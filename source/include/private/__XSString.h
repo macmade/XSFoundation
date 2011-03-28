@@ -53,6 +53,8 @@ typedef struct _XSString
 }
 XSString;
 
+void __XSString_Initialize( void );
+
 #ifdef __cplusplus
 }
 #endif

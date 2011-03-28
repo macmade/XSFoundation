@@ -38,6 +38,18 @@
 #include "XS.h"
 #include "private/__XSFile.h"
 
+static const XSRuntimeClass __XSFileClass =
+{
+    "XSFile"
+};
+
+static XSTypeID __XSFileTypeID;
+
+void __XSFile_Initialize( void )
+{
+    __XSFileTypeID = XSRuntime_RegisterClass( &__XSFileClass );
+}
+
 void __XSFile_WriteAlign( XSFile * file )
 {
     if( file->bit_count > 0 )

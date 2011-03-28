@@ -105,7 +105,7 @@ typedef struct _XSRuntimeClass
 }
 XSRuntimeClass;
 
-typedef struct __XSRuntimeBase
+typedef struct _XSRuntimeBase
 {
     XSRuntimeClass isa;
 }

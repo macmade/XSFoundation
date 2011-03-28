@@ -66,6 +66,9 @@ typedef struct ___XSMemoryObject
 }
 __XSMemoryObject;
 
+void __XSAutoreleasePool_Initialize( void );
+void __XSMemoryObject_Initialize( void );
+
 XSAutoreleasePool * __XSGetCurrentAutoreleasePool( void );
 void                __XSAutoreleasePoolDrain( XSAutoreleasePool * ap );
 __XSMemoryObject  * __XSGetMemoryObject( void * ptr );

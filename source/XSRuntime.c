@@ -37,9 +37,50 @@
 
 #include "XS.h"
 
+#define __XS_RUNTIME_CLASS_TABLE_SIZE   1024
+
+static XSRuntimeClass ** __class_table;
+static size_t            __class_size;
+static size_t            __class_count;
+
+void __XSMemoryObject_Initialize( void );
+void __XSAutoreleasePool_Initialize( void );
+void __XSFile_Initialize( void );
+void __XSString_Initialize( void );
+
+void XSRuntime_Initialize( void )
+{
+    __XSMemoryObject_Initialize();
+    __XSAutoreleasePool_Initialize();
+    __XSFile_Initialize();
+    __XSString_Initialize();
+}
+
 XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls )
 {
-    ( void )cls;
+    if( __class_size == 0 )
+    {
+        if( NULL == ( __class_table = ( XSRuntimeClass ** )calloc( sizeof( XSRuntimeClass * ), __XS_RUNTIME_CLASS_TABLE_SIZE ) ) )
+        {
+            fprintf( stderr, "Error: unable to allocate the runtime class table!" );
+            exit( EXIT_FAILURE );
+        }
+        
+        __class_size += __XS_RUNTIME_CLASS_TABLE_SIZE;
+    }
     
-    return 0;
+    if( __class_count == __class_size )
+    {
+        if( NULL == ( __class_table = ( XSRuntimeClass ** )realloc( __class_table, sizeof( XSRuntimeClass * ) * ( __XS_RUNTIME_CLASS_TABLE_SIZE + __class_size ) ) ) )
+        {
+            fprintf( stderr, "Error: unable to re-allocate the runtime class table!" );
+            exit( EXIT_FAILURE );
+        }
+        
+        __class_size += __XS_RUNTIME_CLASS_TABLE_SIZE;
+    }
+    
+    __class_table[ __class_count ] = ( XSRuntimeClass * )cls;
+    
+    return __class_count++;
 }

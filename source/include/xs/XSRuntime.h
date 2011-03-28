@@ -45,6 +45,7 @@ extern "C" {
 
 #include "XS.h"
 
+void XSRuntime_Initialize( void );
 XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls );
     
 #ifdef __cplusplus

@@ -30,66 +30,22 @@
 /* $Id$ */
 
 /*!
- * @file        
+ * @header      __XSString.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    
+ * @abstract    ...
  */
 
 #include "XS.h"
-#include "private/__XSMemory.h"
+#include "private/__XSString.h"
 
-XSAutoreleasePool * __xs_ar_pools[ XS_MEMORY_MAX_AR_POOLS ];
-XSUInteger          __xs_ar_pools_num;
-
-static const XSRuntimeClass __XSAutoreleasePoolClass =
+static const XSRuntimeClass __XSStringClass =
 {
-    "XSAutoreleasePool"
+    "XSString"
 };
 
-static const XSRuntimeClass __XSMemoryObjectClass =
-{
-    "XSMemoryObject"
-};
+static XSTypeID __XSStringTypeID;
 
-static XSTypeID __XSAutoreleasePoolTypeID;
-static XSTypeID __XSMemoryObjectTypeID;
-
-void __XSAutoreleasePool_Initialize( void )
+void __XSString_Initialize( void )
 {
-    __XSAutoreleasePoolTypeID = XSRuntime_RegisterClass( &__XSAutoreleasePoolClass );
-}
-
-void __XSMemoryObject_Initialize( void )
-{
-    __XSMemoryObjectTypeID = XSRuntime_RegisterClass( &__XSMemoryObjectClass );
-}
-
-XSAutoreleasePool * __XSGetCurrentAutoreleasePool( void )
-{
-    return __xs_ar_pools[ __xs_ar_pools_num - 1 ];
-}
-
-void __XSAutoreleasePoolDrain( XSAutoreleasePool * ap )
-{
-    size_t i;
-    
-    for( i = 0; i < ap->num_objects; i++ )
-    {
-        XSRelease( ap->objects[ i ] );
-    }
-    
-    ap->num_objects = 0;
-}
-
-__XSMemoryObject * __XSGetMemoryObject( void * ptr )
-{
-    __XSMemoryObject * o;
-    char           * c;
-    
-    c  = ( char * )ptr;
-    c -= sizeof( __XSMemoryObject * );
-    c -= sizeof( void * );
-    o  = ( __XSMemoryObject * )c;
-    
-    return o;
+    __XSStringTypeID = XSRuntime_RegisterClass( &__XSStringClass );
 }
