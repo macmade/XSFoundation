@@ -72,7 +72,7 @@ XSFileRef XSFile_Open( const char * filename, const char * mode )
         return NULL;
     }
     
-    if( NULL == ( file = malloc( sizeof( XSFile ) ) ) )
+    if( NULL == ( file = XSAlloc( sizeof( XSFile ) ) ) )
     {
         return NULL;
     }
@@ -134,7 +134,7 @@ XSInteger XSFile_Close( XSFileRef file )
     
     res = fclose( _f->fp );
     
-    free( _f );
+    XSRelease( _f );
     
     return res;
 }
