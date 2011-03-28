@@ -93,8 +93,10 @@ XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls )
 
 XSTypeRef XSRuntime_CreateInstance( XSTypeID typeID, size_t extraBytes )
 {
+    XSRuntimeBase  * b;
     XSRuntimeClass * cls;
     size_t           size;
+    XSTypeRef      * o;
     
     __XS_RUNTINE_INIT_CHECK
     
@@ -103,10 +105,13 @@ XSTypeRef XSRuntime_CreateInstance( XSTypeID typeID, size_t extraBytes )
         return NULL;
     }
     
-    cls  = __class_table[ typeID - 1 ];
-    size = sizeof( cls ) + extraBytes;
+    cls    = __class_table[ typeID - 1 ];
+    size   = sizeof( cls ) + extraBytes;
+    o      = XSAlloc( size, typeID );
+    b      = ( XSRuntimeBase * )o;
+    b->isa = cls;
     
-    return XSAlloc( size, typeID );
+    return o;
 }
 
 const XSRuntimeClass const * XSRuntime_GetClassForTypeID( XSTypeID typeID )
