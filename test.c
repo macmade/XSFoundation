@@ -30,60 +30,36 @@
 /* $Id$ */
 
 /*!
- * @file        
+ * @header      test.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    
+ * @abstract    ...
  */
 
+#include <stdlib.h>
+#include <stdio.h>
 #include "XS.h"
-#include "private/__XSMemory.h"
 
-XSAutoreleasePool * __xsmemory_ar_pools[ XS_MEMORY_MAX_AR_POOLS ];
-XSUInteger          __xsmemory_ar_pools_num;
-
-static const XSRuntimeClass __XSAutoreleasePoolClass =
+int main( void )
 {
-    "XSAutoreleasePool"
-};
-
-static XSTypeID __XSAutoreleasePoolTypeID;
-
-void __XSAutoreleasePool_Initialize( void )
-{
-    __XSAutoreleasePoolTypeID = XSRuntime_RegisterClass( &__XSAutoreleasePoolClass );
-}
-
-XSAutoreleasePool * __XSAutoreleasePool_Alloc( void )
-{
-    return ( XSAutoreleasePool * )XSRuntime_CreateInstance( __XSAutoreleasePoolTypeID, sizeof( XSAutoreleasePool ) );
-}
-
-XSAutoreleasePool * __XSMemory_GetCurrentAutoreleasePool( void )
-{
-    return __xsmemory_ar_pools[ __xsmemory_ar_pools_num - 1 ];
-}
-
-void __XSMemory_AutoreleasePoolDrain( XSAutoreleasePool * ap )
-{
-    size_t i;
+    unsigned int       i;
+    char            ** test;
+    XSAutoreleasePoolRef ap1;
+    XSAutoreleasePoolRef ap2;
     
-    for( i = 0; i < ap->num_objects; i++ )
+    XSRuntime_Initialize();
+    
+    ap1   = XSAutoreleasePool_Create();
+    test  = XSAutoAlloc( 5 * sizeof( char * ) );
+    ap2   = XSAutoreleasePool_Create();
+    
+    for( i = 0; i < 5; i++ )
     {
-        XSRelease( ap->objects[ i ] );
+        test[ i ] = XSAutoAlloc( 2 );
     }
     
-    ap->num_objects = 0;
-}
-
-__XSMemoryObject * __XSMemory_GetMemoryObject( void * ptr )
-{
-    __XSMemoryObject * o;
-    char           * c;
+    XSAutoreleasePool_Drain();
+    XSAutoreleasePool_Destroy( ap2 );
+    XSAutoreleasePool_Destroy( ap1 );
     
-    c  = ( char * )ptr;
-    c -= sizeof( __XSMemoryObject * );
-    c -= sizeof( void * );
-    o  = ( __XSMemoryObject * )c;
-    
-    return o;
+    return EXIT_SUCCESS;
 }

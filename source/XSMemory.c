@@ -44,20 +44,20 @@ XSAutoreleasePoolRef XSAutoreleasePool_Create( void )
     
     if( __xsmemory_ar_pools_num == XS_MEMORY_MAX_AR_POOLS )
     {
-        fprintf( stderr, "Maximum number of auto-release pools reached: %u", XS_MEMORY_MAX_AR_POOLS );
+        fprintf( stderr, "Maximum number of auto-release pools reached: %u\n", XS_MEMORY_MAX_AR_POOLS );
         exit( EXIT_FAILURE );
     }
     
     if( NULL == ( ap = __XSAutoreleasePool_Alloc() ) )
     {
-        fprintf( stderr, "Unable to allocate memory for the auto-release pool" );
+        fprintf( stderr, "Unable to allocate memory for the auto-release pool\n" );
         exit( EXIT_FAILURE );
     }
     
     if( NULL == ( ap->objects = ( void ** )calloc( sizeof( void * ), XS_MEMORY_NUM_OBJECTS ) ) )
     {
         free( ap );
-        fprintf( stderr, "Unable to allocate memory for the auto-release pool" );
+        fprintf( stderr, "Unable to allocate memory for the auto-release pool\n" );
         exit( EXIT_FAILURE );
     }
     
@@ -72,7 +72,7 @@ void XSAutoreleasePool_Destroy( XSAutoreleasePoolRef ap )
 {
     __XSMemory_AutoreleasePoolDrain( ( XSAutoreleasePool * )ap );
     
-    free( ap );
+    XSRelease( ap );
     
     __xsmemory_ar_pools_num--;
 }

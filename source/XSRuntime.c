@@ -39,6 +39,9 @@
 
 #define __XS_RUNTIME_CLASS_TABLE_SIZE   1024
 
+#define __XS_RUNTINE_INIT_CHECK         if( __inited == NO ) { fprintf( stderr, "Error: the runtime has not been initialized\n" ); exit( EXIT_FAILURE ); }
+
+static BOOL              __inited = NO;
 static XSRuntimeClass ** __class_table;
 static size_t            __class_size;
 static size_t            __class_count;
@@ -50,7 +53,9 @@ void __XSString_Initialize( void );
 
 void XSRuntime_Initialize( void )
 {
-    __XSMemoryObject_Initialize();
+    
+    __inited = YES;
+    
     __XSAutoreleasePool_Initialize();
     __XSFile_Initialize();
     __XSString_Initialize();
@@ -58,11 +63,13 @@ void XSRuntime_Initialize( void )
 
 XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls )
 {
+    __XS_RUNTINE_INIT_CHECK
+    
     if( __class_size == 0 )
     {
         if( NULL == ( __class_table = ( XSRuntimeClass ** )calloc( sizeof( XSRuntimeClass * ), __XS_RUNTIME_CLASS_TABLE_SIZE ) ) )
         {
-            fprintf( stderr, "Error: unable to allocate the runtime class table!" );
+            fprintf( stderr, "Error: unable to allocate the runtime class table!\n" );
             exit( EXIT_FAILURE );
         }
         
@@ -73,7 +80,7 @@ XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls )
     {
         if( NULL == ( __class_table = ( XSRuntimeClass ** )realloc( __class_table, sizeof( XSRuntimeClass * ) * ( __XS_RUNTIME_CLASS_TABLE_SIZE + __class_size ) ) ) )
         {
-            fprintf( stderr, "Error: unable to re-allocate the runtime class table!" );
+            fprintf( stderr, "Error: unable to re-allocate the runtime class table!\n" );
             exit( EXIT_FAILURE );
         }
         
@@ -89,6 +96,8 @@ XSTypeRef XSRuntime_CreateInstance( XSTypeID typeID, size_t extraBytes )
 {
     XSRuntimeClass * cls;
     size_t           size;
+    
+    __XS_RUNTINE_INIT_CHECK
     
     if( typeID >= __class_count )
     {
