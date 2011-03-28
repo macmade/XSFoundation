@@ -68,7 +68,7 @@ __XSMemoryObject;
 
 void                __XSAutoreleasePool_Initialize( void );
 XSAutoreleasePool * __XSAutoreleasePool_Alloc( void );
-void XSAutoreleasePool_Dealloc( void * object );
+void __XSAutoreleasePool_Dealloc( void * object );
 
 XSAutoreleasePool * __XSMemory_GetCurrentAutoreleasePool( void );
 void                __XSMemory_AutoreleasePoolDrain( XSAutoreleasePool * ap );

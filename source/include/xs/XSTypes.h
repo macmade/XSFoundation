@@ -113,8 +113,8 @@ typedef struct _XSRuntimeBase
 }
 XSRuntimeBase;
 
-typedef unsigned long         XSTypeID;
-typedef const XSRuntimeBase * XSTypeRef;
+typedef unsigned long XSTypeID;
+typedef const void  * XSTypeRef;
 
 typedef struct _XSPoint
 {

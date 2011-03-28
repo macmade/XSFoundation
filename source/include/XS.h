@@ -49,8 +49,9 @@ extern "C" {
 #include "XS/XSFunctions.h"
 #include "XS/XSMemory.h"
 #include "XS/XSRuntime.h"
-#include "XS/XSFile.h"
+#include "XS/XSArray.h"
 #include "XS/XSString.h"
+#include "XS/XSFile.h"
 
 #ifdef __cplusplus
 }

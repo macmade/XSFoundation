@@ -45,7 +45,7 @@ static const XSRuntimeClass __XSAutoreleasePoolClass =
 {
     "XSAutoreleasePool",
     NULL,
-    XSAutoreleasePool_Dealloc
+    __XSAutoreleasePool_Dealloc
 };
 
 static XSTypeID __XSAutoreleasePoolTypeID;
@@ -60,7 +60,7 @@ XSAutoreleasePool * __XSAutoreleasePool_Alloc( void )
     return ( XSAutoreleasePool * )XSRuntime_CreateInstance( __XSAutoreleasePoolTypeID, sizeof( XSAutoreleasePool ) );
 }
 
-void XSAutoreleasePool_Dealloc( void * object )
+void __XSAutoreleasePool_Dealloc( void * object )
 {
     __XSMemory_AutoreleasePoolDrain( ( XSAutoreleasePool * )object );
     
