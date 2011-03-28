@@ -99,13 +99,20 @@ typedef UInt32                  UTF32Char;
     
 #endif
 
-typedef const void * XSTypeRef;
+typedef struct _XSRuntimeClass
+{
+    const char * className;
+}
+XSRuntimeClass;
 
 typedef struct __XSRuntimeBase
 {
-    uintptr_t isa;
+    XSRuntimeClass isa;
 }
 XSRuntimeBase;
+
+typedef unsigned long         XSTypeID;
+typedef const XSRuntimeBase * XSTypeRef;
 
 typedef struct _XSPoint
 {
