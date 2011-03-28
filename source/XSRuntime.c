@@ -53,7 +53,6 @@ void __XSString_Initialize( void );
 
 void XSRuntime_Initialize( void )
 {
-    
     __inited = YES;
     
     __XSAutoreleasePool_Initialize();
