@@ -1,0 +1,237 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		056003BB1340621F005DC721 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		056003BC1340621F005DC721 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		056003BE1340621F005DC721 /* __XSMemory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemory.c; sourceTree = "<group>"; };
+		056003C11340621F005DC721 /* __XSFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSFile.h; sourceTree = "<group>"; };
+		056003C21340621F005DC721 /* __XSMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSMemory.h; sourceTree = "<group>"; };
+		056003C31340621F005DC721 /* __XSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSString.h; sourceTree = "<group>"; };
+		056003C51340621F005DC721 /* std-ascii.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-ascii.h"; sourceTree = "<group>"; };
+		056003C61340621F005DC721 /* std-bitwise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-bitwise.h"; sourceTree = "<group>"; };
+		056003C71340621F005DC721 /* std-bool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-bool.h"; sourceTree = "<group>"; };
+		056003C81340621F005DC721 /* std-c99.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-c99.h"; sourceTree = "<group>"; };
+		056003C91340621F005DC721 /* std-keywords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-keywords.h"; sourceTree = "<group>"; };
+		056003CA1340621F005DC721 /* std-math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-math.h"; sourceTree = "<group>"; };
+		056003CB1340621F005DC721 /* std-posix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-posix.h"; sourceTree = "<group>"; };
+		056003CC1340621F005DC721 /* std-string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-string.h"; sourceTree = "<group>"; };
+		056003CD1340621F005DC721 /* std.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = std.h; sourceTree = "<group>"; };
+		056003CF1340621F005DC721 /* XSConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSConstants.h; sourceTree = "<group>"; };
+		056003D01340621F005DC721 /* XSFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSFile.h; sourceTree = "<group>"; };
+		056003D11340621F005DC721 /* XSFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSFunctions.h; sourceTree = "<group>"; };
+		056003D21340621F005DC721 /* XSMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMemory.h; sourceTree = "<group>"; };
+		056003D31340621F005DC721 /* XSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSString.h; sourceTree = "<group>"; };
+		056003D41340621F005DC721 /* XSTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSTypes.h; sourceTree = "<group>"; };
+		056003D51340621F005DC721 /* XS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XS.h; sourceTree = "<group>"; };
+		056003D61340621F005DC721 /* std-string.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "std-string.c"; sourceTree = "<group>"; };
+		056003D71340621F005DC721 /* XSFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSFunctions.c; sourceTree = "<group>"; };
+		056003D81340621F005DC721 /* XSMemory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSMemory.c; sourceTree = "<group>"; };
+		056003D91340621F005DC721 /* XSString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSString.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		056003A813406206005DC721 = {
+			isa = PBXGroup;
+			children = (
+				056003BB1340621F005DC721 /* LICENSE.txt */,
+				056003BC1340621F005DC721 /* Makefile */,
+				056003BD1340621F005DC721 /* source */,
+			);
+			sourceTree = "<group>";
+		};
+		056003BD1340621F005DC721 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				056003BE1340621F005DC721 /* __XSMemory.c */,
+				056003BF1340621F005DC721 /* include */,
+				056003D61340621F005DC721 /* std-string.c */,
+				056003D71340621F005DC721 /* XSFunctions.c */,
+				056003D81340621F005DC721 /* XSMemory.c */,
+				056003D91340621F005DC721 /* XSString.c */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		056003BF1340621F005DC721 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				056003C01340621F005DC721 /* private */,
+				056003C41340621F005DC721 /* std */,
+				056003CE1340621F005DC721 /* xs */,
+				056003D51340621F005DC721 /* XS.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		056003C01340621F005DC721 /* private */ = {
+			isa = PBXGroup;
+			children = (
+				056003C11340621F005DC721 /* __XSFile.h */,
+				056003C21340621F005DC721 /* __XSMemory.h */,
+				056003C31340621F005DC721 /* __XSString.h */,
+			);
+			path = private;
+			sourceTree = "<group>";
+		};
+		056003C41340621F005DC721 /* std */ = {
+			isa = PBXGroup;
+			children = (
+				056003C51340621F005DC721 /* std-ascii.h */,
+				056003C61340621F005DC721 /* std-bitwise.h */,
+				056003C71340621F005DC721 /* std-bool.h */,
+				056003C81340621F005DC721 /* std-c99.h */,
+				056003C91340621F005DC721 /* std-keywords.h */,
+				056003CA1340621F005DC721 /* std-math.h */,
+				056003CB1340621F005DC721 /* std-posix.h */,
+				056003CC1340621F005DC721 /* std-string.h */,
+				056003CD1340621F005DC721 /* std.h */,
+			);
+			path = std;
+			sourceTree = "<group>";
+		};
+		056003CE1340621F005DC721 /* xs */ = {
+			isa = PBXGroup;
+			children = (
+				056003CF1340621F005DC721 /* XSConstants.h */,
+				056003D01340621F005DC721 /* XSFile.h */,
+				056003D11340621F005DC721 /* XSFunctions.h */,
+				056003D21340621F005DC721 /* XSMemory.h */,
+				056003D31340621F005DC721 /* XSString.h */,
+				056003D41340621F005DC721 /* XSTypes.h */,
+			);
+			path = xs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		056003AF13406206005DC721 /* XSFoundation */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 056003B213406206005DC721 /* Build configuration list for PBXLegacyTarget "XSFoundation" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			dependencies = (
+			);
+			name = XSFoundation;
+			passBuildSettingsInEnvironment = 1;
+			productName = XSFoundation;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		056003AA13406206005DC721 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = eosgarden;
+			};
+			buildConfigurationList = 056003AD13406206005DC721 /* Build configuration list for PBXProject "XSFoundation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 056003A813406206005DC721;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				056003AF13406206005DC721 /* XSFoundation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		056003B013406206005DC721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		056003B113406206005DC721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		056003B313406206005DC721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		056003B413406206005DC721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		056003AD13406206005DC721 /* Build configuration list for PBXProject "XSFoundation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				056003B013406206005DC721 /* Debug */,
+				056003B113406206005DC721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		056003B213406206005DC721 /* Build configuration list for PBXLegacyTarget "XSFoundation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				056003B313406206005DC721 /* Debug */,
+				056003B413406206005DC721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 056003AA13406206005DC721 /* Project object */;
+}
