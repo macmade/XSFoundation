@@ -89,6 +89,8 @@ void * XSAlloc( size_t size, ... )
     
     typeID = va_arg( args, XSTypeID );
     
+    va_end( args );
+    
     o = calloc( sizeof( __XSMemoryObject ) + size, 1 );
     
     if( o == NULL )
