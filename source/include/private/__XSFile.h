@@ -47,19 +47,20 @@ extern "C" {
 
 typedef struct _XSFile
 {
-    FILE      * fp;
-    char        filename[ FILENAME_MAX ];
-    char        mode[ 4 ];
-    BOOL        writeable;
-    BOOL        readable;
-    BOOL        stdin;
-    BOOL        stdout;
-    BOOL        stderr;
-    BOOL        need_init;
-    uint8_t     bit_buffer;
-    uint8_t     bit_count;
-    uint8_t     bit_offset;
-    struct stat stat_buf;
+    XSRuntimeBase _xsbase;
+    FILE        * fp;
+    char          filename[ FILENAME_MAX ];
+    char          mode[ 4 ];
+    BOOL          writeable;
+    BOOL          readable;
+    BOOL          stdin;
+    BOOL          stdout;
+    BOOL          stderr;
+    BOOL          need_init;
+    uint8_t       bit_buffer;
+    uint8_t       bit_count;
+    uint8_t       bit_offset;
+    struct stat   stat_buf;
 }
 XSFile;
 

@@ -47,8 +47,9 @@ extern "C" {
 
 typedef struct _XSString
 {
-    size_t  length;
-    char  * str;
+    XSRuntimeBase _xsbase;
+    size_t        length;
+    char        * str;
 }
 XSString;
 

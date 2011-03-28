@@ -50,17 +50,19 @@ extern "C" {
 
 typedef struct _XSAutoreleasePool
 {
-    size_t  size;
-    size_t  num_objects;
-    void ** objects;
+    XSRuntimeBase _xsbase;
+    size_t        size;
+    size_t        num_objects;
+    void **       objects;
 }
 XSAutoreleasePool;
 
 typedef struct ___XSMemoryObject
 {
-    XSUInteger retain_count;
-    size_t     size;
-    void *     data;
+    XSRuntimeBase _xsbase;
+    XSUInteger    retain_count;
+    size_t        size;
+    void *        data;
 }
 __XSMemoryObject;
 
