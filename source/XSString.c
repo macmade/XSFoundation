@@ -95,12 +95,20 @@ XSStringRef XSString_SubstringFromIndex( XSStringRef str, size_t i )
 XSStringRef XSString_SubstringToIndex( XSStringRef str, size_t i )
 {
     XSString * _str;
+    XSString * str2;
     
     _str = ( XSString * )str;
     
-    ( void )i;
+    if( i >= _str->length )
+    {
+        return XSCopy( str );
+    }
     
-    return NULL;
+    str2 = ( XSString * )XSString_CreateWithCapacity( i + 1 );
+    
+    memcpy( str2->str, _str->str, i );
+    
+    return ( XSStringRef )str2;
 }
 
 XSStringRef XSString_SubstringWithRange( XSStringRef str, XSRange range )
