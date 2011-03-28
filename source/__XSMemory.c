@@ -58,12 +58,12 @@ XSAutoreleasePool * __XSAutoreleasePool_Alloc( void )
     return ( XSAutoreleasePool * )XSRuntime_CreateInstance( __XSAutoreleasePoolTypeID, sizeof( XSAutoreleasePool ) );
 }
 
-XSAutoreleasePool * __XSGetCurrentAutoreleasePool( void )
+XSAutoreleasePool * __XSMemory_GetCurrentAutoreleasePool( void )
 {
-    return __xs_ar_pools[ __xs_ar_pools_num - 1 ];
+    return __xsmemory_ar_pools[ __xs_ar_pools_num - 1 ];
 }
 
-void __XSAutoreleasePoolDrain( XSAutoreleasePool * ap )
+void __XSMemory_AutoreleasePoolDrain( XSAutoreleasePool * ap )
 {
     size_t i;
     
@@ -75,7 +75,7 @@ void __XSAutoreleasePoolDrain( XSAutoreleasePool * ap )
     ap->num_objects = 0;
 }
 
-__XSMemoryObject * __XSGetMemoryObject( void * ptr )
+__XSMemoryObject * __XSMemory_GetMemoryObject( void * ptr )
 {
     __XSMemoryObject * o;
     char           * c;
