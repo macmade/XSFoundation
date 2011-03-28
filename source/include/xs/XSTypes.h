@@ -164,12 +164,12 @@ typedef XSInteger XSComparisonResult;
 
 typedef struct _XSDecimal
 {
-    signed int     _exponent   : 8;
-    unsigned int   _length     : 4;
-    unsigned int   _isNegative : 1;
-    unsigned int   _isCompact  : 1;
-    unsigned int   _reserved   : 18;
-    unsigned short _mantissa[ XSDecimalMaxSize ];
+    signed int     exponent   : 8;
+    unsigned int   length     : 4;
+    unsigned int   isNegative : 1;
+    unsigned int   isCompact  : 1;
+    unsigned int   reserved   : 18;
+    unsigned short mantissa[ XSDecimalMaxSize ];
 }
 XSDecimal;
 
