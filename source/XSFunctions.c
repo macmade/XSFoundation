@@ -83,3 +83,20 @@ XSRange XSMakeRange( XSUInteger location, XSUInteger length )
     
     return r;
 }
+
+void XSLog( const char * fmt, ... )
+{
+    va_list args;
+    
+    va_start( args, fmt );
+    
+    XSVLog( fmt, args );
+    
+    va_end( args );
+}
+
+void XSVLog( const char * fmt, va_list args )
+{
+    ( void )fmt;
+    ( void )args;
+}
