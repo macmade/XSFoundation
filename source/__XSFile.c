@@ -43,6 +43,7 @@ static const XSRuntimeClass __XSFileClass =
     "XSFile",
     NULL,
     NULL,
+    NULL,
     NULL
 };
 

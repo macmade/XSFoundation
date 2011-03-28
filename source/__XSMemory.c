@@ -46,6 +46,7 @@ static const XSRuntimeClass __XSAutoreleasePoolClass =
     "XSAutoreleasePool",
     NULL,
     __XSAutoreleasePool_Dealloc,
+    NULL,
     NULL
 };
 
