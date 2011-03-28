@@ -84,3 +84,19 @@ XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls )
     
     return __class_count++;
 }
+
+XSTypeRef XSRuntime_CreateInstance( XSTypeID typeID, size_t extraBytes )
+{
+    XSRuntimeClass * cls;
+    size_t           size;
+    
+    if( typeID >= __class_count )
+    {
+        return NULL;
+    }
+    
+    cls  = __class_table[ typeID ];
+    size = sizeof( cls ) + extraBytes;
+    
+    return XSAlloc( size );
+}
