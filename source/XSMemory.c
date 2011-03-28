@@ -122,13 +122,24 @@ void * XSAlloc( size_t size, ... )
 
 void * XSCopy( void * ptr )
 {
-    __XSMemoryObject * o;
-    void             * ptr2;
+    __XSMemoryObject           * o;
+    void                       * ptr2;
+    const XSRuntimeClass const * cls;
     
     o    = __XSMemory_GetMemoryObject( ptr );
     ptr2 = XSAlloc( o->size );
     
     memcpy( ptr2, o->data, o->size );
+    
+    if( o->typeID != 0 )
+    {
+        cls = XSRuntime_GetClassForTypeID( o->typeID );
+        
+        if( cls->copy != NULL )
+        {
+            cls->copy( ptr, ptr2 );
+        }
+    }
     
     return ptr2;
 }
