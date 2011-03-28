@@ -38,35 +38,42 @@
 #include "XS.h"
 #include "private/__XSString.h"
 
+#define __XSSTRING_DEFAULT_CAPACITY 256
+
 XSStringRef XSString_Create( void )
 {
-    return NULL;
+    return XSString_CreateWithCapacity( __XSSTRING_DEFAULT_CAPACITY );
 }
 
 XSStringRef XSString_CreateWithCapacity( XSUInteger capacity )
 {
-    ( void )capacity;
+    XSString * string;
     
-    return NULL;
+    string = __XSString_Alloc();
+    
+    string->str = XSAlloc( ( sizeof( char ) * capacity ) + 1 );
+    
+    return ( XSStringRef )string;
 }
 
-XSStringRef XSString_CreateWithCString( char * str, ... )
+XSStringRef XSString_CreateWithCString( char * str )
 {
-    ( void )str;
+    size_t     length;
+    XSString * string;
     
-    return NULL;
+    length = strlen( str );
+    string = ( XSString * )XSString_CreateWithCapacity( length );
+    
+    memcpy( string->str, str, length );
+    
+    string->length = length;
+    
+    return ( XSStringRef )string;
 }
 
 XSStringRef XSString_CreateWithContentOfFile( char * path )
 {
     ( void )path;
-    
-    return NULL;
-}
-
-XSStringRef XSString_Copy( XSStringRef str )
-{
-    ( void )str;
     
     return NULL;
 }
@@ -109,14 +116,14 @@ XSStringRef XSString_UppercaseString( XSStringRef str )
     return NULL;
 }
 
-XSStringRef XSString_StringByAppendingString( XSStringRef str, ... )
+XSStringRef XSString_StringByAppendingString( XSStringRef str )
 {
     ( void )str;
     
     return NULL;
 }
 
-XSStringRef XSString_StringByAppendingCString( char * str, ... )
+XSStringRef XSString_StringByAppendingCString( char * str )
 {
     ( void )str;
     
@@ -132,9 +139,7 @@ BOOL XSString_WriteToFile( XSStringRef str )
 
 size_t XSString_Length( XSStringRef str )
 {
-    ( void )str;
-    
-    return 0;
+    return ( ( XSString * )str )->length;
 }
 
 char XSString_CharacterAtIndex( XSStringRef str, size_t i )
