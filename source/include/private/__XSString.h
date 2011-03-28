@@ -56,6 +56,7 @@ XSString;
 void       __XSString_Initialize( void );
 XSString * __XSString_Alloc( void );
 void       __XSString_Dealloc( void * object );
+void       __XSString_Copy( void * source, void * destination );
 
 #ifdef __cplusplus
 }
