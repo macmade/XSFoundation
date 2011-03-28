@@ -50,6 +50,7 @@ void __XSMemoryObject_Initialize( void );
 void __XSAutoreleasePool_Initialize( void );
 void __XSFile_Initialize( void );
 void __XSString_Initialize( void );
+void __XSArray_Initialize( void );
 
 void XSRuntime_Initialize( void )
 {
@@ -58,6 +59,7 @@ void XSRuntime_Initialize( void )
     __XSAutoreleasePool_Initialize();
     __XSFile_Initialize();
     __XSString_Initialize();
+    __XSArray_Initialize();
 }
 
 XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls )
