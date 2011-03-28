@@ -104,8 +104,9 @@ void * XSAlloc( size_t size, ... )
     o->retain_count = 1;
     o->size         = size;
     
-    ptr  =  ( char * )o;
-    ptr += ( sizeof( __XSMemoryObject ) );
+    ptr     =  ( char * )o;
+    ptr    += ( sizeof( __XSMemoryObject ) );
+    o->data = ptr;
     
     if( typeID > 0 )
     {
@@ -126,19 +127,40 @@ void * XSCopy( void * ptr )
     void                       * ptr2;
     const XSRuntimeClass const * cls;
     
-    o    = __XSMemory_GetMemoryObject( ptr );
-    ptr2 = XSAlloc( o->size );
+    if( ptr == NULL )
+    {
+        return NULL;
+    }
     
-    memcpy( ptr2, o->data, o->size );
+    o = __XSMemory_GetMemoryObject( ptr );
     
     if( o->typeID != 0 )
     {
-        cls = XSRuntime_GetClassForTypeID( o->typeID );
+        cls  = XSRuntime_GetClassForTypeID( o->typeID );
+        ptr2 = XSAlloc( o->size, o->typeID );
+        
+        if( ptr2 == NULL )
+        {
+            return NULL;
+        }
+        
+        memcpy( ptr2, o->data, o->size );
         
         if( cls->copy != NULL )
         {
             cls->copy( ptr, ptr2 );
         }
+    }
+    else
+    {
+        ptr2 = XSAlloc( o->size );
+        
+        if( ptr2 == NULL )
+        {
+            return NULL;
+        }
+        
+        memcpy( ptr2, o->data, o->size );
     }
     
     return ptr2;
@@ -148,6 +170,11 @@ void XSRelease( void * ptr )
 {
     __XSMemoryObject           * o;
     const XSRuntimeClass const * cls;
+    
+    if( ptr == NULL )
+    {
+        return;
+    }
     
     o = __XSMemory_GetMemoryObject( ptr );
     
@@ -173,6 +200,11 @@ void XSRetain( void * ptr )
 {
     __XSMemoryObject * o;
     
+    if( ptr == NULL )
+    {
+        return;
+    }
+    
     o = __XSMemory_GetMemoryObject( ptr );
     
     o->retain_count++;
@@ -182,6 +214,11 @@ void * XSRealloc( void * ptr, size_t size )
 {
     __XSMemoryObject * o;
     void             * data;
+    
+    if( ptr == NULL )
+    {
+        return NULL;
+    }
     
     o    = __XSMemory_GetMemoryObject( ptr );
     data = realloc( o->data, size );
@@ -211,6 +248,11 @@ void * XSAutoAlloc( size_t size )
 void XSAutorelease( void * ptr )
 {
     XSAutoreleasePool * ap;
+    
+    if( ptr == NULL )
+    {
+        return;
+    }
     
     ap = __XSMemory_GetCurrentAutoreleasePool();
     

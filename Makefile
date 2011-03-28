@@ -102,7 +102,7 @@ test: test.c all
 	@echo "Compiling the test executable"
 	@echo "----------------------------------------------------------------------"
 	@echo 
-	$(CC) -Wall -I$(DIR_INC) -g -o $(DIR_BUILD)$@ $(DIR_BUILD)$(LIBNAME)$(EXT_ARCHIVE) $<
+	$(CC) -Wall -I$(DIR_INC) -o $(DIR_BUILD)$@ $(DIR_BUILD)$(LIBNAME)$(EXT_ARCHIVE) $<
 	@echo 
 	@echo "----------------------------------------------------------------------"
 	@echo "Running the test executable"

@@ -45,6 +45,9 @@ int main( void )
     char              ** test;
     XSAutoreleasePoolRef ap1;
     XSAutoreleasePoolRef ap2;
+    XSStringRef          str1;
+    XSStringRef          str2;
+    XSStringRef          str3;
     
     XSRuntime_Initialize();
     
@@ -56,6 +59,16 @@ int main( void )
     {
         test[ i ] = XSAutoAlloc( 2 );
     }
+    
+    str1 = XSString_CreateWithCString( "hello, world" );
+    str2 = XSString_SubstringFromIndex( str1, 5 );
+    str3 = XSCopy( str2 );
+    
+    printf( "%s%s%s\n", XSString_CString( str1 ), XSString_CString( str2 ), XSString_CString( str3 ) );
+    
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( str3 );
     
     XSAutoreleasePool_Drain();
     XSRelease( ap2 );

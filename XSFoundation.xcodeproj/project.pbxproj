@@ -39,6 +39,10 @@
 		056003E713408197005DC721 /* XSRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSRuntime.h; sourceTree = "<group>"; };
 		056003E81340875C005DC721 /* __XSString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSString.c; sourceTree = "<group>"; };
 		056003ED13409910005DC721 /* test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test.c; sourceTree = "<group>"; };
+		056003EE1340BB05005DC721 /* XSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSArray.h; sourceTree = "<group>"; };
+		056003EF1340BB27005DC721 /* __XSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSArray.h; sourceTree = "<group>"; };
+		056003F01340BB34005DC721 /* __XSArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSArray.c; sourceTree = "<group>"; };
+		056003F11340BB3F005DC721 /* XSArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSArray.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -56,9 +60,11 @@
 			isa = PBXGroup;
 			children = (
 				056003BF1340621F005DC721 /* include */,
+				056003F01340BB34005DC721 /* __XSArray.c */,
 				056003E313406B51005DC721 /* __XSFile.c */,
 				056003BE1340621F005DC721 /* __XSMemory.c */,
 				056003E81340875C005DC721 /* __XSString.c */,
+				056003F11340BB3F005DC721 /* XSArray.c */,
 				056003E2134069EC005DC721 /* XSFile.c */,
 				056003D71340621F005DC721 /* XSFunctions.c */,
 				056003D81340621F005DC721 /* XSMemory.c */,
@@ -83,6 +89,7 @@
 		056003C01340621F005DC721 /* private */ = {
 			isa = PBXGroup;
 			children = (
+				056003EF1340BB27005DC721 /* __XSArray.h */,
 				056003C11340621F005DC721 /* __XSFile.h */,
 				056003C21340621F005DC721 /* __XSMemory.h */,
 				056003C31340621F005DC721 /* __XSString.h */,
@@ -109,6 +116,7 @@
 		056003CE1340621F005DC721 /* xs */ = {
 			isa = PBXGroup;
 			children = (
+				056003EE1340BB05005DC721 /* XSArray.h */,
 				056003CF1340621F005DC721 /* XSConstants.h */,
 				056003D01340621F005DC721 /* XSFile.h */,
 				056003D11340621F005DC721 /* XSFunctions.h */,
