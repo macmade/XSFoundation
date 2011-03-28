@@ -42,7 +42,8 @@ static const XSRuntimeClass __XSStringClass =
 {
     "XSString",
     NULL,
-    __XSString_Dealloc
+    __XSString_Dealloc,
+    NULL
 };
 
 static XSTypeID __XSStringTypeID;

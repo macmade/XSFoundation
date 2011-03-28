@@ -42,6 +42,7 @@ static const XSRuntimeClass __XSArrayClass =
 {
     "XSArray",
     NULL,
+    NULL,
     NULL
 };
 
