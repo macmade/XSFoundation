@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010, Jean-David Gadina <macmade@eosgarden.com>
+ * Copyright (c) 2011, Jean-David Gadina <macmade@eosgarden.com>
  * Distributed under the Boost Software License, Version 1.0.
  * 
  * Boost Software License - Version 1.0 - August 17th, 2003
@@ -26,43 +26,35 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
-
+ 
 /* $Id$ */
 
 /*!
- * @header      
+ * @header      __XSSet.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    
+ * @abstract    ...
  */
 
-#ifndef _XS_H_
-#define _XS_H_
-#pragma once
+#include "XS.h"
+#include "private/__XSSet.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+static const XSRuntimeClass __XSSetClass =
+{
+    "XSSet",
+    NULL,
+    NULL,
+    NULL,
+    NULL
+};
 
-#include "std/std.h"
-#include "XS/XSConstants.h"
-#include "XS/XSTypes.h"
-#include "XS/XSFunctions.h"
-#include "XS/XSMemory.h"
-#include "XS/XSRuntime.h"
-#include "XS/XSArray.h"
-#include "XS/XSData.h"
-#include "XS/XSDate.h"
-#include "XS/XSDictionary.h"
-#include "XS/XSError.h"
-#include "XS/XSFile.h"
-#include "XS/XSNumber.h"
-#include "XS/XSSet.h"
-#include "XS/XSString.h"
-#include "XS/XSTree.h"
-#include "XS/XSURL.h"
+static XSTypeID __XSSetTypeID;
 
-#ifdef __cplusplus
+void __XSSet_Initialize( void )
+{
+    __XSSetTypeID = XSRuntime_RegisterClass( &__XSSetClass );
 }
-#endif
 
-#endif /* _XS_H_ */
+XSSet * __XSSet_Alloc( void )
+{
+    return ( XSSet * )XSRuntime_CreateInstance( __XSSetTypeID, sizeof( XSSet ) );
+}

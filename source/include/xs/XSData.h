@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010, Jean-David Gadina <macmade@eosgarden.com>
+ * Copyright (c) 2011, Jean-David Gadina <macmade@eosgarden.com>
  * Distributed under the Boost Software License, Version 1.0.
  * 
  * Boost Software License - Version 1.0 - August 17th, 2003
@@ -26,43 +26,29 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
-
+ 
 /* $Id$ */
 
 /*!
- * @header      
+ * @header      XSData.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    
+ * @abstract    ...
  */
 
-#ifndef _XS_H_
-#define _XS_H_
+#ifndef _XS_DATA_H_
+#define _XS_DATA_H_
 #pragma once
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include "std/std.h"
-#include "XS/XSConstants.h"
-#include "XS/XSTypes.h"
-#include "XS/XSFunctions.h"
-#include "XS/XSMemory.h"
-#include "XS/XSRuntime.h"
-#include "XS/XSArray.h"
-#include "XS/XSData.h"
-#include "XS/XSDate.h"
-#include "XS/XSDictionary.h"
-#include "XS/XSError.h"
-#include "XS/XSFile.h"
-#include "XS/XSNumber.h"
-#include "XS/XSSet.h"
-#include "XS/XSString.h"
-#include "XS/XSTree.h"
-#include "XS/XSURL.h"
+typedef struct XSData * XSDataRef;
+
+XSDataRef XSData_Create( void );
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* _XS_H_ */
+#endif /* _XS_DATA_H_ */

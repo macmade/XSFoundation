@@ -51,15 +51,31 @@ void __XSAutoreleasePool_Initialize( void );
 void __XSFile_Initialize( void );
 void __XSString_Initialize( void );
 void __XSArray_Initialize( void );
+void __XSDictionary_Initialize( void );
+void __XSSet_Initialize( void );
+void __XSNumber_Initialize( void );
+void __XSDate_Initialize( void );
+void __XSData_Initialize( void );
+void __XSError_Initialize( void );
+void __XSTree_Initialize( void );
+void __XSURL_Initialize( void );
 
 void XSRuntime_Initialize( void )
 {
     __inited = YES;
     
     __XSAutoreleasePool_Initialize();
-    __XSFile_Initialize();
-    __XSString_Initialize();
     __XSArray_Initialize();
+    __XSData_Initialize();
+    __XSDate_Initialize();
+    __XSDictionary_Initialize();
+    __XSError_Initialize();
+    __XSFile_Initialize();
+    __XSNumber_Initialize();
+    __XSSet_Initialize();
+    __XSString_Initialize();
+    __XSTree_Initialize();
+    __XSURL_Initialize();
 }
 
 XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls )
