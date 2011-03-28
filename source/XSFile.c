@@ -38,27 +38,27 @@
 #include "XS.h"
 #include "private/__XSFile.h"
 
-XSFile XSSStdin  = { .stdin  = true, .need_init = true };
-XSFile XSSStdout = { .stdout = true, .need_init = true };
-XSFile XSSStderr = { .stderr = true, .need_init = true };
+XSFile XSSStdin  = { .stdin  = YES, .need_init = YES };
+XSFile XSSStdout = { .stdout = YES, .need_init = YES };
+XSFile XSSStderr = { .stderr = YES, .need_init = YES };
 
 #define __XSFILE_INIT( f )          \
-if( f->need_init == true )          \
+if( f->need_init == YES )           \
 {                                   \
-    if( f->stdin == true )          \
+    if( f->stdin == YES )           \
     {                               \
         f->fp        = stdin;       \
-        f->need_init = false;       \
+        f->need_init = NO;          \
     }                               \
-    else if( f->stdout == true )    \
+    else if( f->stdout == YES )     \
     {                               \
         f->fp        = stdout;      \
-        f->need_init = false;       \
+        f->need_init = NO;          \
     }                               \
-    else if( f->stderr == true )    \
+    else if( f->stderr == YES )     \
     {                               \
         f->fp        = stderr;      \
-        f->need_init = false;       \
+        f->need_init = NO;          \
     }                               \
 }
 
