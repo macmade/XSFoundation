@@ -127,7 +127,7 @@ BOOL XSString_WriteToFile( XSStringRef str )
 {
     ( void )str;
     
-    return false;
+    return NO;
 }
 
 size_t XSString_Length( XSStringRef str )
@@ -177,7 +177,7 @@ BOOL XSString_IsEqualToString( XSStringRef str1, XSStringRef str2 )
     ( void )str1;
     ( void )str2;
     
-    return false;
+    return NO;
 }
 
 XSStringRef XSString_StringByReplacingStringWithString( XSStringRef str1, XSStringRef str2, XSStringRef str3 )
