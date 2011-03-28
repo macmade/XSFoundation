@@ -36,6 +36,7 @@
  */
 
 #include "XS.h"
+#include "private/__XSFunctions.h"
 
 XSPoint XSMakePoint( XSFloat x, XSFloat y )
 {
@@ -97,6 +98,5 @@ void XSLog( const char * fmt, ... )
 
 void XSVLog( const char * fmt, va_list args )
 {
-    ( void )fmt;
-    ( void )args;
+    __XSVLog( fmt, args );
 }
