@@ -38,17 +38,17 @@
 #include "XS.h"
 #include "private/__XSMemory.h"
 
-XSAutoreleasePoolRef XSAutoreleasePoolCreate( void )
+XSAutoreleasePoolRef XSAutoreleasePool_Create( void )
 {
     XSAutoreleasePool * ap;
     
-    if( __xs_ar_pools_num == XS_MEMORY_MAX_AR_POOLS )
+    if( __xsmemory_ar_pools_num == XS_MEMORY_MAX_AR_POOLS )
     {
         fprintf( stderr, "Maximum number of auto-release pools reached: %u", XS_MEMORY_MAX_AR_POOLS );
         exit( EXIT_FAILURE );
     }
     
-    if( NULL == ( ap = ( XSAutoreleasePool * )calloc( sizeof( XSAutoreleasePool ), 1 ) ) )
+    if( NULL == ( ap = __XSAutoreleasePool_Alloc() ) )
     {
         fprintf( stderr, "Unable to allocate memory for the auto-release pool" );
         exit( EXIT_FAILURE );
@@ -61,29 +61,29 @@ XSAutoreleasePoolRef XSAutoreleasePoolCreate( void )
         exit( EXIT_FAILURE );
     }
     
-    ap->size                                           = XS_MEMORY_NUM_OBJECTS;
-    ap->num_objects                                    = 0;
-    __xs_ar_pools[ __xs_ar_pools_num++ ] = ap;
+    ap->size                                         = XS_MEMORY_NUM_OBJECTS;
+    ap->num_objects                                  = 0;
+    __xsmemory_ar_pools[ __xsmemory_ar_pools_num++ ] = ap;
     
     return ( XSAutoreleasePoolRef )ap;
 }
 
-void XSAutoreleasePoolDestroy( XSAutoreleasePoolRef ap )
+void XSAutoreleasePool_Destroy( XSAutoreleasePoolRef ap )
 {
-    __XSAutoreleasePoolDrain( ( XSAutoreleasePool * )ap );
+    __XSMemory_AutoreleasePoolDrain( ( XSAutoreleasePool * )ap );
     
     free( ap );
     
-    __xs_ar_pools_num--;
+    __xsmemory_ar_pools_num--;
 }
 
-void XSAutoreleasePoolDrain( void )
+void XSAutoreleasePool_Drain( void )
 {
     XSAutoreleasePool * ap;
     
-    ap = __XSGetCurrentAutoreleasePool();
+    ap = __XSMemory_GetCurrentAutoreleasePool();
     
-    __XSAutoreleasePoolDrain( ap );
+    __XSMemory_AutoreleasePoolDrain( ap );
 }
 
 void * XSAlloc( size_t size )
@@ -112,7 +112,7 @@ void * XSCopy( void * ptr )
     __XSMemoryObject * o;
     void             * ptr2;
     
-    o    = __XSGetMemoryObject( ptr );
+    o    = __XSMemory_GetMemoryObject( ptr );
     ptr2 = XSAlloc( o->size );
     
     memcpy( ptr2, o->data, o->size );
@@ -124,7 +124,7 @@ void XSRelease( void * ptr )
 {
     __XSMemoryObject * o;
     
-    o = __XSGetMemoryObject( ptr );
+    o = __XSMemory_GetMemoryObject( ptr );
     
     o->retain_count--;
     
@@ -138,7 +138,7 @@ void XSRetain( void * ptr )
 {
     __XSMemoryObject * o;
     
-    o = __XSGetMemoryObject( ptr );
+    o = __XSMemory_GetMemoryObject( ptr );
     
     o->retain_count++;
 }
@@ -148,7 +148,7 @@ void * XSRealloc( void * ptr, size_t size )
     __XSMemoryObject * o;
     void             * data;
     
-    o    = __XSGetMemoryObject( ptr );
+    o    = __XSMemory_GetMemoryObject( ptr );
     data = realloc( o->data, size );
     
     if( data == NULL )
@@ -177,7 +177,7 @@ void XSAutorelease( void * ptr )
 {
     XSAutoreleasePool * ap;
     
-    ap = __XSGetCurrentAutoreleasePool();
+    ap = __XSMemory_GetCurrentAutoreleasePool();
     
     if( ap->num_objects == ap->size )
     {

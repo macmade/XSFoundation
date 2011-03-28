@@ -47,8 +47,8 @@ extern "C" {
 #include "XS/XSConstants.h"
 #include "XS/XSTypes.h"
 #include "XS/XSFunctions.h"
-#include "XS/XSRuntime.h"
 #include "XS/XSMemory.h"
+#include "XS/XSRuntime.h"
 #include "XS/XSFile.h"
 #include "XS/XSString.h"
 

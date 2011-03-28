@@ -65,14 +65,15 @@ typedef struct ___XSMemoryObject
 }
 __XSMemoryObject;
 
-void __XSAutoreleasePool_Initialize( void );
+void                __XSAutoreleasePool_Initialize( void );
+XSAutoreleasePool * __XSAutoreleasePool_Alloc( void );
 
-XSAutoreleasePool * __XSGetCurrentAutoreleasePool( void );
-void                __XSAutoreleasePoolDrain( XSAutoreleasePool * ap );
-__XSMemoryObject  * __XSGetMemoryObject( void * ptr );
+XSAutoreleasePool * __XSMemory_GetCurrentAutoreleasePool( void );
+void                __XSMemory_AutoreleasePoolDrain( XSAutoreleasePool * ap );
+__XSMemoryObject  * __XSMemory_GetMemoryObject( void * ptr );
 
-extern XSAutoreleasePool * __xs_ar_pools[];
-extern XSUInteger          __xs_ar_pools_num;
+extern XSAutoreleasePool * __xsmemory_ar_pools[];
+extern XSUInteger          __xsmemory_ar_pools_num;
 
 #ifdef __cplusplus
 }

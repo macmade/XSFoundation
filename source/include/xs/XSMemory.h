@@ -47,9 +47,9 @@ extern "C" {
 
 typedef struct XSAutoreleasePool * XSAutoreleasePoolRef;
 
-XSAutoreleasePoolRef XSAutoreleasePoolCreate( void );
-void                 XSAutoreleasePoolDestroy( XSAutoreleasePoolRef ap );
-void                 XSAutoreleasePoolDrain( void );
+XSAutoreleasePoolRef XSAutoreleasePool_Create( void );
+void                 XSAutoreleasePool_Destroy( XSAutoreleasePoolRef ap );
+void                 XSAutoreleasePool_Drain( void );
 
 void * XSAlloc( size_t size );
 void * XSRealloc( void * ptr, size_t size );

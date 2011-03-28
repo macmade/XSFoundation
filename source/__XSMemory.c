@@ -46,16 +46,16 @@ static const XSRuntimeClass __XSAutoreleasePoolClass =
     "XSAutoreleasePool"
 };
 
-static const XSRuntimeClass __XSMemoryObjectClass =
-{
-    "XSMemoryObject"
-};
-
 static XSTypeID __XSAutoreleasePoolTypeID;
 
 void __XSAutoreleasePool_Initialize( void )
 {
     __XSAutoreleasePoolTypeID = XSRuntime_RegisterClass( &__XSAutoreleasePoolClass );
+}
+
+XSAutoreleasePool * __XSAutoreleasePool_Alloc( void )
+{
+    return ( XSAutoreleasePool * )XSRuntime_CreateInstance( __XSAutoreleasePoolTypeID, sizeof( XSAutoreleasePool ) );
 }
 
 XSAutoreleasePool * __XSGetCurrentAutoreleasePool( void )
