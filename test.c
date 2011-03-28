@@ -41,8 +41,8 @@
 
 int main( void )
 {
-    unsigned int       i;
-    char            ** test;
+    unsigned int         i;
+    char              ** test;
     XSAutoreleasePoolRef ap1;
     XSAutoreleasePoolRef ap2;
     
