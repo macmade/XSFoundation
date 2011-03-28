@@ -99,6 +99,14 @@ typedef UInt32                  UTF32Char;
     
 #endif
 
+typedef const void * XSTypeRef;
+
+typedef struct __XSRuntimeBase
+{
+    uintptr_t isa;
+}
+XSRuntimeBase;
+
 typedef struct _XSPoint
 {
     XSFloat x;
