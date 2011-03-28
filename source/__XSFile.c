@@ -50,6 +50,11 @@ void __XSFile_Initialize( void )
     __XSFileTypeID = XSRuntime_RegisterClass( &__XSFileClass );
 }
 
+XSFile * __XSFile_Alloc( void )
+{
+    return ( XSFile * )XSRuntime_CreateInstance( __XSFileTypeID, sizeof( XSFile ) );
+}
+
 void __XSFile_WriteAlign( XSFile * file )
 {
     if( file->bit_count > 0 )

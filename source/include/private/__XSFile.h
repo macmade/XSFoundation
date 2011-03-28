@@ -64,7 +64,8 @@ typedef struct _XSFile
 }
 XSFile;
 
-void __XSFile_Initialize( void );
+void     __XSFile_Initialize( void );
+XSFile * __XSFile_Alloc( void );
 
 void __XSFile_WriteAlign( XSFile * file );
 void __XSFile_UpdateStat( XSFile * file );
