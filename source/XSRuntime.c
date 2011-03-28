@@ -35,6 +35,11 @@
  * @abstract    ...
  */
 
-#include "XSRuntime.h"
+#include "XS.h"
 
-
+XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls )
+{
+    ( void )cls;
+    
+    return 0;
+}

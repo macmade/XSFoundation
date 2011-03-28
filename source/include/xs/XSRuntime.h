@@ -42,8 +42,10 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-    
-    
+
+#include "XS.h"
+
+XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls );
     
 #ifdef __cplusplus
 }
