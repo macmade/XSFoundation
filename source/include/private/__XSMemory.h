@@ -59,7 +59,6 @@ XSAutoreleasePool;
 
 typedef struct ___XSMemoryObject
 {
-    XSRuntimeBase _xsbase;
     XSUInteger    retain_count;
     size_t        size;
     void *        data;
@@ -67,7 +66,6 @@ typedef struct ___XSMemoryObject
 __XSMemoryObject;
 
 void __XSAutoreleasePool_Initialize( void );
-void __XSMemoryObject_Initialize( void );
 
 XSAutoreleasePool * __XSGetCurrentAutoreleasePool( void );
 void                __XSAutoreleasePoolDrain( XSAutoreleasePool * ap );
