@@ -42,7 +42,7 @@ static const XSRuntimeClass __XSStringClass =
 {
     "XSString",
     NULL,
-    NULL
+    __XSString_Dealloc
 };
 
 static XSTypeID __XSStringTypeID;
@@ -55,4 +55,13 @@ void __XSString_Initialize( void )
 XSString * __XSString_Alloc( void )
 {
     return ( XSString * )XSRuntime_CreateInstance( __XSStringTypeID, sizeof( XSString ) );
+}
+
+void __XSString_Dealloc( void * object )
+{
+    XSString * str;
+    
+    str = ( XSString * )object;
+    
+    free( str->str );
 }
