@@ -43,6 +43,8 @@
 		056003EF1340BB27005DC721 /* __XSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSArray.h; sourceTree = "<group>"; };
 		056003F01340BB34005DC721 /* __XSArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSArray.c; sourceTree = "<group>"; };
 		056003F11340BB3F005DC721 /* XSArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSArray.c; sourceTree = "<group>"; };
+		056003F213410682005DC721 /* __XSFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; path = __XSFunctions.h; sourceTree = "<group>"; };
+		056003F3134106B5005DC721 /* __XSFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSFunctions.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -62,6 +64,7 @@
 				056003BF1340621F005DC721 /* include */,
 				056003F01340BB34005DC721 /* __XSArray.c */,
 				056003E313406B51005DC721 /* __XSFile.c */,
+				056003F3134106B5005DC721 /* __XSFunctions.c */,
 				056003BE1340621F005DC721 /* __XSMemory.c */,
 				056003E81340875C005DC721 /* __XSString.c */,
 				056003F11340BB3F005DC721 /* XSArray.c */,
@@ -91,6 +94,7 @@
 			children = (
 				056003EF1340BB27005DC721 /* __XSArray.h */,
 				056003C11340621F005DC721 /* __XSFile.h */,
+				056003F213410682005DC721 /* __XSFunctions.h */,
 				056003C21340621F005DC721 /* __XSMemory.h */,
 				056003C31340621F005DC721 /* __XSString.h */,
 			);
