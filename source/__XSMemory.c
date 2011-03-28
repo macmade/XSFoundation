@@ -89,7 +89,7 @@ void __XSMemory_AutoreleasePoolDrain( XSAutoreleasePool * ap )
 __XSMemoryObject * __XSMemory_GetMemoryObject( void * ptr )
 {
     __XSMemoryObject * o;
-    char           * c;
+    char             * c;
     
     c  = ( char * )ptr;
     c -= sizeof( __XSMemoryObject );
