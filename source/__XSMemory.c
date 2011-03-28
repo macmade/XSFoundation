@@ -73,6 +73,11 @@ void __XSAutoreleasePool_Dealloc( void * object )
 
 XSAutoreleasePool * __XSMemory_GetCurrentAutoreleasePool( void )
 {
+    if( __xsmemory_ar_pools_num == 0 )
+    {
+        return NULL;
+    }
+    
     return __xsmemory_ar_pools[ __xsmemory_ar_pools_num - 1 ];
 }
 
