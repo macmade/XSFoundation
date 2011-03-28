@@ -38,12 +38,12 @@
 #include "XS.h"
 #include "private/__XSString.h"
 
-XSStringRef  XSString_Create( void )
+XSStringRef XSString_Create( void )
 {
     return NULL;
 }
 
-XSStringRef  XSString_CreateWithCapacity( XSUInteger capacity )
+XSStringRef XSString_CreateWithCapacity( XSUInteger capacity )
 {
     ( void )capacity;
     
