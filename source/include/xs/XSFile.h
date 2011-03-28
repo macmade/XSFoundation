@@ -35,18 +35,80 @@
  * @abstract    
  */
 
-#ifndef _XS_CONSTANTS_H_
-#define _XS_CONSTANTS_H_
+#ifndef _XS_FILE_H_
+#define _XS_FILE_H_
 #pragma once
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-typedef XSFile * XSFileRef;
+#include "XS.h"
+
+typedef struct XSFile * XSFileRef;
+
+extern XSFileRef XSStdin;
+extern XSFileRef XSStdout;
+extern XSFileRef XSStderr;
+
+XSFileRef    XSFile_Open( const char * filename, const char * mode );
+XSInteger    XSFile_Flush( XSFileRef file );
+XSInteger    XSFile_Close( XSFileRef file );
+XSInteger    XSFile_Printf( XSFileRef file, const char * format, ... );
+XSInteger    XSFile_VPrintf( XSFileRef file, const char * format, va_list arg );
+XSInteger    XSFile_Getc( XSFileRef file );
+XSInteger    XSFile_Putc( XSInteger c, XSFileRef file );
+XSInteger    XSFile_Puts( const char * s, XSFileRef file );
+size_t       XSFile_Read( void * ptr, size_t size, size_t nobj, XSFileRef file );
+size_t       XSFile_Write( const void * ptr, size_t size, size_t nobj, XSFileRef file );
+XSInteger    XSFile_Seek( XSFileRef file, XSInteger offset, XSInteger origin );
+XSInteger    XSFile_Tell( XSFileRef file );
+void         XSFile_Rewind( XSFileRef file );
+XSInteger    XSFile_GetPos( XSFileRef file, fpos_t * ptr );
+XSInteger    XSFile_SetPos( XSFileRef file, const fpos_t * ptr );
+void         XSFile_ClearErr( XSFileRef file );
+XSInteger    XSFile_EndOfFile( XSFileRef file );
+XSInteger    XSFile_Error( XSFileRef file );
+const char * XSFile_Filename( XSFileRef file );
+const char * XSFile_OpenMode( XSFileRef file );
+BOOL         XSFile_IsReadable( XSFileRef file );
+BOOL         XSFile_IsWriteable( XSFileRef file );
+BOOL         XSFile_Copy( char * name, char * new_name );
+XSInteger    XSFile_GetBit( XSFileRef file );
+XSInteger    XSFile_PutBit( XSFileRef file, uint8_t bit );
+XSInteger    XSFile_GetBits( XSFileRef file, XSUInteger count );
+XSInteger    XSFile_PutBits( XSFileRef file, uint64_t bits, XSUInteger count );
+dev_t        XSFile_DeviceID( XSFileRef file );
+ino_t        XSFile_SerialNumber( XSFileRef file );
+nlink_t      XSFile_NumberOfLinks( XSFileRef file );
+uid_t        XSFile_UID( XSFileRef file );
+gid_t        XSFile_GID( XSFileRef file );
+size_t       XSFile_Size( XSFileRef file );
+XSFloat      XSFile_HumanReadableSize( XSFileRef file, char unit[] );
+time_t       XSFile_AccessTime( XSFileRef file );
+time_t       XSFile_ModifictaionTime( XSFileRef file );
+time_t       XSFile_CreationTime( XSFileRef file );
+BOOL         XSFile_IsBlockDevice( XSFileRef file );
+BOOL         XSFile_IsCharacterDevice( XSFileRef file );
+BOOL         XSFile_IsFIFO( XSFileRef file );
+BOOL         XSFile_IsRegularFile( XSFileRef file );
+BOOL         XSFile_IsDirectory( XSFileRef file );
+BOOL         XSFile_IsLink( XSFileRef file );
+BOOL         XSFile_IsSocket( XSFileRef file );
+BOOL         XSFile_IsUserReadable( XSFileRef file );
+BOOL         XSFile_IsUserWriteable( XSFileRef file );
+BOOL         XSFile_ISUserExecutable( XSFileRef file );
+BOOL         XSFile_IsGroupReadable( XSFileRef file );
+BOOL         XSFile_IsGroupWriteable( XSFileRef file );
+BOOL         XSFile_IsGroupExecutable( XSFileRef file );
+BOOL         XSFile_IsWorldReadable( XSFileRef file );
+BOOL         XSFile_IsWorldWriteable( XSFileRef file );
+BOOL         XSFile_IsWorldExecutable( XSFileRef file );
+BOOL         XSFile_HasSUID( XSFileRef file );
+BOOL         XSFile_HasSGID( XSFileRef file );
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* _XS_CONSTANTS_H_ */
+#endif /* _XS_FILE_H_ */

@@ -33,6 +33,8 @@
 		056003D71340621F005DC721 /* XSFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSFunctions.c; sourceTree = "<group>"; };
 		056003D81340621F005DC721 /* XSMemory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSMemory.c; sourceTree = "<group>"; };
 		056003D91340621F005DC721 /* XSString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSString.c; sourceTree = "<group>"; };
+		056003E2134069EC005DC721 /* XSFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSFile.c; sourceTree = "<group>"; };
+		056003E313406B51005DC721 /* __XSFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSFile.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -48,12 +50,14 @@
 		056003BD1340621F005DC721 /* source */ = {
 			isa = PBXGroup;
 			children = (
-				056003BE1340621F005DC721 /* __XSMemory.c */,
 				056003BF1340621F005DC721 /* include */,
-				056003D61340621F005DC721 /* std-string.c */,
+				056003E313406B51005DC721 /* __XSFile.c */,
+				056003BE1340621F005DC721 /* __XSMemory.c */,
+				056003E2134069EC005DC721 /* XSFile.c */,
 				056003D71340621F005DC721 /* XSFunctions.c */,
 				056003D81340621F005DC721 /* XSMemory.c */,
 				056003D91340621F005DC721 /* XSString.c */,
+				056003D61340621F005DC721 /* std-string.c */,
 			);
 			path = source;
 			sourceTree = "<group>";

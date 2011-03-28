@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010, Jean-David Gadina <macmade@eosgarden.com>
+ * Copyright (c) 2011, Jean-David Gadina <macmade@eosgarden.com>
  * Distributed under the Boost Software License, Version 1.0.
  * 
  * Boost Software License - Version 1.0 - August 17th, 2003
@@ -26,48 +26,31 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
-
+ 
 /* $Id$ */
 
 /*!
- * @header      
+ * @file        
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
  * @abstract    
  */
 
-#ifndef ___XS_FILE_H_
-#define ___XS_FILE_H_
-#pragma once
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #include "XS.h"
+#include "private/__XSFile.h"
 
-typedef struct _XSFile
+void __XSFile_WriteAlign( XSFile * file )
 {
-    FILE      * fp;
-    char        filename[ FILENAME_MAX ];
-    char        mode[ 4 ];
-    BOOL        writeable;
-    BOOL        readable;
-    BOOL        stdin;
-    BOOL        stdout;
-    BOOL        stderr;
-    BOOL        need_init;
-    uint8_t     bit_buffer;
-    uint8_t     bit_count;
-    uint8_t     bit_offset;
-    struct stat stat_buf;
+    if( file->bit_count > 0 )
+    {
+        fputc( file->bit_buffer, file->fp );
+    }
+    
+    file->bit_count  = 0;
+    file->bit_buffer = 0;
+    file->bit_offset = 0;
 }
-XSFile;
 
-void __XSFile_WriteAlign( XSFile * file );
-void __XSFile_UpdateStat( XSFile * file );
-
-#ifdef __cplusplus
+void __XSFile_UpdateStat( XSFile * file )
+{
+    stat( file->filename, &( file->stat_buf ) );
 }
-#endif
-
-#endif /* ___XS_FILE_H_ */
