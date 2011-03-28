@@ -51,13 +51,13 @@ _ARGS_CC               = -I $(DIR_INC) $(ARGS_CC)
 
 all: __copyright $(_FILES_SRC_O_BUILD) $(_FILES_SRC_LO_BUILD) $(_FILES_SRC_LA_BUILD) $(_FILES_SRC_DYLIB_BUILD)
 	
-clean:
+clean: __copyright 
 	@echo "    - Removing all build files"
 	@rm -rf $(DIR_BUILD)*
 	@rm -rf $(DIR_BUILD).libs
 	@if [ -d "$(DIR_INSTALL).libs" ]; then rm -rf "$(DIR_INSTALL).libs"; fi
 	
-install: all
+install: __copyright all
 	@if [ ! -d "$(DIR_INSTALL)" ]; then sudo mkdir $(DIR_INSTALL); fi
 	@if [ ! -d "$(DIR_INSTALL_LIB)" ]; then sudo mkdir $(DIR_INSTALL_LIB); fi
 	@if [ ! -d "$(DIR_INSTALL_INC)" ]; then sudo mkdir $(DIR_INSTALL_INC); fi
@@ -68,7 +68,7 @@ install: all
 	@echo "    - Installing dynamic libraries to: $(DIR_INSTALL_LIB)"
 	@sudo cp $(DIR_BUILD)*$(EXT_LIB_DYNAMIC) $(DIR_INSTALL_LIB)
 	
-uninstall:
+uninstall: __copyright 
 	@if [ -d "$(DIR_INSTALL)" ]; then sudo rm -rf $(DIR_INSTALL); fi
 	
 $(DIR_BUILD)%$(EXT_OBJECT): %$(EXT_CODE)
@@ -91,22 +91,20 @@ $(DIR_BUILD)%$(EXT_LIB_DYNAMIC): $(_FILES_SRC_O_BUILD)
 __copyright:
 	@echo 
 	@echo "----------------------------------------------------------------------"
+	@echo "XSFoundation - XEOS C Foundation Library"
+	@echo 
 	@echo "Copyright (c) 2011, Jean-David Gadina <macmade@eosgarden.com>"
 	@echo "Distributed under the Boost Software License, Version 1.0."
 	@echo "----------------------------------------------------------------------"
 	@echo 
 
-test: test.c all
+test: __copyright test.c all
 	@echo 
-	@echo "----------------------------------------------------------------------"
-	@echo "Compiling the test executable"
-	@echo "----------------------------------------------------------------------"
+	@echo "Compiling the test executable:"
 	@echo 
-	$(CC) -Wall -I$(DIR_INC) -o $(DIR_BUILD)$@ $(DIR_BUILD)$(LIBNAME)$(EXT_ARCHIVE) $<
+	$(CC) -Wall -I$(DIR_INC) -o $(DIR_BUILD)$@ $(DIR_BUILD)$(LIBNAME)$(EXT_ARCHIVE) test.c
 	@echo 
-	@echo "----------------------------------------------------------------------"
-	@echo "Running the test executable"
-	@echo "----------------------------------------------------------------------"
+	@echo "Running the test executable:"
 	@echo 
 	@./$(DIR_BUILD)$@
 	@echo 
