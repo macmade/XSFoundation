@@ -49,3 +49,8 @@ void __XSString_Initialize( void )
 {
     __XSStringTypeID = XSRuntime_RegisterClass( &__XSStringClass );
 }
+
+XSString * __XSString_Alloc( void )
+{
+    return ( XSString * )XSRuntime_CreateInstance( __XSStringTypeID, sizeof( XSString ) );
+}

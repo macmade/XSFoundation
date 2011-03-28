@@ -53,7 +53,8 @@ typedef struct _XSString
 }
 XSString;
 
-void __XSString_Initialize( void );
+void       __XSString_Initialize( void );
+XSString * __XSString_Alloc( void );
 
 #ifdef __cplusplus
 }
