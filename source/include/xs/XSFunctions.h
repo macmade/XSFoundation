@@ -50,6 +50,8 @@ XSSize  XSMakeSize( XSFloat width, XSFloat height );
 XSRect  XSMakeRect( XSFloat x, XSFloat y, XSFloat width, XSFloat height );
 XSRect  XSRectZero( void );
 XSRange XSMakeRange( XSUInteger location, XSUInteger length );
+void XSLog( const char * fmt, ... );
+void XSVLog( const char * fmt, va_list args );
 
 #ifdef __cplusplus
 }
