@@ -40,7 +40,9 @@
 
 static const XSRuntimeClass __XSFileClass =
 {
-    "XSFile"
+    "XSFile",
+    NULL,
+    NULL
 };
 
 static XSTypeID __XSFileTypeID;

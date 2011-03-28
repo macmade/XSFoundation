@@ -40,7 +40,9 @@
 
 static const XSRuntimeClass __XSStringClass =
 {
-    "XSString"
+    "XSString",
+    NULL,
+    NULL
 };
 
 static XSTypeID __XSStringTypeID;

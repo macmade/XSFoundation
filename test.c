@@ -58,8 +58,8 @@ int main( void )
     }
     
     XSAutoreleasePool_Drain();
-    XSAutoreleasePool_Destroy( ap2 );
-    XSAutoreleasePool_Destroy( ap1 );
+    XSRelease( ap2 );
+    XSRelease( ap1 );
     
     return EXIT_SUCCESS;
 }

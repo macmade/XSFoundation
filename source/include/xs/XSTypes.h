@@ -102,6 +102,8 @@ typedef UInt32                  UTF32Char;
 typedef struct _XSRuntimeClass
 {
     const char * className;
+    void ( * init    )( void * object );
+    void ( * dealloc )( void * object );
 }
 XSRuntimeClass;
 

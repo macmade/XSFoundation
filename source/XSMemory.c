@@ -68,15 +68,6 @@ XSAutoreleasePoolRef XSAutoreleasePool_Create( void )
     return ( XSAutoreleasePoolRef )ap;
 }
 
-void XSAutoreleasePool_Destroy( XSAutoreleasePoolRef ap )
-{
-    __XSMemory_AutoreleasePoolDrain( ( XSAutoreleasePool * )ap );
-    
-    XSRelease( ap );
-    
-    __xsmemory_ar_pools_num--;
-}
-
 void XSAutoreleasePool_Drain( void )
 {
     XSAutoreleasePool * ap;
@@ -86,10 +77,17 @@ void XSAutoreleasePool_Drain( void )
     __XSMemory_AutoreleasePoolDrain( ap );
 }
 
-void * XSAlloc( size_t size )
+void * XSAlloc( size_t size, ... )
 {
-    __XSMemoryObject * o;
-    char             * ptr;
+    va_list                      args;
+    __XSMemoryObject           * o;
+    char                       * ptr;
+    XSTypeID                     typeID;
+    const XSRuntimeClass const * cls;
+    
+    va_start( args, size );
+    
+    typeID = va_arg( args, XSTypeID );
     
     o = calloc( sizeof( __XSMemoryObject ) + size, 1 );
     
@@ -98,11 +96,26 @@ void * XSAlloc( size_t size )
         return NULL;
     }
     
+    if( typeID > 0 )
+    {
+        o->typeID = typeID;
+    }
+    
     o->retain_count = 1;
     o->size         = size;
     
     ptr  =  ( char * )o;
     ptr += ( sizeof( __XSMemoryObject ) );
+    
+    if( typeID > 0 )
+    {
+        cls = XSRuntime_GetClassForTypeID( o->typeID );
+        
+        if( cls->init != NULL )
+        {
+            cls->init( ptr );
+        }
+    }
     
     return ptr;
 }
@@ -122,7 +135,8 @@ void * XSCopy( void * ptr )
 
 void XSRelease( void * ptr )
 {
-    __XSMemoryObject * o;
+    __XSMemoryObject           * o;
+    const XSRuntimeClass const * cls;
     
     o = __XSMemory_GetMemoryObject( ptr );
     
@@ -130,6 +144,16 @@ void XSRelease( void * ptr )
     
     if( o->retain_count == 0 )
     {
+        if( o->typeID != 0 )
+        {
+            cls = XSRuntime_GetClassForTypeID( o->typeID );
+            
+            if( cls->dealloc != NULL )
+            {
+                cls->dealloc( ptr );
+            }
+        }
+        
         free( o );
     }
 }
