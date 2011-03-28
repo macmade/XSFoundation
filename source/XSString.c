@@ -80,15 +80,24 @@ XSStringRef XSString_CreateWithContentOfFile( char * path )
 
 XSStringRef XSString_SubstringFromIndex( XSStringRef str, size_t i )
 {
-    ( void )str;
-    ( void )i;
+    XSString * _str;
     
-    return NULL;
+    _str = ( XSString * )str;
+    
+    if( i >= _str->length )
+    {
+        return NULL;
+    }
+    
+    return XSString_CreateWithCString( _str->str + i );
 }
 
 XSStringRef XSString_SubstringToIndex( XSStringRef str, size_t i )
 {
-    ( void )str;
+    XSString * _str;
+    
+    _str = ( XSString * )str;
+    
     ( void )i;
     
     return NULL;
@@ -96,7 +105,10 @@ XSStringRef XSString_SubstringToIndex( XSStringRef str, size_t i )
 
 XSStringRef XSString_SubstringWithRange( XSStringRef str, XSRange range )
 {
-    ( void )str;
+    XSString * _str;
+    
+    _str = ( XSString * )str;
+    
     ( void )range;
     
     return NULL;
@@ -104,21 +116,27 @@ XSStringRef XSString_SubstringWithRange( XSStringRef str, XSRange range )
 
 XSStringRef XSString_LowercaseString( XSStringRef str )
 {
-    ( void )str;
+    XSString * _str;
+    
+    _str = ( XSString * )str;
     
     return NULL;
 }
 
 XSStringRef XSString_UppercaseString( XSStringRef str )
 {
-    ( void )str;
+    XSString * _str;
+    
+    _str = ( XSString * )str;
     
     return NULL;
 }
 
 XSStringRef XSString_StringByAppendingString( XSStringRef str )
 {
-    ( void )str;
+    XSString * _str;
+    
+    _str = ( XSString * )str;
     
     return NULL;
 }
@@ -132,7 +150,9 @@ XSStringRef XSString_StringByAppendingCString( char * str )
 
 BOOL XSString_WriteToFile( XSStringRef str )
 {
-    ( void )str;
+    XSString * _str;
+    
+    _str = ( XSString * )str;
     
     return NO;
 }
@@ -144,22 +164,32 @@ size_t XSString_Length( XSStringRef str )
 
 char XSString_CharacterAtIndex( XSStringRef str, size_t i )
 {
-    ( void )str;
-    ( void )i;
+    XSString * _str;
     
-    return 0;
+    _str = ( XSString * )str;
+    
+    if( i >= _str->length )
+    {
+        return 0;
+    }
+    
+    return _str->str[ i ];
 }
 
 const char * XSString_CString( XSStringRef str )
 {
-    ( void )str;
-    
-    return NULL;
+    return ( ( XSString * )str )->str;
 }
 
 XSRange XSString_RangeOfString( XSStringRef str1, XSStringRef str2 )
 {
-    XSRange range = XSMakeRange( 0, 0 );
+    XSString * _str1;
+    XSString * _str2;
+    XSRange    range;
+    
+    _str1 = ( XSString * )str1;
+    _str2 = ( XSString * )str2;
+    range = XSMakeRange( 0, 0 );
     
     ( void )str1;
     ( void )str2;
@@ -169,9 +199,12 @@ XSRange XSString_RangeOfString( XSStringRef str1, XSStringRef str2 )
 
 XSRange XSString_RangeOfCString( XSStringRef str1, char * str2 )
 {
-    XSRange range = XSMakeRange( 0, 0 );
+    XSString * _str;
+    XSRange    range;
     
-    ( void )str1;
+    _str  = ( XSString * )str1;
+    range = XSMakeRange( 0, 0 );
+    
     ( void )str2;
     
     return range;
@@ -179,38 +212,47 @@ XSRange XSString_RangeOfCString( XSStringRef str1, char * str2 )
 
 BOOL XSString_IsEqualToString( XSStringRef str1, XSStringRef str2 )
 {
-    ( void )str1;
-    ( void )str2;
+    XSString * _str1;
+    XSString * _str2;
+    
+    _str1 = ( XSString * )str1;
+    _str2 = ( XSString * )str2;
+    
+    if( strcmp( _str1->str, _str2->str ) == 0 )
+    {
+        return YES;
+    }
     
     return NO;
 }
 
 XSStringRef XSString_StringByReplacingStringWithString( XSStringRef str1, XSStringRef str2, XSStringRef str3 )
 {
-    ( void )str1;
-    ( void )str2;
-    ( void )str3;
+    XSString * _str1;
+    XSString * _str2;
+    XSString * _str3;
+    
+    _str1 = ( XSString * )str1;
+    _str2 = ( XSString * )str2;
+    _str3 = ( XSString * )str3;
     
     return NULL;
 }
 
-XSUInteger XSString_UnsignedIntValue( XSStringRef str1 )
+XSInteger XSString_IntegerValue( XSStringRef str )
 {
-    ( void )str1;
+    XSString * _str;
+    
+    _str = ( XSString * )str;
     
     return 0;
 }
 
-XSInteger XSString_IntValue( XSStringRef str1 )
+XSFloat XSString_FloatValue( XSStringRef str )
 {
-    ( void )str1;
+    XSString * _str;
     
-    return 0;
-}
-
-XSFloat XSString_FloatValue( XSStringRef str1 )
-{
-    ( void )str1;
+    _str = ( XSString * )str;
     
     return 0;
 }

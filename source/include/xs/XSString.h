@@ -66,8 +66,7 @@ XSRange      XSString_RangeOfString( XSStringRef str1, XSStringRef str2 );
 XSRange      XSString_RangeOfCString( XSStringRef str1, char * str2 );
 BOOL         XSString_IsEqualToString( XSStringRef str1, XSStringRef str2 );
 XSStringRef  XSString_StringByReplacingStringWithString( XSStringRef str1, XSStringRef str2, XSStringRef str3 );
-XSUInteger   XSString_UnsignedIntValue( XSStringRef str1 );
-XSInteger    XSString_IntValue( XSStringRef str1 );
+XSInteger    XSString_IntegerValue( XSStringRef str1 );
 XSFloat      XSString_FloatValue( XSStringRef str1 );
 
 #ifdef __cplusplus
