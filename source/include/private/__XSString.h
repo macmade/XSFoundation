@@ -53,10 +53,11 @@ typedef struct _XSString
 }
 XSString;
 
-void       __XSString_Initialize( void );
-XSString * __XSString_Alloc( void );
-void       __XSString_Dealloc( void * object );
-void       __XSString_Copy( void * source, void * destination );
+void         __XSString_Initialize( void );
+XSString   * __XSString_Alloc( void );
+void         __XSString_Dealloc( void * object );
+void         __XSString_Copy( void * source, void * destination );
+const char * __XSString_Description( void * object );
 
 #ifdef __cplusplus
 }

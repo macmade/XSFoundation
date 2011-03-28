@@ -44,7 +44,7 @@ static const XSRuntimeClass __XSStringClass =
     NULL,
     __XSString_Dealloc,
     __XSString_Copy,
-    NULL
+    __XSString_Description
 };
 
 static XSTypeID __XSStringTypeID;
@@ -77,4 +77,13 @@ void __XSString_Copy( void * source, void * destination )
     str = ( XSString * )destination;
     
     XSRetain( str->str );
+}
+
+const char * __XSString_Description( void * object )
+{
+    XSString * str;
+    
+    str = ( XSString * )object;
+    
+    return str->str;
 }
