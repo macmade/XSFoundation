@@ -102,16 +102,16 @@ typedef UInt32                  UTF32Char;
 typedef struct _XSRuntimeClass
 {
     const char * className;
-    void ( * init        )( void * object );
-    void ( * dealloc     )( void * object );
-    void ( * copy        )( void * source, void * destination );
-    void ( * description )( void * object );
+    void         ( * init        )( void * object );
+    void         ( * dealloc     )( void * object );
+    void         ( * copy        )( void * source, void * destination );
+    const char * ( * description )( void * object );
 }
 XSRuntimeClass;
 
 typedef struct _XSRuntimeBase
 {
-    XSRuntimeClass isa;
+    XSRuntimeClass * isa;
 }
 XSRuntimeBase;
 
