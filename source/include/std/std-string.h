@@ -27,7 +27,7 @@
  * DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
 
-/* $Id: string.h 5 2011-01-26 20:37:44Z macmade@eosgarden.com $ */
+/* $Id$ */
 
 /*!
  * @header      string.h
