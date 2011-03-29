@@ -10,10 +10,25 @@ XEOS C Foundation Library
 
 ### About XSFoundation
 
-The XEOS C Foundation library provides the base for *Object-Oriented* C style coding, reference counting memory management with auto-release capabilities, and basic objects.
+The XEOS C Foundation library provides the base for object-oriented C style coding, reference counting memory management with auto-release capabilities, and basic objects.
 It's purpose is to be integrated in the [XEOS][1] Operating System, once its C standard library will be complete.
 
 For now, it's just a standalone project, that should compile on every OS with a decent C compiler.
+
+### Building
+
+The standard command `make` will build static and dynamic versions of the XSFoundation library.
+
+### Linking
+
+Once built, you can link with the XSFoundation library:
+
+`gcc -Wall -o exec_name libxeos.a source.c`
+
+### Header files
+
+A main header file is provided: `XS.h`.
+No other header file should be directly included.
 
 ### License
 
