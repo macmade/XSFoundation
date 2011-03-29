@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 typedef struct _XSNumber
 {
-    void * nothing;
+    XSRuntimeBase _xsbase;
 }
 XSNumber;
 

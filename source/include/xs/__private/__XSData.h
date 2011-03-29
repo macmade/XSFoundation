@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 typedef struct _XSData
 {
-    void * nothing;
+    XSRuntimeBase _xsbase;
 }
 XSData;
 

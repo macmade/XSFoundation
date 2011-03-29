@@ -47,8 +47,9 @@ XS_EXTERN_C_BEGIN
 
 typedef struct _XSArray
 {
-    XSUInteger count;
-    void     * value;
+    XSRuntimeBase _xsbase;
+    XSUInteger    count;
+    void        * values;
 }
 XSArray;
 

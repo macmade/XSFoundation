@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 typedef struct _XSError
 {
-    void * nothing;
+    XSRuntimeBase _xsbase;
 }
 XSError;
 
