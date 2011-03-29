@@ -10,9 +10,6 @@
 		056003BB1340621F005DC721 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		056003BC1340621F005DC721 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		056003BE1340621F005DC721 /* __XSMemory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemory.c; sourceTree = "<group>"; };
-		056003C11340621F005DC721 /* __XSFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSFile.h; sourceTree = "<group>"; };
-		056003C21340621F005DC721 /* __XSMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSMemory.h; sourceTree = "<group>"; };
-		056003C31340621F005DC721 /* __XSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSString.h; sourceTree = "<group>"; };
 		056003C51340621F005DC721 /* std-ascii.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-ascii.h"; sourceTree = "<group>"; };
 		056003C61340621F005DC721 /* std-bitwise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-bitwise.h"; sourceTree = "<group>"; };
 		056003C71340621F005DC721 /* std-bool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-bool.h"; sourceTree = "<group>"; };
@@ -40,19 +37,9 @@
 		056003E81340875C005DC721 /* __XSString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSString.c; sourceTree = "<group>"; };
 		056003ED13409910005DC721 /* test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test.c; sourceTree = "<group>"; };
 		056003EE1340BB05005DC721 /* XSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSArray.h; sourceTree = "<group>"; };
-		056003EF1340BB27005DC721 /* __XSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSArray.h; sourceTree = "<group>"; };
 		056003F01340BB34005DC721 /* __XSArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSArray.c; sourceTree = "<group>"; };
 		056003F11340BB3F005DC721 /* XSArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSArray.c; sourceTree = "<group>"; };
-		056003F213410682005DC721 /* __XSFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSFunctions.h; sourceTree = "<group>"; };
 		056003F3134106B5005DC721 /* __XSFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSFunctions.c; sourceTree = "<group>"; };
-		056004001341284C005DC721 /* __XSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSData.h; sourceTree = "<group>"; };
-		056004011341284C005DC721 /* __XSDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSDate.h; sourceTree = "<group>"; };
-		056004021341284C005DC721 /* __XSDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSDictionary.h; sourceTree = "<group>"; };
-		056004031341284C005DC721 /* __XSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSError.h; sourceTree = "<group>"; };
-		056004041341284C005DC721 /* __XSNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSNumber.h; sourceTree = "<group>"; };
-		056004051341284C005DC721 /* __XSSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSSet.h; sourceTree = "<group>"; };
-		056004061341284C005DC721 /* __XSTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSTree.h; sourceTree = "<group>"; };
-		056004071341284C005DC721 /* __XSURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSURL.h; sourceTree = "<group>"; };
 		0560040913412858005DC721 /* XSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSData.h; sourceTree = "<group>"; };
 		0560040A13412858005DC721 /* XSDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSDate.h; sourceTree = "<group>"; };
 		0560040B13412858005DC721 /* XSDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSDictionary.h; sourceTree = "<group>"; };
@@ -77,6 +64,21 @@
 		0560041E13412868005DC721 /* XSSet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSSet.c; sourceTree = "<group>"; };
 		0560041F13412869005DC721 /* XSTree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSTree.c; sourceTree = "<group>"; };
 		0560042013412869005DC721 /* XSURL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSURL.c; sourceTree = "<group>"; };
+		0560042113417F6F005DC721 /* XSMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMacros.h; sourceTree = "<group>"; };
+		05600422134184BD005DC721 /* XSMacrosTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMacrosTarget.h; sourceTree = "<group>"; };
+		05AC165713418E7100455568 /* __XSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSArray.h; sourceTree = "<group>"; };
+		05AC165813418E7100455568 /* __XSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSData.h; sourceTree = "<group>"; };
+		05AC165913418E7100455568 /* __XSDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSDate.h; sourceTree = "<group>"; };
+		05AC165A13418E7100455568 /* __XSDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSDictionary.h; sourceTree = "<group>"; };
+		05AC165B13418E7100455568 /* __XSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSError.h; sourceTree = "<group>"; };
+		05AC165C13418E7100455568 /* __XSFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSFile.h; sourceTree = "<group>"; };
+		05AC165D13418E7100455568 /* __XSFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSFunctions.h; sourceTree = "<group>"; };
+		05AC165E13418E7100455568 /* __XSMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSMemory.h; sourceTree = "<group>"; };
+		05AC165F13418E7100455568 /* __XSNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSNumber.h; sourceTree = "<group>"; };
+		05AC166013418E7100455568 /* __XSSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSSet.h; sourceTree = "<group>"; };
+		05AC166113418E7100455568 /* __XSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSString.h; sourceTree = "<group>"; };
+		05AC166213418E7100455568 /* __XSTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSTree.h; sourceTree = "<group>"; };
+		05AC166313418E7100455568 /* __XSURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSURL.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -129,32 +131,11 @@
 		056003BF1340621F005DC721 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				056003C01340621F005DC721 /* private */,
 				056003C41340621F005DC721 /* std */,
 				056003CE1340621F005DC721 /* xs */,
 				056003D51340621F005DC721 /* XS.h */,
 			);
 			path = include;
-			sourceTree = "<group>";
-		};
-		056003C01340621F005DC721 /* private */ = {
-			isa = PBXGroup;
-			children = (
-				056003EF1340BB27005DC721 /* __XSArray.h */,
-				056004001341284C005DC721 /* __XSData.h */,
-				056004011341284C005DC721 /* __XSDate.h */,
-				056004021341284C005DC721 /* __XSDictionary.h */,
-				056004031341284C005DC721 /* __XSError.h */,
-				056003C11340621F005DC721 /* __XSFile.h */,
-				056003F213410682005DC721 /* __XSFunctions.h */,
-				056003C21340621F005DC721 /* __XSMemory.h */,
-				056004041341284C005DC721 /* __XSNumber.h */,
-				056004051341284C005DC721 /* __XSSet.h */,
-				056003C31340621F005DC721 /* __XSString.h */,
-				056004061341284C005DC721 /* __XSTree.h */,
-				056004071341284C005DC721 /* __XSURL.h */,
-			);
-			path = private;
 			sourceTree = "<group>";
 		};
 		056003C41340621F005DC721 /* std */ = {
@@ -176,6 +157,7 @@
 		056003CE1340621F005DC721 /* xs */ = {
 			isa = PBXGroup;
 			children = (
+				05AC165613418E7100455568 /* __private */,
 				056003EE1340BB05005DC721 /* XSArray.h */,
 				056003CF1340621F005DC721 /* XSConstants.h */,
 				0560040913412858005DC721 /* XSData.h */,
@@ -184,6 +166,8 @@
 				0560040C13412858005DC721 /* XSError.h */,
 				056003D01340621F005DC721 /* XSFile.h */,
 				056003D11340621F005DC721 /* XSFunctions.h */,
+				0560042113417F6F005DC721 /* XSMacros.h */,
+				05600422134184BD005DC721 /* XSMacrosTarget.h */,
 				056003D21340621F005DC721 /* XSMemory.h */,
 				0560040D13412858005DC721 /* XSNumber.h */,
 				056003E713408197005DC721 /* XSRuntime.h */,
@@ -194,6 +178,26 @@
 				0560041013412858005DC721 /* XSURL.h */,
 			);
 			path = xs;
+			sourceTree = "<group>";
+		};
+		05AC165613418E7100455568 /* __private */ = {
+			isa = PBXGroup;
+			children = (
+				05AC165713418E7100455568 /* __XSArray.h */,
+				05AC165813418E7100455568 /* __XSData.h */,
+				05AC165913418E7100455568 /* __XSDate.h */,
+				05AC165A13418E7100455568 /* __XSDictionary.h */,
+				05AC165B13418E7100455568 /* __XSError.h */,
+				05AC165C13418E7100455568 /* __XSFile.h */,
+				05AC165D13418E7100455568 /* __XSFunctions.h */,
+				05AC165E13418E7100455568 /* __XSMemory.h */,
+				05AC165F13418E7100455568 /* __XSNumber.h */,
+				05AC166013418E7100455568 /* __XSSet.h */,
+				05AC166113418E7100455568 /* __XSString.h */,
+				05AC166213418E7100455568 /* __XSTree.h */,
+				05AC166313418E7100455568 /* __XSURL.h */,
+			);
+			path = __private;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
