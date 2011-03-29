@@ -39,9 +39,9 @@
 #define _XS_STRING_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "XSMacros.h"
+
+XS_EXTERN_C_BEGIN
 
 #include "XSTypes.h"
 
@@ -69,8 +69,6 @@ XSStringRef  XSString_StringByReplacingStringWithString( XSStringRef str1, XSStr
 XSInteger    XSString_IntegerValue( XSStringRef str1 );
 XSFloat      XSString_FloatValue( XSStringRef str1 );
 
-#ifdef __cplusplus
-}
-#endif
+XS_EXTERN_C_END
 
 #endif /* _XS_STRING_H_ */

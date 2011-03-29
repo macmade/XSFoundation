@@ -39,9 +39,9 @@
 #define ___XS_ARRAY_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "../XSMacros.h"
+
+XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
@@ -55,8 +55,6 @@ XSArray;
 void      __XSArray_Initialize( void );
 XSArray * __XSArray_Alloc( void );
 
-#ifdef __cplusplus
-}
-#endif
+XS_EXTERN_C_END
 
 #endif /* ___XS_ARRAY_H_ */

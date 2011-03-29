@@ -39,16 +39,14 @@
 #define _XS_NUMBER_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "XSMacros.h"
+
+XS_EXTERN_C_BEGIN
 
 typedef struct XSNumber * XSNumberRef;
 
 XSNumberRef XSNumber_Create( void );
 
-#ifdef __cplusplus
-}
-#endif
+XS_EXTERN_C_END
 
 #endif /* _XS_NUMBER_H_ */

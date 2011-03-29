@@ -39,9 +39,9 @@
 #define _XS_TYPES_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "XSMacros.h"
+
+XS_EXTERN_C_BEGIN
 
 #include "XSConstants.h"
 #include "../std/std.h"
@@ -174,8 +174,6 @@ typedef struct _XSDecimal
 }
 XSDecimal;
 
-#ifdef __cplusplus
-}
-#endif
+XS_EXTERN_C_END
 
 #endif /* _XS_TYPES_H_ */

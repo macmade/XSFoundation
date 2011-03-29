@@ -39,9 +39,9 @@
 #define _XS_MEMORY_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "XSMacros.h"
+
+XS_EXTERN_C_BEGIN
 
 #include "XSTypes.h"
 
@@ -58,8 +58,6 @@ void * XSAutoAlloc( size_t size );
 void   XSAutorelease( void * ptr );
 void * XSCopy( void * ptr );
 
-#ifdef __cplusplus
-}
-#endif
+XS_EXTERN_C_END
 
 #endif /* _XS_MEMORY_H_ */

@@ -39,16 +39,14 @@
 #define _XS_ARRAY_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "XSMacros.h"
+
+XS_EXTERN_C_BEGIN
 
 typedef struct XSArray * XSArrayRef;
 
 XSArrayRef XSArray_Create( void );
 
-#ifdef __cplusplus
-}
-#endif
+XS_EXTERN_C_END
 
 #endif /* _HEADER_H_ */

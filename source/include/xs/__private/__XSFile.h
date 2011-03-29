@@ -39,9 +39,9 @@
 #define ___XS_FILE_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "../XSMacros.h"
+
+XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
@@ -70,8 +70,6 @@ XSFile * __XSFile_Alloc( void );
 void __XSFile_WriteAlign( XSFile * file );
 void __XSFile_UpdateStat( XSFile * file );
 
-#ifdef __cplusplus
-}
-#endif
+XS_EXTERN_C_END
 
 #endif /* ___XS_FILE_H_ */

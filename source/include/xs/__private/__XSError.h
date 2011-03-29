@@ -39,9 +39,9 @@
 #define ___XS_ERROR_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "../XSMacros.h"
+
+XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
@@ -54,8 +54,6 @@ XSError;
 void      __XSError_Initialize( void );
 XSError * __XSError_Alloc( void );
 
-#ifdef __cplusplus
-}
-#endif
+XS_EXTERN_C_END
 
 #endif /* ___XS_ERROR_H_ */

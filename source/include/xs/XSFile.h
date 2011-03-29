@@ -39,9 +39,9 @@
 #define _XS_FILE_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "XSMacros.h"
+
+XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
@@ -107,8 +107,6 @@ BOOL         XSFile_IsWorldExecutable( XSFileRef file );
 BOOL         XSFile_HasSUID( XSFileRef file );
 BOOL         XSFile_HasSGID( XSFileRef file );
 
-#ifdef __cplusplus
-}
-#endif
+XS_EXTERN_C_END
 
 #endif /* _XS_FILE_H_ */

@@ -39,16 +39,14 @@
 #define _XS_SET_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "XSMacros.h"
+
+XS_EXTERN_C_BEGIN
 
 typedef struct XSSet * XSSetRef;
 
 XSSetRef XSSet_Create( void );
 
-#ifdef __cplusplus
-}
-#endif
+XS_EXTERN_C_END
 
 #endif /* _XS_SET_H_ */

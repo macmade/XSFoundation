@@ -39,9 +39,9 @@
 #define ___XS_NUMBER_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "../XSMacros.h"
+
+XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
@@ -54,8 +54,6 @@ XSNumber;
 void       __XSNumber_Initialize( void );
 XSNumber * __XSNumber_Alloc( void );
 
-#ifdef __cplusplus
-}
-#endif
+XS_EXTERN_C_END
 
 #endif /* ___XS_NUMBER_H_ */

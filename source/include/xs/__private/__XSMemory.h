@@ -39,9 +39,9 @@
 #define ___XS_MEMORY_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "../XSMacros.h"
+
+XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
@@ -77,8 +77,6 @@ __XSMemoryObject  * __XSMemory_GetMemoryObject( void * ptr );
 extern XSAutoreleasePool * __xsmemory_ar_pools[];
 extern XSUInteger          __xsmemory_ar_pools_num;
 
-#ifdef __cplusplus
-}
-#endif
+XS_EXTERN_C_END
 
 #endif /* ___XS_MEMORY_H_ */

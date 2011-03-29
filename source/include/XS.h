@@ -39,10 +39,6 @@
 #define _XS_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #include "std/std.h"
 #include "XS/XSMacros.h"
 #include "XS/XSConstants.h"
@@ -61,9 +57,5 @@ extern "C" {
 #include "XS/XSString.h"
 #include "XS/XSTree.h"
 #include "XS/XSURL.h"
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif /* _XS_H_ */

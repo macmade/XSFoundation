@@ -39,9 +39,9 @@
 #define _XS_MACROS_TARGET_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "XSMacros.h"
+
+XS_EXTERN_C_BEGIN
 
 #if defined( __GNUC__ )
     #if defined( __ppc__ )
@@ -254,8 +254,6 @@ extern "C" {
 
 #endif
 
-#ifdef __cplusplus
-}
-#endif
+XS_EXTERN_C_END
 
 #endif /* _XS_MACROS_TARGET_H_ */

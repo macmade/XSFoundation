@@ -39,16 +39,14 @@
 #define _XS_ERROR_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "XSMacros.h"
+
+XS_EXTERN_C_BEGIN
 
 typedef struct XSError * XSErrorRef;
 
 XSErrorRef XSError_Create( void );
 
-#ifdef __cplusplus
-}
-#endif
+XS_EXTERN_C_END
 
 #endif /* _XS_ERROR_H_ */

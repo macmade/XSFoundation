@@ -39,9 +39,9 @@
 #define _XS_RUNTIME_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "XSMacros.h"
+
+XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
@@ -50,8 +50,6 @@ XSTypeID                     XSRuntime_RegisterClass( const XSRuntimeClass * con
 XSTypeRef                    XSRuntime_CreateInstance( XSTypeID typeID, size_t extraBytes );
 const XSRuntimeClass const * XSRuntime_GetClassForTypeID( XSTypeID typeID );
     
-#ifdef __cplusplus
-}
-#endif
+XS_EXTERN_C_END
 
 #endif /* _XS_RUNTIME_H_ */

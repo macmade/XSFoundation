@@ -39,9 +39,9 @@
 #define _XS_CONSTANTS_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "XSMacros.h"
+
+XS_EXTERN_C_BEGIN
 
 #define XSDecimalMaxSize        ( 8 )
 
@@ -59,8 +59,6 @@ extern "C" {
     
 #endif
 
-#ifdef __cplusplus
-}
-#endif
+XS_EXTERN_C_END
 
 #endif /* _XS_CONSTANTS_H_ */

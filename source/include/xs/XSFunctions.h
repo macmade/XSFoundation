@@ -39,9 +39,9 @@
 #define _XS_FUNCTIONS_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "XSMacros.h"
+
+XS_EXTERN_C_BEGIN
 
 #include "XSTypes.h"
 
@@ -53,8 +53,6 @@ XSRange XSMakeRange( XSUInteger location, XSUInteger length );
 void XSLog( const char * fmt, ... );
 void XSVLog( const char * fmt, va_list args );
 
-#ifdef __cplusplus
-}
-#endif
+XS_EXTERN_C_END
 
 #endif /* _XS_FUNCTIONS_H_ */
