@@ -278,3 +278,17 @@ void XSAutorelease( void * ptr )
     
     ap->objects[ ap->num_objects++ ] = ptr;
 }
+
+XSUInteger XSGetRetainCount( void * ptr )
+{
+    __XSMemoryObject * o;
+    
+    if( ptr == NULL )
+    {
+        return 0;
+    }
+    
+    o = __XSMemory_GetMemoryObject( ptr );
+    
+    return o->retain_count;
+}

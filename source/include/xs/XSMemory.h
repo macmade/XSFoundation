@@ -50,13 +50,14 @@ typedef struct XSAutoreleasePool * XSAutoreleasePoolRef;
 XSAutoreleasePoolRef XSAutoreleasePool_Create( void );
 void                 XSAutoreleasePool_Drain( void );
 
-void * XSAlloc( size_t size, ... );
-void * XSRealloc( void * ptr, size_t size );
-void   XSRetain( void * ptr );
-void   XSRelease( void * ptr );
-void * XSAutoAlloc( size_t size );
-void   XSAutorelease( void * ptr );
-void * XSCopy( void * ptr );
+void     * XSAlloc( size_t size, ... );
+void     * XSRealloc( void * ptr, size_t size );
+void       XSRetain( void * ptr );
+void       XSRelease( void * ptr );
+void     * XSAutoAlloc( size_t size );
+void       XSAutorelease( void * ptr );
+void     * XSCopy( void * ptr );
+XSUInteger XSGetRetainCount( void * ptr );
 
 XS_EXTERN_C_END
 
