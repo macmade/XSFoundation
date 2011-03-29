@@ -44,6 +44,7 @@ extern "C" {
 #endif
 
 #include "std/std.h"
+#include "XS/XSMacros.h"
 #include "XS/XSConstants.h"
 #include "XS/XSTypes.h"
 #include "XS/XSFunctions.h"
