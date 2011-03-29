@@ -39,14 +39,105 @@
 #define _XS_MACROS_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
+#if !defined( XS_EXTERN_C_BEGIN )
+    #if defined( __cplusplus )
+        #define XS_EXTERN_C_BEGIN extern "C" {
+        #define XS_EXTERN_C_END              }
+    #else
+        #define XS_EXTERN_C_BEGIN
+        #define XS_EXTERN_C_END
+    #endif
 #endif
 
+XS_EXTERN_C_BEGIN
 
+#include "XSMacrosTarget.h"
 
-#ifdef __cplusplus
-}
+#if !defined( NULL )
+    #if defined( __GNUG__ )
+        #define NULL __null
+    #elif defined( __cplusplus )
+        #define NULL 0
+    #else
+        #define NULL ( ( void * )0 )
+    #endif
 #endif
+
+#if !defined( TRUE )
+    #define TRUE    1
+#endif
+
+#if !defined( FALSE )
+    #define FALSE	0
+#endif
+
+#if defined( __GNUC__ ) && ( ( __GNUC__ >= 4 ) || ( ( __GNUC__ == 3 ) && ( __GNUC_MINOR__ >= 1 ) ) )
+    #define WEAK_IMPORT_ATTRIBUTE __attribute__( ( weak_import ) )
+#elif defined(__MWERKS__) && ( __MWERKS__ >= 0x3205 )
+    #define WEAK_IMPORT_ATTRIBUTE __attribute__( ( weak_import ) )
+#else
+    #define WEAK_IMPORT_ATTRIBUTE
+#endif
+
+#if defined( __GNUC__ ) && ( ( __GNUC__ >= 4 ) || ( ( __GNUC__ == 3 ) && ( __GNUC_MINOR__ >= 1 ) ) )
+    #define DEPRECATED_ATTRIBUTE __attribute__( ( deprecated ) )
+#else
+    #define DEPRECATED_ATTRIBUTE
+#endif
+
+#if defined( __GNUC__ ) && ( ( __GNUC__ >= 4 ) || ( ( __GNUC__ == 3 ) && ( __GNUC_MINOR__ >= 1 ) ) )
+    #define UNAVAILABLE_ATTRIBUTE __attribute__( ( unavailable ) )
+#else
+    #define UNAVAILABLE_ATTRIBUTE
+#endif
+
+#if !defined( XS_INLINE )
+    #if defined( __GNUC__ ) && ( __GNUC__ == 4 ) && !defined( DEBUG )
+        #define XS_INLINE static __inline__ __attribute__( ( always_inline ) )
+    #elif defined( __GNUC__ )
+        #define XS_INLINE static __inline__
+    #elif defined( __MWERKS__ ) || defined( __cplusplus )
+        #define XS_INLINE static inline
+    #elif defined(_MSC_VER)
+        #define XS_INLINE static __inline
+    #endif
+#endif
+
+#define __XSFatalError( FILE, LINE, ... )                                       \
+    fprintf( stderr, "Fatal error: %s:%i\n", strrchr( FILE, '/' ) + 1, LINE );  \
+    fprintf( stderr, __VA_ARGS__ );                                             \
+    fprintf( stderr, "\n" );                                                    \
+    pthread_exit( EXIT_SUCCESS );                                               \
+    exit( EXIT_FAILURE );
+
+#define XSFatalError( ... ) __XSFatalError( __FILE__, __LINE__, __VA_ARGS__ )
+
+#define XSEndian16_Swap( value )                        \
+    (                                                   \
+        ( ( ( UInt16 )( ( value ) & 0x00FF ) ) << 8 ) | \
+        ( ( ( UInt16 )( ( value ) & 0xFF00 ) ) >> 8 )   \
+    )
+
+#define XSEndian32_Swap( value )                                \
+    (                                                           \
+        ( ( ( UInt32 )( ( value ) & 0x000000FF ) ) << 24 ) |    \
+        ( ( ( UInt32 )( ( value ) & 0x0000FF00 ) ) <<  8 ) |    \
+        ( ( ( UInt32 )( ( value ) & 0x00FF0000 ) ) >>  8 ) |    \
+        ( ( ( UInt32 )( ( value ) & 0xFF000000 ) ) >> 24 )      \
+    )
+
+#define XSEndian64_Swap(value)                                          \
+    (                                                                   \
+        ( ( ( ( UInt64 )value ) << 56 ) & 0xFF00000000000000ULL )  |    \
+        ( ( ( ( UInt64 )value ) << 40 ) & 0x00FF000000000000ULL )  |    \
+        ( ( ( ( UInt64 )value ) << 24 ) & 0x0000FF0000000000ULL )  |    \
+        ( ( ( ( UInt64 )value ) <<  8 ) & 0x000000FF00000000ULL )  |    \
+        ( ( ( ( UInt64 )value ) >>  8 ) & 0x00000000FF000000ULL )  |    \
+        ( ( ( ( UInt64 )value ) >> 24 ) & 0x0000000000FF0000ULL )  |    \
+        ( ( ( ( UInt64 )value ) >> 40 ) & 0x000000000000FF00ULL )  |    \
+        ( ( ( ( UInt64 )value ) >> 56 ) & 0x00000000000000FFULL )       \
+    )
+
+XS_EXTERN_C_END
 
 #endif /* _XS_MACROS_H_ */
