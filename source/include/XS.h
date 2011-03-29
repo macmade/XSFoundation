@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010, Jean-David Gadina <macmade@eosgarden.com>
+ * Copyright (c) 2011, Jean-David Gadina <macmade@eosgarden.com>
  * Distributed under the Boost Software License, Version 1.0.
  * 
  * Boost Software License - Version 1.0 - August 17th, 2003
@@ -30,9 +30,12 @@
 /* $Id$ */
 
 /*!
- * @header      
+ * @header      XS.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    
+ * @abstract    XSFoundation main header file
+ * @description This file should be included on projects using the XEOS C
+ *              Foundation Library. Other header files should never be included
+ *              directly.
  */
 
 #ifndef _XS_H_
