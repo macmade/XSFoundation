@@ -53,28 +53,23 @@ void __XSVLog( const char * fmt, va_list args )
     struct timeval   tv;
     char             date[ 255 ];
     char           * exec;
-    unsigned int     count;
-    int              va_int;
-    unsigned int     va_uint;
-    int            * va_int_ptr;
-    const char     * va_char_ptr;
+    char           * format;
+    char           * format_ptr;
+    size_t           length;
+    unsigned int     i;
     void           * va_ptr;
-    char           * num_ptr;
-    char             num_buf[ 50 ];
     XSRuntimeBase  * b;
     XSRuntimeClass * cls;
     
     #ifdef __MACH__
-    mach_port_t    mid;
+    mach_port_t      mid;
     #endif
-    
-    count = 0;
     
     pid = getpid();
     tid = pthread_self();
-    
     t   = time( NULL );
     now = localtime( &t );
+    
     gettimeofday( &tv, NULL );
     
     #ifdef __MACH__
@@ -103,119 +98,66 @@ void __XSVLog( const char * fmt, va_list args )
     printf( "%s.%06lu %s[%i:%lu] ", date, ( unsigned long )tv.tv_usec, exec, pid, ( unsigned long )tid );
     #endif
     
+    length = strlen( fmt );
+    
+    if( NULL == ( format_ptr = ( char * )calloc( sizeof( char ), length + 1 ) ) )
+    {
+        putc( '\n', stdout );
+        return;
+    }
+    
+    format = format_ptr;
+    
+    strcpy( format, fmt );
+    
+    i = 0;
+    
     while( 1 )
     {
-        if( *( fmt ) == '\0' )
+        if( format[ i ] == '\0' )
         {
             break;
         }
-        
-        if( *( fmt ) == '%' )
+        if( i > 0 && format[ i ] == '@' && format[ i - 1 ] == '%' )
         {
-            fmt++;
+            format[ i - 1 ] = 0;
             
-            if( *( fmt ) == 'n' )
+            vprintf( format, args );
+            
+            va_ptr = va_arg( args, void * );
+            
+            if( va_ptr == NULL )
             {
-                va_int_ptr      = va_arg( args, int * );
-                *( va_int_ptr ) = count;
-            }
-            else if( *( fmt ) == '%' )
-            {
-                putc( '%', stdout );
-                count++;
-            }
-            else if( *( fmt ) == 'c' )
-            {
-                va_int = va_arg( args, int );
-                
-                putc( va_int, stdout );
-                
-                count++;
-            }
-            else if( *( fmt ) == 's' )
-            {
-                va_char_ptr = va_arg( args, const char * );
-                
-                if( va_char_ptr == NULL )
-                {
-                    va_char_ptr = "(NULL)";
-                }
-                
-                fputs( va_char_ptr, stdout );
-                
-                count += strlen( va_char_ptr );
-            }
-            else if( *( fmt ) == 'd' )
-            {
-                va_int = va_arg( args, int );
-                
-                if( va_int < 0 )
-                {
-                    va_uint = -va_int;
-                }
-                else
-                {
-                    va_uint = va_int;
-                }
-                
-                num_ptr = num_buf;
-                
-                do
-                {
-                    *( num_ptr++ ) = ( char )( '0' + va_uint % 10 );
-                    va_uint       /= 10;
-                }
-                while( va_uint > 0 );
-                
-                if( va_int < 0 )
-                {
-                    *( num_ptr++ ) = '-';
-                }
-                
-                do
-                {
-                    num_ptr--;
-                    putc( *( num_ptr ), stdout );
-                    count++;
-                    
-                }
-                while( num_ptr != num_buf );
-            }
-            else if( *( fmt ) == '@' )
-            {
-                va_ptr = va_arg( args, void * );
-                b      = ( XSRuntimeBase * )va_ptr;
-                cls    = b->isa;
-                
-                printf( "<%s: %p>", cls->className, va_ptr );
-                
-                if( cls->description != NULL )
-                {
-                    printf( " %s", cls->description( va_ptr ) );
-                }
-            }
-            else if( *( fmt ) == 'p' )
-            {
-                /* Pointer support */
-            }
-            else if( strchr( "eEgGfF", *( fmt ) ) != NULL && *( fmt ) != 0 )
-            {
-                /* Floating point support */
+                printf( "(null)" );
             }
             else
             {
-                /* Extras support */
+                b      = ( XSRuntimeBase * )va_ptr;
+                cls    = b->isa;
+                
+                if( cls->description != NULL )
+                {
+                    printf( "%s", cls->description( va_ptr ) );
+                }
+                else
+                {
+                    printf( "<%s: %p>", cls->className, va_ptr );
+                }
             }
+            
+            format += i + 1;
+            i       = 0;
         }
         else
         {
-            putc( *( fmt ), stdout );
-            
-            count++;
+            i++;
         }
-        
-        fmt++;
+    }
+    if( i > 0 )
+    {
+        vprintf( format, args );
     }
     
+    free( ( void * )format_ptr );
     putc( '\n', stdout );
 }
