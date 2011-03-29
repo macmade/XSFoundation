@@ -45,8 +45,55 @@
 extern "C" {
 #endif
 
+/*!
+ * @function    itoa
+ * @abstract    Converts an integer to a string
+ * @description Converts an integer value to a null-terminated string using the
+ *              specified base and stores the result in the array given by str
+ *              parameter.
+ *              If base is 10 and value is negative, the resulting string is
+ *              preceded with a minus sign (-). With any other base, value is
+ *              always considered unsigned.
+ *              str should be an array long enough to contain any possible
+ *              value: ( sizeof( int ) * 8 + 1 ) for radix = 2, i.e. 17 bytes
+ *              in 16-bits platforms and 33 in 32-bits platforms.
+ * @param       n       Value to be converted to a string.
+ * @param       s       Array in memory where to store the resulting null-terminated string.
+ * @param       radix   Numerical base used to represent the value as a string, between 2 and 36, where 10 means decimal base, 16 hexadecimal, 8 octal, and 2 binary.
+ * @result      void
+ */
 void itoa( int n, char s[], int radix );
+
+/*!
+ * @function    utoa
+ * @abstract    Converts an unsigned integer to a string
+ * @description Converts an unsigned integer value to a null-terminated string
+ *              using the specified base and stores the result in the array
+ *              given by str parameter.
+ *              If base is 10 and value is negative, the resulting string is
+ *              preceded with a minus sign (-). With any other base, value is
+ *              always considered unsigned.
+ *              str should be an array long enough to contain any possible
+ *              value: ( sizeof( unsigned int ) * 8 + 1 ) for radix = 2,
+ *              i.e. 17 bytes in 16-bits platforms and 33 in 32-bits platforms.
+ * @param       n       Value to be converted to a string.
+ * @param       s       Array in memory where to store the resulting null-terminated string.
+ * @param       radix   Numerical base used to represent the value as a string, between 2 and 36, where 10 means decimal base, 16 hexadecimal, 8 octal, and 2 binary.
+ * @result      void
+ */
 void utoa( unsigned int n, char s[], int radix );
+
+/*!
+ * @function    strrstr
+ * @abstract    Locate substring
+ * @description Returns a pointer to the last occurrence of str2 in str1, or a
+ *              null pointer if str2 is not part of str1.
+ *              The matching process does not include the terminating
+ *              null-characters.
+ * @param       21      C string to be scanned.
+ * @param       s1      C string containing the sequence of characters to match.
+ * @result      A pointer to the last occurrence in str1 of any of the entire sequence of characters specified in str2, or a null pointer if the sequence is not present in str1.
+ */
 char * strrstr( char *s1, char * s2 );
 
 #ifdef __cplusplus
