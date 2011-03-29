@@ -20,6 +20,7 @@ EXT_LIB_DYNAMIC         = .dylib
 DIR_BUILD               = build/
 DIR_SRC                 = source/
 DIR_INC                 = $(DIR_SRC)include/
+DIR_INC_PRIV            = $(DIR_INC)xs/__private/
 DIR_INSTALL		        = /usr/local/$(LIBNAME)
 DIR_INSTALL_LIB		    = $(DIR_INSTALL)lib/
 DIR_INSTALL_INC		    = $(DIR_INSTALL)include/
@@ -45,7 +46,7 @@ _FILES_SRC_LO_BUILD    = $(addprefix $(DIR_BUILD),$(_FILES_SRC_LO))
 _FILES_SRC_LA_BUILD    = $(addprefix $(DIR_BUILD),$(LIBNAME)$(EXT_LIB_ARCHIVE))
 _FILES_SRC_DYLIB_BUILD = $(addprefix $(DIR_BUILD),$(LIBNAME)$(EXT_LIB_DYNAMIC))
 _STEM                  = %
-_ARGS_CC               = -I $(DIR_INC) $(ARGS_CC)
+_ARGS_CC               = -I $(DIR_INC) -I $(DIR_INC_PRIV) $(ARGS_CC)
 
 .PHONY: all clean install uninstall __copyright
 
