@@ -60,6 +60,10 @@ extern "C" {
     #define MIN( a, b ) ( ( a < b ) ? a : b ) 
 #endif
 
+#ifndef ABS
+    #define ABS( a ) ( ( a ) < 0 ? ( -( a ) ) : ( a ) )
+#endif
+
 #ifdef __cplusplus
 }
 #endif
