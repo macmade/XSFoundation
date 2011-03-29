@@ -40,5 +40,5 @@
 
 XSNumberRef XSNumber_Create( void )
 {
-    return NULL;
+    return ( XSNumberRef )__XSNumber_Alloc();
 }

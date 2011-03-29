@@ -40,5 +40,5 @@
 
 XSDataRef XSData_Create( void )
 {
-    return NULL;
+    return ( XSDataRef )__XSData_Alloc();
 }

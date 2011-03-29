@@ -40,5 +40,5 @@
 
 XSDictionaryRef XSDictionary_Create( void )
 {
-    return NULL;
+    return ( XSDictionaryRef )__XSDictionary_Alloc();
 }

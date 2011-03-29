@@ -40,5 +40,5 @@
 
 XSURLRef XSURL_Create( void )
 {
-    return NULL;
+    return ( XSURLRef )__XSURL_Alloc();
 }

@@ -40,5 +40,5 @@
 
 XSDateRef XSDate_Create( void )
 {
-    return NULL;
+    return ( XSDateRef )__XSDate_Alloc();
 }

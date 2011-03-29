@@ -40,5 +40,5 @@
 
 XSSetRef XSSet_Create( void )
 {
-    return NULL;
+    return ( XSSetRef )__XSSet_Alloc();
 }

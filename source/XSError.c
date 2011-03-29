@@ -40,5 +40,5 @@
 
 XSErrorRef XSError_Create( void )
 {
-    return NULL;
+    return ( XSErrorRef )__XSError_Alloc();
 }

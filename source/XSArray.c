@@ -40,5 +40,5 @@
 
 XSArrayRef XSArray_Create( void )
 {
-    return NULL;
+    return ( XSArrayRef )__XSArray_Alloc();
 }

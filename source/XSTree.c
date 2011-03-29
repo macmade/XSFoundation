@@ -40,5 +40,5 @@
 
 XSTreeRef XSTree_Create( void )
 {
-    return NULL;
+    return ( XSTreeRef )__XSTree_Alloc();
 }
