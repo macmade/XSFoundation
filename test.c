@@ -66,7 +66,7 @@ int main( void )
     
     printf( "%s%s%s\n", XSString_CString( str1 ), XSString_CString( str2 ), XSString_CString( str3 ) );
     
-    XSLog( "hello, universe: %@", str1 );
+    XSLog( "hello, universe: %i %@ %i %@ %i", 42, str1, 43, ap1, 44 );
     
     XSRelease( str1 );
     XSRelease( str2 );

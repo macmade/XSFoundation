@@ -79,12 +79,14 @@
 		05AC166113418E7100455568 /* __XSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSString.h; sourceTree = "<group>"; };
 		05AC166213418E7100455568 /* __XSTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSTree.h; sourceTree = "<group>"; };
 		05AC166313418E7100455568 /* __XSURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSURL.h; sourceTree = "<group>"; };
+		05AC166A134192BF00455568 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		056003A813406206005DC721 = {
 			isa = PBXGroup;
 			children = (
+				05AC166A134192BF00455568 /* README.mdown */,
 				056003BB1340621F005DC721 /* LICENSE.txt */,
 				056003BC1340621F005DC721 /* Makefile */,
 				056003ED13409910005DC721 /* test.c */,
