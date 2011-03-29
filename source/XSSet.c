@@ -36,7 +36,7 @@
  */
 
 #include "XS.h"
-#include "private/__XSSet.h"
+#include "__XSSet.h"
 
 XSSetRef XSSet_Create( void )
 {

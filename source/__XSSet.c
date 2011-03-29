@@ -36,7 +36,7 @@
  */
 
 #include "XS.h"
-#include "private/__XSSet.h"
+#include "__XSSet.h"
 
 static const XSRuntimeClass __XSSetClass =
 {

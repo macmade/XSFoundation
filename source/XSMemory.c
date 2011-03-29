@@ -36,7 +36,7 @@
  */
 
 #include "XS.h"
-#include "private/__XSMemory.h"
+#include "__XSMemory.h"
 
 XSAutoreleasePoolRef XSAutoreleasePool_Create( void )
 {

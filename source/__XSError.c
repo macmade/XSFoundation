@@ -36,7 +36,7 @@
  */
 
 #include "XS.h"
-#include "private/__XSError.h"
+#include "__XSError.h"
 
 static const XSRuntimeClass __XSErrorClass =
 {

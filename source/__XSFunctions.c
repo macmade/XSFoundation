@@ -36,7 +36,7 @@
  */
 
 #include "XS.h"
-#include "private/__XSFunctions.h"
+#include "__XSFunctions.h"
 
 char * __progname                    = NULL;
 char * program_invocation_short_name = NULL;

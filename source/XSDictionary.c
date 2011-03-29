@@ -36,7 +36,7 @@
  */
 
 #include "XS.h"
-#include "private/__XSDictionary.h"
+#include "__XSDictionary.h"
 
 XSDictionaryRef XSDictionary_Create( void )
 {

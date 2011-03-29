@@ -36,7 +36,7 @@
  */
 
 #include "XS.h"
-#include "private/__XSError.h"
+#include "__XSError.h"
 
 XSErrorRef XSError_Create( void )
 {

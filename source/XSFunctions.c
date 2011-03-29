@@ -36,7 +36,7 @@
  */
 
 #include "XS.h"
-#include "private/__XSFunctions.h"
+#include "__XSFunctions.h"
 
 XSPoint XSMakePoint( XSFloat x, XSFloat y )
 {

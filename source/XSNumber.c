@@ -36,7 +36,7 @@
  */
 
 #include "XS.h"
-#include "private/__XSNumber.h"
+#include "__XSNumber.h"
 
 XSNumberRef XSNumber_Create( void )
 {

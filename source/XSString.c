@@ -36,7 +36,7 @@
  */
 
 #include "XS.h"
-#include "private/__XSString.h"
+#include "__XSString.h"
 
 #define __XSSTRING_DEFAULT_CAPACITY 256
 

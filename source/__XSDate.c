@@ -36,7 +36,7 @@
  */
 
 #include "XS.h"
-#include "private/__XSDate.h"
+#include "__XSDate.h"
 
 static const XSRuntimeClass __XSDateClass =
 {

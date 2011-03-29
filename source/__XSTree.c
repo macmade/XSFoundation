@@ -36,7 +36,7 @@
  */
 
 #include "XS.h"
-#include "private/__XSTree.h"
+#include "__XSTree.h"
 
 static const XSRuntimeClass __XSTreeClass =
 {

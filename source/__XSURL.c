@@ -36,7 +36,7 @@
  */
 
 #include "XS.h"
-#include "private/__XSURL.h"
+#include "__XSURL.h"
 
 static const XSRuntimeClass __XSURLClass =
 {

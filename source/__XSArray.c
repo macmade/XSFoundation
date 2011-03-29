@@ -36,7 +36,7 @@
  */
 
 #include "XS.h"
-#include "private/__XSArray.h"
+#include "__XSArray.h"
 
 static const XSRuntimeClass __XSArrayClass =
 {

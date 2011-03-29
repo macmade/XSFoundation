@@ -36,7 +36,7 @@
  */
 
 #include "XS.h"
-#include "private/__XSFile.h"
+#include "__XSFile.h"
 
 XSFile XSSStdin  = { .stdin  = YES, .need_init = YES };
 XSFile XSSStdout = { .stdout = YES, .need_init = YES };

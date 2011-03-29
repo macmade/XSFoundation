@@ -36,7 +36,7 @@
  */
 
 #include "XS.h"
-#include "private/__XSMemory.h"
+#include "__XSMemory.h"
 
 XSAutoreleasePool * __xsmemory_ar_pools[ XS_MEMORY_MAX_AR_POOLS ];
 XSUInteger          __xsmemory_ar_pools_num;

@@ -36,7 +36,7 @@
  */
 
 #include "XS.h"
-#include "private/__XSData.h"
+#include "__XSData.h"
 
 XSDataRef XSData_Create( void )
 {

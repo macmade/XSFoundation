@@ -36,7 +36,7 @@
  */
 
 #include "XS.h"
-#include "private/__XSArray.h"
+#include "__XSArray.h"
 
 XSArrayRef XSArray_Create( void )
 {

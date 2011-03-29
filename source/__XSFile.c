@@ -36,7 +36,7 @@
  */
 
 #include "XS.h"
-#include "private/__XSFile.h"
+#include "__XSFile.h"
 
 static const XSRuntimeClass __XSFileClass =
 {
