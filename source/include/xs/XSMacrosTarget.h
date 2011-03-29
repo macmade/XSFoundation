@@ -44,6 +44,7 @@
 XS_EXTERN_C_BEGIN
 
 #if defined( __GNUC__ )
+    
     #if defined( __ppc__ )
         
         #define TARGET_CPU_PPC          1
