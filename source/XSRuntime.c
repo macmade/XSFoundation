@@ -64,6 +64,8 @@ void XSRuntime_Initialize( void )
 {
     __inited = YES;
     
+    atexit( XSRuntime_Finalize );
+    
     __XSAutoreleasePool_Initialize();
     __XSArray_Initialize();
     __XSData_Initialize();
@@ -77,6 +79,13 @@ void XSRuntime_Initialize( void )
     __XSTree_Initialize();
     __XSThread_Initialize();
     __XSURL_Initialize();
+}
+
+void XSRuntime_Finalize( void )
+{
+    __inited = NO;
+    
+    free( __class_table );
 }
 
 XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls )
