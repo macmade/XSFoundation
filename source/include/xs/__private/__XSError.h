@@ -49,10 +49,16 @@ XS_EXTERN_C_BEGIN
  * @typdef      XSError
  * @abastract   XSError class
  * @field       _xsbase     Runtime class
+ * @field       code        The error code
+ * @field       domain      The error domain
+ * @field       reason      The error message
  */
 typedef struct _XSError
 {
     XSRuntimeBase _xsbase;
+    XSInteger     code;
+    XSStringRef   domain;
+    XSStringRef   reason;
 }
 XSError;
 
@@ -69,6 +75,14 @@ void __XSError_Initialize( void );
  * @result      A pointer to the allocated object
  */
 XSError * __XSError_Alloc( void );
+
+/*!
+ * @function    __XSError_Dealloc
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSError_Dealloc( void * object );
 
 XS_EXTERN_C_END
 

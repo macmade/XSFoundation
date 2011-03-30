@@ -43,7 +43,7 @@ static const XSRuntimeClass __XSErrorClass =
 {
     "XSError",          /* Class name */
     NULL,               /* Constructor */
-    NULL,               /* Destructory */
+    __XSError_Dealloc,  /* Destructory */
     NULL,               /* Object coopy */
     NULL                /* Object description */
 };
@@ -69,4 +69,20 @@ void __XSError_Initialize( void )
 XSError * __XSError_Alloc( void )
 {
     return ( XSError * )XSRuntime_CreateInstance( __XSErrorTypeID, sizeof( XSError ) );
+}
+
+/*!
+ * @function    __XSError_Dealloc
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSError_Dealloc( void * object )
+{
+    XSError * error;
+    
+    error = ( XSError * )object;
+    
+    XSRelease( error->domain );
+    XSRelease( error->reason );
 }

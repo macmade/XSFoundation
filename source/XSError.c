@@ -38,7 +38,59 @@
 #include "XS.h"
 #include "__XSError.h"
 
-XSErrorRef XSError_Create( void )
+/*!
+ * @function    XSError_Create
+ * @abstract    Creates an error
+ * @param       code    The error code
+ * @param       domain  The error domain
+ * @param       reason  The error message
+ * @result      The error object
+ */
+XSErrorRef XSError_Create( XSInteger code, XSStringRef domain, XSStringRef reason )
 {
-    return ( XSErrorRef )__XSError_Alloc();
+    XSError * error;
+    
+    error = __XSError_Alloc();
+    
+    error->code   = code;
+    error->domain = domain;
+    error->reason = reason;
+    
+    XSRetain( error->domain );
+    XSRetain( error->domain );
+    
+    return ( XSErrorRef )error;
+}
+
+/*!
+ * @function    XSError_GetCode
+ * @abstract    Gets the error code
+ * @param       error   The error object
+ * @result      The error code
+ */
+XSInteger XSError_GetCode( XSErrorRef error )
+{
+    return ( ( XSError * )error )->code;
+}
+
+/*!
+ * @function    XSError_GetDomain
+ * @abstract    Gets the error domain
+ * @param       error   The error object
+ * @result      The error domain
+ */
+XSStringRef XSError_GetDomain( XSErrorRef error )
+{
+    return ( ( XSError * )error )->domain;
+}
+
+/*!
+ * @function    XSError_GetReason
+ * @abstract    Gets the error message
+ * @param       error   The error object
+ * @result      The error message
+ */
+XSStringRef XSError_GetReason( XSErrorRef error )
+{
+    return ( ( XSError * )error )->reason;
 }

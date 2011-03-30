@@ -43,13 +43,47 @@
 
 XS_EXTERN_C_BEGIN
 
+#include "xs/XSString.h"
+
 /*!
  * @typedef     XSErrorRef
  * @abstract    Opaque type for the XSError objects
  */
 typedef struct XSError * XSErrorRef;
 
-XSErrorRef XSError_Create( void );
+/*!
+ * @function    XSError_Create
+ * @abstract    Creates an error
+ * @param       code    The error code
+ * @param       domain  The error domain
+ * @param       reason  The error message
+ * @result      The error object
+ */
+XSErrorRef XSError_Create( XSInteger code, XSStringRef domain, XSStringRef reason );
+
+/*!
+ * @function    XSError_GetCode
+ * @abstract    Gets the error code
+ * @param       error   The error object
+ * @result      The error code
+ */
+XSInteger XSError_GetCode( XSErrorRef error );
+
+/*!
+ * @function    XSError_GetDomain
+ * @abstract    Gets the error domain
+ * @param       error   The error object
+ * @result      The error domain
+ */
+XSStringRef XSError_GetDomain( XSErrorRef error );
+
+/*!
+ * @function    XSError_GetReason
+ * @abstract    Gets the error message
+ * @param       error   The error object
+ * @result      The error message
+ */
+XSStringRef XSError_GetReason( XSErrorRef error );
 
 XS_EXTERN_C_END
 
