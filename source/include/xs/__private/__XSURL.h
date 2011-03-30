@@ -45,13 +45,29 @@ XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
+/*!
+ * @typdef      XSURL
+ * @abastract   XSURL class
+ * @field       _xsbase     Runtime class
+ */
 typedef struct _XSURL
 {
     XSRuntimeBase _xsbase;
 }
 XSURL;
 
-void    __XSURL_Initialize( void );
+/*!
+ * @function    __XSURL_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
+void __XSURL_Initialize( void );
+
+/*!
+ * @function    __XSURL_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSURL * __XSURL_Alloc( void );
 
 XS_EXTERN_C_END

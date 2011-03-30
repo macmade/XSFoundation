@@ -45,13 +45,29 @@ XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
+/*!
+ * @typdef      XSSet
+ * @abastract   XSSet class
+ * @field       _xsbase     Runtime class
+ */
 typedef struct _XSSet
 {
     XSRuntimeBase _xsbase;
 }
 XSSet;
 
-void    __XSSet_Initialize( void );
+/*!
+ * @function    __XSSet_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
+void __XSSet_Initialize( void );
+
+/*!
+ * @function    __XSSet_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSSet * __XSSet_Alloc( void );
 
 XS_EXTERN_C_END

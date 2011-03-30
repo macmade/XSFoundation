@@ -38,22 +38,34 @@
 #include "XS.h"
 #include "__XSDate.h"
 
+/* Runtime class definition */
 static const XSRuntimeClass __XSDateClass =
 {
-    "XSDate",
-    NULL,
-    NULL,
-    NULL,
-    NULL
+    "XSDate",           /* Class name */
+    NULL,               /* Constructor */
+    NULL,               /* Destructory */
+    NULL,               /* Object coopy */
+    NULL                /* Object description */
 };
 
+/* Type ID for the runtine class */
 static XSTypeID __XSDateTypeID;
 
+/*!
+ * @function    __XSDate_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
 void __XSDate_Initialize( void )
 {
     __XSDateTypeID = XSRuntime_RegisterClass( &__XSDateClass );
 }
 
+/*!
+ * @function    __XSDate_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSDate * __XSDate_Alloc( void )
 {
     return ( XSDate * )XSRuntime_CreateInstance( __XSDateTypeID, sizeof( XSDate ) );

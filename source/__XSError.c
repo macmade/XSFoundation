@@ -38,22 +38,34 @@
 #include "XS.h"
 #include "__XSError.h"
 
+/* Runtime class definition */
 static const XSRuntimeClass __XSErrorClass =
 {
-    "XSError",
-    NULL,
-    NULL,
-    NULL,
-    NULL
+    "XSError",          /* Class name */
+    NULL,               /* Constructor */
+    NULL,               /* Destructory */
+    NULL,               /* Object coopy */
+    NULL                /* Object description */
 };
 
+/* Type ID for the runtine class */
 static XSTypeID __XSErrorTypeID;
 
+/*!
+ * @function    __XSError_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
 void __XSError_Initialize( void )
 {
     __XSErrorTypeID = XSRuntime_RegisterClass( &__XSErrorClass );
 }
 
+/*!
+ * @function    __XSError_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSError * __XSError_Alloc( void )
 {
     return ( XSError * )XSRuntime_CreateInstance( __XSErrorTypeID, sizeof( XSError ) );

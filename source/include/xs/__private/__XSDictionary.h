@@ -45,13 +45,29 @@ XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
+/*!
+ * @typdef      XSDictionary
+ * @abastract   XSDictionary class
+ * @field       _xsbase     Runtime class
+ */
 typedef struct _XSDictionary
 {
     XSRuntimeBase _xsbase;
 }
 XSDictionary;
 
-void           __XSDictionary_Initialize( void );
+/*!
+ * @function    __XSDictionary_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
+void __XSDictionary_Initialize( void );
+
+/*!
+ * @function    __XSDictionary_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSDictionary * __XSDictionary_Alloc( void );
 
 XS_EXTERN_C_END

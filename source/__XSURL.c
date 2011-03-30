@@ -38,22 +38,33 @@
 #include "XS.h"
 #include "__XSURL.h"
 
+/* Runtime class definition */
 static const XSRuntimeClass __XSURLClass =
 {
-    "XSURL",
-    NULL,
-    NULL,
-    NULL,
-    NULL
+    "XSURL",            /* Class name */
+    NULL,               /* Constructor */
+    NULL,               /* Destructory */
+    NULL,               /* Object coopy */
+    NULL                /* Object description */
 };
 
+/* Type ID for the runtine class */
 static XSTypeID __XSURLTypeID;
 
+/*!
+ * @function    __XSURL_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
 void __XSURL_Initialize( void )
 {
     __XSURLTypeID = XSRuntime_RegisterClass( &__XSURLClass );
 }
-
+/*!
+ * @function    __XSURL_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSURL * __XSURL_Alloc( void )
 {
     return ( XSURL * )XSRuntime_CreateInstance( __XSURLTypeID, sizeof( XSURL ) );

@@ -45,13 +45,29 @@ XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
+/*!
+ * @typdef      XSDate
+ * @abastract   XSDate class
+ * @field       _xsbase     Runtime class
+ */
 typedef struct _XSDate
 {
     XSRuntimeBase _xsbase;
 }
 XSDate;
 
-void     __XSDate_Initialize( void );
+/*!
+ * @function    __XSDate_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
+void __XSDate_Initialize( void );
+
+/*!
+ * @function    __XSDate_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSDate * __XSDate_Alloc( void );
 
 XS_EXTERN_C_END

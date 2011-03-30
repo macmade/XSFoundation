@@ -45,13 +45,29 @@ XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
+/*!
+ * @typdef      XSError
+ * @abastract   XSError class
+ * @field       _xsbase     Runtime class
+ */
 typedef struct _XSError
 {
     XSRuntimeBase _xsbase;
 }
 XSError;
 
-void      __XSError_Initialize( void );
+/*!
+ * @function    __XSError_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
+void __XSError_Initialize( void );
+
+/*!
+ * @function    __XSError_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSError * __XSError_Alloc( void );
 
 XS_EXTERN_C_END

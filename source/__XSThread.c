@@ -38,22 +38,34 @@
 #include "XS.h"
 #include "__XSThread.h"
 
+/* Runtime class definition */
 static const XSRuntimeClass __XSThreadClass =
 {
-    "XSThread",
-    NULL,
-    NULL,
-    NULL,
-    NULL
+    "XSThread",         /* Class name */
+    NULL,               /* Constructor */
+    NULL,               /* Destructory */
+    NULL,               /* Object coopy */
+    NULL                /* Object description */
 };
 
+/* Type ID for the runtine class */
 static XSTypeID __XSThreadTypeID;
 
+/*!
+ * @function    __XSThread_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
 void __XSThread_Initialize( void )
 {
     __XSThreadTypeID = XSRuntime_RegisterClass( &__XSThreadClass );
 }
 
+/*!
+ * @function    __XSThread_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSThread * __XSThread_Alloc( void )
 {
     return ( XSThread * )XSRuntime_CreateInstance( __XSThreadTypeID, sizeof( XSThread ) );

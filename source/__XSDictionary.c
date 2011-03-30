@@ -38,22 +38,34 @@
 #include "XS.h"
 #include "__XSDictionary.h"
 
+/* Runtime class definition */
 static const XSRuntimeClass __XSDictionaryClass =
 {
-    "XSDictionary",
-    NULL,
-    NULL,
-    NULL,
-    NULL
+    "XSDictionary",     /* Class name */
+    NULL,               /* Constructor */
+    NULL,               /* Destructory */
+    NULL,               /* Object coopy */
+    NULL                /* Object description */
 };
 
+/* Type ID for the runtine class */
 static XSTypeID __XSDictionaryTypeID;
 
+/*!
+ * @function    __XSDictionary_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
 void __XSDictionary_Initialize( void )
 {
     __XSDictionaryTypeID = XSRuntime_RegisterClass( &__XSDictionaryClass );
 }
 
+/*!
+ * @function    __XSDictionary_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSDictionary * __XSDictionary_Alloc( void )
 {
     return ( XSDictionary * )XSRuntime_CreateInstance( __XSDictionaryTypeID, sizeof( XSDictionary ) );

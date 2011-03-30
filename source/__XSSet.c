@@ -38,22 +38,34 @@
 #include "XS.h"
 #include "__XSSet.h"
 
+/* Runtime class definition */
 static const XSRuntimeClass __XSSetClass =
 {
-    "XSSet",
-    NULL,
-    NULL,
-    NULL,
-    NULL
+    "XSSet",            /* Class name */
+    NULL,               /* Constructor */
+    NULL,               /* Destructory */
+    NULL,               /* Object coopy */
+    NULL                /* Object description */
 };
 
+/* Type ID for the runtine class */
 static XSTypeID __XSSetTypeID;
 
+/*!
+ * @function    __XSSet_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
 void __XSSet_Initialize( void )
 {
     __XSSetTypeID = XSRuntime_RegisterClass( &__XSSetClass );
 }
 
+/*!
+ * @function    __XSSet_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSSet * __XSSet_Alloc( void )
 {
     return ( XSSet * )XSRuntime_CreateInstance( __XSSetTypeID, sizeof( XSSet ) );

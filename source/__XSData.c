@@ -38,22 +38,34 @@
 #include "XS.h"
 #include "__XSData.h"
 
+/* Runtime class definition */
 static const XSRuntimeClass __XSDataClass =
 {
-    "XSData",
-    NULL,
-    NULL,
-    NULL,
-    NULL
+    "XSData",           /* Class name */
+    NULL,               /* Constructor */
+    NULL,               /* Destructory */
+    NULL,               /* Object coopy */
+    NULL                /* Object description */
 };
 
+/* Type ID for the runtine class */
 static XSTypeID __XSDataTypeID;
 
+/*!
+ * @function    __XSData_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
 void __XSData_Initialize( void )
 {
     __XSDataTypeID = XSRuntime_RegisterClass( &__XSDataClass );
 }
 
+/*!
+ * @function    __XSData_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSData * __XSData_Alloc( void )
 {
     return ( XSData * )XSRuntime_CreateInstance( __XSDataTypeID, sizeof( XSData ) );

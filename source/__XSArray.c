@@ -38,22 +38,34 @@
 #include "XS.h"
 #include "__XSArray.h"
 
+/* Runtime class definition */
 static const XSRuntimeClass __XSArrayClass =
 {
-    "XSArray",
-    NULL,
-    NULL,
-    NULL,
-    NULL
+    "XSArray",          /* Class name */
+    NULL,               /* Constructor */
+    NULL,               /* Destructory */
+    NULL,               /* Object coopy */
+    NULL                /* Object description */
 };
 
+/* Type ID for the runtine class */
 static XSTypeID __XSArrayTypeID;
 
+/*!
+ * @function    __XSArray_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
 void __XSArray_Initialize( void )
 {
     __XSArrayTypeID = XSRuntime_RegisterClass( &__XSArrayClass );
 }
 
+/*!
+ * @function    __XSArray_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSArray * __XSArray_Alloc( void )
 {
     return ( XSArray * )XSRuntime_CreateInstance( __XSArrayTypeID, sizeof( XSArray ) );

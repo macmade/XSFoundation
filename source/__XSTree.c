@@ -38,22 +38,34 @@
 #include "XS.h"
 #include "__XSTree.h"
 
+/* Runtime class definition */
 static const XSRuntimeClass __XSTreeClass =
 {
-    "XSTree",
-    NULL,
-    NULL,
-    NULL,
-    NULL
+    "XSTree",           /* Class name */
+    NULL,               /* Constructor */
+    NULL,               /* Destructory */
+    NULL,               /* Object coopy */
+    NULL                /* Object description */
 };
 
+/* Type ID for the runtine class */
 static XSTypeID __XSTreeTypeID;
 
+/*!
+ * @function    __XSTree_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
 void __XSTree_Initialize( void )
 {
     __XSTreeTypeID = XSRuntime_RegisterClass( &__XSTreeClass );
 }
 
+/*!
+ * @function    __XSTree_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSTree * __XSTree_Alloc( void )
 {
     return ( XSTree * )XSRuntime_CreateInstance( __XSTreeTypeID, sizeof( XSTree ) );

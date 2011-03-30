@@ -38,22 +38,34 @@
 #include "XS.h"
 #include "__XSNumber.h"
 
+/* Runtime class definition */
 static const XSRuntimeClass __XSNumberClass =
 {
-    "XSNumber",
-    NULL,
-    NULL,
-    NULL,
-    NULL
+    "XSNumber",         /* Class name */
+    NULL,               /* Constructor */
+    NULL,               /* Destructory */
+    NULL,               /* Object coopy */
+    NULL                /* Object description */
 };
 
+/* Type ID for the runtine class */
 static XSTypeID __XSNumberTypeID;
 
+/*!
+ * @function    __XSNumber_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
 void __XSNumber_Initialize( void )
 {
     __XSNumberTypeID = XSRuntime_RegisterClass( &__XSNumberClass );
 }
 
+/*!
+ * @function    __XSNumber_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSNumber * __XSNumber_Alloc( void )
 {
     return ( XSNumber * )XSRuntime_CreateInstance( __XSNumberTypeID, sizeof( XSNumber ) );

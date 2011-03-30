@@ -45,6 +45,11 @@ XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
+/*!
+ * @typdef      XSArray
+ * @abastract   XSArray class
+ * @field       _xsbase     Runtime class
+ */
 typedef struct _XSArray
 {
     XSRuntimeBase _xsbase;
@@ -53,7 +58,18 @@ typedef struct _XSArray
 }
 XSArray;
 
-void      __XSArray_Initialize( void );
+/*!
+ * @function    __XSArray_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
+void __XSArray_Initialize( void );
+
+/*!
+ * @function    __XSArray_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSArray * __XSArray_Alloc( void );
 
 XS_EXTERN_C_END

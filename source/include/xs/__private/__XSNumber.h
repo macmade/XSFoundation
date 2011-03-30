@@ -45,13 +45,29 @@ XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
+/*!
+ * @typdef      XSNumber
+ * @abastract   XSNumber class
+ * @field       _xsbase     Runtime class
+ */
 typedef struct _XSNumber
 {
     XSRuntimeBase _xsbase;
 }
 XSNumber;
 
-void       __XSNumber_Initialize( void );
+/*!
+ * @function    __XSNumber_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
+void __XSNumber_Initialize( void );
+
+/*!
+ * @function    __XSNumber_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSNumber * __XSNumber_Alloc( void );
 
 XS_EXTERN_C_END
