@@ -39,6 +39,14 @@
 #include <stdio.h>
 #include "XS.h"
 
+void thread_test( XSThreadRef thread, void * arg );
+void thread_test( XSThreadRef thread, void * arg )
+{
+    ( void )arg;
+    
+    XSLog( "Hello from thread #%X", XSThread_GetID( thread ) );
+}
+
 int main( void )
 {
     unsigned int         i;
@@ -68,6 +76,9 @@ int main( void )
     
     XSLog( "hello, universe: %i %@ %i %@ %i", 42, str1, 43, ap1, 44 );
     
+    XSThread_Detach( thread_test, NULL );
+    XSThread_Detach( thread_test, NULL );
+    
     XSRelease( str1 );
     XSRelease( str2 );
     XSRelease( str3 );
@@ -76,5 +87,5 @@ int main( void )
     XSRelease( ap2 );
     XSRelease( ap1 );
     
-    return EXIT_SUCCESS;
+    XSFOUNDATION_EXIT;
 }
