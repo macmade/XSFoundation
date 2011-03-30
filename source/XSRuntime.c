@@ -38,8 +38,7 @@
 #include "XS.h"
 
 #define __XS_RUNTIME_CLASS_TABLE_SIZE   1024
-
-#define __XS_RUNTINE_INIT_CHECK         if( __inited == NO ) { fprintf( stderr, "Error: the runtime has not been initialized\n" ); exit( EXIT_FAILURE ); }
+#define __XS_RUNTINE_INIT_CHECK         if( __inited == NO ) { XSFatalError( "Error: the runtime has not been initialized\n" ) }
 
 static BOOL              __inited = NO;
 static XSRuntimeClass ** __class_table;
@@ -57,6 +56,7 @@ void __XSNumber_Initialize( void );
 void __XSDate_Initialize( void );
 void __XSData_Initialize( void );
 void __XSError_Initialize( void );
+void __XSThread_Initialize( void );
 void __XSTree_Initialize( void );
 void __XSURL_Initialize( void );
 
@@ -75,6 +75,7 @@ void XSRuntime_Initialize( void )
     __XSSet_Initialize();
     __XSString_Initialize();
     __XSTree_Initialize();
+    __XSThread_Initialize();
     __XSURL_Initialize();
 }
 
@@ -132,12 +133,31 @@ XSTypeRef XSRuntime_CreateInstance( XSTypeID typeID, size_t extraBytes )
     return o;
 }
 
-const XSRuntimeClass const * XSRuntime_GetClassForTypeID( XSTypeID typeID )
+Class XSRuntime_GetClassForTypeID( XSTypeID typeID )
 {
     if( typeID > __class_count )
     {
         return NULL;
     }
     
-    return ( const XSRuntimeClass const * )__class_table[ typeID - 1 ];
+    return ( Class )__class_table[ typeID - 1 ];
+}
+
+
+XSTypeID XSRuntime_GetTypeIDForClass( Class cls )
+{
+    XSUInteger       i;
+    XSRuntimeClass * _cls;
+    
+    _cls = ( XSRuntimeClass * )cls;
+    
+    for( i = 0; i < __class_count; i++ )
+    {
+        if( __class_table[ i ] == _cls )
+        {
+            return i + 1;
+        }
+    }
+    
+    return 0;
 }
