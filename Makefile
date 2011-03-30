@@ -2,7 +2,7 @@ LIBNAME                 = libxeos
 
 CC                      = gcc
 LIBTOOL                 = glibtool
-LIBTOOL_DYNAMIC			= libtool
+LIBTOOL_DYNAMIC         = libtool
 ARGS_CC                 = -std=c99 -Os -pedantic -Werror -Wall -Wextra -Wbad-function-cast -Wdeclaration-after-statement -Werror-implicit-function-declaration -Wmissing-braces -Wmissing-declarations -Wmissing-field-initializers -Wmissing-prototypes -Wnested-externs -Wold-style-definition -Wparentheses -Wreturn-type -Wshadow -Wsign-compare -Wstrict-prototypes -Wswitch -Wuninitialized -Wunknown-pragmas -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value -Wunused-variable
 ARGS_LIBTOOL_LO         = --mode=compile
 ARGS_LIBTOOL_LA         = --mode=link
@@ -21,9 +21,9 @@ DIR_BUILD               = build/
 DIR_SRC                 = source/
 DIR_INC                 = $(DIR_SRC)include/
 DIR_INC_PRIV            = $(DIR_INC)xs/__private/
-DIR_INSTALL		        = /usr/local/$(LIBNAME)
-DIR_INSTALL_LIB		    = $(DIR_INSTALL)lib/
-DIR_INSTALL_INC		    = $(DIR_INSTALL)include/
+DIR_INSTALL             = /usr/local/$(LIBNAME)
+DIR_INSTALL_LIB         = $(DIR_INSTALL)lib/
+DIR_INSTALL_INC         = $(DIR_INSTALL)include/
 
 .SUFFIXES:
 .SUFFIXES: $(EXT_CODE) $(EXT_HEADERS) $(EXT_OBJECT) $(EXT_LIB_OBJECT) $(EXT_LIB_ARCHIVE) $(EXT_LIB_DYNAMIC)
