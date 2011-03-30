@@ -42,9 +42,11 @@
 void thread_test( XSThreadRef thread, void * arg );
 void thread_test( XSThreadRef thread, void * arg )
 {
-    ( void )arg;
+    XSStringRef str;
     
-    XSLog( "Hello from thread #%X", XSThread_GetID( thread ) );
+    str = ( XSStringRef )arg;
+    
+    XSLog( "Log message from thread #%X: %@", XSThread_GetID( thread ), str );
 }
 
 int main( void )
@@ -77,7 +79,7 @@ int main( void )
     XSLog( "hello, universe: %i %@ %i %@ %i", 42, str1, 43, ap1, 44 );
     
     XSThread_Detach( thread_test, NULL );
-    XSThread_Detach( thread_test, NULL );
+    XSThread_Detach( thread_test, str1 );
     
     XSRelease( str1 );
     XSRelease( str2 );
