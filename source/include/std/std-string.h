@@ -59,7 +59,7 @@ extern "C" {
  *              in 16-bits platforms and 33 in 32-bits platforms.
  * @param       n       Value to be converted to a string.
  * @param       s       Array in memory where to store the resulting null-terminated string.
- * @param       radix   Numerical base used to represent the value as a string, between 2 and 36, where 10 means decimal base, 16 hexadecimal, 8 octal, and 2 binary.
+ * @param       radix   Numerical base used to represent the value as a string, between 2 and 16, where 10 means decimal base, 16 hexadecimal, 8 octal, and 2 binary.
  * @result      void
  */
 void itoa( int n, char s[], int radix );
@@ -78,7 +78,7 @@ void itoa( int n, char s[], int radix );
  *              i.e. 17 bytes in 16-bits platforms and 33 in 32-bits platforms.
  * @param       n       Value to be converted to a string.
  * @param       s       Array in memory where to store the resulting null-terminated string.
- * @param       radix   Numerical base used to represent the value as a string, between 2 and 36, where 10 means decimal base, 16 hexadecimal, 8 octal, and 2 binary.
+ * @param       radix   Numerical base used to represent the value as a string, between 2 and 16, where 10 means decimal base, 16 hexadecimal, 8 octal, and 2 binary.
  * @result      void
  */
 void utoa( unsigned int n, char s[], int radix );
@@ -90,8 +90,8 @@ void utoa( unsigned int n, char s[], int radix );
  *              null pointer if str2 is not part of str1.
  *              The matching process does not include the terminating
  *              null-characters.
- * @param       21      C string to be scanned.
- * @param       s1      C string containing the sequence of characters to match.
+ * @param       s1      C string to be scanned.
+ * @param       s2      C string containing the sequence of characters to match.
  * @result      A pointer to the last occurrence in str1 of any of the entire sequence of characters specified in str2, or a null pointer if the sequence is not present in str1.
  */
 char * strrstr( char *s1, char * s2 );
