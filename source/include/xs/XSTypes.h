@@ -99,6 +99,9 @@ typedef UInt32                  UTF32Char;
     
 #endif
 
+typedef unsigned long XSTypeID;
+typedef const void  * XSTypeRef;
+
 typedef struct _XSRuntimeClass
 {
     const char * className;
@@ -115,8 +118,11 @@ typedef struct _XSRuntimeBase
 }
 XSRuntimeBase;
 
-typedef unsigned long XSTypeID;
-typedef const void  * XSTypeRef;
+typedef XSRuntimeBase  * id;
+typedef XSRuntimeClass * Class;
+
+#define nil	( id )0
+#define Nil	( Class )0
 
 typedef struct _XSPoint
 {
