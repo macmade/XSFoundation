@@ -46,6 +46,186 @@ XS_EXTERN_C_BEGIN
 #include "XSConstants.h"
 #include "../std/std.h"
 
+/*!
+ * @typedef     XSTypeID
+ * @abstract    Type ID foe the registered runtime classes
+ */
+typedef unsigned long XSTypeID;
+
+/*!
+ * @typedef     XSTypeRef
+ * @abstract    Baisc type for the objects (used mainly in XSRuntime_CreateInstance) 
+ */
+typedef const void  * XSTypeRef;
+
+/*!
+ * @typedef     XSRuntimeClass
+ * @abstract    XSFoundation runtime class
+ * @field       classname   The name of the class
+ * @field       init        The class constructor
+ * @field       dealloc     The class destructor
+ * @field       copy        The object's copy callback
+ * @field       description The object's description callback (used in XSLog)
+ */
+typedef struct _XSRuntimeClass
+{
+    const char * className;
+    void         ( * init        )( void * object );
+    void         ( * dealloc     )( void * object );
+    void         ( * copy        )( void * source, void * destination );
+    const char * ( * description )( void * object );
+}
+XSRuntimeClass;
+
+/*!
+ * @typedef     XSRuntimeBase
+ * @abstract    Base for the runtime classes
+ * @description This sructure MUST be the first member of all XSFoundation
+ *              classes.
+ * @field       isa     A pointer to the class structure for the object
+ */
+typedef struct _XSRuntimeBase
+{
+    XSRuntimeClass * isa;
+}
+XSRuntimeBase;
+
+/*!
+ * @typedef     id
+ * @abstract    Polymorphism support - Generic type for all XSFoundation objects
+ */
+typedef XSRuntimeBase  * id;
+
+/*!
+ * @typedef     Class
+ * @abstract    Polymorphism support - Generic type for all XSFoundation classes
+ */
+typedef XSRuntimeClass * Class;
+
+/*!
+ * @define      nil
+ * @abstract    NULL pointer for the 'id' type
+ */
+#define nil	( id )0
+
+/*!
+ * @define      Nil
+ * @abstract    NULL pointer for the 'Class' type
+ */
+#define Nil	( Class )0
+
+/*!
+ * @typedef     XSPoint
+ * @abstract    Point data-type
+ * @field       x   The X coordinate of the point
+ * @field       y   The Y coordinate of the point
+ */
+typedef struct _XSPoint
+{
+    XSFloat x;
+    XSFloat y;
+}
+XSPoint;
+
+/*!
+ * @typedef     XSSize
+ * @abstract    Size data-type
+ * @field       width   The width of the size
+ * @field       height  The height of the size
+ */
+typedef struct _XSSize
+{
+    XSFloat width;
+    XSFloat height;
+}
+XSSize;
+
+/*!
+ * @typedef     XSRect
+ * @abstract    Rectangle data-type
+ * @field       origin  The origin point of the rectangle
+ * @field       size    The size of the rectangle
+ */
+typedef struct _XSRect
+{
+    XSPoint origin;
+    XSSize  size;
+}
+XSRect;
+
+/*!
+ * @typedef     XSRange 
+ * @abstract    Range data-type
+ * @field       location    The start of the range
+ * @field       length      The length of the range
+ */
+typedef struct _XSRange
+{
+    XSUInteger location;
+    XSUInteger length;
+}
+XSRange;
+
+/*!
+ * @typedef     XSByteOrder
+ * @abstract    Byte-order data-type
+ * @field       XS_UnknownByteOrder     Unknown byte order
+ * @field       XS_LittleEndian         Little endian byte order
+ * @field       XS_BigEndian            Big endian byte order
+ */
+typedef enum _XSByteOrder
+{
+   XS_UnknownByteOrder = 0,
+   XS_LittleEndian     = 1,
+   XS_BigEndian        = 2
+}
+XSByteOdrer;
+
+/*!
+ * @enum
+ * @abstract    Enumeration for the XSComparisonResult data-type
+ * @field       XSOrderedAscending      Order is ascending
+ * @field       XSOrderedSame           Order is same
+ * @field       XSOrderedDescending     Order is descending
+ */
+enum
+{
+   XSOrderedAscending  = -1,
+   XSOrderedSame       = 0,
+   XSOrderedDescending = 1
+};
+
+/*!
+ * @typedef     XSComparisonResult
+ * @abstract    Comaprison result data-type
+ */
+typedef XSInteger XSComparisonResult;
+
+/*!
+ * @typedef     XSDecimal
+ * @abstract    Decimal number representation
+ * @field       exponent        The exponent of the decimal number
+ * @field       length          The length of the decimal number
+ * @field       isNegative      Whether the decimal number is negative
+ * @field       isCompact       Whether the decimal numer is compact
+ * @field       reserved        Reserved bits
+ * @field       mantissa        The manstissa for the decimal number
+ */
+typedef struct _XSDecimal
+{
+    signed int     exponent   : 8;
+    unsigned int   length     : 4;
+    unsigned int   isNegative : 1;
+    unsigned int   isCompact  : 1;
+    unsigned int   reserved   : 18;
+    unsigned short mantissa[ XSDecimalMaxSize ];
+}
+XSDecimal;
+
+/*******************************************************************************
+ * Boolean data-type
+ ******************************************************************************/
+
 #ifndef OBJC_BOOL_DEFINED
     
     typedef signed char BOOL;
@@ -54,6 +234,10 @@ XS_EXTERN_C_BEGIN
     #define OBJC_BOOL_DEFINED
     
 #endif
+
+/*******************************************************************************
+ * Standard typedefs
+ ******************************************************************************/
 
 typedef unsigned char           Boolean;
 typedef unsigned char           UInt8;
@@ -98,87 +282,6 @@ typedef UInt32                  UTF32Char;
     typedef float        XSFloat;
     
 #endif
-
-typedef unsigned long XSTypeID;
-typedef const void  * XSTypeRef;
-
-typedef struct _XSRuntimeClass
-{
-    const char * className;
-    void         ( * init        )( void * object );
-    void         ( * dealloc     )( void * object );
-    void         ( * copy        )( void * source, void * destination );
-    const char * ( * description )( void * object );
-}
-XSRuntimeClass;
-
-typedef struct _XSRuntimeBase
-{
-    XSRuntimeClass * isa;
-}
-XSRuntimeBase;
-
-typedef XSRuntimeBase  * id;
-typedef XSRuntimeClass * Class;
-
-#define nil	( id )0
-#define Nil	( Class )0
-
-typedef struct _XSPoint
-{
-    XSFloat x;
-    XSFloat y;
-}
-XSPoint;
-
-typedef struct _XSSize
-{
-    XSFloat width;
-    XSFloat height;
-}
-XSSize;
-
-typedef struct _XSRect
-{
-    XSPoint origin;
-    XSSize  size;
-}
-XSRect;
-
-typedef struct _XSRange
-{
-    XSUInteger location;
-    XSUInteger length;
-}
-XSRange;
-
-typedef enum _XSByteOrder
-{
-   XS_UnknownByteOrder = 0,
-   XS_LittleEndian     = 1,
-   XS_BigEndian        = 2
-}
-XSByteOdrer;
-
-enum
-{
-   XSOrderedAscending  = -1,
-   XSOrderedSame       = 0,
-   XSOrderedDescending = 1
-};
-
-typedef XSInteger XSComparisonResult;
-
-typedef struct _XSDecimal
-{
-    signed int     exponent   : 8;
-    unsigned int   length     : 4;
-    unsigned int   isNegative : 1;
-    unsigned int   isCompact  : 1;
-    unsigned int   reserved   : 18;
-    unsigned short mantissa[ XSDecimalMaxSize ];
-}
-XSDecimal;
 
 XS_EXTERN_C_END
 
