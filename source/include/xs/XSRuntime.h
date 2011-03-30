@@ -46,6 +46,7 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 void XSRuntime_Initialize( void );
+void XSRuntime_Finalize( void );
 XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls );
 XSTypeRef XSRuntime_CreateInstance( XSTypeID typeID, size_t extraBytes );
 Class XSRuntime_GetClassForTypeID( XSTypeID typeID );
