@@ -40,6 +40,13 @@
 
 extern void * __XSThread_Run( void * thread );
 
+/*!
+ * @function    XSThread_Detach
+ * @abstract    Creates and detaches a thread
+ * @param       func    A pointer to the function to run on the thread
+ * @param       arg     Argument to pass to the thread function
+ * @result      The XSThread instance
+ */
 XSThreadRef XSThread_Detach( void ( * func )( XSThreadRef thread, void * arg ), void * arg )
 {
     pthread_t   t;
@@ -62,6 +69,12 @@ XSThreadRef XSThread_Detach( void ( * func )( XSThreadRef thread, void * arg ), 
     return ( XSThreadRef )thread;
 }
 
+/*!
+ * @function    XSThread_GetID
+ * @abstract    Gets the thread ID
+ * @param       thread  The thread object
+ * @result      The thread ID
+ */
 XSUInteger XSThread_GetID( XSThreadRef thread )
 {
     return ( ( XSThread * )thread )->tid;
