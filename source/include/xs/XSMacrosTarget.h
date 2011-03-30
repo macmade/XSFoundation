@@ -32,7 +32,28 @@
 /*!
  * @header      XSMacrosTarget.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Autoconfiguration of TARGET_ conditionals
+ * @description TARGET_CPU_*    
+ *              These conditionals specify which microprocessor instruction set
+ *              is being generated.  At most one of these is true, the rest are
+ *              false:
+ * 
+ *              TARGET_CPU_PPC          - PowerPC instructions for 32-bit mode
+ *              TARGET_CPU_PPC64        - PowerPC instructions for 64-bit mode
+ *              TARGET_CPU_68K          - 680x0 instructions
+ *              TARGET_CPU_X86          - x86 instructions
+ *              TARGET_CPU_ARM          - ARM instructions
+ *              TARGET_CPU_MIPS         - MIPS instructions
+ *              TARGET_CPU_SPARC        - Sparc instructions
+ *              TARGET_CPU_ALPHA        - Dec Alpha instructions
+ *
+ *              TARGET_RT_* 
+ *              These conditionals specify in which runtime the generated code
+ *              will run.
+ * 
+ *              TARGET_RT_LITTLE_ENDIAN - Little endian format for integers
+ *              TARGET_RT_BIG_ENDIAN    - Big endian format for integers
+ *              TARGET_RT_64_BIT        - 64-bit pointers
  */
 
 #ifndef _XS_MACROS_TARGET_H_
