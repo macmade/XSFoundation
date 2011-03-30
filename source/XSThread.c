@@ -38,7 +38,31 @@
 #include "XS.h"
 #include "__XSThread.h"
 
-XSThreadRef XSThread_Create( void )
+extern void * __XSThread_Run( void * thread );
+
+XSThreadRef XSThread_Detach( void ( * func )( XSThreadRef thread, void * arg ), void * arg )
 {
-    return ( XSThreadRef )__XSThread_Alloc();
+    pthread_t   t;
+    XSUInteger  tid;
+    XSThread  * thread;
+    
+    thread = __XSThread_Alloc();
+    thread->func = func;
+    thread->arg  = arg;
+    
+    tid = pthread_create( &t, NULL, __XSThread_Run, ( void * )thread );
+    
+    if( tid )
+    {
+        XSRelease( thread );
+        
+        return NULL;
+    }
+    
+    return ( XSThreadRef )thread;
+}
+
+XSUInteger XSThread_GetID( XSThreadRef thread )
+{
+    return ( ( XSThread * )thread )->tid;
 }

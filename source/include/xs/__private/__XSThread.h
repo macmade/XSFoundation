@@ -53,6 +53,9 @@ XS_EXTERN_C_BEGIN
 typedef struct _XSThread
 {
     XSRuntimeBase _xsbase;
+    void        * arg;
+    XSUInteger    tid;
+    void ( * func )( XSThreadRef thread, void * arg );
 }
 XSThread;
 
@@ -69,6 +72,14 @@ void __XSThread_Initialize( void );
  * @result      A pointer to the allocated object
  */
 XSThread * __XSThread_Alloc( void );
+
+/*!
+ * @function    __XSThread_Run
+ * @abstract    Runs a thread
+ * param        A pointer to the thread object (XSThread)
+ * @result      Always NULL
+ */
+void * __XSThread_Run( void * thread );
 
 XS_EXTERN_C_END
 

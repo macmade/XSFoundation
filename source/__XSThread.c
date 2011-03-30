@@ -70,3 +70,33 @@ XSThread * __XSThread_Alloc( void )
 {
     return ( XSThread * )XSRuntime_CreateInstance( __XSThreadTypeID, sizeof( XSThread ) );
 }
+
+/*!
+ * @function    __XSThread_Run
+ * @abstract    Runs a thread
+ * param        A pointer to the thread object (XSThread)
+ * @result      Always NULL
+ */
+void * __XSThread_Run( void * thread )
+{
+    pthread_t  tid;
+    XSThread * _thread;
+    
+    #ifdef __MACH__
+    mach_port_t mid;
+    #endif
+    
+    _thread = ( XSThread * )thread;
+    tid     = pthread_self();
+    
+    #ifdef __MACH__
+    mid          = pthread_mach_thread_np( tid );
+    _thread->tid = mid;
+    #else
+    _thread->tid = tid;
+    #endif
+    
+    _thread->func( ( XSThreadRef )thread, _thread->arg );
+    
+    pthread_exit( NULL );
+}

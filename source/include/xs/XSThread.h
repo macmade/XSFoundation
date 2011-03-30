@@ -49,7 +49,8 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct XSThread * XSThreadRef;
 
-XSThreadRef XSThread_Create( void );
+XSThreadRef XSThread_Detach( void ( * func )( XSThreadRef thread, void * arg ), void * arg );
+XSUInteger XSThread_GetID( XSThreadRef thread );
 
 XS_EXTERN_C_END
 
