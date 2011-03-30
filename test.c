@@ -68,7 +68,7 @@ int main( void )
         test[ i ] = XSAutoAlloc( 2 );
     }
     
-    str1 = XSString_CreateWithCString( "hello, world" );
+    str1 = XSSTR( "hello, world" );
     str2 = XSString_SubstringFromIndex( str1, 5 );
     str3 = XSCopy( str2 );
     
