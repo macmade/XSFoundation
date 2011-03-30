@@ -46,6 +46,67 @@ XS_EXTERN_C_BEGIN
 #include "XSConstants.h"
 #include "../std/std.h"
 
+/*******************************************************************************
+ * Boolean data-type
+ ******************************************************************************/
+
+#ifndef OBJC_BOOL_DEFINED
+    
+    typedef signed char BOOL;
+    #define YES ( BOOL )1
+    #define NO  ( BOOL )0
+    #define OBJC_BOOL_DEFINED
+    
+#endif
+
+/*******************************************************************************
+ * Standard typedefs
+ ******************************************************************************/
+
+typedef unsigned char           Boolean;
+typedef unsigned char           UInt8;
+typedef signed char             SInt8;
+typedef unsigned short          UInt16;
+typedef signed short            SInt16;
+typedef unsigned int            UInt32;
+typedef signed int              SInt32;
+typedef uint64_t                UInt64;
+typedef int64_t                 SInt64;
+typedef float                   Float32;
+typedef double                  Float64;
+typedef UInt8                   Byte;
+typedef SInt8                   SignedByte;
+typedef unsigned short          UniChar;
+typedef unsigned long           UniCharCount;
+typedef unsigned char         * StringPtr;
+typedef const unsigned char   * ConstStringPtr;
+typedef unsigned char           Str255[ 256 ];
+typedef const unsigned char   * ConstStr255Param;
+typedef SInt16                  RegionCode;
+typedef SInt16                  LangCode;
+typedef SInt16                  ScriptCode;
+typedef UInt32                  FourCharCode;
+typedef FourCharCode            OSType;
+typedef SInt32                  OSStatus;
+typedef SInt16                  OSErr;
+typedef UInt8                   UTF8Char;
+typedef UInt16                  UTF16Char;
+typedef UInt32                  UTF32Char;
+
+#if __LP64__
+    
+    typedef long          XSInteger;
+    typedef unsigned long XSUInteger;
+    typedef double        XSFloat;
+    
+#else
+    
+    typedef int          XSInteger;
+    typedef unsigned int XSUInteger;
+    typedef float        XSFloat;
+    
+#endif
+
 /*!
  * @typedef     XSTypeID
  * @abstract    Type ID foe the registered runtime classes
@@ -221,67 +282,6 @@ typedef struct _XSDecimal
     unsigned short mantissa[ XSDecimalMaxSize ];
 }
 XSDecimal;
-
-/*******************************************************************************
- * Boolean data-type
- ******************************************************************************/
-
-#ifndef OBJC_BOOL_DEFINED
-    
-    typedef signed char BOOL;
-    #define YES ( BOOL )1
-    #define NO  ( BOOL )0
-    #define OBJC_BOOL_DEFINED
-    
-#endif
-
-/*******************************************************************************
- * Standard typedefs
- ******************************************************************************/
-
-typedef unsigned char           Boolean;
-typedef unsigned char           UInt8;
-typedef signed char             SInt8;
-typedef unsigned short          UInt16;
-typedef signed short            SInt16;
-typedef unsigned int            UInt32;
-typedef signed int              SInt32;
-typedef uint64_t                UInt64;
-typedef int64_t                 SInt64;
-typedef float                   Float32;
-typedef double                  Float64;
-typedef UInt8                   Byte;
-typedef SInt8                   SignedByte;
-typedef unsigned short          UniChar;
-typedef unsigned long           UniCharCount;
-typedef unsigned char         * StringPtr;
-typedef const unsigned char   * ConstStringPtr;
-typedef unsigned char           Str255[ 256 ];
-typedef const unsigned char   * ConstStr255Param;
-typedef SInt16                  RegionCode;
-typedef SInt16                  LangCode;
-typedef SInt16                  ScriptCode;
-typedef UInt32                  FourCharCode;
-typedef FourCharCode            OSType;
-typedef SInt32                  OSStatus;
-typedef SInt16                  OSErr;
-typedef UInt8                   UTF8Char;
-typedef UInt16                  UTF16Char;
-typedef UInt32                  UTF32Char;
-
-#if __LP64__
-    
-    typedef long          XSInteger;
-    typedef unsigned long XSUInteger;
-    typedef double        XSFloat;
-    
-#else
-    
-    typedef int          XSInteger;
-    typedef unsigned int XSUInteger;
-    typedef float        XSFloat;
-    
-#endif
 
 XS_EXTERN_C_END
 
