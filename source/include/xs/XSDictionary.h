@@ -43,6 +43,10 @@
 
 XS_EXTERN_C_BEGIN
 
+/*!
+ * @typedef     XSDictionaryRef
+ * @abstract    Opaque type for the XSDictionary objects
+ */
 typedef struct XSDictionary * XSDictionaryRef;
 
 XSDictionaryRef XSDictionary_Create( void );

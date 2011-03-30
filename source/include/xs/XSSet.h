@@ -43,6 +43,10 @@
 
 XS_EXTERN_C_BEGIN
 
+/*!
+ * @typedef     XSSetRef
+ * @abstract    Opaque type for the XSSet objects
+ */
 typedef struct XSSet * XSSetRef;
 
 XSSetRef XSSet_Create( void );

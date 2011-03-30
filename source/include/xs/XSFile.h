@@ -45,6 +45,10 @@ XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
+/*!
+ * @typedef     XSFileRef
+ * @abstract    Opaque type for the XSFile objects
+ */
 typedef struct XSFile * XSFileRef;
 
 extern XSFileRef XSStdin;

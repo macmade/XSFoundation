@@ -43,6 +43,10 @@
 
 XS_EXTERN_C_BEGIN
 
+/*!
+ * @typedef     XSNumberRef
+ * @abstract    Opaque type for the XSNumber objects
+ */
 typedef struct XSNumber * XSNumberRef;
 
 XSNumberRef XSNumber_Create( void );

@@ -43,6 +43,10 @@
 
 XS_EXTERN_C_BEGIN
 
+/*!
+ * @typedef     XSErrorRef
+ * @abstract    Opaque type for the XSError objects
+ */
 typedef struct XSError * XSErrorRef;
 
 XSErrorRef XSError_Create( void );

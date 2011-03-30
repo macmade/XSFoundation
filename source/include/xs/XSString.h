@@ -45,6 +45,10 @@ XS_EXTERN_C_BEGIN
 
 #include "XSTypes.h"
 
+/*!
+ * @typedef     XSStringRef
+ * @abstract    Opaque type for the XSString objects
+ */
 typedef struct XSString * XSStringRef;
 
 XSStringRef  XSString_Create( void );

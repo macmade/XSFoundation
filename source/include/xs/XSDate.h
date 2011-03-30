@@ -43,6 +43,10 @@
 
 XS_EXTERN_C_BEGIN
 
+/*!
+ * @typedef     XSDateRef
+ * @abstract    Opaque type for the XSDate objects
+ */
 typedef struct XSDate * XSDateRef;
 
 XSDateRef XSDate_Create( void );
