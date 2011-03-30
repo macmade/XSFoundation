@@ -64,6 +64,13 @@
 XS_EXTERN_C_BEGIN
 
 #include "XSMacrosTarget.h"
+/*!
+ * @define      XSFOUNDATION_EXIT
+ * @abstract    Normal termination of the program.
+ * @description You should always use this macro instead of the standard
+ *              exit() function, so the threads are terminated as well.
+ */
+#define XSFOUNDATION_EXIT pthread_exit( NULL );
 
 /*!
  * @define      __XSFatalError
