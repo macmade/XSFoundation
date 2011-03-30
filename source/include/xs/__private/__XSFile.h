@@ -45,6 +45,11 @@ XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
+/*!
+ * @typdef      XSFile
+ * @abastract   XSFile class
+ * @field       _xsbase     Runtime class
+ */
 typedef struct _XSFile
 {
     XSRuntimeBase _xsbase;
@@ -64,10 +69,34 @@ typedef struct _XSFile
 }
 XSFile;
 
-void     __XSFile_Initialize( void );
+/*!
+ * @function    __XSFile_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
+void __XSFile_Initialize( void );
+
+/*!
+ * @function    __XSFile_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSFile * __XSFile_Alloc( void );
 
+/*!
+ * @function    __XSFile_WriteAlign
+ * @abstract    Aligns and write the bit buffer
+ * @param       file    The file object
+ * @result      void
+ */
 void __XSFile_WriteAlign( XSFile * file );
+
+/*!
+ * @function    __XSFile_UpdateStat
+ * @abstract    Updates stat informations for the file
+ * @param       file    The file object
+ * @result      void
+ */
 void __XSFile_UpdateStat( XSFile * file );
 
 XS_EXTERN_C_END

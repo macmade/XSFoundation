@@ -38,27 +38,45 @@
 #include "XS.h"
 #include "__XSFile.h"
 
+/* Runtime class definition */
 static const XSRuntimeClass __XSFileClass =
 {
-    "XSFile",
-    NULL,
-    NULL,
-    NULL,
-    NULL
+    "XSFile",           /* Class name */
+    NULL,               /* Constructor */
+    NULL,               /* Destructory */
+    NULL,               /* Object coopy */
+    NULL                /* Object description */
 };
 
+/* Type ID for the runtine class */
 static XSTypeID __XSFileTypeID;
 
+/*!
+ * @function    __XSFile_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
 void __XSFile_Initialize( void )
 {
     __XSFileTypeID = XSRuntime_RegisterClass( &__XSFileClass );
 }
 
+/*!
+ * @function    __XSFile_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSFile * __XSFile_Alloc( void )
 {
     return ( XSFile * )XSRuntime_CreateInstance( __XSFileTypeID, sizeof( XSFile ) );
 }
 
+/*!
+ * @function    __XSFile_WriteAlign
+ * @abstract    Aligns and write the bit buffer
+ * @param       file    The file object
+ * @result      void
+ */
 void __XSFile_WriteAlign( XSFile * file )
 {
     if( file->bit_count > 0 )
@@ -71,6 +89,12 @@ void __XSFile_WriteAlign( XSFile * file )
     file->bit_offset = 0;
 }
 
+/*!
+ * @function    __XSFile_UpdateStat
+ * @abstract    Updates stat informations for the file
+ * @param       file    The file object
+ * @result      void
+ */
 void __XSFile_UpdateStat( XSFile * file )
 {
     stat( file->filename, &( file->stat_buf ) );
