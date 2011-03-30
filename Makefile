@@ -21,7 +21,7 @@ DIR_BUILD               = build/
 DIR_SRC                 = source/
 DIR_INC                 = $(DIR_SRC)include/
 DIR_INC_PRIV            = $(DIR_INC)xs/__private/
-DIR_INSTALL             = /usr/local/$(LIBNAME)
+DIR_INSTALL             = /usr/local/$(LIBNAME)/
 DIR_INSTALL_LIB         = $(DIR_INSTALL)lib/
 DIR_INSTALL_INC         = $(DIR_INSTALL)include/
 
@@ -63,11 +63,11 @@ install: __copyright all
 	@if [ ! -d "$(DIR_INSTALL_LIB)" ]; then sudo mkdir $(DIR_INSTALL_LIB); fi
 	@if [ ! -d "$(DIR_INSTALL_INC)" ]; then sudo mkdir $(DIR_INSTALL_INC); fi
 	@echo "    - Installing header files to:      $(DIR_INSTALL_INC)"
-	@sudo cp $(DIR_INC)* $(DIR_INSTALL_INC)
+	@sudo cp -r $(DIR_INC)* $(DIR_INSTALL_INC)
 	@echo "    - Installing static libraries to:  $(DIR_INSTALL_LIB)"
-	@sudo cp $(DIR_BUILD)*$(EXT_ARCHIVE) $(DIR_INSTALL_LIB)
+	@sudo cp -r $(DIR_BUILD)*$(EXT_ARCHIVE) $(DIR_INSTALL_LIB)
 	@echo "    - Installing dynamic libraries to: $(DIR_INSTALL_LIB)"
-	@sudo cp $(DIR_BUILD)*$(EXT_LIB_DYNAMIC) $(DIR_INSTALL_LIB)
+	@sudo cp -r $(DIR_BUILD)*$(EXT_LIB_DYNAMIC) $(DIR_INSTALL_LIB)
 	
 uninstall: __copyright 
 	@if [ -d "$(DIR_INSTALL)" ]; then sudo rm -rf $(DIR_INSTALL); fi
