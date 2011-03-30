@@ -38,6 +38,13 @@
 #include "XS.h"
 #include "__XSFunctions.h"
 
+/*!
+ * @function    XSMakePoint
+ * @abstract    Creates an XSPoint structure
+ * @param       x   The X coordinate
+ * @param       y   The Y coordinate
+ * @result      An XSPoint structure
+ */
 XSPoint XSMakePoint( XSFloat x, XSFloat y )
 {
     XSPoint p;
@@ -48,6 +55,13 @@ XSPoint XSMakePoint( XSFloat x, XSFloat y )
     return p;
 }
 
+/*!
+ * @function    XSMakeSize
+ * @abstract    Creates an XSSize structure
+ * @param       width   The width
+ * @param       height  The height
+ * @result      An XSSize structure
+ */
 XSSize XSMakeSize( XSFloat width, XSFloat height )
 {
     XSSize s;
@@ -58,6 +72,15 @@ XSSize XSMakeSize( XSFloat width, XSFloat height )
     return s;
 }
 
+/*!
+ * @function    XSMakeRect
+ * @abstract    Creates an XSRect structure
+ * @param       x       The X coordinate
+ * @param       y       The Y coordinate
+ * @param       width   The width
+ * @param       height  The height
+ * @result      An XSRect structure
+ */
 XSRect XSMakeRect( XSFloat x, XSFloat y, XSFloat width, XSFloat height )
 {
     XSRect r;
@@ -70,11 +93,23 @@ XSRect XSMakeRect( XSFloat x, XSFloat y, XSFloat width, XSFloat height )
     return r;
 }
 
+/*!
+ * @function    XSRectZero
+ * @abstract    Creates an XSRect structure with 0 origin and size
+ * @result      An XSRect structure
+ */
 XSRect XSRectZero( void )
 {
     return XSMakeRect( 0, 0, 0, 0 );
 }
 
+/*!
+ * @function    XSMakeRange
+ * @abstract    Creates an XSRange structure
+ * @param       location    The range location
+ * @param       length      The range length
+ * @result      An XSRange structure
+ */
 XSRange XSMakeRange( XSUInteger location, XSUInteger length )
 {
     XSRange r;
@@ -85,6 +120,13 @@ XSRange XSMakeRange( XSUInteger location, XSUInteger length )
     return r;
 }
 
+/*!
+ * @function    XSLog
+ * @abstract    Outputs a log message
+ * @param       fmt     The message to output
+ * @param       ...     Arguments for the format
+ * @result      void
+ */
 void XSLog( const char * fmt, ... )
 {
     va_list args;
@@ -96,6 +138,13 @@ void XSLog( const char * fmt, ... )
     va_end( args );
 }
 
+/*!
+ * @function    XSVLog
+ * @abstract    Outputs a log message
+ * @param       fmt     The message to output
+ * @param       ...     Arguments for the format
+ * @result      void
+ */
 void XSVLog( const char * fmt, va_list args )
 {
     __XSVLog( fmt, args );
