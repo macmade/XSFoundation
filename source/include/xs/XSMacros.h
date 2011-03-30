@@ -66,6 +66,13 @@ XS_EXTERN_C_BEGIN
 #include "XSMacrosTarget.h"
 
 /*!
+ * @define      XSFOUNDATION_START
+ * @abstract    Initialization of the program.
+ * @description You should always use this macro before using XSFoundation.
+ */
+#define XSFOUNDATION_START XSRuntime_Initialize();
+
+/*!
  * @define      XSFOUNDATION_EXIT
  * @abstract    Normal termination of the program.
  * @description You should always use this macro instead of the standard
