@@ -45,6 +45,12 @@ XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
+/*!
+ * @typdef      XSString
+ * @abastract   XSString class
+ * @field       _xsbase     Runtime class
+ * @field       str         A pointer to the C string
+ */
 typedef struct _XSString
 {
     XSRuntimeBase _xsbase;
@@ -53,10 +59,42 @@ typedef struct _XSString
 }
 XSString;
 
-void         __XSString_Initialize( void );
-XSString   * __XSString_Alloc( void );
-void         __XSString_Dealloc( void * object );
-void         __XSString_Copy( void * source, void * destination );
+/*!
+ * @function    __XSString_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
+void __XSString_Initialize( void );
+
+/*!
+ * @function    __XSString_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
+XSString * __XSString_Alloc( void );
+
+/*!
+ * @function    __XSString_Dealloc
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSString_Dealloc( void * object );
+
+/*!
+ * @function    __XSString_Copy
+ * @abstract    Object copy
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSString_Copy( void * source, void * destination );
+
+/*!
+ * @function    __XSString_Description
+ * @abstract    Object description
+ * @param       object  A pointer to the object
+ * @result      The object's description
+ */
 const char * __XSString_Description( void * object );
 
 XS_EXTERN_C_END

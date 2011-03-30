@@ -38,27 +38,45 @@
 #include "XS.h"
 #include "__XSString.h"
 
+/* Runtime class definition */
 static const XSRuntimeClass __XSStringClass =
 {
-    "XSString",
-    NULL,
-    __XSString_Dealloc,
-    __XSString_Copy,
-    __XSString_Description
+    "XSString",             /* Class name */
+    NULL,                   /* Constructor */
+    __XSString_Dealloc,     /* Destructory */
+    __XSString_Copy,        /* Object copy */
+    __XSString_Description  /* Object description */
 };
 
+/* Type ID for the runtine class */
 static XSTypeID __XSStringTypeID;
 
+/*!
+ * @function    __XSString_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
 void __XSString_Initialize( void )
 {
     __XSStringTypeID = XSRuntime_RegisterClass( &__XSStringClass );
 }
 
+/*!
+ * @function    __XSString_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
 XSString * __XSString_Alloc( void )
 {
     return ( XSString * )XSRuntime_CreateInstance( __XSStringTypeID, sizeof( XSString ) );
 }
 
+/*!
+ * @function    __XSString_Dealloc
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
 void __XSString_Dealloc( void * object )
 {
     XSString * str;
@@ -68,6 +86,12 @@ void __XSString_Dealloc( void * object )
     XSRelease( str->str );
 }
 
+/*!
+ * @function    __XSString_Copy
+ * @abstract    Object copy
+ * @param       object  A pointer to the object
+ * @result      void
+ */
 void __XSString_Copy( void * source, void * destination )
 {
     XSString * str;
@@ -79,6 +103,12 @@ void __XSString_Copy( void * source, void * destination )
     XSRetain( str->str );
 }
 
+/*!
+ * @function    __XSString_Description
+ * @abstract    Object description
+ * @param       object  A pointer to the object
+ * @result      The object's description
+ */
 const char * __XSString_Description( void * object )
 {
     XSString * str;
