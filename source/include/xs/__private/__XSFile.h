@@ -49,6 +49,19 @@ XS_EXTERN_C_BEGIN
  * @typdef      XSFile
  * @abastract   XSFile class
  * @field       _xsbase     Runtime class
+ * @field       fp          The FILE pointer
+ * @field       filename    The name of the file
+ * @field       mode        The file open mode
+ * @field       writeable   Whether the file is writeable
+ * @field       readable    Whether the file is readabe
+ * @field       stdin       Wheter the file represents stdin
+ * @field       stdout      Wheter the file represents stdout
+ * @field       stderr      Wheter the file represents stderr
+ * @field       need_init   Whether the file needs initialization (for stdin, stdout and stderr only)
+ * @field       bit_buffer  Bit buffer
+ * @field       bit_count   Bit count
+ * @field       bit_offset  Offset for the bit buffer
+ * @field       stat_buf    Stat informations
  */
 typedef struct _XSFile
 {
