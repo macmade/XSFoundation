@@ -70,7 +70,7 @@ XS_EXTERN_C_BEGIN
  * @abstract    Initialization of the program.
  * @description You should always use this macro before using XSFoundation.
  */
-#define XSFOUNDATION_START XSRuntime_Initialize();
+#define XSFOUNDATION_START() XSRuntime_Initialize();
 
 /*!
  * @define      XSFOUNDATION_EXIT
@@ -78,7 +78,7 @@ XS_EXTERN_C_BEGIN
  * @description You should always use this macro instead of the standard
  *              exit() function, so the threads are terminated as well.
  */
-#define XSFOUNDATION_EXIT pthread_exit( NULL );
+#define XSFOUNDATION_EXIT() pthread_exit( NULL );
 
 /*!
  * @define      XSSTR

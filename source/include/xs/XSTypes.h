@@ -155,7 +155,7 @@ XSRuntimeBase;
  * @typedef     id
  * @abstract    Polymorphism support - Generic type for all XSFoundation objects
  */
-typedef XSRuntimeBase  * id;
+typedef XSRuntimeBase * id;
 
 /*!
  * @typedef     Class

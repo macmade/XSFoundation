@@ -59,7 +59,7 @@ int main( void )
     XSStringRef          str2;
     XSStringRef          str3;
     
-    XSFOUNDATION_START;
+    XSFOUNDATION_START();
     
     ap1   = XSAutoreleasePool_Create();
     test  = XSAutoAlloc( 5 * sizeof( char * ) );
@@ -89,5 +89,5 @@ int main( void )
     XSRelease( ap2 );
     XSRelease( ap1 );
     
-    XSFOUNDATION_EXIT;
+    XSFOUNDATION_EXIT();
 }
