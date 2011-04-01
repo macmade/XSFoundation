@@ -183,9 +183,9 @@ void * XSRealloc( void * ptr, size_t size )
  *              incremented. It means you own an object that you retain, and
  *              that you are responsible to release it using XSRelease.
  * @param       ptr     The pointer to retain
- * @result      void
+ * @result      The pointer passed, to allow function chaining
  */
-void XSRetain( void * ptr )
+void * XSRetain( void * ptr )
 {
     __XSMemoryObject * o;
     
@@ -197,6 +197,8 @@ void XSRetain( void * ptr )
     o = __XSMemory_GetMemoryObject( ptr );
     
     o->retain_count++;
+    
+    return ptr;
 }
 
 /*!
@@ -206,9 +208,9 @@ void XSRetain( void * ptr )
  *              decremented. When it reaches 0, the pointer will be
  *              automatically freed.
  * @param       ptr     The pointer to release
- * @result      void
+ * @result      The pointer passed, to allow function chaining
  */
-void XSRelease( void * ptr )
+void * XSRelease( void * ptr )
 {
     __XSMemoryObject           * o;
     const XSRuntimeClass const * cls;
@@ -235,7 +237,11 @@ void XSRelease( void * ptr )
         }
         
         free( o );
+        
+        return NULL;
     }
+    
+    return ptr;
 }
 
 /*!
@@ -245,9 +251,9 @@ void XSRelease( void * ptr )
  *              auto-release pool, and will receive a release message the next
  *              the auto-release pool is drained.
  * @param       The memory pointer to mark as auto-releasable
- * @result      void
+ * @result      The pointer passed, to allow function chaining
  */
-void XSAutorelease( void * ptr )
+void * XSAutorelease( void * ptr )
 {
     XSAutoreleasePool * ap;
     
@@ -277,6 +283,8 @@ void XSAutorelease( void * ptr )
     }
     
     ap->objects[ ap->num_objects++ ] = ptr;
+    
+    return ptr;
 }
 
 /*!

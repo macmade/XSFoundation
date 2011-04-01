@@ -95,9 +95,9 @@ void * XSRealloc( void * ptr, size_t size );
  *              incremented. It means you own an object that you retain, and
  *              that you are responsible to release it using XSRelease.
  * @param       ptr     The pointer to retain
- * @result      void
+ * @result      The pointer passed, to allow function chaining
  */
-void XSRetain( void * ptr );
+void * XSRetain( void * ptr );
 
 /*!
  * @function    XSRelease
@@ -106,9 +106,9 @@ void XSRetain( void * ptr );
  *              decremented. When it reaches 0, the pointer will be
  *              automatically freed.
  * @param       ptr     The pointer to release
- * @result      void
+ * @result      The pointer passed, to allow function chaining
  */
-void XSRelease( void * ptr );
+void * XSRelease( void * ptr );
 
 /*!
  * @function    XSAutorelease
@@ -117,9 +117,9 @@ void XSRelease( void * ptr );
  *              auto-release pool, and will receive a release message the next
  *              the auto-release pool is drained.
  * @param       The memory pointer to mark as auto-releasable
- * @result      void
+ * @result      The pointer passed, to allow function chaining
  */
-void XSAutorelease( void * ptr );
+void * XSAutorelease( void * ptr );
 
 /*!
  * @function    XSAutoAlloc
