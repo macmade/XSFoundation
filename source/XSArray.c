@@ -171,9 +171,31 @@ void XSArray_AppendValue( XSArrayRef array, void * value )
  */
 void XSArray_InsertValueAtIndex( XSArrayRef array, void * value, XSUInteger i )
 {
-    XSArray * _array;
+    XSArray  * _array;
+    void     * store;
+    XSUInteger j;
     
     _array = ( XSArray * )array;
+    
+    if( i >= _array->count )
+    {
+        XSArray_AppendValue( array, value );
+    }
+    
+    if( _array->count + 1 > _array->capacity )
+    {
+        if( NULL == ( store = XSRealloc( ( _array->count + _array->capacity ) * sizeof( void * ) ) ) )
+        {
+            return;
+        }
+    }
+    
+    for( j = _array->count; j == i; j++ )
+    {
+        _array->values[ j ] = _array->values[ j - 1 ];
+    }
+    
+    _array->values[ i ] = XSRetain( value );
     
     ( void )array;
     ( void )value;
@@ -245,12 +267,22 @@ void * XSArray_GetValueAtIndex( XSArrayRef array, XSUInteger i )
  */
 void * XSArray_RemoveValueAtIndex( XSArrayRef array, XSUInteger i )
 {
-    XSArray * _array;
+    XSArray  * _array;
+    XSUInteger j;
     
     _array = ( XSArray * )array;
     
-    ( void )array;
-    ( void )i;
+    if( i > _array->count )
+    {
+        return NULL;
+    }
+    
+    for( j = i; j < _array->count - 1; j++ )
+    {
+        _array->values[ j ] = _array->values[ j + 1 ];
+    }
+    
+    _array->values[ _array->count-- ] = NULL;
     
     return NULL;
 }
