@@ -191,7 +191,7 @@ void * XSRetain( void * ptr )
     
     if( ptr == NULL )
     {
-        return;
+        return NULL;
     }
     
     o = __XSMemory_GetMemoryObject( ptr );
@@ -217,7 +217,7 @@ void * XSRelease( void * ptr )
     
     if( ptr == NULL )
     {
-        return;
+        return NULL;
     }
     
     o = __XSMemory_GetMemoryObject( ptr );
@@ -259,7 +259,7 @@ void * XSAutorelease( void * ptr )
     
     if( ptr == NULL )
     {
-        return;
+        return NULL;
     }
     
     ap = __XSMemory_GetCurrentAutoreleasePool();
