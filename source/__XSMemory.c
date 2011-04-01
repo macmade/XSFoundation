@@ -30,31 +30,43 @@
 /* $Id$ */
 
 /*!
- * @file        
+ * @file        __XSMemory.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    
+ * @abstract    ...
  */
 
 #include "XS.h"
 #include "__XSMemory.h"
 
-/* Storage for the auto-release pools */
+/*!
+ * @var         __xsmemory_ar_pools
+ * @abstract    An array with the auto-release pool objects
+ */
 XSAutoreleasePool * __xsmemory_ar_pools[ XS_MEMORY_MAX_AR_POOLS ];
 
-/* NUmber of active auto-release pools */
+/*!
+ * @var         __xsmemory_ar_pools_num
+ * @abstract    The number of active auto-release pool objects
+ */
 XSUInteger          __xsmemory_ar_pools_num;
 
-/* Runtime class definition */
+/*!
+ * @var         __XSAutoreleasePoolClass
+ * @abstract    Runtime class definition
+ */
 static const XSRuntimeClass __XSAutoreleasePoolClass =
 {
     "XSAutoreleasePool",            /* Class name */
     NULL,                           /* Constructor */
-    __XSAutoreleasePool_Dealloc,    /* Destructory */
-    NULL,                           /* Object coopy */
+    __XSAutoreleasePool_Dealloc,    /* Destructor */
+    NULL,                           /* Object copy */
     NULL                            /* Object description */
 };
 
-/* Type ID for the runtine class */
+/*!
+ * @var         __XSAutoreleasePoolTypeID
+ * @abstract    Type ID for the runtine class
+ */
 static XSTypeID __XSAutoreleasePoolTypeID;
 
 /*!

@@ -30,7 +30,7 @@
 /* $Id$ */
 
 /*!
- * @header      __XSNumber.c
+ * @file        __XSNumber.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
  * @abstract    ...
  */
@@ -38,17 +38,23 @@
 #include "XS.h"
 #include "__XSNumber.h"
 
-/* Runtime class definition */
+/*!
+ * @var         __XSNumberClass
+ * @abstract    Runtime class definition
+ */
 static const XSRuntimeClass __XSNumberClass =
 {
     "XSNumber",         /* Class name */
     NULL,               /* Constructor */
-    NULL,               /* Destructory */
-    NULL,               /* Object coopy */
+    NULL,               /* Destructor */
+    NULL,               /* Object copy */
     NULL                /* Object description */
 };
 
-/* Type ID for the runtine class */
+/*!
+ * @var         __XSNumberTypeID
+ * @abstract    Type ID for the runtine class
+ */
 static XSTypeID __XSNumberTypeID;
 
 /*!

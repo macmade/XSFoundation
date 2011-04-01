@@ -30,7 +30,7 @@
 /* $Id$ */
 
 /*!
- * @header      __XSTree.c
+ * @file        __XSTree.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
  * @abstract    ...
  */
@@ -38,17 +38,23 @@
 #include "XS.h"
 #include "__XSTree.h"
 
-/* Runtime class definition */
+/*!
+ * @var         __XSTreeClass
+ * @abstract    Runtime class definition
+ */
 static const XSRuntimeClass __XSTreeClass =
 {
     "XSTree",           /* Class name */
     NULL,               /* Constructor */
-    NULL,               /* Destructory */
-    NULL,               /* Object coopy */
+    NULL,               /* Destructor */
+    NULL,               /* Object copy */
     NULL                /* Object description */
 };
 
-/* Type ID for the runtine class */
+/*!
+ * @var         __XSTreeTypeID
+ * @abstract    Type ID for the runtine class
+ */
 static XSTypeID __XSTreeTypeID;
 
 /*!

@@ -30,7 +30,7 @@
 /* $Id$ */
 
 /*!
- * @header      __XSURL.c
+ * @file        __XSURL.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
  * @abstract    ...
  */
@@ -38,17 +38,23 @@
 #include "XS.h"
 #include "__XSURL.h"
 
-/* Runtime class definition */
+/*!
+ * @var         __XSURLClass
+ * @abstract    Runtime class definition
+ */
 static const XSRuntimeClass __XSURLClass =
 {
     "XSURL",            /* Class name */
     NULL,               /* Constructor */
-    NULL,               /* Destructory */
-    NULL,               /* Object coopy */
+    NULL,               /* Destructor */
+    NULL,               /* Object copy */
     NULL                /* Object description */
 };
 
-/* Type ID for the runtine class */
+/*!
+ * @var         __XSURLTypeID
+ * @abstract    Type ID for the runtine class
+ */
 static XSTypeID __XSURLTypeID;
 
 /*!

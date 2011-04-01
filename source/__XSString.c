@@ -30,7 +30,7 @@
 /* $Id$ */
 
 /*!
- * @header      __XSString.c
+ * @file        __XSString.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
  * @abstract    ...
  */
@@ -38,17 +38,23 @@
 #include "XS.h"
 #include "__XSString.h"
 
-/* Runtime class definition */
+/*!
+ * @var         __XSStringClass
+ * @abstract    Runtime class definition
+ */
 static const XSRuntimeClass __XSStringClass =
 {
     "XSString",             /* Class name */
     NULL,                   /* Constructor */
-    __XSString_Dealloc,     /* Destructory */
+    __XSString_Dealloc,     /* Destructor */
     __XSString_Copy,        /* Object copy */
     __XSString_Description  /* Object description */
 };
 
-/* Type ID for the runtine class */
+/*!
+ * @var         __XSStringTypeID
+ * @abstract    Type ID for the runtine class
+ */
 static XSTypeID __XSStringTypeID;
 
 /*!

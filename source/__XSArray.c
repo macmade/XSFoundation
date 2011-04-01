@@ -30,7 +30,7 @@
 /* $Id$ */
 
 /*!
- * @header      __XSArray.c
+ * @file        __XSArray.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
  * @abstract    ...
  */
@@ -38,17 +38,23 @@
 #include "XS.h"
 #include "__XSArray.h"
 
-/* Runtime class definition */
+/*!
+ * @var         __XSArrayClass
+ * @abstract    Runtime class definition
+ */
 static const XSRuntimeClass __XSArrayClass =
 {
     "XSArray",          /* Class name */
     NULL,               /* Constructor */
-    NULL,               /* Destructory */
-    NULL,               /* Object coopy */
+    NULL,               /* Destructor */
+    NULL,               /* Object copy */
     NULL                /* Object description */
 };
 
-/* Type ID for the runtine class */
+/*!
+ * @var         __XSArrayTypeID
+ * @abstract    Type ID for the runtine class
+ */
 static XSTypeID __XSArrayTypeID;
 
 /*!

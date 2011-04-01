@@ -30,7 +30,7 @@
 /* $Id$ */
 
 /*!
- * @header      __XSError.c
+ * @file        __XSError.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
  * @abstract    ...
  */
@@ -38,17 +38,23 @@
 #include "XS.h"
 #include "__XSError.h"
 
-/* Runtime class definition */
+/*!
+ * @var         __XSErrorClass
+ * @abstract    Runtime class definition
+ */
 static const XSRuntimeClass __XSErrorClass =
 {
     "XSError",          /* Class name */
     NULL,               /* Constructor */
-    __XSError_Dealloc,  /* Destructory */
-    NULL,               /* Object coopy */
+    __XSError_Dealloc,  /* Destructor */
+    NULL,               /* Object copy */
     NULL                /* Object description */
 };
 
-/* Type ID for the runtine class */
+/*!
+ * @var         __XSErrorTypeID
+ * @abstract    Type ID for the runtine class
+ */
 static XSTypeID __XSErrorTypeID;
 
 /*!

@@ -30,25 +30,31 @@
 /* $Id$ */
 
 /*!
- * @file        
+ * @file        __XSFile.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    
+ * @abstract    ...
  */
 
 #include "XS.h"
 #include "__XSFile.h"
 
-/* Runtime class definition */
+/*!
+ * @var         __XSFileClass
+ * @abstract    Runtime class definition
+ */
 static const XSRuntimeClass __XSFileClass =
 {
     "XSFile",           /* Class name */
     NULL,               /* Constructor */
-    NULL,               /* Destructory */
-    NULL,               /* Object coopy */
+    NULL,               /* Destructor */
+    NULL,               /* Object copy */
     NULL                /* Object description */
 };
 
-/* Type ID for the runtine class */
+/*!
+ * @var         __XSFileTypeID
+ * @abstract    Type ID for the runtine class
+ */
 static XSTypeID __XSFileTypeID;
 
 /*!

@@ -30,7 +30,7 @@
 /* $Id$ */
 
 /*!
- * @header      __XSData.c
+ * @file        __XSData.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
  * @abstract    ...
  */
@@ -38,17 +38,23 @@
 #include "XS.h"
 #include "__XSData.h"
 
-/* Runtime class definition */
+/*!
+ * @var         __XSDataClass
+ * @abstract    Runtime class definition
+ */
 static const XSRuntimeClass __XSDataClass =
 {
     "XSData",           /* Class name */
     NULL,               /* Constructor */
-    NULL,               /* Destructory */
-    NULL,               /* Object coopy */
+    NULL,               /* Destructor */
+    NULL,               /* Object copy */
     NULL                /* Object description */
 };
 
-/* Type ID for the runtine class */
+/*!
+ * @var         __XSDataTypeID
+ * @abstract    Type ID for the runtine class
+ */
 static XSTypeID __XSDataTypeID;
 
 /*!

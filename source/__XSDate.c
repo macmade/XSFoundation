@@ -30,7 +30,7 @@
 /* $Id$ */
 
 /*!
- * @header      __XSDate.c
+ * @file        __XSDate.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
  * @abstract    ...
  */
@@ -38,17 +38,23 @@
 #include "XS.h"
 #include "__XSDate.h"
 
-/* Runtime class definition */
+/*!
+ * @var         __XSDateClass
+ * @abstract    Runtime class definition
+ */
 static const XSRuntimeClass __XSDateClass =
 {
     "XSDate",           /* Class name */
     NULL,               /* Constructor */
-    NULL,               /* Destructory */
-    NULL,               /* Object coopy */
+    NULL,               /* Destructor */
+    NULL,               /* Object copy */
     NULL                /* Object description */
 };
 
-/* Type ID for the runtine class */
+/*!
+ * @var         __XSDateTypeID
+ * @abstract    Type ID for the runtine class
+ */
 static XSTypeID __XSDateTypeID;
 
 /*!

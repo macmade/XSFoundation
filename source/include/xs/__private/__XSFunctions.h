@@ -30,7 +30,7 @@
 /* $Id$ */
 
 /*!
- * @header      __Functions.h
+ * @header      __XSFunctions.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
  * @abstract    ...
  */
@@ -43,6 +43,15 @@
 
 XS_EXTERN_C_BEGIN
 
+/*!
+ * @function    __XSVLog
+ * @abstract    Outputs a log message to stdout
+ * @description The log message will be prefixed by the date/time, process
+ *              name, ID, and thread ID (or MACH port if available).
+ * @param       fmt     The message format
+ * @param       args    Arguments for the format
+ * @result      void
+ */
 void __XSVLog( const char * fmt, va_list args );
 
 XS_EXTERN_C_END

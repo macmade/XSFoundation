@@ -30,7 +30,7 @@
 /* $Id$ */
 
 /*!
- * @header      __XSFunctions.c
+ * @file        __XSFunctions.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
  * @abstract    ...
  */
@@ -38,12 +38,31 @@
 #include "XS.h"
 #include "__XSFunctions.h"
 
+/*!
+ * @var         __progname
+ * @abstract    Program name
+ */
 char * __progname                    = NULL;
+
+/*!
+ * @var         program_invocation_short_name
+ * @abstract    Program invocation short name
+ */
 char * program_invocation_short_name = NULL;
 
+/* Weak symbols for the program name and program invocation short name */
 extern char * __progname                    __attribute__( ( weak ) );
 extern char * program_invocation_short_name __attribute__( ( weak ) );
 
+/*!
+ * @function    __XSVLog
+ * @abstract    Outputs a log message to stdout
+ * @description The log message will be prefixed by the date/time, process
+ *              name, ID, and thread ID (or MACH port if available).
+ * @param       fmt     The message format
+ * @param       args    Arguments for the format
+ * @result      void
+ */
 void __XSVLog( const char * fmt, va_list args )
 {
     pid_t            pid;

@@ -30,7 +30,7 @@
 /* $Id$ */
 
 /*!
- * @header      __XSThread.c
+ * @file        __XSThread.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
  * @abstract    ...
  */
@@ -38,17 +38,23 @@
 #include "XS.h"
 #include "__XSThread.h"
 
-/* Runtime class definition */
+/*!
+ * @var         __XSThreadClass
+ * @abstract    Runtime class definition
+ */
 static const XSRuntimeClass __XSThreadClass =
 {
     "XSThread",         /* Class name */
     NULL,               /* Constructor */
-    NULL,               /* Destructory */
-    NULL,               /* Object coopy */
+    NULL,               /* Destructor */
+    NULL,               /* Object copy */
     NULL                /* Object description */
 };
 
-/* Type ID for the runtine class */
+/*!
+ * @var         __XSThreadTypeID
+ * @abstract    Type ID for the runtine class
+ */
 static XSTypeID __XSThreadTypeID;
 
 /*!
