@@ -51,65 +51,257 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct XSFile * XSFileRef;
 
+/*!
+ * @typedef     XSFileOpenMode
+ * @abstract    Open modes for XSFileRef
+ * @description A specific mode can be ORed with XSFileOpenModeText
+ *              XSFileOpenModeBinary to specify if working with text or binary
+ *              files
+ * @field       XSFileOpenModeText          Text mode
+ * @field       XSFileOpenModeBinary        Binary mode
+ * @field       XSFileOpenModeRead          "r" - Text reading
+ * @field       XSFileOpenModeWrite         "w" - Text writing
+ * @field       XSFileOpenModeAppend        "a" - Text append
+ * @field       XSFileOpenModeApendAtEnd    "a+" - Text append, reading, and writing at end
+ * @field       XSFileOpenModeUpdate        "r+" - Text update (reading and writing)
+ * @field       XSFileOpenModeUpdateDiscard "w+" - Text update discarding previous content (if any)
+ */
+typedef enum
+{
+    XSFileOpenModeText          = 0x00,
+    XSFileOpenModeBinary        = 0x01,
+    XSFileOpenModeRead          = 0x02,
+    XSFileOpenModeWrite         = 0x04,
+    XSFileOpenModeAppend        = 0x06,
+    XSFileOpenModeApendAtEnd    = 0x08,
+    XSFileOpenModeUpdate        = 0x0A,
+    XSFileOpenModeUpdateDiscard = 0x0E
+}
+XSFileOpenMode;
+
+/*!
+ * @typedef     XSFileSeekPosition
+ * @abstract    Origin position for the file seek operations
+ * @field       XSFileSeekPositionCurent    Current position
+ * @field       XSFileSeekPositionStart     Start of the file
+ * @field       XSFileSeekPositionEnd       End of the file
+ * @field       XSFileOpenModeReadSet       Specific position
+ */
+typedef enum
+{
+    XSFileSeekPositionCurent = SEEK_CUR,
+    XSFileSeekPositionStart  = 0,
+    XSFileSeekPositionEnd    = SEEK_END,
+    XSFileOpenModeReadSet    = SEEK_SET
+}
+XSFileSeekPosition;
+
+/*!
+ * @var         XSStdin
+ * @abstract    XSFileRef object representing stdin
+ */
 extern XSFileRef XSStdin;
+
+/*!
+ * @var         XSStdout
+ * @abstract    XSFileRef object representing stdout
+ */
 extern XSFileRef XSStdout;
+
+/*!
+ * @var         XSStderr
+ * @abstract    XSFileRef object representing stderr
+ */
 extern XSFileRef XSStderr;
 
-XSFileRef    XSFile_Open( const char * filename, const char * mode );
-XSInteger    XSFile_Flush( XSFileRef file );
-XSInteger    XSFile_Close( XSFileRef file );
-XSInteger    XSFile_Printf( XSFileRef file, const char * format, ... );
-XSInteger    XSFile_VPrintf( XSFileRef file, const char * format, va_list arg );
-XSInteger    XSFile_Getc( XSFileRef file );
-XSInteger    XSFile_Putc( XSInteger c, XSFileRef file );
-XSInteger    XSFile_Puts( const char * s, XSFileRef file );
-size_t       XSFile_Read( void * ptr, size_t size, size_t nobj, XSFileRef file );
-size_t       XSFile_Write( const void * ptr, size_t size, size_t nobj, XSFileRef file );
-XSInteger    XSFile_Seek( XSFileRef file, XSInteger offset, XSInteger origin );
-XSInteger    XSFile_Tell( XSFileRef file );
-void         XSFile_Rewind( XSFileRef file );
-XSInteger    XSFile_GetPos( XSFileRef file, fpos_t * ptr );
-XSInteger    XSFile_SetPos( XSFileRef file, const fpos_t * ptr );
-void         XSFile_ClearErr( XSFileRef file );
-XSInteger    XSFile_EndOfFile( XSFileRef file );
-XSInteger    XSFile_Error( XSFileRef file );
+/*!
+ * @abstract    Creates an XSFileRef instance and opens the represented file.
+ * @description This function may return NULL if the represented file has not
+ *              been opened.
+ * @param       filename    The name of the file
+ * @param       openMode    The file open mode (see XSFileOpenMode)
+ * @result      The instance of XSFileRef
+ */
+XSFileRef XSFile_Open( const char * filename, XSFileOpenMode openMode );
+/*!
+ * Flushes stream stream and returns zero on success or EOF on error.
+ * Effect undefined for input stream. fflush(NULL) flushes all output
+ * streams.
+ */
+XSInteger XSFile_Flush( XSFileRef file );
+/*!
+ * Closes stream stream (after flushing, if output stream). Returns EOF on
+ * error, zero otherwise.
+ */
+XSInteger XSFile_Close( XSFileRef file );
+/*!
+ * Converts (according to format format) and writes output to stream stream.
+ * Number of characters written, or negative value on error, is returned.
+ */
+XSInteger XSFile_Printf( XSFileRef file, const char * format, ... );
+/*!
+ * Equivalent to fprintf with variable argument list replaced by arg, which must
+ * have been initialised by the va_start macro (and may have been used in calls
+ * to va_arg).
+ */
+XSInteger XSFile_VPrintf( XSFileRef file, const char * format, va_list arg );
+/*!
+ * Returns next character from (input) stream stream, or EOF on end-of-file
+ * or error.
+ */
+XSInteger XSFile_Getc( XSFileRef file );
+/*!
+ * Writes c, to stream stream. Returns c, or EOF on error.
+ */
+XSInteger XSFile_Putc( XSInteger c, XSFileRef file );
+/*!
+ * Writes s, to (output) stream stream. Returns non-negative on success or
+ * EOF on error.
+ */
+XSInteger XSFile_Puts( const char * s, XSFileRef file );
+/*!
+ * Reads (at most) nobj objects of size size from stream stream into ptr and
+ * returns number of objects read. (feof and ferror can be used to check
+ * status.)
+ */
+size_t XSFile_Read( void * ptr, size_t size, size_t nobj, XSFileRef file );
+/*!
+ * Writes to stream stream, nobj objects of size size from array ptr.
+ * Returns number of objects written.
+ */
+size_t XSFile_Write( const void * ptr, size_t size, size_t nobj, XSFileRef file );
+/*!
+ * Sets file position for stream stream and clears end-of-file indicator.
+ * For a binary stream, file position is set to offset bytes from the
+ * position indicated by origin: beginning of file for SEEK_SET, current
+ * position for SEEK_CUR, or end of file for SEEK_END. Behaviour is similar
+ * for a text stream, but offset must be zero or, for SEEK_SET only, a value
+ * returned by ftell.
+ * Returns non-zero on error.
+ */
+XSInteger XSFile_Seek( XSFileRef file, XSInteger offset, XSFileSeekPosition origin );
+/*!
+ * Returns current file position for stream stream, or -1 on error.
+ */
+XSInteger XSFile_Tell( XSFileRef file );
+/*!
+ * Equivalent to fseek( stream, 0L, SEEK_SET ); clearerr( stream ).
+ */
+void XSFile_Rewind( XSFileRef file );
+/*!
+ * Stores current file position for stream stream in * ptr.
+ * Returns non-zero on error.
+ */
+XSInteger XSFile_GetPos( XSFileRef file, fpos_t * ptr );
+/*!
+ * Sets current position of stream stream to * ptr.
+ * Returns non-zero on error.
+ */
+XSInteger XSFile_SetPos( XSFileRef file, const fpos_t * ptr );
+/*!
+ * Clears end-of-file and error indicators for stream stream.
+ */
+void XSFile_ClearErr( XSFileRef file );
+/*!
+ * Returns non-zero if end-of-file indicator is set for stream stream.
+ */
+XSInteger XSFile_EndOfFile( XSFileRef file );
+/*!
+ * Returns non-zero if error indicator is set for stream stream.
+ */
+XSInteger XSFile_Error( XSFileRef file );
+/*!
+ * Gets the filename associated to the stream-
+ */
 const char * XSFile_Filename( XSFileRef file );
+/*!
+ * Gets the stream's open mode
+ */
 const char * XSFile_OpenMode( XSFileRef file );
-BOOL         XSFile_IsReadable( XSFileRef file );
-BOOL         XSFile_IsWriteable( XSFileRef file );
-BOOL         XSFile_Copy( char * name, char * new_name );
-XSInteger    XSFile_GetBit( XSFileRef file );
-XSInteger    XSFile_PutBit( XSFileRef file, uint8_t bit );
-XSInteger    XSFile_GetBits( XSFileRef file, XSUInteger count );
-XSInteger    XSFile_PutBits( XSFileRef file, uint64_t bits, XSUInteger count );
-dev_t        XSFile_DeviceID( XSFileRef file );
-ino_t        XSFile_SerialNumber( XSFileRef file );
-nlink_t      XSFile_NumberOfLinks( XSFileRef file );
-uid_t        XSFile_UID( XSFileRef file );
-gid_t        XSFile_GID( XSFileRef file );
-size_t       XSFile_Size( XSFileRef file );
-XSFloat      XSFile_HumanReadableSize( XSFileRef file, char unit[] );
-time_t       XSFile_AccessTime( XSFileRef file );
-time_t       XSFile_ModifictaionTime( XSFileRef file );
-time_t       XSFile_CreationTime( XSFileRef file );
-BOOL         XSFile_IsBlockDevice( XSFileRef file );
-BOOL         XSFile_IsCharacterDevice( XSFileRef file );
-BOOL         XSFile_IsFIFO( XSFileRef file );
-BOOL         XSFile_IsRegularFile( XSFileRef file );
-BOOL         XSFile_IsDirectory( XSFileRef file );
-BOOL         XSFile_IsLink( XSFileRef file );
-BOOL         XSFile_IsSocket( XSFileRef file );
-BOOL         XSFile_IsUserReadable( XSFileRef file );
-BOOL         XSFile_IsUserWriteable( XSFileRef file );
-BOOL         XSFile_ISUserExecutable( XSFileRef file );
-BOOL         XSFile_IsGroupReadable( XSFileRef file );
-BOOL         XSFile_IsGroupWriteable( XSFileRef file );
-BOOL         XSFile_IsGroupExecutable( XSFileRef file );
-BOOL         XSFile_IsWorldReadable( XSFileRef file );
-BOOL         XSFile_IsWorldWriteable( XSFileRef file );
-BOOL         XSFile_IsWorldExecutable( XSFileRef file );
-BOOL         XSFile_HasSUID( XSFileRef file );
-BOOL         XSFile_HasSGID( XSFileRef file );
+/*!
+ * Returns true if the file is readable
+ */
+BOOL XSFile_IsReadable( XSFileRef file );
+/*!
+ * Returns true if the file is writeable
+ */
+BOOL XSFile_IsWriteable( XSFileRef file );
+/*!
+ * Copies a file to another destination.
+ */
+BOOL XSFile_Copy( char * name, char * new_name );
+/*!
+ * Gets the next bit in the stream
+ */
+XSInteger XSFile_GetBit( XSFileRef file );
+/*!
+ * Writes a bit in the stream
+ */
+XSInteger XSFile_PutBit( XSFileRef file, uint8_t bit );
+/*!
+ * Gets bits from the stream
+ */
+XSInteger XSFile_GetBits( XSFileRef file, XSUInteger count );
+/*!
+ * Writes bits to the stream
+ */
+XSInteger XSFile_PutBits( XSFileRef file, uint64_t bits, XSUInteger count );
+
+dev_t XSFile_DeviceID( XSFileRef file );
+
+ino_t XSFile_SerialNumber( XSFileRef file );
+
+nlink_t XSFile_NumberOfLinks( XSFileRef file );
+
+uid_t XSFile_UID( XSFileRef file );
+
+gid_t XSFile_GID( XSFileRef file );
+
+size_t XSFile_Size( XSFileRef file );
+
+XSFloat XSFile_HumanReadableSize( XSFileRef file, char unit[] );
+
+time_t XSFile_AccessTime( XSFileRef file );
+
+time_t XSFile_ModifictaionTime( XSFileRef file );
+
+time_t XSFile_CreationTime( XSFileRef file );
+
+BOOL XSFile_IsBlockDevice( XSFileRef file );
+
+BOOL XSFile_IsCharacterDevice( XSFileRef file );
+
+BOOL XSFile_IsFIFO( XSFileRef file );
+
+BOOL XSFile_IsRegularFile( XSFileRef file );
+
+BOOL XSFile_IsDirectory( XSFileRef file );
+
+BOOL XSFile_IsLink( XSFileRef file );
+
+BOOL XSFile_IsSocket( XSFileRef file );
+
+BOOL XSFile_IsUserReadable( XSFileRef file );
+
+BOOL XSFile_IsUserWriteable( XSFileRef file );
+
+BOOL XSFile_ISUserExecutable( XSFileRef file );
+
+BOOL XSFile_IsGroupReadable( XSFileRef file );
+
+BOOL XSFile_IsGroupWriteable( XSFileRef file );
+
+BOOL XSFile_IsGroupExecutable( XSFileRef file );
+
+BOOL XSFile_IsWorldReadable( XSFileRef file );
+
+BOOL XSFile_IsWorldWriteable( XSFileRef file );
+
+BOOL XSFile_IsWorldExecutable( XSFileRef file );
+
+BOOL XSFile_HasSUID( XSFileRef file );
+
+BOOL XSFile_HasSGID( XSFileRef file );
 
 XS_EXTERN_C_END
 

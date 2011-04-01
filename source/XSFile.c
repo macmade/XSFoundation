@@ -38,9 +38,41 @@
 #include "XS.h"
 #include "__XSFile.h"
 
-XSFile XSSStdin  = { .stdin  = YES, .need_init = YES };
-XSFile XSSStdout = { .stdout = YES, .need_init = YES };
-XSFile XSSStderr = { .stderr = YES, .need_init = YES };
+/*!
+ * @var         __XSSStdin
+ * @abstract    XSFile structure representing stdin
+ */
+XSFile __XSSStdin   = { .stdin  = YES, .need_init = YES };
+
+/*!
+ * @var         __XSSStdout
+ * @abstract    XSFile structure representing srdout
+ */
+XSFile __XSSStdout  = { .stdout = YES, .need_init = YES };
+
+/*!
+ * @var         __XSSStderr
+ * @abstract    XSFile structure representing stderr
+ */
+XSFile __XSSStderr  = { .stderr = YES, .need_init = YES };
+
+/*!
+ * @var         XSStdin
+ * @abstract    XSFileRef object representing stdin
+ */
+XSFileRef XSStdin   = ( XSFileRef )&__XSSStdin;
+
+/*!
+ * @var         XSStdout
+ * @abstract    XSFileRef object representing stdout
+ */
+XSFileRef XSSStdout = ( XSFileRef )&__XSSStderr;
+
+/*!
+ * @var         XSStderr
+ * @abstract    XSFileRef object representing stderr
+ */
+XSFileRef XSSStderr = ( XSFileRef )&__XSSStderr;
 
 #define __XSFILE_INIT( f )          \
 if( f->need_init == YES )           \
@@ -62,10 +94,63 @@ if( f->need_init == YES )           \
     }                               \
 }
 
-XSFileRef XSFile_Open( const char * filename, const char * mode )
+/*!
+ * @abstract    Creates an XSFileRef instance and opens the represented file.
+ * @description This function may return NULL if the represented file has not
+ *              been opened.
+ * @param       filename    The name of the file
+ * @param       mode        The file open mode (see XSFileOpenMode)
+ * @result      The instance of XSFileRef
+ */
+XSFileRef XSFile_Open( const char * filename, XSFileOpenMode openMode )
 {
     FILE    * fp;
     XSFile  * file;
+    char      mode[ 4 ];
+    BOOL      binary;
+    
+    memset( mode, 0, 4 );
+    
+    binary   = ( openMode & XSFileOpenModeBinary ) ? YES : NO;
+    openMode = openMode & 0xFE;
+    
+    switch( ( int )openMode )
+    {
+        case XSFileOpenModeRead:
+            
+            strcat( mode, ( binary ) ? "rb" : "r" );
+            break;
+            
+        case XSFileOpenModeWrite:
+            
+            strcat( mode, ( binary ) ? "wb" : "r" );
+            break;
+            
+        case XSFileOpenModeAppend:
+            
+            strcat( mode, ( binary ) ? "ab" : "r" );
+            break;
+            
+        case XSFileOpenModeApendAtEnd:
+            
+            strcat( mode, ( binary ) ? "ab+" : "a" );
+            break;
+            
+        case XSFileOpenModeUpdate:
+            
+            strcat( mode, ( binary ) ? "rb+" : "r+" );
+            break;
+            
+        case XSFileOpenModeUpdateDiscard:
+            
+            strcat( mode, ( binary ) ? "wb+" : "w+" );
+            break;
+    }
+    
+    if( binary )
+    {
+        strcat( mode, "b" );
+    }
     
     if( NULL == ( fp = fopen( filename, mode ) ) )
     {
@@ -229,7 +314,7 @@ size_t XSFile_Write( const void * ptr, size_t size, size_t nobj, XSFileRef file 
     return fwrite( ptr, size, nobj, _f->fp );
 }
 
-XSInteger XSFile_Seek( XSFileRef file, XSInteger offset, XSInteger origin )
+XSInteger XSFile_Seek( XSFileRef file, XSInteger offset, XSFileSeekPosition origin )
 {
     XSFile * _f;
     
