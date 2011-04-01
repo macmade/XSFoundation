@@ -30,7 +30,7 @@
 /* $Id$ */
 
 /*!
- * @file        
+ * @file        XSFile.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
  * @abstract    ...
  */
@@ -74,6 +74,12 @@ XSFileRef XSSStdout = ( XSFileRef )&__XSSStderr;
  */
 XSFileRef XSSStderr = ( XSFileRef )&__XSSStderr;
 
+/*!
+ * @define      __XSFILE_INIT
+ * @abstract    File initialization macro
+ * @description This is needed for stdin, stdout and sterr, in order to
+ *              initialize properly XSStdin, XSStdout and XSStderr.
+ */
 #define __XSFILE_INIT( f )          \
 if( f->need_init == YES )           \
 {                                   \
@@ -197,6 +203,12 @@ XSFileRef XSFile_Open( const char * filename, XSFileOpenMode openMode )
     return ( XSFileRef )file;
 }
 
+/*!
+ * @function    
+ * @abstract    Flushes the file stream stream
+ * @param       file    The file object
+ * @result      Zero on success or EOF on error
+ */
 XSInteger XSFile_Flush( XSFileRef file )
 {
     XSFile * _f;
@@ -208,6 +220,14 @@ XSInteger XSFile_Flush( XSFileRef file )
     return fflush( _f->fp );
 }
 
+/*!
+ * @function    XSFile_Close
+ * @abstract    Closes the file stream (after flushing, if output stream)
+ * @discussion  You're still responsible to release the file object after
+ *              calling this function.
+ * @param       file    The file object
+ * @result      EOF on error, zero otherwise.
+ */
 XSInteger XSFile_Close( XSFileRef file )
 {
     XSInteger res;
@@ -224,6 +244,12 @@ XSInteger XSFile_Close( XSFileRef file )
     return res;
 }
 
+/*!
+ * @function    XSFile_Printf
+ * @abstract    Converts (according to format format) and writes output to the file
+ * @param       file    The file object
+ * @result      The number of characters written, or negative value on error
+ */
 XSInteger XSFile_Printf( XSFileRef file, const char * format, ... )
 {
     XSInteger res;
@@ -244,6 +270,13 @@ XSInteger XSFile_Printf( XSFileRef file, const char * format, ... )
     return res;
 }
 
+/*!
+ * @function    XSFile_VPrintf
+ * @abstract    Equivalent to fprintf with variable argument list replaced by arg.
+ * @param       file    The file object
+ * @param       arg     The variable arguments list
+ * @result      The number of characters written, or negative value on error
+ */
 XSInteger XSFile_VPrintf( XSFileRef file, const char * format, va_list arg )
 {
     XSFile * _f;
@@ -256,6 +289,12 @@ XSInteger XSFile_VPrintf( XSFileRef file, const char * format, va_list arg )
     return vfprintf( _f->fp, format, arg );
 }
 
+/*!
+ * @function    XSFile_Getc
+ * @abstract    Returns the next character from the file.
+ * @param       file    The file object
+ * @result      The character or EOF on error
+ */
 XSInteger XSFile_Getc( XSFileRef file )
 {
     XSFile * _f;
@@ -267,7 +306,14 @@ XSInteger XSFile_Getc( XSFileRef file )
     return fgetc( _f->fp );
 }
 
-XSInteger XSFile_Putc( XSInteger c, XSFileRef file )
+/*!
+ * @function    XSFile_Putc
+ * @abstract    Writes a character to the file
+ * @param       file    The file object
+ * @param       c       The character to write
+ * @result      The character or EOF on error
+ */
+XSInteger XSFile_Putc( XSFileRef file, XSInteger c )
 {
     XSFile * _f;
     
@@ -279,7 +325,13 @@ XSInteger XSFile_Putc( XSInteger c, XSFileRef file )
     return fputc( c, _f->fp );
 }
 
-XSInteger XSFile_Puts( const char * s, XSFileRef file )
+/*!
+ * @function    XSFile_Puts
+ * @abstract    Writes a C string to the file
+ * @param       file    The file object
+ * @result      Non-negative on success or EOF on error.
+ */
+XSInteger XSFile_Puts( XSFileRef file, const char * s )
 {
     XSFile * _f;
     
@@ -291,7 +343,16 @@ XSInteger XSFile_Puts( const char * s, XSFileRef file )
     return fputs( s, _f->fp );
 }
 
-size_t XSFile_Read( void * ptr, size_t size, size_t nobj, XSFileRef file )
+/*!
+ * @function    XSFile_Read
+ * @abstract    Reads from the file
+ * @param       file    The file object
+ * @param       ptr     A pointer to the memory location in which the data will be placed.
+ * @param       file    The size of the objects to read
+ * @param       file    The number of objects to read
+ * @result      The number of objects read
+ */
+size_t XSFile_Read( XSFileRef file, void * ptr, size_t size, size_t nobj )
 {
     XSFile * _f;
     
@@ -302,7 +363,16 @@ size_t XSFile_Read( void * ptr, size_t size, size_t nobj, XSFileRef file )
     return fread( ptr, size, nobj, _f->fp );
 }
 
-size_t XSFile_Write( const void * ptr, size_t size, size_t nobj, XSFileRef file )
+/*!
+ * @function    XSFile_Write
+ * @abstract    Writes to the file
+ * @param       file    The file object
+ * @param       ptr     The data to write
+ * @param       file    The size of the objects to write
+ * @param       file    The number of objects to write
+ * @result      The number of objects written
+ */
+size_t XSFile_Write( XSFileRef file, const void * ptr, size_t size, size_t nobj )
 {
     XSFile * _f;
     
@@ -314,6 +384,18 @@ size_t XSFile_Write( const void * ptr, size_t size, size_t nobj, XSFileRef file 
     return fwrite( ptr, size, nobj, _f->fp );
 }
 
+/*!
+ * @function    XSFile_Seek
+ * @abstract    Sets file position for the file and clears end-of-file indicator
+ * @description For a binary stream, file position is set to offset bytes from
+ *              the position indicated by origin: beginning of file for
+ *              SEEK_SET, current position for SEEK_CUR, or end of file for
+ *              SEEK_END. Behaviour is similar for a text stream, but offset
+ *              must be zero or, for SEEK_SET only, a value returned by ftell.
+ * @param       file    The file object
+ * @param       origin  The seek origin (see XSFileSeekPosition)
+ * @result      Non-zero on error.
+ */
 XSInteger XSFile_Seek( XSFileRef file, XSInteger offset, XSFileSeekPosition origin )
 {
     XSFile * _f;
@@ -506,12 +588,15 @@ BOOL XSFile_IsWriteable( XSFileRef file )
     }
 }
 
-BOOL XSFile_Copy( char * name, char * new_name )
+BOOL XSFile_Copy( XSFileRef file, char * new_name )
 {
     FILE        * fp1;
     FILE        * fp2;
     size_t        length;
     unsigned char buffer[ 1024 ];
+    const char  * name;
+    
+    name = XSFile_Filename( file );
     
     if( NULL == ( fp1 = fopen( name, "rb" ) ) )
     {

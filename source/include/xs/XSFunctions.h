@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      
+ * @header      XSFunctions.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    
+ * @abstract    ...
  */
 
 #ifndef _XS_FUNCTIONS_H_

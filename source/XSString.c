@@ -30,9 +30,9 @@
 /* $Id */
 
 /*!
- * @file        
+ * @file        XSString.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    
+ * @abstract    ...
  */
 
 #include "XS.h"

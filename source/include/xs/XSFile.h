@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      
+ * @header      XSFile.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    
+ * @abstract    ...
  */
 
 #ifndef _XS_FILE_H_
@@ -123,184 +123,452 @@ extern XSFileRef XSStderr;
  * @result      The instance of XSFileRef
  */
 XSFileRef XSFile_Open( const char * filename, XSFileOpenMode openMode );
+
 /*!
- * Flushes stream stream and returns zero on success or EOF on error.
- * Effect undefined for input stream. fflush(NULL) flushes all output
- * streams.
+ * @function    
+ * @abstract    Flushes the file stream stream
+ * @param       file    The file object
+ * @result      Zero on success or EOF on error
  */
 XSInteger XSFile_Flush( XSFileRef file );
+
 /*!
- * Closes stream stream (after flushing, if output stream). Returns EOF on
- * error, zero otherwise.
+ * @function    XSFile_Close
+ * @abstract    Closes the file stream (after flushing, if output stream)
+ * @discussion  You're still responsible to release the file object after
+ *              calling this function.
+ * @param       file    The file object
+ * @result      EOF on error, zero otherwise.
  */
 XSInteger XSFile_Close( XSFileRef file );
+
 /*!
- * Converts (according to format format) and writes output to stream stream.
- * Number of characters written, or negative value on error, is returned.
+ * @function    XSFile_Printf
+ * @abstract    Converts (according to format format) and writes output to the file
+ * @param       file    The file object
+ * @result      The number of characters written, or negative value on error
  */
 XSInteger XSFile_Printf( XSFileRef file, const char * format, ... );
+
 /*!
- * Equivalent to fprintf with variable argument list replaced by arg, which must
- * have been initialised by the va_start macro (and may have been used in calls
- * to va_arg).
+ * @function    XSFile_VPrintf
+ * @abstract    Equivalent to fprintf with variable argument list replaced by arg.
+ * @param       file    The file object
+ * @param       arg     The variable arguments list
+ * @result      The number of characters written, or negative value on error
  */
 XSInteger XSFile_VPrintf( XSFileRef file, const char * format, va_list arg );
+
 /*!
- * Returns next character from (input) stream stream, or EOF on end-of-file
- * or error.
+ * @function    XSFile_Getc
+ * @abstract    Returns the next character from the file.
+ * @param       file    The file object
+ * @result      The character or EOF on error
  */
 XSInteger XSFile_Getc( XSFileRef file );
+
 /*!
- * Writes c, to stream stream. Returns c, or EOF on error.
+ * @function    XSFile_Putc
+ * @abstract    Writes a character to the file
+ * @param       file    The file object
+ * @param       c       The character to write
+ * @result      The character or EOF on error
  */
-XSInteger XSFile_Putc( XSInteger c, XSFileRef file );
+XSInteger XSFile_Putc( XSFileRef file, XSInteger c );
+
 /*!
- * Writes s, to (output) stream stream. Returns non-negative on success or
- * EOF on error.
+ * @function    XSFile_Puts
+ * @abstract    Writes a C string to the file
+ * @param       file    The file object
+ * @result      Non-negative on success or EOF on error.
  */
-XSInteger XSFile_Puts( const char * s, XSFileRef file );
+XSInteger XSFile_Puts( XSFileRef file, const char * s );
+
 /*!
- * Reads (at most) nobj objects of size size from stream stream into ptr and
- * returns number of objects read. (feof and ferror can be used to check
- * status.)
+ * @function    XSFile_Read
+ * @abstract    Reads from the file
+ * @param       file    The file object
+ * @param       ptr     A pointer to the memory location in which the data will be placed.
+ * @param       file    The size of the objects to read
+ * @param       file    The number of objects to read
+ * @result      The number of objects read
  */
-size_t XSFile_Read( void * ptr, size_t size, size_t nobj, XSFileRef file );
+size_t XSFile_Read( XSFileRef file, void * ptr, size_t size, size_t nobj );
+
 /*!
- * Writes to stream stream, nobj objects of size size from array ptr.
- * Returns number of objects written.
+ * @function    XSFile_Write
+ * @abstract    Writes to the file
+ * @param       file    The file object
+ * @param       ptr     The data to write
+ * @param       file    The size of the objects to write
+ * @param       file    The number of objects to write
+ * @result      The number of objects written
  */
-size_t XSFile_Write( const void * ptr, size_t size, size_t nobj, XSFileRef file );
+size_t XSFile_Write( XSFileRef file, const void * ptr, size_t size, size_t nobj );
+
 /*!
- * Sets file position for stream stream and clears end-of-file indicator.
- * For a binary stream, file position is set to offset bytes from the
- * position indicated by origin: beginning of file for SEEK_SET, current
- * position for SEEK_CUR, or end of file for SEEK_END. Behaviour is similar
- * for a text stream, but offset must be zero or, for SEEK_SET only, a value
- * returned by ftell.
- * Returns non-zero on error.
+ * @function    XSFile_Seek
+ * @abstract    Sets file position for the file and clears end-of-file indicator
+ * @description For a binary stream, file position is set to offset bytes from
+ *              the position indicated by origin: beginning of file for
+ *              SEEK_SET, current position for SEEK_CUR, or end of file for
+ *              SEEK_END. Behaviour is similar for a text stream, but offset
+ *              must be zero or, for SEEK_SET only, a value returned by ftell.
+ * @param       file    The file object
+ * @param       origin  The seek origin (see XSFileSeekPosition)
+ * @result      Non-zero on error.
  */
 XSInteger XSFile_Seek( XSFileRef file, XSInteger offset, XSFileSeekPosition origin );
+
 /*!
- * Returns current file position for stream stream, or -1 on error.
+ * @function    XSFile_Tell
+ * @abstract    Gets the current file position
+ * @param       file    The file object
+ * @result      The position or -1 on error
  */
 XSInteger XSFile_Tell( XSFileRef file );
+
 /*!
- * Equivalent to fseek( stream, 0L, SEEK_SET ); clearerr( stream ).
+ * @function    XSFile_Rewind
+ * @abstract    Rewinds to the beginning of the file and clears the error indicators
+ * return       void
  */
 void XSFile_Rewind( XSFileRef file );
+
 /*!
- * Stores current file position for stream stream in * ptr.
- * Returns non-zero on error.
+ * @function    
+ * @abstract    Stores current file position for stream stream in * ptr. Returns non-zero on error
+ * @param       file    The file object
+ * result       
  */
 XSInteger XSFile_GetPos( XSFileRef file, fpos_t * ptr );
+
 /*!
- * Sets current position of stream stream to * ptr.
- * Returns non-zero on error.
+ * @function    
+ * @abstract    Sets current position of stream stream to * ptr. Returns non-zero on error
+ * @param       file    The file object
+ * result       
  */
 XSInteger XSFile_SetPos( XSFileRef file, const fpos_t * ptr );
+
 /*!
- * Clears end-of-file and error indicators for stream stream.
+ * @function    
+ * @abstract    Clears end-of-file and error indicators for stream stream
+ * @param       file    The file object
+ * result       
  */
 void XSFile_ClearErr( XSFileRef file );
+
 /*!
- * Returns non-zero if end-of-file indicator is set for stream stream.
+ * @function    
+ * @abstract    Returns non-zero if end-of-file indicator is set for stream stream
+ * @param       file    The file object
+ * result       
  */
 XSInteger XSFile_EndOfFile( XSFileRef file );
+
 /*!
- * Returns non-zero if error indicator is set for stream stream.
+ * @function    
+ * @abstract    Returns non-zero if error indicator is set for stream stream
+ * @param       file    The file object
+ * result       
  */
 XSInteger XSFile_Error( XSFileRef file );
+
 /*!
- * Gets the filename associated to the stream-
+ * @function    
+ * @abstract    Gets the filename associated to the stream
+ * @param       file    The file object
+ * result       
  */
 const char * XSFile_Filename( XSFileRef file );
+
 /*!
- * Gets the stream's open mode
+ * @function    
+ * @abstract    Gets the stream's open mode
+ * @param       file    The file object
+ * result       
  */
 const char * XSFile_OpenMode( XSFileRef file );
+
 /*!
- * Returns true if the file is readable
+ * @function    
+ * @abstract    Returns true if the file is readable
+ * @param       file    The file object
+ * result       
  */
 BOOL XSFile_IsReadable( XSFileRef file );
+
 /*!
- * Returns true if the file is writeable
+ * @function    
+ * @abstract    Returns true if the file is writeable
+ * @param       file    The file object
+ * result       
  */
 BOOL XSFile_IsWriteable( XSFileRef file );
+
 /*!
- * Copies a file to another destination.
+ * @function    
+ * @abstract    Copies a file to another destination
+ * @param       file    The file object
+ * result       
  */
-BOOL XSFile_Copy( char * name, char * new_name );
+BOOL XSFile_Copy( XSFileRef file, char * new_name );
+
 /*!
- * Gets the next bit in the stream
+ * @function    
+ * @abstract    Gets the next bit in the stream
+ * @param       file    The file object
+ * result       
  */
 XSInteger XSFile_GetBit( XSFileRef file );
+
 /*!
- * Writes a bit in the stream
+ * @function    
+ * @abstract    Writes a bit in the stream
+ * @param       file    The file object
+ * result       
  */
 XSInteger XSFile_PutBit( XSFileRef file, uint8_t bit );
+
 /*!
- * Gets bits from the stream
+ * @function    
+ * @abstract    Gets bits from the stream
+ * @param       file    The file object
+ * result       
  */
 XSInteger XSFile_GetBits( XSFileRef file, XSUInteger count );
+
 /*!
- * Writes bits to the stream
+ * @function    
+ * @abstract    Write bits to the file
+ * @param       file    The file object
+ * result       
  */
 XSInteger XSFile_PutBits( XSFileRef file, uint64_t bits, XSUInteger count );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 dev_t XSFile_DeviceID( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 ino_t XSFile_SerialNumber( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 nlink_t XSFile_NumberOfLinks( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 uid_t XSFile_UID( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 gid_t XSFile_GID( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 size_t XSFile_Size( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 XSFloat XSFile_HumanReadableSize( XSFileRef file, char unit[] );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 time_t XSFile_AccessTime( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 time_t XSFile_ModifictaionTime( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 time_t XSFile_CreationTime( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 BOOL XSFile_IsBlockDevice( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 BOOL XSFile_IsCharacterDevice( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 BOOL XSFile_IsFIFO( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 BOOL XSFile_IsRegularFile( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 BOOL XSFile_IsDirectory( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 BOOL XSFile_IsLink( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 BOOL XSFile_IsSocket( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 BOOL XSFile_IsUserReadable( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 BOOL XSFile_IsUserWriteable( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 BOOL XSFile_ISUserExecutable( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 BOOL XSFile_IsGroupReadable( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 BOOL XSFile_IsGroupWriteable( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 BOOL XSFile_IsGroupExecutable( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 BOOL XSFile_IsWorldReadable( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 BOOL XSFile_IsWorldWriteable( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 BOOL XSFile_IsWorldExecutable( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 BOOL XSFile_HasSUID( XSFileRef file );
 
+/*!
+ * @function    
+ * @abstract    
+ * @param       file    The file object
+ * result       
+ */
 BOOL XSFile_HasSGID( XSFileRef file );
 
 XS_EXTERN_C_END
