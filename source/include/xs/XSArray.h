@@ -117,9 +117,9 @@ void XSArray_InsertValueAtIndex( XSArrayRef array, void * value, XSUInteger i );
  * @param       array   The array object
  * @param       value   The value to insert
  * @param       i       The index in the array
- * @result      void
+ * @result      The old value
  */
-void XSArray_ReplaceValueAtIndex( XSArrayRef array, void * value, XSUInteger i );
+void * XSArray_ReplaceValueAtIndex( XSArrayRef array, void * value, XSUInteger i );
 
 /*!
  * @function    XSArray_GetValueAtIndex

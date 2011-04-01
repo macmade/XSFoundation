@@ -45,7 +45,7 @@
  */
 XSArrayRef XSArray_Create( void )
 {
-    return ( XSArrayRef )__XSArray_Alloc();
+    return XSArray_CreateWithCapacity( XSARRAY_DEFAULT_CAPACITY );
 }
 
 /*!
@@ -56,23 +56,80 @@ XSArrayRef XSArray_Create( void )
  */
 XSArrayRef XSArray_CreateWithCapacity( XSUInteger capacity )
 {
+    void    * store;
+    XSArray * array;
+    
+    if( NULL == ( store = XSAlloc( capacity * sizeof( void * ) ) ) )
+    {
+        return NULL;
+    }
+    
+    array           = __XSArray_Alloc();
+    array->values   = store;
+    array->capacity = capacity;
+    
     ( void )capacity;
     
-    return NULL;
+    return ( XSArrayRef )array;
 }
 
 /*!
- * @function    XSArray_CreateWithObjects
- * @abstract    Creates an array by inserting objects.
- * @param       array   The array object
- * @param       ...     The objects to insert. Must be terminated by a NULL fence
+ * @function    XSArray_CreateWithValues
+ * @abstract    Creates an array by inserting values.
+ * @param       value1  The first value to insert
+ * @param       ...     The values to insert. Must be terminated by a NULL fence
  * @result      The array object
  */
-XSArrayRef XSArray_CreateWithObjects( XSArrayRef array, ... )
+XSArrayRef XSArray_CreateWithValues( void * value1, ... )
 {
-    ( void )array;
+    va_list    args;
+    XSArray  * array;
+    void     * value;
+    void     * store;
+    XSUInteger values;
     
-    return NULL;
+    va_start( args, value1 );
+    
+    array = ( XSArray * )XSArray_Create();
+    
+    if( value1 == NULL )
+    {
+        return ( XSArrayRef )array;
+    }
+    
+    values                    = 0;
+    array->values[ values++ ] = XSRetain( value1 );
+    
+    while( NULL != ( value = va_arg( args, void * ) ) )
+    {
+        if( values == XSARRAY_DEFAULT_CAPACITY )
+        {
+            if( NULL == ( store = XSRealloc( array->values, ( values + XSARRAY_DEFAULT_CAPACITY ) * sizeof( void * ) ) ) )
+            {
+                XSRelease( array );
+                
+                return NULL;
+            }
+            
+            array->values = store;
+        }
+        
+        array->values[ values++ ] = XSRetain( value );
+    }
+    
+    return ( XSArrayRef )array;
+}
+
+/*!
+ * @function    XSArray_Count
+ * @abstract    Gets the number of values in the array
+ * @description The inserted value will be automatically retained.
+ * @param       array   The array object
+ * @result      The number of values in the array
+ */
+XSUInteger XSArray_Count( XSArrayRef array )
+{
+    return ( ( XSArray * )array )->count;
 }
 
 /*!
@@ -85,13 +142,27 @@ XSArrayRef XSArray_CreateWithObjects( XSArrayRef array, ... )
  */
 void XSArray_AppendValue( XSArrayRef array, void * value )
 {
-    ( void )array;
-    ( void )value;
+    XSArray * _array;
+    void    * store;
+    
+    _array = ( XSArray * )array;
+    
+    if( _array->count == _array->capacity )
+    {
+        if( NULL == ( store = XSRealloc( _array->values, ( _array->count + _array->capacity ) * sizeof( void * ) ) ) )
+        {
+            return;
+        }
+        
+        _array->values = store;
+    }
+    
+    _array->values[ _array->count++ ] = XSRetain( value );
 }
 
 /*!
  * @function    XSArray_InsertValueAtIndex
- * @abstract    
+ * @abstract    Insert a value at a specific index
  * @description The appended value will be automatically retained.
  * @param       array   The array object
  * @param       value   The value to insert
@@ -100,6 +171,10 @@ void XSArray_AppendValue( XSArrayRef array, void * value )
  */
 void XSArray_InsertValueAtIndex( XSArrayRef array, void * value, XSUInteger i )
 {
+    XSArray * _array;
+    
+    _array = ( XSArray * )array;
+    
     ( void )array;
     ( void )value;
     ( void )i;
@@ -107,35 +182,58 @@ void XSArray_InsertValueAtIndex( XSArrayRef array, void * value, XSUInteger i )
 
 /*!
  * @function    XSArray_ReplaceValueAtIndex
- * @abstract    
- * @description The inserted value will be automatically retained.
+ * @abstract    Replace the value at a specific index with a new value
+ * @description The new value will be automatically retained, and the old value
+ *              will be released.
  * @param       array   The array object
  * @param       value   The value to insert
  * @param       i       The index in the array
- * @result      void
+ * @result      The old value
  */
-void XSArray_ReplaceValueAtIndex( XSArrayRef array, void * value, XSUInteger i )
+void * XSArray_ReplaceValueAtIndex( XSArrayRef array, void * value, XSUInteger i )
 {
-    ( void )array;
-    ( void )value;
-    ( void )i;
+    XSArray * _array;
+    void    * old;
+    
+    _array = ( XSArray * )array;
+    
+    if( i > _array->count )
+    {
+        return NULL;
+    }
+    
+    old                 = _array->values[ i ];
+    _array->values[ i ] = XSRetain( value );
+    
+    if( XSGetRetainCount( old ) == 1 )
+    {
+        XSRelease( old );
+        
+        return NULL;
+    }
+    
+    return XSRelease( old );
 }
 
 /*!
  * @function    XSArray_GetValueAtIndex
- * @abstract    
- * @description The new value will be automatically retained, and the old value
- *              will be released.
+ * @abstract    Gets the value at a specific index
  * @param       array   The array object
  * @param       i       The index in the array
  * @result      The array value
  */
 void * XSArray_GetValueAtIndex( XSArrayRef array, XSUInteger i )
 {
-    ( void )array;
-    ( void )i;
+    XSArray * _array;
     
-    return NULL;
+    _array = ( XSArray * )array;
+    
+    if( i > _array->count )
+    {
+        return NULL;
+    }
+    
+    return _array->values[ i ];
 }
 
 /*!
@@ -147,8 +245,37 @@ void * XSArray_GetValueAtIndex( XSArrayRef array, XSUInteger i )
  */
 void * XSArray_RemoveValueAtIndex( XSArrayRef array, XSUInteger i )
 {
+    XSArray * _array;
+    
+    _array = ( XSArray * )array;
+    
     ( void )array;
     ( void )i;
     
     return NULL;
+}
+
+/*!
+ * @function    XSArray_ContainsValue
+ * @abstract    Checks if the array contains a specific value
+ * @param       array   The array object
+ * @param       array   The value to search
+ * @result      YES if the array contains the value, otherwise NO
+ */
+BOOL XSArray_ContainsValue( XSArrayRef array, void * value )
+{
+    XSArray  * _array;
+    XSUInteger i;
+    
+    _array = ( XSArray * )array;
+    
+    for( i = 0; i < _array->count; i++ )
+    {
+        if( _array->values[ i ] == value )
+        {
+            return YES;
+        }
+    }
+    
+    return NO;
 }
