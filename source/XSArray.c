@@ -238,13 +238,13 @@ void * XSArray_ReplaceValueAtIndex( XSArrayRef array, void * value, XSUInteger i
 }
 
 /*!
- * @function    XSArray_GetValueAtIndex
+ * @function    XSArray_ValueAtIndex
  * @abstract    Gets the value at a specific index
  * @param       array   The array object
  * @param       i       The index in the array
  * @result      The array value
  */
-void * XSArray_GetValueAtIndex( XSArrayRef array, XSUInteger i )
+void * XSArray_ValueAtIndex( XSArrayRef array, XSUInteger i )
 {
     XSArray * _array;
     

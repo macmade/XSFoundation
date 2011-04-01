@@ -79,7 +79,7 @@ int main( void )
     printf( "%s%s%s\n", XSString_CString( str1 ), XSString_CString( str2 ), XSString_CString( str3 ) );
     
     XSLog( "hello, universe: %i %@ %i %@ %i", 42, str1, 43, ap1, 44 );
-    XSLog( "Array value 0: %@", XSArray_GetValueAtIndex( arr, 0 ) );
+    XSLog( "Array value 0: %@", XSArray_ValueAtIndex( arr, 0 ) );
     
     XSThread_Detach( thread_test, NULL );
     XSThread_Detach( thread_test, str1 );
