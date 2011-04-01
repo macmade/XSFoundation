@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		056003BB1340621F005DC721 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		056003BB1340621F005DC721 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
 		056003BC1340621F005DC721 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		056003BE1340621F005DC721 /* __XSMemory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemory.c; sourceTree = "<group>"; };
 		056003C51340621F005DC721 /* std-ascii.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-ascii.h"; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 		05AC166113418E7100455568 /* __XSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSString.h; sourceTree = "<group>"; };
 		05AC166213418E7100455568 /* __XSTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSTree.h; sourceTree = "<group>"; };
 		05AC166313418E7100455568 /* __XSURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSURL.h; sourceTree = "<group>"; };
-		05AC166A134192BF00455568 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
+		05AC166A134192BF00455568 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		05AC166C1341DD7800455568 /* __XSThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSThread.h; sourceTree = "<group>"; };
 		05AC166D1341DDDA00455568 /* XSThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSThread.h; sourceTree = "<group>"; };
 		05AC166E1341DE2A00455568 /* __XSThread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSThread.c; sourceTree = "<group>"; };
@@ -90,8 +90,8 @@
 		056003A813406206005DC721 = {
 			isa = PBXGroup;
 			children = (
-				05AC166A134192BF00455568 /* README.mdown */,
-				056003BB1340621F005DC721 /* LICENSE.txt */,
+				05AC166A134192BF00455568 /* README.md */,
+				056003BB1340621F005DC721 /* LICENSE.md */,
 				056003BC1340621F005DC721 /* Makefile */,
 				056003ED13409910005DC721 /* test.c */,
 				056003BD1340621F005DC721 /* source */,
