@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @file        
+ * @file        XSMemory.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    
+ * @abstract    Memory management
  */
 
 #include "XS.h"
