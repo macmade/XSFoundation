@@ -184,7 +184,7 @@ void XSArray_InsertValueAtIndex( XSArrayRef array, void * value, XSUInteger i )
     
     if( _array->count + 1 > _array->capacity )
     {
-        if( NULL == ( store = XSRealloc( ( _array->count + _array->capacity ) * sizeof( void * ) ) ) )
+        if( NULL == ( store = XSRealloc( _array->values, ( _array->count + _array->capacity ) * sizeof( void * ) ) ) )
         {
             return;
         }
