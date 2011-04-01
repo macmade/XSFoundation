@@ -73,6 +73,14 @@ void __XSArray_Initialize( void );
  */
 XSArray * __XSArray_Alloc( void );
 
+/*!
+ * @function    __XSString_Dealloc
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSArray_Dealloc( void * object );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_ARRAY_H_ */

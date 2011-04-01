@@ -44,6 +44,12 @@
 XS_EXTERN_C_BEGIN
 
 /*!
+ * @define      __XSARRAY_DEFAULT_CAPACITY
+ * @abstract    Default capacity for the empty arrays
+ */
+#define XSARRAY_DEFAULT_CAPACITY    256
+
+/*!
  * @typedef     XSArrayRef
  * @abstract    Opaque type for the XSArray objects
  */
@@ -65,13 +71,22 @@ XSArrayRef XSArray_Create( void );
 XSArrayRef XSArray_CreateWithCapacity( XSUInteger capacity );
 
 /*!
- * @function    XSArray_CreateWithObjects
- * @abstract    Creates an array by inserting objects.
- * @param       array   The array object
- * @param       ...     The objects to insert. Must be terminated by a NULL fence
+ * @function    XSArray_CreateWithValues
+ * @abstract    Creates an array by inserting values.
+ * @param       value1  The first value to insert
+ * @param       ...     The values to insert. Must be terminated by a NULL fence
  * @result      The array object
  */
-XSArrayRef XSArray_CreateWithObjects( XSArrayRef array, ... );
+XSArrayRef XSArray_CreateWithValues( void * value1, ... );
+
+/*!
+ * @function    XSArray_Count
+ * @abstract    Gets the number of values in the array
+ * @description The inserted value will be automatically retained.
+ * @param       array   The array object
+ * @result      The number of values in the array
+ */
+XSUInteger XSArray_Count( XSArrayRef array );
 
 /*!
  * @function    XSArray_AppendValue
@@ -85,8 +100,8 @@ void XSArray_AppendValue( XSArrayRef array, void * value );
 
 /*!
  * @function    XSArray_InsertValueAtIndex
- * @abstract    
- * @description The appended value will be automatically retained.
+ * @abstract    Insert a value at a specific index
+ * @description The inserted value will be automatically retained.
  * @param       array   The array object
  * @param       value   The value to insert
  * @param       i       The index in the array
@@ -96,8 +111,9 @@ void XSArray_InsertValueAtIndex( XSArrayRef array, void * value, XSUInteger i );
 
 /*!
  * @function    XSArray_ReplaceValueAtIndex
- * @abstract    
- * @description The inserted value will be automatically retained.
+ * @abstract    Replace the value at a specific index with a new value
+ * @description The new value will be automatically retained, and the old value
+ *              will be released.
  * @param       array   The array object
  * @param       value   The value to insert
  * @param       i       The index in the array
@@ -107,9 +123,7 @@ void XSArray_ReplaceValueAtIndex( XSArrayRef array, void * value, XSUInteger i )
 
 /*!
  * @function    XSArray_GetValueAtIndex
- * @abstract    
- * @description The new value will be automatically retained, and the old value
- *              will be released.
+ * @abstract    Gets the value at a specific index
  * @param       array   The array object
  * @param       i       The index in the array
  * @result      The array value
@@ -124,6 +138,15 @@ void * XSArray_GetValueAtIndex( XSArrayRef array, XSUInteger i );
  * @result      The removed value
  */
 void * XSArray_RemoveValueAtIndex( XSArrayRef array, XSUInteger i );
+
+/*!
+ * @function    XSArray_ContainsValue
+ * @abstract    Checks if the array contains a specific value
+ * @param       array   The array object
+ * @param       array   The value to search
+ * @result      YES if the array contains the value, otherwise NO
+ */
+BOOL XSArray_ContainsValue( XSArrayRef array, void * value );
 
 XS_EXTERN_C_END
 
