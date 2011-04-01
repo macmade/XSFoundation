@@ -56,10 +56,10 @@ XSArrayRef XSArray_Create( void )
  */
 XSArrayRef XSArray_CreateWithCapacity( XSUInteger capacity )
 {
-    void    * store;
-    XSArray * array;
+    void    ** store;
+    XSArray  * array;
     
-    if( NULL == ( store = XSAlloc( capacity * sizeof( void * ) ) ) )
+    if( NULL == ( store = ( void ** )XSAlloc( capacity * sizeof( void * ) ) ) )
     {
         return NULL;
     }

@@ -120,9 +120,13 @@ void * XSAlloc( size_t size, ... )
         return NULL;
     }
     
-    if( typeID > 0 )
+    if( typeID > 0 && XSRuntime_GetClassForTypeID( typeID ) != NULL )
     {
         o->typeID = typeID;
+    }
+    else
+    {
+        typeID = 0;
     }
     
     o->retain_count = 1;
