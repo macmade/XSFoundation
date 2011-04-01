@@ -46,7 +46,7 @@ static const XSRuntimeClass __XSArrayClass =
 {
     "XSArray",          /* Class name */
     NULL,               /* Constructor */
-    NULL,               /* Destructor */
+    __XSArray_Dealloc,  /* Destructor */
     NULL,               /* Object copy */
     NULL                /* Object description */
 };
@@ -75,4 +75,23 @@ void __XSArray_Initialize( void )
 XSArray * __XSArray_Alloc( void )
 {
     return ( XSArray * )XSRuntime_CreateInstance( __XSArrayTypeID, sizeof( XSArray ) );
+}
+
+/*!
+ * @function    __XSString_Dealloc
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSArray_Dealloc( void * object )
+{
+    XSArray  * array;
+    XSUInteger i;
+    
+    array = ( XSArray * )object;
+    
+    for( i = 0; i < array->count; i++ )
+    {
+        XSRelease( array->values[ i ] );
+    }
 }
