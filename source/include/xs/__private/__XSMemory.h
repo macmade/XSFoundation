@@ -71,14 +71,18 @@ XSAutoreleasePool;
  * @field       retain_count    The object's retain count
  * @field       size            The allocated data size
  * @field       typeID          The typeID (only for allocated objects)
+ * @field       f1              Memory fence to prevent overflows
  * @field       data            A pointer to the allocated data
+ * @field       f2              Memory fence to prevent overflows
  */
 typedef struct ___XSMemoryObject
 {
     XSUInteger    retain_count;
     size_t        size;
     XSTypeID      typeID;
+    unsigned char f1[ 256 ];
     void        * data;
+    unsigned char f2[ 256 ];
 }
 __XSMemoryObject;
 
