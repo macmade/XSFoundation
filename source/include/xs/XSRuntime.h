@@ -45,11 +45,59 @@ XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
+/*!
+ * @function    XSRuntime_Initialize
+ * @abstract    Initialize the XSFoundation runtime.
+ * @description Do not call this function. Use the XSFOUNDATION_START()
+ *              macro instead.
+ * @result      void
+ */
 void XSRuntime_Initialize( void );
+
+/*!
+ * @function    XSRuntime_Finalize
+ * @abstract    Finilization the XSFoundation runtime.
+ * @description Do not call this function. Use the XSFOUNDATION_END()
+ *              macro instead.
+ * @result      void
+ */
 void XSRuntime_Finalize( void );
+
+/*!
+ * @function    XSRuntime_RegisterClass
+ * @abstract    Registers a class for the runtime
+ * @description All runtime classes needs to be registered before the runtime
+ *              can use them and create instances.
+ *              This function needs to be called once per class,
+ *              ie using pthread_once().
+ * @param       cls     The class structure to register
+ * @result      The runtime type ID for the class
+ */
 XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls );
+
+/*!
+ * @function    XSRuntime_CreateInstance
+ * @abstract    Creates a new instance of a registered class
+ * @param       The type ID of the class
+ * @param       The size of the object structure for the class
+ * @result      The allocated instance
+ */
 XSTypeRef XSRuntime_CreateInstance( XSTypeID typeID, size_t extraBytes );
+
+/*!
+ * @function    XSRuntime_GetClassForTypeID
+ * @abstract    Gets the class structure for a specific type ID
+ * @param       The type ID of the class
+ * @result      The class corresponding to the type ID
+ */
 Class XSRuntime_GetClassForTypeID( XSTypeID typeID );
+
+/*!
+ * @function    XSRuntime_GetClassForTypeID
+ * @abstract    Gets the type ID for a specific class
+ * @param       The class
+ * @result      The type ID of the class
+ */
 XSTypeID XSRuntime_GetTypeIDForClass( Class cls );
     
 XS_EXTERN_C_END

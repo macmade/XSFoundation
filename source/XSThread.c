@@ -38,6 +38,7 @@
 #include "XS.h"
 #include "__XSThread.h"
 
+/* Prototypes for the private functions */
 extern void * __XSThread_Run( void * thread );
 
 /*!

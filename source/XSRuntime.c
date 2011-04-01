@@ -37,14 +37,44 @@
 
 #include "XS.h"
 
+/*!
+ * define       __XS_RUNTIME_CLASS_TABLE_SIZE
+ * @abstract    Default allocation size for the runtime class table
+ */
 #define __XS_RUNTIME_CLASS_TABLE_SIZE   1024
+
+/*!
+ * define       __XS_RUNTINE_INIT_CHECK
+ * @abstract    Checks if the runtime has been initialized
+ * @description This macro will produce a fatal error if the runtime has not been initialized.
+ */
 #define __XS_RUNTINE_INIT_CHECK         if( __inited == NO ) { XSFatalError( "Error: the runtime has not been initialized\n" ) }
 
+/*!
+ * @var         __inited
+ * @abstract    Whether the XSFoundation runtime has been initialized
+ */
 static BOOL              __inited = NO;
+
+/*!
+ * @var         __class_table
+ * @abstract    The runtime class table
+ */
 static XSRuntimeClass ** __class_table;
+
+/*!
+ * @var         __class_size
+ * @abstract    The allocated size of the runtime class table
+ */
 static size_t            __class_size;
+
+/*!
+ * @var         __class_count
+ * @abstract    The number of registered classes in the runtime class table
+ */
 static size_t            __class_count;
 
+/* Prototypes for the initialization of the core runtime classes */
 void __XSMemoryObject_Initialize( void );
 void __XSAutoreleasePool_Initialize( void );
 void __XSFile_Initialize( void );
@@ -60,6 +90,13 @@ void __XSThread_Initialize( void );
 void __XSTree_Initialize( void );
 void __XSURL_Initialize( void );
 
+/*!
+ * @function    XSRuntime_Initialize
+ * @abstract    Initialize the XSFoundation runtime.
+ * @description Do not call this function. Use the XSFOUNDATION_START()
+ *              macro instead.
+ * @result      void
+ */
 void XSRuntime_Initialize( void )
 {
     __inited = YES;
@@ -81,6 +118,13 @@ void XSRuntime_Initialize( void )
     __XSURL_Initialize();
 }
 
+/*!
+ * @function    XSRuntime_Finalize
+ * @abstract    Finilization the XSFoundation runtime.
+ * @description Do not call this function. Use the XSFOUNDATION_END()
+ *              macro instead.
+ * @result      void
+ */
 void XSRuntime_Finalize( void )
 {
     __inited = NO;
@@ -88,6 +132,16 @@ void XSRuntime_Finalize( void )
     free( __class_table );
 }
 
+/*!
+ * @function    XSRuntime_RegisterClass
+ * @abstract    Registers a class for the runtime
+ * @description All runtime classes needs to be registered before the runtime
+ *              can use them and create instances.
+ *              This function needs to be called once per class,
+ *              ie using pthread_once().
+ * @param       cls     The class structure to register
+ * @result      The runtime type ID for the class
+ */
 XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls )
 {
     __XS_RUNTINE_INIT_CHECK
@@ -119,6 +173,13 @@ XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls )
     return ++__class_count;
 }
 
+/*!
+ * @function    XSRuntime_CreateInstance
+ * @abstract    Creates a new instance of a registered class
+ * @param       The type ID of the class
+ * @param       The size of the object structure for the class
+ * @result      The allocated instance
+ */
 XSTypeRef XSRuntime_CreateInstance( XSTypeID typeID, size_t extraBytes )
 {
     XSRuntimeBase  * b;
@@ -142,6 +203,12 @@ XSTypeRef XSRuntime_CreateInstance( XSTypeID typeID, size_t extraBytes )
     return o;
 }
 
+/*!
+ * @function    XSRuntime_GetClassForTypeID
+ * @abstract    Gets the class structure for a specific type ID
+ * @param       The type ID of the class
+ * @result      The class corresponding to the type ID
+ */
 Class XSRuntime_GetClassForTypeID( XSTypeID typeID )
 {
     if( typeID > __class_count )
@@ -152,7 +219,12 @@ Class XSRuntime_GetClassForTypeID( XSTypeID typeID )
     return ( Class )__class_table[ typeID - 1 ];
 }
 
-
+/*!
+ * @function    XSRuntime_GetClassForTypeID
+ * @abstract    Gets the type ID for a specific class
+ * @param       The class
+ * @result      The type ID of the class
+ */
 XSTypeID XSRuntime_GetTypeIDForClass( Class cls )
 {
     XSUInteger       i;
