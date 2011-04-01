@@ -51,16 +51,106 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct XSAutoreleasePool * XSAutoreleasePoolRef;
 
+/*!
+ * @function    XSAutoreleasePool_Create
+ * @abstract    Creates a new auto-release pool
+ * @description The newly created pool will be set as the active one, meaning
+ *              objects auto-released after the pool creation will be placed
+ *              inside it.
+ * @result      The new auto-release pool object
+ */
 XSAutoreleasePoolRef XSAutoreleasePool_Create( void );
-void                 XSAutoreleasePool_Drain( void );
 
-void     * XSAlloc( size_t size, ... );
-void     * XSRealloc( void * ptr, size_t size );
-void       XSRetain( void * ptr );
-void       XSRelease( void * ptr );
-void     * XSAutoAlloc( size_t size );
-void       XSAutorelease( void * ptr );
-void     * XSCopy( void * ptr );
+/*!
+ * @function    XSAutoreleasePool_Drain
+ * @abstract    Removes objects from the current auto-release pool, sending the a release message.
+ * @result      void
+ */
+void XSAutoreleasePool_Drain( void );
+
+/*!
+ * @function    XSAlloc
+ * @abstract    Allocates memory
+ * descriton    Returned pointer will have to be passed to the XSRelease
+ *              function in order to be free.
+ * @param       size    The number of bytes to allocate
+ * @param       ...     Reserved for internal runtime use
+ * @result      A pointer to the allocated memory
+ */
+void * XSAlloc( size_t size, ... );
+
+/*!
+ * @function    XSRealloc
+ * @abstract    Reallocates memory
+ * @param       ptr     The pointer to reallocate
+ * @param       size    The new size in bytes
+ * @result      The new pointer to the reallocated memory
+ */
+void * XSRealloc( void * ptr, size_t size );
+
+/*!
+ * @function    XSRetain
+ * @abstract    Retains a memory pointer, preventing it to be freed
+ * @description When retaining an object, the internal retain count is
+ *              incremented. It means you own an object that you retain, and
+ *              that you are responsible to release it using XSRelease.
+ * @param       ptr     The pointer to retain
+ * @result      void
+ */
+void XSRetain( void * ptr );
+
+/*!
+ * @function    XSRelease
+ * @abstract    Releases a memory pointer
+ * @description When releasing an object, the internal retain count is
+ *              decremented. When it reaches 0, the pointer will be
+ *              automatically freed.
+ * @param       ptr     The pointer to release
+ * @result      void
+ */
+void XSRelease( void * ptr );
+
+/*!
+ * @function    XSAutorelease
+ * @abstract    Marks a memory pointer as auto-releasable
+ * @description The pointer will be placed in the instance of the current
+ *              auto-release pool, and will receive a release message the next
+ *              the auto-release pool is drained.
+ * @param       The memory pointer to mark as auto-releasable
+ * @result      void
+ */
+void XSAutorelease( void * ptr );
+
+/*!
+ * @function    XSAutoAlloc
+ * @abstract    Allocates auto-releasable memory
+ * @description When using this function, the object will automatically receive
+ *              a release message the next time the current auto-release pool
+ *              is drained. It means you don't own it, and that you are not
+ *              responsible to release it explicitely.
+ * @param       size    The size to allocate in bytes
+ * @result      A pointer to the allocated memory,
+ */
+void * XSAutoAlloc( size_t size );
+
+/*!
+ * @function    XSCopy
+ * @abstract    Copies a pointer
+ * @description This function executes a soft-copy. When using a structure with
+ *              pointers, only the first level is copied.
+ *              Note that you are responsible to release the copied pointer
+ *              by using the XSRelease function.
+ * @param       ptr     The pointer to copy
+ * @result      The copy of the new pointer
+ */
+void * XSCopy( void * ptr );
+
+/*!
+ * @function    XSGetRetainCount
+ * @abstract    Gets the retain count for a pointer
+ * @param       ptr     The pointer
+ * @result      The retain count
+ */
 XSUInteger XSGetRetainCount( void * ptr );
 
 XS_EXTERN_C_END
