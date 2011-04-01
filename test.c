@@ -58,6 +58,7 @@ int main( void )
     XSStringRef          str1;
     XSStringRef          str2;
     XSStringRef          str3;
+    XSArrayRef           arr;
     
     XSFOUNDATION_START();
     
@@ -73,10 +74,12 @@ int main( void )
     str1 = XSSTR( "hello, world" );
     str2 = XSString_SubstringFromIndex( str1, 5 );
     str3 = XSCopy( str2 );
+    arr  = XSArray_CreateWithValues( str1, str2, str3, NULL );
     
     printf( "%s%s%s\n", XSString_CString( str1 ), XSString_CString( str2 ), XSString_CString( str3 ) );
     
     XSLog( "hello, universe: %i %@ %i %@ %i", 42, str1, 43, ap1, 44 );
+    XSLog( "Array value 0: %@", XSArray_GetValueAtIndex( arr, 0 ) );
     
     XSThread_Detach( thread_test, NULL );
     XSThread_Detach( thread_test, str1 );
@@ -84,6 +87,7 @@ int main( void )
     XSRelease( str1 );
     XSRelease( str2 );
     XSRelease( str3 );
+    XSRelease( arr );
     
     XSAutoreleasePool_Drain();
     XSRelease( ap2 );
