@@ -39,36 +39,32 @@ XSFoundation is released under the terms of the [Boost][2] Software License - Ve
 
 ### Basic example
 
-`
-#include "XS.h"
-
-int main( void )
-{
-    XSAutoreleasePoolRef ap;
-    XSStringRef          str1;
-    XSStringRef          str2;
+    #include "XS.h"
     
-    // Initialization of XSFoundation
-    XSFOUNDATION_START();
-    
-    // Creation of the auto-release pool
-    ap   = XSAutoreleasePool_Create();
-    
-    // String creation
-    str1 = XSSTR( "hello, world" );
-    
-    // Substring - The object will be released automatically
-    str2 = XSAutoRelease( XSString_SubstringtoIndex( str1, 5 ) );
-    
-    XSLog( "This is a log message: %@%@", str1, str2 );
-    
-    // Release objects (str2 will be released automatically)
-    XSRelease( str1 );
-    XSRelease( ap );
-    
-    // Termination of XSFoundation
-    XSFOUNDATION_END();
-    
-    return 0;
+    int main( void )
+    {
+        XSAutoreleasePoolRef ap;
+        XSStringRef          str1;
+        XSStringRef          str2;
+        
+        // Initialization of XSFoundation
+        XSFOUNDATION_START();
+        
+        // Creation of the auto-release pool
+        ap   = XSAutoreleasePool_Create();
+        
+        // String creation
+        str1 = XSSTR( "hello, world" );
+        
+        // Substring - The object will be released automatically
+        str2 = XSAutoRelease( XSString_SubstringtoIndex( str1, 5 ) );
+        
+        XSLog( "This is a log message: %@%@", str1, str2 );
+        
+        // Release objects (str2 will be released automatically)
+        XSRelease( str1 );
+        XSRelease( ap );
+        
+        // Termination of XSFoundation and program exit
+        XSFOUNDATION_END();
 }
-`
