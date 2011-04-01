@@ -49,7 +49,81 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct XSArray * XSArrayRef;
 
+/*!
+ * @function    XSArray_Create
+ * @abstract    Creates an empty array
+ * @result      The array object
+ */
 XSArrayRef XSArray_Create( void );
+
+/*!
+ * @function    XSArray_CreateWithCapacity
+ * @abstract    Creates an empty array with an initial capacity
+ * @param       capacity    The initial array capacity
+ * @result      The array object
+ */
+XSArrayRef XSArray_CreateWithCapacity( XSUInteger capacity );
+
+/*!
+ * @function    XSArray_CreateWithObjects
+ * @abstract    Creates an array by inserting objects.
+ * @param       array   The array object
+ * @param       ...     The objects to insert. Must be terminated by a NULL fence
+ * @result      The array object
+ */
+XSArrayRef XSArray_CreateWithObjects( XSArrayRef array, ... );
+
+/*!
+ * @function    XSArray_AppendValue
+ * @abstract    Appends a value at the end of the array.
+ * @description The appended value will be automatically retained.
+ * @param       array   The array object
+ * @param       The value to append
+ * @result      void
+ */
+void XSArray_AppendValue( XSArrayRef array, void * value );
+
+/*!
+ * @function    XSArray_InsertValueAtIndex
+ * @abstract    
+ * @description The appended value will be automatically retained.
+ * @param       array   The array object
+ * @param       value   The value to insert
+ * @param       i       The index in the array
+ * @result      void
+ */
+void XSArray_InsertValueAtIndex( XSArrayRef array, void * value, XSUInteger i );
+
+/*!
+ * @function    XSArray_ReplaceValueAtIndex
+ * @abstract    
+ * @description The inserted value will be automatically retained.
+ * @param       array   The array object
+ * @param       value   The value to insert
+ * @param       i       The index in the array
+ * @result      void
+ */
+void XSArray_ReplaceValueAtIndex( XSArrayRef array, void * value, XSUInteger i );
+
+/*!
+ * @function    XSArray_GetValueAtIndex
+ * @abstract    
+ * @description The new value will be automatically retained, and the old value
+ *              will be released.
+ * @param       array   The array object
+ * @param       i       The index in the array
+ * @result      The array value
+ */
+void * XSArray_GetValueAtIndex( XSArrayRef array, XSUInteger i );
+
+/*!
+ * @function    XSArray_RemoveValueAtIndex
+ * @abstract    Removes a value at a specific index
+ * @description The removed value will be released.
+ * @param       array   The array object
+ * @result      The removed value
+ */
+void * XSArray_RemoveValueAtIndex( XSArrayRef array, XSUInteger i );
 
 XS_EXTERN_C_END
 

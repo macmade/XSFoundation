@@ -54,7 +54,8 @@ typedef struct _XSArray
 {
     XSRuntimeBase _xsbase;
     XSUInteger    count;
-    void        * values;
+    XSUInteger    capacity;
+    void       ** values;
 }
 XSArray;
 
