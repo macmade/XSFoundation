@@ -78,6 +78,54 @@ void __XSColor_Initialize( void );
  */
 XSColor * __XSColor_Alloc( void );
 
+/*!
+ * @function    __XSColor_RGBToHSL
+ * @abstract    Converts the RGB components to HSV
+ * @param       color   The color object
+ * @result      void
+ */
+void __XSColor_RGBToHSL( XSColor * color );
+
+/*!
+ * @function    __XSColor_RGBToHSV
+ * @abstract    Converts the RGB components to HSL
+ * @param       color   The color object
+ * @result      void
+ */
+void __XSColor_RGBToHSV( XSColor * color );
+
+/*!
+ * @function    __XSColor_HSVToRGB
+ * @abstract    Converts the HSV components to RGB
+ * @param       color   The color object
+ * @result      void
+ */
+void __XSColor_HSVToRGB( XSColor * color );
+
+/*!
+ * @function    __XSColor_HSVToHSL
+ * @abstract    Converts the HSV components to HSL
+ * @param       color   The color object
+ * @result      void
+ */
+void __XSColor_HSVToHSL( XSColor * color );
+
+/*!
+ * @function    __XSColor_HSLToRGB
+ * @abstract    Converts the HSL components to RGB
+ * @param       color   The color object
+ * @result      void
+ */
+void __XSColor_HSLToRGB( XSColor * color );
+
+/*!
+ * @function    __XSColor_HSLToHSV
+ * @abstract    Converts the HSL components to HSV
+ * @param       color   The color object
+ * @result      void
+ */
+void __XSColor_HSLToHSV( XSColor * color );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_COLOR_H_ */
