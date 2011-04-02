@@ -49,6 +49,10 @@ XS_EXTERN_C_BEGIN
  * @typdef      XSArray
  * @abastract   XSArray class
  * @field       _xsbase     Runtime class
+ * @field       count       Number of elements in the array
+ * @field       capacity    Initial capacity of the array
+ * @field       cur         Index of the current value
+ * @field       values      Array values
  */
 typedef struct _XSArray
 {
