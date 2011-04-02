@@ -160,13 +160,27 @@ XSStringRef XSString_SubstringToIndex( XSStringRef str, size_t i )
  */
 XSStringRef XSString_SubstringWithRange( XSStringRef str, XSRange range )
 {
-    XSString * _str;
+    XSString * _str1;
+    XSString * _str2;
     
-    _str = ( XSString * )str;
+    _str1 = ( XSString * )str;
     
-    ( void )range;
+    if( range.location > _str1->length )
+    {
+        return NULL;
+    }
     
-    return NULL;
+    if( range.length > _str1->length - range.location )
+    {
+        range.length = _str1->length - range.location;
+    }
+    
+    _str2 = ( XSString * )XSString_CreateWithCapacity( range.length + 1 );
+    
+    memset( _str2->str, 0, range.length + 1 );
+    memcpy( _str2->str, ( _str1->str ) + range.location, range.length );
+    
+    return ( XSStringRef )_str2;
 }
 
 /*!
