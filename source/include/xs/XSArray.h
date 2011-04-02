@@ -133,8 +133,9 @@ void * XSArray_ValueAtIndex( XSArrayRef array, XSUInteger i );
 /*!
  * @function    XSArray_RemoveValueAtIndex
  * @abstract    Removes a value at a specific index
- * @description The removed value will be released.
+ * @description The removed value will be released
  * @param       array   The array object
+ * @param       i       The index in the array
  * @result      The removed value
  */
 void * XSArray_RemoveValueAtIndex( XSArrayRef array, XSUInteger i );
@@ -143,10 +144,50 @@ void * XSArray_RemoveValueAtIndex( XSArrayRef array, XSUInteger i );
  * @function    XSArray_ContainsValue
  * @abstract    Checks if the array contains a specific value
  * @param       array   The array object
- * @param       array   The value to search
+ * @param       value   The value to search
  * @result      YES if the array contains the value, otherwise NO
  */
 BOOL XSArray_ContainsValue( XSArrayRef array, void * value );
+
+/*!
+ * @function    XSArray_Index
+ * @abstract    Gets the current array index
+ * @param       array   The array object
+ * @result      The current array index
+ */
+XSUInteger XSArray_Index( XSArrayRef array );
+
+/*!
+ * @function    XSArray_Current
+ * @abstract    Gets the current array value
+ * @param       array   The array object
+ * @result      The current array value
+ */
+void * XSArray_Current( XSArrayRef array );
+
+/*!
+ * @function    XSArray_Next
+ * @abstract    Increases the internal value pointer and returns the value
+ * @param       array   The array object
+ * @result      The array value
+ */
+void * XSArray_Next( XSArrayRef array );
+
+/*!
+ * @function    XSArray_Previous
+ * @abstract    Decrease the internal value pointer and returns the value
+ * @param       array   The array object
+ * @result      The array value
+ */
+void * XSArray_Previous( XSArrayRef array );
+
+/*!
+ * @function    XSArray_Rewind
+ * @abstract    Sets the internal value pointer to the first value in the array
+ * @param       array   The array object
+ * @result      void
+ */
+void XSArray_Rewind( XSArrayRef array );
 
 XS_EXTERN_C_END
 
