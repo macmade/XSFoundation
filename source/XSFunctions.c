@@ -121,6 +121,27 @@ XSRange XSMakeRange( XSUInteger location, XSUInteger length )
 }
 
 /*!
+ * @function    XSMakeEdgeInsets
+ * @abstract    Creates an XSEdgeInsets structure
+ * @param       left    The left coordinate
+ * @param       top     The top coordinate
+ * @param       right   The right coordinate
+ * @param       bottom  The bottom coordinate
+ * @result      An XSEdgeInsets structure
+ */
+XSEdgeInsets XSMakeEdgeInsets( XSFloat left, XSFloat top, XSFloat right, XSFloat bottom )
+{
+    XSEdgeInsets e;
+    
+    e.left   = left;
+    e.top    = top;
+    e.right  = right;
+    e.bottom = bottom;
+    
+    return e;
+}
+
+/*!
  * @function    XSLog
  * @abstract    Outputs a log message to stdout
  * @description The log message will be prefixed by the date/time, process

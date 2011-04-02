@@ -228,6 +228,23 @@ typedef struct _XSRange
 XSRange;
 
 /*!
+ * @typedef     XSEdgeInset 
+ * @abstract    Inset distances
+ * @field       left    The left coordinate
+ * @field       top     The top coordiante
+ * @field       right   The right coordinate
+ * @field       bottom  The bottom coordinate
+ */
+typedef struct _XSEdgeInsets
+{
+    XSFloat left;
+    XSFloat top;
+    XSFloat right;
+    XSFloat bottom;
+}
+XSEdgeInsets;
+
+/*!
  * @typedef     XSByteOrder
  * @abstract    Byte-order data-type
  * @field       XS_UnknownByteOrder     Unknown byte order
