@@ -38,7 +38,368 @@
 #include "XS.h"
 #include "__XSColor.h"
 
-XSColorRef XSColor_Create( void )
+/*!
+ * @function    XSColor_CreateWithRGB
+ * @abstract    Creates a color with RGB components
+ * @param       r   The red value
+ * @param       g   The green value
+ * @param       b   The blue value
+ * @result      The color object
+ */
+XSColorRef XSColor_CreateWithRGB( XSFloat r, XSFloat g, XSFloat b )
 {
-    return ( XSColorRef )__XSColor_Alloc();
+    ( void )r;
+    ( void )g;
+    ( void )b;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSColor_CreateWithHSL
+ * @abstract    Creates a color with RGB components
+ * @param       h   The hue value
+ * @param       s   The saturation value
+ * @param       l   The luminance value
+ * @result      The color object
+ */
+XSColorRef XSColor_CreateWithHSL( XSFloat h, XSFloat s, XSFloat l )
+{
+    ( void )h;
+    ( void )s;
+    ( void )l;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSColor_CreateWithHSV
+ * @abstract    Creates a color with HSL components
+ * @param       h   The hue value
+ * @param       s   The saturation value
+ * @param       v   The value value
+ * @result      The color object
+ */
+XSColorRef XSColor_CreateWithHSV( XSFloat h, XSFloat s, XSFloat v )
+{
+    ( void )h;
+    ( void )s;
+    ( void )v;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSColor_CreateWithRGB
+ * @abstract    Creates a color with RGB components
+ * @param       r   The red value
+ * @param       g   The green value
+ * @param       b   The blue value
+ * @param       a   The alpha value
+ * @result      The color object
+ */
+XSColorRef XSColor_CreateWithRGBA( XSFloat r, XSFloat g, XSFloat b, XSFloat a )
+{
+    ( void )r;
+    ( void )g;
+    ( void )b;
+    ( void )a;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSColor_CreateWithHSL
+ * @abstract    Creates a color with RGB components
+ * @param       h   The hue value
+ * @param       s   The saturation value
+ * @param       l   The luminance value
+ * @param       a   The alpha value
+ * @result      The color object
+ */
+XSColorRef XSColor_CreateWithHSLA( XSFloat h, XSFloat s, XSFloat l, XSFloat a )
+{
+    ( void )h;
+    ( void )s;
+    ( void )l;
+    ( void )a;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSColor_CreateWithHSV
+ * @abstract    Creates a color with HSL components
+ * @param       h   The hue value
+ * @param       s   The saturation value
+ * @param       v   The value value
+ * @param       a   The alpha value
+ * @result      The color object
+ */
+XSColorRef XSColor_CreateWithHSVA( XSFloat h, XSFloat s, XSFloat v, XSFloat a )
+{
+    ( void )h;
+    ( void )s;
+    ( void )v;
+    ( void )a;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSColor_BlackColor
+ * @abstract    Creates a color with HSVA components
+ * @result      The color object
+ */
+XSColorRef XSColor_BlackColor( void )
+{
+    return NULL;
+}
+
+/*!
+ * @function    XSColor_WhiteColor
+ * @abstract    Create a black color object
+ * @result      The color object
+ */
+XSColorRef XSColor_WhiteColor( void )
+{
+    return NULL;
+}
+
+/*!
+ * @function    XSColor_RedColor
+ * @abstract    Creates a red color object
+ * @result      The color object
+ */
+XSColorRef XSColor_RedColor( void )
+{
+    return NULL;
+}
+
+/*!
+ * @function    XSColor_GreenColor
+ * @abstract    Creates a green color object
+ * @result      The color object
+ */
+XSColorRef XSColor_GreenColor( void )
+{
+    return NULL;
+}
+
+/*!
+ * @function    XSColor_BlueColor
+ * @abstract    Creates a blue color object
+ * @result      The color object
+ */
+XSColorRef XSColor_BlueColor( void )
+{
+    return NULL;
+}
+
+/*!
+ * @function    XSColor_GetRed
+ * @abstract    Get the red component
+ * @param       color   The color object
+ * @result      The red component
+ */
+XSFloat XSColor_GetRed( XSColorRef color )
+{
+    ( void )color;
+    
+    return 0;
+}
+
+/*!
+ * @function    XSColor_GetGreen
+ * @abstract    Get the green component
+ * @param       color   The color object
+ * @result      The green component
+ */
+XSFloat XSColor_GetGreen( XSColorRef color )
+{
+    ( void )color;
+    
+    return 0;
+}
+
+/*!
+ * @function    XSColor_GetBlue
+ * @abstract    Get the blue component
+ * @param       color   The color object
+ * @result      The blue component
+ */
+XSFloat XSColor_GetBlue( XSColorRef color )
+{
+    ( void )color;
+    
+    return 0;
+}
+
+/*!
+ * @function    XSColor_GetHue
+ * @abstract    Get the hue component
+ * @param       color   The color object
+ * @result      The hue component
+ */
+XSFloat XSColor_GetHue( XSColorRef color )
+{
+    ( void )color;
+    
+    return 0;
+}
+
+/*!
+ * @function    XSColor_GetSaturation
+ * @abstract    Get the saturation component
+ * @param       color   The color object
+ * @result      The saturation component
+ */
+XSFloat XSColor_GetSaturation( XSColorRef color )
+{
+    ( void )color;
+    
+    return 0;
+}
+
+/*!
+ * @function    XSColor_GetLuminance
+ * @abstract    Get the luminance component
+ * @param       color   The color object
+ * @result      The luminance component
+ */
+XSFloat XSColor_GetLuminance( XSColorRef color )
+{
+    ( void )color;
+    
+    return 0;
+}
+
+/*!
+ * @function    XSColor_GetValue
+ * @abstract    Get the value component
+ * @param       color   The color object
+ * @result      The value component
+ */
+XSFloat XSColor_GetValue( XSColorRef color )
+{
+    ( void )color;
+    
+    return 0;
+}
+
+/*!
+ * @function    XSColor_GetAlpha
+ * @abstract    Get the alpha component
+ * @param       color   The color object
+ * @result      The alpha component
+ */
+XSFloat XSColor_GetAlpha( XSColorRef color )
+{
+    ( void )color;
+    
+    return 0;
+}
+
+/*!
+ * @function    XSColor_SetRed
+ * @abstract    Sets the red component
+ * @param       color   The color object
+ * @param       v       The red component
+ * @result      void
+ */
+void XSColor_SetRed( XSColorRef color, XSFloat v )
+{
+    ( void )color;
+    ( void )v;
+}
+
+/*!
+ * @function    XSColor_SetGreen
+ * @abstract    Sets the green component
+ * @param       color   The color object
+ * @param       v       The green component
+ * @result      void
+ */
+void XSColor_SetGreen( XSColorRef color, XSFloat v )
+{
+    ( void )color;
+    ( void )v;
+}
+
+/*!
+ * @function    XSColor_SetBlue
+ * @abstract    Sets the blue component
+ * @param       color   The color object
+ * @param       v       The blue component
+ * @result      void
+ */
+void XSColor_SetBlue( XSColorRef color, XSFloat v )
+{
+    ( void )color;
+    ( void )v;
+}
+
+/*!
+ * @function    XSColor_SetHue
+ * @abstract    Sets the hue component
+ * @param       color   The color object
+ * @param       v       The hue component
+ * @result      void
+ */
+void XSColor_SetHue( XSColorRef color, XSFloat v )
+{
+    ( void )color;
+    ( void )v;
+}
+
+/*!
+ * @function    XSColor_SetSaturation
+ * @abstract    Sets the saturation component
+ * @param       color   The color object
+ * @param       v       The saturation component
+ * @result      void
+ */
+void XSColor_SetSaturation( XSColorRef color, XSFloat v )
+{
+    ( void )color;
+    ( void )v;
+}
+
+/*!
+ * @function    XSColor_SetLuminance
+ * @abstract    Sets the luminance component
+ * @param       color   The color object
+ * @param       v       The luminance component
+ * @result      void
+ */
+void XSColor_SetLuminance( XSColorRef color, XSFloat v )
+{
+    ( void )color;
+    ( void )v;
+}
+
+/*!
+ * @function    XSColor_SetValue
+ * @abstract    Sets the value component
+ * @param       color   The color object
+ * @param       v       The value component
+ * @result      void
+ */
+void XSColor_SetValue( XSColorRef color, XSFloat v )
+{
+    ( void )color;
+    ( void )v;
+}
+
+/*!
+ * @function    XSColor_SetAlpha
+ * @abstract    Sets the alpha component
+ * @param       color   The color object
+ * @param       v       The alpha component
+ * @result      void
+ */
+void XSColor_SetAlpha( XSColorRef color, XSFloat v )
+{
+    ( void )color;
+    ( void )v;
 }
