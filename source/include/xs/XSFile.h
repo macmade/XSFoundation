@@ -239,7 +239,7 @@ void XSFile_Rewind( XSFileRef file );
  * @function    
  * @abstract    Stores current file position for stream stream in * ptr. Returns non-zero on error
  * @param       file    The file object
- * result       
+ * @result      
  */
 XSInteger XSFile_GetPos( XSFileRef file, fpos_t * ptr );
 
@@ -247,7 +247,7 @@ XSInteger XSFile_GetPos( XSFileRef file, fpos_t * ptr );
  * @function    
  * @abstract    Sets current position of stream stream to * ptr. Returns non-zero on error
  * @param       file    The file object
- * result       
+ * @result      
  */
 XSInteger XSFile_SetPos( XSFileRef file, const fpos_t * ptr );
 
@@ -255,7 +255,7 @@ XSInteger XSFile_SetPos( XSFileRef file, const fpos_t * ptr );
  * @function    
  * @abstract    Clears end-of-file and error indicators for stream stream
  * @param       file    The file object
- * result       
+ * @result      
  */
 void XSFile_ClearErr( XSFileRef file );
 
@@ -263,7 +263,7 @@ void XSFile_ClearErr( XSFileRef file );
  * @function    
  * @abstract    Returns non-zero if end-of-file indicator is set for stream stream
  * @param       file    The file object
- * result       
+ * @result      
  */
 XSInteger XSFile_EndOfFile( XSFileRef file );
 
@@ -271,7 +271,7 @@ XSInteger XSFile_EndOfFile( XSFileRef file );
  * @function    
  * @abstract    Returns non-zero if error indicator is set for stream stream
  * @param       file    The file object
- * result       
+ * @result      
  */
 XSInteger XSFile_Error( XSFileRef file );
 
@@ -279,7 +279,7 @@ XSInteger XSFile_Error( XSFileRef file );
  * @function    
  * @abstract    Gets the filename associated to the stream
  * @param       file    The file object
- * result       
+ * @result      
  */
 const char * XSFile_Filename( XSFileRef file );
 
@@ -287,7 +287,7 @@ const char * XSFile_Filename( XSFileRef file );
  * @function    
  * @abstract    Gets the stream's open mode
  * @param       file    The file object
- * result       
+ * @result      
  */
 const char * XSFile_OpenMode( XSFileRef file );
 
@@ -295,7 +295,7 @@ const char * XSFile_OpenMode( XSFileRef file );
  * @function    
  * @abstract    Returns true if the file is readable
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_IsReadable( XSFileRef file );
 
@@ -303,7 +303,7 @@ BOOL XSFile_IsReadable( XSFileRef file );
  * @function    
  * @abstract    Returns true if the file is writeable
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_IsWriteable( XSFileRef file );
 
@@ -311,7 +311,7 @@ BOOL XSFile_IsWriteable( XSFileRef file );
  * @function    
  * @abstract    Copies a file to another destination
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_Copy( XSFileRef file, char * new_name );
 
@@ -319,7 +319,7 @@ BOOL XSFile_Copy( XSFileRef file, char * new_name );
  * @function    
  * @abstract    Gets the next bit in the stream
  * @param       file    The file object
- * result       
+ * @result      
  */
 XSInteger XSFile_GetBit( XSFileRef file );
 
@@ -327,7 +327,7 @@ XSInteger XSFile_GetBit( XSFileRef file );
  * @function    
  * @abstract    Writes a bit in the stream
  * @param       file    The file object
- * result       
+ * @result      
  */
 XSInteger XSFile_PutBit( XSFileRef file, uint8_t bit );
 
@@ -335,7 +335,7 @@ XSInteger XSFile_PutBit( XSFileRef file, uint8_t bit );
  * @function    
  * @abstract    Gets bits from the stream
  * @param       file    The file object
- * result       
+ * @result      
  */
 XSInteger XSFile_GetBits( XSFileRef file, XSUInteger count );
 
@@ -343,7 +343,7 @@ XSInteger XSFile_GetBits( XSFileRef file, XSUInteger count );
  * @function    
  * @abstract    Write bits to the file
  * @param       file    The file object
- * result       
+ * @result      
  */
 XSInteger XSFile_PutBits( XSFileRef file, uint64_t bits, XSUInteger count );
 
@@ -351,7 +351,7 @@ XSInteger XSFile_PutBits( XSFileRef file, uint64_t bits, XSUInteger count );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 dev_t XSFile_DeviceID( XSFileRef file );
 
@@ -359,7 +359,7 @@ dev_t XSFile_DeviceID( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 ino_t XSFile_SerialNumber( XSFileRef file );
 
@@ -367,7 +367,7 @@ ino_t XSFile_SerialNumber( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 nlink_t XSFile_NumberOfLinks( XSFileRef file );
 
@@ -375,7 +375,7 @@ nlink_t XSFile_NumberOfLinks( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 uid_t XSFile_UID( XSFileRef file );
 
@@ -383,7 +383,7 @@ uid_t XSFile_UID( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 gid_t XSFile_GID( XSFileRef file );
 
@@ -391,7 +391,7 @@ gid_t XSFile_GID( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 size_t XSFile_Size( XSFileRef file );
 
@@ -399,7 +399,7 @@ size_t XSFile_Size( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 XSFloat XSFile_HumanReadableSize( XSFileRef file, char unit[] );
 
@@ -407,7 +407,7 @@ XSFloat XSFile_HumanReadableSize( XSFileRef file, char unit[] );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 time_t XSFile_AccessTime( XSFileRef file );
 
@@ -415,7 +415,7 @@ time_t XSFile_AccessTime( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 time_t XSFile_ModifictaionTime( XSFileRef file );
 
@@ -423,7 +423,7 @@ time_t XSFile_ModifictaionTime( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 time_t XSFile_CreationTime( XSFileRef file );
 
@@ -431,7 +431,7 @@ time_t XSFile_CreationTime( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_IsBlockDevice( XSFileRef file );
 
@@ -439,7 +439,7 @@ BOOL XSFile_IsBlockDevice( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_IsCharacterDevice( XSFileRef file );
 
@@ -447,7 +447,7 @@ BOOL XSFile_IsCharacterDevice( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_IsFIFO( XSFileRef file );
 
@@ -455,7 +455,7 @@ BOOL XSFile_IsFIFO( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_IsRegularFile( XSFileRef file );
 
@@ -463,7 +463,7 @@ BOOL XSFile_IsRegularFile( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_IsDirectory( XSFileRef file );
 
@@ -471,7 +471,7 @@ BOOL XSFile_IsDirectory( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_IsLink( XSFileRef file );
 
@@ -479,7 +479,7 @@ BOOL XSFile_IsLink( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_IsSocket( XSFileRef file );
 
@@ -487,7 +487,7 @@ BOOL XSFile_IsSocket( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_IsUserReadable( XSFileRef file );
 
@@ -495,7 +495,7 @@ BOOL XSFile_IsUserReadable( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_IsUserWriteable( XSFileRef file );
 
@@ -503,7 +503,7 @@ BOOL XSFile_IsUserWriteable( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_ISUserExecutable( XSFileRef file );
 
@@ -511,7 +511,7 @@ BOOL XSFile_ISUserExecutable( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_IsGroupReadable( XSFileRef file );
 
@@ -519,7 +519,7 @@ BOOL XSFile_IsGroupReadable( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_IsGroupWriteable( XSFileRef file );
 
@@ -527,7 +527,7 @@ BOOL XSFile_IsGroupWriteable( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_IsGroupExecutable( XSFileRef file );
 
@@ -535,7 +535,7 @@ BOOL XSFile_IsGroupExecutable( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_IsWorldReadable( XSFileRef file );
 
@@ -543,7 +543,7 @@ BOOL XSFile_IsWorldReadable( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_IsWorldWriteable( XSFileRef file );
 
@@ -551,7 +551,7 @@ BOOL XSFile_IsWorldWriteable( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_IsWorldExecutable( XSFileRef file );
 
@@ -559,7 +559,7 @@ BOOL XSFile_IsWorldExecutable( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_HasSUID( XSFileRef file );
 
@@ -567,7 +567,7 @@ BOOL XSFile_HasSUID( XSFileRef file );
  * @function    
  * @abstract    
  * @param       file    The file object
- * result       
+ * @result      
  */
 BOOL XSFile_HasSGID( XSFileRef file );
 
