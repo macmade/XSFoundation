@@ -160,6 +160,12 @@ typedef struct _XSRange
 XSRange;
 
 /*!
+ * @define      XSUIntegerMax
+ * @abstract    Not found value for the XSRange.location field
+ */
+#define XSNotFound XSUIntegerMax
+
+/*!
  * @typedef     XSEdgeInset 
  * @abstract    Inset distances
  * @field       left    The left coordinate
@@ -232,6 +238,7 @@ typedef struct _XSDecimal
 }
 XSDecimal;
 
+/* XSString is required here as the objects description callbacks use that type */
 #include "XSString.h"
 
 /*!
