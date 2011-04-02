@@ -95,7 +95,7 @@ void __XSString_Copy( void * source, void * destination );
  * @param       object  A pointer to the object
  * @result      The object's description
  */
-const char * __XSString_Description( void * object );
+XSStringRef __XSString_Description( void * object );
 
 XS_EXTERN_C_END
 

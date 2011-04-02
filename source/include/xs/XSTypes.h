@@ -108,74 +108,6 @@ typedef UInt32                  UTF32Char;
 #endif
 
 /*!
- * @typedef     XSTypeID
- * @abstract    Type ID foe the registered runtime classes
- */
-typedef unsigned long XSTypeID;
-
-/*!
- * @typedef     XSTypeRef
- * @abstract    Baisc type for the objects (used mainly in XSRuntime_CreateInstance) 
- */
-typedef const void  * XSTypeRef;
-
-/*!
- * @typedef     XSRuntimeClass
- * @abstract    XSFoundation runtime class
- * @field       classname   The name of the class
- * @field       init        The class constructor
- * @field       dealloc     The class destructor
- * @field       copy        The object's copy callback
- * @field       description The object's description callback (used in XSLog)
- */
-typedef struct _XSRuntimeClass
-{
-    const char * className;
-    void         ( * init        )( void * object );
-    void         ( * dealloc     )( void * object );
-    void         ( * copy        )( void * source, void * destination );
-    const char * ( * description )( void * object );
-}
-XSRuntimeClass;
-
-/*!
- * @typedef     XSRuntimeBase
- * @abstract    Base for the runtime classes
- * @description This sructure MUST be the first member of all XSFoundation
- *              classes.
- * @field       isa     A pointer to the class structure for the object
- */
-typedef struct _XSRuntimeBase
-{
-    XSRuntimeClass * isa;
-}
-XSRuntimeBase;
-
-/*!
- * @typedef     id
- * @abstract    Polymorphism support - Generic type for all XSFoundation objects
- */
-typedef XSRuntimeBase * id;
-
-/*!
- * @typedef     Class
- * @abstract    Polymorphism support - Generic type for all XSFoundation classes
- */
-typedef XSRuntimeClass * Class;
-
-/*!
- * @define      nil
- * @abstract    NULL pointer for the 'id' type
- */
-#define nil	( id )0
-
-/*!
- * @define      Nil
- * @abstract    NULL pointer for the 'Class' type
- */
-#define Nil	( Class )0
-
-/*!
  * @typedef     XSPoint
  * @abstract    Point data-type
  * @field       x   The X coordinate of the point
@@ -299,6 +231,76 @@ typedef struct _XSDecimal
     unsigned short mantissa[ XSDecimalMaxSize ];
 }
 XSDecimal;
+
+#include "XSString.h"
+
+/*!
+ * @typedef     XSTypeID
+ * @abstract    Type ID foe the registered runtime classes
+ */
+typedef unsigned long XSTypeID;
+
+/*!
+ * @typedef     XSTypeRef
+ * @abstract    Baisc type for the objects (used mainly in XSRuntime_CreateInstance) 
+ */
+typedef const void  * XSTypeRef;
+
+/*!
+ * @typedef     XSRuntimeClass
+ * @abstract    XSFoundation runtime class
+ * @field       classname   The name of the class
+ * @field       init        The class constructor
+ * @field       dealloc     The class destructor
+ * @field       copy        The object's copy callback
+ * @field       description The object's description callback (used in XSLog)
+ */
+typedef struct _XSRuntimeClass
+{
+    const char * className;
+    void         ( * init        )( void * object );
+    void         ( * dealloc     )( void * object );
+    void         ( * copy        )( void * source, void * destination );
+    XSStringRef  ( * description )( void * object );
+}
+XSRuntimeClass;
+
+/*!
+ * @typedef     XSRuntimeBase
+ * @abstract    Base for the runtime classes
+ * @description This sructure MUST be the first member of all XSFoundation
+ *              classes.
+ * @field       isa     A pointer to the class structure for the object
+ */
+typedef struct _XSRuntimeBase
+{
+    XSRuntimeClass * isa;
+}
+XSRuntimeBase;
+
+/*!
+ * @typedef     id
+ * @abstract    Polymorphism support - Generic type for all XSFoundation objects
+ */
+typedef XSRuntimeBase * id;
+
+/*!
+ * @typedef     Class
+ * @abstract    Polymorphism support - Generic type for all XSFoundation classes
+ */
+typedef XSRuntimeClass * Class;
+
+/*!
+ * @define      nil
+ * @abstract    NULL pointer for the 'id' type
+ */
+#define nil	( id )0
+
+/*!
+ * @define      Nil
+ * @abstract    NULL pointer for the 'Class' type
+ */
+#define Nil	( Class )0
 
 XS_EXTERN_C_END
 

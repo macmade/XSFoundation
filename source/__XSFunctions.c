@@ -79,6 +79,7 @@ void __XSVLog( const char * fmt, va_list args )
     void           * va_ptr;
     XSRuntimeBase  * b;
     XSRuntimeClass * cls;
+    XSStringRef      description;
     
     #ifdef __MACH__
     mach_port_t      mid;
@@ -156,7 +157,8 @@ void __XSVLog( const char * fmt, va_list args )
                 
                 if( cls->description != NULL )
                 {
-                    printf( "%s", cls->description( va_ptr ) );
+                    description = cls->description( va_ptr );
+                    printf( "%s", XSString_CString( va_ptr ) );
                 }
                 else
                 {

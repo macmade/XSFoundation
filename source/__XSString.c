@@ -115,11 +115,7 @@ void __XSString_Copy( void * source, void * destination )
  * @param       object  A pointer to the object
  * @result      The object's description
  */
-const char * __XSString_Description( void * object )
+XSStringRef __XSString_Description( void * object )
 {
-    XSString * str;
-    
-    str = ( XSString * )object;
-    
-    return str->str;
+    return ( XSStringRef )object;
 }
