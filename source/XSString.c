@@ -179,10 +179,22 @@ XSStringRef XSString_SubstringWithRange( XSStringRef str, XSRange range )
 XSStringRef XSString_LowercaseString( XSStringRef str )
 {
     XSString * _str;
+    size_t     i;
+    char       c;
     
-    _str = ( XSString * )str;
+    _str = XSCopy( str );
     
-    return NULL;
+    for( i = 0; i < _str->length; i++ )
+    {
+        c = _str->str[ i ];
+        
+        if( c >= 0x41 && c <= 0x5A )
+        {
+            _str->str[ i ] = _str->str[ i ] + 0x20;
+        }
+    }
+    
+    return ( XSStringRef)_str;
 }
 
 /*!
@@ -195,10 +207,22 @@ XSStringRef XSString_LowercaseString( XSStringRef str )
 XSStringRef XSString_UppercaseString( XSStringRef str )
 {
     XSString * _str;
+    size_t     i;
+    char       c;
     
-    _str = ( XSString * )str;
+    _str = XSCopy( str );
     
-    return NULL;
+    for( i = 0; i < _str->length; i++ )
+    {
+        c = _str->str[ i ];
+        
+        if( c >= 0x61 && c <= 0x7A )
+        {
+            _str->str[ i ] = _str->str[ i ] - 0x20;
+        }
+    }
+    
+    return ( XSStringRef)_str;
 }
 
 /*!
