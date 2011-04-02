@@ -43,7 +43,7 @@
 /*!
  * @function    XSString_Create
  * @abstract    Creates an empty string
- * @result      The string object
+ * @result      A new string object
  */
 XSStringRef XSString_Create( void )
 {
@@ -54,7 +54,7 @@ XSStringRef XSString_Create( void )
  * @function    XSString_CreateWithCapacity
  * @abstract    Creates an empty string with an initial capacity
  * @param       capacity    The initial string capacity
- * @result      The string object
+ * @result      A new string object
  */
 XSStringRef XSString_CreateWithCapacity( XSUInteger capacity )
 {
@@ -71,7 +71,7 @@ XSStringRef XSString_CreateWithCapacity( XSUInteger capacity )
  * @function    XSString_CreateWithCString
  * @abstract    Creates a string from a C string
  * @param       The C string
- * @result      The string object
+ * @result      A new string object
  */
 XSStringRef XSString_CreateWithCString( char * str )
 {
@@ -92,7 +92,7 @@ XSStringRef XSString_CreateWithCString( char * str )
  * @function    XSString_CreateWithContentOfFile
  * @abstract    Creates a string with a file's content
  * @param       path    The path to the file
- * @result      The string object
+ * @result      A new string object
  */
 XSStringRef XSString_CreateWithContentOfFile( char * path )
 {
@@ -107,7 +107,7 @@ XSStringRef XSString_CreateWithContentOfFile( char * path )
  * @description You are responsible to release the returned string object
  * @param       str     The string object
  * @param       i       The index
- * @result      The string object
+ * @result      A new string object
  */
 XSStringRef XSString_SubstringFromIndex( XSStringRef str, size_t i )
 {
@@ -129,7 +129,7 @@ XSStringRef XSString_SubstringFromIndex( XSStringRef str, size_t i )
  * @description You are responsible to release the returned string object
  * @param       str     The string object
  * @param       i       The index
- * @result      The string object
+ * @result      A new string object
  */
 XSStringRef XSString_SubstringToIndex( XSStringRef str, size_t i )
 {
@@ -156,7 +156,7 @@ XSStringRef XSString_SubstringToIndex( XSStringRef str, size_t i )
  * @description You are responsible to release the returned string object
  * @param       str     The string object
  * @param       range   The range
- * @result      The string object
+ * @result      A new string object
  */
 XSStringRef XSString_SubstringWithRange( XSStringRef str, XSRange range )
 {
@@ -174,7 +174,7 @@ XSStringRef XSString_SubstringWithRange( XSStringRef str, XSRange range )
  * @abstract    Gets a lower-case string
  * @description You are responsible to release the returned string object
  * @param       str     The string object
- * @result      The string object
+ * @result      A new string object
  */
 XSStringRef XSString_LowercaseString( XSStringRef str )
 {
@@ -202,7 +202,7 @@ XSStringRef XSString_LowercaseString( XSStringRef str )
  * @abstract    Gets a upper-case string
  * @description You are responsible to release the returned string object
  * @param       str     The string object
- * @result      The string object
+ * @result      A new string object
  */
 XSStringRef XSString_UppercaseString( XSStringRef str )
 {
@@ -231,7 +231,7 @@ XSStringRef XSString_UppercaseString( XSStringRef str )
  * @description You are responsible to release the returned string object
  * @param       str1    The string object
  * @param       str2    The string to append
- * @result      The string object
+ * @result      A new string object
  */
 XSStringRef XSString_StringByAppendingString( XSStringRef str1, XSStringRef str2 )
 {
@@ -259,7 +259,7 @@ XSStringRef XSString_StringByAppendingString( XSStringRef str1, XSStringRef str2
  * @description You are responsible to release the returned string object
  * @param       str1    The string object
  * @param       str2    The C string to append
- * @result      The string object
+ * @result      A new string object
  */
 XSStringRef XSString_StringByAppendingCString( XSStringRef str1, char * str2 )
 {
@@ -285,7 +285,7 @@ XSStringRef XSString_StringByAppendingCString( XSStringRef str1, char * str2 )
  * @function    XSString_Length
  * @abstract    Gets the string length
  * @param       str     The string object
- * @result      The string length
+ * @result      A new string length
  */
 size_t XSString_Length( XSStringRef str )
 {
@@ -324,6 +324,14 @@ const char * XSString_CString( XSStringRef str )
     return ( ( XSString * )str )->str;
 }
 
+/*!
+ * @function    XSString_RangeOfString
+ * @abstract    Gets the range of a string in the string
+ * @description If the C string is not found, the location field of the range
+ *              will equals XSNotFound.
+ * @param       str     The string object
+ * @result      The range of the string
+ */
 XSRange XSString_RangeOfString( XSStringRef str1, XSStringRef str2 )
 {
     XSString * _str1;
@@ -340,6 +348,14 @@ XSRange XSString_RangeOfString( XSStringRef str1, XSStringRef str2 )
     return range;
 }
 
+/*!
+ * @function    XSString_RangeOfCString
+ * @abstract    Gets the range of a C string in the string
+ * @description If the C string is not found, the location field of the range
+ *              will equals XSNotFound.
+ * @param       str     The string object
+ * @result      The range of the C string
+ */
 XSRange XSString_RangeOfCString( XSStringRef str1, char * str2 )
 {
     XSString * _str;
@@ -353,6 +369,12 @@ XSRange XSString_RangeOfCString( XSStringRef str1, char * str2 )
     return range;
 }
 
+/*!
+ * @function    XSString_IsEqualToString
+ * @abstract    Compares the string with another string
+ * @param       str     The string object
+ * @result      YES if both strings are equals, otherwise NO
+ */
 BOOL XSString_IsEqualToString( XSStringRef str1, XSStringRef str2 )
 {
     XSString * _str1;
@@ -369,6 +391,13 @@ BOOL XSString_IsEqualToString( XSStringRef str1, XSStringRef str2 )
     return NO;
 }
 
+/*!
+ * @function    XSString_StringByReplacingStringWithString
+ * @abstract    Replaces the occurences of a string with another string
+ * @description You are responsible to release the returned string object
+ * @param       str     The string object
+ * @result      A new string object
+ */
 XSStringRef XSString_StringByReplacingStringWithString( XSStringRef str1, XSStringRef str2, XSStringRef str3 )
 {
     XSString * _str1;
@@ -382,6 +411,12 @@ XSStringRef XSString_StringByReplacingStringWithString( XSStringRef str1, XSStri
     return NULL;
 }
 
+/*!
+ * @function    XSString_IntegerValue
+ * @abstract    Converts the string to an integer representation
+ * @param       str     The string object
+ * @result      An integer value
+ */
 XSInteger XSString_IntegerValue( XSStringRef str )
 {
     XSString * _str;
@@ -391,6 +426,12 @@ XSInteger XSString_IntegerValue( XSStringRef str )
     return 0;
 }
 
+/*!
+ * @function    XSString_FloatValue
+ * @abstract    Converts the string to a floating point representation
+ * @param       str     The string object
+ * @result      A floating point value
+ */
 XSFloat XSString_FloatValue( XSStringRef str )
 {
     XSString * _str;
