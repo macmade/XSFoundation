@@ -235,13 +235,22 @@ XSStringRef XSString_UppercaseString( XSStringRef str )
  */
 XSStringRef XSString_StringByAppendingString( XSStringRef str1, XSStringRef str2 )
 {
-    XSString * _str;
+    XSString * str;
+    size_t     length1;
+    size_t     length2;
     
-    _str = ( XSString * )str1;
+    length1 = XSString_Length( str1 );
+    length2 = XSString_Length( str2 );
     
-    ( void )str2;
+    str = ( XSString * )XSString_CreateWithCapacity( length1 + length2 + 1 );
     
-    return NULL;
+    str->length = length1 + length2;
+    
+    memset( str->str, 0, str->length + 1 );
+    memcpy( str->str, ( ( XSString * )str1 )->str, length1 );
+    strcat( str->str, ( ( XSString * )str2 )->str );
+    
+    return ( XSStringRef )str;
 }
 
 /*!
@@ -254,10 +263,22 @@ XSStringRef XSString_StringByAppendingString( XSStringRef str1, XSStringRef str2
  */
 XSStringRef XSString_StringByAppendingCString( XSStringRef str1, char * str2 )
 {
-    ( void )str1;
-    ( void )str2;
+    XSString * str;
+    size_t     length1;
+    size_t     length2;
     
-    return NULL;
+    length1 = XSString_Length( str1 );
+    length2 = strlen( str2 );
+    
+    str = ( XSString * )XSString_CreateWithCapacity( length1 + length2 + 1 );
+    
+    str->length = length1 + length2;
+    
+    memset( str->str, 0, str->length + 1 );
+    memcpy( str->str, ( ( XSString * )str1 )->str, length1 );
+    strcat( str->str, str2 );
+    
+    return ( XSStringRef )str;
 }
 
 /*!

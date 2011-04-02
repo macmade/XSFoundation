@@ -81,6 +81,8 @@ int main( void )
     XSLog( "hello, universe: %i %@ %i %@ %i", 42, str1, 43, ap1, 44 );
     XSLog( "Array value 0: %@", XSArray_ValueAtIndex( arr, 0 ) );
     
+    XSLog( "%@", XSAutorelease( XSString_StringByAppendingString( str1, str2 ) ) );
+    
     XSThread_Detach( thread_test, NULL );
     XSThread_Detach( thread_test, str1 );
     
