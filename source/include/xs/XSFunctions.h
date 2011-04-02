@@ -102,6 +102,40 @@ XSRange XSMakeRange( XSUInteger location, XSUInteger length );
 XSEdgeInsets XSMakeEdgeInsets( XSFloat left, XSFloat top, XSFloat right, XSFloat bottom );
 
 /*!
+ * @function    XSAngleBetweenPoints
+ * @abstract    Gets the angle from two points
+ * @param       a   The first point
+ * @param       b   The second point
+ * @result      The angle from the two points
+ */
+XSFloat XSAngleBetweenPoints( XSPoint a, XSPoint b );
+
+/*!
+ * @function    XSDistanceBetweenPoints
+ * @abstract    Gets the distance between two points
+ * @param       a   The first point
+ * @param       b   The second point
+ * @result      The distance between the two points
+ */
+XSFloat XSDistanceBetweenPoints( XSPoint a, XSPoint b );
+
+/*!
+ * @function    XSDegreesToRadians
+ * @abstract    Converts a degree angle to a radian angle
+ * @param       x   The angle in degrees
+ * @result      The angle in radians
+ */
+XSFloat XSDegreesToRadians( XSFloat x );
+
+/*!
+ * @function    XSRadiansToDegrees
+ * @abstract    Converts a radian angle to a degree angle
+ * @param       x   The angle in radians
+ * @result      The angle in degrees
+ */
+XSFloat XSRadiansToDegrees( XSFloat x );
+
+/*!
  * @function    XSLog
  * @abstract    Outputs a log message to stdout
  * @description The log message will be prefixed by the date/time, process
