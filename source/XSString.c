@@ -40,11 +40,22 @@
 
 #define __XSSTRING_DEFAULT_CAPACITY 256
 
+/*!
+ * @function    XSString_Create
+ * @abstract    Creates an empty string
+ * @result      The string object
+ */
 XSStringRef XSString_Create( void )
 {
     return XSString_CreateWithCapacity( __XSSTRING_DEFAULT_CAPACITY );
 }
 
+/*!
+ * @function    XSString_CreateWithCapacity
+ * @abstract    Creates an empty string with an initial capacity
+ * @param       capacity    The initial string capacity
+ * @result      The string object
+ */
 XSStringRef XSString_CreateWithCapacity( XSUInteger capacity )
 {
     XSString * string;
@@ -56,6 +67,12 @@ XSStringRef XSString_CreateWithCapacity( XSUInteger capacity )
     return ( XSStringRef )string;
 }
 
+/*!
+ * @function    XSString_CreateWithCString
+ * @abstract    Creates a string from a C string
+ * @param       The C string
+ * @result      The string object
+ */
 XSStringRef XSString_CreateWithCString( char * str )
 {
     size_t     length;
@@ -71,6 +88,12 @@ XSStringRef XSString_CreateWithCString( char * str )
     return ( XSStringRef )string;
 }
 
+/*!
+ * @function    XSString_CreateWithContentOfFile
+ * @abstract    Creates a string with a file's content
+ * @param       path    The path to the file
+ * @result      The string object
+ */
 XSStringRef XSString_CreateWithContentOfFile( char * path )
 {
     ( void )path;
@@ -78,6 +101,14 @@ XSStringRef XSString_CreateWithContentOfFile( char * path )
     return NULL;
 }
 
+/*!
+ * @function    XSString_SubstringFromIndex
+ * @abstract    Gets a substring to a specific index
+ * @description You are responsible to release the returned string object
+ * @param       str     The string object
+ * @param       i       The index
+ * @result      The string object
+ */
 XSStringRef XSString_SubstringFromIndex( XSStringRef str, size_t i )
 {
     XSString * _str;
@@ -92,6 +123,14 @@ XSStringRef XSString_SubstringFromIndex( XSStringRef str, size_t i )
     return XSString_CreateWithCString( _str->str + i );
 }
 
+/*!
+ * @function    XSString_SubstringToIndex
+ * @abstract    Gets a substring to a specific index
+ * @description You are responsible to release the returned string object
+ * @param       str     The string object
+ * @param       i       The index
+ * @result      The string object
+ */
 XSStringRef XSString_SubstringToIndex( XSStringRef str, size_t i )
 {
     XSString * _str;
@@ -111,6 +150,14 @@ XSStringRef XSString_SubstringToIndex( XSStringRef str, size_t i )
     return ( XSStringRef )str2;
 }
 
+/*!
+ * @function    XSString_SubstringWithRange
+ * @abstract    Gets a substring within a specific range
+ * @description You are responsible to release the returned string object
+ * @param       str     The string object
+ * @param       range   The range
+ * @result      The string object
+ */
 XSStringRef XSString_SubstringWithRange( XSStringRef str, XSRange range )
 {
     XSString * _str;
@@ -122,6 +169,13 @@ XSStringRef XSString_SubstringWithRange( XSStringRef str, XSRange range )
     return NULL;
 }
 
+/*!
+ * @function    XSString_LowercaseString
+ * @abstract    Gets a lower-case string
+ * @description You are responsible to release the returned string object
+ * @param       str     The string object
+ * @result      The string object
+ */
 XSStringRef XSString_LowercaseString( XSStringRef str )
 {
     XSString * _str;
@@ -131,6 +185,13 @@ XSStringRef XSString_LowercaseString( XSStringRef str )
     return NULL;
 }
 
+/*!
+ * @function    XSString_LowercaseString
+ * @abstract    Gets a upper-case string
+ * @description You are responsible to release the returned string object
+ * @param       str     The string object
+ * @result      The string object
+ */
 XSStringRef XSString_UppercaseString( XSStringRef str )
 {
     XSString * _str;
@@ -140,36 +201,59 @@ XSStringRef XSString_UppercaseString( XSStringRef str )
     return NULL;
 }
 
-XSStringRef XSString_StringByAppendingString( XSStringRef str )
+/*!
+ * @function    XSString_StringByAppendingString
+ * @abstract    Creates a new string by appending an other string
+ * @description You are responsible to release the returned string object
+ * @param       str1    The string object
+ * @param       str2    The string to append
+ * @result      The string object
+ */
+XSStringRef XSString_StringByAppendingString( XSStringRef str1, XSStringRef str2 )
 {
     XSString * _str;
     
-    _str = ( XSString * )str;
+    _str = ( XSString * )str1;
+    
+    ( void )str2;
     
     return NULL;
 }
 
-XSStringRef XSString_StringByAppendingCString( char * str )
+/*!
+ * @function    XSString_StringByAppendingCString
+ * @abstract    Creates a new string by appending an C string
+ * @description You are responsible to release the returned string object
+ * @param       str1    The string object
+ * @param       str2    The C string to append
+ * @result      The string object
+ */
+XSStringRef XSString_StringByAppendingCString( XSStringRef str1, char * str2 )
 {
-    ( void )str;
+    ( void )str1;
+    ( void )str2;
     
     return NULL;
 }
 
-BOOL XSString_WriteToFile( XSStringRef str )
-{
-    XSString * _str;
-    
-    _str = ( XSString * )str;
-    
-    return NO;
-}
-
+/*!
+ * @function    XSString_Length
+ * @abstract    Gets the string length
+ * @param       str     The string object
+ * @result      The string length
+ */
 size_t XSString_Length( XSStringRef str )
 {
     return ( ( XSString * )str )->length;
 }
 
+/*!
+ * @function    XSString_CharacterAtIndex
+ * @abstract    Gets a character at a specific index
+ * @param       str     The string object
+ * @param       i       The index
+ * @result      The character
+ */
 char XSString_CharacterAtIndex( XSStringRef str, size_t i )
 {
     XSString * _str;
@@ -184,6 +268,12 @@ char XSString_CharacterAtIndex( XSStringRef str, size_t i )
     return _str->str[ i ];
 }
 
+/*!
+ * @function    XSString_CString
+ * @abstract    Gets the C string
+ * @param       str     The string object
+ * @result      The C String
+ */
 const char * XSString_CString( XSStringRef str )
 {
     return ( ( XSString * )str )->str;
