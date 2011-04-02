@@ -66,5 +66,5 @@ XSFoundation is released under the terms of the [Boost][2] Software License - Ve
         XSRelease( ap );
         
         // Termination of XSFoundation and program exit
-        XSFOUNDATION_END();
+        XSFOUNDATION_EXIT();
     }
