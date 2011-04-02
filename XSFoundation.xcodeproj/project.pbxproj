@@ -66,6 +66,10 @@
 		0560042013412869005DC721 /* XSURL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSURL.c; sourceTree = "<group>"; };
 		0560042113417F6F005DC721 /* XSMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMacros.h; sourceTree = "<group>"; };
 		05600422134184BD005DC721 /* XSMacrosTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMacrosTarget.h; sourceTree = "<group>"; };
+		056A74E71346F8C5006DD897 /* __XSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSColor.h; sourceTree = "<group>"; };
+		056A74E91346F953006DD897 /* XSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSColor.h; sourceTree = "<group>"; };
+		056A74EA1346F98B006DD897 /* __XSColor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSColor.c; sourceTree = "<group>"; };
+		056A74EB1346F9DC006DD897 /* XSColor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSColor.c; sourceTree = "<group>"; };
 		05AC165713418E7100455568 /* __XSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSArray.h; sourceTree = "<group>"; };
 		05AC165813418E7100455568 /* __XSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSData.h; sourceTree = "<group>"; };
 		05AC165913418E7100455568 /* __XSDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSDate.h; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 			children = (
 				056003BF1340621F005DC721 /* include */,
 				056003F01340BB34005DC721 /* __XSArray.c */,
+				056A74EA1346F98B006DD897 /* __XSColor.c */,
 				0560041113412865005DC721 /* __XSData.c */,
 				0560041213412865005DC721 /* __XSDate.c */,
 				0560041313412865005DC721 /* __XSDictionary.c */,
@@ -117,6 +122,7 @@
 				0560041713412866005DC721 /* __XSTree.c */,
 				0560041813412866005DC721 /* __XSURL.c */,
 				056003F11340BB3F005DC721 /* XSArray.c */,
+				056A74EB1346F9DC006DD897 /* XSColor.c */,
 				0560041913412867005DC721 /* XSData.c */,
 				0560041A13412867005DC721 /* XSDate.c */,
 				0560041B13412867005DC721 /* XSDictionary.c */,
@@ -167,6 +173,7 @@
 			children = (
 				05AC165613418E7100455568 /* __private */,
 				056003EE1340BB05005DC721 /* XSArray.h */,
+				056A74E91346F953006DD897 /* XSColor.h */,
 				056003CF1340621F005DC721 /* XSConstants.h */,
 				0560040913412858005DC721 /* XSData.h */,
 				0560040A13412858005DC721 /* XSDate.h */,
@@ -193,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				05AC165713418E7100455568 /* __XSArray.h */,
+				056A74E71346F8C5006DD897 /* __XSColor.h */,
 				05AC165813418E7100455568 /* __XSData.h */,
 				05AC165913418E7100455568 /* __XSDate.h */,
 				05AC165A13418E7100455568 /* __XSDictionary.h */,

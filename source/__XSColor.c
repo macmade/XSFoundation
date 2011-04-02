@@ -26,41 +26,53 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
-
+ 
 /* $Id$ */
 
 /*!
- * @header      XS.h
+ * @file        __XSData.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSFoundation main header file
- * @description This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    ...
  */
 
-#ifndef _XS_H_
-#define _XS_H_
-#pragma once
+#include "XS.h"
+#include "__XSColor.h"
 
-#include "std/std.h"
-#include "XS/XSMacros.h"
-#include "XS/XSConstants.h"
-#include "XS/XSTypes.h"
-#include "XS/XSFunctions.h"
-#include "XS/XSMemory.h"
-#include "XS/XSRuntime.h"
-#include "XS/XSArray.h"
-#include "XS/XSColor.h"
-#include "XS/XSData.h"
-#include "XS/XSDate.h"
-#include "XS/XSDictionary.h"
-#include "XS/XSError.h"
-#include "XS/XSFile.h"
-#include "XS/XSNumber.h"
-#include "XS/XSSet.h"
-#include "XS/XSString.h"
-#include "XS/XSThread.h"
-#include "XS/XSTree.h"
-#include "XS/XSURL.h"
+/*!
+ * @var         __XSColorClass
+ * @abstract    Runtime class definition
+ */
+static const XSRuntimeClass __XSColorClass =
+{
+    "XSColor",          /* Class name */
+    NULL,               /* Constructor */
+    NULL,               /* Destructor */
+    NULL,               /* Object copy */
+    NULL                /* Object description */
+};
 
-#endif /* _XS_H_ */
+/*!
+ * @var         __XSColorTypeID
+ * @abstract    Type ID for the runtine class
+ */
+static XSTypeID __XSColorTypeID;
+
+/*!
+ * @function    __XSColor_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
+void __XSColor_Initialize( void )
+{
+    __XSColorTypeID = XSRuntime_RegisterClass( &__XSColorClass );
+}
+
+/*!
+ * @function    __XSColor_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
+XSColor * __XSColor_Alloc( void )
+{
+    return ( XSColor * )XSRuntime_CreateInstance( __XSColorTypeID, sizeof( XSColor ) );
+}
