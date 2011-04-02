@@ -53,6 +53,14 @@ XS_EXTERN_C_BEGIN
 typedef struct _XSColor
 {
     XSRuntimeBase _xsbase;
+    XSFloat       red;
+    XSFloat       green;
+    XSFloat       blue;
+    XSFloat       hue;
+    XSFloat       saturation;
+    XSFloat       value;
+    XSFloat       luminance;
+    XSFloat       alpha;
 }
 XSColor;
 
