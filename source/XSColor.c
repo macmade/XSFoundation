@@ -48,11 +48,7 @@
  */
 XSColorRef XSColor_CreateWithRGB( XSFloat r, XSFloat g, XSFloat b )
 {
-    ( void )r;
-    ( void )g;
-    ( void )b;
-    
-    return NULL;
+    return XSColor_CreateWithRGBA( r, g, b, 100 );
 }
 
 /*!
@@ -65,11 +61,7 @@ XSColorRef XSColor_CreateWithRGB( XSFloat r, XSFloat g, XSFloat b )
  */
 XSColorRef XSColor_CreateWithHSL( XSFloat h, XSFloat s, XSFloat l )
 {
-    ( void )h;
-    ( void )s;
-    ( void )l;
-    
-    return NULL;
+    return XSColor_CreateWithHSLA( h, s, l, 100 );
 }
 
 /*!
@@ -82,11 +74,7 @@ XSColorRef XSColor_CreateWithHSL( XSFloat h, XSFloat s, XSFloat l )
  */
 XSColorRef XSColor_CreateWithHSV( XSFloat h, XSFloat s, XSFloat v )
 {
-    ( void )h;
-    ( void )s;
-    ( void )v;
-    
-    return NULL;
+    return XSColor_CreateWithHSVA( h, s, v, 100 );
 }
 
 /*!
@@ -100,12 +88,19 @@ XSColorRef XSColor_CreateWithHSV( XSFloat h, XSFloat s, XSFloat v )
  */
 XSColorRef XSColor_CreateWithRGBA( XSFloat r, XSFloat g, XSFloat b, XSFloat a )
 {
-    ( void )r;
-    ( void )g;
-    ( void )b;
-    ( void )a;
+    XSColor * color;
     
-    return NULL;
+    color = __XSColor_Alloc();
+    
+    color->red   = MIN( r, 255 );
+    color->green = MIN( g, 255 );
+    color->blue  = MIN( b, 255 );
+    color->alpha = MIN( a, 100 );
+    
+    __XSColor_RGBToHSL( color );
+    __XSColor_RGBToHSV( color );
+    
+    return ( XSColorRef )color;
 }
 
 /*!
@@ -119,12 +114,19 @@ XSColorRef XSColor_CreateWithRGBA( XSFloat r, XSFloat g, XSFloat b, XSFloat a )
  */
 XSColorRef XSColor_CreateWithHSLA( XSFloat h, XSFloat s, XSFloat l, XSFloat a )
 {
-    ( void )h;
-    ( void )s;
-    ( void )l;
-    ( void )a;
+    XSColor * color;
     
-    return NULL;
+    color = __XSColor_Alloc();
+    
+    color->hue        = MIN( h, 360 );
+    color->saturation = MIN( s, 100 );
+    color->luminance  = MIN( l, 100 );
+    color->alpha      = MIN( a, 100 );
+    
+    __XSColor_HSLToRGB( color );
+    __XSColor_HSLToHSV( color );
+    
+    return ( XSColorRef )color;
 }
 
 /*!
@@ -138,12 +140,19 @@ XSColorRef XSColor_CreateWithHSLA( XSFloat h, XSFloat s, XSFloat l, XSFloat a )
  */
 XSColorRef XSColor_CreateWithHSVA( XSFloat h, XSFloat s, XSFloat v, XSFloat a )
 {
-    ( void )h;
-    ( void )s;
-    ( void )v;
-    ( void )a;
+    XSColor * color;
     
-    return NULL;
+    color = __XSColor_Alloc();
+    
+    color->hue        = MIN( h, 360 );
+    color->saturation = MIN( s, 100 );
+    color->value      = MIN( v, 100 );
+    color->alpha      = MIN( a, 100 );
+    
+    __XSColor_HSVToRGB( color );
+    __XSColor_HSVToHSL( color );
+    
+    return ( XSColorRef )color;
 }
 
 /*!
@@ -153,7 +162,7 @@ XSColorRef XSColor_CreateWithHSVA( XSFloat h, XSFloat s, XSFloat v, XSFloat a )
  */
 XSColorRef XSColor_BlackColor( void )
 {
-    return NULL;
+    return XSColor_CreateWithRGB( 0, 0, 0 );
 }
 
 /*!
@@ -163,7 +172,7 @@ XSColorRef XSColor_BlackColor( void )
  */
 XSColorRef XSColor_WhiteColor( void )
 {
-    return NULL;
+    return XSColor_CreateWithRGB( 255, 255, 255 );
 }
 
 /*!
@@ -173,7 +182,7 @@ XSColorRef XSColor_WhiteColor( void )
  */
 XSColorRef XSColor_RedColor( void )
 {
-    return NULL;
+    return XSColor_CreateWithRGB( 255, 0, 0 );
 }
 
 /*!
@@ -183,7 +192,7 @@ XSColorRef XSColor_RedColor( void )
  */
 XSColorRef XSColor_GreenColor( void )
 {
-    return NULL;
+    return XSColor_CreateWithRGB( 0, 255, 0 );
 }
 
 /*!
@@ -193,7 +202,7 @@ XSColorRef XSColor_GreenColor( void )
  */
 XSColorRef XSColor_BlueColor( void )
 {
-    return NULL;
+    return XSColor_CreateWithRGB( 0, 0, 255 );
 }
 
 /*!
@@ -204,9 +213,7 @@ XSColorRef XSColor_BlueColor( void )
  */
 XSFloat XSColor_GetRed( XSColorRef color )
 {
-    ( void )color;
-    
-    return 0;
+    return ( ( XSColor * )color )->red;
 }
 
 /*!
@@ -217,9 +224,7 @@ XSFloat XSColor_GetRed( XSColorRef color )
  */
 XSFloat XSColor_GetGreen( XSColorRef color )
 {
-    ( void )color;
-    
-    return 0;
+    return ( ( XSColor * )color )->green;
 }
 
 /*!
@@ -230,9 +235,7 @@ XSFloat XSColor_GetGreen( XSColorRef color )
  */
 XSFloat XSColor_GetBlue( XSColorRef color )
 {
-    ( void )color;
-    
-    return 0;
+    return ( ( XSColor * )color )->blue;
 }
 
 /*!
@@ -243,9 +246,7 @@ XSFloat XSColor_GetBlue( XSColorRef color )
  */
 XSFloat XSColor_GetHue( XSColorRef color )
 {
-    ( void )color;
-    
-    return 0;
+    return ( ( XSColor * )color )->hue;
 }
 
 /*!
@@ -256,9 +257,7 @@ XSFloat XSColor_GetHue( XSColorRef color )
  */
 XSFloat XSColor_GetSaturation( XSColorRef color )
 {
-    ( void )color;
-    
-    return 0;
+    return ( ( XSColor * )color )->saturation;
 }
 
 /*!
@@ -269,9 +268,7 @@ XSFloat XSColor_GetSaturation( XSColorRef color )
  */
 XSFloat XSColor_GetLuminance( XSColorRef color )
 {
-    ( void )color;
-    
-    return 0;
+    return ( ( XSColor * )color )->luminance;
 }
 
 /*!
@@ -282,9 +279,7 @@ XSFloat XSColor_GetLuminance( XSColorRef color )
  */
 XSFloat XSColor_GetValue( XSColorRef color )
 {
-    ( void )color;
-    
-    return 0;
+    return ( ( XSColor * )color )->value;
 }
 
 /*!
@@ -295,9 +290,7 @@ XSFloat XSColor_GetValue( XSColorRef color )
  */
 XSFloat XSColor_GetAlpha( XSColorRef color )
 {
-    ( void )color;
-    
-    return 0;
+    return ( ( XSColor * )color )->alpha;
 }
 
 /*!
@@ -309,8 +302,10 @@ XSFloat XSColor_GetAlpha( XSColorRef color )
  */
 void XSColor_SetRed( XSColorRef color, XSFloat v )
 {
-    ( void )color;
-    ( void )v;
+    ( ( XSColor * )color )->red = MIN( v, 255 );
+    
+    __XSColor_RGBToHSL( ( XSColor * )color );
+    __XSColor_RGBToHSV( ( XSColor * )color );
 }
 
 /*!
@@ -322,8 +317,10 @@ void XSColor_SetRed( XSColorRef color, XSFloat v )
  */
 void XSColor_SetGreen( XSColorRef color, XSFloat v )
 {
-    ( void )color;
-    ( void )v;
+    ( ( XSColor * )color )->green = MIN( v, 255 );
+    
+    __XSColor_RGBToHSL( ( XSColor * )color );
+    __XSColor_RGBToHSV( ( XSColor * )color );
 }
 
 /*!
@@ -335,8 +332,10 @@ void XSColor_SetGreen( XSColorRef color, XSFloat v )
  */
 void XSColor_SetBlue( XSColorRef color, XSFloat v )
 {
-    ( void )color;
-    ( void )v;
+    ( ( XSColor * )color )->blue = MIN( v, 255 );
+    
+    __XSColor_RGBToHSL( ( XSColor * )color );
+    __XSColor_RGBToHSV( ( XSColor * )color );
 }
 
 /*!
@@ -348,8 +347,9 @@ void XSColor_SetBlue( XSColorRef color, XSFloat v )
  */
 void XSColor_SetHue( XSColorRef color, XSFloat v )
 {
-    ( void )color;
-    ( void )v;
+    ( ( XSColor * )color )->hue = MIN( v, 360 );
+    
+    __XSColor_HSLToRGB( ( XSColor * )color );
 }
 
 /*!
@@ -361,8 +361,9 @@ void XSColor_SetHue( XSColorRef color, XSFloat v )
  */
 void XSColor_SetSaturation( XSColorRef color, XSFloat v )
 {
-    ( void )color;
-    ( void )v;
+    ( ( XSColor * )color )->saturation = MIN( v, 100 );
+    
+    __XSColor_HSLToRGB( ( XSColor * )color );
 }
 
 /*!
@@ -374,8 +375,10 @@ void XSColor_SetSaturation( XSColorRef color, XSFloat v )
  */
 void XSColor_SetLuminance( XSColorRef color, XSFloat v )
 {
-    ( void )color;
-    ( void )v;
+    ( ( XSColor * )color )->luminance = MIN( v, 100 );
+    
+    __XSColor_HSLToRGB( ( XSColor * )color );
+    __XSColor_HSLToHSV( ( XSColor * )color );
 }
 
 /*!
@@ -387,8 +390,10 @@ void XSColor_SetLuminance( XSColorRef color, XSFloat v )
  */
 void XSColor_SetValue( XSColorRef color, XSFloat v )
 {
-    ( void )color;
-    ( void )v;
+    ( ( XSColor * )color )->value = MIN( v, 100 );
+    
+    __XSColor_HSLToRGB( ( XSColor * )color );
+    __XSColor_HSVToHSL( ( XSColor * )color );
 }
 
 /*!
@@ -400,6 +405,5 @@ void XSColor_SetValue( XSColorRef color, XSFloat v )
  */
 void XSColor_SetAlpha( XSColorRef color, XSFloat v )
 {
-    ( void )color;
-    ( void )v;
+    ( ( XSColor * )color )->alpha = MIN( v, 100 );
 }
