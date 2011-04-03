@@ -67,8 +67,7 @@ XSArrayRef XSArray_CreateWithCapacity( XSUInteger capacity )
     array           = __XSArray_Alloc();
     array->values   = store;
     array->capacity = capacity;
-    
-    ( void )capacity;
+    array->count    = 0;
     
     return ( XSArrayRef )array;
 }
@@ -85,7 +84,7 @@ XSArrayRef XSArray_CreateWithValues( void * value1, ... )
     va_list    args;
     XSArray  * array;
     void     * value;
-    void     * store;
+    void    ** store;
     XSUInteger values;
     
     va_start( args, value1 );
@@ -104,7 +103,7 @@ XSArrayRef XSArray_CreateWithValues( void * value1, ... )
     {
         if( values == XSARRAY_DEFAULT_CAPACITY )
         {
-            if( NULL == ( store = XSRealloc( array->values, ( values + XSARRAY_DEFAULT_CAPACITY ) * sizeof( void * ) ) ) )
+            if( NULL == ( store = ( void ** )XSRealloc( array->values, ( values + XSARRAY_DEFAULT_CAPACITY ) * sizeof( void * ) ) ) )
             {
                 XSRelease( array );
                 
@@ -143,13 +142,13 @@ XSUInteger XSArray_Count( XSArrayRef array )
 void XSArray_AppendValue( XSArrayRef array, void * value )
 {
     XSArray * _array;
-    void    * store;
+    void   ** store;
     
     _array = ( XSArray * )array;
     
     if( _array->count == _array->capacity )
     {
-        if( NULL == ( store = XSRealloc( _array->values, ( _array->count + _array->capacity ) * sizeof( void * ) ) ) )
+        if( NULL == ( store = ( void ** )XSRealloc( _array->values, ( _array->count + _array->capacity ) * sizeof( void * ) ) ) )
         {
             return;
         }
@@ -172,7 +171,7 @@ void XSArray_AppendValue( XSArrayRef array, void * value )
 void XSArray_InsertValueAtIndex( XSArrayRef array, void * value, XSUInteger i )
 {
     XSArray  * _array;
-    void     * store;
+    void    ** store;
     XSUInteger j;
     
     _array = ( XSArray * )array;
@@ -184,7 +183,7 @@ void XSArray_InsertValueAtIndex( XSArrayRef array, void * value, XSUInteger i )
     
     if( _array->count + 1 > _array->capacity )
     {
-        if( NULL == ( store = XSRealloc( _array->values, ( _array->count + _array->capacity ) * sizeof( void * ) ) ) )
+        if( NULL == ( store = ( void ** )XSRealloc( _array->values, ( _array->count + _array->capacity ) * sizeof( void * ) ) ) )
         {
             return;
         }
