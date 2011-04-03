@@ -56,9 +56,28 @@ XSDictionaryRef XSDictionary_Create( void )
  */
 XSDictionaryRef XSDictionary_CreateWithCapacity( XSUInteger capacity )
 {
-    ( void )capacity;
+    void        ** store;
+    XSStringRef  * keys;
+    XSDictionary * dict;
     
-    return NULL;
+    if( NULL == ( store = ( void ** )XSAlloc( capacity * sizeof( void * ) ) ) )
+    {
+        return NULL;
+    }
+    
+    if( NULL == ( keys = ( XSStringRef * )XSAlloc( capacity * sizeof( XSStringRef ) ) ) )
+    {
+        XSRelease( store );
+        return NULL;
+    }
+    
+    dict           = __XSDictionary_Alloc();
+    dict->values   = store;
+    dict->keys     = keys;
+    dict->capacity = capacity;
+    dict->count    = 0;
+    
+    return ( XSDictionaryRef )dict;
 }
 
 /*!
@@ -72,10 +91,64 @@ XSDictionaryRef XSDictionary_CreateWithCapacity( XSUInteger capacity )
  */
 XSDictionaryRef XSDictionary_CreateWithValuesAndKeys( void * value1, XSStringRef key1, ... )
 {
-    ( void )value1;
-    ( void )key1;
+    va_list        args;
+    XSDictionary * dict;
+    void         * value;
+    XSStringRef    key;
+    void        ** store;
+    XSStringRef  * keys;
+    XSUInteger     values;
     
-    return NULL;
+    va_start( args, key1 );
+    
+    dict = ( XSDictionary * )XSDictionary_Create();
+    
+    if( value1 == NULL || key1 == NULL )
+    {
+        return ( XSDictionaryRef )dict;
+    }
+    
+    values                   = 0;
+    dict->values[ values ] = XSRetain( value1 );
+    dict->keys[ values ]   = XSCopy( key1 );
+    
+    values++;
+    
+    while( NULL != ( value = va_arg( args, void * ) ) )
+    {
+        key = va_arg( args, XSStringRef );
+        
+        if( key == NULL )
+        {
+            break;
+        }
+        
+        if( values == XSARRAY_DEFAULT_CAPACITY )
+        {
+            if( NULL == ( store = ( void ** )XSRealloc( dict->values, ( values + dict->capacity ) * sizeof( void * ) ) ) )
+            {
+                XSRelease( dict );
+                
+                return NULL;
+            }
+            
+            if( NULL == ( keys = ( XSStringRef * )XSRealloc( dict->keys, ( values + dict->capacity ) * sizeof( XSStringRef ) ) ) )
+            {
+                XSRelease( dict );
+                
+                return NULL;
+            }
+            
+            dict->values = store;
+        }
+        
+        dict->values[ values ] = XSRetain( value );
+        dict->keys[ values ]   = XSCopy( key );
+        
+        values++;
+    }
+    
+    return ( XSDictionaryRef )dict;
 }
 
 /*!
