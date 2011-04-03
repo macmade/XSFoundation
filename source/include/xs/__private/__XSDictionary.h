@@ -53,6 +53,10 @@ XS_EXTERN_C_BEGIN
 typedef struct _XSDictionary
 {
     XSRuntimeBase _xsbase;
+    void       ** values;
+    XSStringRef * keys;
+    XSUInteger    count;
+    XSUInteger    capacity;
 }
 XSDictionary;
 

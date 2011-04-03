@@ -44,7 +44,7 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @define      __XSARRAY_DEFAULT_CAPACITY
+ * @define      XSARRAY_DEFAULT_CAPACITY
  * @abstract    Default capacity for the empty arrays
  */
 #define XSARRAY_DEFAULT_CAPACITY    256
