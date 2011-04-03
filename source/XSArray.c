@@ -103,7 +103,7 @@ XSArrayRef XSArray_CreateWithValues( void * value1, ... )
     {
         if( values == XSARRAY_DEFAULT_CAPACITY )
         {
-            if( NULL == ( store = ( void ** )XSRealloc( array->values, ( values + XSARRAY_DEFAULT_CAPACITY ) * sizeof( void * ) ) ) )
+            if( NULL == ( store = ( void ** )XSRealloc( array->values, ( values + array->capacity ) * sizeof( void * ) ) ) )
             {
                 XSRelease( array );
                 
