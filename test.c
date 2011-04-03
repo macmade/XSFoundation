@@ -84,6 +84,7 @@ int main( void )
     XSLog( "Array value 0: %@", XSArray_ValueAtIndex( arr, 0 ) );
     
     XSLog( "%@", XSAutorelease( XSString_StringByAppendingString( str1, str2 ) ) );
+    XSLog( "%@", arr );
     XSLog( "%@", dict );
     
     XSThread_Detach( thread_test, NULL );
