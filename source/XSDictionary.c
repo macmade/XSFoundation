@@ -162,9 +162,19 @@ XSDictionaryRef XSDictionary_CreateWithValuesAndKeys( void * value1, XSStringRef
  */
 XSArrayRef XSDictionary_Keys( XSDictionaryRef dict )
 {
-    ( void )dict;
+    XSDictionary * _dict;
+    XSArrayRef     array;
+    XSUInteger     i;
     
-    return NULL;
+    _dict = ( XSDictionary * )dict;
+    array = XSArray_CreateWithCapacity( _dict->count );
+    
+    for( i = 0; i < _dict->count; i++ )
+    {
+        XSArray_AppendValue( array, _dict->keys[ i ] );
+    }
+    
+    return array;
 }
 
 /*!
@@ -177,9 +187,19 @@ XSArrayRef XSDictionary_Keys( XSDictionaryRef dict )
  */
 XSArrayRef XSDictionary_Values( XSDictionaryRef dict )
 {
-    ( void )dict;
+    XSDictionary * _dict;
+    XSArrayRef     array;
+    XSUInteger     i;
     
-    return NULL;
+    _dict = ( XSDictionary * )dict;
+    array = XSArray_CreateWithCapacity( _dict->count );
+    
+    for( i = 0; i < _dict->count; i++ )
+    {
+        XSArray_AppendValue( array, _dict->values[ i ] );
+    }
+    
+    return array;
 }
 
 /*!
