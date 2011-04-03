@@ -59,6 +59,7 @@ int main( void )
     XSStringRef          str2;
     XSStringRef          str3;
     XSArrayRef           arr;
+    XSDictionaryRef      dict;
     
     XSFOUNDATION_START();
     
@@ -75,6 +76,7 @@ int main( void )
     str2 = XSString_SubstringFromIndex( str1, 5 );
     str3 = XSCopy( str2 );
     arr  = XSArray_CreateWithValues( str1, str2, str3, NULL );
+    dict = XSAutorelease( XSDictionary_CreateWithValuesAndKeys( str1, str1, str2, str2, NULL ) );
     
     printf( "%s%s%s\n", XSString_CString( str1 ), XSString_CString( str2 ), XSString_CString( str3 ) );
     
@@ -82,6 +84,7 @@ int main( void )
     XSLog( "Array value 0: %@", XSArray_ValueAtIndex( arr, 0 ) );
     
     XSLog( "%@", XSAutorelease( XSString_StringByAppendingString( str1, str2 ) ) );
+    XSLog( "%@", dict );
     
     XSThread_Detach( thread_test, NULL );
     XSThread_Detach( thread_test, str1 );
