@@ -74,6 +74,14 @@ void __XSDictionary_Initialize( void );
  */
 XSDictionary * __XSDictionary_Alloc( void );
 
+/*!
+ * @function    __XSDictionary_Dealloc
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSDictionary_Dealloc( void * object );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_DICTIONARY_H_ */

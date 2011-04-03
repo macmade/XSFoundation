@@ -44,11 +44,11 @@
  */
 static const XSRuntimeClass __XSDictionaryClass =
 {
-    "XSDictionary",     /* Class name */
-    NULL,               /* Constructor */
-    NULL,               /* Destructor */
-    NULL,               /* Object copy */
-    NULL                /* Object description */
+    "XSDictionary",         /* Class name */
+    NULL,                   /* Constructor */
+    __XSDictionary_Dealloc, /* Destructor */
+    NULL,                   /* Object copy */
+    NULL                    /* Object description */
 };
 
 /*!
@@ -75,4 +75,24 @@ void __XSDictionary_Initialize( void )
 XSDictionary * __XSDictionary_Alloc( void )
 {
     return ( XSDictionary * )XSRuntime_CreateInstance( __XSDictionaryTypeID, sizeof( XSDictionary ) );
+}
+
+/*!
+ * @function    __XSDictionary_Dealloc
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSDictionary_Dealloc( void * object )
+{
+    XSDictionary * dict;
+    XSUInteger     i;
+    
+    dict = ( XSDictionary * )object;
+    
+    for( i = 0; i < dict->count; i++ )
+    {
+        XSRelease( dict->values[ i ] );
+        XSRelease( dict->keys[ i ] );
+    }
 }
