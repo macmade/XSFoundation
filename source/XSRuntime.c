@@ -80,6 +80,7 @@ void __XSAutoreleasePool_Initialize( void );
 void __XSFile_Initialize( void );
 void __XSString_Initialize( void );
 void __XSArray_Initialize( void );
+void __XSBag_Initialize( void );
 void __XSDictionary_Initialize( void );
 void __XSSet_Initialize( void );
 void __XSNumber_Initialize( void );
@@ -106,6 +107,7 @@ void XSRuntime_Initialize( void )
     
     __XSAutoreleasePool_Initialize();
     __XSArray_Initialize();
+    __XSBag_Initialize();
     __XSColor_Initialize();
     __XSData_Initialize();
     __XSDate_Initialize();
