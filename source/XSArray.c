@@ -101,7 +101,7 @@ XSArrayRef XSArray_CreateWithValues( void * value1, ... )
     
     while( NULL != ( value = va_arg( args, void * ) ) )
     {
-        if( values == XSARRAY_DEFAULT_CAPACITY )
+        if( values == array->capacity )
         {
             if( NULL == ( store = ( void ** )XSRealloc( array->values, ( values + array->capacity ) * sizeof( void * ) ) ) )
             {
@@ -110,7 +110,8 @@ XSArrayRef XSArray_CreateWithValues( void * value1, ... )
                 return NULL;
             }
             
-            array->values = store;
+            array->values   = store;
+            array->capacity = values + array->capacity;
         }
         
         array->values[ values++ ] = XSRetain( value );
@@ -153,7 +154,8 @@ void XSArray_AppendValue( XSArrayRef array, void * value )
             return;
         }
         
-        _array->values = store;
+        _array->values   = store;
+        _array->capacity = _array->count + _array->capacity;
     }
     
     _array->values[ _array->count++ ] = XSRetain( value );
@@ -187,6 +189,9 @@ void XSArray_InsertValueAtIndex( XSArrayRef array, void * value, XSUInteger i )
         {
             return;
         }
+        
+        _array->values   = store;
+        _array->capacity = _array->count + _array->capacity;
     }
     
     for( j = _array->count; j == i; j++ )

@@ -123,7 +123,7 @@ XSDictionaryRef XSDictionary_CreateWithValuesAndKeys( void * value1, XSStringRef
             break;
         }
         
-        if( values == XSARRAY_DEFAULT_CAPACITY )
+        if( values == dict->capacity )
         {
             if( NULL == ( store = ( void ** )XSRealloc( dict->values, ( values + dict->capacity ) * sizeof( void * ) ) ) )
             {
@@ -139,7 +139,8 @@ XSDictionaryRef XSDictionary_CreateWithValuesAndKeys( void * value1, XSStringRef
                 return NULL;
             }
             
-            dict->values = store;
+            dict->values   = store;
+            dict->capacity = values + dict->capacity;
         }
         
         dict->values[ values ] = XSRetain( value );
