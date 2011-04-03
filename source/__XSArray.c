@@ -78,7 +78,7 @@ XSArray * __XSArray_Alloc( void )
 }
 
 /*!
- * @function    __XSString_Dealloc
+ * @function    __XSArray_Dealloc
  * @abstract    Destructor
  * @param       object  A pointer to the object
  * @result      void
