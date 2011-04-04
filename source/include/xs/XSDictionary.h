@@ -82,6 +82,14 @@ XSDictionaryRef XSDictionary_CreateWithCapacity( XSUInteger capacity );
 XSDictionaryRef XSDictionary_CreateWithValuesAndKeys( void * value1, XSStringRef key1, ... );
 
 /*!
+ * @function    XSDictionary_Count
+ * @abstract    Gets the number of values in the dictionary
+ * @param       dict    The dictionary object
+ * @result      The number of values in the dictionary
+ */
+XSUInteger XSDictionary_Count( XSDictionaryRef dict );
+
+/*!
  * @function    XSDictionary_Keys
  * @abstract    Gets an array with all the dictionary keys
  * @description You are responsible to release the array returned by this

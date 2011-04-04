@@ -74,7 +74,8 @@ XSArrayRef XSArray_CreateWithCapacity( XSUInteger capacity )
 
 /*!
  * @function    XSArray_CreateWithValues
- * @abstract    Creates an array by inserting values.
+ * @abstract    Creates an array by inserting values
+ * @description Values will be automatically retained.
  * @param       value1  The first value to insert
  * @param       ...     The values to insert. Must be terminated by a NULL fence
  * @result      The array object
@@ -123,7 +124,6 @@ XSArrayRef XSArray_CreateWithValues( void * value1, ... )
 /*!
  * @function    XSArray_Count
  * @abstract    Gets the number of values in the array
- * @description The inserted value will be automatically retained.
  * @param       array   The array object
  * @result      The number of values in the array
  */
