@@ -407,6 +407,12 @@ XSInteger XSFile_Seek( XSFileRef file, XSInteger offset, XSFileSeekPosition orig
     return fseek( _f->fp, offset, origin );
 }
 
+/*!
+ * @function    XSFile_Tell
+ * @abstract    Gets the current file position
+ * @param       file    The file object
+ * @result      The position or -1 on error
+ */
 XSInteger XSFile_Tell( XSFileRef file )
 {
     XSFile * _f;
@@ -418,6 +424,11 @@ XSInteger XSFile_Tell( XSFileRef file )
     return ftell( _f->fp );
 }
 
+/*!
+ * @function    XSFile_Rewind
+ * @abstract    Rewinds to the beginning of the file and clears the error indicators
+ * return       void
+ */
 void XSFile_Rewind( XSFileRef file )
 {
     XSFile * _f;
@@ -429,6 +440,13 @@ void XSFile_Rewind( XSFileRef file )
     rewind( _f->fp );
 }
 
+/*!
+ * @function    XSFile_GetPos
+ * @abstract    Stores current file position
+ * @param       file    The file object
+ * @param       ptr     A pointer where tos store the file position
+ * @result      Non-zero on error
+ */
 XSInteger XSFile_GetPos( XSFileRef file, fpos_t * ptr )
 {
     XSFile * _f;
@@ -440,6 +458,13 @@ XSInteger XSFile_GetPos( XSFileRef file, fpos_t * ptr )
     return fgetpos( _f->fp, ptr );
 }
 
+/*!
+ * @function    XSFile_SetPos
+ * @abstract    Sets the current file position
+ * @param       file    The file object
+ * @param       ptr     The file position
+ * @result      Non-zero on error
+ */
 XSInteger XSFile_SetPos( XSFileRef file, const fpos_t * ptr )
 {
     XSFile * _f;
@@ -451,6 +476,12 @@ XSInteger XSFile_SetPos( XSFileRef file, const fpos_t * ptr )
     return fsetpos( _f->fp, ptr );
 }
 
+/*!
+ * @function    XSFile_ClearErr
+ * @abstract    Clears end-of-file and error indicators
+ * @param       file    The file object
+ * @result      void
+ */
 void XSFile_ClearErr( XSFileRef file )
 {
     XSFile * _f;
@@ -462,6 +493,12 @@ void XSFile_ClearErr( XSFileRef file )
     clearerr( _f->fp );
 }
 
+/*!
+ * @function    XSFile_EndOfFile
+ * @abstract    Checks for the end of the file
+ * @param       file    The file object
+ * @result      Non-zero if end-of-file indicator is set
+ */
 XSInteger XSFile_EndOfFile( XSFileRef file )
 {
     XSFile * _f;
@@ -473,6 +510,12 @@ XSInteger XSFile_EndOfFile( XSFileRef file )
     return feof( _f->fp );
 }
 
+/*!
+ * @function    XSFile_Error
+ * @abstract    Checks for the error indicator
+ * @param       file    The file object
+ * @result      Non-zero if error indicator is set
+ */
 XSInteger XSFile_Error( XSFileRef file )
 {
     XSFile * _f;
@@ -484,6 +527,12 @@ XSInteger XSFile_Error( XSFileRef file )
     return ferror( _f->fp );
 }
 
+/*!
+ * @function    XSFile_Filename
+ * @abstract    Gets the filename
+ * @param       file    The file object
+ * @result      The name of the file
+ */
 const char * XSFile_Filename( XSFileRef file )
 {
     XSFile * _f;
@@ -510,6 +559,12 @@ const char * XSFile_Filename( XSFileRef file )
     }
 }
 
+/*!
+ * @function    XSFile_OpenMode
+ * @abstract    Gets the file's open mode
+ * @param       file    The file object
+ * @result      The file's open mode
+ */
 const char * XSFile_OpenMode( XSFileRef file )
 {
     XSFile * _f;
@@ -536,6 +591,12 @@ const char * XSFile_OpenMode( XSFileRef file )
     }
 }
 
+/*!
+ * @function    XSFile_IsReadable
+ * @abstract    Checks if the file is readable 
+ * @param       file    The file object
+ * @result      true if the file is readable, otherwise false
+ */
 BOOL XSFile_IsReadable( XSFileRef file )
 {
     XSFile * _f;
@@ -562,6 +623,12 @@ BOOL XSFile_IsReadable( XSFileRef file )
     }
 }
 
+/*!
+ * @function    XSFile_IsWriteable
+ * @abstract    Checks if the file is writeable 
+ * @param       file    The file object
+ * @result      true if the file is writeable, otherwise false
+ */
 BOOL XSFile_IsWriteable( XSFileRef file )
 {
     XSFile * _f;
@@ -588,6 +655,12 @@ BOOL XSFile_IsWriteable( XSFileRef file )
     }
 }
 
+/*!
+ * @function    XSFile_Copy
+ * @abstract    Copies the file to another destination
+ * @param       file    The file object
+ * @result      True if the file was copeid, otherwise false
+ */
 BOOL XSFile_Copy( XSFileRef file, char * new_name )
 {
     FILE        * fp1;
