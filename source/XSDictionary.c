@@ -211,8 +211,18 @@ XSArrayRef XSDictionary_Values( XSDictionaryRef dict )
  */
 void * XSDictionary_ValueForKey( XSDictionaryRef dict, XSStringRef key )
 {
-    ( void )dict;
-    ( void )key;
+    XSDictionary * _dict;
+    XSUInteger     i;
+    
+    _dict = ( XSDictionary * )dict;
+    
+    for( i = 0; i < _dict->count; i++ )
+    {
+        if( XSString_IsEqualToString( key, _dict->keys[ i ] ) )
+        {
+            return _dict->keys[ values ];
+        }
+    }
     
     return NULL;
 }
