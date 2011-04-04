@@ -220,7 +220,7 @@ void * XSDictionary_ValueForKey( XSDictionaryRef dict, XSStringRef key )
     {
         if( XSString_IsEqualToString( key, _dict->keys[ i ] ) )
         {
-            return _dict->keys[ values ];
+            return _dict->values[ i ];
         }
     }
     
