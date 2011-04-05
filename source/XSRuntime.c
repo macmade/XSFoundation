@@ -78,6 +78,7 @@ static size_t            __class_count;
 void __XSMemoryObject_Initialize( void );
 void __XSAutoreleasePool_Initialize( void );
 void __XSApplication_Initialize( void );
+void __XSApplicationArgument_Initialize( void );
 void __XSArray_Initialize( void );
 void __XSBag_Initialize( void );
 void __XSColor_Initialize( void );
@@ -111,6 +112,7 @@ void XSRuntime_Initialize( void )
     __XSAutoreleasePool_Initialize();
     __XSArray_Initialize();
     __XSApplication_Initialize();
+    __XSApplicationArgument_Initialize();
     __XSBag_Initialize();
     __XSColor_Initialize();
     __XSData_Initialize();

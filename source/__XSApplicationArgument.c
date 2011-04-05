@@ -26,46 +26,53 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
-
+ 
 /* $Id$ */
 
 /*!
- * @header      XS.h
+ * @file        __XSApplicationArgument.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSFoundation main header file
- * @description This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    ...
  */
 
-#ifndef _XS_H_
-#define _XS_H_
-#pragma once
+#include "XS.h"
+#include "__XSApplicationArgument.h"
 
-#include "std/std.h"
-#include "XS/XSMacros.h"
-#include "XS/XSConstants.h"
-#include "XS/XSTypes.h"
-#include "XS/XSFunctions.h"
-#include "XS/XSMemory.h"
-#include "XS/XSRuntime.h"
-#include "XS/XSApplication.h"
-#include "XS/XSApplicationArgument.h"
-#include "XS/XSArray.h"
-#include "XS/XSBag.h"
-#include "XS/XSColor.h"
-#include "XS/XSData.h"
-#include "XS/XSDate.h"
-#include "XS/XSDictionary.h"
-#include "XS/XSError.h"
-#include "XS/XSFile.h"
-#include "XS/XSLock.h"
-#include "XS/XSNumber.h"
-#include "XS/XSSet.h"
-#include "XS/XSString.h"
-#include "XS/XSThread.h"
-#include "XS/XSTimer.h"
-#include "XS/XSTree.h"
-#include "XS/XSURL.h"
+/*!
+ * @var         __XSApplicationArgumentClass
+ * @abstract    Runtime class definition
+ */
+static const XSRuntimeClass __XSApplicationArgumentClass =
+{
+    "XSApplicationArgument",    /* Class name */
+    NULL,                       /* Constructor */
+    NULL,                       /* Destructor */
+    NULL,                       /* Object copy */
+    NULL                        /* Object description */
+};
 
-#endif /* _XS_H_ */
+/*!
+ * @var         __XSApplicationArgumentTypeID
+ * @abstract    Type ID for the runtine class
+ */
+static XSTypeID __XSApplicationArgumentTypeID;
+
+/*!
+ * @function    __XSApplicationArgument_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
+void __XSApplicationArgument_Initialize( void )
+{
+    __XSApplicationArgumentTypeID = XSRuntime_RegisterClass( &__XSApplicationArgumentClass );
+}
+
+/*!
+ * @function    __XSApplicationArgument_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
+XSApplicationArgument * __XSApplicationArgument_Alloc( void )
+{
+    return ( XSApplicationArgument * )XSRuntime_CreateInstance( __XSApplicationArgumentTypeID, sizeof( XSApplicationArgument ) );
+}
