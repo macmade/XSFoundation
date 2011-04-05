@@ -73,12 +73,12 @@ BOOL XSLock_Lock( XSLockRef lock );
 BOOL XSLock_TryLock( XSLockRef lock );
 
 /*!
- * @function    XSLock_WaitUntilLock
+ * @function    XSLock_WaitForLock
  * @abstract    Pause the programs execution until the lock is acquired
  * @param       The lock object
  * @result      void
  */
-void XSLock_WaitUntilLock( XSLockRef lock );
+void XSLock_WaitForLock( XSLockRef lock );
 
 /*!
  * @function    XSLock_Unlock
