@@ -43,13 +43,28 @@
 
 XS_EXTERN_C_BEGIN
 
+#include "XSArray.h"
+#include "XSString.h"
+
 /*!
  * @typedef     XSApplicationRef
  * @abstract    Opaque type for the XSApplication objects
  */
 typedef struct XSApplication * XSApplicationRef;
 
-void XSApplication_Start( int argc, const char ** argv );
+XSApplicationRef XSApplication_Start( int argc, const char ** argv );
+XSApplicationRef XSApplication_SharedApplication( void );
+void XSApplication_RegisterFlagArgument( XSApplicationRef app, const char * name );
+void XSApplication_RegisterIntegerArgument( XSApplicationRef app, const char * name );
+void XSApplication_RegisterUnsignedIntegerArgument( XSApplicationRef app, const char * name );
+void XSApplication_RegisterStringArgument( XSApplicationRef app, const char * name );
+BOOL XSApplication_HasArgument( XSApplicationRef app, const char * name );
+BOOL XSApplication_GetFlag( XSApplicationRef app, const char * name );
+XSInteger XSApplication_GetIntegerArgument( XSApplicationRef app, const char * name );
+XSUInteger XSApplication_GetUnsignedIntegerArgument( XSApplicationRef app, const char * name );
+XSStringRef XSApplication_GetStringArgument( XSApplicationRef app, const char * name );
+XSArrayRef XSApplication_GetUnnamedArguments( XSApplicationRef app );
+void XSApplication_Exit( void );
 
 XS_EXTERN_C_END
 

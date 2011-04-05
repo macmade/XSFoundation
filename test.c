@@ -56,18 +56,17 @@ void timer_test( XSTimerRef timer )
     
     XSLog( "Timer called: %i", ++i );
     
-    if( i == 10 )
+    if( i == 5 )
     {
         XSTimer_Invalidate( timer );
     }
 }
 
-int main( void )
+int main( int argc, char * argv[] )
 {
     unsigned int         i;
     char              ** test;
-    XSAutoreleasePoolRef ap1;
-    XSAutoreleasePoolRef ap2;
+    XSApplicationRef     app;
     XSStringRef          str1;
     XSStringRef          str2;
     XSStringRef          str3;
@@ -75,11 +74,8 @@ int main( void )
     XSDictionaryRef      dict;
     XSTimerRef           timer;
     
-    XSFOUNDATION_START();
-    
-    ap1   = XSAutoreleasePool_Create();
-    test  = XSAutoAlloc( 5 * sizeof( char * ) );
-    ap2   = XSAutoreleasePool_Create();
+    app  = XSApplication_Start( argc, ( const char ** )argv );
+    test = XSAutoAlloc( 5 * sizeof( char * ) );
     
     for( i = 0; i < 5; i++ )
     {
@@ -94,7 +90,7 @@ int main( void )
     
     printf( "%s%s%s\n", XSString_CString( str1 ), XSString_CString( str2 ), XSString_CString( str3 ) );
     
-    XSLog( "hello, universe: %i %@ %i %@ %i", 42, str1, 43, ap1, 44 );
+    XSLog( "hello, universe: %i %@ %i %@ %i", 42, str1, 43, app, 44 );
     XSLog( "Array value 0: %@", XSArray_ValueAtIndex( arr, 0 ) );
     
     XSLog( "%@", XSAutorelease( XSString_StringByAppendingString( str1, str2 ) ) );
@@ -115,9 +111,5 @@ int main( void )
     XSRelease( str3 );
     XSRelease( arr );
     
-    XSAutoreleasePool_Drain();
-    XSRelease( ap2 );
-    XSRelease( ap1 );
-    
-    XSFOUNDATION_EXIT();
+    XSApplication_Exit();
 }

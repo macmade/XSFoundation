@@ -38,8 +38,129 @@
 #include "XS.h"
 #include "__XSApplication.h"
 
-void XSApplication_Start( int argc, const char ** argv )
+static XSApplication      * __xsapp = NULL;
+static XSAutoreleasePoolRef __xsarp = NULL;
+
+XSApplicationRef XSApplication_Start( int argc, const char ** argv )
 {
     ( void )argc;
     ( void )argv;
+    
+    XSRuntime_Initialize();
+    
+    __xsapp = __XSApplication_Alloc();
+    __xsarp = XSAutoreleasePool_Create();
+    
+    return ( XSApplicationRef )__xsapp;
+}
+
+XSApplicationRef XSApplication_SharedApplication( void )
+{
+    return ( XSApplicationRef )__xsapp;
+}
+
+void XSApplication_RegisterFlagArgument( XSApplicationRef app, const char * name )
+{
+    XSApplication * _app;
+    
+    _app = ( XSApplication * )app;
+    
+    ( void )name;
+}
+
+void XSApplication_RegisterIntegerArgument( XSApplicationRef app, const char * name )
+{
+    XSApplication * _app;
+    
+    _app = ( XSApplication * )app;
+    
+    ( void )name;
+}
+
+void XSApplication_RegisterUnsignedIntegerArgument( XSApplicationRef app, const char * name )
+{
+    XSApplication * _app;
+    
+    _app = ( XSApplication * )app;
+    
+    ( void )name;
+}
+
+void XSApplication_RegisterStringArgument( XSApplicationRef app, const char * name )
+{
+    XSApplication * _app;
+    
+    _app = ( XSApplication * )app;
+    
+    ( void )name;
+}
+
+BOOL XSApplication_HasArgument( XSApplicationRef app, const char * name )
+{
+    XSApplication * _app;
+    
+    _app = ( XSApplication * )app;
+    
+    ( void )name;
+    
+    return NO;
+}
+
+BOOL XSApplication_GetFlag( XSApplicationRef app, const char * name )
+{
+    XSApplication * _app;
+    
+    _app = ( XSApplication * )app;
+    
+    ( void )name;
+    
+    return NO;
+}
+
+XSInteger XSApplication_GetIntegerArgument( XSApplicationRef app, const char * name )
+{
+    XSApplication * _app;
+    
+    _app = ( XSApplication * )app;
+    
+    ( void )name;
+    
+    return 0;
+}
+
+XSUInteger XSApplication_GetUnsignedIntegerArgument( XSApplicationRef app, const char * name )
+{
+    XSApplication * _app;
+    
+    _app = ( XSApplication * )app;
+    
+    ( void )name;
+    
+    return 0;
+}
+
+XSStringRef XSApplication_GetStringArgument( XSApplicationRef app, const char * name )
+{
+    XSApplication * _app;
+    
+    _app = ( XSApplication * )app;
+    
+    ( void )name;
+    
+    return NULL;
+}
+
+XSArrayRef XSApplication_GetUnnamedArguments( XSApplicationRef app )
+{
+    XSApplication * _app;
+    
+    _app = ( XSApplication * )app;
+    
+    return NULL;
+}
+
+void XSApplication_Exit( void )
+{
+    XSRelease( __xsarp );
+    pthread_exit( NULL );
 }
