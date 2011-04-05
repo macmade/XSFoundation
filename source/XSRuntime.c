@@ -77,17 +77,18 @@ static size_t            __class_count;
 /* Prototypes for the initialization of the core runtime classes */
 void __XSMemoryObject_Initialize( void );
 void __XSAutoreleasePool_Initialize( void );
-void __XSFile_Initialize( void );
-void __XSString_Initialize( void );
+void __XSApplication_Initialize( void );
 void __XSArray_Initialize( void );
 void __XSBag_Initialize( void );
-void __XSDictionary_Initialize( void );
-void __XSSet_Initialize( void );
-void __XSNumber_Initialize( void );
 void __XSColor_Initialize( void );
 void __XSData_Initialize( void );
 void __XSDate_Initialize( void );
+void __XSDictionary_Initialize( void );
 void __XSError_Initialize( void );
+void __XSFile_Initialize( void );
+void __XSNumber_Initialize( void );
+void __XSSet_Initialize( void );
+void __XSString_Initialize( void );
 void __XSThread_Initialize( void );
 void __XSTimer_Initialize( void );
 void __XSTree_Initialize( void );
@@ -108,6 +109,7 @@ void XSRuntime_Initialize( void )
     
     __XSAutoreleasePool_Initialize();
     __XSArray_Initialize();
+    __XSApplication_Initialize();
     __XSBag_Initialize();
     __XSColor_Initialize();
     __XSData_Initialize();

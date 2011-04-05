@@ -26,44 +26,31 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
-
+ 
 /* $Id$ */
 
 /*!
- * @header      XS.h
+ * @header      XSApplication.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSFoundation main header file
- * @description This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    ...
  */
 
-#ifndef _XS_H_
-#define _XS_H_
+#ifndef _XS_APPLICATION_H_
+#define _XS_APPLICATION_H_
 #pragma once
 
-#include "std/std.h"
-#include "XS/XSMacros.h"
-#include "XS/XSConstants.h"
-#include "XS/XSTypes.h"
-#include "XS/XSFunctions.h"
-#include "XS/XSMemory.h"
-#include "XS/XSRuntime.h"
-#include "XS/XSApplication.h"
-#include "XS/XSArray.h"
-#include "XS/XSBag.h"
-#include "XS/XSColor.h"
-#include "XS/XSData.h"
-#include "XS/XSDate.h"
-#include "XS/XSDictionary.h"
-#include "XS/XSError.h"
-#include "XS/XSFile.h"
-#include "XS/XSNumber.h"
-#include "XS/XSSet.h"
-#include "XS/XSString.h"
-#include "XS/XSThread.h"
-#include "XS/XSTimer.h"
-#include "XS/XSTree.h"
-#include "XS/XSURL.h"
+#include "XSMacros.h"
 
-#endif /* _XS_H_ */
+XS_EXTERN_C_BEGIN
+
+/*!
+ * @typedef     XSApplicationRef
+ * @abstract    Opaque type for the XSApplication objects
+ */
+typedef struct XSApplication * XSApplicationRef;
+
+void XSApplication_Start( int argc, const char ** argv );
+
+XS_EXTERN_C_END
+
+#endif /* _XS_APPLICATION_H_ */
