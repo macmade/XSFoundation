@@ -58,7 +58,7 @@ extern char * program_invocation_short_name __attribute__( ( weak ) );
  * @var         __log_mutex
  * @abstract    Mutex for the log calls
  */
-pthread_mutex_t __log_mutex;
+static pthread_mutex_t __log_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 /*!
  * @function    __XSVLog
@@ -91,7 +91,7 @@ void __XSVLog( const char * fmt, va_list args )
     mach_port_t      mid;
     #endif
     
-    while( pthread_mutex_trylock( &__log_mutex ) == 0 )
+    while( pthread_mutex_trylock( &__log_mutex ) != 0 )
     {}
     
     pid = getpid();
