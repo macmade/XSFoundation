@@ -43,15 +43,11 @@ XSFoundation is released under the terms of the [Boost][2] Software License - Ve
     
     int main( void )
     {
-        XSAutoreleasePoolRef ap;
-        XSStringRef          str1;
-        XSStringRef          str2;
+        XSStringRef str1;
+        XSStringRef str2;
         
         // Initialization of XSFoundation
-        XSFOUNDATION_START();
-        
-        // Creation of the auto-release pool
-        ap   = XSAutoreleasePool_Create();
+        XSApplication_Start( argc, ( const char ** )argv );
         
         // String creation
         str1 = XSSTR( "hello, world" );
@@ -61,10 +57,9 @@ XSFoundation is released under the terms of the [Boost][2] Software License - Ve
         
         XSLog( "This is a log message: %@%@", str1, str2 );
         
-        // Release objects (str2 will be released automatically)
+        // Release objects (str2 will be released automatically when the application exits)
         XSRelease( str1 );
-        XSRelease( ap );
         
         // Termination of XSFoundation and program exit
-        XSFOUNDATION_EXIT();
+        XSApplication_Exit();
     }
