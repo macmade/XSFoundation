@@ -162,5 +162,10 @@ XSArrayRef XSApplication_GetUnnamedArguments( XSApplicationRef app )
 void XSApplication_Exit( void )
 {
     XSRelease( __xsarp );
+    XSRelease( __xsapp );
+    
+    __xsarp = NULL;
+    __xsapp = NULL;
+    
     pthread_exit( NULL );
 }
