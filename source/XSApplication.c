@@ -43,13 +43,14 @@ static XSAutoreleasePoolRef __xsarp = NULL;
 
 XSApplicationRef XSApplication_Start( int argc, const char ** argv )
 {
-    ( void )argc;
-    ( void )argv;
-    
     XSRuntime_Initialize();
     
     __xsapp = __XSApplication_Alloc();
     __xsarp = XSAutoreleasePool_Create();
+    
+    __xsapp->argc       = argc;
+    __xsapp->argv       = argv + 1;
+    __xsapp->executable = argv[ 0 ];
     
     return ( XSApplicationRef )__xsapp;
 }
