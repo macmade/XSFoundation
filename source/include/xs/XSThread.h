@@ -52,6 +52,8 @@ typedef struct XSThread * XSThreadRef;
 /*!
  * @function    XSThread_Detach
  * @abstract    Creates and detaches a thread
+ * @description The thread object will be automatically released when it
+ *              exits. Do not release it explicitely.
  * @param       func    A pointer to the function to run on the thread
  * @param       arg     Argument to pass to the thread function
  * @result      The XSThread instance

@@ -104,5 +104,7 @@ void * __XSThread_Run( void * thread )
     
     _thread->func( ( XSThreadRef )thread, _thread->arg );
     
+    XSRelease( thread );
+    
     pthread_exit( NULL );
 }
