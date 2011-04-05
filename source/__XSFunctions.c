@@ -55,6 +55,12 @@ extern char * __progname                    __attribute__( ( weak ) );
 extern char * program_invocation_short_name __attribute__( ( weak ) );
 
 /*!
+ * @var         __log_mutex
+ * @abstract    Mutex for the log calls
+ */
+pthread_mutex_t __log_mutex;
+
+/*!
  * @function    __XSVLog
  * @abstract    Outputs a log message to stdout
  * @description The log message will be prefixed by the date/time, process
@@ -84,6 +90,9 @@ void __XSVLog( const char * fmt, va_list args )
     #ifdef __MACH__
     mach_port_t      mid;
     #endif
+    
+    while( pthread_mutex_trylock( &__log_mutex ) == 0 )
+    {}
     
     pid = getpid();
     tid = pthread_self();
@@ -181,4 +190,6 @@ void __XSVLog( const char * fmt, va_list args )
     
     free( ( void * )format_ptr );
     putc( '\n', stdout );
+    
+    pthread_mutex_unlock( &__log_mutex );
 }
