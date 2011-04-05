@@ -53,6 +53,10 @@ XS_EXTERN_C_BEGIN
 typedef struct _XSTimer
 {
     XSRuntimeBase _xsbase;
+    BOOL          valid;
+    XSUInteger    msecs;
+    void ( * func )( XSTimerRef timer );
+    
 }
 XSTimer;
 
@@ -69,6 +73,24 @@ void __XSTimer_Initialize( void );
  * @result      A pointer to the allocated object
  */
 XSTimer * __XSTimer_Alloc( void );
+
+/*!
+ * @function    __XSTimer_RunOnce
+ * @abstract    Runs a timer object after its time interval
+ * @param       object  The thread object
+ * @param       object  The timer object
+ * @return      void
+ */
+void __XSTimer_RunOnce( XSThreadRef thread, void * object );
+
+/*!
+ * @function    __XSTimer_RunAndRepeat
+ * @abstract    Runs a timer object after its time interval, and repeats untile the timer is invalidated
+ * @param       object  The thread object
+ * @param       object  The timer object
+ * @return      void
+ */
+void __XSTimer_RunAndRepeat( XSThreadRef thread, void * object );
 
 XS_EXTERN_C_END
 

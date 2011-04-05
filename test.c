@@ -49,6 +49,19 @@ void thread_test( XSThreadRef thread, void * arg )
     XSLog( "Log message from thread #%X: %@", XSThread_GetID( thread ), str );
 }
 
+void timer_test( XSTimerRef timer );
+void timer_test( XSTimerRef timer )
+{
+    static XSUInteger i = 0;
+    
+    XSLog( "Timer called: %i", ++i );
+    
+    if( i == 10 )
+    {
+        XSTimer_Invalidate( timer );
+    }
+}
+
 int main( void )
 {
     unsigned int         i;
@@ -60,6 +73,7 @@ int main( void )
     XSStringRef          str3;
     XSArrayRef           arr;
     XSDictionaryRef      dict;
+    XSTimerRef           timer;
     
     XSFOUNDATION_START();
     
@@ -90,6 +104,12 @@ int main( void )
     XSThread_Detach( thread_test, NULL );
     XSThread_Detach( thread_test, str1 );
     
+    timer = XSTimer_Create( timer_test, 1000 );
+    
+    XSTimer_RunOnce( timer );
+    XSTimer_RunAndRepeat( timer );
+    
+    XSRelease( timer );
     XSRelease( str1 );
     XSRelease( str2 );
     XSRelease( str3 );

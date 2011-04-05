@@ -49,7 +49,38 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct XSTimer * XSTimerRef;
 
-XSTimerRef XSTimer_Create( void );
+/*!
+ * @function    XSTimer_Create
+ * @abstract    Creates a timer object scheduled to run at a specific time
+ * @param       func            A pointer to to function to call when the timer fires
+ * @param       milleseconds    The timer interval, in milliseconds
+ * @result      The timer object
+ */
+XSTimerRef XSTimer_Create( void ( * func )( XSTimerRef timer ), XSUInteger milliseconds );
+
+/*!
+ * @function    XSTimer_RunOnce
+ * @abstract    Runs a specific timer once, after its time interval has been reached
+ * @param       timer   The timer object
+ * @result      void
+ */
+void XSTimer_RunOnce( XSTimerRef timer );
+
+/*!
+ * @function    XSTimer_RunAndRepeat
+ * @abstract    Runs a specific timer every time its time interval has been reached
+ * @param       timer   The timer object
+ * @result      void
+ */
+void XSTimer_RunAndRepeat( XSTimerRef timer );
+
+/*!
+ * @function    XSTimer_Invalidate
+ * @abstract    Invalidates a timer scheduled to repeat
+ * @param       timer   The timer object
+ * @result      void
+ */
+void XSTimer_Invalidate( XSTimerRef timer );
 
 XS_EXTERN_C_END
 

@@ -76,3 +76,45 @@ XSTimer * __XSTimer_Alloc( void )
 {
     return ( XSTimer * )XSRuntime_CreateInstance( __XSTimerTypeID, sizeof( XSTimer ) );
 }
+
+/*!
+ * @function    __XSTimer_RunOnce
+ * @abstract    Runs a timer object after its time interval
+ * @param       object  The thread object
+ * @param       object  The timer object
+ * @return      void
+ */
+void __XSTimer_RunOnce( XSThreadRef thread, void * object )
+{
+    XSTimer * t;
+    
+    ( void )thread;
+    
+    t = ( XSTimer * )object;
+    
+    usleep( t->msecs * 1000 );
+    t->func( ( XSTimerRef )t );
+     
+}
+
+/*!
+ * @function    __XSTimer_RunAndRepeat
+ * @abstract    Runs a timer object after its time interval, and repeats untile the timer is invalidated
+ * @param       object  The thread object
+ * @param       object  The timer object
+ * @return      void
+ */
+void __XSTimer_RunAndRepeat( XSThreadRef thread, void * object )
+{
+    XSTimer * t;
+    
+    ( void )thread;
+    
+     t = ( XSTimer * )object;
+     
+     while( t->valid == YES )
+     {
+        usleep( t->msecs * 1000 );
+        t->func( ( XSTimerRef )t );
+     }
+}
