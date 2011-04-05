@@ -74,6 +74,10 @@
 		0562F8B5134B07EE005190B6 /* XSTimer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSTimer.c; sourceTree = "<group>"; };
 		0562F8B7134B0813005190B6 /* __XSTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSTimer.h; sourceTree = "<group>"; };
 		0562F8B8134B0821005190B6 /* XSTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSTimer.h; sourceTree = "<group>"; };
+		0562F8BF134B3F38005190B6 /* __XSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSApplication.h; sourceTree = "<group>"; };
+		0562F8C1134B3F41005190B6 /* XSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSApplication.h; sourceTree = "<group>"; };
+		0562F8C2134B3F54005190B6 /* __XSApplication.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSApplication.c; sourceTree = "<group>"; };
+		0562F8C3134B3F55005190B6 /* XSApplication.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSApplication.c; sourceTree = "<group>"; };
 		056A74E71346F8C5006DD897 /* __XSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSColor.h; sourceTree = "<group>"; };
 		056A74E91346F953006DD897 /* XSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSColor.h; sourceTree = "<group>"; };
 		056A74EA1346F98B006DD897 /* __XSColor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSColor.c; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				056003BF1340621F005DC721 /* include */,
+				0562F8C2134B3F54005190B6 /* __XSApplication.c */,
 				056003F01340BB34005DC721 /* __XSArray.c */,
 				0562F8531348598C005190B6 /* __XSBag.c */,
 				056A74EA1346F98B006DD897 /* __XSColor.c */,
@@ -131,6 +136,7 @@
 				0562F8B4134B07EE005190B6 /* __XSTimer.c */,
 				0560041713412866005DC721 /* __XSTree.c */,
 				0560041813412866005DC721 /* __XSURL.c */,
+				0562F8C3134B3F55005190B6 /* XSApplication.c */,
 				056003F11340BB3F005DC721 /* XSArray.c */,
 				0562F8541348598C005190B6 /* XSBag.c */,
 				056A74EB1346F9DC006DD897 /* XSColor.c */,
@@ -184,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				05AC165613418E7100455568 /* __private */,
+				0562F8C1134B3F41005190B6 /* XSApplication.h */,
 				056003EE1340BB05005DC721 /* XSArray.h */,
 				0562F8521348597F005190B6 /* XSBag.h */,
 				056A74E91346F953006DD897 /* XSColor.h */,
@@ -213,6 +220,7 @@
 		05AC165613418E7100455568 /* __private */ = {
 			isa = PBXGroup;
 			children = (
+				0562F8BF134B3F38005190B6 /* __XSApplication.h */,
 				05AC165713418E7100455568 /* __XSArray.h */,
 				0562F85013485975005190B6 /* __XSBag.h */,
 				056A74E71346F8C5006DD897 /* __XSColor.h */,
