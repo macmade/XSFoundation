@@ -30,7 +30,7 @@
 /* $Id$ */
 
 /*!
- * @header      XSSet.h
+ * @header      XSBag.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
  * @abstract    ...
  */
