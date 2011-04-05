@@ -1067,6 +1067,12 @@ BOOL XSFile_IsWorldExecutable( XSFileRef file )
     return ( ( ( _f->stat_buf.st_mode & S_IRWXO ) == S_IXOTH ) ) ? YES : NO;
 }
 
+/*!
+ * @function    XSFile_HasSUID
+ * @abstract    Checks if the file has the SUID bit set
+ * @param       file    The file object
+ * @result      True if the SUID bit is set, otherwise false
+ */
 BOOL XSFile_HasSUID( XSFileRef file )
 {
     XSFile * _f;
@@ -1076,6 +1082,12 @@ BOOL XSFile_HasSUID( XSFileRef file )
     return ( _f->stat_buf.st_mode & S_ISUID ) ? YES : NO;
 }
 
+/*!
+ * @function    XSFile_HasSGID
+ * @abstract    Checks if the file has the SGID bit set
+ * @param       file    The file object
+ * @result      True if the SGID bit is set, otherwise false
+ */
 BOOL XSFile_HasSGID( XSFileRef file )
 {
     XSFile * _f;

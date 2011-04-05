@@ -559,17 +559,17 @@ BOOL XSFile_IsWorldExecutable( XSFileRef file );
 
 /*!
  * @function    XSFile_HasSUID
- * @abstract    
+ * @abstract    Checks if the file has the SUID bit set
  * @param       file    The file object
- * @result      
+ * @result      True if the SUID bit is set, otherwise false
  */
 BOOL XSFile_HasSUID( XSFileRef file );
 
 /*!
  * @function    XSFile_HasSGID
- * @abstract    
+ * @abstract    Checks if the file has the SGID bit set
  * @param       file    The file object
- * @result      
+ * @result      True if the SGID bit is set, otherwise false
  */
 BOOL XSFile_HasSGID( XSFileRef file );
 
