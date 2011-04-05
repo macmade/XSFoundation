@@ -49,6 +49,14 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct XSApplicationArgument * XSApplicationArgumentRef;
 
+/*!
+ * @typedef     XSApplicationArgumentType
+ * @abstract    Command line argument types
+ * @field       XSApplicationArgumentTypeFlag               Flag type (no value)
+ * @field       XSApplicationArgumentTypeInteger            Integer type
+ * @field       XSApplicationArgumentTypeUnsignedInteger    Unsigned integer type
+ * @field       XSApplicationArgumentTypeString             String type (char pointer)
+ */
 typedef enum
 {
     XSApplicationArgumentTypeFlag            = 0x00,
@@ -58,16 +66,93 @@ typedef enum
 }
 XSApplicationArgumentType;
 
+/*!
+ * @function    XSApplicationArgument_Create
+ * @abstract    Creates a CLI argument object
+ * @param       name    The name of the CLI argument, including dashes (- or --)
+ * @param       type    The type of the CLI argument
+ * @result      The argument object
+ */
 XSApplicationArgumentRef XSApplicationArgument_Create( const char * name, XSApplicationArgumentType type );
+
+/*!
+ * @function    XSApplicationArgument_GetName
+ * @abstract    Gets the name of the CLI argument
+ * @param       arg     The argument object
+ * @result      The name of the argument object
+ */
 const char * XSApplicationArgument_GetName( XSApplicationArgumentRef arg );
+
+/*!
+ * @function    XSApplicationArgument_GetType
+ * @abstract    Gets the type of the CLI argument
+ * @param       arg     The argument object
+ * @result      The type of the argument object
+ */
 XSApplicationArgumentType XSApplicationArgument_GetType( XSApplicationArgumentRef arg );
+
+/*!
+ * @function    XSApplicationArgument_SetFlag
+ * @abstract    Sets the flag to 'on' for the argument
+ * @param       arg     The argument object
+ * @result      void
+ */
 void XSApplicationArgument_SetFlag( XSApplicationArgumentRef arg );
+
+/*!
+ * @function    XSApplicationArgument_SetIntegerValue
+ * @abstract    Sets the integer value for the argument
+ * @param       arg     The argument object
+ * @result      void
+ */
 void XSApplicationArgument_SetIntegerValue( XSApplicationArgumentRef arg, XSInteger value );
+
+/*!
+ * @function    XSApplicationArgument_SetUnsignedIntegerValue
+ * @abstract    Sets the unsigned integer value for the argument
+ * @param       arg     The argument object
+ * @result      void
+ */
 void XSApplicationArgument_SetUnsignedIntegerValue( XSApplicationArgumentRef arg, XSUInteger value );
+
+/*!
+ * @function    XSApplicationArgument_SetStringValue
+ * @abstract    Sets the string value for the argument
+ * @param       arg     The argument object
+ * @result      void
+ */
 void XSApplicationArgument_SetStringValue( XSApplicationArgumentRef arg, const char * value );
+
+/*!
+ * @function    XSApplicationArgument_GetFlag
+ * @abstract    Gets the flag state for the argument
+ * @param       arg     The argument object
+ * @result      A boolean value indicating if the flag is set
+ */
 BOOL XSApplicationArgument_GetFlag( XSApplicationArgumentRef arg );
+
+/*!
+ * @function    XSApplicationArgument_GetIntegerValue
+ * @abstract    Gets the integer value for the argument
+ * @param       arg     The argument object
+ * @result      The argument's integer value
+ */
 XSInteger XSApplicationArgument_GetIntegerValue( XSApplicationArgumentRef arg );
+
+/*!
+ * @function    XSApplicationArgument_GetUnsignedIntegerValue
+ * @abstract    Gets the unsigned integer value for the argument
+ * @param       arg     The argument object
+ * @result      The argumen'ts unsigned integer value
+ */
 XSUInteger XSApplicationArgument_GetUnsignedIntegerValue( XSApplicationArgumentRef arg );
+
+/*!
+ * @function    XSApplicationArgument_GetStringValue
+ * @abstract    Gets the string value for the argument
+ * @param       arg     The argument object
+ * @result      The argument's string value
+ */
 const char * XSApplicationArgument_GetStringValue( XSApplicationArgumentRef arg );
 
 XS_EXTERN_C_END

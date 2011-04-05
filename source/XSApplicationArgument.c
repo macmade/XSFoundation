@@ -38,6 +38,13 @@
 #include "XS.h"
 #include "__XSApplicationArgument.h"
 
+/*!
+ * @function    XSApplicationArgument_Create
+ * @abstract    Creates a CLI argument object
+ * @param       name    The name of the CLI argument, including dashes (- or --)
+ * @param       type    The type of the CLI argument
+ * @result      The argument object
+ */
 XSApplicationArgumentRef XSApplicationArgument_Create( const char * name, XSApplicationArgumentType type )
 {
     XSApplicationArgument * arg;
@@ -53,16 +60,34 @@ XSApplicationArgumentRef XSApplicationArgument_Create( const char * name, XSAppl
     return ( XSApplicationArgumentRef )arg;
 }
 
+/*!
+ * @function    XSApplicationArgument_GetName
+ * @abstract    Gets the name of the CLI argument
+ * @param       arg     The argument object
+ * @result      The name of the argument object
+ */
 const char * XSApplicationArgument_GetName( XSApplicationArgumentRef arg )
 {
     return ( ( XSApplicationArgument * )arg )->name;
 }
 
+/*!
+ * @function    XSApplicationArgument_GetType
+ * @abstract    Gets the type of the CLI argument
+ * @param       arg     The argument object
+ * @result      The type of the argument object
+ */
 XSApplicationArgumentType XSApplicationArgument_GetType( XSApplicationArgumentRef arg )
 {
     return ( ( XSApplicationArgument * )arg )->type;
 }
 
+/*!
+ * @function    XSApplicationArgument_SetFlag
+ * @abstract    Sets the flag to 'on' for the argument
+ * @param       arg     The argument object
+ * @result      void
+ */
 void XSApplicationArgument_SetFlag( XSApplicationArgumentRef arg )
 {
     XSApplicationArgument * _arg;
@@ -71,6 +96,12 @@ void XSApplicationArgument_SetFlag( XSApplicationArgumentRef arg )
     _arg->flag_val = YES;
 }
 
+/*!
+ * @function    XSApplicationArgument_SetIntegerValue
+ * @abstract    Sets the integer value for the argument
+ * @param       arg     The argument object
+ * @result      void
+ */
 void XSApplicationArgument_SetIntegerValue( XSApplicationArgumentRef arg, XSInteger value )
 {
     XSApplicationArgument * _arg;
@@ -79,6 +110,12 @@ void XSApplicationArgument_SetIntegerValue( XSApplicationArgumentRef arg, XSInte
     _arg->int_val = value;
 }
 
+/*!
+ * @function    XSApplicationArgument_SetUnsignedIntegerValue
+ * @abstract    Sets the unsigned integer value for the argument
+ * @param       arg     The argument object
+ * @result      void
+ */
 void XSApplicationArgument_SetUnsignedIntegerValue( XSApplicationArgumentRef arg, XSUInteger value )
 {
     XSApplicationArgument * _arg;
@@ -87,6 +124,12 @@ void XSApplicationArgument_SetUnsignedIntegerValue( XSApplicationArgumentRef arg
     _arg->uint_val = value;
 }
 
+/*!
+ * @function    XSApplicationArgument_SetStringValue
+ * @abstract    Sets the string value for the argument
+ * @param       arg     The argument object
+ * @result      void
+ */
 void XSApplicationArgument_SetStringValue( XSApplicationArgumentRef arg, const char * value )
 {
     XSApplicationArgument * _arg;
@@ -95,6 +138,12 @@ void XSApplicationArgument_SetStringValue( XSApplicationArgumentRef arg, const c
     _arg->str_val = value;
 }
 
+/*!
+ * @function    XSApplicationArgument_GetFlag
+ * @abstract    Gets the flag state for the argument
+ * @param       arg     The argument object
+ * @result      A boolean value indicating if the flag is set
+ */
 BOOL XSApplicationArgument_GetFlag( XSApplicationArgumentRef arg )
 {
     XSApplicationArgument * _arg;
@@ -104,6 +153,12 @@ BOOL XSApplicationArgument_GetFlag( XSApplicationArgumentRef arg )
     return _arg->flag_val;
 }
 
+/*!
+ * @function    XSApplicationArgument_GetIntegerValue
+ * @abstract    Gets the integer value for the argument
+ * @param       arg     The argument object
+ * @result      The argument's integer value
+ */
 XSInteger XSApplicationArgument_GetIntegerValue( XSApplicationArgumentRef arg )
 {
     XSApplicationArgument * _arg;
@@ -113,6 +168,12 @@ XSInteger XSApplicationArgument_GetIntegerValue( XSApplicationArgumentRef arg )
     return _arg->int_val;
 }
 
+/*!
+ * @function    XSApplicationArgument_GetUnsignedIntegerValue
+ * @abstract    Gets the unsigned integer value for the argument
+ * @param       arg     The argument object
+ * @result      The argumen'ts unsigned integer value
+ */
 XSUInteger XSApplicationArgument_GetUnsignedIntegerValue( XSApplicationArgumentRef arg )
 {
     XSApplicationArgument * _arg;
@@ -122,6 +183,12 @@ XSUInteger XSApplicationArgument_GetUnsignedIntegerValue( XSApplicationArgumentR
     return _arg->uint_val;
 }
 
+/*!
+ * @function    XSApplicationArgument_GetStringValue
+ * @abstract    Gets the string value for the argument
+ * @param       arg     The argument object
+ * @result      The argument's string value
+ */
 const char * XSApplicationArgument_GetStringValue( XSApplicationArgumentRef arg )
 {
     XSApplicationArgument * _arg;
