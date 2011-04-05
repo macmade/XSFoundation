@@ -38,7 +38,95 @@
 #include "XS.h"
 #include "__XSApplicationArgument.h"
 
-XSApplicationArgumentRef XSApplicationArgument_Create( void )
+XSApplicationArgumentRef XSApplicationArgument_Create( const char * name, XSApplicationArgumentType type )
 {
-    return ( XSApplicationArgumentRef )__XSApplicationArgument_Alloc();
+    XSApplicationArgument * arg;
+    
+    arg           = __XSApplicationArgument_Alloc();
+    arg->name     = name;
+    arg->type     = type;
+    arg->uint_val = 0;
+    arg->int_val  = 0;
+    arg->str_val  = NULL;
+    arg->flag_val = NO;
+    
+    return ( XSApplicationArgumentRef )arg;
+}
+
+const char * XSApplicationArgument_GetName( XSApplicationArgumentRef arg )
+{
+    return ( ( XSApplicationArgument * )arg )->name;
+}
+
+XSApplicationArgumentType XSApplicationArgument_GetType( XSApplicationArgumentRef arg )
+{
+    return ( ( XSApplicationArgument * )arg )->type;
+}
+
+void XSApplicationArgument_SetFlag( XSApplicationArgumentRef arg )
+{
+    XSApplicationArgument * _arg;
+    
+    _arg           = ( XSApplicationArgument * )arg;
+    _arg->flag_val = YES;
+}
+
+void XSApplicationArgument_SetIntegerValue( XSApplicationArgumentRef arg, XSInteger value )
+{
+    XSApplicationArgument * _arg;
+    
+    _arg          = ( XSApplicationArgument * )arg;
+    _arg->int_val = value;
+}
+
+void XSApplicationArgument_SetUnsignedIntegerValue( XSApplicationArgumentRef arg, XSUInteger value )
+{
+    XSApplicationArgument * _arg;
+    
+    _arg           = ( XSApplicationArgument * )arg;
+    _arg->uint_val = value;
+}
+
+void XSApplicationArgument_SetStringValue( XSApplicationArgumentRef arg, const char * value )
+{
+    XSApplicationArgument * _arg;
+    
+    _arg          = ( XSApplicationArgument * )arg;
+    _arg->str_val = value;
+}
+
+BOOL XSApplicationArgument_GetFlag( XSApplicationArgumentRef arg )
+{
+    XSApplicationArgument * _arg;
+    
+    _arg = ( XSApplicationArgument * )arg;
+    
+    return _arg->flag_val;
+}
+
+XSInteger XSApplicationArgument_GetIntegerValue( XSApplicationArgumentRef arg )
+{
+    XSApplicationArgument * _arg;
+    
+    _arg = ( XSApplicationArgument * )arg;
+    
+    return _arg->int_val;
+}
+
+XSUInteger XSApplicationArgument_GetUnsignedIntegerValue( XSApplicationArgumentRef arg )
+{
+    XSApplicationArgument * _arg;
+    
+    _arg = ( XSApplicationArgument * )arg;
+    
+    return _arg->uint_val;
+}
+
+const char * XSApplicationArgument_GetStringValue( XSApplicationArgumentRef arg )
+{
+    XSApplicationArgument * _arg;
+    
+    _arg = ( XSApplicationArgument * )arg;
+    
+    return _arg->str_val;
 }

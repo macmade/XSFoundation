@@ -49,7 +49,26 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct XSApplicationArgument * XSApplicationArgumentRef;
 
-XSApplicationArgumentRef XSApplicationArgument_Create( void );
+typedef enum
+{
+    XSApplicationArgumentTypeFlag            = 0x00,
+    XSApplicationArgumentTypeInteger         = 0x01,
+    XSApplicationArgumentTypeUnsignedInteger = 0x02,
+    XSApplicationArgumentTypeString          = 0x03
+}
+XSApplicationArgumentType;
+
+XSApplicationArgumentRef XSApplicationArgument_Create( const char * name, XSApplicationArgumentType type );
+const char * XSApplicationArgument_GetName( XSApplicationArgumentRef arg );
+XSApplicationArgumentType XSApplicationArgument_GetType( XSApplicationArgumentRef arg );
+void XSApplicationArgument_SetFlag( XSApplicationArgumentRef arg );
+void XSApplicationArgument_SetIntegerValue( XSApplicationArgumentRef arg, XSInteger value );
+void XSApplicationArgument_SetUnsignedIntegerValue( XSApplicationArgumentRef arg, XSUInteger value );
+void XSApplicationArgument_SetStringValue( XSApplicationArgumentRef arg, const char * value );
+BOOL XSApplicationArgument_GetFlag( XSApplicationArgumentRef arg );
+XSInteger XSApplicationArgument_GetIntegerValue( XSApplicationArgumentRef arg );
+XSUInteger XSApplicationArgument_GetUnsignedIntegerValue( XSApplicationArgumentRef arg );
+const char * XSApplicationArgument_GetStringValue( XSApplicationArgumentRef arg );
 
 XS_EXTERN_C_END
 
