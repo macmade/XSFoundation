@@ -45,8 +45,8 @@
 static const XSRuntimeClass __XSLockClass =
 {
     "XSLock",           /* Class name */
-    NULL,               /* Constructor */
-    NULL,               /* Destructor */
+    __XSLock_Init,      /* Constructor */
+    __XSLock_Dealloc,   /* Destructor */
     NULL,               /* Object copy */
     NULL                /* Object description */
 };
@@ -75,4 +75,34 @@ void __XSLock_Initialize( void )
 XSLock * __XSLock_Alloc( void )
 {
     return ( XSLock * )XSRuntime_CreateInstance( __XSLockTypeID, sizeof( XSLock ) );
+}
+
+/*!
+ * @function    __XSLock_Init
+ * @abstract    Constructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSLock_Init( void * object )
+{
+    XSLock * lock;
+    
+    lock = ( XSLock * )object;
+    
+    pthread_mutex_init( &( lock->mutex ), NULL );
+}
+
+/*!
+ * @function    __XSLock_Dealloc
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSLock_Dealloc( void * object )
+{
+    XSLock * lock;
+    
+    lock = ( XSLock * )object;
+    
+    pthread_mutex_destroy( &( lock->mutex ) );
 }

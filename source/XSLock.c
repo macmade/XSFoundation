@@ -42,3 +42,90 @@ XSLockRef XSLock_Create( void )
 {
     return ( XSLockRef )__XSLock_Alloc();
 }
+
+/*!
+ * @function    XSLock_Lock
+ * @abstract    Locks the lock object
+ * @param       The lock object
+ * @result      True if the lock was successfully locked, otherwise false
+ */
+BOOL XSLock_Lock( XSLockRef lock )
+{
+    XSLock * _lock;
+    
+    _lock = ( XSLock * )lock;
+    
+    if( pthread_mutex_lock( &( _lock->mutex ) ) == 0 )
+    {
+        return YES;
+    }
+    
+    return NO;
+}
+
+/*!
+ * @function    XSLock_TryLock
+ * @abstract    Tries to acquire a lock
+ * @param       The lock object
+ * @result      True if the lock was successfully locked, otherwise false
+ */
+BOOL XSLock_TryLock( XSLockRef lock )
+{
+    XSLock * _lock;
+    
+    _lock = ( XSLock * )lock;
+    
+    if( pthread_mutex_trylock( &( _lock->mutex ) ) == 0 )
+    {
+        return YES;
+    }
+    
+    return NO;
+}
+
+/*!
+ * @function    XSLock_WaitUntilLock
+ * @abstract    Pause the programs execution until the lock is acquired
+ * @param       The lock object
+ * @result      void
+ */
+void XSLock_WaitUntilLock( XSLockRef lock )
+{
+    XSLock * _lock;
+    
+    _lock = ( XSLock * )lock;
+    
+    while( pthread_mutex_trylock( &( _lock->mutex ) ) != 0 )
+    {}
+}
+
+/*!
+ * @function    XSLock_Unlock
+ * @abstract    Unlocks a lock
+ * @param       The lock object
+ * @result      void
+ */
+void XSLock_Unlock( XSLockRef lock )
+{
+    XSLock * _lock;
+    
+    _lock = ( XSLock * )lock;
+    
+    if( _lock->locked == NO )
+    {
+        return;
+    }
+    
+    pthread_mutex_unlock( &( _lock->mutex ) );
+}
+
+/*!
+ * @function    XSLock_IsLocked
+ * @abstract    Checks if a lock is locked
+ * @param       The lock object
+ * @result      True if the lock is locked, otherwise false
+ */
+BOOL XSLock_IsLocked( XSLockRef lock )
+{
+    return ( ( XSLock * )lock )->locked;
+}

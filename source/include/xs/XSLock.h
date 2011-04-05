@@ -49,7 +49,52 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct XSLock * XSLockRef;
 
+/*!
+ * @function    XSLock_Create
+ * @abstract    Creates a lock
+ * @result      The lock object
+ */
 XSLockRef XSLock_Create( void );
+
+/*!
+ * @function    XSLock_Lock
+ * @abstract    Locks the lock object
+ * @param       The lock object
+ * @result      True if the lock was successfully locked, otherwise false
+ */
+BOOL XSLock_Lock( XSLockRef lock );
+
+/*!
+ * @function    XSLock_TryLock
+ * @abstract    Tries to acquire a lock
+ * @param       The lock object
+ * @result      True if the lock was successfully locked, otherwise false
+ */
+BOOL XSLock_TryLock( XSLockRef lock );
+
+/*!
+ * @function    XSLock_WaitUntilLock
+ * @abstract    Pause the programs execution until the lock is acquired
+ * @param       The lock object
+ * @result      void
+ */
+void XSLock_WaitUntilLock( XSLockRef lock );
+
+/*!
+ * @function    XSLock_Unlock
+ * @abstract    Unlocks a lock
+ * @param       The lock object
+ * @result      void
+ */
+void XSLock_Unlock( XSLockRef lock );
+
+/*!
+ * @function    XSLock_IsLocked
+ * @abstract    Checks if a lock is locked
+ * @param       The lock object
+ * @result      True if the lock is locked, otherwise false
+ */
+BOOL XSLock_IsLocked( XSLockRef lock );
 
 XS_EXTERN_C_END
 

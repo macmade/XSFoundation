@@ -52,7 +52,9 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct _XSLock
 {
-    XSRuntimeBase _xsbase;
+    XSRuntimeBase   _xsbase;
+    pthread_mutex_t mutex;
+    BOOL            locked;
 }
 XSLock;
 
@@ -69,6 +71,22 @@ void __XSLock_Initialize( void );
  * @result      A pointer to the allocated object
  */
 XSLock * __XSLock_Alloc( void );
+
+/*!
+ * @function    __XSLock_Init
+ * @abstract    Constructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSLock_Init( void * object );
+
+/*!
+ * @function    __XSLock_Dealloc
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSLock_Dealloc( void * object );
 
 XS_EXTERN_C_END
 
