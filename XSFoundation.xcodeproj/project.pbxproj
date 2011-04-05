@@ -70,6 +70,10 @@
 		0562F8521348597F005190B6 /* XSBag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBag.h; sourceTree = "<group>"; };
 		0562F8531348598C005190B6 /* __XSBag.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSBag.c; sourceTree = "<group>"; };
 		0562F8541348598C005190B6 /* XSBag.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSBag.c; sourceTree = "<group>"; };
+		0562F8B4134B07EE005190B6 /* __XSTimer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSTimer.c; sourceTree = "<group>"; };
+		0562F8B5134B07EE005190B6 /* XSTimer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSTimer.c; sourceTree = "<group>"; };
+		0562F8B7134B0813005190B6 /* __XSTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSTimer.h; sourceTree = "<group>"; };
+		0562F8B8134B0821005190B6 /* XSTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSTimer.h; sourceTree = "<group>"; };
 		056A74E71346F8C5006DD897 /* __XSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSColor.h; sourceTree = "<group>"; };
 		056A74E91346F953006DD897 /* XSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSColor.h; sourceTree = "<group>"; };
 		056A74EA1346F98B006DD897 /* __XSColor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSColor.c; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 				0560041613412866005DC721 /* __XSSet.c */,
 				056003E81340875C005DC721 /* __XSString.c */,
 				05AC166E1341DE2A00455568 /* __XSThread.c */,
+				0562F8B4134B07EE005190B6 /* __XSTimer.c */,
 				0560041713412866005DC721 /* __XSTree.c */,
 				0560041813412866005DC721 /* __XSURL.c */,
 				056003F11340BB3F005DC721 /* XSArray.c */,
@@ -141,6 +146,7 @@
 				0560041E13412868005DC721 /* XSSet.c */,
 				056003D91340621F005DC721 /* XSString.c */,
 				05AC166F1341DE3F00455568 /* XSThread.c */,
+				0562F8B5134B07EE005190B6 /* XSTimer.c */,
 				0560041F13412869005DC721 /* XSTree.c */,
 				0560042013412869005DC721 /* XSURL.c */,
 				056003D61340621F005DC721 /* std-string.c */,
@@ -195,10 +201,11 @@
 				056003E713408197005DC721 /* XSRuntime.h */,
 				0560040E13412858005DC721 /* XSSet.h */,
 				056003D31340621F005DC721 /* XSString.h */,
+				05AC166D1341DDDA00455568 /* XSThread.h */,
+				0562F8B8134B0821005190B6 /* XSTimer.h */,
 				0560040F13412858005DC721 /* XSTree.h */,
 				056003D41340621F005DC721 /* XSTypes.h */,
 				0560041013412858005DC721 /* XSURL.h */,
-				05AC166D1341DDDA00455568 /* XSThread.h */,
 			);
 			path = xs;
 			sourceTree = "<group>";
@@ -220,6 +227,7 @@
 				05AC166013418E7100455568 /* __XSSet.h */,
 				05AC166113418E7100455568 /* __XSString.h */,
 				05AC166C1341DD7800455568 /* __XSThread.h */,
+				0562F8B7134B0813005190B6 /* __XSTimer.h */,
 				05AC166213418E7100455568 /* __XSTree.h */,
 				05AC166313418E7100455568 /* __XSURL.h */,
 			);

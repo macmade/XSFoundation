@@ -89,6 +89,7 @@ void __XSData_Initialize( void );
 void __XSDate_Initialize( void );
 void __XSError_Initialize( void );
 void __XSThread_Initialize( void );
+void __XSTimer_Initialize( void );
 void __XSTree_Initialize( void );
 void __XSURL_Initialize( void );
 
@@ -117,8 +118,9 @@ void XSRuntime_Initialize( void )
     __XSNumber_Initialize();
     __XSSet_Initialize();
     __XSString_Initialize();
-    __XSTree_Initialize();
     __XSThread_Initialize();
+    __XSTimer_Initialize();
+    __XSTree_Initialize();
     __XSURL_Initialize();
 }
 
