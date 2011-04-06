@@ -45,6 +45,7 @@
 static const XSRuntimeClass __XSDateClass =
 {
     "XSDate",           /* Class name */
+    sizeof( XSDate ),   /* Object size */
     NULL,               /* Constructor */
     NULL,               /* Destructor */
     NULL,               /* Object copy */
@@ -74,5 +75,5 @@ void __XSDate_Initialize( void )
  */
 XSDate * __XSDate_Alloc( void )
 {
-    return ( XSDate * )XSRuntime_CreateInstance( __XSDateTypeID, sizeof( XSDate ) );
+    return ( XSDate * )XSRuntime_CreateInstance( __XSDateTypeID );
 }

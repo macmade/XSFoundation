@@ -45,6 +45,7 @@
 static const XSRuntimeClass __XSSetClass =
 {
     "XSSet",            /* Class name */
+    sizeof( XSSet ),    /* Object size */
     NULL,               /* Constructor */
     NULL,               /* Destructor */
     NULL,               /* Object copy */
@@ -74,5 +75,5 @@ void __XSSet_Initialize( void )
  */
 XSSet * __XSSet_Alloc( void )
 {
-    return ( XSSet * )XSRuntime_CreateInstance( __XSSetTypeID, sizeof( XSSet ) );
+    return ( XSSet * )XSRuntime_CreateInstance( __XSSetTypeID );
 }

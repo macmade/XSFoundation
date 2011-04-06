@@ -45,6 +45,7 @@
 static const XSRuntimeClass __XSURLClass =
 {
     "XSURL",            /* Class name */
+    sizeof( XSURL ),    /* Object size */
     NULL,               /* Constructor */
     NULL,               /* Destructor */
     NULL,               /* Object copy */
@@ -73,5 +74,5 @@ void __XSURL_Initialize( void )
  */
 XSURL * __XSURL_Alloc( void )
 {
-    return ( XSURL * )XSRuntime_CreateInstance( __XSURLTypeID, sizeof( XSURL ) );
+    return ( XSURL * )XSRuntime_CreateInstance( __XSURLTypeID );
 }

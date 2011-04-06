@@ -45,6 +45,7 @@
 static const XSRuntimeClass __XSArrayClass =
 {
     "XSArray",          /* Class name */
+    sizeof( XSArray ),  /* Object size */
     NULL,               /* Constructor */
     __XSArray_Dealloc,  /* Destructor */
     NULL,               /* Object copy */
@@ -74,7 +75,7 @@ void __XSArray_Initialize( void )
  */
 XSArray * __XSArray_Alloc( void )
 {
-    return ( XSArray * )XSRuntime_CreateInstance( __XSArrayTypeID, sizeof( XSArray ) );
+    return ( XSArray * )XSRuntime_CreateInstance( __XSArrayTypeID );
 }
 
 /*!

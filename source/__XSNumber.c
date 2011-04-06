@@ -45,6 +45,7 @@
 static const XSRuntimeClass __XSNumberClass =
 {
     "XSNumber",         /* Class name */
+    sizeof( XSNumber ), /* Object size */
     NULL,               /* Constructor */
     NULL,               /* Destructor */
     NULL,               /* Object copy */
@@ -74,5 +75,5 @@ void __XSNumber_Initialize( void )
  */
 XSNumber * __XSNumber_Alloc( void )
 {
-    return ( XSNumber * )XSRuntime_CreateInstance( __XSNumberTypeID, sizeof( XSNumber ) );
+    return ( XSNumber * )XSRuntime_CreateInstance( __XSNumberTypeID );
 }

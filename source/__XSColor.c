@@ -45,6 +45,7 @@
 static const XSRuntimeClass __XSColorClass =
 {
     "XSColor",          /* Class name */
+    sizeof( XSColor ),  /* Object size */
     NULL,               /* Constructor */
     NULL,               /* Destructor */
     NULL,               /* Object copy */
@@ -74,7 +75,7 @@ void __XSColor_Initialize( void )
  */
 XSColor * __XSColor_Alloc( void )
 {
-    return ( XSColor * )XSRuntime_CreateInstance( __XSColorTypeID, sizeof( XSColor ) );
+    return ( XSColor * )XSRuntime_CreateInstance( __XSColorTypeID );
 }
 
 /*!

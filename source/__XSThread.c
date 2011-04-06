@@ -45,6 +45,7 @@
 static const XSRuntimeClass __XSThreadClass =
 {
     "XSThread",         /* Class name */
+    sizeof( XSThread ), /* Object size */
     NULL,               /* Constructor */
     NULL,               /* Destructor */
     NULL,               /* Object copy */
@@ -74,7 +75,7 @@ void __XSThread_Initialize( void )
  */
 XSThread * __XSThread_Alloc( void )
 {
-    return ( XSThread * )XSRuntime_CreateInstance( __XSThreadTypeID, sizeof( XSThread ) );
+    return ( XSThread * )XSRuntime_CreateInstance( __XSThreadTypeID );
 }
 
 /*!

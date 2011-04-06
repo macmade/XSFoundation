@@ -45,6 +45,7 @@
 static const XSRuntimeClass __XSApplicationClass =
 {
     "XSApplication",            /* Class name */
+    sizeof( XSApplication ),    /* Object size */
     __XSApplication_Init,       /* Constructor */
     __XSApplication_Dealloc,    /* Destructor */
     NULL,                       /* Object copy */
@@ -74,7 +75,7 @@ void __XSApplication_Initialize( void )
  */
 XSApplication * __XSApplication_Alloc( void )
 {
-    return ( XSApplication * )XSRuntime_CreateInstance( __XSApplicationTypeID, sizeof( XSApplication ) );
+    return ( XSApplication * )XSRuntime_CreateInstance( __XSApplicationTypeID );
 }
 
 /*!

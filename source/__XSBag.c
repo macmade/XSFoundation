@@ -45,6 +45,7 @@
 static const XSRuntimeClass __XSBagClass =
 {
     "XSBag",            /* Class name */
+    sizeof( XSBag ),    /* Object size */
     NULL,               /* Constructor */
     NULL,               /* Destructor */
     NULL,               /* Object copy */
@@ -74,5 +75,5 @@ void __XSBag_Initialize( void )
  */
 XSBag * __XSBag_Alloc( void )
 {
-    return ( XSBag * )XSRuntime_CreateInstance( __XSBagTypeID, sizeof( XSBag ) );
+    return ( XSBag * )XSRuntime_CreateInstance( __XSBagTypeID );
 }

@@ -44,7 +44,8 @@
  */
 static const XSRuntimeClass __XSTimerClass =
 {
-    "XSTimer",         /* Class name */
+    "XSTimer",          /* Class name */
+    sizeof( XSTimer ),  /* Object size */
     NULL,               /* Constructor */
     NULL,               /* Destructor */
     NULL,               /* Object copy */
@@ -74,7 +75,7 @@ void __XSTimer_Initialize( void )
  */
 XSTimer * __XSTimer_Alloc( void )
 {
-    return ( XSTimer * )XSRuntime_CreateInstance( __XSTimerTypeID, sizeof( XSTimer ) );
+    return ( XSTimer * )XSRuntime_CreateInstance( __XSTimerTypeID );
 }
 
 /*!

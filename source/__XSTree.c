@@ -45,6 +45,7 @@
 static const XSRuntimeClass __XSTreeClass =
 {
     "XSTree",           /* Class name */
+    sizeof( XSTree ),   /* Object size */
     NULL,               /* Constructor */
     NULL,               /* Destructor */
     NULL,               /* Object copy */
@@ -74,5 +75,5 @@ void __XSTree_Initialize( void )
  */
 XSTree * __XSTree_Alloc( void )
 {
-    return ( XSTree * )XSRuntime_CreateInstance( __XSTreeTypeID, sizeof( XSTree ) );
+    return ( XSTree * )XSRuntime_CreateInstance( __XSTreeTypeID );
 }

@@ -44,11 +44,12 @@
  */
 static const XSRuntimeClass __XSApplicationArgumentClass =
 {
-    "XSApplicationArgument",    /* Class name */
-    NULL,                       /* Constructor */
-    NULL,                       /* Destructor */
-    NULL,                       /* Object copy */
-    NULL                        /* Object description */
+    "XSApplicationArgument",            /* Class name */
+    sizeof( XSApplicationArgument ),    /* Object size */
+    NULL,                               /* Constructor */
+    NULL,                               /* Destructor */
+    NULL,                               /* Object copy */
+    NULL                                /* Object description */
 };
 
 /*!
@@ -74,5 +75,5 @@ void __XSApplicationArgument_Initialize( void )
  */
 XSApplicationArgument * __XSApplicationArgument_Alloc( void )
 {
-    return ( XSApplicationArgument * )XSRuntime_CreateInstance( __XSApplicationArgumentTypeID, sizeof( XSApplicationArgument ) );
+    return ( XSApplicationArgument * )XSRuntime_CreateInstance( __XSApplicationArgumentTypeID );
 }

@@ -45,6 +45,7 @@
 static const XSRuntimeClass __XSLockClass =
 {
     "XSLock",           /* Class name */
+    sizeof( XSLock ),   /* Object size */
     __XSLock_Init,      /* Constructor */
     __XSLock_Dealloc,   /* Destructor */
     NULL,               /* Object copy */
@@ -74,7 +75,7 @@ void __XSLock_Initialize( void )
  */
 XSLock * __XSLock_Alloc( void )
 {
-    return ( XSLock * )XSRuntime_CreateInstance( __XSLockTypeID, sizeof( XSLock ) );
+    return ( XSLock * )XSRuntime_CreateInstance( __XSLockTypeID );
 }
 
 /*!

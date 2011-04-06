@@ -45,6 +45,7 @@
 static const XSRuntimeClass __XSStringClass =
 {
     "XSString",             /* Class name */
+    sizeof( XSString ),     /* Object size */
     NULL,                   /* Constructor */
     __XSString_Dealloc,     /* Destructor */
     __XSString_Copy,        /* Object copy */
@@ -74,7 +75,7 @@ void __XSString_Initialize( void )
  */
 XSString * __XSString_Alloc( void )
 {
-    return ( XSString * )XSRuntime_CreateInstance( __XSStringTypeID, sizeof( XSString ) );
+    return ( XSString * )XSRuntime_CreateInstance( __XSStringTypeID );
 }
 
 /*!

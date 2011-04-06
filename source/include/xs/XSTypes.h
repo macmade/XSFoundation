@@ -256,15 +256,17 @@ typedef const void  * XSTypeRef;
 /*!
  * @typedef     XSRuntimeClass
  * @abstract    XSFoundation runtime class
- * @field       classname   The name of the class
- * @field       init        The class constructor
- * @field       dealloc     The class destructor
- * @field       copy        The object's copy callback
- * @field       description The object's description callback (used in XSLog)
+ * @field       classname       The name of the class
+ * @field       instanceSize    The size of the class instances
+ * @field       init            The class constructor
+ * @field       dealloc         The class destructor
+ * @field       copy            The object's copy callback
+ * @field       description     The object's description callback (used in XSLog)
  */
 typedef struct _XSRuntimeClass
 {
     const char * className;
+    size_t       instanceSize;
     void         ( * init        )( void * object );
     void         ( * dealloc     )( void * object );
     void         ( * copy        )( void * source, void * destination );

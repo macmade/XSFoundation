@@ -78,11 +78,10 @@ XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls );
 /*!
  * @function    XSRuntime_CreateInstance
  * @abstract    Creates a new instance of a registered class
- * @param       The type ID of the class
- * @param       The size of the object structure for the class
+ * @param       typeID  The type ID of the class
  * @result      The allocated instance
  */
-XSTypeRef XSRuntime_CreateInstance( XSTypeID typeID, size_t extraBytes );
+XSTypeRef XSRuntime_CreateInstance( XSTypeID typeID );
 
 /*!
  * @function    XSRuntime_IsInstance

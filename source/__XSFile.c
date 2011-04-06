@@ -45,6 +45,7 @@
 static const XSRuntimeClass __XSFileClass =
 {
     "XSFile",           /* Class name */
+    sizeof( XSFile ),   /* Object size */
     NULL,               /* Constructor */
     NULL,               /* Destructor */
     NULL,               /* Object copy */
@@ -74,7 +75,7 @@ void __XSFile_Initialize( void )
  */
 XSFile * __XSFile_Alloc( void )
 {
-    return ( XSFile * )XSRuntime_CreateInstance( __XSFileTypeID, sizeof( XSFile ) );
+    return ( XSFile * )XSRuntime_CreateInstance( __XSFileTypeID );
 }
 
 /*!

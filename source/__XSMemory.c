@@ -57,6 +57,7 @@ XSUInteger          __xsmemory_ar_pools_num;
 static const XSRuntimeClass __XSAutoreleasePoolClass =
 {
     "XSAutoreleasePool",            /* Class name */
+    sizeof( XSAutoreleasePool ),    /* Object size */
     NULL,                           /* Constructor */
     __XSAutoreleasePool_Dealloc,    /* Destructor */
     NULL,                           /* Object copy */
@@ -86,7 +87,7 @@ void __XSAutoreleasePool_Initialize( void )
  */
 XSAutoreleasePool * __XSAutoreleasePool_Alloc( void )
 {
-    return ( XSAutoreleasePool * )XSRuntime_CreateInstance( __XSAutoreleasePoolTypeID, sizeof( XSAutoreleasePool ) );
+    return ( XSAutoreleasePool * )XSRuntime_CreateInstance( __XSAutoreleasePoolTypeID );
 }
 
 /*!

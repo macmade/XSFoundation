@@ -45,6 +45,7 @@
 static const XSRuntimeClass __XSDictionaryClass =
 {
     "XSDictionary",         /* Class name */
+    sizeof( XSDictionary ), /* Object size */
     NULL,                   /* Constructor */
     __XSDictionary_Dealloc, /* Destructor */
     NULL,                   /* Object copy */
@@ -74,7 +75,7 @@ void __XSDictionary_Initialize( void )
  */
 XSDictionary * __XSDictionary_Alloc( void )
 {
-    return ( XSDictionary * )XSRuntime_CreateInstance( __XSDictionaryTypeID, sizeof( XSDictionary ) );
+    return ( XSDictionary * )XSRuntime_CreateInstance( __XSDictionaryTypeID );
 }
 
 /*!

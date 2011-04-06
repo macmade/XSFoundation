@@ -45,6 +45,7 @@
 static const XSRuntimeClass __XSDataClass =
 {
     "XSData",           /* Class name */
+    sizeof( XSData ),   /* Object size */
     NULL,               /* Constructor */
     NULL,               /* Destructor */
     NULL,               /* Object copy */
@@ -74,5 +75,5 @@ void __XSData_Initialize( void )
  */
 XSData * __XSData_Alloc( void )
 {
-    return ( XSData * )XSRuntime_CreateInstance( __XSDataTypeID, sizeof( XSData ) );
+    return ( XSData * )XSRuntime_CreateInstance( __XSDataTypeID );
 }
