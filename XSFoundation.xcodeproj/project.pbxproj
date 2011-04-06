@@ -86,6 +86,7 @@
 		0562F8D7134B5AB5005190B6 /* XSApplicationArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSApplicationArgument.h; sourceTree = "<group>"; };
 		0562F8D8134B5AC1005190B6 /* __XSApplicationArgument.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSApplicationArgument.c; sourceTree = "<group>"; };
 		0562F8D9134B5AC1005190B6 /* XSApplicationArgument.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSApplicationArgument.c; sourceTree = "<group>"; };
+		0562F8E6134C46A9005190B6 /* XSFoundation.doxygen */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XSFoundation.doxygen; sourceTree = "<group>"; };
 		056A74E71346F8C5006DD897 /* __XSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSColor.h; sourceTree = "<group>"; };
 		056A74E91346F953006DD897 /* XSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSColor.h; sourceTree = "<group>"; };
 		056A74EA1346F98B006DD897 /* __XSColor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSColor.c; sourceTree = "<group>"; };
@@ -114,6 +115,7 @@
 		056003A813406206005DC721 = {
 			isa = PBXGroup;
 			children = (
+				0562F8E6134C46A9005190B6 /* XSFoundation.doxygen */,
 				05AC166A134192BF00455568 /* README.md */,
 				056003BB1340621F005DC721 /* LICENSE.md */,
 				056003BC1340621F005DC721 /* Makefile */,

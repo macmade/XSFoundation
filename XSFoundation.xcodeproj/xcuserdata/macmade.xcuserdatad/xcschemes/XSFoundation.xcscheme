@@ -37,6 +37,9 @@
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug">
+      <PathRunnable
+         FilePath = "/Users/macmade/Documents/Brain/GitHub/XSFoundation/build/test">
+      </PathRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
