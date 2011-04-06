@@ -38,7 +38,197 @@
 #include "XS.h"
 #include "__XSNumber.h"
 
-XSNumberRef XSNumber_Create( void )
+/*!
+ * @function    XSNumber_CreateWithBool
+ * @abstract    Creates a number with a BOOL value
+ * @param       The BOOL value
+ * @result      The number object
+ */
+XSNumberRef XSNumber_CreateWithBool( BOOL value )
 {
-    return ( XSNumberRef )__XSNumber_Alloc();
+    ( void )value;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSNumber_CreateWithChar
+ * @abstract    Creates a number with a char value
+ * @param       The char value
+ * @result      The number object
+ */
+XSNumberRef XSNumber_CreateWithChar( char value )
+{
+    ( void )value;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSNumber_CreateWithDouble
+ * @abstract    Creates a number with a double value
+ * @param       The double value
+ * @result      The number object
+ */
+XSNumberRef XSNumber_CreateWithDouble( double value )
+{
+    ( void )value;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSNumber_CreateWithFloat
+ * @abstract    Creates a number with a float value
+ * @param       The float value
+ * @result      The number object
+ */
+XSNumberRef XSNumber_CreateWithFloat( float value )
+{
+    ( void )value;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSNumber_CreateWithInt
+ * @abstract    Creates a number with an int value
+ * @param       The int value
+ * @result      The number object
+ */
+XSNumberRef XSNumber_CreateWithInt( int value )
+{
+    ( void )value;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSNumber_CreateWithInteger
+ * @abstract    Creates a number with an integer value
+ * @param       The integer value
+ * @result      The number object
+ */
+XSNumberRef XSNumber_CreateWithInteger( XSInteger value )
+{
+    ( void )value;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSNumber_CreateWithLong
+ * @abstract    Creates a number with a long value
+ * @param       The long value
+ * @result      The number object
+ */
+XSNumberRef XSNumber_CreateWithLong( long value )
+{
+    ( void )value;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSNumber_CreateWithLongLong
+ * @abstract    Creates a number with a long long value
+ * @param       The long long value
+ * @result      The number object
+ */
+XSNumberRef XSNumber_CreateWithLongLong( long long value )
+{
+    ( void )value;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSNumber_CreateWithShort
+ * @abstract    Creates a number with a short value
+ * @param       The short value
+ * @result      The number object
+ */
+XSNumberRef XSNumber_CreateWithShort( short value )
+{
+    ( void )value;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSNumber_CreateWithUnsignedChar
+ * @abstract    Creates a number with an unsigned char value
+ * @param       The unsigned char value
+ * @result      The number object
+ */
+XSNumberRef XSNumber_CreateWithUnsignedChar( unsigned char value )
+{
+    ( void )value;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSNumber_CreateWithUnsignedInt
+ * @abstract    Creates a number with an unsigned int value
+ * @param       The unsigned int value
+ * @result      The number object
+ */
+XSNumberRef XSNumber_CreateWithUnsignedInt( unsigned int value )
+{
+    ( void )value;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSNumber_CreateWithUnsignedInteger
+ * @abstract    Creates a number with an unsigned integer value
+ * @param       The unsigned integer value
+ * @result      The number object
+ */
+XSNumberRef XSNumber_CreateWithUnsignedInteger( XSUInteger value )
+{
+    ( void )value;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSNumber_CreateWithUnsignedLong
+ * @abstract    Creates a number with an unsigned long value
+ * @param       The unsigned long value
+ * @result      The number object
+ */
+XSNumberRef XSNumber_CreateWithUnsignedLong( unsigned long value )
+{
+    ( void )value;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSNumber_CreateWithUnsignedLongLong
+ * @abstract    Creates a number with an unsigned long long value
+ * @param       The unsigned long long value
+ * @result      The number object
+ */
+XSNumberRef XSNumber_CreateWithUnsignedLongLong( unsigned long long value )
+{
+    ( void )value;
+    
+    return NULL;
+}
+
+/*!
+ * @function    XSNumber_CreateWithUnsignedShort
+ * @abstract    Creates a number with an unsigned short value
+ * @param       The unsigned short value
+ * @result      The number object
+ */
+XSNumberRef XSNumber_CreateWithUnsignedShort( unsigned short value )
+{
+    ( void )value;
+    
+    return NULL;
 }
