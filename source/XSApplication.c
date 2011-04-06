@@ -96,13 +96,121 @@ XSApplicationRef XSApplication_SharedApplication( void )
     return ( XSApplicationRef )__xsapp;
 }
 
-void XSApplication_RegisterArgument( XSApplicationRef app, const char * name, XSApplicationArgumentType type )
+/*!
+ * @function    XSApplication_PrintHelp
+ * @abstract    Prints the application help dialog
+ * @param       app     The application object
+ * @result      void
+ */
+void XSApplication_PrintHelp( XSApplicationRef app, const char * description )
 {
+    const char             * exec;
+    const char             * help;
     XSApplication          * _app;
     XSApplicationArgumentRef arg;
+    XSUInteger               i;
     
     _app = ( XSApplication * )app;
-    arg  = XSApplicationArgument_Create( name, type );
+    
+    /*XSRuntimeBase              _xsbase;
+    int                        argc;
+    const char              ** argv;
+    const char               * executable;
+    XSApplicationArgumentRef * args;
+    XSUInteger                 arg_count;
+    XSUInteger                 arg_alloc;*/
+    
+    if( NULL == ( exec = strrchr( _app->executable, '/' ) ) )
+    {
+        exec = _app->executable;
+    }
+    else
+    {
+        exec++;
+    }
+    
+    printf( "--------------------------------------------------------------------------------\n" );
+    printf( "%s - %s\n", exec, description );
+    printf( "--------------------------------------------------------------------------------\n" );
+    
+    if( _app->arg_count > 0 )
+    {
+        printf( "\nArguments:\n\n" );
+        
+        for( i = 0; i < _app->arg_count; i++ )
+        {
+            arg = _app->args[ i ];
+            
+            printf( "    %s ", XSApplicationArgument_GetName( arg ) );
+            
+            switch( XSApplicationArgument_GetType( arg ) )
+            {
+                case XSApplicationArgumentTypeFlag:
+                    
+                    printf( "\n" );
+                    break;
+                    
+                case XSApplicationArgumentTypeInteger:
+                    
+                    printf( "[ integer ]\n" );
+                    break;
+                    
+                case XSApplicationArgumentTypeUnsignedInteger:
+                    
+                    printf( "[ positive integer ]\n" );
+                    break;
+                    
+                case XSApplicationArgumentTypeString:
+                    
+                    printf( "[ string ]\n" );
+                    break;
+                    
+                default:
+                    
+                    printf( "[ value ]\n" );
+                    break;
+            }
+            
+            if( NULL == ( help = XSApplicationArgument_GetHelp( arg ) ) )
+            {
+                printf( "    No description available\n\n" );
+            }
+            else
+            {
+                printf( "    %s\n\n", help );
+            }
+        }
+    
+        printf( "--------------------------------------------------------------------------------\n" );
+    }
+    
+    ( void )app;
+    ( void )description;
+}
+
+void XSApplication_RegisterArgument( XSApplicationRef app, const char * name, XSApplicationArgumentType type, ... )
+{
+    va_list                  args;
+    XSApplication          * _app;
+    XSApplicationArgumentRef arg;
+    const char             * help;
+    
+    va_start( args, type );
+    
+    help = va_arg( args, const char * );
+    
+    va_end( args );
+    
+    _app = ( XSApplication * )app;
+    
+    if( help )
+    {
+        arg = XSApplicationArgument_Create( name, type, help );
+    }
+    else
+    {
+        arg = XSApplicationArgument_Create( name, type );
+    }
     
     if( _app->arg_count == _app->arg_alloc )
     {

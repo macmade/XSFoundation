@@ -45,9 +45,17 @@
  * @param       type    The type of the CLI argument
  * @result      The argument object
  */
-XSApplicationArgumentRef XSApplicationArgument_Create( const char * name, XSApplicationArgumentType type )
+XSApplicationArgumentRef XSApplicationArgument_Create( const char * name, XSApplicationArgumentType type, ... )
 {
+    va_list                 args;
+    const char            * help;
     XSApplicationArgument * arg;
+    
+    va_start( args, type );
+    
+    help = va_arg( args, const char * );
+    
+    va_end( args );
     
     arg           = __XSApplicationArgument_Alloc();
     arg->name     = name;
@@ -56,6 +64,12 @@ XSApplicationArgumentRef XSApplicationArgument_Create( const char * name, XSAppl
     arg->int_val  = 0;
     arg->str_val  = NULL;
     arg->flag_val = NO;
+    arg->help     = NULL;
+    
+    if( help )
+    {
+        arg->help = help;
+    }
     
     return ( XSApplicationArgumentRef )arg;
 }
@@ -69,6 +83,17 @@ XSApplicationArgumentRef XSApplicationArgument_Create( const char * name, XSAppl
 const char * XSApplicationArgument_GetName( XSApplicationArgumentRef arg )
 {
     return ( ( XSApplicationArgument * )arg )->name;
+}
+
+/*!
+ * @function    XSApplicationArgument_GetHelp
+ * @abstract    Gets the help text of the CLI argument
+ * @param       arg     The argument object
+ * @result      The help text of the argument object
+ */
+const char * XSApplicationArgument_GetHelp( XSApplicationArgumentRef arg )
+{
+    return ( ( XSApplicationArgument * )arg )->help;
 }
 
 /*!

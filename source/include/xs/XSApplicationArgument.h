@@ -73,7 +73,7 @@ XSApplicationArgumentType;
  * @param       type    The type of the CLI argument
  * @result      The argument object
  */
-XSApplicationArgumentRef XSApplicationArgument_Create( const char * name, XSApplicationArgumentType type );
+XSApplicationArgumentRef XSApplicationArgument_Create( const char * name, XSApplicationArgumentType type, ... );
 
 /*!
  * @function    XSApplicationArgument_GetName
@@ -82,6 +82,14 @@ XSApplicationArgumentRef XSApplicationArgument_Create( const char * name, XSAppl
  * @result      The name of the argument object
  */
 const char * XSApplicationArgument_GetName( XSApplicationArgumentRef arg );
+
+/*!
+ * @function    XSApplicationArgument_GetHelp
+ * @abstract    Gets the help text of the CLI argument
+ * @param       arg     The argument object
+ * @result      The help text of the argument object
+ */
+const char * XSApplicationArgument_GetHelp( XSApplicationArgumentRef arg );
 
 /*!
  * @function    XSApplicationArgument_GetType

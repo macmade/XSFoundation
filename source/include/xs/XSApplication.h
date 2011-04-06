@@ -84,12 +84,20 @@ void XSApplication_Exit( void );
 XSApplicationRef XSApplication_SharedApplication( void );
 
 /*!
+ * @function    XSApplication_PrintHelp
+ * @abstract    Prints the application help dialog
+ * @param       app     The application object
+ * @result      void
+ */
+void XSApplication_PrintHelp( XSApplicationRef app, const char * description );
+
+/*!
  * @function    XSApplication_RegisterArgument
  * @abstract    
  * @param       app     The application object
  * @result      
  */
-void XSApplication_RegisterArgument( XSApplicationRef app, const char * name, XSApplicationArgumentType type );
+void XSApplication_RegisterArgument( XSApplicationRef app, const char * name, XSApplicationArgumentType type, ... );
 
 /*!
  * @function    XSApplication_GetArgument
