@@ -216,6 +216,50 @@ XSTypeRef XSRuntime_CreateInstance( XSTypeID typeID )
 }
 
 /*!
+ * @function    XSRuntime_CreateInstanceOfClass
+ * @abstract    Creates a new instance of a class
+ * @param       cls     The class structure
+ * @result      The allocated instance
+ */
+XSTypeRef XSRuntime_CreateInstanceOfClass( const XSRuntimeClass * const cls )
+{
+    XSTypeID typeID;
+    
+    typeID = XSRuntime_GetTypeIDForClass( ( Class )cls );
+    
+    if( typeID == 0 )
+    {
+        return NULL;
+    }
+    
+    return XSRuntime_CreateInstance( typeID );
+}
+
+/*!
+ * @function    XSRuntime_CreateInstanceOfClassWithName
+ * @abstract    Creates a new instance of a class with a specific name
+ * @param       name    The name of the class
+ * @result      The allocated instance
+ */
+XSTypeRef XSRuntime_CreateInstanceOfClassWithName( const char * name )
+{
+    size_t i;
+    XSRuntimeClass * cls;
+    
+    for( i = 0; i < __class_count; i++ )
+    {
+        cls = __class_table[ i ];
+        
+        if( strcmp( cls->className, name ) == 0 )
+        {
+            return XSRuntime_CreateInstance( i + 1 );
+        }
+    }
+    
+    return NULL;
+}
+
+/*!
  * @function    XSRuntime_IsInstance
  * @abstract    Checks whether a pointer is an object instance
  * @param       ptr     The pointer to check
