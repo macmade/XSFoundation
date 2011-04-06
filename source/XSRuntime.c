@@ -254,3 +254,70 @@ XSTypeID XSRuntime_GetTypeIDForClass( Class cls )
     
     return 0;
 }
+
+/*!
+ * @function    XSRuntime_GetClassForObject
+ * @abstract    Gets the class for an object
+ * @param       object  The object
+ * @result      The object's class
+ */
+Class XSRuntime_GetClassForObject( id object )
+{
+    return ( ( XSRuntimeBase * )object )->isa;
+}
+
+/*!
+ * @function    XSRuntime_GetTypeIDForObject
+ * @abstract    Gets the class type ID for an object
+ * @param       object  The object
+ * @result      The class type ID for the object
+ */
+XSTypeID XSRuntime_GetTypeIDForObject( id object )
+{
+    return XSRuntime_GetTypeIDForClass( XSRuntime_GetClassForObject( object ) );
+}
+
+/*!
+ * @function    XSRuntime_GetClassNameForObject
+ * @abstract    Gets the class name for an object
+ * @param       object  The object
+ * @result      The name of the class
+ */
+const char * XSRuntime_GetClassNameForObject( id object )
+{
+    return ( ( XSRuntimeBase * )object )->isa->className;
+}
+
+/*!
+ * @function    XSRuntime_IsInstanceOfClass
+ * @abstract    Checks whether an object is an instance of a class
+ * @param       object  The object
+ * @param       cls     The class
+ * @result      True if the object is an instance of the class, otherwise false
+ */
+BOOL XSRuntime_IsInstanceOfClass( id object, Class cls )
+{
+    if( ( ( XSRuntimeBase * )object )->isa == cls )
+    {
+        return YES;
+    }
+    
+    return NO;
+}
+
+/*!
+ * @function    XSRuntime_IsInstanceOfClassName
+ * @abstract    Checks whether an object is an instance of a class name
+ * @param       object  The object
+ * @param       name    The name of the class
+ * @result      True if the object is an instance of the class name, otherwise false
+ */
+BOOL XSRuntime_IsInstanceOfClassName( id object, const char * name )
+{
+    if( strcmp( ( ( XSRuntimeBase * )object )->isa->className, name ) == 0 )
+    {
+        return YES;
+    }
+    
+    return NO;
+}
