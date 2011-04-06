@@ -62,6 +62,11 @@ XSStringRef XSString_CreateWithCapacity( XSUInteger capacity )
     
     string = __XSString_Alloc();
     
+    if( capacity == 0 )
+    {
+        capacity = __XSSTRING_DEFAULT_CAPACITY;
+    }
+    
     string->str = XSAlloc( ( sizeof( char ) * capacity ) + 1 );
     
     return ( XSStringRef )string;
@@ -77,6 +82,11 @@ XSStringRef XSString_CreateWithCString( char * str )
 {
     size_t     length;
     XSString * string;
+    
+    if( str == NULL )
+    {
+        return XSString_Create();
+    }
     
     length = strlen( str );
     string = ( XSString * )XSString_CreateWithCapacity( length );
@@ -113,6 +123,11 @@ XSStringRef XSString_SubstringFromIndex( XSStringRef str, size_t i )
 {
     XSString * _str;
     
+    if( str == NULL )
+    {
+        return NULL;
+    }
+    
     _str = ( XSString * )str;
     
     if( i >= _str->length )
@@ -135,6 +150,11 @@ XSStringRef XSString_SubstringToIndex( XSStringRef str, size_t i )
 {
     XSString * _str;
     XSString * str2;
+    
+    if( str == NULL )
+    {
+        return NULL;
+    }
     
     _str = ( XSString * )str;
     
@@ -162,6 +182,11 @@ XSStringRef XSString_SubstringWithRange( XSStringRef str, XSRange range )
 {
     XSString * _str1;
     XSString * _str2;
+    
+    if( str == NULL )
+    {
+        return NULL;
+    }
     
     _str1 = ( XSString * )str;
     
@@ -196,6 +221,11 @@ XSStringRef XSString_LowercaseString( XSStringRef str )
     size_t     i;
     char       c;
     
+    if( str == NULL )
+    {
+        return NULL;
+    }
+    
     _str = XSCopy( str );
     
     for( i = 0; i < _str->length; i++ )
@@ -223,6 +253,11 @@ XSStringRef XSString_UppercaseString( XSStringRef str )
     XSString * _str;
     size_t     i;
     char       c;
+    
+    if( str == NULL )
+    {
+        return NULL;
+    }
     
     _str = XSCopy( str );
     
@@ -253,6 +288,16 @@ XSStringRef XSString_StringByAppendingString( XSStringRef str1, XSStringRef str2
     size_t     length1;
     size_t     length2;
     
+    if( str1 == NULL )
+    {
+        return NULL;
+    }
+    
+    if( str2 == NULL )
+    {
+        return XSCopy( str1 );
+    }
+    
     length1 = XSString_Length( str1 );
     length2 = XSString_Length( str2 );
     
@@ -281,6 +326,16 @@ XSStringRef XSString_StringByAppendingCString( XSStringRef str1, char * str2 )
     size_t     length1;
     size_t     length2;
     
+    if( str1 == NULL )
+    {
+        return NULL;
+    }
+    
+    if( str2 == NULL )
+    {
+        return XSCopy( str1 );
+    }
+    
     length1 = XSString_Length( str1 );
     length2 = strlen( str2 );
     
@@ -303,6 +358,11 @@ XSStringRef XSString_StringByAppendingCString( XSStringRef str1, char * str2 )
  */
 size_t XSString_Length( XSStringRef str )
 {
+    if( str == NULL )
+    {
+        return 0;
+    }
+    
     return ( ( XSString * )str )->length;
 }
 
@@ -316,6 +376,11 @@ size_t XSString_Length( XSStringRef str )
 char XSString_CharacterAtIndex( XSStringRef str, size_t i )
 {
     XSString * _str;
+    
+    if( str == NULL )
+    {
+        return 0;
+    }
     
     _str = ( XSString * )str;
     
@@ -335,6 +400,11 @@ char XSString_CharacterAtIndex( XSStringRef str, size_t i )
  */
 const char * XSString_CString( XSStringRef str )
 {
+    if( str == NULL )
+    {
+        return NULL;
+    }
+    
     return ( ( XSString * )str )->str;
 }
 
@@ -351,6 +421,11 @@ XSRange XSString_RangeOfString( XSStringRef str1, XSStringRef str2 )
     XSString * _str1;
     XSString * _str2;
     XSRange    range;
+    
+    if( str1 == NULL || str2 == NULL )
+    {
+        return XSMakeRange( XSNotFound, 0 );
+    }
     
     _str1 = ( XSString * )str1;
     _str2 = ( XSString * )str2;
@@ -375,6 +450,11 @@ XSRange XSString_RangeOfCString( XSStringRef str1, char * str2 )
     XSString * _str;
     XSRange    range;
     
+    if( str1 == NULL || str2 == NULL )
+    {
+        return XSMakeRange( XSNotFound, 0 );
+    }
+    
     _str  = ( XSString * )str1;
     range = XSMakeRange( 0, 0 );
     
@@ -393,6 +473,11 @@ BOOL XSString_IsEqualToString( XSStringRef str1, XSStringRef str2 )
 {
     XSString * _str1;
     XSString * _str2;
+    
+    if( str1 == NULL || str2 == NULL )
+    {
+        return NO;
+    }
     
     _str1 = ( XSString * )str1;
     _str2 = ( XSString * )str2;
