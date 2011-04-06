@@ -36,6 +36,7 @@
  */
 
 #include "XS.h"
+#include "__XSMemory.h"
 
 /*!
  * define       __XS_RUNTIME_CLASS_TABLE_SIZE
@@ -216,6 +217,26 @@ XSTypeRef XSRuntime_CreateInstance( XSTypeID typeID, size_t extraBytes )
 }
 
 /*!
+ * @function    XSRuntime_IsInstance
+ * @abstract    Checks whether a pointer is an object instance
+ * @param       ptr     The pointer to check
+ * @result      True if the pointer represents an instance, otherwise false
+ */
+BOOL XSRuntime_IsInstance( void * ptr )
+{
+    __XSMemoryObject * o;
+    
+    o = __XSMemory_GetMemoryObject( ptr );
+    
+    if( o->typeID > 0 && XSRuntime_GetClassForTypeID( o->typeID ) != NULL )
+    {
+        return YES;
+    }
+    
+    return NO;
+}
+
+/*!
  * @function    XSRuntime_GetClassForTypeID
  * @abstract    Gets the class structure for a specific type ID
  * @param       The type ID of the class
@@ -263,6 +284,11 @@ XSTypeID XSRuntime_GetTypeIDForClass( Class cls )
  */
 Class XSRuntime_GetClassForObject( id object )
 {
+    if( XSRuntime_IsInstance( object ) == NO )
+    {
+        return NULL;
+    }
+    
     return ( ( XSRuntimeBase * )object )->isa;
 }
 
@@ -274,6 +300,11 @@ Class XSRuntime_GetClassForObject( id object )
  */
 XSTypeID XSRuntime_GetTypeIDForObject( id object )
 {
+    if( XSRuntime_IsInstance( object ) == NO )
+    {
+        return 0;
+    }
+    
     return XSRuntime_GetTypeIDForClass( XSRuntime_GetClassForObject( object ) );
 }
 
@@ -285,6 +316,11 @@ XSTypeID XSRuntime_GetTypeIDForObject( id object )
  */
 const char * XSRuntime_GetClassNameForObject( id object )
 {
+    if( XSRuntime_IsInstance( object ) == NO )
+    {
+        return NULL;
+    }
+    
     return ( ( XSRuntimeBase * )object )->isa->className;
 }
 
@@ -297,6 +333,11 @@ const char * XSRuntime_GetClassNameForObject( id object )
  */
 BOOL XSRuntime_IsInstanceOfClass( id object, Class cls )
 {
+    if( XSRuntime_IsInstance( object ) == NO )
+    {
+        return NO;
+    }
+    
     if( ( ( XSRuntimeBase * )object )->isa == cls )
     {
         return YES;
@@ -314,6 +355,11 @@ BOOL XSRuntime_IsInstanceOfClass( id object, Class cls )
  */
 BOOL XSRuntime_IsInstanceOfClassName( id object, const char * name )
 {
+    if( XSRuntime_IsInstance( object ) == NO )
+    {
+        return NO;
+    }
+    
     if( strcmp( ( ( XSRuntimeBase * )object )->isa->className, name ) == 0 )
     {
         return YES;

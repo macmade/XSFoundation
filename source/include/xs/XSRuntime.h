@@ -85,6 +85,14 @@ XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls );
 XSTypeRef XSRuntime_CreateInstance( XSTypeID typeID, size_t extraBytes );
 
 /*!
+ * @function    XSRuntime_IsInstance
+ * @abstract    Checks whether a pointer is an object instance
+ * @param       ptr     The pointer to check
+ * @result      True if the pointer represents an instance, otherwise false
+ */
+BOOL XSRuntime_IsInstance( void * ptr );
+
+/*!
  * @function    XSRuntime_GetClassForTypeID
  * @abstract    Gets the class structure for a specific type ID
  * @param       The type ID of the class
