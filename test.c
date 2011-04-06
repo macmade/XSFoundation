@@ -65,6 +65,9 @@ void timer_test( XSTimerRef timer )
 int main( int argc, char * argv[] )
 {
     unsigned int         i;
+    XSInteger            arg_int;
+    XSUInteger           arg_uint;
+    XSStringRef          arg_str;
     char              ** test;
     XSApplicationRef     app;
     XSStringRef          str1;
@@ -75,6 +78,32 @@ int main( int argc, char * argv[] )
     XSTimerRef           timer;
     
     app  = XSApplication_Start( argc, ( const char ** )argv );
+    
+    XSApplication_RegisterArgument( app, "--test", XSApplicationArgumentTypeFlag );
+    XSApplication_RegisterArgument( app, "--int",  XSApplicationArgumentTypeInteger );
+    XSApplication_RegisterArgument( app, "--uint", XSApplicationArgumentTypeUnsignedInteger );
+    XSApplication_RegisterArgument( app, "--str",  XSApplicationArgumentTypeString );
+    
+    if( XSApplication_GetFlag( app, "--test" ) )
+    {
+        XSLog( "Has flag argument: test" );
+    }
+    
+    if( ( arg_int = XSApplication_GetInteger( app, "--int" ) ) )
+    {
+        XSLog( "Has int argument: %i", arg_int );
+    }
+    
+    if( ( arg_uint = XSApplication_GetUnsignedInteger( app, "--uint" ) ) )
+    {
+        XSLog( "Has uint argument: %i", arg_uint );
+    }
+    
+    if( ( arg_str = XSApplication_GetString( app, "--str" ) ) )
+    {
+        XSLog( "Has str argument: %@", arg_str );
+    }
+    
     test = XSAutoAlloc( 5 * sizeof( char * ) );
     
     for( i = 0; i < 5; i++ )

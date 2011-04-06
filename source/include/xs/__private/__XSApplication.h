@@ -52,10 +52,13 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct _XSApplication
 {
-    XSRuntimeBase            _xsbase;
-    int                      argc;
-    const char            ** argv;
-    const char            * executable;
+    XSRuntimeBase              _xsbase;
+    int                        argc;
+    const char              ** argv;
+    const char               * executable;
+    XSApplicationArgumentRef * args;
+    XSUInteger                 arg_count;
+    XSUInteger                 arg_alloc;
 }
 XSApplication;
 
@@ -72,6 +75,30 @@ void __XSApplication_Initialize( void );
  * @result      A pointer to the allocated object
  */
 XSApplication * __XSApplication_Alloc( void );
+
+/*!
+ * @function    __XSApplication_Init
+ * @abstract    Constructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSApplication_Init( void * object );
+ 
+ /*!
+ * @function    __XSApplication_Dealloc
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSApplication_Dealloc( void * object );
+
+/*!
+ * @function    __XSApplication_ProcessArguments
+ * @abstract    Processes the command line arguments
+ * @param       app     The application object
+ * @result      void
+ */
+void __XSApplication_ProcessArguments( XSApplication * app );
 
 XS_EXTERN_C_END
 

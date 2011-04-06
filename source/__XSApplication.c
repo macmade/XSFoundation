@@ -44,11 +44,11 @@
  */
 static const XSRuntimeClass __XSApplicationClass =
 {
-    "XSApplication",    /* Class name */
-    NULL,               /* Constructor */
-    NULL,               /* Destructor */
-    NULL,               /* Object copy */
-    NULL                /* Object description */
+    "XSApplication",            /* Class name */
+    __XSApplication_Init,       /* Constructor */
+    __XSApplication_Dealloc,    /* Destructor */
+    NULL,                       /* Object copy */
+    NULL                        /* Object description */
 };
 
 /*!
@@ -75,4 +75,116 @@ void __XSApplication_Initialize( void )
 XSApplication * __XSApplication_Alloc( void )
 {
     return ( XSApplication * )XSRuntime_CreateInstance( __XSApplicationTypeID, sizeof( XSApplication ) );
+}
+
+/*!
+ * @function    __XSApplication_Init
+ * @abstract    Constructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSApplication_Init( void * object )
+{
+    XSApplication * app;
+    
+    app = ( XSApplication * )object;
+    
+    app->args      = XSAlloc( 25 * sizeof( XSApplicationArgumentRef ) );
+    app->arg_alloc = 25;
+    app->arg_count = 0;
+}
+ 
+ /*!
+ * @function    __XSApplication_Dealloc
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSApplication_Dealloc( void * object )
+{
+    XSUInteger      i;
+    XSApplication * app;
+    
+    app = ( XSApplication * )object;
+    
+    for( i = 0; i < app->arg_count; i++ )
+    {
+        XSRelease( app->args[ i ] );
+    }
+    
+    XSRelease( app->args );
+}
+
+/*!
+ * @function    __XSApplication_ProcessArguments
+ * @abstract    Processes the command line arguments
+ * @param       app     The application object
+ * @result      void
+ */
+void __XSApplication_ProcessArguments( XSApplication * app )
+{
+    XSInteger                i;
+    const char             * name;
+    XSApplicationArgumentRef arg;
+    
+    i = 0;
+    
+    while( i < app->argc )
+    {
+        name = app->argv[ i ];
+        arg  = XSApplication_GetArgument( ( XSApplicationRef )app, name );
+        
+        if( arg == NULL )
+        {
+            i++;
+        }
+        else
+        {
+            switch( XSApplicationArgument_GetType( arg ) )
+            {
+                case XSApplicationArgumentTypeFlag:
+                    
+                    XSApplicationArgument_SetFlag( arg );
+                    i++;
+                    break;
+                    
+                case XSApplicationArgumentTypeInteger:
+                    
+                    if( app->argc == i + 1 )
+                    {
+                        break;
+                    }
+                    
+                    XSApplicationArgument_SetIntegerValue( arg, ( XSInteger )atoi( app->argv[ ++i ] ) );
+                    break;
+                    
+                case XSApplicationArgumentTypeUnsignedInteger:
+                    
+                    if( app->argc == i + 1 )
+                    {
+                        break;
+                    }
+                    
+                    XSApplicationArgument_SetUnsignedIntegerValue( arg, ( XSUInteger )atoi( app->argv[ ++i ] ) );
+                    break;
+                    
+                case XSApplicationArgumentTypeString:
+                    
+                    if( app->argc == i + 1 )
+                    {
+                        break;
+                    }
+                    
+                    XSApplicationArgument_SetStringValue( arg, app->argv[ ++i ] );
+                    break;
+                    
+                default:
+                    
+                    i++;
+                    break;
+            }
+        }
+        
+        i++;
+    }
 }
