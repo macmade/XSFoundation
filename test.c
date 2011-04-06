@@ -134,7 +134,7 @@ int main( int argc, char * argv[] )
     XSLog( "%@", XSAutorelease( XSString_StringByAppendingString( str1, str2 ) ) );
     XSLog( "%@", arr );
     XSLog( "%@", dict );
-    XSLog( "%@", XSAutorelease( XSRuntime_CreateInstanceOfClassWithName( "XSNumber" ) ) );
+    XSLog( "%@", XSAutorelease( XSRuntime_CreateInstanceOfClassWithName( "XSString" ) ) );
     
     XSThread_Detach( thread_test, NULL );
     XSThread_Detach( thread_test, str1 );

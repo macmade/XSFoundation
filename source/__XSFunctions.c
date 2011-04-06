@@ -164,14 +164,12 @@ void __XSVLog( const char * fmt, va_list args )
                 b      = ( XSRuntimeBase * )va_ptr;
                 cls    = b->isa;
                 
+                printf( "<%s: %p>", cls->className, va_ptr );
+                
                 if( cls->description != NULL )
                 {
                     description = cls->description( va_ptr );
-                    printf( "%s", XSString_CString( va_ptr ) );
-                }
-                else
-                {
-                    printf( "<%s: %p>", cls->className, va_ptr );
+                    printf( " [ %s ]", XSString_CString( va_ptr ) );
                 }
             }
             
