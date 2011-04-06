@@ -53,17 +53,99 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct XSApplication * XSApplicationRef;
 
+/*!
+ * @function    XSApplication_Exit
+ * @abstract    XSFoundation start routine
+ * @description You must call this function before using any other XSFoundation
+ *              function or object. Note that an auto-release pool is
+ *              automatically created, so the auto-release features are
+ *              enabled by default.
+ * @param       argc    The number of CLI arguments
+ * @param       argv    The CLI arguments array
+ * @result      The application object
+ */
 XSApplicationRef XSApplication_Start( int argc, const char ** argv );
-XSApplicationRef XSApplication_SharedApplication( void );
-void XSApplication_RegisterArgument( XSApplicationRef app, const char * name, XSApplicationArgumentType type );
-XSApplicationArgumentRef XSApplication_GetArgument( XSApplicationRef app, const char * name );
-BOOL XSApplication_HasArgument( XSApplicationRef app, const char * name );
-BOOL XSApplication_GetFlag( XSApplicationRef app, const char * name );
-XSInteger XSApplication_GetInteger( XSApplicationRef app, const char * name );
-XSUInteger XSApplication_GetUnsignedInteger( XSApplicationRef app, const char * name );
-XSStringRef XSApplication_GetString( XSApplicationRef app, const char * name );
-XSArrayRef XSApplication_GetUnnamedArguments( XSApplicationRef app );
+
+/*!
+ * @function    XSApplication_Exit
+ * @abstract    Application termination
+ * @description You must call this function when exiting your application,
+ *              instead of the classic 'exit()' function, so the auto-released
+ *              memory is reclaimed, and the threads are terminated properly.
+ * @result      void
+ */
 void XSApplication_Exit( void );
+
+/*!
+ * @function    XSApplication_SharedApplication
+ * @abstract    Gets the application object
+ * @result      The application object
+ */
+XSApplicationRef XSApplication_SharedApplication( void );
+
+/*!
+ * @function    XSApplication_RegisterArgument
+ * @abstract    
+ * @param       app     The application object
+ * @result      
+ */
+void XSApplication_RegisterArgument( XSApplicationRef app, const char * name, XSApplicationArgumentType type );
+
+/*!
+ * @function    XSApplication_GetArgument
+ * @abstract    
+ * @param       app     The application object
+ * @result      
+ */
+XSApplicationArgumentRef XSApplication_GetArgument( XSApplicationRef app, const char * name );
+
+/*!
+ * @function    XSApplication_HasArgument
+ * @abstract    
+ * @param       app     The application object
+ * @result      
+ */
+BOOL XSApplication_HasArgument( XSApplicationRef app, const char * name );
+
+/*!
+ * @function    XSApplication_GetFlag
+ * @abstract    
+ * @param       app     The application object
+ * @result      
+ */
+BOOL XSApplication_GetFlag( XSApplicationRef app, const char * name );
+
+/*!
+ * @function    XSApplication_GetInteger
+ * @abstract    
+ * @param       app     The application object
+ * @result      
+ */
+XSInteger XSApplication_GetInteger( XSApplicationRef app, const char * name );
+
+/*!
+ * @function    XSApplication_GetUnsignedInteger
+ * @abstract    
+ * @param       app     The application object
+ * @result      
+ */
+XSUInteger XSApplication_GetUnsignedInteger( XSApplicationRef app, const char * name );
+
+/*!
+ * @function    XSApplication_GetString
+ * @abstract    
+ * @param       app     The application object
+ * @result      
+ */
+XSStringRef XSApplication_GetString( XSApplicationRef app, const char * name );
+
+/*!
+ * @function    XSApplication_GetUnnamedArguments
+ * @abstract    
+ * @param       app     The application object
+ * @result      
+ */
+XSArrayRef XSApplication_GetUnnamedArguments( XSApplicationRef app );
 
 XS_EXTERN_C_END
 

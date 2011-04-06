@@ -42,6 +42,17 @@ static XSApplication      * __xsapp = NULL;
 static XSAutoreleasePoolRef __xsarp = NULL;
 static BOOL __xsapp_argv_processed  = NO;
 
+/*!
+ * @function    XSApplication_Exit
+ * @abstract    XSFoundation start routine
+ * @description You must call this function before using any other XSFoundation
+ *              function or object. Note that an auto-release pool is
+ *              automatically created, so the auto-release features are
+ *              enabled by default.
+ * @param       argc    The number of CLI arguments
+ * @param       argv    The CLI arguments array
+ * @result      The application object
+ */
 XSApplicationRef XSApplication_Start( int argc, const char ** argv )
 {
     XSRuntime_Initialize();
@@ -56,6 +67,30 @@ XSApplicationRef XSApplication_Start( int argc, const char ** argv )
     return ( XSApplicationRef )__xsapp;
 }
 
+/*!
+ * @function    XSApplication_Exit
+ * @abstract    Application termination
+ * @description You must call this function when exiting your application,
+ *              instead of the classic 'exit()' function, so the auto-released
+ *              memory is reclaimed, and the threads are terminated properly.
+ * @result      void
+ */
+void XSApplication_Exit( void )
+{
+    XSRelease( __xsarp );
+    XSRelease( __xsapp );
+    
+    __xsarp = NULL;
+    __xsapp = NULL;
+    
+    pthread_exit( NULL );
+}
+
+/*!
+ * @function    XSApplication_SharedApplication
+ * @abstract    Gets the application object
+ * @result      The application object
+ */
 XSApplicationRef XSApplication_SharedApplication( void )
 {
     return ( XSApplicationRef )__xsapp;
@@ -200,15 +235,4 @@ XSArrayRef XSApplication_GetUnnamedArguments( XSApplicationRef app )
     _app = ( XSApplication * )app;
     
     return NULL;
-}
-
-void XSApplication_Exit( void )
-{
-    XSRelease( __xsarp );
-    XSRelease( __xsapp );
-    
-    __xsarp = NULL;
-    __xsapp = NULL;
-    
-    pthread_exit( NULL );
 }
