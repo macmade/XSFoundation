@@ -96,7 +96,7 @@ int main( int argc, char * argv[] )
     
     if( ( arg_uint = XSApplication_GetUnsignedInteger( app, "--uint" ) ) )
     {
-        XSLog( "Has uint argument: %i", arg_uint );
+        XSLog( "Has uint argument: %u", arg_uint );
     }
     
     if( ( arg_str = XSApplication_GetString( app, "--str" ) ) )

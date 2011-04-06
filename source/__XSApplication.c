@@ -125,13 +125,23 @@ void __XSApplication_ProcessArguments( XSApplication * app )
 {
     XSInteger                i;
     const char             * name;
+    char                   * value;
     XSApplicationArgumentRef arg;
     
     i = 0;
     
     while( i < app->argc )
     {
-        name = app->argv[ i ];
+        name  = app->argv[ i ];
+        value = NULL;
+        
+        if( ( value = strstr( name, "=" ) ) != NULL )
+        {
+            *( value ) = 0;
+            
+            value++;
+        }
+        
         arg  = XSApplication_GetArgument( ( XSApplicationRef )app, name );
         
         if( arg == NULL )
@@ -150,32 +160,32 @@ void __XSApplication_ProcessArguments( XSApplication * app )
                     
                 case XSApplicationArgumentTypeInteger:
                     
-                    if( app->argc == i + 1 )
+                    if( app->argc == i + 1 && value == NULL )
                     {
                         break;
                     }
                     
-                    XSApplicationArgument_SetIntegerValue( arg, ( XSInteger )atoi( app->argv[ ++i ] ) );
+                    XSApplicationArgument_SetIntegerValue( arg, ( XSInteger )atoi( ( value != NULL ) ? value : app->argv[ ++i ] ) );
                     break;
                     
                 case XSApplicationArgumentTypeUnsignedInteger:
                     
-                    if( app->argc == i + 1 )
+                    if( app->argc == i + 1 && value == NULL )
                     {
                         break;
                     }
                     
-                    XSApplicationArgument_SetUnsignedIntegerValue( arg, ( XSUInteger )atoi( app->argv[ ++i ] ) );
+                    XSApplicationArgument_SetUnsignedIntegerValue( arg, ( XSUInteger )atoi( ( value != NULL ) ? value : app->argv[ ++i ] ) );
                     break;
                     
                 case XSApplicationArgumentTypeString:
                     
-                    if( app->argc == i + 1 )
+                    if( app->argc == i + 1 && value == NULL )
                     {
                         break;
                     }
                     
-                    XSApplicationArgument_SetStringValue( arg, app->argv[ ++i ] );
+                    XSApplicationArgument_SetStringValue( arg, ( value != NULL ) ? value : app->argv[ ++i ] );
                     break;
                     
                 default:

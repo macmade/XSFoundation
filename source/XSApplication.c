@@ -220,7 +220,7 @@ XSStringRef XSApplication_GetString( XSApplicationRef app, const char * name )
     
     arg  = XSApplication_GetArgument( app, name );
     
-    if( arg == NULL )
+    if( arg == NULL || XSApplicationArgument_GetStringValue( arg ) == NULL )
     {
         return NULL;
     }
