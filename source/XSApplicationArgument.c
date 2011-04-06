@@ -164,6 +164,20 @@ void XSApplicationArgument_SetStringValue( XSApplicationArgumentRef arg, const c
 }
 
 /*!
+ * @function    XSApplicationArgument_SetFloatValue
+ * @abstract    Sets the float value for the argument
+ * @param       arg     The argument object
+ * @result      void
+ */
+void XSApplicationArgument_SetFloatValue( XSApplicationArgumentRef arg, XSFloat value )
+{
+    XSApplicationArgument * _arg;
+    
+    _arg            = ( XSApplicationArgument * )arg;
+    _arg->float_val = value;
+}
+
+/*!
  * @function    XSApplicationArgument_GetFlag
  * @abstract    Gets the flag state for the argument
  * @param       arg     The argument object
@@ -221,4 +235,19 @@ const char * XSApplicationArgument_GetStringValue( XSApplicationArgumentRef arg 
     _arg = ( XSApplicationArgument * )arg;
     
     return _arg->str_val;
+}
+
+/*!
+ * @function    XSApplicationArgument_GetFloatValue
+ * @abstract    Gets the float value for the argument
+ * @param       arg     The argument object
+ * @result      The argument's float value
+ */
+XSFloat XSApplicationArgument_GetFloatValue( XSApplicationArgumentRef arg )
+{
+    XSApplicationArgument * _arg;
+    
+    _arg = ( XSApplicationArgument * )arg;
+    
+    return _arg->float_val;
 }

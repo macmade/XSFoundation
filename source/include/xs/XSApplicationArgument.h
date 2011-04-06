@@ -62,7 +62,8 @@ typedef enum
     XSApplicationArgumentTypeFlag            = 0x00,
     XSApplicationArgumentTypeInteger         = 0x01,
     XSApplicationArgumentTypeUnsignedInteger = 0x02,
-    XSApplicationArgumentTypeString          = 0x03
+    XSApplicationArgumentTypeString          = 0x03,
+    XSApplicationArgumentTypeFloat           = 0x04
 }
 XSApplicationArgumentType;
 
@@ -132,6 +133,14 @@ void XSApplicationArgument_SetUnsignedIntegerValue( XSApplicationArgumentRef arg
 void XSApplicationArgument_SetStringValue( XSApplicationArgumentRef arg, const char * value );
 
 /*!
+ * @function    XSApplicationArgument_SetFloatValue
+ * @abstract    Sets the float value for the argument
+ * @param       arg     The argument object
+ * @result      void
+ */
+void XSApplicationArgument_SetFloatValue( XSApplicationArgumentRef arg, XSFloat value );
+
+/*!
  * @function    XSApplicationArgument_GetFlag
  * @abstract    Gets the flag state for the argument
  * @param       arg     The argument object
@@ -162,6 +171,14 @@ XSUInteger XSApplicationArgument_GetUnsignedIntegerValue( XSApplicationArgumentR
  * @result      The argument's string value
  */
 const char * XSApplicationArgument_GetStringValue( XSApplicationArgumentRef arg );
+
+/*!
+ * @function    XSApplicationArgument_GetFloatValue
+ * @abstract    Gets the float value for the argument
+ * @param       arg     The argument object
+ * @result      The argument's float value
+ */
+XSFloat XSApplicationArgument_GetFloatValue( XSApplicationArgumentRef arg );
 
 XS_EXTERN_C_END
 

@@ -68,6 +68,7 @@ int main( int argc, char * argv[] )
     XSInteger            arg_int;
     XSUInteger           arg_uint;
     XSStringRef          arg_str;
+    XSFloat              arg_float;
     char              ** test;
     XSApplicationRef     app;
     XSStringRef          str1;
@@ -82,7 +83,8 @@ int main( int argc, char * argv[] )
     XSApplication_RegisterArgument( app, "--test", XSApplicationArgumentTypeFlag, "A test flag" );
     XSApplication_RegisterArgument( app, "--int",  XSApplicationArgumentTypeInteger, "A test integer" );
     XSApplication_RegisterArgument( app, "--uint", XSApplicationArgumentTypeUnsignedInteger );
-    XSApplication_RegisterArgument( app, "--str",  XSApplicationArgumentTypeString, "A test string" );
+    XSApplication_RegisterArgument( app, "--string",  XSApplicationArgumentTypeString, "A test string" );
+    XSApplication_RegisterArgument( app, "--float",  XSApplicationArgumentTypeFloat, "A test float" );
     
     XSApplication_PrintHelp( app, "A test application for the XSFoundation" );
     
@@ -101,9 +103,14 @@ int main( int argc, char * argv[] )
         XSLog( "Has uint argument: %u", arg_uint );
     }
     
-    if( ( arg_str = XSApplication_GetString( app, "--str" ) ) )
+    if( ( arg_str = XSApplication_GetString( app, "--string" ) ) )
     {
-        XSLog( "Has str argument: %@", arg_str );
+        XSLog( "Has string argument: %@", arg_str );
+    }
+    
+    if( ( arg_float = XSApplication_GetFloat( app, "--float" ) ) )
+    {
+        XSLog( "Has float argument: %f", arg_float );
     }
     
     test = XSAutoAlloc( 5 * sizeof( char * ) );

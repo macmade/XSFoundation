@@ -188,6 +188,16 @@ void __XSApplication_ProcessArguments( XSApplication * app )
                     XSApplicationArgument_SetStringValue( arg, ( value != NULL ) ? value : app->argv[ ++i ] );
                     break;
                     
+                case XSApplicationArgumentTypeFloat:
+                    
+                    if( app->argc == i + 1 && value == NULL )
+                    {
+                        break;
+                    }
+                    
+                    XSApplicationArgument_SetFloatValue( arg, ( XSFloat )atof( ( value != NULL ) ? value : app->argv[ ++i ] ) );
+                    break;
+                    
                 default:
                     
                     i++;

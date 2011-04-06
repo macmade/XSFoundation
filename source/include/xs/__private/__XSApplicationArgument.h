@@ -59,6 +59,7 @@ typedef struct _XSApplicationArgument
     XSUInteger    uint_val;
     const char  * str_val;
     BOOL          flag_val;
+    XSFloat       float_val;
     const char  * help;
 }
 XSApplicationArgument;

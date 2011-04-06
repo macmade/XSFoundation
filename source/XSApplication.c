@@ -165,6 +165,11 @@ void XSApplication_PrintHelp( XSApplicationRef app, const char * description )
                     printf( "[ string ]\n" );
                     break;
                     
+                case XSApplicationArgumentTypeFloat:
+                    
+                    printf( "[ float ]\n" );
+                    break;
+                    
                 default:
                     
                     printf( "[ value ]\n" );
@@ -334,6 +339,27 @@ XSStringRef XSApplication_GetString( XSApplicationRef app, const char * name )
     }
     
     return XSAutorelease( XSSTR( ( char * )XSApplicationArgument_GetStringValue( arg ) ) );
+}
+
+XSFloat XSApplication_GetFloat( XSApplicationRef app, const char * name )
+{
+    XSApplicationArgumentRef arg;
+    
+    if( __xsapp_argv_processed == NO )
+    {
+        __XSApplication_ProcessArguments( ( XSApplication * )app );
+        
+        __xsapp_argv_processed = YES;
+    }
+        
+    arg  = XSApplication_GetArgument( app, name );
+    
+    if( arg == NULL )
+    {
+        return 0;
+    }
+    
+    return XSApplicationArgument_GetFloatValue( arg );
 }
 
 XSArrayRef XSApplication_GetUnnamedArguments( XSApplicationRef app )

@@ -148,6 +148,14 @@ XSUInteger XSApplication_GetUnsignedInteger( XSApplicationRef app, const char * 
 XSStringRef XSApplication_GetString( XSApplicationRef app, const char * name );
 
 /*!
+ * @function    XSApplication_GetFloat
+ * @abstract    
+ * @param       app     The application object
+ * @result      
+ */
+XSFloat XSApplication_GetFloat( XSApplicationRef app, const char * name );
+
+/*!
  * @function    XSApplication_GetUnnamedArguments
  * @abstract    
  * @param       app     The application object
