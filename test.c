@@ -124,6 +124,9 @@ int main( int argc, char * argv[] )
     str3 = XSCopy( str2 );
     arr  = XSArray_CreateWithValues( str1, str2, str3, NULL );
     
+    XSLog( "Memory hash: %s", XSHash( test ) );
+    XSLog( "Object hash: %s", XSHash( arr ) );
+    
     printf( "%s%s%s\n", XSString_CString( str1 ), XSString_CString( str2 ), XSString_CString( str3 ) );
     
     XSLog( "hello, universe: %i %@ %i %@ %i", 42, str1, 43, app, 44 );

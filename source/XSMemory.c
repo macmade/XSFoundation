@@ -101,6 +101,7 @@ void XSAutoreleasePool_Drain( void )
  */
 void * XSAlloc( size_t size, ... )
 {
+    static size_t              allocID = 0;
     va_list                    args;
     __XSMemoryObject         * o;
     char                     * ptr;
@@ -130,6 +131,7 @@ void * XSAlloc( size_t size, ... )
     }
     
     o->retainCount = 1;
+    o->allocID     = allocID++;
     o->size        = size;
     
     ptr     =  ( char * )o;
@@ -412,9 +414,45 @@ BOOL XSEquals( void * ptr1, void * ptr2 )
  */
 const char * XSHash( void * ptr )
 {
-    ( void )ptr;
+    __XSMemoryObject         * o;
+    const XSClassInfos const * cls;
+    Str255                     classID;
+    Str255                     allocID;
+    Str255                     size;
     
-    return NULL;
+    o = __XSMemory_GetMemoryObject( ptr );
+    
+    if( strlen( ( char * )o->hash ) )
+    {
+        return ( const char * )o->hash;
+    }
+    
+    if( o->classID != 0 )
+    {
+        cls = XSRuntime_GetClassForClassID( o->classID );
+        
+        utoa( o->classID, ( char * )classID, 10 );
+        utoa( o->allocID, ( char * )allocID, 10 );
+        utoa( cls->instanceSize, ( char * )size, 10 );
+        strcat( ( char * )o->hash, ( char * )classID );
+        strcat( ( char * )o->hash, ":" );
+        strcat( ( char * )o->hash, cls->className );
+        strcat( ( char * )o->hash, "#" );
+        strcat( ( char * )o->hash, ( char * )allocID );
+        strcat( ( char * )o->hash, "$" );
+        strcat( ( char * )o->hash, ( char * )size );
+        
+        return ( const char * )o->hash;
+    }
+    
+    strcat( ( char * )o->hash, "0:Memory#" );
+    utoa( o->allocID, ( char * )allocID, 10 );
+    utoa( o->size, ( char * )size, 10 );
+    strcat( ( char * )o->hash, ( char * )allocID );
+    strcat( ( char * )o->hash, "$" );
+    strcat( ( char * )o->hash, ( char * )size );
+    
+    return ( const char * )o->hash;
 }
 
 /*!
