@@ -38,7 +38,7 @@
 #include "XS.h"
 #include "__XSURL.h"
 
-XSURLRef XSURL_Create( void )
+XSURL XSURL_Create( void )
 {
-    return ( XSURLRef )__XSURL_Alloc();
+    return ( XSURL )__XSURL_Alloc();
 }

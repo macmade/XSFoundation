@@ -49,7 +49,9 @@ static const XSClassInfos __XSStringClass =
     NULL,                   /* Constructor */
     __XSString_Destruct,    /* Destructor */
     NULL,                   /* Object copy */
-    __XSString_ToString     /* Object description */
+    __XSString_ToString,    /* Object description */
+    NULL,                   /* Object comparison */
+    NULL                    /* Object hash */
 };
 
 /*!

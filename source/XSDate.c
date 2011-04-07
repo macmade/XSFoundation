@@ -38,7 +38,7 @@
 #include "XS.h"
 #include "__XSDate.h"
 
-XSDateRef XSDate_Create( void )
+XSDate XSDate_Create( void )
 {
-    return ( XSDateRef )__XSDate_Alloc();
+    return ( XSDate )__XSDate_Alloc();
 }

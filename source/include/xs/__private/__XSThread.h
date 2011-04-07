@@ -55,7 +55,7 @@ typedef struct __XSThread_Struct
     XSRuntimeClass __class;
     void         * arg;
     XSUInteger     tid;
-    void ( * func )( XSThreadRef thread, void * arg );
+    void ( * func )( XSThread thread, void * arg );
 }
 __XSThread;
 

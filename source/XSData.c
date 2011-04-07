@@ -38,7 +38,7 @@
 #include "XS.h"
 #include "__XSData.h"
 
-XSDataRef XSData_Create( void )
+XSData XSData_Create( void )
 {
-    return ( XSDataRef )__XSData_Alloc();
+    return ( XSData )__XSData_Alloc();
 }

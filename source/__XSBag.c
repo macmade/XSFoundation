@@ -49,7 +49,9 @@ static const XSClassInfos __XSBagClass =
     NULL,               /* Constructor */
     NULL,               /* Destructor */
     NULL,               /* Object copy */
-    NULL                /* Object description */
+    NULL,               /* Object description */
+    NULL,               /* Object comparison */
+    NULL                /* Object hash */
 };
 
 /*!
@@ -65,7 +67,7 @@ static XSClassID __XSBagClassID;
  */
 void __XSBag_Initialize( void )
 {
-    __XSBagTypeID = XSRuntime_RegisterClass( &__XSBagClassID );
+    __XSBagClassID = XSRuntime_RegisterClass( &__XSBagClass );
 }
 
 /*!

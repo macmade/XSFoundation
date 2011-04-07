@@ -38,7 +38,7 @@
 #include "XS.h"
 #include "__XSSet.h"
 
-XSSetRef XSSet_Create( void )
+XSSet XSSet_Create( void )
 {
-    return ( XSSetRef )__XSSet_Alloc();
+    return ( XSSet )__XSSet_Alloc();
 }

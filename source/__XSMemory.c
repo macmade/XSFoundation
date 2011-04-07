@@ -61,7 +61,9 @@ static const XSClassInfos __XSAutoreleasePoolClass =
     NULL,                           /* Constructor */
     __XSAutoreleasePool_Destruct,   /* Destructor */
     NULL,                           /* Object copy */
-    NULL                            /* Object description */
+    NULL,                           /* Object description */
+    NULL,                           /* Object comparison */
+    NULL                            /* Object hash */
 };
 
 /*!
@@ -87,7 +89,7 @@ void __XSAutoreleasePool_Initialize( void )
  */
 __XSAutoreleasePool * __XSAutoreleasePool_Alloc( void )
 {
-    return ( XSAutoreleasePool * )XSRuntime_CreateInstance( __XSAutoreleasePoolClassID );
+    return ( __XSAutoreleasePool * )XSRuntime_CreateInstance( __XSAutoreleasePoolClassID );
 }
 
 /*!
@@ -108,7 +110,7 @@ void __XSAutoreleasePool_Destruct( void * object )
  * @abstract    Gets a pointer to a memory records object from a pointer returned by the XS allocation functions.
  * @result      The auto-release pool object or NULL if no aut-release pool were created
  */
-XSAutoreleasePool * __XSMemory_GetCurrentAutoreleasePool( void )
+__XSAutoreleasePool * __XSMemory_GetCurrentAutoreleasePool( void )
 {
     if( __xsmemory_ar_pools_num == 0 )
     {
@@ -123,7 +125,7 @@ XSAutoreleasePool * __XSMemory_GetCurrentAutoreleasePool( void )
  * @abstract    Releases all objects placed in the auto-release pool.
  * @result      void
  */
-void __XSMemory_AutoreleasePoolDrain( XSAutoreleasePool * ap )
+void __XSMemory_AutoreleasePoolDrain( __XSAutoreleasePool * ap )
 {
     size_t i;
     

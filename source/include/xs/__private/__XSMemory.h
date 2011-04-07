@@ -79,7 +79,7 @@ typedef struct ___XSMemoryObject_Struct
 {
     XSUInteger    retain_count;
     size_t        size;
-    XSTypeID      typeID;
+    XSClassID     classID;
     unsigned char f1[ 256 ];
     void        * data;
     unsigned char f2[ 256 ];
@@ -121,7 +121,7 @@ __XSAutoreleasePool * __XSMemory_GetCurrentAutoreleasePool( void );
  * @abstract    Releases all objects placed in the auto-release pool.
  * @result      void
  */
-void __XSMemory_AutoreleasePoolDrain( XSAutoreleasePool * ap );
+void __XSMemory_AutoreleasePoolDrain( __XSAutoreleasePool * ap );
 
 /*!
  * @function    __XSMemory_GetMemoryObject

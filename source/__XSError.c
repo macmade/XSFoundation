@@ -47,9 +47,11 @@ static const XSClassInfos __XSErrorClass =
     "XSError",          /* Class name */
     sizeof( XSError ),  /* Object size */
     NULL,               /* Constructor */
-    __XSError_Dealloc,  /* Destructor */
+    __XSError_Destruct, /* Destructor */
     NULL,               /* Object copy */
-    NULL                /* Object description */
+    NULL,               /* Object description */
+    NULL,               /* Object comparison */
+    NULL                /* Object hash */
 };
 
 /*!

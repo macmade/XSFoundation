@@ -44,12 +44,12 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @typedef     XSDataRef
+ * @typedef     XSData
  * @abstract    Opaque type for the XSData objects
  */
-typedef struct XSData * XSDataRef;
+typedef struct XSData * XSData;
 
-XSDataRef XSData_Create( void );
+XSData XSData_Create( void );
 
 XS_EXTERN_C_END
 

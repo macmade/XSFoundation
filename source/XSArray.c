@@ -43,7 +43,7 @@
  * @abstract    Creates an empty array
  * @result      The array object
  */
-XSArrayRef XSArray_Create( void )
+XSArray XSArray_Create( void )
 {
     return XSArray_CreateWithCapacity( XSARRAY_DEFAULT_CAPACITY );
 }
@@ -54,10 +54,10 @@ XSArrayRef XSArray_Create( void )
  * @param       capacity    The initial array capacity
  * @result      The array object
  */
-XSArrayRef XSArray_CreateWithCapacity( XSUInteger capacity )
+XSArray XSArray_CreateWithCapacity( XSUInteger capacity )
 {
-    void    ** store;
-    XSArray  * array;
+    void      ** store;
+    __XSArray  * array;
     
     if( NULL == ( store = ( void ** )XSAlloc( capacity * sizeof( void * ) ) ) )
     {
@@ -69,7 +69,7 @@ XSArrayRef XSArray_CreateWithCapacity( XSUInteger capacity )
     array->capacity = capacity;
     array->count    = 0;
     
-    return ( XSArrayRef )array;
+    return ( XSArray )array;
 }
 
 /*!
@@ -80,21 +80,21 @@ XSArrayRef XSArray_CreateWithCapacity( XSUInteger capacity )
  * @param       ...     The values to insert. Must be terminated by a NULL fence
  * @result      The array object
  */
-XSArrayRef XSArray_CreateWithValues( void * value1, ... )
+XSArray XSArray_CreateWithValues( void * value1, ... )
 {
-    va_list    args;
-    XSArray  * array;
-    void     * value;
-    void    ** store;
-    XSUInteger values;
+    va_list      args;
+    __XSArray  * array;
+    void       * value;
+    void      ** store;
+    XSUInteger   values;
     
     va_start( args, value1 );
     
-    array = ( XSArray * )XSArray_Create();
+    array = ( __XSArray * )XSArray_Create();
     
     if( value1 == NULL )
     {
-        return ( XSArrayRef )array;
+        return ( XSArray )array;
     }
     
     values                    = 0;
@@ -118,7 +118,7 @@ XSArrayRef XSArray_CreateWithValues( void * value1, ... )
         array->values[ values++ ] = XSRetain( value );
     }
     
-    return ( XSArrayRef )array;
+    return ( XSArray )array;
 }
 
 /*!
@@ -127,9 +127,9 @@ XSArrayRef XSArray_CreateWithValues( void * value1, ... )
  * @param       array   The array object
  * @result      The number of values in the array
  */
-XSUInteger XSArray_Count( XSArrayRef array )
+XSUInteger XSArray_Count( XSArray array )
 {
-    return ( ( XSArray * )array )->count;
+    return ( ( __XSArray * )array )->count;
 }
 
 /*!
@@ -140,12 +140,12 @@ XSUInteger XSArray_Count( XSArrayRef array )
  * @param       The value to append
  * @result      void
  */
-void XSArray_AppendValue( XSArrayRef array, void * value )
+void XSArray_AppendValue( XSArray array, void * value )
 {
-    XSArray * _array;
-    void   ** store;
+    __XSArray * _array;
+    void     ** store;
     
-    _array = ( XSArray * )array;
+    _array = ( __XSArray * )array;
     
     if( _array->count == _array->capacity )
     {
@@ -170,13 +170,13 @@ void XSArray_AppendValue( XSArrayRef array, void * value )
  * @param       i       The index in the array
  * @result      void
  */
-void XSArray_InsertValueAtIndex( XSArrayRef array, void * value, XSUInteger i )
+void XSArray_InsertValueAtIndex( XSArray array, void * value, XSUInteger i )
 {
-    XSArray  * _array;
-    void    ** store;
-    XSUInteger j;
+    __XSArray  * _array;
+    void      ** store;
+    XSUInteger   j;
     
-    _array = ( XSArray * )array;
+    _array = ( __XSArray * )array;
     
     if( i >= _array->count )
     {
@@ -216,12 +216,12 @@ void XSArray_InsertValueAtIndex( XSArrayRef array, void * value, XSUInteger i )
  * @param       i       The index in the array
  * @result      The old value
  */
-void * XSArray_ReplaceValueAtIndex( XSArrayRef array, void * value, XSUInteger i )
+void * XSArray_ReplaceValueAtIndex( XSArray array, void * value, XSUInteger i )
 {
-    XSArray * _array;
-    void    * old;
+    __XSArray * _array;
+    void      * old;
     
-    _array = ( XSArray * )array;
+    _array = ( __XSArray * )array;
     
     if( i > _array->count )
     {
@@ -248,11 +248,11 @@ void * XSArray_ReplaceValueAtIndex( XSArrayRef array, void * value, XSUInteger i
  * @param       i       The index in the array
  * @result      The array value
  */
-void * XSArray_ValueAtIndex( XSArrayRef array, XSUInteger i )
+void * XSArray_ValueAtIndex( XSArray array, XSUInteger i )
 {
-    XSArray * _array;
+    __XSArray * _array;
     
-    _array = ( XSArray * )array;
+    _array = ( __XSArray * )array;
     
     if( i > _array->count )
     {
@@ -269,12 +269,12 @@ void * XSArray_ValueAtIndex( XSArrayRef array, XSUInteger i )
  * @param       array   The array object
  * @result      The removed value
  */
-void * XSArray_RemoveValueAtIndex( XSArrayRef array, XSUInteger i )
+void * XSArray_RemoveValueAtIndex( XSArray array, XSUInteger i )
 {
-    XSArray  * _array;
-    XSUInteger j;
+    __XSArray  * _array;
+    XSUInteger   j;
     
-    _array = ( XSArray * )array;
+    _array = ( __XSArray * )array;
     
     if( i > _array->count )
     {
@@ -298,12 +298,12 @@ void * XSArray_RemoveValueAtIndex( XSArrayRef array, XSUInteger i )
  * @param       array   The value to search
  * @result      YES if the array contains the value, otherwise NO
  */
-BOOL XSArray_ContainsValue( XSArrayRef array, void * value )
+BOOL XSArray_ContainsValue( XSArray array, void * value )
 {
-    XSArray  * _array;
-    XSUInteger i;
+    __XSArray  * _array;
+    XSUInteger   i;
     
-    _array = ( XSArray * )array;
+    _array = ( __XSArray * )array;
     
     for( i = 0; i < _array->count; i++ )
     {
@@ -322,11 +322,11 @@ BOOL XSArray_ContainsValue( XSArrayRef array, void * value )
  * @param       array   The array object
  * @result      The current array index
  */
-XSUInteger XSArray_Index( XSArrayRef array )
+XSUInteger XSArray_Index( XSArray array )
 {
-    XSArray  * _array;
+    __XSArray  * _array;
     
-    _array = ( XSArray * )array;
+    _array = ( __XSArray * )array;
     
     return _array->cur;
 }
@@ -337,11 +337,11 @@ XSUInteger XSArray_Index( XSArrayRef array )
  * @param       array   The array object
  * @result      The current array value
  */
-void * XSArray_Current( XSArrayRef array )
+void * XSArray_Current( XSArray array )
 {
-    XSArray  * _array;
+    __XSArray  * _array;
     
-    _array = ( XSArray * )array;
+    _array = ( __XSArray * )array;
     
     return _array->values[ _array->cur ];
 }
@@ -352,11 +352,11 @@ void * XSArray_Current( XSArrayRef array )
  * @param       array   The array object
  * @result      The array value
  */
-void * XSArray_Next( XSArrayRef array )
+void * XSArray_Next( XSArray array )
 {
-    XSArray  * _array;
+    __XSArray  * _array;
     
-    _array = ( XSArray * )array;
+    _array = ( __XSArray * )array;
     
     if( ( _array->cur + 1 ) == _array->count )
     {
@@ -372,11 +372,11 @@ void * XSArray_Next( XSArrayRef array )
  * @param       array   The array object
  * @result      The array value
  */
-void * XSArray_Previous( XSArrayRef array )
+void * XSArray_Previous( XSArray array )
 {
-    XSArray  * _array;
+    __XSArray  * _array;
     
-    _array = ( XSArray * )array;
+    _array = ( __XSArray * )array;
     
     if( _array->cur == 0 )
     {
@@ -392,10 +392,10 @@ void * XSArray_Previous( XSArrayRef array )
  * @param       array   The array object
  * @result      void
  */
-void XSArray_Rewind( XSArrayRef array )
+void XSArray_Rewind( XSArray array )
 {
-    XSArray  * _array;
+    __XSArray  * _array;
     
-    _array      = ( XSArray * )array;
+    _array      = ( __XSArray * )array;
     _array->cur = 0;
 }

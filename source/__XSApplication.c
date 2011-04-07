@@ -129,7 +129,7 @@ void __XSApplication_ProcessArguments( __XSApplication * app )
     XSInteger                i;
     const char             * name;
     char                   * value;
-    XSApplicationArgumentRef arg;
+    XSApplicationArgument arg;
     
     i = 0;
     
@@ -145,7 +145,7 @@ void __XSApplication_ProcessArguments( __XSApplication * app )
             value++;
         }
         
-        arg  = XSApplication_GetArgument( ( XSApplicationRef )app, name );
+        arg  = XSApplication_GetArgument( ( XSApplication )app, name );
         
         if( arg == NULL )
         {

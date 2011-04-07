@@ -46,10 +46,10 @@ XS_EXTERN_C_BEGIN
 #include "XSTypes.h"
 
 /*!
- * @typedef     XSAutoreleasePoolRef
+ * @typedef     XSAutoreleasePool
  * @abstract    Opaque type for the XSAutoreleasePool objects
  */
-typedef struct XSAutoreleasePool * XSAutoreleasePoolRef;
+typedef struct XSAutoreleasePool * XSAutoreleasePool;
 
 /*!
  * @function    XSAutoreleasePool_Create
@@ -59,7 +59,7 @@ typedef struct XSAutoreleasePool * XSAutoreleasePoolRef;
  *              inside it.
  * @result      The new auto-release pool object
  */
-XSAutoreleasePoolRef XSAutoreleasePool_Create( void );
+XSAutoreleasePool XSAutoreleasePool_Create( void );
 
 /*!
  * @function    XSAutoreleasePool_Drain

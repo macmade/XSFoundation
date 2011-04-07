@@ -49,7 +49,9 @@ static const XSClassInfos __XSLockClass =
     __XSLock_Construct, /* Constructor */
     __XSLock_Destruct,  /* Destructor */
     NULL,               /* Object copy */
-    NULL                /* Object description */
+    NULL,               /* Object description */
+    NULL,               /* Object comparison */
+    NULL                /* Object hash */
 };
 
 /*!

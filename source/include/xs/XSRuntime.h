@@ -73,7 +73,7 @@ void XSRuntime_Finalize( void );
  * @param       cls     The class structure to register
  * @result      The runtime type ID for the class
  */
-XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls );
+XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls );
 
 /*!
  * @function    XSRuntime_CreateInstanceOfClass
@@ -81,7 +81,7 @@ XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls );
  * @param       cls     The class structure
  * @result      The allocated instance
  */
-XSTypeRef XSRuntime_CreateInstanceOfClass( const XSRuntimeClass * const cls );
+XSObject XSRuntime_CreateInstanceOfClass( const XSClassInfos * const cls );
 
 /*!
  * @function    XSRuntime_CreateInstanceOfClassWithName
@@ -89,7 +89,7 @@ XSTypeRef XSRuntime_CreateInstanceOfClass( const XSRuntimeClass * const cls );
  * @param       name    The name of the class
  * @result      The allocated instance
  */
-XSTypeRef XSRuntime_CreateInstanceOfClassWithName( const char * name );
+XSObject XSRuntime_CreateInstanceOfClassWithName( const char * name );
 
 /*!
  * @function    XSRuntime_CreateInstance
@@ -97,7 +97,7 @@ XSTypeRef XSRuntime_CreateInstanceOfClassWithName( const char * name );
  * @param       typeID  The type ID of the class
  * @result      The allocated instance
  */
-XSTypeRef XSRuntime_CreateInstance( XSTypeID typeID );
+XSObject XSRuntime_CreateInstance( XSClassID typeID );
 
 /*!
  * @function    XSRuntime_IsInstance
@@ -108,20 +108,20 @@ XSTypeRef XSRuntime_CreateInstance( XSTypeID typeID );
 BOOL XSRuntime_IsInstance( void * ptr );
 
 /*!
- * @function    XSRuntime_GetClassForTypeID
+ * @function    XSRuntime_GetClassForClassID
  * @abstract    Gets the class structure for a specific type ID
- * @param       The type ID of the class
+ * @param       The class ID of the class
  * @result      The class corresponding to the type ID
  */
-Class XSRuntime_GetClassForTypeID( XSTypeID typeID );
+XSClass XSRuntime_GetClassForClassID( XSClassID typeID );
 
 /*!
- * @function    XSRuntime_GetClassForTypeID
+ * @function    XSRuntime_GetClassIDForClass
  * @abstract    Gets the type ID for a specific class
  * @param       The class
- * @result      The type ID of the class
+ * @result      The class ID of the class
  */
-XSTypeID XSRuntime_GetTypeIDForClass( Class cls );
+XSClassID XSRuntime_GetClassIDForClass( XSClass cls );
 
 /*!
  * @function    XSRuntime_GetClassForObject
@@ -129,15 +129,15 @@ XSTypeID XSRuntime_GetTypeIDForClass( Class cls );
  * @param       object  The object
  * @result      The object's class
  */
-Class XSRuntime_GetClassForObject( id object );
+XSClass XSRuntime_GetClassForObject( XSObject object );
 
 /*!
  * @function    XSRuntime_GetTypeIDForObject
  * @abstract    Gets the class type ID for an object
  * @param       object  The object
- * @result      The class type ID for the object
+ * @result      The class ID for the object
  */
-XSTypeID XSRuntime_GetTypeIDForObject( id object );
+XSClassID XSRuntime_GetTypeIDForObject( XSObject object );
 
 /*!
  * @function    XSRuntime_GetClassNameForObject
@@ -145,7 +145,7 @@ XSTypeID XSRuntime_GetTypeIDForObject( id object );
  * @param       object  The object
  * @result      The name of the class
  */
-const char * XSRuntime_GetClassNameForObject( id object );
+const char * XSRuntime_GetClassNameForObject( XSObject object );
 
 /*!
  * @function    XSRuntime_IsInstanceOfClass
@@ -154,7 +154,7 @@ const char * XSRuntime_GetClassNameForObject( id object );
  * @param       cls     The class
  * @result      True if the object is an instance of the class, otherwise false
  */
-BOOL XSRuntime_IsInstanceOfClass( id object, Class cls );
+BOOL XSRuntime_IsInstanceOfClass( XSObject object, XSClass cls );
 
 /*!
  * @function    XSRuntime_IsInstanceOfClassName
@@ -163,7 +163,7 @@ BOOL XSRuntime_IsInstanceOfClass( id object, Class cls );
  * @param       name    The name of the class
  * @result      True if the object is an instance of the class name, otherwise false
  */
-BOOL XSRuntime_IsInstanceOfClassName( id object, const char * name );
+BOOL XSRuntime_IsInstanceOfClassName( XSObject object, const char * name );
     
 XS_EXTERN_C_END
 

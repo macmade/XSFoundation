@@ -46,9 +46,9 @@
  *              inside it.
  * @result      The new auto-release pool object
  */
-XSAutoreleasePoolRef XSAutoreleasePool_Create( void )
+XSAutoreleasePool XSAutoreleasePool_Create( void )
 {
-    XSAutoreleasePool * ap;
+    __XSAutoreleasePool * ap;
     
     if( __xsmemory_ar_pools_num == XS_MEMORY_MAX_AR_POOLS )
     {
@@ -73,7 +73,7 @@ XSAutoreleasePoolRef XSAutoreleasePool_Create( void )
     ap->num_objects                                  = 0;
     __xsmemory_ar_pools[ __xsmemory_ar_pools_num++ ] = ap;
     
-    return ( XSAutoreleasePoolRef )ap;
+    return ( XSAutoreleasePool )ap;
 }
 
 /*!
@@ -83,7 +83,7 @@ XSAutoreleasePoolRef XSAutoreleasePool_Create( void )
  */
 void XSAutoreleasePool_Drain( void )
 {
-    XSAutoreleasePool * ap;
+    __XSAutoreleasePool * ap;
     
     ap = __XSMemory_GetCurrentAutoreleasePool();
     
@@ -101,15 +101,15 @@ void XSAutoreleasePool_Drain( void )
  */
 void * XSAlloc( size_t size, ... )
 {
-    va_list                      args;
-    __XSMemoryObject           * o;
-    char                       * ptr;
-    XSTypeID                     typeID;
-    const XSRuntimeClass const * cls;
+    va_list                    args;
+    __XSMemoryObject         * o;
+    char                     * ptr;
+    XSClassID                  classID;
+    const XSClassInfos const * cls;
     
     va_start( args, size );
     
-    typeID = va_arg( args, XSTypeID );
+    classID = va_arg( args, XSClassID );
     
     va_end( args );
     
@@ -120,13 +120,13 @@ void * XSAlloc( size_t size, ... )
         return NULL;
     }
     
-    if( typeID > 0 && XSRuntime_GetClassForTypeID( typeID ) != NULL )
+    if( classID > 0 && XSRuntime_GetClassForClassID( classID ) != NULL )
     {
-        o->typeID = typeID;
+        o->classID = classID;
     }
     else
     {
-        typeID = 0;
+        classID = 0;
     }
     
     o->retain_count = 1;
@@ -136,13 +136,13 @@ void * XSAlloc( size_t size, ... )
     ptr    += ( sizeof( __XSMemoryObject ) );
     o->data = ptr;
     
-    if( typeID > 0 )
+    if( classID > 0 )
     {
-        cls = XSRuntime_GetClassForTypeID( o->typeID );
+        cls = XSRuntime_GetClassForClassID( o->classID );
         
-        if( cls->init != NULL )
+        if( cls->construct != NULL )
         {
-            cls->init( ptr );
+            cls->construct( ptr );
         }
     }
     
@@ -216,8 +216,8 @@ void * XSRetain( void * ptr )
  */
 void * XSRelease( void * ptr )
 {
-    __XSMemoryObject           * o;
-    const XSRuntimeClass const * cls;
+    __XSMemoryObject         * o;
+    const XSClassInfos const * cls;
     
     if( ptr == NULL )
     {
@@ -230,13 +230,13 @@ void * XSRelease( void * ptr )
     
     if( o->retain_count == 0 )
     {
-        if( o->typeID != 0 )
+        if( o->classID != 0 )
         {
-            cls = XSRuntime_GetClassForTypeID( o->typeID );
+            cls = XSRuntime_GetClassForClassID( o->classID );
             
-            if( cls->dealloc != NULL )
+            if( cls->destruct != NULL )
             {
-                cls->dealloc( ptr );
+                cls->destruct( ptr );
             }
         }
         
@@ -259,7 +259,7 @@ void * XSRelease( void * ptr )
  */
 void * XSAutorelease( void * ptr )
 {
-    XSAutoreleasePool * ap;
+    __XSAutoreleasePool * ap;
     
     if( ptr == NULL )
     {
@@ -324,9 +324,9 @@ void * XSAutoAlloc( size_t size )
  */
 void * XSCopy( void * ptr )
 {
-    __XSMemoryObject           * o;
-    void                       * ptr2;
-    const XSRuntimeClass const * cls;
+    __XSMemoryObject         * o;
+    void                     * ptr2;
+    const XSClassInfos const * cls;
     
     if( ptr == NULL )
     {
@@ -335,10 +335,10 @@ void * XSCopy( void * ptr )
     
     o = __XSMemory_GetMemoryObject( ptr );
     
-    if( o->typeID != 0 )
+    if( o->classID != 0 )
     {
-        cls  = XSRuntime_GetClassForTypeID( o->typeID );
-        ptr2 = XSAlloc( o->size, o->typeID );
+        cls  = XSRuntime_GetClassForClassID( o->classID );
+        ptr2 = XSAlloc( o->size, o->classID );
         
         if( ptr2 == NULL )
         {

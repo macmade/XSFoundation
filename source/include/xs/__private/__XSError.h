@@ -57,8 +57,8 @@ typedef struct __XSError_Struct
 {
     XSRuntimeClass __class;
     XSInteger      code;
-    XSStringRef    domain;
-    XSStringRef    reason;
+    XSString      domain;
+    XSString      reason;
 }
 __XSError;
 

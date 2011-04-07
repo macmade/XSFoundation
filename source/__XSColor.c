@@ -49,7 +49,9 @@ static const XSClassInfos __XSColorClass =
     NULL,                   /* Constructor */
     NULL,                   /* Destructor */
     NULL,                   /* Object copy */
-    NULL                    /* Object description */
+    NULL,                   /* Object description */
+    NULL,                   /* Object comparison */
+    NULL                    /* Object hash */
 };
 
 /*!

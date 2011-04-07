@@ -44,12 +44,12 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @typedef     XSBagRef
+ * @typedef     XSBag
  * @abstract    Opaque type for the XSBag objects
  */
-typedef struct XSBag * XSBagRef;
+typedef struct XSBag * XSBag;
 
-XSBagRef XSBag_Create( void );
+XSBag XSBag_Create( void );
 
 XS_EXTERN_C_END
 

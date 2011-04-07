@@ -52,13 +52,13 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct __XSApplication_Struct
 {
-    XSRuntimeClass              __class;
-    int                        argc;
-    const char              ** argv;
-    const char               * executable;
-    XSApplicationArgumentRef * args;
-    XSUInteger                 arg_count;
-    XSUInteger                 arg_alloc;
+    XSRuntimeClass          __class;
+    int                     argc;
+    const char           ** argv;
+    const char            * executable;
+    XSApplicationArgument * args;
+    XSUInteger              arg_count;
+    XSUInteger              arg_alloc;
 }
 __XSApplication;
 

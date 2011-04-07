@@ -38,7 +38,7 @@
 #include "XS.h"
 #include "__XSTree.h"
 
-XSTreeRef XSTree_Create( void )
+XSTree XSTree_Create( void )
 {
-    return ( XSTreeRef )__XSTree_Alloc();
+    return ( XSTree )__XSTree_Alloc();
 }

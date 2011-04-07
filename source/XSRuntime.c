@@ -55,25 +55,25 @@
  * @var         __inited
  * @abstract    Whether the XSFoundation runtime has been initialized
  */
-static BOOL              __inited = NO;
+static BOOL __inited = NO;
 
 /*!
  * @var         __class_table
  * @abstract    The runtime class table
  */
-static XSRuntimeClass ** __class_table;
+static XSClassInfos ** __class_table;
 
 /*!
  * @var         __class_size
  * @abstract    The allocated size of the runtime class table
  */
-static size_t            __class_size;
+static size_t __class_size;
 
 /*!
  * @var         __class_count
  * @abstract    The number of registered classes in the runtime class table
  */
-static size_t            __class_count;
+static size_t __class_count;
 
 /* Prototypes for the initialization of the core runtime classes */
 void __XSMemoryObject_Initialize( void );
@@ -153,15 +153,15 @@ void XSRuntime_Finalize( void )
  *              This function needs to be called once per class,
  *              ie using pthread_once().
  * @param       cls     The class structure to register
- * @result      The runtime type ID for the class
+ * @result      The runtime class ID for the class
  */
-XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls )
+XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls )
 {
     __XS_RUNTINE_INIT_CHECK
     
     if( __class_size == 0 )
     {
-        if( NULL == ( __class_table = ( XSRuntimeClass ** )calloc( sizeof( XSRuntimeClass * ), __XS_RUNTIME_CLASS_TABLE_SIZE ) ) )
+        if( NULL == ( __class_table = ( XSClassInfos ** )calloc( sizeof( XSClassInfos * ), __XS_RUNTIME_CLASS_TABLE_SIZE ) ) )
         {
             fprintf( stderr, "Error: unable to allocate the runtime class table!\n" );
             exit( EXIT_FAILURE );
@@ -172,7 +172,7 @@ XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls )
     
     if( __class_count == __class_size )
     {
-        if( NULL == ( __class_table = ( XSRuntimeClass ** )realloc( __class_table, sizeof( XSRuntimeClass * ) * ( __XS_RUNTIME_CLASS_TABLE_SIZE + __class_size ) ) ) )
+        if( NULL == ( __class_table = ( XSClassInfos ** )realloc( __class_table, sizeof( XSClassInfos * ) * ( __XS_RUNTIME_CLASS_TABLE_SIZE + __class_size ) ) ) )
         {
             fprintf( stderr, "Error: unable to re-allocate the runtime class table!\n" );
             exit( EXIT_FAILURE );
@@ -181,7 +181,7 @@ XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls )
         __class_size += __XS_RUNTIME_CLASS_TABLE_SIZE;
     }
     
-    __class_table[ __class_count ] = ( XSRuntimeClass * )cls;
+    __class_table[ __class_count ] = ( XSClassInfos * )cls;
     
     return ++__class_count;
 }
@@ -192,12 +192,12 @@ XSTypeID XSRuntime_RegisterClass( const XSRuntimeClass * const cls )
  * @param       typeID  The type ID of the class
  * @result      The allocated instance
  */
-XSTypeRef XSRuntime_CreateInstance( XSTypeID typeID )
+XSObject XSRuntime_CreateInstance( XSClassID typeID )
 {
-    XSRuntimeBase  * b;
-    XSRuntimeClass * cls;
+    XSRuntimeClass * b;
+    XSClassInfos   * cls;
     size_t           size;
-    XSTypeRef      * o;
+    XSObject         o;
     
     __XS_RUNTINE_INIT_CHECK
     
@@ -206,11 +206,11 @@ XSTypeRef XSRuntime_CreateInstance( XSTypeID typeID )
         return NULL;
     }
     
-    cls    = __class_table[ typeID - 1 ];
-    size   = sizeof( cls ) + cls->instanceSize;
-    o      = XSAlloc( size, typeID );
-    b      = ( XSRuntimeBase * )o;
-    b->isa = cls;
+    cls           = __class_table[ typeID - 1 ];
+    size          = sizeof( cls ) + cls->instanceSize;
+    o             = XSAlloc( size, typeID );
+    b             = ( XSRuntimeClass * )o;
+    b->classInfos = cls;
     
     return o;
 }
@@ -221,18 +221,18 @@ XSTypeRef XSRuntime_CreateInstance( XSTypeID typeID )
  * @param       cls     The class structure
  * @result      The allocated instance
  */
-XSTypeRef XSRuntime_CreateInstanceOfClass( const XSRuntimeClass * const cls )
+XSObject XSRuntime_CreateInstanceOfClass( const XSClassInfos * const cls )
 {
-    XSTypeID typeID;
+    XSClassID classID;
     
-    typeID = XSRuntime_GetTypeIDForClass( ( Class )cls );
+    classID = XSRuntime_GetClassIDForClass( ( XSClass )cls );
     
-    if( typeID == 0 )
+    if( classID == 0 )
     {
         return NULL;
     }
     
-    return XSRuntime_CreateInstance( typeID );
+    return XSRuntime_CreateInstance( classID );
 }
 
 /*!
@@ -241,10 +241,10 @@ XSTypeRef XSRuntime_CreateInstanceOfClass( const XSRuntimeClass * const cls )
  * @param       name    The name of the class
  * @result      The allocated instance
  */
-XSTypeRef XSRuntime_CreateInstanceOfClassWithName( const char * name )
+XSObject XSRuntime_CreateInstanceOfClassWithName( const char * name )
 {
-    size_t i;
-    XSRuntimeClass * cls;
+    size_t         i;
+    XSClassInfos * cls;
     
     for( i = 0; i < __class_count; i++ )
     {
@@ -271,7 +271,7 @@ BOOL XSRuntime_IsInstance( void * ptr )
     
     o = __XSMemory_GetMemoryObject( ptr );
     
-    if( o->typeID > 0 && XSRuntime_GetClassForTypeID( o->typeID ) != NULL )
+    if( o->classID > 0 && XSRuntime_GetClassForClassID( o->classID ) != NULL )
     {
         return YES;
     }
@@ -280,33 +280,33 @@ BOOL XSRuntime_IsInstance( void * ptr )
 }
 
 /*!
- * @function    XSRuntime_GetClassForTypeID
+ * @function    XSRuntime_GetClassForClassID
  * @abstract    Gets the class structure for a specific type ID
- * @param       The type ID of the class
+ * @param       classID     The type ID of the class
  * @result      The class corresponding to the type ID
  */
-Class XSRuntime_GetClassForTypeID( XSTypeID typeID )
+XSClass XSRuntime_GetClassForClassID( XSClassID classID )
 {
-    if( typeID > __class_count )
+    if( classID > __class_count )
     {
         return NULL;
     }
     
-    return ( Class )__class_table[ typeID - 1 ];
+    return ( XSClass )__class_table[ classID - 1 ];
 }
 
 /*!
- * @function    XSRuntime_GetClassForTypeID
+ * @function    XSRuntime_GetClassIDForClass
  * @abstract    Gets the type ID for a specific class
  * @param       The class
  * @result      The type ID of the class
  */
-XSTypeID XSRuntime_GetTypeIDForClass( Class cls )
+XSClassID XSRuntime_GetClassIDForClass( XSClass cls )
 {
     XSUInteger       i;
-    XSRuntimeClass * _cls;
+    XSClassInfos * _cls;
     
-    _cls = ( XSRuntimeClass * )cls;
+    _cls = ( XSClassInfos * )cls;
     
     for( i = 0; i < __class_count; i++ )
     {
@@ -325,14 +325,14 @@ XSTypeID XSRuntime_GetTypeIDForClass( Class cls )
  * @param       object  The object
  * @result      The object's class
  */
-Class XSRuntime_GetClassForObject( id object )
+XSClass XSRuntime_GetClassForObject( XSObject object )
 {
     if( XSRuntime_IsInstance( object ) == NO )
     {
         return NULL;
     }
     
-    return ( ( XSRuntimeBase * )object )->isa;
+    return ( ( XSRuntimeClass * )object )->classInfos;
 }
 
 /*!
@@ -341,14 +341,14 @@ Class XSRuntime_GetClassForObject( id object )
  * @param       object  The object
  * @result      The class type ID for the object
  */
-XSTypeID XSRuntime_GetTypeIDForObject( id object )
+XSClassID XSRuntime_GetTypeIDForObject( XSObject object )
 {
     if( XSRuntime_IsInstance( object ) == NO )
     {
         return 0;
     }
     
-    return XSRuntime_GetTypeIDForClass( XSRuntime_GetClassForObject( object ) );
+    return XSRuntime_GetClassIDForClass( XSRuntime_GetClassForObject( object ) );
 }
 
 /*!
@@ -357,14 +357,14 @@ XSTypeID XSRuntime_GetTypeIDForObject( id object )
  * @param       object  The object
  * @result      The name of the class
  */
-const char * XSRuntime_GetClassNameForObject( id object )
+const char * XSRuntime_GetClassNameForObject( XSObject object )
 {
     if( XSRuntime_IsInstance( object ) == NO )
     {
         return NULL;
     }
     
-    return ( ( XSRuntimeBase * )object )->isa->className;
+    return ( ( XSRuntimeClass * )object )->classInfos->className;
 }
 
 /*!
@@ -374,14 +374,14 @@ const char * XSRuntime_GetClassNameForObject( id object )
  * @param       cls     The class
  * @result      True if the object is an instance of the class, otherwise false
  */
-BOOL XSRuntime_IsInstanceOfClass( id object, Class cls )
+BOOL XSRuntime_IsInstanceOfClass( XSObject object, XSClass cls )
 {
     if( XSRuntime_IsInstance( object ) == NO )
     {
         return NO;
     }
     
-    if( ( ( XSRuntimeBase * )object )->isa == cls )
+    if( ( ( XSRuntimeClass * )object )->classInfos == cls )
     {
         return YES;
     }
@@ -396,14 +396,14 @@ BOOL XSRuntime_IsInstanceOfClass( id object, Class cls )
  * @param       name    The name of the class
  * @result      True if the object is an instance of the class name, otherwise false
  */
-BOOL XSRuntime_IsInstanceOfClassName( id object, const char * name )
+BOOL XSRuntime_IsInstanceOfClassName( XSObject object, const char * name )
 {
     if( XSRuntime_IsInstance( object ) == NO )
     {
         return NO;
     }
     
-    if( strcmp( ( ( XSRuntimeBase * )object )->isa->className, name ) == 0 )
+    if( strcmp( ( ( XSRuntimeClass * )object )->classInfos->className, name ) == 0 )
     {
         return YES;
     }

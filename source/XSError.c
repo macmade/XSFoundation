@@ -46,9 +46,9 @@
  * @param       reason  The error message
  * @result      The error object
  */
-XSErrorRef XSError_Create( XSInteger code, XSStringRef domain, XSStringRef reason )
+XSError XSError_Create( XSInteger code, XSString domain, XSString reason )
 {
-    XSError * error;
+    __XSError * error;
     
     error = __XSError_Alloc();
     
@@ -59,7 +59,7 @@ XSErrorRef XSError_Create( XSInteger code, XSStringRef domain, XSStringRef reaso
     XSRetain( error->domain );
     XSRetain( error->domain );
     
-    return ( XSErrorRef )error;
+    return ( XSError )error;
 }
 
 /*!
@@ -68,9 +68,9 @@ XSErrorRef XSError_Create( XSInteger code, XSStringRef domain, XSStringRef reaso
  * @param       error   The error object
  * @result      The error code
  */
-XSInteger XSError_GetCode( XSErrorRef error )
+XSInteger XSError_GetCode( XSError error )
 {
-    return ( ( XSError * )error )->code;
+    return ( ( __XSError * )error )->code;
 }
 
 /*!
@@ -79,9 +79,9 @@ XSInteger XSError_GetCode( XSErrorRef error )
  * @param       error   The error object
  * @result      The error domain
  */
-XSStringRef XSError_GetDomain( XSErrorRef error )
+XSString XSError_GetDomain( XSError error )
 {
-    return ( ( XSError * )error )->domain;
+    return ( ( __XSError * )error )->domain;
 }
 
 /*!
@@ -90,7 +90,7 @@ XSStringRef XSError_GetDomain( XSErrorRef error )
  * @param       error   The error object
  * @result      The error message
  */
-XSStringRef XSError_GetReason( XSErrorRef error )
+XSString XSError_GetReason( XSError error )
 {
-    return ( ( XSError * )error )->reason;
+    return ( ( __XSError * )error )->reason;
 }

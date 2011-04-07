@@ -43,8 +43,8 @@ XSFoundation is released under the terms of the [Boost][2] Software License - Ve
     
     int main( void )
     {
-        XSStringRef str1;
-        XSStringRef str2;
+        XSString str1;
+        XSString str2;
         
         // Initialization of XSFoundation
         XSApplication_Start( argc, ( const char ** )argv );

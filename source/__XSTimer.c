@@ -49,7 +49,9 @@ static const XSClassInfos __XSTimerClass =
     NULL,                   /* Constructor */
     NULL,                   /* Destructor */
     NULL,                   /* Object copy */
-    NULL                    /* Object description */
+    NULL,                   /* Object description */
+    NULL,                   /* Object comparison */
+    NULL                    /* Object hash */
 };
 
 /*!
@@ -65,7 +67,7 @@ static XSClassID __XSTimerClassID;
  */
 void __XSTimer_Initialize( void )
 {
-    XSClassID = XSRuntime_RegisterClass( &__XSTimerClass );
+    __XSTimerClassID = XSRuntime_RegisterClass( &__XSTimerClass );
 }
 
 /*!
@@ -75,7 +77,7 @@ void __XSTimer_Initialize( void )
  */
 __XSTimer * __XSTimer_Alloc( void )
 {
-    return ( __XSTimer * )XSRuntime_CreateInstance( XSClassID );
+    return ( __XSTimer * )XSRuntime_CreateInstance( __XSTimerClassID );
 }
 
 /*!
@@ -87,7 +89,7 @@ __XSTimer * __XSTimer_Alloc( void )
  */
 void __XSTimer_RunOnce( XSThread thread, void * object )
 {
-    XSTimer * t;
+    __XSTimer * t;
     
     ( void )thread;
     
@@ -107,7 +109,7 @@ void __XSTimer_RunOnce( XSThread thread, void * object )
  */
 void __XSTimer_RunAndRepeat( XSThread thread, void * object )
 {
-    XSTimer * t;
+    __XSTimer * t;
     
     ( void )thread;
     

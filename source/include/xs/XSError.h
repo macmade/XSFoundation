@@ -46,10 +46,10 @@ XS_EXTERN_C_BEGIN
 #include "xs/XSString.h"
 
 /*!
- * @typedef     XSErrorRef
+ * @typedef     XSError
  * @abstract    Opaque type for the XSError objects
  */
-typedef struct XSError * XSErrorRef;
+typedef struct XSError * XSError;
 
 /*!
  * @function    XSError_Create
@@ -59,7 +59,7 @@ typedef struct XSError * XSErrorRef;
  * @param       reason  The error message
  * @result      The error object
  */
-XSErrorRef XSError_Create( XSInteger code, XSStringRef domain, XSStringRef reason );
+XSError XSError_Create( XSInteger code, XSString domain, XSString reason );
 
 /*!
  * @function    XSError_GetCode
@@ -67,7 +67,7 @@ XSErrorRef XSError_Create( XSInteger code, XSStringRef domain, XSStringRef reaso
  * @param       error   The error object
  * @result      The error code
  */
-XSInteger XSError_GetCode( XSErrorRef error );
+XSInteger XSError_GetCode( XSError error );
 
 /*!
  * @function    XSError_GetDomain
@@ -75,7 +75,7 @@ XSInteger XSError_GetCode( XSErrorRef error );
  * @param       error   The error object
  * @result      The error domain
  */
-XSStringRef XSError_GetDomain( XSErrorRef error );
+XSString XSError_GetDomain( XSError error );
 
 /*!
  * @function    XSError_GetReason
@@ -83,7 +83,7 @@ XSStringRef XSError_GetDomain( XSErrorRef error );
  * @param       error   The error object
  * @result      The error message
  */
-XSStringRef XSError_GetReason( XSErrorRef error );
+XSString XSError_GetReason( XSError error );
 
 XS_EXTERN_C_END
 

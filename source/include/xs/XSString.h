@@ -46,17 +46,17 @@ XS_EXTERN_C_BEGIN
 #include "XSTypes.h"
 
 /*!
- * @typedef     XSStringRef
+ * @typedef     XSString
  * @abstract    Opaque type for the XSString objects
  */
-typedef struct XSString * XSStringRef;
+typedef struct XSString * XSString;
 
 /*!
  * @function    XSString_Create
  * @abstract    Creates an empty string
  * @result      A new string object
  */
-XSStringRef XSString_Create( void );
+XSString XSString_Create( void );
 
 /*!
  * @function    XSString_CreateWithCapacity
@@ -64,7 +64,7 @@ XSStringRef XSString_Create( void );
  * @param       capacity    The initial string capacity
  * @result      A new string object
  */
-XSStringRef XSString_CreateWithCapacity( XSUInteger capacity );
+XSString XSString_CreateWithCapacity( XSUInteger capacity );
 
 /*!
  * @function    XSString_CreateWithCString
@@ -72,7 +72,7 @@ XSStringRef XSString_CreateWithCapacity( XSUInteger capacity );
  * @param       The C string
  * @result      A new string object
  */
-XSStringRef XSString_CreateWithCString( char * str );
+XSString XSString_CreateWithCString( char * str );
 
 /*!
  * @function    XSString_CreateWithContentOfFile
@@ -80,7 +80,7 @@ XSStringRef XSString_CreateWithCString( char * str );
  * @param       path    The path to the file
  * @result      A new string object
  */
-XSStringRef XSString_CreateWithContentOfFile( char * path );
+XSString XSString_CreateWithContentOfFile( char * path );
 
 /*!
  * @function    XSString_SubstringFromIndex
@@ -90,7 +90,7 @@ XSStringRef XSString_CreateWithContentOfFile( char * path );
  * @param       i       The index
  * @result      A new string object
  */
-XSStringRef XSString_SubstringFromIndex( XSStringRef str, size_t i );
+XSString XSString_SubstringFromIndex( XSString str, size_t i );
 
 /*!
  * @function    XSString_SubstringToIndex
@@ -100,7 +100,7 @@ XSStringRef XSString_SubstringFromIndex( XSStringRef str, size_t i );
  * @param       i       The index
  * @result      A new string object
  */
-XSStringRef XSString_SubstringToIndex( XSStringRef str, size_t i );
+XSString XSString_SubstringToIndex( XSString str, size_t i );
 
 /*!
  * @function    XSString_SubstringWithRange
@@ -110,7 +110,7 @@ XSStringRef XSString_SubstringToIndex( XSStringRef str, size_t i );
  * @param       range   The range
  * @result      A new string object
  */
-XSStringRef XSString_SubstringWithRange( XSStringRef str, XSRange range );
+XSString XSString_SubstringWithRange( XSString str, XSRange range );
 
 /*!
  * @function    XSString_LowercaseString
@@ -119,7 +119,7 @@ XSStringRef XSString_SubstringWithRange( XSStringRef str, XSRange range );
  * @param       str     The string object
  * @result      A new string object
  */
-XSStringRef XSString_LowercaseString( XSStringRef str );
+XSString XSString_LowercaseString( XSString str );
 
 /*!
  * @function    XSString_LowercaseString
@@ -128,7 +128,7 @@ XSStringRef XSString_LowercaseString( XSStringRef str );
  * @param       str     The string object
  * @result      A new string object
  */
-XSStringRef XSString_UppercaseString( XSStringRef str );
+XSString XSString_UppercaseString( XSString str );
 
 /*!
  * @function    XSString_StringByAppendingString
@@ -138,7 +138,7 @@ XSStringRef XSString_UppercaseString( XSStringRef str );
  * @param       str2    The string to append
  * @result      A new string object
  */
-XSStringRef XSString_StringByAppendingString( XSStringRef str1, XSStringRef str2 );
+XSString XSString_StringByAppendingString( XSString str1, XSString str2 );
 
 /*!
  * @function    XSString_StringByAppendingCString
@@ -148,7 +148,7 @@ XSStringRef XSString_StringByAppendingString( XSStringRef str1, XSStringRef str2
  * @param       str2    The C string to append
  * @result      A new string object
  */
-XSStringRef XSString_StringByAppendingCString( XSStringRef str1, char * str2 );
+XSString XSString_StringByAppendingCString( XSString str1, char * str2 );
 
 /*!
  * @function    XSString_Length
@@ -156,7 +156,7 @@ XSStringRef XSString_StringByAppendingCString( XSStringRef str1, char * str2 );
  * @param       str     The string object
  * @result      The string length
  */
-size_t XSString_Length( XSStringRef str );
+size_t XSString_Length( XSString str );
 
 /*!
  * @function    XSString_CharacterAtIndex
@@ -165,7 +165,7 @@ size_t XSString_Length( XSStringRef str );
  * @param       i       The index
  * @result      The character
  */
-char XSString_CharacterAtIndex( XSStringRef str, size_t i );
+char XSString_CharacterAtIndex( XSString str, size_t i );
 
 /*!
  * @function    XSString_CString
@@ -173,7 +173,7 @@ char XSString_CharacterAtIndex( XSStringRef str, size_t i );
  * @param       str     The string object
  * @result      The C String
  */
-const char * XSString_CString( XSStringRef str );
+const char * XSString_CString( XSString str );
 
 /*!
  * @function    XSString_RangeOfString
@@ -183,7 +183,7 @@ const char * XSString_CString( XSStringRef str );
  * @param       str     The string object
  * @result      The range of the string
  */
-XSRange XSString_RangeOfString( XSStringRef str1, XSStringRef str2 );
+XSRange XSString_RangeOfString( XSString str1, XSString str2 );
 
 /*!
  * @function    XSString_RangeOfCString
@@ -193,7 +193,7 @@ XSRange XSString_RangeOfString( XSStringRef str1, XSStringRef str2 );
  * @param       str     The string object
  * @result      The range of the C string
  */
-XSRange XSString_RangeOfCString( XSStringRef str1, char * str2 );
+XSRange XSString_RangeOfCString( XSString str1, char * str2 );
 
 /*!
  * @function    XSString_IsEqualToString
@@ -201,7 +201,7 @@ XSRange XSString_RangeOfCString( XSStringRef str1, char * str2 );
  * @param       str     The string object
  * @result      YES if both strings are equals, otherwise NO
  */
-BOOL XSString_IsEqualToString( XSStringRef str1, XSStringRef str2 );
+BOOL XSString_IsEqualToString( XSString str1, XSString str2 );
 
 /*!
  * @function    XSString_StringByReplacingStringWithString
@@ -210,7 +210,7 @@ BOOL XSString_IsEqualToString( XSStringRef str1, XSStringRef str2 );
  * @param       str     The string object
  * @result      A new string object
  */
-XSStringRef XSString_StringByReplacingStringWithString( XSStringRef str1, XSStringRef str2, XSStringRef str3 );
+XSString XSString_StringByReplacingStringWithString( XSString str1, XSString str2, XSString str3 );
 
 /*!
  * @function    XSString_IntegerValue
@@ -218,7 +218,7 @@ XSStringRef XSString_StringByReplacingStringWithString( XSStringRef str1, XSStri
  * @param       str     The string object
  * @result      An integer value
  */
-XSInteger XSString_IntegerValue( XSStringRef str1 );
+XSInteger XSString_IntegerValue( XSString str1 );
 
 /*!
  * @function    XSString_FloatValue
@@ -226,7 +226,7 @@ XSInteger XSString_IntegerValue( XSStringRef str1 );
  * @param       str     The string object
  * @result      A floating point value
  */
-XSFloat XSString_FloatValue( XSStringRef str1 );
+XSFloat XSString_FloatValue( XSString str1 );
 
 XS_EXTERN_C_END
 

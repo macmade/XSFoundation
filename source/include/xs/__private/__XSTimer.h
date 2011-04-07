@@ -55,7 +55,7 @@ typedef struct __XSTimer_Struct
     XSRuntimeClass __class;
     BOOL           valid;
     XSUInteger     msecs;
-    void ( * func )( XSTimerRef timer );
+    void ( * func )( XSTimer timer );
     
 }
 __XSTimer;

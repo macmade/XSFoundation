@@ -42,14 +42,16 @@
  * @var         __XSURLClass
  * @abstract    Runtime class definition
  */
-static const XSRuntimeClass __XSURLClass =
+static const XSClassInfos __XSURLClass =
 {
     "XSURL",            /* Class name */
     sizeof( XSURL ),    /* Object size */
     NULL,               /* Constructor */
     NULL,               /* Destructor */
     NULL,               /* Object copy */
-    NULL                /* Object description */
+    NULL,               /* Object description */
+    NULL,               /* Object comparison */
+    NULL                /* Object hash */
 };
 
 /*!
@@ -65,14 +67,14 @@ static XSClassID __XSURLClassID;
  */
 void __XSURL_Initialize( void )
 {
-    __XSURLTypeID = XSRuntime_RegisterClass( &__XSURLClass );
+    __XSURLClassID = XSRuntime_RegisterClass( &__XSURLClass );
 }
 /*!
  * @function    __XSURL_Alloc
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSURL * __XSURL_Alloc( void )
+__XSURL * __XSURL_Alloc( void )
 {
-    return ( XSURL * )XSRuntime_CreateInstance( __XSURLTypeID );
+    return ( __XSURL * )XSRuntime_CreateInstance( __XSURLClassID );
 }

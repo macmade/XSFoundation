@@ -38,8 +38,8 @@
 #include "XS.h"
 #include "__XSApplication.h"
 
-static XSApplication      * __xsapp = NULL;
-static XSAutoreleasePoolRef __xsarp = NULL;
+static __XSApplication    * __xsapp = NULL;
+static XSAutoreleasePool    __xsarp = NULL;
 static BOOL __xsapp_argv_processed  = NO;
 
 /*!
@@ -53,7 +53,7 @@ static BOOL __xsapp_argv_processed  = NO;
  * @param       argv    The CLI arguments array
  * @result      The application object
  */
-XSApplicationRef XSApplication_Start( int argc, const char ** argv )
+XSApplication XSApplication_Start( int argc, const char ** argv )
 {
     XSRuntime_Initialize();
     
@@ -64,7 +64,7 @@ XSApplicationRef XSApplication_Start( int argc, const char ** argv )
     __xsapp->argv       = argv + 1;
     __xsapp->executable = argv[ 0 ];
     
-    return ( XSApplicationRef )__xsapp;
+    return ( XSApplication )__xsapp;
 }
 
 /*!
@@ -91,9 +91,9 @@ void XSApplication_Exit( void )
  * @abstract    Gets the application object
  * @result      The application object
  */
-XSApplicationRef XSApplication_SharedApplication( void )
+XSApplication XSApplication_SharedApplication( void )
 {
-    return ( XSApplicationRef )__xsapp;
+    return ( XSApplication )__xsapp;
 }
 
 /*!
@@ -102,21 +102,21 @@ XSApplicationRef XSApplication_SharedApplication( void )
  * @param       app     The application object
  * @result      void
  */
-void XSApplication_PrintHelp( XSApplicationRef app, const char * description )
+void XSApplication_PrintHelp( XSApplication app, const char * description )
 {
-    const char             * exec;
-    const char             * help;
-    XSApplication          * _app;
-    XSApplicationArgumentRef arg;
-    XSUInteger               i;
+    const char          * exec;
+    const char          * help;
+    __XSApplication     * _app;
+    XSApplicationArgument arg;
+    XSUInteger            i;
     
-    _app = ( XSApplication * )app;
+    _app = ( __XSApplication * )app;
     
     /*XSRuntimeBase              _xsbase;
     int                        argc;
     const char              ** argv;
     const char               * executable;
-    XSApplicationArgumentRef * args;
+    XSApplicationArgument * args;
     XSUInteger                 arg_count;
     XSUInteger                 arg_alloc;*/
     
@@ -193,12 +193,12 @@ void XSApplication_PrintHelp( XSApplicationRef app, const char * description )
     ( void )description;
 }
 
-void XSApplication_RegisterArgument( XSApplicationRef app, const char * name, XSApplicationArgumentType type, ... )
+void XSApplication_RegisterArgument( XSApplication app, const char * name, XSApplicationArgumentType type, ... )
 {
-    va_list                  args;
-    XSApplication          * _app;
-    XSApplicationArgumentRef arg;
-    const char             * help;
+    va_list               args;
+    __XSApplication     * _app;
+    XSApplicationArgument arg;
+    const char          * help;
     
     va_start( args, type );
     
@@ -206,7 +206,7 @@ void XSApplication_RegisterArgument( XSApplicationRef app, const char * name, XS
     
     va_end( args );
     
-    _app = ( XSApplication * )app;
+    _app = ( __XSApplication * )app;
     
     if( help )
     {
@@ -227,12 +227,12 @@ void XSApplication_RegisterArgument( XSApplicationRef app, const char * name, XS
     _app->args[ _app->arg_count++ ] = arg;
 }
 
-XSApplicationArgumentRef XSApplication_GetArgument( XSApplicationRef app, const char * name )
+XSApplicationArgument XSApplication_GetArgument( XSApplication app, const char * name )
 {
-    XSUInteger      i;
-    XSApplication * _app;
+    XSUInteger        i;
+    __XSApplication * _app;
     
-    _app = ( XSApplication * )app;
+    _app = ( __XSApplication * )app;
     
     for( i = 0; i < _app->arg_count; i++ )
     {
@@ -245,11 +245,11 @@ XSApplicationArgumentRef XSApplication_GetArgument( XSApplicationRef app, const 
     return NULL;
 }
 
-BOOL XSApplication_HasArgument( XSApplicationRef app, const char * name )
+BOOL XSApplication_HasArgument( XSApplication app, const char * name )
 {
     if( __xsapp_argv_processed == NO )
     {
-        __XSApplication_ProcessArguments( ( XSApplication * )app );
+        __XSApplication_ProcessArguments( ( __XSApplication * )app );
         
         __xsapp_argv_processed = YES;
     }
@@ -257,13 +257,13 @@ BOOL XSApplication_HasArgument( XSApplicationRef app, const char * name )
     return XSApplication_GetArgument( app, name ) != NULL;
 }
 
-BOOL XSApplication_GetFlag( XSApplicationRef app, const char * name )
+BOOL XSApplication_GetFlag( XSApplication app, const char * name )
 {
-    XSApplicationArgumentRef arg;
+    XSApplicationArgument arg;
     
     if( __xsapp_argv_processed == NO )
     {
-        __XSApplication_ProcessArguments( ( XSApplication * )app );
+        __XSApplication_ProcessArguments( ( __XSApplication * )app );
         
         __xsapp_argv_processed = YES;
     }
@@ -278,13 +278,13 @@ BOOL XSApplication_GetFlag( XSApplicationRef app, const char * name )
     return XSApplicationArgument_GetFlag( arg );
 }
 
-XSInteger XSApplication_GetInteger( XSApplicationRef app, const char * name )
+XSInteger XSApplication_GetInteger( XSApplication app, const char * name )
 {
-    XSApplicationArgumentRef arg;
+    XSApplicationArgument arg;
     
     if( __xsapp_argv_processed == NO )
     {
-        __XSApplication_ProcessArguments( ( XSApplication * )app );
+        __XSApplication_ProcessArguments( ( __XSApplication * )app );
         
         __xsapp_argv_processed = YES;
     }
@@ -299,13 +299,13 @@ XSInteger XSApplication_GetInteger( XSApplicationRef app, const char * name )
     return XSApplicationArgument_GetIntegerValue( arg );
 }
 
-XSUInteger XSApplication_GetUnsignedInteger( XSApplicationRef app, const char * name )
+XSUInteger XSApplication_GetUnsignedInteger( XSApplication app, const char * name )
 {
-    XSApplicationArgumentRef arg;
+    XSApplicationArgument arg;
     
     if( __xsapp_argv_processed == NO )
     {
-        __XSApplication_ProcessArguments( ( XSApplication * )app );
+        __XSApplication_ProcessArguments( ( __XSApplication * )app );
         
         __xsapp_argv_processed = YES;
     }
@@ -320,13 +320,13 @@ XSUInteger XSApplication_GetUnsignedInteger( XSApplicationRef app, const char * 
     return XSApplicationArgument_GetUnsignedIntegerValue( arg );
 }
 
-XSStringRef XSApplication_GetString( XSApplicationRef app, const char * name )
+XSString XSApplication_GetString( XSApplication app, const char * name )
 {
-    XSApplicationArgumentRef arg;
+    XSApplicationArgument arg;
     
     if( __xsapp_argv_processed == NO )
     {
-        __XSApplication_ProcessArguments( ( XSApplication * )app );
+        __XSApplication_ProcessArguments( ( __XSApplication * )app );
         
         __xsapp_argv_processed = YES;
     }
@@ -341,13 +341,13 @@ XSStringRef XSApplication_GetString( XSApplicationRef app, const char * name )
     return XSAutorelease( XSSTR( ( char * )XSApplicationArgument_GetStringValue( arg ) ) );
 }
 
-XSFloat XSApplication_GetFloat( XSApplicationRef app, const char * name )
+XSFloat XSApplication_GetFloat( XSApplication app, const char * name )
 {
-    XSApplicationArgumentRef arg;
+    XSApplicationArgument arg;
     
     if( __xsapp_argv_processed == NO )
     {
-        __XSApplication_ProcessArguments( ( XSApplication * )app );
+        __XSApplication_ProcessArguments( ( __XSApplication * )app );
         
         __xsapp_argv_processed = YES;
     }
@@ -362,7 +362,7 @@ XSFloat XSApplication_GetFloat( XSApplicationRef app, const char * name )
     return XSApplicationArgument_GetFloatValue( arg );
 }
 
-XSArrayRef XSApplication_GetUnnamedArguments( XSApplicationRef app )
+XSArray XSApplication_GetUnnamedArguments( XSApplication app )
 {
     XSApplication * _app;
     

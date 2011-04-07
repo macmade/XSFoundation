@@ -44,12 +44,14 @@
  */
 static const XSClassInfos __XSDictionaryClass =
 {
-    "XSDictionary",         /* Class name */
-    sizeof( XSDictionary ), /* Object size */
-    NULL,                   /* Constructor */
-    __XSDictionary_Dealloc, /* Destructor */
-    NULL,                   /* Object copy */
-    NULL                    /* Object description */
+    "XSDictionary",             /* Class name */
+    sizeof( XSDictionary ),     /* Object size */
+    NULL,                       /* Constructor */
+    __XSDictionary_Destruct,    /* Destructor */
+    NULL,                       /* Object copy */
+    NULL,                       /* Object description */
+    NULL,                       /* Object comparison */
+    NULL                        /* Object hash */
 };
 
 /*!

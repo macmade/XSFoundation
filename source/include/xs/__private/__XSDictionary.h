@@ -58,7 +58,7 @@ typedef struct __XSDictionary_Struct
 {
     XSRuntimeClass __class;
     void        ** values;
-    XSStringRef  * keys;
+    XSString     * keys;
     XSUInteger     count;
     XSUInteger     capacity;
 }
