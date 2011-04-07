@@ -157,7 +157,7 @@ void __XSVLog( const char * fmt, va_list args )
             
             if( va_ptr == NULL )
             {
-                printf( "(null)" );
+                printf( "<XSObject: nil>" );
             }
             else
             {
