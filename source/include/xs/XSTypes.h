@@ -264,7 +264,7 @@ typedef struct XSClassInfos_Struct
     void         ( * destruct  )( void * object );
     void         ( * copy      )( void * source, void * destination );
     XSString     ( * toString  )( void * object );
-    BOOL         ( * equals    )( void * object );
+    BOOL         ( * equals    )( void * object1, void * object2 );
     XSString     ( * hash      )( void * object );
 }
 XSClassInfos;
