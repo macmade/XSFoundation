@@ -376,10 +376,32 @@ void * XSCopy( void * ptr )
  */
 BOOL XSEquals( void * ptr1, void * ptr2 )
 {
-    ( void )ptr1;
-    ( void )ptr2;
+    __XSMemoryObject         * o;
+    const XSClassInfos const * cls;
     
-    return NO;
+    if( ptr1 == NULL && ptr2 == NULL )
+    {
+        return YES;
+    }
+    
+    if( ptr1 == NULL || ptr2 == NULL )
+    {
+        return NO;
+    }
+    
+    o = __XSMemory_GetMemoryObject( ptr1 );
+    
+    if( o->classID != 0 )
+    {
+        cls = XSRuntime_GetClassForClassID( o->classID );
+        
+        if( cls->equals != NULL )
+        {
+            return cls->equals( ptr1, ptr2 );
+        }
+    }
+    
+    return ( ptr1 == ptr2 ) ? YES : NO;
 }
 
 /*!
@@ -388,7 +410,7 @@ BOOL XSEquals( void * ptr1, void * ptr2 )
  * @param       ptr     The pointer/object to hash
  * @result      The hash of the pointer/object
  */
-XSString XSHash( void * ptr )
+const char * XSHash( void * ptr )
 {
     ( void )ptr;
     

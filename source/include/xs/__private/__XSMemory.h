@@ -81,6 +81,7 @@ typedef struct ___XSMemoryObject_Struct
     size_t        size;
     size_t        allocID;
     XSClassID     classID;
+    Str255        hash;
     unsigned char f1[ 256 ];
     void        * data;
     unsigned char f2[ 256 ];

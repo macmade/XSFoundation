@@ -160,7 +160,7 @@ BOOL XSEquals( void * ptr1, void * ptr2 );
  * @param       ptr     The pointer/object to hash
  * @result      The hash of the pointer/object
  */
-XSString XSHash( void * ptr );
+const char * XSHash( void * ptr );
 
 /*!
  * @function    XSGetRetainCount
