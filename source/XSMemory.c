@@ -416,8 +416,6 @@ const char * XSHash( void * ptr )
 {
     __XSMemoryObject         * o;
     const XSClassInfos const * cls;
-    Str255                     classID;
-    Str255                     allocID;
     Str255                     size;
     
     o = __XSMemory_GetMemoryObject( ptr );
@@ -431,25 +429,23 @@ const char * XSHash( void * ptr )
     {
         cls = XSRuntime_GetClassForClassID( o->classID );
         
-        utoa( o->classID, ( char * )classID, 10 );
-        utoa( o->allocID, ( char * )allocID, 10 );
         utoa( cls->instanceSize, ( char * )size, 10 );
-        strcat( ( char * )o->hash, ( char * )classID );
+        strcat( ( char * )o->hash, "HASH:" );
+        sprintf( ( char * )( o->hash + strlen( ( char * )o->hash ) ), "%08X", ( unsigned int )o->classID );
         strcat( ( char * )o->hash, ":" );
         strcat( ( char * )o->hash, cls->className );
-        strcat( ( char * )o->hash, "#" );
-        strcat( ( char * )o->hash, ( char * )allocID );
-        strcat( ( char * )o->hash, "$" );
+        strcat( ( char * )o->hash, ":" );
+        sprintf( ( char * )( o->hash + strlen( ( char * )o->hash ) ), "%08X", ( unsigned int )o->allocID );
+        strcat( ( char * )o->hash, ":" );
         strcat( ( char * )o->hash, ( char * )size );
         
         return ( const char * )o->hash;
     }
     
-    strcat( ( char * )o->hash, "0:Memory#" );
-    utoa( o->allocID, ( char * )allocID, 10 );
+    strcat( ( char * )o->hash, "HASH:00000000:NONE:" );
+    sprintf( ( char * )( o->hash + strlen( ( char * )o->hash ) ), "%08X", ( unsigned int )o->allocID );
     utoa( o->size, ( char * )size, 10 );
-    strcat( ( char * )o->hash, ( char * )allocID );
-    strcat( ( char * )o->hash, "$" );
+    strcat( ( char * )o->hash, ":" );
     strcat( ( char * )o->hash, ( char * )size );
     
     return ( const char * )o->hash;
