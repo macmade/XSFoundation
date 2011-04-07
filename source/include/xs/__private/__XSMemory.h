@@ -60,7 +60,7 @@ typedef struct __XSAutoreleasePool_Struct
 {
     XSRuntimeClass __class;
     size_t         size;
-    size_t         num_objects;
+    size_t         numObjects;
     void        ** objects;
 }
 __XSAutoreleasePool;
@@ -77,8 +77,9 @@ __XSAutoreleasePool;
  */
 typedef struct ___XSMemoryObject_Struct
 {
-    XSUInteger    retain_count;
+    XSUInteger    retainCount;
     size_t        size;
+    size_t        allocID;
     XSClassID     classID;
     unsigned char f1[ 256 ];
     void        * data;

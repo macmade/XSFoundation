@@ -129,12 +129,12 @@ void __XSMemory_AutoreleasePoolDrain( __XSAutoreleasePool * ap )
 {
     size_t i;
     
-    for( i = 0; i < ap->num_objects; i++ )
+    for( i = 0; i < ap->numObjects; i++ )
     {
         XSRelease( ap->objects[ i ] );
     }
     
-    ap->num_objects = 0;
+    ap->numObjects = 0;
 }
 
 /*!

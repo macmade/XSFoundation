@@ -70,7 +70,7 @@ XSAutoreleasePool XSAutoreleasePool_Create( void )
     }
     
     ap->size                                         = XS_MEMORY_NUM_OBJECTS;
-    ap->num_objects                                  = 0;
+    ap->numObjects                                   = 0;
     __xsmemory_ar_pools[ __xsmemory_ar_pools_num++ ] = ap;
     
     return ( XSAutoreleasePool )ap;
@@ -129,8 +129,8 @@ void * XSAlloc( size_t size, ... )
         classID = 0;
     }
     
-    o->retain_count = 1;
-    o->size         = size;
+    o->retainCount = 1;
+    o->size        = size;
     
     ptr     =  ( char * )o;
     ptr    += ( sizeof( __XSMemoryObject ) );
@@ -200,7 +200,7 @@ void * XSRetain( void * ptr )
     
     o = __XSMemory_GetMemoryObject( ptr );
     
-    o->retain_count++;
+    o->retainCount++;
     
     return ptr;
 }
@@ -226,9 +226,9 @@ void * XSRelease( void * ptr )
     
     o = __XSMemory_GetMemoryObject( ptr );
     
-    o->retain_count--;
+    o->retainCount--;
     
-    if( o->retain_count == 0 )
+    if( o->retainCount == 0 )
     {
         if( o->classID != 0 )
         {
@@ -273,7 +273,7 @@ void * XSAutorelease( void * ptr )
         fprintf( stderr, "Warning: autoreleasing object %p with no auto-release pool in place - leaking memory\n", ptr );
     }
     
-    if( ap->num_objects == ap->size )
+    if( ap->numObjects == ap->size )
     {
         ap->objects = ( void ** )realloc( ap->objects, sizeof( void * ) * ( ap->size + XS_MEMORY_NUM_OBJECTS ) );
         
@@ -286,7 +286,7 @@ void * XSAutorelease( void * ptr )
         ap->size += XS_MEMORY_NUM_OBJECTS;
     }
     
-    ap->objects[ ap->num_objects++ ] = ptr;
+    ap->objects[ ap->numObjects++ ] = ptr;
     
     return ptr;
 }
@@ -384,5 +384,5 @@ XSUInteger XSGetRetainCount( void * ptr )
     
     o = __XSMemory_GetMemoryObject( ptr );
     
-    return o->retain_count;
+    return o->retainCount;
 }
