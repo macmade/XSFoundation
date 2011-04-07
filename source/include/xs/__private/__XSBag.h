@@ -52,7 +52,7 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct _XSBag
 {
-    XSRuntimeBase _xsbase;
+    XSRuntimeClass __class;
 }
 XSBag;
 

@@ -55,10 +55,10 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct _XSError
 {
-    XSRuntimeBase _xsbase;
-    XSInteger     code;
-    XSStringRef   domain;
-    XSStringRef   reason;
+    XSRuntimeClass __class;
+    XSInteger      code;
+    XSStringRef    domain;
+    XSStringRef    reason;
 }
 XSError;
 

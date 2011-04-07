@@ -52,7 +52,7 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct _XSApplication
 {
-    XSRuntimeBase              _xsbase;
+    XSRuntimeClass              __class;
     int                        argc;
     const char              ** argv;
     const char               * executable;

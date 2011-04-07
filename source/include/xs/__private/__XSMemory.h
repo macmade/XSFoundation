@@ -58,10 +58,10 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct _XSAutoreleasePool
 {
-    XSRuntimeBase _xsbase;
-    size_t        size;
-    size_t        num_objects;
-    void       ** objects;
+    XSRuntimeClass __class;
+    size_t         size;
+    size_t         num_objects;
+    void        ** objects;
 }
 XSAutoreleasePool;
 

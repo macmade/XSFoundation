@@ -52,9 +52,9 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct _XSTimer
 {
-    XSRuntimeBase _xsbase;
-    BOOL          valid;
-    XSUInteger    msecs;
+    XSRuntimeClass __class;
+    BOOL           valid;
+    XSUInteger     msecs;
     void ( * func )( XSTimerRef timer );
     
 }

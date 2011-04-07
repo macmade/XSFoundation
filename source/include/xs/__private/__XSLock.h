@@ -52,7 +52,7 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct _XSLock
 {
-    XSRuntimeBase   _xsbase;
+    XSRuntimeClass  __class;
     pthread_mutex_t mutex;
     BOOL            locked;
 }

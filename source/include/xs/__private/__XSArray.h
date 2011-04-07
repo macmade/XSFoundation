@@ -56,11 +56,11 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct _XSArray
 {
-    XSRuntimeBase _xsbase;
-    XSUInteger    count;
-    XSUInteger    capacity;
-    XSUInteger    cur;
-    void       ** values;
+    XSRuntimeClass __class;
+    XSUInteger     count;
+    XSUInteger     capacity;
+    XSUInteger     cur;
+    void        ** values;
 }
 XSArray;
 

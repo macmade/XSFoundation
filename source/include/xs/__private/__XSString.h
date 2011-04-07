@@ -53,9 +53,9 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct _XSString
 {
-    XSRuntimeBase _xsbase;
-    size_t        length;
-    char        * str;
+    XSRuntimeClass __class;
+    size_t         length;
+    char         * str;
 }
 XSString;
 
