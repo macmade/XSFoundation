@@ -46,15 +46,15 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      XSData
+ * @typdef      __XSData
  * @abastract   XSData class
- * @field       _xsbase     Runtime class
+ * @field       __class     Runtime class
  */
-typedef struct _XSData
+typedef struct __XSData_Struct
 {
     XSRuntimeClass __class;
 }
-XSData;
+__XSData;
 
 /*!
  * @function    __XSData_Initialize
@@ -68,7 +68,7 @@ void __XSData_Initialize( void );
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSData * __XSData_Alloc( void );
+__XSData * __XSData_Alloc( void );
 
 XS_EXTERN_C_END
 

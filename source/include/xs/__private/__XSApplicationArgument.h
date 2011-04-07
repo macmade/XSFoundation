@@ -46,11 +46,11 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      XSApplicationArgument
+ * @typdef      __XSApplicationArgument
  * @abastract   XSApplicationArgument class
- * @field       _xsbase     Runtime class
+ * @field       __class     Runtime class
  */
-typedef struct _XSApplicationArgument
+typedef struct __XSApplicationArgument_Struct
 {
     XSRuntimeClass __class;
     const char   * name;
@@ -62,7 +62,7 @@ typedef struct _XSApplicationArgument
     XSFloat        float_val;
     const char   * help;
 }
-XSApplicationArgument;
+__XSApplicationArgument;
 
 /*!
  * @function    __XSApplicationArgument_Initialize
@@ -76,7 +76,7 @@ void __XSApplicationArgument_Initialize( void );
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSApplicationArgument * __XSApplicationArgument_Alloc( void );
+__XSApplicationArgument * __XSApplicationArgument_Alloc( void );
 
 XS_EXTERN_C_END
 

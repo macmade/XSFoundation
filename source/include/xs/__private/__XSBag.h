@@ -50,11 +50,11 @@ XS_EXTERN_C_BEGIN
  * @abastract   XSBag class
  * @field       _xsbase     Runtime class
  */
-typedef struct _XSBag
+typedef struct __XSBag_Struct
 {
     XSRuntimeClass __class;
 }
-XSBag;
+__XSBag;
 
 /*!
  * @function    __XSBag_Initialize
@@ -68,7 +68,7 @@ void __XSBag_Initialize( void );
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSBag * __XSBag_Alloc( void );
+__XSBag * __XSBag_Alloc( void );
 
 XS_EXTERN_C_END
 

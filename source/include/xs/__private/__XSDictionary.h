@@ -46,11 +46,15 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      XSDictionary
+ * @typdef      __XSDictionary
  * @abastract   XSDictionary class
- * @field       _xsbase     Runtime class
+ * @field       __class     Runtime class
+ * @field       values      The dictionary values
+ * @field       keys        The dictionary keys
+ * @field       count       The number of values in the dictionary
+ * @field       capacity    The dictionary capacity
  */
-typedef struct _XSDictionary
+typedef struct __XSDictionary_Struct
 {
     XSRuntimeClass __class;
     void        ** values;
@@ -58,7 +62,7 @@ typedef struct _XSDictionary
     XSUInteger     count;
     XSUInteger     capacity;
 }
-XSDictionary;
+__XSDictionary;
 
 /*!
  * @function    __XSDictionary_Initialize
@@ -72,15 +76,15 @@ void __XSDictionary_Initialize( void );
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSDictionary * __XSDictionary_Alloc( void );
+__XSDictionary * __XSDictionary_Alloc( void );
 
 /*!
- * @function    __XSDictionary_Dealloc
+ * @function    __XSDictionary_Destruct
  * @abstract    Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSDictionary_Dealloc( void * object );
+void __XSDictionary_Destruct( void * object );
 
 XS_EXTERN_C_END
 

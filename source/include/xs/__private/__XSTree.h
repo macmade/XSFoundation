@@ -46,15 +46,15 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      XSTree
+ * @typdef      __XSTree
  * @abastract   XSTree class
- * @field       _xsbase     Runtime class
+ * @field       __class     Runtime class
  */
-typedef struct _XSTree
+typedef struct __XSTree_Struct
 {
     XSRuntimeClass __class;
 }
-XSTree;
+__XSTree;
 
 /*!
  * @function    __XSTree_Initialize
@@ -68,7 +68,7 @@ void __XSTree_Initialize( void );
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSTree * __XSTree_Alloc( void );
+__XSTree * __XSTree_Alloc( void );
 
 XS_EXTERN_C_END
 
