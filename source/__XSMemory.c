@@ -42,7 +42,7 @@
  * @var         __xsmemory_ar_pools
  * @abstract    An array with the auto-release pool objects
  */
-XSAutoreleasePool * __xsmemory_ar_pools[ XS_MEMORY_MAX_AR_POOLS ];
+__XSAutoreleasePool * __xsmemory_ar_pools[ XS_MEMORY_MAX_AR_POOLS ];
 
 /*!
  * @var         __xsmemory_ar_pools_num
@@ -54,21 +54,21 @@ XSUInteger          __xsmemory_ar_pools_num;
  * @var         __XSAutoreleasePoolClass
  * @abstract    Runtime class definition
  */
-static const XSRuntimeClass __XSAutoreleasePoolClass =
+static const XSClassInfos __XSAutoreleasePoolClass =
 {
     "XSAutoreleasePool",            /* Class name */
-    sizeof( XSAutoreleasePool ),    /* Object size */
+    sizeof( __XSAutoreleasePool ),  /* Object size */
     NULL,                           /* Constructor */
-    __XSAutoreleasePool_Dealloc,    /* Destructor */
+    __XSAutoreleasePool_Destruct,   /* Destructor */
     NULL,                           /* Object copy */
     NULL                            /* Object description */
 };
 
 /*!
- * @var         __XSAutoreleasePoolTypeID
+ * @var         __XSAutoreleasePoolClassID
  * @abstract    Type ID for the runtine class
  */
-static XSTypeID __XSAutoreleasePoolTypeID;
+static XSClassID __XSAutoreleasePoolClassID;
 
 /*!
  * @function    __XSAutoreleasePool_Initialize
@@ -77,7 +77,7 @@ static XSTypeID __XSAutoreleasePoolTypeID;
  */
 void __XSAutoreleasePool_Initialize( void )
 {
-    __XSAutoreleasePoolTypeID = XSRuntime_RegisterClass( &__XSAutoreleasePoolClass );
+    __XSAutoreleasePoolClassID = XSRuntime_RegisterClass( &__XSAutoreleasePoolClass );
 }
 
 /*!
@@ -85,21 +85,21 @@ void __XSAutoreleasePool_Initialize( void )
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSAutoreleasePool * __XSAutoreleasePool_Alloc( void )
+__XSAutoreleasePool * __XSAutoreleasePool_Alloc( void )
 {
-    return ( XSAutoreleasePool * )XSRuntime_CreateInstance( __XSAutoreleasePoolTypeID );
+    return ( XSAutoreleasePool * )XSRuntime_CreateInstance( __XSAutoreleasePoolClassID );
 }
 
 /*!
- * @function    __XSAutoreleasePool_Dealloc
+ * @function    __XSAutoreleasePool_Destruct
  * @abstract    Destructor
  * @abstract    A pointer to the object to be destructed
  * @param       object  The object that will be destructed
  * @result      void
  */
-void __XSAutoreleasePool_Dealloc( void * object )
+void __XSAutoreleasePool_Destruct( void * object )
 {
-    __XSMemory_AutoreleasePoolDrain( ( XSAutoreleasePool * )object );
+    __XSMemory_AutoreleasePoolDrain( ( __XSAutoreleasePool * )object );
     __xsmemory_ar_pools_num--;
 }
 

@@ -42,21 +42,23 @@
  * @var         __XSApplicationClass
  * @abstract    Runtime class definition
  */
-static const XSRuntimeClass __XSApplicationClass =
+static const XSClassInfos __XSApplicationClass =
 {
     "XSApplication",            /* Class name */
-    sizeof( XSApplication ),    /* Object size */
-    __XSApplication_Init,       /* Constructor */
-    __XSApplication_Dealloc,    /* Destructor */
+    sizeof( __XSApplication ),  /* Object size */
+    __XSApplication_Construct,  /* Constructor */
+    __XSApplication_Destruct,   /* Destructor */
     NULL,                       /* Object copy */
-    NULL                        /* Object description */
+    NULL,                       /* Object description */
+    NULL,                       /* Object comparison */
+    NULL                        /* Object hash */
 };
 
 /*!
- * @var         __XSApplicationTypeID
+ * @var         __XSApplicationClassID
  * @abstract    Type ID for the runtine class
  */
-static XSTypeID __XSApplicationTypeID;
+static XSClassID __XSApplicationClassID;
 
 /*!
  * @function    __XSApplication_Initialize
@@ -65,7 +67,7 @@ static XSTypeID __XSApplicationTypeID;
  */
 void __XSApplication_Initialize( void )
 {
-    __XSApplicationTypeID = XSRuntime_RegisterClass( &__XSApplicationClass );
+    __XSApplicationClassID = XSRuntime_RegisterClass( &__XSApplicationClass );
 }
 
 /*!
@@ -73,9 +75,9 @@ void __XSApplication_Initialize( void )
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSApplication * __XSApplication_Alloc( void )
+__XSApplication * __XSApplication_Alloc( void )
 {
-    return ( XSApplication * )XSRuntime_CreateInstance( __XSApplicationTypeID );
+    return ( __XSApplication * )XSRuntime_CreateInstance( __XSApplicationClassID );
 }
 
 /*!
@@ -84,29 +86,29 @@ XSApplication * __XSApplication_Alloc( void )
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSApplication_Init( void * object )
+void __XSApplication_Construct( void * object )
 {
-    XSApplication * app;
+    __XSApplication * app;
     
-    app = ( XSApplication * )object;
+    app = ( __XSApplication * )object;
     
-    app->args      = XSAlloc( 25 * sizeof( XSApplicationArgumentRef ) );
+    app->args      = XSAlloc( 25 * sizeof( XSApplicationArgument ) );
     app->arg_alloc = 25;
     app->arg_count = 0;
 }
  
  /*!
- * @function    __XSApplication_Dealloc
+ * @function    __XSApplication_Destruct
  * @abstract    Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSApplication_Dealloc( void * object )
+void __XSApplication_Destruct( void * object )
 {
-    XSUInteger      i;
-    XSApplication * app;
+    XSUInteger        i;
+    __XSApplication * app;
     
-    app = ( XSApplication * )object;
+    app = ( __XSApplication * )object;
     
     for( i = 0; i < app->arg_count; i++ )
     {
@@ -122,7 +124,7 @@ void __XSApplication_Dealloc( void * object )
  * @param       app     The application object
  * @result      void
  */
-void __XSApplication_ProcessArguments( XSApplication * app )
+void __XSApplication_ProcessArguments( __XSApplication * app )
 {
     XSInteger                i;
     const char             * name;

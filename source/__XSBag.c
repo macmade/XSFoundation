@@ -42,10 +42,10 @@
  * @var         __XSBagClass
  * @abstract    Runtime class definition
  */
-static const XSRuntimeClass __XSBagClass =
+static const XSClassInfos __XSBagClass =
 {
     "XSBag",            /* Class name */
-    sizeof( XSBag ),    /* Object size */
+    sizeof( __XSBag ),  /* Object size */
     NULL,               /* Constructor */
     NULL,               /* Destructor */
     NULL,               /* Object copy */
@@ -53,10 +53,10 @@ static const XSRuntimeClass __XSBagClass =
 };
 
 /*!
- * @var         __XSBagTypeID
+ * @var         __XSBagClassID
  * @abstract    Type ID for the runtine class
  */
-static XSTypeID __XSBagTypeID;
+static XSClassID __XSBagClassID;
 
 /*!
  * @function    __XSBag_Initialize
@@ -65,7 +65,7 @@ static XSTypeID __XSBagTypeID;
  */
 void __XSBag_Initialize( void )
 {
-    __XSBagTypeID = XSRuntime_RegisterClass( &__XSBagClass );
+    __XSBagTypeID = XSRuntime_RegisterClass( &__XSBagClassID );
 }
 
 /*!
@@ -73,7 +73,7 @@ void __XSBag_Initialize( void )
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSBag * __XSBag_Alloc( void )
+__XSBag * __XSBag_Alloc( void )
 {
-    return ( XSBag * )XSRuntime_CreateInstance( __XSBagTypeID );
+    return ( __XSBag * )XSRuntime_CreateInstance( __XSBagClassID );
 }

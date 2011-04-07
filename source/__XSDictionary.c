@@ -42,7 +42,7 @@
  * @var         __XSDictionaryClass
  * @abstract    Runtime class definition
  */
-static const XSRuntimeClass __XSDictionaryClass =
+static const XSClassInfos __XSDictionaryClass =
 {
     "XSDictionary",         /* Class name */
     sizeof( XSDictionary ), /* Object size */
@@ -53,10 +53,10 @@ static const XSRuntimeClass __XSDictionaryClass =
 };
 
 /*!
- * @var         __XSDictionaryTypeID
+ * @var         __XSDictionaryClassID
  * @abstract    Type ID for the runtine class
  */
-static XSTypeID __XSDictionaryTypeID;
+static XSClassID __XSDictionaryClassID;
 
 /*!
  * @function    __XSDictionary_Initialize
@@ -65,7 +65,7 @@ static XSTypeID __XSDictionaryTypeID;
  */
 void __XSDictionary_Initialize( void )
 {
-    __XSDictionaryTypeID = XSRuntime_RegisterClass( &__XSDictionaryClass );
+    __XSDictionaryClassID = XSRuntime_RegisterClass( &__XSDictionaryClass );
 }
 
 /*!
@@ -73,23 +73,23 @@ void __XSDictionary_Initialize( void )
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSDictionary * __XSDictionary_Alloc( void )
+__XSDictionary * __XSDictionary_Alloc( void )
 {
-    return ( XSDictionary * )XSRuntime_CreateInstance( __XSDictionaryTypeID );
+    return ( __XSDictionary * )XSRuntime_CreateInstance( __XSDictionaryClassID );
 }
 
 /*!
- * @function    __XSDictionary_Dealloc
+ * @function    __XSDictionary_Destruct
  * @abstract    Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSDictionary_Dealloc( void * object )
+void __XSDictionary_Destruct( void * object )
 {
-    XSDictionary * dict;
-    XSUInteger     i;
+    __XSDictionary * dict;
+    XSUInteger       i;
     
-    dict = ( XSDictionary * )object;
+    dict = ( __XSDictionary * )object;
     
     for( i = 0; i < dict->count; i++ )
     {

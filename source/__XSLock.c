@@ -42,21 +42,21 @@
  * @var         __XSLockClass
  * @abstract    Runtime class definition
  */
-static const XSRuntimeClass __XSLockClass =
+static const XSClassInfos __XSLockClass =
 {
     "XSLock",           /* Class name */
-    sizeof( XSLock ),   /* Object size */
-    __XSLock_Init,      /* Constructor */
-    __XSLock_Dealloc,   /* Destructor */
+    sizeof( __XSLock ), /* Object size */
+    __XSLock_Construct, /* Constructor */
+    __XSLock_Destruct,  /* Destructor */
     NULL,               /* Object copy */
     NULL                /* Object description */
 };
 
 /*!
- * @var         __XSLockTypeID
+ * @var         __XSLockClassID
  * @abstract    Type ID for the runtine class
  */
-static XSTypeID __XSLockTypeID;
+static XSClassID __XSLockClassID;
 
 /*!
  * @function    __XSLock_Initialize
@@ -65,7 +65,7 @@ static XSTypeID __XSLockTypeID;
  */
 void __XSLock_Initialize( void )
 {
-    __XSLockTypeID = XSRuntime_RegisterClass( &__XSLockClass );
+    __XSLockClassID = XSRuntime_RegisterClass( &__XSLockClass );
 }
 
 /*!
@@ -73,37 +73,37 @@ void __XSLock_Initialize( void )
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSLock * __XSLock_Alloc( void )
+__XSLock * __XSLock_Alloc( void )
 {
-    return ( XSLock * )XSRuntime_CreateInstance( __XSLockTypeID );
+    return ( __XSLock * )XSRuntime_CreateInstance( __XSLockClassID );
 }
 
 /*!
- * @function    __XSLock_Init
+ * @function    __XSLock_Construct
  * @abstract    Constructor
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSLock_Init( void * object )
+void __XSLock_Construct( void * object )
 {
-    XSLock * lock;
+    __XSLock * lock;
     
-    lock = ( XSLock * )object;
+    lock = ( __XSLock * )object;
     
     pthread_mutex_init( &( lock->mutex ), NULL );
 }
 
 /*!
- * @function    __XSLock_Dealloc
+ * @function    __XSLock_Destruct
  * @abstract    Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSLock_Dealloc( void * object )
+void __XSLock_Destruct( void * object )
 {
-    XSLock * lock;
+    __XSLock * lock;
     
-    lock = ( XSLock * )object;
+    lock = ( __XSLock * )object;
     
     pthread_mutex_destroy( &( lock->mutex ) );
 }

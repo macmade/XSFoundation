@@ -42,21 +42,21 @@
  * @var         __XSColorClass
  * @abstract    Runtime class definition
  */
-static const XSRuntimeClass __XSColorClass =
+static const XSClassInfos __XSColorClass =
 {
-    "XSColor",          /* Class name */
-    sizeof( XSColor ),  /* Object size */
-    NULL,               /* Constructor */
-    NULL,               /* Destructor */
-    NULL,               /* Object copy */
-    NULL                /* Object description */
+    "XSColor",              /* Class name */
+    sizeof( __XSColor ),    /* Object size */
+    NULL,                   /* Constructor */
+    NULL,                   /* Destructor */
+    NULL,                   /* Object copy */
+    NULL                    /* Object description */
 };
 
 /*!
- * @var         __XSColorTypeID
+ * @var         __XSColorClassID
  * @abstract    Type ID for the runtine class
  */
-static XSTypeID __XSColorTypeID;
+static XSClassID __XSColorClassID;
 
 /*!
  * @function    __XSColor_Initialize
@@ -65,7 +65,7 @@ static XSTypeID __XSColorTypeID;
  */
 void __XSColor_Initialize( void )
 {
-    __XSColorTypeID = XSRuntime_RegisterClass( &__XSColorClass );
+    __XSColorClassID = XSRuntime_RegisterClass( &__XSColorClass );
 }
 
 /*!
@@ -73,9 +73,9 @@ void __XSColor_Initialize( void )
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSColor * __XSColor_Alloc( void )
+__XSColor * __XSColor_Alloc( void )
 {
-    return ( XSColor * )XSRuntime_CreateInstance( __XSColorTypeID );
+    return ( __XSColor * )XSRuntime_CreateInstance( __XSColorClassID );
 }
 
 /*!
@@ -84,7 +84,7 @@ XSColor * __XSColor_Alloc( void )
  * @param       color   The color object
  * @result      void
  */
-void __XSColor_RGBToHSL( XSColor * color )
+void __XSColor_RGBToHSL( __XSColor * color )
 {
     XSFloat h;
     XSFloat s;
@@ -166,7 +166,7 @@ void __XSColor_RGBToHSL( XSColor * color )
  * @param       color   The color object
  * @result      void
  */
-void __XSColor_RGBToHSV( XSColor * color )
+void __XSColor_RGBToHSV( __XSColor * color )
 {
     XSFloat h;
     XSFloat s;
@@ -241,7 +241,7 @@ void __XSColor_RGBToHSV( XSColor * color )
  * @param       color   The color object
  * @result      void
  */
-void __XSColor_HSVToRGB( XSColor * color )
+void __XSColor_HSVToRGB( __XSColor * color )
 {
     XSFloat   r;
     XSFloat   g;
@@ -330,7 +330,7 @@ void __XSColor_HSVToRGB( XSColor * color )
  * @param       color   The color object
  * @result      void
  */
-void __XSColor_HSVToHSL( XSColor * color )
+void __XSColor_HSVToHSL( __XSColor * color )
 {
     __XSColor_HSVToRGB( color );
     __XSColor_RGBToHSL( color );
@@ -342,7 +342,7 @@ void __XSColor_HSVToHSL( XSColor * color )
  * @param       color   The color object
  * @result      void
  */
-void __XSColor_HSLToRGB( XSColor * color )
+void __XSColor_HSLToRGB( __XSColor * color )
 {
     XSFloat    r;
     XSFloat    g;
@@ -438,7 +438,7 @@ void __XSColor_HSLToRGB( XSColor * color )
  * @param       color   The color object
  * @result      void
  */
-void __XSColor_HSLToHSV( XSColor * color )
+void __XSColor_HSLToHSV( __XSColor * color )
 {
     __XSColor_HSLToRGB( color );
     __XSColor_RGBToHSV( color );

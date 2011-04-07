@@ -42,7 +42,7 @@
  * @var         __XSDateClass
  * @abstract    Runtime class definition
  */
-static const XSRuntimeClass __XSDateClass =
+static const XSClassInfos __XSDateClass =
 {
     "XSDate",           /* Class name */
     sizeof( XSDate ),   /* Object size */
@@ -53,10 +53,10 @@ static const XSRuntimeClass __XSDateClass =
 };
 
 /*!
- * @var         __XSDateTypeID
+ * @var         __XSDateClassID
  * @abstract    Type ID for the runtine class
  */
-static XSTypeID __XSDateTypeID;
+static XSClassID __XSDateClassID;
 
 /*!
  * @function    __XSDate_Initialize
@@ -65,7 +65,7 @@ static XSTypeID __XSDateTypeID;
  */
 void __XSDate_Initialize( void )
 {
-    __XSDateTypeID = XSRuntime_RegisterClass( &__XSDateClass );
+    __XSDateClassID = XSRuntime_RegisterClass( &__XSDateClass );
 }
 
 /*!
@@ -73,7 +73,7 @@ void __XSDate_Initialize( void )
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSDate * __XSDate_Alloc( void )
+__XSDate * __XSDate_Alloc( void )
 {
-    return ( XSDate * )XSRuntime_CreateInstance( __XSDateTypeID );
+    return ( __XSDate * )XSRuntime_CreateInstance( __XSDateClassID );
 }

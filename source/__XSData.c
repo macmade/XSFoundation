@@ -42,7 +42,7 @@
  * @var         __XSDataClass
  * @abstract    Runtime class definition
  */
-static const XSRuntimeClass __XSDataClass =
+static const XSClassInfos __XSDataClass =
 {
     "XSData",           /* Class name */
     sizeof( XSData ),   /* Object size */
@@ -53,10 +53,10 @@ static const XSRuntimeClass __XSDataClass =
 };
 
 /*!
- * @var         __XSDataTypeID
+ * @var         __XSDataClassID
  * @abstract    Type ID for the runtine class
  */
-static XSTypeID __XSDataTypeID;
+static XSClassID __XSDataClassID;
 
 /*!
  * @function    __XSData_Initialize
@@ -65,7 +65,7 @@ static XSTypeID __XSDataTypeID;
  */
 void __XSData_Initialize( void )
 {
-    __XSDataTypeID = XSRuntime_RegisterClass( &__XSDataClass );
+    __XSDataClassID = XSRuntime_RegisterClass( &__XSDataClass );
 }
 
 /*!
@@ -73,7 +73,7 @@ void __XSData_Initialize( void )
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSData * __XSData_Alloc( void )
+__XSData * __XSData_Alloc( void )
 {
-    return ( XSData * )XSRuntime_CreateInstance( __XSDataTypeID );
+    return ( __XSData * )XSRuntime_CreateInstance( __XSDataClassID );
 }

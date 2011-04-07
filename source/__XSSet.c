@@ -42,10 +42,10 @@
  * @var         __XSSetClass
  * @abstract    Runtime class definition
  */
-static const XSRuntimeClass __XSSetClass =
+static const XSClassInfos __XSSetClass =
 {
     "XSSet",            /* Class name */
-    sizeof( XSSet ),    /* Object size */
+    sizeof( __XSSet ),  /* Object size */
     NULL,               /* Constructor */
     NULL,               /* Destructor */
     NULL,               /* Object copy */
@@ -53,10 +53,10 @@ static const XSRuntimeClass __XSSetClass =
 };
 
 /*!
- * @var         __XSSetTypeID
+ * @var         __XSSetClassID
  * @abstract    Type ID for the runtine class
  */
-static XSTypeID __XSSetTypeID;
+static XSClassID __XSSetClassID;
 
 /*!
  * @function    __XSSet_Initialize
@@ -65,7 +65,7 @@ static XSTypeID __XSSetTypeID;
  */
 void __XSSet_Initialize( void )
 {
-    __XSSetTypeID = XSRuntime_RegisterClass( &__XSSetClass );
+    __XSSetClassID = XSRuntime_RegisterClass( &__XSSetClass );
 }
 
 /*!
@@ -73,7 +73,7 @@ void __XSSet_Initialize( void )
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSSet * __XSSet_Alloc( void )
+__XSSet * __XSSet_Alloc( void )
 {
-    return ( XSSet * )XSRuntime_CreateInstance( __XSSetTypeID );
+    return ( __XSSet * )XSRuntime_CreateInstance( __XSSetClassID );
 }

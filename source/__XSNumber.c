@@ -42,21 +42,21 @@
  * @var         __XSNumberClass
  * @abstract    Runtime class definition
  */
-static const XSRuntimeClass __XSNumberClass =
+static const XSClassInfos __XSNumberClass =
 {
-    "XSNumber",         /* Class name */
-    sizeof( XSNumber ), /* Object size */
-    NULL,               /* Constructor */
-    NULL,               /* Destructor */
-    NULL,               /* Object copy */
-    NULL                /* Object description */
+    "XSNumber",             /* Class name */
+    sizeof( __XSNumber ),   /* Object size */
+    NULL,                   /* Constructor */
+    NULL,                   /* Destructor */
+    NULL,                   /* Object copy */
+    NULL                    /* Object description */
 };
 
 /*!
- * @var         __XSNumberTypeID
+ * @var         __XSNumberClassID
  * @abstract    Type ID for the runtine class
  */
-static XSTypeID __XSNumberTypeID;
+static XSClassID __XSNumberClassID;
 
 /*!
  * @function    __XSNumber_Initialize
@@ -65,7 +65,7 @@ static XSTypeID __XSNumberTypeID;
  */
 void __XSNumber_Initialize( void )
 {
-    __XSNumberTypeID = XSRuntime_RegisterClass( &__XSNumberClass );
+    __XSNumberClassID = XSRuntime_RegisterClass( &__XSNumberClass );
 }
 
 /*!
@@ -73,7 +73,7 @@ void __XSNumber_Initialize( void )
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSNumber * __XSNumber_Alloc( void )
+__XSNumber * __XSNumber_Alloc( void )
 {
-    return ( XSNumber * )XSRuntime_CreateInstance( __XSNumberTypeID );
+    return ( __XSNumber * )XSRuntime_CreateInstance( __XSNumberClassID );
 }

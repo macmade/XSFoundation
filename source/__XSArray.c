@@ -42,21 +42,21 @@
  * @var         __XSArrayClass
  * @abstract    Runtime class definition
  */
-static const XSRuntimeClass __XSArrayClass =
+static const XSClassInfos __XSArrayClass =
 {
-    "XSArray",          /* Class name */
-    sizeof( XSArray ),  /* Object size */
-    NULL,               /* Constructor */
-    __XSArray_Dealloc,  /* Destructor */
-    NULL,               /* Object copy */
-    NULL                /* Object description */
+    "XSArray",              /* Class name */
+    sizeof( __XSArray ),    /* Object size */
+    NULL,                   /* Constructor */
+    __XSArray_Destruct,     /* Destructor */
+    NULL,                   /* Object copy */
+    NULL                    /* Object description */
 };
 
 /*!
- * @var         __XSArrayTypeID
+ * @var         __XSArrayClassID
  * @abstract    Type ID for the runtine class
  */
-static XSTypeID __XSArrayTypeID;
+static XSClassID __XSArrayClassID;
 
 /*!
  * @function    __XSArray_Initialize
@@ -65,7 +65,7 @@ static XSTypeID __XSArrayTypeID;
  */
 void __XSArray_Initialize( void )
 {
-    __XSArrayTypeID = XSRuntime_RegisterClass( &__XSArrayClass );
+    __XSArrayClassID = XSRuntime_RegisterClass( &__XSArrayClass );
 }
 
 /*!
@@ -73,23 +73,23 @@ void __XSArray_Initialize( void )
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSArray * __XSArray_Alloc( void )
+__XSArray * __XSArray_Alloc( void )
 {
-    return ( XSArray * )XSRuntime_CreateInstance( __XSArrayTypeID );
+    return ( __XSArray * )XSRuntime_CreateInstance( __XSArrayClassID );
 }
 
 /*!
- * @function    __XSArray_Dealloc
+ * @function    __XSArray_Destruct
  * @abstract    Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSArray_Dealloc( void * object )
+void __XSArray_Destruct( void * object )
 {
-    XSArray  * array;
-    XSUInteger i;
+    __XSArray  * array;
+    XSUInteger  i;
     
-    array = ( XSArray * )object;
+    array = ( __XSArray * )object;
     
     for( i = 0; i < array->count; i++ )
     {

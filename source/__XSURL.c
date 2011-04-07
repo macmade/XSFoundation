@@ -56,7 +56,7 @@ static const XSRuntimeClass __XSURLClass =
  * @var         __XSURLTypeID
  * @abstract    Type ID for the runtine class
  */
-static XSTypeID __XSURLTypeID;
+static XSClassID __XSURLClassID;
 
 /*!
  * @function    __XSURL_Initialize
