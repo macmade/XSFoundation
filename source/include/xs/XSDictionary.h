@@ -71,17 +71,6 @@ XSDictionary XSDictionary_Create( void );
 XSDictionary XSDictionary_CreateWithCapacity( XSUInteger capacity );
 
 /*!
- * @function    XSDictionary_CreateWithValuesAndKeys
- * @abstract    Creates a dictionary with values and keys
- * @description Values will be automatically retained.
- * @param       value1  The first value
- * @param       key1    The first key
- * @param       ...     Other values and keys, terminated by a NULL fence.
- * @result      The new dictionary object
- */
-XSDictionary XSDictionary_CreateWithValuesAndKeys( void * value1, XSString key1, ... );
-
-/*!
  * @function    XSDictionary_Count
  * @abstract    Gets the number of values in the dictionary
  * @param       dict    The dictionary object
