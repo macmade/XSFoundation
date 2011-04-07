@@ -50,8 +50,7 @@ static const XSClassInfos __XSArrayClass =
     __XSArray_Destruct,     /* Destructor */
     NULL,                   /* Object copy */
     NULL,                   /* Object description */
-    NULL,                   /* Object comparison */
-    NULL                    /* Object hash */
+    NULL                    /* Object comparison */
 };
 
 /*!

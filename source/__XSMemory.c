@@ -62,8 +62,7 @@ static const XSClassInfos __XSAutoreleasePoolClass =
     __XSAutoreleasePool_Destruct,   /* Destructor */
     NULL,                           /* Object copy */
     NULL,                           /* Object description */
-    NULL,                           /* Object comparison */
-    NULL                            /* Object hash */
+    NULL                            /* Object comparison */
 };
 
 /*!

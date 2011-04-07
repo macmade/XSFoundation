@@ -50,8 +50,7 @@ static const XSClassInfos __XSStringClass =
     __XSString_Destruct,    /* Destructor */
     NULL,                   /* Object copy */
     __XSString_ToString,    /* Object description */
-    NULL,                   /* Object comparison */
-    NULL                    /* Object hash */
+    NULL                    /* Object comparison */
 };
 
 /*!
