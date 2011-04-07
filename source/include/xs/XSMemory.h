@@ -146,6 +146,23 @@ void * XSAutoAlloc( size_t size );
 void * XSCopy( void * ptr );
 
 /*!
+ * @function    XSEquals
+ * @abstract    Compares two pointers/objects
+ * @param       ptr1    The first pointer/object
+ * @param       ptr2    The second pointer/object
+ * @result      True if the two pointers/objects are equals, otherwise false
+ */
+BOOL XSEquals( void * ptr1, void * ptr2 );
+
+/*!
+ * @function    XSHash
+ * @abstract    Hashes a pointer/object
+ * @param       ptr     The pointer/object to hash
+ * @result      The hash of the pointer/object
+ */
+XSString XSHash( void * ptr );
+
+/*!
  * @function    XSGetRetainCount
  * @abstract    Gets the retain count for a pointer
  * @param       ptr     The pointer
