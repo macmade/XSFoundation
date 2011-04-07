@@ -42,21 +42,23 @@
  * @var         __XSTimerClass
  * @abstract    Runtime class definition
  */
-static const XSRuntimeClass __XSTimerClass =
+static const XSClassInfos __XSTimerClass =
 {
-    "XSTimer",          /* Class name */
-    sizeof( XSTimer ),  /* Object size */
-    NULL,               /* Constructor */
-    NULL,               /* Destructor */
-    NULL,               /* Object copy */
-    NULL                /* Object description */
+    "XSTimer",              /* Class name */
+    sizeof( __XSTimer ),    /* Object size */
+    NULL,                   /* Constructor */
+    NULL,                   /* Destructor */
+    NULL,                   /* Object copy */
+    NULL,                   /* Object description */
+    NULL,                   /* Object comparison */
+    NULL                    /* Object hash */
 };
 
 /*!
- * @var         __XSTimerTypeID
+ * @var         __XSTimerClassID
  * @abstract    Type ID for the runtine class
  */
-static XSTypeID __XSTimerTypeID;
+static XSClassID __XSTimerClassID;
 
 /*!
  * @function    __XSTimer_Initialize
@@ -65,7 +67,7 @@ static XSTypeID __XSTimerTypeID;
  */
 void __XSTimer_Initialize( void )
 {
-    __XSTimerTypeID = XSRuntime_RegisterClass( &__XSTimerClass );
+    __XSTimerClassID = XSRuntime_RegisterClass( &__XSTimerClass );
 }
 
 /*!
@@ -73,9 +75,9 @@ void __XSTimer_Initialize( void )
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSTimer * __XSTimer_Alloc( void )
+__XSTimer * __XSTimer_Alloc( void )
 {
-    return ( XSTimer * )XSRuntime_CreateInstance( __XSTimerTypeID );
+    return ( __XSTimer * )XSRuntime_CreateInstance( __XSTimerClassID );
 }
 
 /*!
@@ -85,16 +87,16 @@ XSTimer * __XSTimer_Alloc( void )
  * @param       object  The timer object
  * @return      void
  */
-void __XSTimer_RunOnce( XSThreadRef thread, void * object )
+void __XSTimer_RunOnce( XSThread thread, void * object )
 {
-    XSTimer * t;
+    __XSTimer * t;
     
     ( void )thread;
     
-    t = ( XSTimer * )object;
+    t = ( __XSTimer * )object;
     
     usleep( t->msecs * 1000 );
-    t->func( ( XSTimerRef )t );
+    t->func( ( XSTimer )t );
      
 }
 
@@ -105,17 +107,17 @@ void __XSTimer_RunOnce( XSThreadRef thread, void * object )
  * @param       object  The timer object
  * @return      void
  */
-void __XSTimer_RunAndRepeat( XSThreadRef thread, void * object )
+void __XSTimer_RunAndRepeat( XSThread thread, void * object )
 {
-    XSTimer * t;
+    __XSTimer * t;
     
     ( void )thread;
     
-     t = ( XSTimer * )object;
+     t = ( __XSTimer * )object;
      
      while( t->valid == YES )
      {
         usleep( t->msecs * 1000 );
-        t->func( ( XSTimerRef )t );
+        t->func( ( XSTimer )t );
      }
 }

@@ -38,9 +38,9 @@
 #include "XS.h"
 #include "__XSLock.h"
 
-XSLockRef XSLock_Create( void )
+XSLock XSLock_Create( void )
 {
-    return ( XSLockRef )__XSLock_Alloc();
+    return ( XSLock )__XSLock_Alloc();
 }
 
 /*!
@@ -49,11 +49,11 @@ XSLockRef XSLock_Create( void )
  * @param       The lock object
  * @result      True if the lock was successfully locked, otherwise false
  */
-BOOL XSLock_Lock( XSLockRef lock )
+BOOL XSLock_Lock( XSLock lock )
 {
-    XSLock * _lock;
+    __XSLock * _lock;
     
-    _lock = ( XSLock * )lock;
+    _lock = ( __XSLock * )lock;
     
     if( pthread_mutex_lock( &( _lock->mutex ) ) == 0 )
     {
@@ -69,11 +69,11 @@ BOOL XSLock_Lock( XSLockRef lock )
  * @param       The lock object
  * @result      True if the lock was successfully locked, otherwise false
  */
-BOOL XSLock_TryLock( XSLockRef lock )
+BOOL XSLock_TryLock( XSLock lock )
 {
-    XSLock * _lock;
+    __XSLock * _lock;
     
-    _lock = ( XSLock * )lock;
+    _lock = ( __XSLock * )lock;
     
     if( pthread_mutex_trylock( &( _lock->mutex ) ) == 0 )
     {
@@ -89,11 +89,11 @@ BOOL XSLock_TryLock( XSLockRef lock )
  * @param       The lock object
  * @result      void
  */
-void XSLock_WaitForLock( XSLockRef lock )
+void XSLock_WaitForLock( XSLock lock )
 {
-    XSLock * _lock;
+    __XSLock * _lock;
     
-    _lock = ( XSLock * )lock;
+    _lock = ( __XSLock * )lock;
     
     while( pthread_mutex_trylock( &( _lock->mutex ) ) != 0 )
     {}
@@ -105,11 +105,11 @@ void XSLock_WaitForLock( XSLockRef lock )
  * @param       The lock object
  * @result      void
  */
-void XSLock_Unlock( XSLockRef lock )
+void XSLock_Unlock( XSLock lock )
 {
-    XSLock * _lock;
+    __XSLock * _lock;
     
-    _lock = ( XSLock * )lock;
+    _lock = ( __XSLock * )lock;
     
     if( _lock->locked == NO )
     {
@@ -125,7 +125,7 @@ void XSLock_Unlock( XSLockRef lock )
  * @param       The lock object
  * @result      True if the lock is locked, otherwise false
  */
-BOOL XSLock_IsLocked( XSLockRef lock )
+BOOL XSLock_IsLocked( XSLock lock )
 {
-    return ( ( XSLock * )lock )->locked;
+    return ( ( __XSLock * )lock )->locked;
 }

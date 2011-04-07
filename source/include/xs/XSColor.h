@@ -44,10 +44,10 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @typedef     XSColorRef
+ * @typedef     XSColor
  * @abstract    Opaque type for the XSColor objects
  */
-typedef struct XSColor * XSColorRef;
+typedef struct XSColor * XSColor;
 
 /*!
  * @function    XSColor_CreateWithRGB
@@ -57,7 +57,7 @@ typedef struct XSColor * XSColorRef;
  * @param       b   The blue value
  * @result      The color object
  */
-XSColorRef XSColor_CreateWithRGB( XSFloat r, XSFloat g, XSFloat b );
+XSColor XSColor_CreateWithRGB( XSFloat r, XSFloat g, XSFloat b );
 
 /*!
  * @function    XSColor_CreateWithHSL
@@ -67,7 +67,7 @@ XSColorRef XSColor_CreateWithRGB( XSFloat r, XSFloat g, XSFloat b );
  * @param       l   The luminance value
  * @result      The color object
  */
-XSColorRef XSColor_CreateWithHSL( XSFloat h, XSFloat s, XSFloat l );
+XSColor XSColor_CreateWithHSL( XSFloat h, XSFloat s, XSFloat l );
 
 /*!
  * @function    XSColor_CreateWithHSV
@@ -77,7 +77,7 @@ XSColorRef XSColor_CreateWithHSL( XSFloat h, XSFloat s, XSFloat l );
  * @param       v   The value value
  * @result      The color object
  */
-XSColorRef XSColor_CreateWithHSV( XSFloat h, XSFloat s, XSFloat v );
+XSColor XSColor_CreateWithHSV( XSFloat h, XSFloat s, XSFloat v );
 
 /*!
  * @function    XSColor_CreateWithRGB
@@ -88,7 +88,7 @@ XSColorRef XSColor_CreateWithHSV( XSFloat h, XSFloat s, XSFloat v );
  * @param       a   The alpha value
  * @result      The color object
  */
-XSColorRef XSColor_CreateWithRGBA( XSFloat r, XSFloat g, XSFloat b, XSFloat a );
+XSColor XSColor_CreateWithRGBA( XSFloat r, XSFloat g, XSFloat b, XSFloat a );
 
 /*!
  * @function    XSColor_CreateWithHSL
@@ -99,7 +99,7 @@ XSColorRef XSColor_CreateWithRGBA( XSFloat r, XSFloat g, XSFloat b, XSFloat a );
  * @param       a   The alpha value
  * @result      The color object
  */
-XSColorRef XSColor_CreateWithHSLA( XSFloat h, XSFloat s, XSFloat l, XSFloat a );
+XSColor XSColor_CreateWithHSLA( XSFloat h, XSFloat s, XSFloat l, XSFloat a );
 
 /*!
  * @function    XSColor_CreateWithHSV
@@ -110,42 +110,42 @@ XSColorRef XSColor_CreateWithHSLA( XSFloat h, XSFloat s, XSFloat l, XSFloat a );
  * @param       a   The alpha value
  * @result      The color object
  */
-XSColorRef XSColor_CreateWithHSVA( XSFloat h, XSFloat s, XSFloat v, XSFloat a );
+XSColor XSColor_CreateWithHSVA( XSFloat h, XSFloat s, XSFloat v, XSFloat a );
 
 /*!
  * @function    XSColor_BlackColor
  * @abstract    Creates a color with HSVA components
  * @result      The color object
  */
-XSColorRef XSColor_BlackColor( void );
+XSColor XSColor_BlackColor( void );
 
 /*!
  * @function    XSColor_WhiteColor
  * @abstract    Create a black color object
  * @result      The color object
  */
-XSColorRef XSColor_WhiteColor( void );
+XSColor XSColor_WhiteColor( void );
 
 /*!
  * @function    XSColor_RedColor
  * @abstract    Creates a red color object
  * @result      The color object
  */
-XSColorRef XSColor_RedColor( void );
+XSColor XSColor_RedColor( void );
 
 /*!
  * @function    XSColor_GreenColor
  * @abstract    Creates a green color object
  * @result      The color object
  */
-XSColorRef XSColor_GreenColor( void );
+XSColor XSColor_GreenColor( void );
 
 /*!
  * @function    XSColor_BlueColor
  * @abstract    Creates a blue color object
  * @result      The color object
  */
-XSColorRef XSColor_BlueColor( void );
+XSColor XSColor_BlueColor( void );
 
 /*!
  * @function    XSColor_GetRed
@@ -153,7 +153,7 @@ XSColorRef XSColor_BlueColor( void );
  * @param       color   The color object
  * @result      The red component
  */
-XSFloat XSColor_GetRed( XSColorRef color );
+XSFloat XSColor_GetRed( XSColor color );
 
 /*!
  * @function    XSColor_GetGreen
@@ -161,7 +161,7 @@ XSFloat XSColor_GetRed( XSColorRef color );
  * @param       color   The color object
  * @result      The green component
  */
-XSFloat XSColor_GetGreen( XSColorRef color );
+XSFloat XSColor_GetGreen( XSColor color );
 
 /*!
  * @function    XSColor_GetBlue
@@ -169,7 +169,7 @@ XSFloat XSColor_GetGreen( XSColorRef color );
  * @param       color   The color object
  * @result      The blue component
  */
-XSFloat XSColor_GetBlue( XSColorRef color );
+XSFloat XSColor_GetBlue( XSColor color );
 
 /*!
  * @function    XSColor_GetHue
@@ -177,7 +177,7 @@ XSFloat XSColor_GetBlue( XSColorRef color );
  * @param       color   The color object
  * @result      The hue component
  */
-XSFloat XSColor_GetHue( XSColorRef color );
+XSFloat XSColor_GetHue( XSColor color );
 
 /*!
  * @function    XSColor_GetSaturation
@@ -185,7 +185,7 @@ XSFloat XSColor_GetHue( XSColorRef color );
  * @param       color   The color object
  * @result      The saturation component
  */
-XSFloat XSColor_GetSaturation( XSColorRef color );
+XSFloat XSColor_GetSaturation( XSColor color );
 
 /*!
  * @function    XSColor_GetLuminance
@@ -193,7 +193,7 @@ XSFloat XSColor_GetSaturation( XSColorRef color );
  * @param       color   The color object
  * @result      The luminance component
  */
-XSFloat XSColor_GetLuminance( XSColorRef color );
+XSFloat XSColor_GetLuminance( XSColor color );
 
 /*!
  * @function    XSColor_GetValue
@@ -201,7 +201,7 @@ XSFloat XSColor_GetLuminance( XSColorRef color );
  * @param       color   The color object
  * @result      The value component
  */
-XSFloat XSColor_GetValue( XSColorRef color );
+XSFloat XSColor_GetValue( XSColor color );
 
 /*!
  * @function    XSColor_GetAlpha
@@ -209,7 +209,7 @@ XSFloat XSColor_GetValue( XSColorRef color );
  * @param       color   The color object
  * @result      The alpha component
  */
-XSFloat XSColor_GetAlpha( XSColorRef color );
+XSFloat XSColor_GetAlpha( XSColor color );
 
 /*!
  * @function    XSColor_SetRed
@@ -218,7 +218,7 @@ XSFloat XSColor_GetAlpha( XSColorRef color );
  * @param       v       The red component
  * @result      void
  */
-void XSColor_SetRed( XSColorRef color, XSFloat v );
+void XSColor_SetRed( XSColor color, XSFloat v );
 
 /*!
  * @function    XSColor_SetGreen
@@ -227,7 +227,7 @@ void XSColor_SetRed( XSColorRef color, XSFloat v );
  * @param       v       The green component
  * @result      void
  */
-void XSColor_SetGreen( XSColorRef color, XSFloat v );
+void XSColor_SetGreen( XSColor color, XSFloat v );
 
 /*!
  * @function    XSColor_SetBlue
@@ -236,7 +236,7 @@ void XSColor_SetGreen( XSColorRef color, XSFloat v );
  * @param       v       The blue component
  * @result      void
  */
-void XSColor_SetBlue( XSColorRef color, XSFloat v );
+void XSColor_SetBlue( XSColor color, XSFloat v );
 
 /*!
  * @function    XSColor_SetHue
@@ -245,7 +245,7 @@ void XSColor_SetBlue( XSColorRef color, XSFloat v );
  * @param       v       The hue component
  * @result      void
  */
-void XSColor_SetHue( XSColorRef color, XSFloat v );
+void XSColor_SetHue( XSColor color, XSFloat v );
 
 /*!
  * @function    XSColor_SetSaturation
@@ -254,7 +254,7 @@ void XSColor_SetHue( XSColorRef color, XSFloat v );
  * @param       v       The saturation component
  * @result      void
  */
-void XSColor_SetSaturation( XSColorRef color, XSFloat v );
+void XSColor_SetSaturation( XSColor color, XSFloat v );
 
 /*!
  * @function    XSColor_SetLuminance
@@ -263,7 +263,7 @@ void XSColor_SetSaturation( XSColorRef color, XSFloat v );
  * @param       v       The luminance component
  * @result      void
  */
-void XSColor_SetLuminance( XSColorRef color, XSFloat v );
+void XSColor_SetLuminance( XSColor color, XSFloat v );
 
 /*!
  * @function    XSColor_SetValue
@@ -272,7 +272,7 @@ void XSColor_SetLuminance( XSColorRef color, XSFloat v );
  * @param       v       The value component
  * @result      void
  */
-void XSColor_SetValue( XSColorRef color, XSFloat v );
+void XSColor_SetValue( XSColor color, XSFloat v );
 
 /*!
  * @function    XSColor_SetAlpha
@@ -281,7 +281,7 @@ void XSColor_SetValue( XSColorRef color, XSFloat v );
  * @param       v       The alpha component
  * @result      void
  */
-void XSColor_SetAlpha( XSColorRef color, XSFloat v );
+void XSColor_SetAlpha( XSColor color, XSFloat v );
 
 XS_EXTERN_C_END
 

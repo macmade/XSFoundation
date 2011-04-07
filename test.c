@@ -39,18 +39,18 @@
 #include <stdio.h>
 #include "XS.h"
 
-void thread_test( XSThreadRef thread, void * arg );
-void thread_test( XSThreadRef thread, void * arg )
+void thread_test( XSThread thread, void * arg );
+void thread_test( XSThread thread, void * arg )
 {
-    XSStringRef str;
+    XSString str;
     
-    str = ( XSStringRef )arg;
+    str = ( XSString )arg;
     
     XSLog( "Log message from thread #%X: %@", XSThread_GetID( thread ), str );
 }
 
-void timer_test( XSTimerRef timer );
-void timer_test( XSTimerRef timer )
+void timer_test( XSTimer timer );
+void timer_test( XSTimer timer )
 {
     static XSUInteger i = 0;
     
@@ -64,27 +64,26 @@ void timer_test( XSTimerRef timer )
 
 int main( int argc, char * argv[] )
 {
-    unsigned int         i;
-    XSInteger            arg_int;
-    XSUInteger           arg_uint;
-    XSStringRef          arg_str;
-    XSFloat              arg_float;
-    char              ** test;
-    XSApplicationRef     app;
-    XSStringRef          str1;
-    XSStringRef          str2;
-    XSStringRef          str3;
-    XSArrayRef           arr;
-    XSDictionaryRef      dict;
-    XSTimerRef           timer;
+    unsigned int  i;
+    XSInteger     arg_int;
+    XSUInteger    arg_uint;
+    XSString      arg_str;
+    XSFloat       arg_float;
+    char       ** test;
+    XSApplication app;
+    XSString      str1;
+    XSString      str2;
+    XSString      str3;
+    XSArray       arr;
+    XSTimer       timer;
     
     app  = XSApplication_Start( argc, ( const char ** )argv );
     
-    XSApplication_RegisterArgument( app, "--test", XSApplicationArgumentTypeFlag, "A test flag" );
-    XSApplication_RegisterArgument( app, "--int",  XSApplicationArgumentTypeInteger, "A test integer" );
-    XSApplication_RegisterArgument( app, "--uint", XSApplicationArgumentTypeUnsignedInteger );
-    XSApplication_RegisterArgument( app, "--string",  XSApplicationArgumentTypeString, "A test string" );
-    XSApplication_RegisterArgument( app, "--float",  XSApplicationArgumentTypeFloat, "A test float" );
+    XSApplication_RegisterArgument( app, "--test",    XSApplicationArgumentTypeFlag,    "A test flag" );
+    XSApplication_RegisterArgument( app, "--int",     XSApplicationArgumentTypeInteger, "A test integer" );
+    XSApplication_RegisterArgument( app, "--string",  XSApplicationArgumentTypeString,  "A test string" );
+    XSApplication_RegisterArgument( app, "--float",   XSApplicationArgumentTypeFloat,   "A test float" );
+    XSApplication_RegisterArgument( app, "--uint",    XSApplicationArgumentTypeUnsignedInteger );
     
     XSApplication_PrintHelp( app, "A test application for the XSFoundation" );
     
@@ -124,7 +123,6 @@ int main( int argc, char * argv[] )
     str2 = XSString_SubstringFromIndex( str1, 5 );
     str3 = XSCopy( str2 );
     arr  = XSArray_CreateWithValues( str1, str2, str3, NULL );
-    dict = XSAutorelease( XSDictionary_CreateWithValuesAndKeys( str1, str1, str2, str2, NULL ) );
     
     printf( "%s%s%s\n", XSString_CString( str1 ), XSString_CString( str2 ), XSString_CString( str3 ) );
     
@@ -133,7 +131,6 @@ int main( int argc, char * argv[] )
     
     XSLog( "%@", XSAutorelease( XSString_StringByAppendingString( str1, str2 ) ) );
     XSLog( "%@", arr );
-    XSLog( "%@", dict );
     XSLog( "%@", XSAutorelease( XSRuntime_CreateInstanceOfClassWithName( "XSString" ) ) );
     
     XSThread_Detach( thread_test, NULL );

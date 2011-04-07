@@ -46,23 +46,23 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      XSArray
+ * @typdef      __XSArray
  * @abastract   XSArray class
- * @field       _xsbase     Runtime class
+ * @field       __class     Runtime class
  * @field       count       Number of elements in the array
  * @field       capacity    Initial capacity of the array
  * @field       cur         Index of the current value
  * @field       values      Array values
  */
-typedef struct _XSArray
+typedef struct __XSArray_Struct
 {
-    XSRuntimeBase _xsbase;
-    XSUInteger    count;
-    XSUInteger    capacity;
-    XSUInteger    cur;
-    void       ** values;
+    XSRuntimeClass __class;
+    XSUInteger     count;
+    XSUInteger     capacity;
+    XSUInteger     cur;
+    void        ** values;
 }
-XSArray;
+__XSArray;
 
 /*!
  * @function    __XSArray_Initialize
@@ -76,15 +76,15 @@ void __XSArray_Initialize( void );
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSArray * __XSArray_Alloc( void );
+__XSArray * __XSArray_Alloc( void );
 
 /*!
- * @function    __XSString_Dealloc
+ * @function    __XSArray_Destruct
  * @abstract    Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSArray_Dealloc( void * object );
+void __XSArray_Destruct( void * object );
 
 XS_EXTERN_C_END
 

@@ -67,7 +67,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @define      XSSTR
- * @abstract    Creates an XSStringRef instance from a C string
+ * @abstract    Creates an XSString instance from a C string
  * @param       s   A C string (char *)
  */
 #define XSSTR( s ) XSString_CreateWithCString( s )

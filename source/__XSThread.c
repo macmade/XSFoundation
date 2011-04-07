@@ -42,21 +42,23 @@
  * @var         __XSThreadClass
  * @abstract    Runtime class definition
  */
-static const XSRuntimeClass __XSThreadClass =
+static const XSClassInfos __XSThreadClass =
 {
-    "XSThread",         /* Class name */
-    sizeof( XSThread ), /* Object size */
-    NULL,               /* Constructor */
-    NULL,               /* Destructor */
-    NULL,               /* Object copy */
-    NULL                /* Object description */
+    "XSThread",             /* Class name */
+    sizeof( __XSThread ),   /* Object size */
+    NULL,                   /* Constructor */
+    NULL,                   /* Destructor */
+    NULL,                   /* Object copy */
+    NULL,                   /* Object description */
+    NULL,                   /* Object comparison */
+    NULL                    /* Object hash */
 };
 
 /*!
- * @var         __XSThreadTypeID
+ * @var         __XSThreadClassID
  * @abstract    Type ID for the runtine class
  */
-static XSTypeID __XSThreadTypeID;
+static XSClassID __XSThreadClassID;
 
 /*!
  * @function    __XSThread_Initialize
@@ -65,7 +67,7 @@ static XSTypeID __XSThreadTypeID;
  */
 void __XSThread_Initialize( void )
 {
-    __XSThreadTypeID = XSRuntime_RegisterClass( &__XSThreadClass );
+    __XSThreadClassID = XSRuntime_RegisterClass( &__XSThreadClass );
 }
 
 /*!
@@ -73,9 +75,9 @@ void __XSThread_Initialize( void )
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSThread * __XSThread_Alloc( void )
+__XSThread * __XSThread_Alloc( void )
 {
-    return ( XSThread * )XSRuntime_CreateInstance( __XSThreadTypeID );
+    return ( __XSThread * )XSRuntime_CreateInstance( __XSThreadClassID );
 }
 
 /*!
@@ -86,14 +88,14 @@ XSThread * __XSThread_Alloc( void )
  */
 void * __XSThread_Run( void * thread )
 {
-    pthread_t  tid;
-    XSThread * _thread;
+    pthread_t    tid;
+    __XSThread * _thread;
     
     #ifdef __MACH__
     mach_port_t mid;
     #endif
     
-    _thread = ( XSThread * )thread;
+    _thread = ( __XSThread * )thread;
     tid     = pthread_self();
     
     #ifdef __MACH__
@@ -103,7 +105,7 @@ void * __XSThread_Run( void * thread )
     _thread->tid = tid;
     #endif
     
-    _thread->func( ( XSThreadRef )thread, _thread->arg );
+    _thread->func( ( XSThread )thread, _thread->arg );
     
     XSRelease( thread );
     

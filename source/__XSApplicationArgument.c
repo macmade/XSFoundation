@@ -42,21 +42,23 @@
  * @var         __XSApplicationArgumentClass
  * @abstract    Runtime class definition
  */
-static const XSRuntimeClass __XSApplicationArgumentClass =
+static const XSClassInfos __XSApplicationArgumentClass =
 {
     "XSApplicationArgument",            /* Class name */
-    sizeof( XSApplicationArgument ),    /* Object size */
+    sizeof( __XSApplicationArgument ),  /* Object size */
     NULL,                               /* Constructor */
     NULL,                               /* Destructor */
     NULL,                               /* Object copy */
-    NULL                                /* Object description */
+    NULL,                               /* Object description */
+    NULL,                               /* Object comparison */
+    NULL                                /* Object hash */
 };
 
 /*!
- * @var         __XSApplicationArgumentTypeID
+ * @var         __XSApplicationArgumentClassID
  * @abstract    Type ID for the runtine class
  */
-static XSTypeID __XSApplicationArgumentTypeID;
+static XSClassID __XSApplicationArgumentClassID;
 
 /*!
  * @function    __XSApplicationArgument_Initialize
@@ -65,7 +67,7 @@ static XSTypeID __XSApplicationArgumentTypeID;
  */
 void __XSApplicationArgument_Initialize( void )
 {
-    __XSApplicationArgumentTypeID = XSRuntime_RegisterClass( &__XSApplicationArgumentClass );
+    __XSApplicationArgumentClassID = XSRuntime_RegisterClass( &__XSApplicationArgumentClass );
 }
 
 /*!
@@ -73,7 +75,7 @@ void __XSApplicationArgument_Initialize( void )
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSApplicationArgument * __XSApplicationArgument_Alloc( void )
+__XSApplicationArgument * __XSApplicationArgument_Alloc( void )
 {
-    return ( XSApplicationArgument * )XSRuntime_CreateInstance( __XSApplicationArgumentTypeID );
+    return ( __XSApplicationArgument * )XSRuntime_CreateInstance( __XSApplicationArgumentClassID );
 }

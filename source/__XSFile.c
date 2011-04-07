@@ -42,21 +42,23 @@
  * @var         __XSFileClass
  * @abstract    Runtime class definition
  */
-static const XSRuntimeClass __XSFileClass =
+static const XSClassInfos __XSFileClass =
 {
     "XSFile",           /* Class name */
     sizeof( XSFile ),   /* Object size */
     NULL,               /* Constructor */
     NULL,               /* Destructor */
     NULL,               /* Object copy */
-    NULL                /* Object description */
+    NULL,               /* Object description */
+    NULL,               /* Object comparison */
+    NULL                /* Object hash */
 };
 
 /*!
- * @var         __XSFileTypeID
+ * @var         __XSFileClassID
  * @abstract    Type ID for the runtine class
  */
-static XSTypeID __XSFileTypeID;
+static XSClassID __XSFileClassID;
 
 /*!
  * @function    __XSFile_Initialize
@@ -65,7 +67,7 @@ static XSTypeID __XSFileTypeID;
  */
 void __XSFile_Initialize( void )
 {
-    __XSFileTypeID = XSRuntime_RegisterClass( &__XSFileClass );
+    __XSFileClassID = XSRuntime_RegisterClass( &__XSFileClass );
 }
 
 /*!
@@ -73,9 +75,9 @@ void __XSFile_Initialize( void )
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSFile * __XSFile_Alloc( void )
+__XSFile * __XSFile_Alloc( void )
 {
-    return ( XSFile * )XSRuntime_CreateInstance( __XSFileTypeID );
+    return ( __XSFile * )XSRuntime_CreateInstance( __XSFileClassID );
 }
 
 /*!
@@ -84,7 +86,7 @@ XSFile * __XSFile_Alloc( void )
  * @param       file    The file object
  * @result      void
  */
-void __XSFile_WriteAlign( XSFile * file )
+void __XSFile_WriteAlign( __XSFile * file )
 {
     if( file->bit_count > 0 )
     {
@@ -102,7 +104,7 @@ void __XSFile_WriteAlign( XSFile * file )
  * @param       file    The file object
  * @result      void
  */
-void __XSFile_UpdateStat( XSFile * file )
+void __XSFile_UpdateStat( __XSFile * file )
 {
     stat( file->filename, &( file->stat_buf ) );
 }

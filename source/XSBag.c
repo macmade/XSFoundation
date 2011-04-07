@@ -38,7 +38,7 @@
 #include "XS.h"
 #include "__XSBag.h"
 
-XSBagRef XSBag_Create( void )
+XSBag XSBag_Create( void )
 {
-    return ( XSBagRef )__XSBag_Alloc();
+    return ( XSBag )__XSBag_Alloc();
 }

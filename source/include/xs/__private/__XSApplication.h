@@ -46,21 +46,21 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      XSApplication
+ * @typdef      __XSApplication
  * @abastract   XSApplication class
- * @field       _xsbase     Runtime class
+ * @field       __class     Runtime class
  */
-typedef struct _XSApplication
+typedef struct __XSApplication_Struct
 {
-    XSRuntimeBase              _xsbase;
-    int                        argc;
-    const char              ** argv;
-    const char               * executable;
-    XSApplicationArgumentRef * args;
-    XSUInteger                 arg_count;
-    XSUInteger                 arg_alloc;
+    XSRuntimeClass          __class;
+    int                     argc;
+    const char           ** argv;
+    const char            * executable;
+    XSApplicationArgument * args;
+    XSUInteger              arg_count;
+    XSUInteger              arg_alloc;
 }
-XSApplication;
+__XSApplication;
 
 /*!
  * @function    __XSApplication_Initialize
@@ -74,23 +74,23 @@ void __XSApplication_Initialize( void );
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSApplication * __XSApplication_Alloc( void );
+__XSApplication * __XSApplication_Alloc( void );
 
 /*!
- * @function    __XSApplication_Init
+ * @function    __XSApplication_Construct
  * @abstract    Constructor
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSApplication_Init( void * object );
+void __XSApplication_Construct( void * object );
  
  /*!
- * @function    __XSApplication_Dealloc
+ * @function    __XSApplication_Destruct
  * @abstract    Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSApplication_Dealloc( void * object );
+void __XSApplication_Destruct( void * object );
 
 /*!
  * @function    __XSApplication_ProcessArguments
@@ -98,7 +98,7 @@ void __XSApplication_Dealloc( void * object );
  * @param       app     The application object
  * @result      void
  */
-void __XSApplication_ProcessArguments( XSApplication * app );
+void __XSApplication_ProcessArguments( __XSApplication * app );
 
 XS_EXTERN_C_END
 

@@ -82,9 +82,6 @@ typedef unsigned char         * StringPtr;
 typedef const unsigned char   * ConstStringPtr;
 typedef unsigned char           Str255[ 256 ];
 typedef const unsigned char   * ConstStr255Param;
-typedef SInt16                  RegionCode;
-typedef SInt16                  LangCode;
-typedef SInt16                  ScriptCode;
 typedef UInt32                  FourCharCode;
 typedef FourCharCode            OSType;
 typedef SInt32                  OSStatus;
@@ -113,7 +110,7 @@ typedef UInt32                  UTF32Char;
  * @field       x   The X coordinate of the point
  * @field       y   The Y coordinate of the point
  */
-typedef struct _XSPoint
+typedef struct XSPoint_Struct
 {
     XSFloat x;
     XSFloat y;
@@ -126,7 +123,7 @@ XSPoint;
  * @field       width   The width of the size
  * @field       height  The height of the size
  */
-typedef struct _XSSize
+typedef struct XSSize_Struct
 {
     XSFloat width;
     XSFloat height;
@@ -152,7 +149,7 @@ XSRect;
  * @field       location    The start of the range
  * @field       length      The length of the range
  */
-typedef struct _XSRange
+typedef struct XSRange_Struct
 {
     XSUInteger location;
     XSUInteger length;
@@ -173,7 +170,7 @@ XSRange;
  * @field       right   The right coordinate
  * @field       bottom  The bottom coordinate
  */
-typedef struct _XSEdgeInsets
+typedef struct XSEdgeInsets_Struct
 {
     XSFloat left;
     XSFloat top;
@@ -189,7 +186,7 @@ XSEdgeInsets;
  * @field       XS_LittleEndian         Little endian byte order
  * @field       XS_BigEndian            Big endian byte order
  */
-typedef enum _XSByteOrder
+typedef enum XSByteOrder_Struct
 {
    XS_UnknownByteOrder = 0,
    XS_LittleEndian     = 1,
@@ -227,7 +224,7 @@ typedef XSInteger XSComparisonResult;
  * @field       reserved        Reserved bits
  * @field       mantissa        The manstissa for the decimal number
  */
-typedef struct _XSDecimal
+typedef struct XSDecimal_Struct
 {
     signed int     exponent   : 8;
     unsigned int   length     : 4;
@@ -242,74 +239,72 @@ XSDecimal;
 #include "XSString.h"
 
 /*!
- * @typedef     XSTypeID
+ * @typedef     XSClassID
  * @abstract    Type ID foe the registered runtime classes
  */
-typedef unsigned long XSTypeID;
+typedef unsigned long XSClassID;
 
 /*!
- * @typedef     XSTypeRef
- * @abstract    Baisc type for the objects (used mainly in XSRuntime_CreateInstance) 
- */
-typedef const void  * XSTypeRef;
-
-/*!
- * @typedef     XSRuntimeClass
+ * @typedef     XSClassInfos
  * @abstract    XSFoundation runtime class
  * @field       classname       The name of the class
  * @field       instanceSize    The size of the class instances
- * @field       init            The class constructor
- * @field       dealloc         The class destructor
+ * @field       construct       The class constructor
+ * @field       destruct        The class destructor
  * @field       copy            The object's copy callback
- * @field       description     The object's description callback (used in XSLog)
+ * @field       toString        The object's description callback (used in XSLog)
+ * @field       equals          The object's comparison callback
+ * @field       hash            The object's hash callback
  */
-typedef struct _XSRuntimeClass
+typedef struct XSClassInfos_Struct
 {
     const char * className;
     size_t       instanceSize;
-    void         ( * init        )( void * object );
-    void         ( * dealloc     )( void * object );
-    void         ( * copy        )( void * source, void * destination );
-    XSStringRef  ( * description )( void * object );
+    void         ( * construct )( void * object );
+    void         ( * destruct  )( void * object );
+    void         ( * copy      )( void * source, void * destination );
+    XSString     ( * toString  )( void * object );
+    BOOL         ( * equals    )( void * object );
+    XSString     ( * hash      )( void * object );
 }
-XSRuntimeClass;
+XSClassInfos;
 
 /*!
- * @typedef     XSRuntimeBase
+ * @typedef     XSRuntimeClass
  * @abstract    Base for the runtime classes
  * @description This sructure MUST be the first member of all XSFoundation
  *              classes.
  * @field       isa     A pointer to the class structure for the object
  */
-typedef struct _XSRuntimeBase
+typedef struct XSRuntimeClass_Struct
 {
-    XSRuntimeClass * isa;
+    XSClassInfos * classInfos;
 }
-XSRuntimeBase;
+XSRuntimeClass;
 
 /*!
- * @typedef     id
+ * @typedef     XSObject
  * @abstract    Polymorphism support - Generic type for all XSFoundation objects
  */
-typedef XSRuntimeBase * id;
+typedef XSRuntimeClass * XSObject;
 
 /*!
- * @typedef     Class
+ * @typedef     XSClass
  * @abstract    Polymorphism support - Generic type for all XSFoundation classes
  */
-typedef XSRuntimeClass * Class;
+typedef XSClassInfos * XSClass;
 
 /*!
  * @define      nil
  * @abstract    NULL pointer for the 'id' type
  */
-#define nil	( id )0
+#define nil	( XSObject )0
 
 /*!
  * @define      Nil
  * @abstract    NULL pointer for the 'Class' type
  */
-#define Nil	( Class )0
+#define Nil	( XSClass )0
 
 XS_EXTERN_C_END
 

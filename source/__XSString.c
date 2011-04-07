@@ -42,21 +42,23 @@
  * @var         __XSStringClass
  * @abstract    Runtime class definition
  */
-static const XSRuntimeClass __XSStringClass =
+static const XSClassInfos __XSStringClass =
 {
     "XSString",             /* Class name */
-    sizeof( XSString ),     /* Object size */
+    sizeof( __XSString ),   /* Object size */
     NULL,                   /* Constructor */
-    __XSString_Dealloc,     /* Destructor */
-    __XSString_Copy,        /* Object copy */
-    __XSString_Description  /* Object description */
+    __XSString_Destruct,    /* Destructor */
+    NULL,                   /* Object copy */
+    __XSString_ToString,    /* Object description */
+    NULL,                   /* Object comparison */
+    NULL                    /* Object hash */
 };
 
 /*!
- * @var         __XSStringTypeID
+ * @var         __XSStringClassID
  * @abstract    Type ID for the runtine class
  */
-static XSTypeID __XSStringTypeID;
+static XSClassID __XSStringClassID;
 
 /*!
  * @function    __XSString_Initialize
@@ -65,7 +67,7 @@ static XSTypeID __XSStringTypeID;
  */
 void __XSString_Initialize( void )
 {
-    __XSStringTypeID = XSRuntime_RegisterClass( &__XSStringClass );
+    __XSStringClassID = XSRuntime_RegisterClass( &__XSStringClass );
 }
 
 /*!
@@ -73,50 +75,33 @@ void __XSString_Initialize( void )
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSString * __XSString_Alloc( void )
+__XSString * __XSString_Alloc( void )
 {
-    return ( XSString * )XSRuntime_CreateInstance( __XSStringTypeID );
+    return ( __XSString * )XSRuntime_CreateInstance( __XSStringClassID );
 }
 
 /*!
- * @function    __XSString_Dealloc
+ * @function    __XSString_Destruct
  * @abstract    Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSString_Dealloc( void * object )
+void __XSString_Destruct( void * object )
 {
-    XSString * str;
+    __XSString * str;
     
-    str = ( XSString * )object;
+    str = ( __XSString * )object;
     
     XSRelease( str->str );
 }
 
 /*!
- * @function    __XSString_Copy
- * @abstract    Object copy
- * @param       object  A pointer to the object
- * @result      void
- */
-void __XSString_Copy( void * source, void * destination )
-{
-    XSString * str;
-    
-    ( void )source;
-    
-    str = ( XSString * )destination;
-    
-    XSRetain( str->str );
-}
-
-/*!
- * @function    __XSString_Description
+ * @function    __XSString_ToString
  * @abstract    Object description
  * @param       object  A pointer to the object
  * @result      The object's description
  */
-XSStringRef __XSString_Description( void * object )
+XSString __XSString_ToString( void * object )
 {
-    return ( XSStringRef )object;
+    return ( XSString )object;
 }

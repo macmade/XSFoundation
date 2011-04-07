@@ -44,10 +44,10 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @typedef     XSThreadRef
+ * @typedef     XSThread
  * @abstract    Opaque type for the XSThread objects
  */
-typedef struct XSThread * XSThreadRef;
+typedef struct XSThread * XSThread;
 
 /*!
  * @function    XSThread_Detach
@@ -58,7 +58,7 @@ typedef struct XSThread * XSThreadRef;
  * @param       arg     Argument to pass to the thread function
  * @result      The XSThread instance
  */
-XSThreadRef XSThread_Detach( void ( * func )( XSThreadRef thread, void * arg ), void * arg );
+XSThread XSThread_Detach( void ( * func )( XSThread thread, void * arg ), void * arg );
 
 /*!
  * @function    XSThread_GetID
@@ -66,7 +66,7 @@ XSThreadRef XSThread_Detach( void ( * func )( XSThreadRef thread, void * arg ), 
  * @param       thread  The thread object
  * @result      The thread ID
  */
-XSUInteger XSThread_GetID( XSThreadRef thread );
+XSUInteger XSThread_GetID( XSThread thread );
 
 XS_EXTERN_C_END
 

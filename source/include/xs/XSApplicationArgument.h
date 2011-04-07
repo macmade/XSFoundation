@@ -44,10 +44,10 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @typedef     XSApplicationArgumentRef
+ * @typedef     XSApplicationArgument
  * @abstract    Opaque type for the XSApplicationArgument objects
  */
-typedef struct XSApplicationArgument * XSApplicationArgumentRef;
+typedef struct __XSApplicationArgument * XSApplicationArgument;
 
 /*!
  * @typedef     XSApplicationArgumentType
@@ -74,7 +74,7 @@ XSApplicationArgumentType;
  * @param       type    The type of the CLI argument
  * @result      The argument object
  */
-XSApplicationArgumentRef XSApplicationArgument_Create( const char * name, XSApplicationArgumentType type, ... );
+XSApplicationArgument XSApplicationArgument_Create( const char * name, XSApplicationArgumentType type, ... );
 
 /*!
  * @function    XSApplicationArgument_GetName
@@ -82,7 +82,7 @@ XSApplicationArgumentRef XSApplicationArgument_Create( const char * name, XSAppl
  * @param       arg     The argument object
  * @result      The name of the argument object
  */
-const char * XSApplicationArgument_GetName( XSApplicationArgumentRef arg );
+const char * XSApplicationArgument_GetName( XSApplicationArgument arg );
 
 /*!
  * @function    XSApplicationArgument_GetHelp
@@ -90,7 +90,7 @@ const char * XSApplicationArgument_GetName( XSApplicationArgumentRef arg );
  * @param       arg     The argument object
  * @result      The help text of the argument object
  */
-const char * XSApplicationArgument_GetHelp( XSApplicationArgumentRef arg );
+const char * XSApplicationArgument_GetHelp( XSApplicationArgument arg );
 
 /*!
  * @function    XSApplicationArgument_GetType
@@ -98,7 +98,7 @@ const char * XSApplicationArgument_GetHelp( XSApplicationArgumentRef arg );
  * @param       arg     The argument object
  * @result      The type of the argument object
  */
-XSApplicationArgumentType XSApplicationArgument_GetType( XSApplicationArgumentRef arg );
+XSApplicationArgumentType XSApplicationArgument_GetType( XSApplicationArgument arg );
 
 /*!
  * @function    XSApplicationArgument_SetFlag
@@ -106,7 +106,7 @@ XSApplicationArgumentType XSApplicationArgument_GetType( XSApplicationArgumentRe
  * @param       arg     The argument object
  * @result      void
  */
-void XSApplicationArgument_SetFlag( XSApplicationArgumentRef arg );
+void XSApplicationArgument_SetFlag( XSApplicationArgument arg );
 
 /*!
  * @function    XSApplicationArgument_SetIntegerValue
@@ -114,7 +114,7 @@ void XSApplicationArgument_SetFlag( XSApplicationArgumentRef arg );
  * @param       arg     The argument object
  * @result      void
  */
-void XSApplicationArgument_SetIntegerValue( XSApplicationArgumentRef arg, XSInteger value );
+void XSApplicationArgument_SetIntegerValue( XSApplicationArgument arg, XSInteger value );
 
 /*!
  * @function    XSApplicationArgument_SetUnsignedIntegerValue
@@ -122,7 +122,7 @@ void XSApplicationArgument_SetIntegerValue( XSApplicationArgumentRef arg, XSInte
  * @param       arg     The argument object
  * @result      void
  */
-void XSApplicationArgument_SetUnsignedIntegerValue( XSApplicationArgumentRef arg, XSUInteger value );
+void XSApplicationArgument_SetUnsignedIntegerValue( XSApplicationArgument arg, XSUInteger value );
 
 /*!
  * @function    XSApplicationArgument_SetStringValue
@@ -130,7 +130,7 @@ void XSApplicationArgument_SetUnsignedIntegerValue( XSApplicationArgumentRef arg
  * @param       arg     The argument object
  * @result      void
  */
-void XSApplicationArgument_SetStringValue( XSApplicationArgumentRef arg, const char * value );
+void XSApplicationArgument_SetStringValue( XSApplicationArgument arg, const char * value );
 
 /*!
  * @function    XSApplicationArgument_SetFloatValue
@@ -138,7 +138,7 @@ void XSApplicationArgument_SetStringValue( XSApplicationArgumentRef arg, const c
  * @param       arg     The argument object
  * @result      void
  */
-void XSApplicationArgument_SetFloatValue( XSApplicationArgumentRef arg, XSFloat value );
+void XSApplicationArgument_SetFloatValue( XSApplicationArgument arg, XSFloat value );
 
 /*!
  * @function    XSApplicationArgument_GetFlag
@@ -146,7 +146,7 @@ void XSApplicationArgument_SetFloatValue( XSApplicationArgumentRef arg, XSFloat 
  * @param       arg     The argument object
  * @result      A boolean value indicating if the flag is set
  */
-BOOL XSApplicationArgument_GetFlag( XSApplicationArgumentRef arg );
+BOOL XSApplicationArgument_GetFlag( XSApplicationArgument arg );
 
 /*!
  * @function    XSApplicationArgument_GetIntegerValue
@@ -154,7 +154,7 @@ BOOL XSApplicationArgument_GetFlag( XSApplicationArgumentRef arg );
  * @param       arg     The argument object
  * @result      The argument's integer value
  */
-XSInteger XSApplicationArgument_GetIntegerValue( XSApplicationArgumentRef arg );
+XSInteger XSApplicationArgument_GetIntegerValue( XSApplicationArgument arg );
 
 /*!
  * @function    XSApplicationArgument_GetUnsignedIntegerValue
@@ -162,7 +162,7 @@ XSInteger XSApplicationArgument_GetIntegerValue( XSApplicationArgumentRef arg );
  * @param       arg     The argument object
  * @result      The argumen'ts unsigned integer value
  */
-XSUInteger XSApplicationArgument_GetUnsignedIntegerValue( XSApplicationArgumentRef arg );
+XSUInteger XSApplicationArgument_GetUnsignedIntegerValue( XSApplicationArgument arg );
 
 /*!
  * @function    XSApplicationArgument_GetStringValue
@@ -170,7 +170,7 @@ XSUInteger XSApplicationArgument_GetUnsignedIntegerValue( XSApplicationArgumentR
  * @param       arg     The argument object
  * @result      The argument's string value
  */
-const char * XSApplicationArgument_GetStringValue( XSApplicationArgumentRef arg );
+const char * XSApplicationArgument_GetStringValue( XSApplicationArgument arg );
 
 /*!
  * @function    XSApplicationArgument_GetFloatValue
@@ -178,7 +178,7 @@ const char * XSApplicationArgument_GetStringValue( XSApplicationArgumentRef arg 
  * @param       arg     The argument object
  * @result      The argument's float value
  */
-XSFloat XSApplicationArgument_GetFloatValue( XSApplicationArgumentRef arg );
+XSFloat XSApplicationArgument_GetFloatValue( XSApplicationArgument arg );
 
 XS_EXTERN_C_END
 

@@ -46,19 +46,19 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      XSTimer
+ * @typdef      __XSTimer
  * @abastract   XSTimer class
- * @field       _xsbase     Runtime class
+ * @field       __class     Runtime class
  */
-typedef struct _XSTimer
+typedef struct __XSTimer_Struct
 {
-    XSRuntimeBase _xsbase;
-    BOOL          valid;
-    XSUInteger    msecs;
-    void ( * func )( XSTimerRef timer );
+    XSRuntimeClass __class;
+    BOOL           valid;
+    XSUInteger     msecs;
+    void ( * func )( XSTimer timer );
     
 }
-XSTimer;
+__XSTimer;
 
 /*!
  * @function    __XSTimer_Initialize
@@ -72,7 +72,7 @@ void __XSTimer_Initialize( void );
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSTimer * __XSTimer_Alloc( void );
+__XSTimer * __XSTimer_Alloc( void );
 
 /*!
  * @function    __XSTimer_RunOnce
@@ -81,7 +81,7 @@ XSTimer * __XSTimer_Alloc( void );
  * @param       object  The timer object
  * @return      void
  */
-void __XSTimer_RunOnce( XSThreadRef thread, void * object );
+void __XSTimer_RunOnce( XSThread thread, void * object );
 
 /*!
  * @function    __XSTimer_RunAndRepeat
@@ -90,7 +90,7 @@ void __XSTimer_RunOnce( XSThreadRef thread, void * object );
  * @param       object  The timer object
  * @return      void
  */
-void __XSTimer_RunAndRepeat( XSThreadRef thread, void * object );
+void __XSTimer_RunAndRepeat( XSThread thread, void * object );
 
 XS_EXTERN_C_END
 

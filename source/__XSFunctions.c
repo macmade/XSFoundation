@@ -83,9 +83,9 @@ void __XSVLog( const char * fmt, va_list args )
     size_t           length;
     unsigned int     i;
     void           * va_ptr;
-    XSRuntimeBase  * b;
-    XSRuntimeClass * cls;
-    XSStringRef      description;
+    XSRuntimeClass * b;
+    XSClassInfos   * cls;
+    XSString         description;
     
     #ifdef __MACH__
     mach_port_t      mid;
@@ -161,14 +161,14 @@ void __XSVLog( const char * fmt, va_list args )
             }
             else
             {
-                b      = ( XSRuntimeBase * )va_ptr;
-                cls    = b->isa;
+                b      = ( XSRuntimeClass * )va_ptr;
+                cls    = b->classInfos;
                 
                 printf( "<%s: %p>", cls->className, va_ptr );
                 
-                if( cls->description != NULL )
+                if( cls->toString != NULL )
                 {
-                    description = cls->description( va_ptr );
+                    description = cls->toString( va_ptr );
                     printf( " [ %s ]", XSString_CString( va_ptr ) );
                 }
             }

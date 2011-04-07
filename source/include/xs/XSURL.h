@@ -44,12 +44,12 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @typedef     XSURLRef
+ * @typedef     XSURL
  * @abstract    Opaque type for the XSURL objects
  */
-typedef struct XSURL * XSURLRef;
+typedef struct XSURL * XSURL;
 
-XSURLRef XSURL_Create( void );
+XSURL XSURL_Create( void );
 
 XS_EXTERN_C_END
 

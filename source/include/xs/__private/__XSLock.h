@@ -46,17 +46,17 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      XSLock
+ * @typdef      __XSLock
  * @abastract   XSLock class
- * @field       _xsbase     Runtime class
+ * @field       __class     Runtime class
  */
-typedef struct _XSLock
+typedef struct __XSLock_Struct
 {
-    XSRuntimeBase   _xsbase;
+    XSRuntimeClass  __class;
     pthread_mutex_t mutex;
     BOOL            locked;
 }
-XSLock;
+__XSLock;
 
 /*!
  * @function    __XSLock_Initialize
@@ -70,23 +70,23 @@ void __XSLock_Initialize( void );
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSLock * __XSLock_Alloc( void );
+__XSLock * __XSLock_Alloc( void );
 
 /*!
- * @function    __XSLock_Init
+ * @function    __XSLock_Construct
  * @abstract    Constructor
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSLock_Init( void * object );
+void __XSLock_Construct( void * object );
 
 /*!
- * @function    __XSLock_Dealloc
+ * @function    __XSLock_Destruct
  * @abstract    Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSLock_Dealloc( void * object );
+void __XSLock_Destruct( void * object );
 
 XS_EXTERN_C_END
 

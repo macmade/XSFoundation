@@ -46,18 +46,18 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      XSThread
+ * @typdef      __XSThread
  * @abastract   XSThread class
- * @field       _xsbase     Runtime class
+ * @field       __class     Runtime class
  */
-typedef struct _XSThread
+typedef struct __XSThread_Struct
 {
-    XSRuntimeBase _xsbase;
-    void        * arg;
-    XSUInteger    tid;
-    void ( * func )( XSThreadRef thread, void * arg );
+    XSRuntimeClass __class;
+    void         * arg;
+    XSUInteger     tid;
+    void ( * func )( XSThread thread, void * arg );
 }
-XSThread;
+__XSThread;
 
 /*!
  * @function    __XSThread_Initialize
@@ -71,7 +71,7 @@ void __XSThread_Initialize( void );
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSThread * __XSThread_Alloc( void );
+__XSThread * __XSThread_Alloc( void );
 
 /*!
  * @function    __XSThread_Run

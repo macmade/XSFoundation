@@ -50,17 +50,17 @@ XS_EXTERN_C_BEGIN
 #define XSARRAY_DEFAULT_CAPACITY    256
 
 /*!
- * @typedef     XSArrayRef
+ * @typedef     XSArray
  * @abstract    Opaque type for the XSArray objects
  */
-typedef struct XSArray * XSArrayRef;
+typedef struct XSArray * XSArray;
 
 /*!
  * @function    XSArray_Create
  * @abstract    Creates an empty array
  * @result      The array object
  */
-XSArrayRef XSArray_Create( void );
+XSArray XSArray_Create( void );
 
 /*!
  * @function    XSArray_CreateWithCapacity
@@ -68,7 +68,7 @@ XSArrayRef XSArray_Create( void );
  * @param       capacity    The initial array capacity
  * @result      The array object
  */
-XSArrayRef XSArray_CreateWithCapacity( XSUInteger capacity );
+XSArray XSArray_CreateWithCapacity( XSUInteger capacity );
 
 /*!
  * @function    XSArray_CreateWithValues
@@ -78,7 +78,7 @@ XSArrayRef XSArray_CreateWithCapacity( XSUInteger capacity );
  * @param       ...     The values to insert. Must be terminated by a NULL fence
  * @result      The array object
  */
-XSArrayRef XSArray_CreateWithValues( void * value1, ... );
+XSArray XSArray_CreateWithValues( void * value1, ... );
 
 /*!
  * @function    XSArray_Count
@@ -86,7 +86,7 @@ XSArrayRef XSArray_CreateWithValues( void * value1, ... );
  * @param       array   The array object
  * @result      The number of values in the array
  */
-XSUInteger XSArray_Count( XSArrayRef array );
+XSUInteger XSArray_Count( XSArray array );
 
 /*!
  * @function    XSArray_AppendValue
@@ -96,7 +96,7 @@ XSUInteger XSArray_Count( XSArrayRef array );
  * @param       The value to append
  * @result      void
  */
-void XSArray_AppendValue( XSArrayRef array, void * value );
+void XSArray_AppendValue( XSArray array, void * value );
 
 /*!
  * @function    XSArray_InsertValueAtIndex
@@ -107,7 +107,7 @@ void XSArray_AppendValue( XSArrayRef array, void * value );
  * @param       i       The index in the array
  * @result      void
  */
-void XSArray_InsertValueAtIndex( XSArrayRef array, void * value, XSUInteger i );
+void XSArray_InsertValueAtIndex( XSArray array, void * value, XSUInteger i );
 
 /*!
  * @function    XSArray_ReplaceValueAtIndex
@@ -119,7 +119,7 @@ void XSArray_InsertValueAtIndex( XSArrayRef array, void * value, XSUInteger i );
  * @param       i       The index in the array
  * @result      The old value
  */
-void * XSArray_ReplaceValueAtIndex( XSArrayRef array, void * value, XSUInteger i );
+void * XSArray_ReplaceValueAtIndex( XSArray array, void * value, XSUInteger i );
 
 /*!
  * @function    XSArray_ValueAtIndex
@@ -128,7 +128,7 @@ void * XSArray_ReplaceValueAtIndex( XSArrayRef array, void * value, XSUInteger i
  * @param       i       The index in the array
  * @result      The array value
  */
-void * XSArray_ValueAtIndex( XSArrayRef array, XSUInteger i );
+void * XSArray_ValueAtIndex( XSArray array, XSUInteger i );
 
 /*!
  * @function    XSArray_RemoveValueAtIndex
@@ -138,7 +138,7 @@ void * XSArray_ValueAtIndex( XSArrayRef array, XSUInteger i );
  * @param       i       The index in the array
  * @result      The removed value
  */
-void * XSArray_RemoveValueAtIndex( XSArrayRef array, XSUInteger i );
+void * XSArray_RemoveValueAtIndex( XSArray array, XSUInteger i );
 
 /*!
  * @function    XSArray_ContainsValue
@@ -147,7 +147,7 @@ void * XSArray_RemoveValueAtIndex( XSArrayRef array, XSUInteger i );
  * @param       value   The value to search
  * @result      YES if the array contains the value, otherwise NO
  */
-BOOL XSArray_ContainsValue( XSArrayRef array, void * value );
+BOOL XSArray_ContainsValue( XSArray array, void * value );
 
 /*!
  * @function    XSArray_Index
@@ -155,7 +155,7 @@ BOOL XSArray_ContainsValue( XSArrayRef array, void * value );
  * @param       array   The array object
  * @result      The current array index
  */
-XSUInteger XSArray_Index( XSArrayRef array );
+XSUInteger XSArray_Index( XSArray array );
 
 /*!
  * @function    XSArray_Current
@@ -163,7 +163,7 @@ XSUInteger XSArray_Index( XSArrayRef array );
  * @param       array   The array object
  * @result      The current array value
  */
-void * XSArray_Current( XSArrayRef array );
+void * XSArray_Current( XSArray array );
 
 /*!
  * @function    XSArray_Next
@@ -171,7 +171,7 @@ void * XSArray_Current( XSArrayRef array );
  * @param       array   The array object
  * @result      The array value
  */
-void * XSArray_Next( XSArrayRef array );
+void * XSArray_Next( XSArray array );
 
 /*!
  * @function    XSArray_Previous
@@ -179,7 +179,7 @@ void * XSArray_Next( XSArrayRef array );
  * @param       array   The array object
  * @result      The array value
  */
-void * XSArray_Previous( XSArrayRef array );
+void * XSArray_Previous( XSArray array );
 
 /*!
  * @function    XSArray_Rewind
@@ -187,7 +187,7 @@ void * XSArray_Previous( XSArrayRef array );
  * @param       array   The array object
  * @result      void
  */
-void XSArray_Rewind( XSArrayRef array );
+void XSArray_Rewind( XSArray array );
 
 XS_EXTERN_C_END
 

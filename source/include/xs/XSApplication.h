@@ -48,10 +48,10 @@ XS_EXTERN_C_BEGIN
 #include "XSApplicationArgument.h"
 
 /*!
- * @typedef     XSApplicationRef
+ * @typedef     XSApplication
  * @abstract    Opaque type for the XSApplication objects
  */
-typedef struct XSApplication * XSApplicationRef;
+typedef struct __XSApplication * XSApplication;
 
 /*!
  * @function    XSApplication_Exit
@@ -64,7 +64,7 @@ typedef struct XSApplication * XSApplicationRef;
  * @param       argv    The CLI arguments array
  * @result      The application object
  */
-XSApplicationRef XSApplication_Start( int argc, const char ** argv );
+XSApplication XSApplication_Start( int argc, const char ** argv );
 
 /*!
  * @function    XSApplication_Exit
@@ -81,7 +81,7 @@ void XSApplication_Exit( void );
  * @abstract    Gets the application object
  * @result      The application object
  */
-XSApplicationRef XSApplication_SharedApplication( void );
+XSApplication XSApplication_SharedApplication( void );
 
 /*!
  * @function    XSApplication_PrintHelp
@@ -89,7 +89,7 @@ XSApplicationRef XSApplication_SharedApplication( void );
  * @param       app     The application object
  * @result      void
  */
-void XSApplication_PrintHelp( XSApplicationRef app, const char * description );
+void XSApplication_PrintHelp( XSApplication app, const char * description );
 
 /*!
  * @function    XSApplication_RegisterArgument
@@ -97,7 +97,7 @@ void XSApplication_PrintHelp( XSApplicationRef app, const char * description );
  * @param       app     The application object
  * @result      
  */
-void XSApplication_RegisterArgument( XSApplicationRef app, const char * name, XSApplicationArgumentType type, ... );
+void XSApplication_RegisterArgument( XSApplication app, const char * name, XSApplicationArgumentType type, ... );
 
 /*!
  * @function    XSApplication_GetArgument
@@ -105,7 +105,7 @@ void XSApplication_RegisterArgument( XSApplicationRef app, const char * name, XS
  * @param       app     The application object
  * @result      
  */
-XSApplicationArgumentRef XSApplication_GetArgument( XSApplicationRef app, const char * name );
+XSApplicationArgument XSApplication_GetArgument( XSApplication app, const char * name );
 
 /*!
  * @function    XSApplication_HasArgument
@@ -113,7 +113,7 @@ XSApplicationArgumentRef XSApplication_GetArgument( XSApplicationRef app, const 
  * @param       app     The application object
  * @result      
  */
-BOOL XSApplication_HasArgument( XSApplicationRef app, const char * name );
+BOOL XSApplication_HasArgument( XSApplication app, const char * name );
 
 /*!
  * @function    XSApplication_GetFlag
@@ -121,7 +121,7 @@ BOOL XSApplication_HasArgument( XSApplicationRef app, const char * name );
  * @param       app     The application object
  * @result      
  */
-BOOL XSApplication_GetFlag( XSApplicationRef app, const char * name );
+BOOL XSApplication_GetFlag( XSApplication app, const char * name );
 
 /*!
  * @function    XSApplication_GetInteger
@@ -129,7 +129,7 @@ BOOL XSApplication_GetFlag( XSApplicationRef app, const char * name );
  * @param       app     The application object
  * @result      
  */
-XSInteger XSApplication_GetInteger( XSApplicationRef app, const char * name );
+XSInteger XSApplication_GetInteger( XSApplication app, const char * name );
 
 /*!
  * @function    XSApplication_GetUnsignedInteger
@@ -137,7 +137,7 @@ XSInteger XSApplication_GetInteger( XSApplicationRef app, const char * name );
  * @param       app     The application object
  * @result      
  */
-XSUInteger XSApplication_GetUnsignedInteger( XSApplicationRef app, const char * name );
+XSUInteger XSApplication_GetUnsignedInteger( XSApplication app, const char * name );
 
 /*!
  * @function    XSApplication_GetString
@@ -145,7 +145,7 @@ XSUInteger XSApplication_GetUnsignedInteger( XSApplicationRef app, const char * 
  * @param       app     The application object
  * @result      
  */
-XSStringRef XSApplication_GetString( XSApplicationRef app, const char * name );
+XSString XSApplication_GetString( XSApplication app, const char * name );
 
 /*!
  * @function    XSApplication_GetFloat
@@ -153,7 +153,7 @@ XSStringRef XSApplication_GetString( XSApplicationRef app, const char * name );
  * @param       app     The application object
  * @result      
  */
-XSFloat XSApplication_GetFloat( XSApplicationRef app, const char * name );
+XSFloat XSApplication_GetFloat( XSApplication app, const char * name );
 
 /*!
  * @function    XSApplication_GetUnnamedArguments
@@ -161,7 +161,7 @@ XSFloat XSApplication_GetFloat( XSApplicationRef app, const char * name );
  * @param       app     The application object
  * @result      
  */
-XSArrayRef XSApplication_GetUnnamedArguments( XSApplicationRef app );
+XSArray XSApplication_GetUnnamedArguments( XSApplication app );
 
 XS_EXTERN_C_END
 

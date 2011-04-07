@@ -45,15 +45,15 @@
  * @param       milleseconds    The timer interval, in milliseconds
  * @result      The timer object
  */
-XSTimerRef XSTimer_Create( void ( * func )( XSTimerRef timer ), XSUInteger milliseconds )
+XSTimer XSTimer_Create( void ( * func )( XSTimer timer ), XSUInteger milliseconds )
 {
-    XSTimer * t;
+    __XSTimer * t;
     
      t        = __XSTimer_Alloc();
      t->msecs = milliseconds;
      t->func  = func;
      
-     return  ( XSTimerRef )t;
+     return  ( XSTimer )t;
 }
 
 /*!
@@ -62,7 +62,7 @@ XSTimerRef XSTimer_Create( void ( * func )( XSTimerRef timer ), XSUInteger milli
  * @param       timer   The timer object
  * @result      void
  */
-void XSTimer_RunOnce( XSTimerRef timer )
+void XSTimer_RunOnce( XSTimer timer )
 {
     XSThread_Detach( __XSTimer_RunOnce, ( void * )timer );
 }
@@ -73,9 +73,9 @@ void XSTimer_RunOnce( XSTimerRef timer )
  * @param       timer   The timer object
  * @result      void
  */
-void XSTimer_RunAndRepeat( XSTimerRef timer )
+void XSTimer_RunAndRepeat( XSTimer timer )
 {
-    ( ( XSTimer * )timer )->valid = YES;
+    ( ( __XSTimer * )timer )->valid = YES;
     
     XSThread_Detach( __XSTimer_RunAndRepeat, ( void * )timer );
 }
@@ -86,7 +86,7 @@ void XSTimer_RunAndRepeat( XSTimerRef timer )
  * @param       timer   The timer object
  * @result      void
  */
-void XSTimer_Invalidate( XSTimerRef timer )
+void XSTimer_Invalidate( XSTimer timer )
 {
-    ( ( XSTimer * )timer )->valid = NO;
+    ( ( __XSTimer * )timer )->valid = NO;
 }

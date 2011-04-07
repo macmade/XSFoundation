@@ -46,21 +46,21 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      XSError
+ * @typdef      __XSError
  * @abastract   XSError class
- * @field       _xsbase     Runtime class
+ * @field       __class     Runtime class
  * @field       code        The error code
  * @field       domain      The error domain
  * @field       reason      The error message
  */
-typedef struct _XSError
+typedef struct __XSError_Struct
 {
-    XSRuntimeBase _xsbase;
-    XSInteger     code;
-    XSStringRef   domain;
-    XSStringRef   reason;
+    XSRuntimeClass __class;
+    XSInteger      code;
+    XSString      domain;
+    XSString      reason;
 }
-XSError;
+__XSError;
 
 /*!
  * @function    __XSError_Initialize
@@ -74,15 +74,15 @@ void __XSError_Initialize( void );
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSError * __XSError_Alloc( void );
+__XSError * __XSError_Alloc( void );
 
 /*!
- * @function    __XSError_Dealloc
+ * @function    __XSError_Destruct
  * @abstract    Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSError_Dealloc( void * object );
+void __XSError_Destruct( void * object );
 
 XS_EXTERN_C_END
 

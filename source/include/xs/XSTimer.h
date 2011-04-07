@@ -44,10 +44,10 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @typedef     XSTimerRef
+ * @typedef     XSTimer
  * @abstract    Opaque type for the XSTree objects
  */
-typedef struct XSTimer * XSTimerRef;
+typedef struct XSTimer * XSTimer;
 
 /*!
  * @function    XSTimer_Create
@@ -56,7 +56,7 @@ typedef struct XSTimer * XSTimerRef;
  * @param       milleseconds    The timer interval, in milliseconds
  * @result      The timer object
  */
-XSTimerRef XSTimer_Create( void ( * func )( XSTimerRef timer ), XSUInteger milliseconds );
+XSTimer XSTimer_Create( void ( * func )( XSTimer timer ), XSUInteger milliseconds );
 
 /*!
  * @function    XSTimer_RunOnce
@@ -64,7 +64,7 @@ XSTimerRef XSTimer_Create( void ( * func )( XSTimerRef timer ), XSUInteger milli
  * @param       timer   The timer object
  * @result      void
  */
-void XSTimer_RunOnce( XSTimerRef timer );
+void XSTimer_RunOnce( XSTimer timer );
 
 /*!
  * @function    XSTimer_RunAndRepeat
@@ -72,7 +72,7 @@ void XSTimer_RunOnce( XSTimerRef timer );
  * @param       timer   The timer object
  * @result      void
  */
-void XSTimer_RunAndRepeat( XSTimerRef timer );
+void XSTimer_RunAndRepeat( XSTimer timer );
 
 /*!
  * @function    XSTimer_Invalidate
@@ -80,7 +80,7 @@ void XSTimer_RunAndRepeat( XSTimerRef timer );
  * @param       timer   The timer object
  * @result      void
  */
-void XSTimer_Invalidate( XSTimerRef timer );
+void XSTimer_Invalidate( XSTimer timer );
 
 XS_EXTERN_C_END
 

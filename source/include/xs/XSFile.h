@@ -46,14 +46,14 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typedef     XSFileRef
+ * @typedef     XSFile
  * @abstract    Opaque type for the XSFile objects
  */
-typedef struct XSFile * XSFileRef;
+typedef struct XSFile * XSFile;
 
 /*!
  * @typedef     XSFileOpenMode
- * @abstract    Open modes for XSFileRef
+ * @abstract    Open modes for XSFile
  * @description A specific mode can be ORed with XSFileOpenModeText
  *              XSFileOpenModeBinary to specify if working with text or binary
  *              files
@@ -98,31 +98,31 @@ XSFileSeekPosition;
 
 /*!
  * @var         XSStdin
- * @abstract    XSFileRef object representing stdin
+ * @abstract    XSFile object representing stdin
  */
-extern XSFileRef XSStdin;
+extern XSFile XSStdin;
 
 /*!
  * @var         XSStdout
- * @abstract    XSFileRef object representing stdout
+ * @abstract    XSFile object representing stdout
  */
-extern XSFileRef XSStdout;
+extern XSFile XSStdout;
 
 /*!
  * @var         XSStderr
- * @abstract    XSFileRef object representing stderr
+ * @abstract    XSFile object representing stderr
  */
-extern XSFileRef XSStderr;
+extern XSFile XSStderr;
 
 /*!
- * @abstract    Creates an XSFileRef instance and opens the represented file.
+ * @abstract    Creates an XSFile instance and opens the represented file.
  * @description This function may return NULL if the represented file has not
  *              been opened.
  * @param       filename    The name of the file
  * @param       openMode    The file open mode (see XSFileOpenMode)
- * @result      The instance of XSFileRef
+ * @result      The instance of XSFile
  */
-XSFileRef XSFile_Open( const char * filename, XSFileOpenMode openMode );
+XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode );
 
 /*!
  * @function    
@@ -130,7 +130,7 @@ XSFileRef XSFile_Open( const char * filename, XSFileOpenMode openMode );
  * @param       file    The file object
  * @result      Zero on success or EOF on error
  */
-XSInteger XSFile_Flush( XSFileRef file );
+XSInteger XSFile_Flush( XSFile file );
 
 /*!
  * @function    XSFile_Close
@@ -140,7 +140,7 @@ XSInteger XSFile_Flush( XSFileRef file );
  * @param       file    The file object
  * @result      EOF on error, zero otherwise.
  */
-XSInteger XSFile_Close( XSFileRef file );
+XSInteger XSFile_Close( XSFile file );
 
 /*!
  * @function    XSFile_Printf
@@ -148,7 +148,7 @@ XSInteger XSFile_Close( XSFileRef file );
  * @param       file    The file object
  * @result      The number of characters written, or negative value on error
  */
-XSInteger XSFile_Printf( XSFileRef file, const char * format, ... );
+XSInteger XSFile_Printf( XSFile file, const char * format, ... );
 
 /*!
  * @function    XSFile_VPrintf
@@ -157,7 +157,7 @@ XSInteger XSFile_Printf( XSFileRef file, const char * format, ... );
  * @param       arg     The variable arguments list
  * @result      The number of characters written, or negative value on error
  */
-XSInteger XSFile_VPrintf( XSFileRef file, const char * format, va_list arg );
+XSInteger XSFile_VPrintf( XSFile file, const char * format, va_list arg );
 
 /*!
  * @function    XSFile_Getc
@@ -165,7 +165,7 @@ XSInteger XSFile_VPrintf( XSFileRef file, const char * format, va_list arg );
  * @param       file    The file object
  * @result      The character or EOF on error
  */
-XSInteger XSFile_Getc( XSFileRef file );
+XSInteger XSFile_Getc( XSFile file );
 
 /*!
  * @function    XSFile_Putc
@@ -174,7 +174,7 @@ XSInteger XSFile_Getc( XSFileRef file );
  * @param       c       The character to write
  * @result      The character or EOF on error
  */
-XSInteger XSFile_Putc( XSFileRef file, XSInteger c );
+XSInteger XSFile_Putc( XSFile file, XSInteger c );
 
 /*!
  * @function    XSFile_Puts
@@ -182,7 +182,7 @@ XSInteger XSFile_Putc( XSFileRef file, XSInteger c );
  * @param       file    The file object
  * @result      Non-negative on success or EOF on error.
  */
-XSInteger XSFile_Puts( XSFileRef file, const char * s );
+XSInteger XSFile_Puts( XSFile file, const char * s );
 
 /*!
  * @function    XSFile_Read
@@ -193,7 +193,7 @@ XSInteger XSFile_Puts( XSFileRef file, const char * s );
  * @param       file    The number of objects to read
  * @result      The number of objects read
  */
-size_t XSFile_Read( XSFileRef file, void * ptr, size_t size, size_t nobj );
+size_t XSFile_Read( XSFile file, void * ptr, size_t size, size_t nobj );
 
 /*!
  * @function    XSFile_Write
@@ -204,7 +204,7 @@ size_t XSFile_Read( XSFileRef file, void * ptr, size_t size, size_t nobj );
  * @param       file    The number of objects to write
  * @result      The number of objects written
  */
-size_t XSFile_Write( XSFileRef file, const void * ptr, size_t size, size_t nobj );
+size_t XSFile_Write( XSFile file, const void * ptr, size_t size, size_t nobj );
 
 /*!
  * @function    XSFile_Seek
@@ -218,7 +218,7 @@ size_t XSFile_Write( XSFileRef file, const void * ptr, size_t size, size_t nobj 
  * @param       origin  The seek origin (see XSFileSeekPosition)
  * @result      Non-zero on error.
  */
-XSInteger XSFile_Seek( XSFileRef file, XSInteger offset, XSFileSeekPosition origin );
+XSInteger XSFile_Seek( XSFile file, XSInteger offset, XSFileSeekPosition origin );
 
 /*!
  * @function    XSFile_Tell
@@ -226,14 +226,14 @@ XSInteger XSFile_Seek( XSFileRef file, XSInteger offset, XSFileSeekPosition orig
  * @param       file    The file object
  * @result      The position or -1 on error
  */
-XSInteger XSFile_Tell( XSFileRef file );
+XSInteger XSFile_Tell( XSFile file );
 
 /*!
  * @function    XSFile_Rewind
  * @abstract    Rewinds to the beginning of the file and clears the error indicators
  * return       void
  */
-void XSFile_Rewind( XSFileRef file );
+void XSFile_Rewind( XSFile file );
 
 /*!
  * @function    XSFile_GetPos
@@ -242,7 +242,7 @@ void XSFile_Rewind( XSFileRef file );
  * @param       ptr     A pointer where tos store the file position
  * @result      Non-zero on error
  */
-XSInteger XSFile_GetPos( XSFileRef file, fpos_t * ptr );
+XSInteger XSFile_GetPos( XSFile file, fpos_t * ptr );
 
 /*!
  * @function    XSFile_SetPos
@@ -251,7 +251,7 @@ XSInteger XSFile_GetPos( XSFileRef file, fpos_t * ptr );
  * @param       ptr     The file position
  * @result      Non-zero on error
  */
-XSInteger XSFile_SetPos( XSFileRef file, const fpos_t * ptr );
+XSInteger XSFile_SetPos( XSFile file, const fpos_t * ptr );
 
 /*!
  * @function    XSFile_ClearErr
@@ -259,7 +259,7 @@ XSInteger XSFile_SetPos( XSFileRef file, const fpos_t * ptr );
  * @param       file    The file object
  * @result      void
  */
-void XSFile_ClearErr( XSFileRef file );
+void XSFile_ClearErr( XSFile file );
 
 /*!
  * @function    XSFile_EndOfFile
@@ -267,7 +267,7 @@ void XSFile_ClearErr( XSFileRef file );
  * @param       file    The file object
  * @result      Non-zero if end-of-file indicator is set
  */
-XSInteger XSFile_EndOfFile( XSFileRef file );
+XSInteger XSFile_EndOfFile( XSFile file );
 
 /*!
  * @function    XSFile_Error
@@ -275,7 +275,7 @@ XSInteger XSFile_EndOfFile( XSFileRef file );
  * @param       file    The file object
  * @result      Non-zero if error indicator is set
  */
-XSInteger XSFile_Error( XSFileRef file );
+XSInteger XSFile_Error( XSFile file );
 
 /*!
  * @function    XSFile_Filename
@@ -283,7 +283,7 @@ XSInteger XSFile_Error( XSFileRef file );
  * @param       file    The file object
  * @result      The name of the file
  */
-const char * XSFile_Filename( XSFileRef file );
+const char * XSFile_Filename( XSFile file );
 
 /*!
  * @function    XSFile_OpenMode
@@ -291,7 +291,7 @@ const char * XSFile_Filename( XSFileRef file );
  * @param       file    The file object
  * @result      The file's open mode
  */
-const char * XSFile_OpenMode( XSFileRef file );
+const char * XSFile_OpenMode( XSFile file );
 
 /*!
  * @function    XSFile_IsReadable
@@ -299,7 +299,7 @@ const char * XSFile_OpenMode( XSFileRef file );
  * @param       file    The file object
  * @result      true if the file is readable, otherwise false
  */
-BOOL XSFile_IsReadable( XSFileRef file );
+BOOL XSFile_IsReadable( XSFile file );
 
 /*!
  * @function    XSFile_IsWriteable
@@ -307,7 +307,7 @@ BOOL XSFile_IsReadable( XSFileRef file );
  * @param       file    The file object
  * @result      true if the file is writeable, otherwise false
  */
-BOOL XSFile_IsWriteable( XSFileRef file );
+BOOL XSFile_IsWriteable( XSFile file );
 
 /*!
  * @function    XSFile_Copy
@@ -315,7 +315,7 @@ BOOL XSFile_IsWriteable( XSFileRef file );
  * @param       file    The file object
  * @result      True if the file was copeid, otherwise false
  */
-BOOL XSFile_Copy( XSFileRef file, char * new_name );
+BOOL XSFile_Copy( XSFile file, char * new_name );
 
 /*!
  * @function    XSFile_GetBit
@@ -323,7 +323,7 @@ BOOL XSFile_Copy( XSFileRef file, char * new_name );
  * @param       file    The file object
  * @result      
  */
-XSInteger XSFile_GetBit( XSFileRef file );
+XSInteger XSFile_GetBit( XSFile file );
 
 /*!
  * @function    XSFile_PutBit
@@ -331,7 +331,7 @@ XSInteger XSFile_GetBit( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-XSInteger XSFile_PutBit( XSFileRef file, uint8_t bit );
+XSInteger XSFile_PutBit( XSFile file, uint8_t bit );
 
 /*!
  * @function    XSFile_GetBits
@@ -339,7 +339,7 @@ XSInteger XSFile_PutBit( XSFileRef file, uint8_t bit );
  * @param       file    The file object
  * @result      
  */
-XSInteger XSFile_GetBits( XSFileRef file, XSUInteger count );
+XSInteger XSFile_GetBits( XSFile file, XSUInteger count );
 
 /*!
  * @function    XSFile_PutBits
@@ -347,7 +347,7 @@ XSInteger XSFile_GetBits( XSFileRef file, XSUInteger count );
  * @param       file    The file object
  * @result      
  */
-XSInteger XSFile_PutBits( XSFileRef file, uint64_t bits, XSUInteger count );
+XSInteger XSFile_PutBits( XSFile file, uint64_t bits, XSUInteger count );
 
 /*!
  * @function    XSFile_DeviceID
@@ -355,7 +355,7 @@ XSInteger XSFile_PutBits( XSFileRef file, uint64_t bits, XSUInteger count );
  * @param       file    The file object
  * @result      
  */
-dev_t XSFile_DeviceID( XSFileRef file );
+dev_t XSFile_DeviceID( XSFile file );
 
 /*!
  * @function    XSFile_SerialNumber
@@ -363,7 +363,7 @@ dev_t XSFile_DeviceID( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-ino_t XSFile_SerialNumber( XSFileRef file );
+ino_t XSFile_SerialNumber( XSFile file );
 
 /*!
  * @function    XSFile_NumberOfLinks
@@ -371,7 +371,7 @@ ino_t XSFile_SerialNumber( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-nlink_t XSFile_NumberOfLinks( XSFileRef file );
+nlink_t XSFile_NumberOfLinks( XSFile file );
 
 /*!
  * @function    XSFile_UID
@@ -379,7 +379,7 @@ nlink_t XSFile_NumberOfLinks( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-uid_t XSFile_UID( XSFileRef file );
+uid_t XSFile_UID( XSFile file );
 
 /*!
  * @function    XSFile_GID
@@ -387,7 +387,7 @@ uid_t XSFile_UID( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-gid_t XSFile_GID( XSFileRef file );
+gid_t XSFile_GID( XSFile file );
 
 /*!
  * @function    XSFile_Size
@@ -395,7 +395,7 @@ gid_t XSFile_GID( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-size_t XSFile_Size( XSFileRef file );
+size_t XSFile_Size( XSFile file );
 
 /*!
  * @function    XSFile_HumanReadableSize
@@ -403,7 +403,7 @@ size_t XSFile_Size( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-XSFloat XSFile_HumanReadableSize( XSFileRef file, char unit[] );
+XSFloat XSFile_HumanReadableSize( XSFile file, char unit[] );
 
 /*!
  * @function    XSFile_AccessTime
@@ -411,7 +411,7 @@ XSFloat XSFile_HumanReadableSize( XSFileRef file, char unit[] );
  * @param       file    The file object
  * @result      
  */
-time_t XSFile_AccessTime( XSFileRef file );
+time_t XSFile_AccessTime( XSFile file );
 
 /*!
  * @function    XSFile_ModifictaionTime
@@ -419,7 +419,7 @@ time_t XSFile_AccessTime( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-time_t XSFile_ModifictaionTime( XSFileRef file );
+time_t XSFile_ModifictaionTime( XSFile file );
 
 /*!
  * @function    XSFile_CreationTime
@@ -427,7 +427,7 @@ time_t XSFile_ModifictaionTime( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-time_t XSFile_CreationTime( XSFileRef file );
+time_t XSFile_CreationTime( XSFile file );
 
 /*!
  * @function    XSFile_IsBlockDevice
@@ -435,7 +435,7 @@ time_t XSFile_CreationTime( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-BOOL XSFile_IsBlockDevice( XSFileRef file );
+BOOL XSFile_IsBlockDevice( XSFile file );
 
 /*!
  * @function    XSFile_IsCharacterDevice
@@ -443,7 +443,7 @@ BOOL XSFile_IsBlockDevice( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-BOOL XSFile_IsCharacterDevice( XSFileRef file );
+BOOL XSFile_IsCharacterDevice( XSFile file );
 
 /*!
  * @function    XSFile_IsFIFO
@@ -451,7 +451,7 @@ BOOL XSFile_IsCharacterDevice( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-BOOL XSFile_IsFIFO( XSFileRef file );
+BOOL XSFile_IsFIFO( XSFile file );
 
 /*!
  * @function    XSFile_IsRegularFile
@@ -459,7 +459,7 @@ BOOL XSFile_IsFIFO( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-BOOL XSFile_IsRegularFile( XSFileRef file );
+BOOL XSFile_IsRegularFile( XSFile file );
 
 /*!
  * @function    XSFile_IsDirectory
@@ -467,7 +467,7 @@ BOOL XSFile_IsRegularFile( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-BOOL XSFile_IsDirectory( XSFileRef file );
+BOOL XSFile_IsDirectory( XSFile file );
 
 /*!
  * @function    XSFile_IsLink
@@ -475,7 +475,7 @@ BOOL XSFile_IsDirectory( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-BOOL XSFile_IsLink( XSFileRef file );
+BOOL XSFile_IsLink( XSFile file );
 
 /*!
  * @function    XSFile_IsSocket
@@ -483,7 +483,7 @@ BOOL XSFile_IsLink( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-BOOL XSFile_IsSocket( XSFileRef file );
+BOOL XSFile_IsSocket( XSFile file );
 
 /*!
  * @function    XSFile_IsUserReadable
@@ -491,7 +491,7 @@ BOOL XSFile_IsSocket( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-BOOL XSFile_IsUserReadable( XSFileRef file );
+BOOL XSFile_IsUserReadable( XSFile file );
 
 /*!
  * @function    XSFile_IsUserWriteable
@@ -499,7 +499,7 @@ BOOL XSFile_IsUserReadable( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-BOOL XSFile_IsUserWriteable( XSFileRef file );
+BOOL XSFile_IsUserWriteable( XSFile file );
 
 /*!
  * @function    XSFile_ISUserExecutable
@@ -507,7 +507,7 @@ BOOL XSFile_IsUserWriteable( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-BOOL XSFile_ISUserExecutable( XSFileRef file );
+BOOL XSFile_ISUserExecutable( XSFile file );
 
 /*!
  * @function    XSFile_IsGroupReadable
@@ -515,7 +515,7 @@ BOOL XSFile_ISUserExecutable( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-BOOL XSFile_IsGroupReadable( XSFileRef file );
+BOOL XSFile_IsGroupReadable( XSFile file );
 
 /*!
  * @function    XSFile_IsGroupWriteable
@@ -523,7 +523,7 @@ BOOL XSFile_IsGroupReadable( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-BOOL XSFile_IsGroupWriteable( XSFileRef file );
+BOOL XSFile_IsGroupWriteable( XSFile file );
 
 /*!
  * @function    XSFile_IsGroupExecutable
@@ -531,7 +531,7 @@ BOOL XSFile_IsGroupWriteable( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-BOOL XSFile_IsGroupExecutable( XSFileRef file );
+BOOL XSFile_IsGroupExecutable( XSFile file );
 
 /*!
  * @function    XSFile_IsWorldReadable
@@ -539,7 +539,7 @@ BOOL XSFile_IsGroupExecutable( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-BOOL XSFile_IsWorldReadable( XSFileRef file );
+BOOL XSFile_IsWorldReadable( XSFile file );
 
 /*!
  * @function    XSFile_IsWorldWriteable
@@ -547,7 +547,7 @@ BOOL XSFile_IsWorldReadable( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-BOOL XSFile_IsWorldWriteable( XSFileRef file );
+BOOL XSFile_IsWorldWriteable( XSFile file );
 
 /*!
  * @function    XSFile_IsWorldExecutable
@@ -555,7 +555,7 @@ BOOL XSFile_IsWorldWriteable( XSFileRef file );
  * @param       file    The file object
  * @result      
  */
-BOOL XSFile_IsWorldExecutable( XSFileRef file );
+BOOL XSFile_IsWorldExecutable( XSFile file );
 
 /*!
  * @function    XSFile_HasSUID
@@ -563,7 +563,7 @@ BOOL XSFile_IsWorldExecutable( XSFileRef file );
  * @param       file    The file object
  * @result      True if the SUID bit is set, otherwise false
  */
-BOOL XSFile_HasSUID( XSFileRef file );
+BOOL XSFile_HasSUID( XSFile file );
 
 /*!
  * @function    XSFile_HasSGID
@@ -571,7 +571,7 @@ BOOL XSFile_HasSUID( XSFileRef file );
  * @param       file    The file object
  * @result      True if the SGID bit is set, otherwise false
  */
-BOOL XSFile_HasSGID( XSFileRef file );
+BOOL XSFile_HasSGID( XSFile file );
 
 XS_EXTERN_C_END
 

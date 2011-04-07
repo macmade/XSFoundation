@@ -45,11 +45,11 @@
  * @param       type    The type of the CLI argument
  * @result      The argument object
  */
-XSApplicationArgumentRef XSApplicationArgument_Create( const char * name, XSApplicationArgumentType type, ... )
+XSApplicationArgument XSApplicationArgument_Create( const char * name, XSApplicationArgumentType type, ... )
 {
-    va_list                 args;
-    const char            * help;
-    XSApplicationArgument * arg;
+    va_list                   args;
+    const char              * help;
+    __XSApplicationArgument * arg;
     
     va_start( args, type );
     
@@ -71,7 +71,7 @@ XSApplicationArgumentRef XSApplicationArgument_Create( const char * name, XSAppl
         arg->help = help;
     }
     
-    return ( XSApplicationArgumentRef )arg;
+    return ( XSApplicationArgument )arg;
 }
 
 /*!
@@ -80,9 +80,9 @@ XSApplicationArgumentRef XSApplicationArgument_Create( const char * name, XSAppl
  * @param       arg     The argument object
  * @result      The name of the argument object
  */
-const char * XSApplicationArgument_GetName( XSApplicationArgumentRef arg )
+const char * XSApplicationArgument_GetName( XSApplicationArgument arg )
 {
-    return ( ( XSApplicationArgument * )arg )->name;
+    return ( ( __XSApplicationArgument * )arg )->name;
 }
 
 /*!
@@ -91,9 +91,9 @@ const char * XSApplicationArgument_GetName( XSApplicationArgumentRef arg )
  * @param       arg     The argument object
  * @result      The help text of the argument object
  */
-const char * XSApplicationArgument_GetHelp( XSApplicationArgumentRef arg )
+const char * XSApplicationArgument_GetHelp( XSApplicationArgument arg )
 {
-    return ( ( XSApplicationArgument * )arg )->help;
+    return ( ( __XSApplicationArgument * )arg )->help;
 }
 
 /*!
@@ -102,9 +102,9 @@ const char * XSApplicationArgument_GetHelp( XSApplicationArgumentRef arg )
  * @param       arg     The argument object
  * @result      The type of the argument object
  */
-XSApplicationArgumentType XSApplicationArgument_GetType( XSApplicationArgumentRef arg )
+XSApplicationArgumentType XSApplicationArgument_GetType( XSApplicationArgument arg )
 {
-    return ( ( XSApplicationArgument * )arg )->type;
+    return ( ( __XSApplicationArgument * )arg )->type;
 }
 
 /*!
@@ -113,11 +113,11 @@ XSApplicationArgumentType XSApplicationArgument_GetType( XSApplicationArgumentRe
  * @param       arg     The argument object
  * @result      void
  */
-void XSApplicationArgument_SetFlag( XSApplicationArgumentRef arg )
+void XSApplicationArgument_SetFlag( XSApplicationArgument arg )
 {
-    XSApplicationArgument * _arg;
+    __XSApplicationArgument * _arg;
     
-    _arg           = ( XSApplicationArgument * )arg;
+    _arg           = ( __XSApplicationArgument * )arg;
     _arg->flag_val = YES;
 }
 
@@ -127,11 +127,11 @@ void XSApplicationArgument_SetFlag( XSApplicationArgumentRef arg )
  * @param       arg     The argument object
  * @result      void
  */
-void XSApplicationArgument_SetIntegerValue( XSApplicationArgumentRef arg, XSInteger value )
+void XSApplicationArgument_SetIntegerValue( XSApplicationArgument arg, XSInteger value )
 {
-    XSApplicationArgument * _arg;
+    __XSApplicationArgument * _arg;
     
-    _arg          = ( XSApplicationArgument * )arg;
+    _arg          = ( __XSApplicationArgument * )arg;
     _arg->int_val = value;
 }
 
@@ -141,11 +141,11 @@ void XSApplicationArgument_SetIntegerValue( XSApplicationArgumentRef arg, XSInte
  * @param       arg     The argument object
  * @result      void
  */
-void XSApplicationArgument_SetUnsignedIntegerValue( XSApplicationArgumentRef arg, XSUInteger value )
+void XSApplicationArgument_SetUnsignedIntegerValue( XSApplicationArgument arg, XSUInteger value )
 {
-    XSApplicationArgument * _arg;
+    __XSApplicationArgument * _arg;
     
-    _arg           = ( XSApplicationArgument * )arg;
+    _arg           = ( __XSApplicationArgument * )arg;
     _arg->uint_val = value;
 }
 
@@ -155,11 +155,11 @@ void XSApplicationArgument_SetUnsignedIntegerValue( XSApplicationArgumentRef arg
  * @param       arg     The argument object
  * @result      void
  */
-void XSApplicationArgument_SetStringValue( XSApplicationArgumentRef arg, const char * value )
+void XSApplicationArgument_SetStringValue( XSApplicationArgument arg, const char * value )
 {
-    XSApplicationArgument * _arg;
+    __XSApplicationArgument * _arg;
     
-    _arg          = ( XSApplicationArgument * )arg;
+    _arg          = ( __XSApplicationArgument * )arg;
     _arg->str_val = value;
 }
 
@@ -169,11 +169,11 @@ void XSApplicationArgument_SetStringValue( XSApplicationArgumentRef arg, const c
  * @param       arg     The argument object
  * @result      void
  */
-void XSApplicationArgument_SetFloatValue( XSApplicationArgumentRef arg, XSFloat value )
+void XSApplicationArgument_SetFloatValue( XSApplicationArgument arg, XSFloat value )
 {
-    XSApplicationArgument * _arg;
+    __XSApplicationArgument * _arg;
     
-    _arg            = ( XSApplicationArgument * )arg;
+    _arg            = ( __XSApplicationArgument * )arg;
     _arg->float_val = value;
 }
 
@@ -183,11 +183,11 @@ void XSApplicationArgument_SetFloatValue( XSApplicationArgumentRef arg, XSFloat 
  * @param       arg     The argument object
  * @result      A boolean value indicating if the flag is set
  */
-BOOL XSApplicationArgument_GetFlag( XSApplicationArgumentRef arg )
+BOOL XSApplicationArgument_GetFlag( XSApplicationArgument arg )
 {
-    XSApplicationArgument * _arg;
+    __XSApplicationArgument * _arg;
     
-    _arg = ( XSApplicationArgument * )arg;
+    _arg = ( __XSApplicationArgument * )arg;
     
     return _arg->flag_val;
 }
@@ -198,11 +198,11 @@ BOOL XSApplicationArgument_GetFlag( XSApplicationArgumentRef arg )
  * @param       arg     The argument object
  * @result      The argument's integer value
  */
-XSInteger XSApplicationArgument_GetIntegerValue( XSApplicationArgumentRef arg )
+XSInteger XSApplicationArgument_GetIntegerValue( XSApplicationArgument arg )
 {
-    XSApplicationArgument * _arg;
+    __XSApplicationArgument * _arg;
     
-    _arg = ( XSApplicationArgument * )arg;
+    _arg = ( __XSApplicationArgument * )arg;
     
     return _arg->int_val;
 }
@@ -213,11 +213,11 @@ XSInteger XSApplicationArgument_GetIntegerValue( XSApplicationArgumentRef arg )
  * @param       arg     The argument object
  * @result      The argumen'ts unsigned integer value
  */
-XSUInteger XSApplicationArgument_GetUnsignedIntegerValue( XSApplicationArgumentRef arg )
+XSUInteger XSApplicationArgument_GetUnsignedIntegerValue( XSApplicationArgument arg )
 {
-    XSApplicationArgument * _arg;
+    __XSApplicationArgument * _arg;
     
-    _arg = ( XSApplicationArgument * )arg;
+    _arg = ( __XSApplicationArgument * )arg;
     
     return _arg->uint_val;
 }
@@ -228,11 +228,11 @@ XSUInteger XSApplicationArgument_GetUnsignedIntegerValue( XSApplicationArgumentR
  * @param       arg     The argument object
  * @result      The argument's string value
  */
-const char * XSApplicationArgument_GetStringValue( XSApplicationArgumentRef arg )
+const char * XSApplicationArgument_GetStringValue( XSApplicationArgument arg )
 {
-    XSApplicationArgument * _arg;
+    __XSApplicationArgument * _arg;
     
-    _arg = ( XSApplicationArgument * )arg;
+    _arg = ( __XSApplicationArgument * )arg;
     
     return _arg->str_val;
 }
@@ -243,11 +243,11 @@ const char * XSApplicationArgument_GetStringValue( XSApplicationArgumentRef arg 
  * @param       arg     The argument object
  * @result      The argument's float value
  */
-XSFloat XSApplicationArgument_GetFloatValue( XSApplicationArgumentRef arg )
+XSFloat XSApplicationArgument_GetFloatValue( XSApplicationArgument arg )
 {
-    XSApplicationArgument * _arg;
+    __XSApplicationArgument * _arg;
     
-    _arg = ( XSApplicationArgument * )arg;
+    _arg = ( __XSApplicationArgument * )arg;
     
     return _arg->float_val;
 }

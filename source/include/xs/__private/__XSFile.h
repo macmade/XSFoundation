@@ -46,9 +46,9 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      XSFile
+ * @typdef      __XSFile
  * @abastract   XSFile class
- * @field       _xsbase     Runtime class
+ * @field       __class     Runtime class
  * @field       fp          The FILE pointer
  * @field       filename    The name of the file
  * @field       mode        The file open mode
@@ -63,24 +63,24 @@ XS_EXTERN_C_BEGIN
  * @field       bit_offset  Offset for the bit buffer
  * @field       stat_buf    Stat informations
  */
-typedef struct _XSFile
+typedef struct __XSFile_Struct
 {
-    XSRuntimeBase _xsbase;
-    FILE        * fp;
-    char          filename[ FILENAME_MAX ];
-    char          mode[ 4 ];
-    BOOL          writeable;
-    BOOL          readable;
-    BOOL          stdin;
-    BOOL          stdout;
-    BOOL          stderr;
-    BOOL          need_init;
-    uint8_t       bit_buffer;
-    uint8_t       bit_count;
-    uint8_t       bit_offset;
-    struct stat   stat_buf;
+    XSRuntimeClass __class;
+    FILE         * fp;
+    char           filename[ FILENAME_MAX ];
+    char           mode[ 4 ];
+    BOOL           writeable;
+    BOOL           readable;
+    BOOL           stdin;
+    BOOL           stdout;
+    BOOL           stderr;
+    BOOL           need_init;
+    uint8_t        bit_buffer;
+    uint8_t        bit_count;
+    uint8_t        bit_offset;
+    struct stat    stat_buf;
 }
-XSFile;
+__XSFile;
 
 /*!
  * @function    __XSFile_Initialize
@@ -94,7 +94,7 @@ void __XSFile_Initialize( void );
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSFile * __XSFile_Alloc( void );
+__XSFile * __XSFile_Alloc( void );
 
 /*!
  * @function    __XSFile_WriteAlign
@@ -102,7 +102,7 @@ XSFile * __XSFile_Alloc( void );
  * @param       file    The file object
  * @result      void
  */
-void __XSFile_WriteAlign( XSFile * file );
+void __XSFile_WriteAlign( __XSFile * file );
 
 /*!
  * @function    __XSFile_UpdateStat
@@ -110,7 +110,7 @@ void __XSFile_WriteAlign( XSFile * file );
  * @param       file    The file object
  * @result      void
  */
-void __XSFile_UpdateStat( XSFile * file );
+void __XSFile_UpdateStat( __XSFile * file );
 
 XS_EXTERN_C_END
 

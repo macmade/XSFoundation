@@ -45,7 +45,7 @@
  * @abstract    Creates an empty string
  * @result      A new string object
  */
-XSStringRef XSString_Create( void )
+XSString XSString_Create( void )
 {
     return XSString_CreateWithCapacity( __XSSTRING_DEFAULT_CAPACITY );
 }
@@ -56,9 +56,9 @@ XSStringRef XSString_Create( void )
  * @param       capacity    The initial string capacity
  * @result      A new string object
  */
-XSStringRef XSString_CreateWithCapacity( XSUInteger capacity )
+XSString XSString_CreateWithCapacity( XSUInteger capacity )
 {
-    XSString * string;
+    __XSString * string;
     
     string = __XSString_Alloc();
     
@@ -69,7 +69,7 @@ XSStringRef XSString_CreateWithCapacity( XSUInteger capacity )
     
     string->str = XSAlloc( ( sizeof( char ) * capacity ) + 1 );
     
-    return ( XSStringRef )string;
+    return ( XSString )string;
 }
 
 /*!
@@ -78,10 +78,10 @@ XSStringRef XSString_CreateWithCapacity( XSUInteger capacity )
  * @param       The C string
  * @result      A new string object
  */
-XSStringRef XSString_CreateWithCString( char * str )
+XSString XSString_CreateWithCString( char * str )
 {
-    size_t     length;
-    XSString * string;
+    size_t       length;
+    __XSString * string;
     
     if( str == NULL )
     {
@@ -89,13 +89,13 @@ XSStringRef XSString_CreateWithCString( char * str )
     }
     
     length = strlen( str );
-    string = ( XSString * )XSString_CreateWithCapacity( length );
+    string = ( __XSString * )XSString_CreateWithCapacity( length );
     
     memcpy( string->str, str, length );
     
     string->length = length;
     
-    return ( XSStringRef )string;
+    return ( XSString )string;
 }
 
 /*!
@@ -104,7 +104,7 @@ XSStringRef XSString_CreateWithCString( char * str )
  * @param       path    The path to the file
  * @result      A new string object
  */
-XSStringRef XSString_CreateWithContentOfFile( char * path )
+XSString XSString_CreateWithContentOfFile( char * path )
 {
     ( void )path;
     
@@ -119,16 +119,16 @@ XSStringRef XSString_CreateWithContentOfFile( char * path )
  * @param       i       The index
  * @result      A new string object
  */
-XSStringRef XSString_SubstringFromIndex( XSStringRef str, size_t i )
+XSString XSString_SubstringFromIndex( XSString str, size_t i )
 {
-    XSString * _str;
+    __XSString * _str;
     
     if( str == NULL )
     {
         return NULL;
     }
     
-    _str = ( XSString * )str;
+    _str = ( __XSString * )str;
     
     if( i >= _str->length )
     {
@@ -146,28 +146,28 @@ XSStringRef XSString_SubstringFromIndex( XSStringRef str, size_t i )
  * @param       i       The index
  * @result      A new string object
  */
-XSStringRef XSString_SubstringToIndex( XSStringRef str, size_t i )
+XSString XSString_SubstringToIndex( XSString str, size_t i )
 {
-    XSString * _str;
-    XSString * str2;
+    __XSString * _str;
+    __XSString * str2;
     
     if( str == NULL )
     {
         return NULL;
     }
     
-    _str = ( XSString * )str;
+    _str = ( __XSString * )str;
     
     if( i >= _str->length )
     {
         return XSCopy( str );
     }
     
-    str2 = ( XSString * )XSString_CreateWithCapacity( i + 1 );
+    str2 = ( __XSString * )XSString_CreateWithCapacity( i + 1 );
     
     memcpy( str2->str, _str->str, i );
     
-    return ( XSStringRef )str2;
+    return ( XSString )str2;
 }
 
 /*!
@@ -178,17 +178,17 @@ XSStringRef XSString_SubstringToIndex( XSStringRef str, size_t i )
  * @param       range   The range
  * @result      A new string object
  */
-XSStringRef XSString_SubstringWithRange( XSStringRef str, XSRange range )
+XSString XSString_SubstringWithRange( XSString str, XSRange range )
 {
-    XSString * _str1;
-    XSString * _str2;
+    __XSString * _str1;
+    __XSString * _str2;
     
     if( str == NULL )
     {
         return NULL;
     }
     
-    _str1 = ( XSString * )str;
+    _str1 = ( __XSString * )str;
     
     if( range.location > _str1->length )
     {
@@ -200,12 +200,12 @@ XSStringRef XSString_SubstringWithRange( XSStringRef str, XSRange range )
         range.length = _str1->length - range.location;
     }
     
-    _str2 = ( XSString * )XSString_CreateWithCapacity( range.length + 1 );
+    _str2 = ( __XSString * )XSString_CreateWithCapacity( range.length + 1 );
     
     memset( _str2->str, 0, range.length + 1 );
     memcpy( _str2->str, ( _str1->str ) + range.location, range.length );
     
-    return ( XSStringRef )_str2;
+    return ( XSString )_str2;
 }
 
 /*!
@@ -215,11 +215,11 @@ XSStringRef XSString_SubstringWithRange( XSStringRef str, XSRange range )
  * @param       str     The string object
  * @result      A new string object
  */
-XSStringRef XSString_LowercaseString( XSStringRef str )
+XSString XSString_LowercaseString( XSString str )
 {
-    XSString * _str;
-    size_t     i;
-    char       c;
+    __XSString * _str;
+    size_t       i;
+    char         c;
     
     if( str == NULL )
     {
@@ -238,7 +238,7 @@ XSStringRef XSString_LowercaseString( XSStringRef str )
         }
     }
     
-    return ( XSStringRef)_str;
+    return ( XSString)_str;
 }
 
 /*!
@@ -248,11 +248,11 @@ XSStringRef XSString_LowercaseString( XSStringRef str )
  * @param       str     The string object
  * @result      A new string object
  */
-XSStringRef XSString_UppercaseString( XSStringRef str )
+XSString XSString_UppercaseString( XSString str )
 {
-    XSString * _str;
-    size_t     i;
-    char       c;
+    __XSString * _str;
+    size_t       i;
+    char         c;
     
     if( str == NULL )
     {
@@ -271,7 +271,7 @@ XSStringRef XSString_UppercaseString( XSStringRef str )
         }
     }
     
-    return ( XSStringRef)_str;
+    return ( XSString)_str;
 }
 
 /*!
@@ -282,11 +282,11 @@ XSStringRef XSString_UppercaseString( XSStringRef str )
  * @param       str2    The string to append
  * @result      A new string object
  */
-XSStringRef XSString_StringByAppendingString( XSStringRef str1, XSStringRef str2 )
+XSString XSString_StringByAppendingString( XSString str1, XSString str2 )
 {
-    XSString * str;
-    size_t     length1;
-    size_t     length2;
+    __XSString * str;
+    size_t       length1;
+    size_t       length2;
     
     if( str1 == NULL )
     {
@@ -301,15 +301,15 @@ XSStringRef XSString_StringByAppendingString( XSStringRef str1, XSStringRef str2
     length1 = XSString_Length( str1 );
     length2 = XSString_Length( str2 );
     
-    str = ( XSString * )XSString_CreateWithCapacity( length1 + length2 + 1 );
+    str = ( __XSString * )XSString_CreateWithCapacity( length1 + length2 + 1 );
     
     str->length = length1 + length2;
     
     memset( str->str, 0, str->length + 1 );
-    memcpy( str->str, ( ( XSString * )str1 )->str, length1 );
-    strcat( str->str, ( ( XSString * )str2 )->str );
+    memcpy( str->str, ( ( __XSString * )str1 )->str, length1 );
+    strcat( str->str, ( ( __XSString * )str2 )->str );
     
-    return ( XSStringRef )str;
+    return ( XSString )str;
 }
 
 /*!
@@ -320,11 +320,11 @@ XSStringRef XSString_StringByAppendingString( XSStringRef str1, XSStringRef str2
  * @param       str2    The C string to append
  * @result      A new string object
  */
-XSStringRef XSString_StringByAppendingCString( XSStringRef str1, char * str2 )
+XSString XSString_StringByAppendingCString( XSString str1, char * str2 )
 {
-    XSString * str;
-    size_t     length1;
-    size_t     length2;
+    __XSString * str;
+    size_t       length1;
+    size_t       length2;
     
     if( str1 == NULL )
     {
@@ -339,15 +339,15 @@ XSStringRef XSString_StringByAppendingCString( XSStringRef str1, char * str2 )
     length1 = XSString_Length( str1 );
     length2 = strlen( str2 );
     
-    str = ( XSString * )XSString_CreateWithCapacity( length1 + length2 + 1 );
+    str = ( __XSString * )XSString_CreateWithCapacity( length1 + length2 + 1 );
     
     str->length = length1 + length2;
     
     memset( str->str, 0, str->length + 1 );
-    memcpy( str->str, ( ( XSString * )str1 )->str, length1 );
+    memcpy( str->str, ( ( __XSString * )str1 )->str, length1 );
     strcat( str->str, str2 );
     
-    return ( XSStringRef )str;
+    return ( XSString )str;
 }
 
 /*!
@@ -356,14 +356,14 @@ XSStringRef XSString_StringByAppendingCString( XSStringRef str1, char * str2 )
  * @param       str     The string object
  * @result      A new string length
  */
-size_t XSString_Length( XSStringRef str )
+size_t XSString_Length( XSString str )
 {
     if( str == NULL )
     {
         return 0;
     }
     
-    return ( ( XSString * )str )->length;
+    return ( ( __XSString * )str )->length;
 }
 
 /*!
@@ -373,16 +373,16 @@ size_t XSString_Length( XSStringRef str )
  * @param       i       The index
  * @result      The character
  */
-char XSString_CharacterAtIndex( XSStringRef str, size_t i )
+char XSString_CharacterAtIndex( XSString str, size_t i )
 {
-    XSString * _str;
+    __XSString * _str;
     
     if( str == NULL )
     {
         return 0;
     }
     
-    _str = ( XSString * )str;
+    _str = ( __XSString * )str;
     
     if( i >= _str->length )
     {
@@ -398,14 +398,14 @@ char XSString_CharacterAtIndex( XSStringRef str, size_t i )
  * @param       str     The string object
  * @result      The C String
  */
-const char * XSString_CString( XSStringRef str )
+const char * XSString_CString( XSString str )
 {
     if( str == NULL )
     {
         return NULL;
     }
     
-    return ( ( XSString * )str )->str;
+    return ( ( __XSString * )str )->str;
 }
 
 /*!
@@ -416,7 +416,7 @@ const char * XSString_CString( XSStringRef str )
  * @param       str     The string object
  * @result      The range of the string
  */
-XSRange XSString_RangeOfString( XSStringRef str1, XSStringRef str2 )
+XSRange XSString_RangeOfString( XSString str1, XSString str2 )
 {
     XSString * _str1;
     XSString * _str2;
@@ -445,7 +445,7 @@ XSRange XSString_RangeOfString( XSStringRef str1, XSStringRef str2 )
  * @param       str     The string object
  * @result      The range of the C string
  */
-XSRange XSString_RangeOfCString( XSStringRef str1, char * str2 )
+XSRange XSString_RangeOfCString( XSString str1, char * str2 )
 {
     XSString * _str;
     XSRange    range;
@@ -469,18 +469,18 @@ XSRange XSString_RangeOfCString( XSStringRef str1, char * str2 )
  * @param       str     The string object
  * @result      YES if both strings are equals, otherwise NO
  */
-BOOL XSString_IsEqualToString( XSStringRef str1, XSStringRef str2 )
+BOOL XSString_IsEqualToString( XSString str1, XSString str2 )
 {
-    XSString * _str1;
-    XSString * _str2;
+    __XSString * _str1;
+    __XSString * _str2;
     
     if( str1 == NULL || str2 == NULL )
     {
         return NO;
     }
     
-    _str1 = ( XSString * )str1;
-    _str2 = ( XSString * )str2;
+    _str1 = ( __XSString * )str1;
+    _str2 = ( __XSString * )str2;
     
     if( strcmp( _str1->str, _str2->str ) == 0 )
     {
@@ -497,7 +497,7 @@ BOOL XSString_IsEqualToString( XSStringRef str1, XSStringRef str2 )
  * @param       str     The string object
  * @result      A new string object
  */
-XSStringRef XSString_StringByReplacingStringWithString( XSStringRef str1, XSStringRef str2, XSStringRef str3 )
+XSString XSString_StringByReplacingStringWithString( XSString str1, XSString str2, XSString str3 )
 {
     XSString * _str1;
     XSString * _str2;
@@ -516,7 +516,7 @@ XSStringRef XSString_StringByReplacingStringWithString( XSStringRef str1, XSStri
  * @param       str     The string object
  * @result      An integer value
  */
-XSInteger XSString_IntegerValue( XSStringRef str )
+XSInteger XSString_IntegerValue( XSString str )
 {
     XSString * _str;
     
@@ -531,7 +531,7 @@ XSInteger XSString_IntegerValue( XSStringRef str )
  * @param       str     The string object
  * @result      A floating point value
  */
-XSFloat XSString_FloatValue( XSStringRef str )
+XSFloat XSString_FloatValue( XSString str )
 {
     XSString * _str;
     

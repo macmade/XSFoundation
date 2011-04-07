@@ -43,7 +43,7 @@
  * @abstract    Creates an empty dictionary
  * @result      The new dictionary object
  */
-XSDictionaryRef XSDictionary_Create( void )
+XSDictionary XSDictionary_Create( void )
 {
     return XSDictionary_CreateWithCapacity( XSDICTIONARY_DEFAULT_CAPACITY );
 }
@@ -54,18 +54,18 @@ XSDictionaryRef XSDictionary_Create( void )
  * @param       capacity    The initial dictionary capacity
  * @result      The new dictionary object
  */
-XSDictionaryRef XSDictionary_CreateWithCapacity( XSUInteger capacity )
+XSDictionary XSDictionary_CreateWithCapacity( XSUInteger capacity )
 {
-    void        ** store;
-    XSStringRef  * keys;
-    XSDictionary * dict;
+    void          ** store;
+    XSString       * keys;
+    __XSDictionary * dict;
     
     if( NULL == ( store = ( void ** )XSAlloc( capacity * sizeof( void * ) ) ) )
     {
         return NULL;
     }
     
-    if( NULL == ( keys = ( XSStringRef * )XSAlloc( capacity * sizeof( XSStringRef ) ) ) )
+    if( NULL == ( keys = ( XSString * )XSAlloc( capacity * sizeof( XSString ) ) ) )
     {
         XSRelease( store );
         return NULL;
@@ -77,79 +77,7 @@ XSDictionaryRef XSDictionary_CreateWithCapacity( XSUInteger capacity )
     dict->capacity = capacity;
     dict->count    = 0;
     
-    return ( XSDictionaryRef )dict;
-}
-
-/*!
- * @function    XSDictionary_CreateWithValuesAndKeys
- * @abstract    Creates a dictionary with values and keys
- * @description Values will be automatically retained.
- * @param       value1  The first value
- * @param       key1    The first key
- * @param       ...     Other values and keys, terminated by a NULL fence.
- * @result      The new dictionary object
- */
-XSDictionaryRef XSDictionary_CreateWithValuesAndKeys( void * value1, XSStringRef key1, ... )
-{
-    va_list        args;
-    XSDictionary * dict;
-    void         * value;
-    XSStringRef    key;
-    void        ** store;
-    XSStringRef  * keys;
-    XSUInteger     values;
-    
-    va_start( args, key1 );
-    
-    dict = ( XSDictionary * )XSDictionary_Create();
-    
-    if( value1 == NULL || key1 == NULL )
-    {
-        return ( XSDictionaryRef )dict;
-    }
-    
-    values                   = 0;
-    dict->values[ values ] = XSRetain( value1 );
-    dict->keys[ values ]   = XSCopy( key1 );
-    
-    values++;
-    
-    while( NULL != ( value = va_arg( args, void * ) ) )
-    {
-        key = va_arg( args, XSStringRef );
-        
-        if( key == NULL )
-        {
-            break;
-        }
-        
-        if( values == dict->capacity )
-        {
-            if( NULL == ( store = ( void ** )XSRealloc( dict->values, ( values + dict->capacity ) * sizeof( void * ) ) ) )
-            {
-                XSRelease( dict );
-                
-                return NULL;
-            }
-            
-            if( NULL == ( keys = ( XSStringRef * )XSRealloc( dict->keys, ( values + dict->capacity ) * sizeof( XSStringRef ) ) ) )
-            {
-                XSRelease( dict );
-                
-                return NULL;
-            }
-            
-            dict->values   = store;
-            dict->capacity = values + dict->capacity;
-        }
-        
-        dict->values[ values ] = XSRetain( value );
-        dict->keys[ values ]   = XSCopy( key );
-        
-        values++;
-    }
-    
-    return ( XSDictionaryRef )dict;
+    return ( XSDictionary )dict;
 }
 
 /*!
@@ -158,9 +86,9 @@ XSDictionaryRef XSDictionary_CreateWithValuesAndKeys( void * value1, XSStringRef
  * @param       dict    The dictionary object
  * @result      The number of values in the dictionary
  */
-XSUInteger XSDictionary_Count( XSDictionaryRef dict )
+XSUInteger XSDictionary_Count( XSDictionary dict )
 {
-    return ( ( XSDictionary * )dict )->count;
+    return ( ( __XSDictionary * )dict )->count;
 }
 
 /*!
@@ -171,13 +99,13 @@ XSUInteger XSDictionary_Count( XSDictionaryRef dict )
  * @param       dict    The dictionary object
  * @result      An array containing all the dictionary keys
  */
-XSArrayRef XSDictionary_Keys( XSDictionaryRef dict )
+XSArray XSDictionary_Keys( XSDictionary dict )
 {
-    XSDictionary * _dict;
-    XSArrayRef     array;
-    XSUInteger     i;
+    __XSDictionary * _dict;
+    XSArray          array;
+    XSUInteger       i;
     
-    _dict = ( XSDictionary * )dict;
+    _dict = ( __XSDictionary * )dict;
     array = XSArray_CreateWithCapacity( _dict->count );
     
     for( i = 0; i < _dict->count; i++ )
@@ -196,13 +124,13 @@ XSArrayRef XSDictionary_Keys( XSDictionaryRef dict )
  * @param       dict    The dictionary object
  * @result      An array containing all the dictionary values
  */
-XSArrayRef XSDictionary_Values( XSDictionaryRef dict )
+XSArray XSDictionary_Values( XSDictionary dict )
 {
-    XSDictionary * _dict;
-    XSArrayRef     array;
-    XSUInteger     i;
+    __XSDictionary * _dict;
+    XSArray          array;
+    XSUInteger       i;
     
-    _dict = ( XSDictionary * )dict;
+    _dict = ( __XSDictionary * )dict;
     array = XSArray_CreateWithCapacity( _dict->count );
     
     for( i = 0; i < _dict->count; i++ )
@@ -220,12 +148,12 @@ XSArrayRef XSDictionary_Values( XSDictionaryRef dict )
  * @param       key     The key
  * @result      THe value, or NULL if the key is not present in the dictionary
  */
-void * XSDictionary_ValueForKey( XSDictionaryRef dict, XSStringRef key )
+void * XSDictionary_ValueForKey( XSDictionary dict, XSString key )
 {
-    XSDictionary * _dict;
-    XSUInteger     i;
+    __XSDictionary * _dict;
+    XSUInteger       i;
     
-    _dict = ( XSDictionary * )dict;
+    _dict = ( __XSDictionary * )dict;
     
     for( i = 0; i < _dict->count; i++ )
     {
@@ -246,7 +174,7 @@ void * XSDictionary_ValueForKey( XSDictionaryRef dict, XSStringRef key )
  * @param       key     The key
  * @result      void
  */
-void XSDictionary_SetValueForKey( XSDictionaryRef dict, void * value, XSStringRef key )
+void XSDictionary_SetValueForKey( XSDictionary dict, void * value, XSString key )
 {
     ( void )dict;
     ( void )value;
@@ -260,7 +188,7 @@ void XSDictionary_SetValueForKey( XSDictionaryRef dict, void * value, XSStringRe
  * @param       dict    The key
  * @result      The removed value
  */
-void * XSDictionary_RemoveValueForKey( XSDictionaryRef dict, void * value, XSStringRef key )
+void * XSDictionary_RemoveValueForKey( XSDictionary dict, void * value, XSString key )
 {
     ( void )dict;
     ( void )value;
@@ -276,7 +204,7 @@ void * XSDictionary_RemoveValueForKey( XSDictionaryRef dict, void * value, XSStr
  * @param       value   The value to search
  * @result      YES if the dictionary contains the value, otherwise NO
  */
-BOOL XSDictionary_ContainsValue( XSDictionaryRef dict, void * value )
+BOOL XSDictionary_ContainsValue( XSDictionary dict, void * value )
 {
     ( void )dict;
     ( void )value;

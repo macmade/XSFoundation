@@ -44,12 +44,12 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @typedef     XSTreeRef
+ * @typedef     XSTree
  * @abstract    Opaque type for the XSTree objects
  */
-typedef struct XSTree * XSTreeRef;
+typedef struct XSTree * XSTree;
 
-XSTreeRef XSTree_Create( void );
+XSTree XSTree_Create( void );
 
 XS_EXTERN_C_END
 

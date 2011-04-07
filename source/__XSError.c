@@ -42,21 +42,23 @@
  * @var         __XSErrorClass
  * @abstract    Runtime class definition
  */
-static const XSRuntimeClass __XSErrorClass =
+static const XSClassInfos __XSErrorClass =
 {
     "XSError",          /* Class name */
     sizeof( XSError ),  /* Object size */
     NULL,               /* Constructor */
-    __XSError_Dealloc,  /* Destructor */
+    __XSError_Destruct, /* Destructor */
     NULL,               /* Object copy */
-    NULL                /* Object description */
+    NULL,               /* Object description */
+    NULL,               /* Object comparison */
+    NULL                /* Object hash */
 };
 
 /*!
- * @var         __XSErrorTypeID
+ * @var         __XSErrorClassID
  * @abstract    Type ID for the runtine class
  */
-static XSTypeID __XSErrorTypeID;
+static XSClassID __XSErrorClassID;
 
 /*!
  * @function    __XSError_Initialize
@@ -65,7 +67,7 @@ static XSTypeID __XSErrorTypeID;
  */
 void __XSError_Initialize( void )
 {
-    __XSErrorTypeID = XSRuntime_RegisterClass( &__XSErrorClass );
+    __XSErrorClassID = XSRuntime_RegisterClass( &__XSErrorClass );
 }
 
 /*!
@@ -73,22 +75,22 @@ void __XSError_Initialize( void )
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSError * __XSError_Alloc( void )
+__XSError * __XSError_Alloc( void )
 {
-    return ( XSError * )XSRuntime_CreateInstance( __XSErrorTypeID );
+    return ( __XSError * )XSRuntime_CreateInstance( __XSErrorClassID );
 }
 
 /*!
- * @function    __XSError_Dealloc
+ * @function    __XSError_Destruct
  * @abstract    Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSError_Dealloc( void * object )
+void __XSError_Destruct( void * object )
 {
-    XSError * error;
+    __XSError * error;
     
-    error = ( XSError * )object;
+    error = ( __XSError * )object;
     
     XSRelease( error->domain );
     XSRelease( error->reason );

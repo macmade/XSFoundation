@@ -44,10 +44,10 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @typedef     XSNumberRef
+ * @typedef     XSNumber
  * @abstract    Opaque type for the XSNumber objects
  */
-typedef struct XSNumber * XSNumberRef;
+typedef struct XSNumber * XSNumber;
 
 /*!
  * @function    XSNumber_CreateWithBool
@@ -55,7 +55,7 @@ typedef struct XSNumber * XSNumberRef;
  * @param       The BOOL value
  * @result      The number object
  */
-XSNumberRef XSNumber_CreateWithBool( BOOL value );
+XSNumber XSNumber_CreateWithBool( BOOL value );
 
 /*!
  * @function    XSNumber_CreateWithChar
@@ -63,7 +63,7 @@ XSNumberRef XSNumber_CreateWithBool( BOOL value );
  * @param       The char value
  * @result      The number object
  */
-XSNumberRef XSNumber_CreateWithChar( char value );
+XSNumber XSNumber_CreateWithChar( char value );
 
 /*!
  * @function    XSNumber_CreateWithDouble
@@ -71,7 +71,7 @@ XSNumberRef XSNumber_CreateWithChar( char value );
  * @param       The double value
  * @result      The number object
  */
-XSNumberRef XSNumber_CreateWithDouble( double value );
+XSNumber XSNumber_CreateWithDouble( double value );
 
 /*!
  * @function    XSNumber_CreateWithFloat
@@ -79,7 +79,7 @@ XSNumberRef XSNumber_CreateWithDouble( double value );
  * @param       The float value
  * @result      The number object
  */
-XSNumberRef XSNumber_CreateWithFloat( float value );
+XSNumber XSNumber_CreateWithFloat( float value );
 
 /*!
  * @function    XSNumber_CreateWithInt
@@ -87,7 +87,7 @@ XSNumberRef XSNumber_CreateWithFloat( float value );
  * @param       The int value
  * @result      The number object
  */
-XSNumberRef XSNumber_CreateWithInt( int value );
+XSNumber XSNumber_CreateWithInt( int value );
 
 /*!
  * @function    XSNumber_CreateWithInteger
@@ -95,7 +95,7 @@ XSNumberRef XSNumber_CreateWithInt( int value );
  * @param       The integer value
  * @result      The number object
  */
-XSNumberRef XSNumber_CreateWithInteger( XSInteger value );
+XSNumber XSNumber_CreateWithInteger( XSInteger value );
 
 /*!
  * @function    XSNumber_CreateWithLong
@@ -103,7 +103,7 @@ XSNumberRef XSNumber_CreateWithInteger( XSInteger value );
  * @param       The long value
  * @result      The number object
  */
-XSNumberRef XSNumber_CreateWithLong( long value );
+XSNumber XSNumber_CreateWithLong( long value );
 
 /*!
  * @function    XSNumber_CreateWithLongLong
@@ -111,7 +111,7 @@ XSNumberRef XSNumber_CreateWithLong( long value );
  * @param       The long long value
  * @result      The number object
  */
-XSNumberRef XSNumber_CreateWithLongLong( long long value );
+XSNumber XSNumber_CreateWithLongLong( long long value );
 
 /*!
  * @function    XSNumber_CreateWithShort
@@ -119,7 +119,7 @@ XSNumberRef XSNumber_CreateWithLongLong( long long value );
  * @param       The short value
  * @result      The number object
  */
-XSNumberRef XSNumber_CreateWithShort( short value );
+XSNumber XSNumber_CreateWithShort( short value );
 
 /*!
  * @function    XSNumber_CreateWithUnsignedChar
@@ -127,7 +127,7 @@ XSNumberRef XSNumber_CreateWithShort( short value );
  * @param       The unsigned char value
  * @result      The number object
  */
-XSNumberRef XSNumber_CreateWithUnsignedChar( unsigned char value );
+XSNumber XSNumber_CreateWithUnsignedChar( unsigned char value );
 
 /*!
  * @function    XSNumber_CreateWithUnsignedInt
@@ -135,7 +135,7 @@ XSNumberRef XSNumber_CreateWithUnsignedChar( unsigned char value );
  * @param       The unsigned int value
  * @result      The number object
  */
-XSNumberRef XSNumber_CreateWithUnsignedInt( unsigned int value );
+XSNumber XSNumber_CreateWithUnsignedInt( unsigned int value );
 
 /*!
  * @function    XSNumber_CreateWithUnsignedInteger
@@ -143,7 +143,7 @@ XSNumberRef XSNumber_CreateWithUnsignedInt( unsigned int value );
  * @param       The unsigned integer value
  * @result      The number object
  */
-XSNumberRef XSNumber_CreateWithUnsignedInteger( XSUInteger value );
+XSNumber XSNumber_CreateWithUnsignedInteger( XSUInteger value );
 
 /*!
  * @function    XSNumber_CreateWithUnsignedLong
@@ -151,7 +151,7 @@ XSNumberRef XSNumber_CreateWithUnsignedInteger( XSUInteger value );
  * @param       The unsigned long value
  * @result      The number object
  */
-XSNumberRef XSNumber_CreateWithUnsignedLong( unsigned long value );
+XSNumber XSNumber_CreateWithUnsignedLong( unsigned long value );
 
 /*!
  * @function    XSNumber_CreateWithUnsignedLongLong
@@ -159,7 +159,7 @@ XSNumberRef XSNumber_CreateWithUnsignedLong( unsigned long value );
  * @param       The unsigned long long value
  * @result      The number object
  */
-XSNumberRef XSNumber_CreateWithUnsignedLongLong( unsigned long long value );
+XSNumber XSNumber_CreateWithUnsignedLongLong( unsigned long long value );
 
 /*!
  * @function    XSNumber_CreateWithUnsignedShort
@@ -167,7 +167,7 @@ XSNumberRef XSNumber_CreateWithUnsignedLongLong( unsigned long long value );
  * @param       The unsigned short value
  * @result      The number object
  */
-XSNumberRef XSNumber_CreateWithUnsignedShort( unsigned short value );
+XSNumber XSNumber_CreateWithUnsignedShort( unsigned short value );
 
 XS_EXTERN_C_END
 

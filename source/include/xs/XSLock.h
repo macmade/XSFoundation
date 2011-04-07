@@ -44,17 +44,17 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @typedef     XSLockRef
+ * @typedef     XSLock
  * @abstract    Opaque type for the XSLock objects
  */
-typedef struct XSLock * XSLockRef;
+typedef struct XSLock * XSLock;
 
 /*!
  * @function    XSLock_Create
  * @abstract    Creates a lock
  * @result      The lock object
  */
-XSLockRef XSLock_Create( void );
+XSLock XSLock_Create( void );
 
 /*!
  * @function    XSLock_Lock
@@ -62,7 +62,7 @@ XSLockRef XSLock_Create( void );
  * @param       The lock object
  * @result      True if the lock was successfully locked, otherwise false
  */
-BOOL XSLock_Lock( XSLockRef lock );
+BOOL XSLock_Lock( XSLock lock );
 
 /*!
  * @function    XSLock_TryLock
@@ -70,7 +70,7 @@ BOOL XSLock_Lock( XSLockRef lock );
  * @param       The lock object
  * @result      True if the lock was successfully locked, otherwise false
  */
-BOOL XSLock_TryLock( XSLockRef lock );
+BOOL XSLock_TryLock( XSLock lock );
 
 /*!
  * @function    XSLock_WaitForLock
@@ -78,7 +78,7 @@ BOOL XSLock_TryLock( XSLockRef lock );
  * @param       The lock object
  * @result      void
  */
-void XSLock_WaitForLock( XSLockRef lock );
+void XSLock_WaitForLock( XSLock lock );
 
 /*!
  * @function    XSLock_Unlock
@@ -86,7 +86,7 @@ void XSLock_WaitForLock( XSLockRef lock );
  * @param       The lock object
  * @result      void
  */
-void XSLock_Unlock( XSLockRef lock );
+void XSLock_Unlock( XSLock lock );
 
 /*!
  * @function    XSLock_IsLocked
@@ -94,7 +94,7 @@ void XSLock_Unlock( XSLockRef lock );
  * @param       The lock object
  * @result      True if the lock is locked, otherwise false
  */
-BOOL XSLock_IsLocked( XSLockRef lock );
+BOOL XSLock_IsLocked( XSLock lock );
 
 XS_EXTERN_C_END
 

@@ -42,21 +42,23 @@
  * @var         __XSTreeClass
  * @abstract    Runtime class definition
  */
-static const XSRuntimeClass __XSTreeClass =
+static const XSClassInfos __XSTreeClass =
 {
     "XSTree",           /* Class name */
-    sizeof( XSTree ),   /* Object size */
+    sizeof( __XSTree ), /* Object size */
     NULL,               /* Constructor */
     NULL,               /* Destructor */
     NULL,               /* Object copy */
-    NULL                /* Object description */
+    NULL,               /* Object description */
+    NULL,               /* Object comparison */
+    NULL                /* Object hash */
 };
 
 /*!
- * @var         __XSTreeTypeID
+ * @var         __XSTreeClassID
  * @abstract    Type ID for the runtine class
  */
-static XSTypeID __XSTreeTypeID;
+static XSClassID __XSTreeClassID;
 
 /*!
  * @function    __XSTree_Initialize
@@ -65,7 +67,7 @@ static XSTypeID __XSTreeTypeID;
  */
 void __XSTree_Initialize( void )
 {
-    __XSTreeTypeID = XSRuntime_RegisterClass( &__XSTreeClass );
+    __XSTreeClassID = XSRuntime_RegisterClass( &__XSTreeClass );
 }
 
 /*!
@@ -73,7 +75,7 @@ void __XSTree_Initialize( void )
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSTree * __XSTree_Alloc( void )
+__XSTree * __XSTree_Alloc( void )
 {
-    return ( XSTree * )XSRuntime_CreateInstance( __XSTreeTypeID );
+    return ( __XSTree * )XSRuntime_CreateInstance( __XSTreeClassID );
 }

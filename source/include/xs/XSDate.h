@@ -44,12 +44,12 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @typedef     XSDateRef
+ * @typedef     XSDate
  * @abstract    Opaque type for the XSDate objects
  */
-typedef struct XSDate * XSDateRef;
+typedef struct XSDate * XSDate;
 
-XSDateRef XSDate_Create( void );
+XSDate XSDate_Create( void );
 
 XS_EXTERN_C_END
 

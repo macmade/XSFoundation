@@ -46,23 +46,23 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      XSColor
+ * @typdef      __XSColor
  * @abastract   XSColor class
- * @field       _xsbase     Runtime class
+ * @field       __class     Runtime class
  */
-typedef struct _XSColor
+typedef struct __XSColor_Struct
 {
-    XSRuntimeBase _xsbase;
-    XSFloat       red;
-    XSFloat       green;
-    XSFloat       blue;
-    XSFloat       hue;
-    XSFloat       saturation;
-    XSFloat       value;
-    XSFloat       luminance;
-    XSFloat       alpha;
+    XSRuntimeClass __class;
+    XSFloat        red;
+    XSFloat        green;
+    XSFloat        blue;
+    XSFloat        hue;
+    XSFloat        saturation;
+    XSFloat        value;
+    XSFloat        luminance;
+    XSFloat        alpha;
 }
-XSColor;
+__XSColor;
 
 /*!
  * @function    __XSColor_Initialize
@@ -76,7 +76,7 @@ void __XSColor_Initialize( void );
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-XSColor * __XSColor_Alloc( void );
+__XSColor * __XSColor_Alloc( void );
 
 /*!
  * @function    __XSColor_RGBToHSL
@@ -84,7 +84,7 @@ XSColor * __XSColor_Alloc( void );
  * @param       color   The color object
  * @result      void
  */
-void __XSColor_RGBToHSL( XSColor * color );
+void __XSColor_RGBToHSL( __XSColor * color );
 
 /*!
  * @function    __XSColor_RGBToHSV
@@ -92,7 +92,7 @@ void __XSColor_RGBToHSL( XSColor * color );
  * @param       color   The color object
  * @result      void
  */
-void __XSColor_RGBToHSV( XSColor * color );
+void __XSColor_RGBToHSV( __XSColor * color );
 
 /*!
  * @function    __XSColor_HSVToRGB
@@ -100,7 +100,7 @@ void __XSColor_RGBToHSV( XSColor * color );
  * @param       color   The color object
  * @result      void
  */
-void __XSColor_HSVToRGB( XSColor * color );
+void __XSColor_HSVToRGB( __XSColor * color );
 
 /*!
  * @function    __XSColor_HSVToHSL
@@ -108,7 +108,7 @@ void __XSColor_HSVToRGB( XSColor * color );
  * @param       color   The color object
  * @result      void
  */
-void __XSColor_HSVToHSL( XSColor * color );
+void __XSColor_HSVToHSL( __XSColor * color );
 
 /*!
  * @function    __XSColor_HSLToRGB
@@ -116,7 +116,7 @@ void __XSColor_HSVToHSL( XSColor * color );
  * @param       color   The color object
  * @result      void
  */
-void __XSColor_HSLToRGB( XSColor * color );
+void __XSColor_HSLToRGB( __XSColor * color );
 
 /*!
  * @function    __XSColor_HSLToHSV
@@ -124,7 +124,7 @@ void __XSColor_HSLToRGB( XSColor * color );
  * @param       color   The color object
  * @result      void
  */
-void __XSColor_HSLToHSV( XSColor * color );
+void __XSColor_HSLToHSV( __XSColor * color );
 
 XS_EXTERN_C_END
 
