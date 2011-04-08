@@ -150,5 +150,5 @@ int main( int argc, char * argv[] )
     XSRelease( str3 );
     XSRelease( arr );
     
-    XSApplication_Exit();
+    return XSApplication_Exit( EXIT_SUCCESS );
 }

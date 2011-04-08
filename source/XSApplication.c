@@ -56,7 +56,7 @@ XSApplication XSApplication_Start( int argc, const char ** argv )
     return ( XSApplication )__xsapp;
 }
 
-void XSApplication_Exit( void )
+int XSApplication_Exit( int status )
 {
     XSRelease( __xsarp );
     XSRelease( __xsapp );
@@ -65,6 +65,8 @@ void XSApplication_Exit( void )
     __xsapp = NULL;
     
     pthread_exit( NULL );
+    
+    return status;
 }
 
 XSApplication XSApplication_SharedApplication( void )

@@ -74,7 +74,7 @@ XSApplication XSApplication_Start( int argc, const char ** argv );
  *              memory is reclaimed, and the threads are terminated properly.
  * @result      void
  */
-void XSApplication_Exit( void );
+int XSApplication_Exit( int status );
 
 /*!
  * @function    XSApplication_SharedApplication
