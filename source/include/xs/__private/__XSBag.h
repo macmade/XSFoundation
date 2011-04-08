@@ -63,13 +63,6 @@ __XSBag;
  */
 void __XSBag_Initialize( void );
 
-/*!
- * @function    __XSBag_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSBag * __XSBag_Alloc( void );
-
 XS_EXTERN_C_END
 
 #endif /* ___XS_BAG_H_ */

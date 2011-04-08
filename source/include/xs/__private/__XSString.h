@@ -67,13 +67,6 @@ __XSString;
 void __XSString_Initialize( void );
 
 /*!
- * @function    __XSString_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSString * __XSString_Alloc( void );
-
-/*!
  * @function    __XSString_Destruct
  * @abstract    Destructor
  * @param       object  A pointer to the object

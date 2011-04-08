@@ -72,13 +72,6 @@ __XSDictionary;
 void __XSDictionary_Initialize( void );
 
 /*!
- * @function    __XSDictionary_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSDictionary * __XSDictionary_Alloc( void );
-
-/*!
  * @function    __XSDictionary_Destruct
  * @abstract    Destructor
  * @param       object  A pointer to the object

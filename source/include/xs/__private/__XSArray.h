@@ -72,13 +72,6 @@ __XSArray;
 void __XSArray_Initialize( void );
 
 /*!
- * @function    __XSArray_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSArray * __XSArray_Alloc( void );
-
-/*!
  * @function    __XSArray_Destruct
  * @abstract    Destructor
  * @param       object  A pointer to the object

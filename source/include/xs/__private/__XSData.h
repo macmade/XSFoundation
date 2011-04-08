@@ -63,13 +63,6 @@ __XSData;
  */
 void __XSData_Initialize( void );
 
-/*!
- * @function    __XSData_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSData * __XSData_Alloc( void );
-
 XS_EXTERN_C_END
 
 #endif /* ___XS_DATA_H_ */

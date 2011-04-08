@@ -63,13 +63,6 @@ __XSTree;
  */
 void __XSTree_Initialize( void );
 
-/*!
- * @function    __XSTree_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSTree * __XSTree_Alloc( void );
-
 XS_EXTERN_C_END
 
 #endif /* ___XS_TREE_H_ */

@@ -68,13 +68,6 @@ __XSTimer;
 void __XSTimer_Initialize( void );
 
 /*!
- * @function    __XSTimer_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSTimer * __XSTimer_Alloc( void );
-
-/*!
  * @function    __XSTimer_RunOnce
  * @abstract    Runs a timer object after its time interval
  * @param       object  The thread object
