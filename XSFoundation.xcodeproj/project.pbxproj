@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		052EC738134F2908004A939E /* std-md5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "std-md5.c"; path = "source/std-md5.c"; sourceTree = SOURCE_ROOT; };
+		052EC739134F2915004A939E /* std-md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-md5.h"; sourceTree = "<group>"; };
 		056003BB1340621F005DC721 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
 		056003BC1340621F005DC721 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		056003BE1340621F005DC721 /* __XSMemory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemory.c; sourceTree = "<group>"; };
@@ -132,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				056003BF1340621F005DC721 /* include */,
+				052EC738134F2908004A939E /* std-md5.c */,
+				056003D61340621F005DC721 /* std-string.c */,
 				0562F8C2134B3F54005190B6 /* __XSApplication.c */,
 				0562F8D8134B5AC1005190B6 /* __XSApplicationArgument.c */,
 				056003F01340BB34005DC721 /* __XSArray.c */,
@@ -175,7 +179,6 @@
 				0562F8B5134B07EE005190B6 /* XSTimer.c */,
 				0560041F13412869005DC721 /* XSTree.c */,
 				0560042013412869005DC721 /* XSURL.c */,
-				056003D61340621F005DC721 /* std-string.c */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				056003C81340621F005DC721 /* std-c99.h */,
 				056003C91340621F005DC721 /* std-keywords.h */,
 				056003CA1340621F005DC721 /* std-math.h */,
+				052EC739134F2915004A939E /* std-md5.h */,
 				056003CB1340621F005DC721 /* std-posix.h */,
 				056003CC1340621F005DC721 /* std-string.h */,
 				056003CD1340621F005DC721 /* std.h */,
