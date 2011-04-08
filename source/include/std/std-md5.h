@@ -21,10 +21,18 @@
 /* $Id$ */
 
 /*!
- * @file        md5.h
+ * @header      md5.h
  * @copyright   RSA Data Security, Inc.
  * @abstract    ...
  */
+
+#ifndef _XS_STD_MD5_H_
+#define _XS_STD_MD5_H_
+#pragma once
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /*!
  * @typedef     MD5_CTX
@@ -67,3 +75,9 @@ void MD5_Update( MD5_CTX * context, unsigned char * data, unsigned int length );
  * @result      void
  */
 void MD5_Final( unsigned char digest[ 16 ], MD5_CTX * context );
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* _XS_STD_MD5_H_ */

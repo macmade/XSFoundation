@@ -43,8 +43,6 @@
 
 XS_EXTERN_C_BEGIN
 
-#include "XSTypes.h"
-
 /*!
  * @typedef     XSString
  * @abstract    Opaque type for the XSString objects
