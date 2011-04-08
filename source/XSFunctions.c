@@ -38,13 +38,6 @@
 #include "XS.h"
 #include "__XSFunctions.h"
 
-/*!
- * @function    XSMakePoint
- * @abstract    Creates an XSPoint structure
- * @param       x   The X coordinate
- * @param       y   The Y coordinate
- * @result      An XSPoint structure
- */
 XSPoint XSMakePoint( XSFloat x, XSFloat y )
 {
     XSPoint p;
@@ -55,13 +48,6 @@ XSPoint XSMakePoint( XSFloat x, XSFloat y )
     return p;
 }
 
-/*!
- * @function    XSMakeSize
- * @abstract    Creates an XSSize structure
- * @param       width   The width
- * @param       height  The height
- * @result      An XSSize structure
- */
 XSSize XSMakeSize( XSFloat width, XSFloat height )
 {
     XSSize s;
@@ -72,15 +58,6 @@ XSSize XSMakeSize( XSFloat width, XSFloat height )
     return s;
 }
 
-/*!
- * @function    XSMakeRect
- * @abstract    Creates an XSRect structure
- * @param       x       The X coordinate
- * @param       y       The Y coordinate
- * @param       width   The width
- * @param       height  The height
- * @result      An XSRect structure
- */
 XSRect XSMakeRect( XSFloat x, XSFloat y, XSFloat width, XSFloat height )
 {
     XSRect r;
@@ -93,23 +70,11 @@ XSRect XSMakeRect( XSFloat x, XSFloat y, XSFloat width, XSFloat height )
     return r;
 }
 
-/*!
- * @function    XSRectZero
- * @abstract    Creates an XSRect structure with 0 origin and size
- * @result      An XSRect structure
- */
 XSRect XSRectZero( void )
 {
     return XSMakeRect( 0, 0, 0, 0 );
 }
 
-/*!
- * @function    XSMakeRange
- * @abstract    Creates an XSRange structure
- * @param       location    The range location
- * @param       length      The range length
- * @result      An XSRange structure
- */
 XSRange XSMakeRange( XSUInteger location, XSUInteger length )
 {
     XSRange r;
@@ -120,15 +85,6 @@ XSRange XSMakeRange( XSUInteger location, XSUInteger length )
     return r;
 }
 
-/*!
- * @function    XSMakeEdgeInsets
- * @abstract    Creates an XSEdgeInsets structure
- * @param       left    The left coordinate
- * @param       top     The top coordinate
- * @param       right   The right coordinate
- * @param       bottom  The bottom coordinate
- * @result      An XSEdgeInsets structure
- */
 XSEdgeInsets XSMakeEdgeInsets( XSFloat left, XSFloat top, XSFloat right, XSFloat bottom )
 {
     XSEdgeInsets e;
@@ -141,13 +97,6 @@ XSEdgeInsets XSMakeEdgeInsets( XSFloat left, XSFloat top, XSFloat right, XSFloat
     return e;
 }
 
-/*!
- * @function    XSAngleBetweenPoints
- * @abstract    Gets the angle from two points
- * @param       a   The first point
- * @param       b   The second point
- * @result      The angle from the two points
- */
 XSFloat XSAngleBetweenPoints( XSPoint a, XSPoint b )
 {
     XSFloat c;
@@ -159,13 +108,6 @@ XSFloat XSAngleBetweenPoints( XSPoint a, XSPoint b )
     return atan2( b.y - a.y, b.x - a.x );
 }
 
-/*!
- * @function    XSDistanceBetweenPoints
- * @abstract    Gets the distance between two points
- * @param       a   The first point
- * @param       b   The second point
- * @result      The distance between the two points
- */
 XSFloat XSDistanceBetweenPoints( XSPoint a, XSPoint b )
 {
     XSFloat x;
@@ -177,37 +119,16 @@ XSFloat XSDistanceBetweenPoints( XSPoint a, XSPoint b )
     return sqrt( ( x * x ) + ( y * y ) );
 }
 
-/*!
- * @function    XSDegreesToRadians
- * @abstract    Converts a degree angle to a radian angle
- * @param       x   The angle in degrees
- * @result      The angle in radians
- */
 XSFloat XSDegreesToRadians( XSFloat x )
 {
     return ( x * M_PI ) / 180;
 }
 
-/*!
- * @function    XSRadiansToDegrees
- * @abstract    Converts a radian angle to a degree angle
- * @param       x   The angle in radians
- * @result      The angle in degrees
- */
 XSFloat XSRadiansToDegrees( XSFloat x )
 {
     return ( x * 180 ) / M_PI;
 }
 
-/*!
- * @function    XSLog
- * @abstract    Outputs a log message to stdout
- * @description The log message will be prefixed by the date/time, process
- *              name, ID, and thread ID (or MACH port if available).
- * @param       fmt     The message format
- * @param       ...     Arguments for the format
- * @result      void
- */
 void XSLog( const char * fmt, ... )
 {
     va_list args;
@@ -219,15 +140,6 @@ void XSLog( const char * fmt, ... )
     va_end( args );
 }
 
-/*!
- * @function    XSVLog
- * @abstract    Outputs a log message to stdout
- * @description The log message will be prefixed by the date/time, process
- *              name, ID, and thread ID (or MACH port if available).
- * @param       fmt     The message format
- * @param       args    Arguments for the format
- * @result      void
- */
 void XSVLog( const char * fmt, va_list args )
 {
     __XSVLog( fmt, args );

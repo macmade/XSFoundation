@@ -59,21 +59,11 @@ static const XSClassInfos __XSTreeClass =
  */
 static XSClassID __XSTreeClassID;
 
-/*!
- * @function    __XSTree_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
 void __XSTree_Initialize( void )
 {
     __XSTreeClassID = XSRuntime_RegisterClass( &__XSTreeClass );
 }
 
-/*!
- * @function    __XSTree_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
 __XSTree * __XSTree_Alloc( void )
 {
     return ( __XSTree * )XSRuntime_CreateInstance( __XSTreeClassID );

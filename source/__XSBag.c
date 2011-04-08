@@ -59,21 +59,11 @@ static const XSClassInfos __XSBagClass =
  */
 static XSClassID __XSBagClassID;
 
-/*!
- * @function    __XSBag_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
 void __XSBag_Initialize( void )
 {
     __XSBagClassID = XSRuntime_RegisterClass( &__XSBagClass );
 }
 
-/*!
- * @function    __XSBag_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
 __XSBag * __XSBag_Alloc( void )
 {
     return ( __XSBag * )XSRuntime_CreateInstance( __XSBagClassID );

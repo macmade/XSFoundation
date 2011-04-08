@@ -42,17 +42,6 @@ static __XSApplication    * __xsapp = NULL;
 static XSAutoreleasePool    __xsarp = NULL;
 static BOOL __xsapp_argv_processed  = NO;
 
-/*!
- * @function    XSApplication_Exit
- * @abstract    XSFoundation start routine
- * @description You must call this function before using any other XSFoundation
- *              function or object. Note that an auto-release pool is
- *              automatically created, so the auto-release features are
- *              enabled by default.
- * @param       argc    The number of CLI arguments
- * @param       argv    The CLI arguments array
- * @result      The application object
- */
 XSApplication XSApplication_Start( int argc, const char ** argv )
 {
     XSRuntime_Initialize();
@@ -67,14 +56,6 @@ XSApplication XSApplication_Start( int argc, const char ** argv )
     return ( XSApplication )__xsapp;
 }
 
-/*!
- * @function    XSApplication_Exit
- * @abstract    Application termination
- * @description You must call this function when exiting your application,
- *              instead of the classic 'exit()' function, so the auto-released
- *              memory is reclaimed, and the threads are terminated properly.
- * @result      void
- */
 void XSApplication_Exit( void )
 {
     XSRelease( __xsarp );
@@ -86,22 +67,11 @@ void XSApplication_Exit( void )
     pthread_exit( NULL );
 }
 
-/*!
- * @function    XSApplication_SharedApplication
- * @abstract    Gets the application object
- * @result      The application object
- */
 XSApplication XSApplication_SharedApplication( void )
 {
     return ( XSApplication )__xsapp;
 }
 
-/*!
- * @function    XSApplication_PrintHelp
- * @abstract    Prints the application help dialog
- * @param       app     The application object
- * @result      void
- */
 void XSApplication_PrintHelp( XSApplication app, const char * description )
 {
     const char          * exec;
@@ -111,14 +81,6 @@ void XSApplication_PrintHelp( XSApplication app, const char * description )
     XSUInteger            i;
     
     _app = ( __XSApplication * )app;
-    
-    /*XSRuntimeBase              _xsbase;
-    int                        argc;
-    const char              ** argv;
-    const char               * executable;
-    XSApplicationArgument * args;
-    XSUInteger                 arg_count;
-    XSUInteger                 arg_alloc;*/
     
     if( NULL == ( exec = strrchr( _app->executable, '/' ) ) )
     {

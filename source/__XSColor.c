@@ -59,32 +59,16 @@ static const XSClassInfos __XSColorClass =
  */
 static XSClassID __XSColorClassID;
 
-/*!
- * @function    __XSColor_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
 void __XSColor_Initialize( void )
 {
     __XSColorClassID = XSRuntime_RegisterClass( &__XSColorClass );
 }
 
-/*!
- * @function    __XSColor_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
 __XSColor * __XSColor_Alloc( void )
 {
     return ( __XSColor * )XSRuntime_CreateInstance( __XSColorClassID );
 }
 
-/*!
- * @function    __XSColor_RGBToHSL
- * @abstract    Converts the RGB components to HSV
- * @param       color   The color object
- * @result      void
- */
 void __XSColor_RGBToHSL( __XSColor * color )
 {
     XSFloat h;
@@ -161,12 +145,6 @@ void __XSColor_RGBToHSL( __XSColor * color )
     color->luminance  = l * 100;
 }
 
-/*!
- * @function    __XSColor_RGBToHSV
- * @abstract    Converts the RGB components to HSL
- * @param       color   The color object
- * @result      void
- */
 void __XSColor_RGBToHSV( __XSColor * color )
 {
     XSFloat h;
@@ -236,12 +214,6 @@ void __XSColor_RGBToHSV( __XSColor * color )
     color->value      = v * 100;
 }
 
-/*!
- * @function    __XSColor_HSVToRGB
- * @abstract    Converts the HSV components to RGB
- * @param       color   The color object
- * @result      void
- */
 void __XSColor_HSVToRGB( __XSColor * color )
 {
     XSFloat   r;
@@ -325,24 +297,12 @@ void __XSColor_HSVToRGB( __XSColor * color )
     }
 }
 
-/*!
- * @function    __XSColor_HSVToHSL
- * @abstract    Converts the HSV components to HSL
- * @param       color   The color object
- * @result      void
- */
 void __XSColor_HSVToHSL( __XSColor * color )
 {
     __XSColor_HSVToRGB( color );
     __XSColor_RGBToHSL( color );
 }
 
-/*!
- * @function    __XSColor_HSLToRGB
- * @abstract    Converts the HSL components to RGB
- * @param       color   The color object
- * @result      void
- */
 void __XSColor_HSLToRGB( __XSColor * color )
 {
     XSFloat    r;
@@ -433,12 +393,6 @@ void __XSColor_HSLToRGB( __XSColor * color )
     }
 }
 
-/*!
- * @function    __XSColor_HSLToHSV
- * @abstract    Converts the HSL components to HSV
- * @param       color   The color object
- * @result      void
- */
 void __XSColor_HSLToHSV( __XSColor * color )
 {
     __XSColor_HSLToRGB( color );

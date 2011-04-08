@@ -71,44 +71,22 @@ static const XSClassInfos __XSAutoreleasePoolClass =
  */
 static XSClassID __XSAutoreleasePoolClassID;
 
-/*!
- * @function    __XSAutoreleasePool_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
 void __XSAutoreleasePool_Initialize( void )
 {
     __XSAutoreleasePoolClassID = XSRuntime_RegisterClass( &__XSAutoreleasePoolClass );
 }
 
-/*!
- * @function    __XSAutoreleasePool_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
 __XSAutoreleasePool * __XSAutoreleasePool_Alloc( void )
 {
     return ( __XSAutoreleasePool * )XSRuntime_CreateInstance( __XSAutoreleasePoolClassID );
 }
 
-/*!
- * @function    __XSAutoreleasePool_Destruct
- * @abstract    Destructor
- * @abstract    A pointer to the object to be destructed
- * @param       object  The object that will be destructed
- * @result      void
- */
 void __XSAutoreleasePool_Destruct( void * object )
 {
     __XSMemory_AutoreleasePoolDrain( ( __XSAutoreleasePool * )object );
     __xsmemory_ar_pools_num--;
 }
 
-/*!
- * @function    __XSMemory_GetCurrentAutoreleasePool
- * @abstract    Gets a pointer to a memory records object from a pointer returned by the XS allocation functions.
- * @result      The auto-release pool object or NULL if no aut-release pool were created
- */
 __XSAutoreleasePool * __XSMemory_GetCurrentAutoreleasePool( void )
 {
     if( __xsmemory_ar_pools_num == 0 )
@@ -119,11 +97,6 @@ __XSAutoreleasePool * __XSMemory_GetCurrentAutoreleasePool( void )
     return __xsmemory_ar_pools[ __xsmemory_ar_pools_num - 1 ];
 }
 
-/*!
- * @function    __XSMemory_AutoreleasePoolDrain
- * @abstract    Releases all objects placed in the auto-release pool.
- * @result      void
- */
 void __XSMemory_AutoreleasePoolDrain( __XSAutoreleasePool * ap )
 {
     size_t i;
@@ -136,11 +109,6 @@ void __XSMemory_AutoreleasePoolDrain( __XSAutoreleasePool * ap )
     ap->numObjects = 0;
 }
 
-/*!
- * @function    __XSMemory_GetMemoryObject
- * @abstract    Gets the current (top-level) auto-release pool
- * @result      A pointer to the memory record object
- */
 __XSMemoryObject * __XSMemory_GetMemoryObject( void * ptr )
 {
     __XSMemoryObject * o;

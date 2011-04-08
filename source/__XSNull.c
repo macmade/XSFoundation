@@ -59,21 +59,11 @@ static const XSClassInfos __XSNullClass =
  */
 static XSClassID __XSNullClassID;
 
-/*!
- * @function    __XSNull_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
 void __XSNull_Initialize( void )
 {
     __XSNullClassID = XSRuntime_RegisterClass( &__XSNullClass );
 }
 
-/*!
- * @function    __XSNull_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
 __XSNull * __XSNull_Alloc( void )
 {
     return ( __XSNull * )XSRuntime_CreateInstance( __XSNullClassID );

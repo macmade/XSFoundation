@@ -38,14 +38,6 @@
 #include "XS.h"
 #include "__XSError.h"
 
-/*!
- * @function    XSError_Create
- * @abstract    Creates an error
- * @param       code    The error code
- * @param       domain  The error domain
- * @param       reason  The error message
- * @result      The error object
- */
 XSError XSError_Create( XSInteger code, XSString domain, XSString reason )
 {
     __XSError * error;
@@ -62,34 +54,16 @@ XSError XSError_Create( XSInteger code, XSString domain, XSString reason )
     return ( XSError )error;
 }
 
-/*!
- * @function    XSError_GetCode
- * @abstract    Gets the error code
- * @param       error   The error object
- * @result      The error code
- */
 XSInteger XSError_GetCode( XSError error )
 {
     return ( ( __XSError * )error )->code;
 }
 
-/*!
- * @function    XSError_GetDomain
- * @abstract    Gets the error domain
- * @param       error   The error object
- * @result      The error domain
- */
 XSString XSError_GetDomain( XSError error )
 {
     return ( ( __XSError * )error )->domain;
 }
 
-/*!
- * @function    XSError_GetReason
- * @abstract    Gets the error message
- * @param       error   The error object
- * @result      The error message
- */
 XSString XSError_GetReason( XSError error )
 {
     return ( ( __XSError * )error )->reason;

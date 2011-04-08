@@ -59,32 +59,17 @@ static const XSClassInfos __XSApplicationClass =
  */
 static XSClassID __XSApplicationClassID;
 
-/*!
- * @function    __XSApplication_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
+
 void __XSApplication_Initialize( void )
 {
     __XSApplicationClassID = XSRuntime_RegisterClass( &__XSApplicationClass );
 }
 
-/*!
- * @function    __XSApplication_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
 __XSApplication * __XSApplication_Alloc( void )
 {
     return ( __XSApplication * )XSRuntime_CreateInstance( __XSApplicationClassID );
 }
 
-/*!
- * @function    __XSApplication_Init
- * @abstract    Constructor
- * @param       object  A pointer to the object
- * @result      void
- */
 void __XSApplication_Construct( void * object )
 {
     __XSApplication * app;
@@ -95,13 +80,7 @@ void __XSApplication_Construct( void * object )
     app->arg_alloc = 25;
     app->arg_count = 0;
 }
- 
- /*!
- * @function    __XSApplication_Destruct
- * @abstract    Destructor
- * @param       object  A pointer to the object
- * @result      void
- */
+
 void __XSApplication_Destruct( void * object )
 {
     XSUInteger        i;
@@ -117,12 +96,6 @@ void __XSApplication_Destruct( void * object )
     XSRelease( app->args );
 }
 
-/*!
- * @function    __XSApplication_ProcessArguments
- * @abstract    Processes the command line arguments
- * @param       app     The application object
- * @result      void
- */
 void __XSApplication_ProcessArguments( __XSApplication * app )
 {
     XSInteger                i;

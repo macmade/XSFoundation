@@ -43,12 +43,6 @@ XSLock XSLock_Create( void )
     return ( XSLock )__XSLock_Alloc();
 }
 
-/*!
- * @function    XSLock_Lock
- * @abstract    Locks the lock object
- * @param       The lock object
- * @result      True if the lock was successfully locked, otherwise false
- */
 BOOL XSLock_Lock( XSLock lock )
 {
     __XSLock * _lock;
@@ -63,12 +57,6 @@ BOOL XSLock_Lock( XSLock lock )
     return NO;
 }
 
-/*!
- * @function    XSLock_TryLock
- * @abstract    Tries to acquire a lock
- * @param       The lock object
- * @result      True if the lock was successfully locked, otherwise false
- */
 BOOL XSLock_TryLock( XSLock lock )
 {
     __XSLock * _lock;
@@ -83,12 +71,6 @@ BOOL XSLock_TryLock( XSLock lock )
     return NO;
 }
 
-/*!
- * @function    XSLock_WaitForLock
- * @abstract    Pause the programs execution until the lock is acquired
- * @param       The lock object
- * @result      void
- */
 void XSLock_WaitForLock( XSLock lock )
 {
     __XSLock * _lock;
@@ -99,12 +81,6 @@ void XSLock_WaitForLock( XSLock lock )
     {}
 }
 
-/*!
- * @function    XSLock_Unlock
- * @abstract    Unlocks a lock
- * @param       The lock object
- * @result      void
- */
 void XSLock_Unlock( XSLock lock )
 {
     __XSLock * _lock;
@@ -119,12 +95,6 @@ void XSLock_Unlock( XSLock lock )
     pthread_mutex_unlock( &( _lock->mutex ) );
 }
 
-/*!
- * @function    XSLock_IsLocked
- * @abstract    Checks if a lock is locked
- * @param       The lock object
- * @result      True if the lock is locked, otherwise false
- */
 BOOL XSLock_IsLocked( XSLock lock )
 {
     return ( ( __XSLock * )lock )->locked;

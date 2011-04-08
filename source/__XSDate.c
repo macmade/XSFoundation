@@ -59,21 +59,11 @@ static const XSClassInfos __XSDateClass =
  */
 static XSClassID __XSDateClassID;
 
-/*!
- * @function    __XSDate_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
 void __XSDate_Initialize( void )
 {
     __XSDateClassID = XSRuntime_RegisterClass( &__XSDateClass );
 }
 
-/*!
- * @function    __XSDate_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
 __XSDate * __XSDate_Alloc( void )
 {
     return ( __XSDate * )XSRuntime_CreateInstance( __XSDateClassID );

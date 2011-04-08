@@ -59,21 +59,11 @@ static const XSClassInfos __XSDataClass =
  */
 static XSClassID __XSDataClassID;
 
-/*!
- * @function    __XSData_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
 void __XSData_Initialize( void )
 {
     __XSDataClassID = XSRuntime_RegisterClass( &__XSDataClass );
 }
 
-/*!
- * @function    __XSData_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
 __XSData * __XSData_Alloc( void )
 {
     return ( __XSData * )XSRuntime_CreateInstance( __XSDataClassID );

@@ -59,32 +59,16 @@ static const XSClassInfos __XSArrayClass =
  */
 static XSClassID __XSArrayClassID;
 
-/*!
- * @function    __XSArray_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
 void __XSArray_Initialize( void )
 {
     __XSArrayClassID = XSRuntime_RegisterClass( &__XSArrayClass );
 }
 
-/*!
- * @function    __XSArray_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
 __XSArray * __XSArray_Alloc( void )
 {
     return ( __XSArray * )XSRuntime_CreateInstance( __XSArrayClassID );
 }
 
-/*!
- * @function    __XSArray_Destruct
- * @abstract    Destructor
- * @param       object  A pointer to the object
- * @result      void
- */
 void __XSArray_Destruct( void * object )
 {
     __XSArray  * array;

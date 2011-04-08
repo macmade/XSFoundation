@@ -59,32 +59,16 @@ static const XSClassInfos __XSThreadClass =
  */
 static XSClassID __XSThreadClassID;
 
-/*!
- * @function    __XSThread_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
 void __XSThread_Initialize( void )
 {
     __XSThreadClassID = XSRuntime_RegisterClass( &__XSThreadClass );
 }
 
-/*!
- * @function    __XSThread_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
 __XSThread * __XSThread_Alloc( void )
 {
     return ( __XSThread * )XSRuntime_CreateInstance( __XSThreadClassID );
 }
 
-/*!
- * @function    __XSThread_Run
- * @abstract    Runs a thread
- * param        A pointer to the thread object (XSThread)
- * @result      Always NULL
- */
 void * __XSThread_Run( void * thread )
 {
     pthread_t    tid;

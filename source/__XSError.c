@@ -59,32 +59,16 @@ static const XSClassInfos __XSErrorClass =
  */
 static XSClassID __XSErrorClassID;
 
-/*!
- * @function    __XSError_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
 void __XSError_Initialize( void )
 {
     __XSErrorClassID = XSRuntime_RegisterClass( &__XSErrorClass );
 }
 
-/*!
- * @function    __XSError_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
 __XSError * __XSError_Alloc( void )
 {
     return ( __XSError * )XSRuntime_CreateInstance( __XSErrorClassID );
 }
 
-/*!
- * @function    __XSError_Destruct
- * @abstract    Destructor
- * @param       object  A pointer to the object
- * @result      void
- */
 void __XSError_Destruct( void * object )
 {
     __XSError * error;

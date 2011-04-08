@@ -59,21 +59,11 @@ static const XSClassInfos __XSApplicationArgumentClass =
  */
 static XSClassID __XSApplicationArgumentClassID;
 
-/*!
- * @function    __XSApplicationArgument_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
 void __XSApplicationArgument_Initialize( void )
 {
     __XSApplicationArgumentClassID = XSRuntime_RegisterClass( &__XSApplicationArgumentClass );
 }
 
-/*!
- * @function    __XSApplicationArgument_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
 __XSApplicationArgument * __XSApplicationArgument_Alloc( void )
 {
     return ( __XSApplicationArgument * )XSRuntime_CreateInstance( __XSApplicationArgumentClassID );

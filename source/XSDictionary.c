@@ -38,22 +38,11 @@
 #include "XS.h"
 #include "__XSDictionary.h"
 
-/*!
- * @function    XSDictionary_Create
- * @abstract    Creates an empty dictionary
- * @result      The new dictionary object
- */
 XSDictionary XSDictionary_Create( void )
 {
     return XSDictionary_CreateWithCapacity( XSDICTIONARY_DEFAULT_CAPACITY );
 }
 
-/*!
- * @function    XSDictionary_CreateWithCapacity
- * @abstract    Creates an empty dictionary with an initial capacity
- * @param       capacity    The initial dictionary capacity
- * @result      The new dictionary object
- */
 XSDictionary XSDictionary_CreateWithCapacity( XSUInteger capacity )
 {
     void          ** store;
@@ -80,25 +69,11 @@ XSDictionary XSDictionary_CreateWithCapacity( XSUInteger capacity )
     return ( XSDictionary )dict;
 }
 
-/*!
- * @function    XSDictionary_Count
- * @abstract    Gets the number of values in the dictionary
- * @param       dict    The dictionary object
- * @result      The number of values in the dictionary
- */
 XSUInteger XSDictionary_Count( XSDictionary dict )
 {
     return ( ( __XSDictionary * )dict )->count;
 }
 
-/*!
- * @function    XSDictionary_Keys
- * @abstract    Gets an array with all the dictionary keys
- * @description You are responsible to release the array returned by this
- *              function.
- * @param       dict    The dictionary object
- * @result      An array containing all the dictionary keys
- */
 XSArray XSDictionary_Keys( XSDictionary dict )
 {
     __XSDictionary * _dict;
@@ -116,14 +91,6 @@ XSArray XSDictionary_Keys( XSDictionary dict )
     return array;
 }
 
-/*!
- * @function    XSDictionary_Keys
- * @abstract    Gets an array with all the dictionary values
- * @description You are responsible to release the array returned by this
- *              function.
- * @param       dict    The dictionary object
- * @result      An array containing all the dictionary values
- */
 XSArray XSDictionary_Values( XSDictionary dict )
 {
     __XSDictionary * _dict;
@@ -141,13 +108,6 @@ XSArray XSDictionary_Values( XSDictionary dict )
     return array;
 }
 
-/*!
- * @function    XSDictionary_ValueForKey
- * @abstract    Gets the value associated with a key
- * @param       dict    The dictionary object
- * @param       key     The key
- * @result      THe value, or NULL if the key is not present in the dictionary
- */
 void * XSDictionary_ValueForKey( XSDictionary dict, XSString key )
 {
     __XSDictionary * _dict;
@@ -166,14 +126,6 @@ void * XSDictionary_ValueForKey( XSDictionary dict, XSString key )
     return NULL;
 }
 
-/*!
- * @function    XSDictionary_SetValueForKey
- * @abstract    Adds a value for a specific key
- * @param       dict    The dictionary object
- * @param       value   The value
- * @param       key     The key
- * @result      void
- */
 void XSDictionary_SetValueForKey( XSDictionary dict, void * value, XSString key )
 {
     ( void )dict;
@@ -181,13 +133,6 @@ void XSDictionary_SetValueForKey( XSDictionary dict, void * value, XSString key 
     ( void )key;
 }
 
-/*!
- * @function    XSDictionary_RemoveValueForKey
- * @abstract    Remove a value for a specific key
- * @param       dict    The dictionary object
- * @param       dict    The key
- * @result      The removed value
- */
 void * XSDictionary_RemoveValueForKey( XSDictionary dict, void * value, XSString key )
 {
     ( void )dict;
@@ -197,13 +142,6 @@ void * XSDictionary_RemoveValueForKey( XSDictionary dict, void * value, XSString
     return NULL;
 }
 
-/*!
- * @function    XSDictionary_ContainsValue
- * @abstract    Checks if the dictionary contains a specific value
- * @param       array   The dictionary object
- * @param       value   The value to search
- * @result      YES if the dictionary contains the value, otherwise NO
- */
 BOOL XSDictionary_ContainsValue( XSDictionary dict, void * value )
 {
     ( void )dict;

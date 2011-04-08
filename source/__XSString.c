@@ -59,32 +59,16 @@ static const XSClassInfos __XSStringClass =
  */
 static XSClassID __XSStringClassID;
 
-/*!
- * @function    __XSString_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
 void __XSString_Initialize( void )
 {
     __XSStringClassID = XSRuntime_RegisterClass( &__XSStringClass );
 }
 
-/*!
- * @function    __XSString_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
 __XSString * __XSString_Alloc( void )
 {
     return ( __XSString * )XSRuntime_CreateInstance( __XSStringClassID );
 }
 
-/*!
- * @function    __XSString_Destruct
- * @abstract    Destructor
- * @param       object  A pointer to the object
- * @result      void
- */
 void __XSString_Destruct( void * object )
 {
     __XSString * str;
@@ -94,12 +78,6 @@ void __XSString_Destruct( void * object )
     XSRelease( str->str );
 }
 
-/*!
- * @function    __XSString_ToString
- * @abstract    Object description
- * @param       object  A pointer to the object
- * @result      The object's description
- */
 XSString __XSString_ToString( void * object )
 {
     return ( XSString )object;

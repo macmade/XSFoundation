@@ -41,15 +41,6 @@
 /* Prototypes for the private functions */
 extern void * __XSThread_Run( void * thread );
 
-/*!
- * @function    XSThread_Detach
- * @abstract    Creates and detaches a thread
- * @description The thread object will be automatically released when it
- *              exits. Do not release it explicitely.
- * @param       func    A pointer to the function to run on the thread
- * @param       arg     Argument to pass to the thread function
- * @result      The XSThread instance
- */
 XSThread XSThread_Detach( void ( * func )( XSThread thread, void * arg ), void * arg )
 {
     pthread_t     t;
@@ -72,12 +63,6 @@ XSThread XSThread_Detach( void ( * func )( XSThread thread, void * arg ), void *
     return ( XSThread )thread;
 }
 
-/*!
- * @function    XSThread_GetID
- * @abstract    Gets the thread ID
- * @param       thread  The thread object
- * @result      The thread ID
- */
 XSUInteger XSThread_GetID( XSThread thread )
 {
     return ( ( __XSThread * )thread )->tid;

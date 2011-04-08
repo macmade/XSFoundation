@@ -38,13 +38,6 @@
 #include "XS.h"
 #include "__XSTimer.h"
 
-/*!
- * @function    XSTimer_Create
- * @abstract    Creates a timer object scheduled to run at a specific time
- * @param       func            A pointer to to function to call when the timer fires
- * @param       milleseconds    The timer interval, in milliseconds
- * @result      The timer object
- */
 XSTimer XSTimer_Create( void ( * func )( XSTimer timer ), XSUInteger milliseconds )
 {
     __XSTimer * t;
@@ -56,23 +49,11 @@ XSTimer XSTimer_Create( void ( * func )( XSTimer timer ), XSUInteger millisecond
      return  ( XSTimer )t;
 }
 
-/*!
- * @function    XSTimer_RunOnce
- * @abstract    Runs a specific timer once, after its time interval has been reached
- * @param       timer   The timer object
- * @result      void
- */
 void XSTimer_RunOnce( XSTimer timer )
 {
     XSThread_Detach( __XSTimer_RunOnce, ( void * )timer );
 }
 
-/*!
- * @function    XSTimer_RunAndRepeat
- * @abstract    Runs a specific timer every time its time interval has been reached
- * @param       timer   The timer object
- * @result      void
- */
 void XSTimer_RunAndRepeat( XSTimer timer )
 {
     ( ( __XSTimer * )timer )->valid = YES;
@@ -80,12 +61,6 @@ void XSTimer_RunAndRepeat( XSTimer timer )
     XSThread_Detach( __XSTimer_RunAndRepeat, ( void * )timer );
 }
 
-/*!
- * @function    XSTimer_Invalidate
- * @abstract    Invalidates a timer scheduled to repeat
- * @param       timer   The timer object
- * @result      void
- */
 void XSTimer_Invalidate( XSTimer timer )
 {
     ( ( __XSTimer * )timer )->valid = NO;

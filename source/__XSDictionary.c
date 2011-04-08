@@ -59,32 +59,16 @@ static const XSClassInfos __XSDictionaryClass =
  */
 static XSClassID __XSDictionaryClassID;
 
-/*!
- * @function    __XSDictionary_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
 void __XSDictionary_Initialize( void )
 {
     __XSDictionaryClassID = XSRuntime_RegisterClass( &__XSDictionaryClass );
 }
 
-/*!
- * @function    __XSDictionary_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
 __XSDictionary * __XSDictionary_Alloc( void )
 {
     return ( __XSDictionary * )XSRuntime_CreateInstance( __XSDictionaryClassID );
 }
 
-/*!
- * @function    __XSDictionary_Destruct
- * @abstract    Destructor
- * @param       object  A pointer to the object
- * @result      void
- */
 void __XSDictionary_Destruct( void * object )
 {
     __XSDictionary * dict;

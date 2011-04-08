@@ -59,32 +59,16 @@ static const XSClassInfos __XSLockClass =
  */
 static XSClassID __XSLockClassID;
 
-/*!
- * @function    __XSLock_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
 void __XSLock_Initialize( void )
 {
     __XSLockClassID = XSRuntime_RegisterClass( &__XSLockClass );
 }
 
-/*!
- * @function    __XSLock_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
 __XSLock * __XSLock_Alloc( void )
 {
     return ( __XSLock * )XSRuntime_CreateInstance( __XSLockClassID );
 }
 
-/*!
- * @function    __XSLock_Construct
- * @abstract    Constructor
- * @param       object  A pointer to the object
- * @result      void
- */
 void __XSLock_Construct( void * object )
 {
     __XSLock * lock;
@@ -94,12 +78,6 @@ void __XSLock_Construct( void * object )
     pthread_mutex_init( &( lock->mutex ), NULL );
 }
 
-/*!
- * @function    __XSLock_Destruct
- * @abstract    Destructor
- * @param       object  A pointer to the object
- * @result      void
- */
 void __XSLock_Destruct( void * object )
 {
     __XSLock * lock;

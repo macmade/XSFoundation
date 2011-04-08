@@ -59,33 +59,16 @@ static const XSClassInfos __XSTimerClass =
  */
 static XSClassID __XSTimerClassID;
 
-/*!
- * @function    __XSTimer_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
 void __XSTimer_Initialize( void )
 {
     __XSTimerClassID = XSRuntime_RegisterClass( &__XSTimerClass );
 }
 
-/*!
- * @function    __XSTimer_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
 __XSTimer * __XSTimer_Alloc( void )
 {
     return ( __XSTimer * )XSRuntime_CreateInstance( __XSTimerClassID );
 }
 
-/*!
- * @function    __XSTimer_RunOnce
- * @abstract    Runs a timer object after its time interval
- * @param       object  The thread object
- * @param       object  The timer object
- * @return      void
- */
 void __XSTimer_RunOnce( XSThread thread, void * object )
 {
     __XSTimer * t;
@@ -99,13 +82,6 @@ void __XSTimer_RunOnce( XSThread thread, void * object )
      
 }
 
-/*!
- * @function    __XSTimer_RunAndRepeat
- * @abstract    Runs a timer object after its time interval, and repeats untile the timer is invalidated
- * @param       object  The thread object
- * @param       object  The timer object
- * @return      void
- */
 void __XSTimer_RunAndRepeat( XSThread thread, void * object )
 {
     __XSTimer * t;

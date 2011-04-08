@@ -100,14 +100,6 @@ if( f->need_init == YES )           \
     }                               \
 }
 
-/*!
- * @abstract    Creates an XSFile instance and opens the represented file.
- * @description This function may return NULL if the represented file has not
- *              been opened.
- * @param       filename    The name of the file
- * @param       mode        The file open mode (see XSFileOpenMode)
- * @result      The instance of XSFile
- */
 XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode )
 {
     FILE      * fp;
@@ -203,12 +195,6 @@ XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode )
     return ( XSFile )file;
 }
 
-/*!
- * @function    
- * @abstract    Flushes the file stream stream
- * @param       file    The file object
- * @result      Zero on success or EOF on error
- */
 XSInteger XSFile_Flush( XSFile file )
 {
     __XSFile * _f;
@@ -220,14 +206,6 @@ XSInteger XSFile_Flush( XSFile file )
     return fflush( _f->fp );
 }
 
-/*!
- * @function    XSFile_Close
- * @abstract    Closes the file stream (after flushing, if output stream)
- * @discussion  You're still responsible to release the file object after
- *              calling this function.
- * @param       file    The file object
- * @result      EOF on error, zero otherwise.
- */
 XSInteger XSFile_Close( XSFile file )
 {
     XSInteger   res;
@@ -244,12 +222,6 @@ XSInteger XSFile_Close( XSFile file )
     return res;
 }
 
-/*!
- * @function    XSFile_Printf
- * @abstract    Converts (according to format format) and writes output to the file
- * @param       file    The file object
- * @result      The number of characters written, or negative value on error
- */
 XSInteger XSFile_Printf( XSFile file, const char * format, ... )
 {
     XSInteger   res;
@@ -270,13 +242,6 @@ XSInteger XSFile_Printf( XSFile file, const char * format, ... )
     return res;
 }
 
-/*!
- * @function    XSFile_VPrintf
- * @abstract    Equivalent to fprintf with variable argument list replaced by arg.
- * @param       file    The file object
- * @param       arg     The variable arguments list
- * @result      The number of characters written, or negative value on error
- */
 XSInteger XSFile_VPrintf( XSFile file, const char * format, va_list arg )
 {
     __XSFile * _f;
@@ -289,12 +254,6 @@ XSInteger XSFile_VPrintf( XSFile file, const char * format, va_list arg )
     return vfprintf( _f->fp, format, arg );
 }
 
-/*!
- * @function    XSFile_Getc
- * @abstract    Returns the next character from the file.
- * @param       file    The file object
- * @result      The character or EOF on error
- */
 XSInteger XSFile_Getc( XSFile file )
 {
     __XSFile * _f;
@@ -306,13 +265,6 @@ XSInteger XSFile_Getc( XSFile file )
     return fgetc( _f->fp );
 }
 
-/*!
- * @function    XSFile_Putc
- * @abstract    Writes a character to the file
- * @param       file    The file object
- * @param       c       The character to write
- * @result      The character or EOF on error
- */
 XSInteger XSFile_Putc( XSFile file, XSInteger c )
 {
     __XSFile * _f;
@@ -325,12 +277,6 @@ XSInteger XSFile_Putc( XSFile file, XSInteger c )
     return fputc( c, _f->fp );
 }
 
-/*!
- * @function    XSFile_Puts
- * @abstract    Writes a C string to the file
- * @param       file    The file object
- * @result      Non-negative on success or EOF on error.
- */
 XSInteger XSFile_Puts( XSFile file, const char * s )
 {
     __XSFile * _f;
@@ -343,15 +289,6 @@ XSInteger XSFile_Puts( XSFile file, const char * s )
     return fputs( s, _f->fp );
 }
 
-/*!
- * @function    XSFile_Read
- * @abstract    Reads from the file
- * @param       file    The file object
- * @param       ptr     A pointer to the memory location in which the data will be placed.
- * @param       file    The size of the objects to read
- * @param       file    The number of objects to read
- * @result      The number of objects read
- */
 size_t XSFile_Read( XSFile file, void * ptr, size_t size, size_t nobj )
 {
     __XSFile * _f;
@@ -363,15 +300,6 @@ size_t XSFile_Read( XSFile file, void * ptr, size_t size, size_t nobj )
     return fread( ptr, size, nobj, _f->fp );
 }
 
-/*!
- * @function    XSFile_Write
- * @abstract    Writes to the file
- * @param       file    The file object
- * @param       ptr     The data to write
- * @param       file    The size of the objects to write
- * @param       file    The number of objects to write
- * @result      The number of objects written
- */
 size_t XSFile_Write( XSFile file, const void * ptr, size_t size, size_t nobj )
 {
     __XSFile * _f;
@@ -384,18 +312,6 @@ size_t XSFile_Write( XSFile file, const void * ptr, size_t size, size_t nobj )
     return fwrite( ptr, size, nobj, _f->fp );
 }
 
-/*!
- * @function    XSFile_Seek
- * @abstract    Sets file position for the file and clears end-of-file indicator
- * @description For a binary stream, file position is set to offset bytes from
- *              the position indicated by origin: beginning of file for
- *              SEEK_SET, current position for SEEK_CUR, or end of file for
- *              SEEK_END. Behaviour is similar for a text stream, but offset
- *              must be zero or, for SEEK_SET only, a value returned by ftell.
- * @param       file    The file object
- * @param       origin  The seek origin (see XSFileSeekPosition)
- * @result      Non-zero on error.
- */
 XSInteger XSFile_Seek( XSFile file, XSInteger offset, XSFileSeekPosition origin )
 {
     __XSFile * _f;
@@ -407,12 +323,6 @@ XSInteger XSFile_Seek( XSFile file, XSInteger offset, XSFileSeekPosition origin 
     return fseek( _f->fp, offset, origin );
 }
 
-/*!
- * @function    XSFile_Tell
- * @abstract    Gets the current file position
- * @param       file    The file object
- * @result      The position or -1 on error
- */
 XSInteger XSFile_Tell( XSFile file )
 {
     __XSFile * _f;
@@ -424,11 +334,6 @@ XSInteger XSFile_Tell( XSFile file )
     return ftell( _f->fp );
 }
 
-/*!
- * @function    XSFile_Rewind
- * @abstract    Rewinds to the beginning of the file and clears the error indicators
- * return       void
- */
 void XSFile_Rewind( XSFile file )
 {
     __XSFile * _f;
@@ -440,13 +345,6 @@ void XSFile_Rewind( XSFile file )
     rewind( _f->fp );
 }
 
-/*!
- * @function    XSFile_GetPos
- * @abstract    Stores current file position
- * @param       file    The file object
- * @param       ptr     A pointer where tos store the file position
- * @result      Non-zero on error
- */
 XSInteger XSFile_GetPos( XSFile file, fpos_t * ptr )
 {
     __XSFile * _f;
@@ -458,13 +356,6 @@ XSInteger XSFile_GetPos( XSFile file, fpos_t * ptr )
     return fgetpos( _f->fp, ptr );
 }
 
-/*!
- * @function    XSFile_SetPos
- * @abstract    Sets the current file position
- * @param       file    The file object
- * @param       ptr     The file position
- * @result      Non-zero on error
- */
 XSInteger XSFile_SetPos( XSFile file, const fpos_t * ptr )
 {
     __XSFile * _f;
@@ -476,12 +367,6 @@ XSInteger XSFile_SetPos( XSFile file, const fpos_t * ptr )
     return fsetpos( _f->fp, ptr );
 }
 
-/*!
- * @function    XSFile_ClearErr
- * @abstract    Clears end-of-file and error indicators
- * @param       file    The file object
- * @result      void
- */
 void XSFile_ClearErr( XSFile file )
 {
     __XSFile * _f;
@@ -493,12 +378,6 @@ void XSFile_ClearErr( XSFile file )
     clearerr( _f->fp );
 }
 
-/*!
- * @function    XSFile_EndOfFile
- * @abstract    Checks for the end of the file
- * @param       file    The file object
- * @result      Non-zero if end-of-file indicator is set
- */
 XSInteger XSFile_EndOfFile( XSFile file )
 {
     __XSFile * _f;
@@ -510,12 +389,6 @@ XSInteger XSFile_EndOfFile( XSFile file )
     return feof( _f->fp );
 }
 
-/*!
- * @function    XSFile_Error
- * @abstract    Checks for the error indicator
- * @param       file    The file object
- * @result      Non-zero if error indicator is set
- */
 XSInteger XSFile_Error( XSFile file )
 {
     __XSFile * _f;
@@ -527,12 +400,6 @@ XSInteger XSFile_Error( XSFile file )
     return ferror( _f->fp );
 }
 
-/*!
- * @function    XSFile_Filename
- * @abstract    Gets the filename
- * @param       file    The file object
- * @result      The name of the file
- */
 const char * XSFile_Filename( XSFile file )
 {
     __XSFile * _f;
@@ -559,12 +426,6 @@ const char * XSFile_Filename( XSFile file )
     }
 }
 
-/*!
- * @function    XSFile_OpenMode
- * @abstract    Gets the file's open mode
- * @param       file    The file object
- * @result      The file's open mode
- */
 const char * XSFile_OpenMode( XSFile file )
 {
     __XSFile * _f;
@@ -591,12 +452,6 @@ const char * XSFile_OpenMode( XSFile file )
     }
 }
 
-/*!
- * @function    XSFile_IsReadable
- * @abstract    Checks if the file is readable 
- * @param       file    The file object
- * @result      true if the file is readable, otherwise false
- */
 BOOL XSFile_IsReadable( XSFile file )
 {
     __XSFile * _f;
@@ -623,12 +478,6 @@ BOOL XSFile_IsReadable( XSFile file )
     }
 }
 
-/*!
- * @function    XSFile_IsWriteable
- * @abstract    Checks if the file is writeable 
- * @param       file    The file object
- * @result      true if the file is writeable, otherwise false
- */
 BOOL XSFile_IsWriteable( XSFile file )
 {
     __XSFile * _f;
@@ -655,12 +504,6 @@ BOOL XSFile_IsWriteable( XSFile file )
     }
 }
 
-/*!
- * @function    XSFile_Copy
- * @abstract    Copies the file to another destination
- * @param       file    The file object
- * @result      True if the file was copeid, otherwise false
- */
 BOOL XSFile_Copy( XSFile file, char * new_name )
 {
     FILE        * fp1;
@@ -1067,12 +910,6 @@ BOOL XSFile_IsWorldExecutable( XSFile file )
     return ( ( ( _f->stat_buf.st_mode & S_IRWXO ) == S_IXOTH ) ) ? YES : NO;
 }
 
-/*!
- * @function    XSFile_HasSUID
- * @abstract    Checks if the file has the SUID bit set
- * @param       file    The file object
- * @result      True if the SUID bit is set, otherwise false
- */
 BOOL XSFile_HasSUID( XSFile file )
 {
     __XSFile * _f;
@@ -1082,12 +919,6 @@ BOOL XSFile_HasSUID( XSFile file )
     return ( _f->stat_buf.st_mode & S_ISUID ) ? YES : NO;
 }
 
-/*!
- * @function    XSFile_HasSGID
- * @abstract    Checks if the file has the SGID bit set
- * @param       file    The file object
- * @result      True if the SGID bit is set, otherwise false
- */
 BOOL XSFile_HasSGID( XSFile file )
 {
     __XSFile * _f;

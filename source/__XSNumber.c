@@ -59,21 +59,11 @@ static const XSClassInfos __XSNumberClass =
  */
 static XSClassID __XSNumberClassID;
 
-/*!
- * @function    __XSNumber_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
 void __XSNumber_Initialize( void )
 {
     __XSNumberClassID = XSRuntime_RegisterClass( &__XSNumberClass );
 }
 
-/*!
- * @function    __XSNumber_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
 __XSNumber * __XSNumber_Alloc( void )
 {
     return ( __XSNumber * )XSRuntime_CreateInstance( __XSNumberClassID );

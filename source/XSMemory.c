@@ -38,14 +38,6 @@
 #include "XS.h"
 #include "__XSMemory.h"
 
-/*!
- * @function    XSAutoreleasePool_Create
- * @abstract    Creates a new auto-release pool
- * @description The newly created pool will be set as the active one, meaning
- *              objects auto-released after the pool creation will be placed
- *              inside it.
- * @result      The new auto-release pool object
- */
 XSAutoreleasePool XSAutoreleasePool_Create( void )
 {
     __XSAutoreleasePool * ap;
@@ -76,11 +68,6 @@ XSAutoreleasePool XSAutoreleasePool_Create( void )
     return ( XSAutoreleasePool )ap;
 }
 
-/*!
- * @function    XSAutoreleasePool_Drain
- * @abstract    Removes objects from the current auto-release pool, sending the a release message.
- * @result      void
- */
 void XSAutoreleasePool_Drain( void )
 {
     __XSAutoreleasePool * ap;
@@ -90,15 +77,6 @@ void XSAutoreleasePool_Drain( void )
     __XSMemory_AutoreleasePoolDrain( ap );
 }
 
-/*!
- * @function    XSAlloc
- * @abstract    Allocates memory
- * descriton    Returned pointer will have to be passed to the XSRelease
- *              function in order to be free.
- * @param       size    The number of bytes to allocate
- * @param       ...     Reserved for internal runtime use
- * @result      A pointer to the allocated memory
- */
 void * XSAlloc( size_t size, ... )
 {
     static size_t              allocID = 0;
@@ -151,13 +129,6 @@ void * XSAlloc( size_t size, ... )
     return ptr;
 }
 
-/*!
- * @function    XSRealloc
- * @abstract    Reallocates memory
- * @param       ptr     The pointer to reallocate
- * @param       size    The new size in bytes
- * @result      The new pointer to the reallocated memory
- */
 void * XSRealloc( void * ptr, size_t size )
 {
     __XSMemoryObject * o;
@@ -182,15 +153,6 @@ void * XSRealloc( void * ptr, size_t size )
     return o->data;
 }
 
-/*!
- * @function    XSRetain
- * @abstract    Retains a memory pointer, preventing it to be freed
- * @description When retaining an object, the internal retain count is
- *              incremented. It means you own an object that you retain, and
- *              that you are responsible to release it using XSRelease.
- * @param       ptr     The pointer to retain
- * @result      The pointer passed, to allow function chaining
- */
 void * XSRetain( void * ptr )
 {
     __XSMemoryObject * o;
@@ -207,15 +169,6 @@ void * XSRetain( void * ptr )
     return ptr;
 }
 
-/*!
- * @function    XSRelease
- * @abstract    Releases a memory pointer
- * @description When releasing an object, the internal retain count is
- *              decremented. When it reaches 0, the pointer will be
- *              automatically freed.
- * @param       ptr     The pointer to release
- * @result      The pointer passed, to allow function chaining
- */
 void * XSRelease( void * ptr )
 {
     __XSMemoryObject         * o;
@@ -250,15 +203,6 @@ void * XSRelease( void * ptr )
     return ptr;
 }
 
-/*!
- * @function    XSAutorelease
- * @abstract    Marks a memory pointer as auto-releasable
- * @description The pointer will be placed in the instance of the current
- *              auto-release pool, and will receive a release message the next
- *              the auto-release pool is drained.
- * @param       The memory pointer to mark as auto-releasable
- * @result      The pointer passed, to allow function chaining
- */
 void * XSAutorelease( void * ptr )
 {
     __XSAutoreleasePool * ap;
@@ -293,16 +237,6 @@ void * XSAutorelease( void * ptr )
     return ptr;
 }
 
-/*!
- * @function    XSAutoAlloc
- * @abstract    Allocates auto-releasable memory
- * @description When using this function, the object will automatically receive
- *              a release message the next time the current auto-release pool
- *              is drained. It means you don't own it, and that you are not
- *              responsible to release it explicitely.
- * @param       size    The size to allocate in bytes
- * @result      A pointer to the allocated memory,
- */
 void * XSAutoAlloc( size_t size )
 {
     void * ptr;
@@ -314,16 +248,6 @@ void * XSAutoAlloc( size_t size )
     return ptr;
 }
 
-/*!
- * @function    XSCopy
- * @abstract    Copies a pointer
- * @description This function executes a soft-copy. When using a structure with
- *              pointers, only the first level is copied.
- *              Note that you are responsible to release the copied pointer
- *              by using the XSRelease function.
- * @param       ptr     The pointer to copy
- * @result      The copy of the new pointer
- */
 void * XSCopy( void * ptr )
 {
     __XSMemoryObject         * o;
@@ -369,13 +293,6 @@ void * XSCopy( void * ptr )
     return ptr2;
 }
 
-/*!
- * @function    XSEquals
- * @abstract    Compares two pointers/objects
- * @param       ptr1    The first pointer/object
- * @param       ptr2    The second pointer/object
- * @result      True if the two pointers/objects are equals, otherwise false
- */
 BOOL XSEquals( void * ptr1, void * ptr2 )
 {
     __XSMemoryObject         * o;
@@ -406,12 +323,6 @@ BOOL XSEquals( void * ptr1, void * ptr2 )
     return ( ptr1 == ptr2 ) ? YES : NO;
 }
 
-/*!
- * @function    XSHash
- * @abstract    Hashes a pointer/object
- * @param       ptr     The pointer/object to hash
- * @result      The hash of the pointer/object
- */
 const char * XSHash( void * ptr )
 {
     __XSMemoryObject         * o;
@@ -451,12 +362,6 @@ const char * XSHash( void * ptr )
     return ( const char * )o->hash;
 }
 
-/*!
- * @function    XSGetRetainCount
- * @abstract    Gets the retain count for a pointer
- * @param       ptr     The pointer
- * @result      The retain count
- */
 XSUInteger XSGetRetainCount( void * ptr )
 {
     __XSMemoryObject * o;

@@ -59,20 +59,11 @@ static const XSClassInfos __XSURLClass =
  */
 static XSClassID __XSURLClassID;
 
-/*!
- * @function    __XSURL_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
 void __XSURL_Initialize( void )
 {
     __XSURLClassID = XSRuntime_RegisterClass( &__XSURLClass );
 }
-/*!
- * @function    __XSURL_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
+
 __XSURL * __XSURL_Alloc( void )
 {
     return ( __XSURL * )XSRuntime_CreateInstance( __XSURLClassID );

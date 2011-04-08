@@ -148,12 +148,6 @@ static unsigned char MD5_PADDING[ 64 ] =
     ( a ) += ( b );                                                             \
 }
 
-/*!
- * @function    MD5_Init
- * @abstract    
- * @param       
- * @result      void
- */
 void MD5_Init( MD5_CTX * context )
 {
   context->count[ 0 ] = 0;
@@ -164,14 +158,6 @@ void MD5_Init( MD5_CTX * context )
   context->state[ 3 ] = 0x10325476;
 }
 
-/*!
- * @function    MD5_Update
- * @abstract    
- * @param       
- * @param       
- * @param       
- * @result      void
- */
 void MD5_Update( MD5_CTX * context, unsigned char * data, unsigned int length )
 
 {
@@ -210,13 +196,6 @@ void MD5_Update( MD5_CTX * context, unsigned char * data, unsigned int length )
     memcpy( ( unsigned char * )&context->buffer[ idx ], ( unsigned char * )&data[ i ], length - i );
 }
 
-/*!
- * @function    MD5_Final
- * @abstract    
- * @param       
- * @param       
- * @result      void
- */
 void MD5_Final( unsigned char digest[ 16 ], MD5_CTX * context )
 {
     unsigned char bits[ 8 ];
@@ -234,13 +213,6 @@ void MD5_Final( unsigned char digest[ 16 ], MD5_CTX * context )
     memset( ( unsigned char * )context, 0, sizeof( *( context ) ) );
 }
 
-/*!
- * @function    __MD5_Transform
- * @abstract    
- * @param       
- * @param       
- * @result      void
- */
 static void __MD5_Transform( unsigned long int state[ 4 ], unsigned char block[ 64 ] )
 {
     unsigned long int a;
@@ -336,14 +308,6 @@ static void __MD5_Transform( unsigned long int state[ 4 ], unsigned char block[ 
     memset( ( unsigned char * )x, 0, sizeof( x ) );
 }
 
-/*!
- * @function    __MD5_Encode
- * @abstract    
- * @param       
- * @param       
- * @param       
- * @result      void
- */
 static void __MD5_Encode( unsigned char * output, unsigned long int * input, unsigned int length )
 {
     unsigned int i;
@@ -358,14 +322,6 @@ static void __MD5_Encode( unsigned char * output, unsigned long int * input, uns
     }
 }
 
-/*!
- * @function    __MD5_Decode
- * @abstract    
- * @param       
- * @param       
- * @param       
- * @result      void
- */
 static void __MD5_Decode( unsigned long int * output, unsigned char * input, unsigned int length )
 {
     unsigned int i;

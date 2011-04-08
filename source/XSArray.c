@@ -38,22 +38,11 @@
 #include "XS.h"
 #include "__XSArray.h"
 
-/*!
- * @function    XSArray_Create
- * @abstract    Creates an empty array
- * @result      The array object
- */
 XSArray XSArray_Create( void )
 {
     return XSArray_CreateWithCapacity( XSARRAY_DEFAULT_CAPACITY );
 }
 
-/*!
- * @function    XSArray_CreateWithCapacity
- * @abstract    Creates an empty array with an initial capacity
- * @param       capacity    The initial array capacity
- * @result      The array object
- */
 XSArray XSArray_CreateWithCapacity( XSUInteger capacity )
 {
     void      ** store;
@@ -72,14 +61,6 @@ XSArray XSArray_CreateWithCapacity( XSUInteger capacity )
     return ( XSArray )array;
 }
 
-/*!
- * @function    XSArray_CreateWithValues
- * @abstract    Creates an array by inserting values
- * @description Values will be automatically retained.
- * @param       value1  The first value to insert
- * @param       ...     The values to insert. Must be terminated by a NULL fence
- * @result      The array object
- */
 XSArray XSArray_CreateWithValues( void * value1, ... )
 {
     va_list      args;
@@ -121,25 +102,11 @@ XSArray XSArray_CreateWithValues( void * value1, ... )
     return ( XSArray )array;
 }
 
-/*!
- * @function    XSArray_Count
- * @abstract    Gets the number of values in the array
- * @param       array   The array object
- * @result      The number of values in the array
- */
 XSUInteger XSArray_Count( XSArray array )
 {
     return ( ( __XSArray * )array )->count;
 }
 
-/*!
- * @function    XSArray_AppendValue
- * @abstract    Appends a value at the end of the array.
- * @description The appended value will be automatically retained.
- * @param       array   The array object
- * @param       The value to append
- * @result      void
- */
 void XSArray_AppendValue( XSArray array, void * value )
 {
     __XSArray * _array;
@@ -161,15 +128,6 @@ void XSArray_AppendValue( XSArray array, void * value )
     _array->values[ _array->count++ ] = XSRetain( value );
 }
 
-/*!
- * @function    XSArray_InsertValueAtIndex
- * @abstract    Insert a value at a specific index
- * @description The appended value will be automatically retained.
- * @param       array   The array object
- * @param       value   The value to insert
- * @param       i       The index in the array
- * @result      void
- */
 void XSArray_InsertValueAtIndex( XSArray array, void * value, XSUInteger i )
 {
     __XSArray  * _array;
@@ -206,16 +164,6 @@ void XSArray_InsertValueAtIndex( XSArray array, void * value, XSUInteger i )
     ( void )i;
 }
 
-/*!
- * @function    XSArray_ReplaceValueAtIndex
- * @abstract    Replace the value at a specific index with a new value
- * @description The new value will be automatically retained, and the old value
- *              will be released.
- * @param       array   The array object
- * @param       value   The value to insert
- * @param       i       The index in the array
- * @result      The old value
- */
 void * XSArray_ReplaceValueAtIndex( XSArray array, void * value, XSUInteger i )
 {
     __XSArray * _array;
@@ -241,13 +189,6 @@ void * XSArray_ReplaceValueAtIndex( XSArray array, void * value, XSUInteger i )
     return XSRelease( old );
 }
 
-/*!
- * @function    XSArray_ValueAtIndex
- * @abstract    Gets the value at a specific index
- * @param       array   The array object
- * @param       i       The index in the array
- * @result      The array value
- */
 void * XSArray_ValueAtIndex( XSArray array, XSUInteger i )
 {
     __XSArray * _array;
@@ -262,13 +203,6 @@ void * XSArray_ValueAtIndex( XSArray array, XSUInteger i )
     return _array->values[ i ];
 }
 
-/*!
- * @function    XSArray_RemoveValueAtIndex
- * @abstract    Removes a value at a specific index
- * @description The removed value will be released.
- * @param       array   The array object
- * @result      The removed value
- */
 void * XSArray_RemoveValueAtIndex( XSArray array, XSUInteger i )
 {
     __XSArray  * _array;
@@ -291,13 +225,6 @@ void * XSArray_RemoveValueAtIndex( XSArray array, XSUInteger i )
     return NULL;
 }
 
-/*!
- * @function    XSArray_ContainsValue
- * @abstract    Checks if the array contains a specific value
- * @param       array   The array object
- * @param       array   The value to search
- * @result      YES if the array contains the value, otherwise NO
- */
 BOOL XSArray_ContainsValue( XSArray array, void * value )
 {
     __XSArray  * _array;
@@ -316,12 +243,6 @@ BOOL XSArray_ContainsValue( XSArray array, void * value )
     return NO;
 }
 
-/*!
- * @function    XSArray_Index
- * @abstract    Gets the current array index
- * @param       array   The array object
- * @result      The current array index
- */
 XSUInteger XSArray_Index( XSArray array )
 {
     __XSArray  * _array;
@@ -331,12 +252,6 @@ XSUInteger XSArray_Index( XSArray array )
     return _array->cur;
 }
 
-/*!
- * @function    XSArray_Current
- * @abstract    Gets the current array value
- * @param       array   The array object
- * @result      The current array value
- */
 void * XSArray_Current( XSArray array )
 {
     __XSArray  * _array;
@@ -346,12 +261,6 @@ void * XSArray_Current( XSArray array )
     return _array->values[ _array->cur ];
 }
 
-/*!
- * @function    XSArray_Next
- * @abstract    Increases the internal value pointer and returns the value
- * @param       array   The array object
- * @result      The array value
- */
 void * XSArray_Next( XSArray array )
 {
     __XSArray  * _array;
@@ -366,12 +275,6 @@ void * XSArray_Next( XSArray array )
     return _array->values[ ++_array->cur ];
 }
 
-/*!
- * @function    XSArray_Previous
- * @abstract    Decrease the internal value pointer and returns the value
- * @param       array   The array object
- * @result      The array value
- */
 void * XSArray_Previous( XSArray array )
 {
     __XSArray  * _array;
@@ -386,12 +289,6 @@ void * XSArray_Previous( XSArray array )
     return _array->values[ --_array->cur ];
 }
 
-/*!
- * @function    XSArray_Rewind
- * @abstract    Sets the internal value pointer to the first value in the array
- * @param       array   The array object
- * @result      void
- */
 void XSArray_Rewind( XSArray array )
 {
     __XSArray  * _array;
