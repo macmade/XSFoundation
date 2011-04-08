@@ -38,6 +38,13 @@
 #include "XS.h"
 #include "__XSApplicationArgument.h"
 
+extern XSClassID __XSApplicationArgumentClassID;
+
+XSApplicationArgument XSApplicationArgument_Alloc( void )
+{
+    return ( XSApplicationArgument )XSRuntime_CreateInstance( __XSApplicationArgumentClassID );
+}
+
 XSApplicationArgument XSApplicationArgument_Create( const char * name, XSApplicationArgumentType type, ... )
 {
     va_list                   args;
@@ -50,7 +57,7 @@ XSApplicationArgument XSApplicationArgument_Create( const char * name, XSApplica
     
     va_end( args );
     
-    arg           = __XSApplicationArgument_Alloc();
+    arg           = ( __XSApplicationArgument * )XSApplicationArgument_Alloc();
     arg->name     = name;
     arg->type     = type;
     arg->uint_val = 0;

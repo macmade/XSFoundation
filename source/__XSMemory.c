@@ -69,16 +69,11 @@ static const XSClassInfos __XSAutoreleasePoolClass =
  * @var         __XSAutoreleasePoolClassID
  * @abstract    Type ID for the runtine class
  */
-static XSClassID __XSAutoreleasePoolClassID;
+XSClassID __XSAutoreleasePoolClassID;
 
 void __XSAutoreleasePool_Initialize( void )
 {
     __XSAutoreleasePoolClassID = XSRuntime_RegisterClass( &__XSAutoreleasePoolClass );
-}
-
-__XSAutoreleasePool * __XSAutoreleasePool_Alloc( void )
-{
-    return ( __XSAutoreleasePool * )XSRuntime_CreateInstance( __XSAutoreleasePoolClassID );
 }
 
 void __XSAutoreleasePool_Destruct( void * object )

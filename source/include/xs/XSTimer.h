@@ -50,6 +50,13 @@ XS_EXTERN_C_BEGIN
 typedef struct XSTimer * XSTimer;
 
 /*!
+ * @function    XSTimer_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
+XSTimer XSTimer_Alloc( void );
+
+/*!
  * @function    XSTimer_Create
  * @abstract    Creates a timer object scheduled to run at a specific time
  * @param       func            A pointer to to function to call when the timer fires

@@ -38,13 +38,20 @@
 #include "XS.h"
 #include "__XSNull.h"
 
-static __XSNull * __xsnull = NULL;
+extern XSClassID __XSNullClassID;
+
+static XSNull __xsnull = NULL;
+
+XSNull XSNull_Alloc( void )
+{
+    return ( XSNull )XSRuntime_CreateInstance( __XSNullClassID );
+}
 
 XSNull XSNull_Null( void )
 {
     if( __xsnull == NULL )
     {
-        __xsnull = __XSNull_Alloc();
+        __xsnull = XSNull_Alloc();
     }
     
     return ( XSNull )__xsnull;

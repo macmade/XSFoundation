@@ -38,7 +38,14 @@
 #include "XS.h"
 #include "__XSData.h"
 
+extern XSClassID __XSDataClassID;
+
+XSData XSData_Alloc( void )
+{
+    return ( XSData )XSRuntime_CreateInstance( __XSDataClassID );
+}
+
 XSData XSData_Create( void )
 {
-    return ( XSData )__XSData_Alloc();
+    return XSData_Alloc();
 }

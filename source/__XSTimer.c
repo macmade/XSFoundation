@@ -57,16 +57,11 @@ static const XSClassInfos __XSTimerClass =
  * @var         __XSTimerClassID
  * @abstract    Type ID for the runtine class
  */
-static XSClassID __XSTimerClassID;
+XSClassID __XSTimerClassID;
 
 void __XSTimer_Initialize( void )
 {
     __XSTimerClassID = XSRuntime_RegisterClass( &__XSTimerClass );
-}
-
-__XSTimer * __XSTimer_Alloc( void )
-{
-    return ( __XSTimer * )XSRuntime_CreateInstance( __XSTimerClassID );
 }
 
 void __XSTimer_RunOnce( XSThread thread, void * object )

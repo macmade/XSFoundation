@@ -52,6 +52,13 @@ XS_EXTERN_C_BEGIN
 typedef struct XSAutoreleasePool * XSAutoreleasePool;
 
 /*!
+ * @function    XSAutoreleasePool_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
+XSAutoreleasePool XSAutoreleasePool_Alloc( void );
+
+/*!
  * @function    XSAutoreleasePool_Create
  * @abstract    Creates a new auto-release pool
  * @description The newly created pool will be set as the active one, meaning

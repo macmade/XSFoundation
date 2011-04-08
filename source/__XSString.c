@@ -57,16 +57,11 @@ static const XSClassInfos __XSStringClass =
  * @var         __XSStringClassID
  * @abstract    Type ID for the runtine class
  */
-static XSClassID __XSStringClassID;
+XSClassID __XSStringClassID;
 
 void __XSString_Initialize( void )
 {
     __XSStringClassID = XSRuntime_RegisterClass( &__XSStringClass );
-}
-
-__XSString * __XSString_Alloc( void )
-{
-    return ( __XSString * )XSRuntime_CreateInstance( __XSStringClassID );
 }
 
 void __XSString_Destruct( void * object )

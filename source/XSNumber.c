@@ -38,6 +38,13 @@
 #include "XS.h"
 #include "__XSNumber.h"
 
+extern XSClassID __XSNumberClassID;
+
+XSNumber XSNumber_Alloc( void )
+{
+    return ( XSNumber )XSRuntime_CreateInstance( __XSNumberClassID );
+}
+
 XSNumber XSNumber_CreateWithBool( BOOL value )
 {
     ( void )value;

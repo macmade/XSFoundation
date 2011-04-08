@@ -68,6 +68,13 @@ typedef enum
 XSApplicationArgumentType;
 
 /*!
+ * @function    XSApplicationArgument_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
+XSApplicationArgument XSApplicationArgument_Alloc( void );
+
+/*!
  * @function    XSApplicationArgument_Create
  * @abstract    Creates a CLI argument object
  * @param       name    The name of the CLI argument, including dashes (- or --)

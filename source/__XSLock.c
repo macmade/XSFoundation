@@ -57,16 +57,11 @@ static const XSClassInfos __XSLockClass =
  * @var         __XSLockClassID
  * @abstract    Type ID for the runtine class
  */
-static XSClassID __XSLockClassID;
+XSClassID __XSLockClassID;
 
 void __XSLock_Initialize( void )
 {
     __XSLockClassID = XSRuntime_RegisterClass( &__XSLockClass );
-}
-
-__XSLock * __XSLock_Alloc( void )
-{
-    return ( __XSLock * )XSRuntime_CreateInstance( __XSLockClassID );
 }
 
 void __XSLock_Construct( void * object )

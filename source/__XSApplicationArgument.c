@@ -57,14 +57,9 @@ static const XSClassInfos __XSApplicationArgumentClass =
  * @var         __XSApplicationArgumentClassID
  * @abstract    Type ID for the runtine class
  */
-static XSClassID __XSApplicationArgumentClassID;
+XSClassID __XSApplicationArgumentClassID;
 
 void __XSApplicationArgument_Initialize( void )
 {
     __XSApplicationArgumentClassID = XSRuntime_RegisterClass( &__XSApplicationArgumentClass );
-}
-
-__XSApplicationArgument * __XSApplicationArgument_Alloc( void )
-{
-    return ( __XSApplicationArgument * )XSRuntime_CreateInstance( __XSApplicationArgumentClassID );
 }

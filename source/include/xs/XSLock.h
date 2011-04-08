@@ -50,6 +50,13 @@ XS_EXTERN_C_BEGIN
 typedef struct XSLock * XSLock;
 
 /*!
+ * @function    XSLock_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
+XSLock XSLock_Alloc( void );
+
+/*!
  * @function    XSLock_Create
  * @abstract    Creates a lock
  * @result      The lock object

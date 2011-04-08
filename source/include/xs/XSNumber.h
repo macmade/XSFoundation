@@ -50,6 +50,13 @@ XS_EXTERN_C_BEGIN
 typedef struct XSNumber * XSNumber;
 
 /*!
+ * @function    XSNumber_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
+XSNumber XSNumber_Alloc( void );
+
+/*!
  * @function    XSNumber_CreateWithBool
  * @abstract    Creates a number with a BOOL value
  * @param       The BOOL value

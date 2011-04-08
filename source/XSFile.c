@@ -38,6 +38,8 @@
 #include "XS.h"
 #include "__XSFile.h"
 
+extern XSClassID __XSFileClassID;
+
 /*!
  * @var         __XSSStdin
  * @abstract    XSFile structure representing stdin
@@ -100,6 +102,11 @@ if( f->need_init == YES )           \
     }                               \
 }
 
+XSFile XSFile_Alloc( void )
+{
+    return ( XSFile )XSRuntime_CreateInstance( __XSFileClassID );
+}
+
 XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode )
 {
     FILE      * fp;
@@ -155,7 +162,7 @@ XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode )
         return NULL;
     }
     
-    if( NULL == ( file = __XSFile_Alloc() ) )
+    if( NULL == ( file = ( __XSFile * )XSFile_Alloc() ) )
     {
         return NULL;
     }

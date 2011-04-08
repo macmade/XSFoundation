@@ -38,15 +38,22 @@
 #include "XS.h"
 #include "__XSApplication.h"
 
+extern XSClassID __XSApplicationClassID;
+
 static __XSApplication    * __xsapp = NULL;
 static XSAutoreleasePool    __xsarp = NULL;
 static BOOL __xsapp_argv_processed  = NO;
+
+XSApplication XSApplication_Alloc( void )
+{
+    return ( XSApplication )XSRuntime_CreateInstance( __XSApplicationClassID );
+}
 
 XSApplication XSApplication_Start( int argc, const char ** argv )
 {
     XSRuntime_Initialize();
     
-    __xsapp = __XSApplication_Alloc();
+    __xsapp = ( __XSApplication * )XSApplication_Alloc();
     __xsarp = XSAutoreleasePool_Create();
     
     __xsapp->argc       = argc - 1;

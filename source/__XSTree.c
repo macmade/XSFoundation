@@ -57,14 +57,9 @@ static const XSClassInfos __XSTreeClass =
  * @var         __XSTreeClassID
  * @abstract    Type ID for the runtine class
  */
-static XSClassID __XSTreeClassID;
+XSClassID __XSTreeClassID;
 
 void __XSTree_Initialize( void )
 {
     __XSTreeClassID = XSRuntime_RegisterClass( &__XSTreeClass );
-}
-
-__XSTree * __XSTree_Alloc( void )
-{
-    return ( __XSTree * )XSRuntime_CreateInstance( __XSTreeClassID );
 }

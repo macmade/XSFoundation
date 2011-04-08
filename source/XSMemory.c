@@ -38,6 +38,13 @@
 #include "XS.h"
 #include "__XSMemory.h"
 
+extern XSClassID __XSAutoreleasePoolClassID;
+
+XSAutoreleasePool XSAutoreleasePool_Alloc( void )
+{
+    return ( XSAutoreleasePool )XSRuntime_CreateInstance( __XSAutoreleasePoolClassID );
+}
+
 XSAutoreleasePool XSAutoreleasePool_Create( void )
 {
     __XSAutoreleasePool * ap;
@@ -48,7 +55,7 @@ XSAutoreleasePool XSAutoreleasePool_Create( void )
         exit( EXIT_FAILURE );
     }
     
-    if( NULL == ( ap = __XSAutoreleasePool_Alloc() ) )
+    if( NULL == ( ap = ( __XSAutoreleasePool * )XSAutoreleasePool_Alloc() ) )
     {
         fprintf( stderr, "Error: unable to allocate memory for the auto-release pool\n" );
         exit( EXIT_FAILURE );

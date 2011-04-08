@@ -57,16 +57,11 @@ static const XSClassInfos __XSDictionaryClass =
  * @var         __XSDictionaryClassID
  * @abstract    Type ID for the runtine class
  */
-static XSClassID __XSDictionaryClassID;
+XSClassID __XSDictionaryClassID;
 
 void __XSDictionary_Initialize( void )
 {
     __XSDictionaryClassID = XSRuntime_RegisterClass( &__XSDictionaryClass );
-}
-
-__XSDictionary * __XSDictionary_Alloc( void )
-{
-    return ( __XSDictionary * )XSRuntime_CreateInstance( __XSDictionaryClassID );
 }
 
 void __XSDictionary_Destruct( void * object )

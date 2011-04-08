@@ -57,16 +57,11 @@ static const XSClassInfos __XSArrayClass =
  * @var         __XSArrayClassID
  * @abstract    Type ID for the runtine class
  */
-static XSClassID __XSArrayClassID;
+XSClassID __XSArrayClassID;
 
 void __XSArray_Initialize( void )
 {
     __XSArrayClassID = XSRuntime_RegisterClass( &__XSArrayClass );
-}
-
-__XSArray * __XSArray_Alloc( void )
-{
-    return ( __XSArray * )XSRuntime_CreateInstance( __XSArrayClassID );
 }
 
 void __XSArray_Destruct( void * object )

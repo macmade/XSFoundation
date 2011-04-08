@@ -57,16 +57,11 @@ static const XSClassInfos __XSColorClass =
  * @var         __XSColorClassID
  * @abstract    Type ID for the runtine class
  */
-static XSClassID __XSColorClassID;
+XSClassID __XSColorClassID;
 
 void __XSColor_Initialize( void )
 {
     __XSColorClassID = XSRuntime_RegisterClass( &__XSColorClass );
-}
-
-__XSColor * __XSColor_Alloc( void )
-{
-    return ( __XSColor * )XSRuntime_CreateInstance( __XSColorClassID );
 }
 
 void __XSColor_RGBToHSL( __XSColor * color )

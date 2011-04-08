@@ -38,9 +38,16 @@
 #include "XS.h"
 #include "__XSLock.h"
 
+extern XSClassID __XSLockClassID;
+
+XSLock XSLock_Alloc( void )
+{
+    return ( XSLock )XSRuntime_CreateInstance( __XSLockClassID );
+}
+
 XSLock XSLock_Create( void )
 {
-    return ( XSLock )__XSLock_Alloc();
+    return XSLock_Alloc();
 }
 
 BOOL XSLock_Lock( XSLock lock )

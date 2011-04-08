@@ -56,6 +56,13 @@ XS_EXTERN_C_BEGIN
 typedef struct XSArray * XSArray;
 
 /*!
+ * @function    XSArray_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
+XSArray XSArray_Alloc( void );
+
+/*!
  * @function    XSArray_Create
  * @abstract    Creates an empty array
  * @result      The array object

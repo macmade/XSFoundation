@@ -50,6 +50,13 @@ XS_EXTERN_C_BEGIN
 typedef struct XSString * XSString;
 
 /*!
+ * @function    XSString_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
+XSString XSString_Alloc( void );
+
+/*!
  * @function    XSString_Create
  * @abstract    Creates an empty string
  * @result      A new string object

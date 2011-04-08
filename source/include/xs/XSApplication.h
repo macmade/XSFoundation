@@ -54,6 +54,13 @@ XS_EXTERN_C_BEGIN
 typedef struct __XSApplication * XSApplication;
 
 /*!
+ * @function    XSApplication_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
+XSApplication XSApplication_Alloc( void );
+
+/*!
  * @function    XSApplication_Exit
  * @abstract    XSFoundation start routine
  * @description You must call this function before using any other XSFoundation

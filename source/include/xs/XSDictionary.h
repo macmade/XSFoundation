@@ -56,6 +56,13 @@ XS_EXTERN_C_BEGIN
 typedef struct XSDictionary * XSDictionary;
 
 /*!
+ * @function    __XSDictionary_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
+XSDictionary XSDictionary_Alloc( void );
+
+/*!
  * @function    XSDictionary_Create
  * @abstract    Creates an empty dictionary
  * @result      The new dictionary object

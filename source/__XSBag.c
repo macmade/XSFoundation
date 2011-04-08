@@ -57,14 +57,9 @@ static const XSClassInfos __XSBagClass =
  * @var         __XSBagClassID
  * @abstract    Type ID for the runtine class
  */
-static XSClassID __XSBagClassID;
+XSClassID __XSBagClassID;
 
 void __XSBag_Initialize( void )
 {
     __XSBagClassID = XSRuntime_RegisterClass( &__XSBagClass );
-}
-
-__XSBag * __XSBag_Alloc( void )
-{
-    return ( __XSBag * )XSRuntime_CreateInstance( __XSBagClassID );
 }

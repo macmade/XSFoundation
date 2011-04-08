@@ -50,6 +50,13 @@ XS_EXTERN_C_BEGIN
 typedef struct XSThread * XSThread;
 
 /*!
+ * @function    XSThread_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
+XSThread XSThread_Alloc( void );
+
+/*!
  * @function    XSThread_Detach
  * @abstract    Creates and detaches a thread
  * @description The thread object will be automatically released when it

@@ -115,6 +115,13 @@ extern XSFile XSStdout;
 extern XSFile XSStderr;
 
 /*!
+ * @function    XSFile_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
+XSFile XSFile_Alloc( void );
+
+/*!
  * @abstract    Creates an XSFile instance and opens the represented file.
  * @description This function may return NULL if the represented file has not
  *              been opened.

@@ -38,7 +38,14 @@
 #include "XS.h"
 #include "__XSTree.h"
 
+extern XSClassID __XSTreeClassID;
+
+XSTree XSTree_Alloc( void )
+{
+    return ( XSTree )XSRuntime_CreateInstance( __XSTreeClassID );
+}
+
 XSTree XSTree_Create( void )
 {
-    return ( XSTree )__XSTree_Alloc();
+    return XSTree_Alloc();
 }

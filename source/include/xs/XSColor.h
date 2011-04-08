@@ -50,6 +50,13 @@ XS_EXTERN_C_BEGIN
 typedef struct XSColor * XSColor;
 
 /*!
+ * @function    __XSColor_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
+XSColor XSColor_Alloc( void );
+
+/*!
  * @function    XSColor_CreateWithRGB
  * @abstract    Creates a color with RGB components
  * @param       r   The red value

@@ -38,11 +38,18 @@
 #include "XS.h"
 #include "__XSError.h"
 
+extern XSClassID __XSErrorClassID;
+
+XSError XSError_Alloc( void )
+{
+    return ( XSError )XSRuntime_CreateInstance( __XSErrorClassID );
+}
+
 XSError XSError_Create( XSInteger code, XSString domain, XSString reason )
 {
     __XSError * error;
     
-    error = __XSError_Alloc();
+    error = ( __XSError * )XSError_Alloc();
     
     error->code   = code;
     error->domain = domain;

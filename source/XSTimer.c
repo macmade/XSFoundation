@@ -38,11 +38,18 @@
 #include "XS.h"
 #include "__XSTimer.h"
 
+extern XSClassID __XSTimerClassID;
+
+XSTimer XSTimer_Alloc( void )
+{
+    return ( XSTimer )XSRuntime_CreateInstance( __XSTimerClassID );
+}
+
 XSTimer XSTimer_Create( void ( * func )( XSTimer timer ), XSUInteger milliseconds )
 {
     __XSTimer * t;
     
-     t        = __XSTimer_Alloc();
+     t        = ( __XSTimer * )XSTimer_Alloc();
      t->msecs = milliseconds;
      t->func  = func;
      

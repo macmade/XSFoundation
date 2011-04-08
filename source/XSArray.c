@@ -38,6 +38,13 @@
 #include "XS.h"
 #include "__XSArray.h"
 
+extern XSClassID __XSArrayClassID;
+
+XSArray XSArray_Alloc( void )
+{
+    return ( XSArray )XSRuntime_CreateInstance( __XSArrayClassID );
+}
+
 XSArray XSArray_Create( void )
 {
     return XSArray_CreateWithCapacity( XSARRAY_DEFAULT_CAPACITY );
@@ -53,7 +60,7 @@ XSArray XSArray_CreateWithCapacity( XSUInteger capacity )
         return NULL;
     }
     
-    array           = __XSArray_Alloc();
+    array           = ( __XSArray * )XSArray_Alloc();
     array->values   = store;
     array->capacity = capacity;
     array->count    = 0;

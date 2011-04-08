@@ -38,6 +38,13 @@
 #include "XS.h"
 #include "__XSColor.h"
 
+extern XSClassID __XSColorClassID;
+
+XSColor XSColor_Alloc( void )
+{
+    return ( XSColor )XSRuntime_CreateInstance( __XSColorClassID );
+}
+
 XSColor XSColor_CreateWithRGB( XSFloat r, XSFloat g, XSFloat b )
 {
     return XSColor_CreateWithRGBA( r, g, b, 100 );
@@ -57,7 +64,7 @@ XSColor XSColor_CreateWithRGBA( XSFloat r, XSFloat g, XSFloat b, XSFloat a )
 {
     __XSColor * color;
     
-    color = __XSColor_Alloc();
+    color = ( __XSColor * )XSColor_Alloc();
     
     color->red   = MIN( r, 255 );
     color->green = MIN( g, 255 );
@@ -74,7 +81,7 @@ XSColor XSColor_CreateWithHSLA( XSFloat h, XSFloat s, XSFloat l, XSFloat a )
 {
     __XSColor * color;
     
-    color = __XSColor_Alloc();
+    color = ( __XSColor * )XSColor_Alloc();
     
     color->hue        = MIN( h, 360 );
     color->saturation = MIN( s, 100 );
@@ -91,7 +98,7 @@ XSColor XSColor_CreateWithHSVA( XSFloat h, XSFloat s, XSFloat v, XSFloat a )
 {
     __XSColor * color;
     
-    color = __XSColor_Alloc();
+    color = ( __XSColor * )XSColor_Alloc();
     
     color->hue        = MIN( h, 360 );
     color->saturation = MIN( s, 100 );

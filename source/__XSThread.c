@@ -57,16 +57,11 @@ static const XSClassInfos __XSThreadClass =
  * @var         __XSThreadClassID
  * @abstract    Type ID for the runtine class
  */
-static XSClassID __XSThreadClassID;
+XSClassID __XSThreadClassID;
 
 void __XSThread_Initialize( void )
 {
     __XSThreadClassID = XSRuntime_RegisterClass( &__XSThreadClass );
-}
-
-__XSThread * __XSThread_Alloc( void )
-{
-    return ( __XSThread * )XSRuntime_CreateInstance( __XSThreadClassID );
 }
 
 void * __XSThread_Run( void * thread )

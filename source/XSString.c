@@ -38,7 +38,14 @@
 #include "XS.h"
 #include "__XSString.h"
 
+extern XSClassID __XSStringClassID;
+
 #define __XSSTRING_DEFAULT_CAPACITY 256
+
+XSString XSString_Alloc( void )
+{
+    return ( XSString )XSRuntime_CreateInstance( __XSStringClassID );
+}
 
 XSString XSString_Create( void )
 {
@@ -49,7 +56,7 @@ XSString XSString_CreateWithCapacity( XSUInteger capacity )
 {
     __XSString * string;
     
-    string = __XSString_Alloc();
+    string = ( __XSString * )XSString_Alloc();
     
     if( capacity == 0 )
     {

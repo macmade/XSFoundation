@@ -52,6 +52,13 @@ XS_EXTERN_C_BEGIN
 typedef struct XSError * XSError;
 
 /*!
+ * @function    XSError_Alloc
+ * @abstract    Object allocator
+ * @result      A pointer to the allocated object
+ */
+XSError XSError_Alloc( void );
+
+/*!
  * @function    XSError_Create
  * @abstract    Creates an error
  * @param       code    The error code

@@ -38,6 +38,13 @@
 #include "XS.h"
 #include "__XSDictionary.h"
 
+extern XSClassID __XSDictionaryClassID;
+
+XSDictionary XSDictionary_Alloc( void )
+{
+    return ( XSDictionary )XSRuntime_CreateInstance( __XSDictionaryClassID );
+}
+
 XSDictionary XSDictionary_Create( void )
 {
     return XSDictionary_CreateWithCapacity( XSDICTIONARY_DEFAULT_CAPACITY );
@@ -60,7 +67,7 @@ XSDictionary XSDictionary_CreateWithCapacity( XSUInteger capacity )
         return NULL;
     }
     
-    dict           = __XSDictionary_Alloc();
+    dict           = ( __XSDictionary * )XSDictionary_Alloc();
     dict->values   = store;
     dict->keys     = keys;
     dict->capacity = capacity;
