@@ -305,6 +305,18 @@ typedef XSClassInfos * XSClass;
  */
 #define Nil	( XSClass )0
 
+/*!
+ * @define      XSStatic
+ * @abstract    Marker for static class methods
+ */
+#define XSStatic
+
+/*!
+ * @define      XSAutoReleased
+ * @abstract    Marker for methods that return auto-released objects
+ */
+#define XSAutoReleased
+
 XS_EXTERN_C_END
 
 #endif /* _XS_TYPES_H_ */
