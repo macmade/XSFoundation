@@ -9,6 +9,11 @@
 /* Begin PBXFileReference section */
 		052EC738134F2908004A939E /* std-md5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "std-md5.c"; path = "source/std-md5.c"; sourceTree = SOURCE_ROOT; };
 		052EC739134F2915004A939E /* std-md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-md5.h"; sourceTree = "<group>"; };
+		052EC750134F339C004A939E /* __machine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __machine.h; sourceTree = "<group>"; };
+		052EC752134F339C004A939E /* __arm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __arm.h; sourceTree = "<group>"; };
+		052EC753134F339C004A939E /* __i386.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __i386.h; sourceTree = "<group>"; };
+		052EC754134F339C004A939E /* eos-skl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "eos-skl.h"; sourceTree = "<group>"; };
+		052EC755134F3414004A939E /* eos-skl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "eos-skl.c"; sourceTree = "<group>"; };
 		056003BB1340621F005DC721 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
 		056003BC1340621F005DC721 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		056003BE1340621F005DC721 /* __XSMemory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemory.c; sourceTree = "<group>"; };
@@ -118,6 +123,33 @@
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		052EC74E134F339C004A939E /* eos-skl */ = {
+			isa = PBXGroup;
+			children = (
+				052EC74F134F339C004A939E /* __private */,
+				052EC754134F339C004A939E /* eos-skl.h */,
+			);
+			path = "eos-skl";
+			sourceTree = "<group>";
+		};
+		052EC74F134F339C004A939E /* __private */ = {
+			isa = PBXGroup;
+			children = (
+				052EC750134F339C004A939E /* __machine.h */,
+				052EC751134F339C004A939E /* arch */,
+			);
+			path = __private;
+			sourceTree = "<group>";
+		};
+		052EC751134F339C004A939E /* arch */ = {
+			isa = PBXGroup;
+			children = (
+				052EC752134F339C004A939E /* __arm.h */,
+				052EC753134F339C004A939E /* __i386.h */,
+			);
+			path = arch;
+			sourceTree = "<group>";
+		};
 		056003A813406206005DC721 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				056003BF1340621F005DC721 /* include */,
+				052EC755134F3414004A939E /* eos-skl.c */,
 				052EC738134F2908004A939E /* std-md5.c */,
 				056003D61340621F005DC721 /* std-string.c */,
 				0562F8C2134B3F54005190B6 /* __XSApplication.c */,
@@ -186,6 +219,7 @@
 		056003BF1340621F005DC721 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				052EC74E134F339C004A939E /* eos-skl */,
 				056003C41340621F005DC721 /* std */,
 				056003CE1340621F005DC721 /* xs */,
 				056003D51340621F005DC721 /* XS.h */,
