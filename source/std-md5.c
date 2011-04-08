@@ -26,7 +26,7 @@
  * @abstract    ...
  */
 
-#include "md5.h"
+#include "std/std-md5.h"
 #include <string.h>
 
 /* Constants for the __MD5_Transform function */
@@ -176,10 +176,10 @@ void MD5_Update( MD5_CTX * context, unsigned char * data, unsigned int length )
 
 {
     unsigned int i;
-    unsigned int index;
+    unsigned int idx;
     unsigned int partLen;
     
-    index = ( unsigned int )( ( context->count[ 0 ] >> 3 ) & 0x3F );
+    idx = ( unsigned int )( ( context->count[ 0 ] >> 3 ) & 0x3F );
     
     if( ( context->count[ 0 ] += ( ( unsigned long int )length << 3 ) ) < ( ( unsigned long int )length << 3 ) )
     {
@@ -188,11 +188,11 @@ void MD5_Update( MD5_CTX * context, unsigned char * data, unsigned int length )
     
     context->count[ 1 ] += ( ( unsigned long int )length >> 29 );
     
-    partLen = 64 - index;
+    partLen = 64 - idx;
 
     if( length >= partLen )
     {
-        memcpy( ( unsigned char * )&context->buffer[ index ], ( unsigned char * )data, partLen );
+        memcpy( ( unsigned char * )&context->buffer[ idx ], ( unsigned char * )data, partLen );
         __MD5_Transform( context->state, context->buffer );
         
         for( i = partLen; i + 63 < length; i += 64 )
@@ -200,14 +200,14 @@ void MD5_Update( MD5_CTX * context, unsigned char * data, unsigned int length )
             __MD5_Transform( context->state, &data[ i ] );
         }
         
-        index = 0;
+        idx = 0;
     }
     else
     {
         i = 0;
     }
     
-    memcpy( ( unsigned char * )&context->buffer[ index ], ( unsigned char * )&data[ i ], length - i );
+    memcpy( ( unsigned char * )&context->buffer[ idx ], ( unsigned char * )&data[ i ], length - i );
 }
 
 /*!
@@ -220,13 +220,13 @@ void MD5_Update( MD5_CTX * context, unsigned char * data, unsigned int length )
 void MD5_Final( unsigned char digest[ 16 ], MD5_CTX * context )
 {
     unsigned char bits[ 8 ];
-    unsigned int  index;
+    unsigned int  idx;
     unsigned int  padLen;
     
     __MD5_Encode( bits, context->count, 8 );
     
-    index  = ( unsigned int )( ( context->count[ 0 ] >> 3 ) & 0x3F );
-    padLen = ( index < 56 ) ? ( 56 - index ) : ( 120 - index );
+    idx    = ( unsigned int )( ( context->count[ 0 ] >> 3 ) & 0x3F );
+    padLen = ( idx < 56 ) ? ( 56 - idx ) : ( 120 - idx );
     
     MD5_Update( context, MD5_PADDING, padLen );
     MD5_Update( context, bits, 8 );
