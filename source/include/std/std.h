@@ -48,6 +48,7 @@ extern "C" {
 #include "std-keywords.h"
 #include "std-bool.h"
 #include "std-math.h"
+#include "std-md5.h"
 #include "std-bitwise.h"
 #include "std-ascii.h"
 #include "std-string.h"
