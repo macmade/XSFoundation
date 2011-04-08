@@ -54,19 +54,19 @@ typedef struct XSAutoreleasePool * XSAutoreleasePool;
 /*!
  * @function    XSAutoreleasePool_Alloc
  * @abstract    Object allocator
- * @result      A pointer to the allocated object
+ * @result      The allocated object
  */
 XSAutoreleasePool XSAutoreleasePool_Alloc( void );
 
 /*!
- * @function    XSAutoreleasePool_Create
+ * @function    XSAutoreleasePool_Init
  * @abstract    Creates a new auto-release pool
  * @description The newly created pool will be set as the active one, meaning
  *              objects auto-released after the pool creation will be placed
  *              inside it.
  * @result      The new auto-release pool object
  */
-XSAutoreleasePool XSAutoreleasePool_Create( void );
+XSAutoreleasePool XSAutoreleasePool_Init( XSAutoreleasePool xsThis );
 
 /*!
  * @function    XSAutoreleasePool_Drain

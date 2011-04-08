@@ -117,9 +117,17 @@ extern XSFile XSStderr;
 /*!
  * @function    XSFile_Alloc
  * @abstract    Object allocator
- * @result      A pointer to the allocated object
+ * @result      The allocated object
  */
 XSFile XSFile_Alloc( void );
+
+/*!
+ * @function    XSFile_Init
+ * @abstract    Initialize a file object
+ * @param       xsThis  The file object
+ * @result      A pointer to the file object
+ */
+XSFile XSFile_Init( XSFile xsThis );
 
 /*!
  * @abstract    Creates an XSFile instance and opens the represented file.

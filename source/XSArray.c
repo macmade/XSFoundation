@@ -45,12 +45,12 @@ XSArray XSArray_Alloc( void )
     return ( XSArray )XSRuntime_CreateInstance( __XSArrayClassID );
 }
 
-XSArray XSArray_Create( void )
+XSArray XSArray_Init( XSArray xsThis )
 {
-    return XSArray_CreateWithCapacity( XSARRAY_DEFAULT_CAPACITY );
+    return XSArray_InitWithCapacity( xsThis, XSARRAY_DEFAULT_CAPACITY );
 }
 
-XSArray XSArray_CreateWithCapacity( XSUInteger capacity )
+XSArray XSArray_InitWithCapacity( XSArray xsThis, XSUInteger capacity )
 {
     void      ** store;
     __XSArray  * array;
@@ -60,51 +60,10 @@ XSArray XSArray_CreateWithCapacity( XSUInteger capacity )
         return NULL;
     }
     
-    array           = ( __XSArray * )XSArray_Alloc();
+    array           = ( __XSArray * )xsThis;
     array->values   = store;
     array->capacity = capacity;
     array->count    = 0;
-    
-    return ( XSArray )array;
-}
-
-XSArray XSArray_CreateWithValues( void * value1, ... )
-{
-    va_list      args;
-    __XSArray  * array;
-    void       * value;
-    void      ** store;
-    XSUInteger   values;
-    
-    va_start( args, value1 );
-    
-    array = ( __XSArray * )XSArray_Create();
-    
-    if( value1 == NULL )
-    {
-        return ( XSArray )array;
-    }
-    
-    values                    = 0;
-    array->values[ values++ ] = XSRetain( value1 );
-    
-    while( NULL != ( value = va_arg( args, void * ) ) )
-    {
-        if( values == array->capacity )
-        {
-            if( NULL == ( store = ( void ** )XSRealloc( array->values, ( values + array->capacity ) * sizeof( void * ) ) ) )
-            {
-                XSRelease( array );
-                
-                return NULL;
-            }
-            
-            array->values   = store;
-            array->capacity = values + array->capacity;
-        }
-        
-        array->values[ values++ ] = XSRetain( value );
-    }
     
     return ( XSArray )array;
 }

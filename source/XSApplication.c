@@ -49,12 +49,17 @@ XSApplication XSApplication_Alloc( void )
     return ( XSApplication )XSRuntime_CreateInstance( __XSApplicationClassID );
 }
 
+XSApplication XSApplication_Init( XSApplication xsThis )
+{
+    return xsThis;
+}
+
 XSApplication XSApplication_Start( int argc, const char ** argv )
 {
     XSRuntime_Initialize();
     
-    __xsapp = ( __XSApplication * )XSApplication_Alloc();
-    __xsarp = XSAutoreleasePool_Create();
+    __xsapp = ( __XSApplication * )XSApplication_Init( XSApplication_Alloc() );
+    __xsarp = XSAutoreleasePool_Init( XSAutoreleasePool_Alloc() );
     
     __xsapp->argc       = argc - 1;
     __xsapp->argv       = argv + 1;
@@ -178,11 +183,11 @@ void XSApplication_RegisterArgument( XSApplication xsThis, const char * name, XS
     
     if( help )
     {
-        arg = XSApplicationArgument_Create( name, type, help );
+        arg = XSApplicationArgument_Init( XSApplicationArgument_Alloc(), name, type, help );
     }
     else
     {
-        arg = XSApplicationArgument_Create( name, type );
+        arg = XSApplicationArgument_Init( XSApplicationArgument_Alloc(), name, type );
     }
     
     if( _app->arg_count == _app->arg_alloc )

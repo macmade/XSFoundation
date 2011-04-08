@@ -45,11 +45,11 @@ XSTimer XSTimer_Alloc( void )
     return ( XSTimer )XSRuntime_CreateInstance( __XSTimerClassID );
 }
 
-XSTimer XSTimer_Create( void ( * func )( XSTimer timer ), XSUInteger milliseconds )
+XSTimer XSTimer_Init( XSTimer xsThis, void ( * func )( XSTimer timer ), XSUInteger milliseconds )
 {
     __XSTimer * t;
     
-     t        = ( __XSTimer * )XSTimer_Alloc();
+     t        = ( __XSTimer * )xsThis;
      t->msecs = milliseconds;
      t->func  = func;
      

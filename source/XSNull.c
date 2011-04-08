@@ -47,11 +47,16 @@ XSNull XSNull_Alloc( void )
     return ( XSNull )XSRuntime_CreateInstance( __XSNullClassID );
 }
 
+XSNull XSNull_Init( XSNull xsThis )
+{
+    return xsThis;
+}
+
 XSNull XSNull_Null( void )
 {
     if( __xsnull == NULL )
     {
-        __xsnull = XSNull_Alloc();
+        __xsnull = XSNull_Init( XSNull_Alloc() );
     }
     
     return ( XSNull )__xsnull;

@@ -107,6 +107,11 @@ XSFile XSFile_Alloc( void )
     return ( XSFile )XSRuntime_CreateInstance( __XSFileClassID );
 }
 
+XSFile XSFile_Init( XSFile xsThis )
+{
+    return xsThis;
+}
+
 XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode )
 {
     FILE      * fp;
@@ -162,7 +167,7 @@ XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode )
         return NULL;
     }
     
-    if( NULL == ( file = ( __XSFile * )XSFile_Alloc() ) )
+    if( NULL == ( file = ( __XSFile * )XSFile_Init( XSFile_Alloc() ) ) )
     {
         return NULL;
     }

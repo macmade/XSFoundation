@@ -45,7 +45,7 @@ XSSet XSSet_Alloc( void )
     return ( XSSet )XSRuntime_CreateInstance( __XSSetClassID );
 }
 
-XSSet XSSet_Create( void )
+XSSet XSSet_Init( XSSet xsThis )
 {
-    return XSSet_Alloc();
+    return xsThis;
 }

@@ -52,9 +52,19 @@ typedef struct XSThread * XSThread;
 /*!
  * @function    XSThread_Alloc
  * @abstract    Object allocator
- * @result      A pointer to the allocated object
+ * @description Do not allocate threads explicitely. Use the XSThread_Detach
+ *              function instead to create new threads.
+ * @result      The allocated object
  */
 XSThread XSThread_Alloc( void );
+
+/*!
+ * @function    XSThread_Alloc
+ * @abstract    Initialize a thread object
+ * @param       xsThis  The thread object
+ * @result      The thread object
+ */
+XSThread XSThread_Init( XSThread xsThis );
 
 /*!
  * @function    XSThread_Detach

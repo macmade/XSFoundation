@@ -58,7 +58,7 @@ typedef struct XSDictionary * XSDictionary;
 /*!
  * @function    __XSDictionary_Alloc
  * @abstract    Object allocator
- * @result      A pointer to the allocated object
+ * @result      The allocated object
  */
 XSDictionary XSDictionary_Alloc( void );
 
@@ -67,15 +67,15 @@ XSDictionary XSDictionary_Alloc( void );
  * @abstract    Creates an empty dictionary
  * @result      The new dictionary object
  */
-XSDictionary XSDictionary_Create( void );
+XSDictionary XSDictionary_Init( XSDictionary xsThis );
 
 /*!
- * @function    XSDictionary_CreateWithCapacity
+ * @function    XSDictionary_InitWithCapacity
  * @abstract    Creates an empty dictionary with an initial capacity
  * @param       capacity    The initial dictionary capacity
  * @result      The new dictionary object
  */
-XSDictionary XSDictionary_CreateWithCapacity( XSUInteger capacity );
+XSDictionary XSDictionary_InitWithCapacity( XSDictionary xsThis, XSUInteger capacity );
 
 /*!
  * @function    XSDictionary_Count

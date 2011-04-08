@@ -52,11 +52,11 @@ typedef struct XSDate * XSDate;
 /*!
  * @function    XSDate_Alloc
  * @abstract    Object allocator
- * @result      A pointer to the allocated object
+ * @result      The allocated object
  */
 XSDate XSDate_Alloc( void );
 
-XSDate XSDate_Create( void );
+XSDate XSDate_Init( XSDate xsThis );
 
 XS_EXTERN_C_END
 

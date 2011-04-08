@@ -45,7 +45,7 @@ XSURL XSURL_Alloc( void )
     return ( XSURL )XSRuntime_CreateInstance( __XSURLClassID );
 }
 
-XSURL XSURL_Create( void )
+XSURL XSURL_Init( XSURL xsThis )
 {
-    return XSURL_Alloc();
+    return xsThis;
 }

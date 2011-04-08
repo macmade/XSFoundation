@@ -52,11 +52,11 @@ typedef struct __XSBag * XSBag;
 /*!
  * @function    __XSBag_Alloc
  * @abstract    Object allocator
- * @result      A pointer to the allocated object
+ * @result      The allocated object
  */
 XSBag XSBag_Alloc( void );
 
-XSBag XSBag_Create( void );
+XSBag XSBag_Init( XSBag xsThis );
 
 XS_EXTERN_C_END
 

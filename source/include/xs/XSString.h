@@ -52,7 +52,7 @@ typedef struct XSString * XSString;
 /*!
  * @function    XSString_Alloc
  * @abstract    Object allocator
- * @result      A pointer to the allocated object
+ * @result      The allocated object
  */
 XSString XSString_Alloc( void );
 

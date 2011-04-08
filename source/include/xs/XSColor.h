@@ -52,72 +52,86 @@ typedef struct XSColor * XSColor;
 /*!
  * @function    __XSColor_Alloc
  * @abstract    Object allocator
- * @result      A pointer to the allocated object
+ * @result      The allocated object
  */
 XSColor XSColor_Alloc( void );
 
 /*!
- * @function    XSColor_CreateWithRGB
- * @abstract    Creates a color with RGB components
- * @param       r   The red value
- * @param       g   The green value
- * @param       b   The blue value
+ * @function    XSColor_Init
+ * @abstract    Initialize a color object
+ * @param       xsThis  The color object
  * @result      The color object
  */
-XSColor XSColor_CreateWithRGB( XSFloat r, XSFloat g, XSFloat b );
+XSColor XSColor_Init( XSColor xsThis );
 
 /*!
- * @function    XSColor_CreateWithHSL
+ * @function    XSColor_InitWithRGB
  * @abstract    Creates a color with RGB components
- * @param       h   The hue value
- * @param       s   The saturation value
- * @param       l   The luminance value
+ * @param       xsThis  The color object
+ * @param       r       The red value
+ * @param       g       The green value
+ * @param       b       The blue value
  * @result      The color object
  */
-XSColor XSColor_CreateWithHSL( XSFloat h, XSFloat s, XSFloat l );
+XSColor XSColor_InitWithRGB( XSColor xsThis, XSFloat r, XSFloat g, XSFloat b );
 
 /*!
- * @function    XSColor_CreateWithHSV
+ * @function    XSColor_InitWithHSL
+ * @abstract    Creates a color with RGB components
+ * @param       xsThis  The color object
+ * @param       h       The hue value
+ * @param       s       The saturation value
+ * @param       l       The luminance value
+ * @result      The color object
+ */
+XSColor XSColor_InitWithHSL( XSColor xsThis, XSFloat h, XSFloat s, XSFloat l );
+
+/*!
+ * @function    XSColor_InitWithHSV
  * @abstract    Creates a color with HSL components
- * @param       h   The hue value
- * @param       s   The saturation value
- * @param       v   The value value
+ * @param       xsThis  The color object
+ * @param       h       The hue value
+ * @param       s       The saturation value
+ * @param       v       The value value
  * @result      The color object
  */
-XSColor XSColor_CreateWithHSV( XSFloat h, XSFloat s, XSFloat v );
+XSColor XSColor_InitWithHSV( XSColor xsThis, XSFloat h, XSFloat s, XSFloat v );
 
 /*!
- * @function    XSColor_CreateWithRGB
+ * @function    XSColor_InitWithRGBA
  * @abstract    Creates a color with RGB components
- * @param       r   The red value
- * @param       g   The green value
- * @param       b   The blue value
- * @param       a   The alpha value
+ * @param       xsThis  The color object
+ * @param       r       The red value
+ * @param       g       The green value
+ * @param       b       The blue value
+ * @param       a       The alpha value
  * @result      The color object
  */
-XSColor XSColor_CreateWithRGBA( XSFloat r, XSFloat g, XSFloat b, XSFloat a );
+XSColor XSColor_InitWithRGBA( XSColor xsThis, XSFloat r, XSFloat g, XSFloat b, XSFloat a );
 
 /*!
- * @function    XSColor_CreateWithHSL
+ * @function    XSColor_InitWithHSLA
  * @abstract    Creates a color with RGB components
- * @param       h   The hue value
- * @param       s   The saturation value
- * @param       l   The luminance value
- * @param       a   The alpha value
+ * @param       xsThis  The color object
+ * @param       h       The hue value
+ * @param       s       The saturation value
+ * @param       l       The luminance value
+ * @param       a       The alpha value
  * @result      The color object
  */
-XSColor XSColor_CreateWithHSLA( XSFloat h, XSFloat s, XSFloat l, XSFloat a );
+XSColor XSColor_InitWithHSLA( XSColor xsThis, XSFloat h, XSFloat s, XSFloat l, XSFloat a );
 
 /*!
- * @function    XSColor_CreateWithHSV
+ * @function    XSColor_InitWithHSVA
  * @abstract    Creates a color with HSL components
- * @param       h   The hue value
- * @param       s   The saturation value
- * @param       v   The value value
- * @param       a   The alpha value
+ * @param       xsThis  The color object
+ * @param       h       The hue value
+ * @param       s       The saturation value
+ * @param       v       The value value
+ * @param       a       The alpha value
  * @result      The color object
  */
-XSColor XSColor_CreateWithHSVA( XSFloat h, XSFloat s, XSFloat v, XSFloat a );
+XSColor XSColor_InitWithHSVA( XSColor xsThis, XSFloat h, XSFloat s, XSFloat v, XSFloat a );
 
 /*!
  * @function    XSColor_BlackColor

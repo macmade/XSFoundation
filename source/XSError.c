@@ -45,11 +45,11 @@ XSError XSError_Alloc( void )
     return ( XSError )XSRuntime_CreateInstance( __XSErrorClassID );
 }
 
-XSError XSError_Create( XSInteger code, XSString domain, XSString reason )
+XSError XSError_Init( XSError xsThis, XSInteger code, XSString domain, XSString reason )
 {
     __XSError * error;
     
-    error = ( __XSError * )XSError_Alloc();
+    error = ( __XSError * )xsThis;
     
     error->code   = code;
     error->domain = domain;

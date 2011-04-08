@@ -70,18 +70,19 @@ XSApplicationArgumentType;
 /*!
  * @function    XSApplicationArgument_Alloc
  * @abstract    Object allocator
- * @result      A pointer to the allocated object
+ * @result      The allocated object
  */
 XSApplicationArgument XSApplicationArgument_Alloc( void );
 
 /*!
- * @function    XSApplicationArgument_Create
+ * @function    XSApplicationArgument_Init
  * @abstract    Creates a CLI argument object
+ * @param       xsThis  The argument object
  * @param       name    The name of the CLI argument, including dashes (- or --)
  * @param       type    The type of the CLI argument
  * @result      The argument object
  */
-XSApplicationArgument XSApplicationArgument_Create( const char * name, XSApplicationArgumentType type, ... );
+XSApplicationArgument XSApplicationArgument_Init( XSApplicationArgument xsThis, const char * name, XSApplicationArgumentType type, ... );
 
 /*!
  * @function    XSApplicationArgument_GetName

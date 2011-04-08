@@ -45,7 +45,7 @@ XSData XSData_Alloc( void )
     return ( XSData )XSRuntime_CreateInstance( __XSDataClassID );
 }
 
-XSData XSData_Create( void )
+XSData XSData_Init( XSData xsThis )
 {
-    return XSData_Alloc();
+    return xsThis;
 }

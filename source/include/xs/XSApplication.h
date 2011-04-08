@@ -56,9 +56,17 @@ typedef struct __XSApplication * XSApplication;
 /*!
  * @function    XSApplication_Alloc
  * @abstract    Object allocator
- * @result      A pointer to the allocated object
+ * @result      The allocated object
  */
 XSApplication XSApplication_Alloc( void );
+
+/*!
+ * @function    XSApplication_Alloc
+ * @abstract    Initialize an application object
+ * @param       xsThis  The application object
+ * @result      The allocated object
+ */
+XSApplication XSApplication_Init( XSApplication xsThis );
 
 /*!
  * @function    XSApplication_Exit

@@ -45,9 +45,9 @@ XSLock XSLock_Alloc( void )
     return ( XSLock )XSRuntime_CreateInstance( __XSLockClassID );
 }
 
-XSLock XSLock_Create( void )
+XSLock XSLock_Init( XSLock xsThis )
 {
-    return XSLock_Alloc();
+    return xsThis;
 }
 
 BOOL XSLock_Lock( XSLock xsThis )

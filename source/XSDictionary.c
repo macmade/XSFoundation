@@ -45,12 +45,12 @@ XSDictionary XSDictionary_Alloc( void )
     return ( XSDictionary )XSRuntime_CreateInstance( __XSDictionaryClassID );
 }
 
-XSDictionary XSDictionary_Create( void )
+XSDictionary XSDictionary_Init( XSDictionary xsThis )
 {
-    return XSDictionary_CreateWithCapacity( XSDICTIONARY_DEFAULT_CAPACITY );
+    return XSDictionary_InitWithCapacity( xsThis, XSDICTIONARY_DEFAULT_CAPACITY );
 }
 
-XSDictionary XSDictionary_CreateWithCapacity( XSUInteger capacity )
+XSDictionary XSDictionary_InitWithCapacity( XSDictionary xsThis, XSUInteger capacity )
 {
     void          ** store;
     XSString       * keys;
@@ -67,7 +67,7 @@ XSDictionary XSDictionary_CreateWithCapacity( XSUInteger capacity )
         return NULL;
     }
     
-    dict           = ( __XSDictionary * )XSDictionary_Alloc();
+    dict           = ( __XSDictionary * )xsThis;
     dict->values   = store;
     dict->keys     = keys;
     dict->capacity = capacity;
@@ -88,7 +88,7 @@ XSArray XSDictionary_Keys( XSDictionary xsThis )
     XSUInteger       i;
     
     _dict = ( __XSDictionary * )xsThis;
-    array = XSArray_CreateWithCapacity( _dict->count );
+    array = XSArray_InitWithCapacity( XSArray_Alloc(), _dict->count );
     
     for( i = 0; i < _dict->count; i++ )
     {
@@ -105,7 +105,7 @@ XSArray XSDictionary_Values( XSDictionary xsThis )
     XSUInteger       i;
     
     _dict = ( __XSDictionary * )xsThis;
-    array = XSArray_CreateWithCapacity( _dict->count );
+    array = XSArray_InitWithCapacity( XSArray_Alloc(), _dict->count );
     
     for( i = 0; i < _dict->count; i++ )
     {

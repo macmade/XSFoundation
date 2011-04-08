@@ -52,9 +52,11 @@ typedef struct __XSNull * XSNull;
 /*!
  * @function    XSNull_Alloc
  * @abstract    Object allocator
- * @result      A pointer to the allocated object
+ * @result      The allocated object
  */
 XSNull XSNull_Alloc( void );
+
+XSNull XSNull_Init( XSNull xsThis );
 
 XSNull XSNull_Null( void );
 

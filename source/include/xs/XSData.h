@@ -52,11 +52,11 @@ typedef struct XSData * XSData;
 /*!
  * @function    __XSData_Alloc
  * @abstract    Object allocator
- * @result      A pointer to the allocated object
+ * @result      The allocated object
  */
 XSData XSData_Alloc( void );
 
-XSData XSData_Create( void );
+XSData XSData_Init( XSData xsThis );
 
 XS_EXTERN_C_END
 

@@ -54,19 +54,19 @@ typedef struct XSError * XSError;
 /*!
  * @function    XSError_Alloc
  * @abstract    Object allocator
- * @result      A pointer to the allocated object
+ * @result      The allocated object
  */
 XSError XSError_Alloc( void );
 
 /*!
- * @function    XSError_Create
+ * @function    XSError_Init
  * @abstract    Creates an error
  * @param       code    The error code
  * @param       domain  The error domain
  * @param       reason  The error message
  * @result      The error object
  */
-XSError XSError_Create( XSInteger code, XSString domain, XSString reason );
+XSError XSError_Init( XSError xsThis, XSInteger code, XSString domain, XSString reason );
 
 /*!
  * @function    XSError_GetCode

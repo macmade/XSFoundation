@@ -58,34 +58,26 @@ typedef struct XSArray * XSArray;
 /*!
  * @function    XSArray_Alloc
  * @abstract    Object allocator
- * @result      A pointer to the allocated object
+ * @result      The allocated object
  */
 XSArray XSArray_Alloc( void );
 
 /*!
- * @function    XSArray_Create
+ * @function    XSArray_Init
  * @abstract    Creates an empty array
+ * @param       xsThis  The array object
  * @result      The array object
  */
-XSArray XSArray_Create( void );
+XSArray XSArray_Init( XSArray xsThis );
 
 /*!
- * @function    XSArray_CreateWithCapacity
+ * @function    XSArray_InitWithCapacity
  * @abstract    Creates an empty array with an initial capacity
+ * @param       xsThis      The array object
  * @param       capacity    The initial array capacity
  * @result      The array object
  */
-XSArray XSArray_CreateWithCapacity( XSUInteger capacity );
-
-/*!
- * @function    XSArray_CreateWithValues
- * @abstract    Creates an array by inserting values
- * @description Values will be automatically retained.
- * @param       value1  The first value to insert
- * @param       ...     The values to insert. Must be terminated by a NULL fence
- * @result      The array object
- */
-XSArray XSArray_CreateWithValues( void * value1, ... );
+XSArray XSArray_InitWithCapacity( XSArray xsThis, XSUInteger capacity );
 
 /*!
  * @function    XSArray_Count

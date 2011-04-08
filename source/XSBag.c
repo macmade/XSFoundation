@@ -45,7 +45,7 @@ XSBag XSBag_Alloc( void )
     return ( XSBag )XSRuntime_CreateInstance( __XSBagClassID );
 }
 
-XSBag XSBag_Create( void )
+XSBag XSBag_Init( XSBag xsThis )
 {
-    return XSBag_Alloc();
+    return xsThis;
 }

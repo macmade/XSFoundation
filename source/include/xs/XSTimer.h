@@ -52,18 +52,19 @@ typedef struct XSTimer * XSTimer;
 /*!
  * @function    XSTimer_Alloc
  * @abstract    Object allocator
- * @result      A pointer to the allocated object
+ * @result      The allocated object
  */
 XSTimer XSTimer_Alloc( void );
 
 /*!
- * @function    XSTimer_Create
+ * @function    XSTimer_Init
  * @abstract    Creates a timer object scheduled to run at a specific time
+ * @param       XSThis          The timer object
  * @param       func            A pointer to to function to call when the timer fires
  * @param       milleseconds    The timer interval, in milliseconds
  * @result      The timer object
  */
-XSTimer XSTimer_Create( void ( * func )( XSTimer timer ), XSUInteger milliseconds );
+XSTimer XSTimer_Init( XSTimer xsThis, void ( * func )( XSTimer timer ), XSUInteger milliseconds );
 
 /*!
  * @function    XSTimer_RunOnce

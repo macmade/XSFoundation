@@ -45,7 +45,7 @@ XSDate XSDate_Alloc( void )
     return ( XSDate )XSRuntime_CreateInstance( __XSDateClassID );
 }
 
-XSDate XSDate_Create( void )
+XSDate XSDate_Init( XSDate xsThis )
 {
-    return XSDate_Alloc();
+    return xsThis;
 }

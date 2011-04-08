@@ -52,7 +52,7 @@ typedef struct XSNumber * XSNumber;
 /*!
  * @function    XSNumber_Alloc
  * @abstract    Object allocator
- * @result      A pointer to the allocated object
+ * @result      The allocated object
  */
 XSNumber XSNumber_Alloc( void );
 

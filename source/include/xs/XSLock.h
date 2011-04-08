@@ -52,16 +52,17 @@ typedef struct XSLock * XSLock;
 /*!
  * @function    XSLock_Alloc
  * @abstract    Object allocator
- * @result      A pointer to the allocated object
+ * @result      The allocated object
  */
 XSLock XSLock_Alloc( void );
 
 /*!
- * @function    XSLock_Create
+ * @function    XSLock_Init
  * @abstract    Creates a lock
+ * @param       xsThis  The lock object
  * @result      The lock object
  */
-XSLock XSLock_Create( void );
+XSLock XSLock_Init( XSLock xsThis );
 
 /*!
  * @function    XSLock_Lock

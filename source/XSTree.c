@@ -45,7 +45,7 @@ XSTree XSTree_Alloc( void )
     return ( XSTree )XSRuntime_CreateInstance( __XSTreeClassID );
 }
 
-XSTree XSTree_Create( void )
+XSTree XSTree_Init( XSTree xsThis )
 {
-    return XSTree_Alloc();
+    return xsThis;
 }
