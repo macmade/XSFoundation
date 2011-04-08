@@ -4,6 +4,8 @@ XSFoundation
 XEOS C Foundation Library
 -------------------------
 
+![XSFoundation](http://www.eosgarden.com/uploads/image/xsfoundation.png)
+
 ### About XEOS
 
 [XEOS][1] is an experimental 32 bits Operating System for x86 platforms, written in Assembly and C, including a C89 Standard Library (with some C99 parts).
