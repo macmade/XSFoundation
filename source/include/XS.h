@@ -60,6 +60,7 @@
 #include "XS/XSError.h"
 #include "XS/XSFile.h"
 #include "XS/XSLock.h"
+#include "XS/XSNull.h"
 #include "XS/XSNumber.h"
 #include "XS/XSSet.h"
 #include "XS/XSString.h"

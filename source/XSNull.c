@@ -30,46 +30,22 @@
 /* $Id$ */
 
 /*!
- * @header      __XSBag.h
+ * @header      XSNull.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
  * @abstract    ...
  */
 
-#ifndef ___XS_BAG_H_
-#define ___XS_BAG_H_
-#pragma once
-
-#include "../XSMacros.h"
-
-XS_EXTERN_C_BEGIN
-
 #include "XS.h"
+#include "__XSNull.h"
 
-/*!
- * @typdef      __XSBag
- * @abastract   XSBag class
- * @field       _xsbase     Runtime class
- */
-typedef struct __XSBag_Struct
+static __XSNull * __xsnull = NULL;
+
+XSNull XSNull_Null( void )
 {
-    XSRuntimeClass __class;
+    if( __xsnull == NULL )
+    {
+        __xsnull = __XSNull_Alloc();
+    }
+    
+    return ( XSNull )__xsnull;
 }
-__XSBag;
-
-/*!
- * @function    __XSBag_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
-void __XSBag_Initialize( void );
-
-/*!
- * @function    __XSBag_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSBag * __XSBag_Alloc( void );
-
-XS_EXTERN_C_END
-
-#endif /* ___XS_BAG_H_ */

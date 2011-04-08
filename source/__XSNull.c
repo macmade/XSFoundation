@@ -30,46 +30,51 @@
 /* $Id$ */
 
 /*!
- * @header      __XSBag.h
+ * @file        __XSNull.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
  * @abstract    ...
  */
 
-#ifndef ___XS_BAG_H_
-#define ___XS_BAG_H_
-#pragma once
-
-#include "../XSMacros.h"
-
-XS_EXTERN_C_BEGIN
-
 #include "XS.h"
+#include "__XSNull.h"
 
 /*!
- * @typdef      __XSBag
- * @abastract   XSBag class
- * @field       _xsbase     Runtime class
+ * @var         __XSBagClass
+ * @abstract    Runtime class definition
  */
-typedef struct __XSBag_Struct
+static const XSClassInfos __XSNullClass =
 {
-    XSRuntimeClass __class;
-}
-__XSBag;
+    "XSNull",           /* Class name */
+    sizeof( __XSNull ), /* Object size */
+    NULL,               /* Constructor */
+    NULL,               /* Destructor */
+    NULL,               /* Object copy */
+    NULL,               /* Object description */
+    NULL                /* Object comparison */
+};
 
 /*!
- * @function    __XSBag_Initialize
+ * @var         __XSNullClassID
+ * @abstract    Type ID for the runtine class
+ */
+static XSClassID __XSNullClassID;
+
+/*!
+ * @function    __XSNull_Initialize
  * @abstract    Runtime initialization
  * @result      void
  */
-void __XSBag_Initialize( void );
+void __XSNull_Initialize( void )
+{
+    __XSNullClassID = XSRuntime_RegisterClass( &__XSNullClass );
+}
 
 /*!
- * @function    __XSBag_Alloc
+ * @function    __XSNull_Alloc
  * @abstract    Object allocator
  * @result      A pointer to the allocated object
  */
-__XSBag * __XSBag_Alloc( void );
-
-XS_EXTERN_C_END
-
-#endif /* ___XS_BAG_H_ */
+__XSNull * __XSNull_Alloc( void )
+{
+    return ( __XSNull * )XSRuntime_CreateInstance( __XSNullClassID );
+}

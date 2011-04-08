@@ -91,6 +91,10 @@
 		056A74E91346F953006DD897 /* XSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSColor.h; sourceTree = "<group>"; };
 		056A74EA1346F98B006DD897 /* __XSColor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSColor.c; sourceTree = "<group>"; };
 		056A74EB1346F9DC006DD897 /* XSColor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSColor.c; sourceTree = "<group>"; };
+		059B999B134EDB93004510C5 /* __XSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSNull.h; sourceTree = "<group>"; };
+		059B999D134EDBA0004510C5 /* XSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSNull.h; sourceTree = "<group>"; };
+		059B999E134EDBB8004510C5 /* __XSNull.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSNull.c; sourceTree = "<group>"; };
+		059B999F134EDBB9004510C5 /* XSNull.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNull.c; sourceTree = "<group>"; };
 		05AC165713418E7100455568 /* __XSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSArray.h; sourceTree = "<group>"; };
 		05AC165813418E7100455568 /* __XSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSData.h; sourceTree = "<group>"; };
 		05AC165913418E7100455568 /* __XSDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSDate.h; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 				056003F3134106B5005DC721 /* __XSFunctions.c */,
 				0562F8CD134B49B4005190B6 /* __XSLock.c */,
 				056003BE1340621F005DC721 /* __XSMemory.c */,
+				059B999E134EDBB8004510C5 /* __XSNull.c */,
 				0560041513412866005DC721 /* __XSNumber.c */,
 				0560041613412866005DC721 /* __XSSet.c */,
 				056003E81340875C005DC721 /* __XSString.c */,
@@ -161,6 +166,7 @@
 				056003D71340621F005DC721 /* XSFunctions.c */,
 				0562F8CE134B49B4005190B6 /* XSLock.c */,
 				056003D81340621F005DC721 /* XSMemory.c */,
+				059B999F134EDBB9004510C5 /* XSNull.c */,
 				0560041D13412868005DC721 /* XSNumber.c */,
 				056003E613408187005DC721 /* XSRuntime.c */,
 				0560041E13412868005DC721 /* XSSet.c */,
@@ -220,6 +226,7 @@
 				0560042113417F6F005DC721 /* XSMacros.h */,
 				05600422134184BD005DC721 /* XSMacrosTarget.h */,
 				056003D21340621F005DC721 /* XSMemory.h */,
+				059B999D134EDBA0004510C5 /* XSNull.h */,
 				0560040D13412858005DC721 /* XSNumber.h */,
 				056003E713408197005DC721 /* XSRuntime.h */,
 				0560040E13412858005DC721 /* XSSet.h */,
@@ -249,6 +256,7 @@
 				05AC165D13418E7100455568 /* __XSFunctions.h */,
 				0562F8CA134B499A005190B6 /* __XSLock.h */,
 				05AC165E13418E7100455568 /* __XSMemory.h */,
+				059B999B134EDB93004510C5 /* __XSNull.h */,
 				05AC165F13418E7100455568 /* __XSNumber.h */,
 				05AC166013418E7100455568 /* __XSSet.h */,
 				05AC166113418E7100455568 /* __XSString.h */,

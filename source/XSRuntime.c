@@ -89,6 +89,7 @@ void __XSDictionary_Initialize( void );
 void __XSError_Initialize( void );
 void __XSFile_Initialize( void );
 void __XSLock_Initialize( void );
+void __XSNull_Initialize( void );
 void __XSNumber_Initialize( void );
 void __XSSet_Initialize( void );
 void __XSString_Initialize( void );
@@ -122,6 +123,7 @@ void XSRuntime_Initialize( void )
     __XSError_Initialize();
     __XSFile_Initialize();
     __XSLock_Initialize();
+    __XSNull_Initialize();
     __XSNumber_Initialize();
     __XSSet_Initialize();
     __XSString_Initialize();
