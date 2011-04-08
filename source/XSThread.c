@@ -70,7 +70,7 @@ XSThread XSThread_Detach( void ( * func )( XSThread thread, void * arg ), void *
     return ( XSThread )thread;
 }
 
-XSUInteger XSThread_GetID( XSThread thread )
+XSUInteger XSThread_GetID( XSThread xsThis )
 {
-    return ( ( __XSThread * )thread )->tid;
+    return ( ( __XSThread * )xsThis )->tid;
 }

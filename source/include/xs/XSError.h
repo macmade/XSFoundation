@@ -71,26 +71,26 @@ XSError XSError_Create( XSInteger code, XSString domain, XSString reason );
 /*!
  * @function    XSError_GetCode
  * @abstract    Gets the error code
- * @param       error   The error object
+ * @param       xsThis  The error object
  * @result      The error code
  */
-XSInteger XSError_GetCode( XSError error );
+XSInteger XSError_GetCode( XSError xsThis );
 
 /*!
  * @function    XSError_GetDomain
  * @abstract    Gets the error domain
- * @param       error   The error object
+ * @param       xsThis  The error object
  * @result      The error domain
  */
-XSString XSError_GetDomain( XSError error );
+XSString XSError_GetDomain( XSError xsThis );
 
 /*!
  * @function    XSError_GetReason
  * @abstract    Gets the error message
- * @param       error   The error object
+ * @param       xsThis  The error object
  * @result      The error message
  */
-XSString XSError_GetReason( XSError error );
+XSString XSError_GetReason( XSError xsThis );
 
 XS_EXTERN_C_END
 

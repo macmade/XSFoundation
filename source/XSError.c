@@ -61,17 +61,17 @@ XSError XSError_Create( XSInteger code, XSString domain, XSString reason )
     return ( XSError )error;
 }
 
-XSInteger XSError_GetCode( XSError error )
+XSInteger XSError_GetCode( XSError xsThis )
 {
-    return ( ( __XSError * )error )->code;
+    return ( ( __XSError * )xsThis )->code;
 }
 
-XSString XSError_GetDomain( XSError error )
+XSString XSError_GetDomain( XSError xsThis )
 {
-    return ( ( __XSError * )error )->domain;
+    return ( ( __XSError * )xsThis )->domain;
 }
 
-XSString XSError_GetReason( XSError error )
+XSString XSError_GetReason( XSError xsThis )
 {
-    return ( ( __XSError * )error )->reason;
+    return ( ( __XSError * )xsThis )->reason;
 }

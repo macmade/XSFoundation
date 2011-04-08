@@ -74,102 +74,102 @@ XSApplicationArgument XSApplicationArgument_Create( const char * name, XSApplica
     return ( XSApplicationArgument )arg;
 }
 
-const char * XSApplicationArgument_GetName( XSApplicationArgument arg )
+const char * XSApplicationArgument_GetName( XSApplicationArgument xsThis )
 {
-    return ( ( __XSApplicationArgument * )arg )->name;
+    return ( ( __XSApplicationArgument * )xsThis )->name;
 }
 
-const char * XSApplicationArgument_GetHelp( XSApplicationArgument arg )
+const char * XSApplicationArgument_GetHelp( XSApplicationArgument xsThis )
 {
-    return ( ( __XSApplicationArgument * )arg )->help;
+    return ( ( __XSApplicationArgument * )xsThis )->help;
 }
 
-XSApplicationArgumentType XSApplicationArgument_GetType( XSApplicationArgument arg )
+XSApplicationArgumentType XSApplicationArgument_GetType( XSApplicationArgument xsThis )
 {
-    return ( ( __XSApplicationArgument * )arg )->type;
+    return ( ( __XSApplicationArgument * )xsThis )->type;
 }
 
-void XSApplicationArgument_SetFlag( XSApplicationArgument arg )
+void XSApplicationArgument_SetFlag( XSApplicationArgument xsThis )
 {
     __XSApplicationArgument * _arg;
     
-    _arg           = ( __XSApplicationArgument * )arg;
+    _arg           = ( __XSApplicationArgument * )xsThis;
     _arg->flag_val = YES;
 }
 
-void XSApplicationArgument_SetIntegerValue( XSApplicationArgument arg, XSInteger value )
+void XSApplicationArgument_SetIntegerValue( XSApplicationArgument xsThis, XSInteger value )
 {
     __XSApplicationArgument * _arg;
     
-    _arg          = ( __XSApplicationArgument * )arg;
+    _arg          = ( __XSApplicationArgument * )xsThis;
     _arg->int_val = value;
 }
 
-void XSApplicationArgument_SetUnsignedIntegerValue( XSApplicationArgument arg, XSUInteger value )
+void XSApplicationArgument_SetUnsignedIntegerValue( XSApplicationArgument xsThis, XSUInteger value )
 {
     __XSApplicationArgument * _arg;
     
-    _arg           = ( __XSApplicationArgument * )arg;
+    _arg           = ( __XSApplicationArgument * )xsThis;
     _arg->uint_val = value;
 }
 
-void XSApplicationArgument_SetStringValue( XSApplicationArgument arg, const char * value )
+void XSApplicationArgument_SetStringValue( XSApplicationArgument xsThis, const char * value )
 {
     __XSApplicationArgument * _arg;
     
-    _arg          = ( __XSApplicationArgument * )arg;
+    _arg          = ( __XSApplicationArgument * )xsThis;
     _arg->str_val = value;
 }
 
-void XSApplicationArgument_SetFloatValue( XSApplicationArgument arg, XSFloat value )
+void XSApplicationArgument_SetFloatValue( XSApplicationArgument xsThis, XSFloat value )
 {
     __XSApplicationArgument * _arg;
     
-    _arg            = ( __XSApplicationArgument * )arg;
+    _arg            = ( __XSApplicationArgument * )xsThis;
     _arg->float_val = value;
 }
 
-BOOL XSApplicationArgument_GetFlag( XSApplicationArgument arg )
+BOOL XSApplicationArgument_GetFlag( XSApplicationArgument xsThis )
 {
     __XSApplicationArgument * _arg;
     
-    _arg = ( __XSApplicationArgument * )arg;
+    _arg = ( __XSApplicationArgument * )xsThis;
     
     return _arg->flag_val;
 }
 
-XSInteger XSApplicationArgument_GetIntegerValue( XSApplicationArgument arg )
+XSInteger XSApplicationArgument_GetIntegerValue( XSApplicationArgument xsThis )
 {
     __XSApplicationArgument * _arg;
     
-    _arg = ( __XSApplicationArgument * )arg;
+    _arg = ( __XSApplicationArgument * )xsThis;
     
     return _arg->int_val;
 }
 
-XSUInteger XSApplicationArgument_GetUnsignedIntegerValue( XSApplicationArgument arg )
+XSUInteger XSApplicationArgument_GetUnsignedIntegerValue( XSApplicationArgument xsThis )
 {
     __XSApplicationArgument * _arg;
     
-    _arg = ( __XSApplicationArgument * )arg;
+    _arg = ( __XSApplicationArgument * )xsThis;
     
     return _arg->uint_val;
 }
 
-const char * XSApplicationArgument_GetStringValue( XSApplicationArgument arg )
+const char * XSApplicationArgument_GetStringValue( XSApplicationArgument xsThis )
 {
     __XSApplicationArgument * _arg;
     
-    _arg = ( __XSApplicationArgument * )arg;
+    _arg = ( __XSApplicationArgument * )xsThis;
     
     return _arg->str_val;
 }
 
-XSFloat XSApplicationArgument_GetFloatValue( XSApplicationArgument arg )
+XSFloat XSApplicationArgument_GetFloatValue( XSApplicationArgument xsThis )
 {
     __XSApplicationArgument * _arg;
     
-    _arg = ( __XSApplicationArgument * )arg;
+    _arg = ( __XSApplicationArgument * )xsThis;
     
     return _arg->float_val;
 }

@@ -90,43 +90,43 @@ XSArray XSArray_CreateWithValues( void * value1, ... );
 /*!
  * @function    XSArray_Count
  * @abstract    Gets the number of values in the array
- * @param       array   The array object
+ * @param       xsThis  The array object
  * @result      The number of values in the array
  */
-XSUInteger XSArray_Count( XSArray array );
+XSUInteger XSArray_Count( XSArray xsThis );
 
 /*!
  * @function    XSArray_AppendValue
  * @abstract    Appends a value at the end of the array.
  * @description The appended value will be automatically retained.
- * @param       array   The array object
+ * @param       xsThis  The array object
  * @param       The value to append
  * @result      void
  */
-void XSArray_AppendValue( XSArray array, void * value );
+void XSArray_AppendValue( XSArray xsThis, void * value );
 
 /*!
  * @function    XSArray_InsertValueAtIndex
  * @abstract    Insert a value at a specific index
  * @description The inserted value will be automatically retained.
- * @param       array   The array object
+ * @param       xsThis  The array object
  * @param       value   The value to insert
  * @param       i       The index in the array
  * @result      void
  */
-void XSArray_InsertValueAtIndex( XSArray array, void * value, XSUInteger i );
+void XSArray_InsertValueAtIndex( XSArray xsThis, void * value, XSUInteger i );
 
 /*!
  * @function    XSArray_ReplaceValueAtIndex
  * @abstract    Replace the value at a specific index with a new value
  * @description The new value will be automatically retained, and the old value
  *              will be released.
- * @param       array   The array object
+ * @param       xsThis  The array object
  * @param       value   The value to insert
  * @param       i       The index in the array
  * @result      The old value
  */
-void * XSArray_ReplaceValueAtIndex( XSArray array, void * value, XSUInteger i );
+void * XSArray_ReplaceValueAtIndex( XSArray xsThis, void * value, XSUInteger i );
 
 /*!
  * @function    XSArray_ValueAtIndex
@@ -141,60 +141,60 @@ void * XSArray_ValueAtIndex( XSArray array, XSUInteger i );
  * @function    XSArray_RemoveValueAtIndex
  * @abstract    Removes a value at a specific index
  * @description The removed value will be released, so it may be NULL
- * @param       array   The array object
+ * @param       xsThis  The array object
  * @param       i       The index in the array
  * @result      The removed value
  */
-void * XSArray_RemoveValueAtIndex( XSArray array, XSUInteger i );
+void * XSArray_RemoveValueAtIndex( XSArray xsThis, XSUInteger i );
 
 /*!
  * @function    XSArray_ContainsValue
  * @abstract    Checks if the array contains a specific value
- * @param       array   The array object
+ * @param       xsThis  The array object
  * @param       value   The value to search
  * @result      YES if the array contains the value, otherwise NO
  */
-BOOL XSArray_ContainsValue( XSArray array, void * value );
+BOOL XSArray_ContainsValue( XSArray xsThis, void * value );
 
 /*!
  * @function    XSArray_Index
  * @abstract    Gets the current array index
- * @param       array   The array object
+ * @param       xsThis  The array object
  * @result      The current array index
  */
-XSUInteger XSArray_Index( XSArray array );
+XSUInteger XSArray_Index( XSArray xsThis );
 
 /*!
  * @function    XSArray_Current
  * @abstract    Gets the current array value
- * @param       array   The array object
+ * @param       xsThis  The array object
  * @result      The current array value
  */
-void * XSArray_Current( XSArray array );
+void * XSArray_Current( XSArray xsThis );
 
 /*!
  * @function    XSArray_Next
  * @abstract    Increases the internal value pointer and returns the value
- * @param       array   The array object
+ * @param       xsThis  The array object
  * @result      The array value
  */
-void * XSArray_Next( XSArray array );
+void * XSArray_Next( XSArray xsThis );
 
 /*!
  * @function    XSArray_Previous
  * @abstract    Decrease the internal value pointer and returns the value
- * @param       array   The array object
+ * @param       xsThis  The array object
  * @result      The array value
  */
-void * XSArray_Previous( XSArray array );
+void * XSArray_Previous( XSArray xsThis );
 
 /*!
  * @function    XSArray_Rewind
  * @abstract    Sets the internal value pointer to the first value in the array
- * @param       array   The array object
+ * @param       xsThis  The array object
  * @result      void
  */
-void XSArray_Rewind( XSArray array );
+void XSArray_Rewind( XSArray xsThis );
 
 XS_EXTERN_C_END
 

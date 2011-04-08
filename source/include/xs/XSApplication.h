@@ -93,82 +93,82 @@ XSApplication XSApplication_SharedApplication( void );
 /*!
  * @function    XSApplication_PrintHelp
  * @abstract    Prints the application help dialog
- * @param       app     The application object
+ * @param       xsThis  The application object
  * @result      void
  */
-void XSApplication_PrintHelp( XSApplication app, const char * description );
+void XSApplication_PrintHelp( XSApplication xsThis, const char * description );
 
 /*!
  * @function    XSApplication_RegisterArgument
  * @abstract    
- * @param       app     The application object
+ * @param       xsThis  The application object
  * @result      
  */
-void XSApplication_RegisterArgument( XSApplication app, const char * name, XSApplicationArgumentType type, ... );
+void XSApplication_RegisterArgument( XSApplication xsThis, const char * name, XSApplicationArgumentType type, ... );
 
 /*!
  * @function    XSApplication_GetArgument
  * @abstract    
- * @param       app     The application object
+ * @param       xsThis  The application object
  * @result      
  */
-XSApplicationArgument XSApplication_GetArgument( XSApplication app, const char * name );
+XSApplicationArgument XSApplication_GetArgument( XSApplication xsThis, const char * name );
 
 /*!
  * @function    XSApplication_HasArgument
  * @abstract    
- * @param       app     The application object
+ * @param       xsThis  The application object
  * @result      
  */
-BOOL XSApplication_HasArgument( XSApplication app, const char * name );
+BOOL XSApplication_HasArgument( XSApplication xsThis, const char * name );
 
 /*!
  * @function    XSApplication_GetFlag
  * @abstract    
- * @param       app     The application object
+ * @param       xsThis  The application object
  * @result      
  */
-BOOL XSApplication_GetFlag( XSApplication app, const char * name );
+BOOL XSApplication_GetFlag( XSApplication xsThis, const char * name );
 
 /*!
  * @function    XSApplication_GetInteger
  * @abstract    
- * @param       app     The application object
+ * @param       xsThis  The application object
  * @result      
  */
-XSInteger XSApplication_GetInteger( XSApplication app, const char * name );
+XSInteger XSApplication_GetInteger( XSApplication xsThis, const char * name );
 
 /*!
  * @function    XSApplication_GetUnsignedInteger
  * @abstract    
- * @param       app     The application object
+ * @param       xsThis  The application object
  * @result      
  */
-XSUInteger XSApplication_GetUnsignedInteger( XSApplication app, const char * name );
+XSUInteger XSApplication_GetUnsignedInteger( XSApplication xsThis, const char * name );
 
 /*!
  * @function    XSApplication_GetString
  * @abstract    
- * @param       app     The application object
+ * @param       xsThis  The application object
  * @result      
  */
-XSString XSApplication_GetString( XSApplication app, const char * name );
+XSString XSApplication_GetString( XSApplication xsThis, const char * name );
 
 /*!
  * @function    XSApplication_GetFloat
  * @abstract    
- * @param       app     The application object
+ * @param       xsThis  The application object
  * @result      
  */
-XSFloat XSApplication_GetFloat( XSApplication app, const char * name );
+XSFloat XSApplication_GetFloat( XSApplication xsThis, const char * name );
 
 /*!
  * @function    XSApplication_GetUnnamedArguments
  * @abstract    
- * @param       app     The application object
+ * @param       xsThis  The application object
  * @result      
  */
-XSArray XSApplication_GetUnnamedArguments( XSApplication app );
+XSArray XSApplication_GetUnnamedArguments( XSApplication xsThis );
 
 XS_EXTERN_C_END
 

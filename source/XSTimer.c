@@ -56,19 +56,19 @@ XSTimer XSTimer_Create( void ( * func )( XSTimer timer ), XSUInteger millisecond
      return  ( XSTimer )t;
 }
 
-void XSTimer_RunOnce( XSTimer timer )
+void XSTimer_RunOnce( XSTimer xsThis )
 {
-    XSThread_Detach( __XSTimer_RunOnce, ( void * )timer );
+    XSThread_Detach( __XSTimer_RunOnce, ( void * )xsThis );
 }
 
-void XSTimer_RunAndRepeat( XSTimer timer )
+void XSTimer_RunAndRepeat( XSTimer xsThis )
 {
-    ( ( __XSTimer * )timer )->valid = YES;
+    ( ( __XSTimer * )xsThis )->valid = YES;
     
-    XSThread_Detach( __XSTimer_RunAndRepeat, ( void * )timer );
+    XSThread_Detach( __XSTimer_RunAndRepeat, ( void * )xsThis );
 }
 
-void XSTimer_Invalidate( XSTimer timer )
+void XSTimer_Invalidate( XSTimer xsThis )
 {
-    ( ( __XSTimer * )timer )->valid = NO;
+    ( ( __XSTimer * )xsThis )->valid = NO;
 }

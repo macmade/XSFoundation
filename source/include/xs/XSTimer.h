@@ -68,26 +68,26 @@ XSTimer XSTimer_Create( void ( * func )( XSTimer timer ), XSUInteger millisecond
 /*!
  * @function    XSTimer_RunOnce
  * @abstract    Runs a specific timer once, after its time interval has been reached
- * @param       timer   The timer object
+ * @param       xsThis  The timer object
  * @result      void
  */
-void XSTimer_RunOnce( XSTimer timer );
+void XSTimer_RunOnce( XSTimer xsThis );
 
 /*!
  * @function    XSTimer_RunAndRepeat
  * @abstract    Runs a specific timer every time its time interval has been reached
- * @param       timer   The timer object
+ * @param       xsThis  The timer object
  * @result      void
  */
-void XSTimer_RunAndRepeat( XSTimer timer );
+void XSTimer_RunAndRepeat( XSTimer xsThis );
 
 /*!
  * @function    XSTimer_Invalidate
  * @abstract    Invalidates a timer scheduled to repeat
- * @param       timer   The timer object
+ * @param       xsThis  The timer object
  * @result      void
  */
-void XSTimer_Invalidate( XSTimer timer );
+void XSTimer_Invalidate( XSTimer xsThis );
 
 XS_EXTERN_C_END
 

@@ -202,23 +202,23 @@ XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode )
     return ( XSFile )file;
 }
 
-XSInteger XSFile_Flush( XSFile file )
+XSInteger XSFile_Flush( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     
     return fflush( _f->fp );
 }
 
-XSInteger XSFile_Close( XSFile file )
+XSInteger XSFile_Close( XSFile xsThis )
 {
     XSInteger   res;
     __XSFile *  _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFile_WriteAlign( _f );
     
@@ -229,13 +229,13 @@ XSInteger XSFile_Close( XSFile file )
     return res;
 }
 
-XSInteger XSFile_Printf( XSFile file, const char * format, ... )
+XSInteger XSFile_Printf( XSFile xsThis, const char * format, ... )
 {
     XSInteger   res;
     va_list     arg;
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     __XSFile_WriteAlign( _f );
@@ -249,11 +249,11 @@ XSInteger XSFile_Printf( XSFile file, const char * format, ... )
     return res;
 }
 
-XSInteger XSFile_VPrintf( XSFile file, const char * format, va_list arg )
+XSInteger XSFile_VPrintf( XSFile xsThis, const char * format, va_list arg )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     __XSFile_WriteAlign( _f );
@@ -261,22 +261,22 @@ XSInteger XSFile_VPrintf( XSFile file, const char * format, va_list arg )
     return vfprintf( _f->fp, format, arg );
 }
 
-XSInteger XSFile_Getc( XSFile file )
+XSInteger XSFile_Getc( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     
     return fgetc( _f->fp );
 }
 
-XSInteger XSFile_Putc( XSFile file, XSInteger c )
+XSInteger XSFile_Putc( XSFile xsThis, XSInteger c )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     __XSFile_WriteAlign( _f );
@@ -284,11 +284,11 @@ XSInteger XSFile_Putc( XSFile file, XSInteger c )
     return fputc( c, _f->fp );
 }
 
-XSInteger XSFile_Puts( XSFile file, const char * s )
+XSInteger XSFile_Puts( XSFile xsThis, const char * s )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     __XSFile_WriteAlign( _f );
@@ -296,22 +296,22 @@ XSInteger XSFile_Puts( XSFile file, const char * s )
     return fputs( s, _f->fp );
 }
 
-size_t XSFile_Read( XSFile file, void * ptr, size_t size, size_t nobj )
+size_t XSFile_Read( XSFile xsThis, void * ptr, size_t size, size_t nobj )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     
     return fread( ptr, size, nobj, _f->fp );
 }
 
-size_t XSFile_Write( XSFile file, const void * ptr, size_t size, size_t nobj )
+size_t XSFile_Write( XSFile xsThis, const void * ptr, size_t size, size_t nobj )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     __XSFile_WriteAlign( _f );
@@ -319,99 +319,99 @@ size_t XSFile_Write( XSFile file, const void * ptr, size_t size, size_t nobj )
     return fwrite( ptr, size, nobj, _f->fp );
 }
 
-XSInteger XSFile_Seek( XSFile file, XSInteger offset, XSFileSeekPosition origin )
+XSInteger XSFile_Seek( XSFile xsThis, XSInteger offset, XSFileSeekPosition origin )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     
     return fseek( _f->fp, offset, origin );
 }
 
-XSInteger XSFile_Tell( XSFile file )
+XSInteger XSFile_Tell( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     
     return ftell( _f->fp );
 }
 
-void XSFile_Rewind( XSFile file )
+void XSFile_Rewind( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     
     rewind( _f->fp );
 }
 
-XSInteger XSFile_GetPos( XSFile file, fpos_t * ptr )
+XSInteger XSFile_GetPos( XSFile xsThis, fpos_t * ptr )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     
     return fgetpos( _f->fp, ptr );
 }
 
-XSInteger XSFile_SetPos( XSFile file, const fpos_t * ptr )
+XSInteger XSFile_SetPos( XSFile xsThis, const fpos_t * ptr )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     
     return fsetpos( _f->fp, ptr );
 }
 
-void XSFile_ClearErr( XSFile file )
+void XSFile_ClearErr( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     
     clearerr( _f->fp );
 }
 
-XSInteger XSFile_EndOfFile( XSFile file )
+XSInteger XSFile_EndOfFile( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     
     return feof( _f->fp );
 }
 
-XSInteger XSFile_Error( XSFile file )
+XSInteger XSFile_Error( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     
     return ferror( _f->fp );
 }
 
-const char * XSFile_Filename( XSFile file )
+const char * XSFile_Filename( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     
@@ -433,11 +433,11 @@ const char * XSFile_Filename( XSFile file )
     }
 }
 
-const char * XSFile_OpenMode( XSFile file )
+const char * XSFile_OpenMode( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     
@@ -459,11 +459,11 @@ const char * XSFile_OpenMode( XSFile file )
     }
 }
 
-BOOL XSFile_IsReadable( XSFile file )
+BOOL XSFile_IsReadable( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     
@@ -485,11 +485,11 @@ BOOL XSFile_IsReadable( XSFile file )
     }
 }
 
-BOOL XSFile_IsWriteable( XSFile file )
+BOOL XSFile_IsWriteable( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
     
@@ -511,7 +511,7 @@ BOOL XSFile_IsWriteable( XSFile file )
     }
 }
 
-BOOL XSFile_Copy( XSFile file, char * new_name )
+BOOL XSFile_Copy( XSFile xsThis, char * new_name )
 {
     FILE        * fp1;
     FILE        * fp2;
@@ -519,7 +519,7 @@ BOOL XSFile_Copy( XSFile file, char * new_name )
     unsigned char buffer[ 1024 ];
     const char  * name;
     
-    name = XSFile_Filename( file );
+    name = XSFile_Filename( xsThis );
     
     if( NULL == ( fp1 = fopen( name, "rb" ) ) )
     {
@@ -551,11 +551,11 @@ BOOL XSFile_Copy( XSFile file, char * new_name )
     return YES;
 }
 
-XSInteger XSFile_GetBit( XSFile file )
+XSInteger XSFile_GetBit( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     if( _f->readable == false )
     {
@@ -578,11 +578,11 @@ XSInteger XSFile_GetBit( XSFile file )
     return ( _f->bit_buffer >> ( 8 - _f->bit_offset ) & 1 );
 }
 
-XSInteger XSFile_PutBit( XSFile file, uint8_t bit )
+XSInteger XSFile_PutBit( XSFile xsThis, uint8_t bit )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     if( _f->writeable == false )
     {
@@ -600,13 +600,13 @@ XSInteger XSFile_PutBit( XSFile file, uint8_t bit )
     return 0;
 }
 
-XSInteger XSFile_GetBits( XSFile file, XSUInteger count )
+XSInteger XSFile_GetBits( XSFile xsThis, XSUInteger count )
 {
     XSInteger    bits;
     XSUInteger   i;
     __XSFile   * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     if( _f->readable == false )
     {
@@ -617,20 +617,20 @@ XSInteger XSFile_GetBits( XSFile file, XSUInteger count )
     
     for( i = 0; i < count; i++ )
     {
-        bits |= ( ( bits << 1 ) | XSFile_GetBit( file ) );
+        bits |= ( ( bits << 1 ) | XSFile_GetBit( xsThis ) );
     }
     
     return bits;
 }
 
-XSInteger XSFile_PutBits( XSFile file, uint64_t bits, XSUInteger count )
+XSInteger XSFile_PutBits( XSFile xsThis, uint64_t bits, XSUInteger count )
 {
     XSUInteger   i;
     XSUInteger   bytes;
     uint8_t      bit;
     __XSFile   * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     if( _f->writeable == false )
     {
@@ -651,76 +651,76 @@ XSInteger XSFile_PutBits( XSFile file, uint64_t bits, XSUInteger count )
     {
         bit = bits >> ( ( count - 1 ) - i );
         
-        XSFile_PutBit( file, bit );
+        XSFile_PutBit( xsThis, bit );
     }
     
     return 0;
 }
 
-dev_t XSFile_DeviceID( XSFile file )
+dev_t XSFile_DeviceID( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return _f->stat_buf.st_dev;
 }
 
-ino_t XSFile_SerialNumber( XSFile file )
+ino_t XSFile_SerialNumber( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return _f->stat_buf.st_ino;
 }
 
-nlink_t XSFile_NumberOfLinks( XSFile file )
+nlink_t XSFile_NumberOfLinks( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return _f->stat_buf.st_nlink;
 }
 
-uid_t XSFile_UID( XSFile file )
+uid_t XSFile_UID( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return _f->stat_buf.st_uid;
 }
 
-gid_t XSFile_GID( XSFile file )
+gid_t XSFile_GID( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return _f->stat_buf.st_gid;
 }
 
-size_t XSFile_Size( XSFile file )
+size_t XSFile_Size( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     __XSFile_UpdateStat( _f );
     
     return _f->stat_buf.st_size;
 }
 
-XSFloat XSFile_HumanReadableSize( XSFile file, char unit[] )
+XSFloat XSFile_HumanReadableSize( XSFile xsThis, char unit[] )
 {
     size_t   bytes;
     XSFloat  size;
     __XSFile * _f;
     
-    _f    = ( __XSFile * )file;
-    bytes = XSFile_Size( file );
+    _f    = ( __XSFile * )xsThis;
+    bytes = XSFile_Size( xsThis );
     
     memset( unit, 0, 3 );
     
@@ -746,191 +746,191 @@ XSFloat XSFile_HumanReadableSize( XSFile file, char unit[] )
     return size;
 }
 
-time_t XSFile_AccessTime( XSFile file )
+time_t XSFile_AccessTime( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return _f->stat_buf.st_atime;
 }
 
-time_t XSFile_ModifictaionTime( XSFile file )
+time_t XSFile_ModifictaionTime( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return _f->stat_buf.st_mtime;
 }
 
-time_t XSFile_CreationTime( XSFile file )
+time_t XSFile_CreationTime( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return _f->stat_buf.st_ctime;
 }
 
-BOOL XSFile_IsBlockDevice( XSFile file )
+BOOL XSFile_IsBlockDevice( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IFMT ) == S_IFBLK ) ) ? YES : NO;
 }
 
-BOOL XSFile_IsCharacterDevice( XSFile file )
+BOOL XSFile_IsCharacterDevice( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IFMT ) == S_IFCHR ) ) ? YES : NO;
 }
 
-BOOL XSFile_IsFIFO( XSFile file )
+BOOL XSFile_IsFIFO( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IFMT ) == S_IFIFO ) ) ? YES : NO;
 }
 
-BOOL XSFile_IsRegularFile( XSFile file )
+BOOL XSFile_IsRegularFile( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IFMT ) == S_IFREG ) ) ? YES : NO;
 }
 
-BOOL XSFile_IsDirectory( XSFile file )
+BOOL XSFile_IsDirectory( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IFMT ) == S_IFDIR ) ) ? YES : NO;
 }
 
-BOOL XSFile_IsLink( XSFile file )
+BOOL XSFile_IsLink( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IFMT ) == S_IFLNK ) ) ? YES : NO;
 }
 
-BOOL XSFile_IsSocket( XSFile file )
+BOOL XSFile_IsSocket( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IFMT ) == S_IFSOCK ) ) ? YES : NO;
 }
 
-BOOL XSFile_IsUserReadable( XSFile file )
+BOOL XSFile_IsUserReadable( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IRWXU ) == S_IRUSR ) ) ? YES : NO;
 }
 
-BOOL XSFile_IsUserWriteable( XSFile file )
+BOOL XSFile_IsUserWriteable( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IRWXU ) == S_IWUSR ) ) ? YES : NO;
 }
 
-BOOL XSFile_ISUserExecutable( XSFile file )
+BOOL XSFile_ISUserExecutable( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IRWXU ) == S_IXUSR ) ) ? YES : NO;
 }
 
-BOOL XSFile_IsGroupReadable( XSFile file )
+BOOL XSFile_IsGroupReadable( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IRWXG ) == S_IRGRP ) ) ? YES : NO;
 }
 
-BOOL XSFile_IsGroupWriteable( XSFile file )
+BOOL XSFile_IsGroupWriteable( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IRWXG ) == S_IWGRP ) ) ? YES : NO;
 }
 
-BOOL XSFile_IsGroupExecutable( XSFile file )
+BOOL XSFile_IsGroupExecutable( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IRWXG ) == S_IXGRP ) ) ? YES : NO;
 }
 
-BOOL XSFile_IsWorldReadable( XSFile file )
+BOOL XSFile_IsWorldReadable( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IRWXO ) == S_IROTH ) ) ? YES : NO;
 }
 
-BOOL XSFile_IsWorldWriteable( XSFile file )
+BOOL XSFile_IsWorldWriteable( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IRWXO ) == S_IWOTH ) ) ? YES : NO;
 }
 
-BOOL XSFile_IsWorldExecutable( XSFile file )
+BOOL XSFile_IsWorldExecutable( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IRWXO ) == S_IXOTH ) ) ? YES : NO;
 }
 
-BOOL XSFile_HasSUID( XSFile file )
+BOOL XSFile_HasSUID( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return ( _f->stat_buf.st_mode & S_ISUID ) ? YES : NO;
 }
 
-BOOL XSFile_HasSGID( XSFile file )
+BOOL XSFile_HasSGID( XSFile xsThis )
 {
     __XSFile * _f;
     
-    _f = ( __XSFile * )file;
+    _f = ( __XSFile * )xsThis;
     
     return ( _f->stat_buf.st_mode & S_ISGID ) ? YES : NO;
 }

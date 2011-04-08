@@ -70,10 +70,10 @@ XSThread XSThread_Detach( void ( * func )( XSThread thread, void * arg ), void *
 /*!
  * @function    XSThread_GetID
  * @abstract    Gets the thread ID
- * @param       thread  The thread object
+ * @param       xsThis  The thread object
  * @result      The thread ID
  */
-XSUInteger XSThread_GetID( XSThread thread );
+XSUInteger XSThread_GetID( XSThread xsThis );
 
 XS_EXTERN_C_END
 
