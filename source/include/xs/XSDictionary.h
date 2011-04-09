@@ -93,7 +93,7 @@ XSUInteger XSDictionary_Count( XSDictionary xsThis );
  * @param       xsThis  The dictionary object
  * @result      An array containing all the dictionary keys
  */
-XSArray XSDictionary_Keys( XSDictionary xsThis );
+XSAutoreleased XSArray XSDictionary_Keys( XSDictionary xsThis );
 
 /*!
  * @function    XSDictionary_Keys
@@ -103,7 +103,7 @@ XSArray XSDictionary_Keys( XSDictionary xsThis );
  * @param       xsThis  The dictionary object
  * @result      An array containing all the dictionary values
  */
-XSArray XSDictionary_Values( XSDictionary xsThis );
+XSAutoreleased XSArray XSDictionary_Values( XSDictionary xsThis );
 
 /*!
  * @function    XSDictionary_ValueForKey

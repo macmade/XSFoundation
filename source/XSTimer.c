@@ -40,7 +40,7 @@
 
 extern XSClassID __XSTimerClassID;
 
-XSStatic XSTimer_Alloc( void )
+XSStatic XSTimer XSTimer_Alloc( void )
 {
     return ( XSTimer )XSRuntime_CreateInstance( __XSTimerClassID );
 }

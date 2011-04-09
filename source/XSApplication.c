@@ -335,7 +335,7 @@ XSFloat XSApplication_GetFloat( XSApplication xsThis, const char * name )
     return XSApplicationArgument_GetFloatValue( arg );
 }
 
-XSArray XSApplication_GetUnnamedArguments( XSApplication xsThis )
+XSAutoreleased XSArray XSApplication_GetUnnamedArguments( XSApplication xsThis )
 {
     XSApplication * _app;
     

@@ -81,7 +81,7 @@ XSUInteger XSDictionary_Count( XSDictionary xsThis )
     return ( ( __XSDictionary * )xsThis )->count;
 }
 
-XSArray XSDictionary_Keys( XSDictionary xsThis )
+XSAutoreleased XSArray XSDictionary_Keys( XSDictionary xsThis )
 {
     __XSDictionary * _dict;
     XSArray          array;
@@ -95,10 +95,10 @@ XSArray XSDictionary_Keys( XSDictionary xsThis )
         XSArray_AppendValue( array, _dict->keys[ i ] );
     }
     
-    return array;
+    return XSAutorelease( array );
 }
 
-XSArray XSDictionary_Values( XSDictionary xsThis )
+XSAutoreleased XSArray XSDictionary_Values( XSDictionary xsThis )
 {
     __XSDictionary * _dict;
     XSArray          array;
@@ -112,7 +112,7 @@ XSArray XSDictionary_Values( XSDictionary xsThis )
         XSArray_AppendValue( array, _dict->values[ i ] );
     }
     
-    return array;
+    return XSAutorelease( array );
 }
 
 void * XSDictionary_ValueForKey( XSDictionary xsThis, XSString key )

@@ -176,7 +176,7 @@ XSFloat XSApplication_GetFloat( XSApplication xsThis, const char * name );
  * @param       xsThis  The application object
  * @result      
  */
-XSArray XSApplication_GetUnnamedArguments( XSApplication xsThis );
+XSAutoreleased XSArray XSApplication_GetUnnamedArguments( XSApplication xsThis );
 
 XS_EXTERN_C_END
 

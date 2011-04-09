@@ -66,12 +66,12 @@ XSInteger XSError_GetCode( XSError xsThis )
     return ( ( __XSError * )xsThis )->code;
 }
 
-XSString XSError_GetDomain( XSError xsThis )
+XSAutoreleased XSString XSError_GetDomain( XSError xsThis )
 {
-    return ( ( __XSError * )xsThis )->domain;
+    return XSAutorelease( XSCopy( ( ( __XSError * )xsThis )->domain ) );
 }
 
-XSString XSError_GetReason( XSError xsThis )
+XSAutoreleased XSString XSError_GetReason( XSError xsThis )
 {
-    return ( ( __XSError * )xsThis )->reason;
+    return XSAutorelease( XSCopy( ( ( __XSError * )xsThis )->reason ) );
 }
