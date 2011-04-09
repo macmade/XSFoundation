@@ -90,6 +90,14 @@ void XSTimer_RunAndRepeat( XSTimer xsThis );
  */
 void XSTimer_Invalidate( XSTimer xsThis );
 
+/*!
+ * @function    XSTimer_IsValid
+ * @abstract    Checks whether a timer is valid or not
+ * @param       xsThis  The timer object
+ * @result      True if the timer is valid, otherwise false
+ */
+BOOL XSTimer_IsValid( XSTimer xsThis );
+
 XS_EXTERN_C_END
 
 #endif /* _XS_TIMER_H_ */

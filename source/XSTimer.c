@@ -72,3 +72,8 @@ void XSTimer_Invalidate( XSTimer xsThis )
 {
     ( ( __XSTimer * )xsThis )->valid = NO;
 }
+
+BOOL XSTimer_IsValid( XSTimer xsThis )
+{
+    return ( ( __XSTimer * )xsThis )->valid;
+}
