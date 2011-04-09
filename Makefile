@@ -100,9 +100,9 @@ __copyright:
 	@echo 
 
 __libclean:
-	@rm $(DIR_BUILD)$(LIBNAME)$(EXT_ARCHIVE)
-	@rm $(DIR_BUILD)$(LIBNAME)$(EXT_LIB_ARCHIVE)
-	@rm $(DIR_BUILD)$(LIBNAME)$(EXT_LIB_DYNAMIC)
+	@if [ -f $(DIR_BUILD)$(LIBNAME)$(EXT_ARCHIVE) ]; then rm $(DIR_BUILD)$(LIBNAME)$(EXT_ARCHIVE); fi
+	@if [ -f $(DIR_BUILD)$(LIBNAME)$(EXT_LIB_ARCHIVE) ]; then rm $(DIR_BUILD)$(LIBNAME)$(EXT_LIB_ARCHIVE); fi
+	@if [ -f $(DIR_BUILD)$(LIBNAME)$(EXT_LIB_DYNAMIC) ]; then rm $(DIR_BUILD)$(LIBNAME)$(EXT_LIB_DYNAMIC); fi
 
 test: __libclean __copyright test.c all
 	@echo 
