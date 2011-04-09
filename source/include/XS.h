@@ -42,10 +42,7 @@
 #define _XS_H_
 #pragma once
 
-#define MEMDEBUG 1
-
 #include "std/std.h"
-#include "memdebug/memdebug.h"
 #include "XS/XSMacros.h"
 #include "XS/XSConstants.h"
 #include "XS/XSTypes.h"
