@@ -82,7 +82,7 @@ XSStatic void XSAutoreleasePool_Drain( void )
     __XSMemory_AutoreleasePoolDrain( ap );
 }
 
-void * XSAlloc( size_t size, ... )
+void * XSAllocWithInfos( const char * file, int line, const char * func, size_t size, ... )
 {
     static size_t              allocID = 0;
     va_list                    args;
@@ -90,6 +90,10 @@ void * XSAlloc( size_t size, ... )
     char                     * ptr;
     XSClassID                  classID;
     const XSClassInfos const * cls;
+    
+    ( void )file;
+    ( void )line;
+    ( void )func;
     
     va_start( args, size );
     
@@ -138,10 +142,14 @@ void * XSAlloc( size_t size, ... )
     return ptr;
 }
 
-void * XSRealloc( void * ptr, size_t size )
+void * XSReallocWithInfos( const char * file, int line, const char * func, void * ptr, size_t size )
 {
     __XSMemoryObject * o;
     void             * data;
+    
+    ( void )file;
+    ( void )line;
+    ( void )func;
     
     if( ptr == NULL )
     {
@@ -178,10 +186,14 @@ void * XSRetain( void * ptr )
     return ptr;
 }
 
-void * XSRelease( void * ptr )
+void * XSReleaseWithInfos( const char * file, int line, const char * func, void * ptr )
 {
     __XSMemoryObject         * o;
     const XSClassInfos const * cls;
+    
+    ( void )file;
+    ( void )line;
+    ( void )func;
     
     if( ptr == NULL )
     {
@@ -248,18 +260,18 @@ void * XSAutorelease( void * ptr )
     return ptr;
 }
 
-void * XSAutoAlloc( size_t size )
+void * XSAutoAllocWithInfos( const char * file, int line, const char * func, size_t size )
 {
     void * ptr;
     
-    ptr = XSAlloc( size );
+    ptr = XSAllocWithInfos( file, line, func, size );
     
     XSAutorelease( ptr );
     
     return ptr;
 }
 
-void * XSCopy( void * ptr )
+void * XSCopyWithInfos( const char * file, int line, const char * func, void * ptr )
 {
     __XSMemoryObject         * o;
     void                     * ptr2;
@@ -275,7 +287,7 @@ void * XSCopy( void * ptr )
     if( o->classID != 0 )
     {
         cls  = XSRuntime_GetClassForClassID( o->classID );
-        ptr2 = XSAlloc( o->size, o->classID );
+        ptr2 = XSAllocWithInfos( file, line, func, o->size, o->classID );
         
         if( ptr2 == NULL )
         {
@@ -291,7 +303,7 @@ void * XSCopy( void * ptr )
     }
     else
     {
-        ptr2 = XSAlloc( o->size );
+        ptr2 = XSAllocWithInfos( file, line, func, o->size );
         
         if( ptr2 == NULL )
         {

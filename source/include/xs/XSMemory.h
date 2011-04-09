@@ -76,7 +76,7 @@ XSAutoreleasePool XSAutoreleasePool_Init( XSAutoreleasePool xsThis );
 XSStatic void XSAutoreleasePool_Drain( void );
 
 /*!
- * @function    XSAlloc
+ * @define      XSAlloc
  * @abstract    Allocates memory
  * descriton    Returned pointer will have to be passed to the XSRelease
  *              function in order to be free.
@@ -84,16 +84,44 @@ XSStatic void XSAutoreleasePool_Drain( void );
  * @param       ...     Reserved for internal runtime use
  * @result      A pointer to the allocated memory
  */
-void * XSAlloc( size_t size, ... );
+#define XSAlloc( ... ) XSAllocWithInfos( __FILE__, __LINE__, __func__, __VA_ARGS__ )
 
 /*!
- * @function    XSRealloc
+ * @function    XSAllocWithInfos
+ * @abstract    Allocates memory
+ * description  This function is used for internal memory debugging. Do not
+ *              call it directly. Use XSAlloc instead.
+ * @param       file    The file name
+ * @param       line    The line number
+ * @param       func    The function name
+ * @param       size    The number of bytes to allocate
+ * @param       ...     Reserved for internal runtime use
+ * @result      A pointer to the allocated memory
+ */
+void * XSAllocWithInfos( const char * file, int line, const char * func, size_t size, ... );
+
+/*!
+ * @define      XSRealloc
  * @abstract    Reallocates memory
  * @param       ptr     The pointer to reallocate
  * @param       size    The new size in bytes
  * @result      The new pointer to the reallocated memory
  */
-void * XSRealloc( void * ptr, size_t size );
+#define XSRealloc( ptr, size ) XSReallocWithInfos( __FILE__, __LINE__, __func__, ptr, size )
+
+/*!
+ * @function    XSReallocWithInfos
+ * @abstract    Reallocates memory
+ * description  This function is used for internal memory debugging. Do not
+ *              call it directly. Use XSAlloc instead.
+ * @param       file    The file name
+ * @param       line    The line number
+ * @param       func    The function name
+ * @param       ptr     The pointer to reallocate
+ * @param       size    The new size in bytes
+ * @result      The new pointer to the reallocated memory
+ */
+void * XSReallocWithInfos( const char * file, int line, const char * func, void * ptr, size_t size );
 
 /*!
  * @function    XSRetain
@@ -107,7 +135,7 @@ void * XSRealloc( void * ptr, size_t size );
 void * XSRetain( void * ptr );
 
 /*!
- * @function    XSRelease
+ * @define      XSRelease
  * @abstract    Releases a memory pointer
  * @description When releasing an object, the internal retain count is
  *              decremented. When it reaches 0, the pointer will be
@@ -115,7 +143,20 @@ void * XSRetain( void * ptr );
  * @param       ptr     The pointer to release
  * @result      The pointer passed, to allow function chaining
  */
-void * XSRelease( void * ptr );
+#define XSRelease( ptr ) XSReleaseWithInfos( __FILE__, __LINE__, __func__, ptr )
+
+/*!
+ * @function    XSRelease
+ * @abstract    Releases a memory pointer
+ * description  This function is used for internal memory debugging. Do not
+ *              call it directly. Use XSAlloc instead.
+ * @param       file    The file name
+ * @param       line    The line number
+ * @param       func    The function name
+ * @param       ptr     The pointer to release
+ * @result      The pointer passed, to allow function chaining
+ */
+void * XSReleaseWithInfos( const char * file, int line, const char * func, void * ptr );
 
 /*!
  * @function    XSAutorelease
@@ -138,7 +179,20 @@ void * XSAutorelease( void * ptr );
  * @param       size    The size to allocate in bytes
  * @result      A pointer to the allocated memory,
  */
-void * XSAutoAlloc( size_t size );
+#define XSAutoAlloc( size ) XSAutoAllocWithInfos( __FILE__, __LINE__, __func__, size )
+
+/*!
+ * @function    XSAutoAlloc
+ * @abstract    Allocates auto-releasable memory
+ * description  This function is used for internal memory debugging. Do not
+ *              call it directly. Use XSAlloc instead.
+ * @param       file    The file name
+ * @param       line    The line number
+ * @param       func    The function name
+ * @param       size    The size to allocate in bytes
+ * @result      A pointer to the allocated memory,
+ */
+void * XSAutoAllocWithInfos( const char * file, int line, const char * func, size_t size );
 
 /*!
  * @function    XSCopy
@@ -150,7 +204,20 @@ void * XSAutoAlloc( size_t size );
  * @param       ptr     The pointer to copy
  * @result      The copy of the new pointer
  */
-void * XSCopy( void * ptr );
+#define XSCopy( ptr ) XSCopyWithInfos( __FILE__, __LINE__, __func__, ptr )
+
+/*!
+ * @function    XSCopy
+ * @abstract    Copies a pointer
+ * description  This function is used for internal memory debugging. Do not
+ *              call it directly. Use XSAlloc instead.
+ * @param       file    The file name
+ * @param       line    The line number
+ * @param       func    The function name
+ * @param       ptr     The pointer to copy
+ * @result      The copy of the new pointer
+ */
+void * XSCopyWithInfos( const char * file, int line, const char * func, void * ptr );
 
 /*!
  * @function    XSEquals
