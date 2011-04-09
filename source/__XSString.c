@@ -75,8 +75,8 @@ void __XSString_Destruct( void * object )
 
 void __XSString_Copy( void * source, void * destination )
 {
-    __XSString * str1 = ( __XSString * )object1;
-    __XSString * str2 = ( __XSString * )object2;
+    __XSString * str1 = ( __XSString * )source;
+    __XSString * str2 = ( __XSString * )destination;
     
     if( NULL == ( str2->str = XSAlloc( str1->length + 1 ) ) )
     {
