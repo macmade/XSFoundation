@@ -47,16 +47,16 @@ XSString XSString_Alloc( void )
     return ( XSString )XSRuntime_CreateInstance( __XSStringClassID );
 }
 
-XSString XSString_Create( void )
+XSString XSString_Init( XSString xsThis )
 {
-    return XSString_CreateWithCapacity( __XSSTRING_DEFAULT_CAPACITY );
+    return XSString_InitWithCapacity( xsThis, __XSSTRING_DEFAULT_CAPACITY );
 }
 
-XSString XSString_CreateWithCapacity( XSUInteger capacity )
+XSString XSString_InitWithCapacity( XSString xsThis, XSUInteger capacity )
 {
     __XSString * string;
     
-    string = ( __XSString * )XSString_Alloc();
+    string = ( __XSString * )xsThis;
     
     if( capacity == 0 )
     {
@@ -68,18 +68,18 @@ XSString XSString_CreateWithCapacity( XSUInteger capacity )
     return ( XSString )string;
 }
 
-XSString XSString_CreateWithCString( char * str )
+XSString XSString_InitWithCString( XSString xsThis, char * str )
 {
     size_t       length;
     __XSString * string;
     
     if( str == NULL )
     {
-        return XSString_Create();
+        return xsThis;
     }
     
     length = strlen( str );
-    string = ( __XSString * )XSString_CreateWithCapacity( length );
+    string = ( __XSString * )XSString_InitWithCapacity( xsThis, length );
     
     memcpy( string->str, str, length );
     
@@ -88,9 +88,10 @@ XSString XSString_CreateWithCString( char * str )
     return ( XSString )string;
 }
 
-XSString XSString_CreateWithContentOfFile( char * path )
+XSString XSString_InitWithContentOfFile( XSString xsThis, char * path )
 {
     ( void )path;
+    ( void )xsThis;
     
     return NULL;
 }
@@ -111,7 +112,7 @@ XSString XSString_SubstringFromIndex( XSString xsThis, size_t i )
         return NULL;
     }
     
-    return XSString_CreateWithCString( _str->str + i );
+    return XSString_InitWithCString( XSString_Alloc(), _str->str + i );
 }
 
 XSString XSString_SubstringToIndex( XSString xsThis, size_t i )
@@ -131,7 +132,7 @@ XSString XSString_SubstringToIndex( XSString xsThis, size_t i )
         return XSCopy( xsThis );
     }
     
-    str2 = ( __XSString * )XSString_CreateWithCapacity( i + 1 );
+    str2 = ( __XSString * )XSString_InitWithCapacity( XSString_Alloc(), i + 1 );
     
     memcpy( str2->str, _str->str, i );
     
@@ -160,7 +161,7 @@ XSString XSString_SubstringWithRange( XSString xsThis, XSRange range )
         range.length = _str1->length - range.location;
     }
     
-    _str2 = ( __XSString * )XSString_CreateWithCapacity( range.length + 1 );
+    _str2 = ( __XSString * )XSString_InitWithCapacity( XSString_Alloc(), range.length + 1 );
     
     memset( _str2->str, 0, range.length + 1 );
     memcpy( _str2->str, ( _str1->str ) + range.location, range.length );
@@ -239,7 +240,7 @@ XSString XSString_StringByAppendingString( XSString xsThis, XSString str )
     length1 = XSString_Length( xsThis );
     length2 = XSString_Length( str );
     
-    newStr         = ( __XSString * )XSString_CreateWithCapacity( length1 + length2 + 1 );
+    newStr         = ( __XSString * )XSString_InitWithCapacity( XSString_Alloc(), length1 + length2 + 1 );
     newStr->length = length1 + length2;
     
     memset( newStr->str, 0, newStr->length + 1 );
@@ -268,7 +269,7 @@ XSString XSString_StringByAppendingCString( XSString xsThis, char * str )
     length1 = XSString_Length( xsThis );
     length2 = strlen( str );
     
-    newStr         = ( __XSString * )XSString_CreateWithCapacity( length1 + length2 + 1 );
+    newStr         = ( __XSString * )XSString_InitWithCapacity( XSString_Alloc(), length1 + length2 + 1 );
     newStr->length = length1 + length2;
     
     memset( newStr->str, 0, newStr->length + 1 );

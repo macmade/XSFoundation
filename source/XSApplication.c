@@ -311,7 +311,7 @@ XSString XSApplication_GetString( XSApplication xsThis, const char * name )
         return NULL;
     }
     
-    return XSAutorelease( XSSTR( ( char * )XSApplicationArgument_GetStringValue( arg ) ) );
+    return XSSTR( ( char * )XSApplicationArgument_GetStringValue( arg ) );
 }
 
 XSFloat XSApplication_GetFloat( XSApplication xsThis, const char * name )

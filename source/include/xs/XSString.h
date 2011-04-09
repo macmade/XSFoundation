@@ -57,40 +57,43 @@ typedef struct XSString * XSString;
 XSString XSString_Alloc( void );
 
 /*!
- * @function    XSString_Create
+ * @function    XSString_Init
  * @abstract    Creates an empty string
+ * @param       xsThis      The string object
  * @result      A new string object
  */
-XSString XSString_Create( void );
+XSString XSString_Init( XSString xsThis );
 
 /*!
- * @function    XSString_CreateWithCapacity
+ * @function    XSString_InitWithCapacity
  * @abstract    Creates an empty string with an initial capacity
+ * @param       xsThis      The string object
  * @param       capacity    The initial string capacity
  * @result      A new string object
  */
-XSString XSString_CreateWithCapacity( XSUInteger capacity );
+XSString XSString_InitWithCapacity( XSString xsThis, XSUInteger capacity );
 
 /*!
- * @function    XSString_CreateWithCString
+ * @function    XSString_InitWithCString
  * @abstract    Creates a string from a C string
- * @param       The C string
+ * @param       xsThis  The string object
+ * @param       str     The C string
  * @result      A new string object
  */
-XSString XSString_CreateWithCString( char * str );
+XSString XSString_InitWithCString( XSString xsThis, char * str );
 
 /*!
- * @function    XSString_CreateWithContentOfFile
+ * @function    XSString_InitWithContentOfFile
  * @abstract    Creates a string with a file's content
+ * @param       xsThis  The string object
  * @param       path    The path to the file
  * @result      A new string object
  */
-XSString XSString_CreateWithContentOfFile( char * path );
+XSString XSString_InitWithContentOfFile( XSString xsThis, char * path );
 
 /*!
  * @function    XSString_SubstringFromIndex
  * @abstract    Gets a substring to a specific index
- * @description You are responsible to release the returned string object
  * @param       xsThis  The string object
  * @param       i       The index
  * @result      A new string object
@@ -100,7 +103,6 @@ XSString XSString_SubstringFromIndex( XSString xsThis, size_t i );
 /*!
  * @function    XSString_SubstringToIndex
  * @abstract    Gets a substring to a specific index
- * @description You are responsible to release the returned string object
  * @param       xsThis  The string object
  * @param       i       The index
  * @result      A new string object
@@ -110,7 +112,6 @@ XSString XSString_SubstringToIndex( XSString xsThis, size_t i );
 /*!
  * @function    XSString_SubstringWithRange
  * @abstract    Gets a substring within a specific range
- * @description You are responsible to release the returned string object
  * @param       xsThis  The string object
  * @param       range   The range
  * @result      A new string object
@@ -120,7 +121,6 @@ XSString XSString_SubstringWithRange( XSString xsThis, XSRange range );
 /*!
  * @function    XSString_LowercaseString
  * @abstract    Gets a lower-case string
- * @description You are responsible to release the returned string object
  * @param       xsThis  The string object
  * @result      A new string object
  */
@@ -129,7 +129,6 @@ XSString XSString_LowercaseString( XSString xsThis );
 /*!
  * @function    XSString_LowercaseString
  * @abstract    Gets a upper-case string
- * @description You are responsible to release the returned string object
  * @param       xsThis  The string object
  * @result      A new string object
  */
@@ -138,7 +137,6 @@ XSString XSString_UppercaseString( XSString xsThis );
 /*!
  * @function    XSString_StringByAppendingString
  * @abstract    Creates a new string by appending an other string
- * @description You are responsible to release the returned string object
  * @param       xsThis  The string object
  * @param       str     The string to append
  * @result      A new string object
@@ -148,7 +146,6 @@ XSString XSString_StringByAppendingString( XSString xsThis, XSString str );
 /*!
  * @function    XSString_StringByAppendingCString
  * @abstract    Creates a new string by appending an C string
- * @description You are responsible to release the returned string object
  * @param       xsThis  The string object
  * @param       str     The C string to append
  * @result      A new string object
@@ -211,7 +208,6 @@ BOOL XSString_IsEqualToString( XSString xsThis, XSString str );
 /*!
  * @function    XSString_StringByReplacingStringWithString
  * @abstract    Replaces the occurences of a string with another string
- * @description You are responsible to release the returned string object
  * @param       xsThis  The string object
  * @result      A new string object
  */
