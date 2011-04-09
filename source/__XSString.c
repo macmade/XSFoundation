@@ -83,7 +83,7 @@ void __XSString_Copy( void * source, void * destination )
         str2->str = NULL;
     }
     
-    strcpy( str1->str, str2->str );
+    memcpy( str2->str, str1->str, str1->length );
 }
 
 XSString __XSString_ToString( void * object )
