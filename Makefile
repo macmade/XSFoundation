@@ -50,7 +50,7 @@ _ARGS_CC               = -I $(DIR_INC) -I $(DIR_INC_PRIV) $(ARGS_CC)
 
 .PHONY: all clean install uninstall __copyright
 
-all: __copyright $(_FILES_SRC_O_BUILD) $(_FILES_SRC_LO_BUILD) $(_FILES_SRC_LA_BUILD) $(_FILES_SRC_DYLIB_BUILD)
+all: __libclean __copyright $(_FILES_SRC_O_BUILD) $(_FILES_SRC_LO_BUILD) $(_FILES_SRC_LA_BUILD) $(_FILES_SRC_DYLIB_BUILD)
 	
 clean: __copyright 
 	@echo "    - Removing all build files"
@@ -99,7 +99,12 @@ __copyright:
 	@echo "----------------------------------------------------------------------"
 	@echo 
 
-test: __copyright test.c all
+__libclean:
+	@rm $(DIR_BUILD)$(LIBNAME)$(EXT_ARCHIVE)
+	@rm $(DIR_BUILD)$(LIBNAME)$(EXT_LIB_ARCHIVE)
+	@rm $(DIR_BUILD)$(LIBNAME)$(EXT_LIB_DYNAMIC)
+
+test: __libclean __copyright test.c all
 	@echo 
 	@echo "Compiling the test executable:"
 	@echo 
