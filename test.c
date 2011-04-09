@@ -77,7 +77,6 @@ int main( int argc, char * argv[] )
     XSString      str3;
     XSArray       arr;
     XSTimer       timer;
-    char        * sigsegv;
     
     app  = XSApplication_Start( argc, ( const char ** )argv );
     
@@ -124,16 +123,13 @@ int main( int argc, char * argv[] )
     str1 = XSSTR( "hello, world" );
     str2 = XSString_SubstringFromIndex( str1, 5 );
     str3 = XSCopy( str2 );
-    arr  = XSArray_Init( XSArray_Alloc() );
+    arr  = XSArray_InitWithValues( XSArray_Alloc(), str1, str2, str3, NULL );
     
     XSLog( "Memory hash: %s", XSHash( test ) );
     XSLog( "Object hash: %s", XSHash( str1 ) );
-    
-    printf( "%s%s%s\n", XSString_CString( str1 ), XSString_CString( str2 ), XSString_CString( str3 ) );
-    
+    XSLog( "%s%s%s", XSString_CString( str1 ), XSString_CString( str2 ), XSString_CString( str3 ) );
     XSLog( "hello, universe: %i %@ %i %@ %i", 42, str1, 43, app, 44 );
     XSLog( "Array value 0: %@", XSArray_ValueAtIndex( arr, 0 ) );
-    
     XSLog( "%@", XSAutorelease( XSString_StringByAppendingString( str1, str2 ) ) );
     XSLog( "%@", arr );
     XSLog( "%@", XSAutorelease( XSRuntime_CreateInstanceOfClassWithName( "XSString" ) ) );
@@ -156,11 +152,6 @@ int main( int argc, char * argv[] )
     {
         usleep( 100 );
     }
-    
-    XSLog( "Now a segmentation to test MEMDebug:" );
-    
-    sigsegv      = NULL;
-    sigsegv[ 0 ] = 0;
     
     return XSApplication_Exit( EXIT_SUCCESS );
 }
