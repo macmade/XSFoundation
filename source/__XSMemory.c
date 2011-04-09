@@ -48,7 +48,7 @@ __XSAutoreleasePool * __xsmemory_ar_pools[ XS_MEMORY_MAX_AR_POOLS ];
  * @var         __xsmemory_ar_pools_num
  * @abstract    The number of active auto-release pool objects
  */
-XSUInteger          __xsmemory_ar_pools_num;
+XSUInteger __xsmemory_ar_pools_num;
 
 /*!
  * @var         __XSAutoreleasePoolClass
