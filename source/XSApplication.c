@@ -105,19 +105,19 @@ void XSApplication_PrintHelp( XSApplication xsThis, const char * description )
         exec++;
     }
     
-    printf( "--------------------------------------------------------------------------------\n" );
-    printf( "%s - %s\n", exec, description );
-    printf( "--------------------------------------------------------------------------------\n" );
+    printf( "#-----------------------------------------------------------------------------------------------------------------\n" );
+    printf( "# %s - %s\n", exec, description );
+    printf( "#-----------------------------------------------------------------------------------------------------------------\n" );
     
     if( _app->arg_count > 0 )
     {
-        printf( "\nArguments:\n\n" );
+        printf( "# \n# Arguments:\n# \n" );
         
         for( i = 0; i < _app->arg_count; i++ )
         {
             arg = _app->args[ i ];
             
-            printf( "    %s ", XSApplicationArgument_GetName( arg ) );
+            printf( "#    %s ", XSApplicationArgument_GetName( arg ) );
             
             switch( XSApplicationArgument_GetType( arg ) )
             {
@@ -154,15 +154,15 @@ void XSApplication_PrintHelp( XSApplication xsThis, const char * description )
             
             if( NULL == ( help = XSApplicationArgument_GetHelp( arg ) ) )
             {
-                printf( "    No description available\n\n" );
+                printf( "#    No description available\n# \n" );
             }
             else
             {
-                printf( "    %s\n\n", help );
+                printf( "#     %s\n# \n", help );
             }
         }
     
-        printf( "--------------------------------------------------------------------------------\n" );
+        printf( "#-----------------------------------------------------------------------------------------------------------------\n" );
     }
 }
 
