@@ -48,7 +48,7 @@ static const XSClassInfos __XSStringClass =
     sizeof( __XSString ),   /* Object size */
     NULL,                   /* Constructor */
     __XSString_Destruct,    /* Destructor */
-    NULL,                   /* Object copy */
+    __XSString_Copy,        /* Object copy */
     __XSString_ToString,    /* Object description */
     NULL                    /* Object comparison */
 };
@@ -71,6 +71,19 @@ void __XSString_Destruct( void * object )
     str = ( __XSString * )object;
     
     XSRelease( str->str );
+}
+
+void __XSString_Copy( void * source, void * destination )
+{
+    __XSString * str1 = ( __XSString * )object1;
+    __XSString * str2 = ( __XSString * )object2;
+    
+    if( NULL == ( str2->str = XSAlloc( str1->length + 1 ) ) )
+    {
+        str2->str = NULL;
+    }
+    
+    strcpy( str1->str, str2->str );
 }
 
 XSString __XSString_ToString( void * object )
