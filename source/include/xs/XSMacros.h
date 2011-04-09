@@ -211,6 +211,20 @@ XS_EXTERN_C_BEGIN
     #define FALSE	0
 #endif
 
+#ifndef __func__
+    #if __STDC_VERSION__ < 199901L
+        #ifdef __GNUC__
+            #if __GNUC__ >= 2
+                #define __func__ __FUNCTION__
+            #else
+                #define __func__ "<unknown function>"
+            #endif
+        #else
+            #define __func__ "<unknown function>"
+        #endif
+    #endif
+#endif
+
 XS_EXTERN_C_END
 
 #endif /* _XS_MACROS_H_ */
