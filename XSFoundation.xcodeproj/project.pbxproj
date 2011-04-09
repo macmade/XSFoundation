@@ -14,6 +14,8 @@
 		052EC753134F339C004A939E /* __i386.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __i386.h; sourceTree = "<group>"; };
 		052EC754134F339C004A939E /* eos-skl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "eos-skl.h"; sourceTree = "<group>"; };
 		052EC755134F3414004A939E /* eos-skl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "eos-skl.c"; sourceTree = "<group>"; };
+		052EC77213504F07004A939E /* memdebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memdebug.h; sourceTree = "<group>"; };
+		052EC77413504F2F004A939E /* memdebug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = memdebug.c; sourceTree = "<group>"; };
 		056003BB1340621F005DC721 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
 		056003BC1340621F005DC721 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		056003BE1340621F005DC721 /* __XSMemory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemory.c; sourceTree = "<group>"; };
@@ -150,6 +152,14 @@
 			path = arch;
 			sourceTree = "<group>";
 		};
+		052EC77113504F07004A939E /* memdebug */ = {
+			isa = PBXGroup;
+			children = (
+				052EC77213504F07004A939E /* memdebug.h */,
+			);
+			path = memdebug;
+			sourceTree = "<group>";
+		};
 		056003A813406206005DC721 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +177,7 @@
 			children = (
 				056003BF1340621F005DC721 /* include */,
 				052EC755134F3414004A939E /* eos-skl.c */,
+				052EC77413504F2F004A939E /* memdebug.c */,
 				052EC738134F2908004A939E /* std-md5.c */,
 				056003D61340621F005DC721 /* std-string.c */,
 				0562F8C2134B3F54005190B6 /* __XSApplication.c */,
@@ -220,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				052EC74E134F339C004A939E /* eos-skl */,
+				052EC77113504F07004A939E /* memdebug */,
 				056003C41340621F005DC721 /* std */,
 				056003CE1340621F005DC721 /* xs */,
 				056003D51340621F005DC721 /* XS.h */,

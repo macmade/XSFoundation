@@ -35,6 +35,7 @@
  * @abstract    ...
  */
 
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "XS.h"
@@ -76,6 +77,7 @@ int main( int argc, char * argv[] )
     XSString      str3;
     XSArray       arr;
     XSTimer       timer;
+    char        * sigsegv;
     
     app  = XSApplication_Start( argc, ( const char ** )argv );
     
@@ -149,6 +151,9 @@ int main( int argc, char * argv[] )
     XSRelease( str2 );
     XSRelease( str3 );
     XSRelease( arr );
+    
+    sigsegv      = NULL;
+    sigsegv[ 0 ] = 0;
     
     return XSApplication_Exit( EXIT_SUCCESS );
 }
