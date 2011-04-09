@@ -132,7 +132,7 @@ XSAutoreleased XSString XSString_SubstringToIndex( XSString xsThis, size_t i )
         return XSCopy( xsThis );
     }
     
-    str2 = ( __XSString * )XSString_InitWithCapacity( XSString_Alloc(), i + 1 );
+    str2 = ( __XSString * )XSString_InitWithCapacity( XSString_Alloc(), i );
     
     memcpy( str2->str, _str->str, i );
     
@@ -161,7 +161,7 @@ XSAutoreleased XSString XSString_SubstringWithRange( XSString xsThis, XSRange ra
         range.length = _str1->length - range.location;
     }
     
-    _str2 = ( __XSString * )XSString_InitWithCapacity( XSString_Alloc(), range.length + 1 );
+    _str2 = ( __XSString * )XSString_InitWithCapacity( XSString_Alloc(), range.length );
     
     memset( _str2->str, 0, range.length + 1 );
     memcpy( _str2->str, ( _str1->str ) + range.location, range.length );
