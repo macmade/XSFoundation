@@ -54,7 +54,7 @@ typedef struct XSURL * XSURL;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSURL XSURL_Alloc( void );
+XSStatic XSURL XSURL_Alloc( void );
 
 XSURL XSURL_Init( XSURL xsThis );
 

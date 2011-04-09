@@ -54,7 +54,7 @@ typedef struct XSNumber * XSNumber;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSNumber XSNumber_Alloc( void );
+XSStatic XSNumber XSNumber_Alloc( void );
 
 /*!
  * @function    XSNumber_InitWithBool

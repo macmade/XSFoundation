@@ -44,7 +44,7 @@ static __XSApplication    * __xsapp = NULL;
 static XSAutoreleasePool    __xsarp = NULL;
 static BOOL __xsapp_argv_processed  = NO;
 
-XSApplication XSApplication_Alloc( void )
+XSStatic XSApplication XSApplication_Alloc( void )
 {
     return ( XSApplication )XSRuntime_CreateInstance( __XSApplicationClassID );
 }
@@ -54,7 +54,7 @@ XSApplication XSApplication_Init( XSApplication xsThis )
     return xsThis;
 }
 
-XSApplication XSApplication_Start( int argc, const char ** argv )
+XSStatic XSApplication XSApplication_Start( int argc, const char ** argv )
 {
     XSRuntime_Initialize();
     
@@ -68,7 +68,7 @@ XSApplication XSApplication_Start( int argc, const char ** argv )
     return ( XSApplication )__xsapp;
 }
 
-int XSApplication_Exit( int status )
+XSStatic int XSApplication_Exit( int status )
 {
     XSRelease( __xsarp );
     XSRelease( __xsapp );
@@ -81,7 +81,7 @@ int XSApplication_Exit( int status )
     return status;
 }
 
-XSApplication XSApplication_SharedApplication( void )
+XSStatic XSApplication XSApplication_SharedApplication( void )
 {
     return ( XSApplication )__xsapp;
 }

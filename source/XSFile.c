@@ -102,7 +102,7 @@ if( f->need_init == YES )           \
     }                               \
 }
 
-XSFile XSFile_Alloc( void )
+XSStatic XSFile XSFile_Alloc( void )
 {
     return ( XSFile )XSRuntime_CreateInstance( __XSFileClassID );
 }
@@ -112,7 +112,7 @@ XSFile XSFile_Init( XSFile xsThis )
     return xsThis;
 }
 
-XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode )
+XSStatic XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode )
 {
     FILE      * fp;
     __XSFile  * file;

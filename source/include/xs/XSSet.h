@@ -54,7 +54,7 @@ typedef struct XSSet * XSSet;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSSet XSSet_Alloc( void );
+XSStatic XSSet XSSet_Alloc( void );
 
 XSSet XSSet_Init( XSSet xsThis );
 

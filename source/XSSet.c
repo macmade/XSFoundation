@@ -40,7 +40,7 @@
 
 extern XSClassID __XSSetClassID;
 
-XSSet XSSet_Alloc( void )
+XSStatic XSSet XSSet_Alloc( void )
 {
     return ( XSSet )XSRuntime_CreateInstance( __XSSetClassID );
 }

@@ -40,7 +40,7 @@
 
 extern XSClassID __XSArrayClassID;
 
-XSArray XSArray_Alloc( void )
+XSStatic XSArray XSArray_Alloc( void )
 {
     return ( XSArray )XSRuntime_CreateInstance( __XSArrayClassID );
 }

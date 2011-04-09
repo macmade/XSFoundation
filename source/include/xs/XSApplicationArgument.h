@@ -72,7 +72,7 @@ XSApplicationArgumentType;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSApplicationArgument XSApplicationArgument_Alloc( void );
+XSStatic XSApplicationArgument XSApplicationArgument_Alloc( void );
 
 /*!
  * @function    XSApplicationArgument_Init

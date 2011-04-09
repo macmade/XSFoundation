@@ -40,7 +40,7 @@
 
 extern XSClassID __XSAutoreleasePoolClassID;
 
-XSAutoreleasePool XSAutoreleasePool_Alloc( void )
+XSStatic XSAutoreleasePool XSAutoreleasePool_Alloc( void )
 {
     return ( XSAutoreleasePool )XSRuntime_CreateInstance( __XSAutoreleasePoolClassID );
 }
@@ -71,7 +71,7 @@ XSAutoreleasePool XSAutoreleasePool_Init( XSAutoreleasePool xsThis )
     return ( XSAutoreleasePool )ap;
 }
 
-void XSAutoreleasePool_Drain( void )
+XSStatic void XSAutoreleasePool_Drain( void )
 {
     __XSAutoreleasePool * ap;
     

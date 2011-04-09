@@ -54,7 +54,7 @@ typedef struct XSColor * XSColor;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSColor XSColor_Alloc( void );
+XSStatic XSColor XSColor_Alloc( void );
 
 /*!
  * @function    XSColor_Init
@@ -138,35 +138,35 @@ XSColor XSColor_InitWithHSVA( XSColor xsThis, XSFloat h, XSFloat s, XSFloat v, X
  * @abstract    Creates a color with HSVA components
  * @result      The color object
  */
-XSColor XSColor_BlackColor( void );
+XSStatic XSColor XSColor_BlackColor( void );
 
 /*!
  * @function    XSColor_WhiteColor
  * @abstract    Create a black color object
  * @result      The color object
  */
-XSColor XSColor_WhiteColor( void );
+XSStatic XSColor XSColor_WhiteColor( void );
 
 /*!
  * @function    XSColor_RedColor
  * @abstract    Creates a red color object
  * @result      The color object
  */
-XSColor XSColor_RedColor( void );
+XSStatic XSColor XSColor_RedColor( void );
 
 /*!
  * @function    XSColor_GreenColor
  * @abstract    Creates a green color object
  * @result      The color object
  */
-XSColor XSColor_GreenColor( void );
+XSStatic XSColor XSColor_GreenColor( void );
 
 /*!
  * @function    XSColor_BlueColor
  * @abstract    Creates a blue color object
  * @result      The color object
  */
-XSColor XSColor_BlueColor( void );
+XSStatic XSColor XSColor_BlueColor( void );
 
 /*!
  * @function    XSColor_GetRed

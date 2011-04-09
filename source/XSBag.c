@@ -40,7 +40,7 @@
 
 extern XSClassID __XSBagClassID;
 
-XSBag XSBag_Alloc( void )
+XSStatic XSBag XSBag_Alloc( void )
 {
     return ( XSBag )XSRuntime_CreateInstance( __XSBagClassID );
 }

@@ -119,7 +119,7 @@ extern XSFile XSStderr;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSFile XSFile_Alloc( void );
+XSStatic XSFile XSFile_Alloc( void );
 
 /*!
  * @function    XSFile_Init
@@ -137,7 +137,7 @@ XSFile XSFile_Init( XSFile xsThis );
  * @param       openMode    The file open mode (see XSFileOpenMode)
  * @result      The instance of XSFile
  */
-XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode );
+XSStatic XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode );
 
 /*!
  * @function    

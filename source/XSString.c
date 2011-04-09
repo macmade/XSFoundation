@@ -42,7 +42,7 @@ extern XSClassID __XSStringClassID;
 
 #define __XSSTRING_DEFAULT_CAPACITY 256
 
-XSString XSString_Alloc( void )
+XSStatic XSString XSString_Alloc( void )
 {
     return ( XSString )XSRuntime_CreateInstance( __XSStringClassID );
 }

@@ -56,7 +56,7 @@ typedef struct XSThread * XSThread;
  *              function instead to create new threads.
  * @result      The allocated object
  */
-XSThread XSThread_Alloc( void );
+XSStatic XSThread XSThread_Alloc( void );
 
 /*!
  * @function    XSThread_Alloc
@@ -75,7 +75,7 @@ XSThread XSThread_Init( XSThread xsThis );
  * @param       arg     Argument to pass to the thread function
  * @result      The XSThread instance
  */
-XSThread XSThread_Detach( void ( * func )( XSThread thread, void * arg ), void * arg );
+XSStatic XSThread XSThread_Detach( void ( * func )( XSThread thread, void * arg ), void * arg );
 
 /*!
  * @function    XSThread_GetID

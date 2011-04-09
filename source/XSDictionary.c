@@ -40,7 +40,7 @@
 
 extern XSClassID __XSDictionaryClassID;
 
-XSDictionary XSDictionary_Alloc( void )
+XSStatic XSDictionary XSDictionary_Alloc( void )
 {
     return ( XSDictionary )XSRuntime_CreateInstance( __XSDictionaryClassID );
 }

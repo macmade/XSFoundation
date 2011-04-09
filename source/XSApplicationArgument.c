@@ -40,7 +40,7 @@
 
 extern XSClassID __XSApplicationArgumentClassID;
 
-XSApplicationArgument XSApplicationArgument_Alloc( void )
+XSStatic XSApplicationArgument XSApplicationArgument_Alloc( void )
 {
     return ( XSApplicationArgument )XSRuntime_CreateInstance( __XSApplicationArgumentClassID );
 }

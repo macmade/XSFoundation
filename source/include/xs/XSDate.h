@@ -54,7 +54,7 @@ typedef struct XSDate * XSDate;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSDate XSDate_Alloc( void );
+XSStatic XSDate XSDate_Alloc( void );
 
 XSDate XSDate_Init( XSDate xsThis );
 

@@ -40,7 +40,7 @@
 
 extern XSClassID __XSDataClassID;
 
-XSData XSData_Alloc( void )
+XSStatic XSData XSData_Alloc( void )
 {
     return ( XSData )XSRuntime_CreateInstance( __XSDataClassID );
 }

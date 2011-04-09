@@ -56,7 +56,7 @@ typedef struct XSError * XSError;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSError XSError_Alloc( void );
+XSStatic XSError XSError_Alloc( void );
 
 /*!
  * @function    XSError_Init

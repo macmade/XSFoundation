@@ -54,7 +54,7 @@ typedef struct XSTree * XSTree;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSTree XSTree_Alloc( void );
+XSStatic XSTree XSTree_Alloc( void );
 
 XSTree XSTree_Init( XSTree xsThis );
 

@@ -40,7 +40,7 @@
 
 extern XSClassID __XSTreeClassID;
 
-XSTree XSTree_Alloc( void )
+XSStatic XSTree XSTree_Alloc( void )
 {
     return ( XSTree )XSRuntime_CreateInstance( __XSTreeClassID );
 }

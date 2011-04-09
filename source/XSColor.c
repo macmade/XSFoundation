@@ -40,7 +40,7 @@
 
 extern XSClassID __XSColorClassID;
 
-XSColor XSColor_Alloc( void )
+XSStatic XSColor XSColor_Alloc( void )
 {
     return ( XSColor )XSRuntime_CreateInstance( __XSColorClassID );
 }
@@ -116,27 +116,27 @@ XSColor XSColor_InitWithHSVA( XSColor xsThis, XSFloat h, XSFloat s, XSFloat v, X
     return ( XSColor )color;
 }
 
-XSColor XSColor_BlackColor( void )
+XSStatic XSColor XSColor_BlackColor( void )
 {
     return XSColor_InitWithRGB( XSColor_Alloc(), 0, 0, 0 );
 }
 
-XSColor XSColor_WhiteColor( void )
+XSStatic XSColor XSColor_WhiteColor( void )
 {
     return XSColor_InitWithRGB( XSColor_Alloc(), 255, 255, 255 );
 }
 
-XSColor XSColor_RedColor( void )
+XSStatic XSColor XSColor_RedColor( void )
 {
     return XSColor_InitWithRGB( XSColor_Alloc(), 255, 0, 0 );
 }
 
-XSColor XSColor_GreenColor( void )
+XSStatic XSColor XSColor_GreenColor( void )
 {
     return XSColor_InitWithRGB( XSColor_Alloc(), 0, 255, 0 );
 }
 
-XSColor XSColor_BlueColor( void )
+XSStatic XSColor XSColor_BlueColor( void )
 {
     return XSColor_InitWithRGB( XSColor_Alloc(), 0, 0, 255 );
 }

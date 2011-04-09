@@ -58,7 +58,7 @@ typedef struct __XSApplication * XSApplication;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSApplication XSApplication_Alloc( void );
+XSStatic XSApplication XSApplication_Alloc( void );
 
 /*!
  * @function    XSApplication_Alloc
@@ -79,7 +79,7 @@ XSApplication XSApplication_Init( XSApplication xsThis );
  * @param       argv    The CLI arguments array
  * @result      The application object
  */
-XSApplication XSApplication_Start( int argc, const char ** argv );
+XSStatic XSApplication XSApplication_Start( int argc, const char ** argv );
 
 /*!
  * @function    XSApplication_Exit
@@ -89,14 +89,14 @@ XSApplication XSApplication_Start( int argc, const char ** argv );
  *              memory is reclaimed, and the threads are terminated properly.
  * @result      void
  */
-int XSApplication_Exit( int status );
+XSStatic int XSApplication_Exit( int status );
 
 /*!
  * @function    XSApplication_SharedApplication
  * @abstract    Gets the application object
  * @result      The application object
  */
-XSApplication XSApplication_SharedApplication( void );
+XSStatic XSApplication XSApplication_SharedApplication( void );
 
 /*!
  * @function    XSApplication_PrintHelp

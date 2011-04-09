@@ -60,7 +60,7 @@ typedef struct XSArray * XSArray;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSArray XSArray_Alloc( void );
+XSStatic XSArray XSArray_Alloc( void );
 
 /*!
  * @function    XSArray_Init

@@ -40,7 +40,7 @@
 
 extern XSClassID __XSErrorClassID;
 
-XSError XSError_Alloc( void )
+XSStatic XSError XSError_Alloc( void )
 {
     return ( XSError )XSRuntime_CreateInstance( __XSErrorClassID );
 }

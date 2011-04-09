@@ -40,7 +40,7 @@
 
 extern XSClassID __XSURLClassID;
 
-XSURL XSURL_Alloc( void )
+XSStatic XSURL XSURL_Alloc( void )
 {
     return ( XSURL )XSRuntime_CreateInstance( __XSURLClassID );
 }

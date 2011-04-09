@@ -40,7 +40,7 @@
 
 extern XSClassID __XSDateClassID;
 
-XSDate XSDate_Alloc( void )
+XSStatic XSDate XSDate_Alloc( void )
 {
     return ( XSDate )XSRuntime_CreateInstance( __XSDateClassID );
 }
