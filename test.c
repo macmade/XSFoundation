@@ -152,6 +152,13 @@ int main( int argc, char * argv[] )
     XSRelease( str3 );
     XSRelease( arr );
     
+    while( XSTimer_IsValid( timer ) == YES )
+    {
+        usleep( 100 );
+    }
+    
+    XSLog( "Now a segmentation to test MEMDebug:" );
+    
     sigsegv      = NULL;
     sigsegv[ 0 ] = 0;
     
