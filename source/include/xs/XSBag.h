@@ -49,7 +49,14 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct __XSBag * XSBag;
 
-XSBag XSBag_Create( void );
+/*!
+ * @function    __XSBag_Alloc
+ * @abstract    Object allocator
+ * @result      The allocated object
+ */
+XSStatic XSBag XSBag_Alloc( void );
+
+XSBag XSBag_Init( XSBag xsThis );
 
 XS_EXTERN_C_END
 

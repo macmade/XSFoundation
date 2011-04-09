@@ -57,14 +57,9 @@ static const XSClassInfos __XSDateClass =
  * @var         __XSDateClassID
  * @abstract    Type ID for the runtine class
  */
-static XSClassID __XSDateClassID;
+XSClassID __XSDateClassID;
 
 void __XSDate_Initialize( void )
 {
     __XSDateClassID = XSRuntime_RegisterClass( &__XSDateClass );
-}
-
-__XSDate * __XSDate_Alloc( void )
-{
-    return ( __XSDate * )XSRuntime_CreateInstance( __XSDateClassID );
 }

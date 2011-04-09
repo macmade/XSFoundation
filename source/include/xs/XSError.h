@@ -52,38 +52,45 @@ XS_EXTERN_C_BEGIN
 typedef struct XSError * XSError;
 
 /*!
- * @function    XSError_Create
+ * @function    XSError_Alloc
+ * @abstract    Object allocator
+ * @result      The allocated object
+ */
+XSStatic XSError XSError_Alloc( void );
+
+/*!
+ * @function    XSError_Init
  * @abstract    Creates an error
  * @param       code    The error code
  * @param       domain  The error domain
  * @param       reason  The error message
  * @result      The error object
  */
-XSError XSError_Create( XSInteger code, XSString domain, XSString reason );
+XSError XSError_Init( XSError xsThis, XSInteger code, XSString domain, XSString reason );
 
 /*!
  * @function    XSError_GetCode
  * @abstract    Gets the error code
- * @param       error   The error object
+ * @param       xsThis  The error object
  * @result      The error code
  */
-XSInteger XSError_GetCode( XSError error );
+XSInteger XSError_GetCode( XSError xsThis );
 
 /*!
  * @function    XSError_GetDomain
  * @abstract    Gets the error domain
- * @param       error   The error object
+ * @param       xsThis  The error object
  * @result      The error domain
  */
-XSString XSError_GetDomain( XSError error );
+XSString XSError_GetDomain( XSError xsThis );
 
 /*!
  * @function    XSError_GetReason
  * @abstract    Gets the error message
- * @param       error   The error object
+ * @param       xsThis  The error object
  * @result      The error message
  */
-XSString XSError_GetReason( XSError error );
+XSString XSError_GetReason( XSError xsThis );
 
 XS_EXTERN_C_END
 

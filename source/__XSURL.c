@@ -57,14 +57,9 @@ static const XSClassInfos __XSURLClass =
  * @var         __XSURLTypeID
  * @abstract    Type ID for the runtine class
  */
-static XSClassID __XSURLClassID;
+XSClassID __XSURLClassID;
 
 void __XSURL_Initialize( void )
 {
     __XSURLClassID = XSRuntime_RegisterClass( &__XSURLClass );
-}
-
-__XSURL * __XSURL_Alloc( void )
-{
-    return ( __XSURL * )XSRuntime_CreateInstance( __XSURLClassID );
 }

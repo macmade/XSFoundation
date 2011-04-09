@@ -122,7 +122,7 @@ int main( int argc, char * argv[] )
     str1 = XSSTR( "hello, world" );
     str2 = XSString_SubstringFromIndex( str1, 5 );
     str3 = XSCopy( str2 );
-    arr  = XSArray_CreateWithValues( str1, str2, str3, NULL );
+    arr  = XSArray_Init( XSArray_Alloc() );
     
     XSLog( "Memory hash: %s", XSHash( test ) );
     XSLog( "Object hash: %s", XSHash( str1 ) );
@@ -139,7 +139,7 @@ int main( int argc, char * argv[] )
     XSThread_Detach( thread_test, NULL );
     XSThread_Detach( thread_test, str1 );
     
-    timer = XSTimer_Create( timer_test, 1000 );
+    timer = XSTimer_Init( XSTimer_Alloc(), timer_test, 1000 );
     
     XSTimer_RunOnce( timer );
     XSTimer_RunAndRepeat( timer );

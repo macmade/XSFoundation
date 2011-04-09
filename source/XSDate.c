@@ -38,7 +38,14 @@
 #include "XS.h"
 #include "__XSDate.h"
 
-XSDate XSDate_Create( void )
+extern XSClassID __XSDateClassID;
+
+XSStatic XSDate XSDate_Alloc( void )
 {
-    return ( XSDate )__XSDate_Alloc();
+    return ( XSDate )XSRuntime_CreateInstance( __XSDateClassID );
+}
+
+XSDate XSDate_Init( XSDate xsThis )
+{
+    return xsThis;
 }

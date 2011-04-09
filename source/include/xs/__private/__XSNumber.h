@@ -63,13 +63,6 @@ __XSNumber;
  */
 void __XSNumber_Initialize( void );
 
-/*!
- * @function    __XSNumber_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSNumber * __XSNumber_Alloc( void );
-
 XS_EXTERN_C_END
 
 #endif /* ___XS_NUMBER_H_ */

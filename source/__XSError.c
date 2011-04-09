@@ -57,16 +57,11 @@ static const XSClassInfos __XSErrorClass =
  * @var         __XSErrorClassID
  * @abstract    Type ID for the runtine class
  */
-static XSClassID __XSErrorClassID;
+XSClassID __XSErrorClassID;
 
 void __XSError_Initialize( void )
 {
     __XSErrorClassID = XSRuntime_RegisterClass( &__XSErrorClass );
-}
-
-__XSError * __XSError_Alloc( void )
-{
-    return ( __XSError * )XSRuntime_CreateInstance( __XSErrorClassID );
 }
 
 void __XSError_Destruct( void * object )

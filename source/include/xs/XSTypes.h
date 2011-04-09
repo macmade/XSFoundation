@@ -235,6 +235,18 @@ typedef struct XSDecimal_Struct
 }
 XSDecimal;
 
+/*!
+ * @define      XSStatic
+ * @abstract    Marker for static class methods
+ */
+#define XSStatic        
+
+/*!
+ * @define      XSAutoreleased
+ * @abstract    Marker for methods that return auto-released objects
+ */
+#define XSAutoreleased  
+
 /* XSString is required here as the objects description callbacks use that type */
 #include "XSString.h"
 

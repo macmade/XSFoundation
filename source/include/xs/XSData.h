@@ -49,7 +49,14 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct XSData * XSData;
 
-XSData XSData_Create( void );
+/*!
+ * @function    __XSData_Alloc
+ * @abstract    Object allocator
+ * @result      The allocated object
+ */
+XSStatic XSData XSData_Alloc( void );
+
+XSData XSData_Init( XSData xsThis );
 
 XS_EXTERN_C_END
 

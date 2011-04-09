@@ -38,16 +38,28 @@
 #include "XS.h"
 #include "__XSThread.h"
 
+extern XSClassID __XSThreadClassID;
+
 /* Prototypes for the private functions */
 extern void * __XSThread_Run( void * thread );
 
-XSThread XSThread_Detach( void ( * func )( XSThread thread, void * arg ), void * arg )
+XSStatic XSThread XSThread_Alloc( void )
+{
+    return ( XSThread )XSRuntime_CreateInstance( __XSThreadClassID );
+}
+
+XSThread XSThread_Init( XSThread xsThis )
+{
+    return xsThis;
+}
+
+XSStatic XSThread XSThread_Detach( void ( * func )( XSThread thread, void * arg ), void * arg )
 {
     pthread_t     t;
     XSUInteger    tid;
     __XSThread  * thread;
     
-    thread = __XSThread_Alloc();
+    thread = ( __XSThread * )XSThread_Init( XSThread_Alloc() );
     thread->func = func;
     thread->arg  = arg;
     
@@ -63,7 +75,7 @@ XSThread XSThread_Detach( void ( * func )( XSThread thread, void * arg ), void *
     return ( XSThread )thread;
 }
 
-XSUInteger XSThread_GetID( XSThread thread )
+XSUInteger XSThread_GetID( XSThread xsThis )
 {
-    return ( ( __XSThread * )thread )->tid;
+    return ( ( __XSThread * )xsThis )->tid;
 }

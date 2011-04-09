@@ -38,12 +38,19 @@
 #include "XS.h"
 #include "__XSDictionary.h"
 
-XSDictionary XSDictionary_Create( void )
+extern XSClassID __XSDictionaryClassID;
+
+XSStatic XSDictionary XSDictionary_Alloc( void )
 {
-    return XSDictionary_CreateWithCapacity( XSDICTIONARY_DEFAULT_CAPACITY );
+    return ( XSDictionary )XSRuntime_CreateInstance( __XSDictionaryClassID );
 }
 
-XSDictionary XSDictionary_CreateWithCapacity( XSUInteger capacity )
+XSDictionary XSDictionary_Init( XSDictionary xsThis )
+{
+    return XSDictionary_InitWithCapacity( xsThis, XSDICTIONARY_DEFAULT_CAPACITY );
+}
+
+XSDictionary XSDictionary_InitWithCapacity( XSDictionary xsThis, XSUInteger capacity )
 {
     void          ** store;
     XSString       * keys;
@@ -60,7 +67,7 @@ XSDictionary XSDictionary_CreateWithCapacity( XSUInteger capacity )
         return NULL;
     }
     
-    dict           = __XSDictionary_Alloc();
+    dict           = ( __XSDictionary * )xsThis;
     dict->values   = store;
     dict->keys     = keys;
     dict->capacity = capacity;
@@ -69,51 +76,51 @@ XSDictionary XSDictionary_CreateWithCapacity( XSUInteger capacity )
     return ( XSDictionary )dict;
 }
 
-XSUInteger XSDictionary_Count( XSDictionary dict )
+XSUInteger XSDictionary_Count( XSDictionary xsThis )
 {
-    return ( ( __XSDictionary * )dict )->count;
+    return ( ( __XSDictionary * )xsThis )->count;
 }
 
-XSArray XSDictionary_Keys( XSDictionary dict )
+XSAutoreleased XSArray XSDictionary_Keys( XSDictionary xsThis )
 {
     __XSDictionary * _dict;
     XSArray          array;
     XSUInteger       i;
     
-    _dict = ( __XSDictionary * )dict;
-    array = XSArray_CreateWithCapacity( _dict->count );
+    _dict = ( __XSDictionary * )xsThis;
+    array = XSArray_InitWithCapacity( XSArray_Alloc(), _dict->count );
     
     for( i = 0; i < _dict->count; i++ )
     {
         XSArray_AppendValue( array, _dict->keys[ i ] );
     }
     
-    return array;
+    return XSAutorelease( array );
 }
 
-XSArray XSDictionary_Values( XSDictionary dict )
+XSAutoreleased XSArray XSDictionary_Values( XSDictionary xsThis )
 {
     __XSDictionary * _dict;
     XSArray          array;
     XSUInteger       i;
     
-    _dict = ( __XSDictionary * )dict;
-    array = XSArray_CreateWithCapacity( _dict->count );
+    _dict = ( __XSDictionary * )xsThis;
+    array = XSArray_InitWithCapacity( XSArray_Alloc(), _dict->count );
     
     for( i = 0; i < _dict->count; i++ )
     {
         XSArray_AppendValue( array, _dict->values[ i ] );
     }
     
-    return array;
+    return XSAutorelease( array );
 }
 
-void * XSDictionary_ValueForKey( XSDictionary dict, XSString key )
+void * XSDictionary_ValueForKey( XSDictionary xsThis, XSString key )
 {
     __XSDictionary * _dict;
     XSUInteger       i;
     
-    _dict = ( __XSDictionary * )dict;
+    _dict = ( __XSDictionary * )xsThis;
     
     for( i = 0; i < _dict->count; i++ )
     {
@@ -126,25 +133,25 @@ void * XSDictionary_ValueForKey( XSDictionary dict, XSString key )
     return NULL;
 }
 
-void XSDictionary_SetValueForKey( XSDictionary dict, void * value, XSString key )
+void XSDictionary_SetValueForKey( XSDictionary xsThis, void * value, XSString key )
 {
-    ( void )dict;
+    ( void )xsThis;
     ( void )value;
     ( void )key;
 }
 
-void * XSDictionary_RemoveValueForKey( XSDictionary dict, void * value, XSString key )
+void * XSDictionary_RemoveValueForKey( XSDictionary xsThis, void * value, XSString key )
 {
-    ( void )dict;
+    ( void )xsThis;
     ( void )value;
     ( void )key;
     
     return NULL;
 }
 
-BOOL XSDictionary_ContainsValue( XSDictionary dict, void * value )
+BOOL XSDictionary_ContainsValue( XSDictionary xsThis, void * value )
 {
-    ( void )dict;
+    ( void )xsThis;
     ( void )value;
     
     return NO;

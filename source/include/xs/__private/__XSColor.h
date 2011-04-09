@@ -72,13 +72,6 @@ __XSColor;
 void __XSColor_Initialize( void );
 
 /*!
- * @function    __XSColor_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSColor * __XSColor_Alloc( void );
-
-/*!
  * @function    __XSColor_RGBToHSL
  * @abstract    Converts the RGB components to HSV
  * @param       color   The color object

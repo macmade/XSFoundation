@@ -49,7 +49,16 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct __XSNull * XSNull;
 
-XSNull XSNull_Null( void );
+/*!
+ * @function    XSNull_Alloc
+ * @abstract    Object allocator
+ * @result      The allocated object
+ */
+XSStatic XSNull XSNull_Alloc( void );
+
+XSNull XSNull_Init( XSNull xsThis );
+
+XSStatic XSNull XSNull_Null( void );
 
 XS_EXTERN_C_END
 

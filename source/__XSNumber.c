@@ -57,14 +57,9 @@ static const XSClassInfos __XSNumberClass =
  * @var         __XSNumberClassID
  * @abstract    Type ID for the runtine class
  */
-static XSClassID __XSNumberClassID;
+XSClassID __XSNumberClassID;
 
 void __XSNumber_Initialize( void )
 {
     __XSNumberClassID = XSRuntime_RegisterClass( &__XSNumberClass );
-}
-
-__XSNumber * __XSNumber_Alloc( void )
-{
-    return ( __XSNumber * )XSRuntime_CreateInstance( __XSNumberClassID );
 }

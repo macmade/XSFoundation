@@ -38,30 +38,37 @@
 #include "XS.h"
 #include "__XSTimer.h"
 
-XSTimer XSTimer_Create( void ( * func )( XSTimer timer ), XSUInteger milliseconds )
+extern XSClassID __XSTimerClassID;
+
+XSStatic XSTimer XSTimer_Alloc( void )
+{
+    return ( XSTimer )XSRuntime_CreateInstance( __XSTimerClassID );
+}
+
+XSTimer XSTimer_Init( XSTimer xsThis, void ( * func )( XSTimer timer ), XSUInteger milliseconds )
 {
     __XSTimer * t;
     
-     t        = __XSTimer_Alloc();
+     t        = ( __XSTimer * )xsThis;
      t->msecs = milliseconds;
      t->func  = func;
      
      return  ( XSTimer )t;
 }
 
-void XSTimer_RunOnce( XSTimer timer )
+void XSTimer_RunOnce( XSTimer xsThis )
 {
-    XSThread_Detach( __XSTimer_RunOnce, ( void * )timer );
+    XSThread_Detach( __XSTimer_RunOnce, ( void * )xsThis );
 }
 
-void XSTimer_RunAndRepeat( XSTimer timer )
+void XSTimer_RunAndRepeat( XSTimer xsThis )
 {
-    ( ( __XSTimer * )timer )->valid = YES;
+    ( ( __XSTimer * )xsThis )->valid = YES;
     
-    XSThread_Detach( __XSTimer_RunAndRepeat, ( void * )timer );
+    XSThread_Detach( __XSTimer_RunAndRepeat, ( void * )xsThis );
 }
 
-void XSTimer_Invalidate( XSTimer timer )
+void XSTimer_Invalidate( XSTimer xsThis )
 {
-    ( ( __XSTimer * )timer )->valid = NO;
+    ( ( __XSTimer * )xsThis )->valid = NO;
 }

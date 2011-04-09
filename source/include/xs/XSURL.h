@@ -49,7 +49,16 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct XSURL * XSURL;
 
-XSURL XSURL_Create( void );
+/*!
+ * @function    XSURL_Alloc
+ * @abstract    Object allocator
+ * @result      The allocated object
+ */
+XSStatic XSURL XSURL_Alloc( void );
+
+XSURL XSURL_Init( XSURL xsThis );
+
+XSURL XSURL_Init( XSURL xsThis );
 
 XS_EXTERN_C_END
 

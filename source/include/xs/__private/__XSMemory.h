@@ -96,13 +96,6 @@ __XSMemoryObject;
 void __XSAutoreleasePool_Initialize( void );
 
 /*!
- * @function    __XSAutoreleasePool_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSAutoreleasePool * __XSAutoreleasePool_Alloc( void );
-
-/*!
  * @function    __XSAutoreleasePool_Destruct
  * @abstract    Destructor
  * @abstract    A pointer to the object to be destructed

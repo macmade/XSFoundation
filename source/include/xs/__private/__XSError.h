@@ -70,13 +70,6 @@ __XSError;
 void __XSError_Initialize( void );
 
 /*!
- * @function    __XSError_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSError * __XSError_Alloc( void );
-
-/*!
  * @function    __XSError_Destruct
  * @abstract    Destructor
  * @param       object  A pointer to the object

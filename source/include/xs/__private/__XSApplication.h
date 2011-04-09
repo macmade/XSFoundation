@@ -70,13 +70,6 @@ __XSApplication;
 void __XSApplication_Initialize( void );
 
 /*!
- * @function    __XSApplication_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSApplication * __XSApplication_Alloc( void );
-
-/*!
  * @function    __XSApplication_Construct
  * @abstract    Constructor
  * @param       object  A pointer to the object

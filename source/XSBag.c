@@ -38,7 +38,14 @@
 #include "XS.h"
 #include "__XSBag.h"
 
-XSBag XSBag_Create( void )
+extern XSClassID __XSBagClassID;
+
+XSStatic XSBag XSBag_Alloc( void )
 {
-    return ( XSBag )__XSBag_Alloc();
+    return ( XSBag )XSRuntime_CreateInstance( __XSBagClassID );
+}
+
+XSBag XSBag_Init( XSBag xsThis )
+{
+    return xsThis;
 }

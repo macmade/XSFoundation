@@ -63,13 +63,6 @@ __XSURL;
  */
 void __XSURL_Initialize( void );
 
-/*!
- * @function    __XSURL_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSURL * __XSURL_Alloc( void );
-
 XS_EXTERN_C_END
 
 #endif /* ___XS_URL_H_ */

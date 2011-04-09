@@ -49,7 +49,14 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct XSDate * XSDate;
 
-XSDate XSDate_Create( void );
+/*!
+ * @function    XSDate_Alloc
+ * @abstract    Object allocator
+ * @result      The allocated object
+ */
+XSStatic XSDate XSDate_Alloc( void );
+
+XSDate XSDate_Init( XSDate xsThis );
 
 XS_EXTERN_C_END
 

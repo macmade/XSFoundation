@@ -49,7 +49,14 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct XSTree * XSTree;
 
-XSTree XSTree_Create( void );
+/*!
+ * @function    XSTree_Alloc
+ * @abstract    Object allocator
+ * @result      The allocated object
+ */
+XSStatic XSTree XSTree_Alloc( void );
+
+XSTree XSTree_Init( XSTree xsThis );
 
 XS_EXTERN_C_END
 

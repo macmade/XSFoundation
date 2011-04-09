@@ -115,6 +115,21 @@ extern XSFile XSStdout;
 extern XSFile XSStderr;
 
 /*!
+ * @function    XSFile_Alloc
+ * @abstract    Object allocator
+ * @result      The allocated object
+ */
+XSStatic XSFile XSFile_Alloc( void );
+
+/*!
+ * @function    XSFile_Init
+ * @abstract    Initialize a file object
+ * @param       xsThis  The file object
+ * @result      A pointer to the file object
+ */
+XSFile XSFile_Init( XSFile xsThis );
+
+/*!
  * @abstract    Creates an XSFile instance and opens the represented file.
  * @description This function may return NULL if the represented file has not
  *              been opened.
@@ -122,89 +137,89 @@ extern XSFile XSStderr;
  * @param       openMode    The file open mode (see XSFileOpenMode)
  * @result      The instance of XSFile
  */
-XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode );
+XSStatic XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode );
 
 /*!
  * @function    
  * @abstract    Flushes the file stream stream
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      Zero on success or EOF on error
  */
-XSInteger XSFile_Flush( XSFile file );
+XSInteger XSFile_Flush( XSFile xsThis );
 
 /*!
  * @function    XSFile_Close
  * @abstract    Closes the file stream (after flushing, if output stream)
  * @discussion  You're still responsible to release the file object after
  *              calling this function.
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      EOF on error, zero otherwise.
  */
-XSInteger XSFile_Close( XSFile file );
+XSInteger XSFile_Close( XSFile xsThis );
 
 /*!
  * @function    XSFile_Printf
  * @abstract    Converts (according to format format) and writes output to the file
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      The number of characters written, or negative value on error
  */
-XSInteger XSFile_Printf( XSFile file, const char * format, ... );
+XSInteger XSFile_Printf( XSFile xsThis, const char * format, ... );
 
 /*!
  * @function    XSFile_VPrintf
  * @abstract    Equivalent to fprintf with variable argument list replaced by arg.
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @param       arg     The variable arguments list
  * @result      The number of characters written, or negative value on error
  */
-XSInteger XSFile_VPrintf( XSFile file, const char * format, va_list arg );
+XSInteger XSFile_VPrintf( XSFile xsThis, const char * format, va_list arg );
 
 /*!
  * @function    XSFile_Getc
  * @abstract    Returns the next character from the file.
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      The character or EOF on error
  */
-XSInteger XSFile_Getc( XSFile file );
+XSInteger XSFile_Getc( XSFile xsThis );
 
 /*!
  * @function    XSFile_Putc
  * @abstract    Writes a character to the file
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @param       c       The character to write
  * @result      The character or EOF on error
  */
-XSInteger XSFile_Putc( XSFile file, XSInteger c );
+XSInteger XSFile_Putc( XSFile xsThis, XSInteger c );
 
 /*!
  * @function    XSFile_Puts
  * @abstract    Writes a C string to the file
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      Non-negative on success or EOF on error.
  */
-XSInteger XSFile_Puts( XSFile file, const char * s );
+XSInteger XSFile_Puts( XSFile xsThis, const char * s );
 
 /*!
  * @function    XSFile_Read
  * @abstract    Reads from the file
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @param       ptr     A pointer to the memory location in which the data will be placed.
- * @param       file    The size of the objects to read
- * @param       file    The number of objects to read
+ * @param       xsThis    The size of the objects to read
+ * @param       xsThis    The number of objects to read
  * @result      The number of objects read
  */
-size_t XSFile_Read( XSFile file, void * ptr, size_t size, size_t nobj );
+size_t XSFile_Read( XSFile xsThis, void * ptr, size_t size, size_t nobj );
 
 /*!
  * @function    XSFile_Write
  * @abstract    Writes to the file
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @param       ptr     The data to write
- * @param       file    The size of the objects to write
- * @param       file    The number of objects to write
+ * @param       xsThis    The size of the objects to write
+ * @param       xsThis    The number of objects to write
  * @result      The number of objects written
  */
-size_t XSFile_Write( XSFile file, const void * ptr, size_t size, size_t nobj );
+size_t XSFile_Write( XSFile xsThis, const void * ptr, size_t size, size_t nobj );
 
 /*!
  * @function    XSFile_Seek
@@ -214,364 +229,364 @@ size_t XSFile_Write( XSFile file, const void * ptr, size_t size, size_t nobj );
  *              SEEK_SET, current position for SEEK_CUR, or end of file for
  *              SEEK_END. Behaviour is similar for a text stream, but offset
  *              must be zero or, for SEEK_SET only, a value returned by ftell.
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @param       origin  The seek origin (see XSFileSeekPosition)
  * @result      Non-zero on error.
  */
-XSInteger XSFile_Seek( XSFile file, XSInteger offset, XSFileSeekPosition origin );
+XSInteger XSFile_Seek( XSFile xsThis, XSInteger offset, XSFileSeekPosition origin );
 
 /*!
  * @function    XSFile_Tell
  * @abstract    Gets the current file position
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      The position or -1 on error
  */
-XSInteger XSFile_Tell( XSFile file );
+XSInteger XSFile_Tell( XSFile xsThis );
 
 /*!
  * @function    XSFile_Rewind
  * @abstract    Rewinds to the beginning of the file and clears the error indicators
  * return       void
  */
-void XSFile_Rewind( XSFile file );
+void XSFile_Rewind( XSFile xsThis );
 
 /*!
  * @function    XSFile_GetPos
  * @abstract    Stores the current file position
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @param       ptr     A pointer where tos store the file position
  * @result      Non-zero on error
  */
-XSInteger XSFile_GetPos( XSFile file, fpos_t * ptr );
+XSInteger XSFile_GetPos( XSFile xsThis, fpos_t * ptr );
 
 /*!
  * @function    XSFile_SetPos
  * @abstract    Sets the current file position
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @param       ptr     The file position
  * @result      Non-zero on error
  */
-XSInteger XSFile_SetPos( XSFile file, const fpos_t * ptr );
+XSInteger XSFile_SetPos( XSFile xsThis, const fpos_t * ptr );
 
 /*!
  * @function    XSFile_ClearErr
  * @abstract    Clears end-of-file and error indicators
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      void
  */
-void XSFile_ClearErr( XSFile file );
+void XSFile_ClearErr( XSFile xsThis );
 
 /*!
  * @function    XSFile_EndOfFile
  * @abstract    Checks for the end of the file
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      Non-zero if end-of-file indicator is set
  */
-XSInteger XSFile_EndOfFile( XSFile file );
+XSInteger XSFile_EndOfFile( XSFile xsThis );
 
 /*!
  * @function    XSFile_Error
  * @abstract    Checks for the error indicator
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      Non-zero if error indicator is set
  */
-XSInteger XSFile_Error( XSFile file );
+XSInteger XSFile_Error( XSFile xsThis );
 
 /*!
  * @function    XSFile_Filename
  * @abstract    Gets the filename
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      The name of the file
  */
-const char * XSFile_Filename( XSFile file );
+const char * XSFile_Filename( XSFile xsThis );
 
 /*!
  * @function    XSFile_OpenMode
  * @abstract    Gets the file's open mode
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      The file's open mode
  */
-const char * XSFile_OpenMode( XSFile file );
+const char * XSFile_OpenMode( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsReadable
  * @abstract    Checks if the file is readable 
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      true if the file is readable, otherwise false
  */
-BOOL XSFile_IsReadable( XSFile file );
+BOOL XSFile_IsReadable( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsWriteable
  * @abstract    Checks if the file is writeable 
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      true if the file is writeable, otherwise false
  */
-BOOL XSFile_IsWriteable( XSFile file );
+BOOL XSFile_IsWriteable( XSFile xsThis );
 
 /*!
  * @function    XSFile_Copy
  * @abstract    Copies the file to another destination
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      True if the file was copeid, otherwise false
  */
-BOOL XSFile_Copy( XSFile file, char * new_name );
+BOOL XSFile_Copy( XSFile xsThis, char * new_name );
 
 /*!
  * @function    XSFile_GetBit
  * @abstract    Gets the next bit in the file
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-XSInteger XSFile_GetBit( XSFile file );
+XSInteger XSFile_GetBit( XSFile xsThis );
 
 /*!
  * @function    XSFile_PutBit
  * @abstract    Writes a bit in the file
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-XSInteger XSFile_PutBit( XSFile file, uint8_t bit );
+XSInteger XSFile_PutBit( XSFile xsThis, uint8_t bit );
 
 /*!
  * @function    XSFile_GetBits
  * @abstract    Gets bits from the file
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-XSInteger XSFile_GetBits( XSFile file, XSUInteger count );
+XSInteger XSFile_GetBits( XSFile xsThis, XSUInteger count );
 
 /*!
  * @function    XSFile_PutBits
  * @abstract    Write bits to the file
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-XSInteger XSFile_PutBits( XSFile file, uint64_t bits, XSUInteger count );
+XSInteger XSFile_PutBits( XSFile xsThis, uint64_t bits, XSUInteger count );
 
 /*!
  * @function    XSFile_DeviceID
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-dev_t XSFile_DeviceID( XSFile file );
+dev_t XSFile_DeviceID( XSFile xsThis );
 
 /*!
  * @function    XSFile_SerialNumber
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-ino_t XSFile_SerialNumber( XSFile file );
+ino_t XSFile_SerialNumber( XSFile xsThis );
 
 /*!
  * @function    XSFile_NumberOfLinks
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-nlink_t XSFile_NumberOfLinks( XSFile file );
+nlink_t XSFile_NumberOfLinks( XSFile xsThis );
 
 /*!
  * @function    XSFile_UID
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-uid_t XSFile_UID( XSFile file );
+uid_t XSFile_UID( XSFile xsThis );
 
 /*!
  * @function    XSFile_GID
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-gid_t XSFile_GID( XSFile file );
+gid_t XSFile_GID( XSFile xsThis );
 
 /*!
  * @function    XSFile_Size
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-size_t XSFile_Size( XSFile file );
+size_t XSFile_Size( XSFile xsThis );
 
 /*!
  * @function    XSFile_HumanReadableSize
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-XSFloat XSFile_HumanReadableSize( XSFile file, char unit[] );
+XSFloat XSFile_HumanReadableSize( XSFile xsThis, char unit[] );
 
 /*!
  * @function    XSFile_AccessTime
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-time_t XSFile_AccessTime( XSFile file );
+time_t XSFile_AccessTime( XSFile xsThis );
 
 /*!
  * @function    XSFile_ModifictaionTime
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-time_t XSFile_ModifictaionTime( XSFile file );
+time_t XSFile_ModifictaionTime( XSFile xsThis );
 
 /*!
  * @function    XSFile_CreationTime
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-time_t XSFile_CreationTime( XSFile file );
+time_t XSFile_CreationTime( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsBlockDevice
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-BOOL XSFile_IsBlockDevice( XSFile file );
+BOOL XSFile_IsBlockDevice( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsCharacterDevice
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-BOOL XSFile_IsCharacterDevice( XSFile file );
+BOOL XSFile_IsCharacterDevice( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsFIFO
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-BOOL XSFile_IsFIFO( XSFile file );
+BOOL XSFile_IsFIFO( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsRegularFile
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-BOOL XSFile_IsRegularFile( XSFile file );
+BOOL XSFile_IsRegularFile( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsDirectory
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-BOOL XSFile_IsDirectory( XSFile file );
+BOOL XSFile_IsDirectory( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsLink
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-BOOL XSFile_IsLink( XSFile file );
+BOOL XSFile_IsLink( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsSocket
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-BOOL XSFile_IsSocket( XSFile file );
+BOOL XSFile_IsSocket( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsUserReadable
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-BOOL XSFile_IsUserReadable( XSFile file );
+BOOL XSFile_IsUserReadable( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsUserWriteable
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-BOOL XSFile_IsUserWriteable( XSFile file );
+BOOL XSFile_IsUserWriteable( XSFile xsThis );
 
 /*!
  * @function    XSFile_ISUserExecutable
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-BOOL XSFile_ISUserExecutable( XSFile file );
+BOOL XSFile_ISUserExecutable( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsGroupReadable
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-BOOL XSFile_IsGroupReadable( XSFile file );
+BOOL XSFile_IsGroupReadable( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsGroupWriteable
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-BOOL XSFile_IsGroupWriteable( XSFile file );
+BOOL XSFile_IsGroupWriteable( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsGroupExecutable
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-BOOL XSFile_IsGroupExecutable( XSFile file );
+BOOL XSFile_IsGroupExecutable( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsWorldReadable
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-BOOL XSFile_IsWorldReadable( XSFile file );
+BOOL XSFile_IsWorldReadable( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsWorldWriteable
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-BOOL XSFile_IsWorldWriteable( XSFile file );
+BOOL XSFile_IsWorldWriteable( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsWorldExecutable
  * @abstract    
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      
  */
-BOOL XSFile_IsWorldExecutable( XSFile file );
+BOOL XSFile_IsWorldExecutable( XSFile xsThis );
 
 /*!
  * @function    XSFile_HasSUID
  * @abstract    Checks if the file has the SUID bit set
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      True if the SUID bit is set, otherwise false
  */
-BOOL XSFile_HasSUID( XSFile file );
+BOOL XSFile_HasSUID( XSFile xsThis );
 
 /*!
  * @function    XSFile_HasSGID
  * @abstract    Checks if the file has the SGID bit set
- * @param       file    The file object
+ * @param       xsThis    The file object
  * @result      True if the SGID bit is set, otherwise false
  */
-BOOL XSFile_HasSGID( XSFile file );
+BOOL XSFile_HasSGID( XSFile xsThis );
 
 XS_EXTERN_C_END
 

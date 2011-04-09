@@ -71,13 +71,6 @@ __XSApplicationArgument;
  */
 void __XSApplicationArgument_Initialize( void );
 
-/*!
- * @function    __XSApplicationArgument_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSApplicationArgument * __XSApplicationArgument_Alloc( void );
-
 XS_EXTERN_C_END
 
 #endif /* ___XS_APPLICATION_ARGUMENT_H_ */

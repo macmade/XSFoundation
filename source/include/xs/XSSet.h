@@ -49,7 +49,14 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct XSSet * XSSet;
 
-XSSet XSSet_Create( void );
+/*!
+ * @function    XSSet_Alloc
+ * @abstract    Object allocator
+ * @result      The allocated object
+ */
+XSStatic XSSet XSSet_Alloc( void );
+
+XSSet XSSet_Init( XSSet xsThis );
 
 XS_EXTERN_C_END
 

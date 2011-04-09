@@ -38,12 +38,19 @@
 #include "XS.h"
 #include "__XSArray.h"
 
-XSArray XSArray_Create( void )
+extern XSClassID __XSArrayClassID;
+
+XSStatic XSArray XSArray_Alloc( void )
 {
-    return XSArray_CreateWithCapacity( XSARRAY_DEFAULT_CAPACITY );
+    return ( XSArray )XSRuntime_CreateInstance( __XSArrayClassID );
 }
 
-XSArray XSArray_CreateWithCapacity( XSUInteger capacity )
+XSArray XSArray_Init( XSArray xsThis )
+{
+    return XSArray_InitWithCapacity( xsThis, XSARRAY_DEFAULT_CAPACITY );
+}
+
+XSArray XSArray_InitWithCapacity( XSArray xsThis, XSUInteger capacity )
 {
     void      ** store;
     __XSArray  * array;
@@ -53,7 +60,7 @@ XSArray XSArray_CreateWithCapacity( XSUInteger capacity )
         return NULL;
     }
     
-    array           = __XSArray_Alloc();
+    array           = ( __XSArray * )xsThis;
     array->values   = store;
     array->capacity = capacity;
     array->count    = 0;
@@ -61,58 +68,17 @@ XSArray XSArray_CreateWithCapacity( XSUInteger capacity )
     return ( XSArray )array;
 }
 
-XSArray XSArray_CreateWithValues( void * value1, ... )
+XSUInteger XSArray_Count( XSArray xsThis )
 {
-    va_list      args;
-    __XSArray  * array;
-    void       * value;
-    void      ** store;
-    XSUInteger   values;
-    
-    va_start( args, value1 );
-    
-    array = ( __XSArray * )XSArray_Create();
-    
-    if( value1 == NULL )
-    {
-        return ( XSArray )array;
-    }
-    
-    values                    = 0;
-    array->values[ values++ ] = XSRetain( value1 );
-    
-    while( NULL != ( value = va_arg( args, void * ) ) )
-    {
-        if( values == array->capacity )
-        {
-            if( NULL == ( store = ( void ** )XSRealloc( array->values, ( values + array->capacity ) * sizeof( void * ) ) ) )
-            {
-                XSRelease( array );
-                
-                return NULL;
-            }
-            
-            array->values   = store;
-            array->capacity = values + array->capacity;
-        }
-        
-        array->values[ values++ ] = XSRetain( value );
-    }
-    
-    return ( XSArray )array;
+    return ( ( __XSArray * )xsThis )->count;
 }
 
-XSUInteger XSArray_Count( XSArray array )
-{
-    return ( ( __XSArray * )array )->count;
-}
-
-void XSArray_AppendValue( XSArray array, void * value )
+void XSArray_AppendValue( XSArray xsThis, void * value )
 {
     __XSArray * _array;
     void     ** store;
     
-    _array = ( __XSArray * )array;
+    _array = ( __XSArray * )xsThis;
     
     if( _array->count == _array->capacity )
     {
@@ -128,17 +94,17 @@ void XSArray_AppendValue( XSArray array, void * value )
     _array->values[ _array->count++ ] = XSRetain( value );
 }
 
-void XSArray_InsertValueAtIndex( XSArray array, void * value, XSUInteger i )
+void XSArray_InsertValueAtIndex( XSArray xsThis, void * value, XSUInteger i )
 {
     __XSArray  * _array;
     void      ** store;
     XSUInteger   j;
     
-    _array = ( __XSArray * )array;
+    _array = ( __XSArray * )xsThis;
     
     if( i >= _array->count )
     {
-        XSArray_AppendValue( array, value );
+        XSArray_AppendValue( xsThis, value );
     }
     
     if( _array->count + 1 > _array->capacity )
@@ -158,18 +124,14 @@ void XSArray_InsertValueAtIndex( XSArray array, void * value, XSUInteger i )
     }
     
     _array->values[ i ] = XSRetain( value );
-    
-    ( void )array;
-    ( void )value;
-    ( void )i;
 }
 
-void * XSArray_ReplaceValueAtIndex( XSArray array, void * value, XSUInteger i )
+void * XSArray_ReplaceValueAtIndex( XSArray xsThis, void * value, XSUInteger i )
 {
     __XSArray * _array;
     void      * old;
     
-    _array = ( __XSArray * )array;
+    _array = ( __XSArray * )xsThis;
     
     if( i > _array->count )
     {
@@ -189,11 +151,11 @@ void * XSArray_ReplaceValueAtIndex( XSArray array, void * value, XSUInteger i )
     return XSRelease( old );
 }
 
-void * XSArray_ValueAtIndex( XSArray array, XSUInteger i )
+void * XSArray_ValueAtIndex( XSArray xsThis, XSUInteger i )
 {
     __XSArray * _array;
     
-    _array = ( __XSArray * )array;
+    _array = ( __XSArray * )xsThis;
     
     if( i > _array->count )
     {
@@ -203,12 +165,12 @@ void * XSArray_ValueAtIndex( XSArray array, XSUInteger i )
     return _array->values[ i ];
 }
 
-void * XSArray_RemoveValueAtIndex( XSArray array, XSUInteger i )
+void * XSArray_RemoveValueAtIndex( XSArray xsThis, XSUInteger i )
 {
     __XSArray  * _array;
     XSUInteger   j;
     
-    _array = ( __XSArray * )array;
+    _array = ( __XSArray * )xsThis;
     
     if( i > _array->count )
     {
@@ -225,12 +187,12 @@ void * XSArray_RemoveValueAtIndex( XSArray array, XSUInteger i )
     return NULL;
 }
 
-BOOL XSArray_ContainsValue( XSArray array, void * value )
+BOOL XSArray_ContainsValue( XSArray xsThis, void * value )
 {
     __XSArray  * _array;
     XSUInteger   i;
     
-    _array = ( __XSArray * )array;
+    _array = ( __XSArray * )xsThis;
     
     for( i = 0; i < _array->count; i++ )
     {
@@ -243,29 +205,29 @@ BOOL XSArray_ContainsValue( XSArray array, void * value )
     return NO;
 }
 
-XSUInteger XSArray_Index( XSArray array )
+XSUInteger XSArray_Index( XSArray xsThis )
 {
     __XSArray  * _array;
     
-    _array = ( __XSArray * )array;
+    _array = ( __XSArray * )xsThis;
     
     return _array->cur;
 }
 
-void * XSArray_Current( XSArray array )
+void * XSArray_Current( XSArray xsThis )
 {
     __XSArray  * _array;
     
-    _array = ( __XSArray * )array;
+    _array = ( __XSArray * )xsThis;
     
     return _array->values[ _array->cur ];
 }
 
-void * XSArray_Next( XSArray array )
+void * XSArray_Next( XSArray xsThis )
 {
     __XSArray  * _array;
     
-    _array = ( __XSArray * )array;
+    _array = ( __XSArray * )xsThis;
     
     if( ( _array->cur + 1 ) == _array->count )
     {
@@ -275,11 +237,11 @@ void * XSArray_Next( XSArray array )
     return _array->values[ ++_array->cur ];
 }
 
-void * XSArray_Previous( XSArray array )
+void * XSArray_Previous( XSArray xsThis )
 {
     __XSArray  * _array;
     
-    _array = ( __XSArray * )array;
+    _array = ( __XSArray * )xsThis;
     
     if( _array->cur == 0 )
     {
@@ -289,10 +251,10 @@ void * XSArray_Previous( XSArray array )
     return _array->values[ --_array->cur ];
 }
 
-void XSArray_Rewind( XSArray array )
+void XSArray_Rewind( XSArray xsThis )
 {
     __XSArray  * _array;
     
-    _array      = ( __XSArray * )array;
+    _array      = ( __XSArray * )xsThis;
     _array->cur = 0;
 }

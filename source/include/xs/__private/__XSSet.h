@@ -63,13 +63,6 @@ __XSSet;
  */
 void __XSSet_Initialize( void );
 
-/*!
- * @function    __XSSet_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSSet * __XSSet_Alloc( void );
-
 XS_EXTERN_C_END
 
 #endif /* ___XS_SET_H_ */

@@ -38,18 +38,25 @@
 #include "XS.h"
 #include "__XSString.h"
 
+extern XSClassID __XSStringClassID;
+
 #define __XSSTRING_DEFAULT_CAPACITY 256
 
-XSString XSString_Create( void )
+XSStatic XSString XSString_Alloc( void )
 {
-    return XSString_CreateWithCapacity( __XSSTRING_DEFAULT_CAPACITY );
+    return ( XSString )XSRuntime_CreateInstance( __XSStringClassID );
 }
 
-XSString XSString_CreateWithCapacity( XSUInteger capacity )
+XSString XSString_Init( XSString xsThis )
+{
+    return XSString_InitWithCapacity( xsThis, __XSSTRING_DEFAULT_CAPACITY );
+}
+
+XSString XSString_InitWithCapacity( XSString xsThis, XSUInteger capacity )
 {
     __XSString * string;
     
-    string = __XSString_Alloc();
+    string = ( __XSString * )xsThis;
     
     if( capacity == 0 )
     {
@@ -61,18 +68,18 @@ XSString XSString_CreateWithCapacity( XSUInteger capacity )
     return ( XSString )string;
 }
 
-XSString XSString_CreateWithCString( char * str )
+XSString XSString_InitWithCString( XSString xsThis, char * str )
 {
     size_t       length;
     __XSString * string;
     
     if( str == NULL )
     {
-        return XSString_Create();
+        return xsThis;
     }
     
     length = strlen( str );
-    string = ( __XSString * )XSString_CreateWithCapacity( length );
+    string = ( __XSString * )XSString_InitWithCapacity( xsThis, length );
     
     memcpy( string->str, str, length );
     
@@ -81,67 +88,68 @@ XSString XSString_CreateWithCString( char * str )
     return ( XSString )string;
 }
 
-XSString XSString_CreateWithContentOfFile( char * path )
+XSString XSString_InitWithContentOfFile( XSString xsThis, char * path )
 {
     ( void )path;
+    ( void )xsThis;
     
     return NULL;
 }
 
-XSString XSString_SubstringFromIndex( XSString str, size_t i )
+XSAutoreleased XSString XSString_SubstringFromIndex( XSString xsThis, size_t i )
 {
     __XSString * _str;
     
-    if( str == NULL )
+    if( xsThis == NULL )
     {
         return NULL;
     }
     
-    _str = ( __XSString * )str;
+    _str = ( __XSString * )xsThis;
     
     if( i >= _str->length )
     {
         return NULL;
     }
     
-    return XSString_CreateWithCString( _str->str + i );
+    return XSAutorelease( XSString_InitWithCString( XSString_Alloc(), _str->str + i ) );
 }
 
-XSString XSString_SubstringToIndex( XSString str, size_t i )
+XSAutoreleased XSString XSString_SubstringToIndex( XSString xsThis, size_t i )
 {
     __XSString * _str;
     __XSString * str2;
     
-    if( str == NULL )
+    if( xsThis == NULL )
     {
         return NULL;
     }
     
-    _str = ( __XSString * )str;
+    _str = ( __XSString * )xsThis;
     
     if( i >= _str->length )
     {
-        return XSCopy( str );
+        return XSCopy( xsThis );
     }
     
-    str2 = ( __XSString * )XSString_CreateWithCapacity( i + 1 );
+    str2 = ( __XSString * )XSString_InitWithCapacity( XSString_Alloc(), i + 1 );
     
     memcpy( str2->str, _str->str, i );
     
-    return ( XSString )str2;
+    return XSAutorelease( ( XSString )str2 );
 }
 
-XSString XSString_SubstringWithRange( XSString str, XSRange range )
+XSAutoreleased XSString XSString_SubstringWithRange( XSString xsThis, XSRange range )
 {
     __XSString * _str1;
     __XSString * _str2;
     
-    if( str == NULL )
+    if( xsThis == NULL )
     {
         return NULL;
     }
     
-    _str1 = ( __XSString * )str;
+    _str1 = ( __XSString * )xsThis;
     
     if( range.location > _str1->length )
     {
@@ -153,26 +161,26 @@ XSString XSString_SubstringWithRange( XSString str, XSRange range )
         range.length = _str1->length - range.location;
     }
     
-    _str2 = ( __XSString * )XSString_CreateWithCapacity( range.length + 1 );
+    _str2 = ( __XSString * )XSString_InitWithCapacity( XSString_Alloc(), range.length + 1 );
     
     memset( _str2->str, 0, range.length + 1 );
     memcpy( _str2->str, ( _str1->str ) + range.location, range.length );
     
-    return ( XSString )_str2;
+    return XSAutorelease( ( XSString )_str2 );
 }
 
-XSString XSString_LowercaseString( XSString str )
+XSAutoreleased XSString XSString_LowercaseString( XSString xsThis )
 {
     __XSString * _str;
     size_t       i;
     char         c;
     
-    if( str == NULL )
+    if( xsThis == NULL )
     {
         return NULL;
     }
     
-    _str = XSCopy( str );
+    _str = XSCopy( xsThis );
     
     for( i = 0; i < _str->length; i++ )
     {
@@ -184,21 +192,21 @@ XSString XSString_LowercaseString( XSString str )
         }
     }
     
-    return ( XSString)_str;
+    return XSAutorelease( ( XSString)_str );
 }
 
-XSString XSString_UppercaseString( XSString str )
+XSAutoreleased XSString XSString_UppercaseString( XSString xsThis )
 {
     __XSString * _str;
     size_t       i;
     char         c;
     
-    if( str == NULL )
+    if( xsThis == NULL )
     {
         return NULL;
     }
     
-    _str = XSCopy( str );
+    _str = XSCopy( xsThis );
     
     for( i = 0; i < _str->length; i++ )
     {
@@ -210,89 +218,87 @@ XSString XSString_UppercaseString( XSString str )
         }
     }
     
-    return ( XSString)_str;
+    return XSAutorelease( ( XSString)_str );
 }
 
-XSString XSString_StringByAppendingString( XSString str1, XSString str2 )
+XSAutoreleased XSString XSString_StringByAppendingString( XSString xsThis, XSString str )
 {
-    __XSString * str;
+    __XSString * newStr;
     size_t       length1;
     size_t       length2;
     
-    if( str1 == NULL )
+    if( xsThis == NULL )
     {
         return NULL;
     }
     
-    if( str2 == NULL )
-    {
-        return XSCopy( str1 );
-    }
-    
-    length1 = XSString_Length( str1 );
-    length2 = XSString_Length( str2 );
-    
-    str = ( __XSString * )XSString_CreateWithCapacity( length1 + length2 + 1 );
-    
-    str->length = length1 + length2;
-    
-    memset( str->str, 0, str->length + 1 );
-    memcpy( str->str, ( ( __XSString * )str1 )->str, length1 );
-    strcat( str->str, ( ( __XSString * )str2 )->str );
-    
-    return ( XSString )str;
-}
-
-XSString XSString_StringByAppendingCString( XSString str1, char * str2 )
-{
-    __XSString * str;
-    size_t       length1;
-    size_t       length2;
-    
-    if( str1 == NULL )
-    {
-        return NULL;
-    }
-    
-    if( str2 == NULL )
-    {
-        return XSCopy( str1 );
-    }
-    
-    length1 = XSString_Length( str1 );
-    length2 = strlen( str2 );
-    
-    str = ( __XSString * )XSString_CreateWithCapacity( length1 + length2 + 1 );
-    
-    str->length = length1 + length2;
-    
-    memset( str->str, 0, str->length + 1 );
-    memcpy( str->str, ( ( __XSString * )str1 )->str, length1 );
-    strcat( str->str, str2 );
-    
-    return ( XSString )str;
-}
-
-size_t XSString_Length( XSString str )
-{
     if( str == NULL )
+    {
+        return XSCopy( xsThis );
+    }
+    
+    length1 = XSString_Length( xsThis );
+    length2 = XSString_Length( str );
+    
+    newStr         = ( __XSString * )XSString_InitWithCapacity( XSString_Alloc(), length1 + length2 + 1 );
+    newStr->length = length1 + length2;
+    
+    memset( newStr->str, 0, newStr->length + 1 );
+    memcpy( newStr->str, ( ( __XSString * )xsThis )->str, length1 );
+    strcat( newStr->str, ( ( __XSString * )str )->str );
+    
+    return XSAutorelease( ( XSString )newStr );
+}
+
+XSAutoreleased XSString XSString_StringByAppendingCString( XSString xsThis, char * str )
+{
+    __XSString * newStr;
+    size_t       length1;
+    size_t       length2;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
+    if( str == NULL )
+    {
+        return XSCopy( xsThis );
+    }
+    
+    length1 = XSString_Length( xsThis );
+    length2 = strlen( str );
+    
+    newStr         = ( __XSString * )XSString_InitWithCapacity( XSString_Alloc(), length1 + length2 + 1 );
+    newStr->length = length1 + length2;
+    
+    memset( newStr->str, 0, newStr->length + 1 );
+    memcpy( newStr->str, ( ( __XSString * )xsThis )->str, length1 );
+    strcat( newStr->str, str );
+    
+    return XSAutorelease( ( XSString )str );
+}
+
+size_t XSString_Length( XSString xsThis )
+{
+    if( xsThis == NULL )
     {
         return 0;
     }
     
-    return ( ( __XSString * )str )->length;
+    return ( ( __XSString * )xsThis )->length;
 }
 
-char XSString_CharacterAtIndex( XSString str, size_t i )
+char XSString_CharacterAtIndex( XSString xsThis, size_t i )
 {
     __XSString * _str;
     
-    if( str == NULL )
+    if( xsThis == NULL )
     {
         return 0;
     }
     
-    _str = ( __XSString * )str;
+    _str = ( __XSString * )xsThis;
     
     if( i >= _str->length )
     {
@@ -302,67 +308,62 @@ char XSString_CharacterAtIndex( XSString str, size_t i )
     return _str->str[ i ];
 }
 
-const char * XSString_CString( XSString str )
+const char * XSString_CString( XSString xsThis )
 {
-    if( str == NULL )
+    if( xsThis == NULL )
     {
         return NULL;
     }
     
-    return ( ( __XSString * )str )->str;
+    return ( ( __XSString * )xsThis )->str;
 }
 
-XSRange XSString_RangeOfString( XSString str1, XSString str2 )
+XSRange XSString_RangeOfString( XSString xsThis, XSString str )
 {
     XSString * _str1;
     XSString * _str2;
     XSRange    range;
     
-    if( str1 == NULL || str2 == NULL )
+    if( xsThis == NULL || str == NULL )
     {
         return XSMakeRange( XSNotFound, 0 );
     }
     
-    _str1 = ( XSString * )str1;
-    _str2 = ( XSString * )str2;
+    _str1 = ( XSString * )xsThis;
+    _str2 = ( XSString * )str;
     range = XSMakeRange( 0, 0 );
-    
-    ( void )str1;
-    ( void )str2;
     
     return range;
 }
 
-XSRange XSString_RangeOfCString( XSString str1, char * str2 )
+XSRange XSString_RangeOfCString( XSString xsThis, char * str )
 {
     XSString * _str;
     XSRange    range;
     
-    if( str1 == NULL || str2 == NULL )
+    if( xsThis == NULL || str == NULL )
     {
         return XSMakeRange( XSNotFound, 0 );
     }
     
-    _str  = ( XSString * )str1;
+    _str  = ( XSString * )str;
     range = XSMakeRange( 0, 0 );
-    
-    ( void )str2;
     
     return range;
 }
 
-BOOL XSString_IsEqualToString( XSString str1, XSString str2 )
+BOOL XSString_IsEqualToString( XSString xsThis, XSString str )
 {
     __XSString * _str1;
     __XSString * _str2;
     
-    if( str1 == NULL || str2 == NULL )
+    if( xsThis == NULL || str == NULL )
     {
         return NO;
     }
     
-    _str1 = ( __XSString * )str1;
-    _str2 = ( __XSString * )str2;
+    _str1 = ( __XSString * )xsThis;
+    _str2 = ( __XSString * )str;
     
     if( strcmp( _str1->str, _str2->str ) == 0 )
     {
@@ -372,33 +373,33 @@ BOOL XSString_IsEqualToString( XSString str1, XSString str2 )
     return NO;
 }
 
-XSString XSString_StringByReplacingStringWithString( XSString str1, XSString str2, XSString str3 )
+XSAutoreleased XSString XSString_StringByReplacingStringWithString( XSString xsThis, XSString str1, XSString str2 )
 {
     XSString * _str1;
     XSString * _str2;
     XSString * _str3;
     
-    _str1 = ( XSString * )str1;
-    _str2 = ( XSString * )str2;
-    _str3 = ( XSString * )str3;
+    _str1 = ( XSString * )xsThis;
+    _str2 = ( XSString * )str1;
+    _str3 = ( XSString * )str2;
     
     return NULL;
 }
 
-XSInteger XSString_IntegerValue( XSString str )
+XSInteger XSString_IntegerValue( XSString xsThis )
 {
     XSString * _str;
     
-    _str = ( XSString * )str;
+    _str = ( XSString * )xsThis;
     
     return 0;
 }
 
-XSFloat XSString_FloatValue( XSString str )
+XSFloat XSString_FloatValue( XSString xsThis )
 {
     XSString * _str;
     
-    _str = ( XSString * )str;
+    _str = ( XSString * )xsThis;
     
     return 0;
 }

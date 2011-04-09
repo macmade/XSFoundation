@@ -90,13 +90,6 @@ __XSFile;
 void __XSFile_Initialize( void );
 
 /*!
- * @function    __XSFile_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSFile * __XSFile_Alloc( void );
-
-/*!
  * @function    __XSFile_WriteAlign
  * @abstract    Aligns and write the bit buffer
  * @param       file    The file object

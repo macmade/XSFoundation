@@ -56,84 +56,91 @@ XS_EXTERN_C_BEGIN
 typedef struct XSDictionary * XSDictionary;
 
 /*!
+ * @function    __XSDictionary_Alloc
+ * @abstract    Object allocator
+ * @result      The allocated object
+ */
+XSStatic XSDictionary XSDictionary_Alloc( void );
+
+/*!
  * @function    XSDictionary_Create
  * @abstract    Creates an empty dictionary
  * @result      The new dictionary object
  */
-XSDictionary XSDictionary_Create( void );
+XSDictionary XSDictionary_Init( XSDictionary xsThis );
 
 /*!
- * @function    XSDictionary_CreateWithCapacity
+ * @function    XSDictionary_InitWithCapacity
  * @abstract    Creates an empty dictionary with an initial capacity
  * @param       capacity    The initial dictionary capacity
  * @result      The new dictionary object
  */
-XSDictionary XSDictionary_CreateWithCapacity( XSUInteger capacity );
+XSDictionary XSDictionary_InitWithCapacity( XSDictionary xsThis, XSUInteger capacity );
 
 /*!
  * @function    XSDictionary_Count
  * @abstract    Gets the number of values in the dictionary
- * @param       dict    The dictionary object
+ * @param       xsThis  The dictionary object
  * @result      The number of values in the dictionary
  */
-XSUInteger XSDictionary_Count( XSDictionary dict );
+XSUInteger XSDictionary_Count( XSDictionary xsThis );
 
 /*!
  * @function    XSDictionary_Keys
  * @abstract    Gets an array with all the dictionary keys
  * @description You are responsible to release the array returned by this
  *              function.
- * @param       dict    The dictionary object
+ * @param       xsThis  The dictionary object
  * @result      An array containing all the dictionary keys
  */
-XSArray XSDictionary_Keys( XSDictionary dict );
+XSAutoreleased XSArray XSDictionary_Keys( XSDictionary xsThis );
 
 /*!
  * @function    XSDictionary_Keys
  * @abstract    Gets an array with all the dictionary values
  * @description You are responsible to release the array returned by this
  *              function.
- * @param       dict    The dictionary object
+ * @param       xsThis  The dictionary object
  * @result      An array containing all the dictionary values
  */
-XSArray XSDictionary_Values( XSDictionary dict );
+XSAutoreleased XSArray XSDictionary_Values( XSDictionary xsThis );
 
 /*!
  * @function    XSDictionary_ValueForKey
  * @abstract    Gets the value associated with a key
- * @param       dict    The dictionary object
+ * @param       xsThis  The dictionary object
  * @param       key     The key
  * @result      THe value, or NULL if the key is not present in the dictionary
  */
-void * XSDictionary_ValueForKey( XSDictionary dict, XSString key );
+void * XSDictionary_ValueForKey( XSDictionary xsThis, XSString key );
 
 /*!
  * @function    XSDictionary_SetValueForKey
  * @abstract    Adds a value for a specific key
- * @param       dict    The dictionary object
+ * @param       xsThis  The dictionary object
  * @param       value   The value
  * @param       key     The key
  * @result      void
  */
-void XSDictionary_SetValueForKey( XSDictionary dict, void * value, XSString key );
+void XSDictionary_SetValueForKey( XSDictionary xsThis, void * value, XSString key );
 
 /*!
  * @function    XSDictionary_RemoveValueForKey
  * @abstract    Remove a value for a specific key
- * @param       dict    The dictionary object
+ * @param       xsThis  The dictionary object
  * @param       dict    The key
  * @result      The removed value
  */
-void * XSDictionary_RemoveValueForKey( XSDictionary dict, void * value, XSString key );
+void * XSDictionary_RemoveValueForKey( XSDictionary xsThis, void * value, XSString key );
 
 /*!
  * @function    XSDictionary_ContainsValue
  * @abstract    Checks if the dictionary contains a specific value
- * @param       array   The dictionary object
+ * @param       xsThis  The dictionary object
  * @param       value   The value to search
  * @result      YES if the dictionary contains the value, otherwise NO
  */
-BOOL XSDictionary_ContainsValue( XSDictionary dict, void * value );
+BOOL XSDictionary_ContainsValue( XSDictionary xsThis, void * value );
 
 XS_EXTERN_C_END
 

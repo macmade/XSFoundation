@@ -38,7 +38,14 @@
 #include "XS.h"
 #include "__XSURL.h"
 
-XSURL XSURL_Create( void )
+extern XSClassID __XSURLClassID;
+
+XSStatic XSURL XSURL_Alloc( void )
 {
-    return ( XSURL )__XSURL_Alloc();
+    return ( XSURL )XSRuntime_CreateInstance( __XSURLClassID );
+}
+
+XSURL XSURL_Init( XSURL xsThis )
+{
+    return xsThis;
 }

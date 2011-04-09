@@ -50,37 +50,45 @@ XS_EXTERN_C_BEGIN
 typedef struct XSTimer * XSTimer;
 
 /*!
- * @function    XSTimer_Create
+ * @function    XSTimer_Alloc
+ * @abstract    Object allocator
+ * @result      The allocated object
+ */
+XSStatic XSTimer XSTimer_Alloc( void );
+
+/*!
+ * @function    XSTimer_Init
  * @abstract    Creates a timer object scheduled to run at a specific time
+ * @param       XSThis          The timer object
  * @param       func            A pointer to to function to call when the timer fires
  * @param       milleseconds    The timer interval, in milliseconds
  * @result      The timer object
  */
-XSTimer XSTimer_Create( void ( * func )( XSTimer timer ), XSUInteger milliseconds );
+XSTimer XSTimer_Init( XSTimer xsThis, void ( * func )( XSTimer timer ), XSUInteger milliseconds );
 
 /*!
  * @function    XSTimer_RunOnce
  * @abstract    Runs a specific timer once, after its time interval has been reached
- * @param       timer   The timer object
+ * @param       xsThis  The timer object
  * @result      void
  */
-void XSTimer_RunOnce( XSTimer timer );
+void XSTimer_RunOnce( XSTimer xsThis );
 
 /*!
  * @function    XSTimer_RunAndRepeat
  * @abstract    Runs a specific timer every time its time interval has been reached
- * @param       timer   The timer object
+ * @param       xsThis  The timer object
  * @result      void
  */
-void XSTimer_RunAndRepeat( XSTimer timer );
+void XSTimer_RunAndRepeat( XSTimer xsThis );
 
 /*!
  * @function    XSTimer_Invalidate
  * @abstract    Invalidates a timer scheduled to repeat
- * @param       timer   The timer object
+ * @param       xsThis  The timer object
  * @result      void
  */
-void XSTimer_Invalidate( XSTimer timer );
+void XSTimer_Invalidate( XSTimer xsThis );
 
 XS_EXTERN_C_END
 

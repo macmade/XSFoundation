@@ -63,13 +63,6 @@ __XSDate;
  */
 void __XSDate_Initialize( void );
 
-/*!
- * @function    __XSDate_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSDate * __XSDate_Alloc( void );
-
 XS_EXTERN_C_END
 
 #endif /* ___XS_DATE_H_ */

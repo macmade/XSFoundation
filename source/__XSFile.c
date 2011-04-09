@@ -57,16 +57,11 @@ static const XSClassInfos __XSFileClass =
  * @var         __XSFileClassID
  * @abstract    Type ID for the runtine class
  */
-static XSClassID __XSFileClassID;
+XSClassID __XSFileClassID;
 
 void __XSFile_Initialize( void )
 {
     __XSFileClassID = XSRuntime_RegisterClass( &__XSFileClass );
-}
-
-__XSFile * __XSFile_Alloc( void )
-{
-    return ( __XSFile * )XSRuntime_CreateInstance( __XSFileClassID );
 }
 
 void __XSFile_WriteAlign( __XSFile * file )

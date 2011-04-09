@@ -50,124 +50,146 @@ XS_EXTERN_C_BEGIN
 typedef struct XSNumber * XSNumber;
 
 /*!
- * @function    XSNumber_CreateWithBool
- * @abstract    Creates a number with a BOOL value
+ * @function    XSNumber_Alloc
+ * @abstract    Object allocator
+ * @result      The allocated object
+ */
+XSStatic XSNumber XSNumber_Alloc( void );
+
+/*!
+ * @function    XSNumber_InitWithBool
+ * @param       xsThis      The number object
+ * @abstract    value       Creates a number with a BOOL value
  * @param       The BOOL value
  * @result      The number object
  */
-XSNumber XSNumber_CreateWithBool( BOOL value );
+XSNumber XSNumber_InitWithBool( XSNumber xsThis, BOOL value );
 
 /*!
- * @function    XSNumber_CreateWithChar
+ * @function    XSNumber_InitWithChar
  * @abstract    Creates a number with a char value
- * @param       The char value
+ * @param       xsThis      The number object
+ * @param       value       The char value
  * @result      The number object
  */
-XSNumber XSNumber_CreateWithChar( char value );
+XSNumber XSNumber_InitWithChar( XSNumber xsThis, char value );
 
 /*!
- * @function    XSNumber_CreateWithDouble
+ * @function    XSNumber_InitWithDouble
  * @abstract    Creates a number with a double value
- * @param       The double value
+ * @param       xsThis      The number object
+ * @param       value       The double value
  * @result      The number object
  */
-XSNumber XSNumber_CreateWithDouble( double value );
+XSNumber XSNumber_InitWithDouble( XSNumber xsThis, double value );
 
 /*!
- * @function    XSNumber_CreateWithFloat
+ * @function    XSNumber_InitWithFloat
  * @abstract    Creates a number with a float value
- * @param       The float value
+ * @param       xsThis      The number object
+ * @param       value       The float value
  * @result      The number object
  */
-XSNumber XSNumber_CreateWithFloat( float value );
+XSNumber XSNumber_InitWithFloat( XSNumber xsThis, float value );
 
 /*!
- * @function    XSNumber_CreateWithInt
+ * @function    XSNumber_InitWithInt
  * @abstract    Creates a number with an int value
- * @param       The int value
+ * @param       xsThis      The number object
+ * @param       value       The int value
  * @result      The number object
  */
-XSNumber XSNumber_CreateWithInt( int value );
+XSNumber XSNumber_InitWithInt( XSNumber xsThis, int value );
 
 /*!
- * @function    XSNumber_CreateWithInteger
+ * @function    XSNumber_InitWithInteger
  * @abstract    Creates a number with an integer value
- * @param       The integer value
+ * @param       xsThis      The number object
+ * @param       value       The integer value
  * @result      The number object
  */
-XSNumber XSNumber_CreateWithInteger( XSInteger value );
+XSNumber XSNumber_InitWithInteger( XSNumber xsThis, XSInteger value );
 
 /*!
- * @function    XSNumber_CreateWithLong
+ * @function    XSNumber_InitWithLong
  * @abstract    Creates a number with a long value
- * @param       The long value
+ * @param       xsThis      The number object
+ * @param       value       The long value
  * @result      The number object
  */
-XSNumber XSNumber_CreateWithLong( long value );
+XSNumber XSNumber_InitWithLong( XSNumber xsThis, long value );
 
 /*!
- * @function    XSNumber_CreateWithLongLong
+ * @function    XSNumber_InitWithLongLong
  * @abstract    Creates a number with a long long value
- * @param       The long long value
+ * @param       xsThis      The number object
+ * @param       value       The long long value
  * @result      The number object
  */
-XSNumber XSNumber_CreateWithLongLong( long long value );
+XSNumber XSNumber_InitWithLongLong( XSNumber xsThis, long long value );
 
 /*!
- * @function    XSNumber_CreateWithShort
+ * @function    XSNumber_InitWithShort
  * @abstract    Creates a number with a short value
- * @param       The short value
+ * @param       xsThis      The number object
+ * @param       value       The short value
  * @result      The number object
  */
-XSNumber XSNumber_CreateWithShort( short value );
+XSNumber XSNumber_InitWithShort( XSNumber xsThis, short value );
 
 /*!
- * @function    XSNumber_CreateWithUnsignedChar
+ * @function    XSNumber_InitWithUnsignedChar
  * @abstract    Creates a number with an unsigned char value
- * @param       The unsigned char value
+ * @param       xsThis      The number object
+ * @param       value       The unsigned char value
  * @result      The number object
  */
-XSNumber XSNumber_CreateWithUnsignedChar( unsigned char value );
+XSNumber XSNumber_InitWithUnsignedChar( XSNumber xsThis, unsigned char value );
 
 /*!
- * @function    XSNumber_CreateWithUnsignedInt
+ * @function    XSNumber_InitWithUnsignedInt
  * @abstract    Creates a number with an unsigned int value
- * @param       The unsigned int value
+ * @param       xsThis      The number object
+ * @param       value       The unsigned int value
  * @result      The number object
  */
-XSNumber XSNumber_CreateWithUnsignedInt( unsigned int value );
+XSNumber XSNumber_InitWithUnsignedInt( XSNumber xsThis, unsigned int value );
 
 /*!
- * @function    XSNumber_CreateWithUnsignedInteger
+ * @function    XSNumber_InitWithUnsignedInteger
  * @abstract    Creates a number with an unsigned integer value
- * @param       The unsigned integer value
+ * @param       xsThis      The number object
+ * @param       value       The unsigned integer value
  * @result      The number object
  */
-XSNumber XSNumber_CreateWithUnsignedInteger( XSUInteger value );
+XSNumber XSNumber_InitWithUnsignedInteger( XSNumber xsThis, XSUInteger value );
 
 /*!
- * @function    XSNumber_CreateWithUnsignedLong
+ * @function    XSNumber_InitWithUnsignedLong
  * @abstract    Creates a number with an unsigned long value
- * @param       The unsigned long value
+ * @param       xsThis      The number object
+ * @param       value       The unsigned long value
  * @result      The number object
  */
-XSNumber XSNumber_CreateWithUnsignedLong( unsigned long value );
+XSNumber XSNumber_InitWithUnsignedLong( XSNumber xsThis, unsigned long value );
 
 /*!
- * @function    XSNumber_CreateWithUnsignedLongLong
+ * @function    XSNumber_InitWithUnsignedLongLong
  * @abstract    Creates a number with an unsigned long long value
- * @param       The unsigned long long value
+ * @param       xsThis      The number object
+ * @param       value       The unsigned long long value
  * @result      The number object
  */
-XSNumber XSNumber_CreateWithUnsignedLongLong( unsigned long long value );
+XSNumber XSNumber_InitWithUnsignedLongLong( XSNumber xsThis, unsigned long long value );
 
 /*!
- * @function    XSNumber_CreateWithUnsignedShort
+ * @function    XSNumber_InitWithUnsignedShort
  * @abstract    Creates a number with an unsigned short value
- * @param       The unsigned short value
+ * @param       xsThis      The number object
+ * @param       value       The unsigned short value
  * @result      The number object
  */
-XSNumber XSNumber_CreateWithUnsignedShort( unsigned short value );
+XSNumber XSNumber_InitWithUnsignedShort( XSNumber xsThis, unsigned short value );
 
 XS_EXTERN_C_END
 

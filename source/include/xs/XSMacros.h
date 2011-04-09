@@ -70,7 +70,7 @@ XS_EXTERN_C_BEGIN
  * @abstract    Creates an XSString instance from a C string
  * @param       s   A C string (char *)
  */
-#define XSSTR( s ) XSString_CreateWithCString( s )
+#define XSSTR( s ) XSAutorelease( XSString_InitWithCString( XSString_Alloc(), s ) )
 
 /*!
  * @define      __XSFatalError

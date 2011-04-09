@@ -38,11 +38,18 @@
 #include "XS.h"
 #include "__XSError.h"
 
-XSError XSError_Create( XSInteger code, XSString domain, XSString reason )
+extern XSClassID __XSErrorClassID;
+
+XSStatic XSError XSError_Alloc( void )
+{
+    return ( XSError )XSRuntime_CreateInstance( __XSErrorClassID );
+}
+
+XSError XSError_Init( XSError xsThis, XSInteger code, XSString domain, XSString reason )
 {
     __XSError * error;
     
-    error = __XSError_Alloc();
+    error = ( __XSError * )xsThis;
     
     error->code   = code;
     error->domain = domain;
@@ -54,17 +61,17 @@ XSError XSError_Create( XSInteger code, XSString domain, XSString reason )
     return ( XSError )error;
 }
 
-XSInteger XSError_GetCode( XSError error )
+XSInteger XSError_GetCode( XSError xsThis )
 {
-    return ( ( __XSError * )error )->code;
+    return ( ( __XSError * )xsThis )->code;
 }
 
-XSString XSError_GetDomain( XSError error )
+XSAutoreleased XSString XSError_GetDomain( XSError xsThis )
 {
-    return ( ( __XSError * )error )->domain;
+    return XSAutorelease( XSCopy( ( ( __XSError * )xsThis )->domain ) );
 }
 
-XSString XSError_GetReason( XSError error )
+XSAutoreleased XSString XSError_GetReason( XSError xsThis )
 {
-    return ( ( __XSError * )error )->reason;
+    return XSAutorelease( XSCopy( ( ( __XSError * )xsThis )->reason ) );
 }

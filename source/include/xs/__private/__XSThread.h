@@ -67,13 +67,6 @@ __XSThread;
 void __XSThread_Initialize( void );
 
 /*!
- * @function    __XSThread_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSThread * __XSThread_Alloc( void );
-
-/*!
  * @function    __XSThread_Run
  * @abstract    Runs a thread
  * param        A pointer to the thread object (XSThread)

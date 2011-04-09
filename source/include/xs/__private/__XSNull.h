@@ -63,13 +63,6 @@ __XSNull;
  */
 void __XSNull_Initialize( void );
 
-/*!
- * @function    __XSNull_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSNull * __XSNull_Alloc( void );
-
 XS_EXTERN_C_END
 
 #endif /* ___XS_NULL_H_ */

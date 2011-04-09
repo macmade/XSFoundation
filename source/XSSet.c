@@ -38,7 +38,14 @@
 #include "XS.h"
 #include "__XSSet.h"
 
-XSSet XSSet_Create( void )
+extern XSClassID __XSSetClassID;
+
+XSStatic XSSet XSSet_Alloc( void )
 {
-    return ( XSSet )__XSSet_Alloc();
+    return ( XSSet )XSRuntime_CreateInstance( __XSSetClassID );
+}
+
+XSSet XSSet_Init( XSSet xsThis )
+{
+    return xsThis;
 }

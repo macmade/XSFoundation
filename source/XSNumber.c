@@ -38,107 +38,114 @@
 #include "XS.h"
 #include "__XSNumber.h"
 
-XSNumber XSNumber_CreateWithBool( BOOL value )
+extern XSClassID __XSNumberClassID;
+
+XSStatic XSNumber XSNumber_Alloc( void )
 {
-    ( void )value;
-    
-    return NULL;
+    return ( XSNumber )XSRuntime_CreateInstance( __XSNumberClassID );
 }
 
-XSNumber XSNumber_CreateWithChar( char value )
+XSNumber XSNumber_InitWithBool( XSNumber xsThis, BOOL value )
 {
     ( void )value;
     
-    return NULL;
+    return xsThis;
 }
 
-XSNumber XSNumber_CreateWithDouble( double value )
+XSNumber XSNumber_InitWithChar( XSNumber xsThis, char value )
 {
     ( void )value;
     
-    return NULL;
+    return xsThis;
 }
 
-XSNumber XSNumber_CreateWithFloat( float value )
+XSNumber XSNumber_InitWithDouble( XSNumber xsThis, double value )
 {
     ( void )value;
     
-    return NULL;
+    return xsThis;
 }
 
-XSNumber XSNumber_CreateWithInt( int value )
+XSNumber XSNumber_InitWithFloat( XSNumber xsThis, float value )
 {
     ( void )value;
     
-    return NULL;
+    return xsThis;
 }
 
-XSNumber XSNumber_CreateWithInteger( XSInteger value )
+XSNumber XSNumber_InitWithInt( XSNumber xsThis, int value )
 {
     ( void )value;
     
-    return NULL;
+    return xsThis;
 }
 
-XSNumber XSNumber_CreateWithLong( long value )
+XSNumber XSNumber_InitWithInteger( XSNumber xsThis, XSInteger value )
 {
     ( void )value;
     
-    return NULL;
+    return xsThis;
 }
 
-XSNumber XSNumber_CreateWithLongLong( long long value )
+XSNumber XSNumber_InitWithLong( XSNumber xsThis, long value )
 {
     ( void )value;
     
-    return NULL;
+    return xsThis;
 }
 
-XSNumber XSNumber_CreateWithShort( short value )
+XSNumber XSNumber_InitWithLongLong( XSNumber xsThis, long long value )
 {
     ( void )value;
     
-    return NULL;
+    return xsThis;
 }
 
-XSNumber XSNumber_CreateWithUnsignedChar( unsigned char value )
+XSNumber XSNumber_InitWithShort( XSNumber xsThis, short value )
 {
     ( void )value;
     
-    return NULL;
+    return xsThis;
 }
 
-XSNumber XSNumber_CreateWithUnsignedInt( unsigned int value )
+XSNumber XSNumber_InitWithUnsignedChar( XSNumber xsThis, unsigned char value )
 {
     ( void )value;
     
-    return NULL;
+    return xsThis;
 }
 
-XSNumber XSNumber_CreateWithUnsignedInteger( XSUInteger value )
+XSNumber XSNumber_InitWithUnsignedInt( XSNumber xsThis, unsigned int value )
 {
     ( void )value;
     
-    return NULL;
+    return xsThis;
 }
 
-XSNumber XSNumber_CreateWithUnsignedLong( unsigned long value )
+XSNumber XSNumber_InitWithUnsignedInteger( XSNumber xsThis, XSUInteger value )
 {
     ( void )value;
     
-    return NULL;
+    return xsThis;
 }
 
-XSNumber XSNumber_CreateWithUnsignedLongLong( unsigned long long value )
+XSNumber XSNumber_InitWithUnsignedLong( XSNumber xsThis, unsigned long value )
 {
     ( void )value;
     
-    return NULL;
+    return xsThis;
 }
 
-XSNumber XSNumber_CreateWithUnsignedShort( unsigned short value )
+XSNumber XSNumber_InitWithUnsignedLongLong( XSNumber xsThis, unsigned long long value )
 {
     ( void )value;
     
-    return NULL;
+    return xsThis;
+}
+
+XSNumber XSNumber_InitWithUnsignedShort( XSNumber xsThis, unsigned short value )
+{
+    ( void )value;
+    
+    return xsThis;
 }

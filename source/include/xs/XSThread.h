@@ -50,6 +50,23 @@ XS_EXTERN_C_BEGIN
 typedef struct XSThread * XSThread;
 
 /*!
+ * @function    XSThread_Alloc
+ * @abstract    Object allocator
+ * @description Do not allocate threads explicitely. Use the XSThread_Detach
+ *              function instead to create new threads.
+ * @result      The allocated object
+ */
+XSStatic XSThread XSThread_Alloc( void );
+
+/*!
+ * @function    XSThread_Alloc
+ * @abstract    Initialize a thread object
+ * @param       xsThis  The thread object
+ * @result      The thread object
+ */
+XSThread XSThread_Init( XSThread xsThis );
+
+/*!
  * @function    XSThread_Detach
  * @abstract    Creates and detaches a thread
  * @description The thread object will be automatically released when it
@@ -58,15 +75,15 @@ typedef struct XSThread * XSThread;
  * @param       arg     Argument to pass to the thread function
  * @result      The XSThread instance
  */
-XSThread XSThread_Detach( void ( * func )( XSThread thread, void * arg ), void * arg );
+XSStatic XSThread XSThread_Detach( void ( * func )( XSThread thread, void * arg ), void * arg );
 
 /*!
  * @function    XSThread_GetID
  * @abstract    Gets the thread ID
- * @param       thread  The thread object
+ * @param       xsThis  The thread object
  * @result      The thread ID
  */
-XSUInteger XSThread_GetID( XSThread thread );
+XSUInteger XSThread_GetID( XSThread xsThis );
 
 XS_EXTERN_C_END
 

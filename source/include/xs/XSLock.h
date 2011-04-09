@@ -50,51 +50,59 @@ XS_EXTERN_C_BEGIN
 typedef struct XSLock * XSLock;
 
 /*!
- * @function    XSLock_Create
+ * @function    XSLock_Alloc
+ * @abstract    Object allocator
+ * @result      The allocated object
+ */
+XSStatic XSLock XSLock_Alloc( void );
+
+/*!
+ * @function    XSLock_Init
  * @abstract    Creates a lock
+ * @param       xsThis  The lock object
  * @result      The lock object
  */
-XSLock XSLock_Create( void );
+XSLock XSLock_Init( XSLock xsThis );
 
 /*!
  * @function    XSLock_Lock
  * @abstract    Locks the lock object
- * @param       The lock object
+ * @param       xsThis  The lock object
  * @result      True if the lock was successfully locked, otherwise false
  */
-BOOL XSLock_Lock( XSLock lock );
+BOOL XSLock_Lock( XSLock xsThis );
 
 /*!
  * @function    XSLock_TryLock
  * @abstract    Tries to acquire a lock
- * @param       The lock object
+ * @param       xsThis  The lock object
  * @result      True if the lock was successfully locked, otherwise false
  */
-BOOL XSLock_TryLock( XSLock lock );
+BOOL XSLock_TryLock( XSLock xsThis );
 
 /*!
  * @function    XSLock_WaitForLock
  * @abstract    Pause the programs execution until the lock is acquired
- * @param       The lock object
+ * @param       xsThis  The lock object
  * @result      void
  */
-void XSLock_WaitForLock( XSLock lock );
+void XSLock_WaitForLock( XSLock xsThis );
 
 /*!
  * @function    XSLock_Unlock
  * @abstract    Unlocks a lock
- * @param       The lock object
+ * @param       xsThis  The lock object
  * @result      void
  */
-void XSLock_Unlock( XSLock lock );
+void XSLock_Unlock( XSLock xsThis );
 
 /*!
  * @function    XSLock_IsLocked
  * @abstract    Checks if a lock is locked
- * @param       The lock object
+ * @param       xsThis  The lock object
  * @result      True if the lock is locked, otherwise false
  */
-BOOL XSLock_IsLocked( XSLock lock );
+BOOL XSLock_IsLocked( XSLock xsThis );
 
 XS_EXTERN_C_END
 

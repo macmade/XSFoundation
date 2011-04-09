@@ -38,16 +38,23 @@
 #include "XS.h"
 #include "__XSLock.h"
 
-XSLock XSLock_Create( void )
+extern XSClassID __XSLockClassID;
+
+XSStatic XSLock XSLock_Alloc( void )
 {
-    return ( XSLock )__XSLock_Alloc();
+    return ( XSLock )XSRuntime_CreateInstance( __XSLockClassID );
 }
 
-BOOL XSLock_Lock( XSLock lock )
+XSLock XSLock_Init( XSLock xsThis )
+{
+    return xsThis;
+}
+
+BOOL XSLock_Lock( XSLock xsThis )
 {
     __XSLock * _lock;
     
-    _lock = ( __XSLock * )lock;
+    _lock = ( __XSLock * )xsThis;
     
     if( pthread_mutex_lock( &( _lock->mutex ) ) == 0 )
     {
@@ -57,11 +64,11 @@ BOOL XSLock_Lock( XSLock lock )
     return NO;
 }
 
-BOOL XSLock_TryLock( XSLock lock )
+BOOL XSLock_TryLock( XSLock xsThis )
 {
     __XSLock * _lock;
     
-    _lock = ( __XSLock * )lock;
+    _lock = ( __XSLock * )xsThis;
     
     if( pthread_mutex_trylock( &( _lock->mutex ) ) == 0 )
     {
@@ -71,21 +78,21 @@ BOOL XSLock_TryLock( XSLock lock )
     return NO;
 }
 
-void XSLock_WaitForLock( XSLock lock )
+void XSLock_WaitForLock( XSLock xsThis )
 {
     __XSLock * _lock;
     
-    _lock = ( __XSLock * )lock;
+    _lock = ( __XSLock * )xsThis;
     
     while( pthread_mutex_trylock( &( _lock->mutex ) ) != 0 )
     {}
 }
 
-void XSLock_Unlock( XSLock lock )
+void XSLock_Unlock( XSLock xsThis )
 {
     __XSLock * _lock;
     
-    _lock = ( __XSLock * )lock;
+    _lock = ( __XSLock * )xsThis;
     
     if( _lock->locked == NO )
     {
@@ -95,7 +102,7 @@ void XSLock_Unlock( XSLock lock )
     pthread_mutex_unlock( &( _lock->mutex ) );
 }
 
-BOOL XSLock_IsLocked( XSLock lock )
+BOOL XSLock_IsLocked( XSLock xsThis )
 {
-    return ( ( __XSLock * )lock )->locked;
+    return ( ( __XSLock * )xsThis )->locked;
 }

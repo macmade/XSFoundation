@@ -66,13 +66,6 @@ __XSLock;
 void __XSLock_Initialize( void );
 
 /*!
- * @function    __XSLock_Alloc
- * @abstract    Object allocator
- * @result      A pointer to the allocated object
- */
-__XSLock * __XSLock_Alloc( void );
-
-/*!
  * @function    __XSLock_Construct
  * @abstract    Constructor
  * @param       object  A pointer to the object
