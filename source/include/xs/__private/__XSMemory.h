@@ -88,6 +88,23 @@ typedef struct ___XSMemoryObject_Struct
 }
 __XSMemoryObject;
 
+typedef struct __XSMemoryRecord_Struct
+{
+    __XSMemoryObject * object;
+    size_t             size;
+    size_t             allocID;
+    XSClassID          classID;
+    Str255             hash;
+    BOOL               freed;
+    const char       * allocFile;
+    int                allocLine;
+    const char       * allocFunc;
+    const char       * freeFile;
+    int                freeLine;
+    const char       * freeFunc;
+}
+__XSMemoryRecord;
+
 /*!
  * @function    __XSAutoreleasePool_Initialize
  * @abstract    Runtime initialization
