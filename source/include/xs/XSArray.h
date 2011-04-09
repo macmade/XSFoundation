@@ -80,6 +80,16 @@ XSArray XSArray_Init( XSArray xsThis );
 XSArray XSArray_InitWithCapacity( XSArray xsThis, XSUInteger capacity );
 
 /*!
+ * @function    XSArray_InitWithCapacity
+ * @abstract    Creates an array with values
+ * @param       xsThis      The array object
+ * @param       value1      The first value
+ * @param       ...         Other values, terminated by a NULL fence.
+ * @result      The array object
+ */
+XSArray XSArray_InitWithValues( XSArray xsThis, void * value1, ... );
+
+/*!
  * @function    XSArray_Count
  * @abstract    Gets the number of values in the array
  * @param       xsThis  The array object

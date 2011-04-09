@@ -68,6 +68,30 @@ XSArray XSArray_InitWithCapacity( XSArray xsThis, XSUInteger capacity )
     return ( XSArray )array;
 }
 
+XSArray XSArray_InitWithValues( XSArray xsThis, void * value1, ... )
+{
+    va_list args;
+    void  * value;
+    
+    if( value1 == NULL )
+    {
+        return xsThis;
+    }
+    
+    XSArray_Init( xsThis );
+    XSArray_AppendValue( xsThis, value1 );
+    va_start( args, value1 );
+    
+    while( NULL != ( value = va_arg( args, void * ) ) )
+    {
+        XSArray_AppendValue( xsThis, value );
+    }
+    
+    va_end( args );
+    
+    return xsThis;
+}
+
 XSUInteger XSArray_Count( XSArray xsThis )
 {
     return ( ( __XSArray * )xsThis )->count;
@@ -157,7 +181,7 @@ void * XSArray_ValueAtIndex( XSArray xsThis, XSUInteger i )
     
     _array = ( __XSArray * )xsThis;
     
-    if( i > _array->count )
+    if( i >= _array->count )
     {
         return NULL;
     }
