@@ -40,6 +40,8 @@
 
 extern XSClassID __XSAutoreleasePoolClassID;
 
+static size_t __xsmemory_alloc = 0;
+
 XSStatic XSAutoreleasePool XSAutoreleasePool_Alloc( void )
 {
     return ( XSAutoreleasePool )XSRuntime_CreateInstance( __XSAutoreleasePoolClassID );
@@ -131,6 +133,8 @@ void * XSAlloc( size_t size, ... )
     
     XSHash( ptr );
     
+    __xsmemory_alloc++;
+    
     return ptr;
 }
 
@@ -201,6 +205,8 @@ void * XSRelease( void * ptr )
         }
         
         free( o );
+        
+        __xsmemory_alloc--;
         
         return NULL;
     }
@@ -379,4 +385,9 @@ XSUInteger XSGetRetainCount( void * ptr )
     o = __XSMemory_GetMemoryObject( ptr );
     
     return o->retainCount;
+}
+
+size_t XSGetAllocationCount( void )
+{
+    return __xsmemory_alloc;
 }

@@ -177,6 +177,13 @@ const char * XSHash( void * ptr );
  */
 XSUInteger XSGetRetainCount( void * ptr );
 
+/*!
+ * @function    XSGetAllocationNumber
+ * @abstract    Gets the number of memory allocations
+ * @result      The number of memory allocations
+ */
+size_t XSGetAllocationCount( void );
+
 XS_EXTERN_C_END
 
 #endif /* _XS_MEMORY_H_ */
