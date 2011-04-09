@@ -172,6 +172,7 @@ void __XSVLog( const char * fmt, va_list args )
             i++;
         }
     }
+    
     if( i > 0 )
     {
         vprintf( format, args );
