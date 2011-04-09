@@ -59,7 +59,7 @@ XSAutoreleasePool XSAutoreleasePool_Init( XSAutoreleasePool xsThis )
         exit( EXIT_FAILURE );
     }
     
-    if( NULL == ( ap->objects = ( void ** )calloc( sizeof( void * ), XS_MEMORY_NUM_OBJECTS ) ) )
+    if( NULL == ( ap->objects = ( void ** )XSAlloc( sizeof( void * ) * XS_MEMORY_NUM_OBJECTS ) ) )
     {
         free( ap );
         fprintf( stderr, "Error: unable to allocate memory for the auto-release pool\n" );
@@ -232,7 +232,7 @@ void * XSAutorelease( void * ptr )
     
     if( ap->numObjects == ap->size )
     {
-        ap->objects = ( void ** )realloc( ap->objects, sizeof( void * ) * ( ap->size + XS_MEMORY_NUM_OBJECTS ) );
+        ap->objects = ( void ** )XSRealloc( ap->objects, sizeof( void * ) * ( ap->size + XS_MEMORY_NUM_OBJECTS ) );
         
         if( ap->objects == NULL )
         {

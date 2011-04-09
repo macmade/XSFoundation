@@ -139,7 +139,7 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls )
     
     if( __class_size == 0 )
     {
-        if( NULL == ( __class_table = ( XSClassInfos ** )calloc( sizeof( XSClassInfos * ), __XS_RUNTIME_CLASS_TABLE_SIZE ) ) )
+        if( NULL == ( __class_table = ( XSClassInfos ** )XSAlloc( sizeof( XSClassInfos * ) * __XS_RUNTIME_CLASS_TABLE_SIZE ) ) )
         {
             fprintf( stderr, "Error: unable to allocate the runtime class table!\n" );
             exit( EXIT_FAILURE );
@@ -150,7 +150,7 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls )
     
     if( __class_count == __class_size )
     {
-        if( NULL == ( __class_table = ( XSClassInfos ** )realloc( __class_table, sizeof( XSClassInfos * ) * ( __XS_RUNTIME_CLASS_TABLE_SIZE + __class_size ) ) ) )
+        if( NULL == ( __class_table = ( XSClassInfos ** )XSRealloc( __class_table, sizeof( XSClassInfos * ) * ( __XS_RUNTIME_CLASS_TABLE_SIZE + __class_size ) ) ) )
         {
             fprintf( stderr, "Error: unable to re-allocate the runtime class table!\n" );
             exit( EXIT_FAILURE );
