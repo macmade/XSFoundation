@@ -129,6 +129,8 @@ void * XSAlloc( size_t size, ... )
         }
     }
     
+    XSHash( ptr );
+    
     return ptr;
 }
 
