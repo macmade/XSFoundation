@@ -70,3 +70,34 @@ __XSMemoryRecord * XSMemoryDebug_GetRecord( __XSMemoryObject * ptr )
     
     return NULL;
 }
+
+__XSMemoryRecord * XSMemoryDebug_NewRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func )
+{
+    ( void )ptr;
+    ( void )file;
+    ( void )line;
+    ( void )func;
+    
+    return NULL;
+}
+
+__XSMemoryRecord * XSMemoryDebug_UpdateRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func )
+{
+    ( void )ptr;
+    ( void )file;
+    ( void )line;
+    ( void )func;
+    
+    return NULL;
+}
+
+__XSMemoryRecord * XSMemoryDebug_FreeRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func )
+{
+    ( void )ptr;
+    ( void )file;
+    ( void )line;
+    ( void )func;
+    
+    return NULL;
+}
+
