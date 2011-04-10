@@ -113,7 +113,7 @@ void * XSAllocWithInfos( const char * file, int line, const char * func, size_t 
  * @function    XSReallocWithInfos
  * @abstract    Reallocates memory
  * description  This function is used for internal memory debugging. Do not
- *              call it directly. Use XSAlloc instead.
+ *              call it directly. Use XSRealloc instead.
  * @param       file    The file name
  * @param       line    The line number
  * @param       func    The function name
@@ -149,7 +149,7 @@ void * XSRetain( void * ptr );
  * @function    XSRelease
  * @abstract    Releases a memory pointer
  * description  This function is used for internal memory debugging. Do not
- *              call it directly. Use XSAlloc instead.
+ *              call it directly. Use XSRelease instead.
  * @param       file    The file name
  * @param       line    The line number
  * @param       func    The function name
@@ -185,7 +185,7 @@ void * XSAutorelease( void * ptr );
  * @function    XSAutoAlloc
  * @abstract    Allocates auto-releasable memory
  * description  This function is used for internal memory debugging. Do not
- *              call it directly. Use XSAlloc instead.
+ *              call it directly. Use XSAutoAlloc instead.
  * @param       file    The file name
  * @param       line    The line number
  * @param       func    The function name
@@ -210,7 +210,7 @@ void * XSAutoAllocWithInfos( const char * file, int line, const char * func, siz
  * @function    XSCopy
  * @abstract    Copies a pointer
  * description  This function is used for internal memory debugging. Do not
- *              call it directly. Use XSAlloc instead.
+ *              call it directly. Use XSCopy instead.
  * @param       file    The file name
  * @param       line    The line number
  * @param       func    The function name
