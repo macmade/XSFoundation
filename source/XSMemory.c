@@ -55,15 +55,13 @@ XSAutoreleasePool XSAutoreleasePool_Init( XSAutoreleasePool xsThis )
     
     if( __xsmemory_ar_pools_num == XS_MEMORY_MAX_AR_POOLS )
     {
-        fprintf( stderr, "Error: maximum number of auto-release pools reached: %u\n", XS_MEMORY_MAX_AR_POOLS );
-        exit( EXIT_FAILURE );
+        XSFatalError( "maximum number of auto-release pools reached: %u", XS_MEMORY_MAX_AR_POOLS );
     }
     
     if( NULL == ( ap->objects = ( void ** )XSAlloc( sizeof( void * ) * XS_MEMORY_NUM_OBJECTS ) ) )
     {
         free( ap );
-        fprintf( stderr, "Error: unable to allocate memory for the auto-release pool\n" );
-        exit( EXIT_FAILURE );
+        XSFatalError( "unable to allocate memory for the auto-release pool" );
     }
     
     ap->size                                         = XS_MEMORY_NUM_OBJECTS;
@@ -239,7 +237,7 @@ void * XSAutorelease( void * ptr )
     
     if( ap == NULL )
     {
-        fprintf( stderr, "Warning: autoreleasing object %p with no auto-release pool in place - leaking memory\n", ptr );
+        XSLog( "Warning: autoreleasing object %p with no auto-release pool in place - leaking memory", ptr );
     }
     
     if( ap->numObjects == ap->size )
@@ -248,8 +246,7 @@ void * XSAutorelease( void * ptr )
         
         if( ap->objects == NULL )
         {
-            fprintf( stderr, "Error: unable to allocate memory for the auto-release pool\n" );
-            exit( EXIT_FAILURE );
+            XSFatalError( "unable to allocate memory for the auto-release pool" );
         }
         
         ap->size += XS_MEMORY_NUM_OBJECTS;
