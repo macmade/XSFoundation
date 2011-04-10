@@ -89,7 +89,7 @@ XSStatic XSApplication XSApplication_Start( int argc, const char ** argv );
  *              memory is reclaimed, and the threads are terminated properly.
  * @result      void
  */
-XSStatic int XSApplication_Exit( int status );
+XSStatic void XSApplication_Exit( void );
 
 /*!
  * @function    XSApplication_SharedApplication

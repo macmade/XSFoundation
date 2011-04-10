@@ -57,6 +57,7 @@ XSApplication XSApplication_Init( XSApplication xsThis )
 XSStatic XSApplication XSApplication_Start( int argc, const char ** argv )
 {
     XSRuntime_Initialize();
+    atexit( XSApplication_Exit );
     
     __xsapp = ( __XSApplication * )XSApplication_Init( XSApplication_Alloc() );
     __xsarp = XSAutoreleasePool_Init( XSAutoreleasePool_Alloc() );
@@ -68,7 +69,7 @@ XSStatic XSApplication XSApplication_Start( int argc, const char ** argv )
     return ( XSApplication )__xsapp;
 }
 
-XSStatic int XSApplication_Exit( int status )
+XSStatic void XSApplication_Exit( void )
 {
     XSRelease( __xsarp );
     XSRelease( __xsapp );
@@ -77,8 +78,6 @@ XSStatic int XSApplication_Exit( int status )
     __xsapp = NULL;
     
     pthread_exit( NULL );
-    
-    return status;
 }
 
 XSStatic XSApplication XSApplication_SharedApplication( void )
