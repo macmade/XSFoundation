@@ -111,7 +111,7 @@ void XSApplication_PrintHelp( XSApplication xsThis, const char * description )
     
     if( _app->arg_count > 0 )
     {
-        printf( "# \n# Arguments:\n# \n" );
+        printf( "# \n#    Arguments:\n# \n" );
         
         for( i = 0; i < _app->arg_count; i++ )
         {
