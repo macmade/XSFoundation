@@ -159,5 +159,5 @@ int main( int argc, char * argv[] )
     sigsegv      = NULL;
     sigsegv[ 0 ] = 0;
     
-    return XSApplication_Exit( EXIT_SUCCESS );
+    return EXIT_SUCCESS;
 }
