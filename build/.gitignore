@@ -1,2 +1,4 @@
 *
 !.gitignore
+!libxeos.a
+!libxeos.dylib
