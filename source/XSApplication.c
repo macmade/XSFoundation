@@ -57,7 +57,6 @@ XSApplication XSApplication_Init( XSApplication xsThis )
 XSStatic XSApplication XSApplication_Start( int argc, const char ** argv )
 {
     XSRuntime_Initialize();
-    atexit( XSApplication_Exit );
     
     __xsapp = ( __XSApplication * )XSApplication_Init( XSApplication_Alloc() );
     __xsarp = XSAutoreleasePool_Init( XSAutoreleasePool_Alloc() );

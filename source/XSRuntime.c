@@ -104,6 +104,8 @@ void XSRuntime_Initialize( void )
     __inited = YES;
     
     atexit( XSRuntime_Finalize );
+    atexit( XSApplication_Exit );
+    atexit( __XSMemoryDebug_Finalize );
     
     __XSMemoryDebug_InstallSignalHandlers();
     
@@ -131,18 +133,9 @@ void XSRuntime_Initialize( void )
 
 void XSRuntime_Finalize( void )
 {
-    size_t alloc;
-    
     __inited = NO;
     
     XSRelease( __class_table );
-    
-    alloc = XSGetAllocationCount();
-    
-    if( alloc > 0 )
-    {
-        XSLog( "Warning: %i objects have not been freed - possible memory leak!", ( unsigned long )alloc );
-    }
 }
 
 XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls )
