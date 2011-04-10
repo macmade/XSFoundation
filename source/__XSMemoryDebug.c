@@ -37,9 +37,33 @@
 
 #include "__XSMemoryDebug.h"
 
-static __XSMemoryRecord * __xs_memory_records       = NULL;
-static size_t             __xs_memory_records_count = 0;
-static size_t             __xs_memory_records_alloc = 0;
+static __XSMemoryRecord * __xs_memory_records             = NULL;
+static size_t             __xs_memory_records_count       = 0;
+static size_t             __xs_memory_records_alloc       = 0;
+static size_t             __xs_memory_records_freed       = 0;
+static size_t             __xs_memory_records_active      = 0;
+static size_t             __xs_memory_total_memory        = 0;
+static size_t             __xs_memory_total_memory_active = 0;
+
+void __XSMemoryDebug_InstallSignalHandlers( void )
+{
+    struct sigaction sa1;
+    struct sigaction sa2;
+    
+    sa1.sa_handler = __XSMemoryDebug_SignalHandler;
+    sa1.sa_flags   = 0;
+    sigemptyset( &sa1.sa_mask );
+    
+    if( sigaction( SIGSEGV, &sa1, &sa2 ) != 0 )
+    {
+        XSFatalError( "cannot set a handler for SIGSEGV" );
+    }
+    
+    if( sigaction( SIGBUS, &sa1, &sa2 ) != 0 )
+    {
+        XSFatalError( "cannot set a handler for SIGBUS" );
+    }
+}
 
 __XSMemoryRecord * __XSMemoryDebug_GetRecord( __XSMemoryObject * ptr )
 {
@@ -51,6 +75,8 @@ __XSMemoryRecord * __XSMemoryDebug_GetRecord( __XSMemoryObject * ptr )
         {
             XSFatalError( "unable to allocate memory for the memory records" );
         }
+        
+        __xs_memory_records_alloc = __XSMEMORY_RECORD_ALLOC;
     }
     if( __xs_memory_records_count == __xs_memory_records_alloc )
     {
@@ -58,6 +84,8 @@ __XSMemoryRecord * __XSMemoryDebug_GetRecord( __XSMemoryObject * ptr )
         {
             XSFatalError( "unable to allocate memory for the memory records" );
         }
+        
+        __xs_memory_records_alloc += __XSMEMORY_RECORD_ALLOC;
     }
     
     for( i = 0; i < __xs_memory_records_count; i++ )
@@ -73,31 +101,93 @@ __XSMemoryRecord * __XSMemoryDebug_GetRecord( __XSMemoryObject * ptr )
 
 __XSMemoryRecord * __XSMemoryDebug_NewRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func )
 {
-    ( void )ptr;
-    ( void )file;
-    ( void )line;
-    ( void )func;
+    __XSMemoryRecord * record;
+    
+    record = __XSMemoryDebug_GetRecord( ptr );
+    
+    if( record == NULL )
+    {
+        record = &( __xs_memory_records[ __xs_memory_records_count++ ] );
+    }
+    else if( record->freed == NO )
+    {
+        /* Error */
+    }
+    
+    record->object    = ptr;
+    record->size      = ptr->size;
+    record->allocID   = ptr->allocID;
+    record->classID   = ptr->classID;
+    record->freed     = NO;
+    record->allocFile = file;
+    record->allocLine = line;
+    record->allocFunc = func;
+    
+    strcpy( ( char * )record->hash, ( char * )ptr->hash );
+    
+    __xs_memory_records_active      += 1;
+    __xs_memory_total_memory        += record->size;
+    __xs_memory_total_memory_active += record->size;
     
     return NULL;
 }
 
 __XSMemoryRecord * __XSMemoryDebug_UpdateRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func )
 {
-    ( void )ptr;
-    ( void )file;
-    ( void )line;
-    ( void )func;
+    __XSMemoryRecord * record;
+    
+    record = __XSMemoryDebug_GetRecord( ptr );
+    
+    if( record == NULL )
+    {
+        /* Error */
+    }
+    
+    __xs_memory_total_memory        -= record->size;
+    __xs_memory_total_memory_active -= record->size;
+    
+    record->object    = ptr;
+    record->size      = ptr->size;
+    record->allocID   = ptr->allocID;
+    record->classID   = ptr->classID;
+    record->freed     = NO;
+    record->allocFile = file;
+    record->allocLine = line;
+    record->allocFunc = func;
+    
+    __xs_memory_total_memory        += record->size;
+    __xs_memory_total_memory_active += record->size;
+    
+    strcpy( ( char * )record->hash, ( char * )ptr->hash );
     
     return NULL;
 }
 
 __XSMemoryRecord * __XSMemoryDebug_FreeRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func )
 {
-    ( void )ptr;
-    ( void )file;
-    ( void )line;
-    ( void )func;
+    __XSMemoryRecord * record;
+    
+    record = __XSMemoryDebug_GetRecord( ptr );
+    
+    if( record == NULL )
+    {
+        /* Error */
+    }
+    
+    record->object    = NULL;
+    record->freed     = YES;
+    record->freeFile = file;
+    record->freeLine = line;
+    record->freeFunc = func;
+    
+    __xs_memory_records_active      -= 1;
+    __xs_memory_records_freed       += 1;
+    __xs_memory_total_memory_active -= record->size;
     
     return NULL;
 }
 
+void __XSMemoryDebug_SignalHandler( int signo )
+{
+    ( void )signo;
+}

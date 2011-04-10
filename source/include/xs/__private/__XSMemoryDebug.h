@@ -65,6 +65,8 @@ typedef struct __XSMemoryRecord_Struct
 }
 __XSMemoryRecord;
 
+void __XSMemoryDebug_InstallSignalHandlers( void );
+
 __XSMemoryRecord * __XSMemoryDebug_GetRecord( __XSMemoryObject * ptr );
 
 __XSMemoryRecord * __XSMemoryDebug_NewRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func );
@@ -72,6 +74,8 @@ __XSMemoryRecord * __XSMemoryDebug_NewRecord( __XSMemoryObject * ptr, const char
 __XSMemoryRecord * __XSMemoryDebug_UpdateRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func );
 
 __XSMemoryRecord * __XSMemoryDebug_FreeRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func );
+
+void __XSMemoryDebug_SignalHandler( int signo );
 
 XS_EXTERN_C_END
 

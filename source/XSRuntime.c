@@ -37,6 +37,7 @@
 
 #include "XS.h"
 #include "__XSMemory.h"
+#include "__XSMemoryDebug.h"
 
 /*!
  * define       __XS_RUNTIME_CLASS_TABLE_SIZE
@@ -103,6 +104,8 @@ void XSRuntime_Initialize( void )
     __inited = YES;
     
     atexit( XSRuntime_Finalize );
+    
+    __XSMemoryDebug_InstallSignalHandlers();
     
     __XSAutoreleasePool_Initialize();
     __XSArray_Initialize();
