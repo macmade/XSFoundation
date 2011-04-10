@@ -41,7 +41,7 @@ static __XSMemoryRecord * __xs_memory_records       = NULL;
 static size_t             __xs_memory_records_count = 0;
 static size_t             __xs_memory_records_alloc = 0;
 
-__XSMemoryRecord * XSMemoryDebug_GetRecord( __XSMemoryObject * ptr )
+__XSMemoryRecord * __XSMemoryDebug_GetRecord( __XSMemoryObject * ptr )
 {
     size_t i;
     
@@ -71,7 +71,7 @@ __XSMemoryRecord * XSMemoryDebug_GetRecord( __XSMemoryObject * ptr )
     return NULL;
 }
 
-__XSMemoryRecord * XSMemoryDebug_NewRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func )
+__XSMemoryRecord * __XSMemoryDebug_NewRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func )
 {
     ( void )ptr;
     ( void )file;
@@ -81,7 +81,7 @@ __XSMemoryRecord * XSMemoryDebug_NewRecord( __XSMemoryObject * ptr, const char *
     return NULL;
 }
 
-__XSMemoryRecord * XSMemoryDebug_UpdateRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func )
+__XSMemoryRecord * __XSMemoryDebug_UpdateRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func )
 {
     ( void )ptr;
     ( void )file;
@@ -91,7 +91,7 @@ __XSMemoryRecord * XSMemoryDebug_UpdateRecord( __XSMemoryObject * ptr, const cha
     return NULL;
 }
 
-__XSMemoryRecord * XSMemoryDebug_FreeRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func )
+__XSMemoryRecord * __XSMemoryDebug_FreeRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func )
 {
     ( void )ptr;
     ( void )file;
