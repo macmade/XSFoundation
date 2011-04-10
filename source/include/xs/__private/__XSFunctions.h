@@ -54,8 +54,18 @@ XS_EXTERN_C_BEGIN
  */
 void __XSVLog( const char * fmt, va_list args );
 
+/*!
+ * @function    __XSLog_Pause
+ * @abstract    Pauses the log system
+ * @result      void
+ */
 void __XSLog_Pause( void );
 
+/*!
+ * @function    __XSLog_Pause
+ * @abstract    Resumes the log system
+ * @result      void
+ */
 void __XSLog_Resume( void );
 
 XS_EXTERN_C_END
