@@ -35,18 +35,44 @@
  * @abstract    ...
  */
 
-#ifndef _HEADER_H_
-#define _HEADER_H_
+#ifndef ___XS_MEMORY_DEBUG_H_
+#define ___XS_MEMORY_DEBUG_H_
 #pragma once
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-    
-    
-    
-#ifdef __cplusplus
-}
-#endif
+#include "../XSMacros.h"
 
-#endif /* _HEADER_H_ */
+XS_EXTERN_C_BEGIN
+
+#include "XS.h"
+#include "__XSMemory.h"
+
+#define __XSMEMORY_RECORD_ALLOC 256
+
+typedef struct __XSMemoryRecord_Struct
+{
+    __XSMemoryObject * object;
+    size_t             size;
+    size_t             allocID;
+    XSClassID          classID;
+    Str255             hash;
+    BOOL               freed;
+    const char       * allocFile;
+    int                allocLine;
+    const char       * allocFunc;
+    const char       * freeFile;
+    int                freeLine;
+    const char       * freeFunc;
+}
+__XSMemoryRecord;
+
+__XSMemoryRecord * XSMemoryDebug_GetRecord( __XSMemoryObject * ptr );
+
+__XSMemoryRecord * XSMemoryDebug_NewRecord( __XSMemoryObject * ptr, const char * line, int line, const char * func );
+
+__XSMemoryRecord * XSMemoryDebug_UpdateRecord( __XSMemoryObject * ptr, const char * line, int line, const char * func );
+
+__XSMemoryRecord * XSMemoryDebug_FreeRecord( __XSMemoryObject * ptr, const char * line, int line, const char * func );
+
+XS_EXTERN_C_END
+
+#endif /* ___XS_MEMORY_DEBUG_H_ */

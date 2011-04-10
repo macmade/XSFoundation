@@ -37,4 +37,36 @@
 
 #include "__XSMemoryDebug.h"
 
+static __XSMemoryRecord * __xs_memory_records       = NULL;
+static size_t             __xs_memory_records_count = 0;
+static size_t             __xs_memory_records_alloc = 0;
 
+__XSMemoryRecord * XSMemoryDebug_GetRecord( __XSMemoryObject * ptr )
+{
+    size_t i;
+    
+    if( __xs_memory_records_alloc == 0 )
+    {
+        if( NULL == ( __xs_memory_records = ( __XSMemoryRecord * )calloc( sizeof( __XSMemoryRecord ), __XSMEMORY_RECORD_ALLOC ) ) )
+        {
+            XSFatalError( "unable to allocate memory for the memory records" );
+        }
+    }
+    if( __xs_memory_records_count == __xs_memory_records_alloc )
+    {
+        if( NULL == ( __xs_memory_records = ( __XSMemoryRecord * )realloc( __xs_memory_records, sizeof( __XSMemoryRecord ) * ( __xs_memory_records_count + __XSMEMORY_RECORD_ALLOC ) ) ) )
+        {
+            XSFatalError( "unable to allocate memory for the memory records" );
+        }
+    }
+    
+    for( i = 0; i < __xs_memory_records_count; i++ )
+    {
+        if( __xs_memory_records[ i ].object == ptr )
+        {
+            return &( __xs_memory_records[ i ] );
+        }
+    }
+    
+    return NULL;
+}

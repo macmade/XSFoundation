@@ -37,6 +37,7 @@
 
 #include "XS.h"
 #include "__XSMemory.h"
+#include "__XSMemoryDebug.h"
 
 /*!
  * @var         __xsmemory_ar_pools

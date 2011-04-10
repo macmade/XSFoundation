@@ -42,7 +42,7 @@
  * @var         __progname
  * @abstract    Program name
  */
-char * __progname                    = NULL;
+char * __progname = NULL;
 
 /*!
  * @var         program_invocation_short_name
@@ -58,7 +58,13 @@ extern char * program_invocation_short_name __attribute__( ( weak ) );
  * @var         __log_mutex
  * @abstract    Mutex for the log calls
  */
-static pthread_mutex_t __log_mutex = PTHREAD_MUTEX_INITIALIZER;
+static pthread_mutex_t __log_mutex  = PTHREAD_MUTEX_INITIALIZER;
+
+/*!
+ * @var         __log_paused
+ * @abstract    Whether the log system is paused or not
+ */
+static BOOL __log_paused = NO;
 
 void __XSVLog( const char * fmt, va_list args )
 {
@@ -182,4 +188,20 @@ void __XSVLog( const char * fmt, va_list args )
     putc( '\n', stdout );
     
     pthread_mutex_unlock( &__log_mutex );
+}
+
+void __XSLog_Pause( void )
+{
+    while( pthread_mutex_trylock( &__log_mutex ) != 0 )
+    {}
+    
+    __log_paused = YES;
+}
+
+void __XSLog_Resume( void )
+{
+    if( __log_paused == YES )
+    {
+        pthread_mutex_unlock( &__log_mutex );
+    }
 }
