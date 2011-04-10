@@ -77,6 +77,7 @@ int main( int argc, char * argv[] )
     XSString      str3;
     XSArray       arr;
     XSTimer       timer;
+    char        * sigsegv;
     
     app  = XSApplication_Start( argc, ( const char ** )argv );
     
@@ -137,7 +138,7 @@ int main( int argc, char * argv[] )
     XSThread_Detach( thread_test, NULL );
     XSThread_Detach( thread_test, str1 );
     
-    timer = XSTimer_Init( XSTimer_Alloc(), timer_test, 1000 );
+    timer = XSTimer_Init( XSTimer_Alloc(), timer_test, 100 );
     
     XSTimer_RunOnce( timer );
     XSTimer_RunAndRepeat( timer );
@@ -152,6 +153,11 @@ int main( int argc, char * argv[] )
     {
         usleep( 100 );
     }
+    
+    XSLog( "Segmentation fault to test the internal debugger..." );
+    
+    sigsegv      = NULL;
+    sigsegv[ 0 ] = 0;
     
     return XSApplication_Exit( EXIT_SUCCESS );
 }
