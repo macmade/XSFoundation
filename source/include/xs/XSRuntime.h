@@ -94,10 +94,10 @@ XSObject XSRuntime_CreateInstanceOfClassWithName( const char * name );
 /*!
  * @function    XSRuntime_CreateInstance
  * @abstract    Creates a new instance of a registered class
- * @param       typeID  The type ID of the class
+ * @param       classID The type ID
  * @result      The allocated instance
  */
-XSObject XSRuntime_CreateInstance( XSClassID typeID );
+XSObject XSRuntime_CreateInstance( XSClassID classID );
 
 /*!
  * @function    XSRuntime_IsInstance
@@ -110,10 +110,10 @@ BOOL XSRuntime_IsInstance( void * ptr );
 /*!
  * @function    XSRuntime_GetClassForClassID
  * @abstract    Gets the class structure for a specific type ID
- * @param       The class ID of the class
+ * @param       classID The class ID
  * @result      The class corresponding to the type ID
  */
-XSClass XSRuntime_GetClassForClassID( XSClassID typeID );
+XSClass XSRuntime_GetClassForClassID( XSClassID classID );
 
 /*!
  * @function    XSRuntime_GetClassIDForClass
@@ -138,6 +138,22 @@ XSClass XSRuntime_GetClassForObject( XSObject object );
  * @result      The class ID for the object
  */
 XSClassID XSRuntime_GetTypeIDForObject( XSObject object );
+
+/*!
+ * @function    XSRuntime_GetClassNameForObject
+ * @abstract    Gets the class name for an object
+ * @param       classID The class ID
+ * @result      The name of the class
+ */
+const char * XSRuntime_GetClassNameForClassID( XSClassID classID );
+
+/*!
+ * @function    XSRuntime_GetClassNameForObject
+ * @abstract    Gets the class name for an object
+ * @param       cls     The class
+ * @result      The name of the class
+ */
+const char * XSRuntime_GetClassNameForClass( XSClass cls );
 
 /*!
  * @function    XSRuntime_GetClassNameForObject

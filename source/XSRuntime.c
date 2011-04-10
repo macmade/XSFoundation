@@ -293,6 +293,25 @@ XSClassID XSRuntime_GetTypeIDForObject( XSObject object )
     return XSRuntime_GetClassIDForClass( XSRuntime_GetClassForObject( object ) );
 }
 
+const char * XSRuntime_GetClassNameForClassID( XSClassID classID )
+{
+    if( classID == 0 || classID > __class_count )
+    {
+        return "XSNotAnObject";
+    }
+    
+    return __class_table[ classID - 1 ]->className;
+}
+
+const char * XSRuntime_GetClassNameForClass( XSClass cls )
+{
+    XSClassInfos * _cls;
+    
+    _cls = ( XSClassInfos * )cls;
+    
+    return _cls->className;
+}
+
 const char * XSRuntime_GetClassNameForObject( XSObject object )
 {
     if( XSRuntime_IsInstance( object ) == NO )
