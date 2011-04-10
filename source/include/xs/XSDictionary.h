@@ -65,6 +65,7 @@ XSStatic XSDictionary XSDictionary_Alloc( void );
 /*!
  * @function    XSDictionary_Create
  * @abstract    Creates an empty dictionary
+ * @param       xsThis  The dictionary object
  * @result      The new dictionary object
  */
 XSDictionary XSDictionary_Init( XSDictionary xsThis );
@@ -72,10 +73,22 @@ XSDictionary XSDictionary_Init( XSDictionary xsThis );
 /*!
  * @function    XSDictionary_InitWithCapacity
  * @abstract    Creates an empty dictionary with an initial capacity
+ * @param       xsThis  The dictionary object
  * @param       capacity    The initial dictionary capacity
  * @result      The new dictionary object
  */
 XSDictionary XSDictionary_InitWithCapacity( XSDictionary xsThis, XSUInteger capacity );
+
+/*!
+ * @function    XSDictionary_InitWithKeysAndValues
+ * @abstract    Creates a dictionary with keys and values
+ * @param       xsThis  The dictionary object
+ * @param       key1    The first key
+ * @param       value1  The first value
+ * @param       ...     Other values and keys, terminated by a NULL fence
+ * @result      The new dictionary object
+ */
+XSDictionary XSDictionary_InitWithKeysAndValues( XSDictionary xsThis, XSString key1, void * value1, ... );
 
 /*!
  * @function    XSDictionary_Count

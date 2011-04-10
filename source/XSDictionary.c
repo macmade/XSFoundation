@@ -76,6 +76,47 @@ XSDictionary XSDictionary_InitWithCapacity( XSDictionary xsThis, XSUInteger capa
     return ( XSDictionary )dict;
 }
 
+/*!
+ * @function    XSDictionary_InitWithKeysAndValues
+ * @abstract    Creates a dictionary with keys and values
+ * @param       xsThis  The dictionary object
+ * @param       key1    The first key
+ * @param       value1  The first value
+ * @param       ...     Other values and keys, terminated by a NULL fence
+ * @result      The new dictionary object
+ */
+XSDictionary XSDictionary_InitWithKeysAndValues( XSDictionary xsThis, XSString key1, void * value1, ... )
+{
+    XSString key;
+    void   * value;
+    va_list  args;
+    
+    if( value1 == NULL || key1 == NULL )
+    {
+        return xsThis;
+    }
+    
+    XSDictionary_Init( xsThis );
+    XSDictionary_SetValueForKey( xsThis, value1, key1 );
+    va_start( args, value1 );
+    
+    while( NULL != ( key = va_arg( args, XSString ) ) )
+    {
+        value = va_arg( args, void * );
+        
+        if( value == NULL )
+        {
+            return xsThis;
+        }
+        
+        XSDictionary_SetValueForKey( xsThis, value, key );
+    }
+    
+    va_end( args );
+    
+    return xsThis;
+}
+
 XSUInteger XSDictionary_Count( XSDictionary xsThis )
 {
     return ( ( __XSDictionary * )xsThis )->count;
