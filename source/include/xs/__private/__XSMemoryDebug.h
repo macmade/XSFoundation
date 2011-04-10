@@ -67,11 +67,11 @@ __XSMemoryRecord;
 
 __XSMemoryRecord * XSMemoryDebug_GetRecord( __XSMemoryObject * ptr );
 
-__XSMemoryRecord * XSMemoryDebug_NewRecord( __XSMemoryObject * ptr, const char * line, int line, const char * func );
+__XSMemoryRecord * XSMemoryDebug_NewRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func );
 
-__XSMemoryRecord * XSMemoryDebug_UpdateRecord( __XSMemoryObject * ptr, const char * line, int line, const char * func );
+__XSMemoryRecord * XSMemoryDebug_UpdateRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func );
 
-__XSMemoryRecord * XSMemoryDebug_FreeRecord( __XSMemoryObject * ptr, const char * line, int line, const char * func );
+__XSMemoryRecord * XSMemoryDebug_FreeRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func );
 
 XS_EXTERN_C_END
 
