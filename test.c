@@ -77,7 +77,6 @@ int main( int argc, char * argv[] )
     XSString      str3;
     XSArray       arr;
     XSTimer       timer;
-    char        * sigsegv;
     
     app  = XSApplication_Start( argc, ( const char ** )argv );
     
