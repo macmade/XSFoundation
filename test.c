@@ -144,20 +144,11 @@ int main( int argc, char * argv[] )
     XSTimer_RunAndRepeat( timer );
     
     XSRelease( timer );
+    XSRelease( arr );
     XSRelease( str1 );
     XSRelease( str2 );
-    XSRelease( str3 );
-    XSRelease( arr );
     
-    while( XSTimer_IsValid( timer ) == YES )
-    {
-        usleep( 100 );
-    }
-    
-    XSLog( "Segmentation fault to test the internal debugger..." );
-    
-    sigsegv      = NULL;
-    sigsegv[ 0 ] = 0;
+    /* XSRelease( str3 ); */
     
     return EXIT_SUCCESS;
 }
