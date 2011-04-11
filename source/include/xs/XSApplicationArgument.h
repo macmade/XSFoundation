@@ -80,9 +80,10 @@ XSStatic XSApplicationArgument XSApplicationArgument_Alloc( void );
  * @param       xsThis  The argument object
  * @param       name    The name of the CLI argument, including dashes (- or --)
  * @param       type    The type of the CLI argument
+ * @param       help    The help text (pass NULL if none)
  * @result      The argument object
  */
-XSApplicationArgument XSApplicationArgument_Init( XSApplicationArgument xsThis, const char * name, XSApplicationArgumentType type, ... );
+XSApplicationArgument XSApplicationArgument_Init( XSApplicationArgument xsThis, const char * name, XSApplicationArgumentType type, const char * help );
 
 /*!
  * @function    XSApplicationArgument_GetName

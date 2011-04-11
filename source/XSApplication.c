@@ -156,7 +156,7 @@ void XSApplication_PrintHelp( XSApplication xsThis, const char * description )
             }
             else
             {
-                printf( "#     %s\n# \n", help );
+                printf( "#     %p\n# \n", help );
             }
         }
     
@@ -164,29 +164,13 @@ void XSApplication_PrintHelp( XSApplication xsThis, const char * description )
     }
 }
 
-void XSApplication_RegisterArgument( XSApplication xsThis, const char * name, XSApplicationArgumentType type, ... )
+void XSApplication_RegisterArgument( XSApplication xsThis, const char * name, XSApplicationArgumentType type, const char * help )
 {
-    va_list               args;
     __XSApplication     * _app;
     XSApplicationArgument arg;
-    const char          * help;
-    
-    va_start( args, type );
-    
-    help = va_arg( args, const char * );
-    
-    va_end( args );
     
     _app = ( __XSApplication * )xsThis;
-    
-    if( help )
-    {
-        arg = XSApplicationArgument_Init( XSApplicationArgument_Alloc(), name, type, help );
-    }
-    else
-    {
-        arg = XSApplicationArgument_Init( XSApplicationArgument_Alloc(), name, type );
-    }
+    arg  = XSApplicationArgument_Init( XSApplicationArgument_Alloc(), name, type, help );
     
     if( _app->arg_count == _app->arg_alloc )
     {

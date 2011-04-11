@@ -112,7 +112,7 @@ void XSApplication_PrintHelp( XSApplication xsThis, const char * description );
  * @param       xsThis  The application object
  * @result      
  */
-void XSApplication_RegisterArgument( XSApplication xsThis, const char * name, XSApplicationArgumentType type, ... );
+void XSApplication_RegisterArgument( XSApplication xsThis, const char * name, XSApplicationArgumentType type, const char * help );
 
 /*!
  * @function    XSApplication_GetArgument

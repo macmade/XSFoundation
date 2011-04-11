@@ -45,17 +45,9 @@ XSStatic XSApplicationArgument XSApplicationArgument_Alloc( void )
     return ( XSApplicationArgument )XSRuntime_CreateInstance( __XSApplicationArgumentClassID );
 }
 
-XSApplicationArgument XSApplicationArgument_Init( XSApplicationArgument xsThis, const char * name, XSApplicationArgumentType type, ... )
+XSApplicationArgument XSApplicationArgument_Init( XSApplicationArgument xsThis, const char * name, XSApplicationArgumentType type, const char * help )
 {
-    va_list                   args;
-    const char              * help;
     __XSApplicationArgument * arg;
-    
-    va_start( args, type );
-    
-    help = va_arg( args, const char * );
-    
-    va_end( args );
     
     arg           = ( __XSApplicationArgument * )xsThis;
     arg->name     = name;
@@ -64,12 +56,7 @@ XSApplicationArgument XSApplicationArgument_Init( XSApplicationArgument xsThis, 
     arg->int_val  = 0;
     arg->str_val  = NULL;
     arg->flag_val = NO;
-    arg->help     = NULL;
-    
-    if( help )
-    {
-        arg->help = help;
-    }
+    arg->help     = help;
     
     return ( XSApplicationArgument )arg;
 }
