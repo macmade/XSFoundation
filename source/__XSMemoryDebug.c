@@ -133,7 +133,7 @@ __XSMemoryRecord * __XSMemoryDebug_NewRecord( __XSMemoryObject * ptr, const char
     __xs_memory_total_memory        += record->size;
     __xs_memory_total_memory_active += record->size;
     
-    return NULL;
+    return record;
 }
 
 __XSMemoryRecord * __XSMemoryDebug_UpdateRecord( __XSMemoryObject * oldPtr, __XSMemoryObject * newPtr, const char * file, int line, const char * func )
@@ -164,10 +164,10 @@ __XSMemoryRecord * __XSMemoryDebug_UpdateRecord( __XSMemoryObject * oldPtr, __XS
     
     strcpy( ( char * )record->hash, ( char * )newPtr->hash );
     
-    return NULL;
+    return record;
 }
 
-__XSMemoryRecord * __XSMemoryDebug_FreeRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func )
+__XSMemoryRecord * __XSMemoryDebug_ReleaseRecord( __XSMemoryObject * ptr, BOOL marsAsFree, const char * file, int line, const char * func )
 {
     __XSMemoryRecord * record;
     
@@ -182,17 +182,19 @@ __XSMemoryRecord * __XSMemoryDebug_FreeRecord( __XSMemoryObject * ptr, const cha
         __XSMemoryDebug_Warning( "pointer beeing freed was already freed", record );
     }
     
-    record->object    = NULL;
-    record->freed     = YES;
-    record->freeFile = file;
-    record->freeLine = line;
-    record->freeFunc = func;
+    if( marsAsFree == YES )
+    {
+        record->freed     = YES;
+        record->freeFile = file;
+        record->freeLine = line;
+        record->freeFunc = func;
+        
+        __xs_memory_records_active      -= 1;
+        __xs_memory_records_freed       += 1;
+        __xs_memory_total_memory_active -= record->size;
+    }
     
-    __xs_memory_records_active      -= 1;
-    __xs_memory_records_freed       += 1;
-    __xs_memory_total_memory_active -= record->size;
-    
-    return NULL;
+    return record;
 }
 
 void __XSMemoryDebug_SignalHandler( int signo )
@@ -224,12 +226,7 @@ void __XSMemoryDebug_Warning( const char * message, __XSMemoryRecord * record )
     printf( __XSMEMORY_HR );
     printf( "# XSFoundation - Memory warning: %s\n", message );
     
-    if( record != NULL )
-    {
-        __XSMemoryDebug_PrintRecord( record );
-    }
-    
-    __XSMemoryDebug_AskOption();
+    __XSMemoryDebug_AskOption( record );
 }
 
 void __XSMemoryDebug_PrintRecord( __XSMemoryRecord * record )
@@ -385,9 +382,14 @@ void __XSMemoryDebug_PrintStatistics( void )
     );
 }
 
-void __XSMemoryDebug_AskOption( void )
+void __XSMemoryDebug_AskOption( __XSMemoryRecord * record )
 {
     unsigned char c;
+    
+    if( record != NULL )
+    {
+        __XSMemoryDebug_PrintRecord( record );
+    }
     
     printf( __XSMEMORY_HR );
     printf
@@ -401,8 +403,14 @@ void __XSMemoryDebug_AskOption( void )
         "#    p: prints all memory records (active and freed)\n"
         "#    a: prints the active memory records\n"
         "#    f: prints the freed memory records\n"
-        "# \n"
     );
+    
+    if( record != NULL )
+    {
+        printf( "#    d: dump the memory record\n" );
+    }
+    
+    printf( "# \n" );
     printf( __XSMEMORY_HR );
     printf( "\nEnter your choice: " );
     fflush( stdin );
@@ -455,13 +463,18 @@ void __XSMemoryDebug_AskOption( void )
             
             __XSMemoryDebug_PrintRecords( NO, YES );
             break;
+            
+        case 'd':
+            
+            __XSMemoryDebug_DumpRecord( record );
+            break;
         
         default:
             
             break;
     }
     
-    __XSMemoryDebug_AskOption();
+    __XSMemoryDebug_AskOption( record );
 }
 
 void __XSMemoryDebug_Finalize( void )
@@ -482,4 +495,61 @@ void __XSMemoryDebug_Finalize( void )
             __XSMemoryDebug_Warning( "unfreed memory record at application exit point", &( __xs_memory_records[ i ] ) );
         }
     }
+}
+
+void __XSMemoryDebug_DumpRecord( __XSMemoryRecord * record )
+{
+    long unsigned int i;
+    long unsigned int j;
+    unsigned char     c;
+    unsigned char   * ptr;
+    size_t            size;
+    
+    printf( __XSMEMORY_HR );
+    printf( "# \n" );
+    
+    ptr  = ( unsigned char * )record->object;
+    size = record->size + sizeof( __XSMemoryObject ) + 8;
+    
+    for( i = 0; i < size; i += 24 )
+    {
+        printf( "#   %010lu: ", i );
+        
+        for( j = i; j < i + 24; j++ )
+        {
+            if( j < size )
+            {
+                printf( "%02X ", ( unsigned char )ptr[ j ] );
+            }
+            else
+            {
+                printf( "   " );
+            }
+        }
+        
+        printf( "| " );
+        
+        for( j = i; j < i + 24; j++ )
+        {
+            c = 0;
+            
+            if( j < size )
+            {
+                c = ( unsigned char )ptr[ j ];
+                
+                if( ( c & 0x80 ) == 0 && isprint( ( int )c ) && c != 0x20 )
+                {
+                    printf( "%c", c );
+                    
+                }
+                else
+                {
+                    printf( "." );
+                }
+            }
+        }
+        
+        printf( "\n" );
+    }
+    printf( "# \n" );
 }
