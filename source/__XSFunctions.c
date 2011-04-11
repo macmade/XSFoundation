@@ -38,6 +38,10 @@
 #include "XS.h"
 #include "__XSFunctions.h"
 
+/* Weak symbols for the program name and program invocation short name */
+extern char * __progname                    __attribute__( ( weak ) );
+extern char * program_invocation_short_name __attribute__( ( weak ) );
+
 /*!
  * @var         __progname
  * @abstract    Program name
@@ -49,10 +53,6 @@ char * __progname = NULL;
  * @abstract    Program invocation short name
  */
 char * program_invocation_short_name = NULL;
-
-/* Weak symbols for the program name and program invocation short name */
-extern char * __progname                    __attribute__( ( weak ) );
-extern char * program_invocation_short_name __attribute__( ( weak ) );
 
 /*!
  * @var         __log_mutex
