@@ -90,17 +90,13 @@ void * XSAllocWithInfos( const char * file, int line, const char * func, size_t 
     XSClassID                  classID;
     const XSClassInfos const * cls;
     
-    ( void )file;
-    ( void )line;
-    ( void )func;
-    
     va_start( args, size );
     
     classID = va_arg( args, XSClassID );
     
     va_end( args );
     
-    o = calloc( sizeof( __XSMemoryObject ) + size, 1 );
+    o = calloc( sizeof( __XSMemoryObject ) + size + 8, 1 );
     
     if( o == NULL )
     {
@@ -120,9 +116,27 @@ void * XSAllocWithInfos( const char * file, int line, const char * func, size_t 
     o->allocID     = allocID++;
     o->size        = size;
     
+    o->fence[ 0  ] = 'X';
+    o->fence[ 1  ] = 'S';
+    o->fence[ 2  ] = 'M';
+    o->fence[ 3  ] = 'E';
+    o->fence[ 4  ] = 'M';
+    o->fence[ 5  ] = 'D';
+    o->fence[ 6  ] = 'A';
+    o->fence[ 7  ] = 'T';
+    
     ptr     =  ( char * )o;
     ptr    += ( sizeof( __XSMemoryObject ) );
     o->data = ptr;
+    
+    ptr[ size + 0 ] = 'X';
+    ptr[ size + 1 ] = 'S';
+    ptr[ size + 2 ] = 'M';
+    ptr[ size + 3 ] = 'E';
+    ptr[ size + 4 ] = 'M';
+    ptr[ size + 5 ] = 'D';
+    ptr[ size + 6 ] = 'A';
+    ptr[ size + 7 ] = 'T';
     
     if( classID > 0 )
     {
@@ -196,10 +210,6 @@ void * XSReleaseWithInfos( const char * file, int line, const char * func, void 
     __XSMemoryObject         * o;
     const XSClassInfos const * cls;
     
-    ( void )file;
-    ( void )line;
-    ( void )func;
-    
     if( ptr == NULL )
     {
         return NULL;
@@ -207,7 +217,12 @@ void * XSReleaseWithInfos( const char * file, int line, const char * func, void 
     
     o = __XSMemory_GetMemoryObject( ptr );
     
-    o->retainCount--;
+    __XSMemoryDebug_ReleaseRecord( o, NO, file, line, func );
+    
+    if( o->retainCount > 0 )
+    {
+        o->retainCount--;
+    }
     
     if( o->retainCount == 0 )
     {
@@ -221,8 +236,7 @@ void * XSReleaseWithInfos( const char * file, int line, const char * func, void 
             }
         }
         
-        __XSMemoryDebug_FreeRecord( o, file, line, func );
-        
+        __XSMemoryDebug_ReleaseRecord( o, YES, file, line, func );
         free( o );
         
         __xsmemory_alloc--;
