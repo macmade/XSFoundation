@@ -85,7 +85,7 @@ __XSMemoryRecord * __XSMemoryDebug_NewRecord( __XSMemoryObject * ptr, const char
 
 __XSMemoryRecord * __XSMemoryDebug_UpdateRecord( __XSMemoryObject * oldPtr, __XSMemoryObject * newPtr, const char * file, int line, const char * func );
 
-__XSMemoryRecord * __XSMemoryDebug_FreeRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func );
+__XSMemoryRecord * __XSMemoryDebug_ReleaseRecord( __XSMemoryObject * ptr, BOOL marsAsFree, const char * file, int line, const char * func );
 
 void __XSMemoryDebug_SignalHandler( int signo );
 
@@ -97,9 +97,11 @@ void __XSMemoryDebug_PrintRecords( BOOL active, BOOL freed );
 
 void __XSMemoryDebug_PrintStatistics( void );
 
-void __XSMemoryDebug_AskOption( void );
+void __XSMemoryDebug_AskOption( __XSMemoryRecord * record );
 
 void __XSMemoryDebug_Finalize( void );
+
+void __XSMemoryDebug_DumpRecord( __XSMemoryRecord * record );
 
 XS_EXTERN_C_END
 
