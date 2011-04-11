@@ -36,6 +36,9 @@
  */
 
 #include "__XSMemoryDebug.h"
+#include "__XSFunctions.h"
+
+#define __XSMEMORY_HR   "#-----------------------------------------------------------------------------------------------------------------\n"
 
 static __XSMemoryRecord * __xs_memory_records             = NULL;
 static size_t             __xs_memory_records_count       = 0;
@@ -44,6 +47,7 @@ static size_t             __xs_memory_records_freed       = 0;
 static size_t             __xs_memory_records_active      = 0;
 static size_t             __xs_memory_total_memory        = 0;
 static size_t             __xs_memory_total_memory_active = 0;
+static bool               __xs_memory_fault_caught        = NO;
 
 void __XSMemoryDebug_InstallSignalHandlers( void )
 {
@@ -132,11 +136,11 @@ __XSMemoryRecord * __XSMemoryDebug_NewRecord( __XSMemoryObject * ptr, const char
     return NULL;
 }
 
-__XSMemoryRecord * __XSMemoryDebug_UpdateRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func )
+__XSMemoryRecord * __XSMemoryDebug_UpdateRecord( __XSMemoryObject * oldPtr, __XSMemoryObject * newPtr, const char * file, int line, const char * func )
 {
     __XSMemoryRecord * record;
     
-    record = __XSMemoryDebug_GetRecord( ptr );
+    record = __XSMemoryDebug_GetRecord( oldPtr );
     
     if( record == NULL )
     {
@@ -146,10 +150,10 @@ __XSMemoryRecord * __XSMemoryDebug_UpdateRecord( __XSMemoryObject * ptr, const c
     __xs_memory_total_memory        -= record->size;
     __xs_memory_total_memory_active -= record->size;
     
-    record->object    = ptr;
-    record->size      = ptr->size;
-    record->allocID   = ptr->allocID;
-    record->classID   = ptr->classID;
+    record->object    = newPtr;
+    record->size      = newPtr->size;
+    record->allocID   = newPtr->allocID;
+    record->classID   = newPtr->classID;
     record->freed     = NO;
     record->allocFile = file;
     record->allocLine = line;
@@ -158,7 +162,7 @@ __XSMemoryRecord * __XSMemoryDebug_UpdateRecord( __XSMemoryObject * ptr, const c
     __xs_memory_total_memory        += record->size;
     __xs_memory_total_memory_active += record->size;
     
-    strcpy( ( char * )record->hash, ( char * )ptr->hash );
+    strcpy( ( char * )record->hash, ( char * )newPtr->hash );
     
     return NULL;
 }
@@ -171,7 +175,11 @@ __XSMemoryRecord * __XSMemoryDebug_FreeRecord( __XSMemoryObject * ptr, const cha
     
     if( record == NULL )
     {
-        /* Error */
+        __XSMemoryDebug_Warning( "pointer beeing freed was not allocated", NULL );
+    }
+    else if( record->freed == YES )
+    {
+        __XSMemoryDebug_Warning( "pointer beeing freed was already freed", record );
     }
     
     record->object    = NULL;
@@ -189,5 +197,289 @@ __XSMemoryRecord * __XSMemoryDebug_FreeRecord( __XSMemoryObject * ptr, const cha
 
 void __XSMemoryDebug_SignalHandler( int signo )
 {
-    ( void )signo;
+    if( signo == SIGSEGV )
+    {
+        __xs_memory_fault_caught = YES;
+        
+        __XSMemoryDebug_Warning( "segmentation fault - SIGSEGV", NULL );
+        XSLog( "SIGSEGV - Segmentation fault: program's execution stopped" );
+    }
+    else if( signo == SIGBUS )
+    {
+        __xs_memory_fault_caught = YES;
+        
+        __XSMemoryDebug_Warning( "bus error - SIGBUS", NULL );
+        XSLog( "SIGBUS - Bus error: program's execution stopped" );
+    }
+    
+    pthread_exit( NULL );
+    exit( EXIT_FAILURE );
+}
+
+void __XSMemoryDebug_Warning( const char * message, __XSMemoryRecord * record )
+{
+    
+    __XSLog_Pause();
+    
+    printf( __XSMEMORY_HR );
+    printf( "# XSFoundation - Memory warning: %s\n", message );
+    
+    if( record != NULL )
+    {
+        __XSMemoryDebug_PrintRecord( record );
+    }
+    
+    __XSMemoryDebug_AskOption();
+}
+
+void __XSMemoryDebug_PrintRecord( __XSMemoryRecord * record )
+{
+    Str255       size;
+    const char * className;
+    
+    memset( size,  0, 256 );
+    
+    if( record->size < 1000 )
+    {
+        sprintf( ( char * )size, "%lu bytes", record->size );
+    }
+    else if( record->size < 1000000 )
+    {
+        sprintf( ( char * )size, "%.2f KB", ( double )record->size / ( double )1000 );
+    }
+    else if( record->size < 1000000000 )
+    {
+        sprintf( ( char * )size, "%.2f MB", ( double )record->size / ( double )1000000 );
+    }
+    else if( record->size < 1000000000000 )
+    {
+        sprintf( ( char * )size, "%.2f GB", ( double )record->size / ( double )1000000000 );
+    }
+    else
+    {
+        sprintf( ( char * )size, "%.2f TB", ( double )record->size / ( double )1000000000000 );
+    }
+    
+    className = XSRuntime_GetClassNameForClassID( record->classID );
+    
+    printf( __XSMEMORY_HR );
+    printf
+    (
+        "#    \n"
+        "#    Record informations:\n"
+        "#    \n"
+        "#    Address:               %p\n"
+        "#    Size:                  %s\n"
+        "#    Allocation ID:         %lu\n"
+        "#    Class ID:              %lu\n"
+        "#    Class name:            %s\n"
+        "#    Memory hash:           %s\n"
+        "#    Allocated in file:     %s\n"
+        "#    Allocated at line:     %i\n"
+        "#    Allocated in function: %s\n"
+        "#    Freed:                 %s\n"
+        "#    Freed in file:         %s\n"
+        "#    Freed at line:         %i\n"
+        "#    Freed in function:     %s\n"
+        "# \n",
+        ( void * )record->object,
+        size,
+        record->allocID,
+        record->classID,
+        className,
+        record->hash,
+        record->allocFile,
+        record->allocLine,
+        record->allocFunc,
+        ( record->freed ) ? "yes" : "no",
+        ( record->freed ) ? record->freeFile : "N/A",
+        ( record->freed ) ? record->freeLine : 0,
+        ( record->freed ) ? record->freeFunc : "N/A"
+    );
+}
+
+void __XSMemoryDebug_PrintRecords( BOOL active, BOOL freed )
+{
+    size_t i;
+    
+    for( i = 0; i < __xs_memory_records_count; i++ )
+    {
+        if( __xs_memory_records[ i ].freed == YES && freed == YES )
+        {
+            __XSMemoryDebug_PrintRecord( &( __xs_memory_records[ i ] ) );
+        }
+        else if( __xs_memory_records[ i ].freed == NO && active == YES )
+        {
+            __XSMemoryDebug_PrintRecord( &( __xs_memory_records[ i ] ) );
+        }
+    }
+}
+
+void __XSMemoryDebug_PrintStatistics( void )
+{
+    Str255       memTotal;
+    Str255       memActive;
+    
+    memset( memTotal,  0, 256 );
+    memset( memActive, 0, 256 );
+    
+    if( __xs_memory_total_memory < 1000 )
+    {
+        sprintf( ( char * )memTotal, "%lu bytes", __xs_memory_total_memory );
+    }
+    else if( __xs_memory_total_memory < 1000000 )
+    {
+        sprintf( ( char * )memTotal, "%.2f KB", ( double )__xs_memory_total_memory / ( double )1000 );
+    }
+    else if( __xs_memory_total_memory < 1000000000 )
+    {
+        sprintf( ( char * )memTotal, "%.2f MB", ( double )__xs_memory_total_memory / ( double )1000000 );
+    }
+    else if( __xs_memory_total_memory < 1000000000000 )
+    {
+        sprintf( ( char * )memTotal, "%.2f GB", ( double )__xs_memory_total_memory / ( double )1000000000 );
+    }
+    else
+    {
+        sprintf( ( char * )memTotal, "%.2f TB", ( double )__xs_memory_total_memory / ( double )1000000000000 );
+    }
+    
+    if( __xs_memory_total_memory_active < 1000 )
+    {
+        sprintf( ( char * )memActive, "%lu bytes", __xs_memory_total_memory_active );
+    }
+    else if( __xs_memory_total_memory_active < 1000000 )
+    {
+        sprintf( ( char * )memActive, "%.2f KB", ( double )__xs_memory_total_memory_active / ( double )1000 );
+    }
+    else if( __xs_memory_total_memory_active < 1000000000 )
+    {
+        sprintf( ( char * )memActive, "%.2f MB", ( double )__xs_memory_total_memory_active / ( double )1000000 );
+    }
+    else if( __xs_memory_total_memory_active < 1000000000000 )
+    {
+        sprintf( ( char * )memActive, "%.2f GB", ( double )__xs_memory_total_memory_active / ( double )1000000000 );
+    }
+    else
+    {
+        sprintf( ( char * )memActive, "%.2f TB", ( double )__xs_memory_total_memory_active / ( double )1000000000000 );
+    }
+    
+    printf( __XSMEMORY_HR );
+    printf
+    (
+        "#    \n"
+        "#    Memory statistics:\n"
+        "#    \n"
+        "#    Number of memory allocations:        %lu\n"
+        "#    Number of memory allocations active: %lu\n"
+        "#    Number of memory allocations freed:  %lu\n"
+        "#    Total memory usage:                  %s\n"
+        "#    Active memory in use:                %s\n"
+        "# \n",
+        __xs_memory_records_count,
+        __xs_memory_records_active,
+        __xs_memory_records_freed,
+        memTotal,
+        memActive
+    );
+}
+
+void __XSMemoryDebug_AskOption( void )
+{
+    unsigned char c;
+    
+    printf( __XSMEMORY_HR );
+    printf
+    (
+        "#    \n"
+        "#    Available options:\n"
+        "#    \n"
+        "#    c: continues the program's execution (default)\n"
+        "#    q: aborts the program's execution\n"
+        "#    s: prints the status of the memory allocations\n"
+        "#    p: prints all memory records (active and freed)\n"
+        "#    a: prints the active memory records\n"
+        "#    f: prints the freed memory records\n"
+        "# \n"
+    );
+    printf( __XSMEMORY_HR );
+    printf( "\nEnter your choice: " );
+    fflush( stdin );
+    
+    c = getchar();
+    
+    printf( "\n" );
+    
+    if( c == '\n' )
+    {
+        c = 'c';
+    }
+    else
+    {
+        while( getchar() != '\n' );
+    }
+    
+    switch( c )
+    {
+        case 'c':
+            
+            printf( "Continuing the program's execution...\n" );
+            __XSLog_Resume();
+            return;
+        
+        case 'q':
+            
+            printf( "Aborting the program's execution...\n" );
+            __XSLog_Resume();
+            pthread_exit( NULL );
+            exit( EXIT_FAILURE );
+            break;
+            
+        case 's':
+            
+            __XSMemoryDebug_PrintStatistics();
+            break;
+            
+        case 'p':
+            
+            __XSMemoryDebug_PrintRecords( YES, YES );
+            break;
+            
+        case 'a':
+            
+            __XSMemoryDebug_PrintRecords( YES, NO );
+            break;
+            
+        case 'f':
+            
+            __XSMemoryDebug_PrintRecords( NO, YES );
+            break;
+        
+        default:
+            
+            break;
+    }
+    
+    __XSMemoryDebug_AskOption();
+}
+
+void __XSMemoryDebug_Finalize( void )
+{
+    size_t i;
+    
+    if( __xs_memory_records_active == 0 || __xs_memory_fault_caught == YES )
+    {
+        return;
+    }
+    
+    XSLog( "Memory warning: %lu objects are not freed - leaking memory!", __xs_memory_records_active );
+    
+    for( i = 0; i < __xs_memory_records_count; i++ )
+    {
+        if( __xs_memory_records[ i ].freed == NO )
+        {
+            __XSMemoryDebug_Warning( "unfreed memory record at application exit point", &( __xs_memory_records[ i ] ) );
+        }
+    }
 }
