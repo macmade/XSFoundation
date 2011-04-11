@@ -103,6 +103,12 @@ void __XSMemoryDebug_Finalize( void );
 
 void __XSMemoryDebug_DumpRecord( __XSMemoryRecord * record );
 
+#ifdef __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+
+void __XSMemoryDebug_PrintBacktrace( void );
+
+#endif
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_MEMORY_DEBUG_H_ */

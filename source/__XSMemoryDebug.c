@@ -48,6 +48,7 @@ static size_t             __xs_memory_records_active      = 0;
 static size_t             __xs_memory_total_memory        = 0;
 static size_t             __xs_memory_total_memory_active = 0;
 static bool               __xs_memory_fault_caught        = NO;
+static unsigned int       __xs_memory_backtrace_skip      = 5;
 
 void __XSMemoryDebug_InstallSignalHandlers( void )
 {
@@ -399,6 +400,9 @@ void __XSMemoryDebug_AskOption( __XSMemoryRecord * record )
         "#    \n"
         "#    c: continues the program's execution (default)\n"
         "#    q: aborts the program's execution\n"
+        #ifdef __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+        "#    t: display the backtrace (function call stack)\n"
+        #endif
         "#    s: prints the status of the memory allocations\n"
         "#    p: prints all memory records (active and freed)\n"
         "#    a: prints the active memory records\n"
@@ -469,11 +473,21 @@ void __XSMemoryDebug_AskOption( __XSMemoryRecord * record )
             __XSMemoryDebug_DumpRecord( record );
             break;
         
+        #ifdef __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+        
+        case 't':
+            
+            __XSMemoryDebug_PrintBacktrace();
+            break;
+        
+        #endif
+        
         default:
             
             break;
     }
     
+    __xs_memory_backtrace_skip++;
     __XSMemoryDebug_AskOption( record );
 }
 
@@ -553,3 +567,32 @@ void __XSMemoryDebug_DumpRecord( __XSMemoryRecord * record )
     }
     printf( "# \n" );
 }
+
+#ifdef __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+
+void __XSMemoryDebug_PrintBacktrace( void )
+{
+    size_t  size;
+    size_t  i;
+    void  * trace[ 100 ];
+    char ** symbols;
+    
+    size    = backtrace( trace, 100 + __xs_memory_backtrace_skip );
+    symbols = backtrace_symbols( trace, size );
+    
+    printf( __XSMEMORY_HR );
+    printf( "# \n" );
+    printf( "#   Displaying %u stack frames:\n", ( int )( size - __xs_memory_backtrace_skip ) );
+    printf( "# \n" );
+    
+    for( i = __xs_memory_backtrace_skip; i < size; i++ )
+    {
+        printf( "#   %s\n", symbols[ i ] );
+    }
+    
+    printf( "# \n" );
+    
+    free( symbols );
+}
+
+#endif
