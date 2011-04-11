@@ -103,9 +103,9 @@ void XSRuntime_Initialize( void )
 {
     __inited = YES;
     
-    atexit( XSRuntime_Finalize );
-    atexit( XSApplication_Exit );
     atexit( __XSMemoryDebug_Finalize );
+    atexit( XSApplication_Exit );
+    atexit( XSRuntime_Finalize );
     
     __XSMemoryDebug_InstallSignalHandlers();
     
@@ -290,7 +290,7 @@ const char * XSRuntime_GetClassNameForClassID( XSClassID classID )
 {
     if( classID == 0 || classID > __class_count )
     {
-        return "XSNotAnObject";
+        return "N/A";
     }
     
     return __class_table[ classID - 1 ]->className;
