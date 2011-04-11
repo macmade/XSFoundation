@@ -71,10 +71,16 @@ void __XSArray_Destruct( void * object )
     
     array = ( __XSArray * )object;
     
-    for( i = 0; i < array->count; i++ )
+    if( array->values != NULL )
     {
-        XSRelease( array->values[ i ] );
+        for( i = 0; i < array->count; i++ )
+        {
+            if( array->values[ i ] != NULL )
+            {
+                XSRelease( array->values[ i ] );
+            }
+        }
+        
+        XSRelease( array->values );
     }
-    
-    XSRelease( array->values );
 }
