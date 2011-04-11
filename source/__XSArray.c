@@ -75,4 +75,6 @@ void __XSArray_Destruct( void * object )
     {
         XSRelease( array->values[ i ] );
     }
+    
+    XSRelease( array->values );
 }
