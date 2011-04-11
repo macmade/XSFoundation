@@ -37,6 +37,7 @@
 
 #include "XS.h"
 #include "__XSMemory.h"
+#include "__XSMemoryDebug.h"
 
 extern XSClassID __XSAutoreleasePoolClassID;
 
@@ -137,12 +138,15 @@ void * XSAllocWithInfos( const char * file, int line, const char * func, size_t 
     
     __xsmemory_alloc++;
     
+    __XSMemoryDebug_NewRecord( o, file, line, func );
+    
     return ptr;
 }
 
 void * XSReallocWithInfos( const char * file, int line, const char * func, void * ptr, size_t size )
 {
-    __XSMemoryObject * o;
+    __XSMemoryObject * o1;
+    __XSMemoryObject * o2;
     void             * data;
     
     ( void )file;
@@ -154,18 +158,21 @@ void * XSReallocWithInfos( const char * file, int line, const char * func, void 
         return NULL;
     }
     
-    o    = __XSMemory_GetMemoryObject( ptr );
-    data = realloc( o->data, size );
+    o1    = __XSMemory_GetMemoryObject( ptr );
+    o2    = o1;
+    data = realloc( o2, size + sizeof( __XSMemoryObject ) );
     
     if( data == NULL )
     {
         return NULL;
     }
     
-    o->data = data;
-    o->size = size;
+    o2->data = data;
+    o2->size = size;
     
-    return o->data;
+    __XSMemoryDebug_UpdateRecord( o1, o2, file, line, func );
+    
+    return o2->data;
 }
 
 void * XSRetain( void * ptr )
@@ -213,6 +220,8 @@ void * XSReleaseWithInfos( const char * file, int line, const char * func, void 
                 cls->destruct( ptr );
             }
         }
+        
+        __XSMemoryDebug_FreeRecord( o, file, line, func );
         
         free( o );
         

@@ -77,6 +77,7 @@ int main( int argc, char * argv[] )
     XSString      str3;
     XSArray       arr;
     XSTimer       timer;
+    char        * sigsegv;
     
     app  = XSApplication_Start( argc, ( const char ** )argv );
     
@@ -137,21 +138,17 @@ int main( int argc, char * argv[] )
     XSThread_Detach( thread_test, NULL );
     XSThread_Detach( thread_test, str1 );
     
-    timer = XSTimer_Init( XSTimer_Alloc(), timer_test, 1000 );
+    timer = XSTimer_Init( XSTimer_Alloc(), timer_test, 100 );
     
     XSTimer_RunOnce( timer );
     XSTimer_RunAndRepeat( timer );
     
     XSRelease( timer );
+    XSRelease( arr );
     XSRelease( str1 );
     XSRelease( str2 );
-    XSRelease( str3 );
-    XSRelease( arr );
     
-    while( XSTimer_IsValid( timer ) == YES )
-    {
-        usleep( 100 );
-    }
+    /* XSRelease( str3 ); */
     
-    return XSApplication_Exit( EXIT_SUCCESS );
+    return EXIT_SUCCESS;
 }

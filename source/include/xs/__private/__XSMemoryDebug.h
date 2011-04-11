@@ -46,6 +46,18 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 #include "__XSMemory.h"
 
+#if defined( __APPLE__ )
+
+#include <execinfo.h>
+#define __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+
+#elif defined( __GLIBC__ ) && defined( HAVE_EXECINFO_H )
+
+#include <execinfo.h>
+#define __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+
+#endif
+
 #define __XSMEMORY_RECORD_ALLOC 256
 
 typedef struct __XSMemoryRecord_Struct
@@ -65,13 +77,29 @@ typedef struct __XSMemoryRecord_Struct
 }
 __XSMemoryRecord;
 
-__XSMemoryRecord * XSMemoryDebug_GetRecord( __XSMemoryObject * ptr );
+void __XSMemoryDebug_InstallSignalHandlers( void );
 
-__XSMemoryRecord * XSMemoryDebug_NewRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func );
+__XSMemoryRecord * __XSMemoryDebug_GetRecord( __XSMemoryObject * ptr );
 
-__XSMemoryRecord * XSMemoryDebug_UpdateRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func );
+__XSMemoryRecord * __XSMemoryDebug_NewRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func );
 
-__XSMemoryRecord * XSMemoryDebug_FreeRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func );
+__XSMemoryRecord * __XSMemoryDebug_UpdateRecord( __XSMemoryObject * oldPtr, __XSMemoryObject * newPtr, const char * file, int line, const char * func );
+
+__XSMemoryRecord * __XSMemoryDebug_FreeRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func );
+
+void __XSMemoryDebug_SignalHandler( int signo );
+
+void __XSMemoryDebug_Warning( const char * message, __XSMemoryRecord * record );
+
+void __XSMemoryDebug_PrintRecord( __XSMemoryRecord * record );
+
+void __XSMemoryDebug_PrintRecords( BOOL active, BOOL freed );
+
+void __XSMemoryDebug_PrintStatistics( void );
+
+void __XSMemoryDebug_AskOption( void );
+
+void __XSMemoryDebug_Finalize( void );
 
 XS_EXTERN_C_END
 

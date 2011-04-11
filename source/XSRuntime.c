@@ -37,6 +37,7 @@
 
 #include "XS.h"
 #include "__XSMemory.h"
+#include "__XSMemoryDebug.h"
 
 /*!
  * define       __XS_RUNTIME_CLASS_TABLE_SIZE
@@ -102,7 +103,11 @@ void XSRuntime_Initialize( void )
 {
     __inited = YES;
     
+    atexit( __XSMemoryDebug_Finalize );
+    atexit( XSApplication_Exit );
     atexit( XSRuntime_Finalize );
+    
+    __XSMemoryDebug_InstallSignalHandlers();
     
     __XSAutoreleasePool_Initialize();
     __XSArray_Initialize();
@@ -128,18 +133,9 @@ void XSRuntime_Initialize( void )
 
 void XSRuntime_Finalize( void )
 {
-    size_t alloc;
-    
     __inited = NO;
     
     XSRelease( __class_table );
-    
-    alloc = XSGetAllocationCount();
-    
-    if( alloc > 0 )
-    {
-        XSLog( "Warning: %i objects have not been freed - possible memory leak!", ( unsigned long )alloc );
-    }
 }
 
 XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls )
@@ -288,6 +284,25 @@ XSClassID XSRuntime_GetTypeIDForObject( XSObject object )
     }
     
     return XSRuntime_GetClassIDForClass( XSRuntime_GetClassForObject( object ) );
+}
+
+const char * XSRuntime_GetClassNameForClassID( XSClassID classID )
+{
+    if( classID == 0 || classID > __class_count )
+    {
+        return "N/A";
+    }
+    
+    return __class_table[ classID - 1 ]->className;
+}
+
+const char * XSRuntime_GetClassNameForClass( XSClass cls )
+{
+    XSClassInfos * _cls;
+    
+    _cls = ( XSClassInfos * )cls;
+    
+    return _cls->className;
 }
 
 const char * XSRuntime_GetClassNameForObject( XSObject object )

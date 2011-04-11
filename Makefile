@@ -91,12 +91,12 @@ $(DIR_BUILD)%$(EXT_LIB_DYNAMIC): $(_FILES_SRC_O_BUILD)
 	
 __copyright:
 	@echo 
-	@echo "----------------------------------------------------------------------"
-	@echo "XSFoundation - XEOS C Foundation Library"
-	@echo 
-	@echo "Copyright (c) 2011, Jean-David Gadina <macmade@eosgarden.com>"
-	@echo "Distributed under the Boost Software License, Version 1.0."
-	@echo "----------------------------------------------------------------------"
+	@echo "#---------------------------------------------------------------------"
+	@echo "# XSFoundation - XEOS C Foundation Library"
+	@echo "# "
+	@echo "# Copyright (c) 2011, Jean-David Gadina <macmade@eosgarden.com>"
+	@echo "# Distributed under the Boost Software License, Version 1.0."
+	@echo "#---------------------------------------------------------------------"
 	@echo 
 
 __libclean:

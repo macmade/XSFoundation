@@ -80,6 +80,7 @@ void __XSAutoreleasePool_Initialize( void )
 void __XSAutoreleasePool_Destruct( void * object )
 {
     __XSMemory_AutoreleasePoolDrain( ( __XSAutoreleasePool * )object );
+    XSRelease( ( ( __XSAutoreleasePool * )object )->objects );
     __xsmemory_ar_pools_num--;
 }
 

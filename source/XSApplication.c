@@ -68,7 +68,7 @@ XSStatic XSApplication XSApplication_Start( int argc, const char ** argv )
     return ( XSApplication )__xsapp;
 }
 
-XSStatic int XSApplication_Exit( int status )
+XSStatic void XSApplication_Exit( void )
 {
     XSRelease( __xsarp );
     XSRelease( __xsapp );
@@ -77,8 +77,6 @@ XSStatic int XSApplication_Exit( int status )
     __xsapp = NULL;
     
     pthread_exit( NULL );
-    
-    return status;
 }
 
 XSStatic XSApplication XSApplication_SharedApplication( void )
@@ -111,7 +109,7 @@ void XSApplication_PrintHelp( XSApplication xsThis, const char * description )
     
     if( _app->arg_count > 0 )
     {
-        printf( "# \n# Arguments:\n# \n" );
+        printf( "# \n#    Arguments:\n# \n" );
         
         for( i = 0; i < _app->arg_count; i++ )
         {
