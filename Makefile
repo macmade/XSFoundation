@@ -3,7 +3,7 @@ LIBNAME                 = libxeos
 CC                      = gcc
 LIBTOOL                 = glibtool
 LIBTOOL_DYNAMIC         = libtool
-ARGS_CC                 = -std=c99 -Os -pedantic -Werror -Wall -Wextra -Wbad-function-cast -Wdeclaration-after-statement -Werror-implicit-function-declaration -Wmissing-braces -Wmissing-declarations -Wmissing-field-initializers -Wmissing-prototypes -Wnested-externs -Wold-style-definition -Wparentheses -Wreturn-type -Wshadow -Wsign-compare -Wstrict-prototypes -Wswitch -Wuninitialized -Wunknown-pragmas -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value -Wunused-variable
+ARGS_CC                 = -std=c99 -G -pedantic -Werror -Wall -Wextra -Wbad-function-cast -Wdeclaration-after-statement -Werror-implicit-function-declaration -Wmissing-braces -Wmissing-declarations -Wmissing-field-initializers -Wmissing-prototypes -Wnested-externs -Wold-style-definition -Wparentheses -Wreturn-type -Wshadow -Wsign-compare -Wstrict-prototypes -Wswitch -Wunknown-pragmas -Wunused-function -Wunused-label -Wunused-parameter -Wunused-value -Wunused-variable
 ARGS_LIBTOOL_LO         = --mode=compile
 ARGS_LIBTOOL_LA         = --mode=link
 ARGS_LIBTOOL_DYLIB      = -dynamic -flat_namespace -lSystem -undefined suppress -macosx_version_min 10.6
