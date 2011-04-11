@@ -85,7 +85,7 @@ int main( int argc, char * argv[] )
     XSApplication_RegisterArgument( app, "--int",     XSApplicationArgumentTypeInteger, "A test integer" );
     XSApplication_RegisterArgument( app, "--string",  XSApplicationArgumentTypeString,  "A test string" );
     XSApplication_RegisterArgument( app, "--float",   XSApplicationArgumentTypeFloat,   "A test float" );
-    XSApplication_RegisterArgument( app, "--uint",    XSApplicationArgumentTypeUnsignedInteger );
+    XSApplication_RegisterArgument( app, "--uint",    XSApplicationArgumentTypeUnsignedInteger, NULL );
     
     XSApplication_PrintHelp( app, "A test application for the XSFoundation" );
     
@@ -131,7 +131,7 @@ int main( int argc, char * argv[] )
     XSLog( "%s%s%s", XSString_CString( str1 ), XSString_CString( str2 ), XSString_CString( str3 ) );
     XSLog( "hello, universe: %i %@ %i %@ %i", 42, str1, 43, app, 44 );
     XSLog( "Array value 0: %@", XSArray_ValueAtIndex( arr, 0 ) );
-    XSLog( "%@", XSAutorelease( XSString_StringByAppendingString( str1, str2 ) ) );
+    XSLog( "%@", XSString_StringByAppendingString( str1, str2 ) );
     XSLog( "%@", arr );
     XSLog( "%@", XSAutorelease( XSRuntime_CreateInstanceOfClassWithName( "XSString" ) ) );
     
@@ -145,10 +145,7 @@ int main( int argc, char * argv[] )
     
     XSRelease( timer );
     XSRelease( arr );
-    XSRelease( str1 );
-    XSRelease( str2 );
-    
-    /* XSRelease( str3 ); */
+    /*XSRelease( str3 );*/
     
     return EXIT_SUCCESS;
 }
