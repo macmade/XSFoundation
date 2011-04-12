@@ -156,7 +156,7 @@ void XSApplication_PrintHelp( XSApplication xsThis, const char * description )
             }
             else
             {
-                printf( "#     %p\n# \n", help );
+                printf( "#    %s\n# \n", help );
             }
         }
     
