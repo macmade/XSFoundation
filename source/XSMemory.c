@@ -96,7 +96,7 @@ void * XSAllocWithInfos( const char * file, int line, const char * func, size_t 
     
     va_end( args );
     
-    o = calloc( sizeof( __XSMemoryObject ) + size + 8, 1 );
+    o = calloc( sizeof( __XSMemoryObject ) + size + 12, 1 );
     
     if( o == NULL )
     {
@@ -116,27 +116,35 @@ void * XSAllocWithInfos( const char * file, int line, const char * func, size_t 
     o->allocID     = allocID++;
     o->size        = size;
     
-    o->fence[ 0  ] = 'X';
-    o->fence[ 1  ] = 'S';
-    o->fence[ 2  ] = 'M';
-    o->fence[ 3  ] = 'E';
+    o->fence[ 0  ] = 0;
+    o->fence[ 1  ] = 'X';
+    o->fence[ 2  ] = 'S';
+    o->fence[ 3  ] = '_';
     o->fence[ 4  ] = 'M';
-    o->fence[ 5  ] = 'D';
-    o->fence[ 6  ] = 'A';
-    o->fence[ 7  ] = 'T';
+    o->fence[ 5  ] = 'E';
+    o->fence[ 6  ] = 'M';
+    o->fence[ 7  ] = 'D';
+    o->fence[ 8  ] = 'A';
+    o->fence[ 9  ] = 'T';
+    o->fence[ 10 ] = 'A';
+    o->fence[ 11 ] = 0;
     
     ptr     =  ( char * )o;
     ptr    += ( sizeof( __XSMemoryObject ) );
     o->data = ptr;
     
-    ptr[ size + 0 ] = 'X';
-    ptr[ size + 1 ] = 'S';
-    ptr[ size + 2 ] = 'M';
-    ptr[ size + 3 ] = 'E';
-    ptr[ size + 4 ] = 'M';
-    ptr[ size + 5 ] = 'D';
-    ptr[ size + 6 ] = 'A';
-    ptr[ size + 7 ] = 'T';
+    ptr[ size + 0  ] = 0;
+    ptr[ size + 1  ] = 'X';
+    ptr[ size + 2  ] = 'S';
+    ptr[ size + 3  ] = '_';
+    ptr[ size + 4  ] = 'M';
+    ptr[ size + 5  ] = 'E';
+    ptr[ size + 6  ] = 'M';
+    ptr[ size + 7  ] = 'D';
+    ptr[ size + 8  ] = 'A';
+    ptr[ size + 9  ] = 'T';
+    ptr[ size + 10 ] = 'A';
+    ptr[ size + 11 ] = 0;
     
     if( classID > 0 )
     {
@@ -162,6 +170,7 @@ void * XSReallocWithInfos( const char * file, int line, const char * func, void 
     __XSMemoryObject * o1;
     __XSMemoryObject * o2;
     void             * data;
+    char             * cptr;
     
     ( void )file;
     ( void )line;
@@ -174,7 +183,7 @@ void * XSReallocWithInfos( const char * file, int line, const char * func, void 
     
     o1    = __XSMemory_GetMemoryObject( ptr );
     o2    = o1;
-    data = realloc( o2, size + sizeof( __XSMemoryObject ) );
+    data = realloc( o2, size + sizeof( __XSMemoryObject ) + 12 );
     
     if( data == NULL )
     {
@@ -183,6 +192,20 @@ void * XSReallocWithInfos( const char * file, int line, const char * func, void 
     
     o2->data = data;
     o2->size = size;
+    cptr     = ( char * )data;
+    
+    cptr[ size + 0  ] = 0;
+    cptr[ size + 1  ] = 'X';
+    cptr[ size + 2  ] = 'S';
+    cptr[ size + 3  ] = '_';
+    cptr[ size + 4  ] = 'M';
+    cptr[ size + 5  ] = 'E';
+    cptr[ size + 6  ] = 'M';
+    cptr[ size + 7  ] = 'D';
+    cptr[ size + 8  ] = 'A';
+    cptr[ size + 9  ] = 'T';
+    cptr[ size + 10 ] = 'A';
+    cptr[ size + 11 ] = 0;
     
     __XSMemoryDebug_UpdateRecord( o1, o2, file, line, func );
     

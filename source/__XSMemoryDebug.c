@@ -532,7 +532,7 @@ void __XSMemoryDebug_DumpRecord( __XSMemoryRecord * record )
     printf( "# \n" );
     
     ptr  = ( unsigned char * )record->object;
-    size = record->size + sizeof( __XSMemoryObject ) + 8;
+    size = record->size + sizeof( __XSMemoryObject ) + 12;
     
     for( i = 0; i < size; i += 24 )
     {

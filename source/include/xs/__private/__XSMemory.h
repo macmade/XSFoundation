@@ -83,7 +83,7 @@ typedef struct ___XSMemoryObject_Struct
     XSClassID     classID;
     Str255        hash;
     void        * data;
-    unsigned char fence[ 8 ];
+    unsigned char fence[ 12 ];
 }
 __XSMemoryObject;
 
