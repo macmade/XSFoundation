@@ -119,7 +119,7 @@ XSStatic XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode )
     char        mode[ 4 ];
     BOOL        binary;
     
-    memset( mode, 0, 4 );
+    memset( ( char * )mode, 0, ( size_t )4 );
     
     binary   = ( openMode & XSFileOpenModeBinary ) ? YES : NO;
     openMode = openMode & 0xFE;
@@ -128,38 +128,39 @@ XSStatic XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode )
     {
         case XSFileOpenModeRead:
             
-            strcat( mode, ( binary ) ? "rb" : "r" );
+            strcat( mode, ( binary == YES ) ? "rb" : "r" );
             break;
             
         case XSFileOpenModeWrite:
             
-            strcat( mode, ( binary ) ? "wb" : "r" );
+            strcat( mode, ( binary == YES ) ? "wb" : "r" );
             break;
             
         case XSFileOpenModeAppend:
             
-            strcat( mode, ( binary ) ? "ab" : "r" );
+            strcat( mode, ( binary == YES ) ? "ab" : "r" );
             break;
             
         case XSFileOpenModeApendAtEnd:
             
-            strcat( mode, ( binary ) ? "ab+" : "a" );
+            strcat( mode, ( binary == YES ) ? "ab+" : "a" );
             break;
             
         case XSFileOpenModeUpdate:
             
-            strcat( mode, ( binary ) ? "rb+" : "r+" );
+            strcat( mode, ( binary == YES ) ? "rb+" : "r+" );
             break;
             
         case XSFileOpenModeUpdateDiscard:
             
-            strcat( mode, ( binary ) ? "wb+" : "w+" );
+            strcat( mode, ( binary == YES ) ? "wb+" : "w+" );
             break;
-    }
-    
-    if( binary )
-    {
-        strcat( mode, "b" );
+            
+        default:
+            
+            strcat( mode, "r" );
+            break;
+            
     }
     
     if( NULL == ( fp = fopen( filename, mode ) ) )
@@ -174,11 +175,11 @@ XSStatic XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode )
     
     file->fp = fp;
     
-    memset(  file->filename,      0, FILENAME_MAX );
-    memset(  file->mode,          0, 4 );
+    memset(  file->filename,      0, ( size_t )FILENAME_MAX );
+    memset(  file->mode,          0, ( size_t )4 );
     memset(  &( file->stat_buf ), 0, sizeof( struct stat ) );
     strcpy(  file->filename, filename );
-    strncpy( file->mode, mode, 3 );
+    strncpy( file->mode, mode, ( size_t )3 );
     __XSFile_UpdateStat( file );
     
     file->need_init  = NO;
@@ -188,19 +189,19 @@ XSStatic XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode )
     file->readable   = NO;
     file->writeable  = NO;
     
-    if( strncmp( mode, "r", 1 ) == 0 )
+    if( strncmp( mode, "r", ( size_t )1 ) == 0 )
     {
         file->readable  = YES;
-        file->writeable = ( strlen( mode ) > 1 && strncmp( mode + 1, "+", 1 ) ) ? YES : NO;
+        file->writeable = ( strlen( mode ) > 1 && strncmp( mode + 1, "+", ( size_t )1 ) ) ? YES : NO;
     }
-    else if( strncmp( mode, "w", 1 ) == 0 )
+    else if( strncmp( mode, "w", ( size_t )1 ) == 0 )
     {
-        file->readable  = ( strlen( mode ) > 1 && strncmp( mode + 1, "+", 1 ) ) ? YES : NO;
+        file->readable  = ( strlen( mode ) > 1 && strncmp( mode + 1, "+", ( size_t )1 ) ) ? YES : NO;
         file->writeable = YES;
     }
-    else if( strncmp( mode, "a", 1 ) == 0 )
+    else if( strncmp( mode, "a", ( size_t )1 ) == 0 )
     {
-        file->readable  = ( strlen( mode ) > 1 && strncmp( mode + 1, "+", 1 ) ) ? YES : NO;
+        file->readable  = ( strlen( mode ) > 1 && strncmp( mode + 1, "+", ( size_t )1 ) ) ? YES : NO;
         file->writeable = YES;
     }
     
@@ -332,7 +333,7 @@ XSInteger XSFile_Seek( XSFile xsThis, XSInteger offset, XSFileSeekPosition origi
     
     __XSFILE_INIT( _f );
     
-    return fseek( _f->fp, offset, origin );
+    return fseek( _f->fp, offset, ( int )origin );
 }
 
 XSInteger XSFile_Tell( XSFile xsThis )
@@ -642,7 +643,7 @@ XSInteger XSFile_PutBits( XSFile xsThis, uint64_t bits, XSUInteger count )
         return -1;
     }
     
-    bytes  = ( XSUInteger )floor( count / 8 );
+    bytes  = ( XSUInteger )floor( ( count / 8 ) );
     count -= bytes * 8;
     
     if( bytes > 0 )
@@ -727,7 +728,7 @@ XSFloat XSFile_HumanReadableSize( XSFile xsThis, char unit[] )
     _f    = ( __XSFile * )xsThis;
     bytes = XSFile_Size( xsThis );
     
-    memset( unit, 0, 3 );
+    memset( unit, 0, ( size_t )3 );
     
     if( bytes < 1000000 )
     {

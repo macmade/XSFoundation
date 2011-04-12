@@ -115,7 +115,7 @@ void __XSVLog( const char * fmt, va_list args )
     }
     else
     {
-        exec = "unknown";
+        exec = ( char * )"unknown";
     }
     
     #ifdef __MACH__

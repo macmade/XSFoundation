@@ -72,7 +72,7 @@ void __XSThread_Initialize( void );
  * param        A pointer to the thread object (XSThread)
  * @result      Always NULL
  */
-void * __XSThread_Run( void * thread );
+void * __XSThread_Run( void * thread ) NORETURN_ATTRIBUTE;
 
 XS_EXTERN_C_END
 

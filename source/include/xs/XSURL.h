@@ -58,8 +58,6 @@ XSStatic XSURL XSURL_Alloc( void );
 
 XSURL XSURL_Init( XSURL xsThis );
 
-XSURL XSURL_Init( XSURL xsThis );
-
 XS_EXTERN_C_END
 
 #endif /* _XS_URL_H_ */

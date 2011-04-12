@@ -163,16 +163,16 @@ XSInteger XSFile_Close( XSFile xsThis );
  * @param       xsThis    The file object
  * @result      The number of characters written, or negative value on error
  */
-XSInteger XSFile_Printf( XSFile xsThis, const char * format, ... );
+XSInteger XSFile_Printf( XSFile xsThis, const char * format, ... ) FORMAT_ATTRIBUTE( printf, 2, 3 );
 
 /*!
  * @function    XSFile_VPrintf
  * @abstract    Equivalent to fprintf with variable argument list replaced by arg.
- * @param       xsThis    The file object
+ * @param       xsThis  The file object
  * @param       arg     The variable arguments list
  * @result      The number of characters written, or negative value on error
  */
-XSInteger XSFile_VPrintf( XSFile xsThis, const char * format, va_list arg );
+XSInteger XSFile_VPrintf( XSFile xsThis, const char * format, va_list arg ) FORMAT_ATTRIBUTE( printf, 2, 0 );
 
 /*!
  * @function    XSFile_Getc

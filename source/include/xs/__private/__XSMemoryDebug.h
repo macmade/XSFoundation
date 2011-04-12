@@ -87,7 +87,7 @@ __XSMemoryRecord * __XSMemoryDebug_UpdateRecord( __XSMemoryObject * oldPtr, __XS
 
 __XSMemoryRecord * __XSMemoryDebug_ReleaseRecord( __XSMemoryObject * ptr, BOOL marsAsFree, const char * file, int line, const char * func );
 
-void __XSMemoryDebug_SignalHandler( int signo );
+void __XSMemoryDebug_SignalHandler( int signo ) NORETURN_ATTRIBUTE;
 
 void __XSMemoryDebug_Warning( const char * message, __XSMemoryRecord * record );
 

@@ -40,9 +40,6 @@
 
 extern XSClassID __XSThreadClassID;
 
-/* Prototypes for the private functions */
-extern void * __XSThread_Run( void * thread );
-
 XSStatic XSThread XSThread_Alloc( void )
 {
     return ( XSThread )XSRuntime_CreateInstance( __XSThreadClassID );

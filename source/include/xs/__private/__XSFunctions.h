@@ -52,7 +52,7 @@ XS_EXTERN_C_BEGIN
  * @param       args    Arguments for the format
  * @result      void
  */
-void __XSVLog( const char * fmt, va_list args );
+void __XSVLog( const char * fmt, va_list args ) FORMAT_ATTRIBUTE( printf, 1, 0 );
 
 /*!
  * @function    __XSLog_Pause

@@ -47,7 +47,7 @@ XSStatic XSArray XSArray_Alloc( void )
 
 XSArray XSArray_Init( XSArray xsThis )
 {
-    return XSArray_InitWithCapacity( xsThis, XSARRAY_DEFAULT_CAPACITY );
+    return XSArray_InitWithCapacity( xsThis, ( XSUInteger )XSARRAY_DEFAULT_CAPACITY );
 }
 
 XSArray XSArray_InitWithCapacity( XSArray xsThis, XSUInteger capacity )

@@ -52,17 +52,17 @@ XSColor XSColor_Init( XSColor xsThis )
 
 XSColor XSColor_InitWithRGB( XSColor xsThis, XSFloat r, XSFloat g, XSFloat b )
 {
-    return XSColor_InitWithRGBA( xsThis, r, g, b, 100 );
+    return XSColor_InitWithRGBA( xsThis, r, g, b, ( XSFloat )100 );
 }
 
 XSColor XSColor_InitWithHSL( XSColor xsThis, XSFloat h, XSFloat s, XSFloat l )
 {
-    return XSColor_InitWithHSLA( xsThis, h, s, l, 100 );
+    return XSColor_InitWithHSLA( xsThis, h, s, l, ( XSFloat )100 );
 }
 
 XSColor XSColor_InitWithHSV( XSColor xsThis, XSFloat h, XSFloat s, XSFloat v )
 {
-    return XSColor_InitWithHSVA( xsThis, h, s, v, 100 );
+    return XSColor_InitWithHSVA( xsThis, h, s, v, ( XSFloat )100 );
 }
 
 XSColor XSColor_InitWithRGBA( XSColor xsThis, XSFloat r, XSFloat g, XSFloat b, XSFloat a )
@@ -118,27 +118,27 @@ XSColor XSColor_InitWithHSVA( XSColor xsThis, XSFloat h, XSFloat s, XSFloat v, X
 
 XSAutoreleased XSStatic XSColor XSColor_BlackColor( void )
 {
-    return XSAutorelease( XSColor_InitWithRGB( XSColor_Alloc(), 0, 0, 0 ) );
+    return XSAutorelease( XSColor_InitWithRGB( XSColor_Alloc(), ( XSFloat )0, ( XSFloat )0, ( XSFloat )0 ) );
 }
 
 XSAutoreleased XSStatic XSColor XSColor_WhiteColor( void )
 {
-    return XSAutorelease( XSColor_InitWithRGB( XSColor_Alloc(), 255, 255, 255 ) );
+    return XSAutorelease( XSColor_InitWithRGB( XSColor_Alloc(), ( XSFloat )255, ( XSFloat )255, ( XSFloat )255 ) );
 }
 
 XSAutoreleased XSStatic XSColor XSColor_RedColor( void )
 {
-    return XSAutorelease( XSColor_InitWithRGB( XSColor_Alloc(), 255, 0, 0 ) );
+    return XSAutorelease( XSColor_InitWithRGB( XSColor_Alloc(), ( XSFloat )255, ( XSFloat )0, ( XSFloat )0 ) );
 }
 
 XSAutoreleased XSStatic XSColor XSColor_GreenColor( void )
 {
-    return XSAutorelease( XSColor_InitWithRGB( XSColor_Alloc(), 0, 255, 0 ) );
+    return XSAutorelease( XSColor_InitWithRGB( XSColor_Alloc(), ( XSFloat )0, ( XSFloat )255, ( XSFloat )0 ) );
 }
 
 XSAutoreleased XSStatic XSColor XSColor_BlueColor( void )
 {
-    return XSAutorelease( XSColor_InitWithRGB( XSColor_Alloc(), 0, 0, 255 ) );
+    return XSAutorelease( XSColor_InitWithRGB( XSColor_Alloc(), ( XSFloat )0, ( XSFloat )0, ( XSFloat )255 ) );
 }
 
 XSFloat XSColor_GetRed( XSColor xsThis )

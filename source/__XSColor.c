@@ -346,6 +346,7 @@ void __XSColor_HSLToRGB( __XSColor * color )
                 case 0: vh = h + ( 1 / 3 ); break;
                 case 1: vh = h;             break;
                 case 2: vh = h - ( 1 / 3 ); break;
+                default:                    break;
             }
             
             if( vh < 0 )
@@ -379,6 +380,7 @@ void __XSColor_HSLToRGB( __XSColor * color )
                 case 0: r = v; break;
                 case 1: g = v; break;
                 case 2: b = v; break;
+                default:       break;
             }
         }
         

@@ -174,6 +174,42 @@ XS_EXTERN_C_BEGIN
 #endif
 
 /*!
+ * @define      FORMAT_ATTRIBUTE
+ * @abstract    Standardization of the format compiler attribute
+ * @description Not all compiler support this attribute, so it may be defined
+ *              to nothing.
+ */
+#if defined( __GNUC__ ) && ( ( __GNUC__ >= 4 ) || ( ( __GNUC__ == 3 ) && ( __GNUC_MINOR__ >= 1 ) ) )
+    #define FORMAT_ATTRIBUTE( f, s, v ) __attribute__( ( format( f, s, v ) ) )
+#else
+    #define FORMAT_ATTRIBUTE( f, s, v )
+#endif
+
+/*!
+ * @define      CONST_ATTRIBUTE
+ * @abstract    Standardization of the const compiler attribute
+ * @description Not all compiler support this attribute, so it may be defined
+ *              to nothing.
+ */
+#if defined( __GNUC__ ) && ( ( __GNUC__ >= 4 ) || ( ( __GNUC__ == 3 ) && ( __GNUC_MINOR__ >= 1 ) ) )
+    #define CONST_ATTRIBUTE __attribute__( ( const ) )
+#else
+    #define CONST_ATTRIBUTE
+#endif
+
+/*!
+ * @define      NORETURN_ATTRIBUTE
+ * @abstract    Standardization of the noreturn compiler attribute
+ * @description Not all compiler support this attribute, so it may be defined
+ *              to nothing.
+ */
+#if defined( __GNUC__ ) && ( ( __GNUC__ >= 4 ) || ( ( __GNUC__ == 3 ) && ( __GNUC_MINOR__ >= 1 ) ) )
+    #define NORETURN_ATTRIBUTE __attribute__( ( noreturn ) )
+#else
+    #define NORETURN_ATTRIBUTE
+#endif
+
+/*!
  * @define      XS_INLINE
  * @abstract    Standardization of the inline compiler keywork
  */

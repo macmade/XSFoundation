@@ -47,7 +47,7 @@ XSStatic XSDictionary XSDictionary_Alloc( void )
 
 XSDictionary XSDictionary_Init( XSDictionary xsThis )
 {
-    return XSDictionary_InitWithCapacity( xsThis, XSDICTIONARY_DEFAULT_CAPACITY );
+    return XSDictionary_InitWithCapacity( xsThis, ( XSUInteger )XSDICTIONARY_DEFAULT_CAPACITY );
 }
 
 XSDictionary XSDictionary_InitWithCapacity( XSDictionary xsThis, XSUInteger capacity )

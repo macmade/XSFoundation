@@ -78,7 +78,6 @@ static size_t __class_count;
 
 /* Prototypes for the initialization of the core runtime classes */
 void __XSMemoryObject_Initialize( void );
-void __XSAutoreleasePool_Initialize( void );
 void __XSApplication_Initialize( void );
 void __XSApplicationArgument_Initialize( void );
 void __XSArray_Initialize( void );
