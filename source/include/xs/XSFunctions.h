@@ -144,7 +144,7 @@ XSFloat XSRadiansToDegrees( XSFloat x );
  * @param       ...     Arguments for the format
  * @result      void
  */
-void XSLog( const char * fmt, ... ) FORMAT_ATTRIBUTE( printf, 1, 2 );
+void XSLog( const char * fmt, ... ) FORMAT_ATTRIBUTE( printf, 1, 0 );
 
 /*!
  * @function    XSVLog
