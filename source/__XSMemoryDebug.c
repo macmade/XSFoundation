@@ -269,10 +269,11 @@ void __XSMemoryDebug_PrintRecord( __XSMemoryRecord * record )
         "#    \n"
         "#    Address:               %p\n"
         "#    Size:                  %s\n"
-        "#    Allocation ID:         %lu\n"
-        "#    Class ID:              %lu\n"
+        "#    Allocation ID:         %lu (0x%08X)\n"
+        "#    Class ID:              %lu (0x%08X)\n"
         "#    Class name:            %s\n"
         "#    Memory hash:           %s\n"
+        "#    Retain count:          %lu\n"
         "#    Allocated in file:     %s\n"
         "#    Allocated at line:     %i\n"
         "#    Allocated in function: %s\n"
@@ -284,9 +285,12 @@ void __XSMemoryDebug_PrintRecord( __XSMemoryRecord * record )
         ( void * )record->object,
         size,
         record->allocID,
+        ( unsigned int )record->allocID,
         record->classID,
+        ( unsigned int )record->classID,
         className,
         record->hash,
+        record->object->retainCount,
         record->allocFile,
         record->allocLine,
         record->allocFunc,
