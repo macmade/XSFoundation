@@ -77,6 +77,7 @@ int main( int argc, char * argv[] )
     XSString      str3;
     XSArray       arr;
     XSTimer       timer;
+    char        * sigsegv;
     
     app  = XSApplication_Start( argc, ( const char ** )argv );
     
@@ -145,6 +146,13 @@ int main( int argc, char * argv[] )
     XSRelease( timer );
     XSRelease( arr );
     /*XSRelease( str3 );*/
+    
+    ( void )sigsegv;
+    
+    /*
+    sigsegv      = NULL;
+    *( sigsegv ) = 0;
+    */
     
     return EXIT_SUCCESS;
 }
