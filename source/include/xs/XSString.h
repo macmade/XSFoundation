@@ -98,7 +98,7 @@ XSString XSString_InitWithContentOfFile( XSString xsThis, char * path );
  * @param       i       The index
  * @result      A new string object
  */
-XSString XSString_SubstringFromIndex( XSString xsThis, size_t i );
+XSAutoreleased XSString XSString_SubstringFromIndex( XSString xsThis, size_t i );
 
 /*!
  * @function    XSString_SubstringToIndex
@@ -107,7 +107,7 @@ XSString XSString_SubstringFromIndex( XSString xsThis, size_t i );
  * @param       i       The index
  * @result      A new string object
  */
-XSString XSString_SubstringToIndex( XSString xsThis, size_t i );
+XSAutoreleased XSString XSString_SubstringToIndex( XSString xsThis, size_t i );
 
 /*!
  * @function    XSString_SubstringWithRange
@@ -116,7 +116,7 @@ XSString XSString_SubstringToIndex( XSString xsThis, size_t i );
  * @param       range   The range
  * @result      A new string object
  */
-XSString XSString_SubstringWithRange( XSString xsThis, XSRange range );
+XSAutoreleased XSString XSString_SubstringWithRange( XSString xsThis, XSRange range );
 
 /*!
  * @function    XSString_LowercaseString
@@ -124,7 +124,7 @@ XSString XSString_SubstringWithRange( XSString xsThis, XSRange range );
  * @param       xsThis  The string object
  * @result      A new string object
  */
-XSString XSString_LowercaseString( XSString xsThis );
+XSAutoreleased XSString XSString_LowercaseString( XSString xsThis );
 
 /*!
  * @function    XSString_LowercaseString
@@ -132,7 +132,7 @@ XSString XSString_LowercaseString( XSString xsThis );
  * @param       xsThis  The string object
  * @result      A new string object
  */
-XSString XSString_UppercaseString( XSString xsThis );
+XSAutoreleased XSString XSString_UppercaseString( XSString xsThis );
 
 /*!
  * @function    XSString_StringByAppendingString
@@ -141,7 +141,7 @@ XSString XSString_UppercaseString( XSString xsThis );
  * @param       str     The string to append
  * @result      A new string object
  */
-XSString XSString_StringByAppendingString( XSString xsThis, XSString str );
+XSAutoreleased XSString XSString_StringByAppendingString( XSString xsThis, XSString str );
 
 /*!
  * @function    XSString_StringByAppendingCString
@@ -150,7 +150,7 @@ XSString XSString_StringByAppendingString( XSString xsThis, XSString str );
  * @param       str     The C string to append
  * @result      A new string object
  */
-XSString XSString_StringByAppendingCString( XSString xsThis, char * str );
+XSAutoreleased XSString XSString_StringByAppendingCString( XSString xsThis, char * str );
 
 /*!
  * @function    XSString_Length
@@ -211,7 +211,7 @@ BOOL XSString_IsEqualToString( XSString xsThis, XSString str );
  * @param       xsThis  The string object
  * @result      A new string object
  */
-XSString XSString_StringByReplacingStringWithString( XSString xsThis, XSString str1, XSString str2 );
+XSAutoreleased XSString XSString_StringByReplacingStringWithString( XSString xsThis, XSString str1, XSString str2 );
 
 /*!
  * @function    XSString_IntegerValue
