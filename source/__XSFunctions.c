@@ -144,7 +144,7 @@ void __XSVLog( const char * fmt, va_list args )
         {
             break;
         }
-        if( i > 0 && format[ i ] == '@' && format[ i - 1 ] == '%' )
+        if( i > 0 && format[ i ] == '@' && format[ i - 1 ] == '$' )
         {
             format[ i - 1 ] = 0;
             

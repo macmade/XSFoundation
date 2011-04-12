@@ -55,7 +55,7 @@ XSFoundation is released under the terms of the [Boost][2] Software License - Ve
         // Substring - The object will be released automatically
         str2 = XSAutoRelease( XSString_SubstringtoIndex( str1, 5 ) );
         
-        XSLog( "This is a log message: %@%@", str1, str2 );
+        XSLog( "This is a log message: $@$@", str1, str2 );
         
         // Release objects (str2 will be released automatically when the application exits)
         XSRelease( str1 );

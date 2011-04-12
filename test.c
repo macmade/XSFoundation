@@ -47,7 +47,7 @@ void thread_test( XSThread thread, void * arg )
     
     str = ( XSString )arg;
     
-    XSLog( "Log message from thread #%X: %@", XSThread_GetID( thread ), str );
+    XSLog( "Log message from thread #%X: $@", XSThread_GetID( thread ), str );
 }
 
 void timer_test( XSTimer timer );
@@ -105,7 +105,7 @@ int main( int argc, char * argv[] )
     
     if( ( arg_str = XSApplication_GetString( app, "--string" ) ) )
     {
-        XSLog( "Has string argument: %@", arg_str );
+        XSLog( "Has string argument: $@", arg_str );
     }
     
     if( ( arg_float = XSApplication_GetFloat( app, "--float" ) ) )
@@ -128,11 +128,11 @@ int main( int argc, char * argv[] )
     XSLog( "Memory hash: %s", XSHash( test ) );
     XSLog( "Object hash: %s", XSHash( str1 ) );
     XSLog( "%s%s%s", XSString_CString( str1 ), XSString_CString( str2 ), XSString_CString( str3 ) );
-    XSLog( "hello, universe: %i %@ %i %@ %i", 42, str1, 43, app, 44 );
-    XSLog( "Array value 0: %@", XSArray_ValueAtIndex( arr, 0 ) );
-    XSLog( "%@", XSString_StringByAppendingString( str1, str2 ) );
-    XSLog( "%@", arr );
-    XSLog( "%@", XSAutorelease( XSRuntime_CreateInstanceOfClassWithName( "XSString" ) ) );
+    XSLog( "hello, universe: %i $@ %i $@ %i", 42, str1, 43, app, 44 );
+    XSLog( "Array value 0: $@", XSArray_ValueAtIndex( arr, 0 ) );
+    XSLog( "$@", XSString_StringByAppendingString( str1, str2 ) );
+    XSLog( "$@", arr );
+    XSLog( "$@", XSAutorelease( XSRuntime_CreateInstanceOfClassWithName( "XSString" ) ) );
     
     XSThread_Detach( thread_test, NULL );
     XSThread_Detach( thread_test, str1 );
