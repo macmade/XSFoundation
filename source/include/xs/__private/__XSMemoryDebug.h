@@ -105,6 +105,8 @@ void __XSMemoryDebug_DumpRecord( __XSMemoryRecord * record );
 
 #ifdef __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
 
+void __XSMemoryDebug_GetBacktrace( void );
+
 void __XSMemoryDebug_PrintBacktrace( void );
 
 #endif

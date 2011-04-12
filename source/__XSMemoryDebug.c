@@ -48,7 +48,8 @@ static size_t             __xs_memory_records_active      = 0;
 static size_t             __xs_memory_total_memory        = 0;
 static size_t             __xs_memory_total_memory_active = 0;
 static bool               __xs_memory_fault_caught        = NO;
-static unsigned int       __xs_memory_backtrace_skip      = 5;
+static size_t             __xs_memory_backtrace_size      = 0;
+static void             * __xs_memory_backtrace[ 100 ];
 
 void __XSMemoryDebug_InstallSignalHandlers( void )
 {
@@ -387,6 +388,15 @@ void __XSMemoryDebug_AskOption( __XSMemoryRecord * record )
 {
     unsigned char c;
     
+    #ifdef __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+    
+    if( __xs_memory_backtrace_size == 0 )
+    {
+        __XSMemoryDebug_GetBacktrace();
+    }
+    
+    #endif
+    
     if( record != NULL )
     {
         __XSMemoryDebug_PrintRecord( record );
@@ -487,7 +497,6 @@ void __XSMemoryDebug_AskOption( __XSMemoryRecord * record )
             break;
     }
     
-    __xs_memory_backtrace_skip++;
     __XSMemoryDebug_AskOption( record );
 }
 
@@ -570,22 +579,24 @@ void __XSMemoryDebug_DumpRecord( __XSMemoryRecord * record )
 
 #ifdef __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
 
+void __XSMemoryDebug_GetBacktrace( void )
+{
+    __xs_memory_backtrace_size = backtrace( __xs_memory_backtrace, 100 );
+}
+
 void __XSMemoryDebug_PrintBacktrace( void )
 {
-    size_t  size;
     size_t  i;
-    void  * trace[ 100 ];
     char ** symbols;
     
-    size    = backtrace( trace, 100 + __xs_memory_backtrace_skip );
-    symbols = backtrace_symbols( trace, size );
+    symbols = backtrace_symbols( __xs_memory_backtrace, __xs_memory_backtrace_size );
     
     printf( __XSMEMORY_HR );
     printf( "# \n" );
-    printf( "#   Displaying %u stack frames:\n", ( int )( size - __xs_memory_backtrace_skip ) );
+    printf( "#   Displaying %u stack frames:\n", ( int )( __xs_memory_backtrace_size - 5 ) );
     printf( "# \n" );
     
-    for( i = __xs_memory_backtrace_skip; i < size; i++ )
+    for( i = 5; i < __xs_memory_backtrace_size; i++ )
     {
         printf( "#   %s\n", symbols[ i ] );
     }
