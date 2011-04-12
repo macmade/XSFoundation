@@ -37,7 +37,6 @@ ARGS_CC                 = -std=c99 \
                           -Wmissing-braces \
                           -Wmissing-declarations \
                           -Wmissing-field-initializers \
-                          -Wmissing-format-attribute \
                           -Wmissing-include-dirs \
                           -Wmissing-noreturn \
                           -Wmissing-prototypes \
