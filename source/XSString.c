@@ -223,31 +223,12 @@ XSAutoreleased XSString XSString_UppercaseString( XSString xsThis )
 
 XSAutoreleased XSString XSString_StringByAppendingString( XSString xsThis, XSString str )
 {
-    __XSString * newStr;
-    size_t       length1;
-    size_t       length2;
-    
-    if( xsThis == NULL )
-    {
-        return NULL;
-    }
-    
     if( str == NULL )
     {
-        return XSCopy( xsThis );
+        return XSAutorelease( XSCopy( xsThis ) );
     }
     
-    length1 = XSString_Length( xsThis );
-    length2 = XSString_Length( str );
-    
-    newStr         = ( __XSString * )XSString_InitWithCapacity( XSString_Alloc(), length1 + length2 + 1 );
-    newStr->length = length1 + length2;
-    
-    memset( newStr->str, 0, newStr->length + 1 );
-    memcpy( newStr->str, ( ( __XSString * )xsThis )->str, length1 );
-    strcat( newStr->str, ( ( __XSString * )str )->str );
-    
-    return XSAutorelease( ( XSString )newStr );
+    return XSString_StringByAppendingCString( xsThis, ( ( __XSString * )str )->str );
 }
 
 XSAutoreleased XSString XSString_StringByAppendingCString( XSString xsThis, char * str )
@@ -263,7 +244,7 @@ XSAutoreleased XSString XSString_StringByAppendingCString( XSString xsThis, char
     
     if( str == NULL )
     {
-        return XSCopy( xsThis );
+        return XSAutorelease( XSCopy( xsThis ) );
     }
     
     length1 = XSString_Length( xsThis );
@@ -276,7 +257,7 @@ XSAutoreleased XSString XSString_StringByAppendingCString( XSString xsThis, char
     memcpy( newStr->str, ( ( __XSString * )xsThis )->str, length1 );
     strcat( newStr->str, str );
     
-    return XSAutorelease( ( XSString )str );
+    return XSAutorelease( ( XSString )newStr );
 }
 
 size_t XSString_Length( XSString xsThis )
