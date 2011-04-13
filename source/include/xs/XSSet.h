@@ -58,6 +58,16 @@ XSStatic XSSet XSSet_Alloc( void );
 
 XSSet XSSet_Init( XSSet xsThis );
 
+XSSet XSSet_InitWithValues( XSSet xsThis, void * value1, ... );
+
+BOOL XSSet_ContainsValue( XSSet xsThis, void * value );
+
+void XSSet_AddValue( XSSet xsThis, void * value );
+
+void XSSet_RemoveValue( XSSet xsThis, void * value );
+
+void XSSet_ReplaceValue( XSSet xsThis, void * valueOld, void * valueNew );
+
 XS_EXTERN_C_END
 
 #endif /* _XS_SET_H_ */

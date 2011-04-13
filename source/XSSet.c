@@ -49,3 +49,37 @@ XSSet XSSet_Init( XSSet xsThis )
 {
     return xsThis;
 }
+
+XSSet XSSet_InitWithValues( XSSet xsThis, void * value1, ... )
+{
+    ( void )value1;
+    
+    return xsThis;
+}
+
+BOOL XSSet_ContainsValue( XSSet xsThis, void * value )
+{
+    ( void )xsThis;
+    ( void )value;
+    
+    return NO;
+}
+
+void XSSet_AddValue( XSSet xsThis, void * value )
+{
+    ( void )xsThis;
+    ( void )value;
+}
+
+void XSSet_RemoveValue( XSSet xsThis, void * value )
+{
+    ( void )xsThis;
+    ( void )value;
+}
+
+void XSSet_ReplaceValue( XSSet xsThis, void * valueOld, void * valueNew )
+{
+    ( void )xsThis;
+    ( void )valueOld;
+    ( void )valueNew;
+}
