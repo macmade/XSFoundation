@@ -223,6 +223,38 @@ XSObject XSRuntime_CreateInstanceOfClassWithName( const char * name )
     return NULL;
 }
 
+const char * XSRuntime_ObjectDescription( void * ptr )
+{
+    XSString           description;
+    XSString           str;
+    __XSMemoryObject * o;
+    XSClassInfos     * cls;
+    
+    if( ptr == NULL )
+    {
+        return "<XSObject: nil>";
+    }
+    
+    if( XSRuntime_IsInstance( ptr ) == NO )
+    {
+        return "<XSNotAnObject>";
+    }
+    
+    o   = __XSMemory_GetMemoryObject( ptr );
+    cls = ( XSClassInfos * )XSRuntime_GetClassForClassID( o->classID );
+    str = XSAutorelease( XSString_Init( XSString_Alloc() ) );
+    
+    XSString_AppendFormat( str, ( char * )"<%s: %p>", cls->className, ptr );
+    
+    if( cls->toString != NULL )
+    {
+        description = cls->toString( ptr );
+        XSString_AppendFormat( str, ( char * )" [ %s ]", XSString_CString( description ) );
+    }
+    
+    return XSString_CString( str );
+}
+
 BOOL XSRuntime_IsInstance( void * ptr )
 {
     __XSMemoryObject * o;
