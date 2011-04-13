@@ -35,6 +35,12 @@ extern "C" {
 #endif
 
 /*!
+ * @define      MD5_DIGEST_LENGTH
+ * @abstract    The length of a MD5 digest
+ */
+#define MD5_DIGEST_LENGTH   16
+
+/*!
  * @typedef     MD5_CTX
  * @abstract    MD5 context
  * @field       state       State (ABCD)
