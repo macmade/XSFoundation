@@ -76,15 +76,6 @@ XSDictionary XSDictionary_InitWithCapacity( XSDictionary xsThis, XSUInteger capa
     return ( XSDictionary )dict;
 }
 
-/*!
- * @function    XSDictionary_InitWithKeysAndValues
- * @abstract    Creates a dictionary with keys and values
- * @param       xsThis  The dictionary object
- * @param       key1    The first key
- * @param       value1  The first value
- * @param       ...     Other values and keys, terminated by a NULL fence
- * @result      The new dictionary object
- */
 XSDictionary XSDictionary_InitWithKeysAndValues( XSDictionary xsThis, XSString key1, void * value1, ... )
 {
     XSString key;
