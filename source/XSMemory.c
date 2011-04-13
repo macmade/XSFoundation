@@ -96,7 +96,7 @@ void * XSAllocWithInfos( const char * file, int line, const char * func, size_t 
     
     va_end( args );
     
-    o = calloc( sizeof( __XSMemoryObject ) + size + 12, 1 );
+    o = ( __XSMemoryObject * )calloc( sizeof( __XSMemoryObject ) + size + 12, 1 );
     
     if( o == NULL )
     {
@@ -169,30 +169,24 @@ void * XSReallocWithInfos( const char * file, int line, const char * func, void 
 {
     __XSMemoryObject * o1;
     __XSMemoryObject * o2;
-    void             * data;
     char             * cptr;
-    
-    ( void )file;
-    ( void )line;
-    ( void )func;
     
     if( ptr == NULL )
     {
         return NULL;
     }
     
-    o1    = __XSMemory_GetMemoryObject( ptr );
-    o2    = o1;
-    data = realloc( o2, size + sizeof( __XSMemoryObject ) + 12 );
+    o1 = __XSMemory_GetMemoryObject( ptr );
+    o2 = o1;
+    o2 = ( __XSMemoryObject * )realloc( o2, size + sizeof( __XSMemoryObject ) + 12 );
     
-    if( data == NULL )
+    if( o2 == NULL )
     {
         return NULL;
     }
     
-    o2->data = data;
     o2->size = size;
-    cptr     = ( char * )data;
+    cptr     = ( char * )o2->data;
     
     cptr[ size + 0  ] = 0;
     cptr[ size + 1  ] = 'X';
