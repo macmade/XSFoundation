@@ -135,6 +135,7 @@ int main( int argc, char * argv[] )
     XSLog( "$@", XSAutorelease( XSRuntime_CreateInstanceOfClassWithName( "XSString" ) ) );
     XSString_AppendCString( str1, " (and universe)" );
     XSLog( "$@", str1 );
+    XSLog( "MD5 Hash: $@", XSString_MD5Hash( str1 ) );
     
     XSThread_Detach( thread_test, NULL );
     XSThread_Detach( thread_test, str1 );

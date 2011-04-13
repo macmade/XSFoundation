@@ -436,31 +436,54 @@ BOOL XSString_IsEqualToString( XSString xsThis, XSString str )
 
 XSAutoreleased XSString XSString_StringByReplacingStringWithString( XSString xsThis, XSString str1, XSString str2 )
 {
-    XSString * _str1;
-    XSString * _str2;
-    XSString * _str3;
+    __XSString * _str1;
+    __XSString * _str2;
+    __XSString * _str3;
     
-    _str1 = ( XSString * )xsThis;
-    _str2 = ( XSString * )str1;
-    _str3 = ( XSString * )str2;
+    _str1 = ( __XSString * )xsThis;
+    _str2 = ( __XSString * )str1;
+    _str3 = ( __XSString * )str2;
     
     return NULL;
 }
 
 XSInteger XSString_IntegerValue( XSString xsThis )
 {
-    XSString * _str;
+    __XSString * _str;
     
-    _str = ( XSString * )xsThis;
+    _str = ( __XSString * )xsThis;
     
     return 0;
 }
 
 XSFloat XSString_FloatValue( XSString xsThis )
 {
-    XSString * _str;
+    __XSString * _str;
     
-    _str = ( XSString * )xsThis;
+    _str = ( __XSString * )xsThis;
     
     return 0;
+}
+
+XSAutoreleased XSString XSString_MD5Hash( XSString xsThis )
+{
+    MD5_CTX       c;
+    __XSString  * _str;
+    unsigned char md[ MD5_DIGEST_LENGTH ];
+    XSString      md5;
+    XSUInteger    i;
+    
+    _str = ( __XSString * )xsThis;
+    md5  = XSString_InitWithCapacity( XSString_Alloc(), MD5_DIGEST_LENGTH * 2 );
+    
+    MD5_Init( &c );
+    MD5_Update( &c, ( void * )_str->str, XSString_Length( xsThis ) );
+    MD5_Final( md, &c );
+    
+    for( i = 0; i < MD5_DIGEST_LENGTH; i++ )
+    {
+        XSString_AppendFormat( md5, ( char * )"%02x", md[ i ] );
+    }
+    
+    return XSAutorelease( md5 );
 }

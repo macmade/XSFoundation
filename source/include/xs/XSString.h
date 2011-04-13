@@ -257,6 +257,14 @@ XSInteger XSString_IntegerValue( XSString xsThis );
  */
 XSFloat XSString_FloatValue( XSString xsThis );
 
+/*!
+ * @function    XSString_MD5Hash
+ * @abstract    Gets a MD5 hash of a string
+ * @param       xsThis  The string object
+ * @result      The MD5 hash
+ */
+XSAutoreleased XSString XSString_MD5Hash( XSString xsThis );
+
 XS_EXTERN_C_END
 
 #endif /* _XS_STRING_H_ */
