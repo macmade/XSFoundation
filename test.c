@@ -134,6 +134,8 @@ int main( int argc, char * argv[] )
     XSLog( "$@", XSString_StringByAppendingString( str1, str2 ) );
     XSLog( "$@", arr );
     XSLog( "$@", XSAutorelease( XSRuntime_CreateInstanceOfClassWithName( "XSString" ) ) );
+    XSString_AppendCString( str1, " (and universe)" );
+    XSLog( "$@", str1 );
     
     XSThread_Detach( thread_test, NULL );
     XSThread_Detach( thread_test, str1 );
