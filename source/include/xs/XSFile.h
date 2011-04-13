@@ -163,7 +163,7 @@ XSInteger XSFile_Close( XSFile xsThis );
  * @param       xsThis    The file object
  * @result      The number of characters written, or negative value on error
  */
-XSInteger XSFile_Printf( XSFile xsThis, const char * format, ... ) FORMAT_ATTRIBUTE( printf, 2, 0 );
+XSInteger XSFile_Printf( XSFile xsThis, const char * format, ... ) FORMAT_ATTRIBUTE( printf, 2, 3 );
 
 /*!
  * @function    XSFile_VPrintf

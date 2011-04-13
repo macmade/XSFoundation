@@ -160,7 +160,7 @@ XSAutoreleased XSString XSString_StringByAppendingCString( XSString xsThis, char
  * @param       
  * @result      void
  */
-void XSString_AppendFormat( XSString xsThis, char * format, ... );
+void XSString_AppendFormat( XSString xsThis, char * format, ... ) FORMAT_ATTRIBUTE( printf, 2, 3 );
 
 /*!
  * @function    XSString_AppendString
