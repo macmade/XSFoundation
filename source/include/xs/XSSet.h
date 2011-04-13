@@ -58,7 +58,11 @@ XSStatic XSSet XSSet_Alloc( void );
 
 XSSet XSSet_Init( XSSet xsThis );
 
+XSSet XSSet_InitWithCapacity( XSSet xsThis, XSUInteger capacity );
+
 XSSet XSSet_InitWithValues( XSSet xsThis, void * value1, ... );
+
+XSUInteger XSSet_Count( XSSet xsThis );
 
 BOOL XSSet_ContainsValue( XSSet xsThis, void * value );
 

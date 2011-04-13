@@ -38,6 +38,8 @@
 #include "XS.h"
 #include "__XSSet.h"
 
+#define __XSSET_DEFAULT_CAPACITY 256
+
 extern XSClassID __XSSetClassID;
 
 XSStatic XSSet XSSet_Alloc( void )
@@ -47,20 +49,56 @@ XSStatic XSSet XSSet_Alloc( void )
 
 XSSet XSSet_Init( XSSet xsThis )
 {
+    return XSSet_InitWithCapacity( xsThis, __XSSET_DEFAULT_CAPACITY );
+}
+
+XSSet XSSet_InitWithCapacity( XSSet xsThis, XSUInteger capacity )
+{
+    __XSSet * set;
+    
+    set = ( __XSSet * )XSSet_Init( xsThis );
+    
+    if( NULL == ( set->values = ( void ** )( XSAlloc( capacity * sizeof( void * ) ) ) ) )
+    {
+        return NULL;
+    }
+    
+    set->count    = 0;
+    set->capacity = capacity;
+    
     return xsThis;
 }
 
 XSSet XSSet_InitWithValues( XSSet xsThis, void * value1, ... )
 {
+    __XSSet * set;
+    
+    set = ( __XSSet * )XSSet_Init( xsThis );
+    
     ( void )value1;
     
     return xsThis;
 }
 
+XSUInteger XSSet_Count( XSSet xsThis )
+{
+    return ( ( __XSSet * )xsThis )->count;
+}
+
 BOOL XSSet_ContainsValue( XSSet xsThis, void * value )
 {
-    ( void )xsThis;
-    ( void )value;
+    __XSSet  * set;
+    XSUInteger i;
+    
+    set = ( __XSSet * )XSSet_Init( xsThis );
+    
+    for( i = 0; i < XSSet_Count( xsThis ); i++ )
+    {
+        if( set->values[ i ] == value )
+        {
+            return YES;
+        }
+    }
     
     return NO;
 }

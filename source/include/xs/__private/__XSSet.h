@@ -53,6 +53,9 @@ XS_EXTERN_C_BEGIN
 typedef struct __XSSet_Struct
 {
     XSRuntimeClass __class;
+    void        ** values;
+    XSUInteger     count;
+    XSUInteger     capacity;
 }
 __XSSet;
 
