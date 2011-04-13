@@ -87,8 +87,6 @@ XSString XSString_InitWithCString( XSString xsThis, char * str )
     
     string->length = length;
     
-    XSLog( "LENGTH: %lu", string->length );
-    
     return ( XSString )string;
 }
 
