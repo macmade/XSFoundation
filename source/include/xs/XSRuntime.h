@@ -100,6 +100,14 @@ XSObject XSRuntime_CreateInstanceOfClassWithName( const char * name );
 XSObject XSRuntime_CreateInstance( XSClassID classID );
 
 /*!
+ * @function    XSRuntime_ObjectDescription
+ * @abstract    Gets an object's description
+ * @param       ptr     The pointer to the object
+ * @result      The object's description
+ */
+const char * XSRuntime_ObjectDescription( void * ptr );
+
+/*!
  * @function    XSRuntime_IsInstance
  * @abstract    Checks whether a pointer is an object instance
  * @param       ptr     The pointer to check
