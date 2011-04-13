@@ -79,6 +79,14 @@ void __XSArray_Initialize( void );
  */
 void __XSArray_Destruct( void * object );
 
+/*!
+ * @function    __XSArray_ToString
+ * @abstract    Object description
+ * @param       object  A pointer to the object
+ * @result      The object's description
+ */
+XSString __XSArray_ToString( void * object );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_ARRAY_H_ */

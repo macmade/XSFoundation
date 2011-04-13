@@ -49,7 +49,7 @@ static const XSClassInfos __XSArrayClass =
     NULL,                   /* Constructor */
     __XSArray_Destruct,     /* Destructor */
     NULL,                   /* Object copy */
-    NULL,                   /* Object description */
+    __XSArray_ToString,     /* Object description */
     NULL                    /* Object comparison */
 };
 
@@ -83,4 +83,36 @@ void __XSArray_Destruct( void * object )
         
         XSRelease( array->values );
     }
+}
+
+XSString __XSArray_ToString( void * object )
+{
+    XSUInteger  i;
+    __XSArray * array;
+    XSString    description;
+    
+    description = XSString_Init( XSString_Alloc() );
+    array       = ( __XSArray * )object;
+    
+    XSString_AppendFormat( description, ( char * )"%lu items: {\n", array->count );
+    
+    for( i = 0; i < array->count; i++ )
+    {
+        if( array->values[ i ] == NULL )
+        {
+            XSString_AppendCString( description, ( char * )"    (null),\n" );
+        }
+        else if( XSRuntime_IsInstance( array->values[ i ] ) )
+        {
+            XSString_AppendFormat( description, ( char * )"    %s,\n", ( char * )XSRuntime_ObjectDescription( array->values[ i ] ) );
+        }
+        else
+        {
+            XSString_AppendFormat( description, ( char * )"    %p,\n", array->values[ i ] );
+        }
+    }
+    
+    XSString_AppendCString( description, ( char * )"}" );
+    
+    return XSAutorelease( description );
 }
