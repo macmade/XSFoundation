@@ -166,7 +166,7 @@ void __XSVLog( const char * fmt, va_list args )
                 if( cls->toString != NULL )
                 {
                     description = cls->toString( va_ptr );
-                    printf( " [ %s ]", XSString_CString( va_ptr ) );
+                    printf( " [ %s ]", XSString_CString( description ) );
                 }
             }
             
