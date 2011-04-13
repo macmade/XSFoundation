@@ -54,7 +54,7 @@ XS_EXTERN_C_BEGIN
 typedef struct __XSString_Struct
 {
     XSRuntimeClass __class;
-    size_t         length;
+    XSUInteger     length;
     XSUInteger     capacity;
     char         * str;
 }

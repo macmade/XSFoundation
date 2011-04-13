@@ -65,6 +65,7 @@ XSString XSString_InitWithCapacity( XSString xsThis, XSUInteger capacity )
     
     string->str      = XSAlloc( ( sizeof( char ) * capacity ) + 1 );
     string->capacity = capacity;
+    string->length    = 0;
     
     return ( XSString )string;
 }
@@ -85,6 +86,8 @@ XSString XSString_InitWithCString( XSString xsThis, char * str )
     memcpy( string->str, str, length );
     
     string->length = length;
+    
+    XSLog( "LENGTH: %lu", string->length );
     
     return ( XSString )string;
 }
@@ -137,6 +140,8 @@ XSAutoreleased XSString XSString_SubstringToIndex( XSString xsThis, size_t i )
     
     memcpy( str2->str, _str->str, i );
     
+    str2->length = strlen( str2->str );
+    
     return XSAutorelease( ( XSString )str2 );
 }
 
@@ -166,6 +171,8 @@ XSAutoreleased XSString XSString_SubstringWithRange( XSString xsThis, XSRange ra
     
     memset( _str2->str, 0, range.length + 1 );
     memcpy( _str2->str, ( _str1->str ) + range.location, range.length );
+    
+    _str2->length = strlen( _str2->str );
     
     return XSAutorelease( ( XSString )_str2 );
 }
@@ -259,6 +266,40 @@ XSAutoreleased XSString XSString_StringByAppendingCString( XSString xsThis, char
     strcat( newStr->str, str );
     
     return XSAutorelease( ( XSString )newStr );
+}
+
+void XSString_AppendString( XSString xsThis, XSString str )
+{
+    __XSString * _str;
+    
+    if( xsThis == NULL || str == NULL )
+    {
+        return;
+    }
+    
+    _str = ( __XSString * )str;
+    
+    XSString_AppendCString( xsThis, _str->str );
+}
+
+void XSString_AppendCString( XSString xsThis, char * str )
+{
+    size_t       length;
+    __XSString * _str;
+    
+    if( xsThis == NULL || str == NULL )
+    {
+        return;
+    }
+    
+    _str   = ( __XSString * )xsThis;
+    length = strlen( str );
+    
+    _str->str                          = XSRealloc( _str->str, _str->length + length + 1 );
+    _str->capacity                     = _str->length + length;
+    _str->str[ _str->length + length ] = 0;
+    
+    strcat( _str->str, str );
 }
 
 size_t XSString_Length( XSString xsThis )

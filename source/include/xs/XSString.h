@@ -153,6 +153,24 @@ XSAutoreleased XSString XSString_StringByAppendingString( XSString xsThis, XSStr
 XSAutoreleased XSString XSString_StringByAppendingCString( XSString xsThis, char * str );
 
 /*!
+ * @function    XSString_AppendString
+ * @abstract    Appends a string to the string object
+ * @param       xsThis  The string object
+ * @param       str     The string to append
+ * @result      void
+ */
+void XSString_AppendString( XSString xsThis, XSString str );
+
+/*!
+ * @function    XSString_AppendCString
+ * @abstract    Appends a C string to the string object
+ * @param       xsThis  The string object
+ * @param       str     The C string to append
+ * @result      void
+ */
+void XSString_AppendCString( XSString xsThis, char * str );
+
+/*!
  * @function    XSString_Length
  * @abstract    Gets the string length
  * @param       xsThis  The string object
