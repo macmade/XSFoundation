@@ -106,6 +106,11 @@ void XSArray_AppendValue( XSArray xsThis, void * value )
     
     _array = ( __XSArray * )xsThis;
     
+    if( value == NULL )
+    {
+        return;
+    }
+    
     if( _array->count == _array->capacity )
     {
         if( NULL == ( store = ( void ** )XSRealloc( _array->values, ( _array->count + _array->capacity ) * sizeof( void * ) ) ) )
@@ -127,6 +132,11 @@ void XSArray_InsertValueAtIndex( XSArray xsThis, void * value, XSUInteger i )
     XSUInteger   j;
     
     _array = ( __XSArray * )xsThis;
+    
+    if( value == NULL )
+    {
+        return;
+    }
     
     if( i >= _array->count )
     {
@@ -158,6 +168,11 @@ void * XSArray_ReplaceValueAtIndex( XSArray xsThis, void * value, XSUInteger i )
     void      * old;
     
     _array = ( __XSArray * )xsThis;
+    
+    if( value == NULL )
+    {
+        return NULL;
+    }
     
     if( i > _array->count )
     {
