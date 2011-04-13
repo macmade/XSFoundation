@@ -153,6 +153,16 @@ XSAutoreleased XSString XSString_StringByAppendingString( XSString xsThis, XSStr
 XSAutoreleased XSString XSString_StringByAppendingCString( XSString xsThis, char * str );
 
 /*!
+ * @function    XSString_AppendFormat
+ * @abstract    
+ * @param       xsThis  The string object
+ * @param       
+ * @param       
+ * @result      void
+ */
+void XSString_AppendFormat( XSString xsThis, char * format, ... );
+
+/*!
  * @function    XSString_AppendString
  * @abstract    Appends a string to the string object
  * @param       xsThis  The string object

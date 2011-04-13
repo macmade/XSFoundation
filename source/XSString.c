@@ -266,6 +266,41 @@ XSAutoreleased XSString XSString_StringByAppendingCString( XSString xsThis, char
     return XSAutorelease( ( XSString )newStr );
 }
 
+void XSString_AppendFormat( XSString xsThis, char * format, ... )
+{
+    va_list      args;
+    size_t       length;
+    __XSString * _str;
+    char         c;
+    
+    if( xsThis == NULL || format == NULL )
+    {
+        return;
+    }
+    
+    va_start( args, format );
+    
+    _str   = ( __XSString * )xsThis;
+    length = vsnprintf( &c, 1, format, args );
+    
+    va_end( args );
+    
+    if( _str->capacity < _str->length + length + 1 )
+    {
+        _str->str                              = XSRealloc( _str->str, _str->length + length + 1 );
+        _str->capacity                         = _str->length + length;
+        _str->str[ _str->length + length + 1 ] = 0;
+    }
+    
+    va_start( args, format );
+    
+    vsprintf( _str->str + _str->length, format, args );
+    
+    _str->length += length;
+    
+    va_end( args );
+}
+
 void XSString_AppendString( XSString xsThis, XSString str )
 {
     __XSString * _str;
@@ -293,11 +328,16 @@ void XSString_AppendCString( XSString xsThis, char * str )
     _str   = ( __XSString * )xsThis;
     length = strlen( str );
     
-    _str->str                          = XSRealloc( _str->str, _str->length + length + 1 );
-    _str->capacity                     = _str->length + length;
-    _str->str[ _str->length + length ] = 0;
+    if( _str->capacity < _str->length + length + 1 )
+    {
+        _str->str                              = XSRealloc( _str->str, _str->length + length + 1 );
+        _str->capacity                         = _str->length + length;
+        _str->str[ _str->length + length + 1 ] = 0;
+    }
     
     strcat( _str->str, str );
+    
+    _str->length += length;
 }
 
 size_t XSString_Length( XSString xsThis )
