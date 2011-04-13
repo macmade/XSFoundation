@@ -38,6 +38,8 @@
 #include "XS.h"
 #include "__XSArray.h"
 
+#define __XSARRAY_DEFAULT_CAPACITY    256
+
 extern XSClassID __XSArrayClassID;
 
 XSStatic XSArray XSArray_Alloc( void )
@@ -47,7 +49,7 @@ XSStatic XSArray XSArray_Alloc( void )
 
 XSArray XSArray_Init( XSArray xsThis )
 {
-    return XSArray_InitWithCapacity( xsThis, ( XSUInteger )XSARRAY_DEFAULT_CAPACITY );
+    return XSArray_InitWithCapacity( xsThis, ( XSUInteger )__XSARRAY_DEFAULT_CAPACITY );
 }
 
 XSArray XSArray_InitWithCapacity( XSArray xsThis, XSUInteger capacity )

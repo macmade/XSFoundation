@@ -44,12 +44,6 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @define      XSARRAY_DEFAULT_CAPACITY
- * @abstract    Default capacity for the empty arrays
- */
-#define XSARRAY_DEFAULT_CAPACITY    256
-
-/*!
  * @typedef     XSArray
  * @abstract    Opaque type for the XSArray objects
  */
