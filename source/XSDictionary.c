@@ -168,24 +168,108 @@ void * XSDictionary_ValueForKey( XSDictionary xsThis, XSString key )
 
 void XSDictionary_SetValueForKey( XSDictionary xsThis, void * value, XSString key )
 {
-    ( void )xsThis;
-    ( void )value;
-    ( void )key;
+    XSString       * keys;
+    void          ** values;
+    __XSDictionary * dict;
+    XSUInteger       i;
+    
+    dict = ( __XSDictionary * )xsThis;
+    
+    for( i = 0; i < dict->count; i++ )
+    {
+        if( XSEquals( dict->keys[ i ], key ) )
+        {
+            XSRelease( dict->values[ i ] );
+            
+            dict->values[ i ] = XSRetain( value );
+            
+            return;
+        }
+    }
+    
+    if( dict->count == dict->capacity )
+    {
+        if( NULL == ( keys = ( XSString * )XSRealloc( dict->keys, sizeof( XSString * ) * ( dict->count + dict->initialCapacity ) ) ) )
+        {
+            return;
+        }
+        
+        if( NULL == ( values = ( void ** )XSRealloc( dict->values, sizeof( void * ) * ( dict->count + dict->initialCapacity ) ) ) )
+        {
+            return;
+        }
+        
+        dict->keys   = keys;
+        dict->values = values;
+    }
+    
+    dict->keys[ dict->count ]     = XSRetain( key );
+    dict->values[ dict->count++ ] = XSRetain( value );
 }
 
-void * XSDictionary_RemoveValueForKey( XSDictionary xsThis, void * value, XSString key )
+void XSDictionary_RemoveValueForKey( XSDictionary xsThis, XSString key )
 {
-    ( void )xsThis;
-    ( void )value;
-    ( void )key;
+    BOOL             found;
+    __XSDictionary * dict;
+    XSUInteger       i;
     
-    return NULL;
+    dict  = ( __XSDictionary * )xsThis;
+    found = NO;
+    
+    for( i = 0; i < dict->count; i++ )
+    {
+        if( found == YES )
+        {
+            dict->keys[ i - 1 ]   = dict->keys[ i ];
+            dict->values[ i - 1 ] = dict->values[ i ];
+            dict->keys[ i ]       = NULL;
+            dict->values[ i ]     = NULL;
+            
+            continue;
+        }
+        
+        if( XSEquals( dict->keys[ i ], key ) )
+        {
+            XSRelease( dict->keys[ i ] );
+            XSRelease( dict->values[ i ] );
+            
+            found = YES;
+        }
+    }
+}
+
+BOOL XSDictionary_KeyExists( XSDictionary xsThis, XSString key )
+{
+    __XSDictionary * dict;
+    XSUInteger       i;
+    
+    dict = ( __XSDictionary * )xsThis;
+    
+    for( i = 0; i < dict->count; i++ )
+    {
+        if( XSEquals( dict->keys[ i ], key ) )
+        {
+            return YES;
+        }
+    }
+    
+    return NO;
 }
 
 BOOL XSDictionary_ContainsValue( XSDictionary xsThis, void * value )
 {
-    ( void )xsThis;
-    ( void )value;
+    __XSDictionary * dict;
+    XSUInteger       i;
+    
+    dict = ( __XSDictionary * )xsThis;
+    
+    for( i = 0; i < dict->count; i++ )
+    {
+        if( XSEquals( dict->values[ i ], value ) )
+        {
+            return YES;
+        }
+    }
     
     return NO;
 }

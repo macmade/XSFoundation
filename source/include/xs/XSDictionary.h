@@ -141,10 +141,19 @@ void XSDictionary_SetValueForKey( XSDictionary xsThis, void * value, XSString ke
  * @function    XSDictionary_RemoveValueForKey
  * @abstract    Remove a value for a specific key
  * @param       xsThis  The dictionary object
- * @param       dict    The key
+ * @param       key     The key
  * @result      The removed value
  */
-void * XSDictionary_RemoveValueForKey( XSDictionary xsThis, void * value, XSString key );
+void XSDictionary_RemoveValueForKey( XSDictionary xsThis, XSString key );
+
+/*!
+ * @function    XSDictionary_KeyExists
+ * @abstract    Checks if the dictionary contains a specific key
+ * @param       xsThis  The dictionary object
+ * @param       value   The key to search
+ * @result      YES if the dictionary contains the key, otherwise NO
+ */
+BOOL XSDictionary_KeyExists( XSDictionary xsThis, XSString value );
 
 /*!
  * @function    XSDictionary_ContainsValue
