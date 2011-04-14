@@ -130,6 +130,10 @@
 		05E0986F1356F21A00189FF4 /* XSNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XSNotification.h; path = source/include/xs/XSNotification.h; sourceTree = SOURCE_ROOT; };
 		05E098701356F22800189FF4 /* __XSNotification.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = __XSNotification.c; path = source/__XSNotification.c; sourceTree = SOURCE_ROOT; };
 		05E098711356F22800189FF4 /* XSNotification.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = XSNotification.c; path = source/XSNotification.c; sourceTree = SOURCE_ROOT; };
+		05E098781356F8E000189FF4 /* __XSBool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSBool.c; sourceTree = "<group>"; };
+		05E098791356F8E000189FF4 /* XSBool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSBool.c; sourceTree = "<group>"; };
+		05E0987B1356F8E900189FF4 /* XSBool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBool.h; sourceTree = "<group>"; };
+		05E0987C1356F8EF00189FF4 /* __XSBool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSBool.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -183,6 +187,7 @@
 				0562F8D8134B5AC1005190B6 /* __XSApplicationArgument.c */,
 				056003F01340BB34005DC721 /* __XSArray.c */,
 				0562F8531348598C005190B6 /* __XSBag.c */,
+				05E098781356F8E000189FF4 /* __XSBool.c */,
 				056A74EA1346F98B006DD897 /* __XSColor.c */,
 				0560041113412865005DC721 /* __XSData.c */,
 				0560041213412865005DC721 /* __XSDate.c */,
@@ -207,6 +212,7 @@
 				0562F8D9134B5AC1005190B6 /* XSApplicationArgument.c */,
 				056003F11340BB3F005DC721 /* XSArray.c */,
 				0562F8541348598C005190B6 /* XSBag.c */,
+				05E098791356F8E000189FF4 /* XSBool.c */,
 				056A74EB1346F9DC006DD897 /* XSColor.c */,
 				0560041913412867005DC721 /* XSData.c */,
 				0560041A13412867005DC721 /* XSDate.c */,
@@ -267,6 +273,7 @@
 				0562F8D7134B5AB5005190B6 /* XSApplicationArgument.h */,
 				056003EE1340BB05005DC721 /* XSArray.h */,
 				0562F8521348597F005190B6 /* XSBag.h */,
+				05E0987B1356F8E900189FF4 /* XSBool.h */,
 				056A74E91346F953006DD897 /* XSColor.h */,
 				056003CF1340621F005DC721 /* XSConstants.h */,
 				0560040913412858005DC721 /* XSData.h */,
@@ -302,6 +309,7 @@
 				0562F8D5134B5AAD005190B6 /* __XSApplicationArgument.h */,
 				05AC165713418E7100455568 /* __XSArray.h */,
 				0562F85013485975005190B6 /* __XSBag.h */,
+				05E0987C1356F8EF00189FF4 /* __XSBool.h */,
 				056A74E71346F8C5006DD897 /* __XSColor.h */,
 				05AC165813418E7100455568 /* __XSData.h */,
 				05AC165913418E7100455568 /* __XSDate.h */,

@@ -44,13 +44,13 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @typedef     XSTree
- * @abstract    Opaque type for the XSTree objects
+ * @typedef     XSBool
+ * @abstract    Opaque type for the XSBool objects
  */
-typedef struct XSTree * XSTree;
+typedef struct __XSTree * XSTree;
 
 /*!
- * @function    XSTree_Alloc
+ * @function    XSBool_Alloc
  * @abstract    Object allocator
  * @result      The allocated object
  */
