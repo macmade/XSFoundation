@@ -239,3 +239,78 @@ XSNumber XSNumber_InitWithUnsignedInteger( XSNumber xsThis, XSUInteger value )
     
     return xsThis;
 }
+
+void XSNumber_SetBoolValue( XSNumber xsThis, BOOL value )
+{
+    XSNumber_InitWithBool( xsThis, value );
+}
+
+void XSNumber_SetCharValue( XSNumber xsThis, char value )
+{
+    XSNumber_InitWithBool( xsThis, value );
+}
+
+void XSNumber_SetUnsignedCharValue( XSNumber xsThis, unsigned char value )
+{
+    XSNumber_InitWithUnsignedChar( xsThis, value );
+}
+
+void XSNumber_SetShortValue( XSNumber xsThis, short value )
+{
+    XSNumber_InitWithShort( xsThis, value );
+}
+
+void XSNumber_SetUnsignedShortValue( XSNumber xsThis, unsigned short value )
+{
+    XSNumber_InitWithUnsignedShort( xsThis, value );
+}
+
+void XSNumber_SetIntValue( XSNumber xsThis, int value )
+{
+    XSNumber_InitWithInt( xsThis, value );
+}
+
+void XSNumber_SetUnsignedIntValue( XSNumber xsThis, unsigned int value )
+{
+    XSNumber_InitWithUnsignedInt( xsThis, value );
+}
+
+void XSNumber_SetLongValue( XSNumber xsThis, long value )
+{
+    XSNumber_InitWithLong( xsThis, value );
+}
+
+void XSNumber_SetUnsignedLongValue( XSNumber xsThis, unsigned long value )
+{
+    XSNumber_InitWithUnsignedLong( xsThis, value );
+}
+
+void XSNumber_SetLongLongValue( XSNumber xsThis, long long value )
+{
+    XSNumber_InitWithLongLong( xsThis, value );
+}
+
+void XSNumber_SetUnsignedLongLongValue( XSNumber xsThis, unsigned long long value )
+{
+    XSNumber_InitWithUnsignedLongLong( xsThis, value );
+}
+
+void XSNumber_SetFloatValue( XSNumber xsThis, float value )
+{
+    XSNumber_InitWithFloat( xsThis, value );
+}
+
+void XSNumber_SetDoubleValue( XSNumber xsThis, double value )
+{
+    XSNumber_InitWithDouble( xsThis, value );
+}
+
+void XSNumber_SetIntegerValue( XSNumber xsThis, XSInteger value )
+{
+    XSNumber_InitWithInteger( xsThis, value );
+}
+
+void XSNumber_SetUnsignedIntegerValue( XSNumber xsThis, XSUInteger value )
+{
+    XSNumber_InitWithUnsignedInteger( xsThis, value );
+}

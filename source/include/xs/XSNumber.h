@@ -191,6 +191,36 @@ XSNumber XSNumber_InitWithInteger( XSNumber xsThis, XSInteger value );
  */
 XSNumber XSNumber_InitWithUnsignedInteger( XSNumber xsThis, XSUInteger value );
 
+void XSNumber_SetBoolValue( XSNumber xsThis, BOOL value );
+
+void XSNumber_SetCharValue( XSNumber xsThis, char value );
+
+void XSNumber_SetUnsignedCharValue( XSNumber xsThis, unsigned char value );
+
+void XSNumber_SetShortValue( XSNumber xsThis, short value );
+
+void XSNumber_SetUnsignedShortValue( XSNumber xsThis, unsigned short value );
+
+void XSNumber_SetIntValue( XSNumber xsThis, int value );
+
+void XSNumber_SetUnsignedIntValue( XSNumber xsThis, unsigned int value );
+
+void XSNumber_SetLongValue( XSNumber xsThis, long value );
+
+void XSNumber_SetUnsignedLongValue( XSNumber xsThis, unsigned long value );
+
+void XSNumber_SetLongLongValue( XSNumber xsThis, long long value );
+
+void XSNumber_SetUnsignedLongLongValue( XSNumber xsThis, unsigned long long value );
+
+void XSNumber_SetFloatValue( XSNumber xsThis, float value );
+
+void XSNumber_SetDoubleValue( XSNumber xsThis, double value );
+
+void XSNumber_SetIntegerValue( XSNumber xsThis, XSInteger value );
+
+void XSNumber_SetUnsignedIntegerValue( XSNumber xsThis, XSUInteger value );
+
 XS_EXTERN_C_END
 
 #endif /* _XS_NUMBER_H_ */
