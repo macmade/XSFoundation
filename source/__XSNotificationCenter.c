@@ -47,7 +47,7 @@ static const XSClassInfos __XSNotificationCenterClass =
     "XSNotificationCenter",             /* Class name */
     sizeof( __XSNotificationCenter ),   /* Object size */
     NULL,                               /* Constructor */
-    NULL,                               /* Destructor */
+    __XSNotificationCenter_Destruct,    /* Destructor */
     NULL,                               /* Object copy */
     NULL,                               /* Object description */
     NULL                                /* Object comparison */
@@ -62,4 +62,9 @@ XSClassID __XSNotificationCenterClassID;
 void __XSNotificationCenter_Initialize( void )
 {
     __XSNotificationCenterClassID = XSRuntime_RegisterClass( &__XSNotificationCenterClass );
+}
+
+void __XSNotificationCenter_Destruct( void * object )
+{
+    XSRelease( ( ( __XSNotificationCenter * )object )->objects );
 }

@@ -53,6 +53,7 @@ XS_EXTERN_C_BEGIN
 typedef struct __XSNotificationCenter_Struct
 {
     XSRuntimeClass __class;
+    XSDictionary   objects;
 }
 __XSNotificationCenter;
 
@@ -62,6 +63,14 @@ __XSNotificationCenter;
  * @result      void
  */
 void __XSNotificationCenter_Initialize( void );
+
+/*!
+ * @function    __XSNotificationCenter_Destruct
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSNotificationCenter_Destruct( void * object );
 
 XS_EXTERN_C_END
 
