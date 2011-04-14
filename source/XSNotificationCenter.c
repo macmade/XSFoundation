@@ -52,7 +52,7 @@ XSNotificationCenter XSNotificationCenter_Init( XSNotificationCenter xsThis )
     return xsThis;
 }
 
-XSNotificationCenter XSNotificationCenter_DefaultCenter( void )
+XSStatic XSAutoreleased XSNotificationCenter XSNotificationCenter_DefaultCenter( void )
 {
     if( __defaultCenter == NULL )
     {

@@ -43,6 +43,8 @@
 
 XS_EXTERN_C_BEGIN
 
+#include "XSNotification.h"
+
 /*!
  * @typedef     XSNotificationCenter
  * @abstract    Opaque type for the XSNotificationCenter objects
@@ -58,7 +60,11 @@ XSStatic XSNotificationCenter XSNotificationCenter_Alloc( void );
 
 XSNotificationCenter XSNotificationCenter_Init( XSNotificationCenter xsThis );
 
-XSNotificationCenter XSNotificationCenter_DefaultCenter( void );
+XSStatic XSAutoreleased XSNotificationCenter XSNotificationCenter_DefaultCenter( void );
+
+XSNotificationCenter XSNotificationCenter_AddObserver( XSNotificationCenter xsThis, XSObject object, const char * notification, void ( * func )( XSNotification notification ) );
+
+XSNotificationCenter XSNotificationCenter_PostNotification( XSNotificationCenter xsThis, XSObject object, const char * notification );
 
 XS_EXTERN_C_END
 
