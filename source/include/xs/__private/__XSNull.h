@@ -63,6 +63,15 @@ __XSNull;
  */
 void __XSNull_Initialize( void );
 
+/*!
+ * @function    __XSString_Equals
+ * @abstract    Object comparison
+ * @param       object1 The first object to compare
+ * @param       object1 The second object to compare
+ * @result      YES if both objects are equals, otherwise NO
+ */
+BOOL __XSNull_Equals( void * object1, void * object2 );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_NULL_H_ */
