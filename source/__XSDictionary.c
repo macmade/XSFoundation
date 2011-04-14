@@ -76,4 +76,7 @@ void __XSDictionary_Destruct( void * object )
         XSRelease( dict->values[ i ] );
         XSRelease( dict->keys[ i ] );
     }
+    
+    XSRelease( dict->values );
+    XSRelease( dict->keys );
 }
