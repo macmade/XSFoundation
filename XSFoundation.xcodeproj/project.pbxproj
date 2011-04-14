@@ -122,6 +122,10 @@
 		05AC166D1341DDDA00455568 /* XSThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSThread.h; sourceTree = "<group>"; };
 		05AC166E1341DE2A00455568 /* __XSThread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSThread.c; sourceTree = "<group>"; };
 		05AC166F1341DE3F00455568 /* XSThread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSThread.c; sourceTree = "<group>"; };
+		05E098621356EBC700189FF4 /* __XSNotificationCenter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = __XSNotificationCenter.c; path = source/__XSNotificationCenter.c; sourceTree = SOURCE_ROOT; };
+		05E098631356EBC700189FF4 /* XSNotificationCenter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = XSNotificationCenter.c; path = source/XSNotificationCenter.c; sourceTree = SOURCE_ROOT; };
+		05E098651356EBD400189FF4 /* XSNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XSNotificationCenter.h; path = source/include/xs/XSNotificationCenter.h; sourceTree = SOURCE_ROOT; };
+		05E098661356EBDD00189FF4 /* __XSNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSNotificationCenter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -185,6 +189,7 @@
 				0562F8CD134B49B4005190B6 /* __XSLock.c */,
 				056003BE1340621F005DC721 /* __XSMemory.c */,
 				057074B613516AF7008FC128 /* __XSMemoryDebug.c */,
+				05E098621356EBC700189FF4 /* __XSNotificationCenter.c */,
 				059B999E134EDBB8004510C5 /* __XSNull.c */,
 				0560041513412866005DC721 /* __XSNumber.c */,
 				0560041613412866005DC721 /* __XSSet.c */,
@@ -206,6 +211,7 @@
 				056003D71340621F005DC721 /* XSFunctions.c */,
 				0562F8CE134B49B4005190B6 /* XSLock.c */,
 				056003D81340621F005DC721 /* XSMemory.c */,
+				05E098631356EBC700189FF4 /* XSNotificationCenter.c */,
 				059B999F134EDBB9004510C5 /* XSNull.c */,
 				0560041D13412868005DC721 /* XSNumber.c */,
 				056003E613408187005DC721 /* XSRuntime.c */,
@@ -267,6 +273,7 @@
 				0560042113417F6F005DC721 /* XSMacros.h */,
 				05600422134184BD005DC721 /* XSMacrosTarget.h */,
 				056003D21340621F005DC721 /* XSMemory.h */,
+				05E098651356EBD400189FF4 /* XSNotificationCenter.h */,
 				059B999D134EDBA0004510C5 /* XSNull.h */,
 				0560040D13412858005DC721 /* XSNumber.h */,
 				056003E713408197005DC721 /* XSRuntime.h */,
@@ -298,6 +305,7 @@
 				0562F8CA134B499A005190B6 /* __XSLock.h */,
 				05AC165E13418E7100455568 /* __XSMemory.h */,
 				057074B413516AAD008FC128 /* __XSMemoryDebug.h */,
+				05E098661356EBDD00189FF4 /* __XSNotificationCenter.h */,
 				059B999B134EDB93004510C5 /* __XSNull.h */,
 				05AC165F13418E7100455568 /* __XSNumber.h */,
 				05AC166013418E7100455568 /* __XSSet.h */,
