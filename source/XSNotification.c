@@ -93,5 +93,5 @@ void XSNotification_SetName( XSNotification xsThis, XSString name )
         XSRelease( notification->name );
     }
     
-    notification->object = XSRetain( name );
+    notification->name = XSRetain( name );
 }

@@ -350,6 +350,20 @@
 			passBuildSettingsInEnvironment = 1;
 			productName = XSFoundation;
 		};
+		05E0987D1357479100189FF4 /* XSFoundation Test */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = test;
+			buildConfigurationList = 05E0987E1357479100189FF4 /* Build configuration list for PBXLegacyTarget "XSFoundation Test" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = "XSFoundation Test";
+			passBuildSettingsInEnvironment = 1;
+			productName = "XSFoundation Test";
+		};
 /* End PBXLegacyTarget section */
 
 /* Begin PBXProject section */
@@ -370,6 +384,7 @@
 			projectRoot = "";
 			targets = (
 				056003AF13406206005DC721 /* XSFoundation */,
+				05E0987D1357479100189FF4 /* XSFoundation Test */,
 			);
 		};
 /* End PBXProject section */
@@ -436,6 +451,35 @@
 			};
 			name = Release;
 		};
+		05E0987F1357479100189FF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		05E098801357479100189FF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -456,6 +500,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		05E0987E1357479100189FF4 /* Build configuration list for PBXLegacyTarget "XSFoundation Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05E0987F1357479100189FF4 /* Debug */,
+				05E098801357479100189FF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

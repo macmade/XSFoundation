@@ -62,9 +62,9 @@ XSNotificationCenter XSNotificationCenter_Init( XSNotificationCenter xsThis );
 
 XSStatic XSAutoreleased XSNotificationCenter XSNotificationCenter_DefaultCenter( void );
 
-XSNotificationCenter XSNotificationCenter_AddObserver( XSNotificationCenter xsThis, XSObject object, const char * notification, void ( * func )( XSNotification notification ) );
+void XSNotificationCenter_AddObserver( XSNotificationCenter xsThis, XSObject object, XSString notificationName, void ( * func )( XSNotification notification ) );
 
-XSNotificationCenter XSNotificationCenter_PostNotification( XSNotificationCenter xsThis, XSObject object, const char * notification );
+void XSNotificationCenter_PostNotification( XSNotificationCenter xsThis, XSObject object, XSString notificationName );
 
 XS_EXTERN_C_END
 

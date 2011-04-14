@@ -63,6 +63,16 @@ void timer_test( XSTimer timer )
     }
 }
 
+void notification_test( XSNotification notification )
+{
+    XSLog
+    (
+        "Received notification \"%s\" with object: $@",
+        XSString_CString( XSNotification_GetName( notification ) ),
+        XSNotification_GetObject( notification )
+    );
+}
+
 int main( int argc, char * argv[] )
 {
     unsigned int  i;
@@ -126,7 +136,7 @@ int main( int argc, char * argv[] )
     str2 = XSString_SubstringFromIndex( str1, 5 );
     str3 = XSCopy( str2 );
     arr  = XSArray_InitWithValues( XSArray_Alloc(), str1, str2, str3, NULL );
-    data = XSData_InitWithBytes( XSData_Alloc(), "hello, world", 12 );
+    data = XSData_InitWithBytes( XSData_Alloc(), ( UInt8 * )"hello, world", 12 );
     dict = XSDictionary_InitWithKeysAndValues( XSDictionary_Alloc(), XSSTR( "test-1" ), str1, XSSTR( "test-2" ), str2, NULL );
     
     XSLog( "Memory hash: %s", XSHash( test ) );
@@ -142,6 +152,9 @@ int main( int argc, char * argv[] )
     XSLog( "MD5 Hash: $@", XSString_MD5Hash( str1 ) );
     XSLog( "$@", data );
     XSLog( "$@", dict );
+    
+    XSNotificationCenter_AddObserver( XSNotificationCenter_DefaultCenter(), ( XSObject )str1, XSSTR( "TestNotification" ), notification_test );
+    XSNotificationCenter_PostNotification( XSNotificationCenter_DefaultCenter(), ( XSObject )str1, XSSTR( "TestNotification" ) );
     
     XSThread_Detach( thread_test, NULL );
     XSThread_Detach( thread_test, str1 );

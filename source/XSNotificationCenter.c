@@ -42,6 +42,11 @@ extern XSClassID __XSNotificationCenterClassID;
 
 static __XSNotificationCenter * __defaultCenter = NULL;
 
+struct __XSNotificationCallback
+{
+    void ( * callback )( XSNotification notification );
+};
+
 XSStatic XSNotificationCenter XSNotificationCenter_Alloc( void )
 {
     return ( XSNotificationCenter )XSRuntime_CreateInstance( __XSNotificationCenterClassID );
@@ -49,6 +54,11 @@ XSStatic XSNotificationCenter XSNotificationCenter_Alloc( void )
 
 XSNotificationCenter XSNotificationCenter_Init( XSNotificationCenter xsThis )
 {
+    __XSNotificationCenter * center;
+    
+    center          = ( __XSNotificationCenter * )xsThis;
+    center->objects = XSDictionary_Init( XSDictionary_Alloc() );
+    
     return xsThis;
 }
 
@@ -60,4 +70,89 @@ XSStatic XSAutoreleased XSNotificationCenter XSNotificationCenter_DefaultCenter(
     }
     
     return ( XSNotificationCenter )__defaultCenter;
+}
+
+void XSNotificationCenter_AddObserver( XSNotificationCenter xsThis, XSObject object, XSString notificationName, void ( * func )( XSNotification notification ) )
+{
+    const char                      * hash;
+    __XSNotificationCenter          * center;
+    XSDictionary                      notifications;
+    XSArray                           observers;
+    struct __XSNotificationCallback * observer;
+    
+    if( object == NULL || notificationName == NULL || func == NULL )
+    {
+        return;
+    }
+    
+    center        = ( __XSNotificationCenter * )xsThis;
+    hash          = XSHash( object );
+    notifications = XSDictionary_ValueForKey( center->objects, XSSTR( ( char * )hash ) );
+    
+    if( notifications == NULL )
+    {
+        notifications = XSAutorelease( XSDictionary_Init( XSDictionary_Alloc() ) );
+        
+        XSDictionary_SetValueForKey( center->objects, notifications, XSSTR( ( char * )hash ) );
+    }
+    
+    observers = XSDictionary_ValueForKey( notifications, notificationName );
+    
+    if( observers == NULL )
+    {
+        observers = XSAutorelease( XSArray_Init( XSArray_Alloc() ) );
+        
+        XSDictionary_SetValueForKey( notifications, observers, notificationName );
+    }
+    
+    observer           = ( struct __XSNotificationCallback * )XSAutorelease( XSAlloc( sizeof( struct __XSNotificationCallback ) ) );
+    observer->callback = func;
+    
+    XSArray_AppendValue( observers, observer );
+}
+
+void XSNotificationCenter_PostNotification( XSNotificationCenter xsThis, XSObject object, XSString notificationName )
+{
+    const char                      * hash;
+    __XSNotificationCenter          * center;
+    XSDictionary                      notifications;
+    XSArray                           observers;
+    struct __XSNotificationCallback * observer;
+    XSUInteger                        i;
+    XSNotification                    notification;
+    
+    if( object == NULL || notificationName == NULL )
+    {
+        return;
+    }
+    
+    center        = ( __XSNotificationCenter * )xsThis;
+    hash          = XSHash( object );
+    notifications = XSDictionary_ValueForKey( center->objects, XSSTR( ( char * )hash ) );
+    
+    if( notifications == NULL )
+    {
+        return;
+    }
+    
+    observers = XSDictionary_ValueForKey( notifications, notificationName );
+    
+    if( observers == NULL )
+    {
+        return;
+    }
+    
+    notification = XSNotification_Init( XSNotification_Alloc() );
+    
+    XSNotification_SetObject( notification, object );
+    XSNotification_SetName( notification, notificationName );
+    
+    for( i = 0; i < XSArray_Count( observers ); i++ )
+    {
+        observer = ( struct __XSNotificationCallback * )XSArray_ValueAtIndex( observers, i );
+        
+        observer->callback( notification );
+    }
+    
+    XSRelease( notification );
 }
