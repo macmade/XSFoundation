@@ -50,7 +50,7 @@ static const XSClassInfos __XSStringClass =
     __XSString_Destruct,    /* Destructor */
     __XSString_Copy,        /* Object copy */
     __XSString_ToString,    /* Object description */
-    NULL                    /* Object comparison */
+    __XSString_Equals       /* Object comparison */
 };
 
 /*!
@@ -89,4 +89,15 @@ void __XSString_Copy( void * source, void * destination )
 XSString __XSString_ToString( void * object )
 {
     return ( XSString )object;
+}
+
+BOOL __XSString_Equals( void * object1, void * object2 )
+{
+    __XSString * s1;
+    __XSString * s2;
+    
+    s1 = ( __XSString * )object1;
+    s2 = ( __XSString * )object2;
+    
+    return ( strcmp( s1->str, s2->str ) == 0 ) ? YES : NO;
 }
