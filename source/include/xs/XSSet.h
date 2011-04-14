@@ -56,20 +56,79 @@ typedef struct XSSet * XSSet;
  */
 XSStatic XSSet XSSet_Alloc( void );
 
+/*!
+ * @function    XSSet_Init
+ * @abstract    Creates an empty set
+ * @param       xsThis  The set object
+ * @result      The set object
+ */
 XSSet XSSet_Init( XSSet xsThis );
 
+/*!
+ * @function    XSSet_InitWithCapacity
+ * @abstract    Creates an empty set with an initial capacity
+ * @param       xsThis      The set object
+ * @param       capacity    The initial capacityThe set object
+ * @result      The set object
+ */
 XSSet XSSet_InitWithCapacity( XSSet xsThis, XSUInteger capacity );
 
+/*!
+ * @function    XSSet_InitWithValues
+ * @abstract    Creates a set with values
+ * @param       xsThis      The set object
+ * @param       value1      The first value
+ * @param       ...         Other values, terminated by a NULL fence
+ * @result      The set object
+ */
 XSSet XSSet_InitWithValues( XSSet xsThis, void * value1, ... );
 
+/*!
+ * @function    XSSet_Count
+ * @abstract    Gets the number of values in the set
+ * @param       xsThis  The set object
+ * @result      The number of values
+ */
 XSUInteger XSSet_Count( XSSet xsThis );
 
+/*!
+ * @function    XSSet_ContainsValue
+ * @abstract    Checks if a set contains a value
+ * @param       xsThis  The set object
+ * @param       xsThis  The value to check
+ * @result      True if the set contains the value, otherwise false
+ */
 BOOL XSSet_ContainsValue( XSSet xsThis, void * value );
 
+/*!
+ * @function    XSSet_AddValue
+ * @abstract    Adds a value in the set
+ * @description The new value will be retained
+ * @param       xsThis  The set object
+ * @param       xsThis  The value to add
+ * @result      void
+ */
 void XSSet_AddValue( XSSet xsThis, void * value );
 
+/*!
+ * @function    XSSet_RemoveValue
+ * @abstract    Removes a value in the set
+ * @description The removed value will be released
+ * @param       xsThis  The set object
+ * @param       xsThis  The value to remove
+ * @result      void
+ */
 void XSSet_RemoveValue( XSSet xsThis, void * value );
 
+/*!
+ * @function    XSSet_ReplaceValue
+ * @abstract    Replaces a value in the set
+ * @description The old value will be released, and the new will be retained
+ * @param       xsThis      The set object
+ * @param       valueOld    The value to replace
+ * @param       valueNew    The new value
+ * @result      void
+ */
 void XSSet_ReplaceValue( XSSet xsThis, void * valueOld, void * valueNew );
 
 /*!
