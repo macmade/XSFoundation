@@ -40,6 +40,8 @@
 
 extern XSClassID __XSNotificationCenterClassID;
 
+static __XSNotificationCenter * __defaultCenter = NULL;
+
 XSStatic XSNotificationCenter XSNotificationCenter_Alloc( void )
 {
     return ( XSNotificationCenter )XSRuntime_CreateInstance( __XSNotificationCenterClassID );
@@ -48,4 +50,14 @@ XSStatic XSNotificationCenter XSNotificationCenter_Alloc( void )
 XSNotificationCenter XSNotificationCenter_Init( XSNotificationCenter xsThis )
 {
     return xsThis;
+}
+
+XSNotificationCenter XSNotificationCenter_DefaultCenter( void )
+{
+    if( __defaultCenter == NULL )
+    {
+        __defaultCenter = ( __XSNotificationCenter * )XSNotificationCenter_Init( XSNotificationCenter_Alloc() );
+    }
+    
+    return ( XSNotificationCenter )__defaultCenter;
 }

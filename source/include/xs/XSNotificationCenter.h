@@ -58,6 +58,8 @@ XSStatic XSNotificationCenter XSNotificationCenter_Alloc( void );
 
 XSNotificationCenter XSNotificationCenter_Init( XSNotificationCenter xsThis );
 
+XSNotificationCenter XSNotificationCenter_DefaultCenter( void );
+
 XS_EXTERN_C_END
 
 #endif /* _XS_NOTIFIATION_CENTER_H_ */

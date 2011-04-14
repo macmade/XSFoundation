@@ -65,6 +65,8 @@ XSStatic XSApplication XSApplication_Start( int argc, const char ** argv )
     __xsapp->argv       = argv + 1;
     __xsapp->executable = argv[ 0 ];
     
+    XSNotificationCenter_DefaultCenter();
+    
     return ( XSApplication )__xsapp;
 }
 
@@ -72,6 +74,7 @@ XSStatic void XSApplication_Exit( void )
 {
     XSRelease( __xsarp );
     XSRelease( __xsapp );
+    XSRelease( XSNotificationCenter_DefaultCenter() );
     
     __xsarp = NULL;
     __xsapp = NULL;
