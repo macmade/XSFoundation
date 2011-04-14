@@ -64,6 +64,15 @@ __XSBool;
  */
 void __XSBool_Initialize( void );
 
+/*!
+ * @function    XSBool_Equals
+ * @abstract    Object comparison
+ * @param       object1 The first object to compare
+ * @param       object1 The second object to compare
+ * @result      YES if both objects are equals, otherwise NO
+ */
+BOOL XSBool_Equals( void * object1, void * object2 );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_BOOL_H_ */

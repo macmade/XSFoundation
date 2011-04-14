@@ -50,7 +50,7 @@ static const XSClassInfos __XSBoolClass =
     NULL,               /* Destructor */
     NULL,               /* Object copy */
     NULL,               /* Object description */
-    NULL                /* Object comparison */
+    XSBool_Equals       /* Object comparison */
 };
 
 /*!
@@ -62,4 +62,15 @@ XSClassID __XSBoolClassID;
 void __XSBool_Initialize( void )
 {
     __XSBoolClassID = XSRuntime_RegisterClass( &__XSBoolClass );
+}
+
+BOOL XSBool_Equals( void * object1, void * object2 )
+{
+    __XSBool * b1;
+    __XSBool * b2;
+    
+    b1 = ( __XSBool * )object1;
+    b2 = ( __XSBool * )object2;
+    
+    return ( b1->value == b2->value ) ? YES : NO;
 }
