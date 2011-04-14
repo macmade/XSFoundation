@@ -67,7 +67,7 @@ void __XSSet_Initialize( void )
 void __XSSet_Destruct( void * object )
 {
     __XSSet  * set;
-    XSUInteger  i;
+    XSUInteger i;
     
     set = ( __XSSet * )object;
     
@@ -87,9 +87,9 @@ void __XSSet_Destruct( void * object )
 
 XSString __XSSet_ToString( void * object )
 {
-    XSUInteger  i;
-    __XSSet   * set;
-    XSString    description;
+    XSUInteger i;
+    __XSSet  * set;
+    XSString   description;
     
     description = XSString_Init( XSString_Alloc() );
     set         = ( __XSSet * )object;
