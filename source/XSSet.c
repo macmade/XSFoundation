@@ -123,6 +123,11 @@ void XSSet_AddValue( XSSet xsThis, void * value )
     __XSSet  * set;
     void     * values;
     
+    if( XSSet_ContainsValue( xsThis, value ) )
+    {
+        return;
+    }
+    
     set = ( __XSSet * )XSSet_Init( xsThis );
     
     if( set->count == set->capacity )
