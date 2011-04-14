@@ -131,7 +131,7 @@ void XSSet_AddValue( XSSet xsThis, void * value )
         
         if( values == NULL )
         {
-            
+            return;
         }
         
         set->values    = values;
