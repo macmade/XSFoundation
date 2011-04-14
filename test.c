@@ -77,6 +77,7 @@ int main( int argc, char * argv[] )
     XSString      str3;
     XSArray       arr;
     XSTimer       timer;
+    XSData        data;
     
     app  = XSApplication_Start( argc, ( const char ** )argv );
     
@@ -124,6 +125,7 @@ int main( int argc, char * argv[] )
     str2 = XSString_SubstringFromIndex( str1, 5 );
     str3 = XSCopy( str2 );
     arr  = XSArray_InitWithValues( XSArray_Alloc(), str1, str2, str3, NULL );
+    data = XSData_InitWithBytes( XSData_Alloc(), "hello, world", 12 );
     
     XSLog( "Memory hash: %s", XSHash( test ) );
     XSLog( "Object hash: %s", XSHash( str1 ) );
@@ -136,6 +138,7 @@ int main( int argc, char * argv[] )
     XSString_AppendCString( str1, " (and universe)" );
     XSLog( "$@", str1 );
     XSLog( "MD5 Hash: $@", XSString_MD5Hash( str1 ) );
+    XSLog( "$@", data );
     
     XSThread_Detach( thread_test, NULL );
     XSThread_Detach( thread_test, str1 );
@@ -148,6 +151,7 @@ int main( int argc, char * argv[] )
     XSRelease( timer );
     XSRelease( arr );
     XSRelease( str3 );
+    XSRelease( data );
     
     return EXIT_SUCCESS;
 }

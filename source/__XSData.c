@@ -47,9 +47,9 @@ static const XSClassInfos __XSDataClass =
     "XSData",           /* Class name */
     sizeof( XSData ),   /* Object size */
     NULL,               /* Constructor */
-    NULL,               /* Destructor */
+    __XSData_Destruct,  /* Destructor */
     NULL,               /* Object copy */
-    NULL,               /* Object description */
+    __XSData_ToString,  /* Object description */
     NULL                /* Object comparison */
 };
 
@@ -78,14 +78,12 @@ XSString __XSData_ToString( void * object )
     description = XSString_Init( XSString_Alloc() );
     data        = ( __XSData * )object;
     
-    XSString_AppendFormat( description, ( char * )"%lu bytes: { ", data->length );
+    XSString_AppendFormat( description, ( char * )"%lu bytes:", data->length );
     
     for( i = 0; i < data->length; i++ )
     {
-        XSString_AppendFormat( description, ( char * )"0x%02X ", data->bytes[ i ] );
+        XSString_AppendFormat( description, ( char * )" 0x%02X", data->bytes[ i ] );
     }
-    
-    XSString_AppendCString( description, ( char * )"}" );
     
     return XSAutorelease( description );
 }
