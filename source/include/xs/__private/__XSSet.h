@@ -67,6 +67,22 @@ __XSSet;
  */
 void __XSSet_Initialize( void );
 
+/*!
+ * @function    __XSSet_Destruct
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSSet_Destruct( void * object );
+
+/*!
+ * @function    __XSSet_ToString
+ * @abstract    Object description
+ * @param       object  A pointer to the object
+ * @result      The object's description
+ */
+XSString __XSSet_ToString( void * object );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_SET_H_ */

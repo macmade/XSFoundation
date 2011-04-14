@@ -47,9 +47,9 @@ static const XSClassInfos __XSSetClass =
     "XSSet",            /* Class name */
     sizeof( __XSSet ),  /* Object size */
     NULL,               /* Constructor */
-    NULL,               /* Destructor */
+    __XSSet_Destruct,   /* Destructor */
     NULL,               /* Object copy */
-    NULL,               /* Object description */
+    __XSSet_ToString,   /* Object description */
     NULL                /* Object comparison */
 };
 
@@ -62,4 +62,57 @@ XSClassID __XSSetClassID;
 void __XSSet_Initialize( void )
 {
     __XSSetClassID = XSRuntime_RegisterClass( &__XSSetClass );
+}
+
+void __XSSet_Destruct( void * object )
+{
+    __XSSet  * set;
+    XSUInteger  i;
+    
+    set = ( __XSSet * )object;
+    
+    if( set->values != NULL )
+    {
+        for( i = 0; i < set->count; i++ )
+        {
+            if( set->values[ i ] != NULL )
+            {
+                XSRelease( set->values[ i ] );
+            }
+        }
+        
+        XSRelease( set->values );
+    }
+}
+
+XSString __XSSet_ToString( void * object )
+{
+    XSUInteger  i;
+    __XSSet   * set;
+    XSString    description;
+    
+    description = XSString_Init( XSString_Alloc() );
+    set         = ( __XSSet * )object;
+    
+    XSString_AppendFormat( description, ( char * )"%lu items: {\n", set->count );
+    
+    for( i = 0; i < set->count; i++ )
+    {
+        if( set->values[ i ] == NULL )
+        {
+            XSString_AppendCString( description, ( char * )"    (null),\n" );
+        }
+        else if( XSRuntime_IsInstance( set->values[ i ] ) )
+        {
+            XSString_AppendFormat( description, ( char * )"    %s,\n", ( char * )XSRuntime_ObjectDescription( set->values[ i ] ) );
+        }
+        else
+        {
+            XSString_AppendFormat( description, ( char * )"    %p,\n", set->values[ i ] );
+        }
+    }
+    
+    XSString_AppendCString( description, ( char * )"}" );
+    
+    return XSAutorelease( description );
 }
