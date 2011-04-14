@@ -56,6 +56,7 @@ typedef struct __XSSet_Struct
     void        ** values;
     XSUInteger     count;
     XSUInteger     capacity;
+    XSUInteger     initialCapacity;
 }
 __XSSet;
 

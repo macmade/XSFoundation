@@ -63,19 +63,34 @@ XSSet XSSet_InitWithCapacity( XSSet xsThis, XSUInteger capacity )
         return NULL;
     }
     
-    set->count    = 0;
-    set->capacity = capacity;
+    set->count           = 0;
+    set->capacity        = capacity;
+    set->initialCapacity = capacity;
     
     return xsThis;
 }
 
 XSSet XSSet_InitWithValues( XSSet xsThis, void * value1, ... )
 {
+    void    * value;
+    va_list   args;
     __XSSet * set;
     
     set = ( __XSSet * )XSSet_Init( xsThis );
     
-    ( void )value1;
+    if( value1 == NULL )
+    {
+        return xsThis;
+    }
+    
+    va_start( args, value1 );
+    
+    while( NULL != ( value = va_arg( args, void * ) ) )
+    {
+        XSSet_AddValue( xsThis, value );
+    }
+    
+    va_end( args );
     
     return xsThis;
 }
@@ -105,19 +120,69 @@ BOOL XSSet_ContainsValue( XSSet xsThis, void * value )
 
 void XSSet_AddValue( XSSet xsThis, void * value )
 {
-    ( void )xsThis;
-    ( void )value;
+    __XSSet  * set;
+    void     * values;
+    
+    set = ( __XSSet * )XSSet_Init( xsThis );
+    
+    if( set->count == set->capacity )
+    {
+        values = XSRealloc( set->values, ( set->count + set->initialCapacity ) * sizeof( void * ) );
+        
+        if( values == NULL )
+        {
+            
+        }
+        
+        set->values    = values;
+        set->capacity += set->initialCapacity;
+    }
+    
+    set->values[ set->count++ ] = XSRetain( value );
 }
 
 void XSSet_RemoveValue( XSSet xsThis, void * value )
 {
-    ( void )xsThis;
-    ( void )value;
+    BOOL       found;
+    __XSSet  * set;
+    XSUInteger i;
+    
+    set   = ( __XSSet * )XSSet_Init( xsThis );
+    found = NO;
+    
+    for( i = 0; i < XSSet_Count( xsThis ); i++ )
+    {
+        if( found == YES )
+        {
+            set->values[ i - 1 ] = set->values[ i ];
+            set->values[ i ]     = NULL;
+        }
+        
+        if( set->values[ i ] == value )
+        {
+            XSRelease( set->values[ i ] );
+            set->count--;
+            
+            set->values[ i ] = NULL;
+            found            = YES;
+        }
+    }
 }
 
 void XSSet_ReplaceValue( XSSet xsThis, void * valueOld, void * valueNew )
 {
-    ( void )xsThis;
-    ( void )valueOld;
-    ( void )valueNew;
+    __XSSet  * set;
+    XSUInteger i;
+    
+    set = ( __XSSet * )XSSet_Init( xsThis );
+    
+    for( i = 0; i < XSSet_Count( xsThis ); i++ )
+    {
+        if( set->values[ i ] == valueOld )
+        {
+            XSRelease( set->values[ i ] );
+            
+            set->values[ i ] = XSRetain( valueNew );
+        }
+    }
 }
