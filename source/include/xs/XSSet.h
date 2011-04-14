@@ -72,6 +72,46 @@ void XSSet_RemoveValue( XSSet xsThis, void * value );
 
 void XSSet_ReplaceValue( XSSet xsThis, void * valueOld, void * valueNew );
 
+/*!
+ * @function    XSSet_Index
+ * @abstract    Gets the current set index
+ * @param       xsThis  The set object
+ * @result      The current set index
+ */
+XSUInteger XSSet_Index( XSSet xsThis );
+
+/*!
+ * @function    XSSet_Current
+ * @abstract    Gets the current set value
+ * @param       xsThis  The set object
+ * @result      The current set value
+ */
+void * XSSet_Current( XSSet xsThis );
+
+/*!
+ * @function    XSSet_Next
+ * @abstract    Increases the internal value pointer and returns the value
+ * @param       xsThis  The set object
+ * @result      The set value
+ */
+void * XSSet_Next( XSSet xsThis );
+
+/*!
+ * @function    XSSet_Previous
+ * @abstract    Decrease the internal value pointer and returns the value
+ * @param       xsThis  The set object
+ * @result      The set value
+ */
+void * XSSet_Previous( XSSet xsThis );
+
+/*!
+ * @function    XSSet_Rewind
+ * @abstract    Sets the internal value pointer to the first value in the set
+ * @param       xsThis  The set object
+ * @result      void
+ */
+void XSSet_Rewind( XSSet xsThis );
+
 XS_EXTERN_C_END
 
 #endif /* _XS_SET_H_ */

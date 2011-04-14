@@ -186,3 +186,57 @@ void XSSet_ReplaceValue( XSSet xsThis, void * valueOld, void * valueNew )
         }
     }
 }
+
+XSUInteger XSSet_Index( XSSet xsThis )
+{
+    __XSSet  * set;
+    
+    set = ( __XSSet * )xsThis;
+    
+    return set->cur;
+}
+
+void * XSSet_Current( XSSet xsThis )
+{
+    __XSSet  * set;
+    
+    set = ( __XSSet * )xsThis;
+    
+    return set->values[ set->cur ];
+}
+
+void * XSSet_Next( XSSet xsThis )
+{
+    __XSSet  * set;
+    
+    set = ( __XSSet * )xsThis;
+    
+    if( ( set->cur + 1 ) == set->count )
+    {
+        return NULL;
+    }
+    
+    return set->values[ ++set->cur ];
+}
+
+void * XSSet_Previous( XSSet xsThis )
+{
+    __XSSet  * set;
+    
+    set = ( __XSSet * )xsThis;
+    
+    if( set->cur == 0 )
+    {
+        return set->values[ 0 ];
+    }
+    
+    return set->values[ --set->cur ];
+}
+
+void XSSet_Rewind( XSSet xsThis )
+{
+    __XSSet  * set;
+    
+    set      = ( __XSSet * )xsThis;
+    set->cur = 0;
+}
