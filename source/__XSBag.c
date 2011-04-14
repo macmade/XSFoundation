@@ -47,9 +47,9 @@ static const XSClassInfos __XSBagClass =
     "XSBag",            /* Class name */
     sizeof( __XSBag ),  /* Object size */
     NULL,               /* Constructor */
-    NULL,               /* Destructor */
+    __XSBag_Destruct,   /* Destructor */
     NULL,               /* Object copy */
-    NULL,               /* Object description */
+    __XSBag_ToString,   /* Object description */
     NULL                /* Object comparison */
 };
 
@@ -62,4 +62,57 @@ XSClassID __XSBagClassID;
 void __XSBag_Initialize( void )
 {
     __XSBagClassID = XSRuntime_RegisterClass( &__XSBagClass );
+}
+
+void __XSBag_Destruct( void * object )
+{
+    __XSBag  * bag;
+    XSUInteger i;
+    
+    bag = ( __XSBag * )object;
+    
+    if( bag->values != NULL )
+    {
+        for( i = 0; i < bag->count; i++ )
+        {
+            if( bag->values[ i ] != NULL )
+            {
+                XSRelease( bag->values[ i ] );
+            }
+        }
+        
+        XSRelease( bag->values );
+    }
+}
+
+XSString __XSBag_ToString( void * object )
+{
+    XSUInteger i;
+    __XSBag  * bag;
+    XSString   description;
+    
+    description = XSString_Init( XSString_Alloc() );
+    bag         = ( __XSBag * )object;
+    
+    XSString_AppendFormat( description, ( char * )"%lu items: {\n", bag->count );
+    
+    for( i = 0; i < bag->count; i++ )
+    {
+        if( bag->values[ i ] == NULL )
+        {
+            XSString_AppendCString( description, ( char * )"    (null),\n" );
+        }
+        else if( XSRuntime_IsInstance( bag->values[ i ] ) )
+        {
+            XSString_AppendFormat( description, ( char * )"    %s,\n", ( char * )XSRuntime_ObjectDescription( bag->values[ i ] ) );
+        }
+        else
+        {
+            XSString_AppendFormat( description, ( char * )"    %p,\n", bag->values[ i ] );
+        }
+    }
+    
+    XSString_AppendCString( description, ( char * )"}" );
+    
+    return XSAutorelease( description );
 }

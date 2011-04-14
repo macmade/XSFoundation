@@ -48,11 +48,16 @@ XS_EXTERN_C_BEGIN
 /*!
  * @typdef      __XSBag
  * @abastract   XSBag class
- * @field       _xsbase     Runtime class
+ * @field       __class     Runtime class
  */
 typedef struct __XSBag_Struct
 {
     XSRuntimeClass __class;
+    void        ** values;
+    XSUInteger     count;
+    XSUInteger     capacity;
+    XSUInteger     initialCapacity;
+    XSUInteger     cur;
 }
 __XSBag;
 
@@ -62,6 +67,22 @@ __XSBag;
  * @result      void
  */
 void __XSBag_Initialize( void );
+
+/*!
+ * @function    __XSBag_Destruct
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSBag_Destruct( void * object );
+
+/*!
+ * @function    __XSBag_ToString
+ * @abstract    Object description
+ * @param       object  A pointer to the object
+ * @result      The object's description
+ */
+XSString __XSBag_ToString( void * object );
 
 XS_EXTERN_C_END
 

@@ -47,16 +47,129 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSBag
  * @abstract    Opaque type for the XSBag objects
  */
-typedef struct __XSBag * XSBag;
+typedef struct XSBag * XSBag;
 
 /*!
- * @function    __XSBag_Alloc
+ * @function    XSBag_Alloc
  * @abstract    Object allocator
  * @result      The allocated object
  */
 XSStatic XSBag XSBag_Alloc( void );
 
+/*!
+ * @function    XSBag_Init
+ * @abstract    Creates an empty bag
+ * @param       xsThis  The bag object
+ * @result      The bag object
+ */
 XSBag XSBag_Init( XSBag xsThis );
+
+/*!
+ * @function    XSBag_InitWithCapacity
+ * @abstract    Creates an empty bag with an initial capacity
+ * @param       xsThis      The bag object
+ * @param       capacity    The initial capacityThe bag object
+ * @result      The bag object
+ */
+XSBag XSBag_InitWithCapacity( XSBag xsThis, XSUInteger capacity );
+
+/*!
+ * @function    XSBag_InitWithValues
+ * @abstract    Creates a bag with values
+ * @param       xsThis      The bag object
+ * @param       value1      The first value
+ * @param       ...         Other values, terminated by a NULL fence
+ * @result      The bag object
+ */
+XSBag XSBag_InitWithValues( XSBag xsThis, void * value1, ... );
+
+/*!
+ * @function    XSBag_Count
+ * @abstract    Gets the number of values in the bag
+ * @param       xsThis  The bag object
+ * @result      The number of values
+ */
+XSUInteger XSBag_Count( XSBag xsThis );
+
+/*!
+ * @function    XSBag_ContainsValue
+ * @abstract    Checks if a bag contains a value
+ * @param       xsThis  The bag object
+ * @param       xsThis  The value to check
+ * @result      True if the bag contains the value, otherwise false
+ */
+BOOL XSBag_ContainsValue( XSBag xsThis, void * value );
+
+/*!
+ * @function    XSBag_AddValue
+ * @abstract    Adds a value in the bag
+ * @description The new value will be retained
+ * @param       xsThis  The bag object
+ * @param       xsThis  The value to add
+ * @result      void
+ */
+void XSBag_AddValue( XSBag xsThis, void * value );
+
+/*!
+ * @function    XSBag_RemoveValue
+ * @abstract    Removes a value in the bag
+ * @description The removed value will be released
+ * @param       xsThis  The bag object
+ * @param       xsThis  The value to remove
+ * @result      void
+ */
+void XSBag_RemoveValue( XSBag xsThis, void * value );
+
+/*!
+ * @function    XSBag_ReplaceValue
+ * @abstract    Replaces a value in the bag
+ * @description The old value will be released, and the new will be retained
+ * @param       xsThis      The bag object
+ * @param       valueOld    The value to replace
+ * @param       valueNew    The new value
+ * @result      void
+ */
+void XSBag_ReplaceValue( XSBag xsThis, void * valueOld, void * valueNew );
+
+/*!
+ * @function    XSBag_Index
+ * @abstract    Gets the current bag index
+ * @param       xsThis  The bag object
+ * @result      The current bag index
+ */
+XSUInteger XSBag_Index( XSBag xsThis );
+
+/*!
+ * @function    XSBag_Current
+ * @abstract    Gets the current bag value
+ * @param       xsThis  The bag object
+ * @result      The current bag value
+ */
+void * XSBag_Current( XSBag xsThis );
+
+/*!
+ * @function    XSBag_Next
+ * @abstract    Increases the internal value pointer and returns the value
+ * @param       xsThis  The bag object
+ * @result      The bag value
+ */
+void * XSBag_Next( XSBag xsThis );
+
+/*!
+ * @function    XSBag_Previous
+ * @abstract    Decrease the internal value pointer and returns the value
+ * @param       xsThis  The bag object
+ * @result      The bag value
+ */
+void * XSBag_Previous( XSBag xsThis );
+
+/*!
+ * @function    XSBag_Rewind
+ * @abstract    Bags the internal value pointer to the first value in the bag
+ * @param       xsThis  The bag object
+ * @result      void
+ */
+void XSBag_Rewind( XSBag xsThis );
 
 XS_EXTERN_C_END
 
