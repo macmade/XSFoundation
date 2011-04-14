@@ -38,6 +38,8 @@
 #include "XS.h"
 #include "__XSData.h"
 
+#define __XSDATA_DEFAULT_CAPACITY 4096
+
 extern XSClassID __XSDataClassID;
 
 XSStatic XSData XSData_Alloc( void )
@@ -47,5 +49,56 @@ XSStatic XSData XSData_Alloc( void )
 
 XSData XSData_Init( XSData xsThis )
 {
+    return XSData_InitWithCapacity( xsThis, __XSDATA_DEFAULT_CAPACITY );
+}
+
+XSData XSData_InitWithCapacity( XSData xsThis, XSUInteger capacity )
+{
+    ( void )capacity;
+    
     return xsThis;
+}
+
+XSData XSData_InitWithBytes( XSData xsThis, UInt8 * bytes, XSUInteger length )
+{
+    ( void )bytes;
+    ( void )length;
+    
+    return xsThis;
+}
+
+void XSData_GetLength( XSData xsThis )
+{
+    ( void )xsThis;
+}
+
+void XSData_GetBytes( XSData xsThis, XSRange range )
+{
+    ( void )xsThis;
+    ( void )range;
+}
+
+void XSData_SetBytes( XSData xsThis, XSRange range )
+{
+    ( void )xsThis;
+    ( void )range;
+}
+
+void XSData_AppendBytes( XSData xsThis, UInt8 * bytes )
+{
+    ( void )xsThis;
+    ( void )bytes;
+}
+
+void XSData_DeleteBytes( XSData xsThis, XSRange range )
+{
+    ( void )xsThis;
+    ( void )range;
+}
+
+UInt8 * XSData_GetBytesPointer( XSData xsThis )
+{
+    ( void )xsThis;
+    
+    return NULL;
 }

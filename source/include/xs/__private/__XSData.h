@@ -53,6 +53,10 @@ XS_EXTERN_C_BEGIN
 typedef struct __XSData_Struct
 {
     XSRuntimeClass __class;
+    UInt8        * bytes;
+    XSUInteger     length;
+    XSUInteger     capacity;
+    XSUInteger     initialCapacity;
 }
 __XSData;
 

@@ -58,6 +58,22 @@ XSStatic XSData XSData_Alloc( void );
 
 XSData XSData_Init( XSData xsThis );
 
+XSData XSData_InitWithCapacity( XSData xsThis, XSUInteger capacity );
+
+XSData XSData_InitWithBytes( XSData xsThis, UInt8 * bytes, XSUInteger length );
+
+void XSData_GetLength( XSData xsThis );
+
+void XSData_GetBytes( XSData xsThis, XSRange range );
+
+void XSData_SetBytes( XSData xsThis, XSRange range );
+
+void XSData_AppendBytes( XSData xsThis, UInt8 * bytes );
+
+void XSData_DeleteBytes( XSData xsThis, XSRange range );
+
+UInt8 * XSData_GetBytesPointer( XSData xsThis );
+
 XS_EXTERN_C_END
 
 #endif /* _XS_DATA_H_ */
