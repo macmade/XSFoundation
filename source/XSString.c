@@ -63,9 +63,10 @@ XSString XSString_InitWithCapacity( XSString xsThis, XSUInteger capacity )
         capacity = __XSSTRING_DEFAULT_CAPACITY;
     }
     
-    string->str      = XSAlloc( ( sizeof( char ) * capacity ) + 1 );
-    string->capacity = capacity;
-    string->length    = 0;
+    string->str             = XSAlloc( ( sizeof( char ) * capacity ) + 1 );
+    string->capacity        = capacity;
+    string->initialCapacity = capacity;
+    string->length          = 0;
     
     return ( XSString )string;
 }

@@ -61,6 +61,7 @@ typedef struct __XSDictionary_Struct
     XSString     * keys;
     XSUInteger     count;
     XSUInteger     capacity;
+    XSUInteger     initialCapacity;
 }
 __XSDictionary;
 

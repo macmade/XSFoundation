@@ -59,6 +59,7 @@ typedef struct __XSArray_Struct
     XSRuntimeClass __class;
     XSUInteger     count;
     XSUInteger     capacity;
+    XSUInteger     initialCapacity;
     XSUInteger     cur;
     void        ** values;
 }

@@ -67,10 +67,11 @@ XSDictionary XSDictionary_InitWithCapacity( XSDictionary xsThis, XSUInteger capa
         return NULL;
     }
     
-    dict           = ( __XSDictionary * )xsThis;
-    dict->values   = store;
-    dict->keys     = keys;
-    dict->capacity = capacity;
+    dict                  = ( __XSDictionary * )xsThis;
+    dict->values          = store;
+    dict->keys            = keys;
+    dict->capacity        = capacity;
+    dict->initialCapacity = capacity;
     dict->count    = 0;
     
     return ( XSDictionary )dict;

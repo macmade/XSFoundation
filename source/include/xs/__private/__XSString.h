@@ -56,6 +56,7 @@ typedef struct __XSString_Struct
     XSRuntimeClass __class;
     XSUInteger     length;
     XSUInteger     capacity;
+    XSUInteger     initialCapacity;
     char         * str;
 }
 __XSString;

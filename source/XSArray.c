@@ -62,10 +62,11 @@ XSArray XSArray_InitWithCapacity( XSArray xsThis, XSUInteger capacity )
         return NULL;
     }
     
-    array           = ( __XSArray * )xsThis;
-    array->values   = store;
-    array->capacity = capacity;
-    array->count    = 0;
+    array                  = ( __XSArray * )xsThis;
+    array->values          = store;
+    array->capacity        = capacity;
+    array->initialCapacity = capacity;
+    array->count           = 0;
     
     return ( XSArray )array;
 }
@@ -113,7 +114,7 @@ void XSArray_AppendValue( XSArray xsThis, void * value )
     
     if( _array->count == _array->capacity )
     {
-        if( NULL == ( store = ( void ** )XSRealloc( _array->values, ( _array->count + _array->capacity ) * sizeof( void * ) ) ) )
+        if( NULL == ( store = ( void ** )XSRealloc( _array->values, ( _array->count + _array->initialCapacity ) * sizeof( void * ) ) ) )
         {
             return;
         }
@@ -145,7 +146,7 @@ void XSArray_InsertValueAtIndex( XSArray xsThis, void * value, XSUInteger i )
     
     if( _array->count + 1 > _array->capacity )
     {
-        if( NULL == ( store = ( void ** )XSRealloc( _array->values, ( _array->count + _array->capacity ) * sizeof( void * ) ) ) )
+        if( NULL == ( store = ( void ** )XSRealloc( _array->values, ( _array->count + _array->initialCapacity ) * sizeof( void * ) ) ) )
         {
             return;
         }
