@@ -47,6 +47,12 @@ XSStatic XSNumber XSNumber_Alloc( void )
 
 XSNumber XSNumber_InitWithBool( XSNumber xsThis, BOOL value )
 {
+    __XSNumber * num;
+    
+    num            = ( __XSNumber * )xsThis;
+    num->boolValue = value;
+    num->types     = __XSNUMBER_TYPE_BOOL;
+    
     ( void )value;
     
     return xsThis;
@@ -54,55 +60,12 @@ XSNumber XSNumber_InitWithBool( XSNumber xsThis, BOOL value )
 
 XSNumber XSNumber_InitWithChar( XSNumber xsThis, char value )
 {
-    ( void )value;
+    __XSNumber * num;
     
-    return xsThis;
-}
-
-XSNumber XSNumber_InitWithDouble( XSNumber xsThis, double value )
-{
-    ( void )value;
+    num             = ( __XSNumber * )xsThis;
+    num->sCharValue = value;
+    num->types      = __XSNUMBER_TYPE_SCHAR;
     
-    return xsThis;
-}
-
-XSNumber XSNumber_InitWithFloat( XSNumber xsThis, float value )
-{
-    ( void )value;
-    
-    return xsThis;
-}
-
-XSNumber XSNumber_InitWithInt( XSNumber xsThis, int value )
-{
-    ( void )value;
-    
-    return xsThis;
-}
-
-XSNumber XSNumber_InitWithInteger( XSNumber xsThis, XSInteger value )
-{
-    ( void )value;
-    
-    return xsThis;
-}
-
-XSNumber XSNumber_InitWithLong( XSNumber xsThis, long value )
-{
-    ( void )value;
-    
-    return xsThis;
-}
-
-XSNumber XSNumber_InitWithLongLong( XSNumber xsThis, long long value )
-{
-    ( void )value;
-    
-    return xsThis;
-}
-
-XSNumber XSNumber_InitWithShort( XSNumber xsThis, short value )
-{
     ( void )value;
     
     return xsThis;
@@ -110,34 +73,25 @@ XSNumber XSNumber_InitWithShort( XSNumber xsThis, short value )
 
 XSNumber XSNumber_InitWithUnsignedChar( XSNumber xsThis, unsigned char value )
 {
+    __XSNumber * num;
+    
+    num             = ( __XSNumber * )xsThis;
+    num->uCharValue = value;
+    num->types      = __XSNUMBER_TYPE_UCHAR;
+    
     ( void )value;
     
     return xsThis;
 }
 
-XSNumber XSNumber_InitWithUnsignedInt( XSNumber xsThis, unsigned int value )
+XSNumber XSNumber_InitWithShort( XSNumber xsThis, short value )
 {
-    ( void )value;
+    __XSNumber * num;
     
-    return xsThis;
-}
-
-XSNumber XSNumber_InitWithUnsignedInteger( XSNumber xsThis, XSUInteger value )
-{
-    ( void )value;
+    num              = ( __XSNumber * )xsThis;
+    num->sShortValue = value;
+    num->types       = __XSNUMBER_TYPE_SSHORT;
     
-    return xsThis;
-}
-
-XSNumber XSNumber_InitWithUnsignedLong( XSNumber xsThis, unsigned long value )
-{
-    ( void )value;
-    
-    return xsThis;
-}
-
-XSNumber XSNumber_InitWithUnsignedLongLong( XSNumber xsThis, unsigned long long value )
-{
     ( void )value;
     
     return xsThis;
@@ -145,6 +99,142 @@ XSNumber XSNumber_InitWithUnsignedLongLong( XSNumber xsThis, unsigned long long 
 
 XSNumber XSNumber_InitWithUnsignedShort( XSNumber xsThis, unsigned short value )
 {
+    __XSNumber * num;
+    
+    num              = ( __XSNumber * )xsThis;
+    num->uShortValue = value;
+    num->types       = __XSNUMBER_TYPE_USHORT;
+    
+    ( void )value;
+    
+    return xsThis;
+}
+
+XSNumber XSNumber_InitWithInt( XSNumber xsThis, int value )
+{
+    __XSNumber * num;
+    
+    num            = ( __XSNumber * )xsThis;
+    num->sIntValue = value;
+    num->types     = __XSNUMBER_TYPE_SINT;
+    
+    ( void )value;
+    
+    return xsThis;
+}
+
+XSNumber XSNumber_InitWithUnsignedInt( XSNumber xsThis, unsigned int value )
+{
+    __XSNumber * num;
+    
+    num            = ( __XSNumber * )xsThis;
+    num->uIntValue = value;
+    num->types     = __XSNUMBER_TYPE_UINT;
+    
+    ( void )value;
+    
+    return xsThis;
+}
+
+XSNumber XSNumber_InitWithLong( XSNumber xsThis, long value )
+{
+    __XSNumber * num;
+    
+    num             = ( __XSNumber * )xsThis;
+    num->sLongValue = value;
+    num->types      = __XSNUMBER_TYPE_SLONG;
+    
+    ( void )value;
+    
+    return xsThis;
+}
+
+XSNumber XSNumber_InitWithUnsignedLong( XSNumber xsThis, unsigned long value )
+{
+    __XSNumber * num;
+    
+    num             = ( __XSNumber * )xsThis;
+    num->uLongValue = value;
+    num->types      = __XSNUMBER_TYPE_ULONG;
+    
+    ( void )value;
+    
+    return xsThis;
+}
+
+XSNumber XSNumber_InitWithLongLong( XSNumber xsThis, long long value )
+{
+    __XSNumber * num;
+    
+    num                 = ( __XSNumber * )xsThis;
+    num->sLongLongValue = value;
+    num->types          = __XSNUMBER_TYPE_SLONGLONG;
+    
+    ( void )value;
+    
+    return xsThis;
+}
+
+XSNumber XSNumber_InitWithUnsignedLongLong( XSNumber xsThis, unsigned long long value )
+{
+    __XSNumber * num;
+    
+    num                 = ( __XSNumber * )xsThis;
+    num->uLongLongValue = value;
+    num->types          = __XSNUMBER_TYPE_ULONGLONG;
+    
+    ( void )value;
+    
+    return xsThis;
+}
+
+XSNumber XSNumber_InitWithFloat( XSNumber xsThis, float value )
+{
+    __XSNumber * num;
+    
+    num             = ( __XSNumber * )xsThis;
+    num->floatValue = value;
+    num->types      = __XSNUMBER_TYPE_FLOAT;
+    
+    ( void )value;
+    
+    return xsThis;
+}
+
+XSNumber XSNumber_InitWithDouble( XSNumber xsThis, double value )
+{
+    __XSNumber * num;
+    
+    num              = ( __XSNumber * )xsThis;
+    num->doubleValue = value;
+    num->types       = __XSNUMBER_TYPE_DOUBLE;
+    
+    ( void )value;
+    
+    return xsThis;
+}
+
+XSNumber XSNumber_InitWithInteger( XSNumber xsThis, XSInteger value )
+{
+    __XSNumber * num;
+    
+    num                = ( __XSNumber * )xsThis;
+    num->sIntegerValue = value;
+    num->types         = __XSNUMBER_TYPE_SINTEGER;
+    
+    ( void )value;
+    
+    return xsThis;
+}
+
+XSNumber XSNumber_InitWithUnsignedInteger( XSNumber xsThis, XSUInteger value )
+{
+    __XSNumber * num;
+    
+    num                = ( __XSNumber * )xsThis;
+    num->uIntegerValue = value;
+    num->types         = __XSNUMBER_TYPE_UINTEGER;
+    
     ( void )value;
     
     return xsThis;

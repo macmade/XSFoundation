@@ -45,6 +45,22 @@ XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
+#define __XSNUMBER_TYPE_BOOL        0x0001
+#define __XSNUMBER_TYPE_SCHAR       0x0002
+#define __XSNUMBER_TYPE_UCHAR       0x0004
+#define __XSNUMBER_TYPE_SSHORT      0x0008
+#define __XSNUMBER_TYPE_USHORT      0x0010
+#define __XSNUMBER_TYPE_SINT        0x0020
+#define __XSNUMBER_TYPE_UINT        0x0040
+#define __XSNUMBER_TYPE_SLONG       0x0080
+#define __XSNUMBER_TYPE_ULONG       0x0100
+#define __XSNUMBER_TYPE_SLONGLONG   0x0200
+#define __XSNUMBER_TYPE_ULONGLONG   0x0400
+#define __XSNUMBER_TYPE_FLOAT       0x0800
+#define __XSNUMBER_TYPE_DOUBLE      0x1000
+#define __XSNUMBER_TYPE_SINTEGER    0x2000
+#define __XSNUMBER_TYPE_UINTEGER    0x4000
+
 /*!
  * @typdef      __XSNumber
  * @abastract   XSNumber class
@@ -52,7 +68,24 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct __XSNumber_Struct
 {
-    XSRuntimeClass __class;
+    XSRuntimeClass      __class;
+    uint16_t            types;
+    BOOL                boolValue;
+    signed char         sCharValue;
+    unsigned char       uCharValue;
+    signed short        sShortValue;
+    unsigned short      uShortValue;
+    signed int          sIntValue;
+    unsigned int        uIntValue;
+    signed long         sLongValue;
+    unsigned long       uLongValue;
+    signed long long    sLongLongValue;
+    unsigned long long  uLongLongValue;
+    float               floatValue;
+    double              doubleValue;
+    XSInteger           sIntegerValue;
+    XSUInteger          uIntegerValue;
+    
 }
 __XSNumber;
 
