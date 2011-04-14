@@ -65,7 +65,7 @@ __XSBool;
 void __XSBool_Initialize( void );
 
 /*!
- * @function    XSBool_Equals
+ * @function    __XSBool_Equals
  * @abstract    Object comparison
  * @param       object1 The first object to compare
  * @param       object1 The second object to compare
