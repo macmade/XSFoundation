@@ -80,6 +80,14 @@ void __XSDictionary_Initialize( void );
  */
 void __XSDictionary_Destruct( void * object );
 
+/*!
+ * @function    __XSArray_ToString
+ * @abstract    Object description
+ * @param       object  A pointer to the object
+ * @result      The object's description
+ */
+XSString __XSDictionary_ToString( void * object );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_DICTIONARY_H_ */

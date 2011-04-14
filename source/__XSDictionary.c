@@ -49,7 +49,7 @@ static const XSClassInfos __XSDictionaryClass =
     NULL,                       /* Constructor */
     __XSDictionary_Destruct,    /* Destructor */
     NULL,                       /* Object copy */
-    NULL,                       /* Object description */
+    __XSDictionary_ToString,    /* Object description */
     NULL                        /* Object comparison */
 };
 
@@ -79,4 +79,40 @@ void __XSDictionary_Destruct( void * object )
     
     XSRelease( dict->values );
     XSRelease( dict->keys );
+}
+
+XSString __XSDictionary_ToString( void * object )
+{
+    XSUInteger       i;
+    __XSDictionary * dict;
+    XSString         description;
+    
+    description = XSString_Init( XSString_Alloc() );
+    dict        = ( __XSDictionary * )object;
+    
+    XSString_AppendFormat( description, ( char * )"%lu items: {\n", dict->count );
+    
+    for( i = 0; i < dict->count; i++ )
+    {
+        XSString_AppendCString( description, ( char * )"    " );
+        XSString_AppendString( description, dict->keys[ i ] );
+        XSString_AppendCString( description, ( char * )" => " );
+        
+        if( dict->values[ i ] == NULL )
+        {
+            XSString_AppendCString( description, ( char * )"(null),\n" );
+        }
+        else if( XSRuntime_IsInstance( dict->values[ i ] ) )
+        {
+            XSString_AppendFormat( description, ( char * )"%s,\n", ( char * )XSRuntime_ObjectDescription( dict->values[ i ] ) );
+        }
+        else
+        {
+            XSString_AppendFormat( description, ( char * )"%p,\n", dict->values[ i ] );
+        }
+    }
+    
+    XSString_AppendCString( description, ( char * )"}" );
+    
+    return XSAutorelease( description );
 }
