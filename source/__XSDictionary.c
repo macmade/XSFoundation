@@ -94,9 +94,7 @@ XSString __XSDictionary_ToString( void * object )
     
     for( i = 0; i < dict->count; i++ )
     {
-        XSString_AppendCString( description, ( char * )"    " );
-        XSString_AppendString( description, dict->keys[ i ] );
-        XSString_AppendCString( description, ( char * )" => " );
+        XSString_AppendFormat( description, ( char * )"    %s => ", XSString_CString( dict->keys[ i ] ) );
         
         if( dict->values[ i ] == NULL )
         {
