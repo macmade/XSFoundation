@@ -71,7 +71,7 @@ void __XSBool_Initialize( void );
  * @param       object1 The second object to compare
  * @result      YES if both objects are equals, otherwise NO
  */
-BOOL XSBool_Equals( void * object1, void * object2 );
+BOOL __XSBool_Equals( void * object1, void * object2 );
 
 XS_EXTERN_C_END
 
