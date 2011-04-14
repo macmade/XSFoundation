@@ -50,7 +50,7 @@ static const XSClassInfos __XSNullClass =
     NULL,               /* Destructor */
     NULL,               /* Object copy */
     NULL,               /* Object description */
-    NULL                /* Object comparison */
+    __XSNull_Equals     /* Object comparison */
 };
 
 /*!
@@ -62,4 +62,12 @@ XSClassID __XSNullClassID;
 void __XSNull_Initialize( void )
 {
     __XSNullClassID = XSRuntime_RegisterClass( &__XSNullClass );
+}
+
+BOOL __XSNull_Equals( void * object1, void * object2 )
+{
+    ( void )object1;
+    ( void )object2;
+    
+    return YES;
 }
