@@ -67,6 +67,22 @@ __XSData;
  */
 void __XSData_Initialize( void );
 
+/*!
+ * @function    __XSData_Destruct
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSData_Destruct( void * object );
+
+/*!
+ * @function    __XSData_ToString
+ * @abstract    Object description
+ * @param       object  A pointer to the object
+ * @result      The object's description
+ */
+XSString __XSData_ToString( void * object );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_DATA_H_ */

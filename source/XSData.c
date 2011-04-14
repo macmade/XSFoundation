@@ -54,28 +54,52 @@ XSData XSData_Init( XSData xsThis )
 
 XSData XSData_InitWithCapacity( XSData xsThis, XSUInteger capacity )
 {
-    ( void )capacity;
+    __XSData * data;
+    UInt8    * bytes;
+    
+    data                  = ( __XSData * )xsThis;
+    data->capacity        = capacity;
+    data->initialCapacity = capacity;
+    data->length          = 0;
+    
+    if( NULL == ( bytes = ( UInt8 * )XSAlloc( capacity * sizeof( UInt8 ) ) ) )
+    {
+        return NULL;
+    }
+    
+    data->bytes = bytes;
     
     return xsThis;
 }
 
 XSData XSData_InitWithBytes( XSData xsThis, UInt8 * bytes, XSUInteger length )
 {
-    ( void )bytes;
-    ( void )length;
+    __XSData * data;
+    
+    if( NULL == XSData_InitWithCapacity( xsThis, length ) )
+    {
+        return NULL;
+    }
+    
+    data         = ( __XSData * )xsThis;
+    data->length = length;
+    
+    memcpy( data->bytes, bytes, length );
     
     return xsThis;
 }
 
-void XSData_GetLength( XSData xsThis )
+XSUInteger XSData_GetLength( XSData xsThis )
 {
-    ( void )xsThis;
+    return ( ( __XSData * )xsThis )->length;
 }
 
-void XSData_GetBytes( XSData xsThis, XSRange range )
+XSAutoreleased UInt8 * XSData_GetBytes( XSData xsThis, XSRange range )
 {
     ( void )xsThis;
     ( void )range;
+    
+    return NULL;
 }
 
 void XSData_SetBytes( XSData xsThis, XSRange range )

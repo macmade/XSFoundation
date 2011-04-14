@@ -63,3 +63,29 @@ void __XSData_Initialize( void )
 {
     __XSDataClassID = XSRuntime_RegisterClass( &__XSDataClass );
 }
+
+void __XSData_Destruct( void * object )
+{
+    XSRelease( ( ( __XSData * )object )->bytes );
+}
+
+XSString __XSData_ToString( void * object )
+{
+    XSUInteger i;
+    __XSData * data;
+    XSString   description;
+    
+    description = XSString_Init( XSString_Alloc() );
+    data        = ( __XSData * )object;
+    
+    XSString_AppendFormat( description, ( char * )"%lu bytes: { ", data->length );
+    
+    for( i = 0; i < data->length; i++ )
+    {
+        XSString_AppendFormat( description, ( char * )"0x%02X ", data->bytes[ i ] );
+    }
+    
+    XSString_AppendCString( description, ( char * )"}" );
+    
+    return XSAutorelease( description );
+}

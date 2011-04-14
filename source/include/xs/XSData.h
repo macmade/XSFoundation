@@ -62,9 +62,9 @@ XSData XSData_InitWithCapacity( XSData xsThis, XSUInteger capacity );
 
 XSData XSData_InitWithBytes( XSData xsThis, UInt8 * bytes, XSUInteger length );
 
-void XSData_GetLength( XSData xsThis );
+XSUInteger XSData_GetLength( XSData xsThis );
 
-void XSData_GetBytes( XSData xsThis, XSRange range );
+XSAutoreleased UInt8 * XSData_GetBytes( XSData xsThis, XSRange range );
 
 void XSData_SetBytes( XSData xsThis, XSRange range );
 
