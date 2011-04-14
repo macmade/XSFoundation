@@ -49,3 +49,49 @@ XSNotification XSNotification_Init( XSNotification xsThis )
 {
     return xsThis;
 }
+
+XSObject XSNotification_GetObject( XSNotification xsThis )
+{
+    __XSNotification * notification;
+    
+    notification = ( __XSNotification * )xsThis;
+    
+    return notification->object;
+}
+
+void XSNotification_SetObject( XSNotification xsThis, XSObject object )
+{
+    __XSNotification * notification;
+    
+    notification = ( __XSNotification * )xsThis;
+
+    if( notification->object != NULL )
+    {
+        XSRelease( notification->object );
+    }
+    
+    notification->object = XSRetain( object );
+}
+
+XSString XSNotification_GetName( XSNotification xsThis )
+{
+    __XSNotification * notification;
+    
+    notification = ( __XSNotification * )xsThis;
+    
+    return notification->name;
+}
+
+void XSNotification_SetName( XSNotification xsThis, XSString name )
+{
+    __XSNotification * notification;
+    
+    notification = ( __XSNotification * )xsThis;
+
+    if( notification->name != NULL )
+    {
+        XSRelease( notification->name );
+    }
+    
+    notification->object = XSRetain( name );
+}

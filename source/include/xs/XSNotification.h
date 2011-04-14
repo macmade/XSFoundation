@@ -58,6 +58,14 @@ XSStatic XSNotification XSNotification_Alloc( void );
 
 XSNotification XSNotification_Init( XSNotification xsThis );
 
+XSObject XSNotification_GetObject( XSNotification xsThis );
+
+void XSNotification_SetObject( XSNotification xsThis, XSObject object );
+
+XSString XSNotification_GetName( XSNotification xsThis );
+
+void XSNotification_SetName( XSNotification xsThis, XSString name );
+
 XS_EXTERN_C_END
 
 #endif /* _XS_NOTIFIATION_CENTER_H_ */

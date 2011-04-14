@@ -44,13 +44,13 @@
  */
 static const XSClassInfos __XSNotificationClass =
 {
-    "XSNotification",             /* Class name */
-    sizeof( __XSNotification ),   /* Object size */
-    NULL,                               /* Constructor */
-    NULL,                               /* Destructor */
-    NULL,                               /* Object copy */
-    NULL,                               /* Object description */
-    NULL                                /* Object comparison */
+    "XSNotification",               /* Class name */
+    sizeof( __XSNotification ),     /* Object size */
+    NULL,                           /* Constructor */
+    __XSNotification_Destruct,      /* Destructor */
+    NULL,                           /* Object copy */
+    NULL,                           /* Object description */
+    NULL                            /* Object comparison */
 };
 
 /*!
@@ -62,4 +62,21 @@ XSClassID __XSNotificationClassID;
 void __XSNotification_Initialize( void )
 {
     __XSNotificationClassID = XSRuntime_RegisterClass( &__XSNotificationClass );
+}
+
+void __XSNotification_Destruct( void * object )
+{
+    __XSNotification * notification;
+    
+    notification = ( __XSNotification * )object;
+    
+    if( notification->object != NULL )
+    {
+        XSRelease( notification->object );
+    }
+    
+    if( notification->name != NULL )
+    {
+        XSRelease( notification->name );
+    }
 }
