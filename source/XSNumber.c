@@ -349,17 +349,9 @@ char XSNumber_GetChar( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_SCHAR ) == 0 )
     {
-        n->types |= __XSNUMBER_TYPE_SCHAR;
-        uint64    = __XSNumber_GetUInt64Value( n );
-        
-        if( uint64 > SCHAR_MAX )
-        {
-            n->sCharValue = SCHAR_MAX;
-        }
-        else
-        {
-            n->sCharValue = ( signed char )uint64;
-        }
+        n->types     |= __XSNUMBER_TYPE_SCHAR;
+        uint64        = __XSNumber_GetUInt64Value( n );
+        n->sCharValue = ( signed char )uint64;
     }
     
     return n->sCharValue;
@@ -374,17 +366,9 @@ unsigned char XSNumber_GetUnsignedChar( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_UCHAR ) == 0 )
     {
-        n->types |= __XSNUMBER_TYPE_UCHAR;
-        uint64    = __XSNumber_GetUInt64Value( n );
-        
-        if( uint64 > UCHAR_MAX )
-        {
-            n->uCharValue = UCHAR_MAX;
-        }
-        else
-        {
-            n->uCharValue = ( unsigned char )uint64;
-        }
+        n->types     |= __XSNUMBER_TYPE_UCHAR;
+        uint64        = __XSNumber_GetUInt64Value( n );
+        n->uCharValue = ( unsigned char )uint64;
     }
     
     return n->uCharValue;
@@ -399,17 +383,9 @@ short XSNumber_GetShort( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_SSHORT ) == 0 )
     {
-        n->types |= __XSNUMBER_TYPE_SSHORT;
-        uint64    = __XSNumber_GetUInt64Value( n );
-        
-        if( uint64 > SHRT_MAX )
-        {
-            n->sShortValue = SHRT_MAX;
-        }
-        else
-        {
-            n->sShortValue = ( signed short )uint64;
-        }
+        n->types      |= __XSNUMBER_TYPE_SSHORT;
+        uint64         = __XSNumber_GetUInt64Value( n );
+        n->sShortValue = ( signed short )uint64;
     }
     
     return n->sShortValue;
@@ -424,17 +400,9 @@ unsigned short XSNumber_GetUnsignedShort( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_USHORT ) == 0 )
     {
-        n->types |= __XSNUMBER_TYPE_USHORT;
-        uint64    = __XSNumber_GetUInt64Value( n );
-        
-        if( uint64 > USHRT_MAX )
-        {
-            n->uShortValue = USHRT_MAX;
-        }
-        else
-        {
-            n->uShortValue = ( unsigned short )uint64;
-        }
+        n->types      |= __XSNUMBER_TYPE_USHORT;
+        uint64         = __XSNumber_GetUInt64Value( n );
+        n->uShortValue = ( unsigned short )uint64;
     }
     
     return n->uShortValue;
@@ -449,17 +417,9 @@ int XSNumber_GetInt( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_SINT ) == 0 )
     {
-        n->types |= __XSNUMBER_TYPE_SINT;
-        uint64    = __XSNumber_GetUInt64Value( n );
-        
-        if( uint64 > INT_MAX )
-        {
-            n->uIntValue = INT_MAX;
-        }
-        else
-        {
-            n->uIntValue = ( signed int )uint64;
-        }
+        n->types    |= __XSNUMBER_TYPE_SINT;
+        uint64       = __XSNumber_GetUInt64Value( n );
+        n->uIntValue = ( signed int )uint64;
     }
     
     return n->uIntValue;
@@ -474,17 +434,9 @@ unsigned int XSNumber_GetUnsignedInt( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_UINT ) == 0 )
     {
-        n->types |= __XSNUMBER_TYPE_UINT;
-        uint64    = __XSNumber_GetUInt64Value( n );
-        
-        if( uint64 > UINT_MAX )
-        {
-            n->sIntValue = UINT_MAX;
-        }
-        else
-        {
-            n->sIntValue = ( unsigned int )uint64;
-        }
+        n->types    |= __XSNUMBER_TYPE_UINT;
+        uint64       = __XSNumber_GetUInt64Value( n );
+        n->sIntValue = ( unsigned int )uint64;
     }
     
     return n->sIntValue;
@@ -499,17 +451,9 @@ long XSNumber_GetLong( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_SLONG ) == 0 )
     {
-        n->types |= __XSNUMBER_TYPE_SLONG;
-        uint64    = __XSNumber_GetUInt64Value( n );
-        
-        if( uint64 > LONG_MAX )
-        {
-            n->sLongValue = LONG_MAX;
-        }
-        else
-        {
-            n->sLongValue = ( signed long )uint64;
-        }
+        n->types     |= __XSNUMBER_TYPE_SLONG;
+        uint64        = __XSNumber_GetUInt64Value( n );
+        n->sLongValue = ( signed long )uint64;
     }
     
     return n->sLongValue;
@@ -524,17 +468,9 @@ unsigned long XSNumber_GetUnsignedLong( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_ULONG ) == 0 )
     {
-        n->types |= __XSNUMBER_TYPE_ULONG;
-        uint64    = __XSNumber_GetUInt64Value( n );
-        
-        if( uint64 > ULONG_MAX )
-        {
-            n->uLongValue = ULONG_MAX;
-        }
-        else
-        {
-            n->uLongValue = ( unsigned long )uint64;
-        }
+        n->types     |= __XSNUMBER_TYPE_ULONG;
+        uint64        = __XSNumber_GetUInt64Value( n );
+        n->uLongValue = ( unsigned long )uint64;
     }
     
     return n->uLongValue;
@@ -549,17 +485,9 @@ long long XSNumber_GetLongLong( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_SLONGLONG ) == 0 )
     {
-        n->types |= __XSNUMBER_TYPE_SLONGLONG;
-        uint64    = __XSNumber_GetUInt64Value( n );
-        
-        if( uint64 > LLONG_MAX )
-        {
-            n->sLongLongValue = LLONG_MAX;
-        }
-        else
-        {
-            n->sLongLongValue = ( signed long long )uint64;
-        }
+        n->types         |= __XSNUMBER_TYPE_SLONGLONG;
+        uint64            = __XSNumber_GetUInt64Value( n );
+        n->sLongLongValue = ( signed long long )uint64;
     }
     
     return n->sLongLongValue;
@@ -574,17 +502,9 @@ unsigned long long XSNumber_GetUnsignedLongLong( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_ULONGLONG ) == 0 )
     {
-        n->types |= __XSNUMBER_TYPE_ULONGLONG;
-        uint64    = __XSNumber_GetUInt64Value( n );
-        
-        if( uint64 > ULLONG_MAX )
-        {
-            n->uLongLongValue = ULLONG_MAX;
-        }
-        else
-        {
-            n->uLongLongValue = ( unsigned long long )uint64;
-        }
+        n->types         |= __XSNUMBER_TYPE_ULONGLONG;
+        uint64            = __XSNumber_GetUInt64Value( n );
+        n->uLongLongValue = ( unsigned long long )uint64;
     }
     
     return n->uLongLongValue;
@@ -605,10 +525,6 @@ float XSNumber_GetFloat( XSNumber xsThis )
         if( n->types & __XSNUMBER_TYPE_DOUBLE )
         {
             n->floatValue = ( float )n->doubleValue;
-        }
-        else if( uint64 > FLT_MAX )
-        {
-            n->floatValue = FLT_MAX;
         }
         else
         {
@@ -635,10 +551,6 @@ double XSNumber_GetDouble( XSNumber xsThis )
         {
             n->doubleValue = ( double )n->floatValue;
         }
-        else if( uint64 > DBL_MAX )
-        {
-            n->doubleValue = DBL_MAX;
-        }
         else
         {
             n->doubleValue = ( double )uint64;
@@ -657,17 +569,9 @@ XSInteger XSNumber_GetInteger( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_UINTEGER ) == 0 )
     {
-        n->types |= __XSNUMBER_TYPE_UINTEGER;
-        uint64    = __XSNumber_GetUInt64Value( n );
-        
-        if( uint64 > XSIntegerMax )
-        {
-            n->sIntegerValue = XSIntegerMax;
-        }
-        else
-        {
-            n->sIntegerValue = ( XSInteger )uint64;
-        }
+        n->types        |= __XSNUMBER_TYPE_UINTEGER;
+        uint64           = __XSNumber_GetUInt64Value( n );
+        n->sIntegerValue = ( XSInteger )uint64;
     }
     
     return n->sIntegerValue;
@@ -682,17 +586,9 @@ XSUInteger XSNumber_GetUnsignedInteger( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_UINTEGER ) == 0 )
     {
-        n->types |= __XSNUMBER_TYPE_UINTEGER;
-        uint64    = __XSNumber_GetUInt64Value( n );
-        
-        if( uint64 > XSUIntegerMax )
-        {
-            n->uIntegerValue = XSUIntegerMax;
-        }
-        else
-        {
-            n->uIntegerValue = ( XSUInteger )uint64;
-        }
+        n->types        |= __XSNUMBER_TYPE_UINTEGER;
+        uint64           = __XSNumber_GetUInt64Value( n );
+        n->uIntegerValue = ( XSUInteger )uint64;
     }
     
     return n->uIntegerValue;
