@@ -32,7 +32,7 @@
 /*!
  * @header      __XSApplication.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Private XSApplication class definitions
  */
 
 #ifndef ___XS_APPLICATION_H_

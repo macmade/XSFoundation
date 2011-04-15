@@ -32,7 +32,7 @@
 /*!
  * @header      __XSArray.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Private XSColor class definitions
  */
 
 #ifndef ___XS_COLOR_H_

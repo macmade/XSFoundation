@@ -32,7 +32,7 @@
 /*!
  * @header      __XSApplicationArgument.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Private XSApplicationArgument class definitions
  */
 
 #ifndef ___XS_APPLICATION_ARGUMENT_H_

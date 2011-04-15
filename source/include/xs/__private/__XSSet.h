@@ -32,7 +32,7 @@
 /*!
  * @header      __XSSet.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Private XSSet class definitions
  */
 
 #ifndef ___XS_SET_H_

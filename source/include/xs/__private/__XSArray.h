@@ -32,7 +32,7 @@
 /*!
  * @header      __XSArray.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Private XSArray class definitions
  */
 
 #ifndef ___XS_ARRAY_H_

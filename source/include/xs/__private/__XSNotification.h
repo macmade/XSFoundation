@@ -32,7 +32,7 @@
 /*!
  * @header      __XSNotification.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Private XSNotification class definitions
  */
 
 #ifndef ___XS_NOTIFIATION_H_

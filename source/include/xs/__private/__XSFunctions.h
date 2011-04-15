@@ -32,7 +32,7 @@
 /*!
  * @header      __XSFunctions.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Private functions
  */
 
 #ifndef ___XS_FUNCTIONS_H_

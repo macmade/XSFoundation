@@ -32,7 +32,7 @@
 /*!
  * @header      __XSThread.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Private XSThread class definitions
  */
 
 #ifndef ___XSTHREAD_H_

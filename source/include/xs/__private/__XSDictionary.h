@@ -32,7 +32,7 @@
 /*!
  * @header      __XSDictionary.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Private XSDictionary class definitions
  */
 
 #ifndef ___XS_DICTIONARY_H_

@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      
+ * @header      __XSFile.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    
+ * @abstract    Private XSFile class definitions
  */
 
 #ifndef ___XS_FILE_H_

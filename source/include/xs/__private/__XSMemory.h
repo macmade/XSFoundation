@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      
+ * @header      __XSMemory management
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    
+ * @abstract    Private memory functions and private XSAutoreleasePool class definitions
  */
 
 #ifndef ___XS_MEMORY_H_

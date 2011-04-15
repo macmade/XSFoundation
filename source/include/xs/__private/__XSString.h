@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      
+ * @header      __XSString.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    
+ * @abstract    Private XSString class definitions
  */
 
 #ifndef ___XS_STRING_H_

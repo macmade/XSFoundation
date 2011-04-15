@@ -32,7 +32,7 @@
 /*!
  * @header      __XSError.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Private XSError class definitions
  */
 
 #ifndef ___XS_ERROR_H_

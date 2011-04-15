@@ -32,7 +32,7 @@
 /*!
  * @header      __XSMemoryDebug.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Private memory debug functions
  */
 
 #ifndef ___XS_MEMORY_DEBUG_H_
