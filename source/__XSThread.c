@@ -65,6 +65,22 @@ void __XSThread_Initialize( void )
     __XSThreadClassID = XSRuntime_RegisterClass( &__XSThreadClass );
 }
 
+BOOL __XSThread_Equals( void * object1, void * object2 )
+{
+    __XSThread * t1;
+    __XSThread * t2;
+    
+    t1 = ( __XSThread * )object1;
+    t2 = ( __XSThread * )object2;
+    
+    if( t1->tid == t2->tid )
+    {
+        return YES;
+    }
+    
+    return NO;
+}
+
 void * __XSThread_Run( void * thread )
 {
     pthread_t    tid;

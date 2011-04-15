@@ -67,6 +67,15 @@ __XSThread;
 void __XSThread_Initialize( void );
 
 /*!
+ * @function    __XSThread_Equals
+ * @abstract    Object comparison
+ * @param       object1 The first object to compare
+ * @param       object1 The second object to compare
+ * @result      YES if both objects are equals, otherwise NO
+ */
+BOOL __XSThread_Equals( void * object1, void * object2 );
+
+/*!
  * @function    __XSThread_Run
  * @abstract    Runs a thread
  * param        A pointer to the thread object (XSThread)
