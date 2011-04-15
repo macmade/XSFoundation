@@ -136,6 +136,7 @@ void XSData_AppendBytes( XSData xsThis, UInt8 * bytes, XSUInteger length )
 {
     ( void )xsThis;
     ( void )bytes;
+    ( void )length;
 }
 
 void XSData_DeleteBytes( XSData xsThis, XSRange range )
