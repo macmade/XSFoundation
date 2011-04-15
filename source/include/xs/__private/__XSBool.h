@@ -65,6 +65,14 @@ __XSBool;
 void __XSBool_Initialize( void );
 
 /*!
+ * @function    __XSBool_ToString
+ * @abstract    Object description
+ * @param       object  A pointer to the object
+ * @result      The object's description
+ */
+XSString __XSBool_ToString( void * object );
+
+/*!
  * @function    __XSBool_Equals
  * @abstract    Object comparison
  * @param       object1 The first object to compare

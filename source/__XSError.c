@@ -50,7 +50,7 @@ static const XSClassInfos __XSErrorClass =
     __XSError_Destruct, /* Destructor */
     NULL,               /* Default initializer */
     NULL,               /* Object copy */
-    NULL,               /* Object description */
+    __XSError_ToString, /* Object description */
     NULL                /* Object comparison */
 };
 
@@ -73,4 +73,22 @@ void __XSError_Destruct( void * object )
     
     XSRelease( error->domain );
     XSRelease( error->reason );
+}
+
+XSString __XSError_ToString( void * object )
+{
+    XSString description;
+    
+    description = XSString_Init( XSString_Alloc() );
+    
+    XSString_AppendFormat
+    (
+        description,
+        ( char * )"%s (%i): %s",
+        XSString_CString( ( ( __XSError * )object )->domain ),
+        ( ( __XSError * )object )->code,
+        XSString_CString( ( ( __XSError * )object )->reason )
+    );
+    
+    return XSAutorelease( description );
 }

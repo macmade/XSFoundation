@@ -50,7 +50,7 @@ static const XSClassInfos __XSNotificationClass =
     __XSNotification_Destruct,      /* Destructor */
     XSNotification_Init,            /* Default initializer */
     NULL,                           /* Object copy */
-    NULL,                           /* Object description */
+    __XSNotification_ToString,      /* Object description */
     NULL                            /* Object comparison */
 };
 
@@ -80,4 +80,21 @@ void __XSNotification_Destruct( void * object )
     {
         XSRelease( notification->name );
     }
+}
+
+XSString __XSNotification_ToString( void * object )
+{
+    XSString description;
+    
+    description = XSString_Init( XSString_Alloc() );
+    
+    XSString_AppendFormat
+    (
+        description,
+        ( char * )"%s (%p)",
+        XSString_CString( ( ( __XSNotification * )object )->name ),
+        ( ( __XSNotification * )object )->object
+    );
+    
+    return XSAutorelease( description );
 }

@@ -73,6 +73,14 @@ void __XSNotification_Initialize( void );
  */
 void __XSNotification_Destruct( void * object );
 
+/*!
+ * @function    __XSNotification_ToString
+ * @abstract    Object description
+ * @param       object  A pointer to the object
+ * @result      The object's description
+ */
+XSString __XSNotification_ToString( void * object );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_NOTIFIATION_H_ */

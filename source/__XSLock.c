@@ -50,7 +50,7 @@ static const XSClassInfos __XSLockClass =
     __XSLock_Destruct,  /* Destructor */
     XSLock_Init,        /* Default initializer */
     NULL,               /* Object copy */
-    NULL,               /* Object description */
+    __XSLock_ToString,  /* Object description */
     NULL                /* Object comparison */
 };
 
@@ -81,4 +81,14 @@ void __XSLock_Destruct( void * object )
     lock = ( __XSLock * )object;
     
     pthread_mutex_destroy( &( lock->mutex ) );
+}
+
+XSString __XSLock_ToString( void * object )
+{
+    if( ( ( __XSLock * )object )->locked == YES )
+    {
+        return XSSTR( ( char * )"Locked" );
+    }
+    
+    return XSSTR( ( char * )"Unlocked" );
 }

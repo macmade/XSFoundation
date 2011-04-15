@@ -77,6 +77,14 @@ void __XSError_Initialize( void );
  */
 void __XSError_Destruct( void * object );
 
+/*!
+ * @function    __XSError_ToString
+ * @abstract    Object description
+ * @param       object  A pointer to the object
+ * @result      The object's description
+ */
+XSString __XSError_ToString( void * object );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_ERROR_H_ */

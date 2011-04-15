@@ -81,6 +81,14 @@ void __XSLock_Construct( void * object );
  */
 void __XSLock_Destruct( void * object );
 
+/*!
+ * @function    __XSLock_ToString
+ * @abstract    Object description
+ * @param       object  A pointer to the object
+ * @result      The object's description
+ */
+XSString __XSLock_ToString( void * object );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_LOCK_H_ */
