@@ -132,7 +132,7 @@ void XSData_SetBytes( XSData xsThis, XSRange range )
     ( void )range;
 }
 
-void XSData_AppendBytes( XSData xsThis, UInt8 * bytes )
+void XSData_AppendBytes( XSData xsThis, UInt8 * bytes, XSUInteger length )
 {
     ( void )xsThis;
     ( void )bytes;
