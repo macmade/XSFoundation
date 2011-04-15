@@ -91,14 +91,6 @@ XSString XSString_InitWithCString( XSString xsThis, char * str )
     return ( XSString )string;
 }
 
-XSString XSString_InitWithContentOfFile( XSString xsThis, char * path )
-{
-    ( void )path;
-    ( void )xsThis;
-    
-    return NULL;
-}
-
 XSAutoreleased XSString XSString_SubstringFromIndex( XSString xsThis, size_t i )
 {
     __XSString * _str;
@@ -433,37 +425,6 @@ BOOL XSString_IsEqualToString( XSString xsThis, XSString str )
     }
     
     return NO;
-}
-
-XSAutoreleased XSString XSString_StringByReplacingStringWithString( XSString xsThis, XSString str1, XSString str2 )
-{
-    __XSString * _str1;
-    __XSString * _str2;
-    __XSString * _str3;
-    
-    _str1 = ( __XSString * )xsThis;
-    _str2 = ( __XSString * )str1;
-    _str3 = ( __XSString * )str2;
-    
-    return NULL;
-}
-
-XSInteger XSString_IntegerValue( XSString xsThis )
-{
-    __XSString * _str;
-    
-    _str = ( __XSString * )xsThis;
-    
-    return 0;
-}
-
-XSFloat XSString_FloatValue( XSString xsThis )
-{
-    __XSString * _str;
-    
-    _str = ( __XSString * )xsThis;
-    
-    return 0;
 }
 
 XSAutoreleased XSString XSString_MD5Hash( XSString xsThis )

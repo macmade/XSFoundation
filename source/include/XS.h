@@ -56,7 +56,6 @@
 #include "XS/XSBool.h"
 #include "XS/XSColor.h"
 #include "XS/XSData.h"
-#include "XS/XSDate.h"
 #include "XS/XSDictionary.h"
 #include "XS/XSError.h"
 #include "XS/XSFile.h"
@@ -69,7 +68,5 @@
 #include "XS/XSString.h"
 #include "XS/XSThread.h"
 #include "XS/XSTimer.h"
-#include "XS/XSTree.h"
-#include "XS/XSURL.h"
 
 #endif /* _XS_H_ */

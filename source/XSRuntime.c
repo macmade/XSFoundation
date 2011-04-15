@@ -85,7 +85,6 @@ void __XSBag_Initialize( void );
 void __XSBool_Initialize( void );
 void __XSColor_Initialize( void );
 void __XSData_Initialize( void );
-void __XSDate_Initialize( void );
 void __XSDictionary_Initialize( void );
 void __XSError_Initialize( void );
 void __XSFile_Initialize( void );
@@ -98,8 +97,6 @@ void __XSSet_Initialize( void );
 void __XSString_Initialize( void );
 void __XSThread_Initialize( void );
 void __XSTimer_Initialize( void );
-void __XSTree_Initialize( void );
-void __XSURL_Initialize( void );
 
 void XSRuntime_Initialize( void )
 {
@@ -119,7 +116,6 @@ void XSRuntime_Initialize( void )
     __XSBool_Initialize();
     __XSColor_Initialize();
     __XSData_Initialize();
-    __XSDate_Initialize();
     __XSDictionary_Initialize();
     __XSError_Initialize();
     __XSFile_Initialize();
@@ -132,8 +128,6 @@ void XSRuntime_Initialize( void )
     __XSString_Initialize();
     __XSThread_Initialize();
     __XSTimer_Initialize();
-    __XSTree_Initialize();
-    __XSURL_Initialize();
 }
 
 void XSRuntime_Finalize( void )

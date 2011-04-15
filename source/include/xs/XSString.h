@@ -83,15 +83,6 @@ XSString XSString_InitWithCapacity( XSString xsThis, XSUInteger capacity );
 XSString XSString_InitWithCString( XSString xsThis, char * str );
 
 /*!
- * @function    XSString_InitWithContentOfFile
- * @abstract    Creates a string with a file's content
- * @param       xsThis  The string object
- * @param       path    The path to the file
- * @result      A new string object
- */
-XSString XSString_InitWithContentOfFile( XSString xsThis, char * path );
-
-/*!
  * @function    XSString_SubstringFromIndex
  * @abstract    Gets a substring to a specific index
  * @param       xsThis  The string object
@@ -232,30 +223,6 @@ XSRange XSString_RangeOfCString( XSString xsThis, char * str );
  * @result      YES if both strings are equals, otherwise NO
  */
 BOOL XSString_IsEqualToString( XSString xsThis, XSString str );
-
-/*!
- * @function    XSString_StringByReplacingStringWithString
- * @abstract    Replaces the occurences of a string with another string
- * @param       xsThis  The string object
- * @result      A new string object
- */
-XSAutoreleased XSString XSString_StringByReplacingStringWithString( XSString xsThis, XSString str1, XSString str2 );
-
-/*!
- * @function    XSString_IntegerValue
- * @abstract    Converts the string to an integer representation
- * @param       xsThis  The string object
- * @result      An integer value
- */
-XSInteger XSString_IntegerValue( XSString xsThis );
-
-/*!
- * @function    XSString_FloatValue
- * @abstract    Converts the string to a floating point representation
- * @param       xsThis  The string object
- * @result      A floating point value
- */
-XSFloat XSString_FloatValue( XSString xsThis );
 
 /*!
  * @function    XSString_MD5Hash
