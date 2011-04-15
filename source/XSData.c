@@ -112,7 +112,6 @@ XSAutoreleased UInt8 * XSData_GetBytes( XSData xsThis, XSRange range )
     if( range.length < data->length )
     {
         length = range.length;
-        XSLog( "Length: %lu", length );
     }
     
     bytes = ( UInt8 * )XSAlloc( length * sizeof( UInt8 ) );
