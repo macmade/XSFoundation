@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSData.c
+ * @header      XSColor.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Implementation for the XSColor class
  */
 
 #include "XS.h"

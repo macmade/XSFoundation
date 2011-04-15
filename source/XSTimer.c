@@ -32,7 +32,7 @@
 /*!
  * @header      XSTree.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Implementation for the XSTree class
  */
 
 #include "XS.h"

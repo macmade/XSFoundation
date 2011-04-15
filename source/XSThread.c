@@ -32,7 +32,7 @@
 /*!
  * @header      XSThread.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Implementation for the XSThread class
  */
 
 #include "XS.h"

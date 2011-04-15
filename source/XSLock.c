@@ -32,7 +32,7 @@
 /*!
  * @header      XSLock.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Implementation for the XSLock class
  */
 
 #include "XS.h"

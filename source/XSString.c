@@ -32,7 +32,7 @@
 /*!
  * @file        XSString.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Implementation for the XSString class
  */
 
 #include "XS.h"

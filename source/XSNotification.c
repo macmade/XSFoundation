@@ -32,7 +32,7 @@
 /*!
  * @header      XSNotification.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Implementation for the XSNotification class
  */
 
 #include "XS.h"
