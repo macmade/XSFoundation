@@ -58,7 +58,7 @@ typedef struct __XSNotificationCenter * XSNotificationCenter;
  */
 XSStatic XSNotificationCenter XSNotificationCenter_Alloc( void );
 
-XSNotificationCenter XSNotificationCenter_Init( XSNotificationCenter xsThis );
+XSObject XSNotificationCenter_Init( XSObject xsThis );
 
 XSStatic XSAutoreleased XSNotificationCenter XSNotificationCenter_DefaultCenter( void );
 

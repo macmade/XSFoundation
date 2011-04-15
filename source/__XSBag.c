@@ -48,6 +48,7 @@ static const XSClassInfos __XSBagClass =
     sizeof( __XSBag ),  /* Object size */
     NULL,               /* Constructor */
     __XSBag_Destruct,   /* Destructor */
+    XSBag_Init,         /* Default initializer */
     NULL,               /* Object copy */
     __XSBag_ToString,   /* Object description */
     NULL                /* Object comparison */

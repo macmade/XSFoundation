@@ -48,6 +48,7 @@ static const XSClassInfos __XSStringClass =
     sizeof( __XSString ),   /* Object size */
     NULL,                   /* Constructor */
     __XSString_Destruct,    /* Destructor */
+    XSString_Init,          /* Default initializer */
     __XSString_Copy,        /* Object copy */
     __XSString_ToString,    /* Object description */
     __XSString_Equals       /* Object comparison */

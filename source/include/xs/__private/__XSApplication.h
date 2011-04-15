@@ -75,7 +75,7 @@ void __XSApplication_Initialize( void );
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSApplication_Construct( void * object );
+void __XSApplication_Construct( XSObject object );
  
  /*!
  * @function    __XSApplication_Destruct
@@ -83,7 +83,7 @@ void __XSApplication_Construct( void * object );
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSApplication_Destruct( void * object );
+void __XSApplication_Destruct( XSObject object );
 
 /*!
  * @function    __XSApplication_ProcessArguments

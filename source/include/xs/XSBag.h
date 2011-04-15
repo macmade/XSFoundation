@@ -62,7 +62,7 @@ XSStatic XSBag XSBag_Alloc( void );
  * @param       xsThis  The bag object
  * @result      The bag object
  */
-XSBag XSBag_Init( XSBag xsThis );
+XSObject XSBag_Init( XSObject xsThis );
 
 /*!
  * @function    XSBag_InitWithCapacity

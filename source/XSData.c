@@ -47,7 +47,7 @@ XSStatic XSData XSData_Alloc( void )
     return ( XSData )XSRuntime_CreateInstance( __XSDataClassID );
 }
 
-XSData XSData_Init( XSData xsThis )
+XSObject XSData_Init( XSObject xsThis )
 {
     return XSData_InitWithCapacity( xsThis, __XSDATA_DEFAULT_CAPACITY );
 }

@@ -48,6 +48,7 @@ static const XSClassInfos __XSBoolClass =
     sizeof( __XSBool ), /* Object size */
     NULL,               /* Constructor */
     NULL,               /* Destructor */
+    XSBool_Init,        /* Default initializer */
     NULL,               /* Object copy */
     NULL,               /* Object description */
     __XSBool_Equals     /* Object comparison */

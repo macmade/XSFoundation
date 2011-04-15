@@ -47,7 +47,7 @@ XSStatic XSArray XSArray_Alloc( void )
     return ( XSArray )XSRuntime_CreateInstance( __XSArrayClassID );
 }
 
-XSArray XSArray_Init( XSArray xsThis )
+XSObject XSArray_Init( XSObject xsThis )
 {
     return XSArray_InitWithCapacity( xsThis, ( XSUInteger )__XSARRAY_DEFAULT_CAPACITY );
 }

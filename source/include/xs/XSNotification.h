@@ -56,7 +56,7 @@ typedef struct __XSNotification * XSNotification;
  */
 XSStatic XSNotification XSNotification_Alloc( void );
 
-XSNotification XSNotification_Init( XSNotification xsThis );
+XSObject XSNotification_Init( XSObject xsThis );
 
 XSObject XSNotification_GetObject( XSNotification xsThis );
 

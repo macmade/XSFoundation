@@ -49,7 +49,7 @@ XSStatic XSApplication XSApplication_Alloc( void )
     return ( XSApplication )XSRuntime_CreateInstance( __XSApplicationClassID );
 }
 
-XSApplication XSApplication_Init( XSApplication xsThis )
+XSObject XSApplication_Init( XSObject xsThis )
 {
     return xsThis;
 }

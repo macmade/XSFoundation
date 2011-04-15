@@ -47,7 +47,7 @@ XSStatic XSSet XSSet_Alloc( void )
     return ( XSSet )XSRuntime_CreateInstance( __XSSetClassID );
 }
 
-XSSet XSSet_Init( XSSet xsThis )
+XSObject XSSet_Init( XSObject xsThis )
 {
     return XSSet_InitWithCapacity( xsThis, __XSSET_DEFAULT_CAPACITY );
 }

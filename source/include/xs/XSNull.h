@@ -56,7 +56,7 @@ typedef struct __XSNull * XSNull;
  */
 XSStatic XSNull XSNull_Alloc( void );
 
-XSNull XSNull_Init( XSNull xsThis );
+XSObject XSNull_Init( XSObject xsThis );
 
 XSStatic XSNull XSNull_Null( void );
 

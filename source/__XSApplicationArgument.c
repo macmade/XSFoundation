@@ -47,6 +47,7 @@ static const XSClassInfos __XSApplicationArgumentClass =
     "XSApplicationArgument",            /* Class name */
     sizeof( __XSApplicationArgument ),  /* Object size */
     NULL,                               /* Constructor */
+    NULL,                               /* Default initializer */
     NULL,                               /* Destructor */
     NULL,                               /* Object copy */
     NULL,                               /* Object description */

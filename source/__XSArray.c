@@ -48,6 +48,7 @@ static const XSClassInfos __XSArrayClass =
     sizeof( __XSArray ),    /* Object size */
     NULL,                   /* Constructor */
     __XSArray_Destruct,     /* Destructor */
+    XSArray_Init,           /* Default initializer */
     NULL,                   /* Object copy */
     __XSArray_ToString,     /* Object description */
     NULL                    /* Object comparison */

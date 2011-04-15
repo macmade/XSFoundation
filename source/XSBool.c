@@ -45,7 +45,7 @@ XSStatic XSBool XSBool_Alloc( void )
     return ( XSBool )XSRuntime_CreateInstance( __XSBoolClassID );
 }
 
-XSBool XSBool_Init( XSBool xsThis )
+XSObject XSBool_Init( XSObject xsThis )
 {
     return xsThis;
 }

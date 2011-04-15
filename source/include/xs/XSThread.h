@@ -64,7 +64,7 @@ XSStatic XSThread XSThread_Alloc( void );
  * @param       xsThis  The thread object
  * @result      The thread object
  */
-XSThread XSThread_Init( XSThread xsThis );
+XSObject XSThread_Init( XSObject xsThis );
 
 /*!
  * @function    XSThread_Detach

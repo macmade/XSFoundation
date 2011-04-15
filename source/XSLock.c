@@ -45,7 +45,7 @@ XSStatic XSLock XSLock_Alloc( void )
     return ( XSLock )XSRuntime_CreateInstance( __XSLockClassID );
 }
 
-XSLock XSLock_Init( XSLock xsThis )
+XSObject XSLock_Init( XSObject xsThis )
 {
     return xsThis;
 }

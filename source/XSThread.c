@@ -45,7 +45,7 @@ XSStatic XSThread XSThread_Alloc( void )
     return ( XSThread )XSRuntime_CreateInstance( __XSThreadClassID );
 }
 
-XSThread XSThread_Init( XSThread xsThis )
+XSObject XSThread_Init( XSObject xsThis )
 {
     return xsThis;
 }

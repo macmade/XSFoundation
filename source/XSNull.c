@@ -47,7 +47,7 @@ XSStatic XSNull XSNull_Alloc( void )
     return ( XSNull )XSRuntime_CreateInstance( __XSNullClassID );
 }
 
-XSNull XSNull_Init( XSNull xsThis )
+XSObject XSNull_Init( XSObject xsThis )
 {
     return xsThis;
 }

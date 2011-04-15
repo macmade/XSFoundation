@@ -68,7 +68,7 @@ XSStatic XSDictionary XSDictionary_Alloc( void );
  * @param       xsThis  The dictionary object
  * @result      The new dictionary object
  */
-XSDictionary XSDictionary_Init( XSDictionary xsThis );
+XSObject XSDictionary_Init( XSObject xsThis );
 
 /*!
  * @function    XSDictionary_InitWithCapacity

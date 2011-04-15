@@ -48,6 +48,7 @@ static const XSClassInfos __XSNullClass =
     sizeof( __XSNull ), /* Object size */
     NULL,               /* Constructor */
     NULL,               /* Destructor */
+    XSNull_Init,        /* Default initializer */
     NULL,               /* Object copy */
     NULL,               /* Object description */
     __XSNull_Equals     /* Object comparison */

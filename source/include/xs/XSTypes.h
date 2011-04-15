@@ -247,14 +247,20 @@ XSDecimal;
  */
 #define XSAutoreleased  
 
-/* XSString is required here as the objects description callbacks use that type */
-#include "XSString.h"
-
 /*!
  * @typedef     XSClassID
  * @abstract    Type ID foe the registered runtime classes
  */
 typedef unsigned long XSClassID;
+
+/*!
+ * @typedef     XSObject
+ * @abstract    Polymorphism support - Generic type for all XSFoundation objects
+ */
+typedef void * XSObject;
+
+/* XSString is required here as the objects description callbacks use that type */
+#include "XSString.h"
 
 /*!
  * @typedef     XSClassInfos
@@ -263,6 +269,7 @@ typedef unsigned long XSClassID;
  * @field       instanceSize    The size of the class instances
  * @field       construct       The class constructor
  * @field       destruct        The class destructor
+ * @field       init            The default object initializer
  * @field       copy            The object's copy callback
  * @field       toString        The object's description callback (used in XSLog)
  * @field       equals          The object's comparison callback
@@ -272,11 +279,12 @@ typedef struct XSClassInfos_Struct
 {
     const char * className;
     size_t       instanceSize;
-    void         ( * construct )( void * object );
-    void         ( * destruct  )( void * object );
-    void         ( * copy      )( void * source, void * destination );
-    XSString     ( * toString  )( void * object );
-    BOOL         ( * equals    )( void * object1, void * object2 );
+    void         ( * construct )( XSObject object );
+    void         ( * destruct  )( XSObject object );
+    XSObject     ( * init      )( XSObject object );
+    void         ( * copy      )( XSObject source, XSObject destination );
+    XSString     ( * toString  )( XSObject object );
+    BOOL         ( * equals    )( XSObject object1, XSObject object2 );
 }
 XSClassInfos;
 
@@ -292,12 +300,6 @@ typedef struct XSRuntimeClass_Struct
     XSClassInfos * classInfos;
 }
 XSRuntimeClass;
-
-/*!
- * @typedef     XSObject
- * @abstract    Polymorphism support - Generic type for all XSFoundation objects
- */
-typedef XSRuntimeClass * XSObject;
 
 /*!
  * @typedef     XSClass

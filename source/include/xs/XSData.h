@@ -56,7 +56,7 @@ typedef struct XSData * XSData;
  */
 XSStatic XSData XSData_Alloc( void );
 
-XSData XSData_Init( XSData xsThis );
+XSObject XSData_Init( XSObject xsThis );
 
 XSData XSData_InitWithCapacity( XSData xsThis, XSUInteger capacity );
 

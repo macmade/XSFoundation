@@ -48,6 +48,7 @@ static const XSClassInfos __XSTimerClass =
     sizeof( __XSTimer ),    /* Object size */
     NULL,                   /* Constructor */
     NULL,                   /* Destructor */
+    NULL,                   /* Default initializer */
     NULL,                   /* Object copy */
     NULL,                   /* Object description */
     NULL                    /* Object comparison */

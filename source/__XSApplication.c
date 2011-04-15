@@ -48,6 +48,7 @@ static const XSClassInfos __XSApplicationClass =
     sizeof( __XSApplication ),  /* Object size */
     __XSApplication_Construct,  /* Constructor */
     __XSApplication_Destruct,   /* Destructor */
+    XSApplication_Init,         /* Default initializer */
     NULL,                       /* Object copy */
     NULL,                       /* Object description */
     NULL                        /* Object comparison */
@@ -64,7 +65,7 @@ void __XSApplication_Initialize( void )
     __XSApplicationClassID = XSRuntime_RegisterClass( &__XSApplicationClass );
 }
 
-void __XSApplication_Construct( void * object )
+void __XSApplication_Construct( XSObject object )
 {
     __XSApplication * app;
     
@@ -75,7 +76,7 @@ void __XSApplication_Construct( void * object )
     app->arg_count = 0;
 }
 
-void __XSApplication_Destruct( void * object )
+void __XSApplication_Destruct( XSObject object )
 {
     XSUInteger        i;
     __XSApplication * app;

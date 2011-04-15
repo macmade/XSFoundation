@@ -48,6 +48,7 @@ static const XSClassInfos __XSDataClass =
     sizeof( XSData ),   /* Object size */
     NULL,               /* Constructor */
     __XSData_Destruct,  /* Destructor */
+    XSData_Init,        /* Default initializer */
     NULL,               /* Object copy */
     __XSData_ToString,  /* Object description */
     NULL                /* Object comparison */

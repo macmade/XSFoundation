@@ -56,7 +56,7 @@ typedef struct __XSBool * XSBool;
  */
 XSStatic XSBool XSBool_Alloc( void );
 
-XSBool XSBool_Init( XSBool xsThis );
+XSObject XSBool_Init( XSObject xsThis );
 
 void XSBool_SetValue( XSBool xsThis, BOOL value );
 

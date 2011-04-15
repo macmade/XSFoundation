@@ -62,7 +62,7 @@ XSStatic XSSet XSSet_Alloc( void );
  * @param       xsThis  The set object
  * @result      The set object
  */
-XSSet XSSet_Init( XSSet xsThis );
+XSObject XSSet_Init( XSObject xsThis );
 
 /*!
  * @function    XSSet_InitWithCapacity

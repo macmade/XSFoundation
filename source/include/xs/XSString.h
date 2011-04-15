@@ -62,7 +62,7 @@ XSStatic XSString XSString_Alloc( void );
  * @param       xsThis      The string object
  * @result      A new string object
  */
-XSString XSString_Init( XSString xsThis );
+XSObject XSString_Init( XSObject xsThis );
 
 /*!
  * @function    XSString_InitWithCapacity

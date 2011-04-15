@@ -66,7 +66,7 @@ XSStatic XSAutoreleasePool XSAutoreleasePool_Alloc( void );
  *              inside it.
  * @result      The new auto-release pool object
  */
-XSAutoreleasePool XSAutoreleasePool_Init( XSAutoreleasePool xsThis );
+XSObject XSAutoreleasePool_Init( XSObject xsThis );
 
 /*!
  * @function    XSAutoreleasePool_Drain

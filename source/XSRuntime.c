@@ -106,7 +106,6 @@ void XSRuntime_Initialize( void )
     atexit( XSApplication_Exit );
     atexit( XSRuntime_Finalize );
     
-    __XSMemoryDebug_InstallSignalHandlers();
     
     __XSAutoreleasePool_Initialize();
     __XSArray_Initialize();
@@ -208,6 +207,7 @@ XSObject XSRuntime_CreateInstanceOfClass( const XSClassInfos * const cls )
 XSObject XSRuntime_CreateInstanceOfClassWithName( const char * name )
 {
     size_t         i;
+    XSObject       o;
     XSClassInfos * cls;
     
     for( i = 0; i < __class_count; i++ )
@@ -216,7 +216,12 @@ XSObject XSRuntime_CreateInstanceOfClassWithName( const char * name )
         
         if( strcmp( cls->className, name ) == 0 )
         {
-            return XSRuntime_CreateInstance( i + 1 );
+            o = XSRuntime_CreateInstance( i + 1 );
+            
+            if( cls->init != NULL )
+            {
+                return cls->init( o );
+            }
         }
     }
     

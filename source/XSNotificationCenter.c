@@ -52,7 +52,7 @@ XSStatic XSNotificationCenter XSNotificationCenter_Alloc( void )
     return ( XSNotificationCenter )XSRuntime_CreateInstance( __XSNotificationCenterClassID );
 }
 
-XSNotificationCenter XSNotificationCenter_Init( XSNotificationCenter xsThis )
+XSObject XSNotificationCenter_Init( XSObject xsThis )
 {
     __XSNotificationCenter * center;
     

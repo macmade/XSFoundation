@@ -47,7 +47,7 @@ XSStatic XSString XSString_Alloc( void )
     return ( XSString )XSRuntime_CreateInstance( __XSStringClassID );
 }
 
-XSString XSString_Init( XSString xsThis )
+XSObject XSString_Init( XSObject xsThis )
 {
     return XSString_InitWithCapacity( xsThis, __XSSTRING_DEFAULT_CAPACITY );
 }

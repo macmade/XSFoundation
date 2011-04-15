@@ -90,6 +90,7 @@
 		056A74EB1346F9DC006DD897 /* XSColor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSColor.c; sourceTree = "<group>"; };
 		057074B413516AAD008FC128 /* __XSMemoryDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSMemoryDebug.h; sourceTree = "<group>"; };
 		057074B613516AF7008FC128 /* __XSMemoryDebug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemoryDebug.c; sourceTree = "<group>"; };
+		0581F3C713587201004E789C /* XSTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSTypes.h; sourceTree = "<group>"; };
 		059B999B134EDB93004510C5 /* __XSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSNull.h; sourceTree = "<group>"; };
 		059B999D134EDBA0004510C5 /* XSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSNull.h; sourceTree = "<group>"; };
 		059B999E134EDBB8004510C5 /* __XSNull.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSNull.c; sourceTree = "<group>"; };
@@ -275,6 +276,7 @@
 				056003D31340621F005DC721 /* XSString.h */,
 				05AC166D1341DDDA00455568 /* XSThread.h */,
 				0562F8B8134B0821005190B6 /* XSTimer.h */,
+				0581F3C713587201004E789C /* XSTypes.h */,
 			);
 			path = xs;
 			sourceTree = "<group>";

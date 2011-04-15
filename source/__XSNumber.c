@@ -48,6 +48,7 @@ static const XSClassInfos __XSNumberClass =
     sizeof( __XSNumber ),   /* Object size */
     NULL,                   /* Constructor */
     NULL,                   /* Destructor */
+    XSNumber_Init,          /* Default initializer */
     NULL,                   /* Object copy */
     NULL,                   /* Object description */
     NULL                    /* Object comparison */

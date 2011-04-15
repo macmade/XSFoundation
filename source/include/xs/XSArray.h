@@ -62,7 +62,7 @@ XSStatic XSArray XSArray_Alloc( void );
  * @param       xsThis  The array object
  * @result      The array object
  */
-XSArray XSArray_Init( XSArray xsThis );
+XSObject XSArray_Init( XSObject xsThis );
 
 /*!
  * @function    XSArray_InitWithCapacity

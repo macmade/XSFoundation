@@ -48,6 +48,7 @@ static const XSClassInfos __XSLockClass =
     sizeof( __XSLock ), /* Object size */
     __XSLock_Construct, /* Constructor */
     __XSLock_Destruct,  /* Destructor */
+    XSLock_Init,        /* Default initializer */
     NULL,               /* Object copy */
     NULL,               /* Object description */
     NULL                /* Object comparison */

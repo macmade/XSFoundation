@@ -48,6 +48,7 @@ static const XSClassInfos __XSSetClass =
     sizeof( __XSSet ),  /* Object size */
     NULL,               /* Constructor */
     __XSSet_Destruct,   /* Destructor */
+    XSSet_Init,         /* Default initializer */
     NULL,               /* Object copy */
     __XSSet_ToString,   /* Object description */
     NULL                /* Object comparison */

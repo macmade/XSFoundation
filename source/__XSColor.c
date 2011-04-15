@@ -48,6 +48,7 @@ static const XSClassInfos __XSColorClass =
     sizeof( __XSColor ),    /* Object size */
     NULL,                   /* Constructor */
     NULL,                   /* Destructor */
+    XSColor_Init,           /* Default initializer */
     NULL,                   /* Object copy */
     NULL,                   /* Object description */
     NULL                    /* Object comparison */

@@ -62,7 +62,7 @@ XSStatic XSColor XSColor_Alloc( void );
  * @param       xsThis  The color object
  * @result      The color object
  */
-XSColor XSColor_Init( XSColor xsThis );
+XSObject XSColor_Init( XSObject xsThis );
 
 /*!
  * @function    XSColor_InitWithRGB

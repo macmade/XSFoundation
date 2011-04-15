@@ -62,7 +62,7 @@ XSStatic XSLock XSLock_Alloc( void );
  * @param       xsThis  The lock object
  * @result      The lock object
  */
-XSLock XSLock_Init( XSLock xsThis );
+XSObject XSLock_Init( XSObject xsThis );
 
 /*!
  * @function    XSLock_Lock

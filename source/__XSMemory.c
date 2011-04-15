@@ -61,6 +61,7 @@ static const XSClassInfos __XSAutoreleasePoolClass =
     sizeof( __XSAutoreleasePool ),  /* Object size */
     NULL,                           /* Constructor */
     __XSAutoreleasePool_Destruct,   /* Destructor */
+    XSAutoreleasePool_Init,         /* Default initializer */
     NULL,                           /* Object copy */
     NULL,                           /* Object description */
     NULL                            /* Object comparison */

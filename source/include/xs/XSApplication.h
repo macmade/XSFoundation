@@ -66,7 +66,7 @@ XSStatic XSApplication XSApplication_Alloc( void );
  * @param       xsThis  The application object
  * @result      The allocated object
  */
-XSApplication XSApplication_Init( XSApplication xsThis );
+XSObject XSApplication_Init( XSObject xsThis );
 
 /*!
  * @function    XSApplication_Exit

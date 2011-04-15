@@ -48,6 +48,7 @@ static const XSClassInfos __XSDictionaryClass =
     sizeof( XSDictionary ),     /* Object size */
     NULL,                       /* Constructor */
     __XSDictionary_Destruct,    /* Destructor */
+    XSDictionary_Init,          /* Default initializer */
     NULL,                       /* Object copy */
     __XSDictionary_ToString,    /* Object description */
     NULL                        /* Object comparison */

@@ -45,7 +45,7 @@ XSStatic XSNumber XSNumber_Alloc( void )
     return ( XSNumber )XSRuntime_CreateInstance( __XSNumberClassID );
 }
 
-XSNumber XSNumber_Init( XSNumber xsThis )
+XSObject XSNumber_Init( XSObject xsThis )
 {
     __XSNumber * num;
     

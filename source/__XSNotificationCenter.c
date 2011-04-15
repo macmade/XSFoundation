@@ -48,6 +48,7 @@ static const XSClassInfos __XSNotificationCenterClass =
     sizeof( __XSNotificationCenter ),   /* Object size */
     NULL,                               /* Constructor */
     __XSNotificationCenter_Destruct,    /* Destructor */
+    XSNotificationCenter_Init,          /* Default initializer */
     NULL,                               /* Object copy */
     NULL,                               /* Object description */
     NULL                                /* Object comparison */

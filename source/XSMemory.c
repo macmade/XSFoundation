@@ -48,7 +48,7 @@ XSStatic XSAutoreleasePool XSAutoreleasePool_Alloc( void )
     return ( XSAutoreleasePool )XSRuntime_CreateInstance( __XSAutoreleasePoolClassID );
 }
 
-XSAutoreleasePool XSAutoreleasePool_Init( XSAutoreleasePool xsThis )
+XSObject XSAutoreleasePool_Init( XSObject xsThis )
 {
     __XSAutoreleasePool * ap;
     

@@ -45,7 +45,7 @@ XSStatic XSColor XSColor_Alloc( void )
     return ( XSColor )XSRuntime_CreateInstance( __XSColorClassID );
 }
 
-XSColor XSColor_Init( XSColor xsThis )
+XSObject XSColor_Init( XSObject xsThis )
 {
     return xsThis;
 }

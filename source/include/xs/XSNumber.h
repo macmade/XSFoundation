@@ -63,7 +63,7 @@ XSStatic XSNumber XSNumber_Alloc( void );
  * @param       value       The BOOL value
  * @result      The number object
  */
-XSNumber XSNumber_Init( XSNumber xsThis );
+XSObject XSNumber_Init( XSObject xsThis );
 
 /*!
  * @function    XSNumber_InitWithBool

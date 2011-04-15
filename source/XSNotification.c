@@ -45,7 +45,7 @@ XSStatic XSNotification XSNotification_Alloc( void )
     return ( XSNotification )XSRuntime_CreateInstance( __XSNotificationClassID );
 }
 
-XSNotification XSNotification_Init( XSNotification xsThis )
+XSObject XSNotification_Init( XSObject xsThis )
 {
     return xsThis;
 }

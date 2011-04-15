@@ -47,7 +47,7 @@ XSStatic XSBag XSBag_Alloc( void )
     return ( XSBag )XSRuntime_CreateInstance( __XSBagClassID );
 }
 
-XSBag XSBag_Init( XSBag xsThis )
+XSObject XSBag_Init( XSObject xsThis )
 {
     return XSBag_InitWithCapacity( xsThis, __XSBAG_DEFAULT_CAPACITY );
 }

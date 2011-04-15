@@ -45,7 +45,7 @@ XSStatic XSDictionary XSDictionary_Alloc( void )
     return ( XSDictionary )XSRuntime_CreateInstance( __XSDictionaryClassID );
 }
 
-XSDictionary XSDictionary_Init( XSDictionary xsThis )
+XSObject XSDictionary_Init( XSObject xsThis )
 {
     return XSDictionary_InitWithCapacity( xsThis, ( XSUInteger )XSDICTIONARY_DEFAULT_CAPACITY );
 }
