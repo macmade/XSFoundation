@@ -105,6 +105,15 @@ void __XSNumber_Initialize( void );
  */
 XSString __XSNumber_ToString( void * object );
 
+/*!
+ * @function    __XSNumber_Equals
+ * @abstract    Object comparison
+ * @param       object1 The first object to compare
+ * @param       object1 The second object to compare
+ * @result      YES if both objects are equals, otherwise NO
+ */
+BOOL __XSNumber_Equals( void * object1, void * object2 );
+
 uint64_t __XSNumber_GetUInt64Value( __XSNumber * n );
 
 XS_EXTERN_C_END

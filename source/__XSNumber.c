@@ -51,7 +51,7 @@ static const XSClassInfos __XSNumberClass =
     XSNumber_Init,          /* Default initializer */
     NULL,                   /* Object copy */
     __XSNumber_ToString,    /* Object description */
-    NULL                    /* Object comparison */
+    __XSNumber_Equals       /* Object comparison */
 };
 
 /*!
@@ -74,6 +74,26 @@ XSString __XSNumber_ToString( void * object )
     XSString_AppendFormat( description, ( char * )"%f", XSNumber_GetDouble( object ) );
     
     return XSAutorelease( description );
+}
+
+BOOL __XSNumber_Equals( void * object1, void * object2 )
+{
+    __XSNumber * n1;
+    __XSNumber * n2;
+    
+    n1 = ( __XSNumber * )object1;
+    n2 = ( __XSNumber * )object2;
+    
+    if( XSNumber_GetDouble( ( XSNumber )n1 ) == XSNumber_GetDouble( ( XSNumber )n2 ) )
+    {
+        return YES;
+    }
+    else if( XSNumber_GetUnsignedLongLong( ( XSNumber )n1 ) == XSNumber_GetUnsignedLongLong( ( XSNumber )n2 ) )
+    {
+        return YES;
+    }
+    
+    return NO;
 }
 
 uint64_t __XSNumber_GetUInt64Value( __XSNumber * n )
