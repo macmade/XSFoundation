@@ -32,7 +32,7 @@
 /*!
  * @file        __XSData.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Private implementation for the XSData class
  */
 
 #include "XS.h"

@@ -32,7 +32,7 @@
 /*!
  * @file        __XSMemory.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Private implementation for the memory functions and the XSAutoreleasePoll class
  */
 
 #include "XS.h"

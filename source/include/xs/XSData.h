@@ -32,7 +32,7 @@
 /*!
  * @header      XSData.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    XSData class functions
  */
 
 #ifndef _XS_DATA_H_

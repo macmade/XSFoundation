@@ -32,7 +32,7 @@
 /*!
  * @header      XSFile.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    XSFile class functions
  */
 
 #ifndef _XS_FILE_H_

@@ -32,7 +32,7 @@
 /*!
  * @header      XSApplicationArgument.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    XSApplicationArgument class functions
  */
 
 #ifndef _XS_APPLICATION_ARGUMENT_H_

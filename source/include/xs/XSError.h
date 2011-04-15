@@ -32,7 +32,7 @@
 /*!
  * @header      XSError.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    XSError class functions
  */
 
 #ifndef _XS_ERROR_H_

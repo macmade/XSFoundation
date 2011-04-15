@@ -32,7 +32,7 @@
 /*!
  * @header      XSMemory.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Memory management
+ * @abstract    Memory functions and XSAutoreleasePool class functions
  */
 
 #ifndef _XS_MEMORY_H_

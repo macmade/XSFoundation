@@ -32,7 +32,7 @@
 /*!
  * @header      XSContants.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    General constants
  */
 
 #ifndef _XS_CONSTANTS_H_

@@ -32,7 +32,7 @@
 /*!
  * @file        __XSArray.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Private implementation for the XSArray class
  */
 
 #include "XS.h"

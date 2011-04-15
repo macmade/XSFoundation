@@ -32,7 +32,7 @@
 /*!
  * @file        __XSDictionary.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Private implementation for the XSDictionary class
  */
 
 #include "XS.h"

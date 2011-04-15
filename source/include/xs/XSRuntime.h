@@ -32,7 +32,7 @@
 /*!
  * @header      XSRuntime.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Runtime functions
  */
 
 #ifndef _XS_RUNTIME_H_

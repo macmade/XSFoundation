@@ -32,7 +32,7 @@
 /*!
  * @header      XSTree.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    XSTimer class functions
  */
 
 #ifndef _XS_TIMER_H_

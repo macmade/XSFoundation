@@ -32,7 +32,7 @@
 /*!
  * @header      XSBag.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    XSBag class functions
  */
 
 #ifndef _XS_BAG_H_

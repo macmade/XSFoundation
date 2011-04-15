@@ -32,7 +32,7 @@
 /*!
  * @file        __XSNumber.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Private implementation for the XSNumber class
  */
 
 #include "XS.h"

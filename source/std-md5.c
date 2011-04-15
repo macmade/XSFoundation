@@ -23,7 +23,7 @@
 /*!
  * @file        md5.c
  * @copyright   RSA Data Security, Inc.
- * @abstract    ...
+ * @abstract    Implelemtation of the MD5 hash algorithm
  */
 
 #include "std/std-md5.h"

@@ -32,7 +32,7 @@
 /*!
  * @header      XSString.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    XSString class functions
  */
 
 #ifndef _XS_STRING_H_

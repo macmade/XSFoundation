@@ -32,7 +32,7 @@
 /*!
  * @header      XSBool.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    XSBool class functions
  */
 
 #ifndef _XS_BOOL_H_

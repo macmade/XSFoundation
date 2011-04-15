@@ -32,7 +32,7 @@
 /*!
  * @file        eos-skl.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Support for EOS-SKL
  */
 
 #include "eos-skl/eos-skl.h"

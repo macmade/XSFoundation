@@ -23,7 +23,7 @@
 /*!
  * @header      md5.h
  * @copyright   RSA Data Security, Inc.
- * @abstract    ...
+ * @abstract    MD5 hash algorithm
  */
 
 #ifndef _XS_STD_MD5_H_

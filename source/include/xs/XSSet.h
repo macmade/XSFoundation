@@ -32,7 +32,7 @@
 /*!
  * @header      XSSet.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    XSSet class functions
  */
 
 #ifndef _XS_SET_H_

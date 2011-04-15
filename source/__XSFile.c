@@ -32,7 +32,7 @@
 /*!
  * @file        __XSFile.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Private implementation for the XSFile class
  */
 
 #include "XS.h"

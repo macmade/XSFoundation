@@ -32,7 +32,7 @@
 /*!
  * @header      XSNull.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    XSNull class functions
  */
 
 #ifndef _XS_NULL_H_

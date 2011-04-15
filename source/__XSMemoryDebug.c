@@ -32,7 +32,7 @@
 /*!
  * @file        __XSMemoryDebug.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Private implementation for the memory debug functions
  */
 
 #include "__XSMemoryDebug.h"
