@@ -56,7 +56,7 @@ typedef struct XSThread * XSThread;
  *              function instead to create new threads.
  * @result      The allocated object
  */
-XSStatic XSThread XSThread_Alloc( void );
+XSStatic XSObject XSThread_Alloc( void );
 
 /*!
  * @function    XSThread_Alloc

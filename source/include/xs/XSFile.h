@@ -119,7 +119,7 @@ extern XSFile XSStderr;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSStatic XSFile XSFile_Alloc( void );
+XSStatic XSObject XSFile_Alloc( void );
 
 /*!
  * @function    XSFile_Init

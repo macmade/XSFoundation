@@ -42,7 +42,7 @@ extern XSClassID __XSApplicationArgumentClassID;
 
 XSStatic XSApplicationArgument XSApplicationArgument_Alloc( void )
 {
-    return ( XSApplicationArgument )XSRuntime_CreateInstance( __XSApplicationArgumentClassID );
+    return ( XSObject )XSRuntime_CreateInstance( __XSApplicationArgumentClassID );
 }
 
 XSApplicationArgument XSApplicationArgument_Init( XSApplicationArgument xsThis, const char * name, XSApplicationArgumentType type, const char * help )

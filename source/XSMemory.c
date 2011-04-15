@@ -43,9 +43,9 @@ extern XSClassID __XSAutoreleasePoolClassID;
 
 static size_t __xsmemory_alloc = 0;
 
-XSStatic XSAutoreleasePool XSAutoreleasePool_Alloc( void )
+XSStatic XSObject XSAutoreleasePool_Alloc( void )
 {
-    return ( XSAutoreleasePool )XSRuntime_CreateInstance( __XSAutoreleasePoolClassID );
+    return ( XSObject )XSRuntime_CreateInstance( __XSAutoreleasePoolClassID );
 }
 
 XSObject XSAutoreleasePool_Init( XSObject xsThis )

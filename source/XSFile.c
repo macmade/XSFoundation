@@ -102,9 +102,9 @@ if( f->need_init == YES )           \
     }                               \
 }
 
-XSStatic XSFile XSFile_Alloc( void )
+XSStatic XSObject XSFile_Alloc( void )
 {
-    return ( XSFile )XSRuntime_CreateInstance( __XSFileClassID );
+    return ( XSObject )XSRuntime_CreateInstance( __XSFileClassID );
 }
 
 XSFile XSFile_Init( XSFile xsThis )

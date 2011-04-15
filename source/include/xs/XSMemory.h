@@ -56,7 +56,7 @@ typedef struct XSAutoreleasePool * XSAutoreleasePool;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSStatic XSAutoreleasePool XSAutoreleasePool_Alloc( void );
+XSStatic XSObject XSAutoreleasePool_Alloc( void );
 
 /*!
  * @function    XSAutoreleasePool_Init

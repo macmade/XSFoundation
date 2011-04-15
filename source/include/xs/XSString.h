@@ -54,7 +54,7 @@ typedef struct XSString * XSString;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSStatic XSString XSString_Alloc( void );
+XSStatic XSObject XSString_Alloc( void );
 
 /*!
  * @function    XSString_Init

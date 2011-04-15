@@ -47,9 +47,9 @@ struct __XSNotificationCallback
     void ( * callback )( XSNotification notification );
 };
 
-XSStatic XSNotificationCenter XSNotificationCenter_Alloc( void )
+XSStatic XSObject XSNotificationCenter_Alloc( void )
 {
-    return ( XSNotificationCenter )XSRuntime_CreateInstance( __XSNotificationCenterClassID );
+    return ( XSObject )XSRuntime_CreateInstance( __XSNotificationCenterClassID );
 }
 
 XSObject XSNotificationCenter_Init( XSObject xsThis )

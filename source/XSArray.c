@@ -42,9 +42,9 @@
 
 extern XSClassID __XSArrayClassID;
 
-XSStatic XSArray XSArray_Alloc( void )
+XSStatic XSObject XSArray_Alloc( void )
 {
-    return ( XSArray )XSRuntime_CreateInstance( __XSArrayClassID );
+    return ( XSObject )XSRuntime_CreateInstance( __XSArrayClassID );
 }
 
 XSObject XSArray_Init( XSObject xsThis )

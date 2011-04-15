@@ -54,7 +54,7 @@ typedef struct XSLock * XSLock;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSStatic XSLock XSLock_Alloc( void );
+XSStatic XSObject XSLock_Alloc( void );
 
 /*!
  * @function    XSLock_Init

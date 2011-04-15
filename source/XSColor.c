@@ -40,9 +40,9 @@
 
 extern XSClassID __XSColorClassID;
 
-XSStatic XSColor XSColor_Alloc( void )
+XSStatic XSObject XSColor_Alloc( void )
 {
-    return ( XSColor )XSRuntime_CreateInstance( __XSColorClassID );
+    return ( XSObject )XSRuntime_CreateInstance( __XSColorClassID );
 }
 
 XSObject XSColor_Init( XSObject xsThis )

@@ -47,14 +47,14 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSArray
  * @abstract    Opaque type for the XSArray objects
  */
-typedef struct XSArray * XSArray;
+typedef struct XSObject * XSArray;
 
 /*!
  * @function    XSArray_Alloc
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSStatic XSArray XSArray_Alloc( void );
+XSStatic XSObject XSArray_Alloc( void );
 
 /*!
  * @function    XSArray_Init

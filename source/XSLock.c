@@ -40,9 +40,9 @@
 
 extern XSClassID __XSLockClassID;
 
-XSStatic XSLock XSLock_Alloc( void )
+XSStatic XSObject XSLock_Alloc( void )
 {
-    return ( XSLock )XSRuntime_CreateInstance( __XSLockClassID );
+    return ( XSObject )XSRuntime_CreateInstance( __XSLockClassID );
 }
 
 XSObject XSLock_Init( XSObject xsThis )

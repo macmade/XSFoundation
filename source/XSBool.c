@@ -40,9 +40,9 @@
 
 extern XSClassID __XSBoolClassID;
 
-XSStatic XSBool XSBool_Alloc( void )
+XSStatic XSObject XSBool_Alloc( void )
 {
-    return ( XSBool )XSRuntime_CreateInstance( __XSBoolClassID );
+    return ( XSObject )XSRuntime_CreateInstance( __XSBoolClassID );
 }
 
 XSObject XSBool_Init( XSObject xsThis )

@@ -40,9 +40,9 @@
 
 extern XSClassID __XSNotificationClassID;
 
-XSStatic XSNotification XSNotification_Alloc( void )
+XSStatic XSObject XSNotification_Alloc( void )
 {
-    return ( XSNotification )XSRuntime_CreateInstance( __XSNotificationClassID );
+    return ( XSObject )XSRuntime_CreateInstance( __XSNotificationClassID );
 }
 
 XSObject XSNotification_Init( XSObject xsThis )

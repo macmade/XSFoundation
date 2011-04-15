@@ -47,14 +47,14 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSSet
  * @abstract    Opaque type for the XSSet objects
  */
-typedef struct XSSet * XSSet;
+typedef struct XSObject * XSSet;
 
 /*!
  * @function    XSSet_Alloc
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSStatic XSSet XSSet_Alloc( void );
+XSStatic XSObject XSSet_Alloc( void );
 
 /*!
  * @function    XSSet_Init

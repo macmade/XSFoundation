@@ -54,7 +54,7 @@ typedef struct XSBag * XSBag;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSStatic XSBag XSBag_Alloc( void );
+XSStatic XSObject XSBag_Alloc( void );
 
 /*!
  * @function    XSBag_Init

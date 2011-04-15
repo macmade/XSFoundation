@@ -54,7 +54,7 @@ typedef struct __XSNotification * XSNotification;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSStatic XSNotification XSNotification_Alloc( void );
+XSStatic XSObject XSNotification_Alloc( void );
 
 XSObject XSNotification_Init( XSObject xsThis );
 

@@ -46,7 +46,7 @@ static BOOL __xsapp_argv_processed  = NO;
 
 XSStatic XSApplication XSApplication_Alloc( void )
 {
-    return ( XSApplication )XSRuntime_CreateInstance( __XSApplicationClassID );
+    return ( XSObject )XSRuntime_CreateInstance( __XSApplicationClassID );
 }
 
 XSObject XSApplication_Init( XSObject xsThis )

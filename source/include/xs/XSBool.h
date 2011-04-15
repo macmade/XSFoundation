@@ -54,7 +54,7 @@ typedef struct __XSBool * XSBool;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSStatic XSBool XSBool_Alloc( void );
+XSStatic XSObject XSBool_Alloc( void );
 
 XSObject XSBool_Init( XSObject xsThis );
 

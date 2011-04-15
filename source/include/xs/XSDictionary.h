@@ -60,7 +60,7 @@ typedef struct XSDictionary * XSDictionary;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSStatic XSDictionary XSDictionary_Alloc( void );
+XSStatic XSObject XSDictionary_Alloc( void );
 
 /*!
  * @function    XSDictionary_Create

@@ -40,9 +40,9 @@
 
 extern XSClassID __XSErrorClassID;
 
-XSStatic XSError XSError_Alloc( void )
+XSStatic XSObject XSError_Alloc( void )
 {
-    return ( XSError )XSRuntime_CreateInstance( __XSErrorClassID );
+    return ( XSObject )XSRuntime_CreateInstance( __XSErrorClassID );
 }
 
 XSError XSError_Init( XSError xsThis, XSInteger code, XSString domain, XSString reason )

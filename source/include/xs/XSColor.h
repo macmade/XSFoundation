@@ -54,7 +54,7 @@ typedef struct XSColor * XSColor;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSStatic XSColor XSColor_Alloc( void );
+XSStatic XSObject XSColor_Alloc( void );
 
 /*!
  * @function    XSColor_Init

@@ -54,7 +54,7 @@ typedef struct XSTimer * XSTimer;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSStatic XSTimer XSTimer_Alloc( void );
+XSStatic XSObject XSTimer_Alloc( void );
 
 /*!
  * @function    XSTimer_Init

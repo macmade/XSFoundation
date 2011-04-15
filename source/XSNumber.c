@@ -40,9 +40,9 @@
 
 extern XSClassID __XSNumberClassID;
 
-XSStatic XSNumber XSNumber_Alloc( void )
+XSStatic XSObject XSNumber_Alloc( void )
 {
-    return ( XSNumber )XSRuntime_CreateInstance( __XSNumberClassID );
+    return ( XSObject )XSRuntime_CreateInstance( __XSNumberClassID );
 }
 
 XSObject XSNumber_Init( XSObject xsThis )

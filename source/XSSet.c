@@ -42,9 +42,9 @@
 
 extern XSClassID __XSSetClassID;
 
-XSStatic XSSet XSSet_Alloc( void )
+XSStatic XSObject XSSet_Alloc( void )
 {
-    return ( XSSet )XSRuntime_CreateInstance( __XSSetClassID );
+    return ( XSObject )XSRuntime_CreateInstance( __XSSetClassID );
 }
 
 XSObject XSSet_Init( XSObject xsThis )

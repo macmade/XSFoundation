@@ -54,7 +54,7 @@ typedef struct XSData * XSData;
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSStatic XSData XSData_Alloc( void );
+XSStatic XSObject XSData_Alloc( void );
 
 XSObject XSData_Init( XSObject xsThis );
 

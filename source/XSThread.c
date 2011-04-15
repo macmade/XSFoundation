@@ -40,9 +40,9 @@
 
 extern XSClassID __XSThreadClassID;
 
-XSStatic XSThread XSThread_Alloc( void )
+XSStatic XSObject XSThread_Alloc( void )
 {
-    return ( XSThread )XSRuntime_CreateInstance( __XSThreadClassID );
+    return ( XSObject )XSRuntime_CreateInstance( __XSThreadClassID );
 }
 
 XSObject XSThread_Init( XSObject xsThis )

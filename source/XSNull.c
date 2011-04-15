@@ -42,9 +42,9 @@ extern XSClassID __XSNullClassID;
 
 static XSNull __xsnull = NULL;
 
-XSStatic XSNull XSNull_Alloc( void )
+XSStatic XSObject XSNull_Alloc( void )
 {
-    return ( XSNull )XSRuntime_CreateInstance( __XSNullClassID );
+    return ( XSObject )XSRuntime_CreateInstance( __XSNullClassID );
 }
 
 XSObject XSNull_Init( XSObject xsThis )
