@@ -89,6 +89,7 @@ int main( int argc, char * argv[] )
     XSTimer       timer;
     XSData        data;
     XSDictionary  dict;
+    XSNumber      num;
     
     app  = XSApplication_Start( argc, ( const char ** )argv );
     
@@ -138,6 +139,7 @@ int main( int argc, char * argv[] )
     arr  = XSArray_InitWithValues( XSArray_Alloc(), str1, str2, str3, NULL );
     data = XSData_InitWithBytes( XSData_Alloc(), ( UInt8 * )"hello, world", 12 );
     dict = XSDictionary_InitWithKeysAndValues( XSDictionary_Alloc(), XSSTR( "test-1" ), str1, XSSTR( "test-2" ), str2, NULL );
+    num  = XSNumber_InitWithShort( XSNumber_Alloc(), 0x0303 );
     
     XSLog( "Memory hash: %s", XSHash( test ) );
     XSLog( "Object hash: %s", XSHash( str1 ) );
@@ -152,6 +154,8 @@ int main( int argc, char * argv[] )
     XSLog( "MD5 Hash: $@", XSString_MD5Hash( str1 ) );
     XSLog( "$@", data );
     XSLog( "$@", dict );
+    XSLog( "$@", num );
+    XSLog( "0x%02x", XSNumber_GetChar( num ) );
     
     XSNotificationCenter_AddObserver( XSNotificationCenter_DefaultCenter(), ( XSObject )str1, XSSTR( "TestNotification" ), notification_test );
     XSNotificationCenter_PostNotification( XSNotificationCenter_DefaultCenter(), ( XSObject )str1, XSSTR( "TestNotification" ) );
@@ -169,6 +173,7 @@ int main( int argc, char * argv[] )
     XSRelease( str3 );
     XSRelease( data );
     XSRelease( dict );
+    XSRelease( num );
     
     return EXIT_SUCCESS;
 }
