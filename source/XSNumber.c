@@ -240,77 +240,460 @@ XSNumber XSNumber_InitWithUnsignedInteger( XSNumber xsThis, XSUInteger value )
     return xsThis;
 }
 
-void XSNumber_SetBoolValue( XSNumber xsThis, BOOL value )
+void XSNumber_SetBool( XSNumber xsThis, BOOL value )
 {
     XSNumber_InitWithBool( xsThis, value );
 }
 
-void XSNumber_SetCharValue( XSNumber xsThis, char value )
+void XSNumber_SetChar( XSNumber xsThis, char value )
 {
     XSNumber_InitWithBool( xsThis, value );
 }
 
-void XSNumber_SetUnsignedCharValue( XSNumber xsThis, unsigned char value )
+void XSNumber_SetUnsignedChar( XSNumber xsThis, unsigned char value )
 {
     XSNumber_InitWithUnsignedChar( xsThis, value );
 }
 
-void XSNumber_SetShortValue( XSNumber xsThis, short value )
+void XSNumber_SetShort( XSNumber xsThis, short value )
 {
     XSNumber_InitWithShort( xsThis, value );
 }
 
-void XSNumber_SetUnsignedShortValue( XSNumber xsThis, unsigned short value )
+void XSNumber_SetUnsignedShort( XSNumber xsThis, unsigned short value )
 {
     XSNumber_InitWithUnsignedShort( xsThis, value );
 }
 
-void XSNumber_SetIntValue( XSNumber xsThis, int value )
+void XSNumber_SetInt( XSNumber xsThis, int value )
 {
     XSNumber_InitWithInt( xsThis, value );
 }
 
-void XSNumber_SetUnsignedIntValue( XSNumber xsThis, unsigned int value )
+void XSNumber_SetUnsignedInt( XSNumber xsThis, unsigned int value )
 {
     XSNumber_InitWithUnsignedInt( xsThis, value );
 }
 
-void XSNumber_SetLongValue( XSNumber xsThis, long value )
+void XSNumber_SetLong( XSNumber xsThis, long value )
 {
     XSNumber_InitWithLong( xsThis, value );
 }
 
-void XSNumber_SetUnsignedLongValue( XSNumber xsThis, unsigned long value )
+void XSNumber_SetUnsignedLong( XSNumber xsThis, unsigned long value )
 {
     XSNumber_InitWithUnsignedLong( xsThis, value );
 }
 
-void XSNumber_SetLongLongValue( XSNumber xsThis, long long value )
+void XSNumber_SetLongLong( XSNumber xsThis, long long value )
 {
     XSNumber_InitWithLongLong( xsThis, value );
 }
 
-void XSNumber_SetUnsignedLongLongValue( XSNumber xsThis, unsigned long long value )
+void XSNumber_SetUnsignedLongLong( XSNumber xsThis, unsigned long long value )
 {
     XSNumber_InitWithUnsignedLongLong( xsThis, value );
 }
 
-void XSNumber_SetFloatValue( XSNumber xsThis, float value )
+void XSNumber_SetFloat( XSNumber xsThis, float value )
 {
     XSNumber_InitWithFloat( xsThis, value );
 }
 
-void XSNumber_SetDoubleValue( XSNumber xsThis, double value )
+void XSNumber_SetDouble( XSNumber xsThis, double value )
 {
     XSNumber_InitWithDouble( xsThis, value );
 }
 
-void XSNumber_SetIntegerValue( XSNumber xsThis, XSInteger value )
+void XSNumber_SetInteger( XSNumber xsThis, XSInteger value )
 {
     XSNumber_InitWithInteger( xsThis, value );
 }
 
-void XSNumber_SetUnsignedIntegerValue( XSNumber xsThis, XSUInteger value )
+void XSNumber_SetUnsignedInteger( XSNumber xsThis, XSUInteger value )
 {
     XSNumber_InitWithUnsignedInteger( xsThis, value );
+}
+
+BOOL XSNumber_GetBool( XSNumber xsThis )
+{
+    __XSNumber * n;
+    uint64_t     uint64;
+    
+    n = ( __XSNumber * )xsThis;
+    
+    if( ( n->types & __XSNUMBER_TYPE_BOOL ) == 0 )
+    {
+        n->types |= __XSNUMBER_TYPE_BOOL;
+        uint64    = __XSNumber_GetUInt64Value( n );
+        
+        if( uint64 > 0 )
+        {
+            n->boolValue = YES;
+        }
+        else
+        {
+            n->boolValue = NO;
+        }
+    }
+    
+    return n->boolValue;
+}
+
+char XSNumber_GetChar( XSNumber xsThis )
+{
+    __XSNumber * n;
+    uint64_t     uint64;
+    
+    n = ( __XSNumber * )xsThis;
+    
+    if( ( n->types & __XSNUMBER_TYPE_SCHAR ) == 0 )
+    {
+        n->types |= __XSNUMBER_TYPE_SCHAR;
+        uint64    = __XSNumber_GetUInt64Value( n );
+        
+        if( uint64 > SCHAR_MAX )
+        {
+            n->sCharValue = SCHAR_MAX;
+        }
+        else
+        {
+            n->sCharValue = ( signed char )uint64;
+        }
+    }
+    
+    return n->sCharValue;
+}
+
+unsigned char XSNumber_GetUnsignedChar( XSNumber xsThis )
+{
+    __XSNumber * n;
+    uint64_t     uint64;
+    
+    n = ( __XSNumber * )xsThis;
+    
+    if( ( n->types & __XSNUMBER_TYPE_UCHAR ) == 0 )
+    {
+        n->types |= __XSNUMBER_TYPE_UCHAR;
+        uint64    = __XSNumber_GetUInt64Value( n );
+        
+        if( uint64 > UCHAR_MAX )
+        {
+            n->uCharValue = UCHAR_MAX;
+        }
+        else
+        {
+            n->uCharValue = ( unsigned char )uint64;
+        }
+    }
+    
+    return n->uCharValue;
+}
+
+short XSNumber_GetShort( XSNumber xsThis )
+{
+    __XSNumber * n;
+    uint64_t     uint64;
+    
+    n = ( __XSNumber * )xsThis;
+    
+    if( ( n->types & __XSNUMBER_TYPE_SSHORT ) == 0 )
+    {
+        n->types |= __XSNUMBER_TYPE_SSHORT;
+        uint64    = __XSNumber_GetUInt64Value( n );
+        
+        if( uint64 > SHRT_MAX )
+        {
+            n->sShortValue = SHRT_MAX;
+        }
+        else
+        {
+            n->sShortValue = ( signed short )uint64;
+        }
+    }
+    
+    return n->sShortValue;
+}
+
+unsigned short XSNumber_GetUnsignedShort( XSNumber xsThis )
+{
+    __XSNumber * n;
+    uint64_t     uint64;
+    
+    n = ( __XSNumber * )xsThis;
+    
+    if( ( n->types & __XSNUMBER_TYPE_USHORT ) == 0 )
+    {
+        n->types |= __XSNUMBER_TYPE_USHORT;
+        uint64    = __XSNumber_GetUInt64Value( n );
+        
+        if( uint64 > USHRT_MAX )
+        {
+            n->uShortValue = USHRT_MAX;
+        }
+        else
+        {
+            n->uShortValue = ( unsigned short )uint64;
+        }
+    }
+    
+    return n->uShortValue;
+}
+
+int XSNumber_GetInt( XSNumber xsThis )
+{
+    __XSNumber * n;
+    uint64_t     uint64;
+    
+    n = ( __XSNumber * )xsThis;
+    
+    if( ( n->types & __XSNUMBER_TYPE_SINT ) == 0 )
+    {
+        n->types |= __XSNUMBER_TYPE_SINT;
+        uint64    = __XSNumber_GetUInt64Value( n );
+        
+        if( uint64 > INT_MAX )
+        {
+            n->uIntValue = INT_MAX;
+        }
+        else
+        {
+            n->uIntValue = ( signed int )uint64;
+        }
+    }
+    
+    return n->uIntValue;
+}
+
+unsigned int XSNumber_GetUnsignedInt( XSNumber xsThis )
+{
+    __XSNumber * n;
+    uint64_t     uint64;
+    
+    n = ( __XSNumber * )xsThis;
+    
+    if( ( n->types & __XSNUMBER_TYPE_UINT ) == 0 )
+    {
+        n->types |= __XSNUMBER_TYPE_UINT;
+        uint64    = __XSNumber_GetUInt64Value( n );
+        
+        if( uint64 > UINT_MAX )
+        {
+            n->sIntValue = UINT_MAX;
+        }
+        else
+        {
+            n->sIntValue = ( unsigned int )uint64;
+        }
+    }
+    
+    return n->sIntValue;
+}
+
+long XSNumber_GetLong( XSNumber xsThis )
+{
+    __XSNumber * n;
+    uint64_t     uint64;
+    
+    n = ( __XSNumber * )xsThis;
+    
+    if( ( n->types & __XSNUMBER_TYPE_SLONG ) == 0 )
+    {
+        n->types |= __XSNUMBER_TYPE_SLONG;
+        uint64    = __XSNumber_GetUInt64Value( n );
+        
+        if( uint64 > LONG_MAX )
+        {
+            n->sLongValue = LONG_MAX;
+        }
+        else
+        {
+            n->sLongValue = ( signed long )uint64;
+        }
+    }
+    
+    return n->sLongValue;
+}
+
+unsigned long XSNumber_GetUnsignedLong( XSNumber xsThis )
+{
+    __XSNumber * n;
+    uint64_t     uint64;
+    
+    n = ( __XSNumber * )xsThis;
+    
+    if( ( n->types & __XSNUMBER_TYPE_ULONG ) == 0 )
+    {
+        n->types |= __XSNUMBER_TYPE_ULONG;
+        uint64    = __XSNumber_GetUInt64Value( n );
+        
+        if( uint64 > ULONG_MAX )
+        {
+            n->uLongValue = ULONG_MAX;
+        }
+        else
+        {
+            n->uLongValue = ( unsigned long )uint64;
+        }
+    }
+    
+    return n->uLongValue;
+}
+
+long long XSNumber_GetLongLong( XSNumber xsThis )
+{
+    __XSNumber * n;
+    uint64_t     uint64;
+    
+    n = ( __XSNumber * )xsThis;
+    
+    if( ( n->types & __XSNUMBER_TYPE_SLONGLONG ) == 0 )
+    {
+        n->types |= __XSNUMBER_TYPE_SLONGLONG;
+        uint64    = __XSNumber_GetUInt64Value( n );
+        
+        if( uint64 > LLONG_MAX )
+        {
+            n->sLongLongValue = LLONG_MAX;
+        }
+        else
+        {
+            n->sLongLongValue = ( signed long long )uint64;
+        }
+    }
+    
+    return n->sLongLongValue;
+}
+
+unsigned long long XSNumber_GetUnsignedLongLong( XSNumber xsThis )
+{
+    __XSNumber * n;
+    uint64_t     uint64;
+    
+    n = ( __XSNumber * )xsThis;
+    
+    if( ( n->types & __XSNUMBER_TYPE_ULONGLONG ) == 0 )
+    {
+        n->types |= __XSNUMBER_TYPE_ULONGLONG;
+        uint64    = __XSNumber_GetUInt64Value( n );
+        
+        if( uint64 > ULLONG_MAX )
+        {
+            n->uLongLongValue = ULLONG_MAX;
+        }
+        else
+        {
+            n->uLongLongValue = ( unsigned long long )uint64;
+        }
+    }
+    
+    return n->uLongLongValue;
+}
+
+float XSNumber_GetFloat( XSNumber xsThis )
+{
+    __XSNumber * n;
+    uint64_t     uint64;
+    
+    n = ( __XSNumber * )xsThis;
+    
+    if( ( n->types & __XSNUMBER_TYPE_SINTEGER ) == 0 )
+    {
+        n->types |= __XSNUMBER_TYPE_SINTEGER;
+        uint64    = __XSNumber_GetUInt64Value( n );
+        
+        if( n->types & __XSNUMBER_TYPE_DOUBLE )
+        {
+            n->floatValue = ( float )n->doubleValue;
+        }
+        else if( uint64 > FLT_MAX )
+        {
+            n->floatValue = FLT_MAX;
+        }
+        else
+        {
+            n->floatValue = ( float )uint64;
+        }
+    }
+    
+    return n->floatValue;
+}
+
+double XSNumber_GetDouble( XSNumber xsThis )
+{
+    __XSNumber * n;
+    uint64_t     uint64;
+        
+    n = ( __XSNumber * )xsThis;
+    
+    if( ( n->types & __XSNUMBER_TYPE_UINTEGER ) == 0 )
+    {
+        n->types |= __XSNUMBER_TYPE_UINTEGER;
+        uint64    = __XSNumber_GetUInt64Value( n );
+        
+        if( n->types & __XSNUMBER_TYPE_FLOAT )
+        {
+            n->doubleValue = ( double )n->floatValue;
+        }
+        else if( uint64 > DBL_MAX )
+        {
+            n->doubleValue = DBL_MAX;
+        }
+        else
+        {
+            n->doubleValue = ( double )uint64;
+        }
+    }
+    
+    return n->doubleValue;
+}
+
+XSInteger XSNumber_GetInteger( XSNumber xsThis )
+{
+    __XSNumber * n;
+    uint64_t     uint64;
+    
+    n = ( __XSNumber * )xsThis;
+    
+    if( ( n->types & __XSNUMBER_TYPE_UINTEGER ) == 0 )
+    {
+        n->types |= __XSNUMBER_TYPE_UINTEGER;
+        uint64    = __XSNumber_GetUInt64Value( n );
+        
+        if( uint64 > XSIntegerMax )
+        {
+            n->sIntegerValue = XSIntegerMax;
+        }
+        else
+        {
+            n->sIntegerValue = ( XSInteger )uint64;
+        }
+    }
+    
+    return n->sIntegerValue;
+}
+
+XSUInteger XSNumber_GetUnsignedInteger( XSNumber xsThis )
+{
+    __XSNumber * n;
+    uint64_t     uint64;
+    
+    n = ( __XSNumber * )xsThis;
+    
+    if( ( n->types & __XSNUMBER_TYPE_UINTEGER ) == 0 )
+    {
+        n->types |= __XSNUMBER_TYPE_UINTEGER;
+        uint64    = __XSNumber_GetUInt64Value( n );
+        
+        if( uint64 > XSUIntegerMax )
+        {
+            n->uIntegerValue = XSUIntegerMax;
+        }
+        else
+        {
+            n->uIntegerValue = ( XSUInteger )uint64;
+        }
+    }
+    
+    return n->uIntegerValue;
 }

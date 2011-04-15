@@ -191,35 +191,65 @@ XSNumber XSNumber_InitWithInteger( XSNumber xsThis, XSInteger value );
  */
 XSNumber XSNumber_InitWithUnsignedInteger( XSNumber xsThis, XSUInteger value );
 
-void XSNumber_SetBoolValue( XSNumber xsThis, BOOL value );
+void XSNumber_SetBool( XSNumber xsThis, BOOL value );
 
-void XSNumber_SetCharValue( XSNumber xsThis, char value );
+void XSNumber_SetChar( XSNumber xsThis, char value );
 
-void XSNumber_SetUnsignedCharValue( XSNumber xsThis, unsigned char value );
+void XSNumber_SetUnsignedChar( XSNumber xsThis, unsigned char value );
 
-void XSNumber_SetShortValue( XSNumber xsThis, short value );
+void XSNumber_SetShort( XSNumber xsThis, short value );
 
-void XSNumber_SetUnsignedShortValue( XSNumber xsThis, unsigned short value );
+void XSNumber_SetUnsignedShort( XSNumber xsThis, unsigned short value );
 
-void XSNumber_SetIntValue( XSNumber xsThis, int value );
+void XSNumber_SetInt( XSNumber xsThis, int value );
 
-void XSNumber_SetUnsignedIntValue( XSNumber xsThis, unsigned int value );
+void XSNumber_SetUnsignedInt( XSNumber xsThis, unsigned int value );
 
-void XSNumber_SetLongValue( XSNumber xsThis, long value );
+void XSNumber_SetLong( XSNumber xsThis, long value );
 
-void XSNumber_SetUnsignedLongValue( XSNumber xsThis, unsigned long value );
+void XSNumber_SetUnsignedLong( XSNumber xsThis, unsigned long value );
 
-void XSNumber_SetLongLongValue( XSNumber xsThis, long long value );
+void XSNumber_SetLongLong( XSNumber xsThis, long long value );
 
-void XSNumber_SetUnsignedLongLongValue( XSNumber xsThis, unsigned long long value );
+void XSNumber_SetUnsignedLongLong( XSNumber xsThis, unsigned long long value );
 
-void XSNumber_SetFloatValue( XSNumber xsThis, float value );
+void XSNumber_SetFloat( XSNumber xsThis, float value );
 
-void XSNumber_SetDoubleValue( XSNumber xsThis, double value );
+void XSNumber_SetDouble( XSNumber xsThis, double value );
 
-void XSNumber_SetIntegerValue( XSNumber xsThis, XSInteger value );
+void XSNumber_SetInteger( XSNumber xsThis, XSInteger value );
 
-void XSNumber_SetUnsignedIntegerValue( XSNumber xsThis, XSUInteger value );
+void XSNumber_SetUnsignedInteger( XSNumber xsThis, XSUInteger value );
+
+BOOL XSNumber_GetBool( XSNumber xsThis );
+
+char XSNumber_GetChar( XSNumber xsThis );
+
+unsigned char XSNumber_GetUnsignedChar( XSNumber xsThis );
+
+short XSNumber_GetShort( XSNumber xsThis );
+
+unsigned short XSNumber_GetUnsignedShort( XSNumber xsThis );
+
+int XSNumber_GetInt( XSNumber xsThis );
+
+unsigned int XSNumber_GetUnsignedInt( XSNumber xsThis );
+
+long XSNumber_GetLong( XSNumber xsThis );
+
+unsigned long XSNumber_GetUnsignedLong( XSNumber xsThis );
+
+long long XSNumber_GetLongLong( XSNumber xsThis );
+
+unsigned long long XSNumber_GetUnsignedLongLong( XSNumber xsThis );
+
+float XSNumber_GetFloat( XSNumber xsThis );
+
+double XSNumber_GetDouble( XSNumber xsThis );
+
+XSInteger XSNumber_GetInteger( XSNumber xsThis );
+
+XSUInteger XSNumber_GetUnsignedInteger( XSNumber xsThis );
 
 XS_EXTERN_C_END
 

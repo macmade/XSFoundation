@@ -96,6 +96,8 @@ __XSNumber;
  */
 void __XSNumber_Initialize( void );
 
+uint64_t __XSNumber_GetUInt64Value( __XSNumber * n );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_NUMBER_H_ */
