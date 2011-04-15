@@ -57,10 +57,19 @@ typedef struct XSNumber * XSNumber;
 XSStatic XSNumber XSNumber_Alloc( void );
 
 /*!
- * @function    XSNumber_InitWithBool
+ * @function    XSNumber_Init
+ * @abstract    Creates a number
  * @param       xsThis      The number object
- * @abstract    value       Creates a number with a BOOL value
- * @param       The BOOL value
+ * @param       value       The BOOL value
+ * @result      The number object
+ */
+XSNumber XSNumber_Init( XSNumber xsThis );
+
+/*!
+ * @function    XSNumber_InitWithBool
+ * @abstract    Creates a number with a BOOL value
+ * @param       xsThis      The number object
+ * @param       value       The BOOL value
  * @result      The number object
  */
 XSNumber XSNumber_InitWithBool( XSNumber xsThis, BOOL value );

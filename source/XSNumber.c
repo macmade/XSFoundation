@@ -45,6 +45,31 @@ XSStatic XSNumber XSNumber_Alloc( void )
     return ( XSNumber )XSRuntime_CreateInstance( __XSNumberClassID );
 }
 
+XSNumber XSNumber_Init( XSNumber xsThis )
+{
+    __XSNumber * num;
+    
+    num                 = ( __XSNumber * )xsThis;
+    num->boolValue      = NO;
+    num->sCharValue     = ( signed char )0;
+    num->uCharValue     = ( unsigned char )0;
+    num->sShortValue    = ( signed short )0;
+    num->uShortValue    = ( unsigned short )0;
+    num->sIntValue      = ( signed int )0;
+    num->uIntValue      = ( unsigned int )0;
+    num->sLongValue     = ( signed long )0;
+    num->uLongValue     = ( unsigned long )0;
+    num->sLongLongValue = ( signed long long )0;
+    num->uLongLongValue = ( unsigned long long )0;
+    num->floatValue     = ( float )0;
+    num->doubleValue    = ( double )0;
+    num->sIntegerValue  = ( XSInteger )0;
+    num->uIntegerValue  = ( XSUInteger )0;
+    num->types          = __XSNUMBER_TYPE_ALL;
+    
+    return xsThis;
+}
+
 XSNumber XSNumber_InitWithBool( XSNumber xsThis, BOOL value )
 {
     __XSNumber * num;

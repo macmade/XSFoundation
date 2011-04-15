@@ -60,6 +60,7 @@ XS_EXTERN_C_BEGIN
 #define __XSNUMBER_TYPE_DOUBLE      0x1000
 #define __XSNUMBER_TYPE_SINTEGER    0x2000
 #define __XSNUMBER_TYPE_UINTEGER    0x4000
+#define __XSNUMBER_TYPE_ALL         0x7FFF
 
 /*!
  * @typdef      __XSNumber
