@@ -63,3 +63,69 @@ void __XSNumber_Initialize( void )
 {
     __XSNumberClassID = XSRuntime_RegisterClass( &__XSNumberClass );
 }
+
+uint64_t __XSNumber_GetUInt64Value( __XSNumber * n )
+{
+    if( n->types & __XSNUMBER_TYPE_BOOL )
+    {
+        return ( uint64_t )n->boolValue;
+    }
+    else if( n->types & __XSNUMBER_TYPE_SCHAR )
+    {
+        return ( uint64_t )n->sCharValue;
+    }
+    else if( n->types & __XSNUMBER_TYPE_UCHAR )
+    {
+        return ( uint64_t )n->uCharValue;
+    }
+    else if( n->types & __XSNUMBER_TYPE_SSHORT )
+    {
+        return ( uint64_t )n->sShortValue;
+    }
+    else if( n->types & __XSNUMBER_TYPE_USHORT )
+    {
+        return ( uint64_t )n->uShortValue;
+    }
+    else if( n->types & __XSNUMBER_TYPE_SINT )
+    {
+        return ( uint64_t )n->sIntValue;
+    }
+    else if( n->types & __XSNUMBER_TYPE_UINT )
+    {
+        return ( uint64_t )n->uIntValue;
+    }
+    else if( n->types & __XSNUMBER_TYPE_SLONG )
+    {
+        return ( uint64_t )n->sLongValue;
+    }
+    else if( n->types & __XSNUMBER_TYPE_ULONG )
+    {
+        return ( uint64_t )n->uLongValue;
+    }
+    else if( n->types & __XSNUMBER_TYPE_SLONGLONG )
+    {
+        return ( uint64_t )n->sLongLongValue;
+    }
+    else if( n->types & __XSNUMBER_TYPE_ULONGLONG )
+    {
+        return ( uint64_t )n->uLongLongValue;
+    }
+    else if( n->types & __XSNUMBER_TYPE_FLOAT )
+    {
+        return ( uint64_t )n->floatValue;
+    }
+    else if( n->types & __XSNUMBER_TYPE_DOUBLE )
+    {
+        return ( uint64_t )n->doubleValue;
+    }
+    else if( n->types & __XSNUMBER_TYPE_SINTEGER )
+    {
+        return ( uint64_t )n->sIntegerValue;
+    }
+    else if( n->types & __XSNUMBER_TYPE_UINTEGER )
+    {
+        return ( uint64_t )n->uIntegerValue;
+    }
+    
+    return 0;
+}
