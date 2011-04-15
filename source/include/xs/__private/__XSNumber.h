@@ -97,6 +97,14 @@ __XSNumber;
  */
 void __XSNumber_Initialize( void );
 
+/*!
+ * @function    __XSNumber_ToString
+ * @abstract    Object description
+ * @param       object  A pointer to the object
+ * @result      The object's description
+ */
+XSString __XSNumber_ToString( void * object );
+
 uint64_t __XSNumber_GetUInt64Value( __XSNumber * n );
 
 XS_EXTERN_C_END

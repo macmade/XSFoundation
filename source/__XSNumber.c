@@ -50,7 +50,7 @@ static const XSClassInfos __XSNumberClass =
     NULL,                   /* Destructor */
     XSNumber_Init,          /* Default initializer */
     NULL,                   /* Object copy */
-    NULL,                   /* Object description */
+    __XSNumber_ToString,    /* Object description */
     NULL                    /* Object comparison */
 };
 
@@ -63,6 +63,17 @@ XSClassID __XSNumberClassID;
 void __XSNumber_Initialize( void )
 {
     __XSNumberClassID = XSRuntime_RegisterClass( &__XSNumberClass );
+}
+
+XSString __XSNumber_ToString( void * object )
+{
+    XSString description;
+    
+    description = XSString_Init( XSString_Alloc() );
+    
+    XSString_AppendFormat( description, ( char * )"%f", XSNumber_GetDouble( object ) );
+    
+    return XSAutorelease( description );
 }
 
 uint64_t __XSNumber_GetUInt64Value( __XSNumber * n )
