@@ -78,8 +78,6 @@ XSNumber XSNumber_InitWithBool( XSNumber xsThis, BOOL value )
     num->boolValue = value;
     num->types     = __XSNUMBER_TYPE_BOOL;
     
-    ( void )value;
-    
     return xsThis;
 }
 
@@ -90,8 +88,6 @@ XSNumber XSNumber_InitWithChar( XSNumber xsThis, char value )
     num             = ( __XSNumber * )xsThis;
     num->sCharValue = value;
     num->types      = __XSNUMBER_TYPE_SCHAR;
-    
-    ( void )value;
     
     return xsThis;
 }
@@ -104,8 +100,6 @@ XSNumber XSNumber_InitWithUnsignedChar( XSNumber xsThis, unsigned char value )
     num->uCharValue = value;
     num->types      = __XSNUMBER_TYPE_UCHAR;
     
-    ( void )value;
-    
     return xsThis;
 }
 
@@ -117,8 +111,6 @@ XSNumber XSNumber_InitWithShort( XSNumber xsThis, short value )
     num->sShortValue = value;
     num->types       = __XSNUMBER_TYPE_SSHORT;
     
-    ( void )value;
-    
     return xsThis;
 }
 
@@ -128,10 +120,7 @@ XSNumber XSNumber_InitWithUnsignedShort( XSNumber xsThis, unsigned short value )
     
     num              = ( __XSNumber * )xsThis;
     num->uShortValue = value;
-    num->types       = __XSNUMBER_TYPE_USHORT;
-    
-    ( void )value;
-    
+    num->types       = __XSNUMBER_TYPE_USHORT;    
     return xsThis;
 }
 
@@ -141,10 +130,7 @@ XSNumber XSNumber_InitWithInt( XSNumber xsThis, int value )
     
     num            = ( __XSNumber * )xsThis;
     num->sIntValue = value;
-    num->types     = __XSNUMBER_TYPE_SINT;
-    
-    ( void )value;
-    
+    num->types     = __XSNUMBER_TYPE_SINT;    
     return xsThis;
 }
 
@@ -154,10 +140,7 @@ XSNumber XSNumber_InitWithUnsignedInt( XSNumber xsThis, unsigned int value )
     
     num            = ( __XSNumber * )xsThis;
     num->uIntValue = value;
-    num->types     = __XSNUMBER_TYPE_UINT;
-    
-    ( void )value;
-    
+    num->types     = __XSNUMBER_TYPE_UINT;    
     return xsThis;
 }
 
@@ -167,10 +150,7 @@ XSNumber XSNumber_InitWithLong( XSNumber xsThis, long value )
     
     num             = ( __XSNumber * )xsThis;
     num->sLongValue = value;
-    num->types      = __XSNUMBER_TYPE_SLONG;
-    
-    ( void )value;
-    
+    num->types      = __XSNUMBER_TYPE_SLONG;    
     return xsThis;
 }
 
@@ -181,8 +161,6 @@ XSNumber XSNumber_InitWithUnsignedLong( XSNumber xsThis, unsigned long value )
     num             = ( __XSNumber * )xsThis;
     num->uLongValue = value;
     num->types      = __XSNUMBER_TYPE_ULONG;
-    
-    ( void )value;
     
     return xsThis;
 }
@@ -195,8 +173,6 @@ XSNumber XSNumber_InitWithLongLong( XSNumber xsThis, long long value )
     num->sLongLongValue = value;
     num->types          = __XSNUMBER_TYPE_SLONGLONG;
     
-    ( void )value;
-    
     return xsThis;
 }
 
@@ -207,8 +183,6 @@ XSNumber XSNumber_InitWithUnsignedLongLong( XSNumber xsThis, unsigned long long 
     num                 = ( __XSNumber * )xsThis;
     num->uLongLongValue = value;
     num->types          = __XSNUMBER_TYPE_ULONGLONG;
-    
-    ( void )value;
     
     return xsThis;
 }
@@ -221,8 +195,6 @@ XSNumber XSNumber_InitWithFloat( XSNumber xsThis, float value )
     num->floatValue = value;
     num->types      = __XSNUMBER_TYPE_FLOAT;
     
-    ( void )value;
-    
     return xsThis;
 }
 
@@ -233,8 +205,6 @@ XSNumber XSNumber_InitWithDouble( XSNumber xsThis, double value )
     num              = ( __XSNumber * )xsThis;
     num->doubleValue = value;
     num->types       = __XSNUMBER_TYPE_DOUBLE;
-    
-    ( void )value;
     
     return xsThis;
 }
@@ -247,8 +217,6 @@ XSNumber XSNumber_InitWithInteger( XSNumber xsThis, XSInteger value )
     num->sIntegerValue = value;
     num->types         = __XSNUMBER_TYPE_SINTEGER;
     
-    ( void )value;
-    
     return xsThis;
 }
 
@@ -259,8 +227,6 @@ XSNumber XSNumber_InitWithUnsignedInteger( XSNumber xsThis, XSUInteger value )
     num                = ( __XSNumber * )xsThis;
     num->uIntegerValue = value;
     num->types         = __XSNUMBER_TYPE_UINTEGER;
-    
-    ( void )value;
     
     return xsThis;
 }
@@ -349,8 +315,8 @@ BOOL XSNumber_GetBool( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_BOOL ) == 0 )
     {
-        n->types |= __XSNUMBER_TYPE_BOOL;
         uint64    = __XSNumber_GetUInt64Value( n );
+        n->types |= __XSNUMBER_TYPE_BOOL;
         
         if( uint64 > 0 )
         {
@@ -374,8 +340,8 @@ char XSNumber_GetChar( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_SCHAR ) == 0 )
     {
-        n->types     |= __XSNUMBER_TYPE_SCHAR;
         uint64        = __XSNumber_GetUInt64Value( n );
+        n->types     |= __XSNUMBER_TYPE_SCHAR;
         n->sCharValue = ( signed char )uint64;
     }
     
@@ -391,8 +357,8 @@ unsigned char XSNumber_GetUnsignedChar( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_UCHAR ) == 0 )
     {
-        n->types     |= __XSNUMBER_TYPE_UCHAR;
         uint64        = __XSNumber_GetUInt64Value( n );
+        n->types     |= __XSNUMBER_TYPE_UCHAR;
         n->uCharValue = ( unsigned char )uint64;
     }
     
@@ -408,8 +374,8 @@ short XSNumber_GetShort( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_SSHORT ) == 0 )
     {
-        n->types      |= __XSNUMBER_TYPE_SSHORT;
         uint64         = __XSNumber_GetUInt64Value( n );
+        n->types      |= __XSNUMBER_TYPE_SSHORT;
         n->sShortValue = ( signed short )uint64;
     }
     
@@ -425,8 +391,8 @@ unsigned short XSNumber_GetUnsignedShort( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_USHORT ) == 0 )
     {
-        n->types      |= __XSNUMBER_TYPE_USHORT;
         uint64         = __XSNumber_GetUInt64Value( n );
+        n->types      |= __XSNUMBER_TYPE_USHORT;
         n->uShortValue = ( unsigned short )uint64;
     }
     
@@ -442,8 +408,8 @@ int XSNumber_GetInt( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_SINT ) == 0 )
     {
-        n->types    |= __XSNUMBER_TYPE_SINT;
         uint64       = __XSNumber_GetUInt64Value( n );
+        n->types    |= __XSNUMBER_TYPE_SINT;
         n->uIntValue = ( signed int )uint64;
     }
     
@@ -459,8 +425,8 @@ unsigned int XSNumber_GetUnsignedInt( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_UINT ) == 0 )
     {
-        n->types    |= __XSNUMBER_TYPE_UINT;
         uint64       = __XSNumber_GetUInt64Value( n );
+        n->types    |= __XSNUMBER_TYPE_UINT;
         n->sIntValue = ( unsigned int )uint64;
     }
     
@@ -476,8 +442,8 @@ long XSNumber_GetLong( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_SLONG ) == 0 )
     {
-        n->types     |= __XSNUMBER_TYPE_SLONG;
         uint64        = __XSNumber_GetUInt64Value( n );
+        n->types     |= __XSNUMBER_TYPE_SLONG;
         n->sLongValue = ( signed long )uint64;
     }
     
@@ -493,8 +459,8 @@ unsigned long XSNumber_GetUnsignedLong( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_ULONG ) == 0 )
     {
-        n->types     |= __XSNUMBER_TYPE_ULONG;
         uint64        = __XSNumber_GetUInt64Value( n );
+        n->types     |= __XSNUMBER_TYPE_ULONG;
         n->uLongValue = ( unsigned long )uint64;
     }
     
@@ -510,8 +476,8 @@ long long XSNumber_GetLongLong( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_SLONGLONG ) == 0 )
     {
-        n->types         |= __XSNUMBER_TYPE_SLONGLONG;
         uint64            = __XSNumber_GetUInt64Value( n );
+        n->types         |= __XSNUMBER_TYPE_SLONGLONG;
         n->sLongLongValue = ( signed long long )uint64;
     }
     
@@ -527,8 +493,8 @@ unsigned long long XSNumber_GetUnsignedLongLong( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_ULONGLONG ) == 0 )
     {
-        n->types         |= __XSNUMBER_TYPE_ULONGLONG;
         uint64            = __XSNumber_GetUInt64Value( n );
+        n->types         |= __XSNUMBER_TYPE_ULONGLONG;
         n->uLongLongValue = ( unsigned long long )uint64;
     }
     
@@ -544,8 +510,8 @@ float XSNumber_GetFloat( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_SINTEGER ) == 0 )
     {
-        n->types |= __XSNUMBER_TYPE_SINTEGER;
         uint64    = __XSNumber_GetUInt64Value( n );
+        n->types |= __XSNUMBER_TYPE_SINTEGER;
         
         if( n->types & __XSNUMBER_TYPE_DOUBLE )
         {
@@ -569,8 +535,8 @@ double XSNumber_GetDouble( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_UINTEGER ) == 0 )
     {
-        n->types |= __XSNUMBER_TYPE_UINTEGER;
         uint64    = __XSNumber_GetUInt64Value( n );
+        n->types |= __XSNUMBER_TYPE_UINTEGER;
         
         if( n->types & __XSNUMBER_TYPE_FLOAT )
         {
@@ -594,8 +560,8 @@ XSInteger XSNumber_GetInteger( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_UINTEGER ) == 0 )
     {
-        n->types        |= __XSNUMBER_TYPE_UINTEGER;
         uint64           = __XSNumber_GetUInt64Value( n );
+        n->types        |= __XSNUMBER_TYPE_UINTEGER;
         n->sIntegerValue = ( XSInteger )uint64;
     }
     
@@ -611,8 +577,8 @@ XSUInteger XSNumber_GetUnsignedInteger( XSNumber xsThis )
     
     if( ( n->types & __XSNUMBER_TYPE_UINTEGER ) == 0 )
     {
-        n->types        |= __XSNUMBER_TYPE_UINTEGER;
         uint64           = __XSNumber_GetUInt64Value( n );
+        n->types        |= __XSNUMBER_TYPE_UINTEGER;
         n->uIntegerValue = ( XSUInteger )uint64;
     }
     
