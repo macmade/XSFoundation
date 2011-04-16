@@ -101,15 +101,15 @@ XSString __XSArray_ToString( void * object )
     {
         if( array->values[ i ] == NULL )
         {
-            XSString_AppendCString( description, ( char * )"    (null),\n" );
+            XSString_AppendFormat( description, ( char * )"    %lu => (null),\n" );
         }
         else if( XSRuntime_IsInstance( array->values[ i ] ) )
         {
-            XSString_AppendFormat( description, ( char * )"    %s,\n", ( char * )XSRuntime_ObjectDescription( array->values[ i ] ) );
+            XSString_AppendFormat( description, ( char * )"    %lu => %s,\n", i, ( char * )XSRuntime_ObjectDescription( array->values[ i ] ) );
         }
         else
         {
-            XSString_AppendFormat( description, ( char * )"    %p,\n", array->values[ i ] );
+            XSString_AppendFormat( description, ( char * )"    %lu => %p,\n", i, array->values[ i ] );
         }
     }
     
