@@ -215,27 +215,6 @@ enum
 typedef XSInteger XSComparisonResult;
 
 /*!
- * @typedef     XSDecimal
- * @abstract    Decimal number representation
- * @field       exponent        The exponent of the decimal number
- * @field       length          The length of the decimal number
- * @field       isNegative      Whether the decimal number is negative
- * @field       isCompact       Whether the decimal numer is compact
- * @field       reserved        Reserved bits
- * @field       mantissa        The manstissa for the decimal number
- */
-typedef struct XSDecimal_Struct
-{
-    signed int     exponent   : 8;
-    unsigned int   length     : 4;
-    unsigned int   isNegative : 1;
-    unsigned int   isCompact  : 1;
-    unsigned int   reserved   : 18;
-    unsigned short mantissa[ XSDecimalMaxSize ];
-}
-XSDecimal;
-
-/*!
  * @define      XSStatic
  * @abstract    Marker for static class methods
  */
