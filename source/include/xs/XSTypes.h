@@ -52,7 +52,12 @@ XS_EXTERN_C_BEGIN
 
 #ifndef OBJC_BOOL_DEFINED
     
-    typedef signed char BOOL;
+    #ifndef _WIN32
+        
+        typedef signed char BOOL;
+    
+    #endif
+    
     #define YES ( BOOL )1
     #define NO  ( BOOL )0
     #define OBJC_BOOL_DEFINED
