@@ -37,4 +37,94 @@
 
 #include "XS.h"
 
+pthread_t __win32_pthread_self( void );
+pthread_t __win32_pthread_self( void )
+{
+    return 0;
+}
 
+void __win32_pthread_exit( void * retval );
+void __win32_pthread_exit( void * retval )
+{
+    ( void )retval;
+}
+
+int __win32_pthread_mutex_init( pthread_mutex_t * mutex, const pthread_mutexattr_t * attr );
+int __win32_pthread_mutex_init( pthread_mutex_t * mutex, const pthread_mutexattr_t * attr )
+{
+    ( void )mutex;
+    ( void )attr;
+    
+    return 0;
+}
+
+int __win32_pthread_mutex_destroy( pthread_mutex_t * mutex );
+int __win32_pthread_mutex_destroy( pthread_mutex_t * mutex )
+{
+    ( void )mutex;
+    
+    return 0;
+}
+
+int __win32_pthread_mutex_lock( pthread_mutex_t * mutex );
+int __win32_pthread_mutex_lock( pthread_mutex_t * mutex )
+{
+    ( void )mutex;
+    
+    return 0;
+}
+
+int __win32_pthread_mutex_unlock( pthread_mutex_t * mutex );
+int __win32_pthread_mutex_unlock( pthread_mutex_t * mutex )
+{
+    ( void )mutex;
+    
+    return 0;
+}
+
+int __win32_pthread_mutex_trylock( pthread_mutex_t * mutex );
+int __win32_pthread_mutex_trylock( pthread_mutex_t * mutex )
+{
+    ( void )mutex;
+    
+    return 0;
+}
+
+#ifdef _WIN32
+
+pthread_t pthread_self( void )
+{
+    return __win32_pthread_self();
+}
+
+void pthread_exit( void * retval )
+{
+    __win32_pthread_exit( retval );
+}
+
+int pthread_mutex_init( pthread_mutex_t * mutex, const pthread_mutexattr_t * attr )
+{
+    return __win32_pthread_mutex_init( mutex, attr );
+}
+
+int pthread_mutex_destroy( pthread_mutex_t * mutex )
+{
+    return __win32_pthread_mutex_destroy( mutex );
+}
+
+int pthread_mutex_lock( pthread_mutex_t * mutex )
+{
+    return __win32_pthread_mutex_destroy( mutex );
+}
+
+int pthread_mutex_unlock( pthread_mutex_t * mutex )
+{
+    return __win32_pthread_mutex_unlock( mutex );
+}
+
+int pthread_mutex_trylock( pthread_mutex_t * mutex )
+{
+    return __win32_pthread_mutex_trylock( mutex );
+}
+
+#endif
