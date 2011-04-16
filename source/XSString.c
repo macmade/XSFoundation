@@ -374,34 +374,32 @@ const char * XSString_CString( XSString xsThis )
 
 XSRange XSString_RangeOfString( XSString xsThis, XSString str )
 {
-    XSString * _str1;
-    XSString * _str2;
-    XSRange    range;
-    
-    if( xsThis == NULL || str == NULL )
-    {
-        return XSMakeRange( XSNotFound, 0 );
-    }
-    
-    _str1 = ( XSString * )xsThis;
-    _str2 = ( XSString * )str;
-    range = XSMakeRange( 0, 0 );
-    
-    return range;
+    return XSString_RangeOfCString( xsThis, ( char * )XSString_CString( str ) );
 }
 
 XSRange XSString_RangeOfCString( XSString xsThis, char * str )
 {
-    XSString * _str;
-    XSRange    range;
+    __XSString * _str;
+    XSRange      range;
+    char       * ptr;
     
     if( xsThis == NULL || str == NULL )
     {
         return XSMakeRange( XSNotFound, 0 );
     }
     
-    _str  = ( XSString * )str;
-    range = XSMakeRange( 0, 0 );
+    _str  = ( __XSString * )xsThis;
+    range = XSMakeRange( XSNotFound, 0 );
+    
+    ptr = strstr( _str->str, str );
+    
+    if( str == NULL )
+    {
+        return range;
+    }
+    
+    range.location = ptr - _str->str;
+    range.length   = strlen( str );
     
     return range;
 }
