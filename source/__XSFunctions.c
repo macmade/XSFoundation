@@ -103,6 +103,7 @@ void __XSVLog( const char * fmt, va_list args )
     
     time( &t );
     localtime_s( &now, &t );
+    strftime( ( char * )date, 255, "%Y-%m-%d %H:%M:%S", &now );
     
     #else
 
@@ -149,8 +150,16 @@ void __XSVLog( const char * fmt, va_list args )
     
     format = format_ptr;
     
+    #ifdef _WIN32
+    
+    strncpy_s( format, length + 1, fmt, length );
+
+    #else
+
     strcpy( format, fmt );
     
+    #endif
+
     i = 0;
     
     while( 1 )
