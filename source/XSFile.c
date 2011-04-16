@@ -44,19 +44,19 @@ extern XSClassID __XSFileClassID;
  * @var         __XSSStdin
  * @abstract    XSFile structure representing stdin
  */
-__XSFile __XSSStdin = { .stdin  = YES, .need_init = YES };
+__XSFile __XSSStdin = { .is_stdin  = YES, .need_init = YES };
 
 /*!
  * @var         __XSSStdout
  * @abstract    XSFile structure representing srdout
  */
-__XSFile __XSSStdout = { .stdout = YES, .need_init = YES };
+__XSFile __XSSStdout = { .is_stdout = YES, .need_init = YES };
 
 /*!
  * @var         __XSSStderr
  * @abstract    XSFile structure representing stderr
  */
-__XSFile __XSSStderr = { .stderr = YES, .need_init = YES };
+__XSFile __XSSStderr = { .is_stderr = YES, .need_init = YES };
 
 /*!
  * @var         XSStdin
@@ -85,17 +85,17 @@ XSFile XSSStderr = ( XSFile )&__XSSStderr;
 #define __XSFILE_INIT( f )          \
 if( f->need_init == YES )           \
 {                                   \
-    if( f->stdin == YES )           \
+    if( f->is_stdin == YES )        \
     {                               \
         f->fp        = stdin;       \
         f->need_init = NO;          \
     }                               \
-    else if( f->stdout == YES )     \
+    else if( f->is_stdout == YES )  \
     {                               \
         f->fp        = stdout;      \
         f->need_init = NO;          \
     }                               \
-    else if( f->stderr == YES )     \
+    else if( f->is_stderr == YES )  \
     {                               \
         f->fp        = stderr;      \
         f->need_init = NO;          \
@@ -421,15 +421,15 @@ const char * XSFile_Filename( XSFile xsThis )
     
     __XSFILE_INIT( _f );
     
-    if( _f->stdin == YES )
+    if( _f->is_stdin == YES )
     {
         return "stdin";
     }
-    else if( _f->stdout == YES )
+    else if( _f->is_stdout == YES )
     {
         return "stdout";
     }
-    else if( _f->stderr == YES )
+    else if( _f->is_stderr == YES )
     {
         return "stderr";
     }
@@ -447,15 +447,15 @@ const char * XSFile_OpenMode( XSFile xsThis )
     
     __XSFILE_INIT( _f );
     
-    if( _f->stdin == YES )
+    if( _f->is_stdin == YES )
     {
         return "r";
     }
-    else if( _f->stdout == YES )
+    else if( _f->is_stdout == YES )
     {
         return "a";
     }
-    else if( _f->stderr == YES )
+    else if( _f->is_stderr == YES )
     {
         return "a";
     }
@@ -473,15 +473,15 @@ BOOL XSFile_IsReadable( XSFile xsThis )
     
     __XSFILE_INIT( _f );
     
-    if( _f->stdin == true )
+    if( _f->is_stdin == true )
     {
         return YES;
     }
-    else if( _f->stdout == true )
+    else if( _f->is_stdout == true )
     {
         return NO;
     }
-    else if( _f->stderr == true )
+    else if( _f->is_stderr == true )
     {
         return NO;
     }
@@ -499,15 +499,15 @@ BOOL XSFile_IsWriteable( XSFile xsThis )
     
     __XSFILE_INIT( _f );
     
-    if( _f->stdin == true )
+    if( _f->is_stdin == true )
     {
         return NO;
     }
-    else if( _f->stdout == true )
+    else if( _f->is_stdout == true )
     {
         return YES;
     }
-    else if( _f->stderr == true )
+    else if( _f->is_stderr == true )
     {
         return YES;
     }

@@ -54,9 +54,9 @@ XS_EXTERN_C_BEGIN
  * @field       mode        The file open mode
  * @field       writeable   Whether the file is writeable
  * @field       readable    Whether the file is readabe
- * @field       stdin       Wheter the file represents stdin
- * @field       stdout      Wheter the file represents stdout
- * @field       stderr      Wheter the file represents stderr
+ * @field       is_stdin    Wheter the file represents stdin
+ * @field       is_stdout   Wheter the file represents stdout
+ * @field       is_stderr   Wheter the file represents stderr
  * @field       need_init   Whether the file needs initialization (for stdin, stdout and stderr only)
  * @field       bit_buffer  Bit buffer
  * @field       bit_count   Bit count
@@ -71,9 +71,9 @@ typedef struct __XSFile_Struct
     char           mode[ 4 ];
     BOOL           writeable;
     BOOL           readable;
-    BOOL           stdin;
-    BOOL           stdout;
-    BOOL           stderr;
+    BOOL           is_stdin;
+    BOOL           is_stdout;
+    BOOL           is_stderr;
     BOOL           need_init;
     uint8_t        bit_buffer;
     uint8_t        bit_count;
