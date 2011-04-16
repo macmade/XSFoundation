@@ -11,17 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\compat.c">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Macmade\Desktop\XSFoundation\source\include\win32;C:\Users\Macmade\Desktop\XSFoundation\source\include\eos-skl;C:\Users\Macmade\Desktop\XSFoundation\source\include\std;C:\Users\Macmade\Desktop\XSFoundation\source\include\xs\__private;C:\Users\Macmade\Desktop\XSFoundation\source\include\xs;C:\Users\Macmade\Desktop\XSFoundation\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
     <ClCompile Include="source\eos-skl.c" />
-    <ClCompile Include="source\getpid.c" />
-    <ClCompile Include="source\pthread.c" />
-    <ClCompile Include="source\signal.c" />
-    <ClCompile Include="source\stat.c" />
     <ClCompile Include="source\std-md5.c" />
     <ClCompile Include="source\std-string.c" />
-    <ClCompile Include="source\usleep.c" />
+    <ClCompile Include="source\win32-getpid.c" />
+    <ClCompile Include="source\win32-pthread.c" />
+    <ClCompile Include="source\win32-signal.c" />
+    <ClCompile Include="source\win32-stat.c" />
+    <ClCompile Include="source\win32-usleep.c" />
     <ClCompile Include="source\XSApplication.c" />
     <ClCompile Include="source\XSApplicationArgument.c" />
     <ClCompile Include="source\XSArray.c" />
@@ -82,13 +79,13 @@
     <ClInclude Include="source\include\std\std-posix.h" />
     <ClInclude Include="source\include\std\std-string.h" />
     <ClInclude Include="source\include\std\std.h" />
-    <ClInclude Include="source\include\win32\compat.h" />
-    <ClInclude Include="source\include\win32\getpid.h" />
-    <ClInclude Include="source\include\win32\pthread.h" />
-    <ClInclude Include="source\include\win32\signal.h" />
-    <ClInclude Include="source\include\win32\stat.h" />
-    <ClInclude Include="source\include\win32\sys-types.h" />
-    <ClInclude Include="source\include\win32\usleep.h" />
+    <ClInclude Include="source\include\win32\win32-compat.h" />
+    <ClInclude Include="source\include\win32\win32-getpid.h" />
+    <ClInclude Include="source\include\win32\win32-pthread.h" />
+    <ClInclude Include="source\include\win32\win32-signal.h" />
+    <ClInclude Include="source\include\win32\win32-stat.h" />
+    <ClInclude Include="source\include\win32\win32-types.h" />
+    <ClInclude Include="source\include\win32\win32-usleep.h" />
     <ClInclude Include="source\include\win32\win32.h" />
     <ClInclude Include="source\include\XS.h" />
     <ClInclude Include="source\include\xs\XSApplication.h" />
@@ -186,7 +183,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Macmade\Desktop\XSFoundation\source\include\win32;C:\Users\Macmade\Desktop\XSFoundation\source\include\eos-skl;C:\Users\Macmade\Desktop\XSFoundation\source\include\std;C:\Users\Macmade\Desktop\XSFoundation\source\include\xs\__private;C:\Users\Macmade\Desktop\XSFoundation\source\include\xs;C:\Users\Macmade\Desktop\XSFoundation\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\source\include\win32;$(SolutionDir)\source\include\eos-skl;$(SolutionDir)\source\include\std;$(SolutionDir)\source\include\xs\__private;$(SolutionDir)\source\include\xs;$(SolutionDir)\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <Link>
@@ -203,7 +200,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Macmade\Desktop\XSFoundation\source\include\win32;C:\Users\Macmade\Desktop\XSFoundation\source\include\eos-skl;C:\Users\Macmade\Desktop\XSFoundation\source\include\std;C:\Users\Macmade\Desktop\XSFoundation\source\include\xs\__private;C:\Users\Macmade\Desktop\XSFoundation\source\include\xs;C:\Users\Macmade\Desktop\XSFoundation\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\source\include\win32;$(SolutionDir)\source\include\eos-skl;$(SolutionDir)\source\include\std;$(SolutionDir)\source\include\xs\__private;$(SolutionDir)\source\include\xs;$(SolutionDir)\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

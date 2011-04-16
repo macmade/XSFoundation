@@ -30,87 +30,30 @@
 /* $Id$ */
 
 /*!
- * @header      signal.h
+ * @header      compat.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Signal functions for Windows
+ * @abstract    Compatibility macros and functions for Windows
  */
 
-#ifndef _XS_WIN32_SIGNAL_H_
-#define _XS_WIN32_SIGNAL_H_
+#ifndef _XS_WIN32_COMPAT_H_
+#define _XS_WIN32_COMPAT_H_
 #pragma once
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include <stdint.h>
-#include "sys-types.h"
+#include <limits.h>
 
-#define SIGABRT     0x01
-#define SIGALRM     0x02
-#define SIGFPE      0x03
-#define SIGHUP      0x04
-#define SIGILL      0x05
-#define SIGINT      0x06
-#define SIGKILL     0x07
-#define SIGPIPE     0x08
-#define SIGQUIT     0x09
-#define SIGSEGV     0x0A
-#define SIGTERM     0x0B
-#define SIGUSR1     0x0C
-#define SIGUSR2     0x0D
-#define SIGCHLD     0x0E
-#define SIGCONT     0x0F
-#define SIGSTOP     0x10
-#define SIGTSTP     0x11
-#define SIGTTIN     0x12
-#define SIGTTOU     0x13
-#define SIGBUS      0x14
-#define SIGPOLL     0x15
-#define SIGPROF     0x16
-#define SIGSYS      0x17
-#define SIGTRAP     0x18
-#define SIGURG      0x19
-#define SIGVTALRM   0x1A
-#define SIGXCPU     0x1B
-#define SIGXFSZ     0x1C
+#define strcpy( a, b )                      strcpy_s( a, strlen( b ), b )
+#define strcat( a, b )                      strcat_s( a, strlen( b ), b )
+#define sprintf( str, ... )                 sprintf_s( str, ULONG_MAX, __VA_ARGS__ )
+#define vsprintf( str, format, ap )         vsprintf_s( str, ULONG_MAX, format, ap )
+#define vsnprintf( str, size, format, ap )  vsnprintf_s( str, ULONG_MAX, size, format, ap )
+#define strncpy( a, b, n )                  strncpy_s( a, n, b, n )
 
-typedef uint64_t sigset_t;
-
-union sigval
-{
-    int    sival_int;
-    void * sival_ptr;
-};
-
-typedef struct
-{
-	int          si_signo;
-	int          si_code;
-	union sigval si_value;
-	int          si_errno;
-	pid_t        si_pid;
-	uid_t        si_uid;
-	void       * si_addr;
-	int          si_status;
-	int          si_band;
-}
-siginfo_t;
-
-struct sigaction
-{
-    void ( * sa_handler )( int );
-    sigset_t sa_mask;
-    int      sa_flags;
-    void ( * sa_sigaction )( int, siginfo_t *, void * );
-};
-
-int sigemptyset( sigset_t * set );
-int sigaction( int sig, const struct sigaction * act, struct sigaction * oact );
-    
-    
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* _XS_WIN32_SIGNAL_H_ */
+#endif /* _XS_WIN32_COMPAT_H_ */

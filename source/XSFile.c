@@ -156,10 +156,21 @@ XSStatic XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode )
             
     }
     
+    #ifdef _WIN32
+
+    if( fopen_s( &fp, filename, mode ) != 0 )
+    {
+        return NULL;
+    }
+
+    #else
+
     if( NULL == ( fp = fopen( filename, mode ) ) )
     {
         return NULL;
     }
+
+    #endif
     
     if( NULL == ( file = ( __XSFile * )XSFile_Init( XSFile_Alloc() ) ) )
     {
@@ -519,17 +530,40 @@ BOOL XSFile_Copy( XSFile xsThis, char * new_name )
     
     name = XSFile_Filename( xsThis );
     
+    #ifdef _WIN32
+
+    if( fopen_s( &fp1, name, "rb" ) != 0 )
+    {
+        return NO;
+    }
+
+    #else
+    
     if( NULL == ( fp1 = fopen( name, "rb" ) ) )
     {
         return NO;
     }
     
-    if( NULL == ( fp2 = fopen( name, "wb" ) ) )
+    #endif
+    
+    #ifdef _WIN32
+
+    if( fopen_s( &fp2, new_name, "wb" ) != 0 )
+    {
+        fclose( fp1 );
+        return NO;
+    }
+
+    #else
+
+    if( NULL == ( fp2 = fopen( new_name, "wb" ) ) )
     {
         fclose( fp1 );
         
         return NO;
     }
+
+    #endif
     
     while( ( length = fread( buffer, sizeof( unsigned char ), 1024, fp1 ) ) )
     {

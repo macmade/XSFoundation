@@ -177,22 +177,19 @@
     <ClCompile Include="source\XSTimer.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\usleep.c">
+    <ClCompile Include="source\win32-getpid.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\pthread.c">
+    <ClCompile Include="source\win32-pthread.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\signal.c">
+    <ClCompile Include="source\win32-signal.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\getpid.c">
+    <ClCompile Include="source\win32-stat.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\stat.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="source\compat.c">
+    <ClCompile Include="source\win32-usleep.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -239,13 +236,7 @@
     <ClInclude Include="source\include\eos-skl\__private\__machine.h">
       <Filter>Header Files\eos-skl\__private</Filter>
     </ClInclude>
-    <ClInclude Include="source\include\win32\sys-types.h">
-      <Filter>Header Files\win32</Filter>
-    </ClInclude>
     <ClInclude Include="source\include\win32\win32.h">
-      <Filter>Header Files\win32</Filter>
-    </ClInclude>
-    <ClInclude Include="source\include\win32\usleep.h">
       <Filter>Header Files\win32</Filter>
     </ClInclude>
     <ClInclude Include="source\include\xs\__private\__XSApplication.h">
@@ -395,19 +386,25 @@
     <ClInclude Include="source\include\xs\XSTimer.h">
       <Filter>Header Files\xs</Filter>
     </ClInclude>
-    <ClInclude Include="source\include\win32\pthread.h">
+    <ClInclude Include="source\include\win32\win32-compat.h">
       <Filter>Header Files\win32</Filter>
     </ClInclude>
-    <ClInclude Include="source\include\win32\signal.h">
+    <ClInclude Include="source\include\win32\win32-getpid.h">
       <Filter>Header Files\win32</Filter>
     </ClInclude>
-    <ClInclude Include="source\include\win32\compat.h">
+    <ClInclude Include="source\include\win32\win32-pthread.h">
       <Filter>Header Files\win32</Filter>
     </ClInclude>
-    <ClInclude Include="source\include\win32\stat.h">
+    <ClInclude Include="source\include\win32\win32-signal.h">
       <Filter>Header Files\win32</Filter>
     </ClInclude>
-    <ClInclude Include="source\include\win32\getpid.h">
+    <ClInclude Include="source\include\win32\win32-stat.h">
+      <Filter>Header Files\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\win32\win32-types.h">
+      <Filter>Header Files\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\win32\win32-usleep.h">
       <Filter>Header Files\win32</Filter>
     </ClInclude>
   </ItemGroup>

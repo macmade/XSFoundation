@@ -30,34 +30,25 @@
 /* $Id$ */
 
 /*!
- * @header      compat.h
+ * @header      getpid.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Compatibility macros and functions for Windows
+ * @abstract    getpid function for Windows
  */
 
-#ifndef _XS_WIN32_COMPAT_H_
-#define _XS_WIN32_COMPAT_H_
+#ifndef _XS_WIN32_GETPID_H_
+#define _XS_WIN32_GETPID_H_
 #pragma once
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include <limits.h>
+#include "win32-types.h"
 
-#define strcpy( a, b )                      strcpy_s( a, strlen( b ), b )
-#define strcat( a, b )                      strcat_s( a, strlen( b ), b )
-#define sprintf( str, ... )                 sprintf_s( str, ULONG_MAX, __VA_ARGS__ )
-#define vsnprintf( str, size, format, ap )  vsnprintf_s( str, ULONG_MAX, size, format, ap )
-#define strncpy( a, b, n )                  strncpy_s( a, n, b, n )
-#define fopen( path, mode )                 __win32_fopen( path, mode )
-#define localtime( timep, result )          __win32_localtime( timep, result )
-
-FILE * __win32_fopen( char * path, char * mode );
-struct tm * __win32_localtime_r( const time_t * timep, struct tm * result );
+pid_t getpid( void );
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* _XS_WIN32_COMPAT_H_ */
+#endif /* _XS_WIN32_GETPID_H_ */

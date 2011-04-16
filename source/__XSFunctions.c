@@ -71,8 +71,6 @@ void __XSVLog( const char * fmt, va_list args )
     pid_t            pid;
     pthread_t        tid;
     time_t           t;
-    struct tm      * now;
-    struct timeval   tv;
     char             date[ 255 ];
     char           * exec;
     char           * format;
@@ -84,6 +82,13 @@ void __XSVLog( const char * fmt, va_list args )
     XSClassInfos   * cls;
     XSString         description;
     
+    #ifdef _WIN32
+    struct tm        now;
+    #else
+    struct tm      * now;
+    struct timeval   tv;
+    #endif
+    
     #ifdef __MACH__
     mach_port_t      mid;
     #endif
@@ -93,17 +98,25 @@ void __XSVLog( const char * fmt, va_list args )
     
     pid = getpid();
     tid = pthread_self();
+
+    #ifdef _WIN32
+    
+    time( &t );
+    localtime_s( &now, &t );
+    
+    #else
+
     t   = time( NULL );
     now = localtime( &t );
-    
     gettimeofday( &tv, NULL );
+    memset( ( void * )date, 0, 255 );
+    strftime( ( char * )date, 255, "%Y-%m-%d %H:%M:%S", now );
+
+    #endif
     
     #ifdef __MACH__
     mid = pthread_mach_thread_np( tid );
     #endif
-    
-    memset( ( void * )date, 0, 255 );
-    strftime( ( char * )date, 255, "%Y-%m-%d %H:%M:%S", now );
     
     if( __progname != NULL )
     {
@@ -118,7 +131,9 @@ void __XSVLog( const char * fmt, va_list args )
         exec = ( char * )"unknown";
     }
     
-    #ifdef __MACH__
+    #if defined( _WIN32 )
+    printf( "%s %s[%i:%lu] ", date, exec, pid, ( unsigned long )tid );
+    #elif defined( __MACH__ )
     printf( "%s.%06lu %s[%i:%X] ", date, ( unsigned long )tv.tv_usec, exec, pid, mid );
     #else
     printf( "%s.%06lu %s[%i:%lu] ", date, ( unsigned long )tv.tv_usec, exec, pid, ( unsigned long )tid );

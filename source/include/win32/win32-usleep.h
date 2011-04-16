@@ -26,39 +26,29 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
- 
+
 /* $Id$ */
 
 /*!
- * @file        compat.c
+ * @header      usleep.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Compatibility function for Windows
+ * @abstract    Micro-seconds sleep function
  */
 
-#include "XS.h"
+#ifndef _XS_WIN32_USLEEP_H_
+#define _XS_WIN32_USLEEP_H_
+#pragma once
 
-#ifndef _WIN32
-
-void fopen_s( FILE ** pFile, const char * filename, const char * mode );
-void localtime_s( struct tm * _tm, const time_t * time );
-
-FILE * __win32_fopen( char * path, char * mode );
-struct tm * __win32_localtime( const time_t * timep, struct tm * result );
-
+#ifdef __cplusplus
+extern "C" {
 #endif
 
-FILE * __win32_fopen( char * path, char * mode )
-{
-    FILE * f;
+#include "win32-types.h"
 
-    fopen_s( &f, path, mode );
+int usleep( useconds_t usec );
 
-    return f;
+#ifdef __cplusplus
 }
+#endif
 
-struct tm * __win32_localtime( const time_t * timep, struct tm * result )
-{
-    localtime_s( result, timep );
-
-    return result;
-}
+#endif /* _XS_WIN32_SYS_TYPES_H_ */

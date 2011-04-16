@@ -43,13 +43,13 @@
 extern "C" {
 #endif
 
-#include "compat.h"
-#include "getpid.h"
-#include "pthread.h"
-#include "signal.h"
-#include "stat.h"
-#include "sys-types.h"
-#include "usleep.h"
+#include "win32-compat.h"
+#include "win32-getpid.h"
+#include "win32-pthread.h"
+#include "win32-signal.h"
+#include "win32-stat.h"
+#include "win32-types.h"
+#include "win32-usleep.h"
 
 #ifdef __cplusplus
 }
