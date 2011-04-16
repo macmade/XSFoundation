@@ -106,5 +106,7 @@ void * __XSThread_Run( void * thread )
     
     pthread_exit( NULL );
     
+    #ifdef _WIN32
     return NULL;
+    #endif
 }
