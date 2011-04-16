@@ -46,10 +46,24 @@ extern "C" {
 #include <stdint.h>
     
 typedef uint32_t pthread_t;
+typedef uint64_t pthread_mutex_t;
+typedef uint64_t pthread_mutexattr_t;
+
+#define PTHREAD_MUTEX_INITIALIZER   0
 
 pthread_t pthread_self( void );
 
 void pthread_exit( void * retval );
+
+int pthread_mutex_init( pthread_mutex_t * mutex, const pthread_mutexattr_t * attr );
+
+int pthread_mutex_destroy( pthread_mutex_t * mutex );
+
+int pthread_mutex_lock( pthread_mutex_t * mutex );
+
+int pthread_mutex_unlock( pthread_mutex_t * mutex );
+
+int pthread_mutex_trylock( pthread_mutex_t * mutex );
     
 #ifdef __cplusplus
 }
