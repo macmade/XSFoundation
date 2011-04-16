@@ -105,7 +105,7 @@ XSFloat XSAngleBetweenPoints( XSPoint a, XSPoint b )
     c = b.y - a.y;
     d = a.x - b.x;
     
-    return atan2( b.y - a.y, b.x - a.x );
+    return ( XSFloat )atan2( b.y - a.y, b.x - a.x );
 }
 
 XSFloat XSDistanceBetweenPoints( XSPoint a, XSPoint b )
@@ -113,20 +113,20 @@ XSFloat XSDistanceBetweenPoints( XSPoint a, XSPoint b )
     XSFloat x;
     XSFloat y;
     
-    x = fabs( a.x - b.x );
-    y = fabs( a.y - b.y );
+    x = ( XSFloat )fabs( a.x - b.x );
+    y = ( XSFloat )fabs( a.y - b.y );
     
-    return sqrt( ( x * x ) + ( y * y ) );
+    return ( XSFloat )sqrt( ( x * x ) + ( y * y ) );
 }
 
 XSFloat XSDegreesToRadians( XSFloat x )
 {
-    return ( x * M_PI ) / 180;
+    return ( XSFloat )( ( x * M_PI ) / 180 );
 }
 
 XSFloat XSRadiansToDegrees( XSFloat x )
 {
-    return ( x * 180 ) / M_PI;
+    return ( XSFloat )( ( x * 180 ) / M_PI );
 }
 
 void XSLog( const char * fmt, ... )

@@ -186,6 +186,15 @@
     <ClCompile Include="source\signal.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\getpid.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\stat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\compat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\include\std\std-ascii.h">
@@ -396,6 +405,9 @@
       <Filter>Header Files\win32</Filter>
     </ClInclude>
     <ClInclude Include="source\include\win32\stat.h">
+      <Filter>Header Files\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\win32\getpid.h">
       <Filter>Header Files\win32</Filter>
     </ClInclude>
   </ItemGroup>

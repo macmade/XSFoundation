@@ -83,12 +83,12 @@ XSStatic void XSAutoreleasePool_Drain( void )
 
 void * XSAllocWithInfos( const char * file, int line, const char * func, size_t size, ... )
 {
-    static size_t              allocID = 0;
-    va_list                    args;
-    __XSMemoryObject         * o;
-    char                     * ptr;
-    XSClassID                  classID;
-    const XSClassInfos const * cls;
+    static size_t        allocID = 0;
+    va_list              args;
+    __XSMemoryObject   * o;
+    char               * ptr;
+    XSClassID            classID;
+    const XSClassInfos * cls;
     
     va_start( args, size );
     
@@ -224,8 +224,8 @@ void * XSRetain( void * ptr )
 
 void * XSReleaseWithInfos( const char * file, int line, const char * func, void * ptr )
 {
-    __XSMemoryObject         * o;
-    const XSClassInfos const * cls;
+    __XSMemoryObject   * o;
+    const XSClassInfos * cls;
     
     if( ptr == NULL )
     {
@@ -310,9 +310,9 @@ void * XSAutoAllocWithInfos( const char * file, int line, const char * func, siz
 
 void * XSCopyWithInfos( const char * file, int line, const char * func, void * ptr )
 {
-    __XSMemoryObject         * o;
-    void                     * ptr2;
-    const XSClassInfos const * cls;
+    __XSMemoryObject   * o;
+    void               * ptr2;
+    const XSClassInfos * cls;
     
     if( ptr == NULL )
     {
@@ -355,8 +355,8 @@ void * XSCopyWithInfos( const char * file, int line, const char * func, void * p
 
 BOOL XSEquals( void * ptr1, void * ptr2 )
 {
-    __XSMemoryObject         * o;
-    const XSClassInfos const * cls;
+    __XSMemoryObject   * o;
+    const XSClassInfos * cls;
     
     if( ptr1 == NULL && ptr2 == NULL )
     {
@@ -385,9 +385,9 @@ BOOL XSEquals( void * ptr1, void * ptr2 )
 
 const char * XSHash( void * ptr )
 {
-    __XSMemoryObject         * o;
-    const XSClassInfos const * cls;
-    Str255                     size;
+    __XSMemoryObject   * o;
+    const XSClassInfos * cls;
+    Str255               size;
     
     o = __XSMemory_GetMemoryObject( ptr );
     

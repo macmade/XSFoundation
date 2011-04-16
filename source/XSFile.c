@@ -647,7 +647,7 @@ XSInteger XSFile_PutBits( XSFile xsThis, uint64_t bits, XSUInteger count )
     
     for( i = 0; i < count; i++ )
     {
-        bit = bits >> ( ( count - 1 ) - i );
+        bit = ( uint8_t )( bits >> ( ( count - 1 ) - i ) );
         
         XSFile_PutBit( xsThis, bit );
     }

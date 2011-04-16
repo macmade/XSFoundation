@@ -11,9 +11,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\compat.c" />
     <ClCompile Include="source\eos-skl.c" />
+    <ClCompile Include="source\getpid.c" />
     <ClCompile Include="source\pthread.c" />
     <ClCompile Include="source\signal.c" />
+    <ClCompile Include="source\stat.c" />
     <ClCompile Include="source\std-md5.c" />
     <ClCompile Include="source\std-string.c" />
     <ClCompile Include="source\usleep.c" />
@@ -78,6 +81,7 @@
     <ClInclude Include="source\include\std\std-string.h" />
     <ClInclude Include="source\include\std\std.h" />
     <ClInclude Include="source\include\win32\compat.h" />
+    <ClInclude Include="source\include\win32\getpid.h" />
     <ClInclude Include="source\include\win32\pthread.h" />
     <ClInclude Include="source\include\win32\signal.h" />
     <ClInclude Include="source\include\win32\stat.h" />

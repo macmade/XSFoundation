@@ -35,8 +35,8 @@
  * @abstract    getpid function for Windows
  */
 
-#ifndef _HEADER_H_
-#define _HEADER_H_
+#ifndef _XS_WIN32_GETPID_H_
+#define _XS_WIN32_GETPID_H_
 #pragma once
 
 #ifdef __cplusplus
@@ -51,4 +51,4 @@ pid_t getpid( void );
 }
 #endif
 
-#endif /* _HEADER_H_ */
+#endif /* _XS_WIN32_GETPID_H_ */
