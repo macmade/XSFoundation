@@ -46,6 +46,7 @@ extern "C" {
 #include "compat.h"
 #include "pthread.h"
 #include "signal.h"
+#include "stat.h"
 #include "sys-types.h"
 #include "usleep.h"
 
