@@ -37,6 +37,16 @@
 
 #include "XS.h"
 
+#ifndef _WIN32
+
+void fopen_s( FILE ** pFile, const char * filename, const char * mode );
+void localtime_s( struct tm * _tm, const time_t * time );
+
+FILE * __win32_fopen( char * path, char * mode );
+struct tm * __win32_localtime( const time_t * timep, struct tm * result );
+
+#endif
+
 FILE * __win32_fopen( char * path, char * mode )
 {
     FILE * f;
