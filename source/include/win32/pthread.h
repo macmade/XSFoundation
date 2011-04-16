@@ -49,9 +49,19 @@ typedef uint32_t pthread_t;
 typedef uint64_t pthread_mutex_t;
 typedef uint64_t pthread_mutexattr_t;
 
+typedef struct
+{
+    int      detachstate;
+    void   * stackaddr;
+    size_t   stacksize;
+}
+pthread_attr_t;
+
 #define PTHREAD_MUTEX_INITIALIZER   0
 
 pthread_t pthread_self( void );
+
+int pthread_create( pthread_t * thread, const pthread_attr_t * attr, void * ( * start_routine )( void * ), void * arg );
 
 void pthread_exit( void * retval );
 

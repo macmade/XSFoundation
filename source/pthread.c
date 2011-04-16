@@ -43,6 +43,17 @@ pthread_t __win32_pthread_self( void )
     return 0;
 }
 
+int __win32_pthread_create( pthread_t * thread, const pthread_attr_t * attr, void * ( * start_routine )( void * ), void * arg );
+int __win32_pthread_create( pthread_t * thread, const pthread_attr_t * attr, void * ( * start_routine )( void * ), void * arg )
+{
+    ( void )thread;
+    ( void )attr;
+    ( void )start_routine;
+    ( void )arg;
+
+    return 0;
+}
+
 void __win32_pthread_exit( void * retval );
 void __win32_pthread_exit( void * retval )
 {
@@ -95,6 +106,11 @@ int __win32_pthread_mutex_trylock( pthread_mutex_t * mutex )
 pthread_t pthread_self( void )
 {
     return __win32_pthread_self();
+}
+
+int pthread_create( pthread_t * thread, const pthread_attr_t * attr, void * ( * start_routine )( void * ), void * arg )
+{
+    return __win32_pthread_create( thread, attr, start_routine, arg );
 }
 
 void pthread_exit( void * retval )
