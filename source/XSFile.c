@@ -44,19 +44,21 @@ extern XSClassID __XSFileClassID;
  * @var         __XSSStdin
  * @abstract    XSFile structure representing stdin
  */
-__XSFile __XSSStdin = { .is_stdin  = YES, .need_init = YES };
+__XSFile __XSSStdin;
 
 /*!
  * @var         __XSSStdout
  * @abstract    XSFile structure representing srdout
  */
-__XSFile __XSSStdout = { .is_stdout = YES, .need_init = YES };
+__XSFile __XSSStdout;
 
 /*!
  * @var         __XSSStderr
  * @abstract    XSFile structure representing stderr
  */
-__XSFile __XSSStderr = { .is_stderr = YES, .need_init = YES };
+__XSFile __XSSStderr;
+
+static BOOL __XSSTDStreamsInited = NO;
 
 /*!
  * @var         XSStdin
@@ -82,24 +84,15 @@ XSFile XSSStderr = ( XSFile )&__XSSStderr;
  * @description This is needed for stdin, stdout and sterr, in order to
  *              initialize properly XSStdin, XSStdout and XSStderr.
  */
-#define __XSFILE_INIT( f )          \
-if( f->need_init == YES )           \
-{                                   \
-    if( f->is_stdin == YES )        \
-    {                               \
-        f->fp        = stdin;       \
-        f->need_init = NO;          \
-    }                               \
-    else if( f->is_stdout == YES )  \
-    {                               \
-        f->fp        = stdout;      \
-        f->need_init = NO;          \
-    }                               \
-    else if( f->is_stderr == YES )  \
-    {                               \
-        f->fp        = stderr;      \
-        f->need_init = NO;          \
-    }                               \
+#define __XSFILE_INIT( f )                      \
+if( __XSSTDStreamsInited == NO )                \
+{                                               \
+    ((__XSFile *)XSStdin)->fp  = stdin;         \
+    ((__XSFile *)XSStdin)->is_stdin  = YES;     \
+    ((__XSFile *)XSStdout)->fp = stdout;        \
+    ((__XSFile *)XSStdout)->is_stdout = YES;    \
+    ((__XSFile *)XSStderr)->fp = stderr;        \
+    ((__XSFile *)XSStderr)->is_stderr = YES;    \
 }
 
 XSStatic XSObject XSFile_Alloc( void )
@@ -182,7 +175,6 @@ XSStatic XSFile XSFile_Open( const char * filename, XSFileOpenMode openMode )
     strncpy( file->mode, mode, ( size_t )3 );
     __XSFile_UpdateStat( file );
     
-    file->need_init  = NO;
     file->bit_buffer = 0;
     file->bit_count  = 0;
     file->bit_offset = 0;
