@@ -200,64 +200,274 @@ XSNumber XSNumber_InitWithInteger( XSNumber xsThis, XSInteger value );
  */
 XSNumber XSNumber_InitWithUnsignedInteger( XSNumber xsThis, XSUInteger value );
 
+/*!
+ * @function    XSNumber_SetBool
+ * @abstract    Sets the number's value with a BOOL value
+ * @param       xsThis  The number object
+ * @param       value   The BOOL value
+ * @result      void
+ */
 void XSNumber_SetBool( XSNumber xsThis, BOOL value );
 
+/*!
+ * @function    XSNumber_SetChar
+ * @abstract    Sets the number's value with a char value
+ * @param       xsThis  The number object
+ * @param       value   The char value
+ * @result      void
+ */
 void XSNumber_SetChar( XSNumber xsThis, char value );
 
+/*!
+ * @function    XSNumber_SetUnsignedChar
+ * @abstract    Sets the number's value with an unsigned char value
+ * @param       xsThis  The number object
+ * @param       value   The unsigned char value
+ * @result      void
+ */
 void XSNumber_SetUnsignedChar( XSNumber xsThis, unsigned char value );
 
+/*!
+ * @function    XSNumber_SetShort
+ * @abstract    Sets the number's value with a short value
+ * @param       xsThis  The number object
+ * @param       value   The short value
+ * @result      void
+ */
 void XSNumber_SetShort( XSNumber xsThis, short value );
 
+/*!
+ * @function    XSNumber_SetUnsignedShort
+ * @abstract    Sets the number's value with an unsigned short value
+ * @param       xsThis  The number object
+ * @param       value   The unsigned short value
+ * @result      void
+ */
 void XSNumber_SetUnsignedShort( XSNumber xsThis, unsigned short value );
 
+/*!
+ * @function    XSNumber_SetInt
+ * @abstract    Sets the number's value with an int value
+ * @param       xsThis  The number object
+ * @param       value   The int value
+ * @result      void
+ */
 void XSNumber_SetInt( XSNumber xsThis, int value );
 
+/*!
+ * @function    XSNumber_SetUnsignedInt
+ * @abstract    Sets the number's value with an unsigned int value
+ * @param       xsThis  The number object
+ * @param       value   The unsigned int value
+ * @result      void
+ */
 void XSNumber_SetUnsignedInt( XSNumber xsThis, unsigned int value );
 
+/*!
+ * @function    XSNumber_SetLong
+ * @abstract    Sets the number's value with a long value
+ * @param       xsThis  The number object
+ * @param       value   The long value
+ * @result      void
+ */
 void XSNumber_SetLong( XSNumber xsThis, long value );
 
+/*!
+ * @function    XSNumber_SetUnsignedLong
+ * @abstract    Sets the number's value with an unsigned long value
+ * @param       xsThis  The number object
+ * @param       value   The unsigned long value
+ * @result      void
+ */
 void XSNumber_SetUnsignedLong( XSNumber xsThis, unsigned long value );
 
+/*!
+ * @function    XSNumber_SetLongLong
+ * @abstract    Sets the number's value with a long long value
+ * @param       xsThis  The number object
+ * @param       value   The long long value
+ * @result      void
+ */
 void XSNumber_SetLongLong( XSNumber xsThis, long long value );
 
+/*!
+ * @function    XSNumber_SetUnsignedLongLong
+ * @abstract    Sets the number's value with an unsigned long long value
+ * @param       xsThis  The number object
+ * @param       value   The unsigned long long value
+ * @result      void
+ */
 void XSNumber_SetUnsignedLongLong( XSNumber xsThis, unsigned long long value );
 
+/*!
+ * @function    XSNumber_SetFloat
+ * @abstract    Sets the number's value with a float value
+ * @param       xsThis  The number object
+ * @param       value   The float value
+ * @result      void
+ */
 void XSNumber_SetFloat( XSNumber xsThis, float value );
 
+/*!
+ * @function    XSNumber_SetDouble
+ * @abstract    Sets the number's value with a double value
+ * @param       xsThis  The number object
+ * @param       value   The double value
+ * @result      void
+ */
 void XSNumber_SetDouble( XSNumber xsThis, double value );
 
+/*!
+ * @function    XSNumber_SetInteger
+ * @abstract    Sets the number's value with a XSInteger value
+ * @param       xsThis  The number object
+ * @param       value   The XSInteger value
+ * @result      void
+ */
 void XSNumber_SetInteger( XSNumber xsThis, XSInteger value );
 
+/*!
+ * @function    XSNumber_SetUnsignedInteger
+ * @abstract    Sets the number's value with a XSUInteger value
+ * @param       xsThis  The number object
+ * @param       value   The XSUInteger value
+ * @result      void
+ */
 void XSNumber_SetUnsignedInteger( XSNumber xsThis, XSUInteger value );
 
+/*!
+ * @function    XSNumber_GetBool
+ * @abstract    Gets the number's value as a BOOL value
+ * @description Depending on the number's value, the result may be truncated.
+ * @param       xsThis  The number object
+ * @result      The BOOL value
+ */
 BOOL XSNumber_GetBool( XSNumber xsThis );
 
+/*!
+ * @function    XSNumber_GetBool
+ * @abstract    Gets the number's value as a char value
+ * @description Depending on the number's value, the result may be truncated.
+ * @param       xsThis  The number object
+ * @result      The char value
+ */
 char XSNumber_GetChar( XSNumber xsThis );
 
+/*!
+ * @function    XSNumber_GetBool
+ * @abstract    Gets the number's value as an unsigned char value
+ * @description Depending on the number's value, the result may be truncated.
+ * @param       xsThis  The number object
+ * @result      The unsigned char value
+ */
 unsigned char XSNumber_GetUnsignedChar( XSNumber xsThis );
 
+/*!
+ * @function    XSNumber_GetBool
+ * @abstract    Gets the number's value as a short value
+ * @description Depending on the number's value, the result may be truncated.
+ * @param       xsThis  The number object
+ * @result      The short value
+ */
 short XSNumber_GetShort( XSNumber xsThis );
 
+/*!
+ * @function    XSNumber_GetBool
+ * @abstract    Gets the number's value as an unsigned short value
+ * @description Depending on the number's value, the result may be truncated.
+ * @param       xsThis  The number object
+ * @result      The unsigned short value
+ */
 unsigned short XSNumber_GetUnsignedShort( XSNumber xsThis );
 
+/*!
+ * @function    XSNumber_GetBool
+ * @abstract    Gets the number's value as an int value
+ * @description Depending on the number's value, the result may be truncated.
+ * @param       xsThis  The number object
+ * @result      The int value
+ */
 int XSNumber_GetInt( XSNumber xsThis );
 
+/*!
+ * @function    XSNumber_GetBool
+ * @abstract    Gets the number's value as an unsigned int value
+ * @description Depending on the number's value, the result may be truncated.
+ * @param       xsThis  The number object
+ * @result      The unsigned int value
+ */
 unsigned int XSNumber_GetUnsignedInt( XSNumber xsThis );
 
+/*!
+ * @function    XSNumber_GetBool
+ * @abstract    Gets the number's value as a long value
+ * @description Depending on the number's value, the result may be truncated.
+ * @param       xsThis  The number object
+ * @result      The long value
+ */
 long XSNumber_GetLong( XSNumber xsThis );
 
+/*!
+ * @function    XSNumber_GetBool
+ * @abstract    Gets the number's value as an unsigned long value
+ * @description Depending on the number's value, the result may be truncated.
+ * @param       xsThis  The number object
+ * @result      The unsigned long value
+ */
 unsigned long XSNumber_GetUnsignedLong( XSNumber xsThis );
 
+/*!
+ * @function    XSNumber_GetBool
+ * @abstract    Gets the number's value as a long long value
+ * @description Depending on the number's value, the result may be truncated.
+ * @param       xsThis  The number object
+ * @result      The long long value
+ */
 long long XSNumber_GetLongLong( XSNumber xsThis );
 
+/*!
+ * @function    XSNumber_GetBool
+ * @abstract    Gets the number's value as an unsigned long long value
+ * @description Depending on the number's value, the result may be truncated.
+ * @param       xsThis  The number object
+ * @result      The unsigned long long value
+ */
 unsigned long long XSNumber_GetUnsignedLongLong( XSNumber xsThis );
 
+/*!
+ * @function    XSNumber_GetBool
+ * @abstract    Gets the number's value as a float value
+ * @description Depending on the number's value, the result may be truncated.
+ * @param       xsThis  The number object
+ * @result      The float value
+ */
 float XSNumber_GetFloat( XSNumber xsThis );
 
+/*!
+ * @function    XSNumber_GetBool
+ * @abstract    Gets the number's value as a double value
+ * @description Depending on the number's value, the result may be truncated.
+ * @param       xsThis  The number object
+ * @result      The double value
+ */
 double XSNumber_GetDouble( XSNumber xsThis );
 
+/*!
+ * @function    XSNumber_GetBool
+ * @abstract    Gets the number's value as a XSInteger value
+ * @description Depending on the number's value, the result may be truncated.
+ * @param       xsThis  The number object
+ * @result      The XSInteger value
+ */
 XSInteger XSNumber_GetInteger( XSNumber xsThis );
 
+/*!
+ * @function    XSNumber_GetBool
+ * @abstract    Gets the number's value as a XSUInteger value
+ * @description Depending on the number's value, the result may be truncated.
+ * @param       xsThis  The number object
+ * @result      The XSUInteger value
+ */
 XSUInteger XSNumber_GetUnsignedInteger( XSNumber xsThis );
 
 XS_EXTERN_C_END
