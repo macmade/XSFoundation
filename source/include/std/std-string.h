@@ -45,6 +45,8 @@
 extern "C" {
 #endif
 
+#if !defined( _WIN32 ) && !defined( _WIN64 )
+
 /*!
  * @function    itoa
  * @abstract    Converts an integer to a string
@@ -63,6 +65,8 @@ extern "C" {
  * @result      void
  */
 void itoa( int n, char s[], int radix );
+
+#endif
 
 /*!
  * @function    utoa

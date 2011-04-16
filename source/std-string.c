@@ -69,6 +69,8 @@ static void __xs_std_str_reverse( char s[] )
     }
 }
 
+#if !defined( _WIN32 ) && !defined( _WIN64 )
+
 void itoa( int n, char s[], int radix )
 {
     unsigned int i;
@@ -105,6 +107,8 @@ void itoa( int n, char s[], int radix )
     
     __xs_std_str_reverse( s );
 }
+
+#endif
 
 void utoa( unsigned int n, char s[], int radix )
 {
