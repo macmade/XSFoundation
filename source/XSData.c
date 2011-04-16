@@ -126,9 +126,10 @@ XSAutoreleased UInt8 * XSData_GetBytes( XSData xsThis, XSRange range )
     return XSAutorelease( bytes );
 }
 
-void XSData_SetBytes( XSData xsThis, XSRange range )
+void XSData_SetBytes( XSData xsThis, UInt8 * bytes, XSRange range )
 {
     ( void )xsThis;
+    ( void )bytes;
     ( void )range;
 }
 

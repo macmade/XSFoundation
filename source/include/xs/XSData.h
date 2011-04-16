@@ -66,7 +66,7 @@ XSUInteger XSData_GetLength( XSData xsThis );
 
 XSAutoreleased UInt8 * XSData_GetBytes( XSData xsThis, XSRange range );
 
-void XSData_SetBytes( XSData xsThis, XSRange range );
+void XSData_SetBytes( XSData xsThis, UInt8 * bytes, XSRange range );
 
 void XSData_AppendBytes( XSData xsThis, UInt8 * bytes, XSUInteger length );
 
