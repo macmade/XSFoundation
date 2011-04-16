@@ -106,6 +106,7 @@ void XSRuntime_Initialize( void )
     atexit( XSApplication_Exit );
     atexit( XSRuntime_Finalize );
     
+    __XSMemoryDebug_InstallSignalHandlers();
     
     __XSAutoreleasePool_Initialize();
     __XSArray_Initialize();
