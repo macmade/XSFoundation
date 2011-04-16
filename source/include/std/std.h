@@ -44,7 +44,7 @@ extern "C" {
 #endif
 
 #include "std-c99.h"
-#ifded _WIN32
+#ifdef _WIN32
     #include <windows.h>
 #else
     #include "std-posix.h"
