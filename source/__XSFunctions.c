@@ -39,8 +39,8 @@
 #include "__XSFunctions.h"
 
 /* Weak symbols for the program name and program invocation short name */
-extern char * __progname                    __attribute__( ( weak ) );
-extern char * program_invocation_short_name __attribute__( ( weak ) );
+extern char * __progname                    WEAK_ATTRIBUTE;
+extern char * program_invocation_short_name WEAK_ATTRIBUTE;
 
 /*!
  * @var         __progname

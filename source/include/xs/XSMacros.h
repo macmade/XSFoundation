@@ -136,8 +136,20 @@ XS_EXTERN_C_BEGIN
     )
 
 /*!
- * @define      WEAK_IMPORT_ATTRIBUTE
+ * @define      WEAK_ATTRIBUTE
  * @abstract    Standardization of the weak compiler attribute
+ * @description Not all compiler support this attribute, so it may be defined
+ *              to nothing.
+ */
+#if defined( __GNUC__ ) && ( ( __GNUC__ >= 4 ) || ( ( __GNUC__ == 3 ) && ( __GNUC_MINOR__ >= 1 ) ) )
+    #define WEAK_ATTRIBUTE __attribute__( ( weak ) )
+#else
+    #define WEAK_ATTRIBUTE
+#endif
+
+/*!
+ * @define      WEAK_IMPORT_ATTRIBUTE
+ * @abstract    Standardization of the weak import compiler attribute
  * @description Not all compiler support this attribute, so it may be defined
  *              to nothing.
  */
