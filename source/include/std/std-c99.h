@@ -44,12 +44,9 @@ extern "C" {
 #endif
 
 #include <assert.h>     /* Diagnostics. */
-#include <complex.h>    /* Complex numbers manupilations. */
 #include <ctype.h>      /* Character class tests. */
 #include <errno.h>      /* Error codes reported by (some) library functions. */
-#include <fenv.h>       /* Control of floating-point environment. */
 #include <float.h>      /* Implementation-defined floating-point limits. */
-#include <inttypes.h>   /* Precise conversion between integer types. */
 #include <iso646.h>     /* Programming in ISO 646 variant character sets. */
 #include <limits.h>     /* Implementation-defined limits. */
 #include <locale.h>     /* Locale-specific information. */
@@ -57,16 +54,24 @@ extern "C" {
 #include <setjmp.h>     /* Non-local jumps. */
 #include <signal.h>     /* Signals. */
 #include <stdarg.h>     /* Variable argument lists. */
-#include <stdbool.h>    /* Boolean data type. */
 #include <stddef.h>     /* Definitions of general use. */
 #include <stdint.h>     /* Definition of various integer types. */
 #include <stdio.h>      /* Input and output. */
 #include <stdlib.h>     /* Utility functions. */
 #include <string.h>     /* String functions. */
-#include <tgmath.h>     /* Type-generic mathematical functions. */
 #include <time.h>       /* Time and date functions. */
 #include <wchar.h>      /* Manipulation of wide streams and several kinds of strings using wide characters. */
 #include <wctype.h>     /* Wide characters classification. */
+
+#ifndef _WIN32
+
+#include <complex.h>    /* Complex numbers manupilations. */
+#include <fenv.h>       /* Control of floating-point environment. */
+#include <inttypes.h>   /* Precise conversion between integer types. */
+#include <stdbool.h>    /* Boolean data type. */
+#include <tgmath.h>     /* Type-generic mathematical functions. */
+
+#endif
 
 #ifdef __cplusplus
 }
