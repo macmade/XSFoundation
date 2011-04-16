@@ -26,29 +26,15 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
-
+ 
 /* $Id$ */
 
 /*!
- * @header      win32.h
+ * @file        pthreads.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Windows compatibility headers
+ * @abstract    POSIX thread functions for Windows
  */
 
-#ifndef _XS_WIN32_H_
-#define _XS_WIN32_H_
-#pragma once
+#include "XS.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
 
-#include "sys-types.h"
-#include "pthreads.h"
-#include "usleep.h"
-
-#ifdef __cplusplus
-}
-#endif
-
-#endif /* _XS_WIN32_H_ */
