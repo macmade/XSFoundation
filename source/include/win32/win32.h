@@ -44,6 +44,7 @@ extern "C" {
 #endif
 
 #include "compat.h"
+#include "getpid.h"
 #include "pthread.h"
 #include "signal.h"
 #include "stat.h"

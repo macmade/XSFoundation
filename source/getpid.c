@@ -30,73 +30,24 @@
 /* $Id$ */
 
 /*!
- * @header      stat.h
+ * @file        getpid.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Stat functions for windows
+ * @abstract    getpid function for Windows
  */
 
-#ifndef _XS_WIN32_STAT_H_
-#define _XS_WIN32_STAT_H_
-#pragma once
+#include "XS.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-#define S_IFMT      0
-#define S_IFBLK     0
-#define S_IFMT      0
-#define S_IFCHR     0
-#define S_IFMT      0
-#define S_IFIFO     0
-#define S_IFMT      0
-#define S_IFREG     0
-#define S_IFMT      0
-#define S_IFLNK     0
-#define S_IFMT      0
-#define S_IFSOCK    0
-#define S_IRWXU     0
-#define S_IRUSR     0
-#define S_IRWXU     0
-#define S_IWUSR     0
-#define S_IRWXU     0
-#define S_IXUSR     0
-#define S_IRWXG     0
-#define S_IRGRP     0
-#define S_IRWXG     0
-#define S_IWGRP     0
-#define S_IRWXG     0
-#define S_IXGRP     0
-#define S_IRWXO     0
-#define S_IROTH     0
-#define S_IRWXO     0
-#define S_IWOTH     0
-#define S_IRWXO     0
-#define S_IXOTH     0
-#define S_ISUID     0
-#define S_ISGID     0
-
-struct stat
+pid_t __win32_getpid( void );
+pid_t __win32_getpid( void )
 {
-    dev_t     st_dev;       /* ID of device containing file */
-    ino_t     st_ino;       /* Inode number */
-    mode_t    st_mode;      /* Protection */
-    nlink_t   st_nlink;     /* Number of hard links */
-    uid_t     st_uid;       /* User ID of owner */
-    gid_t     st_gid;       /* Group ID of owner */
-    dev_t     st_rdev;      /* Device ID (if special file) */
-    off_t     st_size;      /* Total size, in bytes */
-    blksize_t st_blksize;   /* Blocksize for filesystem I/O */
-    blkcnt_t  st_blocks;    /* Number of blocks allocated */
-    time_t    st_atime;     /* Time of last access */
-    time_t    st_mtime;     /* Time of last modification */
-    time_t    st_ctime;     /* Time of last status change */
-};
-
-int stat( const char * path, struct stat * buf );
-
-#ifdef __cplusplus
+    return 0;
 }
-#endif
 
-#endif /* _XS_WIN32_STAT_H_ */
+#ifdef _WIN32
+
+pid_t getpid( void )
+{
+    return __win32_getpid();
+}
+
+#endif
