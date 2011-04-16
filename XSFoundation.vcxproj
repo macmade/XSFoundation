@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\eos-skl.c" />
+    <ClCompile Include="source\pthread.c" />
+    <ClCompile Include="source\signal.c" />
+    <ClCompile Include="source\std-md5.c" />
+    <ClCompile Include="source\std-string.c" />
+    <ClCompile Include="source\usleep.c" />
+    <ClCompile Include="source\XSApplication.c" />
+    <ClCompile Include="source\XSApplicationArgument.c" />
+    <ClCompile Include="source\XSArray.c" />
+    <ClCompile Include="source\XSBag.c" />
+    <ClCompile Include="source\XSBool.c" />
+    <ClCompile Include="source\XSColor.c" />
+    <ClCompile Include="source\XSData.c" />
+    <ClCompile Include="source\XSDictionary.c" />
+    <ClCompile Include="source\XSError.c" />
+    <ClCompile Include="source\XSFile.c" />
+    <ClCompile Include="source\XSFunctions.c" />
+    <ClCompile Include="source\XSLock.c" />
+    <ClCompile Include="source\XSMemory.c" />
+    <ClCompile Include="source\XSNotification.c" />
+    <ClCompile Include="source\XSNotificationCenter.c" />
+    <ClCompile Include="source\XSNull.c" />
+    <ClCompile Include="source\XSNumber.c" />
+    <ClCompile Include="source\XSRuntime.c" />
+    <ClCompile Include="source\XSSet.c" />
+    <ClCompile Include="source\XSString.c" />
+    <ClCompile Include="source\XSThread.c" />
+    <ClCompile Include="source\XSTimer.c" />
+    <ClCompile Include="source\__XSApplication.c" />
+    <ClCompile Include="source\__XSApplicationArgument.c" />
+    <ClCompile Include="source\__XSArray.c" />
+    <ClCompile Include="source\__XSBag.c" />
+    <ClCompile Include="source\__XSBool.c" />
+    <ClCompile Include="source\__XSColor.c" />
+    <ClCompile Include="source\__XSData.c" />
+    <ClCompile Include="source\__XSDictionary.c" />
+    <ClCompile Include="source\__XSError.c" />
+    <ClCompile Include="source\__XSFile.c" />
+    <ClCompile Include="source\__XSFunctions.c" />
+    <ClCompile Include="source\__XSLock.c" />
+    <ClCompile Include="source\__XSMemory.c" />
+    <ClCompile Include="source\__XSMemoryDebug.c" />
+    <ClCompile Include="source\__XSNotification.c" />
+    <ClCompile Include="source\__XSNotificationCenter.c" />
+    <ClCompile Include="source\__XSNull.c" />
+    <ClCompile Include="source\__XSNumber.c" />
+    <ClCompile Include="source\__XSSet.c" />
+    <ClCompile Include="source\__XSString.c" />
+    <ClCompile Include="source\__XSThread.c" />
+    <ClCompile Include="source\__XSTimer.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\include\eos-skl\eos-skl.h" />
+    <ClInclude Include="source\include\eos-skl\__private\arch\__arm.h" />
+    <ClInclude Include="source\include\eos-skl\__private\arch\__i386.h" />
+    <ClInclude Include="source\include\eos-skl\__private\__machine.h" />
+    <ClInclude Include="source\include\std\std-ascii.h" />
+    <ClInclude Include="source\include\std\std-bitwise.h" />
+    <ClInclude Include="source\include\std\std-bool.h" />
+    <ClInclude Include="source\include\std\std-c99.h" />
+    <ClInclude Include="source\include\std\std-keywords.h" />
+    <ClInclude Include="source\include\std\std-math.h" />
+    <ClInclude Include="source\include\std\std-md5.h" />
+    <ClInclude Include="source\include\std\std-posix.h" />
+    <ClInclude Include="source\include\std\std-string.h" />
+    <ClInclude Include="source\include\std\std.h" />
+    <ClInclude Include="source\include\win32\compat.h" />
+    <ClInclude Include="source\include\win32\pthread.h" />
+    <ClInclude Include="source\include\win32\signal.h" />
+    <ClInclude Include="source\include\win32\stat.h" />
+    <ClInclude Include="source\include\win32\sys-types.h" />
+    <ClInclude Include="source\include\win32\usleep.h" />
+    <ClInclude Include="source\include\win32\win32.h" />
+    <ClInclude Include="source\include\XS.h" />
+    <ClInclude Include="source\include\xs\XSApplication.h" />
+    <ClInclude Include="source\include\xs\XSApplicationArgument.h" />
+    <ClInclude Include="source\include\xs\XSArray.h" />
+    <ClInclude Include="source\include\xs\XSBag.h" />
+    <ClInclude Include="source\include\xs\XSBool.h" />
+    <ClInclude Include="source\include\xs\XSColor.h" />
+    <ClInclude Include="source\include\xs\XSConstants.h" />
+    <ClInclude Include="source\include\xs\XSData.h" />
+    <ClInclude Include="source\include\xs\XSDictionary.h" />
+    <ClInclude Include="source\include\xs\XSError.h" />
+    <ClInclude Include="source\include\xs\XSFile.h" />
+    <ClInclude Include="source\include\xs\XSFunctions.h" />
+    <ClInclude Include="source\include\xs\XSLock.h" />
+    <ClInclude Include="source\include\xs\XSMacros.h" />
+    <ClInclude Include="source\include\xs\XSMacrosTarget.h" />
+    <ClInclude Include="source\include\xs\XSMemory.h" />
+    <ClInclude Include="source\include\xs\XSNotification.h" />
+    <ClInclude Include="source\include\xs\XSNotificationCenter.h" />
+    <ClInclude Include="source\include\xs\XSNull.h" />
+    <ClInclude Include="source\include\xs\XSNumber.h" />
+    <ClInclude Include="source\include\xs\XSRuntime.h" />
+    <ClInclude Include="source\include\xs\XSSet.h" />
+    <ClInclude Include="source\include\xs\XSString.h" />
+    <ClInclude Include="source\include\xs\XSThread.h" />
+    <ClInclude Include="source\include\xs\XSTimer.h" />
+    <ClInclude Include="source\include\xs\XSTypes.h" />
+    <ClInclude Include="source\include\xs\__private\__XSApplication.h" />
+    <ClInclude Include="source\include\xs\__private\__XSApplicationArgument.h" />
+    <ClInclude Include="source\include\xs\__private\__XSArray.h" />
+    <ClInclude Include="source\include\xs\__private\__XSBag.h" />
+    <ClInclude Include="source\include\xs\__private\__XSBool.h" />
+    <ClInclude Include="source\include\xs\__private\__XSColor.h" />
+    <ClInclude Include="source\include\xs\__private\__XSData.h" />
+    <ClInclude Include="source\include\xs\__private\__XSDictionary.h" />
+    <ClInclude Include="source\include\xs\__private\__XSError.h" />
+    <ClInclude Include="source\include\xs\__private\__XSFile.h" />
+    <ClInclude Include="source\include\xs\__private\__XSFunctions.h" />
+    <ClInclude Include="source\include\xs\__private\__XSLock.h" />
+    <ClInclude Include="source\include\xs\__private\__XSMemory.h" />
+    <ClInclude Include="source\include\xs\__private\__XSMemoryDebug.h" />
+    <ClInclude Include="source\include\xs\__private\__XSNotification.h" />
+    <ClInclude Include="source\include\xs\__private\__XSNotificationCenter.h" />
+    <ClInclude Include="source\include\xs\__private\__XSNull.h" />
+    <ClInclude Include="source\include\xs\__private\__XSNumber.h" />
+    <ClInclude Include="source\include\xs\__private\__XSSet.h" />
+    <ClInclude Include="source\include\xs\__private\__XSString.h" />
+    <ClInclude Include="source\include\xs\__private\__XSThread.h" />
+    <ClInclude Include="source\include\xs\__private\__XSTimer.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{21B15DF9-576F-4C7D-9F6D-DBC717F554F1}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>XSFoundation</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Macmade\Desktop\XSFoundation\source\include\win32;C:\Users\Macmade\Desktop\XSFoundation\source\include\eos-skl;C:\Users\Macmade\Desktop\XSFoundation\source\include\std;C:\Users\Macmade\Desktop\XSFoundation\source\include\xs\__private;C:\Users\Macmade\Desktop\XSFoundation\source\include\xs;C:\Users\Macmade\Desktop\XSFoundation\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
