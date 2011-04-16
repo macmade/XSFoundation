@@ -58,12 +58,40 @@ typedef struct __XSNotificationCenter * XSNotificationCenter;
  */
 XSStatic XSObject XSNotificationCenter_Alloc( void );
 
+/*!
+ * @function    XSNotificationCenter_Init
+ * @abstract    Creates a notification center
+ * @param       xsThis  The notification center
+ * @result      The notification center
+ */
 XSObject XSNotificationCenter_Init( XSObject xsThis );
 
+/*!
+ * @function    XSNotificationCenter_DefaultCenter
+ * @abstract    Gets the default notification center
+ * @result      The default notification center
+ */
 XSStatic XSAutoreleased XSNotificationCenter XSNotificationCenter_DefaultCenter( void );
 
+/*!
+ * @function    XSNotificationCenter_AddObserver
+ * @abstract    Adds an observer attached to an object
+ * @param       xsThis              The notification center
+ * @param       object              The object to watch
+ * @param       notificationName    The notification name
+ * @param       func                The function that will receive the notifications
+ * @result      void
+ */
 void XSNotificationCenter_AddObserver( XSNotificationCenter xsThis, XSObject object, XSString notificationName, void ( * func )( XSNotification notification ) );
 
+/*!
+ * @function    XSNotificationCenter_PostNotification
+ * @abstract    Posts a notification
+ * @param       xsThis              The notification center
+ * @param       object              The object from which the notification is post
+ * @param       notificationName    The notification name
+ * @result      void
+ */
 void XSNotificationCenter_PostNotification( XSNotificationCenter xsThis, XSObject object, XSString notificationName );
 
 XS_EXTERN_C_END

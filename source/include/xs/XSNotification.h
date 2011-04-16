@@ -56,14 +56,46 @@ typedef struct __XSNotification * XSNotification;
  */
 XSStatic XSObject XSNotification_Alloc( void );
 
+/*!
+ * @function    XSNotification_Init
+ * @abstract    Creates a notification object
+ * @param       xsThis  The notification object
+ * @result      The notification object
+ */
 XSObject XSNotification_Init( XSObject xsThis );
 
+/*!
+ * @function    XSNotification_GetObject
+ * @abstract    Gets the notification's represented object
+ * @param       xsThis  The notification object
+ * @result      The notification's represented object
+ */
 XSObject XSNotification_GetObject( XSNotification xsThis );
 
+/*!
+ * @function    XSNotification_GetObject
+ * @abstract    Sets the notification's represented object
+ * @param       xsThis  The notification object
+ * @param       object  The notification's represented object
+ * @result      void
+ */
 void XSNotification_SetObject( XSNotification xsThis, XSObject object );
 
+/*!
+ * @function    XSNotification_Init
+ * @abstract    Gets the notification name
+ * @param       xsThis  The notification object
+ * @result      The notification name
+ */
 XSString XSNotification_GetName( XSNotification xsThis );
 
+/*!
+ * @function    XSNotification_Init
+ * @abstract    Sets the notification name
+ * @param       xsThis  The notification object
+ * @param       name    The notification name
+ * @result      void
+ */
 void XSNotification_SetName( XSNotification xsThis, XSString name );
 
 XS_EXTERN_C_END
