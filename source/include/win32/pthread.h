@@ -46,6 +46,10 @@ extern "C" {
 #include <stdint.h>
     
 typedef uint32_t pthread_t;
+
+pthread_t pthread_self( void );
+
+void pthread_exit( void * retval );
     
 #ifdef __cplusplus
 }
