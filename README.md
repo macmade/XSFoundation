@@ -13,7 +13,13 @@ XEOS C Foundation Library
 The [XEOS][1] C Foundation library provides the base for object-oriented C style coding, reference counting memory management with auto-release capabilities, reflection, runtime environment, polymorphism and basic objects.
 It's purpose is to be integrated in the [XEOS][1] Operating System, once its C standard library will be complete.
 
-For now, it's just a standalone project, that should compile on every POSIX compliant OS with a decent C compiler.
+For now, it's just a standalone project, that should compile on every OS with a decent C compiler.
+
+### Usage from Windows
+
+XSFoundation can be used on Windows too.
+Some of the features, such are the integrated memory debugger or threading are not implemented yet, but the library compiles fine.
+
 
 ### Building
 
