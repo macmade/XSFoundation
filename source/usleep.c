@@ -37,9 +37,13 @@
 
 #include "XS.h"
 
-typedef uint32_t DWORD;
+#ifndef _WIN32
 
-void Sleep( DWORD msec );
+    typedef uint32_t DWORD;
+    
+    void Sleep( DWORD msec );
+
+#endif
 
 void __win32_usleep( useconds_t usec );
 void __win32_usleep( useconds_t usec )
