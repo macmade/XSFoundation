@@ -105,4 +105,6 @@ void * __XSThread_Run( void * thread )
     XSRelease( thread );
     
     pthread_exit( NULL );
+    
+    return NULL;
 }
