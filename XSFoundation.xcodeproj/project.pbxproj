@@ -114,8 +114,8 @@
 		05CD15C713599330008C6EAD /* usleep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = usleep.h; sourceTree = "<group>"; };
 		05CD15C813599330008C6EAD /* win32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = win32.h; sourceTree = "<group>"; };
 		05CD15CA13599365008C6EAD /* usleep.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = usleep.c; sourceTree = "<group>"; };
-		05CD15CB13599879008C6EAD /* pthreads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pthreads.h; sourceTree = "<group>"; };
-		05CD15CC135998C5008C6EAD /* pthreads.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pthreads.c; sourceTree = "<group>"; };
+		05CD15CB13599879008C6EAD /* pthread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pthread.h; sourceTree = "<group>"; };
+		05CD15CC135998C5008C6EAD /* pthread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pthread.c; sourceTree = "<group>"; };
 		05E098621356EBC700189FF4 /* __XSNotificationCenter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = __XSNotificationCenter.c; path = source/__XSNotificationCenter.c; sourceTree = SOURCE_ROOT; };
 		05E098631356EBC700189FF4 /* XSNotificationCenter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = XSNotificationCenter.c; path = source/XSNotificationCenter.c; sourceTree = SOURCE_ROOT; };
 		05E098651356EBD400189FF4 /* XSNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XSNotificationCenter.h; path = source/include/xs/XSNotificationCenter.h; sourceTree = SOURCE_ROOT; };
@@ -177,7 +177,7 @@
 				052EC755134F3414004A939E /* eos-skl.c */,
 				052EC738134F2908004A939E /* std-md5.c */,
 				056003D61340621F005DC721 /* std-string.c */,
-				05CD15CC135998C5008C6EAD /* pthreads.c */,
+				05CD15CC135998C5008C6EAD /* pthread.c */,
 				05CD15CA13599365008C6EAD /* usleep.c */,
 				0562F8C2134B3F54005190B6 /* __XSApplication.c */,
 				0562F8D8134B5AC1005190B6 /* __XSApplicationArgument.c */,
@@ -323,7 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				05CD15C613599330008C6EAD /* sys-types.h */,
-				05CD15CB13599879008C6EAD /* pthreads.h */,
+				05CD15CB13599879008C6EAD /* pthread.h */,
 				05CD15C713599330008C6EAD /* usleep.h */,
 				05CD15C813599330008C6EAD /* win32.h */,
 			);

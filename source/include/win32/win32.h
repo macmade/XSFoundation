@@ -44,7 +44,7 @@ extern "C" {
 #endif
 
 #include "sys-types.h"
-#include "pthreads.h"
+#include "pthread.h"
 #include "usleep.h"
 
 #ifdef __cplusplus

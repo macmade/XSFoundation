@@ -45,7 +45,7 @@ extern "C" {
 
 #include <stdint.h>
     
-typedef uint32_t pthread_t
+typedef uint32_t pthread_t;
     
 #ifdef __cplusplus
 }
