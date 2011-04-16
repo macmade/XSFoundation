@@ -366,209 +366,202 @@ XSInteger XSFile_PutBits( XSFile xsThis, uint64_t bits, XSUInteger count );
 
 /*!
  * @function    XSFile_DeviceID
- * @abstract    
+ * @abstract    Gets the device ID of the file
  * @param       xsThis    The file object
- * @result      
+ * @result      The file's device ID
  */
 dev_t XSFile_DeviceID( XSFile xsThis );
 
 /*!
  * @function    XSFile_SerialNumber
- * @abstract    
+ * @abstract    Gets the serial number of the file
  * @param       xsThis    The file object
- * @result      
+ * @result      The file's serial number
  */
 ino_t XSFile_SerialNumber( XSFile xsThis );
 
 /*!
  * @function    XSFile_NumberOfLinks
- * @abstract    
+ * @abstract    Gets the number of links to the file
  * @param       xsThis    The file object
- * @result      
+ * @result      The number of links to the file
  */
 nlink_t XSFile_NumberOfLinks( XSFile xsThis );
 
 /*!
  * @function    XSFile_UID
- * @abstract    
+ * @abstract    Gets the file's user ID
  * @param       xsThis    The file object
- * @result      
+ * @result      the file's user ID
  */
 uid_t XSFile_UID( XSFile xsThis );
 
 /*!
  * @function    XSFile_GID
- * @abstract    
+ * @abstract    Gets the file's group ID
  * @param       xsThis    The file object
- * @result      
+ * @result      The file's group ID
  */
 gid_t XSFile_GID( XSFile xsThis );
 
 /*!
  * @function    XSFile_Size
- * @abstract    
+ * @abstract    Gets the file size in bytes
  * @param       xsThis    The file object
- * @result      
+ * @result      The file size in bytes
  */
 size_t XSFile_Size( XSFile xsThis );
 
 /*!
  * @function    XSFile_HumanReadableSize
- * @abstract    
- * @param       xsThis    The file object
- * @result      
+ * @abstract    Gets an human readable size for the size
+ * @param       xsThis      The file object
+ * @param       unit        A buffer to store the size unit
+ * @result      The human readable size
  */
 XSFloat XSFile_HumanReadableSize( XSFile xsThis, char unit[] );
 
 /*!
  * @function    XSFile_AccessTime
- * @abstract    
+ * @abstract    Gets the file's access time
  * @param       xsThis    The file object
- * @result      
+ * @result      The file's access time
  */
 time_t XSFile_AccessTime( XSFile xsThis );
 
 /*!
  * @function    XSFile_ModifictaionTime
- * @abstract    
+ * @abstract    Gets the file's modification time
  * @param       xsThis    The file object
- * @result      
+ * @result      The file's modification time
  */
 time_t XSFile_ModifictaionTime( XSFile xsThis );
 
 /*!
  * @function    XSFile_CreationTime
- * @abstract    
+ * @abstract    Gets the file's creation time
  * @param       xsThis    The file object
- * @result      
+ * @result      The file's creation time
  */
 time_t XSFile_CreationTime( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsBlockDevice
- * @abstract    
+ * @abstract    Checks if the file is a block device
  * @param       xsThis    The file object
- * @result      
+ * @result      YES is the file is a block device, otherwise NO
  */
 BOOL XSFile_IsBlockDevice( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsCharacterDevice
- * @abstract    
+ * @abstract    Checks if the file is a character device
  * @param       xsThis    The file object
- * @result      
+ * @result      YES is the file is a character device otherwise NO
  */
 BOOL XSFile_IsCharacterDevice( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsFIFO
- * @abstract    
+ * @abstract    Checks if the file is a FIFO
  * @param       xsThis    The file object
- * @result      
+ * @result      YES is the file is a FIFO otherwise NO
  */
 BOOL XSFile_IsFIFO( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsRegularFile
- * @abstract    
+ * @abstract    Checks if the file is a regular file
  * @param       xsThis    The file object
- * @result      
+ * @result      YES is the file is a regular file otherwise NO
  */
 BOOL XSFile_IsRegularFile( XSFile xsThis );
 
 /*!
- * @function    XSFile_IsDirectory
- * @abstract    
- * @param       xsThis    The file object
- * @result      
- */
-BOOL XSFile_IsDirectory( XSFile xsThis );
-
-/*!
  * @function    XSFile_IsLink
- * @abstract    
+ * @abstract    Checks if the file is a link
  * @param       xsThis    The file object
- * @result      
+ * @result      YES is the file is a link otherwise NO
  */
 BOOL XSFile_IsLink( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsSocket
- * @abstract    
+ * @abstract    Checks if the file is a socket
  * @param       xsThis    The file object
- * @result      
+ * @result      YES is the file is a socket otherwise NO
  */
 BOOL XSFile_IsSocket( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsUserReadable
- * @abstract    
+ * @abstract    Checks if the file is readable for the user
  * @param       xsThis    The file object
- * @result      
+ * @result      YES is the file is readable for the user, otherwise NO
  */
 BOOL XSFile_IsUserReadable( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsUserWriteable
- * @abstract    
+ * @abstract    Checks if the file is writeable for the user
  * @param       xsThis    The file object
- * @result      
+ * @result      YES is the file is writeable for the user, otherwise NO
  */
 BOOL XSFile_IsUserWriteable( XSFile xsThis );
 
 /*!
  * @function    XSFile_ISUserExecutable
- * @abstract    
+ * @abstract    Checks if the file is executable for the user
  * @param       xsThis    The file object
- * @result      
+ * @result      YES is the file is executable for the user, otherwise NO
  */
 BOOL XSFile_ISUserExecutable( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsGroupReadable
- * @abstract    
+ * @abstract    Checks if the file is readable for the group
  * @param       xsThis    The file object
- * @result      
+ * @result      YES is the file is readable for the group, otherwise NO
  */
 BOOL XSFile_IsGroupReadable( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsGroupWriteable
- * @abstract    
+ * @abstract    Checks if the file is writable for the group
  * @param       xsThis    The file object
- * @result      
+ * @result      YES is the file is writable for the group, otherwise NO
  */
 BOOL XSFile_IsGroupWriteable( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsGroupExecutable
- * @abstract    
+ * @abstract    Checks if the file is executable for the group
  * @param       xsThis    The file object
- * @result      
+ * @result      YES is the file is executable for the group, otherwise NO
  */
 BOOL XSFile_IsGroupExecutable( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsWorldReadable
- * @abstract    
+ * @abstract    Checks if the file is readable for the world
  * @param       xsThis    The file object
- * @result      
+ * @result      YES is the file is readable for the world, otherwise NO
  */
 BOOL XSFile_IsWorldReadable( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsWorldWriteable
- * @abstract    
+ * @abstract    Checks if the file is writeable for the world
  * @param       xsThis    The file object
- * @result      
+ * @result      YES is the file is writeable for the world, otherwise NO
  */
 BOOL XSFile_IsWorldWriteable( XSFile xsThis );
 
 /*!
  * @function    XSFile_IsWorldExecutable
- * @abstract    
+ * @abstract    Checks if the file is executable for the world
  * @param       xsThis    The file object
- * @result      
+ * @result      YES is the file is executable for the world, otherwise NO
  */
 BOOL XSFile_IsWorldExecutable( XSFile xsThis );
 
