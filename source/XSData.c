@@ -126,24 +126,28 @@ XSAutoreleased UInt8 * XSData_GetBytes( XSData xsThis, XSRange range )
     return XSAutorelease( bytes );
 }
 
-void XSData_SetBytes( XSData xsThis, UInt8 * bytes, XSRange range )
-{
-    ( void )xsThis;
-    ( void )bytes;
-    ( void )range;
-}
-
 void XSData_AppendBytes( XSData xsThis, UInt8 * bytes, XSUInteger length )
 {
-    ( void )xsThis;
-    ( void )bytes;
-    ( void )length;
-}
-
-void XSData_DeleteBytes( XSData xsThis, XSRange range )
-{
-    ( void )xsThis;
-    ( void )range;
+    __XSData * data;
+    UInt8    * store;
+    
+    data = ( __XSData * )xsThis;
+    
+    if( data->capacity < length )
+    {
+        store = XSRealloc( data->bytes, data->length + length );
+        
+        if( store == NULL )
+        {
+            return;
+        }
+        
+        data->bytes = store;
+    }
+    
+    memcpy( data->bytes + data->length, bytes, length );
+    
+    data->length += length;
 }
 
 UInt8 * XSData_GetBytesPointer( XSData xsThis )

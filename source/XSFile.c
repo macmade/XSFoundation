@@ -815,15 +815,6 @@ BOOL XSFile_IsRegularFile( XSFile xsThis )
     return ( ( ( _f->stat_buf.st_mode & S_IFMT ) == S_IFREG ) ) ? YES : NO;
 }
 
-BOOL XSFile_IsDirectory( XSFile xsThis )
-{
-    __XSFile * _f;
-    
-    _f = ( __XSFile * )xsThis;
-    
-    return ( ( ( _f->stat_buf.st_mode & S_IFMT ) == S_IFDIR ) ) ? YES : NO;
-}
-
 BOOL XSFile_IsLink( XSFile xsThis )
 {
     __XSFile * _f;
