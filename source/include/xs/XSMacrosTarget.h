@@ -146,6 +146,82 @@ XS_EXTERN_C_BEGIN
         #error unrecognized GNU C compiler
         
     #endif
+    
+#elif defined( _WIN64 )
+        
+    #if defined( _M_IX86 )
+        
+        #define TARGET_CPU_PPC          0
+        #define TARGET_CPU_PPC64        0
+        #define TARGET_CPU_68K          0
+        #define TARGET_CPU_X86          1
+        #define TARGET_CPU_X86_64       0
+        #define TARGET_CPU_ARM          0
+        #define TARGET_CPU_MIPS         0
+        #define TARGET_CPU_SPARC        0
+        #define TARGET_CPU_ALPHA        0
+        #define TARGET_RT_LITTLE_ENDIAN 1
+        #define TARGET_RT_BIG_ENDIAN    0
+        #define TARGET_RT_64_BIT        1
+        
+    #elif defined( _M_X64 )
+        
+        #define TARGET_CPU_PPC          0
+        #define TARGET_CPU_PPC64        0
+        #define TARGET_CPU_68K          0
+        #define TARGET_CPU_X86          0
+        #define TARGET_CPU_X86_64       1
+        #define TARGET_CPU_ARM          0
+        #define TARGET_CPU_MIPS         0
+        #define TARGET_CPU_SPARC        0
+        #define TARGET_CPU_ALPHA        0
+        #define TARGET_RT_LITTLE_ENDIAN 1
+        #define TARGET_RT_BIG_ENDIAN    0
+        #define TARGET_RT_64_BIT        1
+        
+    #else
+        
+        #error unrecognized WIN64 compiler
+        
+    #endif
+
+#elif defined( _WIN32 )
+
+    #if defined( _M_IX86 )
+        
+        #define TARGET_CPU_PPC          0
+        #define TARGET_CPU_PPC64        0
+        #define TARGET_CPU_68K          0
+        #define TARGET_CPU_X86          1
+        #define TARGET_CPU_X86_64       0
+        #define TARGET_CPU_ARM          0
+        #define TARGET_CPU_MIPS         0
+        #define TARGET_CPU_SPARC        0
+        #define TARGET_CPU_ALPHA        0
+        #define TARGET_RT_LITTLE_ENDIAN 1
+        #define TARGET_RT_BIG_ENDIAN    0
+        #define TARGET_RT_64_BIT        0
+        
+    #elif defined( _M_X64 )
+        
+        #define TARGET_CPU_PPC          0
+        #define TARGET_CPU_PPC64        0
+        #define TARGET_CPU_68K          0
+        #define TARGET_CPU_X86          0
+        #define TARGET_CPU_X86_64       1
+        #define TARGET_CPU_ARM          0
+        #define TARGET_CPU_MIPS         0
+        #define TARGET_CPU_SPARC        0
+        #define TARGET_CPU_ALPHA        0
+        #define TARGET_RT_LITTLE_ENDIAN 1
+        #define TARGET_RT_BIG_ENDIAN    0
+        #define TARGET_RT_64_BIT        0
+        
+    #else
+        
+        #error unrecognized WIN32 compiler
+        
+    #endif
 
 #elif defined( __MWERKS__ )
     
