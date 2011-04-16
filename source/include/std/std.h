@@ -44,11 +44,18 @@ extern "C" {
 #endif
 
 #include "std-c99.h"
+
 #ifdef _WIN32
+    
     #include <windows.h>
+    #include "win32.h"
+    
 #else
+    
     #include "std-posix.h"
+    
 #endif
+
 #include "std-keywords.h"
 #include "std-bool.h"
 #include "std-math.h"
