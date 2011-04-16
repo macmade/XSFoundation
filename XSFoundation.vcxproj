@@ -11,7 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\compat.c" />
+    <ClCompile Include="source\compat.c">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Macmade\Desktop\XSFoundation\source\include\win32;C:\Users\Macmade\Desktop\XSFoundation\source\include\eos-skl;C:\Users\Macmade\Desktop\XSFoundation\source\include\std;C:\Users\Macmade\Desktop\XSFoundation\source\include\xs\__private;C:\Users\Macmade\Desktop\XSFoundation\source\include\xs;C:\Users\Macmade\Desktop\XSFoundation\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="source\eos-skl.c" />
     <ClCompile Include="source\getpid.c" />
     <ClCompile Include="source\pthread.c" />
@@ -171,6 +173,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IntDir>build\win32\$(Configuration)\</IntDir>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)\build\win32\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>build\win32\$(Configuration)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>
@@ -195,6 +203,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Macmade\Desktop\XSFoundation\source\include\win32;C:\Users\Macmade\Desktop\XSFoundation\source\include\eos-skl;C:\Users\Macmade\Desktop\XSFoundation\source\include\std;C:\Users\Macmade\Desktop\XSFoundation\source\include\xs\__private;C:\Users\Macmade\Desktop\XSFoundation\source\include\xs;C:\Users\Macmade\Desktop\XSFoundation\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

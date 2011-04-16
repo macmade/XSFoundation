@@ -1,4 +1,4 @@
 *
 !.gitignore
-!libxeos.a
-!libxeos.dylib
+!posix
+!win32

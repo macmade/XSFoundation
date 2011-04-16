@@ -78,7 +78,7 @@ EXT_LIB_OBJECT          = .lo
 EXT_LIB_ARCHIVE         = .la
 EXT_LIB_DYNAMIC         = .dylib
 
-DIR_BUILD               = build/
+DIR_BUILD               = build/posix/
 DIR_SRC                 = source/
 DIR_INC                 = $(DIR_SRC)include/
 DIR_INC_PRIV            = $(DIR_INC)xs/__private/
