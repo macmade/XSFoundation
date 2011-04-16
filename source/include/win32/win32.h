@@ -43,8 +43,10 @@
 extern "C" {
 #endif
 
-#include "sys-types.h"
+#include "compat.h"
 #include "pthread.h"
+#include "signal.h"
+#include "sys-types.h"
 #include "usleep.h"
 
 #ifdef __cplusplus
