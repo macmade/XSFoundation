@@ -63,6 +63,7 @@ void timer_test( XSTimer timer )
     }
 }
 
+void notification_test( XSNotification notification );
 void notification_test( XSNotification notification )
 {
     XSLog
