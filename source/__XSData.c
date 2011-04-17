@@ -45,7 +45,7 @@
 static const XSClassInfos __XSDataClass =
 {
     "XSData",           /* Class name */
-    sizeof( XSData ),   /* Object size */
+    sizeof( __XSData ), /* Object size */
     NULL,               /* Constructor */
     __XSData_Destruct,  /* Destructor */
     XSData_Init,        /* Default initializer */
