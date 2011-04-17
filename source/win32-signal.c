@@ -48,10 +48,10 @@ int __win32_sigemptyset( sigset_t * set )
 int __win32_sigaction( int sig, const struct sigaction * act, struct sigaction * oact );
 int __win32_sigaction( int sig, const struct sigaction * act, struct sigaction * oact )
 {
-    ( void )sig;
-    ( void )act;
     ( void )oact;
-    
+
+    signal( sig, act->sa_handler );
+
     return 0;
 }
 
