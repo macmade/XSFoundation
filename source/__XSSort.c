@@ -38,35 +38,32 @@
 #include "XS.h"
 #include "__XSSort.h"
 
-#define __XS_SHELL_SORT( values, size )                             \
-    XSUInteger i;                                                   \
-    XSUInteger j;                                                   \
-    XSUInteger k;                                                   \
-                                                                    \
-    i = 1;                                                          \
-                                                                    \
-    while( i <= size )                                              \
-    {                                                               \
-        i = ( 3 * i ) + 1;                                          \
-                                                                    \
-        while( i > 1 )                                              \
-        {                                                           \
-            i = i / 3;                                              \
-                                                                    \
-            for( j = i; j < size; j++ )                             \
-            {                                                       \
-                value = values[ j ];                                \
-                k     = 1;                                          \
-                                                                    \
-                while( ( k >= i ) && ( value < values[ k - i ] ) )  \
-                {                                                   \
-                    values[ k ] = values[ k - i ];                  \
-                    k          -= i;                                \
-                }                                                   \
-                                                                    \
-                values[ k ] = value;                                \
-            }                                                       \
-        }                                                           \
+#define __XS_SHELL_SORT( values, size )                 \
+    XSInteger i;                                        \
+    XSInteger j;                                        \
+    XSInteger k;                                        \
+    XSInteger n;                                        \
+                                                        \
+    n = ( XSInteger )size;                              \
+                                                        \
+    for( k = n / 2; k > 0; k /= 2)                      \
+    {                                                   \
+        for( j = k; j < n; j++ )                        \
+        {                                               \
+            for( i = j - k; i >= 0; i -= k )            \
+            {                                           \
+                if( values[ i + k ] >= values[ i ] )    \
+                {                                       \
+                    break;                              \
+                }                                       \
+                else                                    \
+                {                                       \
+                    value           = values[ i ];      \
+                    values[ i ]     = values[ i + k ];  \
+                    values[ i + k ] = value;            \
+                }                                       \
+            }                                           \
+        }                                               \
     }
 
 void __XSShellSortChar( char * values, XSUInteger size )
