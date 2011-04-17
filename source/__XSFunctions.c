@@ -66,6 +66,125 @@ static pthread_mutex_t __log_mutex  = PTHREAD_MUTEX_INITIALIZER;
  */
 static BOOL __log_paused = NO;
 
+#ifdef _WIN32
+
+static va_list __XSVLogWin32FixArgs( char * fmt, va_list ap );
+static va_list __XSVLogWin32FixArgs( char * fmt, va_list ap )
+{
+    BOOL         found;
+    BOOL         end;
+    unsigned int i;
+    char       * str;
+
+    while( ( str = strchr( fmt, '%' ) ) != NULL )
+    {
+        i     = 1;
+        end   = NO;
+        found = NO;
+
+        while( 1 )
+        {
+            if( str[ i ] == '\0' )
+            {
+                end = YES;
+                break;
+            }
+
+            switch( str[ i ] )
+            {
+                case 'h':
+
+                    ap   += sizeof( unsigned short );
+                    found = YES;
+                    break;
+
+                case 'l':
+
+                    ap   += sizeof( unsigned long );
+                    found = YES;
+                    break;
+
+                case 'L':
+
+                    ap   += sizeof( long double );
+                    found = YES;
+                    break;
+                    
+                case 'u':
+                case 'i':
+                case 'd':
+                case 'o':
+                case 'x':
+                case 'X':
+                case 'c':
+
+                    ap   += sizeof( unsigned int );
+                    found = YES;
+                    break;
+
+                case 's':
+
+                    ap   += sizeof( char * );
+                    found = YES;
+                    break;
+                    
+                case 'f':
+                case 'e':
+                case 'E':
+                case 'g':
+                case 'G':
+
+                    ap   += sizeof( double );
+                    found = YES;
+                    break;
+
+                case 'p':
+
+                    ap   += sizeof( void * );
+                    found = YES;
+                    break;
+
+                case 'n':
+
+                    ap   += sizeof( int * );
+                    found = YES;
+                    break;
+
+                case '%':
+                    
+                    found = YES;
+                    break;
+
+                default:
+
+                    i++;
+                    break;
+            }
+
+            if( found == YES )
+            {
+                break;
+            }
+        }
+
+        if( end == YES )
+        {
+            break;
+        }
+
+        fmt = str + 1;
+
+        if( *( fmt ) == 0 )
+        {
+            break;
+        }
+    }
+
+    return ap;
+}
+
+#endif
+
 void __XSVLog( const char * fmt, va_list args )
 {
     pid_t            pid;
@@ -173,7 +292,7 @@ void __XSVLog( const char * fmt, va_list args )
     #endif
 
     i = 0;
-    
+
     while( 1 )
     {
         if( format[ i ] == '\0' )
@@ -183,9 +302,13 @@ void __XSVLog( const char * fmt, va_list args )
         if( i > 0 && format[ i ] == '@' && format[ i - 1 ] == '$' )
         {
             format[ i - 1 ] = 0;
-            
+
             vprintf( format, args );
-            
+
+            #ifdef _WIN32
+            args = __XSVLogWin32FixArgs( format, args );
+            #endif
+
             va_ptr = va_arg( args, void * );
             
             if( va_ptr == NULL )
