@@ -43,14 +43,9 @@
 extern "C" {
 #endif
 
-#include <limits.h>
-
-#define strcpy( a, b )                      strcpy_s( a, strlen( b ), b )
-#define strcat( a, b )                      strcat_s( a, strlen( b ), b )
-#define sprintf( str, ... )                 sprintf_s( str, ULONG_MAX, __VA_ARGS__ )
-#define vsprintf( str, format, ap )         vsprintf_s( str, ULONG_MAX, format, ap )
-#define vsnprintf( str, size, format, ap )  vsnprintf_s( str, ULONG_MAX, size, format, ap )
-#define strncpy( a, b, n )                  strncpy_s( a, n, b, n )
+#ifndef _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
+#endif
 
 #ifdef __cplusplus
 }
