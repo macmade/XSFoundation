@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C++ Express 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XSFoundation", "XSFoundation.vcxproj", "{21B15DF9-576F-4C7D-9F6D-DBC717F554F1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Win32Test", "Win32Test\Win32Test.vcxproj", "{DF5C16BC-416C-48C7-86B1-B07ABB13B765}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +15,10 @@ Global
 		{21B15DF9-576F-4C7D-9F6D-DBC717F554F1}.Debug|Win32.Build.0 = Debug|Win32
 		{21B15DF9-576F-4C7D-9F6D-DBC717F554F1}.Release|Win32.ActiveCfg = Release|Win32
 		{21B15DF9-576F-4C7D-9F6D-DBC717F554F1}.Release|Win32.Build.0 = Release|Win32
+		{DF5C16BC-416C-48C7-86B1-B07ABB13B765}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DF5C16BC-416C-48C7-86B1-B07ABB13B765}.Debug|Win32.Build.0 = Debug|Win32
+		{DF5C16BC-416C-48C7-86B1-B07ABB13B765}.Release|Win32.ActiveCfg = Release|Win32
+		{DF5C16BC-416C-48C7-86B1-B07ABB13B765}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
