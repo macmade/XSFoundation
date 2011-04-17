@@ -37,10 +37,16 @@
 
 #include "XS.h"
 
+#ifndef _WIN32
+
+pthread_t GetCurrentThreadId( void );
+
+#endif
+
 pthread_t __win32_pthread_self( void );
 pthread_t __win32_pthread_self( void )
 {
-    return 0;
+    return ( pthread_t )GetCurrentThreadId();
 }
 
 int __win32_pthread_create( pthread_t * thread, const pthread_attr_t * attr, void * ( * start_routine )( void * ), void * arg );
