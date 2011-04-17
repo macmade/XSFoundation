@@ -26,108 +26,17 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
-
+ 
 /* $Id$ */
 
 /*!
- * @file        XSFunctions.c
+ * @file        XSLog.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation of the general functions
+ * @abstract    Implementation of the logging functions
  */
 
 #include "XS.h"
-#include "__XSFunctions.h"
-
-XSPoint XSMakePoint( XSFloat x, XSFloat y )
-{
-    XSPoint p;
-    
-    p.x = x;
-    p.y = y;
-    
-    return p;
-}
-
-XSSize XSMakeSize( XSFloat width, XSFloat height )
-{
-    XSSize s;
-    
-    s.width  = width;
-    s.height = height;
-    
-    return s;
-}
-
-XSRect XSMakeRect( XSFloat x, XSFloat y, XSFloat width, XSFloat height )
-{
-    XSRect r;
-    
-    r.origin.x    = x;
-    r.origin.y    = y;
-    r.size.width  = width;
-    r.size.height = height;
-    
-    return r;
-}
-
-XSRect XSRectZero( void )
-{
-    return XSMakeRect( 0, 0, 0, 0 );
-}
-
-XSRange XSMakeRange( XSUInteger location, XSUInteger length )
-{
-    XSRange r;
-    
-    r.location = location;
-    r.length   = length;
-    
-    return r;
-}
-
-XSEdgeInsets XSMakeEdgeInsets( XSFloat left, XSFloat top, XSFloat right, XSFloat bottom )
-{
-    XSEdgeInsets e;
-    
-    e.left   = left;
-    e.top    = top;
-    e.right  = right;
-    e.bottom = bottom;
-    
-    return e;
-}
-
-XSFloat XSAngleBetweenPoints( XSPoint a, XSPoint b )
-{
-    XSFloat c;
-    XSFloat d;
-    
-    c = b.y - a.y;
-    d = a.x - b.x;
-    
-    return ( XSFloat )atan2( b.y - a.y, b.x - a.x );
-}
-
-XSFloat XSDistanceBetweenPoints( XSPoint a, XSPoint b )
-{
-    XSFloat x;
-    XSFloat y;
-    
-    x = ( XSFloat )fabs( a.x - b.x );
-    y = ( XSFloat )fabs( a.y - b.y );
-    
-    return ( XSFloat )sqrt( ( x * x ) + ( y * y ) );
-}
-
-XSFloat XSDegreesToRadians( XSFloat x )
-{
-    return ( XSFloat )( ( x * M_PI ) / 180 );
-}
-
-XSFloat XSRadiansToDegrees( XSFloat x )
-{
-    return ( XSFloat )( ( x * 180 ) / M_PI );
-}
+#include "__XSLog.h"
 
 void XSLog( const char * fmt, ... )
 {

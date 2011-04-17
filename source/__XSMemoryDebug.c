@@ -36,7 +36,7 @@
  */
 
 #include "__XSMemoryDebug.h"
-#include "__XSFunctions.h"
+#include "__XSLog.h"
 
 #define __XSMEMORY_HR   "#----------------------------------------------------------------------------------------------------------------------\n"
 

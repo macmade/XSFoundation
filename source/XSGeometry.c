@@ -26,48 +26,104 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
- 
+
 /* $Id$ */
 
 /*!
- * @header      __XSFunctions.h
+ * @file        XSFunctions.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private functions
+ * @abstract    Implementation of the general functions
  */
 
-#ifndef ___XS_FUNCTIONS_H_
-#define ___XS_FUNCTIONS_H_
-#pragma once
+#include "XS.h"
 
-#include "../XSMacros.h"
+XSPoint XSMakePoint( XSFloat x, XSFloat y )
+{
+    XSPoint p;
+    
+    p.x = x;
+    p.y = y;
+    
+    return p;
+}
 
-XS_EXTERN_C_BEGIN
+XSSize XSMakeSize( XSFloat width, XSFloat height )
+{
+    XSSize s;
+    
+    s.width  = width;
+    s.height = height;
+    
+    return s;
+}
 
-/*!
- * @function    __XSVLog
- * @abstract    Outputs a log message to stdout
- * @description The log message will be prefixed by the date/time, process
- *              name, ID, and thread ID (or MACH port if available).
- * @param       fmt     The message format
- * @param       args    Arguments for the format
- * @result      void
- */
-void __XSVLog( const char * fmt, va_list args ) FORMAT_ATTRIBUTE( printf, 1, 0 );
+XSRect XSMakeRect( XSFloat x, XSFloat y, XSFloat width, XSFloat height )
+{
+    XSRect r;
+    
+    r.origin.x    = x;
+    r.origin.y    = y;
+    r.size.width  = width;
+    r.size.height = height;
+    
+    return r;
+}
 
-/*!
- * @function    __XSLog_Pause
- * @abstract    Pauses the log system
- * @result      void
- */
-void __XSLog_Pause( void );
+XSRect XSRectZero( void )
+{
+    return XSMakeRect( 0, 0, 0, 0 );
+}
 
-/*!
- * @function    __XSLog_Pause
- * @abstract    Resumes the log system
- * @result      void
- */
-void __XSLog_Resume( void );
+XSRange XSMakeRange( XSUInteger location, XSUInteger length )
+{
+    XSRange r;
+    
+    r.location = location;
+    r.length   = length;
+    
+    return r;
+}
 
-XS_EXTERN_C_END
+XSEdgeInsets XSMakeEdgeInsets( XSFloat left, XSFloat top, XSFloat right, XSFloat bottom )
+{
+    XSEdgeInsets e;
+    
+    e.left   = left;
+    e.top    = top;
+    e.right  = right;
+    e.bottom = bottom;
+    
+    return e;
+}
 
-#endif /* ___XS_FUNCTIONS_H_ */
+XSFloat XSAngleBetweenPoints( XSPoint a, XSPoint b )
+{
+    XSFloat c;
+    XSFloat d;
+    
+    c = b.y - a.y;
+    d = a.x - b.x;
+    
+    return ( XSFloat )atan2( b.y - a.y, b.x - a.x );
+}
+
+XSFloat XSDistanceBetweenPoints( XSPoint a, XSPoint b )
+{
+    XSFloat x;
+    XSFloat y;
+    
+    x = ( XSFloat )fabs( a.x - b.x );
+    y = ( XSFloat )fabs( a.y - b.y );
+    
+    return ( XSFloat )sqrt( ( x * x ) + ( y * y ) );
+}
+
+XSFloat XSDegreesToRadians( XSFloat x )
+{
+    return ( XSFloat )( ( x * M_PI ) / 180 );
+}
+
+XSFloat XSRadiansToDegrees( XSFloat x )
+{
+    return ( XSFloat )( ( x * 180 ) / M_PI );
+}

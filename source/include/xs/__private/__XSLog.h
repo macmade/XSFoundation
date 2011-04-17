@@ -26,48 +26,48 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
-
+ 
 /* $Id$ */
 
 /*!
- * @header      XS.h
+ * @header      __XSLog.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSFoundation main header file
- * @description This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Private logging functions
  */
 
-#ifndef _XS_H_
-#define _XS_H_
+#ifndef ___XS_LOG_H_
+#define ___XS_LOG_H_
 #pragma once
 
-#include "std/std.h"
-#include "XS/XSMacros.h"
-#include "XS/XSConstants.h"
-#include "XS/XSTypes.h"
-#include "XS/XSLog.h"
-#include "XS/XSMemory.h"
-#include "XS/XSRuntime.h"
-#include "XS/XSApplicationArgument.h"
-#include "XS/XSApplication.h"
-#include "XS/XSArray.h"
-#include "XS/XSBag.h"
-#include "XS/XSBool.h"
-#include "XS/XSColor.h"
-#include "XS/XSData.h"
-#include "XS/XSDictionary.h"
-#include "XS/XSError.h"
-#include "XS/XSFile.h"
-#include "XS/XSGeometry.h"
-#include "XS/XSLock.h"
-#include "XS/XSNull.h"
-#include "XS/XSNotification.h"
-#include "XS/XSNotificationCenter.h"
-#include "XS/XSNumber.h"
-#include "XS/XSSet.h"
-#include "XS/XSString.h"
-#include "XS/XSThread.h"
-#include "XS/XSTimer.h"
+#include "../XSMacros.h"
 
-#endif /* _XS_H_ */
+XS_EXTERN_C_BEGIN
+
+/*!
+ * @function    __XSVLog
+ * @abstract    Outputs a log message to stdout
+ * @description The log message will be prefixed by the date/time, process
+ *              name, ID, and thread ID (or MACH port if available).
+ * @param       fmt     The message format
+ * @param       args    Arguments for the format
+ * @result      void
+ */
+void __XSVLog( const char * fmt, va_list args ) FORMAT_ATTRIBUTE( printf, 1, 0 );
+
+/*!
+ * @function    __XSLog_Pause
+ * @abstract    Pauses the log system
+ * @result      void
+ */
+void __XSLog_Pause( void );
+
+/*!
+ * @function    __XSLog_Pause
+ * @abstract    Resumes the log system
+ * @result      void
+ */
+void __XSLog_Resume( void );
+
+XS_EXTERN_C_END
+
+#endif /* ___XS_LOG_H_ */

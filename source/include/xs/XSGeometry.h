@@ -30,13 +30,13 @@
 /* $Id$ */
 
 /*!
- * @header      XSFunctions.h
+ * @header      XSGeometry.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    General functions
+ * @abstract    Geometry functions
  */
 
-#ifndef _XS_FUNCTIONS_H_
-#define _XS_FUNCTIONS_H_
+#ifndef _XS_GEOMETRY_H_
+#define _XS_GEOMETRY_H_
 #pragma once
 
 #include "XSMacros.h"
@@ -135,28 +135,6 @@ XSFloat XSDegreesToRadians( XSFloat x );
  */
 XSFloat XSRadiansToDegrees( XSFloat x );
 
-/*!
- * @function    XSLog
- * @abstract    Outputs a log message to stdout
- * @description The log message will be prefixed by the date/time, process
- *              name, ID, and thread ID (or MACH port if available).
- * @param       fmt     The message format
- * @param       ...     Arguments for the format
- * @result      void
- */
-void XSLog( const char * fmt, ... ) FORMAT_ATTRIBUTE( printf, 1, 0 );
-
-/*!
- * @function    XSVLog
- * @abstract    Outputs a log message to stdout
- * @description The log message will be prefixed by the date/time, process
- *              name, ID, and thread ID (or MACH port if available).
- * @param       fmt     The message format
- * @param       args    Arguments for the format
- * @result      void
- */
-void XSVLog( const char * fmt, va_list args ) FORMAT_ATTRIBUTE( printf, 1, 0 );
-
 XS_EXTERN_C_END
 
-#endif /* _XS_FUNCTIONS_H_ */
+#endif /* _XS_GEOMETRY_H_ */

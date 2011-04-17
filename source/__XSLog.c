@@ -30,13 +30,13 @@
 /* $Id$ */
 
 /*!
- * @file        __XSFunctions.c
+ * @file        __XSLog.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation of private functions
+ * @abstract    Implementation of private logging functions
  */
 
 #include "XS.h"
-#include "__XSFunctions.h"
+#include "__XSLog.h"
 
 /* Weak symbols for the program name and program invocation short name */
 extern char * __progname                    WEAK_ATTRIBUTE;

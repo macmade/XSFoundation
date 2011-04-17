@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		05266BA9135B6E4F00C1E85A /* XSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSLog.h; sourceTree = "<group>"; };
+		05266BAA135B6ECA00C1E85A /* XSLog.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSLog.c; sourceTree = "<group>"; };
 		052EC738134F2908004A939E /* std-md5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "std-md5.c"; path = "source/std-md5.c"; sourceTree = SOURCE_ROOT; };
 		052EC739134F2915004A939E /* std-md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-md5.h"; sourceTree = "<group>"; };
 		052EC750134F339C004A939E /* __machine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __machine.h; sourceTree = "<group>"; };
@@ -28,12 +30,12 @@
 		056003CD1340621F005DC721 /* std.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = std.h; sourceTree = "<group>"; };
 		056003CF1340621F005DC721 /* XSConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSConstants.h; sourceTree = "<group>"; };
 		056003D01340621F005DC721 /* XSFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSFile.h; sourceTree = "<group>"; };
-		056003D11340621F005DC721 /* XSFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSFunctions.h; sourceTree = "<group>"; };
+		056003D11340621F005DC721 /* XSGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSGeometry.h; sourceTree = "<group>"; };
 		056003D21340621F005DC721 /* XSMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMemory.h; sourceTree = "<group>"; };
 		056003D31340621F005DC721 /* XSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSString.h; sourceTree = "<group>"; };
 		056003D51340621F005DC721 /* XS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XS.h; sourceTree = "<group>"; };
 		056003D61340621F005DC721 /* std-string.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "std-string.c"; sourceTree = "<group>"; };
-		056003D71340621F005DC721 /* XSFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSFunctions.c; sourceTree = "<group>"; };
+		056003D71340621F005DC721 /* XSGeometry.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSGeometry.c; sourceTree = "<group>"; };
 		056003D81340621F005DC721 /* XSMemory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSMemory.c; sourceTree = "<group>"; };
 		056003D91340621F005DC721 /* XSString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSString.c; sourceTree = "<group>"; };
 		056003E2134069EC005DC721 /* XSFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSFile.c; sourceTree = "<group>"; };
@@ -45,7 +47,7 @@
 		056003EE1340BB05005DC721 /* XSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSArray.h; sourceTree = "<group>"; };
 		056003F01340BB34005DC721 /* __XSArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSArray.c; sourceTree = "<group>"; };
 		056003F11340BB3F005DC721 /* XSArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSArray.c; sourceTree = "<group>"; };
-		056003F3134106B5005DC721 /* __XSFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSFunctions.c; sourceTree = "<group>"; };
+		056003F3134106B5005DC721 /* __XSLog.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSLog.c; sourceTree = "<group>"; };
 		0560040913412858005DC721 /* XSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSData.h; sourceTree = "<group>"; };
 		0560040B13412858005DC721 /* XSDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSDictionary.h; sourceTree = "<group>"; };
 		0560040C13412858005DC721 /* XSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSError.h; sourceTree = "<group>"; };
@@ -100,7 +102,7 @@
 		05AC165A13418E7100455568 /* __XSDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSDictionary.h; sourceTree = "<group>"; };
 		05AC165B13418E7100455568 /* __XSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSError.h; sourceTree = "<group>"; };
 		05AC165C13418E7100455568 /* __XSFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSFile.h; sourceTree = "<group>"; };
-		05AC165D13418E7100455568 /* __XSFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSFunctions.h; sourceTree = "<group>"; };
+		05AC165D13418E7100455568 /* __XSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSLog.h; sourceTree = "<group>"; };
 		05AC165E13418E7100455568 /* __XSMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSMemory.h; sourceTree = "<group>"; };
 		05AC165F13418E7100455568 /* __XSNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSNumber.h; sourceTree = "<group>"; };
 		05AC166013418E7100455568 /* __XSSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSSet.h; sourceTree = "<group>"; };
@@ -199,8 +201,8 @@
 				0560041313412865005DC721 /* __XSDictionary.c */,
 				0560041413412865005DC721 /* __XSError.c */,
 				056003E313406B51005DC721 /* __XSFile.c */,
-				056003F3134106B5005DC721 /* __XSFunctions.c */,
 				0562F8CD134B49B4005190B6 /* __XSLock.c */,
+				056003F3134106B5005DC721 /* __XSLog.c */,
 				056003BE1340621F005DC721 /* __XSMemory.c */,
 				057074B613516AF7008FC128 /* __XSMemoryDebug.c */,
 				05E098701356F22800189FF4 /* __XSNotification.c */,
@@ -221,8 +223,9 @@
 				0560041B13412867005DC721 /* XSDictionary.c */,
 				0560041C13412867005DC721 /* XSError.c */,
 				056003E2134069EC005DC721 /* XSFile.c */,
-				056003D71340621F005DC721 /* XSFunctions.c */,
+				056003D71340621F005DC721 /* XSGeometry.c */,
 				0562F8CE134B49B4005190B6 /* XSLock.c */,
+				05266BAA135B6ECA00C1E85A /* XSLog.c */,
 				056003D81340621F005DC721 /* XSMemory.c */,
 				05E098711356F22800189FF4 /* XSNotification.c */,
 				05E098631356EBC700189FF4 /* XSNotificationCenter.c */,
@@ -281,8 +284,9 @@
 				0560040B13412858005DC721 /* XSDictionary.h */,
 				0560040C13412858005DC721 /* XSError.h */,
 				056003D01340621F005DC721 /* XSFile.h */,
-				056003D11340621F005DC721 /* XSFunctions.h */,
+				056003D11340621F005DC721 /* XSGeometry.h */,
 				0562F8CC134B49A4005190B6 /* XSLock.h */,
+				05266BA9135B6E4F00C1E85A /* XSLog.h */,
 				0560042113417F6F005DC721 /* XSMacros.h */,
 				05600422134184BD005DC721 /* XSMacrosTarget.h */,
 				056003D21340621F005DC721 /* XSMemory.h */,
@@ -313,8 +317,8 @@
 				05AC165A13418E7100455568 /* __XSDictionary.h */,
 				05AC165B13418E7100455568 /* __XSError.h */,
 				05AC165C13418E7100455568 /* __XSFile.h */,
-				05AC165D13418E7100455568 /* __XSFunctions.h */,
 				0562F8CA134B499A005190B6 /* __XSLock.h */,
+				05AC165D13418E7100455568 /* __XSLog.h */,
 				05AC165E13418E7100455568 /* __XSMemory.h */,
 				057074B413516AAD008FC128 /* __XSMemoryDebug.h */,
 				05E0986D1356F21300189FF4 /* __XSNotification.h */,
