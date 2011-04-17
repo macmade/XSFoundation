@@ -125,7 +125,9 @@ __XSMemoryRecord * __XSMemoryDebug_NewRecord( __XSMemoryObject * ptr, const char
     }
     else if( record->freed == NO )
     {
-        /* Error */
+        __XSMemoryDebug_Warning( "pointer beeing allocated was not freed", record );
+        
+        return NULL;
     }
     
     record->object    = ptr;
@@ -154,7 +156,16 @@ __XSMemoryRecord * __XSMemoryDebug_UpdateRecord( __XSMemoryObject * oldPtr, __XS
     
     if( record == NULL )
     {
-        /* Error */
+        __XSMemoryDebug_Warning( "pointer beeing reallocated was not allocated", record );
+        
+        return NULL;
+    }
+    
+    if( __XSMemoryDebug_CheckCorruption( newPtr ) )
+    {
+        __XSMemoryDebug_Warning( "heap corruption", record );
+        
+        return NULL;
     }
     
     __xs_memory_total_memory        -= record->size;
@@ -186,10 +197,21 @@ __XSMemoryRecord * __XSMemoryDebug_ReleaseRecord( __XSMemoryObject * ptr, BOOL m
     if( record == NULL )
     {
         __XSMemoryDebug_Warning( "pointer beeing freed was not allocated", NULL );
+        
+        return NULL;
     }
     else if( record->freed == YES )
     {
         __XSMemoryDebug_Warning( "pointer beeing freed was already freed", record );
+        
+        return NULL;
+    }
+    
+    if( __XSMemoryDebug_CheckCorruption( ptr ) )
+    {
+        __XSMemoryDebug_Warning( "heap corruption", record );
+        
+        return NULL;
     }
     
     if( marsAsFree == YES )
@@ -205,6 +227,23 @@ __XSMemoryRecord * __XSMemoryDebug_ReleaseRecord( __XSMemoryObject * ptr, BOOL m
     }
     
     return record;
+}
+
+BOOL __XSMemoryDebug_CheckCorruption( __XSMemoryObject * o )
+{
+    char * fence1;
+    char * fence2;
+    
+    fence1  = ( char * )o->fence + 1;
+    fence2  = ( char * )o->data;
+    fence2 += o->size + 1;
+    
+    if( strcmp( fence1, "XS_MEMDATA" ) || strcmp( fence2, "XS_MEMDATA" ) )
+    {
+        return YES;
+    }
+    
+    return NO;
 }
 
 void __XSMemoryDebug_SignalHandler( int signo )
