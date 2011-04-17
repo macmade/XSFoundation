@@ -363,4 +363,6 @@ void __XSLog_Resume( void )
     {
         pthread_mutex_unlock( &__log_mutex );
     }
+    
+    __log_paused = NO;
 }
