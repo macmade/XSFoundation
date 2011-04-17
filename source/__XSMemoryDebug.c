@@ -38,7 +38,7 @@
 #include "__XSMemoryDebug.h"
 #include "__XSFunctions.h"
 
-#define __XSMEMORY_HR   "#-----------------------------------------------------------------------------------------------------------------\n"
+#define __XSMEMORY_HR   "#------------------------------------------------------------------------------\n"
 
 static __XSMemoryRecord * __xs_memory_records             = NULL;
 static size_t             __xs_memory_records_count       = 0;
@@ -53,6 +53,12 @@ static void             * __xs_memory_backtrace[ 100 ];
 
 void __XSMemoryDebug_InstallSignalHandlers( void )
 {
+    #ifdef _WIN32
+
+    signal( SIGSEGV, __XSMemoryDebug_SignalHandler );
+
+    #else
+
     struct sigaction sa1;
     struct sigaction sa2;
     
@@ -69,6 +75,8 @@ void __XSMemoryDebug_InstallSignalHandlers( void )
     {
         XSFatalError( "cannot set a handler for SIGBUS" );
     }
+
+    #endif
 }
 
 __XSMemoryRecord * __XSMemoryDebug_GetRecord( __XSMemoryObject * ptr )
@@ -519,7 +527,7 @@ void __XSMemoryDebug_Finalize( void )
     {
         if( __xs_memory_records[ i ].freed == NO )
         {
-            __XSMemoryDebug_Warning( "unfreed memory record at application exit point", &( __xs_memory_records[ i ] ) );
+            __XSMemoryDebug_Warning( "unfreed memory record at application exit", &( __xs_memory_records[ i ] ) );
         }
     }
 }
@@ -538,11 +546,11 @@ void __XSMemoryDebug_DumpRecord( __XSMemoryRecord * record )
     ptr  = ( unsigned char * )record->object;
     size = record->size + sizeof( __XSMemoryObject ) + 12;
     
-    for( i = 0; i < size; i += 24 )
+    for( i = 0; i < size; i += 16 )
     {
-        printf( "#   %010lu: ", i );
+        printf( "#   %07lu: ", i );
         
-        for( j = i; j < i + 24; j++ )
+        for( j = i; j < i + 16; j++ )
         {
             if( j < size )
             {
@@ -556,7 +564,7 @@ void __XSMemoryDebug_DumpRecord( __XSMemoryRecord * record )
         
         printf( "| " );
         
-        for( j = i; j < i + 24; j++ )
+        for( j = i; j < i + 16; j++ )
         {
             c = 0;
             

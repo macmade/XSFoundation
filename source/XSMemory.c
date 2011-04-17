@@ -150,7 +150,7 @@ void * XSAllocWithInfos( const char * file, int line, const char * func, size_t 
     {
         cls = XSRuntime_GetClassForClassID( o->classID );
         
-        if( cls->construct != NULL )
+        if(  cls != NULL && cls->construct != NULL )
         {
             cls->construct( ptr );
         }
@@ -247,7 +247,7 @@ void * XSReleaseWithInfos( const char * file, int line, const char * func, void 
         {
             cls = XSRuntime_GetClassForClassID( o->classID );
             
-            if( cls->destruct != NULL )
+            if( cls != NULL && cls->destruct != NULL )
             {
                 cls->destruct( ptr );
             }
@@ -333,7 +333,7 @@ void * XSCopyWithInfos( const char * file, int line, const char * func, void * p
         
         memcpy( ptr2, o->data, o->size );
         
-        if( cls->copy != NULL )
+        if(  cls != NULL && cls->copy != NULL )
         {
             cls->copy( ptr, ptr2 );
         }
@@ -374,7 +374,7 @@ BOOL XSEquals( void * ptr1, void * ptr2 )
     {
         cls = XSRuntime_GetClassForClassID( o->classID );
         
-        if( cls->equals != NULL )
+        if(  cls != NULL && cls->equals != NULL )
         {
             return cls->equals( ptr1, ptr2 );
         }
@@ -401,6 +401,7 @@ const char * XSHash( void * ptr )
         cls = XSRuntime_GetClassForClassID( o->classID );
         
         utoa( cls->instanceSize, ( char * )size, 10 );
+
         strcat( ( char * )o->hash, "HASH:" );
         sprintf( ( char * )( o->hash + strlen( ( char * )o->hash ) ), "%08X", ( unsigned int )o->classID );
         strcat( ( char * )o->hash, ":" );
