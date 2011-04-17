@@ -84,6 +84,7 @@ void __XSVLog( const char * fmt, va_list args )
     
     #ifdef _WIN32
     struct tm        now;
+    TCHAR            win32_exec[ MAX_PATH ];
     #else
     struct tm      * now;
     struct timeval   tv;
@@ -119,6 +120,15 @@ void __XSVLog( const char * fmt, va_list args )
     mid = pthread_mach_thread_np( tid );
     #endif
     
+    #ifdef _WIN32
+
+    memset( win32_exec, 0, MAX_PATH );
+    GetModuleFileName( 0, ( LPTSTR )win32_exec, MAX_PATH );
+
+    exec = ( char * )&win32_exec;
+    
+    #else
+    
     if( __progname != NULL )
     {
         exec = __progname;
@@ -131,6 +141,8 @@ void __XSVLog( const char * fmt, va_list args )
     {
         exec = ( char * )"unknown";
     }
+    
+    #endif
     
     #if defined( _WIN32 )
     printf( "%s %s[%i:%lu] ", date, exec, pid, ( unsigned long )tid );
