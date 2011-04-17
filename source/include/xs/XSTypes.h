@@ -220,6 +220,43 @@ enum
 typedef XSInteger XSComparisonResult;
 
 /*!
+ * @typedef     XSDataType
+ * @abstract    Intrisec data types
+ * @field       XSDataTypeChar          char
+ * @field       XSDataTypeUChar         unsigned char
+ * @field       XSDataTypeShort         short
+ * @field       XSDataTypeUShort        unsigned short
+ * @field       XSDataTypeInt           int
+ * @field       XSDataTypeUInt          unsigned int
+ * @field       XSDataTypeLong          long
+ * @field       XSDataTypeULong         unsigned long
+ * @field       XSDataTypeLongLong      long long
+ * @field       XSDataTypeULongLong     unsigned long long
+ * @field       XSDataTypeFloat         float
+ * @field       XSDataTypeDouble        double
+ * @field       XSDataTypeInteger       XSInteger
+ * @field       XSDataTypeUInteger      XSUInteger
+ */
+typedef enum
+{
+    XSDataTypeChar      = 0x00,
+    XSDataTypeUChar     = 0x01,
+    XSDataTypeShort     = 0x02,
+    XSDataTypeUShort    = 0x03,
+    XSDataTypeInt       = 0x04,
+    XSDataTypeUInt      = 0x05,
+    XSDataTypeLong      = 0x06,
+    XSDataTypeULong     = 0x07,
+    XSDataTypeLongLong  = 0x08,
+    XSDataTypeULongLong = 0x09,
+    XSDataTypeFloat     = 0x0A,
+    XSDataTypeDouble    = 0x0B,
+    XSDataTypeInteger   = 0x0C,
+    XSDataTypeUInteger  = 0x0D
+}
+XSDataType;
+
+/*!
  * @define      XSStatic
  * @abstract    Marker for static class methods
  */
