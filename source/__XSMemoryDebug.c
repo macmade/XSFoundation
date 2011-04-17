@@ -317,9 +317,9 @@ void __XSMemoryDebug_PrintRecord( __XSMemoryRecord * record )
         "#    Address:               %p\n"
         "#    Size:                  %s\n"
         "#    Allocation ID:         %lu (0x%08X)\n"
+        "#    Allocation hash:       %s\n"
         "#    Class ID:              %lu (0x%08X)\n"
         "#    Class name:            %s\n"
-        "#    Memory hash:           %s\n"
         "#    Retain count:          %lu\n"
         "#    Allocated in file:     %s\n"
         "#    Allocated at line:     %i\n"
@@ -333,10 +333,10 @@ void __XSMemoryDebug_PrintRecord( __XSMemoryRecord * record )
         size,
         record->allocID,
         ( unsigned int )record->allocID,
+        record->hash,
         record->classID,
         ( unsigned int )record->classID,
         className,
-        record->hash,
         record->object->retainCount,
         record->allocFile,
         record->allocLine,
@@ -560,7 +560,7 @@ void __XSMemoryDebug_Finalize( void )
         return;
     }
     
-    XSLog( "Memory warning: %lu objects are not freed - leaking memory!", __xs_memory_records_active );
+    XSLog( "Memory warning: %lu objects are not freed - leaking memory!", __xs_memory_records_active - 1 );
     
     for( i = 0; i < __xs_memory_records_count; i++ )
     {
