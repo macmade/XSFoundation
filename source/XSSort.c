@@ -26,49 +26,44 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
-
+ 
 /* $Id$ */
 
 /*!
- * @header      XS.h
+ * @file        XSSort.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSFoundation main header file
- * @description This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Implementation of the sort functions
  */
 
-#ifndef _XS_H_
-#define _XS_H_
-#pragma once
+#include "XS.h"
+#include "__XSSort.h"
 
-#include "std/std.h"
-#include "XS/XSMacros.h"
-#include "XS/XSConstants.h"
-#include "XS/XSTypes.h"
-#include "XS/XSLog.h"
-#include "XS/XSMemory.h"
-#include "XS/XSRuntime.h"
-#include "XS/XSApplicationArgument.h"
-#include "XS/XSApplication.h"
-#include "XS/XSArray.h"
-#include "XS/XSBag.h"
-#include "XS/XSBool.h"
-#include "XS/XSColor.h"
-#include "XS/XSData.h"
-#include "XS/XSDictionary.h"
-#include "XS/XSError.h"
-#include "XS/XSFile.h"
-#include "XS/XSGeometry.h"
-#include "XS/XSLock.h"
-#include "XS/XSNull.h"
-#include "XS/XSNotification.h"
-#include "XS/XSNotificationCenter.h"
-#include "XS/XSNumber.h"
-#include "XS/XSSet.h"
-#include "XS/XSSort.h"
-#include "XS/XSString.h"
-#include "XS/XSThread.h"
-#include "XS/XSTimer.h"
+void XSShellSort( void * values, XSDataType type, XSUInteger size )
+{
+    switch( type )
+    {
+        case XSDataTypeChar:        __XSShellSortChar( values, size );      break;
+        case XSDataTypeUChar:       __XSShellSortUChar( values, size );     break;
+        case XSDataTypeShort:       __XSShellSortShort( values, size );     break;
+        case XSDataTypeUShort:      __XSShellSortUShort( values, size );    break;
+        case XSDataTypeInt:         __XSShellSortInt( values, size );       break;
+        case XSDataTypeUInt:        __XSShellSortUInt( values, size );      break;
+        case XSDataTypeLong:        __XSShellSortLong( values, size );      break;
+        case XSDataTypeULong:       __XSShellSortULong( values, size );     break;
+        case XSDataTypeLongLong:    __XSShellSortLongLong( values, size );  break;
+        case XSDataTypeULongLong:   __XSShellSortULongLong( values, size ); break;
+        case XSDataTypeFloat:       __XSShellSortFloat( values, size );     break;
+        case XSDataTypeDouble:      __XSShellSortDouble( values, size );    break;
+        case XSDataTypeInteger:     __XSShellSortInteger( values, size );   break;
+        case XSDataTypeUInteger:    __XSShellSortUInteger( values, size );  break;
+        default:                                                            break;
+    }
+}
 
-#endif /* _XS_H_ */
+void XSQuickSort( void * values, XSDataType type, XSUInteger left, XSUInteger right )
+{
+    ( void )values;
+    ( void )type;
+    ( void )left;
+    ( void )right;
+}
