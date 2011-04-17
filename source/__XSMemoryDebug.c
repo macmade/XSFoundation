@@ -38,7 +38,7 @@
 #include "__XSMemoryDebug.h"
 #include "__XSFunctions.h"
 
-#define __XSMEMORY_HR   "#------------------------------------------------------------------------------\n"
+#define __XSMEMORY_HR   "#----------------------------------------------------------------------------------------------------------------------\n"
 
 static __XSMemoryRecord * __xs_memory_records             = NULL;
 static size_t             __xs_memory_records_count       = 0;
@@ -516,7 +516,7 @@ void __XSMemoryDebug_Finalize( void )
 {
     size_t i;
     
-    if( __xs_memory_records_active == 0 || __xs_memory_fault_caught == YES )
+    if( __xs_memory_records_active <= 1 || __xs_memory_fault_caught == YES )
     {
         return;
     }
@@ -525,9 +525,9 @@ void __XSMemoryDebug_Finalize( void )
     
     for( i = 0; i < __xs_memory_records_count; i++ )
     {
-        if( __xs_memory_records[ i ].freed == NO )
+        if( __xs_memory_records[ i ].freed == NO && __xs_memory_records[ i ].allocID > 0 )
         {
-            __XSMemoryDebug_Warning( "unfreed memory record at application exit", &( __xs_memory_records[ i ] ) );
+            __XSMemoryDebug_Warning( "unfreed memory record at application exit point", &( __xs_memory_records[ i ] ) );
         }
     }
 }
@@ -546,11 +546,11 @@ void __XSMemoryDebug_DumpRecord( __XSMemoryRecord * record )
     ptr  = ( unsigned char * )record->object;
     size = record->size + sizeof( __XSMemoryObject ) + 12;
     
-    for( i = 0; i < size; i += 16 )
+    for( i = 0; i < size; i += 25 )
     {
-        printf( "#   %07lu: ", i );
+        printf( "#   %010lu: ", i );
         
-        for( j = i; j < i + 16; j++ )
+        for( j = i; j < i + 25; j++ )
         {
             if( j < size )
             {
@@ -564,7 +564,7 @@ void __XSMemoryDebug_DumpRecord( __XSMemoryRecord * record )
         
         printf( "| " );
         
-        for( j = i; j < i + 16; j++ )
+        for( j = i; j < i + 25; j++ )
         {
             c = 0;
             

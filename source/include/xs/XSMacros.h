@@ -260,7 +260,15 @@ XS_EXTERN_C_BEGIN
 #endif
 
 #ifndef __func__
-    #if __STDC_VERSION__ < 199901L
+    #ifdef _WIN32
+        #if defined( __FUNCTION__ )
+            #define __func__ __FUNCTION__
+        #elif defined( __FUNCSIG__ )
+            #define __func__ __FUNCSIG__
+        #elif defined( __FUNCDNAME__ )
+            #define __func__ __FUNCDNAME__
+        #endif
+    #elif __STDC_VERSION__ < 199901L
         #ifdef __GNUC__
             #if __GNUC__ >= 2
                 #define __func__ __FUNCTION__

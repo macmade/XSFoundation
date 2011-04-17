@@ -102,9 +102,9 @@ void XSRuntime_Initialize( void )
 {
     __inited = YES;
     
+    atexit( XSRuntime_Finalize );
     atexit( __XSMemoryDebug_Finalize );
     atexit( XSApplication_Exit );
-    atexit( XSRuntime_Finalize );
     
     __XSMemoryDebug_InstallSignalHandlers();
     
