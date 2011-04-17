@@ -37,10 +37,18 @@
 
 #include "XS.h"
 
+#ifndef _WIN32
+
+typedef uint32_t DWORD;
+
+pid_t GetCurrentProcessId( void );
+
+#endif
+
 pid_t __win32_getpid( void );
 pid_t __win32_getpid( void )
 {
-    return 0;
+    return ( pid_t )GetCurrentProcessId();
 }
 
 #ifdef _WIN32
