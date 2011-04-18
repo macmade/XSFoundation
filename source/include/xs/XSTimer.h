@@ -64,7 +64,7 @@ XSStatic XSObject XSTimer_Alloc( void );
  * @param       milleseconds    The timer interval, in milliseconds
  * @result      The timer object
  */
-XSTimer XSTimer_Init( XSTimer xsThis, void ( * func )( XSTimer timer ), XSUInteger milliseconds );
+XSObject XSTimer_Init( XSTimer xsThis, void ( * func )( XSTimer timer ), XSUInteger milliseconds );
 
 /*!
  * @function    XSTimer_RunOnce

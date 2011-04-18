@@ -45,7 +45,7 @@ XSStatic XSObject XSTimer_Alloc( void )
     return ( XSObject )XSRuntime_CreateInstance( __XSTimerClassID );
 }
 
-XSTimer XSTimer_Init( XSTimer xsThis, void ( * func )( XSTimer timer ), XSUInteger milliseconds )
+XSObject XSTimer_Init( XSTimer xsThis, void ( * func )( XSTimer timer ), XSUInteger milliseconds )
 {
     __XSTimer * t;
     
