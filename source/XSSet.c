@@ -70,9 +70,9 @@ XSSet XSSet_InitWithCapacity( XSSet xsThis, XSUInteger capacity )
     return xsThis;
 }
 
-XSSet XSSet_InitWithValues( XSSet xsThis, void * value1, ... )
+XSSet XSSet_InitWithValues( XSSet xsThis, XSObject value1, ... )
 {
-    void    * value;
+    XSObject  value;
     va_list   args;
     __XSSet * set;
     
@@ -85,7 +85,7 @@ XSSet XSSet_InitWithValues( XSSet xsThis, void * value1, ... )
     
     va_start( args, value1 );
     
-    while( NULL != ( value = va_arg( args, void * ) ) )
+    while( NULL != ( value = va_arg( args, XSObject ) ) )
     {
         XSSet_AddValue( xsThis, value );
     }
@@ -100,7 +100,7 @@ XSUInteger XSSet_Count( XSSet xsThis )
     return ( ( __XSSet * )xsThis )->count;
 }
 
-BOOL XSSet_ContainsValue( XSSet xsThis, void * value )
+BOOL XSSet_ContainsValue( XSSet xsThis, XSObject value )
 {
     __XSSet  * set;
     XSUInteger i;
@@ -118,7 +118,7 @@ BOOL XSSet_ContainsValue( XSSet xsThis, void * value )
     return NO;
 }
 
-void XSSet_AddValue( XSSet xsThis, void * value )
+void XSSet_AddValue( XSSet xsThis, XSObject value )
 {
     __XSSet  * set;
     void     * values;
@@ -146,7 +146,7 @@ void XSSet_AddValue( XSSet xsThis, void * value )
     set->values[ set->count++ ] = XSRetain( value );
 }
 
-void XSSet_RemoveValue( XSSet xsThis, void * value )
+void XSSet_RemoveValue( XSSet xsThis, XSObject value )
 {
     BOOL       found;
     __XSSet  * set;
@@ -174,7 +174,7 @@ void XSSet_RemoveValue( XSSet xsThis, void * value )
     }
 }
 
-void XSSet_ReplaceValue( XSSet xsThis, void * valueOld, void * valueNew )
+void XSSet_ReplaceValue( XSSet xsThis, XSObject valueOld, XSObject valueNew )
 {
     __XSSet  * set;
     XSUInteger i;

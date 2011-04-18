@@ -53,7 +53,7 @@ XS_EXTERN_C_BEGIN
 typedef struct __XSBTree_Struct
 {
     XSRuntimeClass            __class;
-    void                    * value;
+    XSObject                  value;
     struct __XSBTree_Struct * left;
     struct __XSBTree_Struct * right;
     struct __XSBTree_Struct * parent;
@@ -66,6 +66,14 @@ __XSBTree;
  * @result      void
  */
 void __XSBTree_Initialize( void );
+
+/*!
+ * @function    __XSBag_Destruct
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSBTree_Destruct( XSObject object );
 
 XS_EXTERN_C_END
 
