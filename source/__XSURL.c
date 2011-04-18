@@ -64,3 +64,16 @@ void __XSURL_Initialize( void )
 {
     __XSURLClassID = XSRuntime_RegisterClass( &__XSURLClass );
 }
+
+void __XSURL_Destruct( XSObject object )
+{
+    __XSURL * url;
+    
+    url = ( __XSURL * )object;
+    
+    XSRelease( url->scheme );
+    XSRelease( url->domain );
+    XSRelease( url->path );
+    XSRelease( url->query );
+    XSRelease( url->fragment );
+}

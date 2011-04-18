@@ -53,7 +53,12 @@ XS_EXTERN_C_BEGIN
 typedef struct __XSURL_Struct
 {
     XSRuntimeClass __class;
-    
+    XSString       scheme;
+    XSString       domain;
+    XSUInteger     port;
+    XSString       path;
+    XSString       query;
+    XSString       fragment;
 }
 __XSURL;
 
@@ -63,6 +68,14 @@ __XSURL;
  * @result      void
  */
 void __XSURL_Initialize( void );
+
+/*!
+ * @function    __XSString_Destruct
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSURL_Destruct( XSObject object );
 
 XS_EXTERN_C_END
 
