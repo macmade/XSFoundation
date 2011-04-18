@@ -44,8 +44,8 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @typedef     XSBtree
- * @abstract    Opaque type for the XSBtree objects
+ * @typedef     XSBTree
+ * @abstract    Opaque type for the XSBTree objects
  */
 typedef struct __XSBTree * XSBTree;
 
