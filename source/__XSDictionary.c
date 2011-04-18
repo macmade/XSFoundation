@@ -65,7 +65,7 @@ void __XSDictionary_Initialize( void )
     __XSDictionaryClassID = XSRuntime_RegisterClass( &__XSDictionaryClass );
 }
 
-void __XSDictionary_Destruct( void * object )
+void __XSDictionary_Destruct( XSObject object )
 {
     __XSDictionary * dict;
     XSUInteger       i;
@@ -82,7 +82,7 @@ void __XSDictionary_Destruct( void * object )
     XSRelease( dict->keys );
 }
 
-XSString __XSDictionary_ToString( void * object )
+XSString __XSDictionary_ToString( XSObject object )
 {
     XSUInteger       i;
     __XSDictionary * dict;

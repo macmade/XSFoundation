@@ -57,7 +57,7 @@ XS_EXTERN_C_BEGIN
 typedef struct __XSDictionary_Struct
 {
     XSRuntimeClass __class;
-    void        ** values;
+    XSObject     * values;
     XSString     * keys;
     XSUInteger     count;
     XSUInteger     capacity;
@@ -78,7 +78,7 @@ void __XSDictionary_Initialize( void );
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSDictionary_Destruct( void * object );
+void __XSDictionary_Destruct( XSObject object );
 
 /*!
  * @function    __XSArray_ToString
@@ -86,7 +86,7 @@ void __XSDictionary_Destruct( void * object );
  * @param       object  A pointer to the object
  * @result      The object's description
  */
-XSString __XSDictionary_ToString( void * object );
+XSString __XSDictionary_ToString( XSObject object );
 
 XS_EXTERN_C_END
 

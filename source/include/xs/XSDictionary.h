@@ -88,7 +88,7 @@ XSDictionary XSDictionary_InitWithCapacity( XSDictionary xsThis, XSUInteger capa
  * @param       ...     Other values and keys, terminated by a NULL fence
  * @result      The new dictionary object
  */
-XSDictionary XSDictionary_InitWithKeysAndValues( XSDictionary xsThis, XSString key1, void * value1, ... );
+XSDictionary XSDictionary_InitWithKeysAndValues( XSDictionary xsThis, XSString key1, XSObject value1, ... );
 
 /*!
  * @function    XSDictionary_Count
@@ -125,7 +125,7 @@ XSAutoreleased XSArray XSDictionary_Values( XSDictionary xsThis );
  * @param       key     The key
  * @result      THe value, or NULL if the key is not present in the dictionary
  */
-void * XSDictionary_ValueForKey( XSDictionary xsThis, XSString key );
+XSObject XSDictionary_ValueForKey( XSDictionary xsThis, XSString key );
 
 /*!
  * @function    XSDictionary_SetValueForKey
@@ -135,7 +135,7 @@ void * XSDictionary_ValueForKey( XSDictionary xsThis, XSString key );
  * @param       key     The key
  * @result      void
  */
-void XSDictionary_SetValueForKey( XSDictionary xsThis, void * value, XSString key );
+void XSDictionary_SetValueForKey( XSDictionary xsThis, XSObject value, XSString key );
 
 /*!
  * @function    XSDictionary_RemoveValueForKey
@@ -162,7 +162,7 @@ BOOL XSDictionary_KeyExists( XSDictionary xsThis, XSString value );
  * @param       value   The value to search
  * @result      YES if the dictionary contains the value, otherwise NO
  */
-BOOL XSDictionary_ContainsValue( XSDictionary xsThis, void * value );
+BOOL XSDictionary_ContainsValue( XSDictionary xsThis, XSObject value );
 
 XS_EXTERN_C_END
 
