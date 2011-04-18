@@ -58,15 +58,15 @@ XSStatic XSObject XSBTree_Alloc( void );
 
 XSObject XSBTree_Init( XSObject xsThis );
 
-XSBTree XSBTree_GetLeft( XSBTree xsThis );
+XSAutoreleased XSBTree XSBTree_GetLeft( XSBTree xsThis );
 
-XSBTree XSBTree_GetRight( XSBTree xsThis );
+XSAutoreleased XSBTree XSBTree_GetRight( XSBTree xsThis );
 
-XSBTree XSBTree_GetParent( XSBTree xsThis );
+XSAutoreleased XSBTree XSBTree_GetParent( XSBTree xsThis );
 
-XSBTree XSBTree_CreateLeft( XSBTree xsThis, void * value );
+XSAutoreleased XSBTree XSBTree_CreateLeft( XSBTree xsThis, void * value );
 
-XSBTree XSBTree_CreateRight( XSBTree xsThis, void * value );
+XSAutoreleased XSBTree XSBTree_CreateRight( XSBTree xsThis, void * value );
 
 void XSBTree_SetLeft( XSBTree xsThis, XSBTree left );
 
@@ -74,9 +74,9 @@ void XSBTree_SetRight( XSBTree xsThis, XSBTree right );
 
 void XSBTree_SetParent( XSBTree xsThis, XSBTree parent );
 
-void * XSBTree_GetValue( XSBTree xsThis );
+XSAutoreleased void * XSBTree_GetValue( XSBTree xsThis );
 
-XSBTree XSBTree_GetRoot( XSBTree xsThis );
+XSAutoreleased XSBTree XSBTree_GetRoot( XSBTree xsThis );
 
 XSUInteger XSBTree_GetDepth( XSBTree xsThis );
 
