@@ -71,5 +71,6 @@
 #include "XS/XSString.h"
 #include "XS/XSThread.h"
 #include "XS/XSTimer.h"
+#include "XS/XSURL.h"
 
 #endif /* _XS_H_ */

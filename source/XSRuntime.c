@@ -98,6 +98,7 @@ void __XSSet_Initialize( void );
 void __XSString_Initialize( void );
 void __XSThread_Initialize( void );
 void __XSTimer_Initialize( void );
+void __XSURL_Initialize( void );
 
 void XSRuntime_Initialize( void )
 {
@@ -130,6 +131,7 @@ void XSRuntime_Initialize( void )
     __XSString_Initialize();
     __XSThread_Initialize();
     __XSTimer_Initialize();
+    __XSURL_Initialize();
 }
 
 void XSRuntime_Finalize( void )

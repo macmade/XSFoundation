@@ -30,61 +30,37 @@
 /* $Id$ */
 
 /*!
- * @header      __XSTimer.h
+ * @file        __XSURL.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSTimer class definitions
+ * @abstract    Private implementation for the XSURL class
  */
-
-#ifndef ___XS_TIMER_H_
-#define ___XS_TIMER_H_
-#pragma once
-
-#include "../XSMacros.h"
-
-XS_EXTERN_C_BEGIN
 
 #include "XS.h"
+#include "__XSURL.h"
 
 /*!
- * @typdef      __XSTimer
- * @abastract   XSTimer class
- * @field       __class     Runtime class
+ * @var         __XSURLClass
+ * @abstract    Runtime class definition
  */
-typedef struct __XSTimer_Struct
+static const XSClassInfos __XSURLClass =
 {
-    XSRuntimeClass __class;
-    BOOL           valid;
-    XSUInteger     msecs;
-    void ( * func )( XSTimer timer );
-    
+    "XSURL",                /* Class name */
+    sizeof( __XSURL ),      /* Object size */
+    NULL,                   /* Constructor */
+    NULL,                   /* Destructor */
+    XSURL_Init,             /* Default initializer */
+    NULL,                   /* Object copy */
+    NULL,                   /* Object description */
+    NULL                    /* Object comparison */
+};
+
+/*!
+ * @var         __XSURLClassID
+ * @abstract    Type ID for the runtine class
+ */
+XSClassID __XSURLClassID;
+
+void __XSURL_Initialize( void )
+{
+    __XSURLClassID = XSRuntime_RegisterClass( &__XSURLClass );
 }
-__XSTimer;
-
-/*!
- * @function    __XSTimer_Initialize
- * @abstract    Runtime initialization
- * @result      void
- */
-void __XSTimer_Initialize( void );
-
-/*!
- * @function    __XSTimer_RunOnce
- * @abstract    Runs a timer object after its time interval
- * @param       object  The thread object
- * @param       object  The timer object
- * @return      void
- */
-void __XSTimer_RunOnce( XSThread thread, void * object );
-
-/*!
- * @function    __XSTimer_RunAndRepeat
- * @abstract    Runs a timer object after its time interval, and repeats untile the timer is invalidated
- * @param       object  The thread object
- * @param       object  The timer object
- * @return      void
- */
-void __XSTimer_RunAndRepeat( XSThread thread, void * object );
-
-XS_EXTERN_C_END
-
-#endif /* ___XS_TIMER_H_ */

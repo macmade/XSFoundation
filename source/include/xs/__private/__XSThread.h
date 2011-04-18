@@ -35,8 +35,8 @@
  * @abstract    Private XSThread class definitions
  */
 
-#ifndef ___XSTHREAD_H_
-#define ___XSTHREAD_H_
+#ifndef ___XS_THREAD_H_
+#define ___XS_THREAD_H_
 #pragma once
 
 #include "../XSMacros.h"
@@ -85,4 +85,4 @@ void * __XSThread_Run( void * thread ) NORETURN_ATTRIBUTE;
 
 XS_EXTERN_C_END
 
-#endif /* ___XSTHREAD_H_ */
+#endif /* ___XS_THREAD_H_ */

@@ -145,6 +145,10 @@
 		050C2663135C8C3A0009766B /* XSTimer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSTimer.c; sourceTree = "<group>"; };
 		050C2664135C8C3A0009766B /* test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test.c; sourceTree = "<group>"; };
 		050C2665135C8C3A0009766B /* XSFoundation.doxygen */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XSFoundation.doxygen; sourceTree = "<group>"; };
+		0573D2AC135CAB8900DC1C21 /* XSURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSURL.h; sourceTree = "<group>"; };
+		0573D2AE135CAB9300DC1C21 /* __XSURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSURL.h; sourceTree = "<group>"; };
+		0573D2AF135CABA400DC1C21 /* XSURL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSURL.c; sourceTree = "<group>"; };
+		0573D2B0135CABAE00DC1C21 /* __XSURL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSURL.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -188,6 +192,7 @@
 				050C25EC135C8C3A0009766B /* __XSString.c */,
 				050C25ED135C8C3A0009766B /* __XSThread.c */,
 				050C25EE135C8C3A0009766B /* __XSTimer.c */,
+				0573D2B0135CABAE00DC1C21 /* __XSURL.c */,
 				050C25EF135C8C3A0009766B /* eos-skl.c */,
 				050C2644135C8C3A0009766B /* std-md5.c */,
 				050C2645135C8C3A0009766B /* std-string.c */,
@@ -221,6 +226,7 @@
 				050C2661135C8C3A0009766B /* XSString.c */,
 				050C2662135C8C3A0009766B /* XSThread.c */,
 				050C2663135C8C3A0009766B /* XSTimer.c */,
+				0573D2AF135CABA400DC1C21 /* XSURL.c */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -329,6 +335,7 @@
 				050C2640135C8C3A0009766B /* XSThread.h */,
 				050C2641135C8C3A0009766B /* XSTimer.h */,
 				050C2642135C8C3A0009766B /* XSTypes.h */,
+				0573D2AC135CAB8900DC1C21 /* XSURL.h */,
 			);
 			path = xs;
 			sourceTree = "<group>";
@@ -360,6 +367,7 @@
 				050C2623135C8C3A0009766B /* __XSString.h */,
 				050C2624135C8C3A0009766B /* __XSThread.h */,
 				050C2625135C8C3A0009766B /* __XSTimer.h */,
+				0573D2AE135CAB9300DC1C21 /* __XSURL.h */,
 			);
 			path = __private;
 			sourceTree = "<group>";
