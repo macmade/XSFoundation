@@ -30,22 +30,11 @@
 /* $Id$ */
 
 /*!
- * @header      XSBtree.c
+ * @file        __XSBTree.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation for the XSBtree class
+ * @abstract    ...
  */
 
-#include "XS.h"
 #include "__XSBTree.h"
 
-extern XSClassID __XSBTreeClassID;
 
-XSStatic XSObject XSBTree_Alloc( void )
-{
-    return ( XSObject )XSRuntime_CreateInstance( __XSBTreeClassID );
-}
-
-XSObject XSBTree_Init( XSObject xsThis )
-{
-    return xsThis;
-}

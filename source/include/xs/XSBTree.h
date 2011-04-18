@@ -30,64 +30,23 @@
 /* $Id$ */
 
 /*!
- * @header      XSBtree.h
+ * @header      XSBTree.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSBtree class functions
+ * @abstract    ...
  */
 
-#ifndef _XS_BTREE_H_
-#define _XS_BTREE_H_
+#ifndef _HEADER_H_
+#define _HEADER_H_
 #pragma once
 
-#include "XSMacros.h"
+#ifdef __cplusplus
+extern "C" {
+#endif
+    
+    
+    
+#ifdef __cplusplus
+}
+#endif
 
-XS_EXTERN_C_BEGIN
-
-/*!
- * @typedef     XSBtree
- * @abstract    Opaque type for the XSBtree objects
- */
-typedef struct __XSBTree * XSBTree;
-
-/*!
- * @function    XSBTree_Alloc
- * @abstract    Object allocator
- * @result      The allocated object
- */
-XSStatic XSObject XSBTree_Alloc( void );
-
-XSObject XSBTree_Init( XSObject xsThis );
-
-XSBTree XSBTree_GetLeft( XSBTree xsThis );
-
-XSBTree XSBTree_GetRight( XSBTree xsThis );
-
-XSBTree XSBTree_GetParent( XSBTree xsThis );
-
-XSBTree XSBTree_CreateLeft( XSBTree xsThis, void * value );
-
-XSBTree XSBTree_CreateRight( XSBTree xsThis, void * value );
-
-void XSBTree_SetLeft( XSBTree xsThis, XSBTree left );
-
-void XSBTree_SetRight( XSBTree xsThis, XSBTree right );
-
-void XSBTree_SetParent( XSBTree xsThis, XSBTree parent );
-
-void * XSBTree_GetValue( XSBTree xsThis );
-
-XSBTree XSBTree_GetRoot( XSBTree xsThis );
-
-XSUInteger XSBTree_GetDepth( XSBTree xsThis );
-
-XSAutoreleased XSBTree * XSBTree_GetLeafs( XSBTree xsThis );
-
-BOOL XSBtree_IsLeaf( XSBTree xsThis );
-
-BOOL XSBtree_IsNode( XSBTree xsThis );
-
-BOOL XSBtree_IsRoot( XSBTree xsThis );
-
-XS_EXTERN_C_END
-
-#endif /* _XS_BTREE_H_ */
+#endif /* _HEADER_H_ */
