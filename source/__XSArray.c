@@ -65,7 +65,7 @@ void __XSArray_Initialize( void )
     __XSArrayClassID = XSRuntime_RegisterClass( &__XSArrayClass );
 }
 
-void __XSArray_Destruct( void * object )
+void __XSArray_Destruct( XSObject object )
 {
     __XSArray  * array;
     XSUInteger  i;
@@ -86,7 +86,7 @@ void __XSArray_Destruct( void * object )
     }
 }
 
-XSString __XSArray_ToString( void * object )
+XSString __XSArray_ToString( XSObject object )
 {
     XSUInteger  i;
     __XSArray * array;

@@ -81,7 +81,7 @@ XSArray XSArray_InitWithCapacity( XSArray xsThis, XSUInteger capacity );
  * @param       ...         Other values, terminated by a NULL fence.
  * @result      The array object
  */
-XSArray XSArray_InitWithValues( XSArray xsThis, void * value1, ... );
+XSArray XSArray_InitWithValues( XSArray xsThis, XSObject value1, ... );
 
 /*!
  * @function    XSArray_Count
@@ -99,7 +99,7 @@ XSUInteger XSArray_Count( XSArray xsThis );
  * @param       The value to append
  * @result      void
  */
-void XSArray_AppendValue( XSArray xsThis, void * value );
+void XSArray_AppendValue( XSArray xsThis, XSObject value );
 
 /*!
  * @function    XSArray_InsertValueAtIndex
@@ -110,7 +110,7 @@ void XSArray_AppendValue( XSArray xsThis, void * value );
  * @param       i       The index in the array
  * @result      void
  */
-void XSArray_InsertValueAtIndex( XSArray xsThis, void * value, XSUInteger i );
+void XSArray_InsertValueAtIndex( XSArray xsThis, XSObject value, XSUInteger i );
 
 /*!
  * @function    XSArray_ReplaceValueAtIndex
@@ -122,7 +122,7 @@ void XSArray_InsertValueAtIndex( XSArray xsThis, void * value, XSUInteger i );
  * @param       i       The index in the array
  * @result      The old value
  */
-void * XSArray_ReplaceValueAtIndex( XSArray xsThis, void * value, XSUInteger i );
+XSObject XSArray_ReplaceValueAtIndex( XSArray xsThis, XSObject value, XSUInteger i );
 
 /*!
  * @function    XSArray_ValueAtIndex
@@ -131,7 +131,7 @@ void * XSArray_ReplaceValueAtIndex( XSArray xsThis, void * value, XSUInteger i )
  * @param       i       The index in the array
  * @result      The array value
  */
-void * XSArray_ValueAtIndex( XSArray array, XSUInteger i );
+XSObject XSArray_ValueAtIndex( XSArray array, XSUInteger i );
 
 /*!
  * @function    XSArray_RemoveValueAtIndex
@@ -141,7 +141,7 @@ void * XSArray_ValueAtIndex( XSArray array, XSUInteger i );
  * @param       i       The index in the array
  * @result      The removed value
  */
-void * XSArray_RemoveValueAtIndex( XSArray xsThis, XSUInteger i );
+XSObject XSArray_RemoveValueAtIndex( XSArray xsThis, XSUInteger i );
 
 /*!
  * @function    XSArray_ContainsValue
@@ -150,7 +150,7 @@ void * XSArray_RemoveValueAtIndex( XSArray xsThis, XSUInteger i );
  * @param       value   The value to search
  * @result      YES if the array contains the value, otherwise NO
  */
-BOOL XSArray_ContainsValue( XSArray xsThis, void * value );
+BOOL XSArray_ContainsValue( XSArray xsThis, XSObject value );
 
 /*!
  * @function    XSArray_Index
@@ -166,7 +166,7 @@ XSUInteger XSArray_Index( XSArray xsThis );
  * @param       xsThis  The array object
  * @result      The current array value
  */
-void * XSArray_Current( XSArray xsThis );
+XSObject XSArray_Current( XSArray xsThis );
 
 /*!
  * @function    XSArray_Next
@@ -174,7 +174,7 @@ void * XSArray_Current( XSArray xsThis );
  * @param       xsThis  The array object
  * @result      The array value
  */
-void * XSArray_Next( XSArray xsThis );
+XSObject XSArray_Next( XSArray xsThis );
 
 /*!
  * @function    XSArray_Previous
@@ -182,7 +182,7 @@ void * XSArray_Next( XSArray xsThis );
  * @param       xsThis  The array object
  * @result      The array value
  */
-void * XSArray_Previous( XSArray xsThis );
+XSObject XSArray_Previous( XSArray xsThis );
 
 /*!
  * @function    XSArray_Rewind

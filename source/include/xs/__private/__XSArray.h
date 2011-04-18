@@ -61,7 +61,7 @@ typedef struct __XSArray_Struct
     XSUInteger     capacity;
     XSUInteger     initialCapacity;
     XSUInteger     cur;
-    void        ** values;
+    XSObject     * values;
 }
 __XSArray;
 
@@ -78,7 +78,7 @@ void __XSArray_Initialize( void );
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSArray_Destruct( void * object );
+void __XSArray_Destruct( XSObject object );
 
 /*!
  * @function    __XSArray_ToString
@@ -86,7 +86,7 @@ void __XSArray_Destruct( void * object );
  * @param       object  A pointer to the object
  * @result      The object's description
  */
-XSString __XSArray_ToString( void * object );
+XSString __XSArray_ToString( XSObject object );
 
 XS_EXTERN_C_END
 
