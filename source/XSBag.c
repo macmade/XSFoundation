@@ -70,9 +70,9 @@ XSBag XSBag_InitWithCapacity( XSBag xsThis, XSUInteger capacity )
     return xsThis;
 }
 
-XSBag XSBag_InitWithValues( XSBag xsThis, void * value1, ... )
+XSBag XSBag_InitWithValues( XSBag xsThis, XSObject value1, ... )
 {
-    void    * value;
+    XSObject  value;
     va_list   args;
     __XSBag * bag;
     
@@ -85,7 +85,7 @@ XSBag XSBag_InitWithValues( XSBag xsThis, void * value1, ... )
     
     va_start( args, value1 );
     
-    while( NULL != ( value = va_arg( args, void * ) ) )
+    while( NULL != ( value = va_arg( args, XSObject ) ) )
     {
         XSBag_AddValue( xsThis, value );
     }
@@ -100,7 +100,7 @@ XSUInteger XSBag_Count( XSBag xsThis )
     return ( ( __XSBag * )xsThis )->count;
 }
 
-BOOL XSBag_ContainsValue( XSBag xsThis, void * value )
+BOOL XSBag_ContainsValue( XSBag xsThis, XSObject value )
 {
     __XSBag  * bag;
     XSUInteger i;
@@ -118,16 +118,16 @@ BOOL XSBag_ContainsValue( XSBag xsThis, void * value )
     return NO;
 }
 
-void XSBag_AddValue( XSBag xsThis, void * value )
+void XSBag_AddValue( XSBag xsThis, XSObject value )
 {
     __XSBag  * bag;
-    void     * values;
+    XSObject   values;
     
     bag = ( __XSBag * )XSBag_Init( xsThis );
     
     if( bag->count == bag->capacity )
     {
-        values = XSRealloc( bag->values, ( bag->count + bag->initialCapacity ) * sizeof( void * ) );
+        values = XSRealloc( bag->values, ( bag->count + bag->initialCapacity ) * sizeof( XSObject ) );
         
         if( values == NULL )
         {
@@ -141,7 +141,7 @@ void XSBag_AddValue( XSBag xsThis, void * value )
     bag->values[ bag->count++ ] = XSRetain( value );
 }
 
-void XSBag_RemoveValue( XSBag xsThis, void * value )
+void XSBag_RemoveValue( XSBag xsThis, XSObject value )
 {
     BOOL       found;
     __XSBag  * bag;
@@ -169,7 +169,7 @@ void XSBag_RemoveValue( XSBag xsThis, void * value )
     }
 }
 
-void XSBag_ReplaceValue( XSBag xsThis, void * valueOld, void * valueNew )
+void XSBag_ReplaceValue( XSBag xsThis, XSObject valueOld, XSObject valueNew )
 {
     __XSBag  * bag;
     XSUInteger i;

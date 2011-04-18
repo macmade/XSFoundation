@@ -53,7 +53,7 @@ XS_EXTERN_C_BEGIN
 typedef struct __XSBag_Struct
 {
     XSRuntimeClass __class;
-    void        ** values;
+    XSObject     * values;
     XSUInteger     count;
     XSUInteger     capacity;
     XSUInteger     initialCapacity;

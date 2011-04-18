@@ -81,7 +81,7 @@ XSBag XSBag_InitWithCapacity( XSBag xsThis, XSUInteger capacity );
  * @param       ...         Other values, terminated by a NULL fence
  * @result      The bag object
  */
-XSBag XSBag_InitWithValues( XSBag xsThis, void * value1, ... );
+XSBag XSBag_InitWithValues( XSBag xsThis, XSObject value1, ... );
 
 /*!
  * @function    XSBag_Count
@@ -98,7 +98,7 @@ XSUInteger XSBag_Count( XSBag xsThis );
  * @param       xsThis  The value to check
  * @result      True if the bag contains the value, otherwise false
  */
-BOOL XSBag_ContainsValue( XSBag xsThis, void * value );
+BOOL XSBag_ContainsValue( XSBag xsThis, XSObject value );
 
 /*!
  * @function    XSBag_AddValue
@@ -108,7 +108,7 @@ BOOL XSBag_ContainsValue( XSBag xsThis, void * value );
  * @param       xsThis  The value to add
  * @result      void
  */
-void XSBag_AddValue( XSBag xsThis, void * value );
+void XSBag_AddValue( XSBag xsThis, XSObject value );
 
 /*!
  * @function    XSBag_RemoveValue
@@ -118,7 +118,7 @@ void XSBag_AddValue( XSBag xsThis, void * value );
  * @param       xsThis  The value to remove
  * @result      void
  */
-void XSBag_RemoveValue( XSBag xsThis, void * value );
+void XSBag_RemoveValue( XSBag xsThis, XSObject value );
 
 /*!
  * @function    XSBag_ReplaceValue
@@ -129,7 +129,7 @@ void XSBag_RemoveValue( XSBag xsThis, void * value );
  * @param       valueNew    The new value
  * @result      void
  */
-void XSBag_ReplaceValue( XSBag xsThis, void * valueOld, void * valueNew );
+void XSBag_ReplaceValue( XSBag xsThis, XSObject valueOld, XSObject valueNew );
 
 /*!
  * @function    XSBag_Index
