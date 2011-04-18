@@ -49,3 +49,117 @@ XSObject XSURL_Init( XSObject xsThis )
 {
     return xsThis;
 }
+
+XSObject XSURL_InitWithString( XSObject xsThis, XSString str )
+{
+    ( void )str;
+    
+    return xsThis;
+}
+
+XSObject XSURL_InitWithCString( XSObject xsThis, char * str )
+{
+    ( void )str;
+    
+    return xsThis;
+}
+
+XSString XSURL_GetURL( XSObject xsThis )
+{
+    ( void )xsThis;
+    
+    return NULL;
+}
+
+void XSURL_SetScheme( XSObject xsThis, XSString scheme )
+{
+    __XSURL * url;
+    
+    url = ( __XSURL * )xsThis;
+    
+    XSRelease( url->scheme );
+    
+    url->scheme = XSRetain( scheme );
+}
+
+void XSURL_SetDomain( XSObject xsThis, XSString domain )
+{
+    __XSURL * url;
+    
+    url = ( __XSURL * )xsThis;
+    
+    XSRelease( url->domain );
+    
+    url->domain = XSRetain( domain );
+}
+
+void XSURL_SetPort( XSObject xsThis, XSUInteger port )
+{
+    __XSURL * url;
+    
+    url       = ( __XSURL * )xsThis;
+    url->port = port;
+}
+
+void XSURL_SetPath( XSObject xsThis, XSString path )
+{
+    __XSURL * url;
+    
+    url = ( __XSURL * )xsThis;
+    
+    XSRelease( url->path );
+    
+    url->path = XSRetain( path );
+}
+
+void XSURL_SetQuery( XSObject xsThis, XSString query )
+{
+    __XSURL * url;
+    
+    url = ( __XSURL * )xsThis;
+    
+    XSRelease( url->query );
+    
+    url->query = XSRetain( query );
+}
+
+void XSURL_SetFragment( XSObject xsThis, XSString fragment )
+{
+    __XSURL * url;
+    
+    url = ( __XSURL * )xsThis;
+    
+    XSRelease( url->fragment );
+    
+    url->fragment = XSRetain( fragment );
+}
+
+XSAutoreleased XSString XSURL_GetScheme( XSObject xsThis )
+{
+    return ( ( __XSURL * )xsThis )->scheme;
+}
+
+XSAutoreleased XSString XSURL_GetDomain( XSObject xsThis )
+{
+    return ( ( __XSURL * )xsThis )->domain;
+}
+
+XSUInteger XSURL_GetPort( XSObject xsThis )
+{
+    return ( ( __XSURL * )xsThis )->port;
+}
+
+XSAutoreleased XSString XSURL_GetPath( XSObject xsThis )
+{
+    return ( ( __XSURL * )xsThis )->path;
+}
+
+XSAutoreleased XSString XSURL_GetQuery( XSObject xsThis )
+{
+    return ( ( __XSURL * )xsThis )->query;
+}
+
+XSAutoreleased XSString XSURL_GetFragment( XSObject xsThis )
+{
+    return ( ( __XSURL * )xsThis )->fragment;
+}
