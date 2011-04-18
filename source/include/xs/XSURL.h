@@ -58,6 +58,36 @@ XSStatic XSObject XSURL_Alloc( void );
 
 XSObject XSURL_Init( XSObject xsThis );
 
+XSObject XSURL_InitWithString( XSObject xsThis, XSString str );
+
+XSObject XSURL_InitWithCString( XSObject xsThis, char * str );
+
+XSString XSURL_GetURL( XSObject xsThis );
+
+void XSURL_SetScheme( XSObject xsThis, XSString scheme );
+
+void XSURL_SetDomain( XSObject xsThis, XSString domain );
+
+void XSURL_SetPort( XSObject xsThis, XSUInteger port );
+
+void XSURL_SetPath( XSObject xsThis, XSString path );
+
+void XSURL_SetQuery( XSObject xsThis, XSString query );
+
+void XSURL_SetFragment( XSObject xsThis, XSString fragment );
+
+XSAutoreleased XSString XSURL_GetScheme( XSObject xsThis );
+
+XSAutoreleased XSString XSURL_GetDomain( XSObject xsThis );
+
+XSUInteger XSURL_GetPort( XSObject xsThis );
+
+XSAutoreleased XSString XSURL_GetPath( XSObject xsThis );
+
+XSAutoreleased XSString XSURL_GetQuery( XSObject xsThis );
+
+XSAutoreleased XSString XSURL_GetFragment( XSObject xsThis );
+
 XS_EXTERN_C_END
 
 #endif /* _XS_URL_H_ */
