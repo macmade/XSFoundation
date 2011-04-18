@@ -7,370 +7,370 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		050C25B6135C4A540009766B /* __XSBTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSBTree.h; sourceTree = "<group>"; };
-		050C25B7135C4A640009766B /* XSBTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBTree.h; sourceTree = "<group>"; };
-		050C25B8135C4A720009766B /* XSBTree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSBTree.c; sourceTree = "<group>"; };
-		050C25B9135C4A7C0009766B /* __XSBTree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSBTree.c; sourceTree = "<group>"; };
-		05266BA9135B6E4F00C1E85A /* XSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSLog.h; sourceTree = "<group>"; };
-		05266BAA135B6ECA00C1E85A /* XSLog.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSLog.c; sourceTree = "<group>"; };
-		05266BB1135B6F8F00C1E85A /* XSSort.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSSort.c; sourceTree = "<group>"; };
-		05266BB3135B6FE300C1E85A /* XSSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSSort.h; sourceTree = "<group>"; };
-		05266BB4135B746200C1E85A /* __XSSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSSort.h; sourceTree = "<group>"; };
-		05266BB5135B74AF00C1E85A /* __XSSort.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSSort.c; sourceTree = "<group>"; };
-		052EC738134F2908004A939E /* std-md5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "std-md5.c"; path = "source/std-md5.c"; sourceTree = SOURCE_ROOT; };
-		052EC739134F2915004A939E /* std-md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-md5.h"; sourceTree = "<group>"; };
-		052EC750134F339C004A939E /* __machine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __machine.h; sourceTree = "<group>"; };
-		052EC752134F339C004A939E /* __arm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __arm.h; sourceTree = "<group>"; };
-		052EC753134F339C004A939E /* __i386.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __i386.h; sourceTree = "<group>"; };
-		052EC754134F339C004A939E /* eos-skl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "eos-skl.h"; sourceTree = "<group>"; };
-		052EC755134F3414004A939E /* eos-skl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "eos-skl.c"; sourceTree = "<group>"; };
-		056003BB1340621F005DC721 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
-		056003BC1340621F005DC721 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		056003BE1340621F005DC721 /* __XSMemory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemory.c; sourceTree = "<group>"; };
-		056003C51340621F005DC721 /* std-ascii.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-ascii.h"; sourceTree = "<group>"; };
-		056003C61340621F005DC721 /* std-bitwise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-bitwise.h"; sourceTree = "<group>"; };
-		056003C71340621F005DC721 /* std-bool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-bool.h"; sourceTree = "<group>"; };
-		056003C81340621F005DC721 /* std-c99.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-c99.h"; sourceTree = "<group>"; };
-		056003C91340621F005DC721 /* std-keywords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-keywords.h"; sourceTree = "<group>"; };
-		056003CA1340621F005DC721 /* std-math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-math.h"; sourceTree = "<group>"; };
-		056003CB1340621F005DC721 /* std-posix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-posix.h"; sourceTree = "<group>"; };
-		056003CC1340621F005DC721 /* std-string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-string.h"; sourceTree = "<group>"; };
-		056003CD1340621F005DC721 /* std.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = std.h; sourceTree = "<group>"; };
-		056003CF1340621F005DC721 /* XSConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSConstants.h; sourceTree = "<group>"; };
-		056003D01340621F005DC721 /* XSFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSFile.h; sourceTree = "<group>"; };
-		056003D11340621F005DC721 /* XSGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSGeometry.h; sourceTree = "<group>"; };
-		056003D21340621F005DC721 /* XSMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMemory.h; sourceTree = "<group>"; };
-		056003D31340621F005DC721 /* XSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSString.h; sourceTree = "<group>"; };
-		056003D51340621F005DC721 /* XS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XS.h; sourceTree = "<group>"; };
-		056003D61340621F005DC721 /* std-string.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "std-string.c"; sourceTree = "<group>"; };
-		056003D71340621F005DC721 /* XSGeometry.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSGeometry.c; sourceTree = "<group>"; };
-		056003D81340621F005DC721 /* XSMemory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSMemory.c; sourceTree = "<group>"; };
-		056003D91340621F005DC721 /* XSString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSString.c; sourceTree = "<group>"; };
-		056003E2134069EC005DC721 /* XSFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSFile.c; sourceTree = "<group>"; };
-		056003E313406B51005DC721 /* __XSFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSFile.c; sourceTree = "<group>"; };
-		056003E613408187005DC721 /* XSRuntime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSRuntime.c; sourceTree = "<group>"; };
-		056003E713408197005DC721 /* XSRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSRuntime.h; sourceTree = "<group>"; };
-		056003E81340875C005DC721 /* __XSString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSString.c; sourceTree = "<group>"; };
-		056003ED13409910005DC721 /* test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test.c; sourceTree = "<group>"; };
-		056003EE1340BB05005DC721 /* XSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSArray.h; sourceTree = "<group>"; };
-		056003F01340BB34005DC721 /* __XSArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSArray.c; sourceTree = "<group>"; };
-		056003F11340BB3F005DC721 /* XSArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSArray.c; sourceTree = "<group>"; };
-		056003F3134106B5005DC721 /* __XSLog.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSLog.c; sourceTree = "<group>"; };
-		0560040913412858005DC721 /* XSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSData.h; sourceTree = "<group>"; };
-		0560040B13412858005DC721 /* XSDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSDictionary.h; sourceTree = "<group>"; };
-		0560040C13412858005DC721 /* XSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSError.h; sourceTree = "<group>"; };
-		0560040D13412858005DC721 /* XSNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSNumber.h; sourceTree = "<group>"; };
-		0560040E13412858005DC721 /* XSSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSSet.h; sourceTree = "<group>"; };
-		0560041113412865005DC721 /* __XSData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSData.c; sourceTree = "<group>"; };
-		0560041313412865005DC721 /* __XSDictionary.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSDictionary.c; sourceTree = "<group>"; };
-		0560041413412865005DC721 /* __XSError.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSError.c; sourceTree = "<group>"; };
-		0560041513412866005DC721 /* __XSNumber.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSNumber.c; sourceTree = "<group>"; };
-		0560041613412866005DC721 /* __XSSet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSSet.c; sourceTree = "<group>"; };
-		0560041913412867005DC721 /* XSData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSData.c; sourceTree = "<group>"; };
-		0560041B13412867005DC721 /* XSDictionary.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSDictionary.c; sourceTree = "<group>"; };
-		0560041C13412867005DC721 /* XSError.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSError.c; sourceTree = "<group>"; };
-		0560041D13412868005DC721 /* XSNumber.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNumber.c; sourceTree = "<group>"; };
-		0560041E13412868005DC721 /* XSSet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSSet.c; sourceTree = "<group>"; };
-		0560042113417F6F005DC721 /* XSMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMacros.h; sourceTree = "<group>"; };
-		05600422134184BD005DC721 /* XSMacrosTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMacrosTarget.h; sourceTree = "<group>"; };
-		0562F85013485975005190B6 /* __XSBag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSBag.h; sourceTree = "<group>"; };
-		0562F8521348597F005190B6 /* XSBag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBag.h; sourceTree = "<group>"; };
-		0562F8531348598C005190B6 /* __XSBag.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSBag.c; sourceTree = "<group>"; };
-		0562F8541348598C005190B6 /* XSBag.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSBag.c; sourceTree = "<group>"; };
-		0562F8B4134B07EE005190B6 /* __XSTimer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSTimer.c; sourceTree = "<group>"; };
-		0562F8B5134B07EE005190B6 /* XSTimer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSTimer.c; sourceTree = "<group>"; };
-		0562F8B7134B0813005190B6 /* __XSTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSTimer.h; sourceTree = "<group>"; };
-		0562F8B8134B0821005190B6 /* XSTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSTimer.h; sourceTree = "<group>"; };
-		0562F8BF134B3F38005190B6 /* __XSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSApplication.h; sourceTree = "<group>"; };
-		0562F8C1134B3F41005190B6 /* XSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSApplication.h; sourceTree = "<group>"; };
-		0562F8C2134B3F54005190B6 /* __XSApplication.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSApplication.c; sourceTree = "<group>"; };
-		0562F8C3134B3F55005190B6 /* XSApplication.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSApplication.c; sourceTree = "<group>"; };
-		0562F8CA134B499A005190B6 /* __XSLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSLock.h; sourceTree = "<group>"; };
-		0562F8CC134B49A4005190B6 /* XSLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSLock.h; sourceTree = "<group>"; };
-		0562F8CD134B49B4005190B6 /* __XSLock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSLock.c; sourceTree = "<group>"; };
-		0562F8CE134B49B4005190B6 /* XSLock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSLock.c; sourceTree = "<group>"; };
-		0562F8D5134B5AAD005190B6 /* __XSApplicationArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSApplicationArgument.h; sourceTree = "<group>"; };
-		0562F8D7134B5AB5005190B6 /* XSApplicationArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSApplicationArgument.h; sourceTree = "<group>"; };
-		0562F8D8134B5AC1005190B6 /* __XSApplicationArgument.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSApplicationArgument.c; sourceTree = "<group>"; };
-		0562F8D9134B5AC1005190B6 /* XSApplicationArgument.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSApplicationArgument.c; sourceTree = "<group>"; };
-		0562F8E6134C46A9005190B6 /* XSFoundation.doxygen */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XSFoundation.doxygen; sourceTree = "<group>"; };
-		056A74E71346F8C5006DD897 /* __XSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSColor.h; sourceTree = "<group>"; };
-		056A74E91346F953006DD897 /* XSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSColor.h; sourceTree = "<group>"; };
-		056A74EA1346F98B006DD897 /* __XSColor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSColor.c; sourceTree = "<group>"; };
-		056A74EB1346F9DC006DD897 /* XSColor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSColor.c; sourceTree = "<group>"; };
-		057074B413516AAD008FC128 /* __XSMemoryDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSMemoryDebug.h; sourceTree = "<group>"; };
-		057074B613516AF7008FC128 /* __XSMemoryDebug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemoryDebug.c; sourceTree = "<group>"; };
-		0581F3C713587201004E789C /* XSTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSTypes.h; sourceTree = "<group>"; };
-		059B999B134EDB93004510C5 /* __XSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSNull.h; sourceTree = "<group>"; };
-		059B999D134EDBA0004510C5 /* XSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSNull.h; sourceTree = "<group>"; };
-		059B999E134EDBB8004510C5 /* __XSNull.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSNull.c; sourceTree = "<group>"; };
-		059B999F134EDBB9004510C5 /* XSNull.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNull.c; sourceTree = "<group>"; };
-		05AC165713418E7100455568 /* __XSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSArray.h; sourceTree = "<group>"; };
-		05AC165813418E7100455568 /* __XSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSData.h; sourceTree = "<group>"; };
-		05AC165A13418E7100455568 /* __XSDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSDictionary.h; sourceTree = "<group>"; };
-		05AC165B13418E7100455568 /* __XSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSError.h; sourceTree = "<group>"; };
-		05AC165C13418E7100455568 /* __XSFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSFile.h; sourceTree = "<group>"; };
-		05AC165D13418E7100455568 /* __XSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSLog.h; sourceTree = "<group>"; };
-		05AC165E13418E7100455568 /* __XSMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSMemory.h; sourceTree = "<group>"; };
-		05AC165F13418E7100455568 /* __XSNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSNumber.h; sourceTree = "<group>"; };
-		05AC166013418E7100455568 /* __XSSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSSet.h; sourceTree = "<group>"; };
-		05AC166113418E7100455568 /* __XSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSString.h; sourceTree = "<group>"; };
-		05AC166A134192BF00455568 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		05AC166C1341DD7800455568 /* __XSThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSThread.h; sourceTree = "<group>"; };
-		05AC166D1341DDDA00455568 /* XSThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSThread.h; sourceTree = "<group>"; };
-		05AC166E1341DE2A00455568 /* __XSThread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSThread.c; sourceTree = "<group>"; };
-		05AC166F1341DE3F00455568 /* XSThread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSThread.c; sourceTree = "<group>"; };
-		05CD15C613599330008C6EAD /* win32-types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "win32-types.h"; sourceTree = "<group>"; };
-		05CD15C713599330008C6EAD /* win32-usleep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "win32-usleep.h"; sourceTree = "<group>"; };
-		05CD15C813599330008C6EAD /* win32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = win32.h; sourceTree = "<group>"; };
-		05CD15CA13599365008C6EAD /* win32-usleep.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "win32-usleep.c"; sourceTree = "<group>"; };
-		05CD15CB13599879008C6EAD /* win32-pthread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "win32-pthread.h"; sourceTree = "<group>"; };
-		05CD15CC135998C5008C6EAD /* win32-pthread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "win32-pthread.c"; sourceTree = "<group>"; };
-		05CD15CD13599F0C008C6EAD /* win32-signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "win32-signal.h"; sourceTree = "<group>"; };
-		05CD15CE13599F1B008C6EAD /* win32-signal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "win32-signal.c"; sourceTree = "<group>"; };
-		05CD15CF1359A3CD008C6EAD /* win32-compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "win32-compat.h"; sourceTree = "<group>"; };
-		05CD15D01359B0C4008C6EAD /* win32-stat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "win32-stat.h"; sourceTree = "<group>"; };
-		05CD15D11359BC26008C6EAD /* win32-getpid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "win32-getpid.h"; sourceTree = "<group>"; };
-		05CD15D21359BC5C008C6EAD /* win32-stat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "win32-stat.c"; sourceTree = "<group>"; };
-		05CD15D31359BC67008C6EAD /* win32-getpid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "win32-getpid.c"; sourceTree = "<group>"; };
-		05E098621356EBC700189FF4 /* __XSNotificationCenter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = __XSNotificationCenter.c; path = source/__XSNotificationCenter.c; sourceTree = SOURCE_ROOT; };
-		05E098631356EBC700189FF4 /* XSNotificationCenter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = XSNotificationCenter.c; path = source/XSNotificationCenter.c; sourceTree = SOURCE_ROOT; };
-		05E098651356EBD400189FF4 /* XSNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XSNotificationCenter.h; path = source/include/xs/XSNotificationCenter.h; sourceTree = SOURCE_ROOT; };
-		05E098661356EBDD00189FF4 /* __XSNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSNotificationCenter.h; sourceTree = "<group>"; };
-		05E0986D1356F21300189FF4 /* __XSNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSNotification.h; sourceTree = "<group>"; };
-		05E0986F1356F21A00189FF4 /* XSNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XSNotification.h; path = source/include/xs/XSNotification.h; sourceTree = SOURCE_ROOT; };
-		05E098701356F22800189FF4 /* __XSNotification.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = __XSNotification.c; path = source/__XSNotification.c; sourceTree = SOURCE_ROOT; };
-		05E098711356F22800189FF4 /* XSNotification.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = XSNotification.c; path = source/XSNotification.c; sourceTree = SOURCE_ROOT; };
-		05E098781356F8E000189FF4 /* __XSBool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSBool.c; sourceTree = "<group>"; };
-		05E098791356F8E000189FF4 /* XSBool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSBool.c; sourceTree = "<group>"; };
-		05E0987B1356F8E900189FF4 /* XSBool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBool.h; sourceTree = "<group>"; };
-		05E0987C1356F8EF00189FF4 /* __XSBool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSBool.h; sourceTree = "<group>"; };
+		050C25D3135C8C3A0009766B /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
+		050C25D4135C8C3A0009766B /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		050C25D5135C8C3A0009766B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		050C25D7135C8C3A0009766B /* __XSApplication.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSApplication.c; sourceTree = "<group>"; };
+		050C25D8135C8C3A0009766B /* __XSApplicationArgument.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSApplicationArgument.c; sourceTree = "<group>"; };
+		050C25D9135C8C3A0009766B /* __XSArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSArray.c; sourceTree = "<group>"; };
+		050C25DA135C8C3A0009766B /* __XSBag.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSBag.c; sourceTree = "<group>"; };
+		050C25DB135C8C3A0009766B /* __XSBool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSBool.c; sourceTree = "<group>"; };
+		050C25DC135C8C3A0009766B /* __XSBTree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSBTree.c; sourceTree = "<group>"; };
+		050C25DD135C8C3A0009766B /* __XSColor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSColor.c; sourceTree = "<group>"; };
+		050C25DE135C8C3A0009766B /* __XSData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSData.c; sourceTree = "<group>"; };
+		050C25DF135C8C3A0009766B /* __XSDictionary.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSDictionary.c; sourceTree = "<group>"; };
+		050C25E0135C8C3A0009766B /* __XSError.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSError.c; sourceTree = "<group>"; };
+		050C25E1135C8C3A0009766B /* __XSFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSFile.c; sourceTree = "<group>"; };
+		050C25E2135C8C3A0009766B /* __XSLock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSLock.c; sourceTree = "<group>"; };
+		050C25E3135C8C3A0009766B /* __XSLog.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSLog.c; sourceTree = "<group>"; };
+		050C25E4135C8C3A0009766B /* __XSMemory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemory.c; sourceTree = "<group>"; };
+		050C25E5135C8C3A0009766B /* __XSMemoryDebug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemoryDebug.c; sourceTree = "<group>"; };
+		050C25E6135C8C3A0009766B /* __XSNotification.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSNotification.c; sourceTree = "<group>"; };
+		050C25E7135C8C3A0009766B /* __XSNotificationCenter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSNotificationCenter.c; sourceTree = "<group>"; };
+		050C25E8135C8C3A0009766B /* __XSNull.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSNull.c; sourceTree = "<group>"; };
+		050C25E9135C8C3A0009766B /* __XSNumber.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSNumber.c; sourceTree = "<group>"; };
+		050C25EA135C8C3A0009766B /* __XSSet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSSet.c; sourceTree = "<group>"; };
+		050C25EB135C8C3A0009766B /* __XSSort.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSSort.c; sourceTree = "<group>"; };
+		050C25EC135C8C3A0009766B /* __XSString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSString.c; sourceTree = "<group>"; };
+		050C25ED135C8C3A0009766B /* __XSThread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSThread.c; sourceTree = "<group>"; };
+		050C25EE135C8C3A0009766B /* __XSTimer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSTimer.c; sourceTree = "<group>"; };
+		050C25EF135C8C3A0009766B /* eos-skl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "eos-skl.c"; sourceTree = "<group>"; };
+		050C25F3135C8C3A0009766B /* __machine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __machine.h; sourceTree = "<group>"; };
+		050C25F5135C8C3A0009766B /* __arm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __arm.h; sourceTree = "<group>"; };
+		050C25F6135C8C3A0009766B /* __i386.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __i386.h; sourceTree = "<group>"; };
+		050C25F7135C8C3A0009766B /* eos-skl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "eos-skl.h"; sourceTree = "<group>"; };
+		050C25F9135C8C3A0009766B /* std-ascii.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-ascii.h"; sourceTree = "<group>"; };
+		050C25FA135C8C3A0009766B /* std-bitwise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-bitwise.h"; sourceTree = "<group>"; };
+		050C25FB135C8C3A0009766B /* std-bool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-bool.h"; sourceTree = "<group>"; };
+		050C25FC135C8C3A0009766B /* std-c99.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-c99.h"; sourceTree = "<group>"; };
+		050C25FD135C8C3A0009766B /* std-keywords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-keywords.h"; sourceTree = "<group>"; };
+		050C25FE135C8C3A0009766B /* std-math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-math.h"; sourceTree = "<group>"; };
+		050C25FF135C8C3A0009766B /* std-md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-md5.h"; sourceTree = "<group>"; };
+		050C2600135C8C3A0009766B /* std-posix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-posix.h"; sourceTree = "<group>"; };
+		050C2601135C8C3A0009766B /* std-string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "std-string.h"; sourceTree = "<group>"; };
+		050C2602135C8C3A0009766B /* std.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = std.h; sourceTree = "<group>"; };
+		050C2604135C8C3A0009766B /* win32-compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "win32-compat.h"; sourceTree = "<group>"; };
+		050C2605135C8C3A0009766B /* win32-getpid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "win32-getpid.h"; sourceTree = "<group>"; };
+		050C2606135C8C3A0009766B /* win32-pthread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "win32-pthread.h"; sourceTree = "<group>"; };
+		050C2607135C8C3A0009766B /* win32-signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "win32-signal.h"; sourceTree = "<group>"; };
+		050C2608135C8C3A0009766B /* win32-stat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "win32-stat.h"; sourceTree = "<group>"; };
+		050C2609135C8C3A0009766B /* win32-types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "win32-types.h"; sourceTree = "<group>"; };
+		050C260A135C8C3A0009766B /* win32-usleep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "win32-usleep.h"; sourceTree = "<group>"; };
+		050C260B135C8C3A0009766B /* win32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = win32.h; sourceTree = "<group>"; };
+		050C260E135C8C3A0009766B /* __XSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSApplication.h; sourceTree = "<group>"; };
+		050C260F135C8C3A0009766B /* __XSApplicationArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSApplicationArgument.h; sourceTree = "<group>"; };
+		050C2610135C8C3A0009766B /* __XSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSArray.h; sourceTree = "<group>"; };
+		050C2611135C8C3A0009766B /* __XSBag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSBag.h; sourceTree = "<group>"; };
+		050C2612135C8C3A0009766B /* __XSBool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSBool.h; sourceTree = "<group>"; };
+		050C2613135C8C3A0009766B /* __XSBTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSBTree.h; sourceTree = "<group>"; };
+		050C2614135C8C3A0009766B /* __XSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSColor.h; sourceTree = "<group>"; };
+		050C2615135C8C3A0009766B /* __XSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSData.h; sourceTree = "<group>"; };
+		050C2616135C8C3A0009766B /* __XSDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSDictionary.h; sourceTree = "<group>"; };
+		050C2617135C8C3A0009766B /* __XSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSError.h; sourceTree = "<group>"; };
+		050C2618135C8C3A0009766B /* __XSFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSFile.h; sourceTree = "<group>"; };
+		050C2619135C8C3A0009766B /* __XSLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSLock.h; sourceTree = "<group>"; };
+		050C261A135C8C3A0009766B /* __XSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSLog.h; sourceTree = "<group>"; };
+		050C261B135C8C3A0009766B /* __XSMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSMemory.h; sourceTree = "<group>"; };
+		050C261C135C8C3A0009766B /* __XSMemoryDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSMemoryDebug.h; sourceTree = "<group>"; };
+		050C261D135C8C3A0009766B /* __XSNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSNotification.h; sourceTree = "<group>"; };
+		050C261E135C8C3A0009766B /* __XSNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSNotificationCenter.h; sourceTree = "<group>"; };
+		050C261F135C8C3A0009766B /* __XSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSNull.h; sourceTree = "<group>"; };
+		050C2620135C8C3A0009766B /* __XSNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSNumber.h; sourceTree = "<group>"; };
+		050C2621135C8C3A0009766B /* __XSSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSSet.h; sourceTree = "<group>"; };
+		050C2622135C8C3A0009766B /* __XSSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSSort.h; sourceTree = "<group>"; };
+		050C2623135C8C3A0009766B /* __XSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSString.h; sourceTree = "<group>"; };
+		050C2624135C8C3A0009766B /* __XSThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSThread.h; sourceTree = "<group>"; };
+		050C2625135C8C3A0009766B /* __XSTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSTimer.h; sourceTree = "<group>"; };
+		050C2626135C8C3A0009766B /* XSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSApplication.h; sourceTree = "<group>"; };
+		050C2627135C8C3A0009766B /* XSApplicationArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSApplicationArgument.h; sourceTree = "<group>"; };
+		050C2628135C8C3A0009766B /* XSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSArray.h; sourceTree = "<group>"; };
+		050C2629135C8C3A0009766B /* XSBag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBag.h; sourceTree = "<group>"; };
+		050C262A135C8C3A0009766B /* XSBool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBool.h; sourceTree = "<group>"; };
+		050C262B135C8C3A0009766B /* XSBTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBTree.h; sourceTree = "<group>"; };
+		050C262C135C8C3A0009766B /* XSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSColor.h; sourceTree = "<group>"; };
+		050C262D135C8C3A0009766B /* XSConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSConstants.h; sourceTree = "<group>"; };
+		050C262E135C8C3A0009766B /* XSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSData.h; sourceTree = "<group>"; };
+		050C262F135C8C3A0009766B /* XSDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSDictionary.h; sourceTree = "<group>"; };
+		050C2630135C8C3A0009766B /* XSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSError.h; sourceTree = "<group>"; };
+		050C2631135C8C3A0009766B /* XSFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSFile.h; sourceTree = "<group>"; };
+		050C2632135C8C3A0009766B /* XSGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSGeometry.h; sourceTree = "<group>"; };
+		050C2633135C8C3A0009766B /* XSLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSLock.h; sourceTree = "<group>"; };
+		050C2634135C8C3A0009766B /* XSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSLog.h; sourceTree = "<group>"; };
+		050C2635135C8C3A0009766B /* XSMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMacros.h; sourceTree = "<group>"; };
+		050C2636135C8C3A0009766B /* XSMacrosTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMacrosTarget.h; sourceTree = "<group>"; };
+		050C2637135C8C3A0009766B /* XSMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMemory.h; sourceTree = "<group>"; };
+		050C2638135C8C3A0009766B /* XSNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSNotification.h; sourceTree = "<group>"; };
+		050C2639135C8C3A0009766B /* XSNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSNotificationCenter.h; sourceTree = "<group>"; };
+		050C263A135C8C3A0009766B /* XSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSNull.h; sourceTree = "<group>"; };
+		050C263B135C8C3A0009766B /* XSNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSNumber.h; sourceTree = "<group>"; };
+		050C263C135C8C3A0009766B /* XSRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSRuntime.h; sourceTree = "<group>"; };
+		050C263D135C8C3A0009766B /* XSSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSSet.h; sourceTree = "<group>"; };
+		050C263E135C8C3A0009766B /* XSSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSSort.h; sourceTree = "<group>"; };
+		050C263F135C8C3A0009766B /* XSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSString.h; sourceTree = "<group>"; };
+		050C2640135C8C3A0009766B /* XSThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSThread.h; sourceTree = "<group>"; };
+		050C2641135C8C3A0009766B /* XSTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSTimer.h; sourceTree = "<group>"; };
+		050C2642135C8C3A0009766B /* XSTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSTypes.h; sourceTree = "<group>"; };
+		050C2643135C8C3A0009766B /* XS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XS.h; sourceTree = "<group>"; };
+		050C2644135C8C3A0009766B /* std-md5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "std-md5.c"; sourceTree = "<group>"; };
+		050C2645135C8C3A0009766B /* std-string.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "std-string.c"; sourceTree = "<group>"; };
+		050C2646135C8C3A0009766B /* win32-getpid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "win32-getpid.c"; sourceTree = "<group>"; };
+		050C2647135C8C3A0009766B /* win32-pthread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "win32-pthread.c"; sourceTree = "<group>"; };
+		050C2648135C8C3A0009766B /* win32-signal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "win32-signal.c"; sourceTree = "<group>"; };
+		050C2649135C8C3A0009766B /* win32-stat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "win32-stat.c"; sourceTree = "<group>"; };
+		050C264A135C8C3A0009766B /* win32-usleep.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "win32-usleep.c"; sourceTree = "<group>"; };
+		050C264B135C8C3A0009766B /* XSApplication.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSApplication.c; sourceTree = "<group>"; };
+		050C264C135C8C3A0009766B /* XSApplicationArgument.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSApplicationArgument.c; sourceTree = "<group>"; };
+		050C264D135C8C3A0009766B /* XSArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSArray.c; sourceTree = "<group>"; };
+		050C264E135C8C3A0009766B /* XSBag.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSBag.c; sourceTree = "<group>"; };
+		050C264F135C8C3A0009766B /* XSBool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSBool.c; sourceTree = "<group>"; };
+		050C2650135C8C3A0009766B /* XSBTree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSBTree.c; sourceTree = "<group>"; };
+		050C2651135C8C3A0009766B /* XSColor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSColor.c; sourceTree = "<group>"; };
+		050C2652135C8C3A0009766B /* XSData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSData.c; sourceTree = "<group>"; };
+		050C2653135C8C3A0009766B /* XSDictionary.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSDictionary.c; sourceTree = "<group>"; };
+		050C2654135C8C3A0009766B /* XSError.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSError.c; sourceTree = "<group>"; };
+		050C2655135C8C3A0009766B /* XSFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSFile.c; sourceTree = "<group>"; };
+		050C2656135C8C3A0009766B /* XSGeometry.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSGeometry.c; sourceTree = "<group>"; };
+		050C2657135C8C3A0009766B /* XSLock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSLock.c; sourceTree = "<group>"; };
+		050C2658135C8C3A0009766B /* XSLog.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSLog.c; sourceTree = "<group>"; };
+		050C2659135C8C3A0009766B /* XSMemory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSMemory.c; sourceTree = "<group>"; };
+		050C265A135C8C3A0009766B /* XSNotification.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNotification.c; sourceTree = "<group>"; };
+		050C265B135C8C3A0009766B /* XSNotificationCenter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNotificationCenter.c; sourceTree = "<group>"; };
+		050C265C135C8C3A0009766B /* XSNull.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNull.c; sourceTree = "<group>"; };
+		050C265D135C8C3A0009766B /* XSNumber.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNumber.c; sourceTree = "<group>"; };
+		050C265E135C8C3A0009766B /* XSRuntime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSRuntime.c; sourceTree = "<group>"; };
+		050C265F135C8C3A0009766B /* XSSet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSSet.c; sourceTree = "<group>"; };
+		050C2660135C8C3A0009766B /* XSSort.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSSort.c; sourceTree = "<group>"; };
+		050C2661135C8C3A0009766B /* XSString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSString.c; sourceTree = "<group>"; };
+		050C2662135C8C3A0009766B /* XSThread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSThread.c; sourceTree = "<group>"; };
+		050C2663135C8C3A0009766B /* XSTimer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSTimer.c; sourceTree = "<group>"; };
+		050C2664135C8C3A0009766B /* test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test.c; sourceTree = "<group>"; };
+		050C2665135C8C3A0009766B /* XSFoundation.doxygen */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XSFoundation.doxygen; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		052EC74E134F339C004A939E /* eos-skl */ = {
+		050C25C0135C8C070009766B = {
 			isa = PBXGroup;
 			children = (
-				052EC74F134F339C004A939E /* __private */,
-				052EC754134F339C004A939E /* eos-skl.h */,
-			);
-			path = "eos-skl";
-			sourceTree = "<group>";
-		};
-		052EC74F134F339C004A939E /* __private */ = {
-			isa = PBXGroup;
-			children = (
-				052EC750134F339C004A939E /* __machine.h */,
-				052EC751134F339C004A939E /* arch */,
-			);
-			path = __private;
-			sourceTree = "<group>";
-		};
-		052EC751134F339C004A939E /* arch */ = {
-			isa = PBXGroup;
-			children = (
-				052EC752134F339C004A939E /* __arm.h */,
-				052EC753134F339C004A939E /* __i386.h */,
-			);
-			path = arch;
-			sourceTree = "<group>";
-		};
-		056003A813406206005DC721 = {
-			isa = PBXGroup;
-			children = (
-				0562F8E6134C46A9005190B6 /* XSFoundation.doxygen */,
-				05AC166A134192BF00455568 /* README.md */,
-				056003BB1340621F005DC721 /* LICENSE.md */,
-				056003BC1340621F005DC721 /* Makefile */,
-				056003ED13409910005DC721 /* test.c */,
-				056003BD1340621F005DC721 /* source */,
+				050C25D3135C8C3A0009766B /* LICENSE.md */,
+				050C25D4135C8C3A0009766B /* Makefile */,
+				050C25D5135C8C3A0009766B /* README.md */,
+				050C2664135C8C3A0009766B /* test.c */,
+				050C2665135C8C3A0009766B /* XSFoundation.doxygen */,
+				050C25D6135C8C3A0009766B /* source */,
 			);
 			sourceTree = "<group>";
 		};
-		056003BD1340621F005DC721 /* source */ = {
+		050C25D6135C8C3A0009766B /* source */ = {
 			isa = PBXGroup;
 			children = (
-				056003BF1340621F005DC721 /* include */,
-				052EC755134F3414004A939E /* eos-skl.c */,
-				052EC738134F2908004A939E /* std-md5.c */,
-				056003D61340621F005DC721 /* std-string.c */,
-				05CD15D31359BC67008C6EAD /* win32-getpid.c */,
-				05CD15CC135998C5008C6EAD /* win32-pthread.c */,
-				05CD15CE13599F1B008C6EAD /* win32-signal.c */,
-				05CD15D21359BC5C008C6EAD /* win32-stat.c */,
-				05CD15CA13599365008C6EAD /* win32-usleep.c */,
-				0562F8C2134B3F54005190B6 /* __XSApplication.c */,
-				0562F8D8134B5AC1005190B6 /* __XSApplicationArgument.c */,
-				056003F01340BB34005DC721 /* __XSArray.c */,
-				0562F8531348598C005190B6 /* __XSBag.c */,
-				05E098781356F8E000189FF4 /* __XSBool.c */,
-				050C25B9135C4A7C0009766B /* __XSBTree.c */,
-				056A74EA1346F98B006DD897 /* __XSColor.c */,
-				0560041113412865005DC721 /* __XSData.c */,
-				0560041313412865005DC721 /* __XSDictionary.c */,
-				0560041413412865005DC721 /* __XSError.c */,
-				056003E313406B51005DC721 /* __XSFile.c */,
-				0562F8CD134B49B4005190B6 /* __XSLock.c */,
-				056003F3134106B5005DC721 /* __XSLog.c */,
-				056003BE1340621F005DC721 /* __XSMemory.c */,
-				057074B613516AF7008FC128 /* __XSMemoryDebug.c */,
-				05E098701356F22800189FF4 /* __XSNotification.c */,
-				05E098621356EBC700189FF4 /* __XSNotificationCenter.c */,
-				059B999E134EDBB8004510C5 /* __XSNull.c */,
-				0560041513412866005DC721 /* __XSNumber.c */,
-				0560041613412866005DC721 /* __XSSet.c */,
-				05266BB5135B74AF00C1E85A /* __XSSort.c */,
-				056003E81340875C005DC721 /* __XSString.c */,
-				05AC166E1341DE2A00455568 /* __XSThread.c */,
-				0562F8B4134B07EE005190B6 /* __XSTimer.c */,
-				0562F8C3134B3F55005190B6 /* XSApplication.c */,
-				0562F8D9134B5AC1005190B6 /* XSApplicationArgument.c */,
-				056003F11340BB3F005DC721 /* XSArray.c */,
-				0562F8541348598C005190B6 /* XSBag.c */,
-				05E098791356F8E000189FF4 /* XSBool.c */,
-				050C25B8135C4A720009766B /* XSBTree.c */,
-				056A74EB1346F9DC006DD897 /* XSColor.c */,
-				0560041913412867005DC721 /* XSData.c */,
-				0560041B13412867005DC721 /* XSDictionary.c */,
-				0560041C13412867005DC721 /* XSError.c */,
-				056003E2134069EC005DC721 /* XSFile.c */,
-				056003D71340621F005DC721 /* XSGeometry.c */,
-				0562F8CE134B49B4005190B6 /* XSLock.c */,
-				05266BAA135B6ECA00C1E85A /* XSLog.c */,
-				056003D81340621F005DC721 /* XSMemory.c */,
-				05E098711356F22800189FF4 /* XSNotification.c */,
-				05E098631356EBC700189FF4 /* XSNotificationCenter.c */,
-				059B999F134EDBB9004510C5 /* XSNull.c */,
-				0560041D13412868005DC721 /* XSNumber.c */,
-				056003E613408187005DC721 /* XSRuntime.c */,
-				0560041E13412868005DC721 /* XSSet.c */,
-				05266BB1135B6F8F00C1E85A /* XSSort.c */,
-				056003D91340621F005DC721 /* XSString.c */,
-				05AC166F1341DE3F00455568 /* XSThread.c */,
-				0562F8B5134B07EE005190B6 /* XSTimer.c */,
+				050C25F0135C8C3A0009766B /* include */,
+				050C25D7135C8C3A0009766B /* __XSApplication.c */,
+				050C25D8135C8C3A0009766B /* __XSApplicationArgument.c */,
+				050C25D9135C8C3A0009766B /* __XSArray.c */,
+				050C25DA135C8C3A0009766B /* __XSBag.c */,
+				050C25DB135C8C3A0009766B /* __XSBool.c */,
+				050C25DC135C8C3A0009766B /* __XSBTree.c */,
+				050C25DD135C8C3A0009766B /* __XSColor.c */,
+				050C25DE135C8C3A0009766B /* __XSData.c */,
+				050C25DF135C8C3A0009766B /* __XSDictionary.c */,
+				050C25E0135C8C3A0009766B /* __XSError.c */,
+				050C25E1135C8C3A0009766B /* __XSFile.c */,
+				050C25E2135C8C3A0009766B /* __XSLock.c */,
+				050C25E3135C8C3A0009766B /* __XSLog.c */,
+				050C25E4135C8C3A0009766B /* __XSMemory.c */,
+				050C25E5135C8C3A0009766B /* __XSMemoryDebug.c */,
+				050C25E6135C8C3A0009766B /* __XSNotification.c */,
+				050C25E7135C8C3A0009766B /* __XSNotificationCenter.c */,
+				050C25E8135C8C3A0009766B /* __XSNull.c */,
+				050C25E9135C8C3A0009766B /* __XSNumber.c */,
+				050C25EA135C8C3A0009766B /* __XSSet.c */,
+				050C25EB135C8C3A0009766B /* __XSSort.c */,
+				050C25EC135C8C3A0009766B /* __XSString.c */,
+				050C25ED135C8C3A0009766B /* __XSThread.c */,
+				050C25EE135C8C3A0009766B /* __XSTimer.c */,
+				050C25EF135C8C3A0009766B /* eos-skl.c */,
+				050C2644135C8C3A0009766B /* std-md5.c */,
+				050C2645135C8C3A0009766B /* std-string.c */,
+				050C2646135C8C3A0009766B /* win32-getpid.c */,
+				050C2647135C8C3A0009766B /* win32-pthread.c */,
+				050C2648135C8C3A0009766B /* win32-signal.c */,
+				050C2649135C8C3A0009766B /* win32-stat.c */,
+				050C264A135C8C3A0009766B /* win32-usleep.c */,
+				050C264B135C8C3A0009766B /* XSApplication.c */,
+				050C264C135C8C3A0009766B /* XSApplicationArgument.c */,
+				050C264D135C8C3A0009766B /* XSArray.c */,
+				050C264E135C8C3A0009766B /* XSBag.c */,
+				050C264F135C8C3A0009766B /* XSBool.c */,
+				050C2650135C8C3A0009766B /* XSBTree.c */,
+				050C2651135C8C3A0009766B /* XSColor.c */,
+				050C2652135C8C3A0009766B /* XSData.c */,
+				050C2653135C8C3A0009766B /* XSDictionary.c */,
+				050C2654135C8C3A0009766B /* XSError.c */,
+				050C2655135C8C3A0009766B /* XSFile.c */,
+				050C2656135C8C3A0009766B /* XSGeometry.c */,
+				050C2657135C8C3A0009766B /* XSLock.c */,
+				050C2658135C8C3A0009766B /* XSLog.c */,
+				050C2659135C8C3A0009766B /* XSMemory.c */,
+				050C265A135C8C3A0009766B /* XSNotification.c */,
+				050C265B135C8C3A0009766B /* XSNotificationCenter.c */,
+				050C265C135C8C3A0009766B /* XSNull.c */,
+				050C265D135C8C3A0009766B /* XSNumber.c */,
+				050C265E135C8C3A0009766B /* XSRuntime.c */,
+				050C265F135C8C3A0009766B /* XSSet.c */,
+				050C2660135C8C3A0009766B /* XSSort.c */,
+				050C2661135C8C3A0009766B /* XSString.c */,
+				050C2662135C8C3A0009766B /* XSThread.c */,
+				050C2663135C8C3A0009766B /* XSTimer.c */,
 			);
 			path = source;
 			sourceTree = "<group>";
 		};
-		056003BF1340621F005DC721 /* include */ = {
+		050C25F0135C8C3A0009766B /* include */ = {
 			isa = PBXGroup;
 			children = (
-				052EC74E134F339C004A939E /* eos-skl */,
-				056003C41340621F005DC721 /* std */,
-				05CD15C513599330008C6EAD /* win32 */,
-				056003CE1340621F005DC721 /* xs */,
-				056003D51340621F005DC721 /* XS.h */,
+				050C25F1135C8C3A0009766B /* eos-skl */,
+				050C25F8135C8C3A0009766B /* std */,
+				050C2603135C8C3A0009766B /* win32 */,
+				050C260C135C8C3A0009766B /* xs */,
+				050C2643135C8C3A0009766B /* XS.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
 		};
-		056003C41340621F005DC721 /* std */ = {
+		050C25F1135C8C3A0009766B /* eos-skl */ = {
 			isa = PBXGroup;
 			children = (
-				056003C51340621F005DC721 /* std-ascii.h */,
-				056003C61340621F005DC721 /* std-bitwise.h */,
-				056003C71340621F005DC721 /* std-bool.h */,
-				056003C81340621F005DC721 /* std-c99.h */,
-				056003C91340621F005DC721 /* std-keywords.h */,
-				056003CA1340621F005DC721 /* std-math.h */,
-				052EC739134F2915004A939E /* std-md5.h */,
-				056003CB1340621F005DC721 /* std-posix.h */,
-				056003CC1340621F005DC721 /* std-string.h */,
-				056003CD1340621F005DC721 /* std.h */,
+				050C25F2135C8C3A0009766B /* __private */,
+				050C25F7135C8C3A0009766B /* eos-skl.h */,
 			);
-			path = std;
+			path = "eos-skl";
 			sourceTree = "<group>";
 		};
-		056003CE1340621F005DC721 /* xs */ = {
+		050C25F2135C8C3A0009766B /* __private */ = {
 			isa = PBXGroup;
 			children = (
-				05AC165613418E7100455568 /* __private */,
-				0562F8C1134B3F41005190B6 /* XSApplication.h */,
-				0562F8D7134B5AB5005190B6 /* XSApplicationArgument.h */,
-				056003EE1340BB05005DC721 /* XSArray.h */,
-				0562F8521348597F005190B6 /* XSBag.h */,
-				05E0987B1356F8E900189FF4 /* XSBool.h */,
-				050C25B7135C4A640009766B /* XSBTree.h */,
-				056A74E91346F953006DD897 /* XSColor.h */,
-				056003CF1340621F005DC721 /* XSConstants.h */,
-				0560040913412858005DC721 /* XSData.h */,
-				0560040B13412858005DC721 /* XSDictionary.h */,
-				0560040C13412858005DC721 /* XSError.h */,
-				056003D01340621F005DC721 /* XSFile.h */,
-				056003D11340621F005DC721 /* XSGeometry.h */,
-				0562F8CC134B49A4005190B6 /* XSLock.h */,
-				05266BA9135B6E4F00C1E85A /* XSLog.h */,
-				0560042113417F6F005DC721 /* XSMacros.h */,
-				05600422134184BD005DC721 /* XSMacrosTarget.h */,
-				056003D21340621F005DC721 /* XSMemory.h */,
-				05E0986F1356F21A00189FF4 /* XSNotification.h */,
-				05E098651356EBD400189FF4 /* XSNotificationCenter.h */,
-				059B999D134EDBA0004510C5 /* XSNull.h */,
-				0560040D13412858005DC721 /* XSNumber.h */,
-				056003E713408197005DC721 /* XSRuntime.h */,
-				0560040E13412858005DC721 /* XSSet.h */,
-				05266BB3135B6FE300C1E85A /* XSSort.h */,
-				056003D31340621F005DC721 /* XSString.h */,
-				05AC166D1341DDDA00455568 /* XSThread.h */,
-				0562F8B8134B0821005190B6 /* XSTimer.h */,
-				0581F3C713587201004E789C /* XSTypes.h */,
-			);
-			path = xs;
-			sourceTree = "<group>";
-		};
-		05AC165613418E7100455568 /* __private */ = {
-			isa = PBXGroup;
-			children = (
-				0562F8BF134B3F38005190B6 /* __XSApplication.h */,
-				0562F8D5134B5AAD005190B6 /* __XSApplicationArgument.h */,
-				05AC165713418E7100455568 /* __XSArray.h */,
-				0562F85013485975005190B6 /* __XSBag.h */,
-				05E0987C1356F8EF00189FF4 /* __XSBool.h */,
-				050C25B6135C4A540009766B /* __XSBTree.h */,
-				056A74E71346F8C5006DD897 /* __XSColor.h */,
-				05AC165813418E7100455568 /* __XSData.h */,
-				05AC165A13418E7100455568 /* __XSDictionary.h */,
-				05AC165B13418E7100455568 /* __XSError.h */,
-				05AC165C13418E7100455568 /* __XSFile.h */,
-				0562F8CA134B499A005190B6 /* __XSLock.h */,
-				05AC165D13418E7100455568 /* __XSLog.h */,
-				05AC165E13418E7100455568 /* __XSMemory.h */,
-				057074B413516AAD008FC128 /* __XSMemoryDebug.h */,
-				05E0986D1356F21300189FF4 /* __XSNotification.h */,
-				05E098661356EBDD00189FF4 /* __XSNotificationCenter.h */,
-				059B999B134EDB93004510C5 /* __XSNull.h */,
-				05AC165F13418E7100455568 /* __XSNumber.h */,
-				05AC166013418E7100455568 /* __XSSet.h */,
-				05266BB4135B746200C1E85A /* __XSSort.h */,
-				05AC166113418E7100455568 /* __XSString.h */,
-				05AC166C1341DD7800455568 /* __XSThread.h */,
-				0562F8B7134B0813005190B6 /* __XSTimer.h */,
+				050C25F3135C8C3A0009766B /* __machine.h */,
+				050C25F4135C8C3A0009766B /* arch */,
 			);
 			path = __private;
 			sourceTree = "<group>";
 		};
-		05CD15C513599330008C6EAD /* win32 */ = {
+		050C25F4135C8C3A0009766B /* arch */ = {
 			isa = PBXGroup;
 			children = (
-				05CD15C813599330008C6EAD /* win32.h */,
-				05CD15CF1359A3CD008C6EAD /* win32-compat.h */,
-				05CD15D11359BC26008C6EAD /* win32-getpid.h */,
-				05CD15CB13599879008C6EAD /* win32-pthread.h */,
-				05CD15CD13599F0C008C6EAD /* win32-signal.h */,
-				05CD15C613599330008C6EAD /* win32-types.h */,
-				05CD15C713599330008C6EAD /* win32-usleep.h */,
-				05CD15D01359B0C4008C6EAD /* win32-stat.h */,
+				050C25F5135C8C3A0009766B /* __arm.h */,
+				050C25F6135C8C3A0009766B /* __i386.h */,
+			);
+			path = arch;
+			sourceTree = "<group>";
+		};
+		050C25F8135C8C3A0009766B /* std */ = {
+			isa = PBXGroup;
+			children = (
+				050C25F9135C8C3A0009766B /* std-ascii.h */,
+				050C25FA135C8C3A0009766B /* std-bitwise.h */,
+				050C25FB135C8C3A0009766B /* std-bool.h */,
+				050C25FC135C8C3A0009766B /* std-c99.h */,
+				050C25FD135C8C3A0009766B /* std-keywords.h */,
+				050C25FE135C8C3A0009766B /* std-math.h */,
+				050C25FF135C8C3A0009766B /* std-md5.h */,
+				050C2600135C8C3A0009766B /* std-posix.h */,
+				050C2601135C8C3A0009766B /* std-string.h */,
+				050C2602135C8C3A0009766B /* std.h */,
+			);
+			path = std;
+			sourceTree = "<group>";
+		};
+		050C2603135C8C3A0009766B /* win32 */ = {
+			isa = PBXGroup;
+			children = (
+				050C2604135C8C3A0009766B /* win32-compat.h */,
+				050C2605135C8C3A0009766B /* win32-getpid.h */,
+				050C2606135C8C3A0009766B /* win32-pthread.h */,
+				050C2607135C8C3A0009766B /* win32-signal.h */,
+				050C2608135C8C3A0009766B /* win32-stat.h */,
+				050C2609135C8C3A0009766B /* win32-types.h */,
+				050C260A135C8C3A0009766B /* win32-usleep.h */,
+				050C260B135C8C3A0009766B /* win32.h */,
 			);
 			path = win32;
+			sourceTree = "<group>";
+		};
+		050C260C135C8C3A0009766B /* xs */ = {
+			isa = PBXGroup;
+			children = (
+				050C260D135C8C3A0009766B /* __private */,
+				050C2626135C8C3A0009766B /* XSApplication.h */,
+				050C2627135C8C3A0009766B /* XSApplicationArgument.h */,
+				050C2628135C8C3A0009766B /* XSArray.h */,
+				050C2629135C8C3A0009766B /* XSBag.h */,
+				050C262A135C8C3A0009766B /* XSBool.h */,
+				050C262B135C8C3A0009766B /* XSBTree.h */,
+				050C262C135C8C3A0009766B /* XSColor.h */,
+				050C262D135C8C3A0009766B /* XSConstants.h */,
+				050C262E135C8C3A0009766B /* XSData.h */,
+				050C262F135C8C3A0009766B /* XSDictionary.h */,
+				050C2630135C8C3A0009766B /* XSError.h */,
+				050C2631135C8C3A0009766B /* XSFile.h */,
+				050C2632135C8C3A0009766B /* XSGeometry.h */,
+				050C2633135C8C3A0009766B /* XSLock.h */,
+				050C2634135C8C3A0009766B /* XSLog.h */,
+				050C2635135C8C3A0009766B /* XSMacros.h */,
+				050C2636135C8C3A0009766B /* XSMacrosTarget.h */,
+				050C2637135C8C3A0009766B /* XSMemory.h */,
+				050C2638135C8C3A0009766B /* XSNotification.h */,
+				050C2639135C8C3A0009766B /* XSNotificationCenter.h */,
+				050C263A135C8C3A0009766B /* XSNull.h */,
+				050C263B135C8C3A0009766B /* XSNumber.h */,
+				050C263C135C8C3A0009766B /* XSRuntime.h */,
+				050C263D135C8C3A0009766B /* XSSet.h */,
+				050C263E135C8C3A0009766B /* XSSort.h */,
+				050C263F135C8C3A0009766B /* XSString.h */,
+				050C2640135C8C3A0009766B /* XSThread.h */,
+				050C2641135C8C3A0009766B /* XSTimer.h */,
+				050C2642135C8C3A0009766B /* XSTypes.h */,
+			);
+			path = xs;
+			sourceTree = "<group>";
+		};
+		050C260D135C8C3A0009766B /* __private */ = {
+			isa = PBXGroup;
+			children = (
+				050C260E135C8C3A0009766B /* __XSApplication.h */,
+				050C260F135C8C3A0009766B /* __XSApplicationArgument.h */,
+				050C2610135C8C3A0009766B /* __XSArray.h */,
+				050C2611135C8C3A0009766B /* __XSBag.h */,
+				050C2612135C8C3A0009766B /* __XSBool.h */,
+				050C2613135C8C3A0009766B /* __XSBTree.h */,
+				050C2614135C8C3A0009766B /* __XSColor.h */,
+				050C2615135C8C3A0009766B /* __XSData.h */,
+				050C2616135C8C3A0009766B /* __XSDictionary.h */,
+				050C2617135C8C3A0009766B /* __XSError.h */,
+				050C2618135C8C3A0009766B /* __XSFile.h */,
+				050C2619135C8C3A0009766B /* __XSLock.h */,
+				050C261A135C8C3A0009766B /* __XSLog.h */,
+				050C261B135C8C3A0009766B /* __XSMemory.h */,
+				050C261C135C8C3A0009766B /* __XSMemoryDebug.h */,
+				050C261D135C8C3A0009766B /* __XSNotification.h */,
+				050C261E135C8C3A0009766B /* __XSNotificationCenter.h */,
+				050C261F135C8C3A0009766B /* __XSNull.h */,
+				050C2620135C8C3A0009766B /* __XSNumber.h */,
+				050C2621135C8C3A0009766B /* __XSSet.h */,
+				050C2622135C8C3A0009766B /* __XSSort.h */,
+				050C2623135C8C3A0009766B /* __XSString.h */,
+				050C2624135C8C3A0009766B /* __XSThread.h */,
+				050C2625135C8C3A0009766B /* __XSTimer.h */,
+			);
+			path = __private;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXLegacyTarget section */
-		056003AF13406206005DC721 /* XSFoundation */ = {
+		050C25C7135C8C070009766B /* XSFoundation */ = {
 			isa = PBXLegacyTarget;
 			buildArgumentsString = "$(ACTION)";
-			buildConfigurationList = 056003B213406206005DC721 /* Build configuration list for PBXLegacyTarget "XSFoundation" */;
+			buildConfigurationList = 050C25CA135C8C070009766B /* Build configuration list for PBXLegacyTarget "XSFoundation" */;
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
@@ -380,47 +380,32 @@
 			passBuildSettingsInEnvironment = 1;
 			productName = XSFoundation;
 		};
-		05E0987D1357479100189FF4 /* XSFoundation Test */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = test;
-			buildConfigurationList = 05E0987E1357479100189FF4 /* Build configuration list for PBXLegacyTarget "XSFoundation Test" */;
-			buildPhases = (
-			);
-			buildToolPath = /usr/bin/make;
-			buildWorkingDirectory = "";
-			dependencies = (
-			);
-			name = "XSFoundation Test";
-			passBuildSettingsInEnvironment = 1;
-			productName = "XSFoundation Test";
-		};
 /* End PBXLegacyTarget section */
 
 /* Begin PBXProject section */
-		056003AA13406206005DC721 /* Project object */ = {
+		050C25C2135C8C070009766B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = eosgarden;
 			};
-			buildConfigurationList = 056003AD13406206005DC721 /* Build configuration list for PBXProject "XSFoundation" */;
+			buildConfigurationList = 050C25C5135C8C070009766B /* Build configuration list for PBXProject "XSFoundation" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 056003A813406206005DC721;
+			mainGroup = 050C25C0135C8C070009766B;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				056003AF13406206005DC721 /* XSFoundation */,
-				05E0987D1357479100189FF4 /* XSFoundation Test */,
+				050C25C7135C8C070009766B /* XSFoundation */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin XCBuildConfiguration section */
-		056003B013406206005DC721 /* Debug */ = {
+		050C25C8135C8C070009766B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -438,7 +423,7 @@
 			};
 			name = Debug;
 		};
-		056003B113406206005DC721 /* Release */ = {
+		050C25C9135C8C070009766B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -452,7 +437,7 @@
 			};
 			name = Release;
 		};
-		056003B313406206005DC721 /* Debug */ = {
+		050C25CB135C8C070009766B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -468,36 +453,7 @@
 			};
 			name = Debug;
 		};
-		056003B413406206005DC721 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		05E0987F1357479100189FF4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUGGING_SYMBOLS = YES;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		05E098801357479100189FF4 /* Release */ = {
+		050C25CC135C8C070009766B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -513,34 +469,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		056003AD13406206005DC721 /* Build configuration list for PBXProject "XSFoundation" */ = {
+		050C25C5135C8C070009766B /* Build configuration list for PBXProject "XSFoundation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				056003B013406206005DC721 /* Debug */,
-				056003B113406206005DC721 /* Release */,
+				050C25C8135C8C070009766B /* Debug */,
+				050C25C9135C8C070009766B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		056003B213406206005DC721 /* Build configuration list for PBXLegacyTarget "XSFoundation" */ = {
+		050C25CA135C8C070009766B /* Build configuration list for PBXLegacyTarget "XSFoundation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				056003B313406206005DC721 /* Debug */,
-				056003B413406206005DC721 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		05E0987E1357479100189FF4 /* Build configuration list for PBXLegacyTarget "XSFoundation Test" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				05E0987F1357479100189FF4 /* Debug */,
-				05E098801357479100189FF4 /* Release */,
+				050C25CB135C8C070009766B /* Debug */,
+				050C25CC135C8C070009766B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 056003AA13406206005DC721 /* Project object */;
+	rootObject = 050C25C2135C8C070009766B /* Project object */;
 }
