@@ -26,50 +26,47 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
-
+ 
 /* $Id$ */
 
 /*!
- * @header      XS.h
+ * @header      __XSBtree.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSFoundation main header file
- * @description This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Private BTree class definitions
  */
 
-#ifndef _XS_H_
-#define _XS_H_
+#ifndef ___XS_BTREE_H_
+#define ___XS_BTREE_H_
 #pragma once
 
-#include "std/std.h"
-#include "XS/XSMacros.h"
-#include "XS/XSConstants.h"
-#include "XS/XSTypes.h"
-#include "XS/XSLog.h"
-#include "XS/XSMemory.h"
-#include "XS/XSRuntime.h"
-#include "XS/XSApplicationArgument.h"
-#include "XS/XSApplication.h"
-#include "XS/XSArray.h"
-#include "XS/XSBag.h"
-#include "XS/XSBool.h"
-#include "XS/XSBTree.h"
-#include "XS/XSColor.h"
-#include "XS/XSData.h"
-#include "XS/XSDictionary.h"
-#include "XS/XSError.h"
-#include "XS/XSFile.h"
-#include "XS/XSGeometry.h"
-#include "XS/XSLock.h"
-#include "XS/XSNull.h"
-#include "XS/XSNotification.h"
-#include "XS/XSNotificationCenter.h"
-#include "XS/XSNumber.h"
-#include "XS/XSSet.h"
-#include "XS/XSSort.h"
-#include "XS/XSString.h"
-#include "XS/XSThread.h"
-#include "XS/XSTimer.h"
+#include "../XSMacros.h"
 
-#endif /* _XS_H_ */
+XS_EXTERN_C_BEGIN
+
+#include "XS.h"
+
+/*!
+ * @typdef      __XSBTree
+ * @abastract   XSBTree class
+ * @field       __class     Runtime class
+ */
+typedef struct __XSBTree_Struct
+{
+    XSRuntimeClass            __class;
+    void                    * value;
+    struct __XSBTree_Struct * left;
+    struct __XSBTree_Struct * right;
+    struct __XSBTree_Struct * parent;
+}
+__XSBTree;
+
+/*!
+ * @function    __XSBtree_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
+void __XSBTree_Initialize( void );
+
+XS_EXTERN_C_END
+
+#endif /* ___XS_BTREE_H_ */

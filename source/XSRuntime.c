@@ -83,6 +83,7 @@ void __XSApplicationArgument_Initialize( void );
 void __XSArray_Initialize( void );
 void __XSBag_Initialize( void );
 void __XSBool_Initialize( void );
+void __XSBTree_Initialize( void );
 void __XSColor_Initialize( void );
 void __XSData_Initialize( void );
 void __XSDictionary_Initialize( void );
@@ -114,6 +115,7 @@ void XSRuntime_Initialize( void )
     __XSApplicationArgument_Initialize();
     __XSBag_Initialize();
     __XSBool_Initialize();
+    __XSBTree_Initialize();
     __XSColor_Initialize();
     __XSData_Initialize();
     __XSDictionary_Initialize();
