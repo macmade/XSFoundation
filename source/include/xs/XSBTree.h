@@ -64,17 +64,25 @@ XSAutoreleased XSBTree XSBTree_GetRight( XSBTree xsThis );
 
 XSAutoreleased XSBTree XSBTree_GetParent( XSBTree xsThis );
 
-XSAutoreleased XSBTree XSBTree_CreateLeft( XSBTree xsThis, void * value );
+XSAutoreleased XSObject XSBTree_GetValue( XSBTree xsThis );
 
-XSAutoreleased XSBTree XSBTree_CreateRight( XSBTree xsThis, void * value );
+XSAutoreleased XSBTree XSBTree_CreateLeft( XSBTree xsThis, XSObject value );
 
-void XSBTree_SetLeft( XSBTree xsThis, XSBTree left );
+XSAutoreleased XSBTree XSBTree_CreateRight( XSBTree xsThis, XSObject value );
 
-void XSBTree_SetRight( XSBTree xsThis, XSBTree right );
+XSBTree XSBTree_SetLeft( XSBTree xsThis, XSBTree left );
 
-void XSBTree_SetParent( XSBTree xsThis, XSBTree parent );
+XSBTree XSBTree_SetRight( XSBTree xsThis, XSBTree right );
 
-XSAutoreleased void * XSBTree_GetValue( XSBTree xsThis );
+XSBTree XSBTree_SetParent( XSBTree xsThis, XSBTree parent );
+
+void XSBTree_SetValue( XSBTree xsThis, XSObject value );
+
+XSBTree XSBTree_RemoveLeft( XSBTree xsThis );
+
+XSBTree XSBTree_RemoveRight( XSBTree xsThis );
+
+void XSBTree_SwapChildren( XSBTree xsThis );
 
 XSAutoreleased XSBTree XSBTree_GetRoot( XSBTree xsThis );
 
