@@ -81,7 +81,7 @@ XSSet XSSet_InitWithCapacity( XSSet xsThis, XSUInteger capacity );
  * @param       ...         Other values, terminated by a NULL fence
  * @result      The set object
  */
-XSSet XSSet_InitWithValues( XSSet xsThis, void * value1, ... );
+XSSet XSSet_InitWithValues( XSSet xsThis, XSObject value1, ... );
 
 /*!
  * @function    XSSet_Count
@@ -98,7 +98,7 @@ XSUInteger XSSet_Count( XSSet xsThis );
  * @param       xsThis  The value to check
  * @result      True if the set contains the value, otherwise false
  */
-BOOL XSSet_ContainsValue( XSSet xsThis, void * value );
+BOOL XSSet_ContainsValue( XSSet xsThis, XSObject value );
 
 /*!
  * @function    XSSet_AddValue
@@ -108,7 +108,7 @@ BOOL XSSet_ContainsValue( XSSet xsThis, void * value );
  * @param       xsThis  The value to add
  * @result      void
  */
-void XSSet_AddValue( XSSet xsThis, void * value );
+void XSSet_AddValue( XSSet xsThis, XSObject value );
 
 /*!
  * @function    XSSet_RemoveValue
@@ -118,7 +118,7 @@ void XSSet_AddValue( XSSet xsThis, void * value );
  * @param       xsThis  The value to remove
  * @result      void
  */
-void XSSet_RemoveValue( XSSet xsThis, void * value );
+void XSSet_RemoveValue( XSSet xsThis, XSObject value );
 
 /*!
  * @function    XSSet_ReplaceValue
@@ -129,7 +129,7 @@ void XSSet_RemoveValue( XSSet xsThis, void * value );
  * @param       valueNew    The new value
  * @result      void
  */
-void XSSet_ReplaceValue( XSSet xsThis, void * valueOld, void * valueNew );
+void XSSet_ReplaceValue( XSSet xsThis, XSObject valueOld, XSObject valueNew );
 
 /*!
  * @function    XSSet_Index

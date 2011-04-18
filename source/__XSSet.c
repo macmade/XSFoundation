@@ -65,7 +65,7 @@ void __XSSet_Initialize( void )
     __XSSetClassID = XSRuntime_RegisterClass( &__XSSetClass );
 }
 
-void __XSSet_Destruct( void * object )
+void __XSSet_Destruct( XSObject object )
 {
     __XSSet  * set;
     XSUInteger i;
@@ -86,7 +86,7 @@ void __XSSet_Destruct( void * object )
     }
 }
 
-XSString __XSSet_ToString( void * object )
+XSString __XSSet_ToString( XSObject object )
 {
     XSUInteger i;
     __XSSet  * set;

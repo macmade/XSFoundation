@@ -53,7 +53,7 @@ XS_EXTERN_C_BEGIN
 typedef struct __XSSet_Struct
 {
     XSRuntimeClass __class;
-    void        ** values;
+    XSObject      * values;
     XSUInteger     count;
     XSUInteger     capacity;
     XSUInteger     initialCapacity;
@@ -74,7 +74,7 @@ void __XSSet_Initialize( void );
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSSet_Destruct( void * object );
+void __XSSet_Destruct( XSObject object );
 
 /*!
  * @function    __XSSet_ToString
@@ -82,7 +82,7 @@ void __XSSet_Destruct( void * object );
  * @param       object  A pointer to the object
  * @result      The object's description
  */
-XSString __XSSet_ToString( void * object );
+XSString __XSSet_ToString( XSObject object );
 
 XS_EXTERN_C_END
 
