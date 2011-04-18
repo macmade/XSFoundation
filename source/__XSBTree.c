@@ -32,9 +32,35 @@
 /*!
  * @file        __XSBTree.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @abstract    Private implementation for the XSBtree class
  */
 
+#include "XS.h"
 #include "__XSBTree.h"
 
+/*!
+ * @var         __XSBoolClass
+ * @abstract    Runtime class definition
+ */
+static const XSClassInfos __XSBTreeClass =
+{
+    "XSBTree",              /* Class name */
+    sizeof( __XSBTree ),    /* Object size */
+    NULL,                   /* Constructor */
+    NULL,                   /* Destructor */
+    XSBool_Init,            /* Default initializer */
+    NULL,                   /* Object copy */
+    NULL,                   /* Object description */
+    NULL                    /* Object comparison */
+};
 
+/*!
+ * @var         __XSBtreeClassID
+ * @abstract    Type ID for the runtine class
+ */
+XSClassID __XSBTreeClassID;
+
+void __XSBTree_Initialize( void )
+{
+    __XSBTreeClassID = XSRuntime_RegisterClass( &__XSBTreeClass );
+}
