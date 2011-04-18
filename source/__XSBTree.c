@@ -47,7 +47,7 @@ static const XSClassInfos __XSBTreeClass =
     "XSBTree",              /* Class name */
     sizeof( __XSBTree ),    /* Object size */
     NULL,                   /* Constructor */
-    NULL,                   /* Destructor */
+    __XSBTree_Destruct,     /* Destructor */
     XSBool_Init,            /* Default initializer */
     NULL,                   /* Object copy */
     NULL,                   /* Object description */
@@ -63,4 +63,26 @@ XSClassID __XSBTreeClassID;
 void __XSBTree_Initialize( void )
 {
     __XSBTreeClassID = XSRuntime_RegisterClass( &__XSBTreeClass );
+}
+
+void __XSBTree_Destruct( XSObject object )
+{
+    __XSBTree * tree;
+    
+    tree = ( __XSBTree * )object;
+    
+    if( tree->value != NULL )
+    {
+        XSRelease( tree->value );
+    }
+    
+    if( tree->left != NULL )
+    {
+        XSRelease( tree->left );
+    }
+    
+    if( tree->right != NULL )
+    {
+        XSRelease( tree->right );
+    }
 }

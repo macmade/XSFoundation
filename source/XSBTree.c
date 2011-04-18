@@ -49,3 +49,256 @@ XSObject XSBTree_Init( XSObject xsThis )
 {
     return xsThis;
 }
+
+XSAutoreleased XSBTree XSBTree_GetLeft( XSBTree xsThis )
+{
+    return ( XSBTree )( ( __XSBTree * )xsThis )->left;
+}
+
+XSAutoreleased XSBTree XSBTree_GetRight( XSBTree xsThis )
+{
+    return ( XSBTree )( ( __XSBTree * )xsThis )->right;
+}
+
+XSAutoreleased XSBTree XSBTree_GetParent( XSBTree xsThis )
+{
+    return ( XSBTree )( ( __XSBTree * )xsThis )->parent;
+}
+
+XSAutoreleased XSObject XSBTree_GetValue( XSBTree xsThis )
+{
+    return ( ( __XSBTree * )xsThis )->value;
+}
+
+XSAutoreleased XSBTree XSBTree_CreateLeft( XSBTree xsThis, XSObject value )
+{
+    XSBTree node;
+    
+    node = XSBTree_Init( XSBTree_Alloc() );
+    
+    XSBTree_SetValue( node, value );
+    XSBTree_SetLeft( xsThis, node );
+    XSRelease( node );
+    
+    return node;
+}
+
+XSAutoreleased XSBTree XSBTree_CreateRight( XSBTree xsThis, XSObject value )
+{
+    XSBTree node;
+    
+    node = XSBTree_Init( XSBTree_Alloc() );
+    
+    XSBTree_SetValue( node, value );
+    XSBTree_SetRight( xsThis, node );
+    XSRelease( node );
+    
+    return node;
+}
+
+XSBTree XSBTree_SetLeft( XSBTree xsThis, XSBTree left )
+{
+    __XSBTree * tree;
+    __XSBTree * node;
+    __XSBTree * ret;
+    
+    tree = ( __XSBTree * )xsThis;
+    node = ( __XSBTree * )left;
+    
+    if( tree->left != NULL )
+    {
+        tree->left->parent = NULL;
+        ret                 = tree->left;
+        
+        XSAutorelease( tree->left );
+    }
+    
+    tree->left   = XSRetain( node );
+    node->parent = tree;
+    
+    return ( XSBTree )ret;
+}
+
+XSBTree XSBTree_SetRight( XSBTree xsThis, XSBTree right )
+{
+    __XSBTree * tree;
+    __XSBTree * node;
+    __XSBTree * ret;
+    
+    tree = ( __XSBTree * )xsThis;
+    node = ( __XSBTree * )right;
+    
+    if( tree->right != NULL )
+    {
+        tree->right->parent = NULL;
+        ret                 = tree->right;
+        
+        XSAutorelease( tree->right );
+    }
+    
+    tree->right  = XSRetain( node );
+    node->parent = tree;
+    
+    return ( XSBTree )ret;
+}
+
+XSBTree XSBTree_SetParent( XSBTree xsThis, XSBTree parent )
+{
+    __XSBTree * tree;
+    __XSBTree * node;
+    __XSBTree * ret;
+    
+    tree = ( __XSBTree * )xsThis;
+    node = ( __XSBTree * )parent;
+    
+    if( tree->parent != NULL )
+    {
+        ret = tree->parent;
+        
+        if( tree->parent->left == tree )
+        {
+            tree->parent->left = NULL;
+        }
+        else if( tree->parent->right == tree )
+        {
+            tree->parent->right = NULL;
+        }
+        
+        XSAutorelease( ret );
+    }
+    
+    tree->parent = node;
+    
+    XSRetain( tree );
+    
+    return ( XSBTree )ret;
+}
+
+void XSBTree_SetValue( XSBTree xsThis, XSObject value )
+{
+    ( ( __XSBTree * )xsThis )->value = XSRetain( value );
+}
+
+XSBTree XSBTree_RemoveLeft( XSBTree xsThis )
+{
+    __XSBTree * tree;
+    __XSBTree * node;
+    
+    tree = ( __XSBTree * )xsThis;
+    node = tree->left;
+    
+    node->parent = NULL;
+    tree->left   = NULL;
+    
+    XSAutorelease( node );
+    
+    return ( XSBTree )node;
+}
+
+XSBTree XSBTree_RemoveRight( XSBTree xsThis )
+{
+    __XSBTree * tree;
+    __XSBTree * node;
+    
+    tree = ( __XSBTree * )xsThis;
+    node = tree->right;
+    
+    node->parent = NULL;
+    tree->right  = NULL;
+    
+    XSAutorelease( node );
+    
+    return ( XSBTree )node;
+}
+
+void XSBTree_SwapChildren( XSBTree xsThis )
+{
+    __XSBTree * tree;
+    __XSBTree * node;
+    
+    tree        = ( __XSBTree * )xsThis;
+    node        = ( __XSBTree * )tree->left;
+    tree->left  = tree->right;
+    tree->right = node;
+}
+
+XSAutoreleased XSBTree XSBTree_GetRoot( XSBTree xsThis )
+{
+    __XSBTree * node;
+    
+    node  = ( __XSBTree * )xsThis;
+    
+    while( node->parent != NULL )
+    {
+        node = node->parent;
+    }
+    
+    return ( XSBTree )node;
+}
+
+XSUInteger XSBTree_GetDepth( XSBTree xsThis )
+{
+    XSUInteger  depth;
+    __XSBTree * node;
+    
+    depth = 0;
+    node  = ( __XSBTree * )xsThis;
+    
+    while( node->parent != NULL )
+    {
+        depth++;
+        
+        node = node->parent;
+    }
+    
+    return depth;
+}
+
+XSAutoreleased XSBTree * XSBTree_GetLeafs( XSBTree xsThis )
+{
+    ( void )xsThis;
+    
+    return NULL;
+}
+
+BOOL XSBtree_IsLeaf( XSBTree xsThis )
+{
+    __XSBTree * node;
+    
+    node = ( __XSBTree * )xsThis;
+    
+    if( node->left == NULL && node->right == NULL )
+    {
+        return YES;
+    }
+    
+    return NO;
+}
+
+BOOL XSBtree_IsNode( XSBTree xsThis )
+{
+    __XSBTree * node;
+    
+    node = ( __XSBTree * )xsThis;
+    
+    if( node->left != NULL || node->right != NULL )
+    {
+        return YES;
+    }
+    
+    return NO;
+}
+
+BOOL XSBtree_IsRoot( XSBTree xsThis )
+{
+    __XSBTree * node;
+    
+    node = ( __XSBTree * )xsThis;
+    
+    if( node->parent == NULL )
+    {
+        return YES;
+    }
+    
+    return NO;
+}
