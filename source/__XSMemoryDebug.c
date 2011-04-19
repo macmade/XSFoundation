@@ -514,6 +514,8 @@ void __XSMemoryDebug_AskOption( __XSMemoryRecord * record )
         
         case 'q':
             
+            __xs_memory_fault_caught = YES;
+
             printf( "Aborting the program's execution...\n" );
             __XSLog_Resume();
             pthread_exit( NULL );
