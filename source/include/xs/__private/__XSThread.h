@@ -81,7 +81,11 @@ BOOL __XSThread_Equals( void * object1, void * object2 );
  * param        A pointer to the thread object (XSThread)
  * @result      Always NULL
  */
+#ifdef _WIN32
+DWORD __XSThread_Run( LPVOID thread );
+#else
 void * __XSThread_Run( void * thread ) NORETURN_ATTRIBUTE;
+#endif
 
 XS_EXTERN_C_END
 

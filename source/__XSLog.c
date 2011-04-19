@@ -266,7 +266,7 @@ void __XSVLog( const char * fmt, va_list args )
     #if defined( _WIN32 )
     printf( "%s %s[%i:%lu] ", date, exec, pid, ( unsigned long )tid );
     #elif defined( __MACH__ )
-    printf( "%s.%06lu %s[%i:%X] ", date, ( unsigned long )tv.tv_usec, exec, pid, mid );
+    printf( "%s.%06lu %s[%i:%lu] ", date, ( unsigned long )tv.tv_usec, exec, pid, ( unsigned long )mid );
     #else
     printf( "%s.%06lu %s[%i:%lu] ", date, ( unsigned long )tv.tv_usec, exec, pid, ( unsigned long )tid );
     #endif

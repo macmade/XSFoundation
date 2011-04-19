@@ -75,7 +75,7 @@ XSObject XSThread_Init( XSObject xsThis );
  * @param       arg     Argument to pass to the thread function
  * @result      The XSThread instance
  */
-XSStatic XSThread XSThread_Detach( void ( * func )( XSThread thread, void * arg ), void * arg );
+XSStatic XSThread XSThread_Detach( void ( * func )( XSThread thread, XSObject arg ), void * arg );
 
 /*!
  * @function    XSThread_GetID

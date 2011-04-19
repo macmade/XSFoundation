@@ -81,10 +81,15 @@ BOOL __XSThread_Equals( void * object1, void * object2 )
     return NO;
 }
 
+#ifdef _WIN32
+DWORD __XSThread_Run( LPVOID thread )
+#else
 void * __XSThread_Run( void * thread )
+#endif
 {
-    pthread_t    tid;
-    __XSThread * _thread;
+    pthread_t         tid;
+    __XSThread      * _thread;
+    XSAutoreleasePool ap;
     
     #ifdef __MACH__
     mach_port_t mid;
@@ -92,21 +97,24 @@ void * __XSThread_Run( void * thread )
     
     _thread = ( __XSThread * )thread;
     tid     = pthread_self();
-    
+    ap      = XSAutoreleasePool_Init( XSAutoreleasePool_Alloc() );
+
     #ifdef __MACH__
     mid          = pthread_mach_thread_np( tid );
     _thread->tid = mid;
     #else
     _thread->tid = tid;
     #endif
-    
+
     _thread->func( ( XSThread )thread, _thread->arg );
     
+    XSRelease( _thread->arg );
     XSRelease( thread );
+    XSRelease( ap );
     
     pthread_exit( NULL );
-    
+
     #ifdef _WIN32
-    return NULL;
+    return 0;
     #endif
 }

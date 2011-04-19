@@ -50,16 +50,38 @@ XSObject XSThread_Init( XSObject xsThis )
     return xsThis;
 }
 
-XSStatic XSThread XSThread_Detach( void ( * func )( XSThread thread, void * arg ), void * arg )
+XSStatic XSThread XSThread_Detach( void ( * func )( XSThread thread, XSObject arg ), void * arg )
 {
     pthread_t     t;
     XSUInteger    tid;
     __XSThread  * thread;
-    
+
+    #ifdef _WIN32
+    HANDLE        handle;
+    #endif
+
     thread = ( __XSThread * )XSThread_Init( XSThread_Alloc() );
     thread->func = func;
     thread->arg  = arg;
+
+    XSRetain( arg );
     
+    #ifdef _WIN32
+    
+    ( void )tid;
+    ( void )t;
+
+    handle = CreateThread( NULL, 0, ( LPTHREAD_START_ROUTINE )&__XSThread_Run, ( LPVOID )thread, 0, NULL );
+
+    if( handle == NULL )
+    {
+        return NULL;
+    }
+
+    CloseHandle( handle );
+
+    #else
+
     tid = pthread_create( &t, NULL, __XSThread_Run, ( void * )thread );
     
     if( tid )
@@ -68,7 +90,9 @@ XSStatic XSThread XSThread_Detach( void ( * func )( XSThread thread, void * arg 
         
         return NULL;
     }
-    
+
+    #endif
+
     return ( XSThread )thread;
 }
 

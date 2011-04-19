@@ -47,7 +47,7 @@ void thread_test( XSThread thread, void * arg )
     
     str = ( XSString )arg;
     
-    XSLog( "Log message from thread #%X: $@", XSThread_GetID( thread ), str );
+    XSLog( "Log message from thread #%lu: $@", XSThread_GetID( thread ), str );
 }
 
 void timer_test( XSTimer timer );
