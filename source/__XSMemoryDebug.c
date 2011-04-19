@@ -38,6 +38,12 @@
 #include "__XSMemoryDebug.h"
 #include "__XSLog.h"
 
+#ifdef _WIN32
+
+#include <DbgHelp.h>
+
+#endif
+
 #define __XSMEMORY_HR   "#----------------------------------------------------------------------------------------------------------------------\n"
 
 static __XSMemoryRecord * __xs_memory_records             = NULL;
@@ -49,7 +55,12 @@ static size_t             __xs_memory_total_memory        = 0;
 static size_t             __xs_memory_total_memory_active = 0;
 static bool               __xs_memory_fault_caught        = NO;
 static size_t             __xs_memory_backtrace_size      = 0;
+
+#ifdef _WIN32
+void                    * __xs_memory_backtrace[ 100 ];
+#else
 static void             * __xs_memory_backtrace[ 100 ];
+#endif
 
 void __XSMemoryDebug_InstallSignalHandlers( void )
 {
@@ -439,7 +450,7 @@ void __XSMemoryDebug_AskOption( __XSMemoryRecord * record )
 {
     unsigned char c;
     
-    #ifdef __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+    #if defined( __XS_MEMORY_DEBUG_HAVE_EXECINFO_H ) || defined( _WIN32 )
     
     if( __xs_memory_backtrace_size == 0 )
     {
@@ -461,7 +472,7 @@ void __XSMemoryDebug_AskOption( __XSMemoryRecord * record )
         "#    \n"
         "#    c: continues the program's execution (default)\n"
         "#    q: aborts the program's execution\n"
-        #ifdef __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+        #if defined( __XS_MEMORY_DEBUG_HAVE_EXECINFO_H ) || defined( _WIN32 )
         "#    t: display the backtrace (function call stack)\n"
         #endif
         "#    s: prints the status of the memory allocations\n"
@@ -534,7 +545,7 @@ void __XSMemoryDebug_AskOption( __XSMemoryRecord * record )
             __XSMemoryDebug_DumpRecord( record );
             break;
         
-        #ifdef __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+        #if defined( __XS_MEMORY_DEBUG_HAVE_EXECINFO_H ) || defined( _WIN32 )
         
         case 't':
             
@@ -628,33 +639,68 @@ void __XSMemoryDebug_DumpRecord( __XSMemoryRecord * record )
     printf( "# \n" );
 }
 
-#ifdef __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+#if defined( __XS_MEMORY_DEBUG_HAVE_EXECINFO_H ) || defined( _WIN32 )
 
 void __XSMemoryDebug_GetBacktrace( void )
 {
+    #ifdef _WIN32
+
+    SymInitialize( GetCurrentProcess(), NULL, TRUE );
+
+    __xs_memory_backtrace_size = CaptureStackBackTrace( 0, 100, __xs_memory_backtrace, NULL );
+
+    #else
+
     __xs_memory_backtrace_size = backtrace( __xs_memory_backtrace, 100 );
+
+    #endif
 }
 
 void __XSMemoryDebug_PrintBacktrace( void )
 {
     size_t  i;
+
+    #ifdef _WIN32
+    SYMBOL_INFO * symbol;
+    HANDLE        process;
+    #else
     char ** symbols;
-    
-    symbols = backtrace_symbols( __xs_memory_backtrace, __xs_memory_backtrace_size );
-    
+    #endif
+
     printf( __XSMEMORY_HR );
     printf( "# \n" );
     printf( "#   Displaying %u stack frames:\n", ( int )( __xs_memory_backtrace_size - 5 ) );
     printf( "# \n" );
+
+    #ifdef _WIN32
+    
+    process            = GetCurrentProcess();
+    symbol             = ( SYMBOL_INFO * )calloc( sizeof( SYMBOL_INFO ) + 256 * sizeof( char ), 1 );
+    symbol->MaxNameLen = 255;
+    symbol->SizeOfStruct = sizeof( SYMBOL_INFO );
+
+    for( i = 5; i < __xs_memory_backtrace_size; i++ )
+    {
+        SymFromAddr( process, ( DWORD64 )( __xs_memory_backtrace[ i ] ), 0, symbol );
+        printf( "#   %02u: 0x%016x %s\n", i, ( unsigned int )symbol->Address, symbol->Name );
+    }
+
+    free( symbol );
+
+    #else
+    
+    symbols = backtrace_symbols( __xs_memory_backtrace, __xs_memory_backtrace_size );
     
     for( i = 5; i < __xs_memory_backtrace_size; i++ )
     {
         printf( "#   %s\n", symbols[ i ] );
     }
     
-    printf( "# \n" );
-    
     free( symbols );
+
+    #endif
+    
+    printf( "# \n" );
 }
 
 #endif
