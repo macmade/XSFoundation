@@ -185,8 +185,10 @@ void * XSReallocWithInfos( const char * file, int line, const char * func, void 
         return NULL;
     }
     
-    o2->size = size;
-    cptr     = ( char * )o2->data;
+    o2->size  = size;
+    cptr      =  ( char * )o2;
+    cptr     += ( sizeof( __XSMemoryObject ) );
+    o2->data  = cptr;
     
     cptr[ size + 0  ] = 0;
     cptr[ size + 1  ] = 'X';
