@@ -18,8 +18,7 @@ For now, it's just a standalone project, that should compile on every OS with a 
 ### Usage from Windows
 
 XSFoundation can be used on Windows too.
-Some of the features, such are the integrated memory debugger or threading are not implemented yet, but the library compiles fine.
-
+Some of the features, such as threading, are not implemented yet, but the library compiles fine.
 
 ### Building
 
