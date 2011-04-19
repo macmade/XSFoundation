@@ -262,7 +262,7 @@ XSAutoreleased XSString XSString_StringByAppendingCString( XSString xsThis, char
 void XSString_AppendFormat( XSString xsThis, char * format, ... )
 {
     va_list      args;
-    size_t       length;
+    XSInteger    length;
     __XSString * _str;
     char         c;
     
@@ -270,18 +270,47 @@ void XSString_AppendFormat( XSString xsThis, char * format, ... )
     {
         return;
     }
+
+    _str   = ( __XSString * )xsThis;
+
+    #ifdef _WIN32
     
+    ( void )c;
+
+    va_start( args, format );
+
+    while( ( length = vsnprintf( _str->str +_str->length, _str->capacity - _str->length, format, args ) ) < 0 )
+    {
+        _str->str                                                   = XSRealloc( _str->str, _str->length + __XSSTRING_DEFAULT_CAPACITY + 1 );
+        _str->capacity                                              = _str->length + __XSSTRING_DEFAULT_CAPACITY + 1;
+        _str->str[ _str->length + __XSSTRING_DEFAULT_CAPACITY + 1 ] = 0;
+
+        va_end( args );
+        va_start( args, format );
+    }
+
+    _str->length += length;
+
+    va_end( args );
+
+    #else
+
     va_start( args, format );
     
-    _str   = ( __XSString * )xsThis;
     length = vsnprintf( &c, 1, format, args );
     
+    if( length < 0 )
+    {
+        va_end( args );
+        return;
+    }
+
     va_end( args );
     
     if( _str->capacity < _str->length + length + 1 )
     {
         _str->str                              = XSRealloc( _str->str, _str->length + length + 1 );
-        _str->capacity                         = _str->length + length;
+        _str->capacity                         = _str->length + length + 1;
         _str->str[ _str->length + length + 1 ] = 0;
     }
     
@@ -292,6 +321,8 @@ void XSString_AppendFormat( XSString xsThis, char * format, ... )
     _str->length += length;
     
     va_end( args );
+
+    #endif
 }
 
 void XSString_AppendString( XSString xsThis, XSString str )
@@ -320,16 +351,16 @@ void XSString_AppendCString( XSString xsThis, char * str )
     
     _str   = ( __XSString * )xsThis;
     length = strlen( str );
-    
+
     if( _str->capacity < _str->length + length + 1 )
     {
         _str->str                              = XSRealloc( _str->str, _str->length + length + 1 );
         _str->capacity                         = _str->length + length;
         _str->str[ _str->length + length + 1 ] = 0;
     }
-    
+
     strcat( _str->str, str );
-    
+
     _str->length += length;
 }
 
