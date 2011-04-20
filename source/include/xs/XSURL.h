@@ -62,7 +62,7 @@ XSObject XSURL_InitWithString( XSObject xsThis, XSString str );
 
 XSObject XSURL_InitWithCString( XSObject xsThis, char * str );
 
-XSString XSURL_GetURL( XSObject xsThis );
+XSAutoreleased XSString XSURL_GetURL( XSObject xsThis );
 
 void XSURL_SetScheme( XSObject xsThis, XSString scheme );
 

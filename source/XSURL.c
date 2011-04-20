@@ -57,12 +57,118 @@ XSObject XSURL_InitWithString( XSObject xsThis, XSString str )
 
 XSObject XSURL_InitWithCString( XSObject xsThis, char * str )
 {
-    ( void )str;
+    __XSURL * url;
+    char    * parts_orig;
+    char    * parts;
+    char    * search;
+    
+    url   = ( __XSURL * )xsThis;
+    parts = XSAlloc( sizeof( char ) * ( strlen( str ) + 1 ) );
+    
+    if( parts == NULL )
+    {
+        return NULL;
+    }
+    
+    strcpy( parts, str );
+    
+    parts_orig = parts;
+    search     = strstr( parts, "://" );
+    
+    if( search != NULL )
+    {
+        search[ 0 ] = 0;
+        url->scheme = XSString_InitWithCString( XSString_Alloc(), parts ); 
+    }
+    
+    search += 3;
+    parts   = search;
+    search  = strchr( parts, ':' );
+    
+    if( search != NULL )
+    {
+        search[ 0 ] = 0;
+        url->domain = XSString_InitWithCString( XSString_Alloc(), parts );
+        search     += 1;
+        parts       = search;
+        search      = strstr( parts, "/" );
+        
+        if( search != NULL )
+        {
+            search[ 0 ] = 0;
+            url->port   = atol( parts );
+            parts      += strlen( parts ) + 1;
+        }
+    }
+    else
+    {
+        search  = strstr( parts, "/" );
+        
+        if( search == NULL )
+        {
+            url->domain = XSString_InitWithCString( XSString_Alloc(), parts );
+        }
+        else
+        {
+            search[ 0 ] = 0;
+            url->domain = XSString_InitWithCString( XSString_Alloc(), parts );
+            search     += 1;
+            parts       = search;
+        }
+    }
+    
+    search = strchr( parts, '?' );
+    
+    if( search != NULL )
+    {
+        search[ 0 ] = 0;
+        url->path   = XSString_InitWithCString( XSString_Alloc(), parts );
+        search     += 1;
+        parts       = search;
+        search      = strchr( parts, '#' );
+        
+        if( search != NULL )
+        {
+            search[ 0 ] = 0;
+            url->query  = XSString_InitWithCString( XSString_Alloc(), parts );
+            search     += 1;
+            parts       = search;
+            
+            if( strlen( search ) )
+            {
+                url->fragment = XSString_InitWithCString( XSString_Alloc(), parts );
+            }
+        }
+        
+    }
+    else
+    {
+        search = strchr( parts, '#' );
+        
+        if( search != NULL )
+        {
+            search[ 0 ] = 0;
+            url->path   = XSString_InitWithCString( XSString_Alloc(), parts );
+            search     += 1;
+            parts       = search;
+            
+            if( strlen( search ) )
+            {
+                url->fragment = XSString_InitWithCString( XSString_Alloc(), parts );
+            }
+        }
+        else
+        {
+            url->path = XSString_InitWithCString( XSString_Alloc(), parts );
+        }
+    }
+    
+    XSRelease( parts_orig );
     
     return xsThis;
 }
 
-XSString XSURL_GetURL( XSObject xsThis )
+XSAutoreleased XSString XSURL_GetURL( XSObject xsThis )
 {
     __XSURL * url;
     XSString  str;
@@ -85,9 +191,11 @@ XSString XSURL_GetURL( XSObject xsThis )
         XSString_AppendFormat( str, ( char * )":%u", url->port );
     }
     
+    XSString_AppendCString( str, ( char * )"/" );
+    
     if( url->path != NULL )
     {
-        XSString_AppendFormat( str, ( char * )"/%s", XSString_CString( url->path ) );
+        XSString_AppendFormat( str, ( char * )"%s", XSString_CString( url->path ) );
     }
     
     if( url->query != NULL )
@@ -100,7 +208,7 @@ XSString XSURL_GetURL( XSObject xsThis )
         XSString_AppendFormat( str, ( char * )"#%s", XSString_CString( url->fragment ) );
     }
     
-    return str;
+    return XSAutorelease( str );
 }
 
 void XSURL_SetScheme( XSObject xsThis, XSString scheme )
@@ -178,7 +286,21 @@ XSAutoreleased XSString XSURL_GetDomain( XSObject xsThis )
 
 XSUInteger XSURL_GetPort( XSObject xsThis )
 {
-    return ( ( __XSURL * )xsThis )->port;
+    __XSURL * url;
+    
+    url = ( __XSURL * )xsThis;
+    
+    if( url->port == 0 && XSString_IsEqualToString( url->scheme, XSSTR( ( char * )"http" ) ) )
+    {
+        return 80;
+    }
+    
+    if( url->port == 0 && XSString_IsEqualToString( url->scheme, XSSTR( ( char * )"https" ) ) )
+    {
+        return 443;
+    }
+    
+    return url->port;
 }
 
 XSAutoreleased XSString XSURL_GetPath( XSObject xsThis )
