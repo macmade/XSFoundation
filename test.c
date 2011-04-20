@@ -91,6 +91,7 @@ int main( int argc, char * argv[] )
     XSData        data;
     XSDictionary  dict;
     XSNumber      num;
+    XSURL         url;
     
     app  = XSApplication_Start( argc, ( const char ** )argv );
     
@@ -141,6 +142,7 @@ int main( int argc, char * argv[] )
     data = XSData_InitWithBytes( XSData_Alloc(), ( UInt8 * )"hello, world", 12 );
     dict = XSDictionary_InitWithKeysAndValues( XSDictionary_Alloc(), XSSTR( "test-1" ), str1, XSSTR( "test-2" ), str2, NULL );
     num  = XSNumber_InitWithShort( XSNumber_Alloc(), 0x0303 );
+    url  = XSURL_InitWithCString( XSURL_Alloc(), "http://www.eosgarden.com:80/en/contact/?test=1#test" );
     
     XSLog( "Memory hash: %s", XSHash( test ) );
     XSLog( "Object hash: %s", XSHash( str1 ) );
@@ -157,6 +159,7 @@ int main( int argc, char * argv[] )
     XSLog( "$@", dict );
     XSLog( "$@", num );
     XSLog( "0x%02x", XSNumber_GetChar( num ) );
+    XSLog( "$@", url );
     
     XSNotificationCenter_AddObserver( XSNotificationCenter_DefaultCenter(), ( XSObject )str1, XSSTR( "TestNotification" ), notification_test );
     XSNotificationCenter_PostNotification( XSNotificationCenter_DefaultCenter(), ( XSObject )str1, XSSTR( "TestNotification" ) );
@@ -175,6 +178,7 @@ int main( int argc, char * argv[] )
     XSRelease( data );
     XSRelease( dict );
     XSRelease( num );
+    XSRelease( url );
     
     return EXIT_SUCCESS;
 }
