@@ -45,7 +45,7 @@
 static const XSClassInfos __XSHostClass =
 {
     "XSHost",           /* Class name */
-    sizeof( XSHost ),   /* Object size */
+    sizeof( __XSHost ), /* Object size */
     __XSHost_Construct, /* Constructor */
     __XSHost_Destruct,  /* Destructor */
     NULL,               /* Default initializer */
@@ -94,7 +94,7 @@ XSString __XSHost_ToString( XSObject object )
     host        = ( __XSHost * )object;
     description = XSString_Init( XSString_Alloc() );
     
-    XSString_AppendFormat( description, ( char * )"%s (%s) : %u", XSString_CString( host->host ), XSString_CString( host->ip ), host->port );
+    //XSString_AppendFormat( description, ( char * )"%s (%s) : %u", XSString_CString( host->host ), XSString_CString( host->ip ), host->port );
     
     return XSAutorelease( description );
 }
