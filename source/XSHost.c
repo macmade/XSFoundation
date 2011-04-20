@@ -137,3 +137,12 @@ XSUInteger XSHost_GetPort( XSHost xsThis )
     
     return ( ( __XSHost * )xsThis )->port;
 }
+
+XSInteger XSHost_GetSocket( XSHost xsThis )
+{
+    __XSHost * host;
+    
+    host = ( __XSHost * )xsThis;
+    
+    return socket( host->infos->ai_family, host->infos->ai_socktype, host->infos->ai_protocol );
+}

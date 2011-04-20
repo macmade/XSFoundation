@@ -74,6 +74,8 @@ XSString XSHost_GetIP( XSHost xsThis );
 
 XSUInteger XSHost_GetPort( XSHost xsThis );
 
+XSInteger XSHost_GetSocket( XSHost xsThis );
+
 XS_EXTERN_C_END
 
 #endif /* _XS_HOST_H_ */
