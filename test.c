@@ -162,6 +162,7 @@ XSMain( argc, argv )
     XSLog( "$@", num );
     XSLog( "0x%02x", XSNumber_GetChar( num ) );
     XSLog( "$@", url );
+    XSLog( "$@", host );
     
     XSNotificationCenter_AddObserver( XSNotificationCenter_DefaultCenter(), ( XSObject )str1, XSSTR( "TestNotification" ), notification_test );
     XSNotificationCenter_PostNotification( XSNotificationCenter_DefaultCenter(), ( XSObject )str1, XSSTR( "TestNotification" ) );
