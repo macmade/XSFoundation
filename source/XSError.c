@@ -49,6 +49,11 @@ XSError XSError_Init( XSError xsThis, XSInteger code, XSString domain, XSString 
 {
     __XSError * error;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     error = ( __XSError * )xsThis;
     
     error->code   = code;
@@ -63,15 +68,30 @@ XSError XSError_Init( XSError xsThis, XSInteger code, XSString domain, XSString 
 
 XSInteger XSError_GetCode( XSError xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     return ( ( __XSError * )xsThis )->code;
 }
 
 XSAutoreleased XSString XSError_GetDomain( XSError xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     return XSAutorelease( XSCopy( ( ( __XSError * )xsThis )->domain ) );
 }
 
 XSAutoreleased XSString XSError_GetReason( XSError xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     return XSAutorelease( XSCopy( ( ( __XSError * )xsThis )->reason ) );
 }

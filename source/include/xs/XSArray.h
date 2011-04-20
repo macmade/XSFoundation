@@ -122,7 +122,7 @@ void XSArray_InsertValueAtIndex( XSArray xsThis, XSObject value, XSUInteger i );
  * @param       i       The index in the array
  * @result      The old value
  */
-XSObject XSArray_ReplaceValueAtIndex( XSArray xsThis, XSObject value, XSUInteger i );
+XSAutoreleased XSObject XSArray_ReplaceValueAtIndex( XSArray xsThis, XSObject value, XSUInteger i );
 
 /*!
  * @function    XSArray_ValueAtIndex
@@ -131,7 +131,7 @@ XSObject XSArray_ReplaceValueAtIndex( XSArray xsThis, XSObject value, XSUInteger
  * @param       i       The index in the array
  * @result      The array value
  */
-XSObject XSArray_ValueAtIndex( XSArray array, XSUInteger i );
+XSAutoreleased XSObject XSArray_ValueAtIndex( XSArray array, XSUInteger i );
 
 /*!
  * @function    XSArray_RemoveValueAtIndex
@@ -141,7 +141,7 @@ XSObject XSArray_ValueAtIndex( XSArray array, XSUInteger i );
  * @param       i       The index in the array
  * @result      The removed value
  */
-XSObject XSArray_RemoveValueAtIndex( XSArray xsThis, XSUInteger i );
+XSAutoreleased XSObject XSArray_RemoveValueAtIndex( XSArray xsThis, XSUInteger i );
 
 /*!
  * @function    XSArray_ContainsValue
@@ -166,7 +166,7 @@ XSUInteger XSArray_Index( XSArray xsThis );
  * @param       xsThis  The array object
  * @result      The current array value
  */
-XSObject XSArray_Current( XSArray xsThis );
+XSAutoreleased XSObject XSArray_Current( XSArray xsThis );
 
 /*!
  * @function    XSArray_Next
@@ -174,7 +174,7 @@ XSObject XSArray_Current( XSArray xsThis );
  * @param       xsThis  The array object
  * @result      The array value
  */
-XSObject XSArray_Next( XSArray xsThis );
+XSAutoreleased XSObject XSArray_Next( XSArray xsThis );
 
 /*!
  * @function    XSArray_Previous
@@ -182,7 +182,7 @@ XSObject XSArray_Next( XSArray xsThis );
  * @param       xsThis  The array object
  * @result      The array value
  */
-XSObject XSArray_Previous( XSArray xsThis );
+XSAutoreleased XSObject XSArray_Previous( XSArray xsThis );
 
 /*!
  * @function    XSArray_Rewind

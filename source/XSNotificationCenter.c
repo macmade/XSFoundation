@@ -56,6 +56,11 @@ XSObject XSNotificationCenter_Init( XSObject xsThis )
 {
     __XSNotificationCenter * center;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     center          = ( __XSNotificationCenter * )xsThis;
     center->objects = XSDictionary_Init( XSDictionary_Alloc() );
     
@@ -79,6 +84,11 @@ void XSNotificationCenter_AddObserver( XSNotificationCenter xsThis, XSObject obj
     XSDictionary                      notifications;
     XSArray                           observers;
     struct __XSNotificationCallback * observer;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
     
     if( object == NULL || notificationName == NULL || func == NULL )
     {
@@ -120,6 +130,11 @@ void XSNotificationCenter_PostNotification( XSNotificationCenter xsThis, XSObjec
     struct __XSNotificationCallback * observer;
     XSUInteger                        i;
     XSNotification                    notification;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
     
     if( object == NULL || notificationName == NULL )
     {

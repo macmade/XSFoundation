@@ -38,7 +38,7 @@
 #include "XS.h"
 #include "__XSSort.h"
 
-void XSShellSort( void * values, XSDataType type, XSUInteger size )
+void XSSort( void * values, XSDataType type, XSUInteger size )
 {
     switch( type )
     {
@@ -58,12 +58,4 @@ void XSShellSort( void * values, XSDataType type, XSUInteger size )
         case XSDataTypeUInteger:    __XSShellSortUInteger( values, size );  break;
         default:                                                            break;
     }
-}
-
-void XSQuickSort( void * values, XSDataType type, XSUInteger left, XSUInteger right )
-{
-    ( void )values;
-    ( void )type;
-    ( void )left;
-    ( void )right;
 }

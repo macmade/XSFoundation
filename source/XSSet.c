@@ -56,6 +56,11 @@ XSSet XSSet_InitWithCapacity( XSSet xsThis, XSUInteger capacity )
 {
     __XSSet * set;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     set = ( __XSSet * )XSSet_Init( xsThis );
     
     if( NULL == ( set->values = ( void ** )( XSAlloc( capacity * sizeof( void * ) ) ) ) )
@@ -75,6 +80,11 @@ XSSet XSSet_InitWithValues( XSSet xsThis, XSObject value1, ... )
     XSObject  value;
     va_list   args;
     __XSSet * set;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     set = ( __XSSet * )XSSet_Init( xsThis );
     
@@ -97,6 +107,11 @@ XSSet XSSet_InitWithValues( XSSet xsThis, XSObject value1, ... )
 
 XSUInteger XSSet_Count( XSSet xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     return ( ( __XSSet * )xsThis )->count;
 }
 
@@ -104,6 +119,11 @@ BOOL XSSet_ContainsValue( XSSet xsThis, XSObject value )
 {
     __XSSet  * set;
     XSUInteger i;
+    
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
     
     set = ( __XSSet * )XSSet_Init( xsThis );
     
@@ -122,6 +142,11 @@ void XSSet_AddValue( XSSet xsThis, XSObject value )
 {
     __XSSet  * set;
     void     * values;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
     
     if( XSSet_ContainsValue( xsThis, value ) )
     {
@@ -152,6 +177,11 @@ void XSSet_RemoveValue( XSSet xsThis, XSObject value )
     __XSSet  * set;
     XSUInteger i;
     
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     set   = ( __XSSet * )XSSet_Init( xsThis );
     found = NO;
     
@@ -179,6 +209,11 @@ void XSSet_ReplaceValue( XSSet xsThis, XSObject valueOld, XSObject valueNew )
     __XSSet  * set;
     XSUInteger i;
     
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     set = ( __XSSet * )XSSet_Init( xsThis );
     
     for( i = 0; i < XSSet_Count( xsThis ); i++ )
@@ -196,6 +231,11 @@ XSUInteger XSSet_Index( XSSet xsThis )
 {
     __XSSet  * set;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     set = ( __XSSet * )xsThis;
     
     return set->cur;
@@ -205,6 +245,11 @@ void * XSSet_Current( XSSet xsThis )
 {
     __XSSet  * set;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     set = ( __XSSet * )xsThis;
     
     return set->values[ set->cur ];
@@ -213,6 +258,11 @@ void * XSSet_Current( XSSet xsThis )
 void * XSSet_Next( XSSet xsThis )
 {
     __XSSet  * set;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     set = ( __XSSet * )xsThis;
     
@@ -228,6 +278,11 @@ void * XSSet_Previous( XSSet xsThis )
 {
     __XSSet  * set;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     set = ( __XSSet * )xsThis;
     
     if( set->cur == 0 )
@@ -241,6 +296,11 @@ void * XSSet_Previous( XSSet xsThis )
 void XSSet_Rewind( XSSet xsThis )
 {
     __XSSet  * set;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
     
     set      = ( __XSSet * )xsThis;
     set->cur = 0;

@@ -56,6 +56,11 @@ XSString XSString_InitWithCapacity( XSString xsThis, XSUInteger capacity )
 {
     __XSString * string;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     string = ( __XSString * )xsThis;
     
     if( capacity == 0 )
@@ -222,6 +227,11 @@ XSAutoreleased XSString XSString_UppercaseString( XSString xsThis )
 
 XSAutoreleased XSString XSString_StringByAppendingString( XSString xsThis, XSString str )
 {
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     if( str == NULL )
     {
         return XSAutorelease( XSCopy( xsThis ) );
@@ -463,6 +473,11 @@ XSAutoreleased XSString XSString_MD5Hash( XSString xsThis )
     unsigned char md[ MD5_DIGEST_LENGTH ];
     XSString      md5;
     XSUInteger    i;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     _str = ( __XSString * )xsThis;
     md5  = XSString_InitWithCapacity( XSString_Alloc(), MD5_DIGEST_LENGTH * 2 );

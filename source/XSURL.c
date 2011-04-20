@@ -62,6 +62,11 @@ XSObject XSURL_InitWithCString( XSObject xsThis, char * str )
     char    * parts;
     char    * search;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     url   = ( __XSURL * )xsThis;
     parts = XSAlloc( sizeof( char ) * ( strlen( str ) + 1 ) );
     
@@ -173,6 +178,11 @@ XSAutoreleased XSString XSURL_GetURL( XSObject xsThis )
     __XSURL * url;
     XSString  str;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     url = ( __XSURL * )xsThis;
     str = XSString_Init( XSString_Alloc() );
     
@@ -215,6 +225,11 @@ void XSURL_SetScheme( XSObject xsThis, XSString scheme )
 {
     __XSURL * url;
     
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     url = ( __XSURL * )xsThis;
     
     XSRelease( url->scheme );
@@ -225,6 +240,11 @@ void XSURL_SetScheme( XSObject xsThis, XSString scheme )
 void XSURL_SetDomain( XSObject xsThis, XSString domain )
 {
     __XSURL * url;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
     
     url = ( __XSURL * )xsThis;
     
@@ -237,6 +257,11 @@ void XSURL_SetPort( XSObject xsThis, XSUInteger port )
 {
     __XSURL * url;
     
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     url       = ( __XSURL * )xsThis;
     url->port = port;
 }
@@ -244,6 +269,11 @@ void XSURL_SetPort( XSObject xsThis, XSUInteger port )
 void XSURL_SetPath( XSObject xsThis, XSString path )
 {
     __XSURL * url;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
     
     url = ( __XSURL * )xsThis;
     
@@ -256,6 +286,11 @@ void XSURL_SetQuery( XSObject xsThis, XSString query )
 {
     __XSURL * url;
     
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     url = ( __XSURL * )xsThis;
     
     XSRelease( url->query );
@@ -267,6 +302,11 @@ void XSURL_SetFragment( XSObject xsThis, XSString fragment )
 {
     __XSURL * url;
     
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     url = ( __XSURL * )xsThis;
     
     XSRelease( url->fragment );
@@ -276,6 +316,11 @@ void XSURL_SetFragment( XSObject xsThis, XSString fragment )
 
 XSAutoreleased XSString XSURL_GetScheme( XSObject xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     return ( ( __XSURL * )xsThis )->scheme;
 }
 
@@ -286,7 +331,12 @@ XSAutoreleased XSString XSURL_GetDomain( XSObject xsThis )
 
 XSUInteger XSURL_GetPort( XSObject xsThis )
 {
-    __XSURL * url;
+    __XSURL * url;    
+    
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
     
     url = ( __XSURL * )xsThis;
     
@@ -305,15 +355,30 @@ XSUInteger XSURL_GetPort( XSObject xsThis )
 
 XSAutoreleased XSString XSURL_GetPath( XSObject xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     return ( ( __XSURL * )xsThis )->path;
 }
 
 XSAutoreleased XSString XSURL_GetQuery( XSObject xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     return ( ( __XSURL * )xsThis )->query;
 }
 
 XSAutoreleased XSString XSURL_GetFragment( XSObject xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     return ( ( __XSURL * )xsThis )->fragment;
 }

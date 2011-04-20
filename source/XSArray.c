@@ -57,6 +57,11 @@ XSArray XSArray_InitWithCapacity( XSArray xsThis, XSUInteger capacity )
     void      ** store;
     __XSArray  * array;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     if( NULL == ( store = ( void ** )XSAlloc( capacity * sizeof( void * ) ) ) )
     {
         return NULL;
@@ -75,6 +80,11 @@ XSArray XSArray_InitWithValues( XSArray xsThis, XSObject value1, ... )
 {
     va_list  args;
     XSObject value;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     if( value1 == NULL )
     {
@@ -97,6 +107,11 @@ XSArray XSArray_InitWithValues( XSArray xsThis, XSObject value1, ... )
 
 XSUInteger XSArray_Count( XSArray xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     return ( ( __XSArray * )xsThis )->count;
 }
 
@@ -104,6 +119,11 @@ void XSArray_AppendValue( XSArray xsThis, XSObject value )
 {
     __XSArray * _array;
     XSObject  * store;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
     
     _array = ( __XSArray * )xsThis;
     
@@ -131,6 +151,11 @@ void XSArray_InsertValueAtIndex( XSArray xsThis, XSObject value, XSUInteger i )
     __XSArray  * _array;
     XSObject   * store;
     XSUInteger   j;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
     
     _array = ( __XSArray * )xsThis;
     
@@ -163,10 +188,15 @@ void XSArray_InsertValueAtIndex( XSArray xsThis, XSObject value, XSUInteger i )
     _array->values[ i ] = XSRetain( value );
 }
 
-XSObject XSArray_ReplaceValueAtIndex( XSArray xsThis, XSObject value, XSUInteger i )
+XSAutoreleased XSObject XSArray_ReplaceValueAtIndex( XSArray xsThis, XSObject value, XSUInteger i )
 {
     __XSArray * _array;
     XSObject     old;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     _array = ( __XSArray * )xsThis;
     
@@ -193,9 +223,14 @@ XSObject XSArray_ReplaceValueAtIndex( XSArray xsThis, XSObject value, XSUInteger
     return XSRelease( old );
 }
 
-XSObject XSArray_ValueAtIndex( XSArray xsThis, XSUInteger i )
+XSAutoreleased XSObject XSArray_ValueAtIndex( XSArray xsThis, XSUInteger i )
 {
     __XSArray * _array;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     _array = ( __XSArray * )xsThis;
     
@@ -211,6 +246,11 @@ XSObject XSArray_RemoveValueAtIndex( XSArray xsThis, XSUInteger i )
 {
     __XSArray  * _array;
     XSUInteger   j;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     _array = ( __XSArray * )xsThis;
     
@@ -234,6 +274,11 @@ BOOL XSArray_ContainsValue( XSArray xsThis, XSObject value )
     __XSArray  * _array;
     XSUInteger   i;
     
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
+    
     _array = ( __XSArray * )xsThis;
     
     for( i = 0; i < _array->count; i++ )
@@ -251,23 +296,38 @@ XSUInteger XSArray_Index( XSArray xsThis )
 {
     __XSArray  * _array;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     _array = ( __XSArray * )xsThis;
     
     return _array->cur;
 }
 
-XSObject XSArray_Current( XSArray xsThis )
+XSAutoreleased XSObject XSArray_Current( XSArray xsThis )
 {
     __XSArray  * _array;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     _array = ( __XSArray * )xsThis;
     
     return _array->values[ _array->cur ];
 }
 
-XSObject XSArray_Next( XSArray xsThis )
+XSAutoreleased XSObject XSArray_Next( XSArray xsThis )
 {
     __XSArray  * _array;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     _array = ( __XSArray * )xsThis;
     
@@ -279,9 +339,14 @@ XSObject XSArray_Next( XSArray xsThis )
     return _array->values[ ++_array->cur ];
 }
 
-XSObject XSArray_Previous( XSArray xsThis )
+XSAutoreleased XSObject XSArray_Previous( XSArray xsThis )
 {
     __XSArray  * _array;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     _array = ( __XSArray * )xsThis;
     
@@ -296,6 +361,11 @@ XSObject XSArray_Previous( XSArray xsThis )
 void XSArray_Rewind( XSArray xsThis )
 {
     __XSArray  * _array;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
     
     _array      = ( __XSArray * )xsThis;
     _array->cur = 0;

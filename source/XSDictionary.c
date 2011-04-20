@@ -56,6 +56,11 @@ XSDictionary XSDictionary_InitWithCapacity( XSDictionary xsThis, XSUInteger capa
     XSString       * keys;
     __XSDictionary * dict;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     if( NULL == ( store = ( XSObject * )XSAlloc( capacity * sizeof( XSObject ) ) ) )
     {
         return NULL;
@@ -82,6 +87,11 @@ XSDictionary XSDictionary_InitWithKeysAndValues( XSDictionary xsThis, XSString k
     XSString key;
     XSObject value;
     va_list  args;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     if( value1 == NULL || key1 == NULL )
     {
@@ -111,6 +121,11 @@ XSDictionary XSDictionary_InitWithKeysAndValues( XSDictionary xsThis, XSString k
 
 XSUInteger XSDictionary_Count( XSDictionary xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     return ( ( __XSDictionary * )xsThis )->count;
 }
 
@@ -119,6 +134,11 @@ XSAutoreleased XSArray XSDictionary_Keys( XSDictionary xsThis )
     __XSDictionary * _dict;
     XSArray          array;
     XSUInteger       i;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     _dict = ( __XSDictionary * )xsThis;
     array = XSArray_InitWithCapacity( XSArray_Alloc(), _dict->count );
@@ -137,6 +157,11 @@ XSAutoreleased XSArray XSDictionary_Values( XSDictionary xsThis )
     XSArray          array;
     XSUInteger       i;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     _dict = ( __XSDictionary * )xsThis;
     array = XSArray_InitWithCapacity( XSArray_Alloc(), _dict->count );
     
@@ -152,6 +177,11 @@ XSObject XSDictionary_ValueForKey( XSDictionary xsThis, XSString key )
 {
     __XSDictionary * _dict;
     XSUInteger       i;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     _dict = ( __XSDictionary * )xsThis;
     
@@ -172,6 +202,11 @@ void XSDictionary_SetValueForKey( XSDictionary xsThis, XSObject value, XSString 
     XSObject       * values;
     __XSDictionary * dict;
     XSUInteger       i;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
     
     dict = ( __XSDictionary * )xsThis;
     
@@ -213,6 +248,11 @@ void XSDictionary_RemoveValueForKey( XSDictionary xsThis, XSString key )
     __XSDictionary * dict;
     XSUInteger       i;
     
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     dict  = ( __XSDictionary * )xsThis;
     found = NO;
     
@@ -243,6 +283,11 @@ BOOL XSDictionary_KeyExists( XSDictionary xsThis, XSString key )
     __XSDictionary * dict;
     XSUInteger       i;
     
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
+    
     dict = ( __XSDictionary * )xsThis;
     
     for( i = 0; i < dict->count; i++ )
@@ -260,6 +305,11 @@ BOOL XSDictionary_ContainsValue( XSDictionary xsThis, XSObject value )
 {
     __XSDictionary * dict;
     XSUInteger       i;
+    
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
     
     dict = ( __XSDictionary * )xsThis;
     

@@ -54,6 +54,11 @@ BOOL XSLock_Lock( XSLock xsThis )
 {
     __XSLock * _lock;
     
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
+    
     _lock = ( __XSLock * )xsThis;
     
     if( pthread_mutex_lock( &( _lock->mutex ) ) == 0 )
@@ -67,6 +72,11 @@ BOOL XSLock_Lock( XSLock xsThis )
 BOOL XSLock_TryLock( XSLock xsThis )
 {
     __XSLock * _lock;
+    
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
     
     _lock = ( __XSLock * )xsThis;
     
@@ -82,6 +92,11 @@ void XSLock_WaitForLock( XSLock xsThis )
 {
     __XSLock * _lock;
     
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     _lock = ( __XSLock * )xsThis;
     
     while( pthread_mutex_trylock( &( _lock->mutex ) ) != 0 )
@@ -91,6 +106,11 @@ void XSLock_WaitForLock( XSLock xsThis )
 void XSLock_Unlock( XSLock xsThis )
 {
     __XSLock * _lock;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
     
     _lock = ( __XSLock * )xsThis;
     
@@ -104,5 +124,10 @@ void XSLock_Unlock( XSLock xsThis )
 
 BOOL XSLock_IsLocked( XSLock xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
+    
     return ( ( __XSLock * )xsThis )->locked;
 }

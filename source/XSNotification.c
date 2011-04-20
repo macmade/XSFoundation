@@ -54,6 +54,11 @@ XSObject XSNotification_GetObject( XSNotification xsThis )
 {
     __XSNotification * notification;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     notification = ( __XSNotification * )xsThis;
     
     return notification->object;
@@ -62,6 +67,11 @@ XSObject XSNotification_GetObject( XSNotification xsThis )
 void XSNotification_SetObject( XSNotification xsThis, XSObject object )
 {
     __XSNotification * notification;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
     
     notification = ( __XSNotification * )xsThis;
 
@@ -77,6 +87,11 @@ XSString XSNotification_GetName( XSNotification xsThis )
 {
     __XSNotification * notification;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     notification = ( __XSNotification * )xsThis;
     
     return notification->name;
@@ -85,6 +100,11 @@ XSString XSNotification_GetName( XSNotification xsThis )
 void XSNotification_SetName( XSNotification xsThis, XSString name )
 {
     __XSNotification * notification;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
     
     notification = ( __XSNotification * )xsThis;
 

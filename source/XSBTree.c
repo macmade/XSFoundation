@@ -52,27 +52,52 @@ XSObject XSBTree_Init( XSObject xsThis )
 
 XSAutoreleased XSBTree XSBTree_GetLeft( XSBTree xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     return ( XSBTree )( ( __XSBTree * )xsThis )->left;
 }
 
 XSAutoreleased XSBTree XSBTree_GetRight( XSBTree xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     return ( XSBTree )( ( __XSBTree * )xsThis )->right;
 }
 
 XSAutoreleased XSBTree XSBTree_GetParent( XSBTree xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     return ( XSBTree )( ( __XSBTree * )xsThis )->parent;
 }
 
 XSAutoreleased XSObject XSBTree_GetValue( XSBTree xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     return ( ( __XSBTree * )xsThis )->value;
 }
 
 XSAutoreleased XSBTree XSBTree_CreateLeft( XSBTree xsThis, XSObject value )
 {
     XSBTree node;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     node = XSBTree_Init( XSBTree_Alloc() );
     
@@ -86,6 +111,11 @@ XSAutoreleased XSBTree XSBTree_CreateLeft( XSBTree xsThis, XSObject value )
 XSAutoreleased XSBTree XSBTree_CreateRight( XSBTree xsThis, XSObject value )
 {
     XSBTree node;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     node = XSBTree_Init( XSBTree_Alloc() );
     
@@ -101,6 +131,11 @@ XSBTree XSBTree_SetLeft( XSBTree xsThis, XSBTree left )
     __XSBTree * tree;
     __XSBTree * node;
     __XSBTree * ret;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     tree = ( __XSBTree * )xsThis;
     node = ( __XSBTree * )left;
@@ -125,6 +160,11 @@ XSBTree XSBTree_SetRight( XSBTree xsThis, XSBTree right )
     __XSBTree * node;
     __XSBTree * ret;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     tree = ( __XSBTree * )xsThis;
     node = ( __XSBTree * )right;
     
@@ -147,6 +187,11 @@ XSBTree XSBTree_SetParent( XSBTree xsThis, XSBTree parent )
     __XSBTree * tree;
     __XSBTree * node;
     __XSBTree * ret;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     tree = ( __XSBTree * )xsThis;
     node = ( __XSBTree * )parent;
@@ -176,6 +221,11 @@ XSBTree XSBTree_SetParent( XSBTree xsThis, XSBTree parent )
 
 void XSBTree_SetValue( XSBTree xsThis, XSObject value )
 {
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     ( ( __XSBTree * )xsThis )->value = XSRetain( value );
 }
 
@@ -183,6 +233,11 @@ XSBTree XSBTree_RemoveLeft( XSBTree xsThis )
 {
     __XSBTree * tree;
     __XSBTree * node;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     tree = ( __XSBTree * )xsThis;
     node = tree->left;
@@ -200,6 +255,11 @@ XSBTree XSBTree_RemoveRight( XSBTree xsThis )
     __XSBTree * tree;
     __XSBTree * node;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     tree = ( __XSBTree * )xsThis;
     node = tree->right;
     
@@ -216,6 +276,11 @@ void XSBTree_SwapChildren( XSBTree xsThis )
     __XSBTree * tree;
     __XSBTree * node;
     
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     tree        = ( __XSBTree * )xsThis;
     node        = ( __XSBTree * )tree->left;
     tree->left  = tree->right;
@@ -225,6 +290,11 @@ void XSBTree_SwapChildren( XSBTree xsThis )
 XSAutoreleased XSBTree XSBTree_GetRoot( XSBTree xsThis )
 {
     __XSBTree * node;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     node  = ( __XSBTree * )xsThis;
     
@@ -240,6 +310,11 @@ XSUInteger XSBTree_GetDepth( XSBTree xsThis )
 {
     XSUInteger  depth;
     __XSBTree * node;
+    
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
     
     depth = 0;
     node  = ( __XSBTree * )xsThis;
@@ -258,12 +333,22 @@ XSAutoreleased XSBTree * XSBTree_GetLeafs( XSBTree xsThis )
 {
     ( void )xsThis;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     return NULL;
 }
 
 BOOL XSBtree_IsLeaf( XSBTree xsThis )
 {
     __XSBTree * node;
+    
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
     
     node = ( __XSBTree * )xsThis;
     
@@ -279,6 +364,11 @@ BOOL XSBtree_IsNode( XSBTree xsThis )
 {
     __XSBTree * node;
     
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
+    
     node = ( __XSBTree * )xsThis;
     
     if( node->left != NULL || node->right != NULL )
@@ -292,6 +382,11 @@ BOOL XSBtree_IsNode( XSBTree xsThis )
 BOOL XSBtree_IsRoot( XSBTree xsThis )
 {
     __XSBTree * node;
+    
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
     
     node = ( __XSBTree * )xsThis;
     

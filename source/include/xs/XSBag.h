@@ -145,7 +145,7 @@ XSUInteger XSBag_Index( XSBag xsThis );
  * @param       xsThis  The bag object
  * @result      The current bag value
  */
-void * XSBag_Current( XSBag xsThis );
+XSAutoreleased XSObject XSBag_Current( XSBag xsThis );
 
 /*!
  * @function    XSBag_Next
@@ -153,7 +153,7 @@ void * XSBag_Current( XSBag xsThis );
  * @param       xsThis  The bag object
  * @result      The bag value
  */
-void * XSBag_Next( XSBag xsThis );
+XSAutoreleased XSObject XSBag_Next( XSBag xsThis );
 
 /*!
  * @function    XSBag_Previous
@@ -161,7 +161,7 @@ void * XSBag_Next( XSBag xsThis );
  * @param       xsThis  The bag object
  * @result      The bag value
  */
-void * XSBag_Previous( XSBag xsThis );
+XSAutoreleased XSObject XSBag_Previous( XSBag xsThis );
 
 /*!
  * @function    XSBag_Rewind

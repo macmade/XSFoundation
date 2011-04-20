@@ -45,25 +45,14 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @function    XSShellSort
+ * @function    XSSort
  * @abstract    Sort values using the shell sort algorithm
  * @param       values  The values to sort
  * @param       type    The type of the values
  * @param       size    The number of values
  * @return      void
  */
-void XSShellSort( void * values, XSDataType type, XSUInteger size );
-
-/*!
- * @function    XSQuickSort
- * @abstract    Sort values using the quick sort algorithm
- * @param       values  The values to sort
- * @param       type    The type of the values
- * @param       left
- * @param       right
- * @return      void
- */
-void XSQuickSort( void * values, XSDataType type, XSUInteger left, XSUInteger right );
+void XSSort( void * values, XSDataType type, XSUInteger size );
 
 XS_EXTERN_C_END
 

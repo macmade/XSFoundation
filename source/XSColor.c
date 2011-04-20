@@ -69,6 +69,11 @@ XSColor XSColor_InitWithRGBA( XSColor xsThis, XSFloat r, XSFloat g, XSFloat b, X
 {
     __XSColor * color;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     color = ( __XSColor * )xsThis;
     
     color->red   = MIN( r, 255 );
@@ -86,6 +91,11 @@ XSColor XSColor_InitWithHSLA( XSColor xsThis, XSFloat h, XSFloat s, XSFloat l, X
 {
     __XSColor * color;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     color = ( __XSColor * )xsThis;
     
     color->hue        = MIN( h, 360 );
@@ -102,6 +112,11 @@ XSColor XSColor_InitWithHSLA( XSColor xsThis, XSFloat h, XSFloat s, XSFloat l, X
 XSColor XSColor_InitWithHSVA( XSColor xsThis, XSFloat h, XSFloat s, XSFloat v, XSFloat a )
 {
     __XSColor * color;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     color = ( __XSColor * )xsThis;
     
@@ -143,6 +158,11 @@ XSAutoreleased XSStatic XSColor XSColor_BlueColor( void )
 
 XSFloat XSColor_GetRed( XSColor xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     return ( ( __XSColor * )xsThis )->red;
 }
 
@@ -154,26 +174,51 @@ XSFloat XSColor_GetRed( XSColor xsThis )
  */
 XSFloat XSColor_GetGreen( XSColor xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     return ( ( __XSColor * )xsThis )->green;
 }
 
 XSFloat XSColor_GetBlue( XSColor xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     return ( ( __XSColor * )xsThis )->blue;
 }
 
 XSFloat XSColor_GetHue( XSColor xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     return ( ( __XSColor * )xsThis )->hue;
 }
 
 XSFloat XSColor_GetSaturation( XSColor xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     return ( ( __XSColor * )xsThis )->saturation;
 }
 
 XSFloat XSColor_GetLuminance( XSColor xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     return ( ( __XSColor * )xsThis )->luminance;
 }
 
@@ -185,6 +230,11 @@ XSFloat XSColor_GetLuminance( XSColor xsThis )
  */
 XSFloat XSColor_GetValue( XSColor xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     return ( ( __XSColor * )xsThis )->value;
 }
 
@@ -195,6 +245,11 @@ XSFloat XSColor_GetAlpha( XSColor xsThis )
 
 void XSColor_SetRed( XSColor xsThis, XSFloat v )
 {
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     ( ( __XSColor * )xsThis )->red = MIN( v, 255 );
     
     __XSColor_RGBToHSL( ( __XSColor * )xsThis );
@@ -203,6 +258,11 @@ void XSColor_SetRed( XSColor xsThis, XSFloat v )
 
 void XSColor_SetGreen( XSColor xsThis, XSFloat v )
 {
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     ( ( __XSColor * )xsThis )->green = MIN( v, 255 );
     
     __XSColor_RGBToHSL( ( __XSColor * )xsThis );
@@ -211,6 +271,11 @@ void XSColor_SetGreen( XSColor xsThis, XSFloat v )
 
 void XSColor_SetBlue( XSColor xsThis, XSFloat v )
 {
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     ( ( __XSColor * )xsThis )->blue = MIN( v, 255 );
     
     __XSColor_RGBToHSL( ( __XSColor * )xsThis );
@@ -219,6 +284,11 @@ void XSColor_SetBlue( XSColor xsThis, XSFloat v )
 
 void XSColor_SetHue( XSColor xsThis, XSFloat v )
 {
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     ( ( __XSColor * )xsThis )->hue = MIN( v, 360 );
     
     __XSColor_HSLToRGB( ( __XSColor * )xsThis );
@@ -226,6 +296,11 @@ void XSColor_SetHue( XSColor xsThis, XSFloat v )
 
 void XSColor_SetSaturation( XSColor xsThis, XSFloat v )
 {
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     ( ( __XSColor * )xsThis )->saturation = MIN( v, 100 );
     
     __XSColor_HSLToRGB( ( __XSColor * )xsThis );
@@ -233,6 +308,11 @@ void XSColor_SetSaturation( XSColor xsThis, XSFloat v )
 
 void XSColor_SetLuminance( XSColor xsThis, XSFloat v )
 {
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     ( ( __XSColor * )xsThis )->luminance = MIN( v, 100 );
     
     __XSColor_HSLToRGB( ( __XSColor * )xsThis );
@@ -241,6 +321,11 @@ void XSColor_SetLuminance( XSColor xsThis, XSFloat v )
 
 void XSColor_SetValue( XSColor xsThis, XSFloat v )
 {
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     ( ( __XSColor * )xsThis )->value = MIN( v, 100 );
     
     __XSColor_HSLToRGB( ( __XSColor * )xsThis );
@@ -249,5 +334,10 @@ void XSColor_SetValue( XSColor xsThis, XSFloat v )
 
 void XSColor_SetAlpha( XSColor xsThis, XSFloat v )
 {
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     ( ( __XSColor * )xsThis )->alpha = MIN( v, 100 );
 }

@@ -52,10 +52,20 @@ XSObject XSBool_Init( XSObject xsThis )
 
 void XSBool_SetValue( XSBool xsThis, BOOL value )
 {
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     ( ( __XSBool * )xsThis )->value = value;
 }
 
 BOOL XSBool_GetValue( XSBool xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
+    
     return ( ( __XSBool * )xsThis )->value;
 }

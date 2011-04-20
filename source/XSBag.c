@@ -56,6 +56,11 @@ XSBag XSBag_InitWithCapacity( XSBag xsThis, XSUInteger capacity )
 {
     __XSBag * bag;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     bag = ( __XSBag * )XSBag_Init( xsThis );
     
     if( NULL == ( bag->values = ( void ** )( XSAlloc( capacity * sizeof( void * ) ) ) ) )
@@ -75,6 +80,11 @@ XSBag XSBag_InitWithValues( XSBag xsThis, XSObject value1, ... )
     XSObject  value;
     va_list   args;
     __XSBag * bag;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     bag = ( __XSBag * )XSBag_Init( xsThis );
     
@@ -97,6 +107,11 @@ XSBag XSBag_InitWithValues( XSBag xsThis, XSObject value1, ... )
 
 XSUInteger XSBag_Count( XSBag xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     return ( ( __XSBag * )xsThis )->count;
 }
 
@@ -104,6 +119,11 @@ BOOL XSBag_ContainsValue( XSBag xsThis, XSObject value )
 {
     __XSBag  * bag;
     XSUInteger i;
+    
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
     
     bag = ( __XSBag * )XSBag_Init( xsThis );
     
@@ -122,6 +142,11 @@ void XSBag_AddValue( XSBag xsThis, XSObject value )
 {
     __XSBag  * bag;
     XSObject   values;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
     
     bag = ( __XSBag * )XSBag_Init( xsThis );
     
@@ -146,6 +171,11 @@ void XSBag_RemoveValue( XSBag xsThis, XSObject value )
     BOOL       found;
     __XSBag  * bag;
     XSUInteger i;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
     
     bag   = ( __XSBag * )XSBag_Init( xsThis );
     found = NO;
@@ -174,6 +204,11 @@ void XSBag_ReplaceValue( XSBag xsThis, XSObject valueOld, XSObject valueNew )
     __XSBag  * bag;
     XSUInteger i;
     
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     bag = ( __XSBag * )XSBag_Init( xsThis );
     
     for( i = 0; i < XSBag_Count( xsThis ); i++ )
@@ -191,23 +226,43 @@ XSUInteger XSBag_Index( XSBag xsThis )
 {
     __XSBag  * bag;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     bag = ( __XSBag * )xsThis;
     
     return bag->cur;
 }
 
-void * XSBag_Current( XSBag xsThis )
+XSAutoreleased XSObject XSBag_Current( XSBag xsThis )
 {
     __XSBag  * bag;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     bag = ( __XSBag * )xsThis;
     
     return bag->values[ bag->cur ];
 }
 
-void * XSBag_Next( XSBag xsThis )
+XSAutoreleased XSObject XSBag_Next( XSBag xsThis )
 {
     __XSBag  * bag;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     bag = ( __XSBag * )xsThis;
     
@@ -219,9 +274,14 @@ void * XSBag_Next( XSBag xsThis )
     return bag->values[ ++bag->cur ];
 }
 
-void * XSBag_Previous( XSBag xsThis )
+XSAutoreleased XSObject XSBag_Previous( XSBag xsThis )
 {
     __XSBag  * bag;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     bag = ( __XSBag * )xsThis;
     
@@ -236,6 +296,11 @@ void * XSBag_Previous( XSBag xsThis )
 void XSBag_Rewind( XSBag xsThis )
 {
     __XSBag  * bag;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
     
     bag      = ( __XSBag * )xsThis;
     bag->cur = 0;

@@ -49,6 +49,11 @@ XSObject XSTimer_Init( XSTimer xsThis, void ( * func )( XSTimer timer ), XSUInte
 {
     __XSTimer * t;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
      t        = ( __XSTimer * )xsThis;
      t->msecs = milliseconds;
      t->func  = func;
@@ -58,11 +63,21 @@ XSObject XSTimer_Init( XSTimer xsThis, void ( * func )( XSTimer timer ), XSUInte
 
 void XSTimer_RunOnce( XSTimer xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     XSThread_Detach( __XSTimer_RunOnce, ( void * )xsThis );
 }
 
 void XSTimer_RunAndRepeat( XSTimer xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     ( ( __XSTimer * )xsThis )->valid = YES;
     
     XSThread_Detach( __XSTimer_RunAndRepeat, ( void * )xsThis );
@@ -70,10 +85,20 @@ void XSTimer_RunAndRepeat( XSTimer xsThis )
 
 void XSTimer_Invalidate( XSTimer xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     ( ( __XSTimer * )xsThis )->valid = NO;
 }
 
 BOOL XSTimer_IsValid( XSTimer xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
+    
     return ( ( __XSTimer * )xsThis )->valid;
 }

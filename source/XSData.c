@@ -57,6 +57,11 @@ XSData XSData_InitWithCapacity( XSData xsThis, XSUInteger capacity )
     __XSData * data;
     UInt8    * bytes;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     data                  = ( __XSData * )xsThis;
     data->capacity        = capacity;
     data->initialCapacity = capacity;
@@ -76,6 +81,11 @@ XSData XSData_InitWithBytes( XSData xsThis, UInt8 * bytes, XSUInteger length )
 {
     __XSData * data;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     if( NULL == XSData_InitWithCapacity( xsThis, length ) )
     {
         return NULL;
@@ -91,6 +101,11 @@ XSData XSData_InitWithBytes( XSData xsThis, UInt8 * bytes, XSUInteger length )
 
 XSUInteger XSData_GetLength( XSData xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     return ( ( __XSData * )xsThis )->length;
 }
 
@@ -99,6 +114,11 @@ XSAutoreleased UInt8 * XSData_GetBytes( XSData xsThis, XSRange range )
     __XSData * data;
     UInt8    * bytes;
     XSUInteger length;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     data = ( __XSData * )xsThis;
     
@@ -131,6 +151,11 @@ void XSData_AppendBytes( XSData xsThis, UInt8 * bytes, XSUInteger length )
     __XSData * data;
     UInt8    * store;
     
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     data = ( __XSData * )xsThis;
     
     if( data->capacity < length )
@@ -152,5 +177,10 @@ void XSData_AppendBytes( XSData xsThis, UInt8 * bytes, XSUInteger length )
 
 UInt8 * XSData_GetBytesPointer( XSData xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     return ( ( __XSData * )xsThis )->bytes;
 }

@@ -215,6 +215,11 @@ XSInteger XSFile_Flush( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
@@ -226,6 +231,11 @@ XSInteger XSFile_Close( XSFile xsThis )
 {
     XSInteger   res;
     __XSFile *  _f;
+    
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -243,6 +253,11 @@ XSInteger XSFile_Printf( XSFile xsThis, const char * format, ... )
     XSInteger   res;
     va_list     arg;
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -262,6 +277,11 @@ XSInteger XSFile_VPrintf( XSFile xsThis, const char * format, va_list arg )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
@@ -274,6 +294,11 @@ XSInteger XSFile_Getc( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
@@ -284,6 +309,11 @@ XSInteger XSFile_Getc( XSFile xsThis )
 XSInteger XSFile_Putc( XSFile xsThis, XSInteger c )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -297,6 +327,11 @@ XSInteger XSFile_Puts( XSFile xsThis, const char * s )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
@@ -309,6 +344,11 @@ size_t XSFile_Read( XSFile xsThis, void * ptr, size_t size, size_t nobj )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
@@ -319,6 +359,11 @@ size_t XSFile_Read( XSFile xsThis, void * ptr, size_t size, size_t nobj )
 size_t XSFile_Write( XSFile xsThis, const void * ptr, size_t size, size_t nobj )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -332,6 +377,11 @@ XSInteger XSFile_Seek( XSFile xsThis, XSInteger offset, XSFileSeekPosition origi
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
@@ -342,6 +392,11 @@ XSInteger XSFile_Seek( XSFile xsThis, XSInteger offset, XSFileSeekPosition origi
 XSInteger XSFile_Tell( XSFile xsThis )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -354,6 +409,11 @@ void XSFile_Rewind( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
@@ -364,6 +424,11 @@ void XSFile_Rewind( XSFile xsThis )
 XSInteger XSFile_GetPos( XSFile xsThis, fpos_t * ptr )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -376,6 +441,11 @@ XSInteger XSFile_SetPos( XSFile xsThis, const fpos_t * ptr )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
@@ -386,6 +456,11 @@ XSInteger XSFile_SetPos( XSFile xsThis, const fpos_t * ptr )
 void XSFile_ClearErr( XSFile xsThis )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -398,6 +473,11 @@ XSInteger XSFile_EndOfFile( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
@@ -409,6 +489,11 @@ XSInteger XSFile_Error( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
@@ -419,6 +504,11 @@ XSInteger XSFile_Error( XSFile xsThis )
 const char * XSFile_Filename( XSFile xsThis )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -446,6 +536,11 @@ const char * XSFile_OpenMode( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
@@ -472,6 +567,11 @@ BOOL XSFile_IsReadable( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     __XSFILE_INIT( _f );
@@ -497,6 +597,11 @@ BOOL XSFile_IsReadable( XSFile xsThis )
 BOOL XSFile_IsWriteable( XSFile xsThis )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -527,6 +632,11 @@ BOOL XSFile_Copy( XSFile xsThis, char * new_name )
     size_t        length;
     unsigned char buffer[ 1024 ];
     const char  * name;
+    
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
     
     name = XSFile_Filename( xsThis );
     
@@ -587,6 +697,11 @@ XSInteger XSFile_GetBit( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     if( _f->readable == false )
@@ -614,6 +729,11 @@ XSInteger XSFile_PutBit( XSFile xsThis, uint8_t bit )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     if( _f->writeable == false )
@@ -638,6 +758,11 @@ XSInteger XSFile_GetBits( XSFile xsThis, XSUInteger count )
     XSUInteger   i;
     __XSFile   * _f;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     if( _f->readable == false )
@@ -661,6 +786,11 @@ XSInteger XSFile_PutBits( XSFile xsThis, uint64_t bits, XSUInteger count )
     XSUInteger   bytes;
     uint8_t      bit;
     __XSFile   * _f;
+    
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -693,6 +823,11 @@ dev_t XSFile_DeviceID( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     return _f->stat_buf.st_dev;
@@ -701,6 +836,11 @@ dev_t XSFile_DeviceID( XSFile xsThis )
 ino_t XSFile_SerialNumber( XSFile xsThis )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -711,6 +851,11 @@ nlink_t XSFile_NumberOfLinks( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     return _f->stat_buf.st_nlink;
@@ -719,6 +864,11 @@ nlink_t XSFile_NumberOfLinks( XSFile xsThis )
 uid_t XSFile_UID( XSFile xsThis )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -729,6 +879,11 @@ gid_t XSFile_GID( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     return _f->stat_buf.st_gid;
@@ -737,6 +892,11 @@ gid_t XSFile_GID( XSFile xsThis )
 size_t XSFile_Size( XSFile xsThis )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -750,6 +910,11 @@ XSFloat XSFile_HumanReadableSize( XSFile xsThis, char unit[] )
     size_t   bytes;
     XSFloat  size;
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
     
     _f    = ( __XSFile * )xsThis;
     bytes = XSFile_Size( xsThis );
@@ -782,6 +947,11 @@ time_t XSFile_AccessTime( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     return _f->stat_buf.st_atime;
@@ -790,6 +960,11 @@ time_t XSFile_AccessTime( XSFile xsThis )
 time_t XSFile_ModifictaionTime( XSFile xsThis )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -800,6 +975,11 @@ time_t XSFile_CreationTime( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     return _f->stat_buf.st_ctime;
@@ -808,6 +988,11 @@ time_t XSFile_CreationTime( XSFile xsThis )
 BOOL XSFile_IsBlockDevice( XSFile xsThis )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -818,6 +1003,11 @@ BOOL XSFile_IsCharacterDevice( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IFMT ) == S_IFCHR ) ) ? YES : NO;
@@ -826,6 +1016,11 @@ BOOL XSFile_IsCharacterDevice( XSFile xsThis )
 BOOL XSFile_IsFIFO( XSFile xsThis )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -836,6 +1031,11 @@ BOOL XSFile_IsRegularFile( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IFMT ) == S_IFREG ) ) ? YES : NO;
@@ -844,6 +1044,11 @@ BOOL XSFile_IsRegularFile( XSFile xsThis )
 BOOL XSFile_IsLink( XSFile xsThis )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -854,6 +1059,11 @@ BOOL XSFile_IsSocket( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IFMT ) == S_IFSOCK ) ) ? YES : NO;
@@ -862,6 +1072,11 @@ BOOL XSFile_IsSocket( XSFile xsThis )
 BOOL XSFile_IsUserReadable( XSFile xsThis )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -872,6 +1087,11 @@ BOOL XSFile_IsUserWriteable( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IRWXU ) == S_IWUSR ) ) ? YES : NO;
@@ -880,6 +1100,11 @@ BOOL XSFile_IsUserWriteable( XSFile xsThis )
 BOOL XSFile_ISUserExecutable( XSFile xsThis )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -890,6 +1115,11 @@ BOOL XSFile_IsGroupReadable( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IRWXG ) == S_IRGRP ) ) ? YES : NO;
@@ -898,6 +1128,11 @@ BOOL XSFile_IsGroupReadable( XSFile xsThis )
 BOOL XSFile_IsGroupWriteable( XSFile xsThis )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -908,6 +1143,11 @@ BOOL XSFile_IsGroupExecutable( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IRWXG ) == S_IXGRP ) ) ? YES : NO;
@@ -916,6 +1156,11 @@ BOOL XSFile_IsGroupExecutable( XSFile xsThis )
 BOOL XSFile_IsWorldReadable( XSFile xsThis )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -926,6 +1171,11 @@ BOOL XSFile_IsWorldWriteable( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     return ( ( ( _f->stat_buf.st_mode & S_IRWXO ) == S_IWOTH ) ) ? YES : NO;
@@ -934,6 +1184,11 @@ BOOL XSFile_IsWorldWriteable( XSFile xsThis )
 BOOL XSFile_IsWorldExecutable( XSFile xsThis )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
     
     _f = ( __XSFile * )xsThis;
     
@@ -944,6 +1199,11 @@ BOOL XSFile_HasSUID( XSFile xsThis )
 {
     __XSFile * _f;
     
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
+    
     _f = ( __XSFile * )xsThis;
     
     return ( _f->stat_buf.st_mode & S_ISUID ) ? YES : NO;
@@ -952,6 +1212,11 @@ BOOL XSFile_HasSUID( XSFile xsThis )
 BOOL XSFile_HasSGID( XSFile xsThis )
 {
     __XSFile * _f;
+    
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
     
     _f = ( __XSFile * )xsThis;
     

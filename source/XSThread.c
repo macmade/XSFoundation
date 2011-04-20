@@ -55,6 +55,11 @@ XSStatic XSThread XSThread_Detach( void ( * func )( XSThread thread, XSObject ar
     pthread_t     t;
     XSUInteger    tid;
     __XSThread  * thread;
+    
+    if( func == NULL )
+    {
+        return NULL;
+    }
 
     #ifdef _WIN32
     HANDLE        handle;
@@ -98,5 +103,10 @@ XSStatic XSThread XSThread_Detach( void ( * func )( XSThread thread, XSObject ar
 
 XSUInteger XSThread_GetID( XSThread xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     return ( ( __XSThread * )xsThis )->tid;
 }

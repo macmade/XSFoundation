@@ -63,22 +63,42 @@ XSApplicationArgument XSApplicationArgument_Init( XSApplicationArgument xsThis, 
 
 const char * XSApplicationArgument_GetName( XSApplicationArgument xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     return ( ( __XSApplicationArgument * )xsThis )->name;
 }
 
 const char * XSApplicationArgument_GetHelp( XSApplicationArgument xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     return ( ( __XSApplicationArgument * )xsThis )->help;
 }
 
 XSApplicationArgumentType XSApplicationArgument_GetType( XSApplicationArgument xsThis )
 {
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     return ( ( __XSApplicationArgument * )xsThis )->type;
 }
 
 void XSApplicationArgument_SetFlag( XSApplicationArgument xsThis )
 {
     __XSApplicationArgument * _arg;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
     
     _arg           = ( __XSApplicationArgument * )xsThis;
     _arg->flag_val = YES;
@@ -88,6 +108,11 @@ void XSApplicationArgument_SetIntegerValue( XSApplicationArgument xsThis, XSInte
 {
     __XSApplicationArgument * _arg;
     
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     _arg          = ( __XSApplicationArgument * )xsThis;
     _arg->int_val = value;
 }
@@ -95,6 +120,11 @@ void XSApplicationArgument_SetIntegerValue( XSApplicationArgument xsThis, XSInte
 void XSApplicationArgument_SetUnsignedIntegerValue( XSApplicationArgument xsThis, XSUInteger value )
 {
     __XSApplicationArgument * _arg;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
     
     _arg           = ( __XSApplicationArgument * )xsThis;
     _arg->uint_val = value;
@@ -104,6 +134,11 @@ void XSApplicationArgument_SetStringValue( XSApplicationArgument xsThis, const c
 {
     __XSApplicationArgument * _arg;
     
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     _arg          = ( __XSApplicationArgument * )xsThis;
     _arg->str_val = value;
 }
@@ -112,6 +147,11 @@ void XSApplicationArgument_SetFloatValue( XSApplicationArgument xsThis, XSFloat 
 {
     __XSApplicationArgument * _arg;
     
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
     _arg            = ( __XSApplicationArgument * )xsThis;
     _arg->float_val = value;
 }
@@ -119,6 +159,11 @@ void XSApplicationArgument_SetFloatValue( XSApplicationArgument xsThis, XSFloat 
 BOOL XSApplicationArgument_GetFlag( XSApplicationArgument xsThis )
 {
     __XSApplicationArgument * _arg;
+    
+    if( xsThis == NULL )
+    {
+        return NO;
+    }
     
     _arg = ( __XSApplicationArgument * )xsThis;
     
@@ -129,6 +174,11 @@ XSInteger XSApplicationArgument_GetIntegerValue( XSApplicationArgument xsThis )
 {
     __XSApplicationArgument * _arg;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     _arg = ( __XSApplicationArgument * )xsThis;
     
     return _arg->int_val;
@@ -137,6 +187,11 @@ XSInteger XSApplicationArgument_GetIntegerValue( XSApplicationArgument xsThis )
 XSUInteger XSApplicationArgument_GetUnsignedIntegerValue( XSApplicationArgument xsThis )
 {
     __XSApplicationArgument * _arg;
+    
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
     
     _arg = ( __XSApplicationArgument * )xsThis;
     
@@ -147,6 +202,11 @@ const char * XSApplicationArgument_GetStringValue( XSApplicationArgument xsThis 
 {
     __XSApplicationArgument * _arg;
     
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
     _arg = ( __XSApplicationArgument * )xsThis;
     
     return _arg->str_val;
@@ -155,6 +215,11 @@ const char * XSApplicationArgument_GetStringValue( XSApplicationArgument xsThis 
 XSFloat XSApplicationArgument_GetFloatValue( XSApplicationArgument xsThis )
 {
     __XSApplicationArgument * _arg;
+    
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
     
     _arg = ( __XSApplicationArgument * )xsThis;
     
