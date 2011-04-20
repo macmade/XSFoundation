@@ -77,3 +77,18 @@ void __XSURL_Destruct( XSObject object )
     XSRelease( url->query );
     XSRelease( url->fragment );
 }
+
+XSString __XSURL_ToString( XSObject object )
+{
+    return XSURL_GetURL( object );
+}
+
+BOOL __XSURL_Equals( XSObject object1, XSObject object2 )
+{
+    if( XSString_IsEqualToString( XSURL_GetURL( object1 ), XSURL_GetURL( object2 ) ) )
+    {
+        return YES;
+    }
+    
+    return NO;
+}

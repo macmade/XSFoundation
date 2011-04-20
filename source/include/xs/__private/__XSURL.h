@@ -77,6 +77,23 @@ void __XSURL_Initialize( void );
  */
 void __XSURL_Destruct( XSObject object );
 
+/*!
+ * @function    __XSBool_ToString
+ * @abstract    Object description
+ * @param       object  A pointer to the object
+ * @result      The object's description
+ */
+XSString __XSURL_ToString( XSObject object );
+
+/*!
+ * @function    __XSBool_Equals
+ * @abstract    Object comparison
+ * @param       object1 The first object to compare
+ * @param       object1 The second object to compare
+ * @result      YES if both objects are equals, otherwise NO
+ */
+BOOL __XSURL_Equals( XSObject object1, XSObject object2 );
+
 XS_EXTERN_C_END
 
 #endif /* ___XSTIMER_H_ */
