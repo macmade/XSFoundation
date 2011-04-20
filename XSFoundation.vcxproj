@@ -24,13 +24,15 @@
     <ClCompile Include="source\XSArray.c" />
     <ClCompile Include="source\XSBag.c" />
     <ClCompile Include="source\XSBool.c" />
+    <ClCompile Include="source\XSBTree.c" />
     <ClCompile Include="source\XSColor.c" />
     <ClCompile Include="source\XSData.c" />
     <ClCompile Include="source\XSDictionary.c" />
     <ClCompile Include="source\XSError.c" />
     <ClCompile Include="source\XSFile.c" />
-    <ClCompile Include="source\XSFunctions.c" />
+    <ClCompile Include="source\XSGeometry.c" />
     <ClCompile Include="source\XSLock.c" />
+    <ClCompile Include="source\XSLog.c" />
     <ClCompile Include="source\XSMemory.c" />
     <ClCompile Include="source\XSNotification.c" />
     <ClCompile Include="source\XSNotificationCenter.c" />
@@ -41,18 +43,20 @@
     <ClCompile Include="source\XSString.c" />
     <ClCompile Include="source\XSThread.c" />
     <ClCompile Include="source\XSTimer.c" />
+    <ClCompile Include="source\XSURL.c" />
     <ClCompile Include="source\__XSApplication.c" />
     <ClCompile Include="source\__XSApplicationArgument.c" />
     <ClCompile Include="source\__XSArray.c" />
     <ClCompile Include="source\__XSBag.c" />
     <ClCompile Include="source\__XSBool.c" />
+    <ClCompile Include="source\__XSBTree.c" />
     <ClCompile Include="source\__XSColor.c" />
     <ClCompile Include="source\__XSData.c" />
     <ClCompile Include="source\__XSDictionary.c" />
     <ClCompile Include="source\__XSError.c" />
     <ClCompile Include="source\__XSFile.c" />
-    <ClCompile Include="source\__XSFunctions.c" />
     <ClCompile Include="source\__XSLock.c" />
+    <ClCompile Include="source\__XSLog.c" />
     <ClCompile Include="source\__XSMemory.c" />
     <ClCompile Include="source\__XSMemoryDebug.c" />
     <ClCompile Include="source\__XSNotification.c" />
@@ -63,6 +67,7 @@
     <ClCompile Include="source\__XSString.c" />
     <ClCompile Include="source\__XSThread.c" />
     <ClCompile Include="source\__XSTimer.c" />
+    <ClCompile Include="source\__XSURL.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\include\eos-skl\eos-skl.h" />
@@ -93,6 +98,7 @@
     <ClInclude Include="source\include\xs\XSArray.h" />
     <ClInclude Include="source\include\xs\XSBag.h" />
     <ClInclude Include="source\include\xs\XSBool.h" />
+    <ClInclude Include="source\include\xs\XSBTree.h" />
     <ClInclude Include="source\include\xs\XSColor.h" />
     <ClInclude Include="source\include\xs\XSConstants.h" />
     <ClInclude Include="source\include\xs\XSData.h" />
@@ -100,7 +106,9 @@
     <ClInclude Include="source\include\xs\XSError.h" />
     <ClInclude Include="source\include\xs\XSFile.h" />
     <ClInclude Include="source\include\xs\XSFunctions.h" />
+    <ClInclude Include="source\include\xs\XSGeometry.h" />
     <ClInclude Include="source\include\xs\XSLock.h" />
+    <ClInclude Include="source\include\xs\XSLog.h" />
     <ClInclude Include="source\include\xs\XSMacros.h" />
     <ClInclude Include="source\include\xs\XSMacrosTarget.h" />
     <ClInclude Include="source\include\xs\XSMemory.h" />
@@ -114,11 +122,13 @@
     <ClInclude Include="source\include\xs\XSThread.h" />
     <ClInclude Include="source\include\xs\XSTimer.h" />
     <ClInclude Include="source\include\xs\XSTypes.h" />
+    <ClInclude Include="source\include\xs\XSURL.h" />
     <ClInclude Include="source\include\xs\__private\__XSApplication.h" />
     <ClInclude Include="source\include\xs\__private\__XSApplicationArgument.h" />
     <ClInclude Include="source\include\xs\__private\__XSArray.h" />
     <ClInclude Include="source\include\xs\__private\__XSBag.h" />
     <ClInclude Include="source\include\xs\__private\__XSBool.h" />
+    <ClInclude Include="source\include\xs\__private\__XSBTree.h" />
     <ClInclude Include="source\include\xs\__private\__XSColor.h" />
     <ClInclude Include="source\include\xs\__private\__XSData.h" />
     <ClInclude Include="source\include\xs\__private\__XSDictionary.h" />
@@ -126,6 +136,7 @@
     <ClInclude Include="source\include\xs\__private\__XSFile.h" />
     <ClInclude Include="source\include\xs\__private\__XSFunctions.h" />
     <ClInclude Include="source\include\xs\__private\__XSLock.h" />
+    <ClInclude Include="source\include\xs\__private\__XSLog.h" />
     <ClInclude Include="source\include\xs\__private\__XSMemory.h" />
     <ClInclude Include="source\include\xs\__private\__XSMemoryDebug.h" />
     <ClInclude Include="source\include\xs\__private\__XSNotification.h" />
@@ -136,6 +147,7 @@
     <ClInclude Include="source\include\xs\__private\__XSString.h" />
     <ClInclude Include="source\include\xs\__private\__XSThread.h" />
     <ClInclude Include="source\include\xs\__private\__XSTimer.h" />
+    <ClInclude Include="source\include\xs\__private\__XSURL.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{21B15DF9-576F-4C7D-9F6D-DBC717F554F1}</ProjectGuid>
@@ -185,11 +197,18 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)\source\include\win32;$(SolutionDir)\source\include\eos-skl;$(SolutionDir)\source\include\std;$(SolutionDir)\source\include\xs\__private;$(SolutionDir)\source\include\xs;$(SolutionDir)\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>false</TreatWarningAsError>
+      <CompileAs>CompileAsC</CompileAs>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalDependencies>DbgHelp.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files\Microsoft SDKs\Windows\v7.1\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -201,6 +220,9 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)\source\include\win32;$(SolutionDir)\source\include\eos-skl;$(SolutionDir)\source\include\std;$(SolutionDir)\source\include\xs\__private;$(SolutionDir)\source\include\xs;$(SolutionDir)\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsC</CompileAs>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -208,6 +230,9 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <Lib>
+      <AdditionalDependencies>DbgHelp.dll;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

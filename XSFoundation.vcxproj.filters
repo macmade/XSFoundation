@@ -66,9 +66,6 @@
     <ClCompile Include="source\__XSFile.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\__XSFunctions.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="source\__XSLock.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -141,9 +138,6 @@
     <ClCompile Include="source\XSFile.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\XSFunctions.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="source\XSLock.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -190,6 +184,27 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="source\win32-usleep.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\__XSBTree.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\__XSURL.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XSBTree.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XSURL.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\__XSLog.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XSLog.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XSGeometry.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -406,6 +421,27 @@
     </ClInclude>
     <ClInclude Include="source\include\win32\win32-usleep.h">
       <Filter>Header Files\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\xs\__private\__XSBTree.h">
+      <Filter>Header Files\xs\__private</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\xs\__private\__XSURL.h">
+      <Filter>Header Files\xs\__private</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\xs\XSBTree.h">
+      <Filter>Header Files\xs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\xs\XSURL.h">
+      <Filter>Header Files\xs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\xs\__private\__XSLog.h">
+      <Filter>Header Files\xs\__private</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\xs\XSGeometry.h">
+      <Filter>Header Files\xs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\xs\XSLog.h">
+      <Filter>Header Files\xs</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
