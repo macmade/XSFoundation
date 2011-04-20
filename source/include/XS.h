@@ -61,6 +61,7 @@
 #include "XS/XSError.h"
 #include "XS/XSFile.h"
 #include "XS/XSGeometry.h"
+#include "XS/XSHost.h"
 #include "XS/XSLock.h"
 #include "XS/XSNull.h"
 #include "XS/XSNotification.h"

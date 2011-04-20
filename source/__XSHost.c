@@ -30,66 +30,37 @@
 /* $Id$ */
 
 /*!
- * @header      XSError.h
+ * @file        __XSHost.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSError class functions
+ * @abstract    Private implementation for the XSHost class
  */
 
-#ifndef _XS_ERROR_H_
-#define _XS_ERROR_H_
-#pragma once
-
-#include "XSMacros.h"
-
-XS_EXTERN_C_BEGIN
+#include "XS.h"
+#include "__XSHost.h"
 
 /*!
- * @typedef     XSError
- * @abstract    Opaque type for the XSError objects
+ * @var         __XSErrorClass
+ * @abstract    Runtime class definition
  */
-typedef struct XSError * XSError;
+static const XSClassInfos __XSHostClass =
+{
+    "XSHost",           /* Class name */
+    sizeof( XSHost ),   /* Object size */
+    NULL,               /* Constructor */
+    NULL,               /* Destructor */
+    NULL,               /* Default initializer */
+    NULL,               /* Object copy */
+    NULL,               /* Object description */
+    NULL                /* Object comparison */
+};
 
 /*!
- * @function    XSError_Alloc
- * @abstract    Object allocator
- * @result      The allocated object
+ * @var         __XSHostClassID
+ * @abstract    Type ID for the runtine class
  */
-XSStatic XSObject XSError_Alloc( void );
+XSClassID __XSHostClassID;
 
-/*!
- * @function    XSError_Init
- * @abstract    Creates an error
- * @param       code    The error code
- * @param       domain  The error domain
- * @param       reason  The error message
- * @result      The error object
- */
-XSError XSError_Init( XSError xsThis, XSInteger code, XSString domain, XSString reason );
-
-/*!
- * @function    XSError_GetCode
- * @abstract    Gets the error code
- * @param       xsThis  The error object
- * @result      The error code
- */
-XSInteger XSError_GetCode( XSError xsThis );
-
-/*!
- * @function    XSError_GetDomain
- * @abstract    Gets the error domain
- * @param       xsThis  The error object
- * @result      The error domain
- */
-XSString XSError_GetDomain( XSError xsThis );
-
-/*!
- * @function    XSError_GetReason
- * @abstract    Gets the error message
- * @param       xsThis  The error object
- * @result      The error message
- */
-XSString XSError_GetReason( XSError xsThis );
-
-XS_EXTERN_C_END
-
-#endif /* _XS_ERROR_H_ */
+void __XSHost_Initialize( void )
+{
+    __XSHostClassID = XSRuntime_RegisterClass( &__XSHostClass );
+}

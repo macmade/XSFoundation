@@ -30,66 +30,39 @@
 /* $Id$ */
 
 /*!
- * @header      XSError.h
+ * @header      __XSHost.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSError class functions
+ * @abstract    Private XSHost class definitions
  */
 
-#ifndef _XS_ERROR_H_
-#define _XS_ERROR_H_
+#ifndef ___XS_HOST_H_
+#define ___XS_HOST_H_
 #pragma once
 
-#include "XSMacros.h"
+#include "../XSMacros.h"
 
 XS_EXTERN_C_BEGIN
 
-/*!
- * @typedef     XSError
- * @abstract    Opaque type for the XSError objects
- */
-typedef struct XSError * XSError;
+#include "XS.h"
 
 /*!
- * @function    XSError_Alloc
- * @abstract    Object allocator
- * @result      The allocated object
+ * @typdef      __XSHost
+ * @abastract   XSHost class
+ * @field       __class     Runtime class
  */
-XSStatic XSObject XSError_Alloc( void );
+typedef struct __XSHost_Struct
+{
+    XSRuntimeClass __class;
+}
+__XSHost;
 
 /*!
- * @function    XSError_Init
- * @abstract    Creates an error
- * @param       code    The error code
- * @param       domain  The error domain
- * @param       reason  The error message
- * @result      The error object
+ * @function    __XSHost_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
  */
-XSError XSError_Init( XSError xsThis, XSInteger code, XSString domain, XSString reason );
-
-/*!
- * @function    XSError_GetCode
- * @abstract    Gets the error code
- * @param       xsThis  The error object
- * @result      The error code
- */
-XSInteger XSError_GetCode( XSError xsThis );
-
-/*!
- * @function    XSError_GetDomain
- * @abstract    Gets the error domain
- * @param       xsThis  The error object
- * @result      The error domain
- */
-XSString XSError_GetDomain( XSError xsThis );
-
-/*!
- * @function    XSError_GetReason
- * @abstract    Gets the error message
- * @param       xsThis  The error object
- * @result      The error message
- */
-XSString XSError_GetReason( XSError xsThis );
+void __XSHost_Initialize( void );
 
 XS_EXTERN_C_END
 
-#endif /* _XS_ERROR_H_ */
+#endif /* ___XS_HOST_H_ */

@@ -30,66 +30,42 @@
 /* $Id$ */
 
 /*!
- * @header      XSError.h
+ * @header      XSHost.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSError class functions
+ * @abstract    XSHost class functions
  */
 
-#ifndef _XS_ERROR_H_
-#define _XS_ERROR_H_
+#ifndef _XS_HOST_H_
+#define _XS_HOST_H_
 #pragma once
 
 #include "XSMacros.h"
 
 XS_EXTERN_C_BEGIN
 
-/*!
- * @typedef     XSError
- * @abstract    Opaque type for the XSError objects
- */
-typedef struct XSError * XSError;
+#include "XS.h"
 
 /*!
- * @function    XSError_Alloc
+ * @typedef     XSError
+ * @abstract    Opaque type for the XSHost objects
+ */
+typedef struct XSHost * XSHost;
+
+/*!
+ * @function    XSHost_Alloc
  * @abstract    Object allocator
  * @result      The allocated object
  */
-XSStatic XSObject XSError_Alloc( void );
+XSStatic XSObject XSHost_Alloc( void );
 
 /*!
- * @function    XSError_Init
+ * @function    XSHost_Init
  * @abstract    Creates an error
- * @param       code    The error code
- * @param       domain  The error domain
- * @param       reason  The error message
+ * @param       xsThis  The host object
  * @result      The error object
  */
-XSError XSError_Init( XSError xsThis, XSInteger code, XSString domain, XSString reason );
-
-/*!
- * @function    XSError_GetCode
- * @abstract    Gets the error code
- * @param       xsThis  The error object
- * @result      The error code
- */
-XSInteger XSError_GetCode( XSError xsThis );
-
-/*!
- * @function    XSError_GetDomain
- * @abstract    Gets the error domain
- * @param       xsThis  The error object
- * @result      The error domain
- */
-XSString XSError_GetDomain( XSError xsThis );
-
-/*!
- * @function    XSError_GetReason
- * @abstract    Gets the error message
- * @param       xsThis  The error object
- * @result      The error message
- */
-XSString XSError_GetReason( XSError xsThis );
+XSError XSHost_Init( XSError xsThis );
 
 XS_EXTERN_C_END
 
-#endif /* _XS_ERROR_H_ */
+#endif /* _XS_HOST_H_ */

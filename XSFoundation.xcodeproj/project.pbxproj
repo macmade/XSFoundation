@@ -149,6 +149,10 @@
 		0573D2AE135CAB9300DC1C21 /* __XSURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSURL.h; sourceTree = "<group>"; };
 		0573D2AF135CABA400DC1C21 /* XSURL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSURL.c; sourceTree = "<group>"; };
 		0573D2B0135CABAE00DC1C21 /* __XSURL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSURL.c; sourceTree = "<group>"; };
+		05C9A066135EE838000DFEC8 /* __XSHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSHost.h; sourceTree = "<group>"; };
+		05C9A068135EE848000DFEC8 /* XSHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHost.h; sourceTree = "<group>"; };
+		05C9A069135EE856000DFEC8 /* __XSHost.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSHost.c; sourceTree = "<group>"; };
+		05C9A06A135EE85F000DFEC8 /* XSHost.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSHost.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -179,6 +183,7 @@
 				050C25DF135C8C3A0009766B /* __XSDictionary.c */,
 				050C25E0135C8C3A0009766B /* __XSError.c */,
 				050C25E1135C8C3A0009766B /* __XSFile.c */,
+				05C9A069135EE856000DFEC8 /* __XSHost.c */,
 				050C25E2135C8C3A0009766B /* __XSLock.c */,
 				050C25E3135C8C3A0009766B /* __XSLog.c */,
 				050C25E4135C8C3A0009766B /* __XSMemory.c */,
@@ -213,6 +218,7 @@
 				050C2654135C8C3A0009766B /* XSError.c */,
 				050C2655135C8C3A0009766B /* XSFile.c */,
 				050C2656135C8C3A0009766B /* XSGeometry.c */,
+				05C9A06A135EE85F000DFEC8 /* XSHost.c */,
 				050C2657135C8C3A0009766B /* XSLock.c */,
 				050C2658135C8C3A0009766B /* XSLog.c */,
 				050C2659135C8C3A0009766B /* XSMemory.c */,
@@ -319,6 +325,7 @@
 				050C2630135C8C3A0009766B /* XSError.h */,
 				050C2631135C8C3A0009766B /* XSFile.h */,
 				050C2632135C8C3A0009766B /* XSGeometry.h */,
+				05C9A068135EE848000DFEC8 /* XSHost.h */,
 				050C2633135C8C3A0009766B /* XSLock.h */,
 				050C2634135C8C3A0009766B /* XSLog.h */,
 				050C2635135C8C3A0009766B /* XSMacros.h */,
@@ -354,6 +361,7 @@
 				050C2616135C8C3A0009766B /* __XSDictionary.h */,
 				050C2617135C8C3A0009766B /* __XSError.h */,
 				050C2618135C8C3A0009766B /* __XSFile.h */,
+				05C9A066135EE838000DFEC8 /* __XSHost.h */,
 				050C2619135C8C3A0009766B /* __XSLock.h */,
 				050C261A135C8C3A0009766B /* __XSLog.h */,
 				050C261B135C8C3A0009766B /* __XSMemory.h */,
