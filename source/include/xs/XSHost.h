@@ -44,6 +44,7 @@
 XS_EXTERN_C_BEGIN
 
 #include "XS.h"
+#include "xs/XSURL.h"
 
 /*!
  * @typedef     XSError
@@ -64,7 +65,9 @@ XSStatic XSObject XSHost_Alloc( void );
  * @param       xsThis  The host object
  * @result      The error object
  */
-XSError XSHost_Init( XSError xsThis );
+XSObject XSHost_Init( XSHost xsThis );
+
+XSObject XSHost_InitWithURL( XSHost xsThis, XSURL url );
 
 XS_EXTERN_C_END
 

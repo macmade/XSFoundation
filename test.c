@@ -92,6 +92,7 @@ XSMain( argc, argv )
     XSDictionary  dict;
     XSNumber      num;
     XSURL         url;
+    XSHost        host;
     
     app  = XSApplication_Start( argc, ( const char ** )argv );
     
@@ -143,6 +144,7 @@ XSMain( argc, argv )
     dict = XSDictionary_InitWithKeysAndValues( XSDictionary_Alloc(), XSSTR( "test-1" ), str1, XSSTR( "test-2" ), str2, NULL );
     num  = XSNumber_InitWithShort( XSNumber_Alloc(), 0x0303 );
     url  = XSURL_InitWithCString( XSURL_Alloc(), "http://www.eosgarden.com:80/en/contact/?test=1#test" );
+    host = XSHost_InitWithURL( XSHost_Alloc(), url );
     
     XSLog( "Memory hash: %s", XSHash( test ) );
     XSLog( "Object hash: %s", XSHash( str1 ) );
@@ -179,6 +181,7 @@ XSMain( argc, argv )
     XSRelease( dict );
     XSRelease( num );
     XSRelease( url );
+    XSRelease( host );
     
     return EXIT_SUCCESS;
 }

@@ -56,6 +56,10 @@ XSObject XSApplication_Init( XSObject xsThis )
 
 XSStatic XSApplication XSApplication_Start( int argc, const char ** argv )
 {
+    #ifdef _WIN32
+    WSADATA wsaData;
+    #endif
+    
     XSRuntime_Initialize();
     
     __xsapp = ( __XSApplication * )XSApplication_Init( XSApplication_Alloc() );
@@ -66,6 +70,10 @@ XSStatic XSApplication XSApplication_Start( int argc, const char ** argv )
     __xsapp->executable = argv[ 0 ];
     
     XSNotificationCenter_DefaultCenter();
+    
+    #ifdef _WIN32
+    WSAStartup( MAKEWORD( 2, 0 ), &wsaData );
+    #endif
     
     return ( XSApplication )__xsapp;
 }
@@ -78,6 +86,10 @@ XSStatic void XSApplication_Exit( void )
     
     __xsarp = NULL;
     __xsapp = NULL;
+    
+    #ifdef _WIN32
+    WSACleanup();
+    #endif
     
     pthread_exit( NULL );
 }

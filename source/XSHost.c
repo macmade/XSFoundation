@@ -45,7 +45,43 @@ XSStatic XSObject XSHost_Alloc( void )
     return ( XSObject )XSRuntime_CreateInstance( __XSHostClassID );
 }
 
-XSError XSHost_Init( XSError xsThis )
+XSObject XSHost_Init( XSHost xsThis )
 {
+    return xsThis;
+}
+
+XSObject XSHost_InitWithURL( XSHost xsThis, XSURL url )
+{
+    struct addrinfo   hints;
+    struct addrinfo * infos;
+    XSUInteger        portno;
+    XSString          port;
+    
+    if( xsThis == NULL || url == NULL )
+    {
+        return NULL;
+    }
+    
+    portno = XSURL_GetPort( url );
+    port   = XSString_Init( XSString_Alloc() );
+    
+    XSString_AppendFormat( port, ( char * )"%lu", portno );
+    memset( &hints, 0, sizeof( struct addrinfo ) );
+    
+    hints.ai_family   = AF_UNSPEC;
+    hints.ai_socktype = SOCK_STREAM;
+    hints.ai_flags    = AI_PASSIVE;
+    
+    if( getaddrinfo( NULL, XSString_CString( port ), &hints, &infos ) != 0 )
+    {
+        XSRelease( port );
+        return NULL;
+    }
+    
+    
+    
+    XSRelease( port );
+    freeaddrinfo( infos );
+    
     return xsThis;
 }

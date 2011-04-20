@@ -55,6 +55,7 @@ extern "C" {
     
     #include "std-posix.h"
     #include <sys/socket.h>
+    #include <netdb.h>
     
 #endif
 
