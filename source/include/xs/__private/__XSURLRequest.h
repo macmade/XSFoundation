@@ -53,6 +53,12 @@ XS_EXTERN_C_BEGIN
 typedef struct __XSURLRequest_Struct
 {
     XSRuntimeClass __class;
+    XSURL          url;
+    XSHost         host;
+    XSInteger      socket;
+    XSDictionary   headers;
+    XSData         data;
+    BOOL           started;
 }
 __XSURLRequest;
 
@@ -62,6 +68,14 @@ __XSURLRequest;
  * @result      void
  */
 void __XSURLRequest_Initialize( void );
+
+/*!
+ * @function    __XSString_Destruct
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSURLRequest_Destruct( XSObject object );
 
 XS_EXTERN_C_END
 
