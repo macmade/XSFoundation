@@ -45,7 +45,7 @@ XSFoundation is released under the terms of the [Boost][2] Software License - Ve
 
     #include "XS.h"
 
-    int main( void )
+    XSMain( argc, argv )
     {
         XSString str1;
         XSString str2;
