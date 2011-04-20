@@ -78,6 +78,15 @@ void __XSURL_Initialize( void );
 void __XSURL_Destruct( XSObject object );
 
 /*!
+ * @function    __XSURL_Copy
+ * @abstract    Object copy
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSURL_Copy( XSObject source, XSObject destination );
+
+
+/*!
  * @function    __XSBool_ToString
  * @abstract    Object description
  * @param       object  A pointer to the object

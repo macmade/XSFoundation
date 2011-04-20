@@ -78,6 +78,21 @@ void __XSURL_Destruct( XSObject object )
     XSRelease( url->fragment );
 }
 
+void __XSURL_Copy( XSObject source, XSObject destination )
+{
+    __XSURL * url1;
+    __XSURL * url2;
+    
+    url1 = ( __XSURL * )source;
+    url2 = ( __XSURL * )destination;
+    
+    destination->scheme    = XSCopy( source->scheme );
+    destination->domain    = XSCopy( source->domain );
+    destination->path      = XSCopy( source->path );
+    destination->query     = XSCopy( source->query );
+    destination->framgment = XSCopy( source->framgment );
+}
+
 XSString __XSURL_ToString( XSObject object )
 {
     return XSURL_GetURL( object );
