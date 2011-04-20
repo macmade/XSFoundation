@@ -43,14 +43,13 @@
 
 XS_EXTERN_C_BEGIN
 
-#include "XS.h"
-#include "xs/XSURL.h"
+#include "XSURL.h"
 
 /*!
  * @typedef     XSError
  * @abstract    Opaque type for the XSHost objects
  */
-typedef struct XSHost * XSHost;
+typedef struct __XSHost_Struct * XSHost;
 
 /*!
  * @function    XSHost_Alloc

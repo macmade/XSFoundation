@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSSet
  * @abstract    Opaque type for the XSSet objects
  */
-typedef struct XSObject * XSSet;
+typedef struct __XSObject_Struct * XSSet;
 
 /*!
  * @function    XSSet_Alloc

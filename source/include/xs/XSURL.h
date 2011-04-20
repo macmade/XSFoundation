@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSTimer
  * @abstract    Opaque type for the XSTree objects
  */
-typedef struct XSURL * XSURL;
+typedef struct __XSURL_Struct * XSURL;
 
 /*!
  * @function    XSTimer_Alloc

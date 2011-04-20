@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSString
  * @abstract    Opaque type for the XSString objects
  */
-typedef struct XSString * XSString;
+typedef struct __XSString_Struct * XSString;
 
 /*!
  * @function    XSString_Alloc

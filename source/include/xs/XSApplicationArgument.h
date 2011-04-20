@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSApplicationArgument
  * @abstract    Opaque type for the XSApplicationArgument objects
  */
-typedef struct __XSApplicationArgument * XSApplicationArgument;
+typedef struct __XSApplicationArgument_Struct * XSApplicationArgument;
 
 /*!
  * @typedef     XSApplicationArgumentType

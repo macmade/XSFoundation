@@ -53,7 +53,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSDictionary
  * @abstract    Opaque type for the XSDictionary objects
  */
-typedef struct XSDictionary * XSDictionary;
+typedef struct __XSDictionary_Struct * XSDictionary;
 
 /*!
  * @function    __XSDictionary_Alloc

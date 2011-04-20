@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSColor
  * @abstract    Opaque type for the XSColor objects
  */
-typedef struct XSColor * XSColor;
+typedef struct __XSColor_Struct * XSColor;
 
 /*!
  * @function    __XSColor_Alloc

@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSNumber
  * @abstract    Opaque type for the XSNumber objects
  */
-typedef struct XSNumber * XSNumber;
+typedef struct __XSNumber_Struct * XSNumber;
 
 /*!
  * @function    XSNumber_Alloc

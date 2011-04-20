@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSLock
  * @abstract    Opaque type for the XSLock objects
  */
-typedef struct XSLock * XSLock;
+typedef struct __XSLock_Struct * XSLock;
 
 /*!
  * @function    XSLock_Alloc

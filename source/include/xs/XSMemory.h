@@ -49,7 +49,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSAutoreleasePool
  * @abstract    Opaque type for the XSAutoreleasePool objects
  */
-typedef struct XSAutoreleasePool * XSAutoreleasePool;
+typedef struct __XSAutoreleasePool_Struct * XSAutoreleasePool;
 
 /*!
  * @function    XSAutoreleasePool_Alloc

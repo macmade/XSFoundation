@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSArray
  * @abstract    Opaque type for the XSArray objects
  */
-typedef struct XSObject * XSArray;
+typedef struct __XSArray_Struct * XSArray;
 
 /*!
  * @function    XSArray_Alloc

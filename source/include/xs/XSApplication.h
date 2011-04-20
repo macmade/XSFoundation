@@ -51,7 +51,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSApplication
  * @abstract    Opaque type for the XSApplication objects
  */
-typedef struct __XSApplication * XSApplication;
+typedef struct __XSApplication_Struct * XSApplication;
 
 /*!
  * @function    XSApplication_Alloc

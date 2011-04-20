@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSData
  * @abstract    Opaque type for the XSData objects
  */
-typedef struct XSData * XSData;
+typedef struct __XSData_Struct * XSData;
 
 /*!
  * @function    __XSData_Alloc

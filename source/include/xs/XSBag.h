@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSBag
  * @abstract    Opaque type for the XSBag objects
  */
-typedef struct XSBag * XSBag;
+typedef struct __XSBag_Struct * XSBag;
 
 /*!
  * @function    XSBag_Alloc

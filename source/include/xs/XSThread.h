@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSThread
  * @abstract    Opaque type for the XSThread objects
  */
-typedef struct XSThread * XSThread;
+typedef struct __XSThread_Struct * XSThread;
 
 /*!
  * @function    XSThread_Alloc
