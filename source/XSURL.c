@@ -52,9 +52,7 @@ XSObject XSURL_Init( XSObject xsThis )
 
 XSObject XSURL_InitWithString( XSObject xsThis, XSString str )
 {
-    ( void )str;
-    
-    return xsThis;
+    return XSURL_InitWithCString( xsThis, ( char * )XSString_CString( str ) );
 }
 
 XSObject XSURL_InitWithCString( XSObject xsThis, char * str )
@@ -66,9 +64,43 @@ XSObject XSURL_InitWithCString( XSObject xsThis, char * str )
 
 XSString XSURL_GetURL( XSObject xsThis )
 {
-    ( void )xsThis;
+    __XSURL * url;
+    XSString  str;
     
-    return NULL;
+    url = ( __XSURL * )xsThis;
+    str = XSString_Init( XSString_Alloc() );
+    
+    if( url->scheme != NULL )
+    {
+        XSString_AppendFormat( str, ( char * )"%s://", XSString_CString( url->scheme ) );
+    }
+    
+    if( url->domain != NULL )
+    {
+        XSString_AppendString( str, url->domain );
+    }
+    
+    if( url->port != 0 )
+    {
+        XSString_AppendFormat( str, ( char * )":%u", url->port );
+    }
+    
+    if( url->path != NULL )
+    {
+        XSString_AppendFormat( str, ( char * )"/%s", XSString_CString( url->path ) );
+    }
+    
+    if( url->query != NULL )
+    {
+        XSString_AppendFormat( str, ( char * )"?%s", XSString_CString( url->query ) );
+    }
+    
+    if( url->fragment != NULL )
+    {
+        XSString_AppendFormat( str, ( char * )"#%s", XSString_CString( url->fragment ) );
+    }
+    
+    return str;
 }
 
 void XSURL_SetScheme( XSObject xsThis, XSString scheme )
