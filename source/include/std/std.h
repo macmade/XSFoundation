@@ -48,6 +48,7 @@ extern "C" {
 #ifdef _WIN32
     
     #include <windows.h>
+    #include <winsock.h>
     #include "win32.h"
     
 #else
