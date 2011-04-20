@@ -15,10 +15,9 @@ It's purpose is to be integrated in the [XEOS][1] Operating System, once its C s
 
 For now, it's just a standalone project, that should compile on every OS with a decent C compiler.
 
-### Usage from Windows
+### Supported OS
 
-XSFoundation can be used on Windows too.
-Some of the features, such as threading, are not implemented yet, but the library compiles fine.
+XSFoundation can be used on POSIX compliant systems (Mac OS X, Unix, Linux) as well as on Windows.
 
 ### Building
 
