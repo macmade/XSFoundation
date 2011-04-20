@@ -73,7 +73,7 @@ void __XSData_Initialize( void );
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSData_Destruct( void * object );
+void __XSData_Destruct( XSObject object );
 
 /*!
  * @function    __XSData_ToString
@@ -81,7 +81,7 @@ void __XSData_Destruct( void * object );
  * @param       object  A pointer to the object
  * @result      The object's description
  */
-XSString __XSData_ToString( void * object );
+XSString __XSData_ToString( XSObject object );
 
 XS_EXTERN_C_END
 

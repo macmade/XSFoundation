@@ -70,7 +70,7 @@ void __XSNotificationCenter_Initialize( void );
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSNotificationCenter_Destruct( void * object );
+void __XSNotificationCenter_Destruct( XSObject object );
 
 XS_EXTERN_C_END
 

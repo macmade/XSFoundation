@@ -144,7 +144,7 @@ void XSDictionary_SetValueForKey( XSDictionary xsThis, XSObject value, XSString 
  * @param       key     The key
  * @result      The removed value
  */
-void XSDictionary_RemoveValueForKey( XSDictionary xsThis, XSString key );
+XSAutoreleased XSObject  XSDictionary_RemoveValueForKey( XSDictionary xsThis, XSString key );
 
 /*!
  * @function    XSDictionary_KeyExists

@@ -101,7 +101,7 @@ void __XSAutoreleasePool_Initialize( void );
  * @param       object  The object that will be destructed
  * @result      void
  */
-void __XSAutoreleasePool_Destruct( void * object );
+void __XSAutoreleasePool_Destruct( XSObject object );
 
 /*!
  * @function    __XSMemory_GetCurrentAutoreleasePool

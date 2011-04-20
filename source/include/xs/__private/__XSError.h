@@ -75,7 +75,7 @@ void __XSError_Initialize( void );
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSError_Destruct( void * object );
+void __XSError_Destruct( XSObject object );
 
 /*!
  * @function    __XSError_ToString
@@ -83,7 +83,7 @@ void __XSError_Destruct( void * object );
  * @param       object  A pointer to the object
  * @result      The object's description
  */
-XSString __XSError_ToString( void * object );
+XSString __XSError_ToString( XSObject object );
 
 XS_EXTERN_C_END
 

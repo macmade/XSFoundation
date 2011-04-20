@@ -65,7 +65,7 @@ void __XSError_Initialize( void )
     __XSErrorClassID = XSRuntime_RegisterClass( &__XSErrorClass );
 }
 
-void __XSError_Destruct( void * object )
+void __XSError_Destruct( XSObject object )
 {
     __XSError * error;
     
@@ -75,7 +75,7 @@ void __XSError_Destruct( void * object )
     XSRelease( error->reason );
 }
 
-XSString __XSError_ToString( void * object )
+XSString __XSError_ToString( XSObject object )
 {
     XSString description;
     

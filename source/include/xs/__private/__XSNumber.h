@@ -103,7 +103,7 @@ void __XSNumber_Initialize( void );
  * @param       object  A pointer to the object
  * @result      The object's description
  */
-XSString __XSNumber_ToString( void * object );
+XSString __XSNumber_ToString( XSObject object );
 
 /*!
  * @function    __XSNumber_Equals
@@ -112,7 +112,7 @@ XSString __XSNumber_ToString( void * object );
  * @param       object1 The second object to compare
  * @result      YES if both objects are equals, otherwise NO
  */
-BOOL __XSNumber_Equals( void * object1, void * object2 );
+BOOL __XSNumber_Equals( XSObject object1, XSObject object2 );
 
 uint64_t __XSNumber_GetUInt64Value( __XSNumber * n );
 

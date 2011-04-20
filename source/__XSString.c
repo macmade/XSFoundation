@@ -65,7 +65,7 @@ void __XSString_Initialize( void )
     __XSStringClassID = XSRuntime_RegisterClass( &__XSStringClass );
 }
 
-void __XSString_Destruct( void * object )
+void __XSString_Destruct( XSObject object )
 {
     __XSString * str;
     
@@ -74,7 +74,7 @@ void __XSString_Destruct( void * object )
     XSRelease( str->str );
 }
 
-void __XSString_Copy( void * source, void * destination )
+void __XSString_Copy( XSObject source, XSObject destination )
 {
     __XSString * str1 = ( __XSString * )source;
     __XSString * str2 = ( __XSString * )destination;
@@ -87,12 +87,12 @@ void __XSString_Copy( void * source, void * destination )
     memcpy( str2->str, str1->str, str1->length );
 }
 
-XSString __XSString_ToString( void * object )
+XSString __XSString_ToString( XSObject object )
 {
     return ( XSString )object;
 }
 
-BOOL __XSString_Equals( void * object1, void * object2 )
+BOOL __XSString_Equals( XSObject object1, XSObject object2 )
 {
     __XSString * s1;
     __XSString * s2;

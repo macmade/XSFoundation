@@ -65,7 +65,7 @@ void __XSNotification_Initialize( void )
     __XSNotificationClassID = XSRuntime_RegisterClass( &__XSNotificationClass );
 }
 
-void __XSNotification_Destruct( void * object )
+void __XSNotification_Destruct( XSObject object )
 {
     __XSNotification * notification;
     
@@ -82,7 +82,7 @@ void __XSNotification_Destruct( void * object )
     }
 }
 
-XSString __XSNotification_ToString( void * object )
+XSString __XSNotification_ToString( XSObject object )
 {
     XSString description;
     

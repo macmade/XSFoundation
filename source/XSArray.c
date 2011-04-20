@@ -213,14 +213,7 @@ XSAutoreleased XSObject XSArray_ReplaceValueAtIndex( XSArray xsThis, XSObject va
     old                 = _array->values[ i ];
     _array->values[ i ] = XSRetain( value );
     
-    if( XSGetRetainCount( old ) == 1 )
-    {
-        XSRelease( old );
-        
-        return NULL;
-    }
-    
-    return XSRelease( old );
+    return XSAutorelease( old );
 }
 
 XSAutoreleased XSObject XSArray_ValueAtIndex( XSArray xsThis, XSUInteger i )
@@ -246,6 +239,7 @@ XSObject XSArray_RemoveValueAtIndex( XSArray xsThis, XSUInteger i )
 {
     __XSArray  * _array;
     XSUInteger   j;
+    XSObject     old;
     
     if( xsThis == NULL )
     {
@@ -259,6 +253,8 @@ XSObject XSArray_RemoveValueAtIndex( XSArray xsThis, XSUInteger i )
         return NULL;
     }
     
+    old = _array->values[ j ];
+    
     for( j = i; j < _array->count - 1; j++ )
     {
         _array->values[ j ] = _array->values[ j + 1 ];
@@ -266,7 +262,7 @@ XSObject XSArray_RemoveValueAtIndex( XSArray xsThis, XSUInteger i )
     
     _array->values[ _array->count-- ] = NULL;
     
-    return NULL;
+    return XSAutorelease( old );
 }
 
 BOOL XSArray_ContainsValue( XSArray xsThis, XSObject value )

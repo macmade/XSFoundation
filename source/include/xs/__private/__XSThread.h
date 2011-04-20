@@ -73,7 +73,7 @@ void __XSThread_Initialize( void );
  * @param       object1 The second object to compare
  * @result      YES if both objects are equals, otherwise NO
  */
-BOOL __XSThread_Equals( void * object1, void * object2 );
+BOOL __XSThread_Equals( XSObject object1, XSObject object2 );
 
 /*!
  * @function    __XSThread_Run

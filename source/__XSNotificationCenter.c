@@ -65,7 +65,7 @@ void __XSNotificationCenter_Initialize( void )
     __XSNotificationCenterClassID = XSRuntime_RegisterClass( &__XSNotificationCenterClass );
 }
 
-void __XSNotificationCenter_Destruct( void * object )
+void __XSNotificationCenter_Destruct( XSObject object )
 {
     XSRelease( ( ( __XSNotificationCenter * )object )->objects );
 }

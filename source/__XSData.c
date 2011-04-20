@@ -65,12 +65,12 @@ void __XSData_Initialize( void )
     __XSDataClassID = XSRuntime_RegisterClass( &__XSDataClass );
 }
 
-void __XSData_Destruct( void * object )
+void __XSData_Destruct( XSObject object )
 {
     XSRelease( ( ( __XSData * )object )->bytes );
 }
 
-XSString __XSData_ToString( void * object )
+XSString __XSData_ToString( XSObject object )
 {
     XSUInteger i;
     __XSData * data;

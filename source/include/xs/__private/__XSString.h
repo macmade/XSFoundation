@@ -74,7 +74,7 @@ void __XSString_Initialize( void );
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSString_Destruct( void * object );
+void __XSString_Destruct( XSObject object );
 
 /*!
  * @function    __XSString_Copy
@@ -82,7 +82,7 @@ void __XSString_Destruct( void * object );
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSString_Copy( void * source, void * destination );
+void __XSString_Copy( XSObject source, XSObject destination );
 
 /*!
  * @function    __XSString_ToString
@@ -90,7 +90,7 @@ void __XSString_Copy( void * source, void * destination );
  * @param       object  A pointer to the object
  * @result      The object's description
  */
-XSString __XSString_ToString( void * object );
+XSString __XSString_ToString( XSObject object );
 
 /*!
  * @function    __XSString_Equals
@@ -99,7 +99,7 @@ XSString __XSString_ToString( void * object );
  * @param       object1 The second object to compare
  * @result      YES if both objects are equals, otherwise NO
  */
-BOOL __XSString_Equals( void * object1, void * object2 );
+BOOL __XSString_Equals( XSObject object1, XSObject object2 );
 
 XS_EXTERN_C_END
 

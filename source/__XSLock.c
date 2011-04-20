@@ -65,7 +65,7 @@ void __XSLock_Initialize( void )
     __XSLockClassID = XSRuntime_RegisterClass( &__XSLockClass );
 }
 
-void __XSLock_Construct( void * object )
+void __XSLock_Construct( XSObject object )
 {
     __XSLock * lock;
     
@@ -74,7 +74,7 @@ void __XSLock_Construct( void * object )
     pthread_mutex_init( &( lock->mutex ), NULL );
 }
 
-void __XSLock_Destruct( void * object )
+void __XSLock_Destruct( XSObject object )
 {
     __XSLock * lock;
     
@@ -83,7 +83,7 @@ void __XSLock_Destruct( void * object )
     pthread_mutex_destroy( &( lock->mutex ) );
 }
 
-XSString __XSLock_ToString( void * object )
+XSString __XSLock_ToString( XSObject object )
 {
     if( ( ( __XSLock * )object )->locked == YES )
     {

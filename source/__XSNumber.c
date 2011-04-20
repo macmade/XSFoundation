@@ -65,7 +65,7 @@ void __XSNumber_Initialize( void )
     __XSNumberClassID = XSRuntime_RegisterClass( &__XSNumberClass );
 }
 
-XSString __XSNumber_ToString( void * object )
+XSString __XSNumber_ToString( XSObject object )
 {
     XSString description;
     
@@ -76,7 +76,7 @@ XSString __XSNumber_ToString( void * object )
     return XSAutorelease( description );
 }
 
-BOOL __XSNumber_Equals( void * object1, void * object2 )
+BOOL __XSNumber_Equals( XSObject object1, XSObject object2 )
 {
     __XSNumber * n1;
     __XSNumber * n2;

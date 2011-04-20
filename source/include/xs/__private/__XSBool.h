@@ -70,7 +70,7 @@ void __XSBool_Initialize( void );
  * @param       object  A pointer to the object
  * @result      The object's description
  */
-XSString __XSBool_ToString( void * object );
+XSString __XSBool_ToString( XSObject object );
 
 /*!
  * @function    __XSBool_Equals
@@ -79,7 +79,7 @@ XSString __XSBool_ToString( void * object );
  * @param       object1 The second object to compare
  * @result      YES if both objects are equals, otherwise NO
  */
-BOOL __XSBool_Equals( void * object1, void * object2 );
+BOOL __XSBool_Equals( XSObject object1, XSObject object2 );
 
 XS_EXTERN_C_END
 

@@ -242,11 +242,12 @@ void XSDictionary_SetValueForKey( XSDictionary xsThis, XSObject value, XSString 
     dict->values[ dict->count++ ] = XSRetain( value );
 }
 
-void XSDictionary_RemoveValueForKey( XSDictionary xsThis, XSString key )
+XSAutoreleased XSObject XSDictionary_RemoveValueForKey( XSDictionary xsThis, XSString key )
 {
     BOOL             found;
     __XSDictionary * dict;
     XSUInteger       i;
+    XSObject         old;
     
     if( xsThis == NULL )
     {
@@ -255,6 +256,7 @@ void XSDictionary_RemoveValueForKey( XSDictionary xsThis, XSString key )
     
     dict  = ( __XSDictionary * )xsThis;
     found = NO;
+    old   = NULL;
     
     for( i = 0; i < dict->count; i++ )
     {
@@ -271,11 +273,14 @@ void XSDictionary_RemoveValueForKey( XSDictionary xsThis, XSString key )
         if( XSEquals( dict->keys[ i ], key ) )
         {
             XSRelease( dict->keys[ i ] );
-            XSRelease( dict->values[ i ] );
+            
+            old = XSAutorelease( dict->values[ i ] );
             
             found = YES;
         }
     }
+    
+    return old;
 }
 
 BOOL XSDictionary_KeyExists( XSDictionary xsThis, XSString key )

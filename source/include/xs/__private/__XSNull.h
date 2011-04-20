@@ -70,7 +70,7 @@ void __XSNull_Initialize( void );
  * @param       object1 The second object to compare
  * @result      YES if both objects are equals, otherwise NO
  */
-BOOL __XSNull_Equals( void * object1, void * object2 );
+BOOL __XSNull_Equals( XSObject object1, XSObject object2 );
 
 XS_EXTERN_C_END
 

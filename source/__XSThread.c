@@ -65,7 +65,7 @@ void __XSThread_Initialize( void )
     __XSThreadClassID = XSRuntime_RegisterClass( &__XSThreadClass );
 }
 
-BOOL __XSThread_Equals( void * object1, void * object2 )
+BOOL __XSThread_Equals( XSObject object1, XSObject object2 )
 {
     __XSThread * t1;
     __XSThread * t2;

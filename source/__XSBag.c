@@ -65,7 +65,7 @@ void __XSBag_Initialize( void )
     __XSBagClassID = XSRuntime_RegisterClass( &__XSBagClass );
 }
 
-void __XSBag_Destruct( void * object )
+void __XSBag_Destruct( XSObject object )
 {
     __XSBag  * bag;
     XSUInteger i;
@@ -86,7 +86,7 @@ void __XSBag_Destruct( void * object )
     }
 }
 
-XSString __XSBag_ToString( void * object )
+XSString __XSBag_ToString( XSObject object )
 {
     XSUInteger i;
     __XSBag  * bag;

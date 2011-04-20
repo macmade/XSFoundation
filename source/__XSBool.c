@@ -65,7 +65,7 @@ void __XSBool_Initialize( void )
     __XSBoolClassID = XSRuntime_RegisterClass( &__XSBoolClass );
 }
 
-XSString __XSBool_ToString( void * object )
+XSString __XSBool_ToString( XSObject object )
 {
     if( ( ( __XSBool * )object )->value == YES )
     {
@@ -75,7 +75,7 @@ XSString __XSBool_ToString( void * object )
     return XSSTR( ( char * )"NO" );
 }
 
-BOOL __XSBool_Equals( void * object1, void * object2 )
+BOOL __XSBool_Equals( XSObject object1, XSObject object2 )
 {
     __XSBool * b1;
     __XSBool * b2;

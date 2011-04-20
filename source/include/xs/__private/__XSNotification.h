@@ -71,7 +71,7 @@ void __XSNotification_Initialize( void );
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSNotification_Destruct( void * object );
+void __XSNotification_Destruct( XSObject object );
 
 /*!
  * @function    __XSNotification_ToString
@@ -79,7 +79,7 @@ void __XSNotification_Destruct( void * object );
  * @param       object  A pointer to the object
  * @result      The object's description
  */
-XSString __XSNotification_ToString( void * object );
+XSString __XSNotification_ToString( XSObject object );
 
 XS_EXTERN_C_END
 

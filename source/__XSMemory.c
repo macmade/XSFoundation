@@ -78,7 +78,7 @@ void __XSAutoreleasePool_Initialize( void )
     __XSAutoreleasePoolClassID = XSRuntime_RegisterClass( &__XSAutoreleasePoolClass );
 }
 
-void __XSAutoreleasePool_Destruct( void * object )
+void __XSAutoreleasePool_Destruct( XSObject object )
 {
     __XSMemory_AutoreleasePoolDrain( ( __XSAutoreleasePool * )object );
     XSRelease( ( ( __XSAutoreleasePool * )object )->objects );

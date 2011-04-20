@@ -71,7 +71,7 @@ void __XSLock_Initialize( void );
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSLock_Construct( void * object );
+void __XSLock_Construct( XSObject object );
 
 /*!
  * @function    __XSLock_Destruct
@@ -79,7 +79,7 @@ void __XSLock_Construct( void * object );
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSLock_Destruct( void * object );
+void __XSLock_Destruct( XSObject object );
 
 /*!
  * @function    __XSLock_ToString
@@ -87,7 +87,7 @@ void __XSLock_Destruct( void * object );
  * @param       object  A pointer to the object
  * @result      The object's description
  */
-XSString __XSLock_ToString( void * object );
+XSString __XSLock_ToString( XSObject object );
 
 XS_EXTERN_C_END
 

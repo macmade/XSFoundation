@@ -37,8 +37,8 @@
 
 #include "stdafx.h"
 
-void thread_test( XSThread thread, void * arg );
-void thread_test( XSThread thread, void * arg )
+void thread_test( XSThread thread, XSObject arg );
+void thread_test( XSThread thread, XSObject arg )
 {
     XSString str;
     

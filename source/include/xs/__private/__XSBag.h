@@ -74,7 +74,7 @@ void __XSBag_Initialize( void );
  * @param       object  A pointer to the object
  * @result      void
  */
-void __XSBag_Destruct( void * object );
+void __XSBag_Destruct( XSObject object );
 
 /*!
  * @function    __XSBag_ToString
@@ -82,7 +82,7 @@ void __XSBag_Destruct( void * object );
  * @param       object  A pointer to the object
  * @result      The object's description
  */
-XSString __XSBag_ToString( void * object );
+XSString __XSBag_ToString( XSObject object );
 
 XS_EXTERN_C_END
 
