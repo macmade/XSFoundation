@@ -96,4 +96,4 @@ BOOL __XSURL_Equals( XSObject object1, XSObject object2 );
 
 XS_EXTERN_C_END
 
-#endif /* ___XSTIMER_H_ */
+#endif /* ___XS_URL_H_ */
