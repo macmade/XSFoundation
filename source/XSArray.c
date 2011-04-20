@@ -253,7 +253,7 @@ XSObject XSArray_RemoveValueAtIndex( XSArray xsThis, XSUInteger i )
         return NULL;
     }
     
-    old = _array->values[ j ];
+    old = _array->values[ i ];
     
     for( j = i; j < _array->count - 1; j++ )
     {
