@@ -45,41 +45,36 @@ XSStatic XSObject XSHost_Alloc( void )
     return ( XSObject )XSRuntime_CreateInstance( __XSHostClassID );
 }
 
-XSObject XSHost_Init( XSHost xsThis )
+XSObject XSHost_Init( XSHost xsThis, XSString host, XSUInteger port )
 {
-    return xsThis;
-}
-
-XSObject XSHost_InitWithURL( XSHost xsThis, XSURL url )
-{
+    __XSHost           * _host;
     struct addrinfo      hints;
     struct addrinfo    * infos;
     struct addrinfo    * res;
     void               * ip;
     struct sockaddr_in * ipv4;
     char                 ipstr[ INET6_ADDRSTRLEN ];
-    XSUInteger           portno;
-    XSString             port;
+    XSString             portstr;
     
-    if( xsThis == NULL || url == NULL )
+    if( xsThis == NULL || host == NULL || port == 0 )
     {
-        return NULL;
+        return xsThis;
     }
     
-    portno = XSURL_GetPort( url );
-    port   = XSString_Init( XSString_Alloc() );
+    portstr = XSString_Init( XSString_Alloc() );
+    _host   = ( __XSHost * )xsThis;
     
-    XSString_AppendFormat( port, ( char * )"%lu", portno );
+    XSString_AppendFormat( portstr, ( char * )"%lu", port );
     memset( &hints, 0, sizeof( struct addrinfo ) );
     
     hints.ai_family   = INADDR_ANY;
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags    = AI_PASSIVE;
     
-    if( getaddrinfo( XSString_CString( XSURL_GetDomain( url ) ), XSString_CString( port ), &hints, &infos ) != 0 )
+    if( getaddrinfo( XSString_CString( host ), XSString_CString( portstr ), &hints, &infos ) != 0 )
     {
-        XSRelease( port );
-        return NULL;
+        XSRelease( portstr );
+        return xsThis;
     }
     
     for( res = infos; res != NULL; res = infos->ai_next )
@@ -94,9 +89,21 @@ XSObject XSHost_InitWithURL( XSHost xsThis, XSURL url )
             break;
         }
     }
+    
+    _host->host = XSCopy( host );
+    _host->ip   = XSString_InitWithCString( XSString_Alloc(), ipstr );
+    _host->port = port;
+    
+    memcpy( _host->infos, infos, sizeof( struct addrinfo ) );
+    memcpy( _host->sock,  ipv4,  sizeof( struct sockaddr_in ) );
         
-    XSRelease( port );
+    XSRelease( portstr );
     freeaddrinfo( infos );
     
     return xsThis;
+}
+
+XSObject XSHost_InitWithURL( XSHost xsThis, XSURL url )
+{
+    return XSHost_Init( xsThis, XSURL_GetDomain( url ), XSURL_GetPort( url ) );
 }

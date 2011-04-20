@@ -64,7 +64,7 @@ XSStatic XSObject XSHost_Alloc( void );
  * @param       xsThis  The host object
  * @result      The error object
  */
-XSObject XSHost_Init( XSHost xsThis );
+XSObject XSHost_Init( XSHost xsThis, XSString host, XSUInteger port );
 
 XSObject XSHost_InitWithURL( XSHost xsThis, XSURL url );
 

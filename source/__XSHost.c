@@ -94,7 +94,7 @@ XSString __XSHost_ToString( XSObject object )
     host        = ( __XSHost * )object;
     description = XSString_Init( XSString_Alloc() );
     
-    //XSString_AppendFormat( description, ( char * )"%s (%s) : %u", XSString_CString( host->host ), XSString_CString( host->ip ), host->port );
+    XSString_AppendFormat( description, ( char * )"%s (%s) : %u", XSString_CString( host->host ), XSString_CString( host->ip ), host->port );
     
     return XSAutorelease( description );
 }
