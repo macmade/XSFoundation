@@ -71,7 +71,7 @@ void notification_test( XSNotification notification )
     );
 }
 
-int _tmain( int argc, _TCHAR * argv[] )
+XSMain( argc, argv )
 {
     unsigned int  i;
     XSInteger     arg_int;

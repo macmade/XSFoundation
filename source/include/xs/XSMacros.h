@@ -39,6 +39,15 @@
 #define _XS_MACROS_H_
 #pragma once
 
+#ifdef _WIN32
+    
+    #define XSMain( argc, argv )    int _tmain( int argc, _TCHAR * argv[] )
+    
+#else
+    
+    #define XSMain( argc, argv )    int main( int argc, char * argv[] )
+    
+#endif
 
 #if !defined( XS_EXTERN_C_BEGIN )
     #if defined( __cplusplus )

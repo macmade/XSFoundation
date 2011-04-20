@@ -251,7 +251,7 @@ XSAutoreleased XSObject XSDictionary_RemoveValueForKey( XSDictionary xsThis, XSS
     
     if( xsThis == NULL )
     {
-        return;
+        return NULL;
     }
     
     dict  = ( __XSDictionary * )xsThis;
