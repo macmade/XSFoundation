@@ -54,6 +54,7 @@ extern "C" {
 #else
     
     #include "std-posix.h"
+    #include <sys/socket.h>
     
 #endif
 
