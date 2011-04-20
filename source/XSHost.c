@@ -52,10 +52,14 @@ XSObject XSHost_Init( XSHost xsThis )
 
 XSObject XSHost_InitWithURL( XSHost xsThis, XSURL url )
 {
-    struct addrinfo   hints;
-    struct addrinfo * infos;
-    XSUInteger        portno;
-    XSString          port;
+    struct addrinfo      hints;
+    struct addrinfo    * infos;
+    struct addrinfo    * res;
+    void               * ip;
+    struct sockaddr_in * ipv4;
+    char                 ipstr[ INET6_ADDRSTRLEN ];
+    XSUInteger           portno;
+    XSString             port;
     
     if( xsThis == NULL || url == NULL )
     {
@@ -68,18 +72,29 @@ XSObject XSHost_InitWithURL( XSHost xsThis, XSURL url )
     XSString_AppendFormat( port, ( char * )"%lu", portno );
     memset( &hints, 0, sizeof( struct addrinfo ) );
     
-    hints.ai_family   = AF_UNSPEC;
+    hints.ai_family   = INADDR_ANY;
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags    = AI_PASSIVE;
     
-    if( getaddrinfo( NULL, XSString_CString( port ), &hints, &infos ) != 0 )
+    if( getaddrinfo( XSString_CString( XSURL_GetDomain( url ) ), XSString_CString( port ), &hints, &infos ) != 0 )
     {
         XSRelease( port );
         return NULL;
     }
     
-    
-    
+    for( res = infos; res != NULL; res = infos->ai_next )
+    {
+        if( res->ai_family == AF_INET )
+        {
+            ipv4 = ( struct sockaddr_in * )res->ai_addr;
+            ip   = &( ipv4->sin_addr );
+            
+            inet_ntop( res->ai_family, ip, ipstr, INET6_ADDRSTRLEN );
+            
+            break;
+        }
+    }
+        
     XSRelease( port );
     freeaddrinfo( infos );
     
