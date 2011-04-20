@@ -157,6 +157,10 @@
 		05C9A07F135EF7D6000DFEC8 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
 		05C9A080135EF7D6000DFEC8 /* targetver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = targetver.h; sourceTree = "<group>"; };
 		05C9A081135EF7D6000DFEC8 /* Win32Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Win32Test.cpp; sourceTree = "<group>"; };
+		05C9A092135F6738000DFEC8 /* XSURLRequest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSURLRequest.c; sourceTree = "<group>"; };
+		05C9A094135F6747000DFEC8 /* __XSURLRequest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSURLRequest.c; sourceTree = "<group>"; };
+		05C9A095135F6761000DFEC8 /* __XSURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSURLRequest.h; sourceTree = "<group>"; };
+		05C9A096135F676D000DFEC8 /* XSURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSURLRequest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -203,6 +207,7 @@
 				050C25ED135C8C3A0009766B /* __XSThread.c */,
 				050C25EE135C8C3A0009766B /* __XSTimer.c */,
 				0573D2B0135CABAE00DC1C21 /* __XSURL.c */,
+				05C9A094135F6747000DFEC8 /* __XSURLRequest.c */,
 				050C25EF135C8C3A0009766B /* eos-skl.c */,
 				050C2644135C8C3A0009766B /* std-md5.c */,
 				050C2645135C8C3A0009766B /* std-string.c */,
@@ -238,6 +243,7 @@
 				050C2662135C8C3A0009766B /* XSThread.c */,
 				050C2663135C8C3A0009766B /* XSTimer.c */,
 				0573D2AF135CABA400DC1C21 /* XSURL.c */,
+				05C9A092135F6738000DFEC8 /* XSURLRequest.c */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -348,6 +354,7 @@
 				050C2641135C8C3A0009766B /* XSTimer.h */,
 				050C2642135C8C3A0009766B /* XSTypes.h */,
 				0573D2AC135CAB8900DC1C21 /* XSURL.h */,
+				05C9A096135F676D000DFEC8 /* XSURLRequest.h */,
 			);
 			path = xs;
 			sourceTree = "<group>";
@@ -381,6 +388,7 @@
 				050C2624135C8C3A0009766B /* __XSThread.h */,
 				050C2625135C8C3A0009766B /* __XSTimer.h */,
 				0573D2AE135CAB9300DC1C21 /* __XSURL.h */,
+				05C9A095135F6761000DFEC8 /* __XSURLRequest.h */,
 			);
 			path = __private;
 			sourceTree = "<group>";

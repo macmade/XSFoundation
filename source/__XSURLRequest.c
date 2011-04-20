@@ -26,53 +26,41 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
-
+ 
 /* $Id$ */
 
 /*!
- * @header      XS.h
+ * @file        __XSURLRequest.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSFoundation main header file
- * @description This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Private implementation for the XSURLRequest class
  */
 
-#ifndef _XS_H_
-#define _XS_H_
-#pragma once
+#include "XS.h"
+#include "__XSURLRequest.h"
 
-#include "std/std.h"
-#include "XS/XSMacros.h"
-#include "XS/XSConstants.h"
-#include "XS/XSTypes.h"
-#include "XS/XSLog.h"
-#include "XS/XSMemory.h"
-#include "XS/XSRuntime.h"
-#include "XS/XSApplicationArgument.h"
-#include "XS/XSApplication.h"
-#include "XS/XSArray.h"
-#include "XS/XSBag.h"
-#include "XS/XSBool.h"
-#include "XS/XSBTree.h"
-#include "XS/XSColor.h"
-#include "XS/XSData.h"
-#include "XS/XSDictionary.h"
-#include "XS/XSError.h"
-#include "XS/XSFile.h"
-#include "XS/XSGeometry.h"
-#include "XS/XSHost.h"
-#include "XS/XSLock.h"
-#include "XS/XSNull.h"
-#include "XS/XSNotification.h"
-#include "XS/XSNotificationCenter.h"
-#include "XS/XSNumber.h"
-#include "XS/XSSet.h"
-#include "XS/XSSort.h"
-#include "XS/XSString.h"
-#include "XS/XSThread.h"
-#include "XS/XSTimer.h"
-#include "XS/XSURL.h"
-#include "XS/XSURLRequest.h"
+/*!
+ * @var         __XSURLRequestClass
+ * @abstract    Runtime class definition
+ */
+static const XSClassInfos __XSURLRequestClass =
+{
+    "XSURLRequest",             /* Class name */
+    sizeof( __XSURLRequest ),   /* Object size */
+    NULL,                       /* Constructor */
+    NULL,                       /* Destructor */
+    NULL,                       /* Default initializer */
+    NULL,                       /* Object copy */
+    NULL,                       /* Object description */
+    NULL                        /* Object comparison */
+};
 
-#endif /* _XS_H_ */
+/*!
+ * @var         __XSURLRequestClassID
+ * @abstract    Type ID for the runtine class
+ */
+XSClassID __XSURLRequestClassID;
+
+void __XSURLRequest_Initialize( void )
+{
+    __XSURLRequestClassID = XSRuntime_RegisterClass( &__XSURLRequestClass );
+}
