@@ -39,8 +39,26 @@
 
 #ifndef _WIN32
 
+typedef uint32_t DWORD;
+typedef void * HANDLE;
+typedef const char * LPCTSTR;
+typedef void * LPVOID;
+typedef struct _SECURITY_ATTRIBUTES
+{
+    DWORD  nLength;
+    LPVOID lpSecurityDescriptor;
+    BOOL   bInheritHandle;
+}
+SECURITY_ATTRIBUTES, * PSECURITY_ATTRIBUTES, * LPSECURITY_ATTRIBUTES;
+
+#define WAIT_TIMEOUT    0
+
 pthread_t GetCurrentThreadId( void );
 void      ExitThread( int status );
+HANDLE    CreateMutex( LPSECURITY_ATTRIBUTES attr, BOOL owner, LPCTSTR name );
+BOOL      ReleaseMutex( HANDLE mutex );
+BOOL      CloseHandle( HANDLE  mutex );
+DWORD     WaitForSingleObject( HANDLE  mutext, DWORD msecs );
 
 #endif
 
@@ -54,15 +72,21 @@ void __win32_pthread_exit( void * retval );
 void __win32_pthread_exit( void * retval )
 {
     ( void )retval;
-    
+
     ExitThread( 0 );
 }
 
 int __win32_pthread_mutex_init( pthread_mutex_t * mutex, const pthread_mutexattr_t * attr );
 int __win32_pthread_mutex_init( pthread_mutex_t * mutex, const pthread_mutexattr_t * attr )
 {
-    ( void )mutex;
     ( void )attr;
+    ( void )mutex;
+    
+    #ifdef _WIN32
+    
+    *( mutex ) = CreateMutex( NULL, FALSE, NULL );
+    
+    #endif
     
     return 0;
 }
@@ -70,23 +94,7 @@ int __win32_pthread_mutex_init( pthread_mutex_t * mutex, const pthread_mutexattr
 int __win32_pthread_mutex_destroy( pthread_mutex_t * mutex );
 int __win32_pthread_mutex_destroy( pthread_mutex_t * mutex )
 {
-    ( void )mutex;
-    
-    return 0;
-}
-
-int __win32_pthread_mutex_lock( pthread_mutex_t * mutex );
-int __win32_pthread_mutex_lock( pthread_mutex_t * mutex )
-{
-    ( void )mutex;
-    
-    return 0;
-}
-
-int __win32_pthread_mutex_unlock( pthread_mutex_t * mutex );
-int __win32_pthread_mutex_unlock( pthread_mutex_t * mutex )
-{
-    ( void )mutex;
+    CloseHandle( mutex );
     
     return 0;
 }
@@ -95,6 +103,29 @@ int __win32_pthread_mutex_trylock( pthread_mutex_t * mutex );
 int __win32_pthread_mutex_trylock( pthread_mutex_t * mutex )
 {
     ( void )mutex;
+    
+    #ifdef _WIN32
+    
+    if( WaitForSingleObject( *( mutex ), 10 ) == WAIT_TIMEOUT )
+    {
+        return 1;
+    }
+    
+    #endif
+    
+    return 0;
+}
+
+int __win32_pthread_mutex_lock( pthread_mutex_t * mutex );
+int __win32_pthread_mutex_lock( pthread_mutex_t * mutex )
+{
+    return __win32_pthread_mutex_trylock( mutex );
+}
+
+int __win32_pthread_mutex_unlock( pthread_mutex_t * mutex );
+int __win32_pthread_mutex_unlock( pthread_mutex_t * mutex )
+{
+    ReleaseMutex( mutex );
     
     return 0;
 }
