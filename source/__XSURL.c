@@ -86,11 +86,11 @@ void __XSURL_Copy( XSObject source, XSObject destination )
     url1 = ( __XSURL * )source;
     url2 = ( __XSURL * )destination;
     
-    destination->scheme    = XSCopy( source->scheme );
-    destination->domain    = XSCopy( source->domain );
-    destination->path      = XSCopy( source->path );
-    destination->query     = XSCopy( source->query );
-    destination->framgment = XSCopy( source->framgment );
+    url2->scheme   = XSCopy( url1->scheme );
+    url2->domain   = XSCopy( url1->domain );
+    url2->path     = XSCopy( url1->path );
+    url2->query    = XSCopy( url1->query );
+    url2->fragment = XSCopy( url1->fragment );
 }
 
 XSString __XSURL_ToString( XSObject object )
