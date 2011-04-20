@@ -153,12 +153,17 @@
 		05C9A068135EE848000DFEC8 /* XSHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHost.h; sourceTree = "<group>"; };
 		05C9A069135EE856000DFEC8 /* __XSHost.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSHost.c; sourceTree = "<group>"; };
 		05C9A06A135EE85F000DFEC8 /* XSHost.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSHost.c; sourceTree = "<group>"; };
+		05C9A07E135EF7D6000DFEC8 /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stdafx.cpp; sourceTree = "<group>"; };
+		05C9A07F135EF7D6000DFEC8 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
+		05C9A080135EF7D6000DFEC8 /* targetver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = targetver.h; sourceTree = "<group>"; };
+		05C9A081135EF7D6000DFEC8 /* Win32Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Win32Test.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		050C25C0135C8C070009766B = {
 			isa = PBXGroup;
 			children = (
+				05C9A077135EF7D5000DFEC8 /* Win32Test */,
 				050C25D3135C8C3A0009766B /* LICENSE.md */,
 				050C25D4135C8C3A0009766B /* Makefile */,
 				050C25D5135C8C3A0009766B /* README.md */,
@@ -378,6 +383,17 @@
 				0573D2AE135CAB9300DC1C21 /* __XSURL.h */,
 			);
 			path = __private;
+			sourceTree = "<group>";
+		};
+		05C9A077135EF7D5000DFEC8 /* Win32Test */ = {
+			isa = PBXGroup;
+			children = (
+				05C9A07F135EF7D6000DFEC8 /* stdafx.h */,
+				05C9A07E135EF7D6000DFEC8 /* stdafx.cpp */,
+				05C9A080135EF7D6000DFEC8 /* targetver.h */,
+				05C9A081135EF7D6000DFEC8 /* Win32Test.cpp */,
+			);
+			path = Win32Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
