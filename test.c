@@ -93,6 +93,7 @@ XSMain( argc, argv )
     XSNumber      num;
     XSURL         url;
     XSHost        host;
+    XSURLRequest  request;
     
     app  = XSApplication_Start( argc, ( const char ** )argv );
     
@@ -136,15 +137,16 @@ XSMain( argc, argv )
         test[ i ] = XSAutoAlloc( 2 );
     }
     
-    str1 = XSSTR( "hello, world" );
-    str2 = XSString_SubstringFromIndex( str1, 5 );
-    str3 = XSCopy( str2 );
-    arr  = XSArray_InitWithValues( XSArray_Alloc(), str1, str2, str3, NULL );
-    data = XSData_InitWithBytes( XSData_Alloc(), ( UInt8 * )"hello, world", 12 );
-    dict = XSDictionary_InitWithKeysAndValues( XSDictionary_Alloc(), XSSTR( "test-1" ), str1, XSSTR( "test-2" ), str2, NULL );
-    num  = XSNumber_InitWithShort( XSNumber_Alloc(), 0x0303 );
-    url  = XSURL_InitWithCString( XSURL_Alloc(), "http://www.eosgarden.com:80/en/contact/?test=1#test" );
-    host = XSHost_InitWithURL( XSHost_Alloc(), url );
+    str1    = XSSTR( "hello, world" );
+    str2    = XSString_SubstringFromIndex( str1, 5 );
+    str3    = XSCopy( str2 );
+    arr     = XSArray_InitWithValues( XSArray_Alloc(), str1, str2, str3, NULL );
+    data    = XSData_InitWithBytes( XSData_Alloc(), ( UInt8 * )"hello, world", 12 );
+    dict    = XSDictionary_InitWithKeysAndValues( XSDictionary_Alloc(), XSSTR( "test-1" ), str1, XSSTR( "test-2" ), str2, NULL );
+    num     = XSNumber_InitWithShort( XSNumber_Alloc(), 0x0303 );
+    url     = XSURL_InitWithCString( XSURL_Alloc(), "http://www.eosgarden.com:80/en/contact/?test=1#test" );
+    host    = XSHost_InitWithURL( XSHost_Alloc(), url );
+    request = XSURLRequest_InitWithURL( XSURLRequest_Alloc(), url );
     
     XSLog( "Memory hash: %s", XSHash( test ) );
     XSLog( "Object hash: %s", XSHash( str1 ) );
@@ -175,6 +177,8 @@ XSMain( argc, argv )
     XSTimer_RunOnce( timer );
     XSTimer_RunAndRepeat( timer );
     
+    XSURLRequest_Start( request );
+    
     XSRelease( timer );
     XSRelease( arr );
     XSRelease( str3 );
@@ -183,6 +187,7 @@ XSMain( argc, argv )
     XSRelease( num );
     XSRelease( url );
     XSRelease( host );
+    XSRelease( request );
     
     return EXIT_SUCCESS;
 }
