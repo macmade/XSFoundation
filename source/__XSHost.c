@@ -46,11 +46,11 @@ static const XSClassInfos __XSHostClass =
 {
     "XSHost",           /* Class name */
     sizeof( XSHost ),   /* Object size */
-    NULL,               /* Constructor */
-    NULL,               /* Destructor */
+    __XSHost_Construct, /* Constructor */
+    __XSHost_Destruct,  /* Destructor */
     NULL,               /* Default initializer */
     NULL,               /* Object copy */
-    NULL,               /* Object description */
+    __XSHost_ToString,  /* Object description */
     NULL                /* Object comparison */
 };
 
@@ -63,4 +63,38 @@ XSClassID __XSHostClassID;
 void __XSHost_Initialize( void )
 {
     __XSHostClassID = XSRuntime_RegisterClass( &__XSHostClass );
+}
+
+void __XSHost_Construct( XSObject object )
+{
+    __XSHost * host;
+    
+    host        = ( __XSHost * )object;
+    host->infos = XSAlloc( sizeof( struct addrinfo ) );
+    host->sock  = XSAlloc( sizeof( struct sockaddr_in ) );
+}
+
+void __XSHost_Destruct( XSObject object )
+{
+    __XSHost * host;
+    
+    host = ( __XSHost * )object;
+    
+    XSRelease( host->host );
+    XSRelease( host->ip );
+    XSRelease( host->infos );
+    XSRelease( host->sock );
+}
+
+XSString __XSHost_ToString( XSObject object )
+{
+    __XSHost * host;
+    XSString   description;
+    
+    host        = ( __XSHost * )object;
+    description = XSString_Init( XSString_Alloc() );
+    
+    XSString_AppendFormat( description, ( char * )"%s (%s) : %u", XSString_CString( host->host ), XSString_CString( host->ip ), host->port );
+    
+    return XSAutorelease( description );
 }

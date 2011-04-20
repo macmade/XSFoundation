@@ -52,7 +52,12 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct __XSHost_Struct
 {
-    XSRuntimeClass __class;
+    XSRuntimeClass       __class;
+    XSString             host;
+    XSString             ip;
+    XSUInteger           port;
+    struct addrinfo    * infos;
+    struct sockaddr_in * sock;
 }
 __XSHost;
 
@@ -62,6 +67,30 @@ __XSHost;
  * @result      void
  */
 void __XSHost_Initialize( void );
+
+/*!
+ * @function    __XSHost_Construct
+ * @abstract    Constructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSHost_Construct( XSObject object );
+
+/*!
+ * @function    __XSString_Destruct
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSHost_Destruct( XSObject object );
+
+/*!
+ * @function    __XSHost_ToString
+ * @abstract    Object description
+ * @param       object  A pointer to the object
+ * @result      The object's description
+ */
+XSString __XSHost_ToString( XSObject object );
 
 XS_EXTERN_C_END
 
