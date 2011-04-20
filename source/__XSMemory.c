@@ -69,7 +69,7 @@ static const XSClassInfos __XSAutoreleasePoolClass =
 
 /*!
  * @var         __XSAutoreleasePoolClassID
- * @abstract    Type ID for the runtine class
+ * @abstract    Type ID for the __XS_RUNTIME_INIT_CHECK class
  */
 XSClassID __XSAutoreleasePoolClassID;
 

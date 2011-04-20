@@ -56,7 +56,7 @@ static const XSClassInfos __XSNotificationCenterClass =
 
 /*!
  * @var         __XSNotificationCenterClassID
- * @abstract    Type ID for the runtine class
+ * @abstract    Type ID for the __XS_RUNTIME_INIT_CHECK class
  */
 XSClassID __XSNotificationCenterClassID;
 

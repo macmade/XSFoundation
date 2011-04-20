@@ -46,11 +46,11 @@
 #define __XS_RUNTIME_CLASS_TABLE_SIZE   1024
 
 /*!
- * define       __XS_RUNTINE_INIT_CHECK
+ * define       __XS___XS_RUNTIME_INIT_CHECK_INIT_CHECK
  * @abstract    Checks if the runtime has been initialized
  * @description This macro will produce a fatal error if the runtime has not been initialized.
  */
-#define __XS_RUNTINE_INIT_CHECK         if( __inited == NO ) { XSFatalError( "Error: the runtime has not been initialized\n" ) }
+#define __XS___XS_RUNTIME_INIT_CHECK_INIT_CHECK         if( __inited == NO ) { XSFatalError( "Error: the runtime has not been initialized\n" ) }
 
 /*!
  * @var         __inited
@@ -147,7 +147,7 @@ void XSRuntime_Finalize( void )
 
 XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls )
 {
-    __XS_RUNTINE_INIT_CHECK
+    __XS___XS_RUNTIME_INIT_CHECK_INIT_CHECK
     
     if( __class_size == 0 )
     {
@@ -183,7 +183,7 @@ XSObject XSRuntime_CreateInstance( XSClassID typeID )
     size_t           size;
     XSObject         o;
     
-    __XS_RUNTINE_INIT_CHECK
+    __XS___XS_RUNTIME_INIT_CHECK_INIT_CHECK
     
     if( typeID > __class_count || typeID == 0 )
     {
