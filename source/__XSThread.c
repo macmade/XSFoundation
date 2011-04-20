@@ -56,7 +56,7 @@ static const XSClassInfos __XSThreadClass =
 
 /*!
  * @var         __XSThreadClassID
- * @abstract    Type ID for the __XS_RUNTIME_INIT_CHECK class
+ * @abstract    Type ID for the runtime class
  */
 XSClassID __XSThreadClassID;
 

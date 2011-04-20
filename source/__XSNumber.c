@@ -56,7 +56,7 @@ static const XSClassInfos __XSNumberClass =
 
 /*!
  * @var         __XSNumberClassID
- * @abstract    Type ID for the __XS_RUNTIME_INIT_CHECK class
+ * @abstract    Type ID for the runtime class
  */
 XSClassID __XSNumberClassID;
 
