@@ -107,3 +107,33 @@ XSObject XSHost_InitWithURL( XSHost xsThis, XSURL url )
 {
     return XSHost_Init( xsThis, XSURL_GetDomain( url ), XSURL_GetPort( url ) );
 }
+
+XSString XSHost_GetHost( XSHost xsThis )
+{
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
+    return ( ( __XSHost * )xsThis )->host;
+}
+
+XSString XSHost_GetIP( XSHost xsThis )
+{
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
+    return ( ( __XSHost * )xsThis )->ip;
+}
+
+XSUInteger XSHost_GetPort( XSHost xsThis )
+{
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
+    return ( ( __XSHost * )xsThis )->port;
+}

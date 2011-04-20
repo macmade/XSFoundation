@@ -68,6 +68,12 @@ XSObject XSHost_Init( XSHost xsThis, XSString host, XSUInteger port );
 
 XSObject XSHost_InitWithURL( XSHost xsThis, XSURL url );
 
+XSString XSHost_GetHost( XSHost xsThis );
+
+XSString XSHost_GetIP( XSHost xsThis );
+
+XSUInteger XSHost_GetPort( XSHost xsThis );
+
 XS_EXTERN_C_END
 
 #endif /* _XS_HOST_H_ */
