@@ -45,7 +45,12 @@ XSStatic XSObject XSException_Alloc( void )
     return ( XSObject )XSRuntime_CreateInstance( __XSExceptionClassID );
 }
 
-XSException XSException_Init( XSException xsThis, XSInteger code, XSString domain, XSString reason )
+XSStatic XSAutoreleased XSException XSException_New( XSInteger code, XSString reason )
+{
+    return XSAutorelease( XSException_Init( XSException_Alloc(), code, reason ) );
+}
+
+XSException XSException_Init( XSException xsThis, XSInteger code, XSString reason )
 {
     __XSException * e;
     
@@ -57,11 +62,9 @@ XSException XSException_Init( XSException xsThis, XSInteger code, XSString domai
     e = ( __XSException * )xsThis;
     
     e->code   = code;
-    e->domain = domain;
     e->reason = reason;
     
-    XSRetain( e->domain );
-    XSRetain( e->domain );
+    XSRetain( e->reason );
     
     return ( XSException )e;
 }
@@ -74,16 +77,6 @@ XSInteger XSException_GetCode( XSException xsThis )
     }
     
     return ( ( __XSException * )xsThis )->code;
-}
-
-XSAutoreleased XSString XSException_GetDomain( XSException xsThis )
-{
-    if( xsThis == NULL )
-    {
-        return NULL;
-    }
-    
-    return XSAutorelease( XSCopy( ( ( __XSException * )xsThis )->domain ) );
 }
 
 XSAutoreleased XSString XSException_GetReason( XSException xsThis )

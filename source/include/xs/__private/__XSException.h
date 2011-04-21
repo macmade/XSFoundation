@@ -57,8 +57,8 @@ typedef struct __XSException_Struct
 {
     XSRuntimeClass __class;
     XSInteger      code;
-    XSString      domain;
-    XSString      reason;
+    XSString       reason;
+    BOOL           caught;
 }
 __XSException;
 

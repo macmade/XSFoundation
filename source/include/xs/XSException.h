@@ -29,6 +29,13 @@
  
 /* $Id$ */
 
+/*******************************************************************************
+ * Copyright notice:
+ * 
+ * Macros parts of this code (XSTry, XSCatch, ...) are borrowed from the CExcept
+ * project (http://www.nicemice.net/cexcept/), by Adam M. Costello.
+ ******************************************************************************/
+
 /*!
  * @header      XSException.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
@@ -57,36 +64,36 @@ typedef struct __XSException_Struct * XSException;
 XSStatic XSObject XSException_Alloc( void );
 
 /*!
- * @function    XSException_Init
- * @abstract    Creates an error
- * @param       code    The error code
- * @param       domain  The error domain
- * @param       reason  The error message
- * @result      The error object
+ * @function    XSException_New
+ * @abstract    Creates an exception
+ * @param       code    The exception code
+ * @param       reason  The exception message
+ * @result      The exception object
  */
-XSException XSException_Init( XSException xsThis, XSInteger code, XSString domain, XSString reason );
+XSStatic XSAutoreleased XSException XSException_New( XSInteger code, XSString reason );
+
+/*!
+ * @function    XSException_Init
+ * @abstract    Creates an exception
+ * @param       code    The exception code
+ * @param       reason  The exception message
+ * @result      The exception object
+ */
+XSException XSException_Init( XSException xsThis, XSInteger code, XSString reason );
 
 /*!
  * @function    XSException_GetCode
- * @abstract    Gets the error code
- * @param       xsThis  The error object
+ * @abstract    Gets the exception code
+ * @param       xsThis  The exception object
  * @result      The error code
  */
 XSInteger XSException_GetCode( XSException xsThis );
 
 /*!
- * @function    XSException_GetDomain
- * @abstract    Gets the error domain
- * @param       xsThis  The error object
- * @result      The error domain
- */
-XSString XSException_GetDomain( XSException xsThis );
-
-/*!
  * @function    XSException_GetReason
- * @abstract    Gets the error message
- * @param       xsThis  The error object
- * @result      The error message
+ * @abstract    Gets the exception message
+ * @param       xsThis  The exception object
+ * @result      The exception message
  */
 XSString XSException_GetReason( XSException xsThis );
 

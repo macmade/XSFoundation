@@ -44,6 +44,9 @@ static __XSApplication    * __xsapp = NULL;
 static XSAutoreleasePool    __xsarp = NULL;
 static BOOL __xsapp_argv_processed  = NO;
 
+struct XSExceptionContext_Struct   __XSExceptionContext;
+struct XSExceptionContext_Struct * XSExceptionContext;
+
 XSStatic XSApplication XSApplication_Alloc( void )
 {
     return ( XSObject )XSRuntime_CreateInstance( __XSApplicationClassID );
@@ -59,6 +62,9 @@ XSStatic XSApplication XSApplication_Start( int argc, const char ** argv )
     #ifdef _WIN32
     WSADATA wsaData;
     #endif
+    
+    XSExceptionContext        = &__XSExceptionContext;
+    XSExceptionContext->e_env = 0;
     
     XSRuntime_Initialize();
     

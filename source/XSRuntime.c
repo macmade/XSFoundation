@@ -89,6 +89,7 @@ void __XSData_Initialize( void );
 void __XSDictionary_Initialize( void );
 void __XSError_Initialize( void );
 void __XSException_Initialize( void );
+void __XSExceptionCenter_Initialize( void );
 void __XSFile_Initialize( void );
 void __XSHost_Initialize( void );
 void __XSLock_Initialize( void );
@@ -127,6 +128,7 @@ void XSRuntime_Initialize( void )
     __XSDictionary_Initialize();
     __XSError_Initialize();
     __XSException_Initialize();
+    __XSExceptionCenter_Initialize();
     __XSFile_Initialize();
     __XSHost_Initialize();
     __XSLock_Initialize();

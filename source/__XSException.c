@@ -71,7 +71,6 @@ void __XSException_Destruct( XSObject object )
     
     e = ( __XSException * )object;
     
-    XSRelease( e->domain );
     XSRelease( e->reason );
 }
 
@@ -84,8 +83,7 @@ XSString __XSException_ToString( XSObject object )
     XSString_AppendFormat
     (
         description,
-        ( char * )"%s (%i): %s",
-        XSString_CString( ( ( __XSException * )object )->domain ),
+        ( char * )"%i: %s",
         ( ( __XSException * )object )->code,
         XSString_CString( ( ( __XSException * )object )->reason )
     );
