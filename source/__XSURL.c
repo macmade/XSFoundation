@@ -49,7 +49,7 @@ static const XSClassInfos __XSURLClass =
     NULL,                   /* Constructor */
     __XSURL_Destruct,       /* Destructor */
     XSURL_Init,             /* Default initializer */
-    NULL,                   /* Object copy */
+    __XSURL_Copy,           /* Object copy */
     __XSURL_ToString,       /* Object description */
     __XSURL_Equals          /* Object comparison */
 };
