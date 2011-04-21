@@ -44,14 +44,14 @@
  */
 static const XSClassInfos __XSErrorClass =
 {
-    "XSError",          /* Class name */
-    sizeof( XSError ),  /* Object size */
-    NULL,               /* Constructor */
-    __XSError_Destruct, /* Destructor */
-    NULL,               /* Default initializer */
-    NULL,               /* Object copy */
-    __XSError_ToString, /* Object description */
-    NULL                /* Object comparison */
+    "XSError",              /* Class name */
+    sizeof( __XSError ),    /* Object size */
+    NULL,                   /* Constructor */
+    __XSError_Destruct,     /* Destructor */
+    NULL,                   /* Default initializer */
+    NULL,                   /* Object copy */
+    __XSError_ToString,     /* Object description */
+    NULL                    /* Object comparison */
 };
 
 /*!
