@@ -119,7 +119,7 @@ void XSURLRequest_Start( XSURLRequest xsThis )
     char           * headersEnd;
     char           * headerParts;
     XSString         headers;
-    XSString         body;
+    XSInteger        length;
     
     if( xsThis == NULL )
     {
@@ -173,9 +173,8 @@ void XSURLRequest_Start( XSURLRequest xsThis )
     
     hasHeaders = NO;
     headers    = XSString_InitWithCapacity( XSString_Alloc(), 20000 );
-    body       = XSString_InitWithCapacity( XSString_Alloc(), 20000 );
     
-    while( recv( req->socket, buffer, 16384, 0 ) > 0 )
+    while( ( length = recv( req->socket, buffer, 16384, 0 ) ) > 0 )
     {
         if( hasHeaders == NO )
         {
@@ -190,7 +189,7 @@ void XSURLRequest_Start( XSURLRequest xsThis )
                 hasHeaders      = YES;
                 
                 XSString_AppendCString( headers, headerParts );
-                XSString_AppendCString( body, buffer );
+                XSData_AppendBytes( req->data, ( void * )buffer, length );
             }
             else
             {
@@ -199,7 +198,7 @@ void XSURLRequest_Start( XSURLRequest xsThis )
         }
         else
         {
-            XSString_AppendCString( body, buffer );
+            XSData_AppendBytes( req->data, ( void * )buffer, length );
         }
     }
     
@@ -207,6 +206,5 @@ void XSURLRequest_Start( XSURLRequest xsThis )
     XSRelease( msg );
     XSRelease( url );
     XSRelease( headers );
-    XSRelease( body );
     XSRelease( buffer_orig );
 }
