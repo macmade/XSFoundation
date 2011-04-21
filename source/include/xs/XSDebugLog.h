@@ -43,7 +43,7 @@
 
 XS_EXTERN_C_BEGIN
 
-#define XS_DEBUG_LOG_ENABLED    1
+#define XS_DEBUG_LOG_ENABLED    0
 
 typedef enum
 {
