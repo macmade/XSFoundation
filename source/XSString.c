@@ -510,7 +510,7 @@ XSAutoreleased XSArray XSString_SplitWithCString( XSString xsThis, char * s )
     }
     
     str       = ( __XSString * )xsThis;
-    cstr      = XSAlloc( str->length + 1 );
+    cstr      = XSAutorelease( XSAlloc( str->length + 1 ) );
     cstr_orig = cstr;
     length    = strlen( s );
     array     = XSArray_Init( XSArray_Alloc() );
@@ -531,12 +531,16 @@ XSAutoreleased XSArray XSString_SplitWithCString( XSString xsThis, char * s )
         
         if( split == NULL )
         {
+            part = XSString_InitWithCString( XSString_Alloc(), cstr );
+            
+            XSArray_AppendValue( array, part );
+            XSRelease( part );
+            
             break;
         }
         
         split[ 0 ] = 0;
-        
-        part = XSString_InitWithCString( XSString_Alloc(), cstr );
+        part       = XSString_InitWithCString( XSString_Alloc(), cstr );
         
         XSArray_AppendValue( array, part );
         XSRelease( part );
