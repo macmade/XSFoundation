@@ -79,12 +79,9 @@ void __XSString_Copy( XSObject source, XSObject destination )
     __XSString * str1 = ( __XSString * )source;
     __XSString * str2 = ( __XSString * )destination;
     
-    if( NULL == ( str2->str = XSAlloc( str1->length + 1 ) ) )
-    {
-        str2->str = NULL;
-    }
+    ( void )str1;
     
-    memcpy( str2->str, str1->str, str1->length );
+    XSRetain( str2->str );
 }
 
 XSString __XSString_ToString( XSObject object )
