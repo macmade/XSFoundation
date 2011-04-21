@@ -126,11 +126,12 @@ XSObject XSURL_InitWithCString( XSObject xsThis, char * str )
     
     if( search != NULL )
     {
-        search[ 0 ] = 0;
-        url->path   = XSString_InitWithCString( XSString_Alloc(), parts );
-        search     += 1;
-        parts       = search;
-        search      = strchr( parts, '#' );
+        *( parts - 1 ) = '/';
+        search[ 0 ]    = 0;
+        url->path      = XSString_InitWithCString( XSString_Alloc(), parts - 1 );
+        search        += 1;
+        parts          = search;
+        search         = strchr( parts, '#' );
         
         if( search != NULL )
         {
@@ -201,11 +202,13 @@ XSAutoreleased XSString XSURL_GetURL( XSObject xsThis )
         XSString_AppendFormat( str, ( char * )":%u", url->port );
     }
     
-    XSString_AppendCString( str, ( char * )"/" );
-    
     if( url->path != NULL )
     {
         XSString_AppendFormat( str, ( char * )"%s", XSString_CString( url->path ) );
+    }
+    else
+    {
+        XSString_AppendCString( str, ( char * )"/" );
     }
     
     if( url->query != NULL )
