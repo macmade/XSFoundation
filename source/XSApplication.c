@@ -89,6 +89,8 @@ XSStatic void XSApplication_Exit( void )
     XSRelease( __xsarp );
     XSRelease( __xsapp );
     XSRelease( XSNotificationCenter_DefaultCenter() );
+    XSRelease( XSExceptionCenter_DefaultCenter() );
+    XSRelease( XSNull_Null() );
     
     __xsarp = NULL;
     __xsapp = NULL;
