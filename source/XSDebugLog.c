@@ -66,20 +66,20 @@ void XSDebugLog( XSDebugLogLevel level, const char * format, ... )
     {
         va_start( args, format );
         
-        printf( "    > Debug log - " );
+        printf( "    --- DEBUG LOG - " );
         
         switch( level )
         {
-            case XSDebugLogLevelEmergency: printf( "Emergency: " ); break;
-            case XSDebugLogLevelAlert:     printf( "Alert: " );     break;
-            case XSDebugLogLevelCritical:  printf( "Critical: " );  break;
-            case XSDebugLogLevelError:     printf( "Error: " );     break;
-            case XSDebugLogLevelWarning:   printf( "Warning: " );   break;
-            case XSDebugLogLevelNotice:    printf( "Notice: " );    break;
-            case XSDebugLogLevelInfo:      printf( "Info: " );      break;
-            case XSDebugLogLevelDebug:     printf( "Debug: " );     break;
-            case XSDebugLogLevelAll:       printf( "Unknown: " );   break;
-            default:                       printf( "Unknown: " );   break;
+            case XSDebugLogLevelEmergency: printf( "EMERGENCY: " ); break;
+            case XSDebugLogLevelAlert:     printf( "ALERT: " );     break;
+            case XSDebugLogLevelCritical:  printf( "CRITICAL: " );  break;
+            case XSDebugLogLevelError:     printf( "ERROR: " );     break;
+            case XSDebugLogLevelWarning:   printf( "WARNING: " );   break;
+            case XSDebugLogLevelNotice:    printf( "NOTICE: " );    break;
+            case XSDebugLogLevelInfo:      printf( "INFO: " );      break;
+            case XSDebugLogLevelDebug:     printf( "DEBUG: " );     break;
+            case XSDebugLogLevelAll:       printf( "UNKNOWN: " );   break;
+            default:                       printf( "UNKNOWN: " );   break;
         }
         
         vprintf( format, args );
