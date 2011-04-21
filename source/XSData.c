@@ -158,7 +158,7 @@ void XSData_AppendBytes( XSData xsThis, UInt8 * bytes, XSUInteger length )
     
     data = ( __XSData * )xsThis;
     
-    if( data->capacity < length )
+    if( data->capacity < length + data->length )
     {
         store = XSRealloc( data->bytes, data->length + length );
         
@@ -167,10 +167,11 @@ void XSData_AppendBytes( XSData xsThis, UInt8 * bytes, XSUInteger length )
             return;
         }
         
-        data->bytes = store;
+        data->bytes     = store;
+        data->capacity += length;
     }
     
-    memcpy( data->bytes + data->length, bytes, length );
+    memcpy( data->bytes, bytes, length );
     
     data->length += length;
 }
