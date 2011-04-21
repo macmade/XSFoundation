@@ -26,41 +26,65 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
-
+ 
 /* $Id$ */
 
 /*!
- * @header      XSDebugLog.h
+ * @header      __XSException.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Debug log functions
+ * @abstract    Private XSException class definitions
  */
 
-#ifndef _XS_DEBUG_LOG_H_
-#define _XS_DEBUG_LOG_H_
+#ifndef ___XS_EXCEPTION_H_
+#define ___XS_EXCEPTION_H_
 #pragma once
 
-#include "XSMacros.h"
+#include "../XSMacros.h"
 
 XS_EXTERN_C_BEGIN
 
-typedef enum
-{
-    XSDebugLogLevelEmergency    = 0x01,
-    XSDebugLogLevelAlert        = 0x02,
-    XSDebugLogLevelCritical     = 0x04,
-    XSDebugLogLevelError        = 0x05,
-    XSDebugLogLevelWarning      = 0x10,
-    XSDebugLogLevelNotice       = 0x20,
-    XSDebugLogLevelInfo         = 0x40,
-    XSDebugLogLevelDebug        = 0x80,
-    XSDebugLogLevelAll          = 0xFF
-}
-XSDebugLogLevel;
+#include "XS.h"
 
-void XSDebugLogEnable( XSDebugLogLevel level );
-void XSDebugLogDisable( XSDebugLogLevel level );
-void XSDebugLog( XSDebugLogLevel level, const char * format, ... );
+/*!
+ * @typdef      __XSException
+ * @abastract   XSError class
+ * @field       __class     Runtime class
+ * @field       code        The exception code
+ * @field       domain      The exception domain
+ * @field       reason      The exception message
+ */
+typedef struct __XSException_Struct
+{
+    XSRuntimeClass __class;
+    XSInteger      code;
+    XSString      domain;
+    XSString      reason;
+}
+__XSException;
+
+/*!
+ * @function    __XSException_Initialize
+ * @abstract    Runtime initialization
+ * @result      void
+ */
+void __XSException_Initialize( void );
+
+/*!
+ * @function    __XSException_Destruct
+ * @abstract    Destructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSException_Destruct( XSObject object );
+
+/*!
+ * @function    __XSException_ToString
+ * @abstract    Object description
+ * @param       object  A pointer to the object
+ * @result      The object's description
+ */
+XSString __XSException_ToString( XSObject object );
 
 XS_EXTERN_C_END
 
-#endif /* _XS_DEBUG_LOG_H_ */
+#endif /* ___XS_EXCEPTION_H_ */

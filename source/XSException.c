@@ -26,41 +26,72 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
-
+ 
 /* $Id$ */
 
 /*!
- * @header      XSDebugLog.h
+ * @header      XSException.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Debug log functions
+ * @abstract    Implementation for the XSException class
  */
 
-#ifndef _XS_DEBUG_LOG_H_
-#define _XS_DEBUG_LOG_H_
-#pragma once
+#include "XS.h"
+#include "__XSException.h"
 
-#include "XSMacros.h"
+extern XSClassID __XSExceptionClassID;
 
-XS_EXTERN_C_BEGIN
-
-typedef enum
+XSStatic XSObject XSException_Alloc( void )
 {
-    XSDebugLogLevelEmergency    = 0x01,
-    XSDebugLogLevelAlert        = 0x02,
-    XSDebugLogLevelCritical     = 0x04,
-    XSDebugLogLevelError        = 0x05,
-    XSDebugLogLevelWarning      = 0x10,
-    XSDebugLogLevelNotice       = 0x20,
-    XSDebugLogLevelInfo         = 0x40,
-    XSDebugLogLevelDebug        = 0x80,
-    XSDebugLogLevelAll          = 0xFF
+    return ( XSObject )XSRuntime_CreateInstance( __XSExceptionClassID );
 }
-XSDebugLogLevel;
 
-void XSDebugLogEnable( XSDebugLogLevel level );
-void XSDebugLogDisable( XSDebugLogLevel level );
-void XSDebugLog( XSDebugLogLevel level, const char * format, ... );
+XSException XSException_Init( XSException xsThis, XSInteger code, XSString domain, XSString reason )
+{
+    __XSException * e;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
+    e = ( __XSException * )xsThis;
+    
+    e->code   = code;
+    e->domain = domain;
+    e->reason = reason;
+    
+    XSRetain( e->domain );
+    XSRetain( e->domain );
+    
+    return ( XSException )e;
+}
 
-XS_EXTERN_C_END
+XSInteger XSException_GetCode( XSException xsThis )
+{
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
+    return ( ( __XSException * )xsThis )->code;
+}
 
-#endif /* _XS_DEBUG_LOG_H_ */
+XSAutoreleased XSString XSException_GetDomain( XSException xsThis )
+{
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
+    return XSAutorelease( XSCopy( ( ( __XSException * )xsThis )->domain ) );
+}
+
+XSAutoreleased XSString XSException_GetReason( XSException xsThis )
+{
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
+    return XSAutorelease( XSCopy( ( ( __XSException * )xsThis )->reason ) );
+}

@@ -26,41 +26,70 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
-
+ 
 /* $Id$ */
 
 /*!
- * @header      XSDebugLog.h
+ * @header      XSException.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Debug log functions
+ * @abstract    XSException class functions
  */
 
-#ifndef _XS_DEBUG_LOG_H_
-#define _XS_DEBUG_LOG_H_
+#ifndef _XS_EXCEPTION_H_
+#define _XS_EXCEPTION_H_
 #pragma once
 
 #include "XSMacros.h"
 
 XS_EXTERN_C_BEGIN
 
-typedef enum
-{
-    XSDebugLogLevelEmergency    = 0x01,
-    XSDebugLogLevelAlert        = 0x02,
-    XSDebugLogLevelCritical     = 0x04,
-    XSDebugLogLevelError        = 0x05,
-    XSDebugLogLevelWarning      = 0x10,
-    XSDebugLogLevelNotice       = 0x20,
-    XSDebugLogLevelInfo         = 0x40,
-    XSDebugLogLevelDebug        = 0x80,
-    XSDebugLogLevelAll          = 0xFF
-}
-XSDebugLogLevel;
+/*!
+ * @typedef     XSException
+ * @abstract    Opaque type for the XSError objects
+ */
+typedef struct __XSException_Struct * XSException;
 
-void XSDebugLogEnable( XSDebugLogLevel level );
-void XSDebugLogDisable( XSDebugLogLevel level );
-void XSDebugLog( XSDebugLogLevel level, const char * format, ... );
+/*!
+ * @function    XSException_Alloc
+ * @abstract    Object allocator
+ * @result      The allocated object
+ */
+XSStatic XSObject XSException_Alloc( void );
+
+/*!
+ * @function    XSException_Init
+ * @abstract    Creates an error
+ * @param       code    The error code
+ * @param       domain  The error domain
+ * @param       reason  The error message
+ * @result      The error object
+ */
+XSException XSException_Init( XSException xsThis, XSInteger code, XSString domain, XSString reason );
+
+/*!
+ * @function    XSException_GetCode
+ * @abstract    Gets the error code
+ * @param       xsThis  The error object
+ * @result      The error code
+ */
+XSInteger XSException_GetCode( XSException xsThis );
+
+/*!
+ * @function    XSException_GetDomain
+ * @abstract    Gets the error domain
+ * @param       xsThis  The error object
+ * @result      The error domain
+ */
+XSString XSException_GetDomain( XSException xsThis );
+
+/*!
+ * @function    XSException_GetReason
+ * @abstract    Gets the error message
+ * @param       xsThis  The error object
+ * @result      The error message
+ */
+XSString XSException_GetReason( XSException xsThis );
 
 XS_EXTERN_C_END
 
-#endif /* _XS_DEBUG_LOG_H_ */
+#endif /* _XS_EXCEPTION_H_ */

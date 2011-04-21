@@ -26,41 +26,69 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
-
+ 
 /* $Id$ */
 
 /*!
- * @header      XSDebugLog.h
+ * @file        __XSException.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Debug log functions
+ * @abstract    Private implementation for the XSException class
  */
 
-#ifndef _XS_DEBUG_LOG_H_
-#define _XS_DEBUG_LOG_H_
-#pragma once
+#include "XS.h"
+#include "__XSException.h"
 
-#include "XSMacros.h"
-
-XS_EXTERN_C_BEGIN
-
-typedef enum
+/*!
+ * @var         __XSExceptionClass
+ * @abstract    Runtime class definition
+ */
+static const XSClassInfos __XSExceptionClass =
 {
-    XSDebugLogLevelEmergency    = 0x01,
-    XSDebugLogLevelAlert        = 0x02,
-    XSDebugLogLevelCritical     = 0x04,
-    XSDebugLogLevelError        = 0x05,
-    XSDebugLogLevelWarning      = 0x10,
-    XSDebugLogLevelNotice       = 0x20,
-    XSDebugLogLevelInfo         = 0x40,
-    XSDebugLogLevelDebug        = 0x80,
-    XSDebugLogLevelAll          = 0xFF
+    "XSException",              /* Class name */
+    sizeof( __XSException ),    /* Object size */
+    NULL,                       /* Constructor */
+    __XSException_Destruct,     /* Destructor */
+    NULL,                       /* Default initializer */
+    NULL,                       /* Object copy */
+    __XSException_ToString,     /* Object description */
+    NULL                        /* Object comparison */
+};
+
+/*!
+ * @var         __XSExceptionClassID
+ * @abstract    Type ID for the runtime class
+ */
+XSClassID __XSExceptionClassID;
+
+void __XSException_Initialize( void )
+{
+    __XSExceptionClassID = XSRuntime_RegisterClass( &__XSExceptionClass );
 }
-XSDebugLogLevel;
 
-void XSDebugLogEnable( XSDebugLogLevel level );
-void XSDebugLogDisable( XSDebugLogLevel level );
-void XSDebugLog( XSDebugLogLevel level, const char * format, ... );
+void __XSException_Destruct( XSObject object )
+{
+    __XSException * e;
+    
+    e = ( __XSException * )object;
+    
+    XSRelease( e->domain );
+    XSRelease( e->reason );
+}
 
-XS_EXTERN_C_END
-
-#endif /* _XS_DEBUG_LOG_H_ */
+XSString __XSException_ToString( XSObject object )
+{
+    XSString description;
+    
+    description = XSString_Init( XSString_Alloc() );
+    
+    XSString_AppendFormat
+    (
+        description,
+        ( char * )"%s (%i): %s",
+        XSString_CString( ( ( __XSException * )object )->domain ),
+        ( ( __XSException * )object )->code,
+        XSString_CString( ( ( __XSException * )object )->reason )
+    );
+    
+    return XSAutorelease( description );
+}

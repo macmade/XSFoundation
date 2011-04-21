@@ -95,7 +95,7 @@ XSMain( argc, argv )
     XSHost        host;
     XSURLRequest  request;
     
-    XSDebugLogEnable( XSDebugLogLevelAll );
+    /* XSDebugLogEnable( XSDebugLogLevelAll ); */
     
     app  = XSApplication_Start( argc, ( const char ** )argv );
     
