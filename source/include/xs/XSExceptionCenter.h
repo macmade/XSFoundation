@@ -29,6 +29,13 @@
  
 /* $Id$ */
 
+/*******************************************************************************
+ * Copyright notice:
+ * 
+ * Macros parts of this code (XSTry, XSCatch, ...) are borrowed from the CExcept
+ * project (http://www.nicemice.net/cexcept/), by Adam M. Costello.
+ ******************************************************************************/
+
 /*!
  * @header      XSExceptionCenter.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
