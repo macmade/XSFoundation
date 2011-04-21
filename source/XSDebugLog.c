@@ -36,6 +36,7 @@
  */
 
 #include "XS.h"
+#include "__XSLog.h"
 
 static XSDebugLogLevel __xsdebuglog_level = 0;
 
@@ -66,6 +67,8 @@ void XSDebugLog( XSDebugLogLevel level, const char * format, ... )
     {
         va_start( args, format );
         
+        __XSLog_Pause();
+        
         printf( "    --- DEBUG LOG - " );
         
         switch( level )
@@ -86,5 +89,7 @@ void XSDebugLog( XSDebugLogLevel level, const char * format, ... )
         printf( "\n" );
         
         va_end( args );
+        
+        __XSLog_Resume();
     }
 }
