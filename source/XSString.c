@@ -493,3 +493,58 @@ XSAutoreleased XSString XSString_MD5Hash( XSString xsThis )
     
     return XSAutorelease( md5 );
 }
+
+XSAutoreleased XSArray XSString_SplitWithCString( XSString xsThis, char * s )
+{
+    size_t   length;
+    XSArray  array;
+    XSString str;
+    XSString part;
+    char   * cstr;
+    char   * cstr_orig;
+    char   * split;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
+    str       = ( __XSString * )xsThis;
+    cstr      = XSAlloc( str->length + 1 );
+    cstr_orig = cstr;
+    length    = strlen( s );
+    array     = XSArray_Init( XSArray_Alloc() );
+    
+    strcpy( cstr, str->str );
+    
+    if( strstr( cstr, s ) == NULL )
+    {
+        XSArray_AppendValue( array, xsThis );
+        XSRelease( cstr_orig );
+        
+        return array;
+    }
+    
+    while( 1 )
+    {
+        split = strstr( cstr, s );
+        
+        if( split == NULL )
+        {
+            break;
+        }
+        
+        split[ 0 ] = 0;
+        
+        part = XSString_InitWithCString( XSString_Alloc(), cstr );
+        
+        XSArray_AppendValue( array, part );
+        XSRelease( part );
+        
+        cstr = split + length;
+    }
+    
+    XSRelease( cstr_orig );
+    
+    return XSAutorelease( array );
+}

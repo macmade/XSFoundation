@@ -43,6 +43,8 @@
 
 XS_EXTERN_C_BEGIN
 
+#include "XSArray.h"
+
 /*!
  * @typedef     XSString
  * @abstract    Opaque type for the XSString objects
@@ -231,6 +233,15 @@ BOOL XSString_IsEqualToString( XSString xsThis, XSString str );
  * @result      The MD5 hash
  */
 XSAutoreleased XSString XSString_MD5Hash( XSString xsThis );
+
+/*!
+ * @function    XSString_SplitWithCString
+ * @abstract    Splits a string by a C string
+ * @param       xsThis  The string object
+ * @param       c       The split string
+ * @result      An array with the string parts
+ */
+XSAutoreleased XSArray XSString_SplitWithCString( XSString xsThis, char * s );
 
 XS_EXTERN_C_END
 
