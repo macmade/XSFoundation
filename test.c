@@ -95,6 +95,8 @@ XSMain( argc, argv )
     XSHost        host;
     XSURLRequest  request;
     
+    XSDebugLogEnable( XSDebugLogLevelAll );
+    
     app  = XSApplication_Start( argc, ( const char ** )argv );
     
     XSApplication_RegisterArgument( app, "--test",    XSApplicationArgumentTypeFlag,    "A test flag" );

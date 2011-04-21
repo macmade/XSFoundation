@@ -30,50 +30,49 @@
 /* $Id$ */
 
 /*!
- * @header      XS.h
+ * @header      XSDebugLog.h
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSFoundation main header file
- * @description This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Debug log functions
  */
 
-#ifndef _XS_H_
-#define _XS_H_
+#ifndef _XS_DEBUG_LOG_H_
+#define _XS_DEBUG_LOG_H_
 #pragma once
 
-#include "std/std.h"
-#include "XS/XSMacros.h"
-#include "XS/XSConstants.h"
-#include "XS/XSTypes.h"
-#include "XS/XSLog.h"
-#include "XS/XSMemory.h"
-#include "XS/XSRuntime.h"
-#include "XS/XSApplicationArgument.h"
-#include "XS/XSApplication.h"
-#include "XS/XSArray.h"
-#include "XS/XSBag.h"
-#include "XS/XSBool.h"
-#include "XS/XSBTree.h"
-#include "XS/XSColor.h"
-#include "XS/XSDebugLog.h"
-#include "XS/XSData.h"
-#include "XS/XSDictionary.h"
-#include "XS/XSError.h"
-#include "XS/XSFile.h"
-#include "XS/XSGeometry.h"
-#include "XS/XSHost.h"
-#include "XS/XSLock.h"
-#include "XS/XSNull.h"
-#include "XS/XSNotification.h"
-#include "XS/XSNotificationCenter.h"
-#include "XS/XSNumber.h"
-#include "XS/XSSet.h"
-#include "XS/XSSort.h"
-#include "XS/XSString.h"
-#include "XS/XSThread.h"
-#include "XS/XSTimer.h"
-#include "XS/XSURL.h"
-#include "XS/XSURLRequest.h"
+#include "XSMacros.h"
 
-#endif /* _XS_H_ */
+XS_EXTERN_C_BEGIN
+
+#define XS_DEBUG_LOG_ENABLED    1
+
+typedef enum
+{
+    XSDebugLogLevelEmergency    = 0x01,
+    XSDebugLogLevelAlert        = 0x02,
+    XSDebugLogLevelCritical     = 0x04,
+    XSDebugLogLevelError        = 0x05,
+    XSDebugLogLevelWarning      = 0x10,
+    XSDebugLogLevelNotice       = 0x20,
+    XSDebugLogLevelInfo         = 0x40,
+    XSDebugLogLevelDebug        = 0x80,
+    XSDebugLogLevelAll          = 0xFF
+}
+XSDebugLogLevel;
+
+#if defined( XS_DEBUG_LOG_ENABLED ) && XS_DEBUG_LOG_ENABLED == 1
+
+void XSDebugLogEnable( XSDebugLogLevel level );
+void XSDebugLogDisable( XSDebugLogLevel level );
+void XSDebugLog( XSDebugLogLevel level, const char * format, ... );
+
+#else
+
+#define XSDebugLogEnable( level )   
+#define XSDebugLogDisable( level )       
+#define XSDebugLog( level, format, ... )   
+
+#endif
+
+XS_EXTERN_C_END
+
+#endif /* _XS_DEBUG_LOG_H_ */

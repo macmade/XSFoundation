@@ -149,6 +149,7 @@
 		0573D2AE135CAB9300DC1C21 /* __XSURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSURL.h; sourceTree = "<group>"; };
 		0573D2AF135CABA400DC1C21 /* XSURL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSURL.c; sourceTree = "<group>"; };
 		0573D2B0135CABAE00DC1C21 /* __XSURL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSURL.c; sourceTree = "<group>"; };
+		05843CD7136021D6006D102B /* XSDebugLog.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSDebugLog.c; sourceTree = "<group>"; };
 		05C9A066135EE838000DFEC8 /* __XSHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSHost.h; sourceTree = "<group>"; };
 		05C9A068135EE848000DFEC8 /* XSHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHost.h; sourceTree = "<group>"; };
 		05C9A069135EE856000DFEC8 /* __XSHost.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSHost.c; sourceTree = "<group>"; };
@@ -161,6 +162,7 @@
 		05C9A094135F6747000DFEC8 /* __XSURLRequest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSURLRequest.c; sourceTree = "<group>"; };
 		05C9A095135F6761000DFEC8 /* __XSURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSURLRequest.h; sourceTree = "<group>"; };
 		05C9A096135F676D000DFEC8 /* XSURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSURLRequest.h; sourceTree = "<group>"; };
+		05C9A0A313601F3D000DFEC8 /* XSDebugLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSDebugLog.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -223,6 +225,7 @@
 				050C264F135C8C3A0009766B /* XSBool.c */,
 				050C2650135C8C3A0009766B /* XSBTree.c */,
 				050C2651135C8C3A0009766B /* XSColor.c */,
+				05843CD7136021D6006D102B /* XSDebugLog.c */,
 				050C2652135C8C3A0009766B /* XSData.c */,
 				050C2653135C8C3A0009766B /* XSDictionary.c */,
 				050C2654135C8C3A0009766B /* XSError.c */,
@@ -332,6 +335,7 @@
 				050C262C135C8C3A0009766B /* XSColor.h */,
 				050C262D135C8C3A0009766B /* XSConstants.h */,
 				050C262E135C8C3A0009766B /* XSData.h */,
+				05C9A0A313601F3D000DFEC8 /* XSDebugLog.h */,
 				050C262F135C8C3A0009766B /* XSDictionary.h */,
 				050C2630135C8C3A0009766B /* XSError.h */,
 				050C2631135C8C3A0009766B /* XSFile.h */,
