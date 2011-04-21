@@ -180,6 +180,7 @@ XSMain( argc, argv )
     XSTimer_RunAndRepeat( timer );
     
     XSURLRequest_Start( request );
+    XSLog( "$@", XSURLRequest_GetHTTPHeaders( request ) );
     
     XSRelease( timer );
     XSRelease( arr );
