@@ -76,6 +76,10 @@ XSUInteger XSHost_GetPort( XSHost xsThis );
 
 XSInteger XSHost_GetSocket( XSHost xsThis );
 
+XSInteger XSHost_Connect( XSHost xsThis, XSInteger sock );
+
+XSInteger XSHost_Disconnect( XSHost xsThis, XSInteger sock );
+
 XS_EXTERN_C_END
 
 #endif /* _XS_HOST_H_ */

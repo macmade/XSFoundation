@@ -57,6 +57,7 @@ typedef struct __XSHost_Struct
     XSString             ip;
     XSUInteger           port;
     struct addrinfo    * infos;
+    struct addrinfo    * addr;
     struct sockaddr_in * sock;
 }
 __XSHost;

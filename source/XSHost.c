@@ -65,11 +65,10 @@ XSObject XSHost_Init( XSHost xsThis, XSString host, XSUInteger port )
     _host   = ( __XSHost * )xsThis;
     
     XSString_AppendFormat( portstr, ( char * )"%lu", port );
-    memset( &hints, 0, sizeof( struct addrinfo ) );
+    memset( &hints, 0, sizeof( hints ) );
     
     hints.ai_family   = INADDR_ANY;
     hints.ai_socktype = SOCK_STREAM;
-    hints.ai_flags    = AI_PASSIVE;
     
     if( getaddrinfo( XSString_CString( host ), XSString_CString( portstr ), &hints, &infos ) != 0 )
     {
@@ -90,15 +89,19 @@ XSObject XSHost_Init( XSHost xsThis, XSString host, XSUInteger port )
         }
     }
     
-    _host->host = XSCopy( host );
-    _host->ip   = XSString_InitWithCString( XSString_Alloc(), ipstr );
-    _host->port = port;
+    if( res == NULL )
+    {
+        return xsThis;
+    }
     
-    memcpy( _host->infos, infos, sizeof( struct addrinfo ) );
-    memcpy( _host->sock,  ipv4,  sizeof( struct sockaddr_in ) );
+    _host->host  = XSCopy( host );
+    _host->ip    = XSString_InitWithCString( XSString_Alloc(), ipstr );
+    _host->port  = port;
+    _host->infos = infos;
+    _host->addr  = res;
+    _host->sock  = ipv4;
         
     XSRelease( portstr );
-    freeaddrinfo( infos );
     
     return xsThis;
 }
@@ -142,7 +145,40 @@ XSInteger XSHost_GetSocket( XSHost xsThis )
 {
     __XSHost * host;
     
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
     host = ( __XSHost * )xsThis;
     
     return socket( host->infos->ai_family, host->infos->ai_socktype, host->infos->ai_protocol );
+}
+
+XSInteger XSHost_Connect( XSHost xsThis, XSInteger sock )
+{
+    __XSHost * host;
+    
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
+    host = ( __XSHost * )xsThis;
+    
+    return connect( sock, host->infos->ai_addr, host->infos->ai_addrlen );
+}
+
+XSInteger XSHost_Disconnect( XSHost xsThis, XSInteger sock )
+{
+    __XSHost * host;
+    
+    if( xsThis == NULL )
+    {
+        return 0;
+    }
+    
+    host = ( __XSHost * )xsThis;
+    
+    return close( sock );
 }

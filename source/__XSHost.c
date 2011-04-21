@@ -69,9 +69,7 @@ void __XSHost_Construct( XSObject object )
 {
     __XSHost * host;
     
-    host        = ( __XSHost * )object;
-    host->infos = XSAlloc( sizeof( struct addrinfo ) );
-    host->sock  = XSAlloc( sizeof( struct sockaddr_in ) );
+    host = ( __XSHost * )object;
 }
 
 void __XSHost_Destruct( XSObject object )
@@ -82,8 +80,7 @@ void __XSHost_Destruct( XSObject object )
     
     XSRelease( host->host );
     XSRelease( host->ip );
-    XSRelease( host->infos );
-    XSRelease( host->sock );
+    freeaddrinfo( host->infos );
 }
 
 XSString __XSHost_ToString( XSObject object )
