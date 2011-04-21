@@ -82,7 +82,7 @@ void throw_exception( void )
 
 XSMain( argc, argv )
 {
-    int           e;
+    XSUInteger    e;
     unsigned int  i;
     XSInteger     arg_int;
     XSUInteger    arg_uint;

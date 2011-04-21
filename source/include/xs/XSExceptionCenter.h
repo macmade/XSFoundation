@@ -61,7 +61,7 @@ struct XSExceptionContext_Struct
 {
     jmp_buf            * e_env;
     int                  caught;
-    volatile int         e;
+    volatile XSUInteger  e;
 };
 
 extern struct XSExceptionContext_Struct * XSExceptionContext;
