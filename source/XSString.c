@@ -496,59 +496,55 @@ XSAutoreleased XSString XSString_MD5Hash( XSString xsThis )
 
 XSAutoreleased XSArray XSString_SplitWithCString( XSString xsThis, char * s )
 {
-    size_t   length;
-    XSArray  array;
-    XSString str;
-    XSString part;
-    char   * cstr;
-    char   * cstr_orig;
-    char   * split;
+    __XSString * str;
+    size_t       length;
+    XSArray      array;
+    char       * delim;
+    char       * delim_orig;
+    char       * part;
+    XSString     string;
     
-    if( xsThis == NULL )
+    str        = ( __XSString * )xsThis;
+    array      = XSArray_Init( XSArray_Alloc() );
+    length     = strlen( s );
+    delim      = XSAlloc( str->length + 1 );
+    delim_orig = delim;
+    
+    memcpy( delim, str->str, str->length + 1 );
+    
+    if( ( part = strstr( delim, s ) ) == NULL )
     {
-        return NULL;
+        string = XSString_InitWithCString( XSString_Alloc(), str->str );
+        
+        XSArray_AppendValue( array, string );
+        XSRelease( string );
+        
+        XSRelease( delim_orig );
+        return XSAutorelease( array );
     }
     
-    str       = ( __XSString * )xsThis;
-    cstr      = XSAutorelease( XSAlloc( str->length + 1 ) );
-    cstr_orig = cstr;
-    length    = strlen( s );
-    array     = XSArray_Init( XSArray_Alloc() );
-    
-    strcpy( cstr, str->str );
-    
-    if( strstr( cstr, s ) == NULL )
+    while( part != NULL )
     {
-        XSArray_AppendValue( array, xsThis );
-        XSRelease( cstr_orig );
+        part[ 0 ] = 0;
         
-        return array;
+        string = XSString_InitWithCString( XSString_Alloc(), delim );
+        
+        XSArray_AppendValue( array, string );
+        XSRelease( string );
+        
+        delim = part + length;
+        part  = strstr( delim, s );
     }
     
-    while( 1 )
+    if( strlen( delim ) )
     {
-        split = strstr( cstr, s );
+        string = XSString_InitWithCString( XSString_Alloc(), delim );
         
-        if( split == NULL )
-        {
-            part = XSString_InitWithCString( XSString_Alloc(), cstr );
-            
-            XSArray_AppendValue( array, part );
-            XSRelease( part );
-            
-            break;
-        }
-        
-        split[ 0 ] = 0;
-        part       = XSString_InitWithCString( XSString_Alloc(), cstr );
-        
-        XSArray_AppendValue( array, part );
-        XSRelease( part );
-        
-        cstr = split + length;
+        XSArray_AppendValue( array, string );
+        XSRelease( string );
     }
     
-    XSRelease( cstr_orig );
+    XSRelease( delim_orig );
     
     return XSAutorelease( array );
 }
