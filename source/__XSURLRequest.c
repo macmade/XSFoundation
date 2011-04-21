@@ -46,7 +46,7 @@ static const XSClassInfos __XSURLRequestClass =
 {
     "XSURLRequest",             /* Class name */
     sizeof( __XSURLRequest ),   /* Object size */
-    NULL,                       /* Constructor */
+    __XSURLRequest_Construct,   /* Constructor */
     __XSURLRequest_Destruct,    /* Destructor */
     NULL,                       /* Default initializer */
     NULL,                       /* Object copy */
@@ -63,6 +63,16 @@ XSClassID __XSURLRequestClassID;
 void __XSURLRequest_Initialize( void )
 {
     __XSURLRequestClassID = XSRuntime_RegisterClass( &__XSURLRequestClass );
+}
+
+void __XSURLRequest_Construct( XSObject object )
+{
+    __XSURLRequest * req;
+    
+    req = ( __XSURLRequest * )object;
+    
+    req->headers = XSDictionary_Init( XSDictionary_Alloc() );
+    req->data    = XSData_InitWithCapacity( XSData_Alloc(), 20000 );
 }
 
 void __XSURLRequest_Destruct( XSObject object )

@@ -70,6 +70,14 @@ __XSURLRequest;
 void __XSURLRequest_Initialize( void );
 
 /*!
+ * @function    __XSURLRequest_Construct
+ * @abstract    Constructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSURLRequest_Construct( XSObject object );
+
+/*!
  * @function    __XSString_Destruct
  * @abstract    Destructor
  * @param       object  A pointer to the object
