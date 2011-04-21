@@ -47,33 +47,166 @@ XSStatic XSObject XSURLRequest_Alloc( void )
 
 XSObject XSURLRequest_InitWithURL( XSObject xsThis, XSURL url )
 {
-    ( void )url;
+    __XSURLRequest * req;
+    
+    if( xsThis == NULL || url == NULL )
+    {
+        return xsThis;
+    }
+    
+    req         = ( __XSURLRequest * )xsThis;
+    req->url    = XSCopy( url );
+    req->host   = XSHost_InitWithURL( XSHost_Alloc(), url );
+    req->socket = XSHost_GetSocket( req->host );
     
     return xsThis;
 }
 
 XSAutoreleased XSURL XSURLRequest_GetURL( XSURLRequest xsThis )
 {
-    ( void )xsThis;
+    __XSURLRequest * req;
     
-    return NULL;
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
+    req = ( __XSURLRequest * )xsThis;
+    
+    return req->url;
 }
 
 XSAutoreleased XSDictionary XSURLRequest_GetHTTPHeaders( XSURLRequest xsThis )
 {
-    ( void )xsThis;
+    __XSURLRequest * req;
     
-    return NULL;
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
+    req = ( __XSURLRequest * )xsThis;
+    
+    return req->headers;
 }
 
 XSAutoreleased XSData XSURLRequest_GetBody( XSURLRequest xsThis )
 {
-    ( void )xsThis;
+    __XSURLRequest * req;
     
-    return NULL;
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
+    req = ( __XSURLRequest * )xsThis;
+    
+    return req->data;
 }
 
 void XSURLRequest_Start( XSURLRequest xsThis )
 {
-    ( void )xsThis;
+    __XSURLRequest * req;
+    const char     * msgFormat;
+    XSString         msg;
+    char           * sendMsg;
+    char           * buffer;
+    char           * buffer_orig;
+    XSString         url;
+    XSString         query;
+    XSString         fragment;
+    BOOL             hasHeaders;
+    char           * headersEnd;
+    char           * headerParts;
+    XSString         headers;
+    XSString         body;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
+    req = ( __XSURLRequest * )xsThis;
+    
+    if( XSHost_Connect( req->host, req->socket ) == -1 )
+    {
+        return;
+    }
+    
+    msgFormat = "GET %s HTTP/1.1\r\n"
+                "Host: %s\r\n"
+                "Connection: close\r\n"
+                "\r\n";
+    
+    msg      = XSString_Init( XSString_Alloc() );
+    url      = XSString_Init( XSString_Alloc() );
+    
+    query    = XSURL_GetQuery( req->url );
+    fragment = XSURL_GetFragment( req->url );
+    
+    XSString_AppendFormat( url, ( char * )"%s", XSString_CString( XSURL_GetPath( req->url ) ) );
+    
+    if( query != NULL )
+    {
+        XSString_AppendFormat( url, ( char * )"?%s", XSString_CString( query ) );
+    }
+    
+    if( fragment != NULL )
+    {
+        XSString_AppendFormat( url, ( char * )"#%s", XSString_CString( fragment ) );
+    }
+    
+    XSString_AppendFormat( msg, ( char * )msgFormat, XSString_CString( url ), XSString_CString( XSURL_GetDomain( req->url ) ) );
+    
+    sendMsg     = ( char * )XSString_CString( msg );
+    buffer      = XSAlloc( 17000 * sizeof( char ) );
+    buffer_orig = buffer;
+    
+    if( send( req->socket, sendMsg, strlen( sendMsg ), 0 ) == -1 )
+    {
+        XSRelease( msg );
+        XSRelease( buffer );
+        XSHost_Disconnect( req->host, req->socket );
+        
+        return;
+    }
+    
+    hasHeaders = NO;
+    headers    = XSString_InitWithCapacity( XSString_Alloc(), 20000 );
+    body       = XSString_InitWithCapacity( XSString_Alloc(), 20000 );
+    
+    while( recv( req->socket, buffer, 16384, 0 ) > 0 )
+    {
+        if( hasHeaders == NO )
+        {
+            headersEnd = strstr( buffer, "\r\n\r\n" );
+            
+            if( headersEnd != NULL )
+            {
+                headersEnd[ 2 ] = 0;
+                headersEnd[ 3 ] = 0;
+                headerParts     = buffer;
+                buffer          = headersEnd + 4;
+                hasHeaders      = YES;
+                
+                XSString_AppendCString( headers, headerParts );
+                XSString_AppendCString( body, buffer );
+            }
+            else
+            {
+                XSString_AppendCString( headers, headerParts );
+            }
+        }
+        else
+        {
+            XSString_AppendCString( body, buffer );
+        }
+    }
+    
+    XSHost_Disconnect( req->host, req->socket );
+    XSRelease( msg );
+    XSRelease( url );
+    XSRelease( headers );
+    XSRelease( body );
+    XSRelease( buffer_orig );
 }
