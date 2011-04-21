@@ -56,6 +56,7 @@ typedef struct __XSURLRequest_Struct
     XSURL          url;
     XSHost         host;
     XSInteger      socket;
+    XSString       status;
     XSDictionary   headers;
     XSData         data;
     BOOL           started;

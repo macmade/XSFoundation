@@ -83,6 +83,7 @@ void __XSURLRequest_Destruct( XSObject object )
     
     XSRelease( req->url );
     XSRelease( req->host );
+    XSRelease( req->status );
     XSRelease( req->headers );
     XSRelease( req->data );
 }

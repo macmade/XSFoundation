@@ -66,7 +66,7 @@ XSAutoreleased XSURL XSURLRequest_GetURL( XSURLRequest xsThis );
 
 XSAutoreleased XSDictionary XSURLRequest_GetHTTPHeaders( XSURLRequest xsThis );
 
-XSAutoreleased XSData XSURLRequest_GetBody( XSURLRequest xsThis );
+XSAutoreleased XSData XSURLRequest_GetRawBody( XSURLRequest xsThis );
 
 void XSURLRequest_Start( XSURLRequest xsThis );
 

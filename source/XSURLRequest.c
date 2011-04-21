@@ -90,7 +90,7 @@ XSAutoreleased XSDictionary XSURLRequest_GetHTTPHeaders( XSURLRequest xsThis )
     return req->headers;
 }
 
-XSAutoreleased XSData XSURLRequest_GetBody( XSURLRequest xsThis )
+XSAutoreleased XSData XSURLRequest_GetRawBody( XSURLRequest xsThis )
 {
     __XSURLRequest * req;
     
@@ -106,6 +106,8 @@ XSAutoreleased XSData XSURLRequest_GetBody( XSURLRequest xsThis )
 
 void XSURLRequest_Start( XSURLRequest xsThis )
 {
+    XSUInteger       i;
+    XSUInteger       j;
     __XSURLRequest * req;
     const char     * msgFormat;
     XSString         msg;
@@ -119,6 +121,11 @@ void XSURLRequest_Start( XSURLRequest xsThis )
     char           * headersEnd;
     char           * headerParts;
     XSString         headers;
+    XSString         header;
+    XSArray          headerArray;
+    XSString         headerName;
+    XSString         headerValue;
+    XSArray          headersArray;
     XSInteger        length;
     
     if( xsThis == NULL )
@@ -190,6 +197,40 @@ void XSURLRequest_Start( XSURLRequest xsThis )
                 
                 XSString_AppendCString( headers, headerParts );
                 XSData_AppendBytes( req->data, ( void * )buffer, length );
+                
+                headersArray = XSString_SplitWithCString( headers, ( char * )"\r\n" );
+                
+                if( XSArray_Count( headersArray ) > 0 )
+                {
+                    req->status = XSRetain( XSArray_ValueAtIndex( headersArray, 0 ) );
+                    
+                    XSArray_RemoveValueAtIndex( headersArray, 0 );
+                }
+                
+                for( i = 0; i < XSArray_Count( headersArray ); i++ )
+                {
+                    header      = XSArray_ValueAtIndex( headersArray, i );
+                    headerArray = XSString_SplitWithCString( header, ( char * )": " );
+                    
+                    if( XSArray_Count( headerArray ) < 2 )
+                    {
+                        continue;
+                    }
+                    
+                    headerName  = XSArray_ValueAtIndex( headerArray, 0 );
+                    headerValue = XSString_Init( XSString_Alloc() );
+                    
+                    XSArray_RemoveValueAtIndex( headerArray, 0 );
+                    
+                    for( j = 0; j < XSArray_Count( headerArray ); j++ )
+                    {
+                        XSString_AppendString( headerValue, XSArray_ValueAtIndex( headerArray, j ) );
+                    }
+                    
+                    XSDictionary_SetValueForKey( req->headers, headerValue, headerName );
+                    
+                    XSRelease( headerValue );
+                }
             }
             else
             {
