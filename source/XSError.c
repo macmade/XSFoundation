@@ -61,7 +61,7 @@ XSError XSError_Init( XSError xsThis, XSInteger code, XSString domain, XSString 
     error->reason = reason;
     
     XSRetain( error->domain );
-    XSRetain( error->domain );
+    XSRetain( error->reason );
     
     return ( XSError )error;
 }
