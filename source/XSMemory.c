@@ -65,6 +65,8 @@ XSObject XSAutoreleasePool_Init( XSObject xsThis )
         XSFatalError( "unable to allocate memory for the auto-release pool" );
     }
     
+    XSDebugLog( XSDebugLogLevelDebug, "Creating new auto-release pool (%p)", ( void * )ap );
+    
     ap->size                                         = XS_MEMORY_NUM_OBJECTS;
     ap->numObjects                                   = 0;
     __xsmemory_ar_pools[ __xsmemory_ar_pools_num++ ] = ap;
@@ -77,6 +79,8 @@ XSStatic void XSAutoreleasePool_Drain( void )
     __XSAutoreleasePool * ap;
     
     ap = __XSMemory_GetCurrentAutoreleasePool();
+    
+    XSDebugLog( XSDebugLogLevelDebug, "Draining current auto-release pool (%p)", ( void * )ap );
     
     __XSMemory_AutoreleasePoolDrain( ap );
 }

@@ -104,6 +104,8 @@ void __XSURLRequest_Initialize( void );
 
 void XSRuntime_Initialize( void )
 {
+    XSDebugLog( XSDebugLogLevelDebug, "Initializing the XSFoundation runtime" );
+    
     __inited = YES;
     
     atexit( XSRuntime_Finalize );
@@ -142,6 +144,8 @@ void XSRuntime_Finalize( void )
 {
     __inited = NO;
     
+    XSDebugLog( XSDebugLogLevelDebug, "Finalizing the XSFoundation runtime" );
+    
     XSRelease( __class_table );
 }
 
@@ -151,6 +155,8 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls )
     
     if( __class_size == 0 )
     {
+        XSDebugLog( XSDebugLogLevelDebug, "Allocating space for the class table" );
+        
         if( NULL == ( __class_table = ( XSClassInfos ** )XSAlloc( sizeof( XSClassInfos * ) * __XS_RUNTIME_CLASS_TABLE_SIZE ) ) )
         {
             fprintf( stderr, "Error: unable to allocate the runtime class table!\n" );
@@ -162,6 +168,8 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls )
     
     if( __class_count == __class_size )
     {
+        XSDebugLog( XSDebugLogLevelDebug, "Reallocating space for the class table" );
+        
         if( NULL == ( __class_table = ( XSClassInfos ** )XSRealloc( __class_table, sizeof( XSClassInfos * ) * ( __XS_RUNTIME_CLASS_TABLE_SIZE + __class_size ) ) ) )
         {
             fprintf( stderr, "Error: unable to re-allocate the runtime class table!\n" );
@@ -170,6 +178,8 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls )
         
         __class_size += __XS_RUNTIME_CLASS_TABLE_SIZE;
     }
+    
+    XSDebugLog( XSDebugLogLevelDebug, "Registering class: %s", cls->className );
     
     __class_table[ __class_count ] = ( XSClassInfos * )cls;
     

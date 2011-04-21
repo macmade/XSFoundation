@@ -105,8 +105,12 @@ void * __XSThread_Run( void * thread )
     #else
     _thread->tid = tid;
     #endif
+    
+    XSDebugLog( XSDebugLogLevelDebug, "Entering new thread: %u -> %p (ARP: %p)", _thread->tid, _thread->func, ( void * )ap );
 
     _thread->func( ( XSThread )thread, _thread->arg );
+    
+    XSDebugLog( XSDebugLogLevelDebug, "Terminating thread: %u -> %p (ARP: %p)", _thread->tid, _thread->func, ( void * )ap );
     
     XSRelease( _thread->arg );
     XSRelease( thread );

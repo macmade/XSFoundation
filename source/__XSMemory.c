@@ -80,6 +80,8 @@ void __XSAutoreleasePool_Initialize( void )
 
 void __XSAutoreleasePool_Destruct( XSObject object )
 {
+    XSDebugLog( XSDebugLogLevelDebug, "Destroying auto-release pool: %p", ( void * )object );
+    
     __XSMemory_AutoreleasePoolDrain( ( __XSAutoreleasePool * )object );
     XSRelease( ( ( __XSAutoreleasePool * )object )->objects );
     __xsmemory_ar_pools_num--;
@@ -98,6 +100,8 @@ __XSAutoreleasePool * __XSMemory_GetCurrentAutoreleasePool( void )
 void __XSMemory_AutoreleasePoolDrain( __XSAutoreleasePool * ap )
 {
     size_t i;
+    
+    XSDebugLog( XSDebugLogLevelDebug, "Draining auto-release pool: %p", ( void * )ap );
     
     for( i = 0; i < ap->numObjects; i++ )
     {
