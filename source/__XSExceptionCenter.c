@@ -46,7 +46,7 @@ static const XSClassInfos __XSExceptionCenterClass =
 {
     "XSExceptionCenter",            /* Class name */
     sizeof( __XSExceptionCenter ),  /* Object size */
-    NULL,                           /* Constructor */
+    __XSExceptionCenter_Construct,  /* Constructor */
     __XSExceptionCenter_Destruct,   /* Destructor */
     NULL,                           /* Default initializer */
     NULL,                           /* Object copy */
@@ -65,9 +65,19 @@ void __XSExceptionCenter_Initialize( void )
     __XSExceptionCenterClassID = XSRuntime_RegisterClass( &__XSExceptionCenterClass );
 }
 
+void __XSExceptionCenter_Construct( XSObject object )
+{
+    __XSExceptionCenter * e;
+    
+    e             = ( __XSExceptionCenter * )object;
+    e->exceptions = XSArray_Init( XSArray_Alloc() );
+}
+
 void __XSExceptionCenter_Destruct( XSObject object )
 {
     __XSExceptionCenter * e;
     
     e = ( __XSExceptionCenter * )object;
+    
+    XSRelease( e->exceptions );
 }

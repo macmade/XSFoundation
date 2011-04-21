@@ -50,7 +50,6 @@ XS_EXTERN_C_BEGIN
  * @abstract    Opaque type for the XSExceptionCenter objects
  */
 typedef struct __XSExceptionCenter * XSExceptionCenter;
-
 struct XSExceptionContext_Struct
 {
     jmp_buf            * e_env;
@@ -111,6 +110,10 @@ XSObject XSExceptionCenter_Init( XSObject xsThis );
  * @result      The default notification center
  */
 XSStatic XSAutoreleased XSExceptionCenter XSExceptionCenter_DefaultCenter( void );
+
+void XSExceptionCenter_RegisterException( XSExceptionCenter xsThis, XSUInteger code, XSString reason );
+
+XSAutoreleased XSException XSExceptionCenter_GetException( XSExceptionCenter xsThis, XSUInteger code );
 
 XS_EXTERN_C_END
 

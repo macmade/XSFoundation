@@ -53,6 +53,7 @@ XS_EXTERN_C_BEGIN
 typedef struct __XSExceptionCenter_Struct
 {
     XSRuntimeClass __class;
+    XSArray        exceptions;
 }
 __XSExceptionCenter;
 
@@ -62,6 +63,14 @@ __XSExceptionCenter;
  * @result      void
  */
 void __XSExceptionCenter_Initialize( void );
+
+/*!
+ * @function    __XSExceptionCenter_Construct
+ * @abstract    Constructor
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSExceptionCenter_Construct( XSObject object );
 
 /*!
  * @function    __XSExceptionCenter_Destruct

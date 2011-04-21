@@ -70,3 +70,46 @@ XSStatic XSAutoreleased XSExceptionCenter XSExceptionCenter_DefaultCenter( void 
     
     return ( XSExceptionCenter )__defaultCenter;
 }
+
+void XSExceptionCenter_RegisterException( XSExceptionCenter xsThis, XSUInteger code, XSString reason )
+{
+    __XSExceptionCenter * center;
+    XSObject              value;
+    
+    if( xsThis == NULL )
+    {
+        return;
+    }
+    
+    center = ( __XSExceptionCenter * )xsThis;
+    value  = XSArray_ValueAtIndex( center->exceptions, code );
+    
+    if( value == NULL || XSEquals( value, XSNull_Null() ) )
+    {
+        XSArray_InsertValueAtIndex( center->exceptions, reason, code );
+    }
+}
+
+XSAutoreleased XSException XSExceptionCenter_GetException( XSExceptionCenter xsThis, XSUInteger code )
+{
+    __XSExceptionCenter * center;
+    XSObject              value;
+    XSException           e;
+    
+    if( xsThis == NULL )
+    {
+        return NULL;
+    }
+    
+    center = ( __XSExceptionCenter * )xsThis;
+    value  = XSArray_ValueAtIndex( center->exceptions, code );
+    
+    if( value == NULL || XSEquals( value, XSNull_Null() ) )
+    {
+        e = XSException_New( code, XSSTR( ( char * )"Unknown exception" ) );
+        
+        return e;
+    }
+    
+    return value;
+}

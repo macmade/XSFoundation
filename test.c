@@ -76,7 +76,7 @@ void notification_test( XSNotification notification )
 
 void throw_exception( void );
 void throw_exception( void )
-{
+{   
     XSThrow 0;
 }
 
@@ -205,8 +205,14 @@ XSMain( argc, argv )
     }
     XSCatch( e )
     {
-        XSLog( "Uncaught exception: %i", e );
-        exit( EXIT_FAILURE );
+        {
+            XSException exception;
+            
+            exception = XSExceptionCenter_GetException( XSExceptionCenter_DefaultCenter(), e );
+            
+            XSLog( "Uncaught exception: $@", exception );
+            exit( EXIT_FAILURE );
+        }
     }
     
     return EXIT_SUCCESS;
