@@ -32,7 +32,7 @@
 /*!
  * @file        XSFunctions.c
  * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation of the general functions
+ * @abstract    Implementation of the geometry functions
  */
 
 #include "XS.h"
