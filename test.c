@@ -77,7 +77,7 @@ void notification_test( XSNotification notification )
 void throw_exception( void );
 void throw_exception( void )
 {   
-    XSThrow 0;
+    /*XSThrow 0;*/
 }
 
 XSMain( argc, argv )
