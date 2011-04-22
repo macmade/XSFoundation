@@ -207,6 +207,42 @@
     <ClCompile Include="source\XSGeometry.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\__XSHost.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XSHost.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\__XSExceptionCenter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\__XSException.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XSURLRequest.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\__XSSort.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\__XSURLRequest.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XSDebugLog.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XSException.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XSExceptionCenter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XSMemoryDebug.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XSSort.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\include\std\std-ascii.h">
@@ -442,6 +478,42 @@
     </ClInclude>
     <ClInclude Include="source\include\xs\XSLog.h">
       <Filter>Header Files\xs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\xs\XSHost.h">
+      <Filter>Header Files\xs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\xs\__private\__XSHost.h">
+      <Filter>Header Files\xs\__private</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\xs\XSMemoryDebug.h">
+      <Filter>Header Files\xs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\xs\XSDebugLog.h">
+      <Filter>Header Files\xs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\xs\XSException.h">
+      <Filter>Header Files\xs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\xs\XSExceptionCenter.h">
+      <Filter>Header Files\xs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\xs\XSSort.h">
+      <Filter>Header Files\xs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\xs\XSURLRequest.h">
+      <Filter>Header Files\xs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\xs\__private\__XSException.h">
+      <Filter>Header Files\xs\__private</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\xs\__private\__XSExceptionCenter.h">
+      <Filter>Header Files\xs\__private</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\xs\__private\__XSSort.h">
+      <Filter>Header Files\xs\__private</Filter>
+    </ClInclude>
+    <ClInclude Include="source\include\xs\__private\__XSURLRequest.h">
+      <Filter>Header Files\xs\__private</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

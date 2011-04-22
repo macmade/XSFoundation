@@ -27,23 +27,30 @@
     <ClCompile Include="source\XSBTree.c" />
     <ClCompile Include="source\XSColor.c" />
     <ClCompile Include="source\XSData.c" />
+    <ClCompile Include="source\XSDebugLog.c" />
     <ClCompile Include="source\XSDictionary.c" />
     <ClCompile Include="source\XSError.c" />
+    <ClCompile Include="source\XSException.c" />
+    <ClCompile Include="source\XSExceptionCenter.c" />
     <ClCompile Include="source\XSFile.c" />
     <ClCompile Include="source\XSGeometry.c" />
+    <ClCompile Include="source\XSHost.c" />
     <ClCompile Include="source\XSLock.c" />
     <ClCompile Include="source\XSLog.c" />
     <ClCompile Include="source\XSMemory.c" />
+    <ClCompile Include="source\XSMemoryDebug.c" />
     <ClCompile Include="source\XSNotification.c" />
     <ClCompile Include="source\XSNotificationCenter.c" />
     <ClCompile Include="source\XSNull.c" />
     <ClCompile Include="source\XSNumber.c" />
     <ClCompile Include="source\XSRuntime.c" />
     <ClCompile Include="source\XSSet.c" />
+    <ClCompile Include="source\XSSort.c" />
     <ClCompile Include="source\XSString.c" />
     <ClCompile Include="source\XSThread.c" />
     <ClCompile Include="source\XSTimer.c" />
     <ClCompile Include="source\XSURL.c" />
+    <ClCompile Include="source\XSURLRequest.c" />
     <ClCompile Include="source\__XSApplication.c" />
     <ClCompile Include="source\__XSApplicationArgument.c" />
     <ClCompile Include="source\__XSArray.c" />
@@ -54,7 +61,10 @@
     <ClCompile Include="source\__XSData.c" />
     <ClCompile Include="source\__XSDictionary.c" />
     <ClCompile Include="source\__XSError.c" />
+    <ClCompile Include="source\__XSException.c" />
+    <ClCompile Include="source\__XSExceptionCenter.c" />
     <ClCompile Include="source\__XSFile.c" />
+    <ClCompile Include="source\__XSHost.c" />
     <ClCompile Include="source\__XSLock.c" />
     <ClCompile Include="source\__XSLog.c" />
     <ClCompile Include="source\__XSMemory.c" />
@@ -64,10 +74,12 @@
     <ClCompile Include="source\__XSNull.c" />
     <ClCompile Include="source\__XSNumber.c" />
     <ClCompile Include="source\__XSSet.c" />
+    <ClCompile Include="source\__XSSort.c" />
     <ClCompile Include="source\__XSString.c" />
     <ClCompile Include="source\__XSThread.c" />
     <ClCompile Include="source\__XSTimer.c" />
     <ClCompile Include="source\__XSURL.c" />
+    <ClCompile Include="source\__XSURLRequest.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\include\eos-skl\eos-skl.h" />
@@ -102,27 +114,34 @@
     <ClInclude Include="source\include\xs\XSColor.h" />
     <ClInclude Include="source\include\xs\XSConstants.h" />
     <ClInclude Include="source\include\xs\XSData.h" />
+    <ClInclude Include="source\include\xs\XSDebugLog.h" />
     <ClInclude Include="source\include\xs\XSDictionary.h" />
     <ClInclude Include="source\include\xs\XSError.h" />
+    <ClInclude Include="source\include\xs\XSException.h" />
+    <ClInclude Include="source\include\xs\XSExceptionCenter.h" />
     <ClInclude Include="source\include\xs\XSFile.h" />
     <ClInclude Include="source\include\xs\XSFunctions.h" />
     <ClInclude Include="source\include\xs\XSGeometry.h" />
+    <ClInclude Include="source\include\xs\XSHost.h" />
     <ClInclude Include="source\include\xs\XSLock.h" />
     <ClInclude Include="source\include\xs\XSLog.h" />
     <ClInclude Include="source\include\xs\XSMacros.h" />
     <ClInclude Include="source\include\xs\XSMacrosTarget.h" />
     <ClInclude Include="source\include\xs\XSMemory.h" />
+    <ClInclude Include="source\include\xs\XSMemoryDebug.h" />
     <ClInclude Include="source\include\xs\XSNotification.h" />
     <ClInclude Include="source\include\xs\XSNotificationCenter.h" />
     <ClInclude Include="source\include\xs\XSNull.h" />
     <ClInclude Include="source\include\xs\XSNumber.h" />
     <ClInclude Include="source\include\xs\XSRuntime.h" />
     <ClInclude Include="source\include\xs\XSSet.h" />
+    <ClInclude Include="source\include\xs\XSSort.h" />
     <ClInclude Include="source\include\xs\XSString.h" />
     <ClInclude Include="source\include\xs\XSThread.h" />
     <ClInclude Include="source\include\xs\XSTimer.h" />
     <ClInclude Include="source\include\xs\XSTypes.h" />
     <ClInclude Include="source\include\xs\XSURL.h" />
+    <ClInclude Include="source\include\xs\XSURLRequest.h" />
     <ClInclude Include="source\include\xs\__private\__XSApplication.h" />
     <ClInclude Include="source\include\xs\__private\__XSApplicationArgument.h" />
     <ClInclude Include="source\include\xs\__private\__XSArray.h" />
@@ -133,8 +152,11 @@
     <ClInclude Include="source\include\xs\__private\__XSData.h" />
     <ClInclude Include="source\include\xs\__private\__XSDictionary.h" />
     <ClInclude Include="source\include\xs\__private\__XSError.h" />
+    <ClInclude Include="source\include\xs\__private\__XSException.h" />
+    <ClInclude Include="source\include\xs\__private\__XSExceptionCenter.h" />
     <ClInclude Include="source\include\xs\__private\__XSFile.h" />
     <ClInclude Include="source\include\xs\__private\__XSFunctions.h" />
+    <ClInclude Include="source\include\xs\__private\__XSHost.h" />
     <ClInclude Include="source\include\xs\__private\__XSLock.h" />
     <ClInclude Include="source\include\xs\__private\__XSLog.h" />
     <ClInclude Include="source\include\xs\__private\__XSMemory.h" />
@@ -144,10 +166,12 @@
     <ClInclude Include="source\include\xs\__private\__XSNull.h" />
     <ClInclude Include="source\include\xs\__private\__XSNumber.h" />
     <ClInclude Include="source\include\xs\__private\__XSSet.h" />
+    <ClInclude Include="source\include\xs\__private\__XSSort.h" />
     <ClInclude Include="source\include\xs\__private\__XSString.h" />
     <ClInclude Include="source\include\xs\__private\__XSThread.h" />
     <ClInclude Include="source\include\xs\__private\__XSTimer.h" />
     <ClInclude Include="source\include\xs\__private\__XSURL.h" />
+    <ClInclude Include="source\include\xs\__private\__XSURLRequest.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{21B15DF9-576F-4C7D-9F6D-DBC717F554F1}</ProjectGuid>
@@ -206,7 +230,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>DbgHelp.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>DbgHelp.Lib;Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>C:\Program Files\Microsoft SDKs\Windows\v7.1\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
