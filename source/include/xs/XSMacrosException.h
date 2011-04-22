@@ -82,7 +82,7 @@ XS_EXTERN_C_BEGIN
             }                           \
             XSCatch( e )                \
             {                           \
-                throw e;                \
+                XSThrow e;              \
             }                           \
         }                               \
         return returnValue;             \
