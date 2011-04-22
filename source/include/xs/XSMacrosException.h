@@ -179,8 +179,8 @@ XS_EXTERN_C_BEGIN
     }                                                                               \
     else
 
-#define XSCatch( e ) __XSCatch( ( ( e ) = XSExceptionContext->e, 0 ) )
-#define XSMainCatch( e, returnValue ) __XSMainCatch( ( ( e ) = XSExceptionContext->e, 0 ), returnValue )
+#define XSCatch( e ) __XSCatch( ( ( ex ) = XSExceptionContext->e, 0 ) )
+#define XSMainCatch( e, returnValue ) __XSMainCatch( ( ( ex ) = XSExceptionContext->e, 0 ), returnValue )
 
 XS_EXTERN_C_END
 
