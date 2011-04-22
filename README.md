@@ -44,8 +44,8 @@ XSFoundation is released under the terms of the [Boost][2] Software License - Ve
 ### Basic example
 
     #include "XS.h"
-
-    XSMain( argc, argv )
+    
+    XSMainStart( argc, argv )
     {
         XSUInteger e;
         XSString   str1;
@@ -83,7 +83,5 @@ XSFoundation is released under the terms of the [Boost][2] Software License - Ve
                 exit( EXIT_FAILURE );
             }
         }
-        
-        // Program exit
-        return EXIT_SUCCESS;
     }
+    XSMainEnd( EXIT_SUCCESS )
