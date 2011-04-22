@@ -44,7 +44,7 @@ extern "C" {
 #endif
 
 #include <stdint.h>
-    
+
 typedef uint32_t pthread_t;
 typedef HANDLE   pthread_mutex_t;
 typedef uint64_t pthread_mutexattr_t;

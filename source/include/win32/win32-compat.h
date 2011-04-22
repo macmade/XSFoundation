@@ -43,8 +43,20 @@
 extern "C" {
 #endif
 
+
 #ifndef _CRT_SECURE_NO_WARNINGS
+
+/*!
+ * @define      _CRT_SECURE_NO_WARNINGS
+ * @abstract    Do not warn about stupid Microsoft "security enhancements"
+ * @discussion  Microsoft provides "security" enhanced version of standard
+ *              C library functions, like sprintf, intended to prevent buffer
+ *              overflows. Defining this macro turns off thos annoying
+ *              warnings in VisualStudio. If you don't know what you are
+ *              doing, then keep on coding C# or Java.
+ */
 #define _CRT_SECURE_NO_WARNINGS
+
 #endif
 
 #ifdef __cplusplus

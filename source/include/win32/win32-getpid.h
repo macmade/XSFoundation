@@ -45,6 +45,11 @@ extern "C" {
 
 #include "win32-types.h"
 
+/*!
+ * @function    getpid
+ * @abstract    Returns the process ID of the calling process
+ * @return      The process ID
+ */
 pid_t getpid( void );
 
 #ifdef __cplusplus

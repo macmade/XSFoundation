@@ -46,116 +46,120 @@ extern "C" {
 #include <stdint.h>
 #include "win32-types.h"
 
+/*******************************************************************************
+ * Standard POSXI signal types
+ ******************************************************************************/
+
 #ifndef SIGABRT
-#define SIGABRT     0x01
+#define SIGABRT     0x01    /* Abort */
 #endif
 
 #ifndef SIGALRM
-#define SIGALRM     0x02
+#define SIGALRM     0x02    /* Alarm */
 #endif
 
 #ifndef SIGFPE
-#define SIGFPE      0x03
+#define SIGFPE      0x03    /* Floating point exception */
 #endif
 
 #ifndef SIGHUP
-#define SIGHUP      0x04
+#define SIGHUP      0x04    /* Hang-up */
 #endif
 
 #ifndef SIGILL
-#define SIGILL      0x05
+#define SIGILL      0x05    /* Illegal instruction */
 #endif
 
 #ifndef SIGINT
-#define SIGINT      0x06
+#define SIGINT      0x06    /* Interrupt request */
 #endif
 
 #ifndef SIGKILL
-#define SIGKILL     0x07
+#define SIGKILL     0x07    /* Kill process */
 #endif
 
 #ifndef SIGPIPE
-#define SIGPIPE     0x08
+#define SIGPIPE     0x08    /* Pipe exception */
 #endif
 
 #ifndef SIGQUIT
-#define SIGQUIT     0x09
+#define SIGQUIT     0x09    /* Core dump */
 #endif
 
 #ifndef SIGSEGV
-#define SIGSEGV     0x0A
+#define SIGSEGV     0x0A    /* Segmentation fault */
 #endif
 
 #ifndef SIGTERM
-#define SIGTERM     0x0B
+#define SIGTERM     0x0B    /* Process termination request */
 #endif
 
 #ifndef SIGUSR1
-#define SIGUSR1     0x0C
+#define SIGUSR1     0x0C    /* User defined condition */
 #endif
 
 #ifndef SIGUSR2
-#define SIGUSR2     0x0D
+#define SIGUSR2     0x0D    /* User defined consition */
 #endif
 
 #ifndef SIGCHLD
-#define SIGCHLD     0x0E
+#define SIGCHLD     0x0E    /* Child process termination */
 #endif
 
 #ifndef SIGCONT
-#define SIGCONT     0x0F
+#define SIGCONT     0x0F    /* Process restart */
 #endif
 
 #ifndef SIGSTOP
-#define SIGSTOP     0x10
+#define SIGSTOP     0x10    /* Process stop */
 #endif
 
 #ifndef SIGTSTP
-#define SIGTSTP     0x11
+#define SIGTSTP     0x11    /* Process pause */
 #endif
 
 #ifndef SIGTTIN
-#define SIGTTIN     0x12
+#define SIGTTIN     0x12    /* TTY read */
 #endif
 
 #ifndef SIGTTOU
-#define SIGTTOU     0x13
+#define SIGTTOU     0x13    /* TTY write */
 #endif
 
 #ifndef SIGBUS
-#define SIGBUS      0x14
+#define SIGBUS      0x14    /* Bus error */
 #endif
 
 #ifndef SIGPOLL
-#define SIGPOLL     0x15
+#define SIGPOLL     0x15    /* Asynchronous I/O event */
 #endif
 
 #ifndef SIGPROF
-#define SIGPROF     0x16
+#define SIGPROF     0x16    /* Profiling timer expiration */
 #endif
 
 #ifndef SIGSYS
-#define SIGSYS      0x17
+#define SIGSYS      0x17    /* Bad system call argument */
 #endif
 
 #ifndef SIGTRAP
-#define SIGTRAP     0x18
+#define SIGTRAP     0x18    /* Debugger condition */
 #endif
 
 #ifndef SIGURG
-#define SIGURG      0x19
+#define SIGURG      0x19    /* Urgent data in socket */
 #endif
 
 #ifndef SIGVTALRM
-#define SIGVTALRM   0x1A
+#define SIGVTALRM   0x1A    /* Time limit elapsed */
 #endif
 
 #ifndef SIGXCPU
-#define SIGXCPU     0x1B
+#define SIGXCPU     0x1B    /* Exceeded CPU time */
 #endif
 
 #ifndef SIGXFSZ
-#define SIGXFSZ     0x1C
+#define SIGXFSZ     0x1C    /* Allowed file size exceeded */
 #endif
 
 typedef uint64_t sigset_t;
