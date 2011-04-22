@@ -155,6 +155,7 @@
 		0524115913609A7300CAF423 /* XSExceptionCenter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSExceptionCenter.c; sourceTree = "<group>"; };
 		0524116613611A1400CAF423 /* XSMemoryDebug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSMemoryDebug.c; sourceTree = "<group>"; };
 		0524116813611A2800CAF423 /* XSMemoryDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMemoryDebug.h; sourceTree = "<group>"; };
+		0524117513612C5500CAF423 /* XSMacrosException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMacrosException.h; sourceTree = "<group>"; };
 		0573D2AC135CAB8900DC1C21 /* XSURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSURL.h; sourceTree = "<group>"; };
 		0573D2AE135CAB9300DC1C21 /* __XSURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSURL.h; sourceTree = "<group>"; };
 		0573D2AF135CABA400DC1C21 /* XSURL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSURL.c; sourceTree = "<group>"; };
@@ -362,6 +363,7 @@
 				050C2634135C8C3A0009766B /* XSLog.h */,
 				050C2635135C8C3A0009766B /* XSMacros.h */,
 				050C2636135C8C3A0009766B /* XSMacrosTarget.h */,
+				0524117513612C5500CAF423 /* XSMacrosException.h */,
 				050C2637135C8C3A0009766B /* XSMemory.h */,
 				0524116813611A2800CAF423 /* XSMemoryDebug.h */,
 				050C2638135C8C3A0009766B /* XSNotification.h */,

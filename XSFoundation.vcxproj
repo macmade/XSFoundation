@@ -126,6 +126,7 @@
     <ClInclude Include="source\include\xs\XSLock.h" />
     <ClInclude Include="source\include\xs\XSLog.h" />
     <ClInclude Include="source\include\xs\XSMacros.h" />
+    <ClInclude Include="source\include\xs\XSMacrosException.h" />
     <ClInclude Include="source\include\xs\XSMacrosTarget.h" />
     <ClInclude Include="source\include\xs\XSMemory.h" />
     <ClInclude Include="source\include\xs\XSMemoryDebug.h" />

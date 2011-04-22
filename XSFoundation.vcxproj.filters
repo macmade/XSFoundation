@@ -515,5 +515,8 @@
     <ClInclude Include="source\include\xs\__private\__XSURLRequest.h">
       <Filter>Header Files\xs\__private</Filter>
     </ClInclude>
+    <ClInclude Include="source\include\xs\XSMacrosException.h">
+      <Filter>Header Files\xs</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
