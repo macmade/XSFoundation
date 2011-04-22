@@ -52,36 +52,22 @@ XSFoundation is released under the terms of the [Boost][2] Software License - Ve
         XSString   str2;
         XSString   str3;
         
-        XSTry
-        {
-            // Initialization of XSFoundation
-            XSApplication_Start( argc, ( const char ** )argv );
-            
-            // String creation - The object will be released automatically
-            str1 = XSSTR( "hello, world" );
-            
-            // Substring - The object will be released automatically
-            str2 = XSString_SubstringtoIndex( str1, 5 );
-            
-            // String copy - The object will have to be released explicitly
-            str3 = XSCopy( str2 );
-            
-            // Prints "hello, world, world, world"    
-            XSLog( "This is a log message: $@$@$@", str1, str2, str3 );
-            
-            // Release memory
-            XSRelease( str3 );
-        }
-        XSCatch( e )
-        {
-            {
-                XSException exception;
-                
-                exception = XSExceptionCenter_GetException( XSExceptionCenter_DefaultCenter(), e );
-                
-                XSLog( "Uncaught exception: $@", exception );
-                exit( EXIT_FAILURE );
-            }
-        }
+        // Initialization of XSFoundation
+        XSApplication_Start( argc, ( const char ** )argv );
+        
+        // String creation - The object will be released automatically
+        str1 = XSSTR( "hello, world" );
+        
+        // Substring - The object will be released automatically
+        str2 = XSString_SubstringtoIndex( str1, 5 );
+        
+        // String copy - The object will have to be released explicitly
+        str3 = XSCopy( str2 );
+        
+        // Prints "hello, world, world, world"    
+        XSLog( "This is a log message: $@$@$@", str1, str2, str3 );
+        
+        // Release memory
+        XSRelease( str3 );
     }
     XSMainEnd( EXIT_SUCCESS )
