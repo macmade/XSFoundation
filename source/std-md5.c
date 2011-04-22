@@ -116,7 +116,7 @@ static unsigned char MD5_PADDING[ 64 ] =
 }
 
 /*!
- * @define      FF
+ * @define      GG
  * @abstract    Transformations for round 2
  */
 #define GG( a, b, c, d, x, s, ac )                                              \
@@ -127,7 +127,7 @@ static unsigned char MD5_PADDING[ 64 ] =
 }
 
 /*!
- * @define      FF
+ * @define      HH
  * @abstract    Transformations for round 3
  */
 #define HH( a, b, c, d, x, s, ac )                                              \
@@ -138,7 +138,7 @@ static unsigned char MD5_PADDING[ 64 ] =
 }
 
 /*!
- * @define      FF
+ * @define      II
  * @abstract    Transformations for round 4
  */
 #define II( a, b, c, d, x, s, ac )                                              \
