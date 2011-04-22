@@ -60,67 +60,73 @@ XS_EXTERN_C_BEGIN
     
 #endif
 
-#define XSMainStart( argc, argv )                                               \
-    XSMain( argc, argv )                                                        \
-    {                                                                           \
-        XSApplication_Start( argc, ( const char ** )argv );                     \
-        XSFunctionStart()
+#define XSMainStart( argc, argv )                           \
+    XSMain( argc, argv )                                    \
+    {                                                       \
+        XSApplication_Start( argc, ( const char ** )argv ); \
+        XSTryCatchStart()
+
+#define XSMainEnd( returnValue )            \
+        XSMainFunctionEnd( returnValue )    \
+    }
+
+#define XSTryCatchStart()               \
+    {                                   \
+        {                               \
+            XSException  e;             \
+                                        \
+            XSTry                       \
+            {
+
+#define XSTryCatchEnd( returnValue )    \
+            }                           \
+            XSCatch( e )                \
+            {                           \
+                throw e;                \
+            }                           \
+        }                               \
+        return returnValue;             \
+    }
 
 #ifdef _WIN32
 
-#define XSMainEnd( returnValue )                                                \
-        XSMainFunctionEnd( returnValue )                                        \
+#define XSMainFunctionEnd( returnValue )                        \
+            }                                                   \
+            XSMainCatch( e, returnValue )                       \
+            {                                                   \
+                XSMemoryDebug_Disable();                        \
+                                                                \
+                XSLog                                           \
+                (                                               \
+                    "FATAL ERROR: uncaught exception: $@\n",    \
+                    e                                           \
+                );                                              \
+                ExitProcess( EXIT_FAILURE );                    \
+            }                                                   \
+        }                                                       \
+        return returnValue;                                     \
     }
-    
+
 #else
 
-#define XSMainEnd( returnValue )                                                \
-        XSFunctionEnd( returnValue )                                            \
+#define XSMainFunctionEnd( returnValue )                        \
+            }                                                   \
+            XSCatch( e )                                        \
+            {                                                   \
+                XSMemoryDebug_Disable();                        \
+                                                                \
+                XSLog                                           \
+                (                                               \
+                    "FATAL ERROR: uncaught exception: $@\n",    \
+                    e                                           \
+                );                                              \
+                exit( EXIT_FAILURE );                           \
+            }                                                   \
+        }                                                       \
+        return returnValue;                                     \
     }
 
 #endif
-
-#define XSFunctionStart()                                                       \
-    {                                                                           \
-        {                                                                       \
-            XSException  e;                                                      \
-                                                                                \
-            XSTry                                                               \
-            {
-
-#define XSMainFunctionEnd( returnValue )                                        \
-            }                                                                   \
-            XSMainCatch( e, returnValue )                                       \
-            {                                                                   \
-                    XSMemoryDebug_Disable();                                    \
-                                                                                \
-                    XSLog                                                       \
-                    (                                                           \
-                        "FATAL ERROR: uncaught exception: $@\n",                \
-                        e                                                       \
-                    );                                                          \
-                    ExitProcess( EXIT_FAILURE );                                \
-            }                                                                   \
-        }                                                                       \
-        return returnValue;                                                     \
-    }
-
-#define XSFunctionEnd( returnValue )                                            \
-            }                                                                   \
-            XSCatch( e )                                                        \
-            {                                                                   \
-                    XSMemoryDebug_Disable();                                    \
-                                                                                \
-                    XSLog                                                       \
-                    (                                                           \
-                        "FATAL ERROR: uncaught exception: $@\n",                \
-                        e                                                       \
-                    );                                                          \
-                    exit( EXIT_FAILURE );                                       \
-            }                                                                   \
-        }                                                                       \
-        return returnValue;                                                     \
-    }
 
 #define XSThrow   for( ; ; longjmp( *( XSExceptionContext->e_env ), 1 ) ) XSExceptionContext->e = 
 
