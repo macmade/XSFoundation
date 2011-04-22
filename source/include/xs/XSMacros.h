@@ -55,12 +55,60 @@
         #define XS_EXTERN_C_END              }
         
     #else
+        
         #define XS_EXTERN_C_BEGIN
         #define XS_EXTERN_C_END
+        
     #endif
 #endif
 
 XS_EXTERN_C_BEGIN
+
+/*!
+ * @define          __XS_VERS_STR__
+ * @abstract        XSFoundation version number string
+ * @availability    0.0.1
+ */
+#define __XS_VERS_STR__    "1.2.1-0"
+
+/*!
+ * @define          __XS_VERS_MAJ__
+ * @abstract        XSFoundation major version number
+ * @availability    0.0.1
+ */
+#define __XS_VERS_MAJ__    1
+
+/*!
+ * @define          __XS_VERS_MIN__
+ * @abstract        XSFoundation minor version number
+ * @availability    0.0.1
+ */
+#define __XS_VERS_MIN__    2
+
+/*!
+ * @define          __XS_VERS_BUG__
+ * @abstract        XSFoundation bugfix version number
+ * @availability    0.0.1
+ */
+#define __XS_VERS_BUG__    1
+
+/*!
+ * @define          __XS_VERS_PATCH__
+ * @abstract        XSFoundation patch level version number
+ * @availability    0.0.1
+ */
+#define __XS_VERS_PATCH__  0
+
+/*!
+ * @define          __XS_VERS__
+ * @abstract        XSFoundation version number
+ * @availability    0.0.1
+ */
+#define __XS_VERS__ ( __XS_VERS_MAJ__ * 1000000 \
+                    + __XS_VERS_MIN__ * 10000   \
+                    + __XS_VERS_BUG__ * 100     \
+                    + __XS_VERS_PATCH__ )
+
 
 #include "XSMacrosTarget.h"
 #include "XSMacrosException.h"
