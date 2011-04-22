@@ -65,7 +65,7 @@ XS_EXTERN_C_BEGIN
 #endif
 
 /*******************************************************************************
- * Standard typedefs
+ * Standard types
  ******************************************************************************/
 
 typedef unsigned char           Boolean;
@@ -94,6 +94,10 @@ typedef SInt16                  OSErr;
 typedef UInt8                   UTF8Char;
 typedef UInt16                  UTF16Char;
 typedef UInt32                  UTF32Char;
+
+/*******************************************************************************
+ * XSFoundation types
+ ******************************************************************************/
 
 #if __LP64__
     
@@ -330,13 +334,13 @@ typedef XSClassInfos * XSClass;
 
 /*!
  * @define      nil
- * @abstract    NULL pointer for the 'id' type
+ * @abstract    NULL pointer for the 'XSObject' type
  */
 #define nil	( XSObject )0
 
 /*!
  * @define      Nil
- * @abstract    NULL pointer for the 'Class' type
+ * @abstract    NULL pointer for the 'XSClass' type
  */
 #define Nil	( XSClass )0
 
