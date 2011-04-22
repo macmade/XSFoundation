@@ -189,8 +189,6 @@ XSMainStart( argc, argv )
     XSURLRequest_Start( request );
     XSLog( "$@", XSURLRequest_GetHTTPHeaders( request ) );
     
-    throw_exception();
-    
     XSRelease( timer );
     XSRelease( arr );
     XSRelease( str3 );
