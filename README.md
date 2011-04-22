@@ -52,9 +52,6 @@ XSFoundation is released under the terms of the [Boost][2] Software License - Ve
         XSString   str2;
         XSString   str3;
         
-        // Initialization of XSFoundation
-        XSApplication_Start( argc, ( const char ** )argv );
-        
         // String creation - The object will be released automatically
         str1 = XSSTR( "hello, world" );
         
