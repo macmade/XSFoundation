@@ -164,7 +164,7 @@ void XSArray_InsertValueAtIndex( XSArray xsThis, XSObject value, XSUInteger i )
         return;
     }
     
-    if( j >= _array->count )
+    if( i >= _array->count )
     {
         for( j = _array->count; j < i; j++ )
         {
