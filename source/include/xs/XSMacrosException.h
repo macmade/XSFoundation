@@ -83,8 +83,7 @@ XS_EXTERN_C_BEGIN
 #define XSFunctionStart()                                                       \
     {                                                                           \
         {                                                                       \
-            XSUInteger  e;                                                      \
-            XSException __xs_exception;                                         \
+            XSException  e;                                                      \
                                                                                 \
             XSTry                                                               \
             {
@@ -93,18 +92,12 @@ XS_EXTERN_C_BEGIN
             }                                                                   \
             XSMainCatch( e, returnValue )                                       \
             {                                                                   \
-                    __xs_exception = XSExceptionCenter_GetException             \
-                    (                                                           \
-                        XSExceptionCenter_DefaultCenter(),                      \
-                        e                                                       \
-                    );                                                          \
-                                                                                \
                     XSMemoryDebug_Disable();                                    \
                                                                                 \
                     XSLog                                                       \
                     (                                                           \
                         "FATAL ERROR: uncaught exception: $@\n",                \
-                        __xs_exception                                          \
+                        e                                                       \
                     );                                                          \
                     ExitProcess( EXIT_FAILURE );                                \
             }                                                                   \
@@ -116,18 +109,12 @@ XS_EXTERN_C_BEGIN
             }                                                                   \
             XSCatch( e )                                                        \
             {                                                                   \
-                    __xs_exception = XSExceptionCenter_GetException             \
-                    (                                                           \
-                        XSExceptionCenter_DefaultCenter(),                      \
-                        e                                                       \
-                    );                                                          \
-                                                                                \
                     XSMemoryDebug_Disable();                                    \
                                                                                 \
                     XSLog                                                       \
                     (                                                           \
                         "FATAL ERROR: uncaught exception: $@\n",                \
-                        __xs_exception                                          \
+                        e                                                       \
                     );                                                          \
                     exit( EXIT_FAILURE );                                       \
             }                                                                   \

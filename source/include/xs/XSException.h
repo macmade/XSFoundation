@@ -49,6 +49,15 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct __XSException_Struct * XSException;
 
+struct XSExceptionContext_Struct
+{
+    jmp_buf            * e_env;
+    int                  caught;
+    volatile XSException e;
+};
+
+extern struct XSExceptionContext_Struct * XSExceptionContext;
+
 /*!
  * @function    XSException_Alloc
  * @abstract    Object allocator

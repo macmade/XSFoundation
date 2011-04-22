@@ -62,7 +62,6 @@
 #include "XS/XSDictionary.h"
 #include "XS/XSError.h"
 #include "XS/XSException.h"
-#include "XS/XSExceptionCenter.h"
 #include "XS/XSFile.h"
 #include "XS/XSGeometry.h"
 #include "XS/XSHost.h"

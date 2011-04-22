@@ -149,10 +149,6 @@
 		05241146136077A900CAF423 /* XSException.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSException.c; sourceTree = "<group>"; };
 		05241147136077CA00CAF423 /* __XSException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSException.h; sourceTree = "<group>"; };
 		05241148136077E100CAF423 /* XSException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSException.h; sourceTree = "<group>"; };
-		0524115513609A3900CAF423 /* __XSExceptionCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSExceptionCenter.h; sourceTree = "<group>"; };
-		0524115713609A4D00CAF423 /* XSExceptionCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSExceptionCenter.h; sourceTree = "<group>"; };
-		0524115813609A6500CAF423 /* __XSExceptionCenter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSExceptionCenter.c; sourceTree = "<group>"; };
-		0524115913609A7300CAF423 /* XSExceptionCenter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSExceptionCenter.c; sourceTree = "<group>"; };
 		0524116613611A1400CAF423 /* XSMemoryDebug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSMemoryDebug.c; sourceTree = "<group>"; };
 		0524116813611A2800CAF423 /* XSMemoryDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMemoryDebug.h; sourceTree = "<group>"; };
 		0524117513612C5500CAF423 /* XSMacrosException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMacrosException.h; sourceTree = "<group>"; };
@@ -205,7 +201,6 @@
 				050C25DF135C8C3A0009766B /* __XSDictionary.c */,
 				050C25E0135C8C3A0009766B /* __XSError.c */,
 				052411441360778F00CAF423 /* __XSException.c */,
-				0524115813609A6500CAF423 /* __XSExceptionCenter.c */,
 				050C25E1135C8C3A0009766B /* __XSFile.c */,
 				05C9A069135EE856000DFEC8 /* __XSHost.c */,
 				050C25E2135C8C3A0009766B /* __XSLock.c */,
@@ -243,7 +238,6 @@
 				050C2653135C8C3A0009766B /* XSDictionary.c */,
 				050C2654135C8C3A0009766B /* XSError.c */,
 				05241146136077A900CAF423 /* XSException.c */,
-				0524115913609A7300CAF423 /* XSExceptionCenter.c */,
 				050C2655135C8C3A0009766B /* XSFile.c */,
 				050C2656135C8C3A0009766B /* XSGeometry.c */,
 				05C9A06A135EE85F000DFEC8 /* XSHost.c */,
@@ -355,7 +349,6 @@
 				050C262F135C8C3A0009766B /* XSDictionary.h */,
 				050C2630135C8C3A0009766B /* XSError.h */,
 				05241148136077E100CAF423 /* XSException.h */,
-				0524115713609A4D00CAF423 /* XSExceptionCenter.h */,
 				050C2631135C8C3A0009766B /* XSFile.h */,
 				050C2632135C8C3A0009766B /* XSGeometry.h */,
 				05C9A068135EE848000DFEC8 /* XSHost.h */,
@@ -397,7 +390,6 @@
 				050C2616135C8C3A0009766B /* __XSDictionary.h */,
 				050C2617135C8C3A0009766B /* __XSError.h */,
 				05241147136077CA00CAF423 /* __XSException.h */,
-				0524115513609A3900CAF423 /* __XSExceptionCenter.h */,
 				050C2618135C8C3A0009766B /* __XSFile.h */,
 				05C9A066135EE838000DFEC8 /* __XSHost.h */,
 				050C2619135C8C3A0009766B /* __XSLock.h */,

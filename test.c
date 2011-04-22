@@ -145,15 +145,15 @@ XSMainStart( argc, argv )
     request = XSURLRequest_InitWithURL( XSURLRequest_Alloc(), url );
     
     {
-        XSUInteger  e;
+        XSException e;
         
         XSTry
         {
-            XSThrow 0;
+            XSThrow XSException_New( 1234, XSSTR( "Test exception..." ) );
         }
         XSCatch( e )
         {
-            XSLog( "Caught exception: %u - $@", e, XSExceptionCenter_GetException( XSExceptionCenter_DefaultCenter(), e ) );
+            XSLog( "Caught exception: $@", e );
         }
     }
     
