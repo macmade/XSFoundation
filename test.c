@@ -71,12 +71,6 @@ void notification_test( XSNotification notification )
     );
 }
 
-void throw_exception( void );
-void throw_exception( void )
-{   
-    XSThrow 0;
-}
-
 XSMainStart( argc, argv )
 {
     unsigned int  i;
@@ -195,7 +189,7 @@ XSMainStart( argc, argv )
     XSURLRequest_Start( request );
     XSLog( "$@", XSURLRequest_GetHTTPHeaders( request ) );
     
-    /*throw_exception();*/
+    throw_exception();
     
     XSRelease( timer );
     XSRelease( arr );
