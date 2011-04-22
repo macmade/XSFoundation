@@ -35,9 +35,6 @@
  * @abstract    ...
  */
 
-
-#include <stdlib.h>
-#include <stdio.h>
 #include "XS.h"
 
 void thread_test( XSThread thread, XSObject arg );

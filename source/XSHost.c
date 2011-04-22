@@ -180,5 +180,9 @@ XSInteger XSHost_Disconnect( XSHost xsThis, XSInteger sock )
     
     host = ( __XSHost * )xsThis;
     
+    #ifdef _WIN32
+    return closesocket( sock );
+    #else
     return close( sock );
+    #endif
 }

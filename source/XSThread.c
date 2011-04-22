@@ -55,15 +55,15 @@ XSStatic XSThread XSThread_Detach( void ( * func )( XSThread thread, XSObject ar
     pthread_t     t;
     XSUInteger    tid;
     __XSThread  * thread;
+
+    #ifdef _WIN32
+    HANDLE        handle;
+    #endif
     
     if( func == NULL )
     {
         return NULL;
     }
-
-    #ifdef _WIN32
-    HANDLE        handle;
-    #endif
 
     thread = ( __XSThread * )XSThread_Init( XSThread_Alloc() );
     thread->func = func;

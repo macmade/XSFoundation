@@ -35,7 +35,7 @@
  * @abstract    ...
  */
 
-#include "stdafx.h"
+#include "StdAfx.h"
 
 void thread_test( XSThread thread, XSObject arg );
 void thread_test( XSThread thread, XSObject arg )
@@ -71,7 +71,13 @@ void notification_test( XSNotification notification )
     );
 }
 
-XSMain( argc, argv )
+void throw_exception( void );
+void throw_exception( void )
+{   
+    XSThrow 0;
+}
+
+XSMainStart( argc, argv )
 {
     unsigned int  i;
     XSInteger     arg_int;
@@ -79,7 +85,6 @@ XSMain( argc, argv )
     XSString      arg_str;
     XSFloat       arg_float;
     char       ** test;
-    XSApplication app;
     XSString      str1;
     XSString      str2;
     XSString      str3;
@@ -89,38 +94,40 @@ XSMain( argc, argv )
     XSDictionary  dict;
     XSNumber      num;
     XSURL         url;
+    XSHost        host;
+    XSURLRequest  request;
     
-    app  = XSApplication_Start( argc, ( const char ** )argv );
+    /*XSDebugLogEnable( XSDebugLogLevelAll );*/
     
-    XSApplication_RegisterArgument( app, "--test",    XSApplicationArgumentTypeFlag,    "A test flag" );
-    XSApplication_RegisterArgument( app, "--int",     XSApplicationArgumentTypeInteger, "A test integer" );
-    XSApplication_RegisterArgument( app, "--string",  XSApplicationArgumentTypeString,  "A test string" );
-    XSApplication_RegisterArgument( app, "--float",   XSApplicationArgumentTypeFloat,   "A test float" );
-    XSApplication_RegisterArgument( app, "--uint",    XSApplicationArgumentTypeUnsignedInteger, NULL );
+    XSApplication_RegisterArgument( XSApplication_SharedApplication(), "--test",    XSApplicationArgumentTypeFlag,    "A test flag" );
+    XSApplication_RegisterArgument( XSApplication_SharedApplication(), "--int",     XSApplicationArgumentTypeInteger, "A test integer" );
+    XSApplication_RegisterArgument( XSApplication_SharedApplication(), "--string",  XSApplicationArgumentTypeString,  "A test string" );
+    XSApplication_RegisterArgument( XSApplication_SharedApplication(), "--float",   XSApplicationArgumentTypeFloat,   "A test float" );
+    XSApplication_RegisterArgument( XSApplication_SharedApplication(), "--uint",    XSApplicationArgumentTypeUnsignedInteger, NULL );
     
-    XSApplication_PrintHelp( app, "A test application for the XSFoundation" );
+    XSApplication_PrintHelp( XSApplication_SharedApplication(), "A test application for the XSFoundation" );
     
-    if( XSApplication_GetFlag( app, "--test" ) )
+    if( XSApplication_GetFlag( XSApplication_SharedApplication(), "--test" ) )
     {
         XSLog( "Has flag argument: test" );
     }
     
-    if( ( arg_int = XSApplication_GetInteger( app, "--int" ) ) )
+    if( ( arg_int = XSApplication_GetInteger( XSApplication_SharedApplication(), "--int" ) ) )
     {
         XSLog( "Has int argument: %i", arg_int );
     }
     
-    if( ( arg_uint = XSApplication_GetUnsignedInteger( app, "--uint" ) ) )
+    if( ( arg_uint = XSApplication_GetUnsignedInteger( XSApplication_SharedApplication(), "--uint" ) ) )
     {
         XSLog( "Has uint argument: %u", arg_uint );
     }
     
-    if( ( arg_str = XSApplication_GetString( app, "--string" ) ) )
+    if( ( arg_str = XSApplication_GetString( XSApplication_SharedApplication(), "--string" ) ) )
     {
         XSLog( "Has string argument: $@", arg_str );
     }
     
-    if( ( arg_float = XSApplication_GetFloat( app, "--float" ) ) )
+    if( ( arg_float = XSApplication_GetFloat( XSApplication_SharedApplication(), "--float" ) ) )
     {
         XSLog( "Has float argument: %f", arg_float );
     }
@@ -132,19 +139,21 @@ XSMain( argc, argv )
         test[ i ] = XSAutoAlloc( 2 );
     }
     
-    str1 = XSSTR( "hello, world" );
-    str2 = XSString_SubstringFromIndex( str1, 5 );
-    str3 = XSCopy( str2 );
-    arr  = XSArray_InitWithValues( XSArray_Alloc(), str1, str2, str3, NULL );
-    data = XSData_InitWithBytes( XSData_Alloc(), ( UInt8 * )"hello, world", 12 );
-    dict = XSDictionary_InitWithKeysAndValues( XSDictionary_Alloc(), XSSTR( "test-1" ), str1, XSSTR( "test-2" ), str2, NULL );
-    num  = XSNumber_InitWithShort( XSNumber_Alloc(), 0x0303 );
-    url  = XSURL_InitWithCString( XSURL_Alloc(), "http://www.eosgarden.com:80/en/contact/?test=1#test" );
+    str1    = XSSTR( "hello, world" );
+    str2    = XSString_SubstringFromIndex( str1, 5 );
+    str3    = XSCopy( str2 );
+    arr     = XSArray_InitWithValues( XSArray_Alloc(), str1, str2, str3, NULL );
+    data    = XSData_InitWithBytes( XSData_Alloc(), ( UInt8 * )"hello, world", 12 );
+    dict    = XSDictionary_InitWithKeysAndValues( XSDictionary_Alloc(), XSSTR( "test-1" ), str1, XSSTR( "test-2" ), str2, NULL );
+    num     = XSNumber_InitWithShort( XSNumber_Alloc(), 0x0303 );
+    url     = XSURL_InitWithCString( XSURL_Alloc(), "http://www.eosgarden.com:80/en/contact/?test=1#test" );
+    host    = XSHost_InitWithURL( XSHost_Alloc(), url );
+    request = XSURLRequest_InitWithURL( XSURLRequest_Alloc(), url );
     
     XSLog( "Memory hash: %s", XSHash( test ) );
     XSLog( "Object hash: %s", XSHash( str1 ) );
     XSLog( "%s%s%s", XSString_CString( str1 ), XSString_CString( str2 ), XSString_CString( str3 ) );
-    XSLog( "hello, universe: %i $@ %i $@ %i", 42, str1, 43, app, 44 );
+    XSLog( "hello, universe: %i $@ %i $@ %i", 42, str1, 43, str2, 44 );
     XSLog( "Array value 0: $@", XSArray_ValueAtIndex( arr, 0 ) );
     XSLog( "$@", XSString_StringByAppendingString( str1, str2 ) );
     XSLog( "$@", arr );
@@ -157,6 +166,7 @@ XSMain( argc, argv )
     XSLog( "$@", num );
     XSLog( "0x%02x", XSNumber_GetChar( num ) );
     XSLog( "$@", url );
+    XSLog( "$@", host );
     
     XSNotificationCenter_AddObserver( XSNotificationCenter_DefaultCenter(), ( XSObject )str1, XSSTR( "TestNotification" ), notification_test );
     XSNotificationCenter_PostNotification( XSNotificationCenter_DefaultCenter(), ( XSObject )str1, XSSTR( "TestNotification" ) );
@@ -169,6 +179,11 @@ XSMain( argc, argv )
     XSTimer_RunOnce( timer );
     XSTimer_RunAndRepeat( timer );
     
+    XSURLRequest_Start( request );
+    XSLog( "$@", XSURLRequest_GetHTTPHeaders( request ) );
+    
+    /*throw_exception();*/
+    
     XSRelease( timer );
     XSRelease( arr );
     XSRelease( str3 );
@@ -176,6 +191,7 @@ XSMain( argc, argv )
     XSRelease( dict );
     XSRelease( num );
     XSRelease( url );
-    
-    return EXIT_SUCCESS;
+    XSRelease( host );
+    XSRelease( request );
 }
+XSMainEnd( EXIT_SUCCESS )
