@@ -133,7 +133,13 @@ void XSURLRequest_Start( XSURLRequest xsThis )
         return;
     }
     
-    req = ( __XSURLRequest * )xsThis;
+    if( req->started == YES )
+    {
+        return;
+    }
+    
+    req          = ( __XSURLRequest * )xsThis;
+    req->started = YES;
     
     if( XSHost_Connect( req->host, req->socket ) == -1 )
     {
