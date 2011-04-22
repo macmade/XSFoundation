@@ -49,7 +49,7 @@ static const XSClassInfos __XSDictionaryClass =
     NULL,                       /* Constructor */
     __XSDictionary_Destruct,    /* Destructor */
     XSDictionary_Init,          /* Default initializer */
-    NULL,                       /* Object copy */
+    __XSDictionary_Copy,        /* Object copy */
     __XSDictionary_ToString,    /* Object description */
     NULL                        /* Object comparison */
 };
@@ -114,4 +114,23 @@ XSString __XSDictionary_ToString( XSObject object )
     XSString_AppendCString( description, ( char * )"}" );
     
     return XSAutorelease( description );
+}
+
+void __XSDictionary_Copy( XSObject source, XSObject destination )
+{
+    __XSDictionary  * d1;
+    __XSDictionary  * d2;
+    XSUInteger i;
+    
+    d1 = ( __XSDictionary * )source;
+    d2 = ( __XSDictionary * )destination;
+    
+    d2->values = XSCopy( d1->values );
+    
+    for( i = 0; i < d1->count; i++ )
+    {
+        d2->keys[ i ] = XSCopy( d1->values[ i ] );
+        
+        XSRetain( d2->values[ i ] );
+    }
 }

@@ -49,7 +49,7 @@ static const XSClassInfos __XSDataClass =
     NULL,               /* Constructor */
     __XSData_Destruct,  /* Destructor */
     XSData_Init,        /* Default initializer */
-    NULL,               /* Object copy */
+    __XSData_Copy,      /* Object copy */
     __XSData_ToString,  /* Object description */
     NULL                /* Object comparison */
 };
@@ -87,4 +87,15 @@ XSString __XSData_ToString( XSObject object )
     }
     
     return XSAutorelease( description );
+}
+
+void __XSData_Copy( XSObject source, XSObject destination )
+{
+    __XSData * d1;
+    __XSData * d2;
+    
+    d1 = ( __XSData * )source;
+    d2 = ( __XSData * )destination;
+    
+    d2->bytes = XSCopy( d1->bytes );
 }

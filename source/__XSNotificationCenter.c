@@ -49,7 +49,7 @@ static const XSClassInfos __XSNotificationCenterClass =
     NULL,                               /* Constructor */
     __XSNotificationCenter_Destruct,    /* Destructor */
     XSNotificationCenter_Init,          /* Default initializer */
-    NULL,                               /* Object copy */
+    __XSNotificationCenter_Copy,        /* Object copy */
     NULL,                               /* Object description */
     NULL                                /* Object comparison */
 };
@@ -68,4 +68,15 @@ void __XSNotificationCenter_Initialize( void )
 void __XSNotificationCenter_Destruct( XSObject object )
 {
     XSRelease( ( ( __XSNotificationCenter * )object )->objects );
+}
+
+void __XSNotificationCenter_Copy( XSObject source, XSObject destination )
+{
+    __XSNotificationCenter * c1;
+    __XSNotificationCenter * c2;
+    
+    c1 = ( __XSNotificationCenter * )source;
+    c2 = ( __XSNotificationCenter * )destination;
+    
+    c2->objects = XSCopy( c1->objects );
 }

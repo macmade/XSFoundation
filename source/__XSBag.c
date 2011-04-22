@@ -49,7 +49,7 @@ static const XSClassInfos __XSBagClass =
     NULL,               /* Constructor */
     __XSBag_Destruct,   /* Destructor */
     XSBag_Init,         /* Default initializer */
-    NULL,               /* Object copy */
+    __XSBag_Copy,       /* Object copy */
     __XSBag_ToString,   /* Object description */
     NULL                /* Object comparison */
 };
@@ -116,4 +116,21 @@ XSString __XSBag_ToString( XSObject object )
     XSString_AppendCString( description, ( char * )"}" );
     
     return XSAutorelease( description );
+}
+
+void __XSBag_Copy( XSObject source, XSObject destination )
+{
+    __XSBag  * b1;
+    __XSBag  * b2;
+    XSUInteger i;
+    
+    b1 = ( __XSBag * )source;
+    b2 = ( __XSBag * )destination;
+    
+    b2->values = XSCopy( b1->values );
+    
+    for( i = 0; i < b1->count; i++ )
+    {
+        XSRetain( b2->values[ i ] );
+    }
 }

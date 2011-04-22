@@ -81,7 +81,7 @@ void __XSString_Copy( XSObject source, XSObject destination )
     
     ( void )str1;
     
-    XSRetain( str2->str );
+    str2->str = XSCopy( str1->str );
 }
 
 XSString __XSString_ToString( XSObject object )

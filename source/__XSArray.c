@@ -49,7 +49,7 @@ static const XSClassInfos __XSArrayClass =
     NULL,                   /* Constructor */
     __XSArray_Destruct,     /* Destructor */
     XSArray_Init,           /* Default initializer */
-    NULL,                   /* Object copy */
+    __XSArray_Copy,         /* Object copy */
     __XSArray_ToString,     /* Object description */
     NULL                    /* Object comparison */
 };
@@ -116,4 +116,21 @@ XSString __XSArray_ToString( XSObject object )
     XSString_AppendCString( description, ( char * )"}" );
     
     return XSAutorelease( description );
+}
+
+void __XSArray_Copy( XSObject source, XSObject destination )
+{
+    __XSArray * a1;
+    __XSArray * a2;
+    XSUInteger  i;
+    
+    a1 = ( __XSArray * )source;
+    a2 = ( __XSArray * )destination;
+    
+    a2->values = XSCopy( a1->values );
+    
+    for( i = 0; i < a1->count; i++ )
+    {
+        XSRetain( a2->values[ i ] );
+    }
 }

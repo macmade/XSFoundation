@@ -59,6 +59,7 @@ typedef struct __XSHost_Struct
     struct addrinfo    * infos;
     struct addrinfo    * addr;
     struct sockaddr_in * sock;
+    BOOL                 isCopy;
 }
 __XSHost;
 
@@ -92,6 +93,14 @@ void __XSHost_Destruct( XSObject object );
  * @result      The object's description
  */
 XSString __XSHost_ToString( XSObject object );
+
+/*!
+ * @function    __XSHost_Copy
+ * @abstract    Object copy
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSHost_Copy( XSObject source, XSObject destination );
 
 XS_EXTERN_C_END
 

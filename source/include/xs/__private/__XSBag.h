@@ -84,6 +84,14 @@ void __XSBag_Destruct( XSObject object );
  */
 XSString __XSBag_ToString( XSObject object );
 
+/*!
+ * @function    __XSBag_Copy
+ * @abstract    Object copy
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSBag_Copy( XSObject source, XSObject destination );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_BAG_H_ */

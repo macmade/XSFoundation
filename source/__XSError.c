@@ -49,7 +49,7 @@ static const XSClassInfos __XSErrorClass =
     NULL,                   /* Constructor */
     __XSError_Destruct,     /* Destructor */
     NULL,                   /* Default initializer */
-    NULL,                   /* Object copy */
+    __XSError_Copy,         /* Object copy */
     __XSError_ToString,     /* Object description */
     NULL                    /* Object comparison */
 };
@@ -91,4 +91,16 @@ XSString __XSError_ToString( XSObject object )
     );
     
     return XSAutorelease( description );
+}
+
+void __XSError_Copy( XSObject source, XSObject destination )
+{
+    __XSError * e1;
+    __XSError * e2;
+    
+    e1 = ( __XSError * )source;
+    e2 = ( __XSError * )destination;
+    
+    e2->reason = XSCopy( e1->reason );
+    e2->domain = XSCopy( e1->domain );
 }

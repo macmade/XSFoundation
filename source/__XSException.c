@@ -49,7 +49,7 @@ static const XSClassInfos __XSExceptionClass =
     NULL,                       /* Constructor */
     __XSException_Destruct,     /* Destructor */
     NULL,                       /* Default initializer */
-    NULL,                       /* Object copy */
+    __XSException_Copy,         /* Object copy */
     __XSException_ToString,     /* Object description */
     NULL                        /* Object comparison */
 };
@@ -89,4 +89,15 @@ XSString __XSException_ToString( XSObject object )
     );
     
     return XSAutorelease( description );
+}
+
+void __XSException_Copy( XSObject source, XSObject destination )
+{
+    __XSException * e1;
+    __XSException * e2;
+    
+    e1 = ( __XSException * )source;
+    e2 = ( __XSException * )destination;
+    
+    e2->reason = XSCopy( e1->reason );
 }

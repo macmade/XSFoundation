@@ -81,6 +81,14 @@ void __XSNotification_Destruct( XSObject object );
  */
 XSString __XSNotification_ToString( XSObject object );
 
+/*!
+ * @function    __XSNotification_Copy
+ * @abstract    Object copy
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSNotification_Copy( XSObject source, XSObject destination );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_NOTIFIATION_H_ */

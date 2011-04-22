@@ -84,6 +84,14 @@ void __XSSet_Destruct( XSObject object );
  */
 XSString __XSSet_ToString( XSObject object );
 
+/*!
+ * @function    __XSSet_Copy
+ * @abstract    Object copy
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSSet_Copy( XSObject source, XSObject destination );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_SET_H_ */

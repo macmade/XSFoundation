@@ -75,6 +75,14 @@ void __XSBTree_Initialize( void );
  */
 void __XSBTree_Destruct( XSObject object );
 
+/*!
+ * @function    __XSBTree_Copy
+ * @abstract    Object copy
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSBTree_Copy( XSObject source, XSObject destination );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_BTREE_H_ */

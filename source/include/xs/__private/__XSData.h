@@ -83,6 +83,14 @@ void __XSData_Destruct( XSObject object );
  */
 XSString __XSData_ToString( XSObject object );
 
+/*!
+ * @function    __XSData_Copy
+ * @abstract    Object copy
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSData_Copy( XSObject source, XSObject destination );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_DATA_H_ */

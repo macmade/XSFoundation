@@ -88,6 +88,14 @@ void __XSDictionary_Destruct( XSObject object );
  */
 XSString __XSDictionary_ToString( XSObject object );
 
+/*!
+ * @function    __XSDictionary_Copy
+ * @abstract    Object copy
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSDictionary_Copy( XSObject source, XSObject destination );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_DICTIONARY_H_ */

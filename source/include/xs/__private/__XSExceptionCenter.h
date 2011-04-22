@@ -80,6 +80,14 @@ void __XSExceptionCenter_Construct( XSObject object );
  */
 void __XSExceptionCenter_Destruct( XSObject object );
 
+/*!
+ * @function    __XSExceptionCenter_Copy
+ * @abstract    Object copy
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSExceptionCenter_Copy( XSObject source, XSObject destination );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_EXCEPTION_CENTER_H_ */

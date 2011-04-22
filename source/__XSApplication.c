@@ -49,7 +49,7 @@ static const XSClassInfos __XSApplicationClass =
     __XSApplication_Construct,  /* Constructor */
     __XSApplication_Destruct,   /* Destructor */
     XSApplication_Init,         /* Default initializer */
-    NULL,                       /* Object copy */
+    __XSApplication_Copy,       /* Object copy */
     NULL,                       /* Object description */
     NULL                        /* Object comparison */
 };
@@ -89,6 +89,23 @@ void __XSApplication_Destruct( XSObject object )
     }
     
     XSRelease( app->args );
+}
+
+void __XSApplication_Copy( XSObject source, XSObject destination )
+{
+    __XSApplication * a1;
+    __XSApplication * a2;
+    XSUInteger        i;
+    
+    a1 = ( __XSApplication * )source;
+    a2 = ( __XSApplication * )destination;
+    
+    a2->args = XSCopy( a1->args );
+    
+    for( i = 0; i < a1->arg_count; i++ )
+    {
+        XSRetain( a2->args[ i ] );
+    }
 }
 
 void __XSApplication_ProcessArguments( __XSApplication * app )

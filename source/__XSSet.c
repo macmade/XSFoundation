@@ -49,7 +49,7 @@ static const XSClassInfos __XSSetClass =
     NULL,               /* Constructor */
     __XSSet_Destruct,   /* Destructor */
     XSSet_Init,         /* Default initializer */
-    NULL,               /* Object copy */
+    __XSSet_Copy,       /* Object copy */
     __XSSet_ToString,   /* Object description */
     NULL                /* Object comparison */
 };
@@ -83,6 +83,23 @@ void __XSSet_Destruct( XSObject object )
         }
         
         XSRelease( set->values );
+    }
+}
+
+void __XSSet_Copy( XSObject source, XSObject destination )
+{
+    __XSSet  * s1;
+    __XSSet  * s2;
+    XSUInteger i;
+    
+    s1 = ( __XSSet * )source;
+    s2 = ( __XSSet * )destination;
+    
+    s2->values = XSCopy( s1->values );
+    
+    for( i = 0; i < s1->count; i++ )
+    {
+        XSRetain( s2->values[ i ] );
     }
 }
 

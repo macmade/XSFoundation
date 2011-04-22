@@ -104,6 +104,14 @@ void __XSAutoreleasePool_Initialize( void );
 void __XSAutoreleasePool_Destruct( XSObject object );
 
 /*!
+ * @function    __XSAutoreleasePool_Copy
+ * @abstract    Object copy
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSAutoreleasePool_Copy( XSObject source, XSObject destination );
+
+/*!
  * @function    __XSMemory_GetCurrentAutoreleasePool
  * @abstract    Gets a pointer to a memory records object from a pointer returned by the XS allocation functions.
  * @result      The auto-release pool object or NULL if no aut-release pool were created

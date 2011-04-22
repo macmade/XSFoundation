@@ -51,7 +51,7 @@ static const XSClassInfos __XSThreadClass =
     XSThread_Init,          /* Default initializer */
     NULL,                   /* Object copy */
     NULL,                   /* Object description */
-    NULL                    /* Object comparison */
+    __XSThread_Equals       /* Object comparison */
 };
 
 /*!

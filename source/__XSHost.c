@@ -49,7 +49,7 @@ static const XSClassInfos __XSHostClass =
     __XSHost_Construct, /* Constructor */
     __XSHost_Destruct,  /* Destructor */
     NULL,               /* Default initializer */
-    NULL,               /* Object copy */
+    __XSHost_Copy,      /* Object copy */
     __XSHost_ToString,  /* Object description */
     NULL                /* Object comparison */
 };
@@ -80,7 +80,11 @@ void __XSHost_Destruct( XSObject object )
     
     XSRelease( host->host );
     XSRelease( host->ip );
-    freeaddrinfo( host->infos );
+    
+    if( host->isCopy == NO )
+    {
+        freeaddrinfo( host->infos );
+    }
 }
 
 XSString __XSHost_ToString( XSObject object )
@@ -94,4 +98,17 @@ XSString __XSHost_ToString( XSObject object )
     XSString_AppendFormat( description, ( char * )"%s (%s) : %u", XSString_CString( host->host ), XSString_CString( host->ip ), host->port );
     
     return XSAutorelease( description );
+}
+
+void __XSHost_Copy( XSObject source, XSObject destination )
+{
+    __XSHost * h1;
+    __XSHost * h2;
+    
+    h1 = ( __XSHost * )source;
+    h2 = ( __XSHost * )destination;
+    
+    h2->host   = XSCopy( h1->host );
+    h2->ip     = XSCopy( h1->ip );
+    h2->isCopy = YES;
 }

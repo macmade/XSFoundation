@@ -85,6 +85,14 @@ void __XSError_Destruct( XSObject object );
  */
 XSString __XSError_ToString( XSObject object );
 
+/*!
+ * @function    __XSError_Copy
+ * @abstract    Object copy
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSError_Copy( XSObject source, XSObject destination );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_ERROR_H_ */

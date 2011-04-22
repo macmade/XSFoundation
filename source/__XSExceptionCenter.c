@@ -49,7 +49,7 @@ static const XSClassInfos __XSExceptionCenterClass =
     __XSExceptionCenter_Construct,  /* Constructor */
     __XSExceptionCenter_Destruct,   /* Destructor */
     NULL,                           /* Default initializer */
-    NULL,                           /* Object copy */
+    __XSExceptionCenter_Copy,       /* Object copy */
     NULL,                           /* Object description */
     NULL                            /* Object comparison */
 };
@@ -80,4 +80,15 @@ void __XSExceptionCenter_Destruct( XSObject object )
     e = ( __XSExceptionCenter * )object;
     
     XSRelease( e->exceptions );
+}
+
+void __XSExceptionCenter_Copy( XSObject source, XSObject destination )
+{
+    __XSExceptionCenter * c1;
+    __XSExceptionCenter * c2;
+    
+    c1 = ( __XSExceptionCenter * )source;
+    c2 = ( __XSExceptionCenter * )destination;
+    
+    c2->exceptions = XSCopy( c1->exceptions );
 }

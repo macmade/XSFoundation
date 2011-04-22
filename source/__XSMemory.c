@@ -62,7 +62,7 @@ static const XSClassInfos __XSAutoreleasePoolClass =
     NULL,                           /* Constructor */
     __XSAutoreleasePool_Destruct,   /* Destructor */
     XSAutoreleasePool_Init,         /* Default initializer */
-    NULL,                           /* Object copy */
+    __XSAutoreleasePool_Copy,       /* Object copy */
     NULL,                           /* Object description */
     NULL                            /* Object comparison */
 };
@@ -85,6 +85,21 @@ void __XSAutoreleasePool_Destruct( XSObject object )
     __XSMemory_AutoreleasePoolDrain( ( __XSAutoreleasePool * )object );
     XSRelease( ( ( __XSAutoreleasePool * )object )->objects );
     __xsmemory_ar_pools_num--;
+}
+
+void __XSAutoreleasePool_Copy( XSObject source, XSObject destination )
+{
+    __XSAutoreleasePool * a1;
+    __XSAutoreleasePool * a2;
+    XSUInteger            i;
+    
+    a1 = ( __XSAutoreleasePool * )source;
+    a2 = ( __XSAutoreleasePool * )destination;
+    
+    for( i = 0; i < a2->numObjects; i++ )
+    {
+        XSRetain( a2->objects[ i ] );
+    }
 }
 
 __XSAutoreleasePool * __XSMemory_GetCurrentAutoreleasePool( void )

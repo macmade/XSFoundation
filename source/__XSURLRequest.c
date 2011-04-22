@@ -49,7 +49,7 @@ static const XSClassInfos __XSURLRequestClass =
     __XSURLRequest_Construct,   /* Constructor */
     __XSURLRequest_Destruct,    /* Destructor */
     NULL,                       /* Default initializer */
-    NULL,                       /* Object copy */
+    __XSURLRequest_Copy,        /* Object copy */
     NULL,                       /* Object description */
     NULL                        /* Object comparison */
 };
@@ -86,4 +86,19 @@ void __XSURLRequest_Destruct( XSObject object )
     XSRelease( req->status );
     XSRelease( req->headers );
     XSRelease( req->data );
+}
+
+void __XSURLRequest_Copy( XSObject source, XSObject destination )
+{
+    __XSURLRequest * req1;
+    __XSURLRequest * req2;
+    
+    req1 = ( __XSURLRequest * )source;
+    req2 = ( __XSURLRequest * )destination;
+    
+    req2->url     = XSCopy( req2->url );
+    req1->host    = XSCopy( req1->host );
+    req1->status  = XSCopy( req1->status );
+    req1->headers = XSCopy( req1->headers );
+    req1->data    = XSCopy( req1->data );
 }

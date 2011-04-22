@@ -53,7 +53,7 @@ XS_EXTERN_C_BEGIN
 typedef struct __XSThread_Struct
 {
     XSRuntimeClass __class;
-    void         * arg;
+    XSObject       arg;
     XSUInteger     tid;
     void ( * func )( XSThread thread, void * arg );
 }

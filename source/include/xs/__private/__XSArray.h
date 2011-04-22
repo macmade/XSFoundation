@@ -88,6 +88,14 @@ void __XSArray_Destruct( XSObject object );
  */
 XSString __XSArray_ToString( XSObject object );
 
+/*!
+ * @function    __XSArray_Copy
+ * @abstract    Object copy
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSArray_Copy( XSObject source, XSObject destination );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_ARRAY_H_ */

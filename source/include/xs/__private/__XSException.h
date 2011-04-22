@@ -85,6 +85,14 @@ void __XSException_Destruct( XSObject object );
  */
 XSString __XSException_ToString( XSObject object );
 
+/*!
+ * @function    __XSException_Copy
+ * @abstract    Object copy
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSException_Copy( XSObject source, XSObject destination );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_EXCEPTION_H_ */

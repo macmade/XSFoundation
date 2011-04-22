@@ -72,6 +72,14 @@ void __XSNotificationCenter_Initialize( void );
  */
 void __XSNotificationCenter_Destruct( XSObject object );
 
+/*!
+ * @function    __XSNotificationCenter_Copy
+ * @abstract    Object copy
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSNotificationCenter_Copy( XSObject source, XSObject destination );
+
 XS_EXTERN_C_END
 
 #endif /* ___XS_NOTIFIATION_CENTER_H_ */

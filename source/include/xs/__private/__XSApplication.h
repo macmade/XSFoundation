@@ -86,6 +86,14 @@ void __XSApplication_Construct( XSObject object );
 void __XSApplication_Destruct( XSObject object );
 
 /*!
+ * @function    __XSApplication_Copy
+ * @abstract    Object copy
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSApplication_Copy( XSObject source, XSObject destination );
+
+/*!
  * @function    __XSApplication_ProcessArguments
  * @abstract    Processes the command line arguments
  * @param       app     The application object

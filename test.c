@@ -150,6 +150,19 @@ XSMainStart( argc, argv )
     host    = XSHost_InitWithURL( XSHost_Alloc(), url );
     request = XSURLRequest_InitWithURL( XSURLRequest_Alloc(), url );
     
+    {
+        XSUInteger  e;
+        
+        XSTry
+        {
+            XSThrow 0;
+        }
+        XSCatch( e )
+        {
+            XSLog( "Caught exception: %u - $@", e, XSExceptionCenter_GetException( XSExceptionCenter_DefaultCenter(), e ) );
+        }
+    }
+    
     XSLog( "Memory hash: %s", XSHash( test ) );
     XSLog( "Object hash: %s", XSHash( str1 ) );
     XSLog( "%s%s%s", XSString_CString( str1 ), XSString_CString( str2 ), XSString_CString( str3 ) );

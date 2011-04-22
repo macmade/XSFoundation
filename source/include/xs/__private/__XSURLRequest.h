@@ -79,6 +79,14 @@ void __XSURLRequest_Initialize( void );
 void __XSURLRequest_Construct( XSObject object );
 
 /*!
+ * @function    __XSURLRequest_Copy
+ * @abstract    Object copy
+ * @param       object  A pointer to the object
+ * @result      void
+ */
+void __XSURLRequest_Copy( XSObject source, XSObject destination );
+
+/*!
  * @function    __XSString_Destruct
  * @abstract    Destructor
  * @param       object  A pointer to the object

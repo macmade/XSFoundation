@@ -49,7 +49,7 @@ static const XSClassInfos __XSBTreeClass =
     NULL,                   /* Constructor */
     __XSBTree_Destruct,     /* Destructor */
     XSBool_Init,            /* Default initializer */
-    NULL,                   /* Object copy */
+    __XSBTree_Copy,         /* Object copy */
     NULL,                   /* Object description */
     NULL                    /* Object comparison */
 };
@@ -85,4 +85,19 @@ void __XSBTree_Destruct( XSObject object )
     {
         XSRelease( tree->right );
     }
+}
+
+void __XSBTree_Copy( XSObject source, XSObject destination )
+{
+    __XSBTree * t1;
+    __XSBTree * t2;
+    
+    t1 = ( __XSBTree * )source;
+    t2 = ( __XSBTree * )destination;
+    
+    XSRetain( t2->parent );
+    XSRetain( t2->left );
+    XSRetain( t2->right );
+    
+    t2->value = XSCopy( t1->value );
 }

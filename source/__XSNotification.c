@@ -49,7 +49,7 @@ static const XSClassInfos __XSNotificationClass =
     NULL,                           /* Constructor */
     __XSNotification_Destruct,      /* Destructor */
     XSNotification_Init,            /* Default initializer */
-    NULL,                           /* Object copy */
+    __XSNotification_Copy,          /* Object copy */
     __XSNotification_ToString,      /* Object description */
     NULL                            /* Object comparison */
 };
@@ -97,4 +97,17 @@ XSString __XSNotification_ToString( XSObject object )
     );
     
     return XSAutorelease( description );
+}
+
+void __XSNotification_Copy( XSObject source, XSObject destination )
+{
+    __XSNotification * n1;
+    __XSNotification * n2;
+    
+    n1 = ( __XSNotification * )source;
+    n2 = ( __XSNotification * )destination;
+    
+    n2->name = XSCopy( n1->name );
+    
+    XSRetain( n2->object );
 }
