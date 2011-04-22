@@ -56,6 +56,8 @@ static size_t             __xs_memory_total_memory_active = 0;
 static bool               __xs_memory_fault_caught        = NO;
 static size_t             __xs_memory_backtrace_size      = 0;
 
+BOOL                      __xs_memory_debug_enabled       = YES;
+
 #ifdef _WIN32
 void                    * __xs_memory_backtrace[ 100 ];
 #else
@@ -568,7 +570,7 @@ void __XSMemoryDebug_Finalize( void )
 {
     size_t i;
     
-    if( __xs_memory_records_active <= 1 || __xs_memory_fault_caught == YES )
+    if( __xs_memory_records_active <= 1 || __xs_memory_fault_caught == YES || __xs_memory_debug_enabled == NO )
     {
         return;
     }
