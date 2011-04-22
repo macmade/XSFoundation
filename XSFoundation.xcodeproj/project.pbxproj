@@ -153,6 +153,8 @@
 		0524115713609A4D00CAF423 /* XSExceptionCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSExceptionCenter.h; sourceTree = "<group>"; };
 		0524115813609A6500CAF423 /* __XSExceptionCenter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSExceptionCenter.c; sourceTree = "<group>"; };
 		0524115913609A7300CAF423 /* XSExceptionCenter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSExceptionCenter.c; sourceTree = "<group>"; };
+		0524116613611A1400CAF423 /* XSMemoryDebug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSMemoryDebug.c; sourceTree = "<group>"; };
+		0524116813611A2800CAF423 /* XSMemoryDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMemoryDebug.h; sourceTree = "<group>"; };
 		0573D2AC135CAB8900DC1C21 /* XSURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSURL.h; sourceTree = "<group>"; };
 		0573D2AE135CAB9300DC1C21 /* __XSURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSURL.h; sourceTree = "<group>"; };
 		0573D2AF135CABA400DC1C21 /* XSURL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSURL.c; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				050C2657135C8C3A0009766B /* XSLock.c */,
 				050C2658135C8C3A0009766B /* XSLog.c */,
 				050C2659135C8C3A0009766B /* XSMemory.c */,
+				0524116613611A1400CAF423 /* XSMemoryDebug.c */,
 				050C265A135C8C3A0009766B /* XSNotification.c */,
 				050C265B135C8C3A0009766B /* XSNotificationCenter.c */,
 				050C265C135C8C3A0009766B /* XSNull.c */,
@@ -360,6 +363,7 @@
 				050C2635135C8C3A0009766B /* XSMacros.h */,
 				050C2636135C8C3A0009766B /* XSMacrosTarget.h */,
 				050C2637135C8C3A0009766B /* XSMemory.h */,
+				0524116813611A2800CAF423 /* XSMemoryDebug.h */,
 				050C2638135C8C3A0009766B /* XSNotification.h */,
 				050C2639135C8C3A0009766B /* XSNotificationCenter.h */,
 				050C263A135C8C3A0009766B /* XSNull.h */,

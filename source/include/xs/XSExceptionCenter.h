@@ -57,6 +57,7 @@ XS_EXTERN_C_BEGIN
  * @abstract    Opaque type for the XSExceptionCenter objects
  */
 typedef struct __XSExceptionCenter * XSExceptionCenter;
+
 struct XSExceptionContext_Struct
 {
     jmp_buf            * e_env;
@@ -65,36 +66,6 @@ struct XSExceptionContext_Struct
 };
 
 extern struct XSExceptionContext_Struct * XSExceptionContext;
-
-#define XSThrow   for( ; ; longjmp( *( XSExceptionContext->e_env ), 1 ) ) XSExceptionContext->e = 
-
-#define XSTry                                                   \
-    {                                                           \
-        jmp_buf * e_prev;                                       \
-        jmp_buf   e_cur;                                        \
-                                                                \
-        e_prev                    = XSExceptionContext->e_env;  \
-        XSExceptionContext->e_env = &e_cur;                     \
-                                                                \
-        if( setjmp( e_cur ) == 0 )                              \
-        {                                                       \
-            do
-
-#define __XSCatch( action )                                                         \
-            while( XSExceptionContext->caught = 0, XSExceptionContext->caught );    \
-        }                                                                           \
-        else                                                                        \
-        {                                                                           \
-            XSExceptionContext->caught = 1;                                         \
-        }                                                                           \
-                                                                                    \
-        XSExceptionContext->e_env = e_prev;                                         \
-    }                                                                               \
-    if( !XSExceptionContext->caught || action )                                     \
-    {}                                                                              \
-    else
-
-#define XSCatch( e ) __XSCatch( ( ( e ) = XSExceptionContext->e, 0 ) )
 
 /*!
  * @function    XSExceptionCenter_Alloc

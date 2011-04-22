@@ -38,7 +38,6 @@ ARGS_CC                 = -std=c99 \
                           -Wmissing-declarations \
                           -Wmissing-field-initializers \
                           -Wmissing-include-dirs \
-                          -Wmissing-noreturn \
                           -Wmissing-prototypes \
                           -Wold-style-definition \
                           -Woverlength-strings \

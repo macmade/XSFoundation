@@ -48,6 +48,7 @@
 #include "XS/XSTypes.h"
 #include "XS/XSLog.h"
 #include "XS/XSMemory.h"
+#include "XS/XSMemoryDebug.h"
 #include "XS/XSRuntime.h"
 #include "XS/XSApplicationArgument.h"
 #include "XS/XSApplication.h"
