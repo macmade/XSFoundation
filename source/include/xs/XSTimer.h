@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSTree.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSTimer class functions
+ * @file        XSTimer.h
+ * @brief       XSTimer class functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_TIMER_H_
@@ -45,54 +45,48 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typedef     XSTimer
- * @abstract    Opaque type for the XSTree objects
+ * @brief       Opaque type for the XSTree objects
  */
 typedef struct __XSTimer_Struct * XSTimer;
 
 /*!
- * @function    XSTimer_Alloc
- * @abstract    Object allocator
+ * @brief       Object allocator
  * @result      The allocated object
  */
 XSStatic XSObject XSTimer_Alloc( void );
 
 /*!
- * @function    XSTimer_Init
- * @abstract    Creates a timer object scheduled to run at a specific time
- * @param       XSThis          The timer object
+ * @brief       Creates a timer object scheduled to run at a specific time
+ * @param       xsThis          The timer object
  * @param       func            A pointer to to function to call when the timer fires
- * @param       milleseconds    The timer interval, in milliseconds
+ * @param       milliseconds    The timer interval, in milliseconds
  * @result      The timer object
  */
 XSObject XSTimer_Init( XSTimer xsThis, void ( * func )( XSTimer timer ), XSUInteger milliseconds );
 
 /*!
- * @function    XSTimer_RunOnce
- * @abstract    Runs a specific timer once, after its time interval has been reached
+ * @brief       Runs a specific timer once, after its time interval has been reached
  * @param       xsThis  The timer object
  * @result      void
  */
 void XSTimer_RunOnce( XSTimer xsThis );
 
 /*!
- * @function    XSTimer_RunAndRepeat
- * @abstract    Runs a specific timer every time its time interval has been reached
+ * @brief       Runs a specific timer every time its time interval has been reached
  * @param       xsThis  The timer object
  * @result      void
  */
 void XSTimer_RunAndRepeat( XSTimer xsThis );
 
 /*!
- * @function    XSTimer_Invalidate
- * @abstract    Invalidates a timer scheduled to repeat
+ * @brief       Invalidates a timer scheduled to repeat
  * @param       xsThis  The timer object
  * @result      void
  */
 void XSTimer_Invalidate( XSTimer xsThis );
 
 /*!
- * @function    XSTimer_IsValid
- * @abstract    Checks whether a timer is valid or not
+ * @brief       Checks whether a timer is valid or not
  * @param       xsThis  The timer object
  * @result      True if the timer is valid, otherwise false
  */

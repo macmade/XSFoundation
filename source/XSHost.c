@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSHost.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation for the XSHost class
+ * @file        XSHost.c
+ * @brief       Implementation for the XSHost class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

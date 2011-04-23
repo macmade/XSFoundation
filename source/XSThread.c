@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSThread.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation for the XSThread class
+ * @file        XSThread.c
+ * @brief       Implementation for the XSThread class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

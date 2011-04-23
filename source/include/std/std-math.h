@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      std-math.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Mathematical macros
+ * @file        std-math.h
+ * @brief       Mathematical macros
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_STD_MATH_
@@ -44,24 +44,59 @@ extern "C" {
 #endif
 
 #ifndef M_PI
+    
+    /*!
+     * @def         M_PI
+     * @brief       ...
+     */
     #define M_PI        3.1415926535897932384626433832795
+    
 #endif
 
 #ifndef LOG2
+    
+    /*!
+     * @def         __LOG2
+     * @brief       ...
+     */
     #define __LOG2      0.301029995663981f
+    
+    /*!
+     * @def         LOG2
+     * @brief       ...
+     */
     #define LOG2( x )   ( log10( x ) / __LOG2 )
+    
 #endif
 
 #ifndef MAX
+    
+    /*!
+     * @def         MAX
+     * @brief       ...
+     */
     #define MAX( a, b ) ( ( a > b ) ? a : b )
+    
 #endif
 
 #ifndef MIN
-    #define MIN( a, b ) ( ( a < b ) ? a : b ) 
+    
+    /*!
+     * @def         MIN
+     * @brief       ...
+     */
+    #define MIN( a, b ) ( ( a < b ) ? a : b )
+    
 #endif
 
 #ifndef ABS
+    
+    /*!
+     * @def         ABS
+     * @brief       ...
+     */
     #define ABS( a ) ( ( a ) < 0 ? ( -( a ) ) : ( a ) )
+    
 #endif
 
 #ifdef __cplusplus

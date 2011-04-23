@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      test.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @file        test.c
+ * @brief       POSIX test executable
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

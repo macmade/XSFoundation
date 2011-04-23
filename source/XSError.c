@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSError.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation for the XSError class
+ * @file        XSError.c
+ * @brief       Implementation for the XSError class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      signal.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Signal functions for Windows
+ * @file        win32-signal.h
+ * @brief       Signal functions for Windows
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_WIN32_SIGNAL_H_
@@ -46,153 +46,295 @@ extern "C" {
 #include <stdint.h>
 #include "win32-types.h"
 
-/*******************************************************************************
- * Standard POSXI signal types
- ******************************************************************************/
-
 #ifndef SIGABRT
-#define SIGABRT     0x01    /* Abort */
+/*!
+ * @def         SIGABRT
+ * @brief       Abort
+ */
+#define SIGABRT     0x01
 #endif
 
 #ifndef SIGALRM
-#define SIGALRM     0x02    /* Alarm */
+/*!
+ * @def         SIGALRM
+ * @brief       Alarm
+ */
+#define SIGALRM     0x02
 #endif
 
 #ifndef SIGFPE
-#define SIGFPE      0x03    /* Floating point exception */
+/*!
+ * @def         SIGFPE
+ * @brief       Floating point exception
+ */
+#define SIGFPE      0x03
 #endif
 
 #ifndef SIGHUP
-#define SIGHUP      0x04    /* Hang-up */
+/*!
+ * @def         SIGHUP
+ * @brief       Hang-up
+ */
+#define SIGHUP      0x04
 #endif
 
 #ifndef SIGILL
-#define SIGILL      0x05    /* Illegal instruction */
+/*!
+ * @def         SIGILL
+ * @brief       Illegal instruction
+ */
+#define SIGILL      0x05
 #endif
 
 #ifndef SIGINT
-#define SIGINT      0x06    /* Interrupt request */
+/*!
+ * @def         SIGINT
+ * @brief       Interrupt request
+ */
+#define SIGINT      0x06
 #endif
 
 #ifndef SIGKILL
-#define SIGKILL     0x07    /* Kill process */
+/*!
+ * @def         SIGKILL
+ * @brief       Kill process
+ */
+#define SIGKILL     0x07
 #endif
 
 #ifndef SIGPIPE
-#define SIGPIPE     0x08    /* Pipe exception */
+/*!
+ * @def         SIGPIPE
+ * @brief       Pipe exception
+ */
+#define SIGPIPE     0x08
 #endif
 
 #ifndef SIGQUIT
-#define SIGQUIT     0x09    /* Core dump */
+/*!
+ * @def         SIGQUIT
+ * @brief       Core dump
+ */
+#define SIGQUIT     0x09
 #endif
 
 #ifndef SIGSEGV
-#define SIGSEGV     0x0A    /* Segmentation fault */
+/*!
+ * @def         SIGSEGV
+ * @brief       Segmentation fault
+ */
+#define SIGSEGV     0x0A
 #endif
 
 #ifndef SIGTERM
-#define SIGTERM     0x0B    /* Process termination request */
+/*!
+ * @def         SIGTERM
+ * @brief       Process termination request
+ */
+#define SIGTERM     0x0B
 #endif
 
 #ifndef SIGUSR1
-#define SIGUSR1     0x0C    /* User defined condition */
+/*!
+ * @def         SIGUSR1
+ * @brief       User defined condition
+ */
+#define SIGUSR1     0x0C
 #endif
 
 #ifndef SIGUSR2
-#define SIGUSR2     0x0D    /* User defined consition */
+/*!
+ * @def         SIGUSR2
+ * @brief       User defined consition
+ */
+#define SIGUSR2     0x0D
 #endif
 
 #ifndef SIGCHLD
-#define SIGCHLD     0x0E    /* Child process termination */
+/*!
+ * @def         SIGCHLD
+ * @brief       Child process termination
+ */
+#define SIGCHLD     0x0E
 #endif
 
 #ifndef SIGCONT
-#define SIGCONT     0x0F    /* Process restart */
+/*!
+ * @def         SIGCONT
+ * @brief       Process restart
+ */
+#define SIGCONT     0x0F
 #endif
 
 #ifndef SIGSTOP
-#define SIGSTOP     0x10    /* Process stop */
+/*!
+ * @def         SIGSTOP
+ * @brief       Process stop
+ */
+#define SIGSTOP     0x10
 #endif
 
 #ifndef SIGTSTP
-#define SIGTSTP     0x11    /* Process pause */
+/*!
+ * @def         SIGTSTP
+ * @brief       Process pause
+ */
+#define SIGTSTP     0x11
 #endif
 
 #ifndef SIGTTIN
-#define SIGTTIN     0x12    /* TTY read */
+/*!
+ * @def         SIGTTIN
+ * @brief       TTY read
+ */
+#define SIGTTIN     0x12
 #endif
 
 #ifndef SIGTTOU
-#define SIGTTOU     0x13    /* TTY write */
+/*!
+ * @def         SIGTTOU
+ * @brief       TTY write
+ */
+#define SIGTTOU     0x13
 #endif
 
 #ifndef SIGBUS
-#define SIGBUS      0x14    /* Bus error */
+/*!
+ * @def         SIGBUS
+ * @brief       Bus error
+ */
+#define SIGBUS      0x14
 #endif
 
 #ifndef SIGPOLL
-#define SIGPOLL     0x15    /* Asynchronous I/O event */
+/*!
+ * @def         SIGPOLL
+ * @brief       Asynchronous I/O event
+ */
+#define SIGPOLL     0x15
 #endif
 
 #ifndef SIGPROF
-#define SIGPROF     0x16    /* Profiling timer expiration */
+/*!
+ * @def         SIGPROF
+ * @brief       Profiling timer expiration
+ */
+#define SIGPROF     0x16
 #endif
 
 #ifndef SIGSYS
-#define SIGSYS      0x17    /* Bad system call argument */
+/*!
+ * @def         SIGSYS
+ * @brief       Bad system call argument
+ */
+#define SIGSYS      0x17
 #endif
 
 #ifndef SIGTRAP
-#define SIGTRAP     0x18    /* Debugger condition */
+/*!
+ * @def         SIGTRAP
+ * @brief       Debugger condition
+ */
+#define SIGTRAP     0x18
 #endif
 
 #ifndef SIGURG
-#define SIGURG      0x19    /* Urgent data in socket */
+/*!
+ * @def         SIGURG
+ * @brief        Urgent data in socket
+ */
+#define SIGURG      0x19
 #endif
 
 #ifndef SIGVTALRM
-#define SIGVTALRM   0x1A    /* Time limit elapsed */
+/*!
+ * @def         SIGVTALRM
+ * @brief       Time limit elapsed
+ */
+#define SIGVTALRM   0x1A
 #endif
 
 #ifndef SIGXCPU
-#define SIGXCPU     0x1B    /* Exceeded CPU time */
+/*!
+ * @def         SIGXCPU
+ * @brief       Exceeded CPU time
+ */
+#define SIGXCPU     0x1B
 #endif
 
 #ifndef SIGXFSZ
-#define SIGXFSZ     0x1C    /* Allowed file size exceeded */
+/*!
+ * @def         SIGXFSZ
+ * @brief       Allowed file size exceeded
+ */
+#define SIGXFSZ     0x1C
 #endif
 
+/*!
+ * @typedef     sigset_t
+ * @brief       ...
+ */
 typedef uint64_t sigset_t;
 
+/*!
+ * @union       sigval
+ * @brief       ...
+ */
 union sigval
 {
-    int    sival_int;
-    void * sival_ptr;
+    int    sival_int;   /*! ... */
+    void * sival_ptr;   /*! ... */
 };
 
-typedef struct
+/*!
+ * @struct      siginfo_t
+ * @brief       ...
+ */
+struct siginfo_t_struct
 {
-	int          si_signo;
-	int          si_code;
-	union sigval si_value;
-	int          si_errno;
-	pid_t        si_pid;
-	uid_t        si_uid;
-	void       * si_addr;
-	int          si_status;
-	int          si_band;
-}
-siginfo_t;
+	int          si_signo;  /*! ... */
+	int          si_code;   /*! ... */
+	union sigval si_value;  /*! ... */
+	int          si_errno;  /*! ... */
+	pid_t        si_pid;    /*! ... */
+	uid_t        si_uid;    /*! ... */
+	void       * si_addr;   /*! ... */
+	int          si_status; /*! ... */
+	int          si_band;   /*! ... */
+};
 
+/*!
+ * @typedef     siginfo_t
+ * @brief       ...
+ */
+typedef struct siginfo_t_struct siginfo_t;
+
+/*!
+ * @struct      siginfo_t
+ * @brief       ...
+ */
 struct sigaction
 {
-    void ( * sa_handler )( int );
-    sigset_t sa_mask;
-    int      sa_flags;
-    void ( * sa_sigaction )( int, siginfo_t *, void * );
+    void ( * sa_handler )( int );                           /*! ... */
+    sigset_t sa_mask;                                       /*! ... */
+    int      sa_flags;                                      /*! ... */
+    void ( * sa_sigaction )( int, siginfo_t *, void * );    /*! ... */
 };
 
+/*!
+ * @brief       ...
+ * @param       set     ...
+ * @result      ...
+ */
 int sigemptyset( sigset_t * set );
+
+/*!
+ * @brief       ...
+ * @param       sig     ...
+ * @param       act     ...
+ * @param       oact    ...
+ * @result      ...
+ */
 int sigaction( int sig, const struct sigaction * act, struct sigaction * oact );
     
     

@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      getpid.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    getpid function for Windows
+ * @file        win32-getpid.h
+ * @brief       getpid function for Windows
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_WIN32_GETPID_H_
@@ -46,9 +46,8 @@ extern "C" {
 #include "win32-types.h"
 
 /*!
- * @function    getpid
- * @abstract    Returns the process ID of the calling process
- * @return      The process ID
+ * @brief       Returns the process ID of the calling process
+ * @result      The process ID
  */
 pid_t getpid( void );
 

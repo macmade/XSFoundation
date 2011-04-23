@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSNotificationCenter.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSNotificationCenter class definitions
+ * @file        __XSNotificationCenter.h
+ * @brief       Private XSNotificationCenter class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_NOTIFIATION_CENTER_H_
@@ -46,36 +46,38 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSNotificationCenter
- * @abstract    XSNotificationCenter class
- * @field       __class     Runtime class
+ * @struct      __XSNotificationCenter_Struct
+ * @brief       XSNotificationCenter class
  */
-typedef struct __XSNotificationCenter_Struct
+struct __XSNotificationCenter_Struct
 {
-    XSRuntimeClass __class;
-    XSDictionary   objects;
-}
-__XSNotificationCenter;
+    XSRuntimeClass __class;     /*! Runtime class */
+    XSDictionary   objects;     /*! ... */
+};
 
 /*!
- * @function    __XSNotificationCenter_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSNotificationCenter
+ * @brief       XSNotificationCenter class type
+ */
+typedef struct __XSNotificationCenter_Struct __XSNotificationCenter;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSNotificationCenter_Initialize( void );
 
 /*!
- * @function    __XSNotificationCenter_Destruct
- * @abstract    Destructor
+ * @brief       Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
 void __XSNotificationCenter_Destruct( XSObject object );
 
 /*!
- * @function    __XSNotificationCenter_Copy
- * @abstract    Object copy
- * @param       object  A pointer to the object
+ * @brief       Object copy
+ * @param       source          The source object
+ * @param       destination     The destination object
  * @result      void
  */
 void __XSNotificationCenter_Copy( XSObject source, XSObject destination );

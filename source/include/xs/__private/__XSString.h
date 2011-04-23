@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSString.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSString class definitions
+ * @file        __XSString.h
+ * @brief       Private XSString class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_STRING_H_
@@ -46,57 +46,56 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSString
- * @abstract    XSString class
- * @field       __class     Runtime class
- * @field       str         A pointer to the C string
+ * @struct      __XSString_Struct
+ * @brief       XSString class
  */
-typedef struct __XSString_Struct
+struct __XSString_Struct
 {
-    XSRuntimeClass __class;
-    XSUInteger     length;
-    XSUInteger     capacity;
-    XSUInteger     initialCapacity;
-    char         * str;
-}
-__XSString;
+    XSRuntimeClass __class;             /*! Runtime class */
+    XSUInteger     length;              /*! ... */
+    XSUInteger     capacity;            /*! ... */
+    XSUInteger     initialCapacity;     /*! ... */
+    char         * str;                 /*! ... */
+};
 
 /*!
- * @function    __XSString_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSString
+ * @brief       XSString class type
+ */
+typedef struct __XSString_Struct __XSString;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSString_Initialize( void );
 
 /*!
- * @function    __XSString_Destruct
- * @abstract    Destructor
+ * @brief       Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
 void __XSString_Destruct( XSObject object );
 
 /*!
- * @function    __XSString_Copy
- * @abstract    Object copy
- * @param       object  A pointer to the object
+ * @brief       Object copy
+ * @param       source          The source object
+ * @param       destination     The destination object
  * @result      void
  */
 void __XSString_Copy( XSObject source, XSObject destination );
 
 /*!
- * @function    __XSString_ToString
- * @abstract    Object description
+ * @brief       Object description
  * @param       object  A pointer to the object
  * @result      The object's description
  */
 XSString __XSString_ToString( XSObject object );
 
 /*!
- * @function    __XSString_Equals
- * @abstract    Object comparison
+ * @brief       Object comparison
  * @param       object1 The first object to compare
- * @param       object1 The second object to compare
+ * @param       object2 The second object to compare
  * @result      YES if both objects are equals, otherwise NO
  */
 BOOL __XSString_Equals( XSObject object1, XSObject object2 );

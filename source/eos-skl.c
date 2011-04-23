@@ -31,8 +31,8 @@
 
 /*!
  * @file        eos-skl.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Support for EOS-SKL
+ * @brief       Support for EOS-SKL
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "eos-skl/eos-skl.h"

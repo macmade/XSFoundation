@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSLock.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSLock class functions
+ * @file        XSLock.h
+ * @brief       XSLock class functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_LOCK_H_
@@ -45,60 +45,53 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typedef     XSLock
- * @abstract    Opaque type for the XSLock objects
+ * @brief       Opaque type for the XSLock objects
  */
 typedef struct __XSLock_Struct * XSLock;
 
 /*!
- * @function    XSLock_Alloc
- * @abstract    Object allocator
+ * @brief       Object allocator
  * @result      The allocated object
  */
 XSStatic XSObject XSLock_Alloc( void );
 
 /*!
- * @function    XSLock_Init
- * @abstract    Creates a lock
+ * @brief       Creates a lock
  * @param       xsThis  The lock object
  * @result      The lock object
  */
 XSObject XSLock_Init( XSObject xsThis );
 
 /*!
- * @function    XSLock_Lock
- * @abstract    Locks the lock object
+ * @brief       Locks the lock object
  * @param       xsThis  The lock object
  * @result      True if the lock was successfully locked, otherwise false
  */
 BOOL XSLock_Lock( XSLock xsThis );
 
 /*!
- * @function    XSLock_TryLock
- * @abstract    Tries to acquire a lock
+ * @brief       Tries to acquire a lock
  * @param       xsThis  The lock object
  * @result      True if the lock was successfully locked, otherwise false
  */
 BOOL XSLock_TryLock( XSLock xsThis );
 
 /*!
- * @function    XSLock_WaitForLock
- * @abstract    Pause the programs execution until the lock is acquired
+ * @brief       Pause the programs execution until the lock is acquired
  * @param       xsThis  The lock object
  * @result      void
  */
 void XSLock_WaitForLock( XSLock xsThis );
 
 /*!
- * @function    XSLock_Unlock
- * @abstract    Unlocks a lock
+ * @brief       Unlocks a lock
  * @param       xsThis  The lock object
  * @result      void
  */
 void XSLock_Unlock( XSLock xsThis );
 
 /*!
- * @function    XSLock_IsLocked
- * @abstract    Checks if a lock is locked
+ * @brief       Checks if a lock is locked
  * @param       xsThis  The lock object
  * @result      True if the lock is locked, otherwise false
  */

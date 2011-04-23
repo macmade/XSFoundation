@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSArray.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation for the XSArray class
+ * @file        XSArray.c
+ * @brief       Implementation for the XSArray class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

@@ -31,8 +31,8 @@
 
 /*!
  * @file        getpid.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    getpid function for Windows
+ * @brief       getpid function for Windows
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

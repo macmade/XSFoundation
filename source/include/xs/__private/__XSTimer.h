@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSTimer.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSTimer class definitions
+ * @file        __XSTimer.h
+ * @brief       Private XSTimer class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_TIMER_H_
@@ -46,40 +46,41 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSTimer
- * @abstract    XSTimer class
- * @field       __class     Runtime class
+ * @struct      __XSTimer_Struct
+ * @brief       XSTimer class
  */
-typedef struct __XSTimer_Struct
+struct __XSTimer_Struct
 {
-    XSRuntimeClass __class;
-    BOOL           valid;
-    XSUInteger     msecs;
-    void ( * func )( XSTimer timer );
+    XSRuntimeClass __class;             /*! Runtime class */
+    BOOL           valid;               /*! ... */
+    XSUInteger     msecs;               /*! ... */
+    void ( * func )( XSTimer timer );   /*! ... */
     
-}
-__XSTimer;
+};
 
 /*!
- * @function    __XSTimer_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSTimer
+ * @brief       XSTimer class type
+ */
+typedef struct __XSTimer_Struct __XSTimer;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSTimer_Initialize( void );
 
 /*!
- * @function    __XSTimer_RunOnce
- * @abstract    Runs a timer object after its time interval
- * @param       object  The thread object
+ * @brief       Runs a timer object after its time interval
+ * @param       thread  The thread object
  * @param       object  The timer object
  * @return      void
  */
 void __XSTimer_RunOnce( XSThread thread, void * object );
 
 /*!
- * @function    __XSTimer_RunAndRepeat
- * @abstract    Runs a timer object after its time interval, and repeats untile the timer is invalidated
- * @param       object  The thread object
+ * @brief       Runs a timer object after its time interval, and repeats untile the timer is invalidated
+ * @param       thread  The thread object
  * @param       object  The timer object
  * @return      void
  */

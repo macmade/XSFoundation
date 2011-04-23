@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSSet.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSSet class functions
+ * @file        XSSet.h
+ * @brief       XSSet class functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_SET_H_
@@ -45,28 +45,25 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typedef     XSSet
- * @abstract    Opaque type for the XSSet objects
+ * @brief       Opaque type for the XSSet objects
  */
 typedef struct __XSObject_Struct * XSSet;
 
 /*!
- * @function    XSSet_Alloc
- * @abstract    Object allocator
+ * @brief       Object allocator
  * @result      The allocated object
  */
 XSStatic XSObject XSSet_Alloc( void );
 
 /*!
- * @function    XSSet_Init
- * @abstract    Creates an empty set
+ * @brief       Creates an empty set
  * @param       xsThis  The set object
  * @result      The set object
  */
 XSObject XSSet_Init( XSObject xsThis );
 
 /*!
- * @function    XSSet_InitWithCapacity
- * @abstract    Creates an empty set with an initial capacity
+ * @brief       Creates an empty set with an initial capacity
  * @param       xsThis      The set object
  * @param       capacity    The initial capacityThe set object
  * @result      The set object
@@ -74,8 +71,7 @@ XSObject XSSet_Init( XSObject xsThis );
 XSSet XSSet_InitWithCapacity( XSSet xsThis, XSUInteger capacity );
 
 /*!
- * @function    XSSet_InitWithValues
- * @abstract    Creates a set with values
+ * @brief       Creates a set with values
  * @param       xsThis      The set object
  * @param       value1      The first value
  * @param       ...         Other values, terminated by a NULL fence
@@ -84,46 +80,41 @@ XSSet XSSet_InitWithCapacity( XSSet xsThis, XSUInteger capacity );
 XSSet XSSet_InitWithValues( XSSet xsThis, XSObject value1, ... );
 
 /*!
- * @function    XSSet_Count
- * @abstract    Gets the number of values in the set
+ * @brief       Gets the number of values in the set
  * @param       xsThis  The set object
  * @result      The number of values
  */
 XSUInteger XSSet_Count( XSSet xsThis );
 
 /*!
- * @function    XSSet_ContainsValue
- * @abstract    Checks if a set contains a value
+ * @brief       Checks if a set contains a value
  * @param       xsThis  The set object
- * @param       xsThis  The value to check
+ * @param       value   The value to check
  * @result      True if the set contains the value, otherwise false
  */
 BOOL XSSet_ContainsValue( XSSet xsThis, XSObject value );
 
 /*!
- * @function    XSSet_AddValue
- * @abstract    Adds a value in the set
- * @description The new value will be retained
+ * @brief       Adds a value in the set
+ * @details     The new value will be retained
  * @param       xsThis  The set object
- * @param       xsThis  The value to add
+ * @param       value   The value to add
  * @result      void
  */
 void XSSet_AddValue( XSSet xsThis, XSObject value );
 
 /*!
- * @function    XSSet_RemoveValue
- * @abstract    Removes a value in the set
- * @description The removed value will be released
+ * @brief       Removes a value in the set
+ * @details     The removed value will be released
  * @param       xsThis  The set object
- * @param       xsThis  The value to remove
+ * @param       value   The value to remove
  * @result      void
  */
 void XSSet_RemoveValue( XSSet xsThis, XSObject value );
 
 /*!
- * @function    XSSet_ReplaceValue
- * @abstract    Replaces a value in the set
- * @description The old value will be released, and the new will be retained
+ * @brief       Replaces a value in the set
+ * @details     The old value will be released, and the new will be retained
  * @param       xsThis      The set object
  * @param       valueOld    The value to replace
  * @param       valueNew    The new value
@@ -132,40 +123,35 @@ void XSSet_RemoveValue( XSSet xsThis, XSObject value );
 void XSSet_ReplaceValue( XSSet xsThis, XSObject valueOld, XSObject valueNew );
 
 /*!
- * @function    XSSet_Index
- * @abstract    Gets the current set index
+ * @brief       Gets the current set index
  * @param       xsThis  The set object
  * @result      The current set index
  */
 XSUInteger XSSet_Index( XSSet xsThis );
 
 /*!
- * @function    XSSet_Current
- * @abstract    Gets the current set value
+ * @brief       Gets the current set value
  * @param       xsThis  The set object
  * @result      The current set value
  */
 void * XSSet_Current( XSSet xsThis );
 
 /*!
- * @function    XSSet_Next
- * @abstract    Increases the internal value pointer and returns the value
+ * @brief       Increases the internal value pointer and returns the value
  * @param       xsThis  The set object
  * @result      The set value
  */
 void * XSSet_Next( XSSet xsThis );
 
 /*!
- * @function    XSSet_Previous
- * @abstract    Decrease the internal value pointer and returns the value
+ * @brief       Decrease the internal value pointer and returns the value
  * @param       xsThis  The set object
  * @result      The set value
  */
 void * XSSet_Previous( XSSet xsThis );
 
 /*!
- * @function    XSSet_Rewind
- * @abstract    Sets the internal value pointer to the first value in the set
+ * @brief       Sets the internal value pointer to the first value in the set
  * @param       xsThis  The set object
  * @result      void
  */

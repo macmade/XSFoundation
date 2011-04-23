@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      pthreads.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    POSIX thread functions for Windows
+ * @file        win32-pthread.h
+ * @brief       POSIX thread functions for Windows
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_WIN32_PTHREADS_H_
@@ -45,32 +45,93 @@ extern "C" {
 
 #include <stdint.h>
 
+/*!
+ * @typedef     pthread_t
+ * @brief       ...
+ */
 typedef uint32_t pthread_t;
+
+/*!
+ * @typedef     pthread_mutex_t
+ * @brief       ...
+ */
 typedef HANDLE   pthread_mutex_t;
+
+/*!
+ * @typedef     pthread_mutexattr_t
+ * @brief       ...
+ */
 typedef uint64_t pthread_mutexattr_t;
 
-typedef struct
+/*!
+ * @struct      pthread_attr_t_struct
+ * @brief       ...
+ */
+struct pthread_attr_t_struct
 {
-    int      detachstate;
-    void   * stackaddr;
-    size_t   stacksize;
-}
-pthread_attr_t;
+    int      detachstate;   /*! ... */
+    void   * stackaddr;     /*! ... */
+    size_t   stacksize;     /*! ... */
+};
 
+/*!
+ * @typedef     pthread_attr_t
+ * @brief       ...
+ */
+typedef struct pthread_attr_t_struct pthread_attr_t;
+
+/*!
+ * @def         PTHREAD_MUTEX_INITIALIZER
+ * @brief       ...
+ */
 #define PTHREAD_MUTEX_INITIALIZER   0
 
+/*!
+ * @brief       ...
+ * @result      ...
+ */
 pthread_t pthread_self( void );
 
+/*!
+ * @brief       ...
+ * @result      void
+ */
 void pthread_exit( void * retval );
 
+/*!
+ * @brief       ...
+ * @param       mutex   ...
+ * @param       attr    ...
+ * @result      ...
+ */
 int pthread_mutex_init( pthread_mutex_t * mutex, const pthread_mutexattr_t * attr );
 
+/*!
+ * @brief       ...
+ * @param       mutex   ...
+ * @result      ...
+ */
 int pthread_mutex_destroy( pthread_mutex_t * mutex );
 
+/*!
+ * @brief       ...
+ * @param       mutex   ...
+ * @result      ...
+ */
 int pthread_mutex_lock( pthread_mutex_t * mutex );
 
+/*!
+ * @brief       ...
+ * @param       mutex   ...
+ * @result      ...
+ */
 int pthread_mutex_unlock( pthread_mutex_t * mutex );
 
+/*!
+ * @brief       ...
+ * @param       mutex   ...
+ * @result      ...
+ */
 int pthread_mutex_trylock( pthread_mutex_t * mutex );
     
 #ifdef __cplusplus

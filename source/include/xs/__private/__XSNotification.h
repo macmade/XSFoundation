@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSNotification.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSNotification class definitions
+ * @file        __XSNotification.h
+ * @brief       Private XSNotification class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_NOTIFIATION_H_
@@ -46,45 +46,46 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSNotification
- * @abstract    XSNotification class
- * @field       __class     Runtime class
+ * @struct      __XSNotification_Struct
+ * @brief       XSNotification class
  */
-typedef struct __XSNotification_Struct
+struct __XSNotification_Struct
 {
-    XSRuntimeClass __class;
-    XSObject       object;
-    XSString       name;
-}
-__XSNotification;
+    XSRuntimeClass __class;     /*! Runtime class */
+    XSObject       object;      /*! ... */
+    XSString       name;        /*! ... */
+};
 
 /*!
- * @function    __XSNotification_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSNotification
+ * @brief       XSNotification class type
+ */
+typedef struct __XSNotification_Struct __XSNotification;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSNotification_Initialize( void );
 
 /*!
- * @function    __XSNotification_Destruct
- * @abstract    Destructor
+ * @brief       Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
 void __XSNotification_Destruct( XSObject object );
 
 /*!
- * @function    __XSNotification_ToString
- * @abstract    Object description
+ * @brief       Object description
  * @param       object  A pointer to the object
  * @result      The object's description
  */
 XSString __XSNotification_ToString( XSObject object );
 
 /*!
- * @function    __XSNotification_Copy
- * @abstract    Object copy
- * @param       object  A pointer to the object
+ * @brief       Object copy
+ * @param       source          The source object
+ * @param       destination     The destination object
  * @result      void
  */
 void __XSNotification_Copy( XSObject source, XSObject destination );

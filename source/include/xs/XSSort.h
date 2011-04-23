@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSSort.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Sort functions
+ * @file        XSSort.h
+ * @brief       Sort functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_SORT_H_
@@ -45,8 +45,7 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @function    XSSort
- * @abstract    Sort values using the shell sort algorithm
+ * @brief       Sort values using the shell sort algorithm
  * @param       values  The values to sort
  * @param       type    The type of the values
  * @param       size    The number of values

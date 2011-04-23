@@ -30,13 +30,12 @@
 /* $Id$ */
 
 /*!
- * @header          __arch.h
- * @copyright       eosgarden 2010 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract        EOS-SKL (Source Kit Language) ARM private routines
+ * @file            __arm.h
+ * @brief           EOS-SKL (Source Kit Language) ARM private routines
+ * @author          Jean-David Gadina <macmade@eosgarden.com>
  * @version         4.5.0
- * @availability    2.5.0
- * @updated         $Date$
- * @disucussion     This header file contains the EOS-SKL (Source Kit Language)
+ * @since           2.5.0
+ * @details         This header file contains the EOS-SKL (Source Kit Language)
  *                  private routines for the ARM architecture.
  *                  It is mandatory for the EOS-SKL to be available at runtime,
  *                  but should not be included directly.
@@ -64,9 +63,9 @@ extern "C" {
 #endif
 
 /*!
- * @define          __EOS_SKL_ARCH__
- * @abstract        EOS SKL architecture has been included
- * @availability    0.0.1
+ * @def             __EOS_SKL_ARCH__
+ * @brief           EOS SKL architecture has been included
+ * @since           0.0.1
  */
 #define __EOS_SKL_ARCH__ 45
 

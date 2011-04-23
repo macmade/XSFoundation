@@ -30,12 +30,11 @@
 /* $Id$ */
 
 /*!
- * @header          __machine.h
- * @copyright       eosgarden 2010 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract        EOS-SKL (Source Kit Language) architecture private routines
+ * @file            __machine.h
+ * @brief           EOS-SKL (Source Kit Language) architecture private routines
+ * @author          Jean-David Gadina <macmade@eosgarden.com>
  * @version         4.0.0
- * @availability    2.5.0
- * @updated         $Date$
+ * @since           2.5.0
  */
 
 #ifndef _XS_EOS_SKL_PRIV_MACHINE_H_

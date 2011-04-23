@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSRuntime.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Runtime functions
+ * @file        XSRuntime.h
+ * @brief       Runtime functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_RUNTIME_H_
@@ -46,27 +46,24 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @function    XSRuntime_Initialize
- * @abstract    Initialize the XSFoundation runtime.
- * @description Do not call this function. Use the XSFOUNDATION_START()
+ * @brief       Initialize the XSFoundation runtime.
+ * @details     Do not call this function. Use the XSFOUNDATION_START()
  *              macro instead.
  * @result      void
  */
 void XSRuntime_Initialize( void );
 
 /*!
- * @function    XSRuntime_Finalize
- * @abstract    Finilization the XSFoundation runtime.
- * @description Do not call this function. Use the XSFOUNDATION_END()
+ * @brief       Finilization the XSFoundation runtime.
+ * @details     Do not call this function. Use the XSFOUNDATION_END()
  *              macro instead.
  * @result      void
  */
 void XSRuntime_Finalize( void );
 
 /*!
- * @function    XSRuntime_RegisterClass
- * @abstract    Registers a class for the runtime
- * @description All runtime classes needs to be registered before the runtime
+ * @brief       Registers a class for the runtime
+ * @details     All runtime classes needs to be registered before the runtime
  *              can use them and create instances.
  *              This function needs to be called once per class,
  *              ie using pthread_once().
@@ -76,104 +73,91 @@ void XSRuntime_Finalize( void );
 XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls );
 
 /*!
- * @function    XSRuntime_CreateInstanceOfClass
- * @abstract    Creates a new instance of a class
+ * @brief       Creates a new instance of a class
  * @param       cls     The class structure
  * @result      The allocated instance
  */
 XSObject XSRuntime_CreateInstanceOfClass( const XSClassInfos * const cls );
 
 /*!
- * @function    XSRuntime_CreateInstanceOfClassWithName
- * @abstract    Creates a new instance of a class with a specific name
+ * @brief       Creates a new instance of a class with a specific name
  * @param       name    The name of the class
  * @result      The allocated instance
  */
 XSObject XSRuntime_CreateInstanceOfClassWithName( const char * name );
 
 /*!
- * @function    XSRuntime_CreateInstance
- * @abstract    Creates a new instance of a registered class
+ * @brief       Creates a new instance of a registered class
  * @param       classID The type ID
  * @result      The allocated instance
  */
 XSObject XSRuntime_CreateInstance( XSClassID classID );
 
 /*!
- * @function    XSRuntime_ObjectDescription
- * @abstract    Gets an object's description
+ * @brief       Gets an object's description
  * @param       ptr     The pointer to the object
  * @result      The object's description
  */
 const char * XSRuntime_ObjectDescription( void * ptr );
 
 /*!
- * @function    XSRuntime_IsInstance
- * @abstract    Checks whether a pointer is an object instance
+ * @brief       Checks whether a pointer is an object instance
  * @param       ptr     The pointer to check
  * @result      True if the pointer represents an instance, otherwise false
  */
 BOOL XSRuntime_IsInstance( void * ptr );
 
 /*!
- * @function    XSRuntime_GetClassForClassID
- * @abstract    Gets the class structure for a specific type ID
+ * @brief       Gets the class structure for a specific type ID
  * @param       classID The class ID
  * @result      The class corresponding to the type ID
  */
 XSClass XSRuntime_GetClassForClassID( XSClassID classID );
 
 /*!
- * @function    XSRuntime_GetClassIDForClass
- * @abstract    Gets the type ID for a specific class
- * @param       The class
+ * @brief       Gets the type ID for a specific class
+ * @param       cls     The class
  * @result      The class ID of the class
  */
 XSClassID XSRuntime_GetClassIDForClass( XSClass cls );
 
 /*!
- * @function    XSRuntime_GetClassForObject
- * @abstract    Gets the class for an object
+ * @brief       Gets the class for an object
  * @param       object  The object
  * @result      The object's class
  */
 XSClass XSRuntime_GetClassForObject( XSObject object );
 
 /*!
- * @function    XSRuntime_GetTypeIDForObject
- * @abstract    Gets the class type ID for an object
+ * @brief       Gets the class type ID for an object
  * @param       object  The object
  * @result      The class ID for the object
  */
 XSClassID XSRuntime_GetTypeIDForObject( XSObject object );
 
 /*!
- * @function    XSRuntime_GetClassNameForObject
- * @abstract    Gets the class name for an object
+ * @brief       Gets the class name for an object
  * @param       classID The class ID
  * @result      The name of the class
  */
 const char * XSRuntime_GetClassNameForClassID( XSClassID classID );
 
 /*!
- * @function    XSRuntime_GetClassNameForObject
- * @abstract    Gets the class name for an object
+ * @brief       Gets the class name for an object
  * @param       cls     The class
  * @result      The name of the class
  */
 const char * XSRuntime_GetClassNameForClass( XSClass cls );
 
 /*!
- * @function    XSRuntime_GetClassNameForObject
- * @abstract    Gets the class name for an object
+ * @brief       Gets the class name for an object
  * @param       object  The object
  * @result      The name of the class
  */
 const char * XSRuntime_GetClassNameForObject( XSObject object );
 
 /*!
- * @function    XSRuntime_IsInstanceOfClass
- * @abstract    Checks whether an object is an instance of a class
+ * @brief       Checks whether an object is an instance of a class
  * @param       object  The object
  * @param       cls     The class
  * @result      True if the object is an instance of the class, otherwise false
@@ -181,8 +165,7 @@ const char * XSRuntime_GetClassNameForObject( XSObject object );
 BOOL XSRuntime_IsInstanceOfClass( XSObject object, XSClass cls );
 
 /*!
- * @function    XSRuntime_IsInstanceOfClassName
- * @abstract    Checks whether an object is an instance of a class name
+ * @brief       Checks whether an object is an instance of a class name
  * @param       object  The object
  * @param       name    The name of the class
  * @result      True if the object is an instance of the class name, otherwise false

@@ -31,8 +31,8 @@
 
 /*!
  * @file        XSMemoryDebug.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation of the memory debug functions
+ * @brief       Implementation of the memory debug functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

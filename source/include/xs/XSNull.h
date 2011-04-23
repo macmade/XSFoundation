@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSNull.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSNull class functions
+ * @file        XSNull.h
+ * @brief       XSNull class functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_NULL_H_
@@ -45,13 +45,12 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typedef     XSBag
- * @abstract    Opaque type for the XSBag objects
+ * @brief       Opaque type for the XSBag objects
  */
 typedef struct __XSNull * XSNull;
 
 /*!
- * @function    XSNull_Alloc
- * @abstract    Object allocator
+ * @brief       Object allocator
  * @result      The allocated object
  */
 XSStatic XSObject XSNull_Alloc( void );

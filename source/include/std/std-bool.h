@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      std-bool.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Definition of the boolean datatype
+ * @file        std-bool.h
+ * @brief       Definition of the boolean datatype
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_STD_BOOL_H_
@@ -44,14 +44,43 @@ extern "C" {
 #endif
 
 #ifndef __bool_true_false_are_defined
+    
     #ifdef _Bool
+        
+        /*!
+         * @def         bool
+         * @brief       Boolean data type
+         */
         #define bool                        _Bool
+        
     #else
+        
+        /*!
+         * @def         bool
+         * @brief       Boolean data type
+         */
         #define bool                        char
+        
     #endif
+    
+    /*!
+     * @def         true
+     * @brief       True value
+     */
     #define true                            1
+    
+    /*!
+     * @def         false
+     * @brief       False value
+     */
     #define false                           0
+    
+    /*!
+     * @def         __bool_true_false_are_defined
+     * @brief       Required by the C standard
+     */
     #define __bool_true_false_are_defined   1
+    
 #endif
 
 #ifdef __cplusplus

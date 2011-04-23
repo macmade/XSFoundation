@@ -34,6 +34,16 @@ Once built, you can link with the XSFoundation library:
 A main header file is provided: `XS.h`.
 No other header file should be directly included.
 
+### Source access
+
+XSFoundation is hosted on GitHub: https://github.com/macmade/XSFoundation/
+
+### Documentation
+
+Source code documentation can be found at the following address: http://www.eosgarden.com/doxygen/xsfoundation/
+
+Wiki can be found on GitHub: https://github.com/macmade/XSFoundation/wiki
+
 ### License
 
 XSFoundation is released under the terms of the [Boost][2] Software License - Version 1.0.

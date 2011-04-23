@@ -31,8 +31,8 @@
 
 /*!
  * @file        XSSort.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation of the sort functions
+ * @brief       Implementation of the sort functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

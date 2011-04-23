@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSContants.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    General constants
+ * @file        XSConstants.h
+ * @brief       General constants
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_CONSTANTS_H_

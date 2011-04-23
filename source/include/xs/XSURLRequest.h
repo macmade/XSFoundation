@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSURLRequest.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSURLRequest class functions
+ * @file        XSURLRequest.h
+ * @brief       XSURLRequest class functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_URL_REQUEST_H_
@@ -49,13 +49,12 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typedef     XSURLRequest
- * @abstract    Opaque type for the XSTree objects
+ * @brief       Opaque type for the XSTree objects
  */
 typedef struct __XSURLRequest_Struct * XSURLRequest;
 
 /*!
- * @function    XSURLRequest_Alloc
- * @abstract    Object allocator
+ * @brief       Object allocator
  * @result      The allocated object
  */
 XSStatic XSObject XSURLRequest_Alloc( void );

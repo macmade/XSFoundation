@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSLock.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSLock class definitions
+ * @file        __XSLock.h
+ * @brief       Private XSLock class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_LOCK_H_
@@ -46,44 +46,44 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSLock
- * @abstract    XSLock class
- * @field       __class     Runtime class
+ * @struct      __XSLock_Struct
+ * @brief       XSLock class
  */
-typedef struct __XSLock_Struct
+struct __XSLock_Struct
 {
-    XSRuntimeClass  __class;
-    pthread_mutex_t mutex;
-    BOOL            locked;
-}
-__XSLock;
+    XSRuntimeClass  __class;    /*! Runtime class */
+    pthread_mutex_t mutex;      /*! ... */
+    BOOL            locked;     /*! ... */
+};
 
 /*!
- * @function    __XSLock_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSLock
+ * @brief       XSLock class type
+ */
+typedef struct __XSLock_Struct __XSLock;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSLock_Initialize( void );
 
 /*!
- * @function    __XSLock_Construct
- * @abstract    Constructor
+ * @brief       Constructor
  * @param       object  A pointer to the object
  * @result      void
  */
 void __XSLock_Construct( XSObject object );
 
 /*!
- * @function    __XSLock_Destruct
- * @abstract    Destructor
+ * @brief       Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
 void __XSLock_Destruct( XSObject object );
 
 /*!
- * @function    __XSLock_ToString
- * @abstract    Object description
+ * @brief       Object description
  * @param       object  A pointer to the object
  * @result      The object's description
  */

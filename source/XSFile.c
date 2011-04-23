@@ -31,8 +31,8 @@
 
 /*!
  * @file        XSFile.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation for the XSFile class
+ * @brief       Implementation for the XSFile class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"
@@ -42,19 +42,19 @@ extern XSClassID __XSFileClassID;
 
 /*!
  * @var         __XSSStdin
- * @abstract    XSFile structure representing stdin
+ * @brief       XSFile structure representing stdin
  */
 __XSFile __XSSStdin;
 
 /*!
  * @var         __XSSStdout
- * @abstract    XSFile structure representing srdout
+ * @brief       XSFile structure representing srdout
  */
 __XSFile __XSSStdout;
 
 /*!
  * @var         __XSSStderr
- * @abstract    XSFile structure representing stderr
+ * @brief       XSFile structure representing stderr
  */
 __XSFile __XSSStderr;
 
@@ -62,26 +62,26 @@ static BOOL __XSSTDStreamsInited = NO;
 
 /*!
  * @var         XSStdin
- * @abstract    XSFile object representing stdin
+ * @brief       XSFile object representing stdin
  */
 XSFile XSStdin = ( XSFile )&__XSSStdin;
 
 /*!
  * @var         XSStdout
- * @abstract    XSFile object representing stdout
+ * @brief       XSFile object representing stdout
  */
 XSFile XSSStdout = ( XSFile )&__XSSStderr;
 
 /*!
  * @var         XSStderr
- * @abstract    XSFile object representing stderr
+ * @brief       XSFile object representing stderr
  */
 XSFile XSSStderr = ( XSFile )&__XSSStderr;
 
 /*!
  * @define      __XSFILE_INIT
- * @abstract    File initialization macro
- * @description This is needed for stdin, stdout and sterr, in order to
+ * @brief       File initialization macro
+ * @details     This is needed for stdin, stdout and sterr, in order to
  *              initialize properly XSStdin, XSStdout and XSStderr.
  */
 #define __XSFILE_INIT( f )                      \

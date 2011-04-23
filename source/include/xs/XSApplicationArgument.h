@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSApplicationArgument.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSApplicationArgument class functions
+ * @file        XSApplicationArgument.h
+ * @brief       XSApplicationArgument class functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_APPLICATION_ARGUMENT_H_
@@ -45,38 +45,32 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typedef     XSApplicationArgument
- * @abstract    Opaque type for the XSApplicationArgument objects
+ * @brief       Opaque type for the XSApplicationArgument objects
  */
 typedef struct __XSApplicationArgument_Struct * XSApplicationArgument;
 
 /*!
- * @typedef     XSApplicationArgumentType
- * @abstract    Command line argument types
- * @field       XSApplicationArgumentTypeFlag               Flag type (no value)
- * @field       XSApplicationArgumentTypeInteger            Integer type
- * @field       XSApplicationArgumentTypeUnsignedInteger    Unsigned integer type
- * @field       XSApplicationArgumentTypeString             String type (char pointer)
+ * @enum        XSApplicationArgumentType
+ * @brief       Command line argument types          
  */
 typedef enum
 {
-    XSApplicationArgumentTypeFlag            = 0x00,
-    XSApplicationArgumentTypeInteger         = 0x01,
-    XSApplicationArgumentTypeUnsignedInteger = 0x02,
-    XSApplicationArgumentTypeString          = 0x03,
-    XSApplicationArgumentTypeFloat           = 0x04
+    XSApplicationArgumentTypeFlag            = 0x00,    /*! Flag type (no value) */
+    XSApplicationArgumentTypeInteger         = 0x01,    /*! Integer type */
+    XSApplicationArgumentTypeUnsignedInteger = 0x02,    /*! Unsigned integer type */
+    XSApplicationArgumentTypeString          = 0x03,    /*! String type (char pointer) */
+    XSApplicationArgumentTypeFloat           = 0x04     /*! Float type */
 }
 XSApplicationArgumentType;
 
 /*!
- * @function    XSApplicationArgument_Alloc
- * @abstract    Object allocator
+ * @brief       Object allocator
  * @result      The allocated object
  */
 XSStatic XSApplicationArgument XSApplicationArgument_Alloc( void );
 
 /*!
- * @function    XSApplicationArgument_Init
- * @abstract    Creates a CLI argument object
+ * @brief       Creates a CLI argument object
  * @param       xsThis  The argument object
  * @param       name    The name of the CLI argument, including dashes (- or --)
  * @param       type    The type of the CLI argument
@@ -86,104 +80,95 @@ XSStatic XSApplicationArgument XSApplicationArgument_Alloc( void );
 XSApplicationArgument XSApplicationArgument_Init( XSApplicationArgument xsThis, const char * name, XSApplicationArgumentType type, const char * help );
 
 /*!
- * @function    XSApplicationArgument_GetName
- * @abstract    Gets the name of the CLI argument
+ * @brief       Gets the name of the CLI argument
  * @param       xsThis  The argument object
  * @result      The name of the argument object
  */
 const char * XSApplicationArgument_GetName( XSApplicationArgument xsThis );
 
 /*!
- * @function    XSApplicationArgument_GetHelp
- * @abstract    Gets the help text of the CLI argument
+ * @brief       Gets the help text of the CLI argument
  * @param       xsThis  The argument object
  * @result      The help text of the argument object
  */
 const char * XSApplicationArgument_GetHelp( XSApplicationArgument xsThis );
 
 /*!
- * @function    XSApplicationArgument_GetType
- * @abstract    Gets the type of the CLI argument
+ * @brief       Gets the type of the CLI argument
  * @param       xsThis  The argument object
  * @result      The type of the argument object
  */
 XSApplicationArgumentType XSApplicationArgument_GetType( XSApplicationArgument xsThis );
 
 /*!
- * @function    XSApplicationArgument_SetFlag
- * @abstract    Sets the flag to 'on' for the argument
+ * @brief       Sets the flag to 'on' for the argument
  * @param       xsThis  The argument object
  * @result      void
  */
 void XSApplicationArgument_SetFlag( XSApplicationArgument xsThis );
 
 /*!
- * @function    XSApplicationArgument_SetIntegerValue
- * @abstract    Sets the integer value for the argument
+ * @brief       Sets the integer value for the argument
  * @param       xsThis  The argument object
+ * @param       value   ...
  * @result      void
  */
 void XSApplicationArgument_SetIntegerValue( XSApplicationArgument xsThis, XSInteger value );
 
 /*!
- * @function    XSApplicationArgument_SetUnsignedIntegerValue
- * @abstract    Sets the unsigned integer value for the argument
+ * @brief       Sets the unsigned integer value for the argument
  * @param       xsThis  The argument object
+ * @param       value   ...
  * @result      void
  */
 void XSApplicationArgument_SetUnsignedIntegerValue( XSApplicationArgument xsThis, XSUInteger value );
 
 /*!
- * @function    XSApplicationArgument_SetStringValue
- * @abstract    Sets the string value for the argument
+ * @brief       Sets the string value for the argument
  * @param       xsThis  The argument object
+ * @param       value   ...
  * @result      void
  */
 void XSApplicationArgument_SetStringValue( XSApplicationArgument xsThis, const char * value );
 
 /*!
- * @function    XSApplicationArgument_SetFloatValue
- * @abstract    Sets the float value for the argument
+ * @brief       Sets the float value for the argument
  * @param       xsThis  The argument object
+ * @param       value   ...
  * @result      void
  */
 void XSApplicationArgument_SetFloatValue( XSApplicationArgument xsThis, XSFloat value );
 
 /*!
- * @function    XSApplicationArgument_GetFlag
- * @abstract    Gets the flag state for the argument
+ * @brief       Gets the flag state for the argument
  * @param       xsThis  The argument object
  * @result      A boolean value indicating if the flag is set
  */
 BOOL XSApplicationArgument_GetFlag( XSApplicationArgument xsThis );
 
 /*!
- * @function    XSApplicationArgument_GetIntegerValue
- * @abstract    Gets the integer value for the argument
+ * @brief       Gets the integer value for the argument
  * @param       xsThis  The argument object
  * @result      The argument's integer value
  */
 XSInteger XSApplicationArgument_GetIntegerValue( XSApplicationArgument xsThis );
 
 /*!
- * @function    XSApplicationArgument_GetUnsignedIntegerValue
- * @abstract    Gets the unsigned integer value for the argument
+ * @brief       Gets the unsigned integer value for the argument
  * @param       xsThis  The argument object
  * @result      The argumen'ts unsigned integer value
  */
 XSUInteger XSApplicationArgument_GetUnsignedIntegerValue( XSApplicationArgument xsThis );
 
 /*!
- * @function    XSApplicationArgument_GetStringValue
- * @abstract    Gets the string value for the argument
+ * @brief       Gets the string value for the argument
  * @param       xsThis  The argument object
  * @result      The argument's string value
  */
 const char * XSApplicationArgument_GetStringValue( XSApplicationArgument xsThis );
 
 /*!
- * @function    XSApplicationArgument_GetFloatValue
- * @abstract    Gets the float value for the argument
+ * @brief       Gets the float value for the argument
  * @param       xsThis  The argument object
  * @result      The argument's float value
  */

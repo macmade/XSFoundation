@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSApplication.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSApplication class definitions
+ * @file        __XSApplication.h
+ * @brief       Private XSApplication class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_APPLICATION_H_
@@ -46,56 +46,56 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSApplication
- * @abstract    XSApplication class
- * @field       __class     Runtime class
+ * @struct      __XSApplication_Struct
+ * @brief       XSApplication class
  */
-typedef struct __XSApplication_Struct
+struct __XSApplication_Struct
 {
-    XSRuntimeClass          __class;
-    int                     argc;
-    const char           ** argv;
-    const char            * executable;
-    XSApplicationArgument * args;
-    XSUInteger              arg_count;
-    XSUInteger              arg_alloc;
-}
-__XSApplication;
+    XSRuntimeClass          __class;        /*! Runtime class */
+    int                     argc;           /*! ... */
+    const char           ** argv;           /*! ... */
+    const char            * executable;     /*! ... */
+    XSApplicationArgument * args;           /*! ... */
+    XSUInteger              arg_count;      /*! ... */
+    XSUInteger              arg_alloc;      /*! ... */
+};
 
 /*!
- * @function    __XSApplication_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSApplication
+ * @brief       XSApplication class type
+ */
+typedef struct __XSApplication_Struct __XSApplication;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSApplication_Initialize( void );
 
 /*!
- * @function    __XSApplication_Construct
- * @abstract    Constructor
+ * @brief       Constructor
  * @param       object  A pointer to the object
  * @result      void
  */
 void __XSApplication_Construct( XSObject object );
  
  /*!
- * @function    __XSApplication_Destruct
- * @abstract    Destructor
+ * @brief       Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
 void __XSApplication_Destruct( XSObject object );
 
 /*!
- * @function    __XSApplication_Copy
- * @abstract    Object copy
- * @param       object  A pointer to the object
+ * @brief       Object copy
+ * @param       source          The source object
+ * @param       destination     The destination object
  * @result      void
  */
 void __XSApplication_Copy( XSObject source, XSObject destination );
 
 /*!
- * @function    __XSApplication_ProcessArguments
- * @abstract    Processes the command line arguments
+ * @brief       Processes the command line arguments
  * @param       app     The application object
  * @result      void
  */

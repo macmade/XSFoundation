@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSMemoryDebug.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private memory debug functions
+ * @file        __XSMemoryDebug.h
+ * @brief       Private memory debug functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_MEMORY_DEBUG_H_
@@ -46,69 +46,180 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 #include "__XSMemory.h"
 
+/*!
+ * @struct      __XSMemoryRecord_Struct
+ * @brief       ...
+ */
+struct __XSMemoryRecord_Struct
+{
+    __XSMemoryObject * object;      /*! ... */
+    size_t             size;        /*! ... */
+    size_t             allocID;     /*! ... */
+    XSClassID          classID;     /*! ... */
+    Str255             hash;        /*! ... */
+    BOOL               freed;       /*! ... */
+    const char       * allocFile;   /*! ... */
+    int                allocLine;   /*! ... */
+    const char       * allocFunc;   /*! ... */
+    const char       * freeFile;    /*! ... */
+    int                freeLine;    /*! ... */
+    const char       * freeFunc;    /*! ... */
+};
+
+/*!
+ * @typedef     __XSMemoryRecord
+ * @brief       ...
+ */
+typedef struct __XSMemoryRecord_Struct __XSMemoryRecord;
+
 #if defined( __APPLE__ )
 
 #include <execinfo.h>
+
+/*!
+ * @def     __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+ * @brief   execinfo.h header file is available
+ */
 #define __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
 
 #elif defined( __GLIBC__ ) && defined( HAVE_EXECINFO_H )
 
 #include <execinfo.h>
+
+/*!
+ * @def     __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+ * @brief   execinfo.h header file is available
+ */
 #define __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
 
 #endif
 
+/*!
+ * @def     __XSMEMORY_RECORD_ALLOC
+ * @brief   ...
+ */
 #define __XSMEMORY_RECORD_ALLOC 256
 
-typedef struct __XSMemoryRecord_Struct
-{
-    __XSMemoryObject * object;
-    size_t             size;
-    size_t             allocID;
-    XSClassID          classID;
-    Str255             hash;
-    BOOL               freed;
-    const char       * allocFile;
-    int                allocLine;
-    const char       * allocFunc;
-    const char       * freeFile;
-    int                freeLine;
-    const char       * freeFunc;
-}
-__XSMemoryRecord;
-
+/*!
+ * @brief       ...
+ * @result      void
+ */
 void __XSMemoryDebug_InstallSignalHandlers( void );
 
+/*!
+ * @brief       ...
+ * @param       ptr         ...
+ * @result      ...
+ */
 __XSMemoryRecord * __XSMemoryDebug_GetRecord( __XSMemoryObject * ptr );
 
+/*!
+ * @brief       ...
+ * @param       ptr         ...
+ * @param       file        ...
+ * @param       line        ...
+ * @param       func        ...
+ * @result      ...
+ */
 __XSMemoryRecord * __XSMemoryDebug_NewRecord( __XSMemoryObject * ptr, const char * file, int line, const char * func );
 
+/*!
+ * @brief       ...
+ * @param       oldPtr      ...
+ * @param       newPtr      ...
+ * @param       file        ...
+ * @param       line        ...
+ * @param       func        ...
+ * @result      ...
+ */
 __XSMemoryRecord * __XSMemoryDebug_UpdateRecord( __XSMemoryObject * oldPtr, __XSMemoryObject * newPtr, const char * file, int line, const char * func );
 
+/*!
+ * @brief       ...
+ * @param       ptr         ...
+ * @param       marsAsFree  ...
+ * @param       file        ...
+ * @param       line        ...
+ * @param       func        ...
+ * @result      ...
+ */
 __XSMemoryRecord * __XSMemoryDebug_ReleaseRecord( __XSMemoryObject * ptr, BOOL marsAsFree, const char * file, int line, const char * func );
 
+/*!
+ * @brief       ...
+ * @param       o           ...
+ * @result      ...
+ */
 BOOL __XSMemoryDebug_CheckCorruption( __XSMemoryObject * o );
 
+/*!
+ * @brief       ...
+ * @param       signo       ...
+ * @result      void
+ */
 void __XSMemoryDebug_SignalHandler( int signo ) NORETURN_ATTRIBUTE;
 
+/*!
+ * @brief       ...
+ * @param       message     ...
+ * @param       record      ...
+ * @result      void
+ */
 void __XSMemoryDebug_Warning( const char * message, __XSMemoryRecord * record );
 
+/*!
+ * @brief       ...
+ * @param       record      ...
+ * @result      void
+ */
 void __XSMemoryDebug_PrintRecord( __XSMemoryRecord * record );
 
+/*!
+ * @brief       ...
+ * @param       active      ...
+ * @param       freed       ...
+ * @result      void
+ */
 void __XSMemoryDebug_PrintRecords( BOOL active, BOOL freed );
 
+/*!
+ * @brief       ...
+ * @result      void
+ */
 void __XSMemoryDebug_PrintStatistics( void );
 
+/*!
+ * @brief       ...
+ * @param       record      ...
+ * @result      void
+ */
 void __XSMemoryDebug_AskOption( __XSMemoryRecord * record );
 
+/*!
+ * @brief       ...
+ * @result      void
+ */
 void __XSMemoryDebug_Finalize( void );
 
+/*!
+ * @brief       ...
+ * @param       record      ...
+ * @result      void
+ */
 void __XSMemoryDebug_DumpRecord( __XSMemoryRecord * record );
 
 #if defined( __XS_MEMORY_DEBUG_HAVE_EXECINFO_H ) || defined( _WIN32 )
 
+/*!
+ * @brief       ...
+ * @result      void
+ */
 void __XSMemoryDebug_GetBacktrace( void );
 
+/*!
+ * @brief       ...
+ * @result      void
+ */
 void __XSMemoryDebug_PrintBacktrace( void );
 
 #endif

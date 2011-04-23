@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSHost.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSHost class definitions
+ * @file        __XSHost.h
+ * @brief       Private XSHost class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_HOST_H_
@@ -46,58 +46,58 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSHost
- * @abstract    XSHost class
- * @field       __class     Runtime class
+ * @struct      __XSHost_Struct
+ * @brief       XSHost class
  */
-typedef struct __XSHost_Struct
+struct __XSHost_Struct
 {
-    XSRuntimeClass       __class;
-    XSString             host;
-    XSString             ip;
-    XSUInteger           port;
-    struct addrinfo    * infos;
-    struct addrinfo    * addr;
-    struct sockaddr_in * sock;
-    BOOL                 isCopy;
-}
-__XSHost;
+    XSRuntimeClass       __class;   /*! Runtime class */
+    XSString             host;      /*! ... */
+    XSString             ip;        /*! ... */
+    XSUInteger           port;      /*! ... */
+    struct addrinfo    * infos;     /*! ... */
+    struct addrinfo    * addr;      /*! ... */
+    struct sockaddr_in * sock;      /*! ... */
+    BOOL                 isCopy;    /*! ... */
+};
 
 /*!
- * @function    __XSHost_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSHost
+ * @brief       XSHost class type
+ */
+typedef struct __XSHost_Struct __XSHost;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSHost_Initialize( void );
 
 /*!
- * @function    __XSHost_Construct
- * @abstract    Constructor
+ * @brief       Constructor
  * @param       object  A pointer to the object
  * @result      void
  */
 void __XSHost_Construct( XSObject object );
 
 /*!
- * @function    __XSString_Destruct
- * @abstract    Destructor
+ * @brief       Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
 void __XSHost_Destruct( XSObject object );
 
 /*!
- * @function    __XSHost_ToString
- * @abstract    Object description
+ * @brief       Object description
  * @param       object  A pointer to the object
  * @result      The object's description
  */
 XSString __XSHost_ToString( XSObject object );
 
 /*!
- * @function    __XSHost_Copy
- * @abstract    Object copy
- * @param       object  A pointer to the object
+ * @brief       Object copy
+ * @param       source          The source object
+ * @param       destination     The destination object
  * @result      void
  */
 void __XSHost_Copy( XSObject source, XSObject destination );

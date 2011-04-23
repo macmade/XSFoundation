@@ -31,8 +31,8 @@
 
 /*!
  * @file        __XSTimer.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private implementation for the XSTimer class
+ * @brief       Private implementation for the XSTimer class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"
@@ -40,7 +40,7 @@
 
 /*!
  * @var         __XSTimerClass
- * @abstract    Runtime class definition
+ * @brief       Runtime class definition
  */
 static const XSClassInfos __XSTimerClass =
 {
@@ -56,7 +56,7 @@ static const XSClassInfos __XSTimerClass =
 
 /*!
  * @var         __XSTimerClassID
- * @abstract    Type ID for the runtime class
+ * @brief       Type ID for the runtime class
  */
 XSClassID __XSTimerClassID;
 

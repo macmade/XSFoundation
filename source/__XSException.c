@@ -31,8 +31,8 @@
 
 /*!
  * @file        __XSException.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private implementation for the XSException class
+ * @brief       Private implementation for the XSException class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"
@@ -40,7 +40,7 @@
 
 /*!
  * @var         __XSExceptionClass
- * @abstract    Runtime class definition
+ * @brief       Runtime class definition
  */
 static const XSClassInfos __XSExceptionClass =
 {
@@ -56,7 +56,7 @@ static const XSClassInfos __XSExceptionClass =
 
 /*!
  * @var         __XSExceptionClassID
- * @abstract    Type ID for the runtime class
+ * @brief       Type ID for the runtime class
  */
 XSClassID __XSExceptionClassID;
 

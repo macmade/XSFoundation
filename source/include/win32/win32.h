@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      win32.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Windows compatibility headers
+ * @file        win32.h
+ * @brief       Windows compatibility headers
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_WIN32_H_

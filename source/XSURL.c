@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSURL.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation for the XSURL class
+ * @file        XSURL.c
+ * @brief       Implementation for the XSURL class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

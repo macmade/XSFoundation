@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSThread.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSThread class definitions
+ * @file        __XSThread.h
+ * @brief       Private XSThread class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_THREAD_H_
@@ -46,38 +46,39 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSThread
- * @abstract    XSThread class
- * @field       __class     Runtime class
+ * @struct      __XSThread_Struct
+ * @brief       XSThread class
  */
-typedef struct __XSThread_Struct
+struct __XSThread_Struct
 {
-    XSRuntimeClass __class;
-    XSObject       arg;
-    XSUInteger     tid;
-    void ( * func )( XSThread thread, void * arg );
-}
-__XSThread;
+    XSRuntimeClass __class;                             /*! Runtime class */
+    XSObject       arg;                                 /*! ... */
+    XSUInteger     tid;                                 /*! ... */
+    void ( * func )( XSThread thread, void * arg );     /*! ... */
+};
 
 /*!
- * @function    __XSThread_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSThread
+ * @brief       XSThread class type
+ */
+typedef struct __XSThread_Struct __XSThread;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSThread_Initialize( void );
 
 /*!
- * @function    __XSThread_Equals
- * @abstract    Object comparison
+ * @brief       Object comparison
  * @param       object1 The first object to compare
- * @param       object1 The second object to compare
+ * @param       object2 The second object to compare
  * @result      YES if both objects are equals, otherwise NO
  */
 BOOL __XSThread_Equals( XSObject object1, XSObject object2 );
 
 /*!
- * @function    __XSThread_Run
- * @abstract    Runs a thread
+ * @brief       Runs a thread
  * param        A pointer to the thread object (XSThread)
  * @result      Always NULL
  */

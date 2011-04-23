@@ -31,8 +31,8 @@
 
 /*!
  * @file        __XSNumber.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private implementation for the XSNumber class
+ * @brief       Private implementation for the XSNumber class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"
@@ -40,7 +40,7 @@
 
 /*!
  * @var         __XSNumberClass
- * @abstract    Runtime class definition
+ * @brief       Runtime class definition
  */
 static const XSClassInfos __XSNumberClass =
 {
@@ -56,7 +56,7 @@ static const XSClassInfos __XSNumberClass =
 
 /*!
  * @var         __XSNumberClassID
- * @abstract    Type ID for the runtime class
+ * @brief       Type ID for the runtime class
  */
 XSClassID __XSNumberClassID;
 

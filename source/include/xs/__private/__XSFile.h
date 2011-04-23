@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSFile.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSFile class definitions
+ * @file        __XSFile.h
+ * @brief       Private XSFile class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_FILE_H_
@@ -46,58 +46,47 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSFile
- * @abstract    XSFile class
- * @field       __class     Runtime class
- * @field       fp          The FILE pointer
- * @field       filename    The name of the file
- * @field       mode        The file open mode
- * @field       writeable   Whether the file is writeable
- * @field       readable    Whether the file is readabe
- * @field       is_stdin    Wheter the file represents stdin
- * @field       is_stdout   Wheter the file represents stdout
- * @field       is_stderr   Wheter the file represents stderr
- * @field       bit_buffer  Bit buffer
- * @field       bit_count   Bit count
- * @field       bit_offset  Offset for the bit buffer
- * @field       stat_buf    Stat informations
+ * @struct      __XSFile_Struct
+ * @brief       XSFile class
  */
-typedef struct __XSFile_Struct
+struct __XSFile_Struct
 {
-    XSRuntimeClass __class;
-    FILE         * fp;
-    char           filename[ FILENAME_MAX ];
-    char           mode[ 4 ];
-    BOOL           writeable;
-    BOOL           readable;
-    BOOL           is_stdin;
-    BOOL           is_stdout;
-    BOOL           is_stderr;
-    uint8_t        bit_buffer;
-    uint8_t        bit_count;
-    uint8_t        bit_offset;
-    struct stat    stat_buf;
-}
-__XSFile;
+    XSRuntimeClass __class;                     /*! Runtime class */
+    FILE         * fp;                          /*! The FILE pointer */
+    char           filename[ FILENAME_MAX ];    /*! The name of the file */
+    char           mode[ 4 ];                   /*! The file open mode */
+    BOOL           writeable;                   /*! Whether the file is writeable */
+    BOOL           readable;                    /*! Whether the file is readabe */
+    BOOL           is_stdin;                    /*! Wheter the file represents stdin */
+    BOOL           is_stdout;                   /*! Wheter the file represents stdout */
+    BOOL           is_stderr;                   /*! Wheter the file represents stderr */
+    uint8_t        bit_buffer;                  /*! Bit buffer */
+    uint8_t        bit_count;                   /*! Bit count */
+    uint8_t        bit_offset;                  /*! Offset for the bit buffer */
+    struct stat    stat_buf;                    /*! Stat informations */
+};
 
 /*!
- * @function    __XSFile_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSFile
+ * @brief       XSFile class type
+ */
+typedef struct __XSFile_Struct __XSFile;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSFile_Initialize( void );
 
 /*!
- * @function    __XSFile_WriteAlign
- * @abstract    Aligns and write the bit buffer
+ * @brief       Aligns and write the bit buffer
  * @param       file    The file object
  * @result      void
  */
 void __XSFile_WriteAlign( __XSFile * file );
 
 /*!
- * @function    __XSFile_UpdateStat
- * @abstract    Updates stat informations for the file
+ * @brief       Updates stat informations for the file
  * @param       file    The file object
  * @result      void
  */

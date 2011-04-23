@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSException.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation for the XSException class
+ * @file        XSException.c
+ * @brief       Implementation for the XSException class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

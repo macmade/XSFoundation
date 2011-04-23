@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSApplicationArgument.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSApplicationArgument class definitions
+ * @file        __XSApplicationArgument.h
+ * @brief       Private XSApplicationArgument class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_APPLICATION_ARGUMENT_H_
@@ -46,27 +46,30 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSApplicationArgument
- * @abstract    XSApplicationArgument class
- * @field       __class     Runtime class
+ * @struct      __XSApplicationArgument_Struct
+ * @brief       XSApplicationArgument class
  */
-typedef struct __XSApplicationArgument_Struct
+struct __XSApplicationArgument_Struct
 {
-    XSRuntimeClass __class;
-    const char   * name;
-    XSUInteger     type;
-    XSInteger      int_val;
-    XSUInteger     uint_val;
-    const char   * str_val;
-    BOOL           flag_val;
-    XSFloat        float_val;
-    const char   * help;
-}
-__XSApplicationArgument;
+    XSRuntimeClass __class;     /*! Runtime class */
+    const char   * name;        /*! ... */
+    XSUInteger     type;        /*! ... */
+    XSInteger      int_val;     /*! ... */
+    XSUInteger     uint_val;    /*! ... */
+    const char   * str_val;     /*! ... */
+    BOOL           flag_val;    /*! ... */
+    XSFloat        float_val;   /*! ... */
+    const char   * help;        /*! ... */
+};
 
 /*!
- * @function    __XSApplicationArgument_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSApplicationArgument
+ * @brief       XSApplicationArgument class type
+ */
+typedef struct __XSApplicationArgument_Struct __XSApplicationArgument;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSApplicationArgument_Initialize( void );

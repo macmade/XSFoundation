@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      std-ascii.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ASCII control characters
+ * @file        std-ascii.h
+ * @brief       ASCII control characters
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_STD_ASCII_H_

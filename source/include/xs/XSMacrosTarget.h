@@ -30,10 +30,10 @@
 /* $Id$ */
 
 /*!
- * @header      XSMacrosTarget.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Autoconfiguration of TARGET_ conditionals
- * @description TARGET_CPU_*    
+ * @file        XSMacrosTarget.h
+ * @brief       Autoconfiguration of TARGET_ conditionals
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
+ * @details     TARGET_CPU_*    
  *              These conditionals specify which microprocessor instruction set
  *              is being generated.  At most one of these is true, the rest are
  *              false:

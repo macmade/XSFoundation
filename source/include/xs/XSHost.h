@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSHost.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSHost class functions
+ * @file        XSHost.h
+ * @brief       XSHost class functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_HOST_H_
@@ -47,21 +47,21 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typedef     XSError
- * @abstract    Opaque type for the XSHost objects
+ * @brief       Opaque type for the XSHost objects
  */
 typedef struct __XSHost_Struct * XSHost;
 
 /*!
- * @function    XSHost_Alloc
- * @abstract    Object allocator
+ * @brief       Object allocator
  * @result      The allocated object
  */
 XSStatic XSObject XSHost_Alloc( void );
 
 /*!
- * @function    XSHost_Init
- * @abstract    Creates an error
+ * @brief       Creates an error
  * @param       xsThis  The host object
+ * @param       host    The host name
+ * @param       port    The port number
  * @result      The error object
  */
 XSObject XSHost_Init( XSHost xsThis, XSString host, XSUInteger port );

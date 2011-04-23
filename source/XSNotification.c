@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSNotification.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation for the XSNotification class
+ * @file        XSNotification.c
+ * @brief       Implementation for the XSNotification class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

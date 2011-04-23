@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSMemoryDebug.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Geometry functions
+ * @file        XSMemoryDebug.h
+ * @brief       Memory debug functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_MEMORY_DEBUG_H_

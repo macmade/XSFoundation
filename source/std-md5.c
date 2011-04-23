@@ -21,9 +21,9 @@
 /* $Id$ */
 
 /*!
- * @file        md5.c
- * @copyright   RSA Data Security, Inc.
- * @abstract    Implelemtation of the MD5 hash algorithm
+ * @file        std-md5.c
+ * @brief       Implelemtation of the MD5 hash algorithm
+ * @author      RSA Data Security, Inc.
  */
 
 #include "std/std-md5.h"
@@ -48,37 +48,34 @@
 #define S44     21
 
 /*!
- * @function    __MD5_Transform
- * @abstract    
- * @param       
- * @param       
+ * @brief       ...
+ * @param       state   ...
+ * @param       block   ...
  * @result      void
  */
 static void __MD5_Transform( unsigned long int state[ 4 ], unsigned char block[ 64 ] );
 
 /*!
- * @function    __MD5_Encode
- * @abstract    
- * @param       
- * @param       
- * @param       
+ * @brief       ...
+ * @param       output  ...
+ * @param       input   ...
+ * @param       length  ...
  * @result      void
  */
 static void __MD5_Encode( unsigned char * output, unsigned long int * input, unsigned int length );
 
 /*!
- * @function    __MD5_Decode
- * @abstract    
- * @param       
- * @param       
- * @param       
+ * @brief       ...
+ * @param       output  ...
+ * @param       input   ...
+ * @param       length  ...
  * @result      void
  */
 static void __MD5_Decode( unsigned long int * output, unsigned char * input, unsigned int length );
 
 /*!
  * @var         MD5_PADDING
- * @abstract    
+ * @brief       ...
  */
 static unsigned char MD5_PADDING[ 64 ] =
 {
@@ -92,21 +89,21 @@ static unsigned char MD5_PADDING[ 64 ] =
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 };
 
-/* Basic MD5 functions */
+
 #define F( x, y, z ) ( ( ( x ) & ( y ) ) | ( ( ~x ) & ( z ) ) )
 #define G( x, y, z ) ( ( ( x ) & ( z ) ) | ( ( y ) & ( ~z ) ) )
 #define H( x, y, z ) ( ( x ) ^ ( y ) ^ ( z ) )
 #define I( x, y, z ) ( ( y ) ^ ( ( x ) | ( ~z ) ) )
 
 /*!
- * @define      MD5_ROTATE_LEFT
- * @abstract    Rotates x left n bits
+ * @def         MD5_ROTATE_LEFT
+ * @brief       Rotates x left n bits
  */
 #define MD5_ROTATE_LEFT( x, n ) ( ( ( x ) << ( n ) ) | ( ( x ) >> ( 32 - ( n ) ) ) )
 
 /*!
- * @define      FF
- * @abstract    Transformations for round 1
+ * @def         FF
+ * @brief       Transformations for round 1
  */
 #define FF( a, b, c, d, x, s, ac )                                              \
 {                                                                               \
@@ -116,8 +113,8 @@ static unsigned char MD5_PADDING[ 64 ] =
 }
 
 /*!
- * @define      GG
- * @abstract    Transformations for round 2
+ * @def         GG
+ * @brief       Transformations for round 2
  */
 #define GG( a, b, c, d, x, s, ac )                                              \
 {                                                                               \
@@ -127,8 +124,8 @@ static unsigned char MD5_PADDING[ 64 ] =
 }
 
 /*!
- * @define      HH
- * @abstract    Transformations for round 3
+ * @def         HH
+ * @brief       Transformations for round 3
  */
 #define HH( a, b, c, d, x, s, ac )                                              \
 {                                                                               \
@@ -138,8 +135,8 @@ static unsigned char MD5_PADDING[ 64 ] =
 }
 
 /*!
- * @define      II
- * @abstract    Transformations for round 4
+ * @def         II
+ * @brief       Transformations for round 4
  */
 #define II( a, b, c, d, x, s, ac )                                              \
 {                                                                               \

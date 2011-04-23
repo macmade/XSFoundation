@@ -31,8 +31,8 @@
 
 /*!
  * @file        XSMemory.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation of the memory management functions and implementation for the XSAutoreleasePool class
+ * @brief       Implementation of the memory management functions and implementation for the XSAutoreleasePool class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

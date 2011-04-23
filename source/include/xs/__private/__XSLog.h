@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSLog.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private logging functions
+ * @file        __XSLog.h
+ * @brief       Private logging functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_LOG_H_
@@ -44,9 +44,8 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @function    __XSVLog
- * @abstract    Outputs a log message to stdout
- * @description The log message will be prefixed by the date/time, process
+ * @brief       Outputs a log message to stdout
+ * @details     The log message will be prefixed by the date/time, process
  *              name, ID, and thread ID (or MACH port if available).
  * @param       fmt     The message format
  * @param       args    Arguments for the format
@@ -55,15 +54,13 @@ XS_EXTERN_C_BEGIN
 void __XSVLog( const char * fmt, va_list args ) FORMAT_ATTRIBUTE( printf, 1, 0 );
 
 /*!
- * @function    __XSLog_Pause
- * @abstract    Pauses the log system
+ * @brief       Pauses the log system
  * @result      void
  */
 void __XSLog_Pause( void );
 
 /*!
- * @function    __XSLog_Pause
- * @abstract    Resumes the log system
+ * @brief       Resumes the log system
  * @result      void
  */
 void __XSLog_Resume( void );

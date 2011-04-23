@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSData.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation for the XSData class
+ * @file        XSData.c
+ * @brief       Implementation for the XSData class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      std-c99.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Inclusion of the full C99 header files
+ * @file        std-c99.h
+ * @brief       Inclusion of the full C99 header files
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_STD_C99_H_

@@ -31,8 +31,8 @@
 
 /*!
  * @file        XSLog.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation of the logging functions
+ * @brief       Implementation of the logging functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

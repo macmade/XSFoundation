@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSDictionary.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSDictionary class functions
+ * @file        XSDictionary.h
+ * @brief       XSDictionary class functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_DICTIONARY_H_
@@ -44,35 +44,32 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @define      XSDICTIONARY_DEFAULT_CAPACITY
- * @abstract    Default capacity for the empty dictionaries
+ * @def         XSDICTIONARY_DEFAULT_CAPACITY
+ * @brief       Default capacity for the empty dictionaries
  */
 #define XSDICTIONARY_DEFAULT_CAPACITY    256
 
 /*!
  * @typedef     XSDictionary
- * @abstract    Opaque type for the XSDictionary objects
+ * @brief       Opaque type for the XSDictionary objects
  */
 typedef struct __XSDictionary_Struct * XSDictionary;
 
 /*!
- * @function    __XSDictionary_Alloc
- * @abstract    Object allocator
+ * @brief       Object allocator
  * @result      The allocated object
  */
 XSStatic XSObject XSDictionary_Alloc( void );
 
 /*!
- * @function    XSDictionary_Create
- * @abstract    Creates an empty dictionary
+ * @brief       Creates an empty dictionary
  * @param       xsThis  The dictionary object
  * @result      The new dictionary object
  */
 XSObject XSDictionary_Init( XSObject xsThis );
 
 /*!
- * @function    XSDictionary_InitWithCapacity
- * @abstract    Creates an empty dictionary with an initial capacity
+ * @brief       Creates an empty dictionary with an initial capacity
  * @param       xsThis  The dictionary object
  * @param       capacity    The initial dictionary capacity
  * @result      The new dictionary object
@@ -80,8 +77,7 @@ XSObject XSDictionary_Init( XSObject xsThis );
 XSDictionary XSDictionary_InitWithCapacity( XSDictionary xsThis, XSUInteger capacity );
 
 /*!
- * @function    XSDictionary_InitWithKeysAndValues
- * @abstract    Creates a dictionary with keys and values
+ * @brief       Creates a dictionary with keys and values
  * @param       xsThis  The dictionary object
  * @param       key1    The first key
  * @param       value1  The first value
@@ -91,17 +87,15 @@ XSDictionary XSDictionary_InitWithCapacity( XSDictionary xsThis, XSUInteger capa
 XSDictionary XSDictionary_InitWithKeysAndValues( XSDictionary xsThis, XSString key1, XSObject value1, ... );
 
 /*!
- * @function    XSDictionary_Count
- * @abstract    Gets the number of values in the dictionary
+ * @brief       Gets the number of values in the dictionary
  * @param       xsThis  The dictionary object
  * @result      The number of values in the dictionary
  */
 XSUInteger XSDictionary_Count( XSDictionary xsThis );
 
 /*!
- * @function    XSDictionary_Keys
- * @abstract    Gets an array with all the dictionary keys
- * @description You are responsible to release the array returned by this
+ * @brief       Gets an array with all the dictionary keys
+ * @details     You are responsible to release the array returned by this
  *              function.
  * @param       xsThis  The dictionary object
  * @result      An array containing all the dictionary keys
@@ -109,9 +103,8 @@ XSUInteger XSDictionary_Count( XSDictionary xsThis );
 XSAutoreleased XSArray XSDictionary_Keys( XSDictionary xsThis );
 
 /*!
- * @function    XSDictionary_Keys
- * @abstract    Gets an array with all the dictionary values
- * @description You are responsible to release the array returned by this
+ * @brief       Gets an array with all the dictionary values
+ * @details     You are responsible to release the array returned by this
  *              function.
  * @param       xsThis  The dictionary object
  * @result      An array containing all the dictionary values
@@ -119,8 +112,7 @@ XSAutoreleased XSArray XSDictionary_Keys( XSDictionary xsThis );
 XSAutoreleased XSArray XSDictionary_Values( XSDictionary xsThis );
 
 /*!
- * @function    XSDictionary_ValueForKey
- * @abstract    Gets the value associated with a key
+ * @brief       Gets the value associated with a key
  * @param       xsThis  The dictionary object
  * @param       key     The key
  * @result      THe value, or NULL if the key is not present in the dictionary
@@ -128,8 +120,7 @@ XSAutoreleased XSArray XSDictionary_Values( XSDictionary xsThis );
 XSObject XSDictionary_ValueForKey( XSDictionary xsThis, XSString key );
 
 /*!
- * @function    XSDictionary_SetValueForKey
- * @abstract    Adds a value for a specific key
+ * @brief       Adds a value for a specific key
  * @param       xsThis  The dictionary object
  * @param       value   The value
  * @param       key     The key
@@ -138,8 +129,7 @@ XSObject XSDictionary_ValueForKey( XSDictionary xsThis, XSString key );
 void XSDictionary_SetValueForKey( XSDictionary xsThis, XSObject value, XSString key );
 
 /*!
- * @function    XSDictionary_RemoveValueForKey
- * @abstract    Remove a value for a specific key
+ * @brief       Remove a value for a specific key
  * @param       xsThis  The dictionary object
  * @param       key     The key
  * @result      The removed value
@@ -147,8 +137,7 @@ void XSDictionary_SetValueForKey( XSDictionary xsThis, XSObject value, XSString 
 XSAutoreleased XSObject  XSDictionary_RemoveValueForKey( XSDictionary xsThis, XSString key );
 
 /*!
- * @function    XSDictionary_KeyExists
- * @abstract    Checks if the dictionary contains a specific key
+ * @brief       Checks if the dictionary contains a specific key
  * @param       xsThis  The dictionary object
  * @param       value   The key to search
  * @result      YES if the dictionary contains the key, otherwise NO
@@ -156,8 +145,7 @@ XSAutoreleased XSObject  XSDictionary_RemoveValueForKey( XSDictionary xsThis, XS
 BOOL XSDictionary_KeyExists( XSDictionary xsThis, XSString value );
 
 /*!
- * @function    XSDictionary_ContainsValue
- * @abstract    Checks if the dictionary contains a specific value
+ * @brief       Checks if the dictionary contains a specific value
  * @param       xsThis  The dictionary object
  * @param       value   The value to search
  * @result      YES if the dictionary contains the value, otherwise NO

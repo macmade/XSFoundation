@@ -21,9 +21,9 @@
 /* $Id$ */
 
 /*!
- * @header      md5.h
- * @copyright   RSA Data Security, Inc.
- * @abstract    MD5 hash algorithm
+ * @file        std-md5.h
+ * @brief       MD5 hash algorithm
+ * @author      RSA Data Security, Inc.
  */
 
 #ifndef _XS_STD_MD5_H_
@@ -35,49 +35,48 @@ extern "C" {
 #endif
 
 /*!
- * @define      MD5_DIGEST_LENGTH
- * @abstract    The length of a MD5 digest
+ * @def         MD5_DIGEST_LENGTH
+ * @brief       The length of a MD5 digest
  */
 #define MD5_DIGEST_LENGTH   16
 
 /*!
- * @typedef     MD5_CTX
- * @abstract    MD5 context
- * @field       state       State (ABCD)
- * @field       count       Number of bits, modulo 2^64 (LSB first)
- * @field       buffer      Input buffer
+ * @struct      MD5_CTX_Struct
+ * @brief       MD5 context structure
  */
-typedef struct
+struct MD5_CTX_Struct
 {
-    unsigned long int state[ 4 ];
-    unsigned long int count[ 2 ];
-    unsigned char     buffer[ 64 ];
-}
-MD5_CTX;
+    unsigned long int state[ 4 ];       /*! < State (ABCD) */
+    unsigned long int count[ 2 ];       /*! < Number of bits, modulo 2^64 (LSB first) */
+    unsigned char     buffer[ 64 ];     /*! < Input buffer */
+};
 
 /*!
- * @function    MD5_Init
- * @abstract    
- * @param       
+ * @typedef     MD5_CTX
+ * @brief       MD5 context
+ */
+typedef struct MD5_CTX_Struct MD5_CTX;
+
+/*!
+ * @brief       ...
+ * @param       context     ...
  * @result      void
  */
 void MD5_Init( MD5_CTX * context );
 
 /*!
- * @function    MD5_Update
- * @abstract    
- * @param       
- * @param       
- * @param       
+ * @brief       ...
+ * @param       context     ...
+ * @param       data        ...
+ * @param       length      ...
  * @result      void
  */
 void MD5_Update( MD5_CTX * context, unsigned char * data, unsigned int length );
 
 /*!
- * @function    MD5_Final
- * @abstract    
- * @param       
- * @param       
+ * @brief       ...
+ * @param       digest      ...
+ * @param       context     ...
  * @result      void
  */
 void MD5_Final( unsigned char digest[ 16 ], MD5_CTX * context );

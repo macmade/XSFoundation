@@ -31,8 +31,8 @@
 
 /*!
  * @file        __XSMemory.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private implementation for the memory functions and the XSAutoreleasePoll class
+ * @brief       Private implementation for the memory functions and the XSAutoreleasePoll class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"
@@ -41,19 +41,19 @@
 
 /*!
  * @var         __xsmemory_ar_pools
- * @abstract    An array with the auto-release pool objects
+ * @brief       An array with the auto-release pool objects
  */
 __XSAutoreleasePool * __xsmemory_ar_pools[ XS_MEMORY_MAX_AR_POOLS ];
 
 /*!
  * @var         __xsmemory_ar_pools_num
- * @abstract    The number of active auto-release pool objects
+ * @brief       The number of active auto-release pool objects
  */
 XSUInteger __xsmemory_ar_pools_num;
 
 /*!
  * @var         __XSAutoreleasePoolClass
- * @abstract    Runtime class definition
+ * @brief       Runtime class definition
  */
 static const XSClassInfos __XSAutoreleasePoolClass =
 {
@@ -69,7 +69,7 @@ static const XSClassInfos __XSAutoreleasePoolClass =
 
 /*!
  * @var         __XSAutoreleasePoolClassID
- * @abstract    Type ID for the runtime class
+ * @brief       Type ID for the runtime class
  */
 XSClassID __XSAutoreleasePoolClassID;
 

@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSURLRequest.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSURLRequest class definitions
+ * @file        __XSURLRequest.h
+ * @brief       Private XSURLRequest class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_URL_REQUEST_H_
@@ -46,49 +46,50 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSURLRequest
- * @abstract    XSURLRequest class
- * @field       __class     Runtime class
+ * @struct      __XSURLRequest_Struct
+ * @brief       XSURLRequest class
  */
-typedef struct __XSURLRequest_Struct
+struct __XSURLRequest_Struct
 {
-    XSRuntimeClass __class;
-    XSURL          url;
-    XSHost         host;
-    XSInteger      socket;
-    XSString       status;
-    XSDictionary   headers;
-    XSData         data;
-    BOOL           started;
-}
-__XSURLRequest;
+    XSRuntimeClass __class;     /*! Runtime class */
+    XSURL          url;         /*! ... */
+    XSHost         host;        /*! ... */
+    XSInteger      socket;      /*! ... */
+    XSString       status;      /*! ... */
+    XSDictionary   headers;     /*! ... */
+    XSData         data;        /*! ... */
+    BOOL           started;     /*! ... */
+};
 
 /*!
- * @function    __XSURLRequest_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSURLRequest
+ * @brief       XSURLRequest class type
+ */
+typedef struct __XSURLRequest_Struct __XSURLRequest;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSURLRequest_Initialize( void );
 
 /*!
- * @function    __XSURLRequest_Construct
- * @abstract    Constructor
+ * @brief       Constructor
  * @param       object  A pointer to the object
  * @result      void
  */
 void __XSURLRequest_Construct( XSObject object );
 
 /*!
- * @function    __XSURLRequest_Copy
- * @abstract    Object copy
- * @param       object  A pointer to the object
+ * @brief       Object copy
+ * @param       source          The source object
+ * @param       destination     The destination object
  * @result      void
  */
 void __XSURLRequest_Copy( XSObject source, XSObject destination );
 
 /*!
- * @function    __XSString_Destruct
- * @abstract    Destructor
+ * @brief       Destructor
  * @param       object  A pointer to the object
  * @result      void
  */

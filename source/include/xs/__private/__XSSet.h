@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSSet.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSSet class definitions
+ * @file        __XSSet.h
+ * @brief       Private XSSet class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_SET_H_
@@ -46,48 +46,49 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSSet
- * @abstract    XSSet class
- * @field       __class     Runtime class
+ * @struct      __XSSet_Struct
+ * @brief       XSSet class
  */
-typedef struct __XSSet_Struct
+struct __XSSet_Struct
 {
-    XSRuntimeClass __class;
-    XSObject      * values;
-    XSUInteger     count;
-    XSUInteger     capacity;
-    XSUInteger     initialCapacity;
-    XSUInteger     cur;
-}
-__XSSet;
+    XSRuntimeClass __class;             /*! Runtime class */
+    XSObject      * values;             /*! ... */
+    XSUInteger     count;               /*! ... */
+    XSUInteger     capacity;            /*! ... */
+    XSUInteger     initialCapacity;     /*! ... */
+    XSUInteger     cur;                 /*! ... */
+};
 
 /*!
- * @function    __XSSet_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSSet
+ * @brief       XSSet class type
+ */
+typedef struct __XSSet_Struct __XSSet;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSSet_Initialize( void );
 
 /*!
- * @function    __XSSet_Destruct
- * @abstract    Destructor
+ * @brief       Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
 void __XSSet_Destruct( XSObject object );
 
 /*!
- * @function    __XSSet_ToString
- * @abstract    Object description
+ * @brief       Object description
  * @param       object  A pointer to the object
  * @result      The object's description
  */
 XSString __XSSet_ToString( XSObject object );
 
 /*!
- * @function    __XSSet_Copy
- * @abstract    Object copy
- * @param       object  A pointer to the object
+ * @brief       Object copy
+ * @param       source          The source object
+ * @param       destination     The destination object
  * @result      void
  */
 void __XSSet_Copy( XSObject source, XSObject destination );

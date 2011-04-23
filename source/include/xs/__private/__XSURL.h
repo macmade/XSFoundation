@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSURL.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSURL class definitions
+ * @file        __XSURL.h
+ * @brief       Private XSURL class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_URL_H_
@@ -46,59 +46,59 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSURL
- * @abstract    XSURL class
- * @field       __class     Runtime class
+ * @struct      __XSURL_Struct
+ * @brief       XSURL class
  */
-typedef struct __XSURL_Struct
+struct __XSURL_Struct
 {
-    XSRuntimeClass __class;
-    XSString       scheme;
-    XSString       domain;
-    XSUInteger     port;
-    XSString       path;
-    XSString       query;
-    XSString       fragment;
-}
-__XSURL;
+    XSRuntimeClass __class;     /*! Runtime class */
+    XSString       scheme;      /*! ... */
+    XSString       domain;      /*! ... */
+    XSUInteger     port;        /*! ... */
+    XSString       path;        /*! ... */
+    XSString       query;       /*! ... */
+    XSString       fragment;    /*! ... */
+};
 
 /*!
- * @function    __XSURL_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSURL
+ * @brief       XSURL class type
+ */
+typedef struct __XSURL_Struct __XSURL;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSURL_Initialize( void );
 
 /*!
- * @function    __XSString_Destruct
- * @abstract    Destructor
+ * @brief       Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
 void __XSURL_Destruct( XSObject object );
 
 /*!
- * @function    __XSURL_Copy
- * @abstract    Object copy
- * @param       object  A pointer to the object
+ * @brief       Object copy
+ * @param       source          The source object
+ * @param       destination     The destination object
  * @result      void
  */
 void __XSURL_Copy( XSObject source, XSObject destination );
 
 
 /*!
- * @function    __XSBool_ToString
- * @abstract    Object description
+ * @brief       Object description
  * @param       object  A pointer to the object
  * @result      The object's description
  */
 XSString __XSURL_ToString( XSObject object );
 
 /*!
- * @function    __XSBool_Equals
- * @abstract    Object comparison
+ * @brief       Object comparison
  * @param       object1 The first object to compare
- * @param       object1 The second object to compare
+ * @param       object2 The second object to compare
  * @result      YES if both objects are equals, otherwise NO
  */
 BOOL __XSURL_Equals( XSObject object1, XSObject object2 );

@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      std-bitwise.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Bitwise operations
+ * @file        std-bitwise.h
+ * @brief       Bitwise operations
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_STD_BITWISE_
@@ -43,10 +43,34 @@
 extern "C" {
 #endif
 
+/*!
+ * @def         BITWISE_FLAG
+ * @brief       Flags a specific bit
+ */
 #define BITWISE_FLAG( x )       (   1   <<  ( x ) )
+
+/*!
+ * @def         BITWISE_SET
+ * @brief       Sets a specific bit
+ */
 #define BITWISE_SET( v, f )     ( ( v ) |=  ( f ) )
+
+/*!
+ * @def         BITWISE_CLEAR
+ * @brief       Clears a specific bit
+ */
 #define BITWISE_CLEAR( v, f )   ( ( v ) &= ~( f ) )
+
+/*!
+ * @def         BITWISE_ISSET
+ * @brief       Tests for a specific bit
+ */
 #define BITWISE_ISSET( v, f )   ( ( v ) &   ( f ) )
+
+/*!
+ * @def         BITWISE_TOGGLE
+ * @brief       Toggles a specific bit
+ */
 #define BITWISE_TOGGLE( v, f )  ( ( v ) ^=  ( f ) )
 
 #ifdef __cplusplus

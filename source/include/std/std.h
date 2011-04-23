@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      std.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    C standardization
+ * @file        std.h
+ * @brief       C standardization
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_STD_H__

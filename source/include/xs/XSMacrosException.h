@@ -32,14 +32,14 @@
 /*******************************************************************************
  * Copyright notice:
  * 
- * Macros parts of this code (XSTry, XSCatch, ...) are borrowed from the CExcept
- * project (http://www.nicemice.net/cexcept/), by Adam M. Costello.
+ * Some macros parts of this code (XSTry, XSCatch, ...) are borrowed from the
+ * CExcept project (http://www.nicemice.net/cexcept/), by Adam M. Costello.
  ******************************************************************************/
 
 /*!
- * @header      XSMacrosException.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Exception macros
+ * @file        XSMacrosException.h
+ * @brief       Exception macros
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_MACROS_EXCEPTION_H_

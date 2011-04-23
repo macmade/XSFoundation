@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSSort.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private sort functions
+ * @file        __XSSort.h
+ * @brief       Private sort functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_SORT_H_
@@ -45,19 +45,116 @@ XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
+/*!
+ * @brief   ...
+ * @param   values  The values to sort
+ * @param   size    The number of values
+ * @return  void
+ */
 void __XSShellSortChar( char * values, XSUInteger size );
+
+/*!
+ * @brief   ...
+ * @param   values  The values to sort
+ * @param   size    The number of values
+ * @return  void
+ */
 void __XSShellSortUChar( unsigned char * values, XSUInteger size );
+
+/*!
+ * @brief   ...
+ * @param   values  The values to sort
+ * @param   size    The number of values
+ * @return  void
+ */
 void __XSShellSortShort( short * values, XSUInteger size );
+
+/*!
+ * @brief   ...
+ * @param   values  The values to sort
+ * @param   size    The number of values
+ * @return  void
+ */
 void __XSShellSortUShort( unsigned short * values, XSUInteger size );
+
+/*!
+ * @brief   ...
+ * @param   values  The values to sort
+ * @param   size    The number of values
+ * @return  void
+ */
 void __XSShellSortInt( int * values, XSUInteger size );
+
+/*!
+ * @brief   ...
+ * @param   values  The values to sort
+ * @param   size    The number of values
+ * @return  void
+ */
 void __XSShellSortUInt( unsigned int * values, XSUInteger size );
+
+/*!
+ * @brief   ...
+ * @param   values  The values to sort
+ * @param   size    The number of values
+ * @return  void
+ */
 void __XSShellSortLong( long * values, XSUInteger size );
+
+/*!
+ * @brief   ...
+ * @param   values  The values to sort
+ * @param   size    The number of values
+ * @return  void
+ */
 void __XSShellSortULong( unsigned long * values, XSUInteger size );
+
+/*!
+ * @brief   ...
+ * @param   values  The values to sort
+ * @param   size    The number of values
+ * @return  void
+ */
 void __XSShellSortLongLong( long long * values, XSUInteger size );
+
+/*!
+ * @brief   ...
+ * @param   values  The values to sort
+ * @param   size    The number of values
+ * @return  void
+ */
 void __XSShellSortULongLong( unsigned long long * values, XSUInteger size );
+
+/*!
+ * @brief   ...
+ * @param   values  The values to sort
+ * @param   size    The number of values
+ * @return  void
+ */
 void __XSShellSortFloat( float * values, XSUInteger size );
+
+/*!
+ * @brief   ...
+ * @param   values  The values to sort
+ * @param   size    The number of values
+ * @return  void
+ */
 void __XSShellSortDouble( double * values, XSUInteger size );
+
+/*!
+ * @brief   ...
+ * @param   values  The values to sort
+ * @param   size    The number of values
+ * @return  void
+ */
 void __XSShellSortInteger( XSInteger * values, XSUInteger size );
+
+/*!
+ * @brief   ...
+ * @param   values  The values to sort
+ * @param   size    The number of values
+ * @return  void
+ */
 void __XSShellSortUInteger( XSUInteger * values, XSUInteger size );
 
 XS_EXTERN_C_END

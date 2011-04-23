@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSNotificationCenter.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation for the XSNotificationCenter class
+ * @file        XSNotificationCenter.c
+ * @brief       Implementation for the XSNotificationCenter class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

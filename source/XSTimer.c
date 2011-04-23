@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSTree.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation for the XSTree class
+ * @file        XSTree.c
+ * @brief       Implementation for the XSTree class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

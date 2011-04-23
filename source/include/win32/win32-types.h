@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      sys-types.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Definition of POSIX system types for Windows
+ * @file        win32-types.h
+ * @brief       Definition of POSIX system types for Windows
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_WIN32_SYS_TYPES_H_
@@ -45,11 +45,40 @@ extern "C" {
 
 #include <stdint.h>
 
+/*!
+ * @typedef     useconds_t
+ * @brief       ...
+ */
 typedef uint64_t useconds_t;
+
+/*!
+ * @typedef     nlink_t
+ * @brief       ...
+ */
 typedef uint32_t nlink_t;
+
+/*!
+ * @typedef     pid_t
+ * @brief       ...
+ */
 typedef uint32_t pid_t;
+
+/*!
+ * @typedef     uid_t
+ * @brief       ...
+ */
 typedef uint32_t uid_t;
+
+/*!
+ * @typedef     gid_t
+ * @brief       ...
+ */
 typedef uint32_t gid_t;
+
+/*!
+ * @typedef     dev_t
+ * @brief       ...
+ */
 typedef uint32_t dev_t;
 
 #ifdef __cplusplus

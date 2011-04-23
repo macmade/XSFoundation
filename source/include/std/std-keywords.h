@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      std-keywords.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Standard compiant keywords
+ * @file        std-keywords.h
+ * @brief       Standard compiant keywords
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_STD_KEYWORDS_H_
@@ -46,11 +46,23 @@ extern "C" {
 #ifndef __GNUC__
     
     #ifndef __asm__
+        
+        /*!
+         * @def         __asm__
+         * @brief       ...
+         */
         #define __asm__     asm
+        
     #endif
     
     #ifndef __inline__
+        
+        /*!
+         * @def         __inline__
+         * @brief       ...
+         */
         #define __inline__  inline
+        
     #endif
     
 #endif

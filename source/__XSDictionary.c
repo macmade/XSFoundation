@@ -31,8 +31,8 @@
 
 /*!
  * @file        __XSDictionary.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private implementation for the XSDictionary class
+ * @brief       Private implementation for the XSDictionary class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"
@@ -40,7 +40,7 @@
 
 /*!
  * @var         __XSDictionaryClass
- * @abstract    Runtime class definition
+ * @brief       Runtime class definition
  */
 static const XSClassInfos __XSDictionaryClass =
 {
@@ -56,7 +56,7 @@ static const XSClassInfos __XSDictionaryClass =
 
 /*!
  * @var         __XSDictionaryClassID
- * @abstract    Type ID for the runtime class
+ * @brief       Type ID for the runtime class
  */
 XSClassID __XSDictionaryClassID;
 

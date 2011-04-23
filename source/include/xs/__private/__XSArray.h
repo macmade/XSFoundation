@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSArray.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSArray class definitions
+ * @file        __XSArray.h
+ * @brief       Private XSArray class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_ARRAY_H_
@@ -46,52 +46,49 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSArray
- * @abstract    XSArray class
- * @field       __class     Runtime class
- * @field       count       Number of elements in the array
- * @field       capacity    Initial capacity of the array
- * @field       cur         Index of the current value
- * @field       values      Array values
+ * @struct      __XSArray_Struct
+ * @brief       XSArray class
  */
-typedef struct __XSArray_Struct
+struct __XSArray_Struct
 {
-    XSRuntimeClass __class;
-    XSUInteger     count;
-    XSUInteger     capacity;
-    XSUInteger     initialCapacity;
-    XSUInteger     cur;
-    XSObject     * values;
-}
-__XSArray;
+    XSRuntimeClass __class;             /*! Runtime class */
+    XSUInteger     count;               /*! Number of elements in the array */
+    XSUInteger     capacity;            /*! Current array capacity */
+    XSUInteger     initialCapacity;     /*! Initial capacity of the array */
+    XSUInteger     cur;                 /*! Index of the current value */
+    XSObject     * values;              /*! Array values */
+};
 
 /*!
- * @function    __XSArray_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSArray
+ * @brief       XSArray class type
+ */
+typedef struct __XSArray_Struct __XSArray;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSArray_Initialize( void );
 
 /*!
- * @function    __XSArray_Destruct
- * @abstract    Destructor
+ * @brief       Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
 void __XSArray_Destruct( XSObject object );
 
 /*!
- * @function    __XSArray_ToString
- * @abstract    Object description
+ * @brief       Object description
  * @param       object  A pointer to the object
  * @result      The object's description
  */
 XSString __XSArray_ToString( XSObject object );
 
 /*!
- * @function    __XSArray_Copy
- * @abstract    Object copy
- * @param       object  A pointer to the object
+ * @brief       Object copy
+ * @param       source          The source object
+ * @param       destination     The destination object
  * @result      void
  */
 void __XSArray_Copy( XSObject source, XSObject destination );

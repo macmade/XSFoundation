@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      usleep.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Micro-seconds sleep function
+ * @file        win32-usleep.h
+ * @brief       Micro-seconds sleep function
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_WIN32_USLEEP_H_
@@ -45,6 +45,11 @@ extern "C" {
 
 #include "win32-types.h"
 
+/*!
+ * @brief       ...
+ * @param       usec    ...
+ * @result      ...
+ */
 int usleep( useconds_t usec );
 
 #ifdef __cplusplus

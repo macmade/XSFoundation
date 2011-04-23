@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSURL.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSURL class functions
+ * @file        XSURL.h
+ * @brief       XSURL class functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_URL_H_
@@ -45,13 +45,12 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typedef     XSTimer
- * @abstract    Opaque type for the XSTree objects
+ * @brief       Opaque type for the XSTree objects
  */
 typedef struct __XSURL_Struct * XSURL;
 
 /*!
- * @function    XSTimer_Alloc
- * @abstract    Object allocator
+ * @brief       Object allocator
  * @result      The allocated object
  */
 XSStatic XSObject XSURL_Alloc( void );

@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSBool.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSBool class definitions
+ * @file        __XSBool.h
+ * @brief       Private XSBool class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_BOOL_H_
@@ -46,37 +46,38 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSBool
- * @abstract    XSBool class
- * @field       __class     Runtime class
+ * @struct      __XSBool_Struct
+ * @brief       XSBool class
  */
-typedef struct __XSBool_Struct
+struct __XSBool_Struct
 {
-    XSRuntimeClass __class;
-    BOOL           value;
-}
-__XSBool;
+    XSRuntimeClass __class; /* Runtime class */
+    BOOL           value;   /* Boolean value */
+};
 
 /*!
- * @function    __XSBool_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSBool
+ * @brief       XSBool class type
+ */
+typedef struct __XSBool_Struct __XSBool;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSBool_Initialize( void );
 
 /*!
- * @function    __XSBool_ToString
- * @abstract    Object description
+ * @brief       Object description
  * @param       object  A pointer to the object
  * @result      The object's description
  */
 XSString __XSBool_ToString( XSObject object );
 
 /*!
- * @function    __XSBool_Equals
- * @abstract    Object comparison
+ * @brief       Object comparison
  * @param       object1 The first object to compare
- * @param       object1 The second object to compare
+ * @param       object2 The second object to compare
  * @result      YES if both objects are equals, otherwise NO
  */
 BOOL __XSBool_Equals( XSObject object1, XSObject object2 );

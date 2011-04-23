@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSDictionary.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation for the XSDictionary class
+ * @file        XSDictionary.c
+ * @brief       Implementation for the XSDictionary class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

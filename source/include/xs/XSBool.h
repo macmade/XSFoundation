@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSBool.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSBool class functions
+ * @file        XSBool.h
+ * @brief       XSBool class functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_BOOL_H_
@@ -45,13 +45,12 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typedef     XSBool
- * @abstract    Opaque type for the XSTree objects
+ * @brief       Opaque type for the XSTree objects
  */
 typedef struct __XSBool * XSBool;
 
 /*!
- * @function    XSBoole_Alloc
- * @abstract    Object allocator
+ * @brief       Object allocator
  * @result      The allocated object
  */
 XSStatic XSObject XSBool_Alloc( void );

@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSApplicationArgument.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation for the XSApplicationArgument class
+ * @file        XSApplicationArgument.c
+ * @brief       Implementation for the XSApplicationArgument class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSBTree.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSBTree class functions
+ * @file        XSBTree.h
+ * @brief       XSBTree class functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_BTREE_H_
@@ -45,13 +45,12 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typedef     XSBTree
- * @abstract    Opaque type for the XSBTree objects
+ * @brief       Opaque type for the XSBTree objects
  */
 typedef struct __XSBTree * XSBTree;
 
 /*!
- * @function    XSBTree_Alloc
- * @abstract    Object allocator
+ * @brief       Object allocator
  * @result      The allocated object
  */
 XSStatic XSObject XSBTree_Alloc( void );

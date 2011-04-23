@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSNotificationCenter.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSNotificationCenter class functions
+ * @file        XSNotificationCenter.h
+ * @brief       XSNotificationCenter class functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_NOTIFIATION_CENTER_H_
@@ -47,35 +47,31 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typedef     XSNotificationCenter
- * @abstract    Opaque type for the XSNotificationCenter objects
+ * @brief       Opaque type for the XSNotificationCenter objects
  */
 typedef struct __XSNotificationCenter * XSNotificationCenter;
 
 /*!
- * @function    XSNotificationCenter_Alloc
- * @abstract    Object allocator
+ * @brief       Object allocator
  * @result      The allocated object
  */
 XSStatic XSObject XSNotificationCenter_Alloc( void );
 
 /*!
- * @function    XSNotificationCenter_Init
- * @abstract    Creates a notification center
+ * @brief       Creates a notification center
  * @param       xsThis  The notification center
  * @result      The notification center
  */
 XSObject XSNotificationCenter_Init( XSObject xsThis );
 
 /*!
- * @function    XSNotificationCenter_DefaultCenter
- * @abstract    Gets the default notification center
+ * @brief       Gets the default notification center
  * @result      The default notification center
  */
 XSStatic XSAutoreleased XSNotificationCenter XSNotificationCenter_DefaultCenter( void );
 
 /*!
- * @function    XSNotificationCenter_AddObserver
- * @abstract    Adds an observer attached to an object
+ * @brief       Adds an observer attached to an object
  * @param       xsThis              The notification center
  * @param       object              The object to watch
  * @param       notificationName    The notification name
@@ -85,8 +81,7 @@ XSStatic XSAutoreleased XSNotificationCenter XSNotificationCenter_DefaultCenter(
 void XSNotificationCenter_AddObserver( XSNotificationCenter xsThis, XSObject object, XSString notificationName, void ( * func )( XSNotification notification ) );
 
 /*!
- * @function    XSNotificationCenter_PostNotification
- * @abstract    Posts a notification
+ * @brief       Posts a notification
  * @param       xsThis              The notification center
  * @param       object              The object from which the notification is post
  * @param       notificationName    The notification name

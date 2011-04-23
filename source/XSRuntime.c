@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSRuntime.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation of the runtime functions
+ * @file        XSRuntime.c
+ * @brief       Implementation of the runtime functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"
@@ -41,38 +41,38 @@
 
 /*!
  * define       __XS_RUNTIME_CLASS_TABLE_SIZE
- * @abstract    Default allocation size for the runtime class table
+ * @brief       Default allocation size for the runtime class table
  */
 #define __XS_RUNTIME_CLASS_TABLE_SIZE   1024
 
 /*!
  * define       __XS___XS_RUNTIME_INIT_CHECK_INIT_CHECK
- * @abstract    Checks if the runtime has been initialized
- * @description This macro will produce a fatal error if the runtime has not been initialized.
+ * @brief       Checks if the runtime has been initialized
+ * @details     This macro will produce a fatal error if the runtime has not been initialized.
  */
 #define __XS___XS_RUNTIME_INIT_CHECK_INIT_CHECK         if( __inited == NO ) { XSFatalError( "Error: the runtime has not been initialized\n" ) }
 
 /*!
  * @var         __inited
- * @abstract    Whether the XSFoundation runtime has been initialized
+ * @brief       Whether the XSFoundation runtime has been initialized
  */
 static BOOL __inited = NO;
 
 /*!
  * @var         __class_table
- * @abstract    The runtime class table
+ * @brief       The runtime class table
  */
 static XSClassInfos ** __class_table;
 
 /*!
  * @var         __class_size
- * @abstract    The allocated size of the runtime class table
+ * @brief       The allocated size of the runtime class table
  */
 static size_t __class_size;
 
 /*!
  * @var         __class_count
- * @abstract    The number of registered classes in the runtime class table
+ * @brief       The number of registered classes in the runtime class table
  */
 static size_t __class_count;
 

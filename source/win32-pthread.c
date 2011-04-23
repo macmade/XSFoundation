@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @file        pthreads.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    POSIX thread functions for Windows
+ * @file        win32-pthreads.c
+ * @brief       POSIX thread functions for Windows
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

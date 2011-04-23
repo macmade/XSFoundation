@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSNULL.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSNull class definitions
+ * @file        __XSNULL.h
+ * @brief       Private XSNull class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_NULL_H_
@@ -46,28 +46,30 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSNull
- * @abstract    XSNull class
- * @field       _xsbase     Runtime class
+ * @struct      __XSNull_Struct
+ * @brief       XSNull class
  */
-typedef struct __XSNull_Struct
+struct __XSNull_Struct
 {
-    XSRuntimeClass __class;
-}
-__XSNull;
+    XSRuntimeClass __class;     /*! Runtime class */
+};
 
 /*!
- * @function    __XSNull_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSNull
+ * @brief       XSNull class type
+ */
+typedef struct __XSNull_Struct __XSNull;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSNull_Initialize( void );
 
 /*!
- * @function    __XSString_Equals
- * @abstract    Object comparison
+ * @brief       Object comparison
  * @param       object1 The first object to compare
- * @param       object1 The second object to compare
+ * @param       object2 The second object to compare
  * @result      YES if both objects are equals, otherwise NO
  */
 BOOL __XSNull_Equals( XSObject object1, XSObject object2 );

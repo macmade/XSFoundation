@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      stat.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Stat functions for windows
+ * @file        win32-stat.h
+ * @brief       Stat functions for windows
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_WIN32_STAT_H_
@@ -43,39 +43,204 @@
 extern "C" {
 #endif
 
+/*!
+ * @def         S_IFMT
+ * @brief       ...
+ */
 #define S_IFMT      0
+
+/*!
+ * @def         S_IFBLK
+ * @brief       ...
+ */
 #define S_IFBLK     0
+
+/*!
+ * @def         S_IFMT
+ * @brief       ...
+ */
 #define S_IFMT      0
+
+/*!
+ * @def         S_IFCHR
+ * @brief       ...
+ */
 #define S_IFCHR     0
+
+/*!
+ * @def         S_IFMT
+ * @brief       ...
+ */
 #define S_IFMT      0
+
+/*!
+ * @def         S_IFIFO
+ * @brief       ...
+ */
 #define S_IFIFO     0
+
+/*!
+ * @def         S_IFMT
+ * @brief       ...
+ */
 #define S_IFMT      0
+
+/*!
+ * @def         S_IFREG
+ * @brief       ...
+ */
 #define S_IFREG     0
+
+/*!
+ * @def         S_IFMT
+ * @brief       ...
+ */
 #define S_IFMT      0
+
+/*!
+ * @def         S_IFLNK
+ * @brief       ...
+ */
 #define S_IFLNK     0
+
+/*!
+ * @def         S_IFMT
+ * @brief       ...
+ */
 #define S_IFMT      0
+
+/*!
+ * @def         S_IFSOCK
+ * @brief       ...
+ */
 #define S_IFSOCK    0
+
+/*!
+ * @def         S_IRWXU
+ * @brief       ...
+ */
 #define S_IRWXU     0
+
+/*!
+ * @def         S_IRUSR
+ * @brief       ...
+ */
 #define S_IRUSR     0
+
+/*!
+ * @def         S_IRWXU
+ * @brief       ...
+ */
 #define S_IRWXU     0
+
+/*!
+ * @def         S_IWUSR
+ * @brief       ...
+ */
 #define S_IWUSR     0
+
+/*!
+ * @def         S_IRWXU
+ * @brief       ...
+ */
 #define S_IRWXU     0
+
+/*!
+ * @def         S_IXUSR
+ * @brief       ...
+ */
 #define S_IXUSR     0
+
+/*!
+ * @def         S_IRWXG
+ * @brief       ...
+ */
 #define S_IRWXG     0
+
+/*!
+ * @def         S_IRGRP
+ * @brief       ...
+ */
 #define S_IRGRP     0
+
+/*!
+ * @def         S_IRWXG
+ * @brief       ...
+ */
 #define S_IRWXG     0
+
+/*!
+ * @def         S_IWGRP
+ * @brief       ...
+ */
 #define S_IWGRP     0
+
+/*!
+ * @def         S_IRWXG
+ * @brief       ...
+ */
 #define S_IRWXG     0
+
+/*!
+ * @def         S_IXGRP
+ * @brief       ...
+ */
 #define S_IXGRP     0
+
+/*!
+ * @def         S_IRWXO
+ * @brief       ...
+ */
 #define S_IRWXO     0
+
+/*!
+ * @def         S_IROTH
+ * @brief       ...
+ */
 #define S_IROTH     0
+
+/*!
+ * @def         S_IRWXO
+ * @brief       ...
+ */
 #define S_IRWXO     0
+
+/*!
+ * @def         S_IWOTH
+ * @brief       ...
+ */
 #define S_IWOTH     0
+
+/*!
+ * @def         S_IRWXO
+ * @brief       ...
+ */
 #define S_IRWXO     0
+
+/*!
+ * @def         S_IXOTH
+ * @brief       ...
+ */
 #define S_IXOTH     0
+
+/*!
+ * @def         S_ISUID
+ * @brief       ...
+ */
 #define S_ISUID     0
+
+/*!
+ * @def         S_ISGID
+ * @brief       ...
+ */
 #define S_ISGID     0
 
+/*!
+ * @brief       ...
+ * @param       path    ...
+ * @param       buf     ...
+ * @result      ...
+ */
 int stat( const char * path, struct stat * buf );
 
 #ifdef __cplusplus

@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSArray.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSColor class definitions
+ * @file        __XSColor.h
+ * @brief       Private XSColor class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_COLOR_H_
@@ -46,74 +46,71 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSColor
- * @abstract    XSColor class
- * @field       __class     Runtime class
+ * @struct      __XSColor_Struct
+ * @brief       XSColor class
  */
-typedef struct __XSColor_Struct
+struct __XSColor_Struct
 {
-    XSRuntimeClass __class;
-    XSFloat        red;
-    XSFloat        green;
-    XSFloat        blue;
-    XSFloat        hue;
-    XSFloat        saturation;
-    XSFloat        value;
-    XSFloat        luminance;
-    XSFloat        alpha;
-}
-__XSColor;
+    XSRuntimeClass __class;     /*! Runtime class */
+    XSFloat        red;         /*! ... */
+    XSFloat        green;       /*! ... */
+    XSFloat        blue;        /*! ... */
+    XSFloat        hue;         /*! ... */
+    XSFloat        saturation;  /*! ... */
+    XSFloat        value;       /*! ... */
+    XSFloat        luminance;   /*! ... */
+    XSFloat        alpha;       /*! ... */
+};
 
 /*!
- * @function    __XSColor_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSColor
+ * @brief       XSColor class type
+ */
+typedef struct __XSColor_Struct __XSColor;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSColor_Initialize( void );
 
 /*!
- * @function    __XSColor_RGBToHSL
- * @abstract    Converts the RGB components to HSV
+ * @brief       Converts the RGB components to HSV
  * @param       color   The color object
  * @result      void
  */
 void __XSColor_RGBToHSL( __XSColor * color );
 
 /*!
- * @function    __XSColor_RGBToHSV
- * @abstract    Converts the RGB components to HSL
+ * @brief       Converts the RGB components to HSL
  * @param       color   The color object
  * @result      void
  */
 void __XSColor_RGBToHSV( __XSColor * color );
 
 /*!
- * @function    __XSColor_HSVToRGB
- * @abstract    Converts the HSV components to RGB
+ * @brief       Converts the HSV components to RGB
  * @param       color   The color object
  * @result      void
  */
 void __XSColor_HSVToRGB( __XSColor * color );
 
 /*!
- * @function    __XSColor_HSVToHSL
- * @abstract    Converts the HSV components to HSL
+ * @brief       Converts the HSV components to HSL
  * @param       color   The color object
  * @result      void
  */
 void __XSColor_HSVToHSL( __XSColor * color );
 
 /*!
- * @function    __XSColor_HSLToRGB
- * @abstract    Converts the HSL components to RGB
+ * @brief       Converts the HSL components to RGB
  * @param       color   The color object
  * @result      void
  */
 void __XSColor_HSLToRGB( __XSColor * color );
 
 /*!
- * @function    __XSColor_HSLToHSV
- * @abstract    Converts the HSL components to HSV
+ * @brief       Converts the HSL components to HSV
  * @param       color   The color object
  * @result      void
  */

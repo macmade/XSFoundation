@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSNumber.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSNumber class definitions
+ * @file        __XSNumber.h
+ * @brief       Private XSNumber class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_NUMBER_H_
@@ -63,53 +63,54 @@ XS_EXTERN_C_BEGIN
 #define __XSNUMBER_TYPE_ALL         0x7FFF
 
 /*!
- * @typdef      __XSNumber
- * @abstract    XSNumber class
- * @field       __class     Runtime class
+ * @struct      __XSNumber_Struct
+ * @brief       XSNumber class
  */
-typedef struct __XSNumber_Struct
+struct __XSNumber_Struct
 {
-    XSRuntimeClass      __class;
-    uint16_t            types;
-    BOOL                boolValue;
-    signed char         sCharValue;
-    unsigned char       uCharValue;
-    signed short        sShortValue;
-    unsigned short      uShortValue;
-    signed int          sIntValue;
-    unsigned int        uIntValue;
-    signed long         sLongValue;
-    unsigned long       uLongValue;
-    signed long long    sLongLongValue;
-    unsigned long long  uLongLongValue;
-    float               floatValue;
-    double              doubleValue;
-    XSInteger           sIntegerValue;
-    XSUInteger          uIntegerValue;
+    XSRuntimeClass      __class;            /*! Runtime class */
+    uint16_t            types;              /*! ... */
+    BOOL                boolValue;          /*! ... */
+    signed char         sCharValue;         /*! ... */
+    unsigned char       uCharValue;         /*! ... */
+    signed short        sShortValue;        /*! ... */
+    unsigned short      uShortValue;        /*! ... */
+    signed int          sIntValue;          /*! ... */
+    unsigned int        uIntValue;          /*! ... */
+    signed long         sLongValue;         /*! ... */
+    unsigned long       uLongValue;         /*! ... */
+    signed long long    sLongLongValue;     /*! ... */
+    unsigned long long  uLongLongValue;     /*! ... */
+    float               floatValue;         /*! ... */
+    double              doubleValue;        /*! ... */
+    XSInteger           sIntegerValue;      /*! ... */
+    XSUInteger          uIntegerValue;      /*! ... */
     
-}
-__XSNumber;
+};
 
 /*!
- * @function    __XSNumber_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSNumber
+ * @brief       XSNumber class type
+ */
+typedef struct __XSNumber_Struct __XSNumber;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSNumber_Initialize( void );
 
 /*!
- * @function    __XSNumber_ToString
- * @abstract    Object description
+ * @brief       Object description
  * @param       object  A pointer to the object
  * @result      The object's description
  */
 XSString __XSNumber_ToString( XSObject object );
 
 /*!
- * @function    __XSNumber_Equals
- * @abstract    Object comparison
+ * @brief       Object comparison
  * @param       object1 The first object to compare
- * @param       object1 The second object to compare
+ * @param       object2 The second object to compare
  * @result      YES if both objects are equals, otherwise NO
  */
 BOOL __XSNumber_Equals( XSObject object1, XSObject object2 );

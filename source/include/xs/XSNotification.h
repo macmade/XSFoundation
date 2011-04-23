@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSNotification.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSNotification class functions
+ * @file        XSNotification.h
+ * @brief       XSNotification class functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_NOTIFIATION_H_
@@ -45,36 +45,32 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typedef     XSNotification
- * @abstract    Opaque type for the XSNotification objects
+ * @brief       Opaque type for the XSNotification objects
  */
 typedef struct __XSNotification * XSNotification;
 
 /*!
- * @function    XSNotification_Alloc
- * @abstract    Object allocator
+ * @brief       Object allocator
  * @result      The allocated object
  */
 XSStatic XSObject XSNotification_Alloc( void );
 
 /*!
- * @function    XSNotification_Init
- * @abstract    Creates a notification object
+ * @brief       Creates a notification object
  * @param       xsThis  The notification object
  * @result      The notification object
  */
 XSObject XSNotification_Init( XSObject xsThis );
 
 /*!
- * @function    XSNotification_GetObject
- * @abstract    Gets the notification's represented object
+ * @brief       Gets the notification's represented object
  * @param       xsThis  The notification object
  * @result      The notification's represented object
  */
 XSObject XSNotification_GetObject( XSNotification xsThis );
 
 /*!
- * @function    XSNotification_GetObject
- * @abstract    Sets the notification's represented object
+ * @brief       Sets the notification's represented object
  * @param       xsThis  The notification object
  * @param       object  The notification's represented object
  * @result      void
@@ -82,16 +78,14 @@ XSObject XSNotification_GetObject( XSNotification xsThis );
 void XSNotification_SetObject( XSNotification xsThis, XSObject object );
 
 /*!
- * @function    XSNotification_Init
- * @abstract    Gets the notification name
+ * @brief       Gets the notification name
  * @param       xsThis  The notification object
  * @result      The notification name
  */
 XSString XSNotification_GetName( XSNotification xsThis );
 
 /*!
- * @function    XSNotification_Init
- * @abstract    Sets the notification name
+ * @brief       Sets the notification name
  * @param       xsThis  The notification object
  * @param       name    The notification name
  * @result      void

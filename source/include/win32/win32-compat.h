@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      compat.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Compatibility macros and functions for Windows
+ * @file        win32-compat.h
+ * @brief       Compatibility macros and functions for Windows
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_WIN32_COMPAT_H_
@@ -47,13 +47,15 @@ extern "C" {
 #ifndef _CRT_SECURE_NO_WARNINGS
 
 /*!
- * @define      _CRT_SECURE_NO_WARNINGS
- * @abstract    Do not warn about stupid Microsoft "security enhancements"
- * @discussion  Microsoft provides "security" enhanced version of standard
- *              C library functions, like sprintf, intended to prevent buffer
- *              overflows. Defining this macro turns off thos annoying
- *              warnings in VisualStudio. If you don't know what you are
- *              doing, then keep on coding C# or Java.
+ * @def         _CRT_SECURE_NO_WARNINGS
+ * @brief       Do not warn about stupid Microsoft "security enhancements"
+ * @details     Microsoft provides "security" enhanced version of standard
+ *              C library functions, like sprintf, (with xxx_s counterparts),
+ *              intended to prevent buffer overflows. Defining this macro turns
+ *              off those annoying warnings in VisualStudio.
+ *              Those "enhancements" won't prevent a buffer overflow anyway.
+ *              If you don't know what you are doing, then keep on coding in
+ *              C# or Java.
  */
 #define _CRT_SECURE_NO_WARNINGS
 

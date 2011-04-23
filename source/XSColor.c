@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSColor.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation for the XSColor class
+ * @file        XSColor.c
+ * @brief       Implementation for the XSColor class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"
@@ -166,12 +166,6 @@ XSFloat XSColor_GetRed( XSColor xsThis )
     return ( ( __XSColor * )xsThis )->red;
 }
 
-/*!
- * @function    XSColor_GetGreen
- * @abstract    Get the green component
- * @param       color   The color object
- * @result      The green component
- */
 XSFloat XSColor_GetGreen( XSColor xsThis )
 {
     if( xsThis == NULL )
@@ -222,12 +216,6 @@ XSFloat XSColor_GetLuminance( XSColor xsThis )
     return ( ( __XSColor * )xsThis )->luminance;
 }
 
-/*!
- * @function    XSColor_GetValue
- * @abstract    Get the value component
- * @param       color   The color object
- * @result      The value component
- */
 XSFloat XSColor_GetValue( XSColor xsThis )
 {
     if( xsThis == NULL )

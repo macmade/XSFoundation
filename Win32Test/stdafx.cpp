@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      stdafx.cpp
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @file        stdafx.cpp
+ * @brief       Proceompiled header for the Win32 test
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "stdafx.h"

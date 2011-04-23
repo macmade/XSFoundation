@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      string.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Definition of the non-standard string functions
+ * @file        std-string.h
+ * @brief       Definition of the non-standard string functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _STDC_STD_EXTRAS_STRING_H_
@@ -48,9 +48,8 @@ extern "C" {
 #if !defined( _WIN32 ) && !defined( _WIN64 )
 
 /*!
- * @function    itoa
- * @abstract    Converts an integer to a string
- * @description Converts an integer value to a null-terminated string using the
+ * @brief       Converts an integer to a string
+ * @details     Converts an integer value to a null-terminated string using the
  *              specified base and stores the result in the array given by str
  *              parameter.
  *              If base is 10 and value is negative, the resulting string is
@@ -69,9 +68,8 @@ void itoa( int n, char s[], int radix );
 #endif
 
 /*!
- * @function    utoa
- * @abstract    Converts an unsigned integer to a string
- * @description Converts an unsigned integer value to a null-terminated string
+ * @brief       Converts an unsigned integer to a string
+ * @details     Converts an unsigned integer value to a null-terminated string
  *              using the specified base and stores the result in the array
  *              given by str parameter.
  *              If base is 10 and value is negative, the resulting string is
@@ -88,9 +86,8 @@ void itoa( int n, char s[], int radix );
 void utoa( unsigned int n, char s[], int radix );
 
 /*!
- * @function    strrstr
- * @abstract    Locate substring
- * @description Returns a pointer to the last occurrence of str2 in str1, or a
+ * @brief       Locate substring
+ * @details     Returns a pointer to the last occurrence of str2 in str1, or a
  *              null pointer if str2 is not part of str1.
  *              The matching process does not include the terminating
  *              null-characters.

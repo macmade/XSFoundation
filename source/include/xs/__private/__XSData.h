@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSData.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSData class definitions
+ * @file        __XSData.h
+ * @brief       Private XSData class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_DATA_H_
@@ -46,47 +46,48 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSData
- * @abstract    XSData class
- * @field       __class     Runtime class
+ * @struct      __XSData_Struct
+ * @brief       XSData class
  */
-typedef struct __XSData_Struct
+struct __XSData_Struct
 {
-    XSRuntimeClass __class;
-    UInt8        * bytes;
-    XSUInteger     length;
-    XSUInteger     capacity;
-    XSUInteger     initialCapacity;
-}
-__XSData;
+    XSRuntimeClass __class;         /*! Runtime class */
+    UInt8        * bytes;           /*! ... */
+    XSUInteger     length;          /*! ... */
+    XSUInteger     capacity;        /*! ... */
+    XSUInteger     initialCapacity; /*! ... */
+};
 
 /*!
- * @function    __XSData_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSData
+ * @brief       XSData class type
+ */
+typedef struct __XSData_Struct __XSData;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSData_Initialize( void );
 
 /*!
- * @function    __XSData_Destruct
- * @abstract    Destructor
+ * @brief       Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
 void __XSData_Destruct( XSObject object );
 
 /*!
- * @function    __XSData_ToString
- * @abstract    Object description
+ * @brief       Object description
  * @param       object  A pointer to the object
  * @result      The object's description
  */
 XSString __XSData_ToString( XSObject object );
 
 /*!
- * @function    __XSData_Copy
- * @abstract    Object copy
- * @param       object  A pointer to the object
+ * @brief       Object copy
+ * @param       source          The source object
+ * @param       destination     The destination object
  * @result      void
  */
 void __XSData_Copy( XSObject source, XSObject destination );

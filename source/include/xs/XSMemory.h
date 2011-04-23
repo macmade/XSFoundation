@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSMemory.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Memory management functions and XSAutoreleasePool class functions
+ * @file        XSMemory.h
+ * @brief       Memory management functions and XSAutoreleasePool class functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_MEMORY_H_
@@ -47,21 +47,19 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typedef     XSAutoreleasePool
- * @abstract    Opaque type for the XSAutoreleasePool objects
+ * @brief       Opaque type for the XSAutoreleasePool objects
  */
 typedef struct __XSAutoreleasePool_Struct * XSAutoreleasePool;
 
 /*!
- * @function    XSAutoreleasePool_Alloc
- * @abstract    Object allocator
+ * @brief       Object allocator
  * @result      The allocated object
  */
 XSStatic XSObject XSAutoreleasePool_Alloc( void );
 
 /*!
- * @function    XSAutoreleasePool_Init
- * @abstract    Creates a new auto-release pool
- * @description The newly created pool will be set as the active one, meaning
+ * @brief       Creates a new auto-release pool
+ * @details     The newly created pool will be set as the active one, meaning
  *              objects auto-released after the pool creation will be placed
  *              inside it.
  * @result      The new auto-release pool object
@@ -69,26 +67,23 @@ XSStatic XSObject XSAutoreleasePool_Alloc( void );
 XSObject XSAutoreleasePool_Init( XSObject xsThis );
 
 /*!
- * @function    XSAutoreleasePool_Drain
- * @abstract    Removes objects from the current auto-release pool, sending the a release message.
+ * @brief       Removes objects from the current auto-release pool, sending the a release message.
  * @result      void
  */
 XSStatic void XSAutoreleasePool_Drain( void );
 
 /*!
- * @define      XSAlloc
- * @abstract    Allocates memory
+ * @def         XSAlloc
+ * @brief       Allocates memory
  * descriton    Returned pointer will have to be passed to the XSRelease
  *              function in order to be free.
- * @param       size    The number of bytes to allocate
  * @param       ...     Reserved for internal runtime use
  * @result      A pointer to the allocated memory
  */
 #define XSAlloc( ... ) XSAllocWithInfos( __FILE__, __LINE__, __func__, __VA_ARGS__ )
 
 /*!
- * @function    XSAllocWithInfos
- * @abstract    Allocates memory
+ * @brief       Allocates memory
  * description  This function is used for internal memory debugging. Do not
  *              call it directly. Use XSAlloc instead.
  * @param       file    The file name
@@ -101,8 +96,8 @@ XSStatic void XSAutoreleasePool_Drain( void );
 void * XSAllocWithInfos( const char * file, int line, const char * func, size_t size, ... );
 
 /*!
- * @define      XSRealloc
- * @abstract    Reallocates memory
+ * @def         XSRealloc
+ * @brief       Reallocates memory
  * @param       ptr     The pointer to reallocate
  * @param       size    The new size in bytes
  * @result      The new pointer to the reallocated memory
@@ -110,8 +105,7 @@ void * XSAllocWithInfos( const char * file, int line, const char * func, size_t 
 #define XSRealloc( ptr, size ) XSReallocWithInfos( __FILE__, __LINE__, __func__, ptr, size )
 
 /*!
- * @function    XSReallocWithInfos
- * @abstract    Reallocates memory
+ * @brief       Reallocates memory
  * description  This function is used for internal memory debugging. Do not
  *              call it directly. Use XSRealloc instead.
  * @param       file    The file name
@@ -124,9 +118,8 @@ void * XSAllocWithInfos( const char * file, int line, const char * func, size_t 
 void * XSReallocWithInfos( const char * file, int line, const char * func, void * ptr, size_t size );
 
 /*!
- * @function    XSRetain
- * @abstract    Retains a memory pointer, preventing it to be freed
- * @description When retaining an object, the internal retain count is
+ * @brief       Retains a memory pointer, preventing it to be freed
+ * @details     When retaining an object, the internal retain count is
  *              incremented. It means you own an object that you retain, and
  *              that you are responsible to release it using XSRelease.
  * @param       ptr     The pointer to retain
@@ -135,9 +128,9 @@ void * XSReallocWithInfos( const char * file, int line, const char * func, void 
 void * XSRetain( void * ptr );
 
 /*!
- * @define      XSRelease
- * @abstract    Releases a memory pointer
- * @description When releasing an object, the internal retain count is
+ * @def         XSRelease
+ * @brief       Releases a memory pointer
+ * @details     When releasing an object, the internal retain count is
  *              decremented. When it reaches 0, the pointer will be
  *              automatically freed.
  * @param       ptr     The pointer to release
@@ -146,8 +139,7 @@ void * XSRetain( void * ptr );
 #define XSRelease( ptr ) XSReleaseWithInfos( __FILE__, __LINE__, __func__, ptr )
 
 /*!
- * @function    XSRelease
- * @abstract    Releases a memory pointer
+ * @brief       Releases a memory pointer
  * description  This function is used for internal memory debugging. Do not
  *              call it directly. Use XSRelease instead.
  * @param       file    The file name
@@ -159,20 +151,19 @@ void * XSRetain( void * ptr );
 void * XSReleaseWithInfos( const char * file, int line, const char * func, void * ptr );
 
 /*!
- * @function    XSAutorelease
- * @abstract    Marks a memory pointer as auto-releasable
- * @description The pointer will be placed in the instance of the current
+ * @brief       Marks a memory pointer as auto-releasable
+ * @details     The pointer will be placed in the instance of the current
  *              auto-release pool, and will receive a release message the next
  *              the auto-release pool is drained.
- * @param       The memory pointer to mark as auto-releasable
+ * @param       ptr     The memory pointer to mark as auto-releasable
  * @result      The pointer passed, to allow function chaining
  */
 void * XSAutorelease( void * ptr );
 
 /*!
- * @function    XSAutoAlloc
- * @abstract    Allocates auto-releasable memory
- * @description When using this function, the object will automatically receive
+ * @def         XSAutoAlloc
+ * @brief       Allocates auto-releasable memory
+ * @details     When using this function, the object will automatically receive
  *              a release message the next time the current auto-release pool
  *              is drained. It means you don't own it, and that you are not
  *              responsible to release it explicitely.
@@ -182,8 +173,7 @@ void * XSAutorelease( void * ptr );
 #define XSAutoAlloc( size ) XSAutoAllocWithInfos( __FILE__, __LINE__, __func__, size )
 
 /*!
- * @function    XSAutoAlloc
- * @abstract    Allocates auto-releasable memory
+ * @brief       Allocates auto-releasable memory
  * description  This function is used for internal memory debugging. Do not
  *              call it directly. Use XSAutoAlloc instead.
  * @param       file    The file name
@@ -195,9 +185,9 @@ void * XSAutorelease( void * ptr );
 void * XSAutoAllocWithInfos( const char * file, int line, const char * func, size_t size );
 
 /*!
- * @function    XSCopy
- * @abstract    Copies a pointer
- * @description This function executes a soft-copy. When using a structure with
+ * @def         XSCopy
+ * @brief       Copies a pointer
+ * @details     This function executes a soft-copy. When using a structure with
  *              pointers, only the first level is copied.
  *              Note that you are responsible to release the copied pointer
  *              by using the XSRelease function.
@@ -207,8 +197,7 @@ void * XSAutoAllocWithInfos( const char * file, int line, const char * func, siz
 #define XSCopy( ptr ) XSCopyWithInfos( __FILE__, __LINE__, __func__, ptr )
 
 /*!
- * @function    XSCopy
- * @abstract    Copies a pointer
+ * @brief       Copies a pointer
  * description  This function is used for internal memory debugging. Do not
  *              call it directly. Use XSCopy instead.
  * @param       file    The file name
@@ -220,8 +209,7 @@ void * XSAutoAllocWithInfos( const char * file, int line, const char * func, siz
 void * XSCopyWithInfos( const char * file, int line, const char * func, void * ptr );
 
 /*!
- * @function    XSEquals
- * @abstract    Compares two pointers/objects
+ * @brief       Compares two pointers/objects
  * @param       ptr1    The first pointer/object
  * @param       ptr2    The second pointer/object
  * @result      True if the two pointers/objects are equals, otherwise false
@@ -229,24 +217,21 @@ void * XSCopyWithInfos( const char * file, int line, const char * func, void * p
 BOOL XSEquals( void * ptr1, void * ptr2 );
 
 /*!
- * @function    XSHash
- * @abstract    Hashes a pointer/object
+ * @brief       Hashes a pointer/object
  * @param       ptr     The pointer/object to hash
  * @result      The hash of the pointer/object
  */
 const char * XSHash( void * ptr );
 
 /*!
- * @function    XSGetRetainCount
- * @abstract    Gets the retain count for a pointer
+ * @brief       Gets the retain count for a pointer
  * @param       ptr     The pointer
  * @result      The retain count
  */
 XSUInteger XSGetRetainCount( void * ptr );
 
 /*!
- * @function    XSGetAllocationNumber
- * @abstract    Gets the number of memory allocations
+ * @brief       Gets the number of memory allocations
  * @result      The number of memory allocations
  */
 size_t XSGetAllocationCount( void );

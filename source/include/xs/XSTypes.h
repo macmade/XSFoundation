@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    
+ * @file        XSTypes.h
+ * @brief       XSFoundation data-types
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_TYPES_H_
@@ -101,186 +101,212 @@ typedef UInt32                  UTF32Char;
 
 #if __LP64__
     
+    /*!
+     * @def     XSInteger
+     * @brief   ...
+     */
     typedef long          XSInteger;
+    
+    /*!
+     * @def     XSUInteger
+     * @brief   ...
+     */
     typedef unsigned long XSUInteger;
+    
+    /*!
+     * @def     XSFloat
+     * @brief   ...
+     */
     typedef double        XSFloat;
     
 #else
     
+    /*!
+     * @def     XSInteger
+     * @brief   ...
+     */
     typedef int          XSInteger;
+    
+    /*!
+     * @def     XSUInteger
+     * @brief   ...
+     */
     typedef unsigned int XSUInteger;
+    
+    /*!
+     * @def     XSFloat
+     * @brief   ...
+     */
     typedef float        XSFloat;
     
 #endif
 
 /*!
- * @typedef     XSPoint
- * @abstract    Point data-type
- * @field       x   The X coordinate of the point
- * @field       y   The Y coordinate of the point
+ * @typedef     XSPoint_Struct
+ * @brief       Point data-type structure
  */
-typedef struct XSPoint_Struct
+struct XSPoint_Struct
 {
-    XSFloat x;
-    XSFloat y;
-}
-XSPoint;
+    XSFloat x;      /*! The X coordinate of the point */
+    XSFloat y;      /*! The Y coordinate of the point */
+};
+
+/*!
+ * @typedef     XSPoint
+ * @brief       Point data-type
+ */
+typedef struct XSPoint_Struct XSPoint;
+
+/*!
+ * @typedef     XSSize_Struct
+ * @brief       Size data-type structure
+ */
+struct XSSize_Struct
+{
+    XSFloat width;      /*! The width of the size */
+    XSFloat height;     /*! The height of the size */
+};
 
 /*!
  * @typedef     XSSize
- * @abstract    Size data-type
- * @field       width   The width of the size
- * @field       height  The height of the size
+ * @brief       Size data-type
  */
-typedef struct XSSize_Struct
+typedef struct XSSize_Struct XSSize;
+
+/*!
+ * @typedef     XSRect_Struct
+ * @brief       Rectangle data-type structure
+ */
+struct XSRect_Struct
 {
-    XSFloat width;
-    XSFloat height;
-}
-XSSize;
+    XSPoint origin;     /*! The origin point of the rectangle */
+    XSSize  size;       /*! The size of the rectangle */
+};
 
 /*!
  * @typedef     XSRect
- * @abstract    Rectangle data-type
- * @field       origin  The origin point of the rectangle
- * @field       size    The size of the rectangle
+ * @brief       Rectangle data-type
  */
-typedef struct _XSRect
+typedef struct XSRect_Struct XSRect;
+
+/*!
+ * @typedef     XSRange_Struct 
+ * @brief       Range data-type structure
+ */
+struct XSRange_Struct
 {
-    XSPoint origin;
-    XSSize  size;
-}
-XSRect;
+    XSUInteger location;    /*! The start of the range */
+    XSUInteger length;      /*! The length of the range */
+};
 
 /*!
  * @typedef     XSRange 
- * @abstract    Range data-type
- * @field       location    The start of the range
- * @field       length      The length of the range
+ * @brief       Range data-type   
  */
-typedef struct XSRange_Struct
-{
-    XSUInteger location;
-    XSUInteger length;
-}
-XSRange;
+typedef struct XSRange_Struct XSRange;
 
 /*!
- * @define      XSUIntegerMax
- * @abstract    Not found value for the XSRange.location field
+ * @def         XSUIntegerMax
+ * @brief       Not found value for the XSRange.location field
  */
 #define XSNotFound XSUIntegerMax
 
 /*!
+ * @typedef     XSEdgeInsets_Struct 
+ * @brief       Inset distances structure
+ */
+struct XSEdgeInsets_Struct
+{
+    XSFloat left;       /*! The left coordinate */
+    XSFloat top;        /*! The top coordiante */
+    XSFloat right;      /*! The right coordinate */
+    XSFloat bottom;     /*! The bottom coordinate */
+};
+
+/*!
  * @typedef     XSEdgeInset 
- * @abstract    Inset distances
- * @field       left    The left coordinate
- * @field       top     The top coordiante
- * @field       right   The right coordinate
- * @field       bottom  The bottom coordinate
+ * @brief       Inset distances
  */
-typedef struct XSEdgeInsets_Struct
-{
-    XSFloat left;
-    XSFloat top;
-    XSFloat right;
-    XSFloat bottom;
-}
-XSEdgeInsets;
+typedef struct XSEdgeInsets_Struct XSEdgeInsets;
 
 /*!
- * @typedef     XSByteOrder
- * @abstract    Byte-order data-type
- * @field       XS_UnknownByteOrder     Unknown byte order
- * @field       XS_LittleEndian         Little endian byte order
- * @field       XS_BigEndian            Big endian byte order
+ * @enum        XSByteOrder_Enum
+ * @brief       Byte-order data-type enumeration
  */
-typedef enum XSByteOrder_Struct
+enum XSByteOrder_Enum
 {
-   XS_UnknownByteOrder = 0,
-   XS_LittleEndian     = 1,
-   XS_BigEndian        = 2
-}
-XSByteOdrer;
+   XS_UnknownByteOrder = 0,     /*! Unknown byte order */
+   XS_LittleEndian     = 1,     /*! Little endian byte order */
+   XS_BigEndian        = 2      /*! Big endian byte order */
+};
 
 /*!
- * @enum
- * @abstract    Enumeration for the XSComparisonResult data-type
- * @field       XSOrderedAscending      Order is ascending
- * @field       XSOrderedSame           Order is same
- * @field       XSOrderedDescending     Order is descending
+ * @typedef     XSByteOdrer
+ * @brief       Byte order data type
  */
-enum
+typedef XSInteger XSByteOdrer;
+
+/*!
+ * @enum        XSOrdered_Enum
+ * @brief       Enumeration for the XSComparisonResult data-type 
+ */
+enum XSOrdered_Enum
 {
-   XSOrderedAscending  = -1,
-   XSOrderedSame       = 0,
-   XSOrderedDescending = 1
+   XSOrderedAscending  = -1,    /*! Order is ascending */
+   XSOrderedSame       = 0,     /*! Order is same */
+   XSOrderedDescending = 1      /*! Order is descending */
 };
 
 /*!
  * @typedef     XSComparisonResult
- * @abstract    Comaprison result data-type
+ * @brief       Comaprison result data-type
  */
 typedef XSInteger XSComparisonResult;
 
 /*!
- * @typedef     XSDataType
- * @abstract    Intrisec data types
- * @field       XSDataTypeChar          char
- * @field       XSDataTypeUChar         unsigned char
- * @field       XSDataTypeShort         short
- * @field       XSDataTypeUShort        unsigned short
- * @field       XSDataTypeInt           int
- * @field       XSDataTypeUInt          unsigned int
- * @field       XSDataTypeLong          long
- * @field       XSDataTypeULong         unsigned long
- * @field       XSDataTypeLongLong      long long
- * @field       XSDataTypeULongLong     unsigned long long
- * @field       XSDataTypeFloat         float
- * @field       XSDataTypeDouble        double
- * @field       XSDataTypeInteger       XSInteger
- * @field       XSDataTypeUInteger      XSUInteger
+ * @enum        XSDataType
+ * @brief       Intrisec data types    
  */
 typedef enum
 {
-    XSDataTypeChar      = 0x00,
-    XSDataTypeUChar     = 0x01,
-    XSDataTypeShort     = 0x02,
-    XSDataTypeUShort    = 0x03,
-    XSDataTypeInt       = 0x04,
-    XSDataTypeUInt      = 0x05,
-    XSDataTypeLong      = 0x06,
-    XSDataTypeULong     = 0x07,
-    XSDataTypeLongLong  = 0x08,
-    XSDataTypeULongLong = 0x09,
-    XSDataTypeFloat     = 0x0A,
-    XSDataTypeDouble    = 0x0B,
-    XSDataTypeInteger   = 0x0C,
-    XSDataTypeUInteger  = 0x0D
+    XSDataTypeChar      = 0x00,     /*! char */
+    XSDataTypeUChar     = 0x01,     /*! unsigned char */
+    XSDataTypeShort     = 0x02,     /*! short */
+    XSDataTypeUShort    = 0x03,     /*! unsigned short */
+    XSDataTypeInt       = 0x04,     /*! int */
+    XSDataTypeUInt      = 0x05,     /*! unsigned int */
+    XSDataTypeLong      = 0x06,     /*! long */
+    XSDataTypeULong     = 0x07,     /*! unsigned long */
+    XSDataTypeLongLong  = 0x08,     /*! long long */
+    XSDataTypeULongLong = 0x09,     /*! unsigned long long */
+    XSDataTypeFloat     = 0x0A,     /*! float */
+    XSDataTypeDouble    = 0x0B,     /*! double */
+    XSDataTypeInteger   = 0x0C,     /*! XSInteger */
+    XSDataTypeUInteger  = 0x0D      /*! XSUInteger */
 }
 XSDataType;
 
 /*!
- * @define      XSStatic
- * @abstract    Marker for static class methods
+ * @def         XSStatic
+ * @brief       Marker for static class methods
  */
 #define XSStatic        
 
 /*!
- * @define      XSAutoreleased
- * @abstract    Marker for methods that return auto-released objects
+ * @def         XSAutoreleased
+ * @brief       Marker for methods that return auto-released objects
  */
 #define XSAutoreleased  
 
 /*!
  * @typedef     XSClassID
- * @abstract    Type ID foe the registered runtime classes
+ * @brief       Type ID foe the registered runtime classes
  */
 typedef unsigned long XSClassID;
 
 /*!
  * @typedef     XSObject
- * @abstract    Polymorphism support - Generic type for all XSFoundation objects
+ * @brief       Polymorphism support - Generic type for all XSFoundation objects
  */
 typedef void * XSObject;
 
@@ -288,59 +314,59 @@ typedef void * XSObject;
 #include "XSString.h"
 
 /*!
- * @typedef     XSClassInfos
- * @abstract    XSFoundation runtime class
- * @field       classname       The name of the class
- * @field       instanceSize    The size of the class instances
- * @field       construct       The class constructor
- * @field       destruct        The class destructor
- * @field       init            The default object initializer
- * @field       copy            The object's copy callback
- * @field       toString        The object's description callback (used in XSLog)
- * @field       equals          The object's comparison callback
- * @field       hash            The object's hash callback
+ * @struct      XSClassInfos_Struct
+ * @brief       XSFoundation runtime class structure
  */
-typedef struct XSClassInfos_Struct
+struct XSClassInfos_Struct
 {
-    const char * className;
-    size_t       instanceSize;
-    void         ( * construct )( XSObject object );
-    void         ( * destruct  )( XSObject object );
-    XSObject     ( * init      )( XSObject object );
-    void         ( * copy      )( XSObject source, XSObject destination );
-    XSString     ( * toString  )( XSObject object );
-    BOOL         ( * equals    )( XSObject object1, XSObject object2 );
-}
-XSClassInfos;
+    const char * className;                                                 /*! The name of the class */
+    size_t       instanceSize;                                              /*! The size of the class instances */
+    void         ( * construct )( XSObject object );                        /*! The class constructor */
+    void         ( * destruct  )( XSObject object );                        /*! The class destructor */
+    XSObject     ( * init      )( XSObject object );                        /*! The default object initializer */
+    void         ( * copy      )( XSObject source, XSObject destination );  /*! The object's copy callback */
+    XSString     ( * toString  )( XSObject object );                        /*! The object's description callback (used in XSLog) */
+    BOOL         ( * equals    )( XSObject object1, XSObject object2 );     /*! The object's comparison callback */
+};
+
+/*!
+ * @struct      XSClassInfos
+ * @brief       XSFoundation runtime class type
+ */
+typedef struct XSClassInfos_Struct XSClassInfos;
+
+/*!
+ * @struct      XSRuntimeClass_Struct
+ * @brief       Base structure for the runtime classes
+ */
+struct XSRuntimeClass_Struct
+{
+    XSClassInfos * classInfos;  /*! A pointer to the class structure for the object */
+};
 
 /*!
  * @typedef     XSRuntimeClass
- * @abstract    Base for the runtime classes
- * @description This sructure MUST be the first member of all XSFoundation
+ * @brief       Base type for the runtime classes
+ * @details     This type MUST be the first member of all XSFoundation
  *              classes.
- * @field       isa     A pointer to the class structure for the object
  */
-typedef struct XSRuntimeClass_Struct
-{
-    XSClassInfos * classInfos;
-}
-XSRuntimeClass;
+typedef struct XSRuntimeClass_Struct XSRuntimeClass;
 
 /*!
  * @typedef     XSClass
- * @abstract    Polymorphism support - Generic type for all XSFoundation classes
+ * @brief       Polymorphism support - Generic type for all XSFoundation classes
  */
 typedef XSClassInfos * XSClass;
 
 /*!
- * @define      nil
- * @abstract    NULL pointer for the 'XSObject' type
+ * @def         nil
+ * @brief       NULL pointer for the 'XSObject' type
  */
 #define nil	( XSObject )0
 
 /*!
- * @define      Nil
- * @abstract    NULL pointer for the 'XSClass' type
+ * @def         Nil
+ * @brief       NULL pointer for the 'XSClass' type
  */
 #define Nil	( XSClass )0
 

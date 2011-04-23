@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSThread.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSThread class functions
+ * @file        XSThread.h
+ * @brief       XSThread class functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_THREAD_H_
@@ -45,31 +45,28 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typedef     XSThread
- * @abstract    Opaque type for the XSThread objects
+ * @brief       Opaque type for the XSThread objects
  */
 typedef struct __XSThread_Struct * XSThread;
 
 /*!
- * @function    XSThread_Alloc
- * @abstract    Object allocator
- * @description Do not allocate threads explicitely. Use the XSThread_Detach
+ * @brief       Object allocator
+ * @details     Do not allocate threads explicitely. Use the XSThread_Detach
  *              function instead to create new threads.
  * @result      The allocated object
  */
 XSStatic XSObject XSThread_Alloc( void );
 
 /*!
- * @function    XSThread_Alloc
- * @abstract    Initialize a thread object
+ * @brief       Initialize a thread object
  * @param       xsThis  The thread object
  * @result      The thread object
  */
 XSObject XSThread_Init( XSObject xsThis );
 
 /*!
- * @function    XSThread_Detach
- * @abstract    Creates and detaches a thread
- * @description The thread object will be automatically released when it
+ * @brief       Creates and detaches a thread
+ * @details     The thread object will be automatically released when it
  *              exits. Do not release it explicitely.
  * @param       func    A pointer to the function to run on the thread
  * @param       arg     Argument to pass to the thread function
@@ -78,8 +75,7 @@ XSObject XSThread_Init( XSObject xsThis );
 XSStatic XSThread XSThread_Detach( void ( * func )( XSThread thread, XSObject arg ), void * arg );
 
 /*!
- * @function    XSThread_GetID
- * @abstract    Gets the thread ID
+ * @brief       Gets the thread ID
  * @param       xsThis  The thread object
  * @result      The thread ID
  */

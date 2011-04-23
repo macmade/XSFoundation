@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSGeometry.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Geometry functions
+ * @file        XSGeometry.h
+ * @brief       Geometry functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_GEOMETRY_H_
@@ -46,8 +46,7 @@ XS_EXTERN_C_BEGIN
 #include "XSTypes.h"
 
 /*!
- * @function    XSMakePoint
- * @abstract    Creates an XSPoint structure
+ * @brief       Creates an XSPoint structure
  * @param       x   The X coordinate
  * @param       y   The Y coordinate
  * @result      An XSPoint structure
@@ -55,8 +54,7 @@ XS_EXTERN_C_BEGIN
 XSPoint XSMakePoint( XSFloat x, XSFloat y );
 
 /*!
- * @function    XSMakeSize
- * @abstract    Creates an XSSize structure
+ * @brief       Creates an XSSize structure
  * @param       width   The width
  * @param       height  The height
  * @result      An XSSize structure
@@ -64,8 +62,7 @@ XSPoint XSMakePoint( XSFloat x, XSFloat y );
 XSSize XSMakeSize( XSFloat width, XSFloat height );
 
 /*!
- * @function    XSMakeRect
- * @abstract    Creates an XSRect structure
+ * @brief       Creates an XSRect structure
  * @param       x       The X coordinate
  * @param       y       The Y coordinate
  * @param       width   The width
@@ -75,15 +72,13 @@ XSSize XSMakeSize( XSFloat width, XSFloat height );
 XSRect XSMakeRect( XSFloat x, XSFloat y, XSFloat width, XSFloat height );
 
 /*!
- * @function    XSRectZero
- * @abstract    Creates an XSRect structure with 0 origin and size
+ * @brief       Creates an XSRect structure with 0 origin and size
  * @result      An XSRect structure
  */
 XSRect XSRectZero( void );
 
 /*!
- * @function    XSMakeRange
- * @abstract    Creates an XSRange structure
+ * @brief       Creates an XSRange structure
  * @param       location    The range location
  * @param       length      The range length
  * @result      An XSRange structure
@@ -91,8 +86,7 @@ XSRect XSRectZero( void );
 XSRange XSMakeRange( XSUInteger location, XSUInteger length );
 
 /*!
- * @function    XSMakeEdgeInsets
- * @abstract    Creates an XSEdgeInsets structure
+ * @brief       Creates an XSEdgeInsets structure
  * @param       left    The left coordinate
  * @param       top     The top coordinate
  * @param       right   The right coordinate
@@ -102,8 +96,7 @@ XSRange XSMakeRange( XSUInteger location, XSUInteger length );
 XSEdgeInsets XSMakeEdgeInsets( XSFloat left, XSFloat top, XSFloat right, XSFloat bottom );
 
 /*!
- * @function    XSAngleBetweenPoints
- * @abstract    Gets the angle from two points
+ * @brief       Gets the angle from two points
  * @param       a   The first point
  * @param       b   The second point
  * @result      The angle from the two points
@@ -111,8 +104,7 @@ XSEdgeInsets XSMakeEdgeInsets( XSFloat left, XSFloat top, XSFloat right, XSFloat
 XSFloat XSAngleBetweenPoints( XSPoint a, XSPoint b );
 
 /*!
- * @function    XSDistanceBetweenPoints
- * @abstract    Gets the distance between two points
+ * @brief       Gets the distance between two points
  * @param       a   The first point
  * @param       b   The second point
  * @result      The distance between the two points
@@ -120,16 +112,14 @@ XSFloat XSAngleBetweenPoints( XSPoint a, XSPoint b );
 XSFloat XSDistanceBetweenPoints( XSPoint a, XSPoint b );
 
 /*!
- * @function    XSDegreesToRadians
- * @abstract    Converts a degree angle to a radian angle
+ * @brief       Converts a degree angle to a radian angle
  * @param       x   The angle in degrees
  * @result      The angle in radians
  */
 XSFloat XSDegreesToRadians( XSFloat x );
 
 /*!
- * @function    XSRadiansToDegrees
- * @abstract    Converts a radian angle to a degree angle
+ * @brief       Converts a radian angle to a degree angle
  * @param       x   The angle in radians
  * @result      The angle in degrees
  */

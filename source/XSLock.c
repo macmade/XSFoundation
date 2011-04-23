@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSLock.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation for the XSLock class
+ * @file        XSLock.c
+ * @brief       Implementation for the XSLock class
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

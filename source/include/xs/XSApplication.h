@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSApplication.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSApplication class functions
+ * @file        XSApplication.h
+ * @brief       XSApplication class functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_APPLICATION_H_
@@ -49,29 +49,26 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typedef     XSApplication
- * @abstract    Opaque type for the XSApplication objects
+ * @brief       Opaque type for the XSApplication objects
  */
 typedef struct __XSApplication_Struct * XSApplication;
 
 /*!
- * @function    XSApplication_Alloc
- * @abstract    Object allocator
+ * @brief       Object allocator
  * @result      The allocated object
  */
 XSStatic XSApplication XSApplication_Alloc( void );
 
 /*!
- * @function    XSApplication_Alloc
- * @abstract    Initialize an application object
+ * @brief       Initialize an application object
  * @param       xsThis  The application object
  * @result      The allocated object
  */
 XSObject XSApplication_Init( XSObject xsThis );
 
 /*!
- * @function    XSApplication_Exit
- * @abstract    XSFoundation start routine
- * @description You must call this function before using any other XSFoundation
+ * @brief       XSFoundation start routine
+ * @details     You must call this function before using any other XSFoundation
  *              function or object. Note that an auto-release pool is
  *              automatically created, so the auto-release features are
  *              enabled by default.
@@ -82,9 +79,8 @@ XSObject XSApplication_Init( XSObject xsThis );
 XSStatic XSApplication XSApplication_Start( int argc, const char ** argv );
 
 /*!
- * @function    XSApplication_Exit
- * @abstract    Application termination
- * @description You must call this function when exiting your application,
+ * @brief       Application termination
+ * @details     You must call this function when exiting your application,
  *              instead of the classic 'exit()' function, so the auto-released
  *              memory is reclaimed, and the threads are terminated properly.
  * @result      void
@@ -92,87 +88,87 @@ XSStatic XSApplication XSApplication_Start( int argc, const char ** argv );
 XSStatic void XSApplication_Exit( void ) NORETURN_ATTRIBUTE;
 
 /*!
- * @function    XSApplication_SharedApplication
- * @abstract    Gets the application object
+ * @brief       Gets the application object
  * @result      The application object
  */
 XSStatic XSApplication XSApplication_SharedApplication( void );
 
 /*!
- * @function    XSApplication_PrintHelp
- * @abstract    Prints the application help dialog
- * @param       xsThis  The application object
+ * @brief       Prints the application help dialog
+ * @param       xsThis          The application object
+ * @param       description     ...
  * @result      void
  */
 void XSApplication_PrintHelp( XSApplication xsThis, const char * description );
 
 /*!
- * @function    XSApplication_RegisterArgument
- * @abstract    
+ * @brief       
  * @param       xsThis  The application object
+ * @param       name    ...
+ * @param       type    ...
+ * @param       help    ...
  * @result      
  */
 void XSApplication_RegisterArgument( XSApplication xsThis, const char * name, XSApplicationArgumentType type, const char * help );
 
 /*!
- * @function    XSApplication_GetArgument
- * @abstract    
+ * @brief       
  * @param       xsThis  The application object
+ * @param       name    ...
  * @result      
  */
 XSApplicationArgument XSApplication_GetArgument( XSApplication xsThis, const char * name );
 
 /*!
- * @function    XSApplication_HasArgument
- * @abstract    
+ * @brief       
  * @param       xsThis  The application object
+ * @param       name    ...
  * @result      
  */
 BOOL XSApplication_HasArgument( XSApplication xsThis, const char * name );
 
 /*!
- * @function    XSApplication_GetFlag
- * @abstract    
+ * @brief       
  * @param       xsThis  The application object
+ * @param       name    ...
  * @result      
  */
 BOOL XSApplication_GetFlag( XSApplication xsThis, const char * name );
 
 /*!
- * @function    XSApplication_GetInteger
- * @abstract    
+ * @brief       
  * @param       xsThis  The application object
+ * @param       name    ...
  * @result      
  */
 XSInteger XSApplication_GetInteger( XSApplication xsThis, const char * name );
 
 /*!
- * @function    XSApplication_GetUnsignedInteger
- * @abstract    
+ * @brief       
  * @param       xsThis  The application object
+ * @param       name    ...
  * @result      
  */
 XSUInteger XSApplication_GetUnsignedInteger( XSApplication xsThis, const char * name );
 
 /*!
- * @function    XSApplication_GetString
- * @abstract    
+ * @brief       
  * @param       xsThis  The application object
+ * @param       name    ...
  * @result      
  */
 XSString XSApplication_GetString( XSApplication xsThis, const char * name );
 
 /*!
- * @function    XSApplication_GetFloat
- * @abstract    
+ * @brief       
  * @param       xsThis  The application object
+ * @param       name    ...
  * @result      
  */
 XSFloat XSApplication_GetFloat( XSApplication xsThis, const char * name );
 
 /*!
- * @function    XSApplication_GetUnnamedArguments
- * @abstract    
+ * @brief       
  * @param       xsThis  The application object
  * @result      
  */

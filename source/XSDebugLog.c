@@ -31,8 +31,8 @@
 
 /*!
  * @file        XSDebugLog.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation of the debug log functions
+ * @brief       Implementation of the debug log functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

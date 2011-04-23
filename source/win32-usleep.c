@@ -30,9 +30,9 @@
 /* $Id */
 
 /*!
- * @file        
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Micro-seconds sleep function
+ * @file        win32-usleep.c
+ * @brief       Micro-seconds sleep function
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

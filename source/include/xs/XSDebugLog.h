@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSDebugLog.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Debug log functions
+ * @file        XSDebugLog.h
+ * @brief       Debug log functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_DEBUG_LOG_H_

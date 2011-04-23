@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSMacros.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    General macros
+ * @file        XSMacros.h
+ * @brief       General macros
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_MACROS_H_
@@ -43,20 +43,29 @@
     #if defined( __cplusplus )
         
         /*!
-         * @define      XS_EXTERN_C_BEGIN
-         * @abstract    Substitution for 'extern "C" {' start
+         * @def         XS_EXTERN_C_BEGIN
+         * @brief       Substitution for 'extern "C" {' start
          */
         #define XS_EXTERN_C_BEGIN extern "C" {
         
         /*!
-         * @define      XS_EXTERN_C_END
-         * @abstract    Substitution for 'extern "C" {' end
+         * @def         XS_EXTERN_C_END
+         * @brief       Substitution for 'extern "C" {' end
          */
         #define XS_EXTERN_C_END              }
         
     #else
         
+        /*!
+         * @def         XS_EXTERN_C_END
+         * @brief       Substitution for 'extern "C" {' end
+         */
         #define XS_EXTERN_C_BEGIN
+        
+        /*!
+         * @def         XS_EXTERN_C_BEGIN
+         * @brief       Substitution for 'extern "C" {' start
+         */
         #define XS_EXTERN_C_END
         
     #endif
@@ -65,44 +74,38 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @define          __XS_VERS_STR__
- * @abstract        XSFoundation version number string
- * @availability    0.0.1
+ * @def             __XS_VERS_STR__
+ * @brief           XSFoundation version number string
  */
 #define __XS_VERS_STR__    "1.2.1-0"
 
 /*!
- * @define          __XS_VERS_MAJ__
- * @abstract        XSFoundation major version number
- * @availability    0.0.1
+ * @def             __XS_VERS_MAJ__
+ * @brief           XSFoundation major version number
  */
 #define __XS_VERS_MAJ__    1
 
 /*!
- * @define          __XS_VERS_MIN__
- * @abstract        XSFoundation minor version number
- * @availability    0.0.1
+ * @def             __XS_VERS_MIN__
+ * @brief           XSFoundation minor version number
  */
 #define __XS_VERS_MIN__    2
 
 /*!
- * @define          __XS_VERS_BUG__
- * @abstract        XSFoundation bugfix version number
- * @availability    0.0.1
+ * @def             __XS_VERS_BUG__
+ * @brief           XSFoundation bugfix version number
  */
 #define __XS_VERS_BUG__    1
 
 /*!
- * @define          __XS_VERS_PATCH__
- * @abstract        XSFoundation patch level version number
- * @availability    0.0.1
+ * @def             __XS_VERS_PATCH__
+ * @brief           XSFoundation patch level version number
  */
 #define __XS_VERS_PATCH__  0
 
 /*!
- * @define          __XS_VERS__
- * @abstract        XSFoundation version number
- * @availability    0.0.1
+ * @def             __XS_VERS__
+ * @brief           XSFoundation version number
  */
 #define __XS_VERS__ ( __XS_VERS_MAJ__ * 1000000 \
                     + __XS_VERS_MIN__ * 10000   \
@@ -114,16 +117,16 @@ XS_EXTERN_C_BEGIN
 #include "XSMacrosException.h"
 
 /*!
- * @define      XSSTR
- * @abstract    Creates an XSString instance from a C string
+ * @def         XSSTR
+ * @brief       Creates an XSString instance from a C string
  * @param       s   A C string (char *)
  */
 #define XSSTR( s ) XSAutorelease( XSString_InitWithCString( XSString_Alloc(), s ) )
 
 /*!
- * @define      __XSFatalError
- * @abstract    Issues a fatal error message and aborts the program
- * @description Never call this macro directly. Use XSFatalError instead.
+ * @def         __XSFatalError
+ * @brief       Issues a fatal error message and aborts the program
+ * @details     Never call this macro directly. Use XSFatalError instead.
  * @param       FILE    The file name in which the error occured
  * @param       LINE    The line number in which the error occured
  * @param       ...     Message and format arguments
@@ -136,15 +139,15 @@ XS_EXTERN_C_BEGIN
     exit( EXIT_FAILURE );
 
 /*!
- * @define      XSFatalError
- * @abstract    Issues a fatal error message and aborts the program
+ * @def         XSFatalError
+ * @brief       Issues a fatal error message and aborts the program
  * @param       ...     Message and format arguments
  */
 #define XSFatalError( ... ) __XSFatalError( __FILE__, __LINE__, __VA_ARGS__ )
 
 /*!
- * @define      XSEndian16_Swap
- * @abstract    Swap endiannes of a 16 bits value
+ * @def         XSEndian16_Swap
+ * @brief       Swap endiannes of a 16 bits value
  * @param       value   The value to swap
  */
 #define XSEndian16_Swap( value )                        \
@@ -154,8 +157,8 @@ XS_EXTERN_C_BEGIN
     )
 
 /*!
- * @define      XSEndian32_Swap
- * @abstract    Swap endiannes of a 32 bits value
+ * @def         XSEndian32_Swap
+ * @brief       Swap endiannes of a 32 bits value
  * @param       value   The value to swap
  */
 #define XSEndian32_Swap( value )                                \
@@ -167,8 +170,8 @@ XS_EXTERN_C_BEGIN
     )
 
 /*!
- * @define      XSEndian64_Swap
- * @abstract    Swap endiannes of a 64 bits value
+ * @def         XSEndian64_Swap
+ * @brief       Swap endiannes of a 64 bits value
  * @param       value   The value to swap
  */
 #define XSEndian64_Swap(value)                                          \
@@ -184,9 +187,9 @@ XS_EXTERN_C_BEGIN
     )
 
 /*!
- * @define      WEAK_ATTRIBUTE
- * @abstract    Standardization of the weak compiler attribute
- * @description Not all compiler support this attribute, so it may be defined
+ * @def         WEAK_ATTRIBUTE
+ * @brief       Standardization of the weak compiler attribute
+ * @details     Not all compiler support this attribute, so it may be defined
  *              to nothing.
  */
 #if defined( __GNUC__ ) && ( ( __GNUC__ >= 4 ) || ( ( __GNUC__ == 3 ) && ( __GNUC_MINOR__ >= 1 ) ) )
@@ -196,9 +199,9 @@ XS_EXTERN_C_BEGIN
 #endif
 
 /*!
- * @define      WEAK_IMPORT_ATTRIBUTE
- * @abstract    Standardization of the weak import compiler attribute
- * @description Not all compiler support this attribute, so it may be defined
+ * @def         WEAK_IMPORT_ATTRIBUTE
+ * @brief       Standardization of the weak import compiler attribute
+ * @details     Not all compiler support this attribute, so it may be defined
  *              to nothing.
  */
 #if defined( __GNUC__ ) && ( ( __GNUC__ >= 4 ) || ( ( __GNUC__ == 3 ) && ( __GNUC_MINOR__ >= 1 ) ) )
@@ -210,9 +213,9 @@ XS_EXTERN_C_BEGIN
 #endif
 
 /*!
- * @define      DEPRECATED_ATTRIBUTE
- * @abstract    Standardization of the deprecated compiler attribute
- * @description Not all compiler support this attribute, so it may be defined
+ * @def         DEPRECATED_ATTRIBUTE
+ * @brief       Standardization of the deprecated compiler attribute
+ * @details     Not all compiler support this attribute, so it may be defined
  *              to nothing.
  */
 #if defined( __GNUC__ ) && ( ( __GNUC__ >= 4 ) || ( ( __GNUC__ == 3 ) && ( __GNUC_MINOR__ >= 1 ) ) )
@@ -222,9 +225,9 @@ XS_EXTERN_C_BEGIN
 #endif
 
 /*!
- * @define      UNAVAILABLE_ATTRIBUTE
- * @abstract    Standardization of the unavailable compiler attribute
- * @description Not all compiler support this attribute, so it may be defined
+ * @def         UNAVAILABLE_ATTRIBUTE
+ * @brief       Standardization of the unavailable compiler attribute
+ * @details     Not all compiler support this attribute, so it may be defined
  *              to nothing.
  */
 #if defined( __GNUC__ ) && ( ( __GNUC__ >= 4 ) || ( ( __GNUC__ == 3 ) && ( __GNUC_MINOR__ >= 1 ) ) )
@@ -234,9 +237,9 @@ XS_EXTERN_C_BEGIN
 #endif
 
 /*!
- * @define      FORMAT_ATTRIBUTE
- * @abstract    Standardization of the format compiler attribute
- * @description Not all compiler support this attribute, so it may be defined
+ * @def         FORMAT_ATTRIBUTE
+ * @brief       Standardization of the format compiler attribute
+ * @details     Not all compiler support this attribute, so it may be defined
  *              to nothing.
  */
 #if defined( __GNUC__ ) && ( ( __GNUC__ >= 4 ) || ( ( __GNUC__ == 3 ) && ( __GNUC_MINOR__ >= 1 ) ) )
@@ -246,9 +249,9 @@ XS_EXTERN_C_BEGIN
 #endif
 
 /*!
- * @define      CONST_ATTRIBUTE
- * @abstract    Standardization of the const compiler attribute
- * @description Not all compiler support this attribute, so it may be defined
+ * @def         CONST_ATTRIBUTE
+ * @brief       Standardization of the const compiler attribute
+ * @details     Not all compiler support this attribute, so it may be defined
  *              to nothing.
  */
 #if defined( __GNUC__ ) && ( ( __GNUC__ >= 4 ) || ( ( __GNUC__ == 3 ) && ( __GNUC_MINOR__ >= 1 ) ) )
@@ -258,9 +261,9 @@ XS_EXTERN_C_BEGIN
 #endif
 
 /*!
- * @define      NORETURN_ATTRIBUTE
- * @abstract    Standardization of the noreturn compiler attribute
- * @description Not all compiler support this attribute, so it may be defined
+ * @def         NORETURN_ATTRIBUTE
+ * @brief       Standardization of the noreturn compiler attribute
+ * @details     Not all compiler support this attribute, so it may be defined
  *              to nothing.
  */
 #if defined( __GNUC__ ) && ( ( __GNUC__ >= 4 ) || ( ( __GNUC__ == 3 ) && ( __GNUC_MINOR__ >= 1 ) ) )
@@ -270,8 +273,8 @@ XS_EXTERN_C_BEGIN
 #endif
 
 /*!
- * @define      XS_INLINE
- * @abstract    Standardization of the inline compiler keywork
+ * @def         XS_INLINE
+ * @brief       Standardization of the inline compiler keywork
  */
 #if !defined( XS_INLINE )
     #if defined( __GNUC__ ) && ( __GNUC__ == 4 ) && !defined( DEBUG )

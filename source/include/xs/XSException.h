@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      XSException.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSException class functions
+ * @file        XSException.h
+ * @brief       XSException class functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef _XS_EXCEPTION_H_
@@ -45,7 +45,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typedef     XSException
- * @abstract    Opaque type for the XSError objects
+ * @brief       Opaque type for the XSError objects
  */
 typedef struct __XSException_Struct * XSException;
 
@@ -59,15 +59,13 @@ struct XSExceptionContext_Struct
 extern struct XSExceptionContext_Struct * XSExceptionContext;
 
 /*!
- * @function    XSException_Alloc
- * @abstract    Object allocator
+ * @brief       Object allocator
  * @result      The allocated object
  */
 XSStatic XSObject XSException_Alloc( void );
 
 /*!
- * @function    XSException_New
- * @abstract    Creates an exception
+ * @brief       Creates an exception
  * @param       code    The exception code
  * @param       reason  The exception message
  * @result      The exception object
@@ -75,8 +73,8 @@ XSStatic XSObject XSException_Alloc( void );
 XSStatic XSAutoreleased XSException XSException_New( XSInteger code, XSString reason );
 
 /*!
- * @function    XSException_Init
- * @abstract    Creates an exception
+ * @brief       Creates an exception
+ * @param       xsThis  The exception object
  * @param       code    The exception code
  * @param       reason  The exception message
  * @result      The exception object
@@ -84,16 +82,14 @@ XSStatic XSAutoreleased XSException XSException_New( XSInteger code, XSString re
 XSException XSException_Init( XSException xsThis, XSInteger code, XSString reason );
 
 /*!
- * @function    XSException_GetCode
- * @abstract    Gets the exception code
+ * @brief       Gets the exception code
  * @param       xsThis  The exception object
  * @result      The error code
  */
 XSInteger XSException_GetCode( XSException xsThis );
 
 /*!
- * @function    XSException_GetReason
- * @abstract    Gets the exception message
+ * @brief       Gets the exception message
  * @param       xsThis  The exception object
  * @result      The exception message
  */

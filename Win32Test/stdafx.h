@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      stdafx.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @file        stdafx.h
+ * @brief       Global includes for the Win32 test
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #pragma once

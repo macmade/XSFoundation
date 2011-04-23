@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      targetver.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @file        targetver.h
+ * @brief       ...
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #pragma once

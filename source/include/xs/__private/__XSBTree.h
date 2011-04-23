@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSBTree.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private BTree class definitions
+ * @file        __XSBTree.h
+ * @brief       Private BTree class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_BTREE_H_
@@ -46,39 +46,41 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSBTree
- * @abstract    XSBTree class
- * @field       __class     Runtime class
+ * @struct      __XSBTree_Struct
+ * @brief       XSBTree class
  */
-typedef struct __XSBTree_Struct
+struct __XSBTree_Struct
 {
-    XSRuntimeClass            __class;
-    XSObject                  value;
-    struct __XSBTree_Struct * left;
-    struct __XSBTree_Struct * right;
-    struct __XSBTree_Struct * parent;
-}
-__XSBTree;
+    XSRuntimeClass            __class;  /*! Runtime class */
+    XSObject                  value;    /* ... */
+    struct __XSBTree_Struct * left;     /* ... */
+    struct __XSBTree_Struct * right;    /* ... */
+    struct __XSBTree_Struct * parent;   /* ... */
+};
 
 /*!
- * @function    __XSBtree_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSBTree
+ * @brief       XSBTree class type
+ */
+typedef struct __XSBTree_Struct __XSBTree;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSBTree_Initialize( void );
 
 /*!
- * @function    __XSBag_Destruct
- * @abstract    Destructor
+ * @brief       Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
 void __XSBTree_Destruct( XSObject object );
 
 /*!
- * @function    __XSBTree_Copy
- * @abstract    Object copy
- * @param       object  A pointer to the object
+ * @brief       Object copy
+ * @param       source          The source object
+ * @param       destination     The destination object
  * @result      void
  */
 void __XSBTree_Copy( XSObject source, XSObject destination );

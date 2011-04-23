@@ -30,9 +30,9 @@
 /* $Id */
 
 /*!
- * @file        
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation of the non-standard string functions
+ * @file        std-string.c
+ * @brief       Implementation of the non-standard string functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"
@@ -45,10 +45,9 @@ static char __stdc_string_hex_chars[] =
 };
 
 /*!
- * @function    __xs_std_str_reverse
- * @abstract    Reverse a string
+ * @brief       Reverse a string
  * @param       s1       The string to reverse
- * @result     void
+ * @result      void
  */
 static void __xs_std_str_reverse( char s[] );
 static void __xs_std_str_reverse( char s[] )

@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSDictionary.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSDictionary class definitions
+ * @file        __XSDictionary.h
+ * @brief       Private XSDictionary class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_DICTIONARY_H_
@@ -46,52 +46,49 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSDictionary
- * @abstract    XSDictionary class
- * @field       __class     Runtime class
- * @field       values      The dictionary values
- * @field       keys        The dictionary keys
- * @field       count       The number of values in the dictionary
- * @field       capacity    The dictionary capacity
+ * @struct      __XSDictionary_Struct
+ * @brief       XSDictionary class
  */
-typedef struct __XSDictionary_Struct
+struct __XSDictionary_Struct
 {
-    XSRuntimeClass __class;
-    XSObject     * values;
-    XSString     * keys;
-    XSUInteger     count;
-    XSUInteger     capacity;
-    XSUInteger     initialCapacity;
-}
-__XSDictionary;
+    XSRuntimeClass __class;         /*! Runtime class */
+    XSObject     * values;          /*! The dictionary values */
+    XSString     * keys;            /*! The dictionary keys */
+    XSUInteger     count;           /*! The number of values in the dictionary */
+    XSUInteger     capacity;        /*! The dictionary capacity */
+    XSUInteger     initialCapacity; /*! The initial dictionary capacity */
+};
 
 /*!
- * @function    __XSDictionary_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSDictionary
+ * @brief       XSDictionary class type
+ */
+typedef struct __XSDictionary_Struct __XSDictionary;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSDictionary_Initialize( void );
 
 /*!
- * @function    __XSDictionary_Destruct
- * @abstract    Destructor
+ * @brief       Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
 void __XSDictionary_Destruct( XSObject object );
 
 /*!
- * @function    __XSArray_ToString
- * @abstract    Object description
+ * @brief       Object description
  * @param       object  A pointer to the object
  * @result      The object's description
  */
 XSString __XSDictionary_ToString( XSObject object );
 
 /*!
- * @function    __XSDictionary_Copy
- * @abstract    Object copy
- * @param       object  A pointer to the object
+ * @brief       Object copy
+ * @param       source          The source object
+ * @param       destination     The destination object
  * @result      void
  */
 void __XSDictionary_Copy( XSObject source, XSObject destination );

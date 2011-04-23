@@ -30,12 +30,44 @@
 /* $Id$ */
 
 /*!
- * @header      XS.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    XSFoundation main header file
- * @description This file should be included on projects using the XEOS C
+ * @file        XS.h
+ * @brief       XSFoundation main header file
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
+ * @details     This file should be included on projects using the XEOS C
  *              Foundation Library. Other header files should never be included
  *              directly.
+ */
+
+/*!
+ * @mainpage    XSFoundation - XEOS C Foundation Library
+ * @section     about_xeos  About XEOS
+ *              XEOS is an experimental 32 bits Operating System for x86
+ *              platforms, written in Assembly and C, including a C89 Standard
+ *              Library (with some C99 parts).
+ * @section     about_xs    About XSFoundation
+ *              The XEOS C Foundation library provides the base for
+ *              object-oriented C style coding, reference counting memory
+ *              management with auto-release capabilities, reflection, runtime
+ *              environment, polymorphism, exceptions, and basic objects.
+ *              It's purpose is to be integrated in the XEOS Operating System,
+ *              once its C standard library will be c
+ omplete.
+ *              For now, it's just a standalone project, that should compile on
+ *              every OS with a decent C compiler.
+ * @section     os          Supported OS
+ *              XSFoundation can be used on POSIX compliant systems
+ *              (Mac OS X, Unix, Linux) as well as on Windows.
+ * @section     source      Source access
+ *              XSFoundation is hosted on GitHub:
+ *              https://github.com/macmade/XSFoundation/
+ * @section     doc         Documentation
+ *              Source code documentation can be found at the following address:
+ *              http://www.eosgarden.com/doxygen/xsfoundation/
+ *              Wiki can be found on GitHub:
+ *              https://github.com/macmade/XSFoundation/wiki
+ * @section     license     License
+ *              XSFoundation is released under the terms of the BOOST Software
+ *              License - Version 1.0.
  */
 
 #ifndef _XS_H_

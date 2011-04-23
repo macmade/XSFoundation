@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @file        stat.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    ...
+ * @file        win32-stat.c
+ * @brief       ...
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"

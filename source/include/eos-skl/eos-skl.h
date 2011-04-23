@@ -30,12 +30,11 @@
 /* $Id$ */
 
 /*!
- * @header          eos-skl.h
- * @copyright       eosgarden 2010 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract        EOS-SKL (Source Kit Language) main header file
+ * @file            eos-skl.h
+ * @brief           EOS-SKL (Source Kit Language) main header file
+ * @author          Jean-David Gadina <macmade@eosgarden.com>
  * @version         4.5.3-8
- * @availability    2.5.0
- * @updated         $Date$
+ * @since           2.5.0
  */
 
 /* Utility macros for GCC */
@@ -45,9 +44,9 @@
     #if defined( __GNUC_MINOR__ ) && defined( __GNUC_PATCHLEVEL__ )
     
     /*!
-     * @define          __GCC_VERSION__
-     * @abstract        GCC version number
-     * @availability    N/A
+     * @def             __GCC_VERSION__
+     * @brief           GCC version number
+     * @since           N/A
      */
     #define __EOS_STK_GCC_VERSION__ ( __GNUC__       * 10000    \
                                     + __GNUC_MINOR__ * 100      \
@@ -65,44 +64,44 @@
     #if defined( __EOS_SKL_ARCH__ )
         
         /*!
-         * @define          __EOS_SKL_VERS__
-         * @abstract        EOS SKL version number string
-         * @availability    0.0.1
+         * @def             __EOS_SKL_VERS__
+         * @brief           EOS SKL version number string
+         * @since           0.0.1
          */
         #define __EOS_SKL_VERS_STR__    "4.5.3-8"
         
         /*!
-         * @define          __EOS_SKL_VERS_MAJ
-         * @abstract        EOS SKL major version number
-         * @availability    0.0.1
+         * @def             __EOS_SKL_VERS_MAJ
+         * @brief           EOS SKL major version number
+         * @since           0.0.1
          */
         #define __EOS_SKL_VERS_MAJ__    4
         
         /*!
-         * @define          __EOS_SKL_VERS_MIN__
-         * @abstract        EOS SKL minor version number
-         * @availability    0.0.1
+         * @def             __EOS_SKL_VERS_MIN__
+         * @brief           EOS SKL minor version number
+         * @since           0.0.1
          */
         #define __EOS_SKL_VERS_MIN__    5
         
         /*!
-         * @define          __EOS_SKL_VERS_BUG__
-         * @abstract        EOS SKL bugfix version number
-         * @availability    0.0.1
+         * @def             __EOS_SKL_VERS_BUG__
+         * @brief           EOS SKL bugfix version number
+         * @since           0.0.1
          */
         #define __EOS_SKL_VERS_BUG__    3
         
         /*!
-         * @define          __EOS_SKL_VERS_PATCH__
-         * @abstract        EOS SKL patch level version number
-         * @availability    0.0.1
+         * @def             __EOS_SKL_VERS_PATCH__
+         * @brief           EOS SKL patch level version number
+         * @since           0.0.1
          */
         #define __EOS_SKL_VERS_PATCH__  8
         
         /*!
-         * @define          __EOS_SKL_VERS__
-         * @abstract        EOS SKL version number
-         * @availability    0.0.1
+         * @def             __EOS_SKL_VERS__
+         * @brief           EOS SKL version number
+         * @since           0.0.1
          */
         #define __EOS_SKL_VERS__    ( __EOS_SKL_VERS_MAJ__ * 1000000    \
                                     + __EOS_SKL_VERS_MIN__ * 10000      \

@@ -31,8 +31,8 @@
 
 /*!
  * @file        __XSLog.c
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Implementation of private logging functions
+ * @brief       Implementation of private logging functions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #include "XS.h"
@@ -44,25 +44,25 @@ extern char * program_invocation_short_name WEAK_ATTRIBUTE;
 
 /*!
  * @var         __progname
- * @abstract    Program name
+ * @brief       Program name
  */
 char * __progname = NULL;
 
 /*!
  * @var         program_invocation_short_name
- * @abstract    Program invocation short name
+ * @brief       Program invocation short name
  */
 char * program_invocation_short_name = NULL;
 
 /*!
  * @var         __log_mutex
- * @abstract    Mutex for the log calls
+ * @brief       Mutex for the log calls
  */
 static pthread_mutex_t __log_mutex  = PTHREAD_MUTEX_INITIALIZER;
 
 /*!
  * @var         __log_paused
- * @abstract    Whether the log system is paused or not
+ * @brief       Whether the log system is paused or not
  */
 static BOOL __log_paused = NO;
 

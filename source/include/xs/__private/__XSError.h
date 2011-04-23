@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSError.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSError class definitions
+ * @file        __XSError.h
+ * @brief       Private XSError class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_ERROR_H_
@@ -46,49 +46,47 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSError
- * @abstract    XSError class
- * @field       __class     Runtime class
- * @field       code        The error code
- * @field       domain      The error domain
- * @field       reason      The error message
+ * @struct      __XSError_Struct
+ * @brief       XSError class
  */
-typedef struct __XSError_Struct
+struct __XSError_Struct
 {
-    XSRuntimeClass __class;
-    XSInteger      code;
-    XSString      domain;
-    XSString      reason;
-}
-__XSError;
+    XSRuntimeClass __class; /*! Runtime class */
+    XSInteger      code;    /*! The error code */
+    XSString      domain;   /*! The error domain */
+    XSString      reason;   /*! The error message */
+};
 
 /*!
- * @function    __XSError_Initialize
- * @abstract    Runtime initialization
+ * @typedef     __XSError
+ * @brief       XSError class type
+ */
+typedef struct __XSError_Struct __XSError;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSError_Initialize( void );
 
 /*!
- * @function    __XSError_Destruct
- * @abstract    Destructor
+ * @brief       Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
 void __XSError_Destruct( XSObject object );
 
 /*!
- * @function    __XSError_ToString
- * @abstract    Object description
+ * @brief       Object description
  * @param       object  A pointer to the object
  * @result      The object's description
  */
 XSString __XSError_ToString( XSObject object );
 
 /*!
- * @function    __XSError_Copy
- * @abstract    Object copy
- * @param       object  A pointer to the object
+ * @brief       Object copy
+ * @param       source          The source object
+ * @param       destination     The destination object
  * @result      void
  */
 void __XSError_Copy( XSObject source, XSObject destination );

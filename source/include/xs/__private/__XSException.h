@@ -30,9 +30,9 @@
 /* $Id$ */
 
 /*!
- * @header      __XSException.h
- * @copyright   eosgarden 2011 - Jean-David Gadina <macmade@eosgarden.com>
- * @abstract    Private XSException class definitions
+ * @file        __XSException.h
+ * @brief       Private XSException class definitions
+ * @author      Jean-David Gadina <macmade@eosgarden.com>
  */
 
 #ifndef ___XS_EXCEPTION_H_
@@ -46,49 +46,46 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @typdef      __XSException
- * @abstract    XSError class
- * @field       __class     Runtime class
- * @field       code        The exception code
- * @field       domain      The exception domain
- * @field       reason      The exception message
+ * @struct      __XSException_Struct
+ * @brief       XSException class
  */
-typedef struct __XSException_Struct
+struct __XSException_Struct
 {
-    XSRuntimeClass __class;
-    XSInteger      code;
-    XSString       reason;
-    BOOL           caught;
-}
-__XSException;
+    XSRuntimeClass __class; /*! Runtime class */
+    XSInteger      code;    /*! The exception code */
+    XSString       reason;  /*! The exception reason */
+};
 
 /*!
- * @function    __XSException_Initialize
- * @abstract    Runtime initialization
+ * @struct      __XSException
+ * @brief       XSException class type    
+ */
+typedef struct __XSException_Struct __XSException;
+
+/*!
+ * @brief       Runtime initialization
  * @result      void
  */
 void __XSException_Initialize( void );
 
 /*!
- * @function    __XSException_Destruct
- * @abstract    Destructor
+ * @brief       Destructor
  * @param       object  A pointer to the object
  * @result      void
  */
 void __XSException_Destruct( XSObject object );
 
 /*!
- * @function    __XSException_ToString
- * @abstract    Object description
+ * @brief       Object description
  * @param       object  A pointer to the object
  * @result      The object's description
  */
 XSString __XSException_ToString( XSObject object );
 
 /*!
- * @function    __XSException_Copy
- * @abstract    Object copy
- * @param       object  A pointer to the object
+ * @brief       Object copy
+ * @param       source          The source object
+ * @param       destination     The destination object
  * @result      void
  */
 void __XSException_Copy( XSObject source, XSObject destination );
