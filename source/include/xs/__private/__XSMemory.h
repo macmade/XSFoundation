@@ -53,7 +53,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSAutoreleasePool
- * @abastract   XSAutoreleasePool class
+ * @abstract    XSAutoreleasePool class
  * @field       __class     Runtime class
  */
 typedef struct __XSAutoreleasePool_Struct
@@ -67,7 +67,7 @@ __XSAutoreleasePool;
 
 /*!
  * @typdef      __XSMemoryObject
- * @abastract   Allocated memeory object
+ * @abstract    Allocated memeory object
  * @field       retain_count    The object's retain count
  * @field       size            The allocated data size
  * @field       typeID          The typeID (only for allocated objects)

@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSApplicationArgument
- * @abastract   XSApplicationArgument class
+ * @abstract    XSApplicationArgument class
  * @field       __class     Runtime class
  */
 typedef struct __XSApplicationArgument_Struct

@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSSet
- * @abastract   XSSet class
+ * @abstract    XSSet class
  * @field       __class     Runtime class
  */
 typedef struct __XSSet_Struct

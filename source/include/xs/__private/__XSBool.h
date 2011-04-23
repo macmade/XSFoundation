@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSBool
- * @abastract   XSBool class
+ * @abstract    XSBool class
  * @field       __class     Runtime class
  */
 typedef struct __XSBool_Struct

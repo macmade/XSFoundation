@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSColor
- * @abastract   XSColor class
+ * @abstract    XSColor class
  * @field       __class     Runtime class
  */
 typedef struct __XSColor_Struct

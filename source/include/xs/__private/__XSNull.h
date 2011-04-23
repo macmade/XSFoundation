@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSNull
- * @abastract   XSNull class
+ * @abstract    XSNull class
  * @field       _xsbase     Runtime class
  */
 typedef struct __XSNull_Struct

@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSURL
- * @abastract   XSURL class
+ * @abstract    XSURL class
  * @field       __class     Runtime class
  */
 typedef struct __XSURL_Struct

@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSBag
- * @abastract   XSBag class
+ * @abstract    XSBag class
  * @field       __class     Runtime class
  */
 typedef struct __XSBag_Struct

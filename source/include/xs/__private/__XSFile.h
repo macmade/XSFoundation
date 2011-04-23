@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSFile
- * @abastract   XSFile class
+ * @abstract    XSFile class
  * @field       __class     Runtime class
  * @field       fp          The FILE pointer
  * @field       filename    The name of the file

@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSLock
- * @abastract   XSLock class
+ * @abstract    XSLock class
  * @field       __class     Runtime class
  */
 typedef struct __XSLock_Struct

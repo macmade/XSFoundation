@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSString
- * @abastract   XSString class
+ * @abstract    XSString class
  * @field       __class     Runtime class
  * @field       str         A pointer to the C string
  */

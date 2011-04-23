@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSHost
- * @abastract   XSHost class
+ * @abstract    XSHost class
  * @field       __class     Runtime class
  */
 typedef struct __XSHost_Struct

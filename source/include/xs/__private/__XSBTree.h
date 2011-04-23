@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSBTree
- * @abastract   XSBTree class
+ * @abstract    XSBTree class
  * @field       __class     Runtime class
  */
 typedef struct __XSBTree_Struct

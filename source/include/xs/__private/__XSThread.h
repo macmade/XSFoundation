@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSThread
- * @abastract   XSThread class
+ * @abstract    XSThread class
  * @field       __class     Runtime class
  */
 typedef struct __XSThread_Struct

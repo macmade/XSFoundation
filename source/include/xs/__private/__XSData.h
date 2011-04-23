@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSData
- * @abastract   XSData class
+ * @abstract    XSData class
  * @field       __class     Runtime class
  */
 typedef struct __XSData_Struct

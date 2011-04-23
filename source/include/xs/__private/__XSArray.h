@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSArray
- * @abastract   XSArray class
+ * @abstract    XSArray class
  * @field       __class     Runtime class
  * @field       count       Number of elements in the array
  * @field       capacity    Initial capacity of the array

@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSNotification
- * @abastract   XSNotification class
+ * @abstract    XSNotification class
  * @field       __class     Runtime class
  */
 typedef struct __XSNotification_Struct

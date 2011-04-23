@@ -64,7 +64,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSNumber
- * @abastract   XSNumber class
+ * @abstract    XSNumber class
  * @field       __class     Runtime class
  */
 typedef struct __XSNumber_Struct

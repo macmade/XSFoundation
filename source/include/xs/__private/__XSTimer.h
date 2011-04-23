@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSTimer
- * @abastract   XSTimer class
+ * @abstract    XSTimer class
  * @field       __class     Runtime class
  */
 typedef struct __XSTimer_Struct

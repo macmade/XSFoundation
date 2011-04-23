@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSURLRequest
- * @abastract   XSURLRequest class
+ * @abstract    XSURLRequest class
  * @field       __class     Runtime class
  */
 typedef struct __XSURLRequest_Struct

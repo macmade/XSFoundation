@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSDictionary
- * @abastract   XSDictionary class
+ * @abstract    XSDictionary class
  * @field       __class     Runtime class
  * @field       values      The dictionary values
  * @field       keys        The dictionary keys

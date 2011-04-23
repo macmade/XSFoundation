@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typdef      __XSException
- * @abastract   XSError class
+ * @abstract    XSError class
  * @field       __class     Runtime class
  * @field       code        The exception code
  * @field       domain      The exception domain
