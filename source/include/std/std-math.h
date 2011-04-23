@@ -75,7 +75,7 @@ extern "C" {
      * @def         MAX
      * @brief       ...
      */
-    #define MAX( a, b ) ( ( a > b ) ? a : b )
+    #define MAX( a, b ) ( ( ( a ) > ( b ) ) ? a : b )
     
 #endif
 
@@ -85,7 +85,7 @@ extern "C" {
      * @def         MIN
      * @brief       ...
      */
-    #define MIN( a, b ) ( ( a < b ) ? a : b )
+    #define MIN( a, b ) ( ( ( a ) < ( b ) ) ? a : b )
     
 #endif
 
