@@ -57,7 +57,7 @@ struct __XSException_Struct
 };
 
 /*!
- * @struct      __XSException
+ * @typedef     __XSException
  * @brief       XSException class type    
  */
 typedef struct __XSException_Struct __XSException;
