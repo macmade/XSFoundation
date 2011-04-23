@@ -77,7 +77,7 @@ XS_EXTERN_C_BEGIN
  * @def             __XS_VERS_STR__
  * @brief           XSFoundation version number string
  */
-#define __XS_VERS_STR__    "1.2.1-0"
+#define __XS_VERS_STR__    "1.2.2-0"
 
 /*!
  * @def             __XS_VERS_MAJ__
@@ -95,7 +95,7 @@ XS_EXTERN_C_BEGIN
  * @def             __XS_VERS_BUG__
  * @brief           XSFoundation bugfix version number
  */
-#define __XS_VERS_BUG__    1
+#define __XS_VERS_BUG__    2
 
 /*!
  * @def             __XS_VERS_PATCH__
