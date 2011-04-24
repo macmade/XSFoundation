@@ -1,0 +1,465 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="std-math_8h" kind="file">
+    <compoundname>std-math.h</compoundname>
+    <includedby refid="std_8h" local="yes">std.h</includedby>
+    <invincdepgraph>
+      <node id="6326">
+        <label>__XSApplicationArgument.h</label>
+        <link refid="____XSApplicationArgument_8h"/>
+      </node>
+      <node id="6331">
+        <label>__XSColor.h</label>
+        <link refid="____XSColor_8h"/>
+      </node>
+      <node id="6343">
+        <label>__XSNull.h</label>
+        <link refid="____XSNull_8h"/>
+      </node>
+      <node id="6333">
+        <label>__XSDictionary.h</label>
+        <link refid="____XSDictionary_8h"/>
+      </node>
+      <node id="6321">
+        <label>XSMemory.h</label>
+        <link refid="XSMemory_8h"/>
+      </node>
+      <node id="6349">
+        <label>__XSTimer.h</label>
+        <link refid="____XSTimer_8h"/>
+      </node>
+      <node id="6322">
+        <label>XSMemoryDebug.h</label>
+        <link refid="XSMemoryDebug_8h"/>
+      </node>
+      <node id="6338">
+        <label>__XSLock.h</label>
+        <link refid="____XSLock_8h"/>
+      </node>
+      <node id="6327">
+        <label>__XSArray.h</label>
+        <link refid="____XSArray_8h"/>
+      </node>
+      <node id="6347">
+        <label>__XSString.h</label>
+        <link refid="____XSString_8h"/>
+      </node>
+      <node id="6325">
+        <label>__XSApplication.h</label>
+        <link refid="____XSApplication_8h"/>
+      </node>
+      <node id="6328">
+        <label>__XSBag.h</label>
+        <link refid="____XSBag_8h"/>
+      </node>
+      <node id="6352">
+        <label>XSRuntime.h</label>
+        <link refid="XSRuntime_8h"/>
+      </node>
+      <node id="6337">
+        <label>__XSHost.h</label>
+        <link refid="____XSHost_8h"/>
+      </node>
+      <node id="6344">
+        <label>__XSNumber.h</label>
+        <link refid="____XSNumber_8h"/>
+      </node>
+      <node id="6348">
+        <label>__XSThread.h</label>
+        <link refid="____XSThread_8h"/>
+      </node>
+      <node id="6319">
+        <label>XSTypes.h</label>
+        <link refid="XSTypes_8h"/>
+        <childnode refid="6320" relation="include">
+        </childnode>
+        <childnode refid="6321" relation="include">
+        </childnode>
+        <childnode refid="6322" relation="include">
+        </childnode>
+        <childnode refid="6323" relation="include">
+        </childnode>
+      </node>
+      <node id="6320">
+        <label>XSGeometry.h</label>
+        <link refid="XSGeometry_8h"/>
+      </node>
+      <node id="6346">
+        <label>__XSSort.h</label>
+        <link refid="____XSSort_8h"/>
+      </node>
+      <node id="6350">
+        <label>__XSURL.h</label>
+        <link refid="____XSURL_8h"/>
+      </node>
+      <node id="6342">
+        <label>__XSNotificationCenter.h</label>
+        <link refid="____XSNotificationCenter_8h"/>
+      </node>
+      <node id="6317">
+        <label>std-math.h</label>
+        <link refid="std-math.h"/>
+        <childnode refid="6318" relation="include">
+        </childnode>
+      </node>
+      <node id="6330">
+        <label>__XSBTree.h</label>
+        <link refid="____XSBTree_8h"/>
+      </node>
+      <node id="6318">
+        <label>std.h</label>
+        <link refid="std_8h"/>
+        <childnode refid="6319" relation="include">
+        </childnode>
+        <childnode refid="6324" relation="include">
+        </childnode>
+      </node>
+      <node id="6339">
+        <label>__XSMemory.h</label>
+        <link refid="____XSMemory_8h"/>
+        <childnode refid="6340" relation="include">
+        </childnode>
+      </node>
+      <node id="6340">
+        <label>__XSMemoryDebug.h</label>
+        <link refid="____XSMemoryDebug_8h"/>
+      </node>
+      <node id="6323">
+        <label>XSSort.h</label>
+        <link refid="XSSort_8h"/>
+      </node>
+      <node id="6334">
+        <label>__XSError.h</label>
+        <link refid="____XSError_8h"/>
+      </node>
+      <node id="6332">
+        <label>__XSData.h</label>
+        <link refid="____XSData_8h"/>
+      </node>
+      <node id="6335">
+        <label>__XSException.h</label>
+        <link refid="____XSException_8h"/>
+      </node>
+      <node id="6341">
+        <label>__XSNotification.h</label>
+        <link refid="____XSNotification_8h"/>
+      </node>
+      <node id="6329">
+        <label>__XSBool.h</label>
+        <link refid="____XSBool_8h"/>
+      </node>
+      <node id="6324">
+        <label>XS.h</label>
+        <link refid="XS_8h"/>
+        <childnode refid="6325" relation="include">
+        </childnode>
+        <childnode refid="6326" relation="include">
+        </childnode>
+        <childnode refid="6327" relation="include">
+        </childnode>
+        <childnode refid="6328" relation="include">
+        </childnode>
+        <childnode refid="6329" relation="include">
+        </childnode>
+        <childnode refid="6330" relation="include">
+        </childnode>
+        <childnode refid="6331" relation="include">
+        </childnode>
+        <childnode refid="6332" relation="include">
+        </childnode>
+        <childnode refid="6333" relation="include">
+        </childnode>
+        <childnode refid="6334" relation="include">
+        </childnode>
+        <childnode refid="6335" relation="include">
+        </childnode>
+        <childnode refid="6336" relation="include">
+        </childnode>
+        <childnode refid="6337" relation="include">
+        </childnode>
+        <childnode refid="6338" relation="include">
+        </childnode>
+        <childnode refid="6339" relation="include">
+        </childnode>
+        <childnode refid="6340" relation="include">
+        </childnode>
+        <childnode refid="6341" relation="include">
+        </childnode>
+        <childnode refid="6342" relation="include">
+        </childnode>
+        <childnode refid="6343" relation="include">
+        </childnode>
+        <childnode refid="6344" relation="include">
+        </childnode>
+        <childnode refid="6345" relation="include">
+        </childnode>
+        <childnode refid="6346" relation="include">
+        </childnode>
+        <childnode refid="6347" relation="include">
+        </childnode>
+        <childnode refid="6348" relation="include">
+        </childnode>
+        <childnode refid="6349" relation="include">
+        </childnode>
+        <childnode refid="6350" relation="include">
+        </childnode>
+        <childnode refid="6351" relation="include">
+        </childnode>
+        <childnode refid="6352" relation="include">
+        </childnode>
+      </node>
+      <node id="6345">
+        <label>__XSSet.h</label>
+        <link refid="____XSSet_8h"/>
+      </node>
+      <node id="6351">
+        <label>__XSURLRequest.h</label>
+        <link refid="____XSURLRequest_8h"/>
+      </node>
+      <node id="6336">
+        <label>__XSFile.h</label>
+        <link refid="____XSFile_8h"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="std-math_8h_1afa44535408dbd055919bf9faec57f9a9" prot="public" static="no">
+        <name>__LOG2</name>
+        <initializer>0.301029995663981f</initializer>
+        <briefdescription>
+<para>Constant for the binary logarithm macro. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-math.h" line="62" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-math.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-math_8h_1ae2f08dc603ae93c402abd918ba4e23e1" prot="public" static="no">
+        <name>ABS</name>
+        <param><defname>a</defname></param>
+        <initializer>( ( a ) &lt; 0 ? ( -( a ) ) : ( a ) )</initializer>
+        <briefdescription>
+<para>Absolute value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-math.h" line="104" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-math.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-math_8h_1a40805b5dd56ee36df59a7bbe403ddf33" prot="public" static="no">
+        <name>LOG2</name>
+        <param><defname>x</defname></param>
+        <initializer>( log10( x ) / __LOG2 )</initializer>
+        <briefdescription>
+<para>Binary logarithm. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-math.h" line="69" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-math.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-math_8h_1ae71449b1cc6e6250b91f539153a7a0d3" prot="public" static="no">
+        <name>M_PI</name>
+        <initializer>3.1415926535897932384626433832795</initializer>
+        <briefdescription>
+<para>Pi (π) constant. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-math.h" line="52" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-math.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-math_8h_1afa99ec4acc4ecb2dc3c2d05da15d0e3f" prot="public" static="no">
+        <name>MAX</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>( ( ( a ) &gt; ( b ) ) ? a : b )</initializer>
+        <briefdescription>
+<para>Get the max of two values. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-math.h" line="81" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-math.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-math_8h_1a3acffbd305ee72dcd4593c0d8af64a4f" prot="public" static="no">
+        <name>MIN</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>( ( ( a ) &lt; ( b ) ) ? a : b )</initializer>
+        <briefdescription>
+<para>Get the min of two values. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-math.h" line="93" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-math.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Mathematical macros. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt; </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2011,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std-math.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mathematical<sp/>macros</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_XS_STD_MATH_</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_XS_STD_MATH_</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>M_PI</highlight></codeline>
+<codeline lineno="47"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>M_PI</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Pi<sp/>(π)<sp/>constant</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="std-math_8h_1ae71449b1cc6e6250b91f539153a7a0d3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>M_PI<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3.1415926535897932384626433832795</highlight></codeline>
+<codeline lineno="53"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="55"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LOG2</highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__LOG2</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Constant<sp/>for<sp/>the<sp/>binary<sp/>logarithm<sp/>macro</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="std-math_8h_1afa44535408dbd055919bf9faec57f9a9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>__LOG2<sp/><sp/><sp/><sp/><sp/><sp/>0.301029995663981f</highlight></codeline>
+<codeline lineno="63"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LOG2</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Binary<sp/>logarithm</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/><sp/><sp/>The<sp/>value</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="std-math_8h_1a40805b5dd56ee36df59a7bbe403ddf33" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>LOG2(<sp/>x<sp/>)<sp/><sp/><sp/>(<sp/>log10(<sp/>x<sp/>)<sp/>/<sp/>__LOG2<sp/>)</highlight></codeline>
+<codeline lineno="70"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="72"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MAX</highlight></codeline>
+<codeline lineno="74"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MAX</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Get<sp/>the<sp/>max<sp/>of<sp/>two<sp/>values</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>a<sp/><sp/><sp/>The<sp/>first<sp/>value</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>b<sp/><sp/><sp/>The<sp/>second<sp/>value</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="std-math_8h_1afa99ec4acc4ecb2dc3c2d05da15d0e3f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>MAX(<sp/>a,<sp/>b<sp/>)<sp/>(<sp/>(<sp/>(<sp/>a<sp/>)<sp/>&gt;<sp/>(<sp/>b<sp/>)<sp/>)<sp/>?<sp/>a<sp/>:<sp/>b<sp/>)</highlight></codeline>
+<codeline lineno="82"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="84"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MIN</highlight></codeline>
+<codeline lineno="86"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MIN</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Get<sp/>the<sp/>min<sp/>of<sp/>two<sp/>values</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>a<sp/><sp/><sp/>The<sp/>first<sp/>value</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>b<sp/><sp/><sp/>The<sp/>second<sp/>value</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="std-math_8h_1a3acffbd305ee72dcd4593c0d8af64a4f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>MIN(<sp/>a,<sp/>b<sp/>)<sp/>(<sp/>(<sp/>(<sp/>a<sp/>)<sp/>&lt;<sp/>(<sp/>b<sp/>)<sp/>)<sp/>?<sp/>a<sp/>:<sp/>b<sp/>)</highlight></codeline>
+<codeline lineno="94"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="96"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ABS</highlight></codeline>
+<codeline lineno="98"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ABS</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Absolute<sp/>value</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>a<sp/><sp/><sp/>The<sp/>value</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="std-math_8h_1ae2f08dc603ae93c402abd918ba4e23e1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>ABS(<sp/>a<sp/>)<sp/>(<sp/>(<sp/>a<sp/>)<sp/>&lt;<sp/>0<sp/>?<sp/>(<sp/>-(<sp/>a<sp/>)<sp/>)<sp/>:<sp/>(<sp/>a<sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="105"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="107"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="109"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="111"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_XS_STD_MATH_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-math.h"/>
+  </compounddef>
+</doxygen>

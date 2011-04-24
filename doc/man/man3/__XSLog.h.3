@@ -1,0 +1,80 @@
+.TH "__XSLog.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+__XSLog.h \- 
+.PP
+Private logging functions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '../XSMacros.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "XS_EXTERN_C_BEGIN void void \fB__XSLog_Pause\fP (void)"
+.br
+.RI "\fIPauses the log system. \fP"
+.ti -1c
+.RI "void \fB__XSLog_Resume\fP (void)"
+.br
+.RI "\fIResumes the log system. \fP"
+.ti -1c
+.RI "XS_EXTERN_C_BEGIN void \fB__XSVLog\fP (const char *fmt, va_list args) FORMAT_ATTRIBUTE(printf"
+.br
+.RI "\fIOutputs a log message to stdout. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Private logging functions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fB__XSLog.h\fP.
+.SH "Function Documentation"
+.PP 
+.SS "XS_EXTERN_C_BEGIN void void __XSLog_Pause (void)"
+.PP
+Pauses the log system. \fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void __XSLog_Resume (void)"
+.PP
+Resumes the log system. \fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "XS_EXTERN_C_BEGIN void __XSVLog (const char *fmt, va_listargs)"
+.PP
+Outputs a log message to stdout. The log message will be prefixed by the date/time, process name, ID, and thread ID (or MACH port if available). 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfmt\fP The message format 
+.br
+\fIargs\fP Arguments for the format 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

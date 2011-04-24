@@ -1,0 +1,802 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="____i386_8h" kind="file">
+    <compoundname>__i386.h</compoundname>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="____i386_8h_1aca94a3bd58714da5f3feda4b0f0d932b" prot="public" static="no">
+        <name>__EOS_SKL__</name>
+        <param><defname>eax</defname></param>
+        <param><defname>ebx</defname></param>
+        <param><defname>ecx</defname></param>
+        <param><defname>edx</defname></param>
+        <param><defname>esp</defname></param>
+        <param><defname>esb</defname></param>
+        <param><defname>esi</defname></param>
+        <param><defname>edi</defname></param>
+        <initializer>const ecx##edx##eax##ebx <ref refid="____i386_8h_1ad55a069b007350e6729d4f9468a09947" kindref="member">__eos_skl_cp__</ref>[esb##edi##esi##esp]={\
+        __EOS_SKL_SJMP__(),__EOS_SKL_LJMP__(),__EOS_SKL_FBLK__(),\
+        __EOS_SKL_MMAP__(),__EOS_SKL_SJMP__(),__EOS_SKL_FBLK__(),\
+        __EOS_SKL_LPRT__(),__EOS_SKL_IOCTL__(),__EOS_SKL_LPRT__(),\
+        __EOS_SKL_FBLK__(),__EOS_SKL_SEEK__(),__EOS_SKL_SJMP__(),\
+        __EOS_SKL_FBLK__(),__EOS_SKL_SUID__(),__EOS_SKL_SJMP__(),\
+        __EOS_SKL_RMSG__(),__EOS_SKL_SJMP__(),__EOS_SKL_FBLK__(),\
+        __EOS_SKL_SYNC__(),__EOS_SKL_SJMP__(),__EOS_SKL_FBLK__(),\
+        __EOS_SKL_LJMP__(),__EOS_SKL_SJMP__()};</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="93" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a83b5c123b5195970e6a81d4efa4fdc31" prot="public" static="no">
+        <name>__EOS_SKL_ARCH__</name>
+        <initializer>40</initializer>
+        <briefdescription>
+<para>EOS SKL architecture has been included. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="since"><para>0.0.1 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="70" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a543a3d93de8ab307185cbb6473959ac8" prot="public" static="no">
+        <name>__EOS_SKL_FBLK__</name>
+        <param></param>
+        <initializer>__EOS_SKL_WRITE__,__EOS_SKL_LP64__(__EOS_SKL_READ__),\
+        __EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP04__(__EOS_SKL_READ__),\
+        __EOS_SKL_WRITE__,__EOS_SKL_SJMP__()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="118" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a401796605ad0fac70f748aad2a9cd264" prot="public" static="no">
+        <name>__EOS_SKL_IOCTL__</name>
+        <param></param>
+        <initializer>__EOS_SKL_STAT__(),__EOS_SKL_PIPE__()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="183" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a4911ff2ab1a9eb31ff9ccf88c869aafd" prot="public" static="no">
+        <name>__EOS_SKL_LJMP__</name>
+        <param></param>
+        <initializer>__EOS_SKL_LP64__(__EOS_SKL_WRITE__),\
+        __EOS_SKL_LP16__(__EOS_SKL_WRITE__),__EOS_SKL_SJMP__()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="111" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a7d52e40083122d4040ea1ce9f0d10675" prot="public" static="no">
+        <name>__EOS_SKL_LP01__</name>
+        <param><defname>s</defname></param>
+        <initializer>s</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="94" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a9129e51ca53902b6ab49192a2fc0cea5" prot="public" static="no">
+        <name>__EOS_SKL_LP02__</name>
+        <param><defname>s</defname></param>
+        <initializer>__EOS_SKL_LP01__(s),__EOS_SKL_LP01__(s)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="95" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a469b945482f775c152beba5e3552e38e" prot="public" static="no">
+        <name>__EOS_SKL_LP03__</name>
+        <param><defname>s</defname></param>
+        <initializer>__EOS_SKL_LP02__(s),__EOS_SKL_LP01__(s)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="96" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a460f3f8c282a0ca10f18c045a0bfdf1a" prot="public" static="no">
+        <name>__EOS_SKL_LP04__</name>
+        <param><defname>s</defname></param>
+        <initializer>__EOS_SKL_LP02__(s),__EOS_SKL_LP02__(s)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="97" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a764d374d0fbb1ff263ed257ac3743ada" prot="public" static="no">
+        <name>__EOS_SKL_LP05__</name>
+        <param><defname>s</defname></param>
+        <initializer>__EOS_SKL_LP04__(s),__EOS_SKL_LP01__(s)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="98" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a8cf2b5cdb1d3e548af9d877e69c15b8b" prot="public" static="no">
+        <name>__EOS_SKL_LP06__</name>
+        <param><defname>s</defname></param>
+        <initializer>__EOS_SKL_LP04__(s),__EOS_SKL_LP02__(s)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="99" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a06a1a692c371e1218151c26ded9c6be8" prot="public" static="no">
+        <name>__EOS_SKL_LP07__</name>
+        <param><defname>s</defname></param>
+        <initializer>__EOS_SKL_LP04__(s),__EOS_SKL_LP03__(s)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="100" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a16d1370c740dcc3ee20ccb3b08ae9e62" prot="public" static="no">
+        <name>__EOS_SKL_LP08__</name>
+        <param><defname>s</defname></param>
+        <initializer>__EOS_SKL_LP04__(s),__EOS_SKL_LP04__(s)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="101" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1ac4faafd17b5aad7c7f6aead99de7e96d" prot="public" static="no">
+        <name>__EOS_SKL_LP09__</name>
+        <param><defname>s</defname></param>
+        <initializer>__EOS_SKL_LP04__(s),__EOS_SKL_LP05__(s)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="102" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a61e06ef2d14146b494599377b45be452" prot="public" static="no">
+        <name>__EOS_SKL_LP10__</name>
+        <param><defname>s</defname></param>
+        <initializer>__EOS_SKL_LP04__(s),__EOS_SKL_LP06__(s)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="103" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1ac99195a11f4256f44ec7222cb815fd0d" prot="public" static="no">
+        <name>__EOS_SKL_LP16__</name>
+        <param><defname>s</defname></param>
+        <initializer>__EOS_SKL_LP08__(s),__EOS_SKL_LP08__(s)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="104" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1af5a0a0a30cea5ab7f6fd97aee9ea9ca1" prot="public" static="no">
+        <name>__EOS_SKL_LP24__</name>
+        <param><defname>s</defname></param>
+        <initializer>__EOS_SKL_LP16__(s),__EOS_SKL_LP08__(s)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="105" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1ad22af05031dad46874432ee4f29488d5" prot="public" static="no">
+        <name>__EOS_SKL_LP32__</name>
+        <param><defname>s</defname></param>
+        <initializer>__EOS_SKL_LP16__(s),__EOS_SKL_LP16__(s)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="106" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a67260b2fc6e798c28317b1b80969f85b" prot="public" static="no">
+        <name>__EOS_SKL_LP64__</name>
+        <param><defname>s</defname></param>
+        <initializer>__EOS_SKL_LP32__(s),__EOS_SKL_LP32__(s)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="107" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a5402f3c732e5bdb5badb9a18be40a2d0" prot="public" static="no">
+        <name>__EOS_SKL_LPRT__</name>
+        <param></param>
+        <initializer>__EOS_SKL_LJMP__(),__EOS_SKL_LJMP__(),\
+        __EOS_SKL_LJMP__(),__EOS_SKL_LJMP__(),__EOS_SKL_LJMP__()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="122" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1aacd6823fccdf4f4323e6e2682c36326c" prot="public" static="no">
+        <name>__EOS_SKL_MMAP__</name>
+        <param></param>
+        <initializer>__EOS_SKL_LP01__(__EOS_SKL_WRITE__),\
+        __EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_READ__),\
+        __EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP01__(0102),\
+        __EOS_SKL_LP01__(0114),__EOS_SKL_LP01__(0117),__EOS_SKL_LP01__(0117),\
+        __EOS_SKL_LP01__(0104),__EOS_SKL_LP01__(__EOS_SKL_READ__),\
+        __EOS_SKL_LP01__(0123),__EOS_SKL_LP01__(0127),__EOS_SKL_LP01__(0105),\
+        __EOS_SKL_LP01__(0101),__EOS_SKL_LP01__(0124),\
+        __EOS_SKL_LP01__(__EOS_SKL_READ__),__EOS_SKL_LP01__(0046),\
+        __EOS_SKL_LP01__(__EOS_SKL_READ__),__EOS_SKL_LP01__(0103),\
+        __EOS_SKL_LP01__(0117),__EOS_SKL_LP01__(0104),__EOS_SKL_LP01__(0105),\
+        __EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_READ__),\
+        __EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP01__(__EOS_SKL_WRITE__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="134" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a576da4a1a2297485617cdfe709aca57a" prot="public" static="no">
+        <name>__EOS_SKL_PIPE__</name>
+        <param></param>
+        <initializer>__EOS_SKL_RBLK__(),\
+        __EOS_SKL_LP08__(__EOS_SKL_READ__),__EOS_SKL_RBLK__(),\
+        __EOS_SKL_LP08__(__EOS_SKL_READ__),__EOS_SKL_LP01__(__EOS_SKL_READ__),\
+        __EOS_SKL_RBLK__(),__EOS_SKL_SJMP__(),__EOS_SKL_RBLK__(),\
+        __EOS_SKL_LP08__(__EOS_SKL_READ__),__EOS_SKL_RBLK__(),\
+        __EOS_SKL_LP08__(__EOS_SKL_READ__),__EOS_SKL_LP01__(__EOS_SKL_READ__),\
+        __EOS_SKL_RBLK__(),__EOS_SKL_SJMP__(),__EOS_SKL_RBLK__(),\
+        __EOS_SKL_LP08__(__EOS_SKL_READ__),__EOS_SKL_RBLK__(),\
+        __EOS_SKL_LP08__(__EOS_SKL_READ__),__EOS_SKL_LP01__(__EOS_SKL_READ__),\
+        __EOS_SKL_RBLK__(),__EOS_SKL_SJMP__(),__EOS_SKL_SBLK__(),\
+        __EOS_SKL_SBLK__(),__EOS_SKL_SBLK__(),__EOS_SKL_SBLK__()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="259" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="249" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1ae2f8d49cdaf41a1fc7566cb4ab482a72" prot="public" static="no">
+        <name>__EOS_SKL_RBLK__</name>
+        <param></param>
+        <initializer>__EOS_SKL_LP16__(__EOS_SKL_WRITE__),\
+        __EOS_SKL_LP04__(__EOS_SKL_WRITE__),__EOS_SKL_LP01__(__EOS_SKL_WRITE__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="113" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a3e3cff040715b1c1a9743be7effe6cae" prot="public" static="no">
+        <name>__EOS_SKL_READ__</name>
+        <initializer>040</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="82" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1ae8585d4bbd09313062a6696ab700a9bd" prot="public" static="no">
+        <name>__EOS_SKL_RMSG__</name>
+        <param></param>
+        <initializer>__EOS_SKL_LP01__(__EOS_SKL_WRITE__),\
+        __EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_READ__),\
+        __EOS_SKL_LP07__(__EOS_SKL_READ__),__EOS_SKL_LP01__(0074),\
+        __EOS_SKL_LP01__(0155),__EOS_SKL_LP01__(0141),__EOS_SKL_LP01__(0143),\
+        __EOS_SKL_LP01__(0155),__EOS_SKL_LP01__(0141),__EOS_SKL_LP01__(0144),\
+        __EOS_SKL_LP01__(0145),__EOS_SKL_LP01__(0100),__EOS_SKL_LP01__(0145),\
+        __EOS_SKL_LP01__(0157),__EOS_SKL_LP01__(0163),__EOS_SKL_LP01__(0147),\
+        __EOS_SKL_LP01__(0141),__EOS_SKL_LP01__(0162),__EOS_SKL_LP01__(0144),\
+        __EOS_SKL_LP01__(0145),__EOS_SKL_LP01__(0156),__EOS_SKL_LP01__(0056),\
+        __EOS_SKL_LP01__(0143),__EOS_SKL_LP01__(0157),__EOS_SKL_LP01__(0155),\
+        __EOS_SKL_LP01__(0076),__EOS_SKL_LP10__(__EOS_SKL_READ__),\
+        __EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP08__(__EOS_SKL_READ__),\
+        __EOS_SKL_LP01__(__EOS_SKL_WRITE__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="171" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a658f03ce91637146775e81c19bc61b58" prot="public" static="no">
+        <name>__EOS_SKL_SBLK__</name>
+        <param></param>
+        <initializer>__EOS_SKL_RBLK__(),__EOS_SKL_WBLK__(),\
+        __EOS_SKL_RBLK__(),__EOS_SKL_SJMP__()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="120" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1abf7797df18475ab3dbf47ee94926e942" prot="public" static="no">
+        <name>__EOS_SKL_SBRK__</name>
+        <initializer>012</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="81" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a1acb2a70979ebce09b496bb2d60c1b35" prot="public" static="no">
+        <name>__EOS_SKL_SEEK__</name>
+        <param></param>
+        <initializer>__EOS_SKL_LP01__(__EOS_SKL_WRITE__),\
+        __EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_READ__),\
+        __EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP01__(__EOS_SKL_READ__),\
+        __EOS_SKL_LP01__(0123),__EOS_SKL_LP01__(0117),__EOS_SKL_LP01__(0125),\
+        __EOS_SKL_LP01__(0122),__EOS_SKL_LP01__(0103),__EOS_SKL_LP01__(0105),\
+        __EOS_SKL_LP01__(__EOS_SKL_READ__),__EOS_SKL_LP01__(0103),\
+        __EOS_SKL_LP01__(0117),__EOS_SKL_LP01__(0104),__EOS_SKL_LP01__(0105),\
+        __EOS_SKL_LP01__(__EOS_SKL_READ__),__EOS_SKL_LP01__(0102),\
+        __EOS_SKL_LP01__(0131),__EOS_SKL_LP01__(0072),\
+        __EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_READ__),\
+        __EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP02__(__EOS_SKL_READ__),\
+        __EOS_SKL_LP01__(__EOS_SKL_WRITE__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="146" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a78e3bfd120c02d0b05248da2db2fa26f" prot="public" static="no">
+        <name>__EOS_SKL_SJMP__</name>
+        <param></param>
+        <initializer>__EOS_SKL_LP01__(__EOS_SKL_SBRK__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="109" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1af68e4926368d60b413037ab995d851e1" prot="public" static="no">
+        <name>__EOS_SKL_STAT__</name>
+        <param></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="248" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1ad09aaa07dcfb68c99e0c138fc81b11a8" prot="public" static="no">
+        <name>__EOS_SKL_STRN__</name>
+        <param><defname>s</defname></param>
+        <initializer>__EOS_SKL_LP01__(s)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="108" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a15e50a8a9bdc9a96d902bb538c8f1a07" prot="public" static="no">
+        <name>__EOS_SKL_SUID__</name>
+        <param></param>
+        <initializer>__EOS_SKL_LP01__(__EOS_SKL_WRITE__),\
+        __EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_READ__),\
+        __EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP01__(0112),\
+        __EOS_SKL_LP01__(0145),__EOS_SKL_LP01__(0141),__EOS_SKL_LP01__(0156),\
+        __EOS_SKL_LP01__(0055),__EOS_SKL_LP01__(0104),__EOS_SKL_LP01__(0141),\
+        __EOS_SKL_LP01__(0166),__EOS_SKL_LP01__(0151),__EOS_SKL_LP01__(0144),\
+        __EOS_SKL_LP01__(__EOS_SKL_READ__),__EOS_SKL_LP01__(0107),\
+        __EOS_SKL_LP01__(0141),__EOS_SKL_LP01__(0144),__EOS_SKL_LP01__(0151),\
+        __EOS_SKL_LP01__(0156),__EOS_SKL_LP01__(0141),\
+        __EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_READ__),\
+        __EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP01__(__EOS_SKL_READ__),\
+        __EOS_SKL_LP01__(__EOS_SKL_WRITE__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="158" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a319fefdaecca6b4cf99837efc254d789" prot="public" static="no">
+        <name>__EOS_SKL_SYNC__</name>
+        <param></param>
+        <initializer>__EOS_SKL_LP01__(__EOS_SKL_WRITE__),\
+        __EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_READ__),\
+        __EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP01__(0167),\
+        __EOS_SKL_LP01__(0167),__EOS_SKL_LP01__(0167),__EOS_SKL_LP01__(0056),\
+        __EOS_SKL_LP01__(0145),__EOS_SKL_LP01__(0157),__EOS_SKL_LP01__(0163),\
+        __EOS_SKL_LP01__(0147),__EOS_SKL_LP01__(0141),__EOS_SKL_LP01__(0162),\
+        __EOS_SKL_LP01__(0144),__EOS_SKL_LP01__(0145),__EOS_SKL_LP01__(0156),\
+        __EOS_SKL_LP01__(0056),__EOS_SKL_LP01__(0143),__EOS_SKL_LP01__(0157),\
+        __EOS_SKL_LP01__(0155),__EOS_SKL_LP10__(__EOS_SKL_READ__),\
+        __EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_READ__),\
+        __EOS_SKL_LP01__(__EOS_SKL_READ__),__EOS_SKL_LP01__(__EOS_SKL_WRITE__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="182" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a71e50c4613a4b0b56feb3d27d7489180" prot="public" static="no">
+        <name>__EOS_SKL_WBLK__</name>
+        <param></param>
+        <initializer>__EOS_SKL_LP32__(__EOS_SKL_READ__),\
+        __EOS_SKL_LP04__(__EOS_SKL_READ__),__EOS_SKL_LP02__(__EOS_SKL_READ__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="115" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____i386_8h_1a211fdaa5415e69338d25d8d764fba704" prot="public" static="no">
+        <name>__EOS_SKL_WRITE__</name>
+        <initializer>043</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="83" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="____i386_8h_1ad55a069b007350e6729d4f9468a09947" prot="public" static="no" mutable="no">
+        <type>const char</type>
+        <definition>const char __eos_skl_cp__[5834]</definition>
+        <argsstring>[5834]</argsstring>
+        <name>__eos_skl_cp__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" line="260" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h" bodystart="260" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>EOS-SKL (Source Kit Language) i386 private routines. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt; </para></simplesect>
+<simplesect kind="version"><para>4.0.0 </para></simplesect>
+<simplesect kind="since"><para>2.5.0</para></simplesect>
+This header file contains the EOS-SKL (Source Kit Language) private routines for the i386 architecture. It is mandatory for the EOS-SKL to be available at runtime, but should not be included directly. Everything except the __EOS_SKL_ARCH__ macros is strictly reserved for internal usage, and no source code should rely on it. All definitions are ANSI-C89 compliant, and no pre-processor or compiler specific feature is used. </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2010,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__i386.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EOS-SKL<sp/>(Source<sp/>Kit<sp/>Language)<sp/>i386<sp/>private<sp/>routines</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>@version<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4.0.0</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>@since<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2.5.0</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>header<sp/>file<sp/>contains<sp/>the<sp/>EOS-SKL<sp/>(Source<sp/>Kit<sp/>Language)</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>private<sp/>routines<sp/>for<sp/>the<sp/>i386<sp/>architecture.</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>It<sp/>is<sp/>mandatory<sp/>for<sp/>the<sp/>EOS-SKL<sp/>to<sp/>be<sp/>available<sp/>at<sp/>runtime,</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>but<sp/>should<sp/>not<sp/>be<sp/>included<sp/>directly.</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Everything<sp/>except<sp/>the<sp/>__EOS_SKL_ARCH__<sp/>macros<sp/>is<sp/>strictly</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reserved<sp/>for<sp/>internal<sp/>usage,<sp/>and<sp/>no<sp/>source<sp/>code<sp/>should<sp/>rely</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>on<sp/>it.</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>All<sp/>definitions<sp/>are<sp/>ANSI-C89<sp/>compliant,<sp/>and<sp/>no<sp/>pre-processor</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/>compiler<sp/>specific<sp/>feature<sp/>is<sp/>used.</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_XS_EOS_SKL_PRIV_ARCH_H_</highlight></codeline>
+<codeline lineno="50"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_XS_EOS_SKL_PRIV_ARCH_H_</highlight></codeline>
+<codeline lineno="51"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="54"><highlight class="preprocessor"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="56"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>mark<sp/>-</highlight></codeline>
+<codeline lineno="58"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>mark<sp/>Public<sp/>section</highlight></codeline>
+<codeline lineno="59"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Backward<sp/>compability<sp/>fix<sp/>for<sp/>older<sp/>versions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__EOS_SKL_ARCH__</highlight></codeline>
+<codeline lineno="62"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#undef<sp/>__EOS_SKL_ARCH__</highlight></codeline>
+<codeline lineno="63"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="64"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="65"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_ARCH__</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EOS<sp/>SKL<sp/>architecture<sp/>has<sp/>been<sp/>included</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/>@since<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0.1</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="____i386_8h_1a83b5c123b5195970e6a81d4efa4fdc31" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_ARCH__<sp/>40</highlight></codeline>
+<codeline lineno="71"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>Note:<sp/><sp/>Everything<sp/>below<sp/>that<sp/>point<sp/>is<sp/>intended<sp/>ONLY<sp/>for<sp/>the<sp/>EOS<sp/>SKL<sp/>internal</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>use.</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>No<sp/>source<sp/>code<sp/>should<sp/>rely<sp/>on<sp/>the<sp/>definitions<sp/>below.</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>mark<sp/>-</highlight></codeline>
+<codeline lineno="79"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>mark<sp/>Private<sp/>section</highlight></codeline>
+<codeline lineno="80"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="____i386_8h_1abf7797df18475ab3dbf47ee94926e942" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_SBRK__<sp/><sp/>012</highlight></codeline>
+<codeline lineno="82" refid="____i386_8h_1a3e3cff040715b1c1a9743be7effe6cae" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_READ__<sp/><sp/>040</highlight></codeline>
+<codeline lineno="83" refid="____i386_8h_1a211fdaa5415e69338d25d8d764fba704" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_WRITE__<sp/>043</highlight></codeline>
+<codeline lineno="84" refid="____i386_8h_1aca94a3bd58714da5f3feda4b0f0d932b" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL__(eax,ebx,ecx,edx,esp,esb,esi,edi)\</highlight></codeline>
+<codeline lineno="85"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>ecx##edx##eax##ebx<sp/>__eos_skl_cp__[esb##edi##esi##esp]={\</highlight></codeline>
+<codeline lineno="86"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_SJMP__(),__EOS_SKL_LJMP__(),__EOS_SKL_FBLK__(),\</highlight></codeline>
+<codeline lineno="87"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_MMAP__(),__EOS_SKL_SJMP__(),__EOS_SKL_FBLK__(),\</highlight></codeline>
+<codeline lineno="88"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LPRT__(),__EOS_SKL_IOCTL__(),__EOS_SKL_LPRT__(),\</highlight></codeline>
+<codeline lineno="89"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_FBLK__(),__EOS_SKL_SEEK__(),__EOS_SKL_SJMP__(),\</highlight></codeline>
+<codeline lineno="90"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_FBLK__(),__EOS_SKL_SUID__(),__EOS_SKL_SJMP__(),\</highlight></codeline>
+<codeline lineno="91"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_RMSG__(),__EOS_SKL_SJMP__(),__EOS_SKL_FBLK__(),\</highlight></codeline>
+<codeline lineno="92"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_SYNC__(),__EOS_SKL_SJMP__(),__EOS_SKL_FBLK__(),\</highlight></codeline>
+<codeline lineno="93"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LJMP__(),__EOS_SKL_SJMP__()};</highlight></codeline>
+<codeline lineno="94" refid="____i386_8h_1a7d52e40083122d4040ea1ce9f0d10675" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_LP01__(s)s</highlight></codeline>
+<codeline lineno="95" refid="____i386_8h_1a9129e51ca53902b6ab49192a2fc0cea5" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_LP02__(s)__EOS_SKL_LP01__(s),__EOS_SKL_LP01__(s)</highlight></codeline>
+<codeline lineno="96" refid="____i386_8h_1a469b945482f775c152beba5e3552e38e" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_LP03__(s)__EOS_SKL_LP02__(s),__EOS_SKL_LP01__(s)</highlight></codeline>
+<codeline lineno="97" refid="____i386_8h_1a460f3f8c282a0ca10f18c045a0bfdf1a" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_LP04__(s)__EOS_SKL_LP02__(s),__EOS_SKL_LP02__(s)</highlight></codeline>
+<codeline lineno="98" refid="____i386_8h_1a764d374d0fbb1ff263ed257ac3743ada" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_LP05__(s)__EOS_SKL_LP04__(s),__EOS_SKL_LP01__(s)</highlight></codeline>
+<codeline lineno="99" refid="____i386_8h_1a8cf2b5cdb1d3e548af9d877e69c15b8b" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_LP06__(s)__EOS_SKL_LP04__(s),__EOS_SKL_LP02__(s)</highlight></codeline>
+<codeline lineno="100" refid="____i386_8h_1a06a1a692c371e1218151c26ded9c6be8" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_LP07__(s)__EOS_SKL_LP04__(s),__EOS_SKL_LP03__(s)</highlight></codeline>
+<codeline lineno="101" refid="____i386_8h_1a16d1370c740dcc3ee20ccb3b08ae9e62" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_LP08__(s)__EOS_SKL_LP04__(s),__EOS_SKL_LP04__(s)</highlight></codeline>
+<codeline lineno="102" refid="____i386_8h_1ac4faafd17b5aad7c7f6aead99de7e96d" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_LP09__(s)__EOS_SKL_LP04__(s),__EOS_SKL_LP05__(s)</highlight></codeline>
+<codeline lineno="103" refid="____i386_8h_1a61e06ef2d14146b494599377b45be452" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_LP10__(s)__EOS_SKL_LP04__(s),__EOS_SKL_LP06__(s)</highlight></codeline>
+<codeline lineno="104" refid="____i386_8h_1ac99195a11f4256f44ec7222cb815fd0d" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_LP16__(s)__EOS_SKL_LP08__(s),__EOS_SKL_LP08__(s)</highlight></codeline>
+<codeline lineno="105" refid="____i386_8h_1af5a0a0a30cea5ab7f6fd97aee9ea9ca1" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_LP24__(s)__EOS_SKL_LP16__(s),__EOS_SKL_LP08__(s)</highlight></codeline>
+<codeline lineno="106" refid="____i386_8h_1ad22af05031dad46874432ee4f29488d5" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_LP32__(s)__EOS_SKL_LP16__(s),__EOS_SKL_LP16__(s)</highlight></codeline>
+<codeline lineno="107" refid="____i386_8h_1a67260b2fc6e798c28317b1b80969f85b" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_LP64__(s)__EOS_SKL_LP32__(s),__EOS_SKL_LP32__(s)</highlight></codeline>
+<codeline lineno="108" refid="____i386_8h_1ad09aaa07dcfb68c99e0c138fc81b11a8" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_STRN__(s)__EOS_SKL_LP01__(s)</highlight></codeline>
+<codeline lineno="109" refid="____i386_8h_1a78e3bfd120c02d0b05248da2db2fa26f" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_SJMP__()__EOS_SKL_LP01__(__EOS_SKL_SBRK__)</highlight></codeline>
+<codeline lineno="110" refid="____i386_8h_1a4911ff2ab1a9eb31ff9ccf88c869aafd" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_LJMP__()__EOS_SKL_LP64__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="111"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP16__(__EOS_SKL_WRITE__),__EOS_SKL_SJMP__()</highlight></codeline>
+<codeline lineno="112" refid="____i386_8h_1ae2f8d49cdaf41a1fc7566cb4ab482a72" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_RBLK__()__EOS_SKL_LP16__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="113"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP04__(__EOS_SKL_WRITE__),__EOS_SKL_LP01__(__EOS_SKL_WRITE__)</highlight></codeline>
+<codeline lineno="114" refid="____i386_8h_1a71e50c4613a4b0b56feb3d27d7489180" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_WBLK__()__EOS_SKL_LP32__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="115"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP04__(__EOS_SKL_READ__),__EOS_SKL_LP02__(__EOS_SKL_READ__)</highlight></codeline>
+<codeline lineno="116" refid="____i386_8h_1a543a3d93de8ab307185cbb6473959ac8" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_FBLK__()__EOS_SKL_WRITE__,__EOS_SKL_LP64__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="117"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP04__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="118"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_WRITE__,__EOS_SKL_SJMP__()</highlight></codeline>
+<codeline lineno="119" refid="____i386_8h_1a658f03ce91637146775e81c19bc61b58" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_SBLK__()__EOS_SKL_RBLK__(),__EOS_SKL_WBLK__(),\</highlight></codeline>
+<codeline lineno="120"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_RBLK__(),__EOS_SKL_SJMP__()</highlight></codeline>
+<codeline lineno="121" refid="____i386_8h_1a5402f3c732e5bdb5badb9a18be40a2d0" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_LPRT__()__EOS_SKL_LJMP__(),__EOS_SKL_LJMP__(),\</highlight></codeline>
+<codeline lineno="122"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LJMP__(),__EOS_SKL_LJMP__(),__EOS_SKL_LJMP__()</highlight></codeline>
+<codeline lineno="123" refid="____i386_8h_1aacd6823fccdf4f4323e6e2682c36326c" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_MMAP__()__EOS_SKL_LP01__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="124"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="125"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP01__(0102),\</highlight></codeline>
+<codeline lineno="126"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0114),__EOS_SKL_LP01__(0117),__EOS_SKL_LP01__(0117),\</highlight></codeline>
+<codeline lineno="127"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0104),__EOS_SKL_LP01__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="128"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0123),__EOS_SKL_LP01__(0127),__EOS_SKL_LP01__(0105),\</highlight></codeline>
+<codeline lineno="129"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0101),__EOS_SKL_LP01__(0124),\</highlight></codeline>
+<codeline lineno="130"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(__EOS_SKL_READ__),__EOS_SKL_LP01__(0046),\</highlight></codeline>
+<codeline lineno="131"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(__EOS_SKL_READ__),__EOS_SKL_LP01__(0103),\</highlight></codeline>
+<codeline lineno="132"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0117),__EOS_SKL_LP01__(0104),__EOS_SKL_LP01__(0105),\</highlight></codeline>
+<codeline lineno="133"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="134"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP01__(__EOS_SKL_WRITE__)</highlight></codeline>
+<codeline lineno="135" refid="____i386_8h_1a1acb2a70979ebce09b496bb2d60c1b35" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_SEEK__()__EOS_SKL_LP01__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="136"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="137"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP01__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="138"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0123),__EOS_SKL_LP01__(0117),__EOS_SKL_LP01__(0125),\</highlight></codeline>
+<codeline lineno="139"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0122),__EOS_SKL_LP01__(0103),__EOS_SKL_LP01__(0105),\</highlight></codeline>
+<codeline lineno="140"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(__EOS_SKL_READ__),__EOS_SKL_LP01__(0103),\</highlight></codeline>
+<codeline lineno="141"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0117),__EOS_SKL_LP01__(0104),__EOS_SKL_LP01__(0105),\</highlight></codeline>
+<codeline lineno="142"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(__EOS_SKL_READ__),__EOS_SKL_LP01__(0102),\</highlight></codeline>
+<codeline lineno="143"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0131),__EOS_SKL_LP01__(0072),\</highlight></codeline>
+<codeline lineno="144"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="145"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP02__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="146"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(__EOS_SKL_WRITE__)</highlight></codeline>
+<codeline lineno="147" refid="____i386_8h_1a15e50a8a9bdc9a96d902bb538c8f1a07" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_SUID__()__EOS_SKL_LP01__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="148"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="149"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP01__(0112),\</highlight></codeline>
+<codeline lineno="150"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0145),__EOS_SKL_LP01__(0141),__EOS_SKL_LP01__(0156),\</highlight></codeline>
+<codeline lineno="151"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0055),__EOS_SKL_LP01__(0104),__EOS_SKL_LP01__(0141),\</highlight></codeline>
+<codeline lineno="152"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0166),__EOS_SKL_LP01__(0151),__EOS_SKL_LP01__(0144),\</highlight></codeline>
+<codeline lineno="153"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(__EOS_SKL_READ__),__EOS_SKL_LP01__(0107),\</highlight></codeline>
+<codeline lineno="154"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0141),__EOS_SKL_LP01__(0144),__EOS_SKL_LP01__(0151),\</highlight></codeline>
+<codeline lineno="155"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0156),__EOS_SKL_LP01__(0141),\</highlight></codeline>
+<codeline lineno="156"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="157"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP01__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="158"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(__EOS_SKL_WRITE__)</highlight></codeline>
+<codeline lineno="159" refid="____i386_8h_1ae8585d4bbd09313062a6696ab700a9bd" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_RMSG__()__EOS_SKL_LP01__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="160"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="161"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP07__(__EOS_SKL_READ__),__EOS_SKL_LP01__(0074),\</highlight></codeline>
+<codeline lineno="162"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0155),__EOS_SKL_LP01__(0141),__EOS_SKL_LP01__(0143),\</highlight></codeline>
+<codeline lineno="163"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0155),__EOS_SKL_LP01__(0141),__EOS_SKL_LP01__(0144),\</highlight></codeline>
+<codeline lineno="164"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0145),__EOS_SKL_LP01__(0100),__EOS_SKL_LP01__(0145),\</highlight></codeline>
+<codeline lineno="165"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0157),__EOS_SKL_LP01__(0163),__EOS_SKL_LP01__(0147),\</highlight></codeline>
+<codeline lineno="166"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0141),__EOS_SKL_LP01__(0162),__EOS_SKL_LP01__(0144),\</highlight></codeline>
+<codeline lineno="167"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0145),__EOS_SKL_LP01__(0156),__EOS_SKL_LP01__(0056),\</highlight></codeline>
+<codeline lineno="168"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0143),__EOS_SKL_LP01__(0157),__EOS_SKL_LP01__(0155),\</highlight></codeline>
+<codeline lineno="169"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0076),__EOS_SKL_LP10__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="170"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP08__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="171"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(__EOS_SKL_WRITE__)</highlight></codeline>
+<codeline lineno="172" refid="____i386_8h_1a319fefdaecca6b4cf99837efc254d789" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_SYNC__()__EOS_SKL_LP01__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="173"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="174"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP01__(0167),\</highlight></codeline>
+<codeline lineno="175"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0167),__EOS_SKL_LP01__(0167),__EOS_SKL_LP01__(0056),\</highlight></codeline>
+<codeline lineno="176"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0145),__EOS_SKL_LP01__(0157),__EOS_SKL_LP01__(0163),\</highlight></codeline>
+<codeline lineno="177"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0147),__EOS_SKL_LP01__(0141),__EOS_SKL_LP01__(0162),\</highlight></codeline>
+<codeline lineno="178"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0144),__EOS_SKL_LP01__(0145),__EOS_SKL_LP01__(0156),\</highlight></codeline>
+<codeline lineno="179"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0056),__EOS_SKL_LP01__(0143),__EOS_SKL_LP01__(0157),\</highlight></codeline>
+<codeline lineno="180"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(0155),__EOS_SKL_LP10__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="181"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="182"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(__EOS_SKL_READ__),__EOS_SKL_LP01__(__EOS_SKL_WRITE__)</highlight></codeline>
+<codeline lineno="183" refid="____i386_8h_1a401796605ad0fac70f748aad2a9cd264" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_IOCTL__()__EOS_SKL_STAT__(),__EOS_SKL_PIPE__()</highlight></codeline>
+<codeline lineno="184" refid="____i386_8h_1af68e4926368d60b413037ab995d851e1" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_STAT__()__EOS_SKL_SBLK__(),__EOS_SKL_SBLK__(),\</highlight></codeline>
+<codeline lineno="185"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_SBLK__(),__EOS_SKL_SBLK__(),__EOS_SKL_SBLK__(),\</highlight></codeline>
+<codeline lineno="186"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_SBLK__(),__EOS_SKL_SBLK__(),__EOS_SKL_SBLK__(),\</highlight></codeline>
+<codeline lineno="187"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_SBLK__(),__EOS_SKL_SBLK__(),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="188"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP07__(__EOS_SKL_READ__),__EOS_SKL_LP01__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="189"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP02__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="190"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP01__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="191"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP07__(__EOS_SKL_READ__),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="192"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_SJMP__(),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="193"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP07__(__EOS_SKL_READ__),__EOS_SKL_LP02__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="194"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="195"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP02__(__EOS_SKL_WRITE__),__EOS_SKL_LP07__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="196"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_RBLK__(),__EOS_SKL_SJMP__(),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="197"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP07__(__EOS_SKL_READ__),__EOS_SKL_LP03__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="198"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_READ__),__EOS_SKL_LP08__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="199"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP03__(__EOS_SKL_WRITE__),__EOS_SKL_LP07__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="200"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_RBLK__(),__EOS_SKL_SJMP__(),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="201"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP07__(__EOS_SKL_READ__),__EOS_SKL_LP24__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="202"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP07__(__EOS_SKL_READ__),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="203"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_SJMP__(),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="204"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP07__(__EOS_SKL_READ__),__EOS_SKL_LP24__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="205"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP07__(__EOS_SKL_READ__),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="206"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_SJMP__(),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="207"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP07__(__EOS_SKL_READ__),__EOS_SKL_LP10__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="208"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(__EOS_SKL_WRITE__),__EOS_SKL_LP02__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="209"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP01__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="210"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP10__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="211"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP07__(__EOS_SKL_READ__),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="212"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_SJMP__(),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="213"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP16__(__EOS_SKL_READ__),__EOS_SKL_LP02__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="214"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP02__(__EOS_SKL_READ__),__EOS_SKL_LP02__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="215"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP16__(__EOS_SKL_READ__),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="216"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_SJMP__(),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="217"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP16__(__EOS_SKL_READ__),__EOS_SKL_LP02__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="218"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP02__(__EOS_SKL_READ__),__EOS_SKL_LP02__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="219"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP16__(__EOS_SKL_READ__),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="220"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_SJMP__(),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="221"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP08__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="222"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP04__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="223"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP04__(__EOS_SKL_READ__),__EOS_SKL_LP02__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="224"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP02__(__EOS_SKL_READ__),__EOS_SKL_LP02__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="225"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP04__(__EOS_SKL_READ__),__EOS_SKL_LP08__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="226"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP04__(__EOS_SKL_WRITE__),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="227"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_SJMP__(),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="228"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP08__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="229"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP04__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="230"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP04__(__EOS_SKL_READ__),__EOS_SKL_LP02__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="231"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP02__(__EOS_SKL_READ__),__EOS_SKL_LP02__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="232"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP04__(__EOS_SKL_READ__),__EOS_SKL_LP08__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="233"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP04__(__EOS_SKL_WRITE__),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="234"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_SJMP__(),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="235"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP08__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="236"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP04__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="237"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP04__(__EOS_SKL_READ__),__EOS_SKL_LP02__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="238"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP02__(__EOS_SKL_READ__),__EOS_SKL_LP02__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="239"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP04__(__EOS_SKL_READ__),__EOS_SKL_LP08__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="240"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP04__(__EOS_SKL_WRITE__),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="241"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_SJMP__(),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="242"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP08__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="243"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP04__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="244"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP04__(__EOS_SKL_READ__),__EOS_SKL_LP02__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="245"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP02__(__EOS_SKL_READ__),__EOS_SKL_LP02__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="246"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP04__(__EOS_SKL_READ__),__EOS_SKL_LP08__(__EOS_SKL_WRITE__),\</highlight></codeline>
+<codeline lineno="247"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP04__(__EOS_SKL_WRITE__),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="248"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_SJMP__()</highlight></codeline>
+<codeline lineno="249" refid="____i386_8h_1a576da4a1a2297485617cdfe709aca57a" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__EOS_SKL_PIPE__()__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="250"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP08__(__EOS_SKL_READ__),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="251"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP08__(__EOS_SKL_READ__),__EOS_SKL_LP01__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="252"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_RBLK__(),__EOS_SKL_SJMP__(),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="253"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP08__(__EOS_SKL_READ__),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="254"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP08__(__EOS_SKL_READ__),__EOS_SKL_LP01__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="255"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_RBLK__(),__EOS_SKL_SJMP__(),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="256"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP08__(__EOS_SKL_READ__),__EOS_SKL_RBLK__(),\</highlight></codeline>
+<codeline lineno="257"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_LP08__(__EOS_SKL_READ__),__EOS_SKL_LP01__(__EOS_SKL_READ__),\</highlight></codeline>
+<codeline lineno="258"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_RBLK__(),__EOS_SKL_SJMP__(),__EOS_SKL_SBLK__(),\</highlight></codeline>
+<codeline lineno="259"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__EOS_SKL_SBLK__(),__EOS_SKL_SBLK__(),__EOS_SKL_SBLK__()</highlight></codeline>
+<codeline lineno="260" refid="____i386_8h_1ad55a069b007350e6729d4f9468a09947" refkind="member"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="____i386_8h_1aca94a3bd58714da5f3feda4b0f0d932b" kindref="member">__EOS_SKL__</ref>(a,r,c,h,4,5,3,8)</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="263"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="265"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_XS_EOS_SKL_PRIV_ARCH_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/arch/__i386.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,763 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="XSApplication_8h" kind="file">
+    <compoundname>XSApplication.h</compoundname>
+    <includes refid="XSMacros_8h" local="yes">XSMacros.h</includes>
+    <includes refid="XSArray_8h" local="yes">XSArray.h</includes>
+    <includes refid="XSString_8h" local="yes">XSString.h</includes>
+    <includes refid="XSApplicationArgument_8h" local="yes">XSApplicationArgument.h</includes>
+    <incdepgraph>
+      <node id="6735">
+        <label>XSMacros.h</label>
+        <link refid="XSMacros_8h"/>
+        <childnode refid="6736" relation="include">
+        </childnode>
+        <childnode refid="6737" relation="include">
+        </childnode>
+      </node>
+      <node id="6736">
+        <label>XSMacrosTarget.h</label>
+        <link refid="XSMacrosTarget_8h"/>
+        <childnode refid="6735" relation="include">
+        </childnode>
+      </node>
+      <node id="6737">
+        <label>XSMacrosException.h</label>
+        <link refid="XSMacrosException_8h"/>
+        <childnode refid="6735" relation="include">
+        </childnode>
+      </node>
+      <node id="6739">
+        <label>XSString.h</label>
+        <link refid="XSString_8h"/>
+        <childnode refid="6735" relation="include">
+        </childnode>
+        <childnode refid="6738" relation="include">
+        </childnode>
+      </node>
+      <node id="6734">
+        <label>XSApplication.h</label>
+        <link refid="XSApplication.h"/>
+        <childnode refid="6735" relation="include">
+        </childnode>
+        <childnode refid="6738" relation="include">
+        </childnode>
+        <childnode refid="6739" relation="include">
+        </childnode>
+        <childnode refid="6740" relation="include">
+        </childnode>
+      </node>
+      <node id="6740">
+        <label>XSApplicationArgument.h</label>
+        <link refid="XSApplicationArgument_8h"/>
+        <childnode refid="6735" relation="include">
+        </childnode>
+      </node>
+      <node id="6738">
+        <label>XSArray.h</label>
+        <link refid="XSArray_8h"/>
+        <childnode refid="6735" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="XSApplication_8h_1a79d10d58d3d4aedb2cef62d49d98b239" prot="public" static="no">
+        <type>struct <ref refid="struct____XSApplication__Struct" kindref="compound">__XSApplication_Struct</ref> *</type>
+        <definition>XSApplication</definition>
+        <argsstring></argsstring>
+        <name>XSApplication</name>
+        <briefdescription>
+<para>Opaque type for the XSApplication objects. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSApplication.h" line="54" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSApplication.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="XSApplication_8h_1a1b9756e4d2b3c86f5e56065155c41939" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSStatic <ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSStatic XSObject XSApplication_Alloc</definition>
+        <argsstring>(void)</argsstring>
+        <name>XSApplication_Alloc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Object allocator. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The allocated object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSApplication.h" line="60"/>
+      </memberdef>
+      <memberdef kind="function" id="XSApplication_8h_1a0cfd297838fef12fed3e6b2896c21fca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSStatic void</type>
+        <definition>XSStatic void XSApplication_Exit</definition>
+        <argsstring>(void)</argsstring>
+        <name>XSApplication_Exit</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Application termination. </para>        </briefdescription>
+        <detaileddescription>
+<para>You must call this function when exiting your application, instead of the classic &apos;exit()&apos; function, so the auto-released memory is reclaimed, and the threads are terminated properly. <simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSApplication.h" line="88"/>
+      </memberdef>
+      <memberdef kind="function" id="XSApplication_8h_1abc00f1e4b794ce52c6e758b17681d9d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct____XSApplicationArgument__Struct" kindref="compound">XSApplicationArgument</ref></type>
+        <definition>XSApplicationArgument XSApplication_GetArgument</definition>
+        <argsstring>(XSApplication xsThis, const char *name)</argsstring>
+        <name>XSApplication_GetArgument</name>
+        <param>
+          <type><ref refid="struct____XSApplication__Struct" kindref="compound">XSApplication</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The application object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>... </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSApplication.h" line="120"/>
+      </memberdef>
+      <memberdef kind="function" id="XSApplication_8h_1a7cb19fa007ef62e962b978baaef6fa4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSApplication_GetFlag</definition>
+        <argsstring>(XSApplication xsThis, const char *name)</argsstring>
+        <name>XSApplication_GetFlag</name>
+        <param>
+          <type><ref refid="struct____XSApplication__Struct" kindref="compound">XSApplication</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The application object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>... </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSApplication.h" line="136"/>
+      </memberdef>
+      <memberdef kind="function" id="XSApplication_8h_1a4caaa3385f4036fda5637084db7c1f61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+        <definition>XSFloat XSApplication_GetFloat</definition>
+        <argsstring>(XSApplication xsThis, const char *name)</argsstring>
+        <name>XSApplication_GetFloat</name>
+        <param>
+          <type><ref refid="struct____XSApplication__Struct" kindref="compound">XSApplication</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The application object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>... </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSApplication.h" line="168"/>
+      </memberdef>
+      <memberdef kind="function" id="XSApplication_8h_1a7c7b2fa284bd1c49efc0df453b4ad3bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSInteger XSApplication_GetInteger</definition>
+        <argsstring>(XSApplication xsThis, const char *name)</argsstring>
+        <name>XSApplication_GetInteger</name>
+        <param>
+          <type><ref refid="struct____XSApplication__Struct" kindref="compound">XSApplication</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The application object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>... </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSApplication.h" line="144"/>
+      </memberdef>
+      <memberdef kind="function" id="XSApplication_8h_1a87cbeeb9b348780e868426c7fddb9b40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct____XSString__Struct" kindref="compound">XSString</ref></type>
+        <definition>XSString XSApplication_GetString</definition>
+        <argsstring>(XSApplication xsThis, const char *name)</argsstring>
+        <name>XSApplication_GetString</name>
+        <param>
+          <type><ref refid="struct____XSApplication__Struct" kindref="compound">XSApplication</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The application object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>... </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSApplication.h" line="160"/>
+      </memberdef>
+      <memberdef kind="function" id="XSApplication_8h_1a4b16f049275bc65f799c245fb9b0e78a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSAutoreleased <ref refid="struct____XSArray__Struct" kindref="compound">XSArray</ref></type>
+        <definition>XSAutoreleased XSArray XSApplication_GetUnnamedArguments</definition>
+        <argsstring>(XSApplication xsThis)</argsstring>
+        <name>XSApplication_GetUnnamedArguments</name>
+        <param>
+          <type><ref refid="struct____XSApplication__Struct" kindref="compound">XSApplication</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The application object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>... </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSApplication.h" line="175"/>
+      </memberdef>
+      <memberdef kind="function" id="XSApplication_8h_1a70ecdfcb735eeab6f190d8fcaf520a4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger XSApplication_GetUnsignedInteger</definition>
+        <argsstring>(XSApplication xsThis, const char *name)</argsstring>
+        <name>XSApplication_GetUnsignedInteger</name>
+        <param>
+          <type><ref refid="struct____XSApplication__Struct" kindref="compound">XSApplication</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The application object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>... </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSApplication.h" line="152"/>
+      </memberdef>
+      <memberdef kind="function" id="XSApplication_8h_1a18f1af954dc13faec61ec734a6a9f36a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSApplication_HasArgument</definition>
+        <argsstring>(XSApplication xsThis, const char *name)</argsstring>
+        <name>XSApplication_HasArgument</name>
+        <param>
+          <type><ref refid="struct____XSApplication__Struct" kindref="compound">XSApplication</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The application object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>... </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSApplication.h" line="128"/>
+      </memberdef>
+      <memberdef kind="function" id="XSApplication_8h_1a9275d5a42602bc4b0ef9ca8e3a8a781e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSObject XSApplication_Init</definition>
+        <argsstring>(XSObject xsThis)</argsstring>
+        <name>XSApplication_Init</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Initialize an application object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The application object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The allocated object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSApplication.h" line="67"/>
+      </memberdef>
+      <memberdef kind="function" id="XSApplication_8h_1a9cd970d26fd9c3b099bdd1faab0e046a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XSApplication_PrintHelp</definition>
+        <argsstring>(XSApplication xsThis, const char *description)</argsstring>
+        <name>XSApplication_PrintHelp</name>
+        <param>
+          <type><ref refid="struct____XSApplication__Struct" kindref="compound">XSApplication</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>description</declname>
+        </param>
+        <briefdescription>
+<para>Prints the application help dialog. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The application object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>description</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSApplication.h" line="102"/>
+      </memberdef>
+      <memberdef kind="function" id="XSApplication_8h_1a415cfa65c1dd1d4b8713addcef5a4932" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XSApplication_RegisterArgument</definition>
+        <argsstring>(XSApplication xsThis, const char *name, XSApplicationArgumentType type, const char *help)</argsstring>
+        <name>XSApplication_RegisterArgument</name>
+        <param>
+          <type><ref refid="struct____XSApplication__Struct" kindref="compound">XSApplication</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="XSApplicationArgument_8h_1ae71fc68a8e1977a960f6cf4cbf35e95d" kindref="member">XSApplicationArgumentType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>help</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The application object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>help</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSApplication.h" line="112"/>
+      </memberdef>
+      <memberdef kind="function" id="XSApplication_8h_1a6d0f916965280702ad68f5e9482bb332" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSStatic <ref refid="struct____XSApplication__Struct" kindref="compound">XSApplication</ref></type>
+        <definition>XSStatic XSApplication XSApplication_SharedApplication</definition>
+        <argsstring>(void)</argsstring>
+        <name>XSApplication_SharedApplication</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Gets the application object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The application object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSApplication.h" line="94"/>
+      </memberdef>
+      <memberdef kind="function" id="XSApplication_8h_1adfab1ba06bf2a1272a3ec92e77b8101e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSStatic <ref refid="struct____XSApplication__Struct" kindref="compound">XSApplication</ref></type>
+        <definition>XSStatic XSApplication XSApplication_Start</definition>
+        <argsstring>(int argc, const char **argv)</argsstring>
+        <name>XSApplication_Start</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+<para>XSFoundation start routine. </para>        </briefdescription>
+        <detaileddescription>
+<para>You must call this function before using any other XSFoundation function or object. Note that an auto-release pool is automatically created, so the auto-release features are enabled by default. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>argc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of CLI arguments </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The CLI arguments array </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The application object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSApplication.h" line="79"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>XSApplication class functions. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt; </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2011,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSApplication.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSApplication<sp/>class<sp/>functions</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_XS_APPLICATION_H_</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_XS_APPLICATION_H_</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XSMacros_8h" kindref="compound" tooltip="General macros.">XSMacros.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="XSMacros_8h_1ae3fa7c5665557917f34badbe69a55828" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; start.">XS_EXTERN_C_BEGIN</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XSArray_8h" kindref="compound" tooltip="XSArray class functions.">XSArray.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XSString_8h" kindref="compound" tooltip="XSString class functions.">XSString.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XSApplicationArgument_8h" kindref="compound" tooltip="XSApplicationArgument class functions.">XSApplicationArgument.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="50"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>XSApplication</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Opaque<sp/>type<sp/>for<sp/>the<sp/>XSApplication<sp/>objects</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="XSApplication_8h_1a79d10d58d3d4aedb2cef62d49d98b239" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct____XSApplication__Struct" kindref="compound" tooltip="XSApplication class.">__XSApplication_Struct</ref><sp/>*<sp/><ref refid="XSApplication_8h_1a79d10d58d3d4aedb2cef62d49d98b239" kindref="member" tooltip="Opaque type for the XSApplication objects.">XSApplication</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="56"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Object<sp/>allocator</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>allocated<sp/>object</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><ref refid="XSTypes_8h_1a3310ef0367fe9a2e896f4b92ea6efe9a" kindref="member" tooltip="Marker for static class methods.">XSStatic</ref><sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSApplication_8h_1a1b9756e4d2b3c86f5e56065155c41939" kindref="member" tooltip="Object allocator.">XSApplication_Alloc</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="62"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initialize<sp/>an<sp/>application<sp/>object</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>application<sp/>object</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>allocated<sp/>object</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSApplication_8h_1a9275d5a42602bc4b0ef9ca8e3a8a781e" kindref="member" tooltip="Initialize an application object.">XSApplication_Init</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="69"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSFoundation<sp/>start<sp/>routine</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>You<sp/>must<sp/>call<sp/>this<sp/>function<sp/>before<sp/>using<sp/>any<sp/>other<sp/>XSFoundation</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>function<sp/>or<sp/>object.<sp/>Note<sp/>that<sp/>an<sp/>auto-release<sp/>pool<sp/>is</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>automatically<sp/>created,<sp/>so<sp/>the<sp/>auto-release<sp/>features<sp/>are</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enabled<sp/>by<sp/>default.</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>argc<sp/><sp/><sp/><sp/>The<sp/>number<sp/>of<sp/>CLI<sp/>arguments</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>argv<sp/><sp/><sp/><sp/>The<sp/>CLI<sp/>arguments<sp/>array</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>application<sp/>object</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><ref refid="XSTypes_8h_1a3310ef0367fe9a2e896f4b92ea6efe9a" kindref="member" tooltip="Marker for static class methods.">XSStatic</ref><sp/>XSApplication<sp/><ref refid="XSApplication_8h_1adfab1ba06bf2a1272a3ec92e77b8101e" kindref="member" tooltip="XSFoundation start routine.">XSApplication_Start</ref>(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct____XSApplication__Struct_1a3d1f261f6f7507548bb329b07d1e00ab" kindref="member">argc</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**<sp/><ref refid="struct____XSApplication__Struct_1a31d3d386df07a85eaa92f636a514c60a" kindref="member">argv</ref><sp/>);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="81"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Application<sp/>termination</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>You<sp/>must<sp/>call<sp/>this<sp/>function<sp/>when<sp/>exiting<sp/>your<sp/>application,</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>instead<sp/>of<sp/>the<sp/>classic<sp/>&apos;exit()&apos;<sp/>function,<sp/>so<sp/>the<sp/>auto-released</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memory<sp/>is<sp/>reclaimed,<sp/>and<sp/>the<sp/>threads<sp/>are<sp/>terminated<sp/>properly.</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><ref refid="XSTypes_8h_1a3310ef0367fe9a2e896f4b92ea6efe9a" kindref="member" tooltip="Marker for static class methods.">XSStatic</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSApplication_8h_1a0cfd297838fef12fed3e6b2896c21fca" kindref="member" tooltip="Application termination.">XSApplication_Exit</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/><ref refid="XSMacros_8h_1a7c9f8aad7910fa73e3b470c036e6a3b9" kindref="member" tooltip="Standardization of the noreturn compiler attribute.">NORETURN_ATTRIBUTE</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="90"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>application<sp/>object</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>application<sp/>object</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><ref refid="XSTypes_8h_1a3310ef0367fe9a2e896f4b92ea6efe9a" kindref="member" tooltip="Marker for static class methods.">XSStatic</ref><sp/>XSApplication<sp/><ref refid="XSApplication_8h_1a6d0f916965280702ad68f5e9482bb332" kindref="member" tooltip="Gets the application object.">XSApplication_SharedApplication</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="96"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Prints<sp/>the<sp/>application<sp/>help<sp/>dialog</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>application<sp/>object</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>description<sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSApplication_8h_1a9cd970d26fd9c3b099bdd1faab0e046a" kindref="member" tooltip="Prints the application help dialog.">XSApplication_PrintHelp</ref>(<sp/>XSApplication<sp/>xsThis,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>description<sp/>);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="104"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>application<sp/>object</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>name<sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>type<sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>help<sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSApplication_8h_1a415cfa65c1dd1d4b8713addcef5a4932" kindref="member">XSApplication_RegisterArgument</ref>(<sp/>XSApplication<sp/>xsThis,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>name,<sp/><ref refid="XSApplicationArgument_8h_1ae71fc68a8e1977a960f6cf4cbf35e95d" kindref="member" tooltip="Command line argument types.">XSApplicationArgumentType</ref><sp/>type,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>help<sp/>);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="114"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>application<sp/>object</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>name<sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><ref refid="struct____XSApplicationArgument__Struct" kindref="compound" tooltip="XSApplicationArgument class.">XSApplicationArgument</ref><sp/><ref refid="XSApplication_8h_1abc00f1e4b794ce52c6e758b17681d9d7" kindref="member" tooltip="...">XSApplication_GetArgument</ref>(<sp/>XSApplication<sp/>xsThis,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>name<sp/>);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="122"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>application<sp/>object</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>name<sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSApplication_8h_1a18f1af954dc13faec61ec734a6a9f36a" kindref="member" tooltip="...">XSApplication_HasArgument</ref>(<sp/>XSApplication<sp/>xsThis,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>name<sp/>);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="130"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>application<sp/>object</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>name<sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSApplication_8h_1a7cb19fa007ef62e962b978baaef6fa4f" kindref="member" tooltip="...">XSApplication_GetFlag</ref>(<sp/>XSApplication<sp/>xsThis,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>name<sp/>);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="138"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>application<sp/>object</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>name<sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSApplication_8h_1a7c7b2fa284bd1c49efc0df453b4ad3bc" kindref="member" tooltip="...">XSApplication_GetInteger</ref>(<sp/>XSApplication<sp/>xsThis,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>name<sp/>);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="146"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>application<sp/>object</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>name<sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref><sp/><ref refid="XSApplication_8h_1a70ecdfcb735eeab6f190d8fcaf520a4e" kindref="member" tooltip="...">XSApplication_GetUnsignedInteger</ref>(<sp/>XSApplication<sp/>xsThis,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>name<sp/>);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="154"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>application<sp/>object</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>name<sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><ref refid="struct____XSString__Struct" kindref="compound" tooltip="XSString class.">XSString</ref><sp/><ref refid="XSApplication_8h_1a87cbeeb9b348780e868426c7fddb9b40" kindref="member" tooltip="...">XSApplication_GetString</ref>(<sp/>XSApplication<sp/>xsThis,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>name<sp/>);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="162"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>application<sp/>object</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>name<sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><ref refid="XSApplication_8h_1a4caaa3385f4036fda5637084db7c1f61" kindref="member" tooltip="...">XSApplication_GetFloat</ref>(<sp/>XSApplication<sp/>xsThis,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>name<sp/>);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="170"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="171"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>application<sp/>object</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><ref refid="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" kindref="member" tooltip="Marker for methods that return auto-released objects.">XSAutoreleased</ref><sp/><ref refid="struct____XSArray__Struct" kindref="compound" tooltip="XSArray class.">XSArray</ref><sp/><ref refid="XSApplication_8h_1a4b16f049275bc65f799c245fb9b0e78a" kindref="member" tooltip="...">XSApplication_GetUnnamedArguments</ref>(<sp/>XSApplication<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><ref refid="XSMacros_8h_1a35fa049fa034476400f574516968a3a2" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; end.">XS_EXTERN_C_END</ref></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_XS_APPLICATION_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSApplication.h"/>
+  </compounddef>
+</doxygen>

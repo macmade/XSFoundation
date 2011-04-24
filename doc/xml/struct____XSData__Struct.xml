@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="struct____XSData__Struct" kind="struct" prot="public">
+    <compoundname>__XSData_Struct</compoundname>
+    <includes refid="____XSData_8h" local="yes">__XSData.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct____XSData__Struct_1ad506b14f960da9290833ff0818dd4bf8" prot="public" static="no" mutable="no">
+        <type><ref refid="structXSRuntimeClass__Struct" kindref="compound">XSRuntimeClass</ref></type>
+        <definition>XSRuntimeClass __XSData_Struct::__class</definition>
+        <argsstring></argsstring>
+        <name>__class</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSData.h" line="54" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSData.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSData__Struct_1a04101235eb8e4fb4a7b1e7f7eed8e76f" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a9b66271558bfa5abc5095791246b540d" kindref="member">UInt8</ref> *</type>
+        <definition>UInt8* __XSData_Struct::bytes</definition>
+        <argsstring></argsstring>
+        <name>bytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Runtime class </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSData.h" line="55" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSData.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSData__Struct_1a4943323bd3056934ed6306c8fe907591" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger __XSData_Struct::capacity</definition>
+        <argsstring></argsstring>
+        <name>capacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSData.h" line="57" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSData.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSData__Struct_1ac224e13263b5ef90b45c1bae5100faca" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger __XSData_Struct::initialCapacity</definition>
+        <argsstring></argsstring>
+        <name>initialCapacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSData.h" line="58" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSData.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSData__Struct_1a6180a0e14a068c7f91da2dfe1bc576c4" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger __XSData_Struct::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSData.h" line="56" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSData.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>XSData class. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="343">
+        <label>XSClassInfos</label>
+        <link refid="structXSClassInfos"/>
+      </node>
+      <node id="340">
+        <label>unsigned char</label>
+      </node>
+      <node id="341">
+        <label>int</label>
+      </node>
+      <node id="339">
+        <label>__XSData_Struct</label>
+        <link refid="struct____XSData__Struct"/>
+        <childnode refid="340" relation="usage">
+          <edgelabel>bytes</edgelabel>
+        </childnode>
+        <childnode refid="341" relation="usage">
+          <edgelabel>length</edgelabel>
+          <edgelabel>capacity</edgelabel>
+          <edgelabel>initialCapacity</edgelabel>
+        </childnode>
+        <childnode refid="342" relation="usage">
+          <edgelabel>__class</edgelabel>
+        </childnode>
+      </node>
+      <node id="342">
+        <label>XSRuntimeClass_Struct</label>
+        <link refid="structXSRuntimeClass__Struct"/>
+        <childnode refid="343" relation="usage">
+          <edgelabel>classInfos</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSData.h" line="53" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSData.h" bodystart="52" bodyend="59"/>
+    <listofallmembers>
+      <member refid="struct____XSData__Struct_1ad506b14f960da9290833ff0818dd4bf8" prot="public" virt="non-virtual"><scope>__XSData_Struct</scope><name>__class</name></member>
+      <member refid="struct____XSData__Struct_1a04101235eb8e4fb4a7b1e7f7eed8e76f" prot="public" virt="non-virtual"><scope>__XSData_Struct</scope><name>bytes</name></member>
+      <member refid="struct____XSData__Struct_1a4943323bd3056934ed6306c8fe907591" prot="public" virt="non-virtual"><scope>__XSData_Struct</scope><name>capacity</name></member>
+      <member refid="struct____XSData__Struct_1ac224e13263b5ef90b45c1bae5100faca" prot="public" virt="non-virtual"><scope>__XSData_Struct</scope><name>initialCapacity</name></member>
+      <member refid="struct____XSData__Struct_1a6180a0e14a068c7f91da2dfe1bc576c4" prot="public" virt="non-virtual"><scope>__XSData_Struct</scope><name>length</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

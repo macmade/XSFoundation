@@ -1,0 +1,326 @@
+.TH "__XSMemoryDebug.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+__XSMemoryDebug.h \- 
+.PP
+Private memory debug functions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '../XSMacros.h'\fP
+.br
+\fC#include 'XS.h'\fP
+.br
+\fC#include '__XSMemory.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fB__XSMemoryRecord_Struct\fP"
+.br
+.RI "\fI... \fP"
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fB__XSMEMORY_RECORD_ALLOC\fP   256"
+.br
+.RI "\fI... \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB__XSMemoryRecord_Struct\fP \fB__XSMemoryRecord\fP"
+.br
+.RI "\fI... \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fB__XSMemoryDebug_AskOption\fP (\fB__XSMemoryRecord\fP *record)"
+.br
+.RI "\fI... \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fB__XSMemoryDebug_CheckCorruption\fP (\fB__XSMemoryObject\fP *o)"
+.br
+.RI "\fI... \fP"
+.ti -1c
+.RI "void \fB__XSMemoryDebug_DumpRecord\fP (\fB__XSMemoryRecord\fP *record)"
+.br
+.RI "\fI... \fP"
+.ti -1c
+.RI "void \fB__XSMemoryDebug_Finalize\fP (void)"
+.br
+.RI "\fI... \fP"
+.ti -1c
+.RI "\fB__XSMemoryRecord\fP * \fB__XSMemoryDebug_GetRecord\fP (\fB__XSMemoryObject\fP *ptr)"
+.br
+.RI "\fI... \fP"
+.ti -1c
+.RI "void \fB__XSMemoryDebug_InstallSignalHandlers\fP (void)"
+.br
+.RI "\fI... \fP"
+.ti -1c
+.RI "\fB__XSMemoryRecord\fP * \fB__XSMemoryDebug_NewRecord\fP (\fB__XSMemoryObject\fP *ptr, const char *file, int line, const char *func)"
+.br
+.RI "\fI... \fP"
+.ti -1c
+.RI "void \fB__XSMemoryDebug_PrintRecord\fP (\fB__XSMemoryRecord\fP *record)"
+.br
+.RI "\fI... \fP"
+.ti -1c
+.RI "void \fB__XSMemoryDebug_PrintRecords\fP (\fBBOOL\fP active, \fBBOOL\fP freed)"
+.br
+.RI "\fI... \fP"
+.ti -1c
+.RI "void \fB__XSMemoryDebug_PrintStatistics\fP (void)"
+.br
+.RI "\fI... \fP"
+.ti -1c
+.RI "\fB__XSMemoryRecord\fP * \fB__XSMemoryDebug_ReleaseRecord\fP (\fB__XSMemoryObject\fP *ptr, \fBBOOL\fP marsAsFree, const char *file, int line, const char *func)"
+.br
+.RI "\fI... \fP"
+.ti -1c
+.RI "void \fB__XSMemoryDebug_SignalHandler\fP (int signo) NORETURN_ATTRIBUTE"
+.br
+.RI "\fI... \fP"
+.ti -1c
+.RI "\fB__XSMemoryRecord\fP * \fB__XSMemoryDebug_UpdateRecord\fP (\fB__XSMemoryObject\fP *oldPtr, \fB__XSMemoryObject\fP *newPtr, const char *file, int line, const char *func)"
+.br
+.RI "\fI... \fP"
+.ti -1c
+.RI "void \fB__XSMemoryDebug_Warning\fP (const char *message, \fB__XSMemoryRecord\fP *record)"
+.br
+.RI "\fI... \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Private memory debug functions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fB__XSMemoryDebug.h\fP.
+.SH "Define Documentation"
+.PP 
+.SS "#define __XSMEMORY_RECORD_ALLOC   256"
+.PP
+... 
+.PP
+Definition at line 101 of file __XSMemoryDebug.h.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fB__XSMemoryRecord\fP"
+.PP
+... 
+.PP
+Definition at line 73 of file __XSMemoryDebug.h.
+.SH "Function Documentation"
+.PP 
+.SS "void __XSMemoryDebug_AskOption (\fB__XSMemoryRecord\fP *record)"
+.PP
+... \fBParameters:\fP
+.RS 4
+\fIrecord\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "\fBBOOL\fP __XSMemoryDebug_CheckCorruption (\fB__XSMemoryObject\fP *o)"
+.PP
+... \fBParameters:\fP
+.RS 4
+\fIo\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+... 
+.RE
+.PP
+
+.SS "void __XSMemoryDebug_DumpRecord (\fB__XSMemoryRecord\fP *record)"
+.PP
+... \fBParameters:\fP
+.RS 4
+\fIrecord\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void __XSMemoryDebug_Finalize (void)"
+.PP
+... \fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "\fB__XSMemoryRecord\fP* __XSMemoryDebug_GetRecord (\fB__XSMemoryObject\fP *ptr)"
+.PP
+... \fBParameters:\fP
+.RS 4
+\fIptr\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+... 
+.RE
+.PP
+
+.SS "void __XSMemoryDebug_InstallSignalHandlers (void)"
+.PP
+... \fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "\fB__XSMemoryRecord\fP* __XSMemoryDebug_NewRecord (\fB__XSMemoryObject\fP *ptr, const char *file, intline, const char *func)"
+.PP
+... \fBParameters:\fP
+.RS 4
+\fIptr\fP ... 
+.br
+\fIfile\fP ... 
+.br
+\fIline\fP ... 
+.br
+\fIfunc\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+... 
+.RE
+.PP
+
+.SS "void __XSMemoryDebug_PrintRecord (\fB__XSMemoryRecord\fP *record)"
+.PP
+... \fBParameters:\fP
+.RS 4
+\fIrecord\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void __XSMemoryDebug_PrintRecords (\fBBOOL\fPactive, \fBBOOL\fPfreed)"
+.PP
+... \fBParameters:\fP
+.RS 4
+\fIactive\fP ... 
+.br
+\fIfreed\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void __XSMemoryDebug_PrintStatistics (void)"
+.PP
+... \fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "\fB__XSMemoryRecord\fP* __XSMemoryDebug_ReleaseRecord (\fB__XSMemoryObject\fP *ptr, \fBBOOL\fPmarsAsFree, const char *file, intline, const char *func)"
+.PP
+... \fBParameters:\fP
+.RS 4
+\fIptr\fP ... 
+.br
+\fImarsAsFree\fP ... 
+.br
+\fIfile\fP ... 
+.br
+\fIline\fP ... 
+.br
+\fIfunc\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+... 
+.RE
+.PP
+
+.SS "void __XSMemoryDebug_SignalHandler (intsigno)"
+.PP
+... \fBParameters:\fP
+.RS 4
+\fIsigno\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "\fB__XSMemoryRecord\fP* __XSMemoryDebug_UpdateRecord (\fB__XSMemoryObject\fP *oldPtr, \fB__XSMemoryObject\fP *newPtr, const char *file, intline, const char *func)"
+.PP
+... \fBParameters:\fP
+.RS 4
+\fIoldPtr\fP ... 
+.br
+\fInewPtr\fP ... 
+.br
+\fIfile\fP ... 
+.br
+\fIline\fP ... 
+.br
+\fIfunc\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+... 
+.RE
+.PP
+
+.SS "void __XSMemoryDebug_Warning (const char *message, \fB__XSMemoryRecord\fP *record)"
+.PP
+... \fBParameters:\fP
+.RS 4
+\fImessage\fP ... 
+.br
+\fIrecord\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

@@ -1,0 +1,123 @@
+.TH "XSURL.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XSURL.h \- 
+.PP
+XSURL class functions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'XSMacros.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB__XSURL_Struct\fP * \fBXSURL\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "XSStatic \fBXSObject\fP \fBXSURL_Alloc\fP (void)"
+.br
+.RI "\fIObject allocator. \fP"
+.ti -1c
+.RI "XSAutoreleased \fBXSString\fP \fBXSURL_GetDomain\fP (\fBXSObject\fP xsThis)"
+.br
+.ti -1c
+.RI "XSAutoreleased \fBXSString\fP \fBXSURL_GetFragment\fP (\fBXSObject\fP xsThis)"
+.br
+.ti -1c
+.RI "XSAutoreleased \fBXSString\fP \fBXSURL_GetPath\fP (\fBXSObject\fP xsThis)"
+.br
+.ti -1c
+.RI "\fBXSUInteger\fP \fBXSURL_GetPort\fP (\fBXSObject\fP xsThis)"
+.br
+.ti -1c
+.RI "XSAutoreleased \fBXSString\fP \fBXSURL_GetQuery\fP (\fBXSObject\fP xsThis)"
+.br
+.ti -1c
+.RI "XSAutoreleased \fBXSString\fP \fBXSURL_GetScheme\fP (\fBXSObject\fP xsThis)"
+.br
+.ti -1c
+.RI "XSAutoreleased \fBXSString\fP \fBXSURL_GetURL\fP (\fBXSObject\fP xsThis)"
+.br
+.ti -1c
+.RI "\fBXSObject\fP \fBXSURL_Init\fP (\fBXSObject\fP xsThis)"
+.br
+.ti -1c
+.RI "\fBXSObject\fP \fBXSURL_InitWithCString\fP (\fBXSObject\fP xsThis, char *str)"
+.br
+.ti -1c
+.RI "\fBXSObject\fP \fBXSURL_InitWithString\fP (\fBXSObject\fP xsThis, \fBXSString\fP str)"
+.br
+.ti -1c
+.RI "void \fBXSURL_SetDomain\fP (\fBXSObject\fP xsThis, \fBXSString\fP domain)"
+.br
+.ti -1c
+.RI "void \fBXSURL_SetFragment\fP (\fBXSObject\fP xsThis, \fBXSString\fP fragment)"
+.br
+.ti -1c
+.RI "void \fBXSURL_SetPath\fP (\fBXSObject\fP xsThis, \fBXSString\fP path)"
+.br
+.ti -1c
+.RI "void \fBXSURL_SetPort\fP (\fBXSObject\fP xsThis, \fBXSUInteger\fP port)"
+.br
+.ti -1c
+.RI "void \fBXSURL_SetQuery\fP (\fBXSObject\fP xsThis, \fBXSString\fP query)"
+.br
+.ti -1c
+.RI "void \fBXSURL_SetScheme\fP (\fBXSObject\fP xsThis, \fBXSString\fP scheme)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+XSURL class functions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBXSURL.h\fP.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fB__XSURL_Struct\fP* \fBXSURL\fP"
+.PP
+Definition at line 50 of file XSURL.h.
+.SH "Function Documentation"
+.PP 
+.SS "XSStatic \fBXSObject\fP XSURL_Alloc (void)"
+.PP
+Object allocator. \fBReturns:\fP
+.RS 4
+The allocated object 
+.RE
+.PP
+
+.SS "XSAutoreleased \fBXSString\fP XSURL_GetDomain (\fBXSObject\fPxsThis)"
+.SS "XSAutoreleased \fBXSString\fP XSURL_GetFragment (\fBXSObject\fPxsThis)"
+.SS "XSAutoreleased \fBXSString\fP XSURL_GetPath (\fBXSObject\fPxsThis)"
+.SS "\fBXSUInteger\fP XSURL_GetPort (\fBXSObject\fPxsThis)"
+.SS "XSAutoreleased \fBXSString\fP XSURL_GetQuery (\fBXSObject\fPxsThis)"
+.SS "XSAutoreleased \fBXSString\fP XSURL_GetScheme (\fBXSObject\fPxsThis)"
+.SS "XSAutoreleased \fBXSString\fP XSURL_GetURL (\fBXSObject\fPxsThis)"
+.SS "\fBXSObject\fP XSURL_Init (\fBXSObject\fPxsThis)"
+.SS "\fBXSObject\fP XSURL_InitWithCString (\fBXSObject\fPxsThis, char *str)"
+.SS "\fBXSObject\fP XSURL_InitWithString (\fBXSObject\fPxsThis, \fBXSString\fPstr)"
+.SS "void XSURL_SetDomain (\fBXSObject\fPxsThis, \fBXSString\fPdomain)"
+.SS "void XSURL_SetFragment (\fBXSObject\fPxsThis, \fBXSString\fPfragment)"
+.SS "void XSURL_SetPath (\fBXSObject\fPxsThis, \fBXSString\fPpath)"
+.SS "void XSURL_SetPort (\fBXSObject\fPxsThis, \fBXSUInteger\fPport)"
+.SS "void XSURL_SetQuery (\fBXSObject\fPxsThis, \fBXSString\fPquery)"
+.SS "void XSURL_SetScheme (\fBXSObject\fPxsThis, \fBXSString\fPscheme)"
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

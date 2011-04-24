@@ -1,0 +1,2437 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="XSFile_8h" kind="file">
+    <compoundname>XSFile.h</compoundname>
+    <includes refid="XSMacros_8h" local="yes">XSMacros.h</includes>
+    <incdepgraph>
+      <node id="6818">
+        <label>XSMacros.h</label>
+        <link refid="XSMacros_8h"/>
+        <childnode refid="6819" relation="include">
+        </childnode>
+        <childnode refid="6820" relation="include">
+        </childnode>
+      </node>
+      <node id="6819">
+        <label>XSMacrosTarget.h</label>
+        <link refid="XSMacrosTarget_8h"/>
+        <childnode refid="6818" relation="include">
+        </childnode>
+      </node>
+      <node id="6817">
+        <label>XSFile.h</label>
+        <link refid="XSFile.h"/>
+        <childnode refid="6818" relation="include">
+        </childnode>
+      </node>
+      <node id="6820">
+        <label>XSMacrosException.h</label>
+        <link refid="XSMacrosException_8h"/>
+        <childnode refid="6818" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4" prot="public" static="no">
+        <name>XSFileOpenMode</name>
+        <enumvalue id="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4a4d36eaf8beb695e7898e385f55da6ddd" prot="public">
+          <name>XSFileOpenModeText</name>
+          <initializer> 0x00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4a8dff0457c363cad7a5cb6f9ed11bd461" prot="public">
+          <name>XSFileOpenModeBinary</name>
+          <initializer> 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Text mode </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4aff02bc7ea5e1122413748859c343454a" prot="public">
+          <name>XSFileOpenModeRead</name>
+          <initializer> 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Binary mode </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4afd8d8a34f73eb9c28f11fcff5690ad64" prot="public">
+          <name>XSFileOpenModeWrite</name>
+          <initializer> 0x04</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>&quot;r&quot; - Text reading </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4a4e269fac5159f79de24ad16effcc5507" prot="public">
+          <name>XSFileOpenModeAppend</name>
+          <initializer> 0x06</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>&quot;w&quot; - Text writing </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4a9c4f7d75bf2ff04f3d21b52b92740c15" prot="public">
+          <name>XSFileOpenModeApendAtEnd</name>
+          <initializer> 0x08</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>&quot;a&quot; - Text append </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4a5c5d50fed8641e4faad38a744c4ef61e" prot="public">
+          <name>XSFileOpenModeUpdate</name>
+          <initializer> 0x0A</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>&quot;a+&quot; - Text append, reading, and writing at end </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4a8cfd1c2de7a1f83c7f2a946b6e4bb3a8" prot="public">
+          <name>XSFileOpenModeUpdateDiscard</name>
+          <initializer> 0x0E</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>&quot;r+&quot; - Text update (reading and writing) </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Open modes for XSFile. </para>        </briefdescription>
+        <detaileddescription>
+<para>A specific mode can be ORed with XSFileOpenModeText XSFileOpenModeBinary to specify if working with text or binary files </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="60" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" bodystart="59" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="enum" id="XSFile_8h_1afa855a600aed357a1d8a616fa1cf5e6a" prot="public" static="no">
+        <name>XSFileSeekPosition</name>
+        <enumvalue id="XSFile_8h_1afa855a600aed357a1d8a616fa1cf5e6aac8eb5c0fd0fa2f9ad555cc38abb1d9d3" prot="public">
+          <name>XSFileSeekPositionCurent</name>
+          <initializer> SEEK_CUR</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSFile_8h_1afa855a600aed357a1d8a616fa1cf5e6aada4fcaff561fd29c96ced76ca0b05ea3" prot="public">
+          <name>XSFileSeekPositionStart</name>
+          <initializer> 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Current position </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSFile_8h_1afa855a600aed357a1d8a616fa1cf5e6aa9877bee79cbdc1c741027e6b1e9725c8" prot="public">
+          <name>XSFileSeekPositionEnd</name>
+          <initializer> SEEK_END</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Start of the file </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSFile_8h_1afa855a600aed357a1d8a616fa1cf5e6aa0deecc6762d2e55af250a219829838fe" prot="public">
+          <name>XSFileOpenModeReadSet</name>
+          <initializer> SEEK_SET</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>End of the file </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Origin position for the file seek operations. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="77" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" bodystart="76" bodyend="82"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="XSFile_8h_1a527d729ede14aad890f07995bee5920b" prot="public" static="no">
+        <type>struct <ref refid="struct____XSFile__Struct" kindref="compound">__XSFile_Struct</ref> *</type>
+        <definition>XSFile</definition>
+        <argsstring></argsstring>
+        <name>XSFile</name>
+        <briefdescription>
+<para>Opaque type for the XSFile objects. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="50" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="XSFile_8h_1aef91fadd3147f07377343f533c1ca785" prot="public" static="no" mutable="no">
+        <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+        <definition>XSStderr</definition>
+        <argsstring></argsstring>
+        <name>XSStderr</name>
+        <briefdescription>
+<para>XSFile object representing stderr. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="101"/>
+      </memberdef>
+      <memberdef kind="variable" id="XSFile_8h_1a8672a66d0bea0f89248ba2eb2627973f" prot="public" static="no" mutable="no">
+        <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+        <definition>XSStdin</definition>
+        <argsstring></argsstring>
+        <name>XSStdin</name>
+        <briefdescription>
+<para>XSFile object representing stdin. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="89"/>
+      </memberdef>
+      <memberdef kind="variable" id="XSFile_8h_1ae1b771b4d8a0b11d67afea02d7b4209a" prot="public" static="no" mutable="no">
+        <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+        <definition>XSStdout</definition>
+        <argsstring></argsstring>
+        <name>XSStdout</name>
+        <briefdescription>
+<para>XSFile object representing stdout. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="95"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="XSFile_8h_1a949fe22dc8a70c678f78c651ca1e97d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>time_t</type>
+        <definition>time_t XSFile_AccessTime</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_AccessTime</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Gets the file&apos;s access time. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The file&apos;s access time </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="390"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1ae2edccb53ff699ac3a6ca1c0f060794a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSStatic <ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSStatic XSObject XSFile_Alloc</definition>
+        <argsstring>(void)</argsstring>
+        <name>XSFile_Alloc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Object allocator. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The allocated object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="107"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a36a0656bb113e23c24bfef8d647c003d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XSFile_ClearErr</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_ClearErr</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Clears end-of-file and error indicators. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="251"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a7b7289f968fe85f40e99bafb905330d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSInteger XSFile_Close</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_Close</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Closes the file stream (after flushing, if output stream) </para>        </briefdescription>
+        <detaileddescription>
+<para>You&apos;re still responsible to release the file object after calling this function. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>EOF on error, zero otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="140"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a08b1c6851eb7f71c7d12c250143eab2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_Copy</definition>
+        <argsstring>(XSFile xsThis, char *new_name)</argsstring>
+        <name>XSFile_Copy</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>new_name</declname>
+        </param>
+        <briefdescription>
+<para>Copies the file to another destination. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>new_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the file was copeid, otherwise false </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="301"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1aea63bfa5bef864b22d7655492d0f2fcb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>time_t</type>
+        <definition>time_t XSFile_CreationTime</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_CreationTime</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Gets the file&apos;s creation time. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The file&apos;s creation time </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="404"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1af35dbf4867075f658606de167eb94de9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="win32-types_8h_1aa1bf7a99cddcd2596589cc5e2a95fb40" kindref="member">dev_t</ref></type>
+        <definition>dev_t XSFile_DeviceID</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_DeviceID</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Gets the device ID of the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The file&apos;s device ID </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="340"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1af50bcd35b343ebc821da52fea5af5bd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSInteger XSFile_EndOfFile</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_EndOfFile</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks for the end of the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Non-zero if end-of-file indicator is set </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="258"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a369612ec5acc2787cecacc285b75fcb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSInteger XSFile_Error</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_Error</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks for the error indicator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Non-zero if error indicator is set </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="265"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a5300b63b64bf63f4c5e90921591d42a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* XSFile_Filename</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_Filename</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Gets the filename. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The name of the file </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="272"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a9b49193820017e72114586951302a337" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSInteger XSFile_Flush</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_Flush</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Flushes the file stream stream. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Zero on success or EOF on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="131"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a2279d191ee704fc5f60f789ba4d17817" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSInteger XSFile_GetBit</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_GetBit</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Gets the next bit in the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="308"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1ad146a028d4286bbb73cea3836f571b18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSInteger XSFile_GetBits</definition>
+        <argsstring>(XSFile xsThis, XSUInteger count)</argsstring>
+        <name>XSFile_GetBits</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+<para>Gets bits from the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="324"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a5dc9974119c675932d899ae411159f46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSInteger XSFile_Getc</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_Getc</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Returns the next character from the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The character or EOF on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="165"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a3b77656c01fde1228e481fba10380bf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSInteger XSFile_GetPos</definition>
+        <argsstring>(XSFile xsThis, fpos_t *ptr)</argsstring>
+        <name>XSFile_GetPos</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>fpos_t *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Stores the current file position. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer where tos store the file position </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Non-zero on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="236"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a2635c104db6a84eb401d202acfe647bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="win32-types_8h_1aa4fcc0a724c7edf56931ddc02cdd98ed" kindref="member">gid_t</ref></type>
+        <definition>gid_t XSFile_GID</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_GID</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Gets the file&apos;s group ID. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The file&apos;s group ID </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="368"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a1a9c914f9e319df84fe7f79d6ac5614f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_HasSGID</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_HasSGID</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the file has the SGID bit set. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the SGID bit is set, otherwise false </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="523"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a4f2265bf675cf092eb90cd660724fafc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_HasSUID</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_HasSUID</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the file has the SUID bit set. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the SUID bit is set, otherwise false </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="516"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a078af8fdb0b845a24a3e07566578bab8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+        <definition>XSFloat XSFile_HumanReadableSize</definition>
+        <argsstring>(XSFile xsThis, char unit[])</argsstring>
+        <name>XSFile_HumanReadableSize</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>unit</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para>Gets an human readable size for the size. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>unit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A buffer to store the size unit </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The human readable size </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="383"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1afdacbffc702845fc8bdc8cdfd10bd47a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+        <definition>XSFile XSFile_Init</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_Init</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Initialize a file object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the file object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="114"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1af46be2a279746cd04185ea800d1de60f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_IsBlockDevice</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_IsBlockDevice</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the file is a block device. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>YES is the file is a block device, otherwise NO </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="411"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1ace528546184b5ca585d14cf7eac11612" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_IsCharacterDevice</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_IsCharacterDevice</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the file is a character device. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>YES is the file is a character device otherwise NO </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="418"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a9a99a689193191973a0454cd1467730e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_IsFIFO</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_IsFIFO</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the file is a FIFO. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>YES is the file is a FIFO otherwise NO </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="425"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a421a858dfbc834c72e929c2b55e97e8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_IsGroupExecutable</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_IsGroupExecutable</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the file is executable for the group. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>YES is the file is executable for the group, otherwise NO </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="488"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1aaddb79f91ef437ee3bf3e527c7b2d954" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_IsGroupReadable</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_IsGroupReadable</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the file is readable for the group. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>YES is the file is readable for the group, otherwise NO </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="474"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a7352de5fe9c011ce639d867b4925af2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_IsGroupWriteable</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_IsGroupWriteable</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the file is writable for the group. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>YES is the file is writable for the group, otherwise NO </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="481"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a05b468a6324be263c35574a8b3b9a54a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_IsLink</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_IsLink</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the file is a link. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>YES is the file is a link otherwise NO </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="439"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a7bdc821a04a0bb2eda7b79021f202a7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_IsReadable</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_IsReadable</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the file is readable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the file is readable, otherwise false </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="286"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a743960634a32b5ad7053d48b40825121" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_IsRegularFile</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_IsRegularFile</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the file is a regular file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>YES is the file is a regular file otherwise NO </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="432"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a7a98620f909517d5d8d7ed6521eda16c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_IsSocket</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_IsSocket</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the file is a socket. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>YES is the file is a socket otherwise NO </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="446"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a5726ac0ffa95ccfff7d8c05e072f91c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_ISUserExecutable</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_ISUserExecutable</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the file is executable for the user. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>YES is the file is executable for the user, otherwise NO </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="467"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1ad24dc770022435402d6837c8d2f66c63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_IsUserReadable</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_IsUserReadable</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the file is readable for the user. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>YES is the file is readable for the user, otherwise NO </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="453"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1aa60dc344836daf41336411113f1a4f50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_IsUserWriteable</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_IsUserWriteable</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the file is writeable for the user. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>YES is the file is writeable for the user, otherwise NO </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="460"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a1ecd27fb68cbd99bb752e45dcdab4a7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_IsWorldExecutable</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_IsWorldExecutable</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the file is executable for the world. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>YES is the file is executable for the world, otherwise NO </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="509"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1aed2534b233d659ca08e10f6619c9bbe1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_IsWorldReadable</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_IsWorldReadable</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the file is readable for the world. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>YES is the file is readable for the world, otherwise NO </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="495"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a029f78d1bc2d7c5d0673e0ecb23f7350" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_IsWorldWriteable</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_IsWorldWriteable</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the file is writeable for the world. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>YES is the file is writeable for the world, otherwise NO </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="502"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a519828a7f71f95fbf85178589cf97256" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSFile_IsWriteable</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_IsWriteable</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the file is writeable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the file is writeable, otherwise false </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="293"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1abf49c126a6e7ec9ebdbdef7dbea66cd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>time_t</type>
+        <definition>time_t XSFile_ModifictaionTime</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_ModifictaionTime</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Gets the file&apos;s modification time. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The file&apos;s modification time </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="397"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a98abf13018bf0855d3edadb886a8aa40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="win32-types_8h_1a35369663cc31d2c155f1d6a6e69adc14" kindref="member">nlink_t</ref></type>
+        <definition>nlink_t XSFile_NumberOfLinks</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_NumberOfLinks</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Gets the number of links to the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of links to the file </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="354"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a196382461e27bdb70536824601912725" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSStatic <ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+        <definition>XSStatic XSFile XSFile_Open</definition>
+        <argsstring>(const char *filename, XSFileOpenMode openMode)</argsstring>
+        <name>XSFile_Open</name>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type><ref refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4" kindref="member">XSFileOpenMode</ref></type>
+          <declname>openMode</declname>
+        </param>
+        <briefdescription>
+<para>Initializes an XSFile instance and opens the represented file. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function may return NULL if the represented file has not been opened. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the file </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>openMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file open mode (see XSFileOpenMode) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The instance of XSFile </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="124"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1ae03967f842194fdc145e86678e103905" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* XSFile_OpenMode</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_OpenMode</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Gets the file&apos;s open mode. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The file&apos;s open mode </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="279"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a736a13e96cb9dd7354627adcd87ae5ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSInteger XSFile_Printf</definition>
+        <argsstring>(XSFile xsThis, const char *format,...)</argsstring>
+        <name>XSFile_Printf</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>Converts (according to format format) and writes output to the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of characters written, or negative value on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="149"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1af5ae36ecc397fed8fd87a398821d44a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSInteger XSFile_PutBit</definition>
+        <argsstring>(XSFile xsThis, uint8_t bit)</argsstring>
+        <name>XSFile_PutBit</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>bit</declname>
+        </param>
+        <briefdescription>
+<para>Writes a bit in the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="316"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1abff0ef8668646cf5aaf882152d3b61da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSInteger XSFile_PutBits</definition>
+        <argsstring>(XSFile xsThis, uint64_t bits, XSUInteger count)</argsstring>
+        <name>XSFile_PutBits</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>bits</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+<para>Write bits to the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bits</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="333"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a0d6b9327d7e99cbafe049f098779ab13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSInteger XSFile_Putc</definition>
+        <argsstring>(XSFile xsThis, XSInteger c)</argsstring>
+        <name>XSFile_Putc</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Writes a character to the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character to write </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The character or EOF on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="173"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a49378c80bbfb7b0e8f8b04c2bee23a65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSInteger XSFile_Puts</definition>
+        <argsstring>(XSFile xsThis, const char *s)</argsstring>
+        <name>XSFile_Puts</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Writes a C string to the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Non-negative on success or EOF on error. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="181"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a72b1ceba2f686f945c9dff5d4f07d630" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t XSFile_Read</definition>
+        <argsstring>(XSFile xsThis, void *ptr, size_t size, size_t nobj)</argsstring>
+        <name>XSFile_Read</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nobj</declname>
+        </param>
+        <briefdescription>
+<para>Reads from the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the memory location in which the data will be placed. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the objects to read </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of objects to read </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of objects read </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="191"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1aa1bd25cb0864d3d8bbcbbfd98a16ec8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XSFile_Rewind</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_Rewind</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Rewinds to the beginning of the file and clears the error indicators return void. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="228"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a3ee5e2de6ef42dc3478b287deedc9c45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSInteger XSFile_Seek</definition>
+        <argsstring>(XSFile xsThis, XSInteger offset, XSFileSeekPosition origin)</argsstring>
+        <name>XSFile_Seek</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type><ref refid="XSFile_8h_1afa855a600aed357a1d8a616fa1cf5e6a" kindref="member">XSFileSeekPosition</ref></type>
+          <declname>origin</declname>
+        </param>
+        <briefdescription>
+<para>Sets file position for the file and clears end-of-file indicator. </para>        </briefdescription>
+        <detaileddescription>
+<para>For a binary stream, file position is set to offset bytes from the position indicated by origin: beginning of file for SEEK_SET, current position for SEEK_CUR, or end of file for SEEK_END. Behaviour is similar for a text stream, but offset must be zero or, for SEEK_SET only, a value returned by ftell. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The seek origin (see XSFileSeekPosition) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Non-zero on error. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="215"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1ac149dd4ac8dec95a14d0892eeaeb5aae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ino_t</type>
+        <definition>ino_t XSFile_SerialNumber</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_SerialNumber</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Gets the serial number of the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The file&apos;s serial number </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="347"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a4af95819d7f20bd664697732c62cd9b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSInteger XSFile_SetPos</definition>
+        <argsstring>(XSFile xsThis, const fpos_t *ptr)</argsstring>
+        <name>XSFile_SetPos</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>const fpos_t *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Sets the current file position. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file position </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Non-zero on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="244"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a90bfb357a2ffa40366b43c4a366dcb21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t XSFile_Size</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_Size</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Gets the file size in bytes. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The file size in bytes </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="375"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1aab30d2e6d123fbfe600721549dca9363" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSInteger XSFile_Tell</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_Tell</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Gets the current file position. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The position or -1 on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="222"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1a224822f8aee53585801b4e27445f4518" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="win32-types_8h_1a9bca296f8996778e28ec966b1bd1ce60" kindref="member">uid_t</ref></type>
+        <definition>uid_t XSFile_UID</definition>
+        <argsstring>(XSFile xsThis)</argsstring>
+        <name>XSFile_UID</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Gets the file&apos;s user ID. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the file&apos;s user ID </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="361"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1ae6108a146670035e7d38e4bf147ab41c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSInteger XSFile_VPrintf</definition>
+        <argsstring>(XSFile xsThis, const char *format, va_list arg)</argsstring>
+        <name>XSFile_VPrintf</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>va_list</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+<para>Equivalent to fprintf with variable argument list replaced by arg. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>arg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The variable arguments list </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of characters written, or negative value on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="158"/>
+      </memberdef>
+      <memberdef kind="function" id="XSFile_8h_1ae76989c05915dd55d1db1a2b3f21eb21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t XSFile_Write</definition>
+        <argsstring>(XSFile xsThis, const void *ptr, size_t size, size_t nobj)</argsstring>
+        <name>XSFile_Write</name>
+        <param>
+          <type><ref refid="struct____XSFile__Struct" kindref="compound">XSFile</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nobj</declname>
+        </param>
+        <briefdescription>
+<para>Writes to the file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data to write </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the objects to write </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nobj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of objects to write </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of objects written </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h" line="201"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>XSFile class functions. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt; </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2011,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSFile.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSFile<sp/>class<sp/>functions</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_XS_FILE_H_</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_XS_FILE_H_</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XSMacros_8h" kindref="compound" tooltip="General macros.">XSMacros.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="XSMacros_8h_1ae3fa7c5665557917f34badbe69a55828" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; start.">XS_EXTERN_C_BEGIN</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="46"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>XSFile</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Opaque<sp/>type<sp/>for<sp/>the<sp/>XSFile<sp/>objects</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="XSFile_8h_1a527d729ede14aad890f07995bee5920b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct____XSFile__Struct" kindref="compound" tooltip="XSFile class.">__XSFile_Struct</ref><sp/>*<sp/><ref refid="XSFile_8h_1a527d729ede14aad890f07995bee5920b" kindref="member" tooltip="Opaque type for the XSFile objects.">XSFile</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="52"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>@enum<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSFileOpenMode</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Open<sp/>modes<sp/>for<sp/>XSFile</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>A<sp/>specific<sp/>mode<sp/>can<sp/>be<sp/>ORed<sp/>with<sp/>XSFileOpenModeText</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSFileOpenModeBinary<sp/>to<sp/>specify<sp/>if<sp/>working<sp/>with<sp/>text<sp/>or<sp/>binary</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>files</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61" refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4a4d36eaf8beb695e7898e385f55da6ddd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4a4d36eaf8beb695e7898e385f55da6ddd" kindref="member">XSFileOpenModeText</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>Text<sp/>mode<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4a8dff0457c363cad7a5cb6f9ed11bd461" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4a8dff0457c363cad7a5cb6f9ed11bd461" kindref="member">XSFileOpenModeBinary</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x01,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>Binary<sp/>mode<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4aff02bc7ea5e1122413748859c343454a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4aff02bc7ea5e1122413748859c343454a" kindref="member">XSFileOpenModeRead</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x02,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>&quot;r&quot;<sp/>-<sp/>Text<sp/>reading<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4afd8d8a34f73eb9c28f11fcff5690ad64" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4afd8d8a34f73eb9c28f11fcff5690ad64" kindref="member">XSFileOpenModeWrite</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x04,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>&quot;w&quot;<sp/>-<sp/>Text<sp/>writing<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4a4e269fac5159f79de24ad16effcc5507" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4a4e269fac5159f79de24ad16effcc5507" kindref="member">XSFileOpenModeAppend</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x06,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>&quot;a&quot;<sp/>-<sp/>Text<sp/>append<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4a9c4f7d75bf2ff04f3d21b52b92740c15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4a9c4f7d75bf2ff04f3d21b52b92740c15" kindref="member">XSFileOpenModeApendAtEnd</ref><sp/><sp/><sp/><sp/>=<sp/>0x08,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>&quot;a+&quot;<sp/>-<sp/>Text<sp/>append,<sp/>reading,<sp/>and<sp/>writing<sp/>at<sp/>end<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4a5c5d50fed8641e4faad38a744c4ef61e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4a5c5d50fed8641e4faad38a744c4ef61e" kindref="member">XSFileOpenModeUpdate</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x0A,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>&quot;r+&quot;<sp/>-<sp/>Text<sp/>update<sp/>(reading<sp/>and<sp/>writing)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4a8cfd1c2de7a1f83c7f2a946b6e4bb3a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4a8cfd1c2de7a1f83c7f2a946b6e4bb3a8" kindref="member">XSFileOpenModeUpdateDiscard</ref><sp/>=<sp/>0x0E<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>&quot;w+&quot;<sp/>-<sp/>Text<sp/>update<sp/>discarding<sp/>previous<sp/>content<sp/>(if<sp/>any)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><ref refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4" kindref="member" tooltip="Open modes for XSFile.">XSFileOpenMode</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="72"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/>@enum<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSFileSeekPosition</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Origin<sp/>position<sp/>for<sp/>the<sp/>file<sp/>seek<sp/>operations</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="XSFile_8h_1afa855a600aed357a1d8a616fa1cf5e6a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78" refid="XSFile_8h_1afa855a600aed357a1d8a616fa1cf5e6aac8eb5c0fd0fa2f9ad555cc38abb1d9d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSFile_8h_1afa855a600aed357a1d8a616fa1cf5e6aac8eb5c0fd0fa2f9ad555cc38abb1d9d3" kindref="member">XSFileSeekPositionCurent</ref><sp/>=<sp/>SEEK_CUR,<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>Current<sp/>position<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="XSFile_8h_1afa855a600aed357a1d8a616fa1cf5e6aada4fcaff561fd29c96ced76ca0b05ea3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSFile_8h_1afa855a600aed357a1d8a616fa1cf5e6aada4fcaff561fd29c96ced76ca0b05ea3" kindref="member">XSFileSeekPositionStart</ref><sp/><sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>Start<sp/>of<sp/>the<sp/>file<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="XSFile_8h_1afa855a600aed357a1d8a616fa1cf5e6aa9877bee79cbdc1c741027e6b1e9725c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSFile_8h_1afa855a600aed357a1d8a616fa1cf5e6aa9877bee79cbdc1c741027e6b1e9725c8" kindref="member">XSFileSeekPositionEnd</ref><sp/><sp/><sp/><sp/>=<sp/>SEEK_END,<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>End<sp/>of<sp/>the<sp/>file<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="XSFile_8h_1afa855a600aed357a1d8a616fa1cf5e6aa0deecc6762d2e55af250a219829838fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSFile_8h_1afa855a600aed357a1d8a616fa1cf5e6aa0deecc6762d2e55af250a219829838fe" kindref="member">XSFileOpenModeReadSet</ref><sp/><sp/><sp/><sp/>=<sp/>SEEK_SET<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>Specific<sp/>position<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><ref refid="XSFile_8h_1afa855a600aed357a1d8a616fa1cf5e6a" kindref="member" tooltip="Origin position for the file seek operations.">XSFileSeekPosition</ref>;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="85"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*<sp/>@var<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSStdin</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSFile<sp/>object<sp/>representing<sp/>stdin</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>XSFile<sp/><ref refid="XSFile_8h_1a8672a66d0bea0f89248ba2eb2627973f" kindref="member" tooltip="XSFile object representing stdin.">XSStdin</ref>;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="91"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/>@var<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSStdout</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSFile<sp/>object<sp/>representing<sp/>stdout</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>XSFile<sp/><ref refid="XSFile_8h_1ae1b771b4d8a0b11d67afea02d7b4209a" kindref="member" tooltip="XSFile object representing stdout.">XSStdout</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="97"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*<sp/>@var<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSStderr</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSFile<sp/>object<sp/>representing<sp/>stderr</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>XSFile<sp/><ref refid="XSFile_8h_1aef91fadd3147f07377343f533c1ca785" kindref="member" tooltip="XSFile object representing stderr.">XSStderr</ref>;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="103"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Object<sp/>allocator</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>allocated<sp/>object</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><ref refid="XSTypes_8h_1a3310ef0367fe9a2e896f4b92ea6efe9a" kindref="member" tooltip="Marker for static class methods.">XSStatic</ref><sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSFile_8h_1ae2edccb53ff699ac3a6ca1c0f060794a" kindref="member" tooltip="Object allocator.">XSFile_Alloc</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="109"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initialize<sp/>a<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal">XSFile<sp/><ref refid="XSFile_8h_1afdacbffc702845fc8bdc8cdfd10bd47a" kindref="member" tooltip="Initialize a file object.">XSFile_Init</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="116"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initializes<sp/>an<sp/>XSFile<sp/>instance<sp/>and<sp/>opens<sp/>the<sp/>represented<sp/>file.</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>This<sp/>function<sp/>may<sp/>return<sp/>NULL<sp/>if<sp/>the<sp/>represented<sp/>file<sp/>has<sp/>not</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>been<sp/>opened.</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>filename<sp/><sp/><sp/><sp/>The<sp/>name<sp/>of<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>openMode<sp/><sp/><sp/><sp/>The<sp/>file<sp/>open<sp/>mode<sp/>(see<sp/>XSFileOpenMode)</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>instance<sp/>of<sp/>XSFile</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><ref refid="XSTypes_8h_1a3310ef0367fe9a2e896f4b92ea6efe9a" kindref="member" tooltip="Marker for static class methods.">XSStatic</ref><sp/>XSFile<sp/><ref refid="XSFile_8h_1a196382461e27bdb70536824601912725" kindref="member" tooltip="Initializes an XSFile instance and opens the represented file.">XSFile_Open</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="struct____XSFile__Struct_1a3def9869dccdf65b953471f518d8bfee" kindref="member">filename</ref>,<sp/><ref refid="XSFile_8h_1ab8394927b2736b36209263cc5fa74ec4" kindref="member" tooltip="Open modes for XSFile.">XSFileOpenMode</ref><sp/>openMode<sp/>);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="126"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Flushes<sp/>the<sp/>file<sp/>stream<sp/>stream</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>Zero<sp/>on<sp/>success<sp/>or<sp/>EOF<sp/>on<sp/>error</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSFile_8h_1a9b49193820017e72114586951302a337" kindref="member" tooltip="Flushes the file stream stream.">XSFile_Flush</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="133"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Closes<sp/>the<sp/>file<sp/>stream<sp/>(after<sp/>flushing,<sp/>if<sp/>output<sp/>stream)</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>You&apos;re<sp/>still<sp/>responsible<sp/>to<sp/>release<sp/>the<sp/>file<sp/>object<sp/>after</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>calling<sp/>this<sp/>function.</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>EOF<sp/>on<sp/>error,<sp/>zero<sp/>otherwise.</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSFile_8h_1a7b7289f968fe85f40e99bafb905330d4" kindref="member" tooltip="Closes the file stream (after flushing, if output stream)">XSFile_Close</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="142"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Converts<sp/>(according<sp/>to<sp/>format<sp/>format)<sp/>and<sp/>writes<sp/>output<sp/>to<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>format<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>number<sp/>of<sp/>characters<sp/>written,<sp/>or<sp/>negative<sp/>value<sp/>on<sp/>error</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSFile_8h_1a736a13e96cb9dd7354627adcd87ae5ea" kindref="member" tooltip="Converts (according to format format) and writes output to the file.">XSFile_Printf</ref>(<sp/>XSFile<sp/>xsThis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>format,<sp/>...<sp/>)<sp/><ref refid="XSMacros_8h_1a6dec8f00c05db28549867b3437ed2316" kindref="member" tooltip="Standardization of the format compiler attribute.">FORMAT_ATTRIBUTE</ref>(<sp/>printf,<sp/>2,<sp/>0<sp/>);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="151"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Equivalent<sp/>to<sp/>fprintf<sp/>with<sp/>variable<sp/>argument<sp/>list<sp/>replaced<sp/>by<sp/>arg.</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>format<sp/><sp/>...</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>arg<sp/><sp/><sp/><sp/><sp/>The<sp/>variable<sp/>arguments<sp/>list</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>number<sp/>of<sp/>characters<sp/>written,<sp/>or<sp/>negative<sp/>value<sp/>on<sp/>error</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSFile_8h_1ae6108a146670035e7d38e4bf147ab41c" kindref="member" tooltip="Equivalent to fprintf with variable argument list replaced by arg.">XSFile_VPrintf</ref>(<sp/>XSFile<sp/>xsThis,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>format,<sp/>va_list<sp/>arg<sp/>)<sp/><ref refid="XSMacros_8h_1a6dec8f00c05db28549867b3437ed2316" kindref="member" tooltip="Standardization of the format compiler attribute.">FORMAT_ATTRIBUTE</ref>(<sp/>printf,<sp/>2,<sp/>0<sp/>);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="160"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Returns<sp/>the<sp/>next<sp/>character<sp/>from<sp/>the<sp/>file.</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>character<sp/>or<sp/>EOF<sp/>on<sp/>error</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSFile_8h_1a5dc9974119c675932d899ae411159f46" kindref="member" tooltip="Returns the next character from the file.">XSFile_Getc</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="167"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Writes<sp/>a<sp/>character<sp/>to<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="170"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>c<sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>character<sp/>to<sp/>write</highlight></codeline>
+<codeline lineno="171"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>character<sp/>or<sp/>EOF<sp/>on<sp/>error</highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSFile_8h_1a0d6b9327d7e99cbafe049f098779ab13" kindref="member" tooltip="Writes a character to the file.">XSFile_Putc</ref>(<sp/>XSFile<sp/>xsThis,<sp/><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/>c<sp/>);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="175"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Writes<sp/>a<sp/>C<sp/>string<sp/>to<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>s<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>Non-negative<sp/>on<sp/>success<sp/>or<sp/>EOF<sp/>on<sp/>error.</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSFile_8h_1a49378c80bbfb7b0e8f8b04c2bee23a65" kindref="member" tooltip="Writes a C string to the file.">XSFile_Puts</ref>(<sp/>XSFile<sp/>xsThis,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>s<sp/>);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="183"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Reads<sp/>from<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>memory<sp/>location<sp/>in<sp/>which<sp/>the<sp/>data<sp/>will<sp/>be<sp/>placed.</highlight></codeline>
+<codeline lineno="187"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>size<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>size<sp/>of<sp/>the<sp/>objects<sp/>to<sp/>read</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>nobj<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>number<sp/>of<sp/>objects<sp/>to<sp/>read</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>number<sp/>of<sp/>objects<sp/>read</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="XSFile_8h_1a72b1ceba2f686f945c9dff5d4f07d630" kindref="member" tooltip="Reads from the file.">XSFile_Read</ref>(<sp/>XSFile<sp/>xsThis,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>ptr,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nobj<sp/>);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="193"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Writes<sp/>to<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>data<sp/>to<sp/>write</highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>size<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>size<sp/>of<sp/>the<sp/>objects<sp/>to<sp/>write</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>nobj<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>number<sp/>of<sp/>objects<sp/>to<sp/>write</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>number<sp/>of<sp/>objects<sp/>written</highlight></codeline>
+<codeline lineno="200"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="XSFile_8h_1ae76989c05915dd55d1db1a2b3f21eb21" kindref="member" tooltip="Writes to the file.">XSFile_Write</ref>(<sp/>XSFile<sp/>xsThis,<sp/>const<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>ptr,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nobj<sp/>);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="203"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="204"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sets<sp/>file<sp/>position<sp/>for<sp/>the<sp/>file<sp/>and<sp/>clears<sp/>end-of-file<sp/>indicator</highlight></codeline>
+<codeline lineno="205"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>For<sp/>a<sp/>binary<sp/>stream,<sp/>file<sp/>position<sp/>is<sp/>set<sp/>to<sp/>offset<sp/>bytes<sp/>from</highlight></codeline>
+<codeline lineno="206"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>position<sp/>indicated<sp/>by<sp/>origin:<sp/>beginning<sp/>of<sp/>file<sp/>for</highlight></codeline>
+<codeline lineno="207"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SEEK_SET,<sp/>current<sp/>position<sp/>for<sp/>SEEK_CUR,<sp/>or<sp/>end<sp/>of<sp/>file<sp/>for</highlight></codeline>
+<codeline lineno="208"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SEEK_END.<sp/>Behaviour<sp/>is<sp/>similar<sp/>for<sp/>a<sp/>text<sp/>stream,<sp/>but<sp/>offset</highlight></codeline>
+<codeline lineno="209"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>must<sp/>be<sp/>zero<sp/>or,<sp/>for<sp/>SEEK_SET<sp/>only,<sp/>a<sp/>value<sp/>returned<sp/>by<sp/>ftell.</highlight></codeline>
+<codeline lineno="210"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="211"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>offset<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="212"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>origin<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>seek<sp/>origin<sp/>(see<sp/>XSFileSeekPosition)</highlight></codeline>
+<codeline lineno="213"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>Non-zero<sp/>on<sp/>error.</highlight></codeline>
+<codeline lineno="214"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSFile_8h_1a3ee5e2de6ef42dc3478b287deedc9c45" kindref="member" tooltip="Sets file position for the file and clears end-of-file indicator.">XSFile_Seek</ref>(<sp/>XSFile<sp/>xsThis,<sp/><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/>offset,<sp/><ref refid="XSFile_8h_1afa855a600aed357a1d8a616fa1cf5e6a" kindref="member" tooltip="Origin position for the file seek operations.">XSFileSeekPosition</ref><sp/>origin<sp/>);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="217"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="218"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>current<sp/>file<sp/>position</highlight></codeline>
+<codeline lineno="219"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="220"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>position<sp/>or<sp/>-1<sp/>on<sp/>error</highlight></codeline>
+<codeline lineno="221"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSFile_8h_1aab30d2e6d123fbfe600721549dca9363" kindref="member" tooltip="Gets the current file position.">XSFile_Tell</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="224"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="225"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rewinds<sp/>to<sp/>the<sp/>beginning<sp/>of<sp/>the<sp/>file<sp/>and<sp/>clears<sp/>the<sp/>error<sp/>indicators</highlight></codeline>
+<codeline lineno="226"><highlight class="comment"><sp/>*<sp/>return<sp/><sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="227"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSFile_8h_1aa1bd25cb0864d3d8bbcbbfd98a16ec8e" kindref="member" tooltip="Rewinds to the beginning of the file and clears the error indicators return void.">XSFile_Rewind</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="230"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="231"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Stores<sp/>the<sp/>current<sp/>file<sp/>position</highlight></codeline>
+<codeline lineno="232"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="233"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>pointer<sp/>where<sp/>tos<sp/>store<sp/>the<sp/>file<sp/>position</highlight></codeline>
+<codeline lineno="234"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>Non-zero<sp/>on<sp/>error</highlight></codeline>
+<codeline lineno="235"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSFile_8h_1a3b77656c01fde1228e481fba10380bf7" kindref="member" tooltip="Stores the current file position.">XSFile_GetPos</ref>(<sp/>XSFile<sp/>xsThis,<sp/>fpos_t<sp/>*<sp/>ptr<sp/>);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="238"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="239"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sets<sp/>the<sp/>current<sp/>file<sp/>position</highlight></codeline>
+<codeline lineno="240"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="241"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>position</highlight></codeline>
+<codeline lineno="242"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>Non-zero<sp/>on<sp/>error</highlight></codeline>
+<codeline lineno="243"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSFile_8h_1a4af95819d7f20bd664697732c62cd9b0" kindref="member" tooltip="Sets the current file position.">XSFile_SetPos</ref>(<sp/>XSFile<sp/>xsThis,<sp/>const<sp/>fpos_t<sp/>*<sp/>ptr<sp/>);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="246"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="247"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Clears<sp/>end-of-file<sp/>and<sp/>error<sp/>indicators</highlight></codeline>
+<codeline lineno="248"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="249"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="250"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSFile_8h_1a36a0656bb113e23c24bfef8d647c003d" kindref="member" tooltip="Clears end-of-file and error indicators.">XSFile_ClearErr</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="253"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="254"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>for<sp/>the<sp/>end<sp/>of<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="255"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="256"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>Non-zero<sp/>if<sp/>end-of-file<sp/>indicator<sp/>is<sp/>set</highlight></codeline>
+<codeline lineno="257"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSFile_8h_1af50bcd35b343ebc821da52fea5af5bd8" kindref="member" tooltip="Checks for the end of the file.">XSFile_EndOfFile</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="260"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="261"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>for<sp/>the<sp/>error<sp/>indicator</highlight></codeline>
+<codeline lineno="262"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="263"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>Non-zero<sp/>if<sp/>error<sp/>indicator<sp/>is<sp/>set</highlight></codeline>
+<codeline lineno="264"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSFile_8h_1a369612ec5acc2787cecacc285b75fcb7" kindref="member" tooltip="Checks for the error indicator.">XSFile_Error</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="267"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="268"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>filename</highlight></codeline>
+<codeline lineno="269"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="270"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>name<sp/>of<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="271"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal">const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="XSFile_8h_1a5300b63b64bf63f4c5e90921591d42a1" kindref="member" tooltip="Gets the filename.">XSFile_Filename</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="274"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="275"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>file&apos;s<sp/>open<sp/>mode</highlight></codeline>
+<codeline lineno="276"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="277"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file&apos;s<sp/>open<sp/>mode</highlight></codeline>
+<codeline lineno="278"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal">const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="XSFile_8h_1ae03967f842194fdc145e86678e103905" kindref="member" tooltip="Gets the file&amp;#39;s open mode.">XSFile_OpenMode</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="281"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="282"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>the<sp/>file<sp/>is<sp/>readable<sp/></highlight></codeline>
+<codeline lineno="283"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="284"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>true<sp/>if<sp/>the<sp/>file<sp/>is<sp/>readable,<sp/>otherwise<sp/>false</highlight></codeline>
+<codeline lineno="285"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1a7bdc821a04a0bb2eda7b79021f202a7a" kindref="member" tooltip="Checks if the file is readable.">XSFile_IsReadable</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="288"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="289"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>the<sp/>file<sp/>is<sp/>writeable<sp/></highlight></codeline>
+<codeline lineno="290"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="291"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>true<sp/>if<sp/>the<sp/>file<sp/>is<sp/>writeable,<sp/>otherwise<sp/>false</highlight></codeline>
+<codeline lineno="292"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1a519828a7f71f95fbf85178589cf97256" kindref="member" tooltip="Checks if the file is writeable.">XSFile_IsWriteable</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="295"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="296"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Copies<sp/>the<sp/>file<sp/>to<sp/>another<sp/>destination</highlight></codeline>
+<codeline lineno="297"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="298"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_name<sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="299"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>True<sp/>if<sp/>the<sp/>file<sp/>was<sp/>copeid,<sp/>otherwise<sp/>false</highlight></codeline>
+<codeline lineno="300"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1a08b1c6851eb7f71c7d12c250143eab2f" kindref="member" tooltip="Copies the file to another destination.">XSFile_Copy</ref>(<sp/>XSFile<sp/>xsThis,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>new_name<sp/>);</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="303"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="304"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>next<sp/>bit<sp/>in<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="305"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="306"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="307"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSFile_8h_1a2279d191ee704fc5f60f789ba4d17817" kindref="member" tooltip="Gets the next bit in the file.">XSFile_GetBit</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="310"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="311"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Writes<sp/>a<sp/>bit<sp/>in<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="312"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="313"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>bit<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="314"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="315"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSFile_8h_1af5ae36ecc397fed8fd87a398821d44a3" kindref="member" tooltip="Writes a bit in the file.">XSFile_PutBit</ref>(<sp/>XSFile<sp/>xsThis,<sp/>uint8_t<sp/>bit<sp/>);</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="318"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="319"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>bits<sp/>from<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="320"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="321"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>count<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="322"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="323"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSFile_8h_1ad146a028d4286bbb73cea3836f571b18" kindref="member" tooltip="Gets bits from the file.">XSFile_GetBits</ref>(<sp/>XSFile<sp/>xsThis,<sp/><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref><sp/>count<sp/>);</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="326"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="327"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Write<sp/>bits<sp/>to<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="328"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="329"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>bits<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="330"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>count<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="331"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="332"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSFile_8h_1abff0ef8668646cf5aaf882152d3b61da" kindref="member" tooltip="Write bits to the file.">XSFile_PutBits</ref>(<sp/>XSFile<sp/>xsThis,<sp/>uint64_t<sp/>bits,<sp/><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref><sp/>count<sp/>);</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="335"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="336"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>device<sp/>ID<sp/>of<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="337"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="338"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file&apos;s<sp/>device<sp/>ID</highlight></codeline>
+<codeline lineno="339"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><ref refid="win32-types_8h_1aa1bf7a99cddcd2596589cc5e2a95fb40" kindref="member" tooltip="Used for device IDs.">dev_t</ref><sp/><ref refid="XSFile_8h_1af35dbf4867075f658606de167eb94de9" kindref="member" tooltip="Gets the device ID of the file.">XSFile_DeviceID</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="342"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="343"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>serial<sp/>number<sp/>of<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="344"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="345"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file&apos;s<sp/>serial<sp/>number</highlight></codeline>
+<codeline lineno="346"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal">ino_t<sp/><ref refid="XSFile_8h_1ac149dd4ac8dec95a14d0892eeaeb5aae" kindref="member" tooltip="Gets the serial number of the file.">XSFile_SerialNumber</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="349"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="350"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>number<sp/>of<sp/>links<sp/>to<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="351"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="352"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>number<sp/>of<sp/>links<sp/>to<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="353"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><ref refid="win32-types_8h_1a35369663cc31d2c155f1d6a6e69adc14" kindref="member" tooltip="Used for link counts.">nlink_t</ref><sp/><ref refid="XSFile_8h_1a98abf13018bf0855d3edadb886a8aa40" kindref="member" tooltip="Gets the number of links to the file.">XSFile_NumberOfLinks</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="356"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="357"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>file&apos;s<sp/>user<sp/>ID</highlight></codeline>
+<codeline lineno="358"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="359"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>file&apos;s<sp/>user<sp/>ID</highlight></codeline>
+<codeline lineno="360"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><ref refid="win32-types_8h_1a9bca296f8996778e28ec966b1bd1ce60" kindref="member" tooltip="Used for user IDs.">uid_t</ref><sp/><ref refid="XSFile_8h_1a224822f8aee53585801b4e27445f4518" kindref="member" tooltip="Gets the file&amp;#39;s user ID.">XSFile_UID</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="363"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="364"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>file&apos;s<sp/>group<sp/>ID</highlight></codeline>
+<codeline lineno="365"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="366"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file&apos;s<sp/>group<sp/>ID</highlight></codeline>
+<codeline lineno="367"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><ref refid="win32-types_8h_1aa4fcc0a724c7edf56931ddc02cdd98ed" kindref="member" tooltip="Used for group IDs.">gid_t</ref><sp/><ref refid="XSFile_8h_1a2635c104db6a84eb401d202acfe647bd" kindref="member" tooltip="Gets the file&amp;#39;s group ID.">XSFile_GID</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="370"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="371"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>file<sp/>size<sp/>in<sp/>bytes</highlight></codeline>
+<codeline lineno="372"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="373"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>size<sp/>in<sp/>bytes</highlight></codeline>
+<codeline lineno="374"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="XSFile_8h_1a90bfb357a2ffa40366b43c4a366dcb21" kindref="member" tooltip="Gets the file size in bytes.">XSFile_Size</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="377"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="378"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>an<sp/>human<sp/>readable<sp/>size<sp/>for<sp/>the<sp/>size</highlight></codeline>
+<codeline lineno="379"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="380"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>unit<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>buffer<sp/>to<sp/>store<sp/>the<sp/>size<sp/>unit</highlight></codeline>
+<codeline lineno="381"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>human<sp/>readable<sp/>size</highlight></codeline>
+<codeline lineno="382"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><ref refid="XSFile_8h_1a078af8fdb0b845a24a3e07566578bab8" kindref="member" tooltip="Gets an human readable size for the size.">XSFile_HumanReadableSize</ref>(<sp/>XSFile<sp/>xsThis,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>unit[]<sp/>);</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="385"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="386"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>file&apos;s<sp/>access<sp/>time</highlight></codeline>
+<codeline lineno="387"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="388"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file&apos;s<sp/>access<sp/>time</highlight></codeline>
+<codeline lineno="389"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal">time_t<sp/><ref refid="XSFile_8h_1a949fe22dc8a70c678f78c651ca1e97d1" kindref="member" tooltip="Gets the file&amp;#39;s access time.">XSFile_AccessTime</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="392"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="393"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>file&apos;s<sp/>modification<sp/>time</highlight></codeline>
+<codeline lineno="394"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="395"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file&apos;s<sp/>modification<sp/>time</highlight></codeline>
+<codeline lineno="396"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal">time_t<sp/><ref refid="XSFile_8h_1abf49c126a6e7ec9ebdbdef7dbea66cd2" kindref="member" tooltip="Gets the file&amp;#39;s modification time.">XSFile_ModifictaionTime</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="399"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="400"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>file&apos;s<sp/>creation<sp/>time</highlight></codeline>
+<codeline lineno="401"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="402"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file&apos;s<sp/>creation<sp/>time</highlight></codeline>
+<codeline lineno="403"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal">time_t<sp/><ref refid="XSFile_8h_1aea63bfa5bef864b22d7655492d0f2fcb" kindref="member" tooltip="Gets the file&amp;#39;s creation time.">XSFile_CreationTime</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="406"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="407"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>the<sp/>file<sp/>is<sp/>a<sp/>block<sp/>device</highlight></codeline>
+<codeline lineno="408"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="409"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>YES<sp/>is<sp/>the<sp/>file<sp/>is<sp/>a<sp/>block<sp/>device,<sp/>otherwise<sp/>NO</highlight></codeline>
+<codeline lineno="410"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1af46be2a279746cd04185ea800d1de60f" kindref="member" tooltip="Checks if the file is a block device.">XSFile_IsBlockDevice</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="413"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="414"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>the<sp/>file<sp/>is<sp/>a<sp/>character<sp/>device</highlight></codeline>
+<codeline lineno="415"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="416"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>YES<sp/>is<sp/>the<sp/>file<sp/>is<sp/>a<sp/>character<sp/>device<sp/>otherwise<sp/>NO</highlight></codeline>
+<codeline lineno="417"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1ace528546184b5ca585d14cf7eac11612" kindref="member" tooltip="Checks if the file is a character device.">XSFile_IsCharacterDevice</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="420"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="421"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>the<sp/>file<sp/>is<sp/>a<sp/>FIFO</highlight></codeline>
+<codeline lineno="422"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="423"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>YES<sp/>is<sp/>the<sp/>file<sp/>is<sp/>a<sp/>FIFO<sp/>otherwise<sp/>NO</highlight></codeline>
+<codeline lineno="424"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1a9a99a689193191973a0454cd1467730e" kindref="member" tooltip="Checks if the file is a FIFO.">XSFile_IsFIFO</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="427"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="428"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>the<sp/>file<sp/>is<sp/>a<sp/>regular<sp/>file</highlight></codeline>
+<codeline lineno="429"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="430"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>YES<sp/>is<sp/>the<sp/>file<sp/>is<sp/>a<sp/>regular<sp/>file<sp/>otherwise<sp/>NO</highlight></codeline>
+<codeline lineno="431"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1a743960634a32b5ad7053d48b40825121" kindref="member" tooltip="Checks if the file is a regular file.">XSFile_IsRegularFile</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="434"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="435"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>the<sp/>file<sp/>is<sp/>a<sp/>link</highlight></codeline>
+<codeline lineno="436"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="437"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>YES<sp/>is<sp/>the<sp/>file<sp/>is<sp/>a<sp/>link<sp/>otherwise<sp/>NO</highlight></codeline>
+<codeline lineno="438"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1a05b468a6324be263c35574a8b3b9a54a" kindref="member" tooltip="Checks if the file is a link.">XSFile_IsLink</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="441"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="442"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>the<sp/>file<sp/>is<sp/>a<sp/>socket</highlight></codeline>
+<codeline lineno="443"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="444"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>YES<sp/>is<sp/>the<sp/>file<sp/>is<sp/>a<sp/>socket<sp/>otherwise<sp/>NO</highlight></codeline>
+<codeline lineno="445"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="446"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1a7a98620f909517d5d8d7ed6521eda16c" kindref="member" tooltip="Checks if the file is a socket.">XSFile_IsSocket</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="448"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="449"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>the<sp/>file<sp/>is<sp/>readable<sp/>for<sp/>the<sp/>user</highlight></codeline>
+<codeline lineno="450"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="451"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>YES<sp/>is<sp/>the<sp/>file<sp/>is<sp/>readable<sp/>for<sp/>the<sp/>user,<sp/>otherwise<sp/>NO</highlight></codeline>
+<codeline lineno="452"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1ad24dc770022435402d6837c8d2f66c63" kindref="member" tooltip="Checks if the file is readable for the user.">XSFile_IsUserReadable</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="455"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="456"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>the<sp/>file<sp/>is<sp/>writeable<sp/>for<sp/>the<sp/>user</highlight></codeline>
+<codeline lineno="457"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="458"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>YES<sp/>is<sp/>the<sp/>file<sp/>is<sp/>writeable<sp/>for<sp/>the<sp/>user,<sp/>otherwise<sp/>NO</highlight></codeline>
+<codeline lineno="459"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1aa60dc344836daf41336411113f1a4f50" kindref="member" tooltip="Checks if the file is writeable for the user.">XSFile_IsUserWriteable</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="462"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="463"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>the<sp/>file<sp/>is<sp/>executable<sp/>for<sp/>the<sp/>user</highlight></codeline>
+<codeline lineno="464"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="465"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>YES<sp/>is<sp/>the<sp/>file<sp/>is<sp/>executable<sp/>for<sp/>the<sp/>user,<sp/>otherwise<sp/>NO</highlight></codeline>
+<codeline lineno="466"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1a5726ac0ffa95ccfff7d8c05e072f91c4" kindref="member" tooltip="Checks if the file is executable for the user.">XSFile_ISUserExecutable</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="469"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="470"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>the<sp/>file<sp/>is<sp/>readable<sp/>for<sp/>the<sp/>group</highlight></codeline>
+<codeline lineno="471"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="472"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>YES<sp/>is<sp/>the<sp/>file<sp/>is<sp/>readable<sp/>for<sp/>the<sp/>group,<sp/>otherwise<sp/>NO</highlight></codeline>
+<codeline lineno="473"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1aaddb79f91ef437ee3bf3e527c7b2d954" kindref="member" tooltip="Checks if the file is readable for the group.">XSFile_IsGroupReadable</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="476"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="477"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>the<sp/>file<sp/>is<sp/>writable<sp/>for<sp/>the<sp/>group</highlight></codeline>
+<codeline lineno="478"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="479"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>YES<sp/>is<sp/>the<sp/>file<sp/>is<sp/>writable<sp/>for<sp/>the<sp/>group,<sp/>otherwise<sp/>NO</highlight></codeline>
+<codeline lineno="480"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1a7352de5fe9c011ce639d867b4925af2f" kindref="member" tooltip="Checks if the file is writable for the group.">XSFile_IsGroupWriteable</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="483"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="484"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>the<sp/>file<sp/>is<sp/>executable<sp/>for<sp/>the<sp/>group</highlight></codeline>
+<codeline lineno="485"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="486"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>YES<sp/>is<sp/>the<sp/>file<sp/>is<sp/>executable<sp/>for<sp/>the<sp/>group,<sp/>otherwise<sp/>NO</highlight></codeline>
+<codeline lineno="487"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1a421a858dfbc834c72e929c2b55e97e8f" kindref="member" tooltip="Checks if the file is executable for the group.">XSFile_IsGroupExecutable</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="490"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="491"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>the<sp/>file<sp/>is<sp/>readable<sp/>for<sp/>the<sp/>world</highlight></codeline>
+<codeline lineno="492"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="493"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>YES<sp/>is<sp/>the<sp/>file<sp/>is<sp/>readable<sp/>for<sp/>the<sp/>world,<sp/>otherwise<sp/>NO</highlight></codeline>
+<codeline lineno="494"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1aed2534b233d659ca08e10f6619c9bbe1" kindref="member" tooltip="Checks if the file is readable for the world.">XSFile_IsWorldReadable</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="497"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="498"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>the<sp/>file<sp/>is<sp/>writeable<sp/>for<sp/>the<sp/>world</highlight></codeline>
+<codeline lineno="499"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="500"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>YES<sp/>is<sp/>the<sp/>file<sp/>is<sp/>writeable<sp/>for<sp/>the<sp/>world,<sp/>otherwise<sp/>NO</highlight></codeline>
+<codeline lineno="501"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1a029f78d1bc2d7c5d0673e0ecb23f7350" kindref="member" tooltip="Checks if the file is writeable for the world.">XSFile_IsWorldWriteable</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="504"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="505"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>the<sp/>file<sp/>is<sp/>executable<sp/>for<sp/>the<sp/>world</highlight></codeline>
+<codeline lineno="506"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="507"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>YES<sp/>is<sp/>the<sp/>file<sp/>is<sp/>executable<sp/>for<sp/>the<sp/>world,<sp/>otherwise<sp/>NO</highlight></codeline>
+<codeline lineno="508"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1a1ecd27fb68cbd99bb752e45dcdab4a7b" kindref="member" tooltip="Checks if the file is executable for the world.">XSFile_IsWorldExecutable</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="511"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="512"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>the<sp/>file<sp/>has<sp/>the<sp/>SUID<sp/>bit<sp/>set</highlight></codeline>
+<codeline lineno="513"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="514"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>True<sp/>if<sp/>the<sp/>SUID<sp/>bit<sp/>is<sp/>set,<sp/>otherwise<sp/>false</highlight></codeline>
+<codeline lineno="515"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1a4f2265bf675cf092eb90cd660724fafc" kindref="member" tooltip="Checks if the file has the SUID bit set.">XSFile_HasSUID</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="518"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="519"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>the<sp/>file<sp/>has<sp/>the<sp/>SGID<sp/>bit<sp/>set</highlight></codeline>
+<codeline lineno="520"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>file<sp/>object</highlight></codeline>
+<codeline lineno="521"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>True<sp/>if<sp/>the<sp/>SGID<sp/>bit<sp/>is<sp/>set,<sp/>otherwise<sp/>false</highlight></codeline>
+<codeline lineno="522"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSFile_8h_1a1a9c914f9e319df84fe7f79d6ac5614f" kindref="member" tooltip="Checks if the file has the SGID bit set.">XSFile_HasSGID</ref>(<sp/>XSFile<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="524"><highlight class="normal"></highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><ref refid="XSMacros_8h_1a35fa049fa034476400f574516968a3a2" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; end.">XS_EXTERN_C_END</ref></highlight></codeline>
+<codeline lineno="526"><highlight class="normal"></highlight></codeline>
+<codeline lineno="527"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_XS_FILE_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSFile.h"/>
+  </compounddef>
+</doxygen>

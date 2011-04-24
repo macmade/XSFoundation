@@ -1,0 +1,110 @@
+.TH "XSHost.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XSHost.h \- 
+.PP
+XSHost class functions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'XSMacros.h'\fP
+.br
+\fC#include 'XSURL.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB__XSHost_Struct\fP * \fBXSHost\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "XSStatic \fBXSObject\fP \fBXSHost_Alloc\fP (void)"
+.br
+.RI "\fIObject allocator. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSHost_Connect\fP (\fBXSHost\fP xsThis, \fBXSInteger\fP sock)"
+.br
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSHost_Disconnect\fP (\fBXSHost\fP xsThis, \fBXSInteger\fP sock)"
+.br
+.ti -1c
+.RI "\fBXSString\fP \fBXSHost_GetHost\fP (\fBXSHost\fP xsThis)"
+.br
+.ti -1c
+.RI "\fBXSString\fP \fBXSHost_GetIP\fP (\fBXSHost\fP xsThis)"
+.br
+.ti -1c
+.RI "\fBXSUInteger\fP \fBXSHost_GetPort\fP (\fBXSHost\fP xsThis)"
+.br
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSHost_GetSocket\fP (\fBXSHost\fP xsThis)"
+.br
+.ti -1c
+.RI "\fBXSObject\fP \fBXSHost_Init\fP (\fBXSHost\fP xsThis, \fBXSString\fP host, \fBXSUInteger\fP port)"
+.br
+.RI "\fIInitializes an error. \fP"
+.ti -1c
+.RI "\fBXSObject\fP \fBXSHost_InitWithURL\fP (\fBXSHost\fP xsThis, \fBXSURL\fP url)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+XSHost class functions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBXSHost.h\fP.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fB__XSHost_Struct\fP* \fBXSHost\fP"
+.PP
+Definition at line 52 of file XSHost.h.
+.SH "Function Documentation"
+.PP 
+.SS "XSStatic \fBXSObject\fP XSHost_Alloc (void)"
+.PP
+Object allocator. \fBReturns:\fP
+.RS 4
+The allocated object 
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSHost_Connect (\fBXSHost\fPxsThis, \fBXSInteger\fPsock)"
+.SS "\fBXSInteger\fP XSHost_Disconnect (\fBXSHost\fPxsThis, \fBXSInteger\fPsock)"
+.SS "\fBXSString\fP XSHost_GetHost (\fBXSHost\fPxsThis)"
+.SS "\fBXSString\fP XSHost_GetIP (\fBXSHost\fPxsThis)"
+.SS "\fBXSUInteger\fP XSHost_GetPort (\fBXSHost\fPxsThis)"
+.SS "\fBXSInteger\fP XSHost_GetSocket (\fBXSHost\fPxsThis)"
+.SS "\fBXSObject\fP XSHost_Init (\fBXSHost\fPxsThis, \fBXSString\fPhost, \fBXSUInteger\fPport)"
+.PP
+Initializes an error. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The host object 
+.br
+\fIhost\fP The host name 
+.br
+\fIport\fP The port number 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The error object 
+.RE
+.PP
+
+.SS "\fBXSObject\fP XSHost_InitWithURL (\fBXSHost\fPxsThis, \fBXSURL\fPurl)"
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

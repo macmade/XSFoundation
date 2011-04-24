@@ -1,0 +1,980 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="XSMemory_8h" kind="file">
+    <compoundname>XSMemory.h</compoundname>
+    <includes refid="XSMacros_8h" local="yes">XSMacros.h</includes>
+    <includes refid="XSTypes_8h" local="yes">XSTypes.h</includes>
+    <incdepgraph>
+      <node id="6963">
+        <label>XSMacros.h</label>
+        <link refid="XSMacros_8h"/>
+        <childnode refid="6964" relation="include">
+        </childnode>
+        <childnode refid="6965" relation="include">
+        </childnode>
+      </node>
+      <node id="6964">
+        <label>XSMacrosTarget.h</label>
+        <link refid="XSMacrosTarget_8h"/>
+        <childnode refid="6963" relation="include">
+        </childnode>
+      </node>
+      <node id="6962">
+        <label>XSMemory.h</label>
+        <link refid="XSMemory.h"/>
+        <childnode refid="6963" relation="include">
+        </childnode>
+        <childnode refid="6966" relation="include">
+        </childnode>
+      </node>
+      <node id="6967">
+        <label>XSConstants.h</label>
+        <link refid="XSConstants_8h"/>
+        <childnode refid="6963" relation="include">
+        </childnode>
+      </node>
+      <node id="6966">
+        <label>XSTypes.h</label>
+        <link refid="XSTypes_8h"/>
+        <childnode refid="6963" relation="include">
+        </childnode>
+        <childnode refid="6967" relation="include">
+        </childnode>
+        <childnode refid="6968" relation="include">
+        </childnode>
+        <childnode refid="6969" relation="include">
+        </childnode>
+      </node>
+      <node id="6965">
+        <label>XSMacrosException.h</label>
+        <link refid="XSMacrosException_8h"/>
+        <childnode refid="6963" relation="include">
+        </childnode>
+      </node>
+      <node id="6968">
+        <label>../std/std.h</label>
+      </node>
+      <node id="6969">
+        <label>XSString.h</label>
+        <link refid="XSString_8h"/>
+        <childnode refid="6963" relation="include">
+        </childnode>
+        <childnode refid="6970" relation="include">
+        </childnode>
+      </node>
+      <node id="6970">
+        <label>XSArray.h</label>
+        <link refid="XSArray_8h"/>
+        <childnode refid="6963" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="XSMemory_8h_1a63d7f156f3b060c4d0d1051894c07dcb" prot="public" static="no">
+        <name>XSAlloc</name>
+        <param><defname>...</defname></param>
+        <initializer>XSAllocWithInfos( __FILE__, __LINE__, __func__, __VA_ARGS__ )</initializer>
+        <briefdescription>
+<para>Allocates memory descriton Returned pointer will have to be passed to the XSRelease function in order to be free. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reserved for internal runtime use </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the allocated memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="83" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="XSMemory_8h_1afc1310f4f49eaa0b431d379a07cb9366" prot="public" static="no">
+        <name>XSAutoAlloc</name>
+        <param><defname>size</defname></param>
+        <initializer>XSAutoAllocWithInfos( __FILE__, __LINE__, __func__, size )</initializer>
+        <briefdescription>
+<para>Allocates auto-releasable memory. </para>        </briefdescription>
+        <detaileddescription>
+<para>When using this function, the object will automatically receive a release message the next time the current auto-release pool is drained. It means you don&apos;t own it, and that you are not responsible to release it explicitely. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size to allocate in bytes </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the allocated memory, </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="173" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="XSMemory_8h_1abc01495aaf2ff151c77746b2cc9bd6b2" prot="public" static="no">
+        <name>XSCopy</name>
+        <param><defname>ptr</defname></param>
+        <initializer>XSCopyWithInfos( __FILE__, __LINE__, __func__, ptr )</initializer>
+        <briefdescription>
+<para>Copies a pointer. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function executes a soft-copy. When using a structure with pointers, only the first level is copied. Note that you are responsible to release the copied pointer by using the XSRelease function. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pointer to copy </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The copy of the new pointer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="197" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="XSMemory_8h_1afb77f98180074bb629b673096ad18326" prot="public" static="no">
+        <name>XSRealloc</name>
+        <param><defname>ptr</defname></param>
+        <param><defname>size</defname></param>
+        <initializer>XSReallocWithInfos( __FILE__, __LINE__, __func__, ptr, size )</initializer>
+        <briefdescription>
+<para>Reallocates memory. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pointer to reallocate </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new size in bytes </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The new pointer to the reallocated memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="105" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="XSMemory_8h_1a44e074bf0cd1235df75d35605b8007e9" prot="public" static="no">
+        <name>XSRelease</name>
+        <param><defname>ptr</defname></param>
+        <initializer>XSReleaseWithInfos( __FILE__, __LINE__, __func__, ptr )</initializer>
+        <briefdescription>
+<para>Releases a memory pointer. </para>        </briefdescription>
+        <detaileddescription>
+<para>When releasing an object, the internal retain count is decremented. When it reaches 0, the pointer will be automatically freed. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pointer to release </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The pointer passed, to allow function chaining </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="139" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="XSMemory_8h_1ac5af5bb50cfb8a5a35038219b07a3ab8" prot="public" static="no">
+        <type>struct <ref refid="struct____XSAutoreleasePool__Struct" kindref="compound">__XSAutoreleasePool_Struct</ref> *</type>
+        <definition>XSAutoreleasePool</definition>
+        <argsstring></argsstring>
+        <name>XSAutoreleasePool</name>
+        <briefdescription>
+<para>Opaque type for the XSAutoreleasePool objects. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="52" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="XSMemory_8h_1a29c90266272911e573b37ba371d7a503" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* XSAllocWithInfos</definition>
+        <argsstring>(const char *file, int line, const char *func, size_t size,...)</argsstring>
+        <name>XSAllocWithInfos</name>
+        <param>
+          <type>const char *</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>Allocates memory description This function is used for internal memory debugging. Do not call it directly. Use XSAlloc instead. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The line number </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of bytes to allocate </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reserved for internal runtime use </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the allocated memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="96"/>
+      </memberdef>
+      <memberdef kind="function" id="XSMemory_8h_1ab52ac901ac2b3d00866b5a4c1bf84041" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* XSAutoAllocWithInfos</definition>
+        <argsstring>(const char *file, int line, const char *func, size_t size)</argsstring>
+        <name>XSAutoAllocWithInfos</name>
+        <param>
+          <type>const char *</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Allocates auto-releasable memory description This function is used for internal memory debugging. Do not call it directly. Use XSAutoAlloc instead. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The line number </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size to allocate in bytes </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the allocated memory, </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="185"/>
+      </memberdef>
+      <memberdef kind="function" id="XSMemory_8h_1ae8281d3f2b142b548d5ad30973b29abe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* XSAutorelease</definition>
+        <argsstring>(void *ptr)</argsstring>
+        <name>XSAutorelease</name>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Marks a memory pointer as auto-releasable. </para>        </briefdescription>
+        <detaileddescription>
+<para>The pointer will be placed in the instance of the current auto-release pool, and will receive a release message the next the auto-release pool is drained. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The memory pointer to mark as auto-releasable </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The pointer passed, to allow function chaining </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="161"/>
+      </memberdef>
+      <memberdef kind="function" id="XSMemory_8h_1ada0ec0f16ebdb0965f88bc7190092ad2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSObject XSAutoreleasePool_Alloc</definition>
+        <argsstring>(void)</argsstring>
+        <name>XSAutoreleasePool_Alloc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Object allocator. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The allocated object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="58"/>
+      </memberdef>
+      <memberdef kind="function" id="XSMemory_8h_1a1fd419f18e3382338e46751e3fbf7fdc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XSAutoreleasePool_Drain</definition>
+        <argsstring>(void)</argsstring>
+        <name>XSAutoreleasePool_Drain</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Removes objects from the current auto-release pool, sending the a release message. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="73"/>
+      </memberdef>
+      <memberdef kind="function" id="XSMemory_8h_1a4f26fc4917781cfd9624d9f6ce28c5d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSObject XSAutoreleasePool_Init</definition>
+        <argsstring>(XSObject xsThis)</argsstring>
+        <name>XSAutoreleasePool_Init</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a new auto-release pool. </para>        </briefdescription>
+        <detaileddescription>
+<para>The newly created pool will be set as the active one, meaning objects auto-released after the pool creation will be placed inside it. <simplesect kind="return"><para>The new auto-release pool object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="67"/>
+      </memberdef>
+      <memberdef kind="function" id="XSMemory_8h_1a933860dae7af5f3a48f336adf04c5d14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* XSCopyWithInfos</definition>
+        <argsstring>(const char *file, int line, const char *func, void *ptr)</argsstring>
+        <name>XSCopyWithInfos</name>
+        <param>
+          <type>const char *</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Copies a pointer description This function is used for internal memory debugging. Do not call it directly. Use XSCopy instead. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The line number </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pointer to copy </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The copy of the new pointer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="209"/>
+      </memberdef>
+      <memberdef kind="function" id="XSMemory_8h_1a6b2a53b23c7fe40fc4f79e0d97231056" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSEquals</definition>
+        <argsstring>(void *ptr1, void *ptr2)</argsstring>
+        <name>XSEquals</name>
+        <param>
+          <type>void *</type>
+          <declname>ptr1</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>ptr2</declname>
+        </param>
+        <briefdescription>
+<para>Compares two pointers/objects. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first pointer/object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ptr2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second pointer/object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the two pointers/objects are equals, otherwise false </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="217"/>
+      </memberdef>
+      <memberdef kind="function" id="XSMemory_8h_1a192b6eadd1e60bcd35aae921b3dc56e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t XSGetAllocationCount</definition>
+        <argsstring>(void)</argsstring>
+        <name>XSGetAllocationCount</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Gets the number of memory allocations. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The number of memory allocations </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="237"/>
+      </memberdef>
+      <memberdef kind="function" id="XSMemory_8h_1a2c5a7bff94f3cda0e164246306b52798" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger XSGetRetainCount</definition>
+        <argsstring>(void *ptr)</argsstring>
+        <name>XSGetRetainCount</name>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Gets the retain count for a pointer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pointer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The retain count </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="231"/>
+      </memberdef>
+      <memberdef kind="function" id="XSMemory_8h_1a59d769927bd8e7d4a5435fe4847223e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* XSHash</definition>
+        <argsstring>(void *ptr)</argsstring>
+        <name>XSHash</name>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Hashes a pointer/object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pointer/object to hash </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The hash of the pointer/object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="224"/>
+      </memberdef>
+      <memberdef kind="function" id="XSMemory_8h_1aac817311e3e9cf4c344a53f913943040" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* XSReallocWithInfos</definition>
+        <argsstring>(const char *file, int line, const char *func, void *ptr, size_t size)</argsstring>
+        <name>XSReallocWithInfos</name>
+        <param>
+          <type>const char *</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Reallocates memory description This function is used for internal memory debugging. Do not call it directly. Use XSRealloc instead. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The line number </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pointer to reallocate </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new size in bytes </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The new pointer to the reallocated memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="118"/>
+      </memberdef>
+      <memberdef kind="function" id="XSMemory_8h_1a19de84f73d2a3e570c7a8cd4f2aa9763" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* XSReleaseWithInfos</definition>
+        <argsstring>(const char *file, int line, const char *func, void *ptr)</argsstring>
+        <name>XSReleaseWithInfos</name>
+        <param>
+          <type>const char *</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Releases a memory pointer description This function is used for internal memory debugging. Do not call it directly. Use XSRelease instead. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The line number </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pointer to release </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The pointer passed, to allow function chaining </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="151"/>
+      </memberdef>
+      <memberdef kind="function" id="XSMemory_8h_1a6ed09f7fc902bc79c6507a0e3eb2e765" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* XSRetain</definition>
+        <argsstring>(void *ptr)</argsstring>
+        <name>XSRetain</name>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Retains a memory pointer, preventing it to be freed. </para>        </briefdescription>
+        <detaileddescription>
+<para>When retaining an object, the internal retain count is incremented. It means you own an object that you retain, and that you are responsible to release it using XSRelease. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pointer to retain </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The pointer passed, to allow function chaining </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h" line="128"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Memory management functions and XSAutoreleasePool class functions. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt; </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2011,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSMemory.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Memory<sp/>management<sp/>functions<sp/>and<sp/>XSAutoreleasePool<sp/>class<sp/>functions</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_XS_MEMORY_H_</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_XS_MEMORY_H_</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XSMacros_8h" kindref="compound" tooltip="General macros.">XSMacros.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="XSMacros_8h_1ae3fa7c5665557917f34badbe69a55828" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; start.">XS_EXTERN_C_BEGIN</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XSTypes_8h" kindref="compound" tooltip="XSFoundation data-types.">XSTypes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="48"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>XSAutoreleasePool</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Opaque<sp/>type<sp/>for<sp/>the<sp/>XSAutoreleasePool<sp/>objects</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="XSMemory_8h_1ac5af5bb50cfb8a5a35038219b07a3ab8" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct____XSAutoreleasePool__Struct" kindref="compound" tooltip="XSAutoreleasePool class.">__XSAutoreleasePool_Struct</ref><sp/>*<sp/><ref refid="XSMemory_8h_1ac5af5bb50cfb8a5a35038219b07a3ab8" kindref="member" tooltip="Opaque type for the XSAutoreleasePool objects.">XSAutoreleasePool</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="54"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Object<sp/>allocator</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>allocated<sp/>object</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><ref refid="XSTypes_8h_1a3310ef0367fe9a2e896f4b92ea6efe9a" kindref="member" tooltip="Marker for static class methods.">XSStatic</ref><sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSMemory_8h_1ada0ec0f16ebdb0965f88bc7190092ad2" kindref="member" tooltip="Object allocator.">XSAutoreleasePool_Alloc</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="60"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initializes<sp/>a<sp/>new<sp/>auto-release<sp/>pool</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>The<sp/>newly<sp/>created<sp/>pool<sp/>will<sp/>be<sp/>set<sp/>as<sp/>the<sp/>active<sp/>one,<sp/>meaning</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objects<sp/>auto-released<sp/>after<sp/>the<sp/>pool<sp/>creation<sp/>will<sp/>be<sp/>placed</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inside<sp/>it.</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>new<sp/>auto-release<sp/>pool<sp/>object</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSMemory_8h_1a4f26fc4917781cfd9624d9f6ce28c5d4" kindref="member" tooltip="Initializes a new auto-release pool.">XSAutoreleasePool_Init</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="69"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Removes<sp/>objects<sp/>from<sp/>the<sp/>current<sp/>auto-release<sp/>pool,<sp/>sending<sp/>the<sp/>a<sp/>release<sp/>message.</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><ref refid="XSTypes_8h_1a3310ef0367fe9a2e896f4b92ea6efe9a" kindref="member" tooltip="Marker for static class methods.">XSStatic</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSMemory_8h_1a1fd419f18e3382338e46751e3fbf7fdc" kindref="member" tooltip="Removes objects from the current auto-release pool, sending the a release message.">XSAutoreleasePool_Drain</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="75"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSAlloc</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Allocates<sp/>memory</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/>descriton<sp/><sp/><sp/><sp/>Returned<sp/>pointer<sp/>will<sp/>have<sp/>to<sp/>be<sp/>passed<sp/>to<sp/>the<sp/>XSRelease</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>function<sp/>in<sp/>order<sp/>to<sp/>be<sp/>free.</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/><sp/><sp/><sp/><sp/>Reserved<sp/>for<sp/>internal<sp/>runtime<sp/>use</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>allocated<sp/>memory</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="XSMemory_8h_1a63d7f156f3b060c4d0d1051894c07dcb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XSAlloc(<sp/>...<sp/>)<sp/>XSAllocWithInfos(<sp/>__FILE__,<sp/>__LINE__,<sp/>__func__,<sp/>__VA_ARGS__<sp/>)</highlight></codeline>
+<codeline lineno="84"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="85"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Allocates<sp/>memory</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*<sp/>description<sp/><sp/>This<sp/>function<sp/>is<sp/>used<sp/>for<sp/>internal<sp/>memory<sp/>debugging.<sp/>Do<sp/>not</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call<sp/>it<sp/>directly.<sp/>Use<sp/>XSAlloc<sp/>instead.</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>file<sp/><sp/><sp/><sp/>The<sp/>file<sp/>name</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>line<sp/><sp/><sp/><sp/>The<sp/>line<sp/>number</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>func<sp/><sp/><sp/><sp/>The<sp/>function<sp/>name</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>size<sp/><sp/><sp/><sp/>The<sp/>number<sp/>of<sp/>bytes<sp/>to<sp/>allocate</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/><sp/><sp/><sp/><sp/>Reserved<sp/>for<sp/>internal<sp/>runtime<sp/>use</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>allocated<sp/>memory</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="XSMemory_8h_1a29c90266272911e573b37ba371d7a503" kindref="member" tooltip="Allocates memory description This function is used for internal memory debugging. Do not call it dire...">XSAllocWithInfos</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>file,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>line,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>func,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct____XSAutoreleasePool__Struct_1af135b235799eb2d1ac667cf2c10b1632" kindref="member">size</ref>,<sp/>...<sp/>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="98"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSRealloc</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Reallocates<sp/>memory</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/><sp/><sp/><sp/><sp/>The<sp/>pointer<sp/>to<sp/>reallocate</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>size<sp/><sp/><sp/><sp/>The<sp/>new<sp/>size<sp/>in<sp/>bytes</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>new<sp/>pointer<sp/>to<sp/>the<sp/>reallocated<sp/>memory</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="XSMemory_8h_1afb77f98180074bb629b673096ad18326" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XSRealloc(<sp/>ptr,<sp/>size<sp/>)<sp/>XSReallocWithInfos(<sp/>__FILE__,<sp/>__LINE__,<sp/>__func__,<sp/>ptr,<sp/>size<sp/>)</highlight></codeline>
+<codeline lineno="106"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="107"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Reallocates<sp/>memory</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*<sp/>description<sp/><sp/>This<sp/>function<sp/>is<sp/>used<sp/>for<sp/>internal<sp/>memory<sp/>debugging.<sp/>Do<sp/>not</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call<sp/>it<sp/>directly.<sp/>Use<sp/>XSRealloc<sp/>instead.</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>file<sp/><sp/><sp/><sp/>The<sp/>file<sp/>name</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>line<sp/><sp/><sp/><sp/>The<sp/>line<sp/>number</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>func<sp/><sp/><sp/><sp/>The<sp/>function<sp/>name</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/><sp/><sp/><sp/><sp/>The<sp/>pointer<sp/>to<sp/>reallocate</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>size<sp/><sp/><sp/><sp/>The<sp/>new<sp/>size<sp/>in<sp/>bytes</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>new<sp/>pointer<sp/>to<sp/>the<sp/>reallocated<sp/>memory</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="XSMemory_8h_1aac817311e3e9cf4c344a53f913943040" kindref="member" tooltip="Reallocates memory description This function is used for internal memory debugging. Do not call it directly. Use XSRealloc instead.">XSReallocWithInfos</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>file,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>line,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>func,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>ptr,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct____XSAutoreleasePool__Struct_1af135b235799eb2d1ac667cf2c10b1632" kindref="member">size</ref><sp/>);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="120"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Retains<sp/>a<sp/>memory<sp/>pointer,<sp/>preventing<sp/>it<sp/>to<sp/>be<sp/>freed</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>When<sp/>retaining<sp/>an<sp/>object,<sp/>the<sp/>internal<sp/>retain<sp/>count<sp/>is</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>incremented.<sp/>It<sp/>means<sp/>you<sp/>own<sp/>an<sp/>object<sp/>that<sp/>you<sp/>retain,<sp/>and</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>that<sp/>you<sp/>are<sp/>responsible<sp/>to<sp/>release<sp/>it<sp/>using<sp/>XSRelease.</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/><sp/><sp/><sp/><sp/>The<sp/>pointer<sp/>to<sp/>retain</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>pointer<sp/>passed,<sp/>to<sp/>allow<sp/>function<sp/>chaining</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="XSMemory_8h_1a6ed09f7fc902bc79c6507a0e3eb2e765" kindref="member" tooltip="Retains a memory pointer, preventing it to be freed.">XSRetain</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>ptr<sp/>);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="130"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSRelease</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Releases<sp/>a<sp/>memory<sp/>pointer</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>When<sp/>releasing<sp/>an<sp/>object,<sp/>the<sp/>internal<sp/>retain<sp/>count<sp/>is</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>decremented.<sp/>When<sp/>it<sp/>reaches<sp/>0,<sp/>the<sp/>pointer<sp/>will<sp/>be</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>automatically<sp/>freed.</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/><sp/><sp/><sp/><sp/>The<sp/>pointer<sp/>to<sp/>release</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>pointer<sp/>passed,<sp/>to<sp/>allow<sp/>function<sp/>chaining</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="XSMemory_8h_1a44e074bf0cd1235df75d35605b8007e9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XSRelease(<sp/>ptr<sp/>)<sp/>XSReleaseWithInfos(<sp/>__FILE__,<sp/>__LINE__,<sp/>__func__,<sp/>ptr<sp/>)</highlight></codeline>
+<codeline lineno="140"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="141"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Releases<sp/>a<sp/>memory<sp/>pointer</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/>*<sp/>description<sp/><sp/>This<sp/>function<sp/>is<sp/>used<sp/>for<sp/>internal<sp/>memory<sp/>debugging.<sp/>Do<sp/>not</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call<sp/>it<sp/>directly.<sp/>Use<sp/>XSRelease<sp/>instead.</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>file<sp/><sp/><sp/><sp/>The<sp/>file<sp/>name</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>line<sp/><sp/><sp/><sp/>The<sp/>line<sp/>number</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>func<sp/><sp/><sp/><sp/>The<sp/>function<sp/>name</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/><sp/><sp/><sp/><sp/>The<sp/>pointer<sp/>to<sp/>release</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>pointer<sp/>passed,<sp/>to<sp/>allow<sp/>function<sp/>chaining</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="XSMemory_8h_1a19de84f73d2a3e570c7a8cd4f2aa9763" kindref="member" tooltip="Releases a memory pointer description This function is used for internal memory debugging. Do not call it directly. Use XSRelease instead.">XSReleaseWithInfos</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>file,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>line,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>func,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>ptr<sp/>);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="153"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Marks<sp/>a<sp/>memory<sp/>pointer<sp/>as<sp/>auto-releasable</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>The<sp/>pointer<sp/>will<sp/>be<sp/>placed<sp/>in<sp/>the<sp/>instance<sp/>of<sp/>the<sp/>current</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>auto-release<sp/>pool,<sp/>and<sp/>will<sp/>receive<sp/>a<sp/>release<sp/>message<sp/>the<sp/>next</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>auto-release<sp/>pool<sp/>is<sp/>drained.</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/><sp/><sp/><sp/><sp/>The<sp/>memory<sp/>pointer<sp/>to<sp/>mark<sp/>as<sp/>auto-releasable</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>pointer<sp/>passed,<sp/>to<sp/>allow<sp/>function<sp/>chaining</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="XSMemory_8h_1ae8281d3f2b142b548d5ad30973b29abe" kindref="member" tooltip="Marks a memory pointer as auto-releasable.">XSAutorelease</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>ptr<sp/>);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="163"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSAutoAlloc</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Allocates<sp/>auto-releasable<sp/>memory</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>When<sp/>using<sp/>this<sp/>function,<sp/>the<sp/>object<sp/>will<sp/>automatically<sp/>receive</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a<sp/>release<sp/>message<sp/>the<sp/>next<sp/>time<sp/>the<sp/>current<sp/>auto-release<sp/>pool</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>drained.<sp/>It<sp/>means<sp/>you<sp/>don&apos;t<sp/>own<sp/>it,<sp/>and<sp/>that<sp/>you<sp/>are<sp/>not</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>responsible<sp/>to<sp/>release<sp/>it<sp/>explicitely.</highlight></codeline>
+<codeline lineno="170"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>size<sp/><sp/><sp/><sp/>The<sp/>size<sp/>to<sp/>allocate<sp/>in<sp/>bytes</highlight></codeline>
+<codeline lineno="171"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>allocated<sp/>memory,</highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173" refid="XSMemory_8h_1afc1310f4f49eaa0b431d379a07cb9366" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XSAutoAlloc(<sp/>size<sp/>)<sp/>XSAutoAllocWithInfos(<sp/>__FILE__,<sp/>__LINE__,<sp/>__func__,<sp/>size<sp/>)</highlight></codeline>
+<codeline lineno="174"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="175"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Allocates<sp/>auto-releasable<sp/>memory</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/>*<sp/>description<sp/><sp/>This<sp/>function<sp/>is<sp/>used<sp/>for<sp/>internal<sp/>memory<sp/>debugging.<sp/>Do<sp/>not</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call<sp/>it<sp/>directly.<sp/>Use<sp/>XSAutoAlloc<sp/>instead.</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>file<sp/><sp/><sp/><sp/>The<sp/>file<sp/>name</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>line<sp/><sp/><sp/><sp/>The<sp/>line<sp/>number</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>func<sp/><sp/><sp/><sp/>The<sp/>function<sp/>name</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>size<sp/><sp/><sp/><sp/>The<sp/>size<sp/>to<sp/>allocate<sp/>in<sp/>bytes</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>allocated<sp/>memory,</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="XSMemory_8h_1ab52ac901ac2b3d00866b5a4c1bf84041" kindref="member" tooltip="Allocates auto-releasable memory description This function is used for internal memory debugging...">XSAutoAllocWithInfos</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>file,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>line,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>func,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct____XSAutoreleasePool__Struct_1af135b235799eb2d1ac667cf2c10b1632" kindref="member">size</ref><sp/>);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="187"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSCopy</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Copies<sp/>a<sp/>pointer</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>This<sp/>function<sp/>executes<sp/>a<sp/>soft-copy.<sp/>When<sp/>using<sp/>a<sp/>structure<sp/>with</highlight></codeline>
+<codeline lineno="191"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pointers,<sp/>only<sp/>the<sp/>first<sp/>level<sp/>is<sp/>copied.</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Note<sp/>that<sp/>you<sp/>are<sp/>responsible<sp/>to<sp/>release<sp/>the<sp/>copied<sp/>pointer</highlight></codeline>
+<codeline lineno="193"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>by<sp/>using<sp/>the<sp/>XSRelease<sp/>function.</highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/><sp/><sp/><sp/><sp/>The<sp/>pointer<sp/>to<sp/>copy</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>copy<sp/>of<sp/>the<sp/>new<sp/>pointer</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197" refid="XSMemory_8h_1abc01495aaf2ff151c77746b2cc9bd6b2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XSCopy(<sp/>ptr<sp/>)<sp/>XSCopyWithInfos(<sp/>__FILE__,<sp/>__LINE__,<sp/>__func__,<sp/>ptr<sp/>)</highlight></codeline>
+<codeline lineno="198"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="199"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="200"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Copies<sp/>a<sp/>pointer</highlight></codeline>
+<codeline lineno="201"><highlight class="comment"><sp/>*<sp/>description<sp/><sp/>This<sp/>function<sp/>is<sp/>used<sp/>for<sp/>internal<sp/>memory<sp/>debugging.<sp/>Do<sp/>not</highlight></codeline>
+<codeline lineno="202"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call<sp/>it<sp/>directly.<sp/>Use<sp/>XSCopy<sp/>instead.</highlight></codeline>
+<codeline lineno="203"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>file<sp/><sp/><sp/><sp/>The<sp/>file<sp/>name</highlight></codeline>
+<codeline lineno="204"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>line<sp/><sp/><sp/><sp/>The<sp/>line<sp/>number</highlight></codeline>
+<codeline lineno="205"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>func<sp/><sp/><sp/><sp/>The<sp/>function<sp/>name</highlight></codeline>
+<codeline lineno="206"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/><sp/><sp/><sp/><sp/>The<sp/>pointer<sp/>to<sp/>copy</highlight></codeline>
+<codeline lineno="207"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>copy<sp/>of<sp/>the<sp/>new<sp/>pointer</highlight></codeline>
+<codeline lineno="208"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="XSMemory_8h_1a933860dae7af5f3a48f336adf04c5d14" kindref="member" tooltip="Copies a pointer description This function is used for internal memory debugging. Do not call it dire...">XSCopyWithInfos</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>file,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>line,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>func,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>ptr<sp/>);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="211"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="212"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Compares<sp/>two<sp/>pointers/objects</highlight></codeline>
+<codeline lineno="213"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr1<sp/><sp/><sp/><sp/>The<sp/>first<sp/>pointer/object</highlight></codeline>
+<codeline lineno="214"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr2<sp/><sp/><sp/><sp/>The<sp/>second<sp/>pointer/object</highlight></codeline>
+<codeline lineno="215"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>True<sp/>if<sp/>the<sp/>two<sp/>pointers/objects<sp/>are<sp/>equals,<sp/>otherwise<sp/>false</highlight></codeline>
+<codeline lineno="216"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSMemory_8h_1a6b2a53b23c7fe40fc4f79e0d97231056" kindref="member" tooltip="Compares two pointers/objects.">XSEquals</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>ptr1,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>ptr2<sp/>);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="219"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="220"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Hashes<sp/>a<sp/>pointer/object</highlight></codeline>
+<codeline lineno="221"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/><sp/><sp/><sp/><sp/>The<sp/>pointer/object<sp/>to<sp/>hash</highlight></codeline>
+<codeline lineno="222"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>hash<sp/>of<sp/>the<sp/>pointer/object</highlight></codeline>
+<codeline lineno="223"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="XSMemory_8h_1a59d769927bd8e7d4a5435fe4847223e1" kindref="member" tooltip="Hashes a pointer/object.">XSHash</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>ptr<sp/>);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="226"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="227"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>retain<sp/>count<sp/>for<sp/>a<sp/>pointer</highlight></codeline>
+<codeline lineno="228"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/><sp/><sp/><sp/><sp/>The<sp/>pointer</highlight></codeline>
+<codeline lineno="229"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>retain<sp/>count</highlight></codeline>
+<codeline lineno="230"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref><sp/><ref refid="XSMemory_8h_1a2c5a7bff94f3cda0e164246306b52798" kindref="member" tooltip="Gets the retain count for a pointer.">XSGetRetainCount</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>ptr<sp/>);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="233"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="234"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>number<sp/>of<sp/>memory<sp/>allocations</highlight></codeline>
+<codeline lineno="235"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>number<sp/>of<sp/>memory<sp/>allocations</highlight></codeline>
+<codeline lineno="236"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="XSMemory_8h_1a192b6eadd1e60bcd35aae921b3dc56e4" kindref="member" tooltip="Gets the number of memory allocations.">XSGetAllocationCount</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><ref refid="XSMacros_8h_1a35fa049fa034476400f574516968a3a2" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; end.">XS_EXTERN_C_END</ref></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_XS_MEMORY_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSMemory.h"/>
+  </compounddef>
+</doxygen>

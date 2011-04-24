@@ -1,0 +1,464 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="std-md5_8h" kind="file">
+    <compoundname>std-md5.h</compoundname>
+    <includedby refid="std_8h" local="yes">std.h</includedby>
+    <invincdepgraph>
+      <node id="6363">
+        <label>__XSApplicationArgument.h</label>
+        <link refid="____XSApplicationArgument_8h"/>
+      </node>
+      <node id="6368">
+        <label>__XSColor.h</label>
+        <link refid="____XSColor_8h"/>
+      </node>
+      <node id="6380">
+        <label>__XSNull.h</label>
+        <link refid="____XSNull_8h"/>
+      </node>
+      <node id="6370">
+        <label>__XSDictionary.h</label>
+        <link refid="____XSDictionary_8h"/>
+      </node>
+      <node id="6358">
+        <label>XSMemory.h</label>
+        <link refid="XSMemory_8h"/>
+      </node>
+      <node id="6386">
+        <label>__XSTimer.h</label>
+        <link refid="____XSTimer_8h"/>
+      </node>
+      <node id="6359">
+        <label>XSMemoryDebug.h</label>
+        <link refid="XSMemoryDebug_8h"/>
+      </node>
+      <node id="6375">
+        <label>__XSLock.h</label>
+        <link refid="____XSLock_8h"/>
+      </node>
+      <node id="6364">
+        <label>__XSArray.h</label>
+        <link refid="____XSArray_8h"/>
+      </node>
+      <node id="6384">
+        <label>__XSString.h</label>
+        <link refid="____XSString_8h"/>
+      </node>
+      <node id="6362">
+        <label>__XSApplication.h</label>
+        <link refid="____XSApplication_8h"/>
+      </node>
+      <node id="6365">
+        <label>__XSBag.h</label>
+        <link refid="____XSBag_8h"/>
+      </node>
+      <node id="6389">
+        <label>XSRuntime.h</label>
+        <link refid="XSRuntime_8h"/>
+      </node>
+      <node id="6374">
+        <label>__XSHost.h</label>
+        <link refid="____XSHost_8h"/>
+      </node>
+      <node id="6381">
+        <label>__XSNumber.h</label>
+        <link refid="____XSNumber_8h"/>
+      </node>
+      <node id="6385">
+        <label>__XSThread.h</label>
+        <link refid="____XSThread_8h"/>
+      </node>
+      <node id="6356">
+        <label>XSTypes.h</label>
+        <link refid="XSTypes_8h"/>
+        <childnode refid="6357" relation="include">
+        </childnode>
+        <childnode refid="6358" relation="include">
+        </childnode>
+        <childnode refid="6359" relation="include">
+        </childnode>
+        <childnode refid="6360" relation="include">
+        </childnode>
+      </node>
+      <node id="6357">
+        <label>XSGeometry.h</label>
+        <link refid="XSGeometry_8h"/>
+      </node>
+      <node id="6383">
+        <label>__XSSort.h</label>
+        <link refid="____XSSort_8h"/>
+      </node>
+      <node id="6387">
+        <label>__XSURL.h</label>
+        <link refid="____XSURL_8h"/>
+      </node>
+      <node id="6379">
+        <label>__XSNotificationCenter.h</label>
+        <link refid="____XSNotificationCenter_8h"/>
+      </node>
+      <node id="6367">
+        <label>__XSBTree.h</label>
+        <link refid="____XSBTree_8h"/>
+      </node>
+      <node id="6355">
+        <label>std.h</label>
+        <link refid="std_8h"/>
+        <childnode refid="6356" relation="include">
+        </childnode>
+        <childnode refid="6361" relation="include">
+        </childnode>
+      </node>
+      <node id="6376">
+        <label>__XSMemory.h</label>
+        <link refid="____XSMemory_8h"/>
+        <childnode refid="6377" relation="include">
+        </childnode>
+      </node>
+      <node id="6377">
+        <label>__XSMemoryDebug.h</label>
+        <link refid="____XSMemoryDebug_8h"/>
+      </node>
+      <node id="6360">
+        <label>XSSort.h</label>
+        <link refid="XSSort_8h"/>
+      </node>
+      <node id="6371">
+        <label>__XSError.h</label>
+        <link refid="____XSError_8h"/>
+      </node>
+      <node id="6369">
+        <label>__XSData.h</label>
+        <link refid="____XSData_8h"/>
+      </node>
+      <node id="6372">
+        <label>__XSException.h</label>
+        <link refid="____XSException_8h"/>
+      </node>
+      <node id="6378">
+        <label>__XSNotification.h</label>
+        <link refid="____XSNotification_8h"/>
+      </node>
+      <node id="6366">
+        <label>__XSBool.h</label>
+        <link refid="____XSBool_8h"/>
+      </node>
+      <node id="6361">
+        <label>XS.h</label>
+        <link refid="XS_8h"/>
+        <childnode refid="6362" relation="include">
+        </childnode>
+        <childnode refid="6363" relation="include">
+        </childnode>
+        <childnode refid="6364" relation="include">
+        </childnode>
+        <childnode refid="6365" relation="include">
+        </childnode>
+        <childnode refid="6366" relation="include">
+        </childnode>
+        <childnode refid="6367" relation="include">
+        </childnode>
+        <childnode refid="6368" relation="include">
+        </childnode>
+        <childnode refid="6369" relation="include">
+        </childnode>
+        <childnode refid="6370" relation="include">
+        </childnode>
+        <childnode refid="6371" relation="include">
+        </childnode>
+        <childnode refid="6372" relation="include">
+        </childnode>
+        <childnode refid="6373" relation="include">
+        </childnode>
+        <childnode refid="6374" relation="include">
+        </childnode>
+        <childnode refid="6375" relation="include">
+        </childnode>
+        <childnode refid="6376" relation="include">
+        </childnode>
+        <childnode refid="6377" relation="include">
+        </childnode>
+        <childnode refid="6378" relation="include">
+        </childnode>
+        <childnode refid="6379" relation="include">
+        </childnode>
+        <childnode refid="6380" relation="include">
+        </childnode>
+        <childnode refid="6381" relation="include">
+        </childnode>
+        <childnode refid="6382" relation="include">
+        </childnode>
+        <childnode refid="6383" relation="include">
+        </childnode>
+        <childnode refid="6384" relation="include">
+        </childnode>
+        <childnode refid="6385" relation="include">
+        </childnode>
+        <childnode refid="6386" relation="include">
+        </childnode>
+        <childnode refid="6387" relation="include">
+        </childnode>
+        <childnode refid="6388" relation="include">
+        </childnode>
+        <childnode refid="6389" relation="include">
+        </childnode>
+      </node>
+      <node id="6354">
+        <label>std-md5.h</label>
+        <link refid="std-md5.h"/>
+        <childnode refid="6355" relation="include">
+        </childnode>
+      </node>
+      <node id="6382">
+        <label>__XSSet.h</label>
+        <link refid="____XSSet_8h"/>
+      </node>
+      <node id="6388">
+        <label>__XSURLRequest.h</label>
+        <link refid="____XSURLRequest_8h"/>
+      </node>
+      <node id="6373">
+        <label>__XSFile.h</label>
+        <link refid="____XSFile_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structMD5__CTX__Struct" prot="public">MD5_CTX_Struct</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="std-md5_8h_1a09a4f4b2f28cbe522d9b80153666029c" prot="public" static="no">
+        <name>MD5_DIGEST_LENGTH</name>
+        <initializer>16</initializer>
+        <briefdescription>
+<para>The length of a MD5 digest. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-md5.h" line="41" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-md5.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="std-md5_8h_1a073d408754dcdd6cc560a10f5d44352c" prot="public" static="no">
+        <type>struct <ref refid="structMD5__CTX__Struct" kindref="compound">MD5_CTX_Struct</ref></type>
+        <definition>MD5_CTX</definition>
+        <argsstring></argsstring>
+        <name>MD5_CTX</name>
+        <briefdescription>
+<para>MD5 context. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-md5.h" line="58" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-md5.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="std-md5_8h_1a1550696842f292da8b2a7527cf6036a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MD5_Final</definition>
+        <argsstring>(unsigned char digest[16], MD5_CTX *context)</argsstring>
+        <name>MD5_Final</name>
+        <param>
+          <type>unsigned char</type>
+          <declname>digest</declname>
+          <array>[16]</array>
+        </param>
+        <param>
+          <type><ref refid="structMD5__CTX__Struct" kindref="compound">MD5_CTX</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>Finalizes the message digest. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>digest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The buffer for the digest (16 bytes) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The MD5 context </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-md5.h" line="82"/>
+      </memberdef>
+      <memberdef kind="function" id="std-md5_8h_1a82bedbbdf15e290d572304c04e4d9a1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MD5_Init</definition>
+        <argsstring>(MD5_CTX *context)</argsstring>
+        <name>MD5_Init</name>
+        <param>
+          <type><ref refid="structMD5__CTX__Struct" kindref="compound">MD5_CTX</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>initializes a MD5_CTX structure. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The MD5 contex </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-md5.h" line="65"/>
+      </memberdef>
+      <memberdef kind="function" id="std-md5_8h_1a8ec8862be791bb27b71c15ab55581f5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MD5_Update</definition>
+        <argsstring>(MD5_CTX *context, unsigned char *data, unsigned int length)</argsstring>
+        <name>MD5_Update</name>
+        <param>
+          <type><ref refid="structMD5__CTX__Struct" kindref="compound">MD5_CTX</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Updates the MD5_CTX structure with chunks of the message to be hashed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The MD5 context </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the message data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-md5.h" line="74"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>MD5 hash algorithm. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>RSA Data Security, Inc. </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>1991-2,<sp/>RSA<sp/>Data<sp/>Security,<sp/>Inc.<sp/>Created<sp/>1991.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>License<sp/>to<sp/>copy<sp/>and<sp/>use<sp/>this<sp/>software<sp/>is<sp/>granted<sp/>provided<sp/>that<sp/>it</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>is<sp/>identified<sp/>as<sp/>the<sp/>&quot;RSA<sp/>Data<sp/>Security,<sp/>Inc.<sp/>MD5<sp/>Message-Digest</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Algorithm&quot;<sp/>in<sp/>all<sp/>material<sp/>mentioning<sp/>or<sp/>referencing<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>or<sp/>this<sp/>function.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>License<sp/>is<sp/>also<sp/>granted<sp/>to<sp/>make<sp/>and<sp/>use<sp/>derivative<sp/>works<sp/>provided</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>that<sp/>such<sp/>works<sp/>are<sp/>identified<sp/>as<sp/>&quot;derived<sp/>from<sp/>the<sp/>RSA<sp/>Data</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>Security,<sp/>Inc.<sp/>MD5<sp/>Message-Digest<sp/>Algorithm&quot;<sp/>in<sp/>all<sp/>material</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>mentioning<sp/>or<sp/>referencing<sp/>the<sp/>derived<sp/>work.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>RSA<sp/>Data<sp/>Security,<sp/>Inc.<sp/>makes<sp/>no<sp/>representations<sp/>concerning<sp/>either</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>the<sp/>merchantability<sp/>of<sp/>this<sp/>software<sp/>or<sp/>the<sp/>suitability<sp/>of<sp/>this</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>software<sp/>for<sp/>any<sp/>particular<sp/>purpose.<sp/>It<sp/>is<sp/>provided<sp/>&quot;as<sp/>is&quot;</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>without<sp/>express<sp/>or<sp/>implied<sp/>warranty<sp/>of<sp/>any<sp/>kind.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="23"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std-md5.h</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>MD5<sp/>hash<sp/>algorithm</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>RSA<sp/>Data<sp/>Security,<sp/>Inc.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_XS_STD_MD5_H_</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_XS_STD_MD5_H_</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="32"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="37"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MD5_DIGEST_LENGTH</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>length<sp/>of<sp/>a<sp/>MD5<sp/>digest</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="std-md5_8h_1a09a4f4b2f28cbe522d9b80153666029c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MD5_DIGEST_LENGTH<sp/><sp/><sp/>16</highlight></codeline>
+<codeline lineno="42"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="43"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/>@struct<sp/><sp/><sp/><sp/><sp/><sp/>MD5_CTX_Struct</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>MD5<sp/>context<sp/>structure</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="structMD5__CTX__Struct" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structMD5__CTX__Struct" kindref="compound" tooltip="MD5 context structure.">MD5_CTX_Struct</ref></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49" refid="structMD5__CTX__Struct_1a8840d5d9412790d822968cdf493eed36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structMD5__CTX__Struct_1a8840d5d9412790d822968cdf493eed36" kindref="member">state</ref>[<sp/>4<sp/>];<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>State<sp/>(ABCD)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="structMD5__CTX__Struct_1abb5649050367b63d65cc904eb501bbdd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structMD5__CTX__Struct_1abb5649050367b63d65cc904eb501bbdd" kindref="member">count</ref>[<sp/>2<sp/>];<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>Number<sp/>of<sp/>bits,<sp/>modulo<sp/>2^64<sp/>(LSB<sp/>first)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="structMD5__CTX__Struct_1aedd8df265b09aab646c1b46aef264c04" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="structMD5__CTX__Struct_1aedd8df265b09aab646c1b46aef264c04" kindref="member">buffer</ref>[<sp/>64<sp/>];<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>Input<sp/>buffer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="54"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>MD5_CTX</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>MD5<sp/>context</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="std-md5_8h_1a073d408754dcdd6cc560a10f5d44352c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structMD5__CTX__Struct" kindref="compound" tooltip="MD5 context structure.">MD5_CTX_Struct</ref><sp/><ref refid="structMD5__CTX__Struct" kindref="compound" tooltip="MD5 context structure.">MD5_CTX</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="60"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>initializes<sp/>a<sp/>MD5_CTX<sp/>structure.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>context<sp/><sp/><sp/><sp/><sp/>The<sp/>MD5<sp/>contex</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="std-md5_8h_1a82bedbbdf15e290d572304c04e4d9a1c" kindref="member" tooltip="initializes a MD5_CTX structure.">MD5_Init</ref>(<sp/><ref refid="structMD5__CTX__Struct" kindref="compound" tooltip="MD5 context structure.">MD5_CTX</ref><sp/>*<sp/>context<sp/>);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="67"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Updates<sp/>the<sp/>MD5_CTX<sp/>structure<sp/>with<sp/>chunks<sp/>of<sp/>the<sp/>message<sp/>to<sp/>be<sp/>hashed</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>context<sp/><sp/><sp/><sp/><sp/>The<sp/>MD5<sp/>context</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>data<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>message<sp/>data</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>length<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>length<sp/>of<sp/>the<sp/>message<sp/>data</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="std-md5_8h_1a8ec8862be791bb27b71c15ab55581f5b" kindref="member" tooltip="Updates the MD5_CTX structure with chunks of the message to be hashed.">MD5_Update</ref>(<sp/><ref refid="structMD5__CTX__Struct" kindref="compound" tooltip="MD5 context structure.">MD5_CTX</ref><sp/>*<sp/>context,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>data,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length<sp/>);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="76"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Finalizes<sp/>the<sp/>message<sp/>digest</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>digest<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>buffer<sp/>for<sp/>the<sp/>digest<sp/>(16<sp/>bytes)</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>context<sp/><sp/><sp/><sp/><sp/>The<sp/>MD5<sp/>context</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="std-md5_8h_1a1550696842f292da8b2a7527cf6036a7" kindref="member" tooltip="Finalizes the message digest.">MD5_Final</ref>(<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>digest[<sp/><ref refid="std-md5_8h_1a09a4f4b2f28cbe522d9b80153666029c" kindref="member" tooltip="The length of a MD5 digest.">MD5_DIGEST_LENGTH</ref><sp/>],<sp/><ref refid="structMD5__CTX__Struct" kindref="compound" tooltip="MD5 context structure.">MD5_CTX</ref><sp/>*<sp/>context<sp/>);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="85"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="87"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_XS_STD_MD5_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-md5.h"/>
+  </compounddef>
+</doxygen>

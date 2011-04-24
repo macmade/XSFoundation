@@ -1,0 +1,541 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="XSBTree_8h" kind="file">
+    <compoundname>XSBTree.h</compoundname>
+    <includes refid="XSMacros_8h" local="yes">XSMacros.h</includes>
+    <incdepgraph>
+      <node id="6771">
+        <label>XSMacros.h</label>
+        <link refid="XSMacros_8h"/>
+        <childnode refid="6772" relation="include">
+        </childnode>
+        <childnode refid="6773" relation="include">
+        </childnode>
+      </node>
+      <node id="6772">
+        <label>XSMacrosTarget.h</label>
+        <link refid="XSMacrosTarget_8h"/>
+        <childnode refid="6771" relation="include">
+        </childnode>
+      </node>
+      <node id="6773">
+        <label>XSMacrosException.h</label>
+        <link refid="XSMacrosException_8h"/>
+        <childnode refid="6771" relation="include">
+        </childnode>
+      </node>
+      <node id="6770">
+        <label>XSBTree.h</label>
+        <link refid="XSBTree.h"/>
+        <childnode refid="6771" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="XSBTree_8h_1a3e59636d332dbbcfc79c6e29228d0a55" prot="public" static="no">
+        <type>struct <ref refid="struct____XSBTree__Struct" kindref="compound">__XSBTree_Struct</ref> *</type>
+        <definition>XSBTree</definition>
+        <argsstring></argsstring>
+        <name>XSBTree</name>
+        <briefdescription>
+<para>Opaque type for the XSBTree objects. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="50" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="XSBTree_8h_1ad8a4a8026d623218797fa2107a3ad034" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSStatic <ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSStatic XSObject XSBTree_Alloc</definition>
+        <argsstring>(void)</argsstring>
+        <name>XSBTree_Alloc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Object allocator. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The allocated object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="56"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1ae9e1a54149899a023eeeaf1343fa0cb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSAutoreleased <ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+        <definition>XSAutoreleased XSBTree XSBTree_CreateLeft</definition>
+        <argsstring>(XSBTree xsThis, XSObject value)</argsstring>
+        <name>XSBTree_CreateLeft</name>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="68"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1abc550277ecac1156ae6cca5d9a8822fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSAutoreleased <ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+        <definition>XSAutoreleased XSBTree XSBTree_CreateRight</definition>
+        <argsstring>(XSBTree xsThis, XSObject value)</argsstring>
+        <name>XSBTree_CreateRight</name>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="70"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1a52c35c5c662cd299a25e27459f22f3fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger XSBTree_GetDepth</definition>
+        <argsstring>(XSBTree xsThis)</argsstring>
+        <name>XSBTree_GetDepth</name>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="88"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1a88f4f976b0d4ce3bf0644e7f456ba765" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSAutoreleased <ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref> *</type>
+        <definition>XSAutoreleased XSBTree* XSBTree_GetLeafs</definition>
+        <argsstring>(XSBTree xsThis)</argsstring>
+        <name>XSBTree_GetLeafs</name>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="90"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1a0136ffb1c082a6188ebd37631b195ddc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSAutoreleased <ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+        <definition>XSAutoreleased XSBTree XSBTree_GetLeft</definition>
+        <argsstring>(XSBTree xsThis)</argsstring>
+        <name>XSBTree_GetLeft</name>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="60"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1a69843bbed758e2e44070d0ba8d711dfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSAutoreleased <ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+        <definition>XSAutoreleased XSBTree XSBTree_GetParent</definition>
+        <argsstring>(XSBTree xsThis)</argsstring>
+        <name>XSBTree_GetParent</name>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="64"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1ae6a612ff53bcecdcc0eac388c6ee1c0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSAutoreleased <ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+        <definition>XSAutoreleased XSBTree XSBTree_GetRight</definition>
+        <argsstring>(XSBTree xsThis)</argsstring>
+        <name>XSBTree_GetRight</name>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="62"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1a9db58a05d389509f62f37812fcb4a027" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSAutoreleased <ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+        <definition>XSAutoreleased XSBTree XSBTree_GetRoot</definition>
+        <argsstring>(XSBTree xsThis)</argsstring>
+        <name>XSBTree_GetRoot</name>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="86"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1ab8776aa27c5b52672ffb1d32a13decce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSAutoreleased <ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSAutoreleased XSObject XSBTree_GetValue</definition>
+        <argsstring>(XSBTree xsThis)</argsstring>
+        <name>XSBTree_GetValue</name>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="66"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1aed72cf4a2813fe90ae2b9efa1b58e0b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSObject XSBTree_Init</definition>
+        <argsstring>(XSObject xsThis)</argsstring>
+        <name>XSBTree_Init</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="58"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1a1820f059dcb11b6b94a230afb39393cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSBtree_IsLeaf</definition>
+        <argsstring>(XSBTree xsThis)</argsstring>
+        <name>XSBtree_IsLeaf</name>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="92"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1a8799dd35f19ab3a123eb23324931620a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSBtree_IsNode</definition>
+        <argsstring>(XSBTree xsThis)</argsstring>
+        <name>XSBtree_IsNode</name>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="94"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1a5fd6ca93a8f9eed37d1c1b3b8d737d75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSBtree_IsRoot</definition>
+        <argsstring>(XSBTree xsThis)</argsstring>
+        <name>XSBtree_IsRoot</name>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="96"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1aaecfc28375eb8febbf13a16b663745b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+        <definition>XSBTree XSBTree_RemoveLeft</definition>
+        <argsstring>(XSBTree xsThis)</argsstring>
+        <name>XSBTree_RemoveLeft</name>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="80"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1a18b3e484cc3989fef1e77e104c533a81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+        <definition>XSBTree XSBTree_RemoveRight</definition>
+        <argsstring>(XSBTree xsThis)</argsstring>
+        <name>XSBTree_RemoveRight</name>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="82"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1a22c0308da201027e070e6e8470ef325d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+        <definition>XSBTree XSBTree_SetLeft</definition>
+        <argsstring>(XSBTree xsThis, XSBTree left)</argsstring>
+        <name>XSBTree_SetLeft</name>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>left</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="72"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1a8718e0e9a5691e49c6b3d246c7f4005a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+        <definition>XSBTree XSBTree_SetParent</definition>
+        <argsstring>(XSBTree xsThis, XSBTree parent)</argsstring>
+        <name>XSBTree_SetParent</name>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="76"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1a5966b265982de80941a7bd3a86c09eba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+        <definition>XSBTree XSBTree_SetRight</definition>
+        <argsstring>(XSBTree xsThis, XSBTree right)</argsstring>
+        <name>XSBTree_SetRight</name>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>right</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="74"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1a09ccd554cc21f9e8d39bcd00c92669e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XSBTree_SetValue</definition>
+        <argsstring>(XSBTree xsThis, XSObject value)</argsstring>
+        <name>XSBTree_SetValue</name>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="78"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBTree_8h_1a0dc3e6ead53e51e80214e3b3bae1053f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XSBTree_SwapChildren</definition>
+        <argsstring>(XSBTree xsThis)</argsstring>
+        <name>XSBTree_SwapChildren</name>
+        <param>
+          <type><ref refid="struct____XSBTree__Struct" kindref="compound">XSBTree</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h" line="84"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>XSBTree class functions. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt; </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2011,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSBTree.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSBTree<sp/>class<sp/>functions</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_XS_BTREE_H_</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_XS_BTREE_H_</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XSMacros_8h" kindref="compound" tooltip="General macros.">XSMacros.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="XSMacros_8h_1ae3fa7c5665557917f34badbe69a55828" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; start.">XS_EXTERN_C_BEGIN</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="46"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>XSBTree</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Opaque<sp/>type<sp/>for<sp/>the<sp/>XSBTree<sp/>objects</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="XSBTree_8h_1a3e59636d332dbbcfc79c6e29228d0a55" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct____XSBTree__Struct" kindref="compound" tooltip="XSBTree class.">__XSBTree_Struct</ref><sp/>*<sp/><ref refid="XSBTree_8h_1a3e59636d332dbbcfc79c6e29228d0a55" kindref="member" tooltip="Opaque type for the XSBTree objects.">XSBTree</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="52"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Object<sp/>allocator</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>allocated<sp/>object</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><ref refid="XSTypes_8h_1a3310ef0367fe9a2e896f4b92ea6efe9a" kindref="member" tooltip="Marker for static class methods.">XSStatic</ref><sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSBTree_8h_1ad8a4a8026d623218797fa2107a3ad034" kindref="member" tooltip="Object allocator.">XSBTree_Alloc</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSBTree_8h_1aed72cf4a2813fe90ae2b9efa1b58e0b3" kindref="member">XSBTree_Init</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><ref refid="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" kindref="member" tooltip="Marker for methods that return auto-released objects.">XSAutoreleased</ref><sp/>XSBTree<sp/><ref refid="XSBTree_8h_1a0136ffb1c082a6188ebd37631b195ddc" kindref="member">XSBTree_GetLeft</ref>(<sp/>XSBTree<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><ref refid="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" kindref="member" tooltip="Marker for methods that return auto-released objects.">XSAutoreleased</ref><sp/>XSBTree<sp/><ref refid="XSBTree_8h_1ae6a612ff53bcecdcc0eac388c6ee1c0c" kindref="member">XSBTree_GetRight</ref>(<sp/>XSBTree<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><ref refid="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" kindref="member" tooltip="Marker for methods that return auto-released objects.">XSAutoreleased</ref><sp/>XSBTree<sp/><ref refid="XSBTree_8h_1a69843bbed758e2e44070d0ba8d711dfb" kindref="member">XSBTree_GetParent</ref>(<sp/>XSBTree<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><ref refid="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" kindref="member" tooltip="Marker for methods that return auto-released objects.">XSAutoreleased</ref><sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSBTree_8h_1ab8776aa27c5b52672ffb1d32a13decce" kindref="member">XSBTree_GetValue</ref>(<sp/>XSBTree<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><ref refid="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" kindref="member" tooltip="Marker for methods that return auto-released objects.">XSAutoreleased</ref><sp/>XSBTree<sp/><ref refid="XSBTree_8h_1ae9e1a54149899a023eeeaf1343fa0cb9" kindref="member">XSBTree_CreateLeft</ref>(<sp/>XSBTree<sp/>xsThis,<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="struct____XSBTree__Struct_1a2afd8532d733b2fee73c192b11e4bbf6" kindref="member">value</ref><sp/>);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><ref refid="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" kindref="member" tooltip="Marker for methods that return auto-released objects.">XSAutoreleased</ref><sp/>XSBTree<sp/><ref refid="XSBTree_8h_1abc550277ecac1156ae6cca5d9a8822fe" kindref="member">XSBTree_CreateRight</ref>(<sp/>XSBTree<sp/>xsThis,<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="struct____XSBTree__Struct_1a2afd8532d733b2fee73c192b11e4bbf6" kindref="member">value</ref><sp/>);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">XSBTree<sp/><ref refid="XSBTree_8h_1a22c0308da201027e070e6e8470ef325d" kindref="member">XSBTree_SetLeft</ref>(<sp/>XSBTree<sp/>xsThis,<sp/>XSBTree<sp/><ref refid="struct____XSBTree__Struct_1a8250f5c0a9f94a21633195f3cc996012" kindref="member">left</ref><sp/>);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">XSBTree<sp/><ref refid="XSBTree_8h_1a5966b265982de80941a7bd3a86c09eba" kindref="member">XSBTree_SetRight</ref>(<sp/>XSBTree<sp/>xsThis,<sp/>XSBTree<sp/><ref refid="struct____XSBTree__Struct_1a3e146e6cbce70fd5f48e4b6fbb1b01d9" kindref="member">right</ref><sp/>);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">XSBTree<sp/><ref refid="XSBTree_8h_1a8718e0e9a5691e49c6b3d246c7f4005a" kindref="member">XSBTree_SetParent</ref>(<sp/>XSBTree<sp/>xsThis,<sp/>XSBTree<sp/><ref refid="struct____XSBTree__Struct_1aae8366958c3ac93804e8feab862d0287" kindref="member">parent</ref><sp/>);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSBTree_8h_1a09ccd554cc21f9e8d39bcd00c92669e7" kindref="member">XSBTree_SetValue</ref>(<sp/>XSBTree<sp/>xsThis,<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="struct____XSBTree__Struct_1a2afd8532d733b2fee73c192b11e4bbf6" kindref="member">value</ref><sp/>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal">XSBTree<sp/><ref refid="XSBTree_8h_1aaecfc28375eb8febbf13a16b663745b2" kindref="member">XSBTree_RemoveLeft</ref>(<sp/>XSBTree<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">XSBTree<sp/><ref refid="XSBTree_8h_1a18b3e484cc3989fef1e77e104c533a81" kindref="member">XSBTree_RemoveRight</ref>(<sp/>XSBTree<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSBTree_8h_1a0dc3e6ead53e51e80214e3b3bae1053f" kindref="member">XSBTree_SwapChildren</ref>(<sp/>XSBTree<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><ref refid="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" kindref="member" tooltip="Marker for methods that return auto-released objects.">XSAutoreleased</ref><sp/>XSBTree<sp/><ref refid="XSBTree_8h_1a9db58a05d389509f62f37812fcb4a027" kindref="member">XSBTree_GetRoot</ref>(<sp/>XSBTree<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref><sp/><ref refid="XSBTree_8h_1a52c35c5c662cd299a25e27459f22f3fc" kindref="member">XSBTree_GetDepth</ref>(<sp/>XSBTree<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><ref refid="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" kindref="member" tooltip="Marker for methods that return auto-released objects.">XSAutoreleased</ref><sp/>XSBTree<sp/>*<sp/><ref refid="XSBTree_8h_1a88f4f976b0d4ce3bf0644e7f456ba765" kindref="member">XSBTree_GetLeafs</ref>(<sp/>XSBTree<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSBTree_8h_1a1820f059dcb11b6b94a230afb39393cf" kindref="member">XSBtree_IsLeaf</ref>(<sp/>XSBTree<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSBTree_8h_1a8799dd35f19ab3a123eb23324931620a" kindref="member">XSBtree_IsNode</ref>(<sp/>XSBTree<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSBTree_8h_1a5fd6ca93a8f9eed37d1c1b3b8d737d75" kindref="member">XSBtree_IsRoot</ref>(<sp/>XSBTree<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><ref refid="XSMacros_8h_1a35fa049fa034476400f574516968a3a2" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; end.">XS_EXTERN_C_END</ref></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_XS_BTREE_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBTree.h"/>
+  </compounddef>
+</doxygen>

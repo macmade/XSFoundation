@@ -1,0 +1,371 @@
+.TH "win32-signal.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+win32-signal.h \- 
+.PP
+Signal functions for Windows.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdint.h>\fP
+.br
+\fC#include 'win32-types.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBsigaction\fP"
+.br
+.ti -1c
+.RI "struct \fBsiginfo_t_struct\fP"
+.br
+.ti -1c
+.RI "union \fBsigval\fP"
+.br
+.RI "\fI... \fP"
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSIGABRT\fP   0x01"
+.br
+.RI "\fIAbort. \fP"
+.ti -1c
+.RI "#define \fBSIGALRM\fP   0x02"
+.br
+.RI "\fIAlarm. \fP"
+.ti -1c
+.RI "#define \fBSIGBUS\fP   0x14"
+.br
+.RI "\fIBus error. \fP"
+.ti -1c
+.RI "#define \fBSIGCHLD\fP   0x0E"
+.br
+.RI "\fIChild process termination. \fP"
+.ti -1c
+.RI "#define \fBSIGCONT\fP   0x0F"
+.br
+.RI "\fIProcess restart. \fP"
+.ti -1c
+.RI "#define \fBSIGFPE\fP   0x03"
+.br
+.RI "\fIFloating point exception. \fP"
+.ti -1c
+.RI "#define \fBSIGHUP\fP   0x04"
+.br
+.RI "\fIHang-up. \fP"
+.ti -1c
+.RI "#define \fBSIGILL\fP   0x05"
+.br
+.RI "\fIIllegal instruction. \fP"
+.ti -1c
+.RI "#define \fBSIGINT\fP   0x06"
+.br
+.RI "\fIInterrupt request. \fP"
+.ti -1c
+.RI "#define \fBSIGKILL\fP   0x07"
+.br
+.RI "\fIKill process. \fP"
+.ti -1c
+.RI "#define \fBSIGPIPE\fP   0x08"
+.br
+.RI "\fIPipe exception. \fP"
+.ti -1c
+.RI "#define \fBSIGPOLL\fP   0x15"
+.br
+.RI "\fIAsynchronous I/O event. \fP"
+.ti -1c
+.RI "#define \fBSIGPROF\fP   0x16"
+.br
+.RI "\fIProfiling timer expiration. \fP"
+.ti -1c
+.RI "#define \fBSIGQUIT\fP   0x09"
+.br
+.RI "\fICore dump. \fP"
+.ti -1c
+.RI "#define \fBSIGSEGV\fP   0x0A"
+.br
+.RI "\fISegmentation fault. \fP"
+.ti -1c
+.RI "#define \fBSIGSTOP\fP   0x10"
+.br
+.RI "\fIProcess stop. \fP"
+.ti -1c
+.RI "#define \fBSIGSYS\fP   0x17"
+.br
+.RI "\fIBad system call argument. \fP"
+.ti -1c
+.RI "#define \fBSIGTERM\fP   0x0B"
+.br
+.RI "\fIProcess termination request. \fP"
+.ti -1c
+.RI "#define \fBSIGTRAP\fP   0x18"
+.br
+.RI "\fIDebugger condition. \fP"
+.ti -1c
+.RI "#define \fBSIGTSTP\fP   0x11"
+.br
+.RI "\fIProcess pause. \fP"
+.ti -1c
+.RI "#define \fBSIGTTIN\fP   0x12"
+.br
+.RI "\fITTY read. \fP"
+.ti -1c
+.RI "#define \fBSIGTTOU\fP   0x13"
+.br
+.RI "\fITTY write. \fP"
+.ti -1c
+.RI "#define \fBSIGURG\fP   0x19"
+.br
+.RI "\fIUrgent data in socket. \fP"
+.ti -1c
+.RI "#define \fBSIGUSR1\fP   0x0C"
+.br
+.RI "\fIUser defined condition. \fP"
+.ti -1c
+.RI "#define \fBSIGUSR2\fP   0x0D"
+.br
+.RI "\fIUser defined consition. \fP"
+.ti -1c
+.RI "#define \fBSIGVTALRM\fP   0x1A"
+.br
+.RI "\fITime limit elapsed. \fP"
+.ti -1c
+.RI "#define \fBSIGXCPU\fP   0x1B"
+.br
+.RI "\fIExceeded CPU time. \fP"
+.ti -1c
+.RI "#define \fBSIGXFSZ\fP   0x1C"
+.br
+.RI "\fIAllowed file size exceeded. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBsiginfo_t_struct\fP \fBsiginfo_t\fP"
+.br
+.RI "\fI... \fP"
+.ti -1c
+.RI "typedef uint64_t \fBsigset_t\fP"
+.br
+.RI "\fI... \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBsigaction\fP (int sig, const struct \fBsigaction\fP *act, struct \fBsigaction\fP *oact)"
+.br
+.RI "\fI... \fP"
+.ti -1c
+.RI "int \fBsigemptyset\fP (\fBsigset_t\fP *set)"
+.br
+.RI "\fI... \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Signal functions for Windows. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBwin32-signal.h\fP.
+.SH "Define Documentation"
+.PP 
+.SS "#define SIGABRT   0x01"
+.PP
+Abort. 
+.PP
+Definition at line 54 of file win32-signal.h.
+.SS "#define SIGALRM   0x02"
+.PP
+Alarm. 
+.PP
+Definition at line 62 of file win32-signal.h.
+.SS "#define SIGBUS   0x14"
+.PP
+Bus error. 
+.PP
+Definition at line 206 of file win32-signal.h.
+.SS "#define SIGCHLD   0x0E"
+.PP
+Child process termination. 
+.PP
+Definition at line 158 of file win32-signal.h.
+.SS "#define SIGCONT   0x0F"
+.PP
+Process restart. 
+.PP
+Definition at line 166 of file win32-signal.h.
+.SS "#define SIGFPE   0x03"
+.PP
+Floating point exception. 
+.PP
+Definition at line 70 of file win32-signal.h.
+.SS "#define SIGHUP   0x04"
+.PP
+Hang-up. 
+.PP
+Definition at line 78 of file win32-signal.h.
+.SS "#define SIGILL   0x05"
+.PP
+Illegal instruction. 
+.PP
+Definition at line 86 of file win32-signal.h.
+.SS "#define SIGINT   0x06"
+.PP
+Interrupt request. 
+.PP
+Definition at line 94 of file win32-signal.h.
+.SS "#define SIGKILL   0x07"
+.PP
+Kill process. 
+.PP
+Definition at line 102 of file win32-signal.h.
+.SS "#define SIGPIPE   0x08"
+.PP
+Pipe exception. 
+.PP
+Definition at line 110 of file win32-signal.h.
+.SS "#define SIGPOLL   0x15"
+.PP
+Asynchronous I/O event. 
+.PP
+Definition at line 214 of file win32-signal.h.
+.SS "#define SIGPROF   0x16"
+.PP
+Profiling timer expiration. 
+.PP
+Definition at line 222 of file win32-signal.h.
+.SS "#define SIGQUIT   0x09"
+.PP
+Core dump. 
+.PP
+Definition at line 118 of file win32-signal.h.
+.SS "#define SIGSEGV   0x0A"
+.PP
+Segmentation fault. 
+.PP
+Definition at line 126 of file win32-signal.h.
+.SS "#define SIGSTOP   0x10"
+.PP
+Process stop. 
+.PP
+Definition at line 174 of file win32-signal.h.
+.SS "#define SIGSYS   0x17"
+.PP
+Bad system call argument. 
+.PP
+Definition at line 230 of file win32-signal.h.
+.SS "#define SIGTERM   0x0B"
+.PP
+Process termination request. 
+.PP
+Definition at line 134 of file win32-signal.h.
+.SS "#define SIGTRAP   0x18"
+.PP
+Debugger condition. 
+.PP
+Definition at line 238 of file win32-signal.h.
+.SS "#define SIGTSTP   0x11"
+.PP
+Process pause. 
+.PP
+Definition at line 182 of file win32-signal.h.
+.SS "#define SIGTTIN   0x12"
+.PP
+TTY read. 
+.PP
+Definition at line 190 of file win32-signal.h.
+.SS "#define SIGTTOU   0x13"
+.PP
+TTY write. 
+.PP
+Definition at line 198 of file win32-signal.h.
+.SS "#define SIGURG   0x19"
+.PP
+Urgent data in socket. 
+.PP
+Definition at line 246 of file win32-signal.h.
+.SS "#define SIGUSR1   0x0C"
+.PP
+User defined condition. 
+.PP
+Definition at line 142 of file win32-signal.h.
+.SS "#define SIGUSR2   0x0D"
+.PP
+User defined consition. 
+.PP
+Definition at line 150 of file win32-signal.h.
+.SS "#define SIGVTALRM   0x1A"
+.PP
+Time limit elapsed. 
+.PP
+Definition at line 254 of file win32-signal.h.
+.SS "#define SIGXCPU   0x1B"
+.PP
+Exceeded CPU time. 
+.PP
+Definition at line 262 of file win32-signal.h.
+.SS "#define SIGXFSZ   0x1C"
+.PP
+Allowed file size exceeded. 
+.PP
+Definition at line 270 of file win32-signal.h.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBsiginfo_t\fP"
+.PP
+... 
+.PP
+Definition at line 310 of file win32-signal.h.
+.SS "\fBsigset_t\fP"
+.PP
+... 
+.PP
+Definition at line 277 of file win32-signal.h.
+.SH "Function Documentation"
+.PP 
+.SS "int \fBsigaction\fP (intsig, const struct \fBsigaction\fP *act, struct \fBsigaction\fP *oact)"
+.PP
+... \fBParameters:\fP
+.RS 4
+\fIsig\fP ... 
+.br
+\fIact\fP ... 
+.br
+\fIoact\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+... 
+.RE
+.PP
+
+.SS "int sigemptyset (\fBsigset_t\fP *set)"
+.PP
+... \fBParameters:\fP
+.RS 4
+\fIset\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+... 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

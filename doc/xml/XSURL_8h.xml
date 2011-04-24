@@ -1,0 +1,493 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="XSURL_8h" kind="file">
+    <compoundname>XSURL.h</compoundname>
+    <includes refid="XSMacros_8h" local="yes">XSMacros.h</includes>
+    <includedby refid="XSHost_8h" local="yes">XSHost.h</includedby>
+    <includedby refid="XSURLRequest_8h" local="yes">XSURLRequest.h</includedby>
+    <incdepgraph>
+      <node id="7150">
+        <label>XSMacros.h</label>
+        <link refid="XSMacros_8h"/>
+        <childnode refid="7151" relation="include">
+        </childnode>
+        <childnode refid="7152" relation="include">
+        </childnode>
+      </node>
+      <node id="7151">
+        <label>XSMacrosTarget.h</label>
+        <link refid="XSMacrosTarget_8h"/>
+        <childnode refid="7150" relation="include">
+        </childnode>
+      </node>
+      <node id="7149">
+        <label>XSURL.h</label>
+        <link refid="XSURL.h"/>
+        <childnode refid="7150" relation="include">
+        </childnode>
+      </node>
+      <node id="7152">
+        <label>XSMacrosException.h</label>
+        <link refid="XSMacrosException_8h"/>
+        <childnode refid="7150" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="7155">
+        <label>XSURLRequest.h</label>
+        <link refid="XSURLRequest_8h"/>
+      </node>
+      <node id="7154">
+        <label>XSHost.h</label>
+        <link refid="XSHost_8h"/>
+      </node>
+      <node id="7153">
+        <label>XSURL.h</label>
+        <link refid="XSURL.h"/>
+        <childnode refid="7154" relation="include">
+        </childnode>
+        <childnode refid="7155" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="XSURL_8h_1a7dac5625d8172c0d3461deaad7984aaa" prot="public" static="no">
+        <type>struct <ref refid="struct____XSURL__Struct" kindref="compound">__XSURL_Struct</ref> *</type>
+        <definition>typedef struct __XSURL_Struct* XSURL</definition>
+        <argsstring></argsstring>
+        <name>XSURL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h" line="50" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="XSURL_8h_1a6bf3faf705271d4074e75476c84da974" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSStatic <ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSStatic XSObject XSURL_Alloc</definition>
+        <argsstring>(void)</argsstring>
+        <name>XSURL_Alloc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Object allocator. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The allocated object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h" line="56"/>
+      </memberdef>
+      <memberdef kind="function" id="XSURL_8h_1afc48ed7bbbf43cbf4da898c4e09b515a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSAutoreleased <ref refid="struct____XSString__Struct" kindref="compound">XSString</ref></type>
+        <definition>XSAutoreleased XSString XSURL_GetDomain</definition>
+        <argsstring>(XSObject xsThis)</argsstring>
+        <name>XSURL_GetDomain</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h" line="80"/>
+      </memberdef>
+      <memberdef kind="function" id="XSURL_8h_1acc08575fd6dd2800f20a9c873a9af1f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSAutoreleased <ref refid="struct____XSString__Struct" kindref="compound">XSString</ref></type>
+        <definition>XSAutoreleased XSString XSURL_GetFragment</definition>
+        <argsstring>(XSObject xsThis)</argsstring>
+        <name>XSURL_GetFragment</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h" line="88"/>
+      </memberdef>
+      <memberdef kind="function" id="XSURL_8h_1aab631ec9fc2f257564eb5e8c9fee9144" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSAutoreleased <ref refid="struct____XSString__Struct" kindref="compound">XSString</ref></type>
+        <definition>XSAutoreleased XSString XSURL_GetPath</definition>
+        <argsstring>(XSObject xsThis)</argsstring>
+        <name>XSURL_GetPath</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h" line="84"/>
+      </memberdef>
+      <memberdef kind="function" id="XSURL_8h_1a696146abc7ccd442a7003640ca10f5a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger XSURL_GetPort</definition>
+        <argsstring>(XSObject xsThis)</argsstring>
+        <name>XSURL_GetPort</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h" line="82"/>
+      </memberdef>
+      <memberdef kind="function" id="XSURL_8h_1acb3c27d82da1eaae1752ac7262c2a820" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSAutoreleased <ref refid="struct____XSString__Struct" kindref="compound">XSString</ref></type>
+        <definition>XSAutoreleased XSString XSURL_GetQuery</definition>
+        <argsstring>(XSObject xsThis)</argsstring>
+        <name>XSURL_GetQuery</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h" line="86"/>
+      </memberdef>
+      <memberdef kind="function" id="XSURL_8h_1a5c16c2e917673347a04c0b32117b101b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSAutoreleased <ref refid="struct____XSString__Struct" kindref="compound">XSString</ref></type>
+        <definition>XSAutoreleased XSString XSURL_GetScheme</definition>
+        <argsstring>(XSObject xsThis)</argsstring>
+        <name>XSURL_GetScheme</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h" line="78"/>
+      </memberdef>
+      <memberdef kind="function" id="XSURL_8h_1a7773207750e4fc76880bf356b492379b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSAutoreleased <ref refid="struct____XSString__Struct" kindref="compound">XSString</ref></type>
+        <definition>XSAutoreleased XSString XSURL_GetURL</definition>
+        <argsstring>(XSObject xsThis)</argsstring>
+        <name>XSURL_GetURL</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h" line="64"/>
+      </memberdef>
+      <memberdef kind="function" id="XSURL_8h_1a3acf53d9e08c55425bdcfdffe1ce8aa2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSObject XSURL_Init</definition>
+        <argsstring>(XSObject xsThis)</argsstring>
+        <name>XSURL_Init</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h" line="58"/>
+      </memberdef>
+      <memberdef kind="function" id="XSURL_8h_1ab9b0f5fcdbf3d0c43017bd33d12c0339" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSObject XSURL_InitWithCString</definition>
+        <argsstring>(XSObject xsThis, char *str)</argsstring>
+        <name>XSURL_InitWithCString</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h" line="62"/>
+      </memberdef>
+      <memberdef kind="function" id="XSURL_8h_1a31f23000baf91cb8c36a065292983622" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSObject XSURL_InitWithString</definition>
+        <argsstring>(XSObject xsThis, XSString str)</argsstring>
+        <name>XSURL_InitWithString</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="struct____XSString__Struct" kindref="compound">XSString</ref></type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h" line="60"/>
+      </memberdef>
+      <memberdef kind="function" id="XSURL_8h_1a5fb35179b086bb3ba59beb2ce15ef636" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XSURL_SetDomain</definition>
+        <argsstring>(XSObject xsThis, XSString domain)</argsstring>
+        <name>XSURL_SetDomain</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="struct____XSString__Struct" kindref="compound">XSString</ref></type>
+          <declname>domain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h" line="68"/>
+      </memberdef>
+      <memberdef kind="function" id="XSURL_8h_1a30f43f83d346e12a542d581de63cd712" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XSURL_SetFragment</definition>
+        <argsstring>(XSObject xsThis, XSString fragment)</argsstring>
+        <name>XSURL_SetFragment</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="struct____XSString__Struct" kindref="compound">XSString</ref></type>
+          <declname>fragment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h" line="76"/>
+      </memberdef>
+      <memberdef kind="function" id="XSURL_8h_1a230c6476adadfeb79838333122a235f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XSURL_SetPath</definition>
+        <argsstring>(XSObject xsThis, XSString path)</argsstring>
+        <name>XSURL_SetPath</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="struct____XSString__Struct" kindref="compound">XSString</ref></type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h" line="72"/>
+      </memberdef>
+      <memberdef kind="function" id="XSURL_8h_1a305fa2ad6625ca8dbc17d3d04199a488" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XSURL_SetPort</definition>
+        <argsstring>(XSObject xsThis, XSUInteger port)</argsstring>
+        <name>XSURL_SetPort</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h" line="70"/>
+      </memberdef>
+      <memberdef kind="function" id="XSURL_8h_1ae07dff3b7409e1aab7e1e230a24690ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XSURL_SetQuery</definition>
+        <argsstring>(XSObject xsThis, XSString query)</argsstring>
+        <name>XSURL_SetQuery</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="struct____XSString__Struct" kindref="compound">XSString</ref></type>
+          <declname>query</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h" line="74"/>
+      </memberdef>
+      <memberdef kind="function" id="XSURL_8h_1af6f7f4ad9b831022d03075be99bb79d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XSURL_SetScheme</definition>
+        <argsstring>(XSObject xsThis, XSString scheme)</argsstring>
+        <name>XSURL_SetScheme</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="struct____XSString__Struct" kindref="compound">XSString</ref></type>
+          <declname>scheme</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h" line="66"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>XSURL class functions. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt; </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2011,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSURL.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSURL<sp/>class<sp/>functions</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_XS_URL_H_</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_XS_URL_H_</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XSMacros_8h" kindref="compound" tooltip="General macros.">XSMacros.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="XSMacros_8h_1ae3fa7c5665557917f34badbe69a55828" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; start.">XS_EXTERN_C_BEGIN</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="46"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>XSTimer</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Opaque<sp/>type<sp/>for<sp/>the<sp/>XSTree<sp/>objects</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="XSURL_8h_1a7dac5625d8172c0d3461deaad7984aaa" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct____XSURL__Struct" kindref="compound" tooltip="XSURL class.">__XSURL_Struct</ref><sp/>*<sp/><ref refid="XSURL_8h_1a7dac5625d8172c0d3461deaad7984aaa" kindref="member">XSURL</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="52"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Object<sp/>allocator</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>allocated<sp/>object</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><ref refid="XSTypes_8h_1a3310ef0367fe9a2e896f4b92ea6efe9a" kindref="member" tooltip="Marker for static class methods.">XSStatic</ref><sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSURL_8h_1a6bf3faf705271d4074e75476c84da974" kindref="member" tooltip="Object allocator.">XSURL_Alloc</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSURL_8h_1a3acf53d9e08c55425bdcfdffe1ce8aa2" kindref="member">XSURL_Init</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSURL_8h_1a31f23000baf91cb8c36a065292983622" kindref="member">XSURL_InitWithString</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis,<sp/><ref refid="struct____XSString__Struct" kindref="compound" tooltip="XSString class.">XSString</ref><sp/>str<sp/>);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSURL_8h_1ab9b0f5fcdbf3d0c43017bd33d12c0339" kindref="member">XSURL_InitWithCString</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>str<sp/>);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><ref refid="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" kindref="member" tooltip="Marker for methods that return auto-released objects.">XSAutoreleased</ref><sp/><ref refid="struct____XSString__Struct" kindref="compound" tooltip="XSString class.">XSString</ref><sp/><ref refid="XSURL_8h_1a7773207750e4fc76880bf356b492379b" kindref="member">XSURL_GetURL</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSURL_8h_1af6f7f4ad9b831022d03075be99bb79d0" kindref="member">XSURL_SetScheme</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis,<sp/><ref refid="struct____XSString__Struct" kindref="compound" tooltip="XSString class.">XSString</ref><sp/><ref refid="struct____XSURL__Struct_1a4c71fac050fedbd42a618e30d9f7aef0" kindref="member">scheme</ref><sp/>);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSURL_8h_1a5fb35179b086bb3ba59beb2ce15ef636" kindref="member">XSURL_SetDomain</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis,<sp/><ref refid="struct____XSString__Struct" kindref="compound" tooltip="XSString class.">XSString</ref><sp/><ref refid="struct____XSURL__Struct_1a3d627825bedfbd2b2c42d0f753e797d4" kindref="member">domain</ref><sp/>);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSURL_8h_1a305fa2ad6625ca8dbc17d3d04199a488" kindref="member">XSURL_SetPort</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis,<sp/><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref><sp/><ref refid="struct____XSURL__Struct_1a1385c465841868475490f87258f58d63" kindref="member">port</ref><sp/>);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSURL_8h_1a230c6476adadfeb79838333122a235f1" kindref="member">XSURL_SetPath</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis,<sp/><ref refid="struct____XSString__Struct" kindref="compound" tooltip="XSString class.">XSString</ref><sp/><ref refid="struct____XSURL__Struct_1aacfa7a301b7df43dcc7d797d40d6fcf5" kindref="member">path</ref><sp/>);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSURL_8h_1ae07dff3b7409e1aab7e1e230a24690ad" kindref="member">XSURL_SetQuery</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis,<sp/><ref refid="struct____XSString__Struct" kindref="compound" tooltip="XSString class.">XSString</ref><sp/><ref refid="struct____XSURL__Struct_1a97efdf76de871abd74d3b150e1cc5dba" kindref="member">query</ref><sp/>);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSURL_8h_1a30f43f83d346e12a542d581de63cd712" kindref="member">XSURL_SetFragment</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis,<sp/><ref refid="struct____XSString__Struct" kindref="compound" tooltip="XSString class.">XSString</ref><sp/><ref refid="struct____XSURL__Struct_1a529f91de4d136aa14f06e4fcc3511adb" kindref="member">fragment</ref><sp/>);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><ref refid="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" kindref="member" tooltip="Marker for methods that return auto-released objects.">XSAutoreleased</ref><sp/><ref refid="struct____XSString__Struct" kindref="compound" tooltip="XSString class.">XSString</ref><sp/><ref refid="XSURL_8h_1a5c16c2e917673347a04c0b32117b101b" kindref="member">XSURL_GetScheme</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><ref refid="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" kindref="member" tooltip="Marker for methods that return auto-released objects.">XSAutoreleased</ref><sp/><ref refid="struct____XSString__Struct" kindref="compound" tooltip="XSString class.">XSString</ref><sp/><ref refid="XSURL_8h_1afc48ed7bbbf43cbf4da898c4e09b515a" kindref="member">XSURL_GetDomain</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref><sp/><ref refid="XSURL_8h_1a696146abc7ccd442a7003640ca10f5a0" kindref="member">XSURL_GetPort</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><ref refid="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" kindref="member" tooltip="Marker for methods that return auto-released objects.">XSAutoreleased</ref><sp/><ref refid="struct____XSString__Struct" kindref="compound" tooltip="XSString class.">XSString</ref><sp/><ref refid="XSURL_8h_1aab631ec9fc2f257564eb5e8c9fee9144" kindref="member">XSURL_GetPath</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><ref refid="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" kindref="member" tooltip="Marker for methods that return auto-released objects.">XSAutoreleased</ref><sp/><ref refid="struct____XSString__Struct" kindref="compound" tooltip="XSString class.">XSString</ref><sp/><ref refid="XSURL_8h_1acb3c27d82da1eaae1752ac7262c2a820" kindref="member">XSURL_GetQuery</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><ref refid="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" kindref="member" tooltip="Marker for methods that return auto-released objects.">XSAutoreleased</ref><sp/><ref refid="struct____XSString__Struct" kindref="compound" tooltip="XSString class.">XSString</ref><sp/><ref refid="XSURL_8h_1acc08575fd6dd2800f20a9c873a9af1f2" kindref="member">XSURL_GetFragment</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><ref refid="XSMacros_8h_1a35fa049fa034476400f574516968a3a2" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; end.">XS_EXTERN_C_END</ref></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_XS_URL_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSURL.h"/>
+  </compounddef>
+</doxygen>

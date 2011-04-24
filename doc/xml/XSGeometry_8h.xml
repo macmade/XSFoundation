@@ -1,0 +1,585 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="XSGeometry_8h" kind="file">
+    <compoundname>XSGeometry.h</compoundname>
+    <includes refid="XSMacros_8h" local="yes">XSMacros.h</includes>
+    <includes refid="XSTypes_8h" local="yes">XSTypes.h</includes>
+    <incdepgraph>
+      <node id="6823">
+        <label>XSMacros.h</label>
+        <link refid="XSMacros_8h"/>
+        <childnode refid="6824" relation="include">
+        </childnode>
+        <childnode refid="6825" relation="include">
+        </childnode>
+      </node>
+      <node id="6824">
+        <label>XSMacrosTarget.h</label>
+        <link refid="XSMacrosTarget_8h"/>
+        <childnode refid="6823" relation="include">
+        </childnode>
+      </node>
+      <node id="6827">
+        <label>XSConstants.h</label>
+        <link refid="XSConstants_8h"/>
+        <childnode refid="6823" relation="include">
+        </childnode>
+      </node>
+      <node id="6826">
+        <label>XSTypes.h</label>
+        <link refid="XSTypes_8h"/>
+        <childnode refid="6823" relation="include">
+        </childnode>
+        <childnode refid="6827" relation="include">
+        </childnode>
+        <childnode refid="6828" relation="include">
+        </childnode>
+        <childnode refid="6829" relation="include">
+        </childnode>
+      </node>
+      <node id="6822">
+        <label>XSGeometry.h</label>
+        <link refid="XSGeometry.h"/>
+        <childnode refid="6823" relation="include">
+        </childnode>
+        <childnode refid="6826" relation="include">
+        </childnode>
+      </node>
+      <node id="6825">
+        <label>XSMacrosException.h</label>
+        <link refid="XSMacrosException_8h"/>
+        <childnode refid="6823" relation="include">
+        </childnode>
+      </node>
+      <node id="6828">
+        <label>../std/std.h</label>
+      </node>
+      <node id="6829">
+        <label>XSString.h</label>
+        <link refid="XSString_8h"/>
+        <childnode refid="6823" relation="include">
+        </childnode>
+        <childnode refid="6830" relation="include">
+        </childnode>
+      </node>
+      <node id="6830">
+        <label>XSArray.h</label>
+        <link refid="XSArray_8h"/>
+        <childnode refid="6823" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="XSGeometry_8h_1ae220eabc297de2841b3891f171065dc9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+        <definition>XSFloat XSAngleBetweenPoints</definition>
+        <argsstring>(XSPoint a, XSPoint b)</argsstring>
+        <name>XSAngleBetweenPoints</name>
+        <param>
+          <type><ref refid="structXSPoint__Struct" kindref="compound">XSPoint</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="structXSPoint__Struct" kindref="compound">XSPoint</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Gets the angle from two points. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first point </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second point </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The angle from the two points </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSGeometry.h" line="104"/>
+      </memberdef>
+      <memberdef kind="function" id="XSGeometry_8h_1aab5b38ad120d687200e01c5661a82cca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+        <definition>XSFloat XSDegreesToRadians</definition>
+        <argsstring>(XSFloat x)</argsstring>
+        <name>XSDegreesToRadians</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+<para>Converts a degree angle to a radian angle. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The angle in degrees </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The angle in radians </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSGeometry.h" line="119"/>
+      </memberdef>
+      <memberdef kind="function" id="XSGeometry_8h_1a0448abdfdc8ec66b8a15fd799aa65097" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+        <definition>XSFloat XSDistanceBetweenPoints</definition>
+        <argsstring>(XSPoint a, XSPoint b)</argsstring>
+        <name>XSDistanceBetweenPoints</name>
+        <param>
+          <type><ref refid="structXSPoint__Struct" kindref="compound">XSPoint</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="structXSPoint__Struct" kindref="compound">XSPoint</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Gets the distance between two points. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first point </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second point </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The distance between the two points </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSGeometry.h" line="112"/>
+      </memberdef>
+      <memberdef kind="function" id="XSGeometry_8h_1a2a872d911b8959f890d437f8745efff0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structXSEdgeInsets__Struct" kindref="compound">XSEdgeInsets</ref></type>
+        <definition>XSEdgeInsets XSMakeEdgeInsets</definition>
+        <argsstring>(XSFloat left, XSFloat top, XSFloat right, XSFloat bottom)</argsstring>
+        <name>XSMakeEdgeInsets</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+          <declname>top</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+          <declname>right</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+          <declname>bottom</declname>
+        </param>
+        <briefdescription>
+<para>Initializes an XSEdgeInsets structure. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The left coordinate </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>top</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The top coordinate </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>right</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The right coordinate </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bottom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bottom coordinate </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An XSEdgeInsets structure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSGeometry.h" line="96"/>
+      </memberdef>
+      <memberdef kind="function" id="XSGeometry_8h_1ab50188e5bc911a47a33bc1a0d2c8eb92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structXSPoint__Struct" kindref="compound">XSPoint</ref></type>
+        <definition>XSPoint XSMakePoint</definition>
+        <argsstring>(XSFloat x, XSFloat y)</argsstring>
+        <name>XSMakePoint</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Initializes an XSPoint structure. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The X coordinate </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Y coordinate </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An XSPoint structure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSGeometry.h" line="54"/>
+      </memberdef>
+      <memberdef kind="function" id="XSGeometry_8h_1ac2af48df3164d0af359221fc8f52f0c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structXSRange__Struct" kindref="compound">XSRange</ref></type>
+        <definition>XSRange XSMakeRange</definition>
+        <argsstring>(XSUInteger location, XSUInteger length)</argsstring>
+        <name>XSMakeRange</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+          <declname>location</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Initializes an XSRange structure. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>location</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The range location </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The range length </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An XSRange structure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSGeometry.h" line="86"/>
+      </memberdef>
+      <memberdef kind="function" id="XSGeometry_8h_1a5c8e191e7687f26583d4ab8b97b6811d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structXSRect__Struct" kindref="compound">XSRect</ref></type>
+        <definition>XSRect XSMakeRect</definition>
+        <argsstring>(XSFloat x, XSFloat y, XSFloat width, XSFloat height)</argsstring>
+        <name>XSMakeRect</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Initializes an XSRect structure. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The X coordinate </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Y coordinate </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An XSRect structure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSGeometry.h" line="72"/>
+      </memberdef>
+      <memberdef kind="function" id="XSGeometry_8h_1a1a61d5b617c3af05e06fb592b643e1ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structXSSize__Struct" kindref="compound">XSSize</ref></type>
+        <definition>XSSize XSMakeSize</definition>
+        <argsstring>(XSFloat width, XSFloat height)</argsstring>
+        <name>XSMakeSize</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Initializes an XSSize structure. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An XSSize structure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSGeometry.h" line="62"/>
+      </memberdef>
+      <memberdef kind="function" id="XSGeometry_8h_1a5e6fb205666daca846aba71be1686b16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+        <definition>XSFloat XSRadiansToDegrees</definition>
+        <argsstring>(XSFloat x)</argsstring>
+        <name>XSRadiansToDegrees</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+<para>Converts a radian angle to a degree angle. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The angle in radians </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The angle in degrees </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSGeometry.h" line="126"/>
+      </memberdef>
+      <memberdef kind="function" id="XSGeometry_8h_1abdf13e90fd3d91b765020a4dcdcfb5d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structXSRect__Struct" kindref="compound">XSRect</ref></type>
+        <definition>XSRect XSRectZero</definition>
+        <argsstring>(void)</argsstring>
+        <name>XSRectZero</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initializes an XSRect structure with 0 origin and size. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>An XSRect structure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSGeometry.h" line="78"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Geometry functions. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt; </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2011,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSGeometry.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Geometry<sp/>functions</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_XS_GEOMETRY_H_</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_XS_GEOMETRY_H_</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XSMacros_8h" kindref="compound" tooltip="General macros.">XSMacros.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="XSMacros_8h_1ae3fa7c5665557917f34badbe69a55828" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; start.">XS_EXTERN_C_BEGIN</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XSTypes_8h" kindref="compound" tooltip="XSFoundation data-types.">XSTypes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="48"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initializes<sp/>an<sp/>XSPoint<sp/>structure</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/><sp/><sp/>The<sp/>X<sp/>coordinate</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/><sp/><sp/>The<sp/>Y<sp/>coordinate</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>An<sp/>XSPoint<sp/>structure</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><ref refid="structXSPoint__Struct" kindref="compound" tooltip="Point data-type structure.">XSPoint</ref><sp/><ref refid="XSGeometry_8h_1ab50188e5bc911a47a33bc1a0d2c8eb92" kindref="member" tooltip="Initializes an XSPoint structure.">XSMakePoint</ref>(<sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/>x,<sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/>y<sp/>);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="56"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initializes<sp/>an<sp/>XSSize<sp/>structure</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>width<sp/><sp/><sp/>The<sp/>width</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>height<sp/><sp/>The<sp/>height</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>An<sp/>XSSize<sp/>structure</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><ref refid="structXSSize__Struct" kindref="compound" tooltip="Size data-type structure.">XSSize</ref><sp/><ref refid="XSGeometry_8h_1a1a61d5b617c3af05e06fb592b643e1ff" kindref="member" tooltip="Initializes an XSSize structure.">XSMakeSize</ref>(<sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/>width,<sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/>height<sp/>);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="64"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initializes<sp/>an<sp/>XSRect<sp/>structure</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>X<sp/>coordinate</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>Y<sp/>coordinate</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>width<sp/><sp/><sp/>The<sp/>width</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>height<sp/><sp/>The<sp/>height</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>An<sp/>XSRect<sp/>structure</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><ref refid="structXSRect__Struct" kindref="compound" tooltip="Rectangle data-type structure.">XSRect</ref><sp/><ref refid="XSGeometry_8h_1a5c8e191e7687f26583d4ab8b97b6811d" kindref="member" tooltip="Initializes an XSRect structure.">XSMakeRect</ref>(<sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/>x,<sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/>y,<sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/>width,<sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/>height<sp/>);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="74"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initializes<sp/>an<sp/>XSRect<sp/>structure<sp/>with<sp/>0<sp/>origin<sp/>and<sp/>size</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>An<sp/>XSRect<sp/>structure</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><ref refid="structXSRect__Struct" kindref="compound" tooltip="Rectangle data-type structure.">XSRect</ref><sp/><ref refid="XSGeometry_8h_1abdf13e90fd3d91b765020a4dcdcfb5d5" kindref="member" tooltip="Initializes an XSRect structure with 0 origin and size.">XSRectZero</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="80"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initializes<sp/>an<sp/>XSRange<sp/>structure</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>location<sp/><sp/><sp/><sp/>The<sp/>range<sp/>location</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>length<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>range<sp/>length</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>An<sp/>XSRange<sp/>structure</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><ref refid="structXSRange__Struct" kindref="compound" tooltip="Range data-type structure.">XSRange</ref><sp/><ref refid="XSGeometry_8h_1ac2af48df3164d0af359221fc8f52f0c4" kindref="member" tooltip="Initializes an XSRange structure.">XSMakeRange</ref>(<sp/><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref><sp/>location,<sp/><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref><sp/>length<sp/>);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="88"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initializes<sp/>an<sp/>XSEdgeInsets<sp/>structure</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>left<sp/><sp/><sp/><sp/>The<sp/>left<sp/>coordinate</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>top<sp/><sp/><sp/><sp/><sp/>The<sp/>top<sp/>coordinate</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>right<sp/><sp/><sp/>The<sp/>right<sp/>coordinate</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>bottom<sp/><sp/>The<sp/>bottom<sp/>coordinate</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>An<sp/>XSEdgeInsets<sp/>structure</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><ref refid="structXSEdgeInsets__Struct" kindref="compound" tooltip="Inset distances structure.">XSEdgeInsets</ref><sp/><ref refid="XSGeometry_8h_1a2a872d911b8959f890d437f8745efff0" kindref="member" tooltip="Initializes an XSEdgeInsets structure.">XSMakeEdgeInsets</ref>(<sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/>left,<sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/>top,<sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/>right,<sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/>bottom<sp/>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="98"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>angle<sp/>from<sp/>two<sp/>points</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>a<sp/><sp/><sp/>The<sp/>first<sp/>point</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>b<sp/><sp/><sp/>The<sp/>second<sp/>point</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>angle<sp/>from<sp/>the<sp/>two<sp/>points</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><ref refid="XSGeometry_8h_1ae220eabc297de2841b3891f171065dc9" kindref="member" tooltip="Gets the angle from two points.">XSAngleBetweenPoints</ref>(<sp/><ref refid="structXSPoint__Struct" kindref="compound" tooltip="Point data-type structure.">XSPoint</ref><sp/>a,<sp/><ref refid="structXSPoint__Struct" kindref="compound" tooltip="Point data-type structure.">XSPoint</ref><sp/>b<sp/>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="106"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>distance<sp/>between<sp/>two<sp/>points</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>a<sp/><sp/><sp/>The<sp/>first<sp/>point</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>b<sp/><sp/><sp/>The<sp/>second<sp/>point</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>distance<sp/>between<sp/>the<sp/>two<sp/>points</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><ref refid="XSGeometry_8h_1a0448abdfdc8ec66b8a15fd799aa65097" kindref="member" tooltip="Gets the distance between two points.">XSDistanceBetweenPoints</ref>(<sp/><ref refid="structXSPoint__Struct" kindref="compound" tooltip="Point data-type structure.">XSPoint</ref><sp/>a,<sp/><ref refid="structXSPoint__Struct" kindref="compound" tooltip="Point data-type structure.">XSPoint</ref><sp/>b<sp/>);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="114"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Converts<sp/>a<sp/>degree<sp/>angle<sp/>to<sp/>a<sp/>radian<sp/>angle</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/><sp/><sp/>The<sp/>angle<sp/>in<sp/>degrees</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>angle<sp/>in<sp/>radians</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><ref refid="XSGeometry_8h_1aab5b38ad120d687200e01c5661a82cca" kindref="member" tooltip="Converts a degree angle to a radian angle.">XSDegreesToRadians</ref>(<sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/>x<sp/>);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="121"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Converts<sp/>a<sp/>radian<sp/>angle<sp/>to<sp/>a<sp/>degree<sp/>angle</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/><sp/><sp/>The<sp/>angle<sp/>in<sp/>radians</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>angle<sp/>in<sp/>degrees</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><ref refid="XSGeometry_8h_1a5e6fb205666daca846aba71be1686b16" kindref="member" tooltip="Converts a radian angle to a degree angle.">XSRadiansToDegrees</ref>(<sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/>x<sp/>);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><ref refid="XSMacros_8h_1a35fa049fa034476400f574516968a3a2" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; end.">XS_EXTERN_C_END</ref></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_XS_GEOMETRY_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSGeometry.h"/>
+  </compounddef>
+</doxygen>

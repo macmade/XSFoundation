@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="structXSEdgeInsets__Struct" kind="struct" prot="public">
+    <compoundname>XSEdgeInsets_Struct</compoundname>
+    <includes refid="XSTypes_8h" local="yes">XSTypes.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structXSEdgeInsets__Struct_1a53ae59181c3e5e172e31e0d997f72367" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+        <definition>XSFloat XSEdgeInsets_Struct::bottom</definition>
+        <argsstring></argsstring>
+        <name>bottom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The right coordinate </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="223" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structXSEdgeInsets__Struct_1a77927913f6419a91c0e013cc6c5cee9e" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+        <definition>XSFloat XSEdgeInsets_Struct::left</definition>
+        <argsstring></argsstring>
+        <name>left</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="220" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structXSEdgeInsets__Struct_1aaa2c643b80d0421cdde92b6671e9d4c0" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+        <definition>XSFloat XSEdgeInsets_Struct::right</definition>
+        <argsstring></argsstring>
+        <name>right</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The top coordiante </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="222" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structXSEdgeInsets__Struct_1ae1d4db82b45c5ab4e7c45f359b6d508d" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+        <definition>XSFloat XSEdgeInsets_Struct::top</definition>
+        <argsstring></argsstring>
+        <name>top</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The left coordinate </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="221" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Inset distances structure. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="531">
+        <label>float</label>
+      </node>
+      <node id="530">
+        <label>XSEdgeInsets_Struct</label>
+        <link refid="structXSEdgeInsets__Struct"/>
+        <childnode refid="531" relation="usage">
+          <edgelabel>right</edgelabel>
+          <edgelabel>left</edgelabel>
+          <edgelabel>bottom</edgelabel>
+          <edgelabel>top</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="219" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="218" bodyend="224"/>
+    <listofallmembers>
+      <member refid="structXSEdgeInsets__Struct_1a53ae59181c3e5e172e31e0d997f72367" prot="public" virt="non-virtual"><scope>XSEdgeInsets_Struct</scope><name>bottom</name></member>
+      <member refid="structXSEdgeInsets__Struct_1a77927913f6419a91c0e013cc6c5cee9e" prot="public" virt="non-virtual"><scope>XSEdgeInsets_Struct</scope><name>left</name></member>
+      <member refid="structXSEdgeInsets__Struct_1aaa2c643b80d0421cdde92b6671e9d4c0" prot="public" virt="non-virtual"><scope>XSEdgeInsets_Struct</scope><name>right</name></member>
+      <member refid="structXSEdgeInsets__Struct_1ae1d4db82b45c5ab4e7c45f359b6d508d" prot="public" virt="non-virtual"><scope>XSEdgeInsets_Struct</scope><name>top</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

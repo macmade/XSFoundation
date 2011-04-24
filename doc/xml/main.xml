@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="main" kind="page">
+    <compoundname>main</compoundname>
+    <title>XSFoundation - XEOS C Foundation Library</title>
+    <detaileddescription>
+<sect1 id="main_1about_xeos">
+<title>About XEOS</title>
+<para>XEOS is an experimental 32 bits Operating System for x86 platforms, written in Assembly and C, including a C89 Standard Library (with some C99 parts). </para></sect1>
+<sect1 id="main_1about_xs">
+<title>About XSFoundation</title>
+<para>The XEOS C Foundation library provides the base for object-oriented C style coding, reference counting memory management with auto-release capabilities, reflection, runtime environment, polymorphism, exceptions, and basic objects. It&apos;s purpose is to be integrated in the XEOS Operating System, once its C standard library will be c omplete. For now, it&apos;s just a standalone project, that should compile on every OS with a decent C compiler. </para></sect1>
+<sect1 id="main_1os">
+<title>Supported OS</title>
+<para>XSFoundation can be used on POSIX compliant systems (Mac OS X, Unix, Linux) as well as on Windows. </para></sect1>
+<sect1 id="main_1source">
+<title>Source access</title>
+<para>XSFoundation is hosted on GitHub: <ulink url="https://github.com/macmade/XSFoundation/">https://github.com/macmade/XSFoundation/</ulink> </para></sect1>
+<sect1 id="main_1doc">
+<title>Documentation</title>
+<para>Source code documentation can be found at the following address: <ulink url="http://www.eosgarden.com/doxygen/xsfoundation/">http://www.eosgarden.com/doxygen/xsfoundation/</ulink> Wiki can be found on GitHub: <ulink url="https://github.com/macmade/XSFoundation/wiki">https://github.com/macmade/XSFoundation/wiki</ulink> </para></sect1>
+<sect1 id="main_1license">
+<title>License</title>
+<para>XSFoundation is released under the terms of the BOOST Software License - Version 1.0. </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

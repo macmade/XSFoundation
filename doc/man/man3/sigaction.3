@@ -1,0 +1,47 @@
+.TH "sigaction" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sigaction \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'win32-signal.h'\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "int \fBsa_flags\fP"
+.br
+.ti -1c
+.RI "void(* \fBsa_handler\fP )(int)"
+.br
+.ti -1c
+.RI "\fBsigset_t\fP \fBsa_mask\fP"
+.br
+.ti -1c
+.RI "void(* \fBsa_sigaction\fP )(int, \fBsiginfo_t\fP *, void *)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 316 of file win32-signal.h.
+.SH "Field Documentation"
+.PP 
+.SS "int \fBsigaction::sa_flags\fP"... 
+.PP
+Definition at line 320 of file win32-signal.h.
+.SS "void( *  \fBsigaction::sa_handler\fP)(int)"
+.PP
+Definition at line 318 of file win32-signal.h.
+.SS "\fBsigset_t\fP \fBsigaction::sa_mask\fP"... 
+.PP
+Definition at line 319 of file win32-signal.h.
+.SS "void( *  \fBsigaction::sa_sigaction\fP)(int, \fBsiginfo_t\fP *, void *)"... 
+.PP
+Definition at line 321 of file win32-signal.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

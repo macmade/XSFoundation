@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="struct____XSAutoreleasePool__Struct" kind="struct" prot="public">
+    <compoundname>__XSAutoreleasePool_Struct</compoundname>
+    <includes refid="____XSMemory_8h" local="yes">__XSMemory.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct____XSAutoreleasePool__Struct_1ac38c66899261405228f8a050d17a21be" prot="public" static="no" mutable="no">
+        <type><ref refid="structXSRuntimeClass__Struct" kindref="compound">XSRuntimeClass</ref></type>
+        <definition>XSRuntimeClass __XSAutoreleasePool_Struct::__class</definition>
+        <argsstring></argsstring>
+        <name>__class</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" line="54" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSAutoreleasePool__Struct_1aa82a9f073f56aa0929d2d8fcfe680d14" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t __XSAutoreleasePool_Struct::numObjects</definition>
+        <argsstring></argsstring>
+        <name>numObjects</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" line="56" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSAutoreleasePool__Struct_1a78162298b162ead49b937c525cf329df" prot="public" static="no" mutable="no">
+        <type>void **</type>
+        <definition>void** __XSAutoreleasePool_Struct::objects</definition>
+        <argsstring></argsstring>
+        <name>objects</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" line="57" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSAutoreleasePool__Struct_1af135b235799eb2d1ac667cf2c10b1632" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t __XSAutoreleasePool_Struct::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Runtime class </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" line="55" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>XSAutoreleasePool class. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="314">
+        <label>size_t</label>
+      </node>
+      <node id="316">
+        <label>XSClassInfos</label>
+        <link refid="structXSClassInfos"/>
+      </node>
+      <node id="312">
+        <label>__XSAutoreleasePool_Struct</label>
+        <link refid="struct____XSAutoreleasePool__Struct"/>
+        <childnode refid="313" relation="usage">
+          <edgelabel>objects</edgelabel>
+        </childnode>
+        <childnode refid="314" relation="usage">
+          <edgelabel>size</edgelabel>
+          <edgelabel>numObjects</edgelabel>
+        </childnode>
+        <childnode refid="315" relation="usage">
+          <edgelabel>__class</edgelabel>
+        </childnode>
+      </node>
+      <node id="313">
+        <label>void **</label>
+      </node>
+      <node id="315">
+        <label>XSRuntimeClass_Struct</label>
+        <link refid="structXSRuntimeClass__Struct"/>
+        <childnode refid="316" relation="usage">
+          <edgelabel>classInfos</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" line="53" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" bodystart="52" bodyend="58"/>
+    <listofallmembers>
+      <member refid="struct____XSAutoreleasePool__Struct_1ac38c66899261405228f8a050d17a21be" prot="public" virt="non-virtual"><scope>__XSAutoreleasePool_Struct</scope><name>__class</name></member>
+      <member refid="struct____XSAutoreleasePool__Struct_1aa82a9f073f56aa0929d2d8fcfe680d14" prot="public" virt="non-virtual"><scope>__XSAutoreleasePool_Struct</scope><name>numObjects</name></member>
+      <member refid="struct____XSAutoreleasePool__Struct_1a78162298b162ead49b937c525cf329df" prot="public" virt="non-virtual"><scope>__XSAutoreleasePool_Struct</scope><name>objects</name></member>
+      <member refid="struct____XSAutoreleasePool__Struct_1af135b235799eb2d1ac667cf2c10b1632" prot="public" virt="non-virtual"><scope>__XSAutoreleasePool_Struct</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

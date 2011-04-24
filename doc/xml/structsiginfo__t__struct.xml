@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="structsiginfo__t__struct" kind="struct" prot="public">
+    <compoundname>siginfo_t_struct</compoundname>
+    <includes refid="win32-signal_8h" local="yes">win32-signal.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structsiginfo__t__struct_1a470b458754b752d7ce78fcdd8b7887c1" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* siginfo_t_struct::si_addr</definition>
+        <argsstring></argsstring>
+        <name>si_addr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" line="301" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" bodystart="301" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsiginfo__t__struct_1ac991563ca469a0ac64269e6bd7bf2f10" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int siginfo_t_struct::si_band</definition>
+        <argsstring></argsstring>
+        <name>si_band</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" line="303" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" bodystart="303" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsiginfo__t__struct_1a8e6e2f54b631d74d39030dfa89ba34f1" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int siginfo_t_struct::si_code</definition>
+        <argsstring></argsstring>
+        <name>si_code</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" line="296" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" bodystart="296" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsiginfo__t__struct_1ac242d937b5bf81ed43a282d99d8c0954" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int siginfo_t_struct::si_errno</definition>
+        <argsstring></argsstring>
+        <name>si_errno</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" line="298" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" bodystart="298" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsiginfo__t__struct_1a43c76a0de718fe2d3fadd3126d6452c9" prot="public" static="no" mutable="no">
+        <type><ref refid="win32-types_8h_1ab612a3a4eb0e2ced1e55ecff76260458" kindref="member">pid_t</ref></type>
+        <definition>pid_t siginfo_t_struct::si_pid</definition>
+        <argsstring></argsstring>
+        <name>si_pid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" line="299" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" bodystart="299" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsiginfo__t__struct_1a70c68ffca95b5be41164ab25155ddeb1" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int siginfo_t_struct::si_signo</definition>
+        <argsstring></argsstring>
+        <name>si_signo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" line="295" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" bodystart="295" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsiginfo__t__struct_1abaea6dac821e50c1763b5d4322a0c267" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int siginfo_t_struct::si_status</definition>
+        <argsstring></argsstring>
+        <name>si_status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" line="302" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsiginfo__t__struct_1a4bb24d298f1745455e2b252bee0114ab" prot="public" static="no" mutable="no">
+        <type><ref refid="win32-types_8h_1a9bca296f8996778e28ec966b1bd1ce60" kindref="member">uid_t</ref></type>
+        <definition>uid_t siginfo_t_struct::si_uid</definition>
+        <argsstring></argsstring>
+        <name>si_uid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" line="300" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" bodystart="300" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsiginfo__t__struct_1a0bbf42abc4d08f5805f9958e22b5769b" prot="public" static="no" mutable="no">
+        <type>union <ref refid="unionsigval" kindref="compound">sigval</ref></type>
+        <definition>union sigval siginfo_t_struct::si_value</definition>
+        <argsstring></argsstring>
+        <name>si_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" line="297" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" bodystart="297" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="508">
+        <label>void *</label>
+      </node>
+      <node id="505">
+        <label>siginfo_t_struct</label>
+        <link refid="structsiginfo__t__struct"/>
+        <childnode refid="506" relation="usage">
+          <edgelabel>si_pid</edgelabel>
+          <edgelabel>si_uid</edgelabel>
+        </childnode>
+        <childnode refid="507" relation="usage">
+          <edgelabel>si_band</edgelabel>
+          <edgelabel>si_code</edgelabel>
+          <edgelabel>si_status</edgelabel>
+          <edgelabel>si_errno</edgelabel>
+          <edgelabel>si_signo</edgelabel>
+        </childnode>
+        <childnode refid="508" relation="usage">
+          <edgelabel>si_addr</edgelabel>
+        </childnode>
+        <childnode refid="509" relation="usage">
+          <edgelabel>si_value</edgelabel>
+        </childnode>
+      </node>
+      <node id="509">
+        <label>sigval</label>
+        <link refid="unionsigval"/>
+        <childnode refid="507" relation="usage">
+          <edgelabel>sival_int</edgelabel>
+        </childnode>
+        <childnode refid="508" relation="usage">
+          <edgelabel>sival_ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="507">
+        <label>int</label>
+      </node>
+      <node id="506">
+        <label>uint32_t</label>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" line="294" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-signal.h" bodystart="293" bodyend="304"/>
+    <listofallmembers>
+      <member refid="structsiginfo__t__struct_1a470b458754b752d7ce78fcdd8b7887c1" prot="public" virt="non-virtual"><scope>siginfo_t_struct</scope><name>si_addr</name></member>
+      <member refid="structsiginfo__t__struct_1ac991563ca469a0ac64269e6bd7bf2f10" prot="public" virt="non-virtual"><scope>siginfo_t_struct</scope><name>si_band</name></member>
+      <member refid="structsiginfo__t__struct_1a8e6e2f54b631d74d39030dfa89ba34f1" prot="public" virt="non-virtual"><scope>siginfo_t_struct</scope><name>si_code</name></member>
+      <member refid="structsiginfo__t__struct_1ac242d937b5bf81ed43a282d99d8c0954" prot="public" virt="non-virtual"><scope>siginfo_t_struct</scope><name>si_errno</name></member>
+      <member refid="structsiginfo__t__struct_1a43c76a0de718fe2d3fadd3126d6452c9" prot="public" virt="non-virtual"><scope>siginfo_t_struct</scope><name>si_pid</name></member>
+      <member refid="structsiginfo__t__struct_1a70c68ffca95b5be41164ab25155ddeb1" prot="public" virt="non-virtual"><scope>siginfo_t_struct</scope><name>si_signo</name></member>
+      <member refid="structsiginfo__t__struct_1abaea6dac821e50c1763b5d4322a0c267" prot="public" virt="non-virtual"><scope>siginfo_t_struct</scope><name>si_status</name></member>
+      <member refid="structsiginfo__t__struct_1a4bb24d298f1745455e2b252bee0114ab" prot="public" virt="non-virtual"><scope>siginfo_t_struct</scope><name>si_uid</name></member>
+      <member refid="structsiginfo__t__struct_1a0bbf42abc4d08f5805f9958e22b5769b" prot="public" virt="non-virtual"><scope>siginfo_t_struct</scope><name>si_value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

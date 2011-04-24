@@ -1,0 +1,103 @@
+.TH "__XSThread.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+__XSThread.h \- 
+.PP
+Private XSThread class definitions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '../XSMacros.h'\fP
+.br
+\fC#include 'XS.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fB__XSThread_Struct\fP"
+.br
+.RI "\fIXSThread class. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB__XSThread_Struct\fP \fB__XSThread\fP"
+.br
+.RI "\fIXSThread class type. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBOOL\fP \fB__XSThread_Equals\fP (\fBXSObject\fP object1, \fBXSObject\fP object2)"
+.br
+.RI "\fIObject comparison. \fP"
+.ti -1c
+.RI "void \fB__XSThread_Initialize\fP (void)"
+.br
+.RI "\fIRuntime initialization. \fP"
+.ti -1c
+.RI "void * \fB__XSThread_Run\fP (void *thread) NORETURN_ATTRIBUTE"
+.br
+.RI "\fIRuns a thread param A pointer to the thread object (XSThread) \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Private XSThread class definitions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fB__XSThread.h\fP.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fB__XSThread\fP"
+.PP
+XSThread class type. 
+.PP
+Definition at line 64 of file __XSThread.h.
+.SH "Function Documentation"
+.PP 
+.SS "\fBBOOL\fP __XSThread_Equals (\fBXSObject\fPobject1, \fBXSObject\fPobject2)"
+.PP
+Object comparison. \fBParameters:\fP
+.RS 4
+\fIobject1\fP The first object to compare 
+.br
+\fIobject2\fP The second object to compare 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+YES if both objects are equals, otherwise NO 
+.RE
+.PP
+
+.SS "void __XSThread_Initialize (void)"
+.PP
+Runtime initialization. \fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void* __XSThread_Run (void *thread)"
+.PP
+Runs a thread param A pointer to the thread object (XSThread) \fBReturns:\fP
+.RS 4
+Always NULL 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

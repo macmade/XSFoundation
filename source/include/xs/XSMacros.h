@@ -276,16 +276,16 @@ XS_EXTERN_C_BEGIN
  * @def         XS_INLINE
  * @brief       Standardization of the inline compiler keyword
  */
-#if !defined( XS_INLINE )
-    #if defined( __GNUC__ ) && ( __GNUC__ == 4 ) && !defined( DEBUG )
-        #define XS_INLINE static __inline__ __attribute__( ( always_inline ) )
-    #elif defined( __GNUC__ )
-        #define XS_INLINE static __inline__
-    #elif defined( __MWERKS__ ) || defined( __cplusplus )
-        #define XS_INLINE static inline
-    #elif defined(_MSC_VER)
-        #define XS_INLINE static __inline
-    #endif
+#if defined( __GNUC__ ) && ( __GNUC__ == 4 ) && !defined( DEBUG )
+    #define XS_INLINE static __inline__ __attribute__( ( always_inline ) )
+#elif defined( __GNUC__ )
+    #define XS_INLINE static __inline__
+#elif defined( __MWERKS__ ) || defined( __cplusplus )
+    #define XS_INLINE static inline
+#elif defined(_MSC_VER)
+    #define XS_INLINE static __inline
+#else
+    #define XS_INLINE
 #endif
 
 /*!

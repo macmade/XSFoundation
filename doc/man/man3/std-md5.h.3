@@ -1,0 +1,127 @@
+.TH "std-md5.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+std-md5.h \- 
+.PP
+MD5 hash algorithm.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBMD5_CTX_Struct\fP"
+.br
+.RI "\fIMD5 context structure. \fP"
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMD5_DIGEST_LENGTH\fP   16"
+.br
+.RI "\fIThe length of a MD5 digest. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBMD5_CTX_Struct\fP \fBMD5_CTX\fP"
+.br
+.RI "\fIMD5 context. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBMD5_Final\fP (unsigned char digest[16], \fBMD5_CTX\fP *context)"
+.br
+.RI "\fIFinalizes the message digest. \fP"
+.ti -1c
+.RI "void \fBMD5_Init\fP (\fBMD5_CTX\fP *context)"
+.br
+.RI "\fIinitializes a MD5_CTX structure. \fP"
+.ti -1c
+.RI "void \fBMD5_Update\fP (\fBMD5_CTX\fP *context, unsigned char *data, unsigned int length)"
+.br
+.RI "\fIUpdates the MD5_CTX structure with chunks of the message to be hashed. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+MD5 hash algorithm. 
+
+\fBAuthor:\fP
+.RS 4
+RSA Data Security, Inc. 
+.RE
+.PP
+
+.PP
+Definition in file \fBstd-md5.h\fP.
+.SH "Define Documentation"
+.PP 
+.SS "#define MD5_DIGEST_LENGTH   16"
+.PP
+The length of a MD5 digest. 
+.PP
+Definition at line 41 of file std-md5.h.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBMD5_CTX\fP"
+.PP
+MD5 context. 
+.PP
+Definition at line 58 of file std-md5.h.
+.SH "Function Documentation"
+.PP 
+.SS "void MD5_Final (unsigned chardigest[16], \fBMD5_CTX\fP *context)"
+.PP
+Finalizes the message digest. \fBParameters:\fP
+.RS 4
+\fIdigest\fP The buffer for the digest (16 bytes) 
+.br
+\fIcontext\fP The MD5 context 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void MD5_Init (\fBMD5_CTX\fP *context)"
+.PP
+initializes a MD5_CTX structure. \fBParameters:\fP
+.RS 4
+\fIcontext\fP The MD5 contex 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void MD5_Update (\fBMD5_CTX\fP *context, unsigned char *data, unsigned intlength)"
+.PP
+Updates the MD5_CTX structure with chunks of the message to be hashed. \fBParameters:\fP
+.RS 4
+\fIcontext\fP The MD5 context 
+.br
+\fIdata\fP The message data 
+.br
+\fIlength\fP The length of the message data 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

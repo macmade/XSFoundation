@@ -1,0 +1,747 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="____XSHost_8h" kind="file">
+    <compoundname>__XSHost.h</compoundname>
+    <includes local="yes">../XSMacros.h</includes>
+    <includes refid="XS_8h" local="yes">XS.h</includes>
+    <incdepgraph>
+      <node id="4743">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="4731">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4737">
+        <label>grp.h</label>
+      </node>
+      <node id="4719">
+        <label>stdarg.h</label>
+      </node>
+      <node id="4754">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="4709">
+        <label>assert.h</label>
+      </node>
+      <node id="4712">
+        <label>float.h</label>
+      </node>
+      <node id="4792">
+        <label>XS/XSThread.h</label>
+      </node>
+      <node id="4727">
+        <label>wctype.h</label>
+      </node>
+      <node id="4771">
+        <label>XS/XSArray.h</label>
+      </node>
+      <node id="4729">
+        <label>fenv.h</label>
+      </node>
+      <node id="4793">
+        <label>XS/XSTimer.h</label>
+      </node>
+      <node id="4721">
+        <label>stdint.h</label>
+      </node>
+      <node id="4791">
+        <label>XS/XSString.h</label>
+      </node>
+      <node id="4723">
+        <label>stdlib.h</label>
+      </node>
+      <node id="4717">
+        <label>setjmp.h</label>
+      </node>
+      <node id="4787">
+        <label>XS/XSNotificationCenter.h</label>
+      </node>
+      <node id="4769">
+        <label>XS/XSApplicationArgument.h</label>
+      </node>
+      <node id="4741">
+        <label>sys/msg.h</label>
+      </node>
+      <node id="4711">
+        <label>errno.h</label>
+      </node>
+      <node id="4713">
+        <label>iso646.h</label>
+      </node>
+      <node id="4781">
+        <label>XS/XSFile.h</label>
+      </node>
+      <node id="4736">
+        <label>fcntl.h</label>
+      </node>
+      <node id="4749">
+        <label>termios.h</label>
+      </node>
+      <node id="4770">
+        <label>XS/XSApplication.h</label>
+      </node>
+      <node id="4733">
+        <label>std-posix.h</label>
+        <link refid="std-posix_8h"/>
+        <childnode refid="4734" relation="include">
+        </childnode>
+        <childnode refid="4735" relation="include">
+        </childnode>
+        <childnode refid="4736" relation="include">
+        </childnode>
+        <childnode refid="4737" relation="include">
+        </childnode>
+        <childnode refid="4738" relation="include">
+        </childnode>
+        <childnode refid="4739" relation="include">
+        </childnode>
+        <childnode refid="4740" relation="include">
+        </childnode>
+        <childnode refid="4741" relation="include">
+        </childnode>
+        <childnode refid="4742" relation="include">
+        </childnode>
+        <childnode refid="4743" relation="include">
+        </childnode>
+        <childnode refid="4744" relation="include">
+        </childnode>
+        <childnode refid="4745" relation="include">
+        </childnode>
+        <childnode refid="4746" relation="include">
+        </childnode>
+        <childnode refid="4747" relation="include">
+        </childnode>
+        <childnode refid="4748" relation="include">
+        </childnode>
+        <childnode refid="4749" relation="include">
+        </childnode>
+        <childnode refid="4750" relation="include">
+        </childnode>
+        <childnode refid="4751" relation="include">
+        </childnode>
+      </node>
+      <node id="4708">
+        <label>std-c99.h</label>
+        <link refid="std-c99_8h"/>
+        <childnode refid="4709" relation="include">
+        </childnode>
+        <childnode refid="4710" relation="include">
+        </childnode>
+        <childnode refid="4711" relation="include">
+        </childnode>
+        <childnode refid="4712" relation="include">
+        </childnode>
+        <childnode refid="4713" relation="include">
+        </childnode>
+        <childnode refid="4714" relation="include">
+        </childnode>
+        <childnode refid="4715" relation="include">
+        </childnode>
+        <childnode refid="4716" relation="include">
+        </childnode>
+        <childnode refid="4717" relation="include">
+        </childnode>
+        <childnode refid="4718" relation="include">
+        </childnode>
+        <childnode refid="4719" relation="include">
+        </childnode>
+        <childnode refid="4720" relation="include">
+        </childnode>
+        <childnode refid="4721" relation="include">
+        </childnode>
+        <childnode refid="4722" relation="include">
+        </childnode>
+        <childnode refid="4723" relation="include">
+        </childnode>
+        <childnode refid="4724" relation="include">
+        </childnode>
+        <childnode refid="4725" relation="include">
+        </childnode>
+        <childnode refid="4726" relation="include">
+        </childnode>
+        <childnode refid="4727" relation="include">
+        </childnode>
+        <childnode refid="4728" relation="include">
+        </childnode>
+        <childnode refid="4729" relation="include">
+        </childnode>
+        <childnode refid="4730" relation="include">
+        </childnode>
+        <childnode refid="4731" relation="include">
+        </childnode>
+        <childnode refid="4732" relation="include">
+        </childnode>
+      </node>
+      <node id="4765">
+        <label>XS/XSLog.h</label>
+      </node>
+      <node id="4704">
+        <label>__XSHost.h</label>
+        <link refid="__XSHost.h"/>
+        <childnode refid="4705" relation="include">
+        </childnode>
+        <childnode refid="4706" relation="include">
+        </childnode>
+      </node>
+      <node id="4742">
+        <label>sys/sem.h</label>
+      </node>
+      <node id="4720">
+        <label>stddef.h</label>
+      </node>
+      <node id="4786">
+        <label>XS/XSNotification.h</label>
+      </node>
+      <node id="4764">
+        <label>XS/XSTypes.h</label>
+      </node>
+      <node id="4753">
+        <label>netdb.h</label>
+      </node>
+      <node id="4785">
+        <label>XS/XSNull.h</label>
+      </node>
+      <node id="4794">
+        <label>XS/XSURL.h</label>
+      </node>
+      <node id="4714">
+        <label>limits.h</label>
+      </node>
+      <node id="4768">
+        <label>XS/XSRuntime.h</label>
+      </node>
+      <node id="4738">
+        <label>pthread.h</label>
+      </node>
+      <node id="4705">
+        <label>../XSMacros.h</label>
+      </node>
+      <node id="4766">
+        <label>XS/XSMemory.h</label>
+      </node>
+      <node id="4726">
+        <label>wchar.h</label>
+      </node>
+      <node id="4745">
+        <label>sys/types.h</label>
+      </node>
+      <node id="4784">
+        <label>XS/XSLock.h</label>
+      </node>
+      <node id="4724">
+        <label>string.h</label>
+      </node>
+      <node id="4751">
+        <label>utime.h</label>
+      </node>
+      <node id="4774">
+        <label>XS/XSBTree.h</label>
+      </node>
+      <node id="4755">
+        <label>std-keywords.h</label>
+        <link refid="std-keywords_8h"/>
+      </node>
+      <node id="4795">
+        <label>XS/XSURLRequest.h</label>
+      </node>
+      <node id="4756">
+        <label>std-bool.h</label>
+        <link refid="std-bool_8h"/>
+      </node>
+      <node id="4757">
+        <label>std-math.h</label>
+        <link refid="std-math_8h"/>
+      </node>
+      <node id="4750">
+        <label>unistd.h</label>
+      </node>
+      <node id="4707">
+        <label>std/std.h</label>
+        <link refid="std_8h"/>
+        <childnode refid="4708" relation="include">
+        </childnode>
+        <childnode refid="4733" relation="include">
+        </childnode>
+        <childnode refid="4752" relation="include">
+        </childnode>
+        <childnode refid="4753" relation="include">
+        </childnode>
+        <childnode refid="4754" relation="include">
+        </childnode>
+        <childnode refid="4755" relation="include">
+        </childnode>
+        <childnode refid="4756" relation="include">
+        </childnode>
+        <childnode refid="4757" relation="include">
+        </childnode>
+        <childnode refid="4758" relation="include">
+        </childnode>
+        <childnode refid="4759" relation="include">
+        </childnode>
+        <childnode refid="4760" relation="include">
+        </childnode>
+        <childnode refid="4761" relation="include">
+        </childnode>
+      </node>
+      <node id="4759">
+        <label>std-bitwise.h</label>
+        <link refid="std-bitwise_8h"/>
+      </node>
+      <node id="4732">
+        <label>tgmath.h</label>
+      </node>
+      <node id="4778">
+        <label>XS/XSDictionary.h</label>
+      </node>
+      <node id="4718">
+        <label>signal.h</label>
+      </node>
+      <node id="4728">
+        <label>complex.h</label>
+      </node>
+      <node id="4776">
+        <label>XS/XSDebugLog.h</label>
+      </node>
+      <node id="4740">
+        <label>sys/ipc.h</label>
+      </node>
+      <node id="4725">
+        <label>time.h</label>
+      </node>
+      <node id="4790">
+        <label>XS/XSSort.h</label>
+      </node>
+      <node id="4716">
+        <label>math.h</label>
+      </node>
+      <node id="4747">
+        <label>sys/wait.h</label>
+      </node>
+      <node id="4783">
+        <label>XS/XSHost.h</label>
+      </node>
+      <node id="4744">
+        <label>sys/time.h</label>
+      </node>
+      <node id="4773">
+        <label>XS/XSBool.h</label>
+      </node>
+      <node id="4710">
+        <label>ctype.h</label>
+      </node>
+      <node id="4752">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="4739">
+        <label>pwd.h</label>
+      </node>
+      <node id="4775">
+        <label>XS/XSColor.h</label>
+      </node>
+      <node id="4763">
+        <label>XS/XSConstants.h</label>
+      </node>
+      <node id="4767">
+        <label>XS/XSMemoryDebug.h</label>
+      </node>
+      <node id="4734">
+        <label>cpio.h</label>
+      </node>
+      <node id="4706">
+        <label>XS.h</label>
+        <link refid="XS_8h"/>
+        <childnode refid="4707" relation="include">
+        </childnode>
+        <childnode refid="4762" relation="include">
+        </childnode>
+        <childnode refid="4763" relation="include">
+        </childnode>
+        <childnode refid="4764" relation="include">
+        </childnode>
+        <childnode refid="4765" relation="include">
+        </childnode>
+        <childnode refid="4766" relation="include">
+        </childnode>
+        <childnode refid="4767" relation="include">
+        </childnode>
+        <childnode refid="4768" relation="include">
+        </childnode>
+        <childnode refid="4769" relation="include">
+        </childnode>
+        <childnode refid="4770" relation="include">
+        </childnode>
+        <childnode refid="4771" relation="include">
+        </childnode>
+        <childnode refid="4772" relation="include">
+        </childnode>
+        <childnode refid="4773" relation="include">
+        </childnode>
+        <childnode refid="4774" relation="include">
+        </childnode>
+        <childnode refid="4775" relation="include">
+        </childnode>
+        <childnode refid="4776" relation="include">
+        </childnode>
+        <childnode refid="4777" relation="include">
+        </childnode>
+        <childnode refid="4778" relation="include">
+        </childnode>
+        <childnode refid="4779" relation="include">
+        </childnode>
+        <childnode refid="4780" relation="include">
+        </childnode>
+        <childnode refid="4781" relation="include">
+        </childnode>
+        <childnode refid="4782" relation="include">
+        </childnode>
+        <childnode refid="4783" relation="include">
+        </childnode>
+        <childnode refid="4784" relation="include">
+        </childnode>
+        <childnode refid="4785" relation="include">
+        </childnode>
+        <childnode refid="4786" relation="include">
+        </childnode>
+        <childnode refid="4787" relation="include">
+        </childnode>
+        <childnode refid="4788" relation="include">
+        </childnode>
+        <childnode refid="4789" relation="include">
+        </childnode>
+        <childnode refid="4790" relation="include">
+        </childnode>
+        <childnode refid="4791" relation="include">
+        </childnode>
+        <childnode refid="4792" relation="include">
+        </childnode>
+        <childnode refid="4793" relation="include">
+        </childnode>
+        <childnode refid="4794" relation="include">
+        </childnode>
+        <childnode refid="4795" relation="include">
+        </childnode>
+      </node>
+      <node id="4748">
+        <label>tar.h</label>
+      </node>
+      <node id="4789">
+        <label>XS/XSSet.h</label>
+      </node>
+      <node id="4780">
+        <label>XS/XSException.h</label>
+      </node>
+      <node id="4761">
+        <label>std-string.h</label>
+        <link refid="std-string_8h"/>
+        <childnode refid="4755" relation="include">
+        </childnode>
+      </node>
+      <node id="4758">
+        <label>std-md5.h</label>
+        <link refid="std-md5_8h"/>
+      </node>
+      <node id="4788">
+        <label>XS/XSNumber.h</label>
+      </node>
+      <node id="4722">
+        <label>stdio.h</label>
+      </node>
+      <node id="4715">
+        <label>locale.h</label>
+      </node>
+      <node id="4762">
+        <label>XS/XSMacros.h</label>
+      </node>
+      <node id="4777">
+        <label>XS/XSData.h</label>
+      </node>
+      <node id="4772">
+        <label>XS/XSBag.h</label>
+      </node>
+      <node id="4746">
+        <label>sys/utsname.h</label>
+      </node>
+      <node id="4730">
+        <label>inttypes.h</label>
+      </node>
+      <node id="4782">
+        <label>XS/XSGeometry.h</label>
+      </node>
+      <node id="4779">
+        <label>XS/XSError.h</label>
+      </node>
+      <node id="4760">
+        <label>std-ascii.h</label>
+        <link refid="std-ascii_8h"/>
+      </node>
+      <node id="4735">
+        <label>dirent.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct____XSHost__Struct" prot="public">__XSHost_Struct</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="____XSHost_8h_1a0cef28ce279aa9991b261db030d8ca87" prot="public" static="no">
+        <type>struct <ref refid="struct____XSHost__Struct" kindref="compound">__XSHost_Struct</ref></type>
+        <definition>__XSHost</definition>
+        <argsstring></argsstring>
+        <name>__XSHost</name>
+        <briefdescription>
+<para>XSHost class type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" line="68" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="____XSHost_8h_1a34fc363bd9c0aa6e27a7c09d80525747" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSHost_Construct</definition>
+        <argsstring>(XSObject object)</argsstring>
+        <name>__XSHost_Construct</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" line="81"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSHost_8h_1a00d5f6e92edab3e23bfe598c7ea31339" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSHost_Copy</definition>
+        <argsstring>(XSObject source, XSObject destination)</argsstring>
+        <name>__XSHost_Copy</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>destination</declname>
+        </param>
+        <briefdescription>
+<para>Object copy. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>destination</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The destination object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" line="103"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSHost_8h_1af1bf9e8fb12db4721901975baeb5090c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSHost_Destruct</definition>
+        <argsstring>(XSObject object)</argsstring>
+        <name>__XSHost_Destruct</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+<para>Destructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" line="88"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSHost_8h_1a8451c69d88a0bfb6abd4029883233e69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSHost_Initialize</definition>
+        <argsstring>(void)</argsstring>
+        <name>__XSHost_Initialize</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Runtime initialization. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" line="74"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSHost_8h_1a5b68cfecbb9a8da22db0f2eb4f2ed2c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct____XSString__Struct" kindref="compound">XSString</ref></type>
+        <definition>XSString __XSHost_ToString</definition>
+        <argsstring>(XSObject object)</argsstring>
+        <name>__XSHost_ToString</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+<para>Object description. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The object&apos;s description </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" line="95"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Private XSHost class definitions. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt; </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2011,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__XSHost.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Private<sp/>XSHost<sp/>class<sp/>definitions</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>___XS_HOST_H_</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>___XS_HOST_H_</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../XSMacros.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="XSMacros_8h_1ae3fa7c5665557917f34badbe69a55828" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; start.">XS_EXTERN_C_BEGIN</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XS_8h" kindref="compound" tooltip="XSFoundation main header file.">XS.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="48"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>@struct<sp/><sp/><sp/><sp/><sp/><sp/>__XSHost_Struct</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSHost<sp/>class</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="struct____XSHost__Struct" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct____XSHost__Struct" kindref="compound" tooltip="XSHost class.">__XSHost_Struct</ref></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54" refid="struct____XSHost__Struct_1a52e5cf77626e45317edca536351a79ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structXSRuntimeClass__Struct" kindref="compound" tooltip="Base structure for the runtime classes.">XSRuntimeClass</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSHost__Struct_1a52e5cf77626e45317edca536351a79ca" kindref="member">__class</ref>;<sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>Runtime<sp/>class<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="struct____XSHost__Struct_1a1b58db32c9bf8e1a1804b549d00a5ff5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct____XSString__Struct" kindref="compound" tooltip="XSString class.">XSString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSHost__Struct_1a1b58db32c9bf8e1a1804b549d00a5ff5" kindref="member">host</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="struct____XSHost__Struct_1aeb8165054c95eaf3c165e34ed0772716" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct____XSString__Struct" kindref="compound" tooltip="XSString class.">XSString</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSHost__Struct_1aeb8165054c95eaf3c165e34ed0772716" kindref="member">ip</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="struct____XSHost__Struct_1ac58e688ec8bac722bb5268c4b1642358" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSHost__Struct_1ac58e688ec8bac722bb5268c4b1642358" kindref="member">port</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="struct____XSHost__Struct_1a8338cbd6bb6ebf91463c90fddbdb753e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">addrinfo<sp/><sp/><sp/><sp/>*<sp/><ref refid="struct____XSHost__Struct_1a8338cbd6bb6ebf91463c90fddbdb753e" kindref="member">infos</ref>;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="struct____XSHost__Struct_1a41f7a76ef94457367d77bd3cfefe32d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">addrinfo<sp/><sp/><sp/><sp/>*<sp/><ref refid="struct____XSHost__Struct_1a41f7a76ef94457367d77bd3cfefe32d0" kindref="member">addr</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="struct____XSHost__Struct_1a185fa8498899ff7216cbccacd5d87cda" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>*<sp/><ref refid="struct____XSHost__Struct_1a185fa8498899ff7216cbccacd5d87cda" kindref="member">sock</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="struct____XSHost__Struct_1ad18d881b0f60ac3833ec3352b75ba67c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSHost__Struct_1ad18d881b0f60ac3833ec3352b75ba67c" kindref="member">isCopy</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="64"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>__XSHost</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSHost<sp/>class<sp/>type</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="____XSHost_8h_1a0cef28ce279aa9991b261db030d8ca87" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct____XSHost__Struct" kindref="compound" tooltip="XSHost class.">__XSHost_Struct</ref><sp/><ref refid="struct____XSHost__Struct" kindref="compound" tooltip="XSHost class.">__XSHost</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="70"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Runtime<sp/>initialization</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSHost_8h_1a8451c69d88a0bfb6abd4029883233e69" kindref="member" tooltip="Runtime initialization.">__XSHost_Initialize</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="76"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Constructor</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>object<sp/><sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>object</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSHost_8h_1a34fc363bd9c0aa6e27a7c09d80525747" kindref="member" tooltip="Constructor.">__XSHost_Construct</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="83"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Destructor</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>object<sp/><sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>object</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSHost_8h_1af1bf9e8fb12db4721901975baeb5090c" kindref="member" tooltip="Destructor.">__XSHost_Destruct</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="90"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Object<sp/>description</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>object<sp/><sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>object</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>object&apos;s<sp/>description</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><ref refid="struct____XSString__Struct" kindref="compound" tooltip="XSString class.">XSString</ref><sp/><ref refid="____XSHost_8h_1a5b68cfecbb9a8da22db0f2eb4f2ed2c1" kindref="member" tooltip="Object description.">__XSHost_ToString</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="97"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Object<sp/>copy</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>source<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>source<sp/>object</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>destination<sp/><sp/><sp/><sp/><sp/>The<sp/>destination<sp/>object</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSHost_8h_1a00d5f6e92edab3e23bfe598c7ea31339" kindref="member" tooltip="Object copy.">__XSHost_Copy</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>source,<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>destination<sp/>);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><ref refid="XSMacros_8h_1a35fa049fa034476400f574516968a3a2" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; end.">XS_EXTERN_C_END</ref></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>___XS_HOST_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h"/>
+  </compounddef>
+</doxygen>

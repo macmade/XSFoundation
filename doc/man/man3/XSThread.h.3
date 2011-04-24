@@ -1,0 +1,119 @@
+.TH "XSThread.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XSThread.h \- 
+.PP
+XSThread class functions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'XSMacros.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB__XSThread_Struct\fP * \fBXSThread\fP"
+.br
+.RI "\fIOpaque type for the XSThread objects. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "XSStatic \fBXSObject\fP \fBXSThread_Alloc\fP (void)"
+.br
+.RI "\fIObject allocator. \fP"
+.ti -1c
+.RI "XSStatic \fBXSThread\fP \fBXSThread_Detach\fP (void(*func)(\fBXSThread\fP thread, \fBXSObject\fP arg), void *arg)"
+.br
+.RI "\fIInitializes and detaches a thread. \fP"
+.ti -1c
+.RI "\fBXSUInteger\fP \fBXSThread_GetID\fP (\fBXSThread\fP xsThis)"
+.br
+.RI "\fIGets the thread ID. \fP"
+.ti -1c
+.RI "\fBXSObject\fP \fBXSThread_Init\fP (\fBXSObject\fP xsThis)"
+.br
+.RI "\fIInitialize a thread object. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+XSThread class functions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBXSThread.h\fP.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBXSThread\fP"
+.PP
+Opaque type for the XSThread objects. 
+.PP
+Definition at line 50 of file XSThread.h.
+.SH "Function Documentation"
+.PP 
+.SS "XSStatic \fBXSObject\fP XSThread_Alloc (void)"
+.PP
+Object allocator. Do not allocate threads explicitely. Use the XSThread_Detach function instead to create new threads. 
+.PP
+\fBReturns:\fP
+.RS 4
+The allocated object 
+.RE
+.PP
+
+.SS "XSStatic \fBXSThread\fP XSThread_Detach (void(*)(\fBXSThread\fP thread, \fBXSObject\fP arg)func, void *arg)"
+.PP
+Initializes and detaches a thread. The thread object will be automatically released when it exits. Do not release it explicitely. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfunc\fP A pointer to the function to run on the thread 
+.br
+\fIarg\fP Argument to pass to the thread function 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The XSThread instance 
+.RE
+.PP
+
+.SS "\fBXSUInteger\fP XSThread_GetID (\fBXSThread\fPxsThis)"
+.PP
+Gets the thread ID. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The thread object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The thread ID 
+.RE
+.PP
+
+.SS "\fBXSObject\fP XSThread_Init (\fBXSObject\fPxsThis)"
+.PP
+Initialize a thread object. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The thread object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The thread object 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

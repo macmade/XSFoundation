@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_f8ad7efe8e2bec12d8e7f61d6fc41769" kind="dir">
+    <compoundname>source/include/</compoundname>
+    <innerdir refid="dir_7411e51eb1dee6b7d29a5806541f50d2">source/include/eos-skl/</innerdir>
+    <innerdir refid="dir_d890394df29f14908c35aa4136c971fa">source/include/std/</innerdir>
+    <innerdir refid="dir_36aef0d8fee62aa601176d9a35cbce94">source/include/win32/</innerdir>
+    <innerdir refid="dir_badd33d49bfa05f01cbc4babeba2bbab">source/include/xs/</innerdir>
+    <innerfile refid="XS_8h">XS.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/"/>
+  </compounddef>
+</doxygen>

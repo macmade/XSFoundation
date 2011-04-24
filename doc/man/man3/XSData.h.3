@@ -1,0 +1,188 @@
+.TH "XSData.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XSData.h \- 
+.PP
+XSData class functions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'XSMacros.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB__XSData_Struct\fP * \fBXSData\fP"
+.br
+.RI "\fIOpaque type for the XSData objects. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "XSStatic \fBXSObject\fP \fBXSData_Alloc\fP (void)"
+.br
+.RI "\fIObject allocator. \fP"
+.ti -1c
+.RI "void \fBXSData_AppendBytes\fP (\fBXSData\fP xsThis, \fBUInt8\fP *bytes, \fBXSUInteger\fP length)"
+.br
+.RI "\fIAppends bytes to the data object. \fP"
+.ti -1c
+.RI "XSAutoreleased \fBUInt8\fP * \fBXSData_GetBytes\fP (\fBXSData\fP xsThis, \fBXSRange\fP range)"
+.br
+.RI "\fIGet bytes from the data object. \fP"
+.ti -1c
+.RI "\fBUInt8\fP * \fBXSData_GetBytesPointer\fP (\fBXSData\fP xsThis)"
+.br
+.RI "\fIGets a pointer to the bytes. \fP"
+.ti -1c
+.RI "\fBXSUInteger\fP \fBXSData_GetLength\fP (\fBXSData\fP xsThis)"
+.br
+.RI "\fIGets the data length. \fP"
+.ti -1c
+.RI "\fBXSObject\fP \fBXSData_Init\fP (\fBXSObject\fP xsThis)"
+.br
+.RI "\fIInitializes a data object. \fP"
+.ti -1c
+.RI "\fBXSData\fP \fBXSData_InitWithBytes\fP (\fBXSData\fP xsThis, \fBUInt8\fP *bytes, \fBXSUInteger\fP length)"
+.br
+.RI "\fIInitializes a data object with bytes. \fP"
+.ti -1c
+.RI "\fBXSData\fP \fBXSData_InitWithCapacity\fP (\fBXSData\fP xsThis, \fBXSUInteger\fP capacity)"
+.br
+.RI "\fIInitializes a data object with an initial capacity. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+XSData class functions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBXSData.h\fP.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBXSData\fP"
+.PP
+Opaque type for the XSData objects. 
+.PP
+Definition at line 50 of file XSData.h.
+.SH "Function Documentation"
+.PP 
+.SS "XSStatic \fBXSObject\fP XSData_Alloc (void)"
+.PP
+Object allocator. \fBReturns:\fP
+.RS 4
+The allocated object 
+.RE
+.PP
+
+.SS "void XSData_AppendBytes (\fBXSData\fPxsThis, \fBUInt8\fP *bytes, \fBXSUInteger\fPlength)"
+.PP
+Appends bytes to the data object. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The data object 
+.br
+\fIbytes\fP The bytes to append 
+.br
+\fIlength\fP The length of the data to append 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The data bytes 
+.RE
+.PP
+
+.SS "XSAutoreleased \fBUInt8\fP* XSData_GetBytes (\fBXSData\fPxsThis, \fBXSRange\fPrange)"
+.PP
+Get bytes from the data object. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The data object 
+.br
+\fIrange\fP The range of the data to get 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The data bytes 
+.RE
+.PP
+
+.SS "\fBUInt8\fP* XSData_GetBytesPointer (\fBXSData\fPxsThis)"
+.PP
+Gets a pointer to the bytes. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The data object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A pointer to the bytes data 
+.RE
+.PP
+
+.SS "\fBXSUInteger\fP XSData_GetLength (\fBXSData\fPxsThis)"
+.PP
+Gets the data length. \fBReturns:\fP
+.RS 4
+The data length 
+.RE
+.PP
+
+.SS "\fBXSObject\fP XSData_Init (\fBXSObject\fPxsThis)"
+.PP
+Initializes a data object. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The data object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The data object 
+.RE
+.PP
+
+.SS "\fBXSData\fP XSData_InitWithBytes (\fBXSData\fPxsThis, \fBUInt8\fP *bytes, \fBXSUInteger\fPlength)"
+.PP
+Initializes a data object with bytes. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The data object 
+.br
+\fIbytes\fP The data to copy 
+.br
+\fIlength\fP The length of the data 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The data object 
+.RE
+.PP
+
+.SS "\fBXSData\fP XSData_InitWithCapacity (\fBXSData\fPxsThis, \fBXSUInteger\fPcapacity)"
+.PP
+Initializes a data object with an initial capacity. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The data object 
+.br
+\fIcapacity\fP The initial capacity 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The data object 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

@@ -1,0 +1,346 @@
+.TH "XSApplicationArgument.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XSApplicationArgument.h \- 
+.PP
+XSApplicationArgument class functions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'XSMacros.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB__XSApplicationArgument_Struct\fP * \fBXSApplicationArgument\fP"
+.br
+.RI "\fIOpaque type for the XSApplicationArgument objects. \fP"
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBXSApplicationArgumentType\fP { \fBXSApplicationArgumentTypeFlag\fP =  0x00, \fBXSApplicationArgumentTypeInteger\fP =  0x01, \fBXSApplicationArgumentTypeUnsignedInteger\fP =  0x02, \fBXSApplicationArgumentTypeString\fP =  0x03, \fBXSApplicationArgumentTypeFloat\fP =  0x04 }"
+.br
+.RI "\fICommand line argument types. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "XSStatic \fBXSApplicationArgument\fP \fBXSApplicationArgument_Alloc\fP (void)"
+.br
+.RI "\fIObject allocator. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSApplicationArgument_GetFlag\fP (\fBXSApplicationArgument\fP xsThis)"
+.br
+.RI "\fIGets the flag state for the argument. \fP"
+.ti -1c
+.RI "\fBXSFloat\fP \fBXSApplicationArgument_GetFloatValue\fP (\fBXSApplicationArgument\fP xsThis)"
+.br
+.RI "\fIGets the float value for the argument. \fP"
+.ti -1c
+.RI "const char * \fBXSApplicationArgument_GetHelp\fP (\fBXSApplicationArgument\fP xsThis)"
+.br
+.RI "\fIGets the help text of the CLI argument. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSApplicationArgument_GetIntegerValue\fP (\fBXSApplicationArgument\fP xsThis)"
+.br
+.RI "\fIGets the integer value for the argument. \fP"
+.ti -1c
+.RI "const char * \fBXSApplicationArgument_GetName\fP (\fBXSApplicationArgument\fP xsThis)"
+.br
+.RI "\fIGets the name of the CLI argument. \fP"
+.ti -1c
+.RI "const char * \fBXSApplicationArgument_GetStringValue\fP (\fBXSApplicationArgument\fP xsThis)"
+.br
+.RI "\fIGets the string value for the argument. \fP"
+.ti -1c
+.RI "\fBXSApplicationArgumentType\fP \fBXSApplicationArgument_GetType\fP (\fBXSApplicationArgument\fP xsThis)"
+.br
+.RI "\fIGets the type of the CLI argument. \fP"
+.ti -1c
+.RI "\fBXSUInteger\fP \fBXSApplicationArgument_GetUnsignedIntegerValue\fP (\fBXSApplicationArgument\fP xsThis)"
+.br
+.RI "\fIGets the unsigned integer value for the argument. \fP"
+.ti -1c
+.RI "\fBXSApplicationArgument\fP \fBXSApplicationArgument_Init\fP (\fBXSApplicationArgument\fP xsThis, const char *name, \fBXSApplicationArgumentType\fP type, const char *help)"
+.br
+.RI "\fIInitializes a CLI argument object. \fP"
+.ti -1c
+.RI "void \fBXSApplicationArgument_SetFlag\fP (\fBXSApplicationArgument\fP xsThis)"
+.br
+.RI "\fISets the flag to 'on' for the argument. \fP"
+.ti -1c
+.RI "void \fBXSApplicationArgument_SetFloatValue\fP (\fBXSApplicationArgument\fP xsThis, \fBXSFloat\fP value)"
+.br
+.RI "\fISets the float value for the argument. \fP"
+.ti -1c
+.RI "void \fBXSApplicationArgument_SetIntegerValue\fP (\fBXSApplicationArgument\fP xsThis, \fBXSInteger\fP value)"
+.br
+.RI "\fISets the integer value for the argument. \fP"
+.ti -1c
+.RI "void \fBXSApplicationArgument_SetStringValue\fP (\fBXSApplicationArgument\fP xsThis, const char *value)"
+.br
+.RI "\fISets the string value for the argument. \fP"
+.ti -1c
+.RI "void \fBXSApplicationArgument_SetUnsignedIntegerValue\fP (\fBXSApplicationArgument\fP xsThis, \fBXSUInteger\fP value)"
+.br
+.RI "\fISets the unsigned integer value for the argument. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+XSApplicationArgument class functions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBXSApplicationArgument.h\fP.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBXSApplicationArgument\fP"
+.PP
+Opaque type for the XSApplicationArgument objects. 
+.PP
+Definition at line 50 of file XSApplicationArgument.h.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBXSApplicationArgumentType\fP"
+.PP
+Command line argument types. 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIXSApplicationArgumentTypeFlag \fP\fP
+.TP
+\fB\fIXSApplicationArgumentTypeInteger \fP\fP
+Flag type (no value) 
+.TP
+\fB\fIXSApplicationArgumentTypeUnsignedInteger \fP\fP
+Integer type 
+.TP
+\fB\fIXSApplicationArgumentTypeString \fP\fP
+Unsigned integer type 
+.TP
+\fB\fIXSApplicationArgumentTypeFloat \fP\fP
+String type (char pointer) 
+.PP
+Definition at line 56 of file XSApplicationArgument.h.
+.SH "Function Documentation"
+.PP 
+.SS "XSStatic \fBXSApplicationArgument\fP XSApplicationArgument_Alloc (void)"
+.PP
+Object allocator. \fBReturns:\fP
+.RS 4
+The allocated object 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSApplicationArgument_GetFlag (\fBXSApplicationArgument\fPxsThis)"
+.PP
+Gets the flag state for the argument. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The argument object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A boolean value indicating if the flag is set 
+.RE
+.PP
+
+.SS "\fBXSFloat\fP XSApplicationArgument_GetFloatValue (\fBXSApplicationArgument\fPxsThis)"
+.PP
+Gets the float value for the argument. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The argument object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The argument's float value 
+.RE
+.PP
+
+.SS "const char* XSApplicationArgument_GetHelp (\fBXSApplicationArgument\fPxsThis)"
+.PP
+Gets the help text of the CLI argument. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The argument object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The help text of the argument object 
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSApplicationArgument_GetIntegerValue (\fBXSApplicationArgument\fPxsThis)"
+.PP
+Gets the integer value for the argument. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The argument object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The argument's integer value 
+.RE
+.PP
+
+.SS "const char* XSApplicationArgument_GetName (\fBXSApplicationArgument\fPxsThis)"
+.PP
+Gets the name of the CLI argument. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The argument object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The name of the argument object 
+.RE
+.PP
+
+.SS "const char* XSApplicationArgument_GetStringValue (\fBXSApplicationArgument\fPxsThis)"
+.PP
+Gets the string value for the argument. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The argument object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The argument's string value 
+.RE
+.PP
+
+.SS "\fBXSApplicationArgumentType\fP XSApplicationArgument_GetType (\fBXSApplicationArgument\fPxsThis)"
+.PP
+Gets the type of the CLI argument. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The argument object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The type of the argument object 
+.RE
+.PP
+
+.SS "\fBXSUInteger\fP XSApplicationArgument_GetUnsignedIntegerValue (\fBXSApplicationArgument\fPxsThis)"
+.PP
+Gets the unsigned integer value for the argument. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The argument object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The argumen'ts unsigned integer value 
+.RE
+.PP
+
+.SS "\fBXSApplicationArgument\fP XSApplicationArgument_Init (\fBXSApplicationArgument\fPxsThis, const char *name, \fBXSApplicationArgumentType\fPtype, const char *help)"
+.PP
+Initializes a CLI argument object. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The argument object 
+.br
+\fIname\fP The name of the CLI argument, including dashes (- or --) 
+.br
+\fItype\fP The type of the CLI argument 
+.br
+\fIhelp\fP The help text (pass NULL if none) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The argument object 
+.RE
+.PP
+
+.SS "void XSApplicationArgument_SetFlag (\fBXSApplicationArgument\fPxsThis)"
+.PP
+Sets the flag to 'on' for the argument. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The argument object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void XSApplicationArgument_SetFloatValue (\fBXSApplicationArgument\fPxsThis, \fBXSFloat\fPvalue)"
+.PP
+Sets the float value for the argument. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The argument object 
+.br
+\fIvalue\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void XSApplicationArgument_SetIntegerValue (\fBXSApplicationArgument\fPxsThis, \fBXSInteger\fPvalue)"
+.PP
+Sets the integer value for the argument. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The argument object 
+.br
+\fIvalue\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void XSApplicationArgument_SetStringValue (\fBXSApplicationArgument\fPxsThis, const char *value)"
+.PP
+Sets the string value for the argument. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The argument object 
+.br
+\fIvalue\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void XSApplicationArgument_SetUnsignedIntegerValue (\fBXSApplicationArgument\fPxsThis, \fBXSUInteger\fPvalue)"
+.PP
+Sets the unsigned integer value for the argument. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The argument object 
+.br
+\fIvalue\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

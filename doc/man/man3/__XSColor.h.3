@@ -1,0 +1,174 @@
+.TH "__XSColor.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+__XSColor.h \- 
+.PP
+Private XSColor class definitions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '../XSMacros.h'\fP
+.br
+\fC#include 'XS.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fB__XSColor_Struct\fP"
+.br
+.RI "\fIXSColor class. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB__XSColor_Struct\fP \fB__XSColor\fP"
+.br
+.RI "\fIXSColor class type. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fB__XSColor_HSLToHSV\fP (\fB__XSColor\fP *color)"
+.br
+.RI "\fIConverts the HSL components to HSV. \fP"
+.ti -1c
+.RI "void \fB__XSColor_HSLToRGB\fP (\fB__XSColor\fP *color)"
+.br
+.RI "\fIConverts the HSL components to RGB. \fP"
+.ti -1c
+.RI "void \fB__XSColor_HSVToHSL\fP (\fB__XSColor\fP *color)"
+.br
+.RI "\fIConverts the HSV components to HSL. \fP"
+.ti -1c
+.RI "void \fB__XSColor_HSVToRGB\fP (\fB__XSColor\fP *color)"
+.br
+.RI "\fIConverts the HSV components to RGB. \fP"
+.ti -1c
+.RI "void \fB__XSColor_Initialize\fP (void)"
+.br
+.RI "\fIRuntime initialization. \fP"
+.ti -1c
+.RI "void \fB__XSColor_RGBToHSL\fP (\fB__XSColor\fP *color)"
+.br
+.RI "\fIConverts the RGB components to HSV. \fP"
+.ti -1c
+.RI "void \fB__XSColor_RGBToHSV\fP (\fB__XSColor\fP *color)"
+.br
+.RI "\fIConverts the RGB components to HSL. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Private XSColor class definitions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fB__XSColor.h\fP.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fB__XSColor\fP"
+.PP
+XSColor class type. 
+.PP
+Definition at line 69 of file __XSColor.h.
+.SH "Function Documentation"
+.PP 
+.SS "void __XSColor_HSLToHSV (\fB__XSColor\fP *color)"
+.PP
+Converts the HSL components to HSV. \fBParameters:\fP
+.RS 4
+\fIcolor\fP The color object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void __XSColor_HSLToRGB (\fB__XSColor\fP *color)"
+.PP
+Converts the HSL components to RGB. \fBParameters:\fP
+.RS 4
+\fIcolor\fP The color object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void __XSColor_HSVToHSL (\fB__XSColor\fP *color)"
+.PP
+Converts the HSV components to HSL. \fBParameters:\fP
+.RS 4
+\fIcolor\fP The color object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void __XSColor_HSVToRGB (\fB__XSColor\fP *color)"
+.PP
+Converts the HSV components to RGB. \fBParameters:\fP
+.RS 4
+\fIcolor\fP The color object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void __XSColor_Initialize (void)"
+.PP
+Runtime initialization. \fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void __XSColor_RGBToHSL (\fB__XSColor\fP *color)"
+.PP
+Converts the RGB components to HSV. \fBParameters:\fP
+.RS 4
+\fIcolor\fP The color object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void __XSColor_RGBToHSV (\fB__XSColor\fP *color)"
+.PP
+Converts the RGB components to HSL. \fBParameters:\fP
+.RS 4
+\fIcolor\fP The color object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

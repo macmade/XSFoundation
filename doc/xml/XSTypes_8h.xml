@@ -1,0 +1,1318 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="XSTypes_8h" kind="file">
+    <compoundname>XSTypes.h</compoundname>
+    <includes refid="XSMacros_8h" local="yes">XSMacros.h</includes>
+    <includes refid="XSConstants_8h" local="yes">XSConstants.h</includes>
+    <includes local="yes">../std/std.h</includes>
+    <includes refid="XSString_8h" local="yes">XSString.h</includes>
+    <includedby refid="XSGeometry_8h" local="yes">XSGeometry.h</includedby>
+    <includedby refid="XSMemory_8h" local="yes">XSMemory.h</includedby>
+    <includedby refid="XSMemoryDebug_8h" local="yes">XSMemoryDebug.h</includedby>
+    <includedby refid="XSSort_8h" local="yes">XSSort.h</includedby>
+    <incdepgraph>
+      <node id="7137">
+        <label>XSMacros.h</label>
+        <link refid="XSMacros_8h"/>
+        <childnode refid="7138" relation="include">
+        </childnode>
+        <childnode refid="7139" relation="include">
+        </childnode>
+      </node>
+      <node id="7138">
+        <label>XSMacrosTarget.h</label>
+        <link refid="XSMacrosTarget_8h"/>
+        <childnode refid="7137" relation="include">
+        </childnode>
+      </node>
+      <node id="7140">
+        <label>XSConstants.h</label>
+        <link refid="XSConstants_8h"/>
+        <childnode refid="7137" relation="include">
+        </childnode>
+      </node>
+      <node id="7136">
+        <label>XSTypes.h</label>
+        <link refid="XSTypes.h"/>
+        <childnode refid="7137" relation="include">
+        </childnode>
+        <childnode refid="7140" relation="include">
+        </childnode>
+        <childnode refid="7141" relation="include">
+        </childnode>
+        <childnode refid="7142" relation="include">
+        </childnode>
+      </node>
+      <node id="7139">
+        <label>XSMacrosException.h</label>
+        <link refid="XSMacrosException_8h"/>
+        <childnode refid="7137" relation="include">
+        </childnode>
+      </node>
+      <node id="7141">
+        <label>../std/std.h</label>
+      </node>
+      <node id="7142">
+        <label>XSString.h</label>
+        <link refid="XSString_8h"/>
+        <childnode refid="7137" relation="include">
+        </childnode>
+        <childnode refid="7143" relation="include">
+        </childnode>
+      </node>
+      <node id="7143">
+        <label>XSArray.h</label>
+        <link refid="XSArray_8h"/>
+        <childnode refid="7137" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="7146">
+        <label>XSMemory.h</label>
+        <link refid="XSMemory_8h"/>
+      </node>
+      <node id="7147">
+        <label>XSMemoryDebug.h</label>
+        <link refid="XSMemoryDebug_8h"/>
+      </node>
+      <node id="7144">
+        <label>XSTypes.h</label>
+        <link refid="XSTypes.h"/>
+        <childnode refid="7145" relation="include">
+        </childnode>
+        <childnode refid="7146" relation="include">
+        </childnode>
+        <childnode refid="7147" relation="include">
+        </childnode>
+        <childnode refid="7148" relation="include">
+        </childnode>
+      </node>
+      <node id="7145">
+        <label>XSGeometry.h</label>
+        <link refid="XSGeometry_8h"/>
+      </node>
+      <node id="7148">
+        <label>XSSort.h</label>
+        <link refid="XSSort_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structXSClassInfos__Struct" prot="public">XSClassInfos_Struct</innerclass>
+    <innerclass refid="structXSEdgeInsets__Struct" prot="public">XSEdgeInsets_Struct</innerclass>
+    <innerclass refid="structXSPoint__Struct" prot="public">XSPoint_Struct</innerclass>
+    <innerclass refid="structXSRange__Struct" prot="public">XSRange_Struct</innerclass>
+    <innerclass refid="structXSRect__Struct" prot="public">XSRect_Struct</innerclass>
+    <innerclass refid="structXSRuntimeClass__Struct" prot="public">XSRuntimeClass_Struct</innerclass>
+    <innerclass refid="structXSSize__Struct" prot="public">XSSize_Struct</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="XSTypes_8h_1a7a7ca81d2a85873283b5ec82953b1b25" prot="public" static="no">
+        <name>nil</name>
+        <initializer>( <ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref> )0</initializer>
+        <briefdescription>
+<para>NULL pointer for the &apos;XSObject&apos; type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="365" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="365" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="XSTypes_8h_1ae3b89c60b6c464ce16be3640106365f7" prot="public" static="no">
+        <name>Nil</name>
+        <initializer>( <ref refid="structXSClassInfos" kindref="compound">XSClass</ref> )0</initializer>
+        <briefdescription>
+<para>NULL pointer for the &apos;XSClass&apos; type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="371" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="371" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="XSTypes_8h_1a996bde01ecac342918f0a2c4e7ce7bd5" prot="public" static="no">
+        <name>NO</name>
+        <initializer>( <ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref> )0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="62" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="XSTypes_8h_1a5735ae0c283a2bcf0697b515866b8a52" prot="public" static="no">
+        <name>OBJC_BOOL_DEFINED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="63" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" prot="public" static="no">
+        <name>XSAutoreleased</name>
+        <briefdescription>
+<para>Marker for methods that return auto-released objects. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="299" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="299" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="XSTypes_8h_1ab3eddb7fadb44086af34b5bfc1aab33b" prot="public" static="no">
+        <name>XSNotFound</name>
+        <initializer>XSUIntegerMax</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="212" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="XSTypes_8h_1a3310ef0367fe9a2e896f4b92ea6efe9a" prot="public" static="no">
+        <name>XSStatic</name>
+        <briefdescription>
+<para>Marker for static class methods. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="293" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="293" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="XSTypes_8h_1a7ebc9a785e5ab85457c98595aac81589" prot="public" static="no">
+        <name>YES</name>
+        <initializer>( <ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref> )1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="61" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="XSTypes_8h_1a2696b828bf310e1027e2049ce5db2386" prot="public" static="no">
+        <name>XSByteOrder_Enum</name>
+        <enumvalue id="XSTypes_8h_1a2696b828bf310e1027e2049ce5db2386aa0dbcae3ae2cbe6f5ab0dd9a710c5755" prot="public">
+          <name>XS_UnknownByteOrder</name>
+          <initializer> 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSTypes_8h_1a2696b828bf310e1027e2049ce5db2386a704d8827ce6fea0e8ee86a34a338d508" prot="public">
+          <name>XS_LittleEndian</name>
+          <initializer> 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Unknown byte order </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSTypes_8h_1a2696b828bf310e1027e2049ce5db2386afeba20986045608e3608b7082e39938b" prot="public">
+          <name>XS_BigEndian</name>
+          <initializer> 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Little endian byte order </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Byte-order data-type enumeration. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="237" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="236" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="enum" id="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8d" prot="public" static="no">
+        <name>XSDataType</name>
+        <enumvalue id="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da3ed3ecd063d87580a109f3cdb7703cf4" prot="public">
+          <name>XSDataTypeChar</name>
+          <initializer> 0x00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8dab182b8038711c2312b99b38d1b86035d" prot="public">
+          <name>XSDataTypeUChar</name>
+          <initializer> 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>char </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8dae0b7316d56f271a16403761165f0a3ea" prot="public">
+          <name>XSDataTypeShort</name>
+          <initializer> 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>unsigned char </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8daf0ca26373e45eb5ef7bc1efcec68002b" prot="public">
+          <name>XSDataTypeUShort</name>
+          <initializer> 0x03</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>short </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da1a3f9b8773d119d75b17669b359d8402" prot="public">
+          <name>XSDataTypeInt</name>
+          <initializer> 0x04</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>unsigned short </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da98483def28d76a7888366502297b03df" prot="public">
+          <name>XSDataTypeUInt</name>
+          <initializer> 0x05</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>int </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da0ddc1541d88f8d7d756341ea050e72ef" prot="public">
+          <name>XSDataTypeLong</name>
+          <initializer> 0x06</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>unsigned int </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da2df633a330e8992ad59e0a0a19e789ad" prot="public">
+          <name>XSDataTypeULong</name>
+          <initializer> 0x07</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>long </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da70c19810fd0328b2e582278140454722" prot="public">
+          <name>XSDataTypeLongLong</name>
+          <initializer> 0x08</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>unsigned long </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8daf4493c58f0d6d4896d0b1edf8808e6e6" prot="public">
+          <name>XSDataTypeULongLong</name>
+          <initializer> 0x09</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>long long </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da864555ff2324999bf05a954cd63ef3e7" prot="public">
+          <name>XSDataTypeFloat</name>
+          <initializer> 0x0A</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>unsigned long long </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8dafcbb1392218f48e48e7919cb78ecac63" prot="public">
+          <name>XSDataTypeDouble</name>
+          <initializer> 0x0B</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>float </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da13ee8bd97e00bca4bdec686c5d934821" prot="public">
+          <name>XSDataTypeInteger</name>
+          <initializer> 0x0C</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>double </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da7cdce3dc1475b52a5479fcabf813d54c" prot="public">
+          <name>XSDataTypeUInteger</name>
+          <initializer> 0x0D</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>XSInteger </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Intrisec data types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="271" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="270" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="enum" id="XSTypes_8h_1acf810f9ed8d8a86485ab55ea3a879dab" prot="public" static="no">
+        <name>XSOrdered_Enum</name>
+        <enumvalue id="XSTypes_8h_1acf810f9ed8d8a86485ab55ea3a879daba5bd1329f41a03c59c25f9b8015783cf2" prot="public">
+          <name>XSOrderedAscending</name>
+          <initializer> -1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSTypes_8h_1acf810f9ed8d8a86485ab55ea3a879daba66f80a43a37215b9e0f8474e54d878d0" prot="public">
+          <name>XSOrderedSame</name>
+          <initializer> 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Order is ascending </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="XSTypes_8h_1acf810f9ed8d8a86485ab55ea3a879dabaad336742fb9456f021e74ea04c37ef29" prot="public">
+          <name>XSOrderedDescending</name>
+          <initializer> 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Order is same </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for the XSComparisonResult data-type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="254" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="253" bodyend="258"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" prot="public" static="no">
+        <type>signed char</type>
+        <definition>typedef signed char BOOL</definition>
+        <argsstring></argsstring>
+        <name>BOOL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="57" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1adaac7155d04f98cee33773208b61f3f8" prot="public" static="no">
+        <type>unsigned char</type>
+        <definition>typedef unsigned char Boolean</definition>
+        <argsstring></argsstring>
+        <name>Boolean</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="71" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1af0a1b8db4687f6f26de755cb5df768b3" prot="public" static="no">
+        <type><ref refid="XSTypes_8h_1a9b66271558bfa5abc5095791246b540d" kindref="member">UInt8</ref></type>
+        <definition>typedef UInt8 Byte</definition>
+        <argsstring></argsstring>
+        <name>Byte</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="82" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1ae9a3e5feacf2b83dc365b297a613fea1" prot="public" static="no">
+        <type>const unsigned char *</type>
+        <definition>typedef const unsigned char* ConstStr255Param</definition>
+        <argsstring></argsstring>
+        <name>ConstStr255Param</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="89" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a5668e6840af0f3066d0ebe255614126c" prot="public" static="no">
+        <type>const unsigned char *</type>
+        <definition>typedef const unsigned char* ConstStringPtr</definition>
+        <argsstring></argsstring>
+        <name>ConstStringPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="87" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a87d38f886e617ced2698fc55afa07637" prot="public" static="no">
+        <type>float</type>
+        <definition>typedef float Float32</definition>
+        <argsstring></argsstring>
+        <name>Float32</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="80" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a3f1431cb9f76da10f59246d1d743dc2c" prot="public" static="no">
+        <type>double</type>
+        <definition>typedef double Float64</definition>
+        <argsstring></argsstring>
+        <name>Float64</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="81" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a441e1ebb5a254059ef53a427c67f36a7" prot="public" static="no">
+        <type><ref refid="XSTypes_8h_1a4cd0dc7d33ac7a69204e8429ecea0f86" kindref="member">UInt32</ref></type>
+        <definition>typedef UInt32 FourCharCode</definition>
+        <argsstring></argsstring>
+        <name>FourCharCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="90" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a15f6aaa36abfb4a3e50e8c48d7426afc" prot="public" static="no">
+        <type><ref refid="XSTypes_8h_1a8ef590265e1637c30a97cdeb6630e9a3" kindref="member">SInt16</ref></type>
+        <definition>typedef SInt16 OSErr</definition>
+        <argsstring></argsstring>
+        <name>OSErr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="93" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a389e8a167a89832edb1c7f2d0302537c" prot="public" static="no">
+        <type><ref refid="XSTypes_8h_1a10093955472d6638c304d9d9423a5168" kindref="member">SInt32</ref></type>
+        <definition>typedef SInt32 OSStatus</definition>
+        <argsstring></argsstring>
+        <name>OSStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="92" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1aee71aae7a9447dc760f49f55fdd34f3f" prot="public" static="no">
+        <type><ref refid="XSTypes_8h_1a441e1ebb5a254059ef53a427c67f36a7" kindref="member">FourCharCode</ref></type>
+        <definition>typedef FourCharCode OSType</definition>
+        <argsstring></argsstring>
+        <name>OSType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="91" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a806db52c78656b5e75b3d90b65691772" prot="public" static="no">
+        <type><ref refid="XSTypes_8h_1adfdfc7b9490f8944b629654fa47671cd" kindref="member">SInt8</ref></type>
+        <definition>typedef SInt8 SignedByte</definition>
+        <argsstring></argsstring>
+        <name>SignedByte</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="83" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a8ef590265e1637c30a97cdeb6630e9a3" prot="public" static="no">
+        <type>signed short</type>
+        <definition>typedef signed short SInt16</definition>
+        <argsstring></argsstring>
+        <name>SInt16</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="75" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a10093955472d6638c304d9d9423a5168" prot="public" static="no">
+        <type>signed int</type>
+        <definition>typedef signed int SInt32</definition>
+        <argsstring></argsstring>
+        <name>SInt32</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="77" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1ab45d31da6c42607c54bf3420ead9641d" prot="public" static="no">
+        <type>int64_t</type>
+        <definition>typedef int64_t SInt64</definition>
+        <argsstring></argsstring>
+        <name>SInt64</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="79" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1adfdfc7b9490f8944b629654fa47671cd" prot="public" static="no">
+        <type>signed char</type>
+        <definition>typedef signed char SInt8</definition>
+        <argsstring></argsstring>
+        <name>SInt8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="73" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1ae8d29cea6ffaf89a545da4cd8f11f8e0" prot="public" static="no">
+        <type>unsigned char</type>
+        <definition>typedef unsigned char Str255[256]</definition>
+        <argsstring>[256]</argsstring>
+        <name>Str255</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="88" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a511b290632594aef3cde5572cf981f98" prot="public" static="no">
+        <type>unsigned char *</type>
+        <definition>typedef unsigned char* StringPtr</definition>
+        <argsstring></argsstring>
+        <name>StringPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="86" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1accc14a7c843716dfed734f3a03e8d2b6" prot="public" static="no">
+        <type>unsigned short</type>
+        <definition>typedef unsigned short UInt16</definition>
+        <argsstring></argsstring>
+        <name>UInt16</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="74" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a4cd0dc7d33ac7a69204e8429ecea0f86" prot="public" static="no">
+        <type>unsigned int</type>
+        <definition>typedef unsigned int UInt32</definition>
+        <argsstring></argsstring>
+        <name>UInt32</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="76" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1aa288382a207683aa38aca516f6edd66d" prot="public" static="no">
+        <type>uint64_t</type>
+        <definition>typedef uint64_t UInt64</definition>
+        <argsstring></argsstring>
+        <name>UInt64</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="78" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a9b66271558bfa5abc5095791246b540d" prot="public" static="no">
+        <type>unsigned char</type>
+        <definition>typedef unsigned char UInt8</definition>
+        <argsstring></argsstring>
+        <name>UInt8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="72" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a7edf438a3547255847b2b903b1a36aaf" prot="public" static="no">
+        <type>unsigned short</type>
+        <definition>typedef unsigned short UniChar</definition>
+        <argsstring></argsstring>
+        <name>UniChar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="84" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1ad97574873aac4db91dbc1fb774487feb" prot="public" static="no">
+        <type>unsigned long</type>
+        <definition>typedef unsigned long UniCharCount</definition>
+        <argsstring></argsstring>
+        <name>UniCharCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="85" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a8f1cfd50a3e22c9f7290cc4858d09dbd" prot="public" static="no">
+        <type><ref refid="XSTypes_8h_1accc14a7c843716dfed734f3a03e8d2b6" kindref="member">UInt16</ref></type>
+        <definition>typedef UInt16 UTF16Char</definition>
+        <argsstring></argsstring>
+        <name>UTF16Char</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="95" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a0b8f4f31d7210035dbc389e832216f07" prot="public" static="no">
+        <type><ref refid="XSTypes_8h_1a4cd0dc7d33ac7a69204e8429ecea0f86" kindref="member">UInt32</ref></type>
+        <definition>typedef UInt32 UTF32Char</definition>
+        <argsstring></argsstring>
+        <name>UTF32Char</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="96" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1ac3f5aa6f26261b8925c1f56df3fe941e" prot="public" static="no">
+        <type><ref refid="XSTypes_8h_1a9b66271558bfa5abc5095791246b540d" kindref="member">UInt8</ref></type>
+        <definition>typedef UInt8 UTF8Char</definition>
+        <argsstring></argsstring>
+        <name>UTF8Char</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="94" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a6ff77882d9d8991c5ad3f4f1e602436f" prot="public" static="no">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSByteOdrer</definition>
+        <argsstring></argsstring>
+        <name>XSByteOdrer</name>
+        <briefdescription>
+<para>Byte order data type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="247" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a15da511c970cd20e0dcedb0e5db118d2" prot="public" static="no">
+        <type><ref refid="structXSClassInfos" kindref="compound">XSClassInfos</ref> *</type>
+        <definition>XSClass</definition>
+        <argsstring></argsstring>
+        <name>XSClass</name>
+        <briefdescription>
+<para>Polymorphism support - Generic type for all XSFoundation classes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="359" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="359" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1ab697493797a12574d517e2ca17bce7c0" prot="public" static="no">
+        <type>unsigned long</type>
+        <definition>XSClassID</definition>
+        <argsstring></argsstring>
+        <name>XSClassID</name>
+        <briefdescription>
+<para>Type ID foe the registered runtime classes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="305" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a4cd8405a1087c32b26ab999748a29295" prot="public" static="no">
+        <type>struct <ref refid="structXSClassInfos__Struct" kindref="compound">XSClassInfos_Struct</ref></type>
+        <definition>typedef struct XSClassInfos_Struct XSClassInfos</definition>
+        <argsstring></argsstring>
+        <name>XSClassInfos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="336" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="336" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1ac92ef3ceac9e3c679d877c42d03f1628" prot="public" static="no">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSComparisonResult</definition>
+        <argsstring></argsstring>
+        <name>XSComparisonResult</name>
+        <briefdescription>
+<para>Comaprison result data-type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="264" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="264" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a51ac41ff97fa111b1dc0d5a64fdcd8d6" prot="public" static="no">
+        <type>struct <ref refid="structXSEdgeInsets__Struct" kindref="compound">XSEdgeInsets_Struct</ref></type>
+        <definition>XSEdgeInsets</definition>
+        <argsstring></argsstring>
+        <name>XSEdgeInsets</name>
+        <briefdescription>
+<para>Inset distances. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="230" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="230" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" prot="public" static="no">
+        <type>float</type>
+        <definition>typedef float XSFloat</definition>
+        <argsstring></argsstring>
+        <name>XSFloat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="140" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" prot="public" static="no">
+        <type>int</type>
+        <definition>typedef int XSInteger</definition>
+        <argsstring></argsstring>
+        <name>XSInteger</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="128" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" prot="public" static="no">
+        <type>void *</type>
+        <definition>XSObject</definition>
+        <argsstring></argsstring>
+        <name>XSObject</name>
+        <briefdescription>
+<para>Polymorphism support - Generic type for all XSFoundation objects. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="311" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="311" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a7aa6d1904d854d8ae037f462a9ae3d40" prot="public" static="no">
+        <type>struct <ref refid="structXSPoint__Struct" kindref="compound">XSPoint_Struct</ref></type>
+        <definition>XSPoint</definition>
+        <argsstring></argsstring>
+        <name>XSPoint</name>
+        <briefdescription>
+<para>Point data-type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="158" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a23965d7312cc7659a922347e26f5df54" prot="public" static="no">
+        <type>struct <ref refid="structXSRange__Struct" kindref="compound">XSRange_Struct</ref></type>
+        <definition>XSRange</definition>
+        <argsstring></argsstring>
+        <name>XSRange</name>
+        <briefdescription>
+<para>Range data-type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="206" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a82f5dc7a421803c77bfced7f61501aa1" prot="public" static="no">
+        <type>struct <ref refid="structXSRect__Struct" kindref="compound">XSRect_Struct</ref></type>
+        <definition>XSRect</definition>
+        <argsstring></argsstring>
+        <name>XSRect</name>
+        <briefdescription>
+<para>Rectangle data-type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="190" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a393c00ed0b3c9f6b70cf9734388307a9" prot="public" static="no">
+        <type>struct <ref refid="structXSRuntimeClass__Struct" kindref="compound">XSRuntimeClass_Struct</ref></type>
+        <definition>XSRuntimeClass</definition>
+        <argsstring></argsstring>
+        <name>XSRuntimeClass</name>
+        <briefdescription>
+<para>Base type for the runtime classes. </para>        </briefdescription>
+        <detaileddescription>
+<para>This type MUST be the first member of all XSFoundation classes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="353" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="353" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a56751e8de04c43e6390eec408f13f1a5" prot="public" static="no">
+        <type>struct <ref refid="structXSSize__Struct" kindref="compound">XSSize_Struct</ref></type>
+        <definition>XSSize</definition>
+        <argsstring></argsstring>
+        <name>XSSize</name>
+        <briefdescription>
+<para>Size data-type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="174" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" prot="public" static="no">
+        <type>unsigned int</type>
+        <definition>typedef unsigned int XSUInteger</definition>
+        <argsstring></argsstring>
+        <name>XSUInteger</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="134" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>XSFoundation data-types. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt; </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2011,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSTypes.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSFoundation<sp/>data-types</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_XS_TYPES_H_</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_XS_TYPES_H_</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XSMacros_8h" kindref="compound" tooltip="General macros.">XSMacros.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="XSMacros_8h_1ae3fa7c5665557917f34badbe69a55828" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; start.">XS_EXTERN_C_BEGIN</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XSConstants_8h" kindref="compound" tooltip="General constants.">XSConstants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../std/std.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>Boolean<sp/>data-type</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>OBJC_BOOL_DEFINED</highlight></codeline>
+<codeline lineno="54"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#ifndef<sp/>_WIN32</highlight></codeline>
+<codeline lineno="56"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57" refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#endif</highlight></codeline>
+<codeline lineno="60"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61" refid="XSTypes_8h_1a7ebc9a785e5ab85457c98595aac81589" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>YES<sp/>(<sp/>BOOL<sp/>)1</highlight></codeline>
+<codeline lineno="62" refid="XSTypes_8h_1a996bde01ecac342918f0a2c4e7ce7bd5" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>NO<sp/><sp/>(<sp/>BOOL<sp/>)0</highlight></codeline>
+<codeline lineno="63" refid="XSTypes_8h_1a5735ae0c283a2bcf0697b515866b8a52" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>OBJC_BOOL_DEFINED</highlight></codeline>
+<codeline lineno="64"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="66"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/>Standard<sp/>types</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="XSTypes_8h_1adaac7155d04f98cee33773208b61f3f8" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1adaac7155d04f98cee33773208b61f3f8" kindref="member">Boolean</ref>;</highlight></codeline>
+<codeline lineno="72" refid="XSTypes_8h_1a9b66271558bfa5abc5095791246b540d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a9b66271558bfa5abc5095791246b540d" kindref="member">UInt8</ref>;</highlight></codeline>
+<codeline lineno="73" refid="XSTypes_8h_1adfdfc7b9490f8944b629654fa47671cd" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1adfdfc7b9490f8944b629654fa47671cd" kindref="member">SInt8</ref>;</highlight></codeline>
+<codeline lineno="74" refid="XSTypes_8h_1accc14a7c843716dfed734f3a03e8d2b6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1accc14a7c843716dfed734f3a03e8d2b6" kindref="member">UInt16</ref>;</highlight></codeline>
+<codeline lineno="75" refid="XSTypes_8h_1a8ef590265e1637c30a97cdeb6630e9a3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a8ef590265e1637c30a97cdeb6630e9a3" kindref="member">SInt16</ref>;</highlight></codeline>
+<codeline lineno="76" refid="XSTypes_8h_1a4cd0dc7d33ac7a69204e8429ecea0f86" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a4cd0dc7d33ac7a69204e8429ecea0f86" kindref="member">UInt32</ref>;</highlight></codeline>
+<codeline lineno="77" refid="XSTypes_8h_1a10093955472d6638c304d9d9423a5168" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a10093955472d6638c304d9d9423a5168" kindref="member">SInt32</ref>;</highlight></codeline>
+<codeline lineno="78" refid="XSTypes_8h_1aa288382a207683aa38aca516f6edd66d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint64_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1aa288382a207683aa38aca516f6edd66d" kindref="member">UInt64</ref>;</highlight></codeline>
+<codeline lineno="79" refid="XSTypes_8h_1ab45d31da6c42607c54bf3420ead9641d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int64_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab45d31da6c42607c54bf3420ead9641d" kindref="member">SInt64</ref>;</highlight></codeline>
+<codeline lineno="80" refid="XSTypes_8h_1a87d38f886e617ced2698fc55afa07637" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a87d38f886e617ced2698fc55afa07637" kindref="member">Float32</ref>;</highlight></codeline>
+<codeline lineno="81" refid="XSTypes_8h_1a3f1431cb9f76da10f59246d1d743dc2c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a3f1431cb9f76da10f59246d1d743dc2c" kindref="member">Float64</ref>;</highlight></codeline>
+<codeline lineno="82" refid="XSTypes_8h_1af0a1b8db4687f6f26de755cb5df768b3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="XSTypes_8h_1a9b66271558bfa5abc5095791246b540d" kindref="member">UInt8</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1af0a1b8db4687f6f26de755cb5df768b3" kindref="member">Byte</ref>;</highlight></codeline>
+<codeline lineno="83" refid="XSTypes_8h_1a806db52c78656b5e75b3d90b65691772" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="XSTypes_8h_1adfdfc7b9490f8944b629654fa47671cd" kindref="member">SInt8</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a806db52c78656b5e75b3d90b65691772" kindref="member">SignedByte</ref>;</highlight></codeline>
+<codeline lineno="84" refid="XSTypes_8h_1a7edf438a3547255847b2b903b1a36aaf" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a7edf438a3547255847b2b903b1a36aaf" kindref="member">UniChar</ref>;</highlight></codeline>
+<codeline lineno="85" refid="XSTypes_8h_1ad97574873aac4db91dbc1fb774487feb" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ad97574873aac4db91dbc1fb774487feb" kindref="member">UniCharCount</ref>;</highlight></codeline>
+<codeline lineno="86" refid="XSTypes_8h_1a511b290632594aef3cde5572cf981f98" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/><ref refid="XSTypes_8h_1a511b290632594aef3cde5572cf981f98" kindref="member">StringPtr</ref>;</highlight></codeline>
+<codeline lineno="87" refid="XSTypes_8h_1a5668e6840af0f3066d0ebe255614126c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/>*<sp/><ref refid="XSTypes_8h_1a5668e6840af0f3066d0ebe255614126c" kindref="member">ConstStringPtr</ref>;</highlight></codeline>
+<codeline lineno="88" refid="XSTypes_8h_1ae8d29cea6ffaf89a545da4cd8f11f8e0" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ae8d29cea6ffaf89a545da4cd8f11f8e0" kindref="member">Str255</ref>[<sp/>256<sp/>];</highlight></codeline>
+<codeline lineno="89" refid="XSTypes_8h_1ae9a3e5feacf2b83dc365b297a613fea1" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/>*<sp/><ref refid="XSTypes_8h_1ae9a3e5feacf2b83dc365b297a613fea1" kindref="member">ConstStr255Param</ref>;</highlight></codeline>
+<codeline lineno="90" refid="XSTypes_8h_1a441e1ebb5a254059ef53a427c67f36a7" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="XSTypes_8h_1a4cd0dc7d33ac7a69204e8429ecea0f86" kindref="member">UInt32</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a441e1ebb5a254059ef53a427c67f36a7" kindref="member">FourCharCode</ref>;</highlight></codeline>
+<codeline lineno="91" refid="XSTypes_8h_1aee71aae7a9447dc760f49f55fdd34f3f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="XSTypes_8h_1a441e1ebb5a254059ef53a427c67f36a7" kindref="member">FourCharCode</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1aee71aae7a9447dc760f49f55fdd34f3f" kindref="member">OSType</ref>;</highlight></codeline>
+<codeline lineno="92" refid="XSTypes_8h_1a389e8a167a89832edb1c7f2d0302537c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="XSTypes_8h_1a10093955472d6638c304d9d9423a5168" kindref="member">SInt32</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a389e8a167a89832edb1c7f2d0302537c" kindref="member">OSStatus</ref>;</highlight></codeline>
+<codeline lineno="93" refid="XSTypes_8h_1a15f6aaa36abfb4a3e50e8c48d7426afc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="XSTypes_8h_1a8ef590265e1637c30a97cdeb6630e9a3" kindref="member">SInt16</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a15f6aaa36abfb4a3e50e8c48d7426afc" kindref="member">OSErr</ref>;</highlight></codeline>
+<codeline lineno="94" refid="XSTypes_8h_1ac3f5aa6f26261b8925c1f56df3fe941e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="XSTypes_8h_1a9b66271558bfa5abc5095791246b540d" kindref="member">UInt8</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ac3f5aa6f26261b8925c1f56df3fe941e" kindref="member">UTF8Char</ref>;</highlight></codeline>
+<codeline lineno="95" refid="XSTypes_8h_1a8f1cfd50a3e22c9f7290cc4858d09dbd" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="XSTypes_8h_1accc14a7c843716dfed734f3a03e8d2b6" kindref="member">UInt16</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a8f1cfd50a3e22c9f7290cc4858d09dbd" kindref="member">UTF16Char</ref>;</highlight></codeline>
+<codeline lineno="96" refid="XSTypes_8h_1a0b8f4f31d7210035dbc389e832216f07" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="XSTypes_8h_1a4cd0dc7d33ac7a69204e8429ecea0f86" kindref="member">UInt32</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a0b8f4f31d7210035dbc389e832216f07" kindref="member">UTF32Char</ref>;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/>XSFoundation<sp/>types</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>__LP64__</highlight></codeline>
+<codeline lineno="103"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>XSInteger</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>XSUInteger</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref>;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>XSFloat</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref>;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="123"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>XSInteger</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref>;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>XSUInteger</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref>;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/><sp/><sp/><sp/>/*!</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>XSFloat</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref>;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="143"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="144"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/>*<sp/>@struct<sp/><sp/><sp/><sp/><sp/><sp/>XSPoint_Struct</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Point<sp/>data-type<sp/>structure</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="structXSPoint__Struct" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structXSPoint__Struct" kindref="compound" tooltip="Point data-type structure.">XSPoint_Struct</ref></highlight></codeline>
+<codeline lineno="149"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="150" refid="structXSPoint__Struct_1acb926e33db92c0af4ea4f43f67b5b5ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><ref refid="structXSPoint__Struct_1acb926e33db92c0af4ea4f43f67b5b5ee" kindref="member">x</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>X<sp/>coordinate<sp/>of<sp/>the<sp/>point<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151" refid="structXSPoint__Struct_1acf6ce2f547ecfba364b96a61dfe44ef1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><ref refid="structXSPoint__Struct_1acf6ce2f547ecfba364b96a61dfe44ef1" kindref="member">y</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>Y<sp/>coordinate<sp/>of<sp/>the<sp/>point<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="154"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>XSPoint</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Point<sp/>data-type</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="XSTypes_8h_1a7aa6d1904d854d8ae037f462a9ae3d40" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structXSPoint__Struct" kindref="compound" tooltip="Point data-type structure.">XSPoint_Struct</ref><sp/><ref refid="structXSPoint__Struct" kindref="compound" tooltip="Point data-type structure.">XSPoint</ref>;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="160"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/>*<sp/>@struct<sp/><sp/><sp/><sp/><sp/><sp/>XSSize_Struct</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Size<sp/>data-type<sp/>structure</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="structXSSize__Struct" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structXSSize__Struct" kindref="compound" tooltip="Size data-type structure.">XSSize_Struct</ref></highlight></codeline>
+<codeline lineno="165"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="166" refid="structXSSize__Struct_1aeda2797bdbf23b84e91612180528ceca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><ref refid="structXSSize__Struct_1aeda2797bdbf23b84e91612180528ceca" kindref="member">width</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>width<sp/>of<sp/>the<sp/>size<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167" refid="structXSSize__Struct_1a9070c93a61c1e1d6827e706524682ffe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><ref refid="structXSSize__Struct_1a9070c93a61c1e1d6827e706524682ffe" kindref="member">height</ref>;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>height<sp/>of<sp/>the<sp/>size<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="170"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="171"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>XSSize</highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Size<sp/>data-type</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174" refid="XSTypes_8h_1a56751e8de04c43e6390eec408f13f1a5" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structXSSize__Struct" kindref="compound" tooltip="Size data-type structure.">XSSize_Struct</ref><sp/><ref refid="structXSSize__Struct" kindref="compound" tooltip="Size data-type structure.">XSSize</ref>;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="176"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/>*<sp/>@struct<sp/><sp/><sp/><sp/><sp/><sp/>XSRect_Struct</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rectangle<sp/>data-type<sp/>structure</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180" refid="structXSRect__Struct" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structXSRect__Struct" kindref="compound" tooltip="Rectangle data-type structure.">XSRect_Struct</ref></highlight></codeline>
+<codeline lineno="181"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="182" refid="structXSRect__Struct_1ab7e5ff95d4ba4d2cb8986d5561b9b2f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structXSPoint__Struct" kindref="compound" tooltip="Point data-type structure.">XSPoint</ref><sp/><ref refid="structXSRect__Struct_1ab7e5ff95d4ba4d2cb8986d5561b9b2f2" kindref="member">origin</ref>;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>origin<sp/>point<sp/>of<sp/>the<sp/>rectangle<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="structXSRect__Struct_1ad9f352485f48f8e54a661af6cbd740b7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structXSSize__Struct" kindref="compound" tooltip="Size data-type structure.">XSSize</ref><sp/><sp/><ref refid="structXSRect__Struct_1ad9f352485f48f8e54a661af6cbd740b7" kindref="member">size</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>size<sp/>of<sp/>the<sp/>rectangle<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="186"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="187"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>XSRect</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rectangle<sp/>data-type</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190" refid="XSTypes_8h_1a82f5dc7a421803c77bfced7f61501aa1" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structXSRect__Struct" kindref="compound" tooltip="Rectangle data-type structure.">XSRect_Struct</ref><sp/><ref refid="structXSRect__Struct" kindref="compound" tooltip="Rectangle data-type structure.">XSRect</ref>;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="192"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="193"><highlight class="comment"><sp/>*<sp/>@struct<sp/><sp/><sp/><sp/><sp/><sp/>XSRange_Struct<sp/></highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Range<sp/>data-type<sp/>structure</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196" refid="structXSRange__Struct" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structXSRange__Struct" kindref="compound" tooltip="Range data-type structure.">XSRange_Struct</ref></highlight></codeline>
+<codeline lineno="197"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="198" refid="structXSRange__Struct_1af60637eaf3ca98ac15f9f87cc49c706a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref><sp/><ref refid="structXSRange__Struct_1af60637eaf3ca98ac15f9f87cc49c706a" kindref="member">location</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>start<sp/>of<sp/>the<sp/>range<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199" refid="structXSRange__Struct_1a6cb4efdc31759e950e73e02573a0618d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref><sp/><ref refid="structXSRange__Struct_1a6cb4efdc31759e950e73e02573a0618d" kindref="member">length</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>length<sp/>of<sp/>the<sp/>range<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="202"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="203"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>XSRange<sp/></highlight></codeline>
+<codeline lineno="204"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Range<sp/>data-type<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="205"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206" refid="XSTypes_8h_1a23965d7312cc7659a922347e26f5df54" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structXSRange__Struct" kindref="compound" tooltip="Range data-type structure.">XSRange_Struct</ref><sp/><ref refid="structXSRange__Struct" kindref="compound" tooltip="Range data-type structure.">XSRange</ref>;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="208"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="209"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSUIntegerMax</highlight></codeline>
+<codeline lineno="210"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Not<sp/>found<sp/>value<sp/>for<sp/>the<sp/>XSRange.location<sp/>field</highlight></codeline>
+<codeline lineno="211"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212" refid="XSTypes_8h_1ab3eddb7fadb44086af34b5bfc1aab33b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XSNotFound<sp/>XSUIntegerMax</highlight></codeline>
+<codeline lineno="213"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="214"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="215"><highlight class="comment"><sp/>*<sp/>@struct<sp/><sp/><sp/><sp/><sp/><sp/>XSEdgeInsets_Struct<sp/></highlight></codeline>
+<codeline lineno="216"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Inset<sp/>distances<sp/>structure</highlight></codeline>
+<codeline lineno="217"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218" refid="structXSEdgeInsets__Struct" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structXSEdgeInsets__Struct" kindref="compound" tooltip="Inset distances structure.">XSEdgeInsets_Struct</ref></highlight></codeline>
+<codeline lineno="219"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="220" refid="structXSEdgeInsets__Struct_1a77927913f6419a91c0e013cc6c5cee9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><ref refid="structXSEdgeInsets__Struct_1a77927913f6419a91c0e013cc6c5cee9e" kindref="member">left</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>left<sp/>coordinate<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221" refid="structXSEdgeInsets__Struct_1ae1d4db82b45c5ab4e7c45f359b6d508d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><ref refid="structXSEdgeInsets__Struct_1ae1d4db82b45c5ab4e7c45f359b6d508d" kindref="member">top</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>top<sp/>coordiante<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222" refid="structXSEdgeInsets__Struct_1aaa2c643b80d0421cdde92b6671e9d4c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><ref refid="structXSEdgeInsets__Struct_1aaa2c643b80d0421cdde92b6671e9d4c0" kindref="member">right</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>right<sp/>coordinate<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223" refid="structXSEdgeInsets__Struct_1a53ae59181c3e5e172e31e0d997f72367" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><ref refid="structXSEdgeInsets__Struct_1a53ae59181c3e5e172e31e0d997f72367" kindref="member">bottom</ref>;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>bottom<sp/>coordinate<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="226"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="227"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>XSEdgeInsets<sp/></highlight></codeline>
+<codeline lineno="228"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Inset<sp/>distances</highlight></codeline>
+<codeline lineno="229"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230" refid="XSTypes_8h_1a51ac41ff97fa111b1dc0d5a64fdcd8d6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structXSEdgeInsets__Struct" kindref="compound" tooltip="Inset distances structure.">XSEdgeInsets_Struct</ref><sp/><ref refid="structXSEdgeInsets__Struct" kindref="compound" tooltip="Inset distances structure.">XSEdgeInsets</ref>;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="232"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="233"><highlight class="comment"><sp/>*<sp/>@enum<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSByteOrder_Enum</highlight></codeline>
+<codeline lineno="234"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Byte-order<sp/>data-type<sp/>enumeration</highlight></codeline>
+<codeline lineno="235"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236" refid="XSTypes_8h_1a2696b828bf310e1027e2049ce5db2386" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="XSTypes_8h_1a2696b828bf310e1027e2049ce5db2386" kindref="member" tooltip="Byte-order data-type enumeration.">XSByteOrder_Enum</ref></highlight></codeline>
+<codeline lineno="237"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="238" refid="XSTypes_8h_1a2696b828bf310e1027e2049ce5db2386aa0dbcae3ae2cbe6f5ab0dd9a710c5755" refkind="member"><highlight class="normal"><sp/><sp/><sp/><ref refid="XSTypes_8h_1a2696b828bf310e1027e2049ce5db2386aa0dbcae3ae2cbe6f5ab0dd9a710c5755" kindref="member">XS_UnknownByteOrder</ref><sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>Unknown<sp/>byte<sp/>order<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239" refid="XSTypes_8h_1a2696b828bf310e1027e2049ce5db2386a704d8827ce6fea0e8ee86a34a338d508" refkind="member"><highlight class="normal"><sp/><sp/><sp/><ref refid="XSTypes_8h_1a2696b828bf310e1027e2049ce5db2386a704d8827ce6fea0e8ee86a34a338d508" kindref="member">XS_LittleEndian</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>1,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>Little<sp/>endian<sp/>byte<sp/>order<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240" refid="XSTypes_8h_1a2696b828bf310e1027e2049ce5db2386afeba20986045608e3608b7082e39938b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><ref refid="XSTypes_8h_1a2696b828bf310e1027e2049ce5db2386afeba20986045608e3608b7082e39938b" kindref="member">XS_BigEndian</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>2<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>Big<sp/>endian<sp/>byte<sp/>order<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="243"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="244"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>XSByteOdrer</highlight></codeline>
+<codeline lineno="245"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Byte<sp/>order<sp/>data<sp/>type</highlight></codeline>
+<codeline lineno="246"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247" refid="XSTypes_8h_1a6ff77882d9d8991c5ad3f4f1e602436f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSTypes_8h_1a6ff77882d9d8991c5ad3f4f1e602436f" kindref="member" tooltip="Byte order data type.">XSByteOdrer</ref>;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="249"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="250"><highlight class="comment"><sp/>*<sp/>@enum<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSOrdered_Enum</highlight></codeline>
+<codeline lineno="251"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Enumeration<sp/>for<sp/>the<sp/>XSComparisonResult<sp/>data-type<sp/></highlight></codeline>
+<codeline lineno="252"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253" refid="XSTypes_8h_1acf810f9ed8d8a86485ab55ea3a879dab" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="XSTypes_8h_1acf810f9ed8d8a86485ab55ea3a879dab" kindref="member" tooltip="Enumeration for the XSComparisonResult data-type.">XSOrdered_Enum</ref></highlight></codeline>
+<codeline lineno="254"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="255" refid="XSTypes_8h_1acf810f9ed8d8a86485ab55ea3a879daba5bd1329f41a03c59c25f9b8015783cf2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><ref refid="XSTypes_8h_1acf810f9ed8d8a86485ab55ea3a879daba5bd1329f41a03c59c25f9b8015783cf2" kindref="member">XSOrderedAscending</ref><sp/><sp/>=<sp/>-1,<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>Order<sp/>is<sp/>ascending<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256" refid="XSTypes_8h_1acf810f9ed8d8a86485ab55ea3a879daba66f80a43a37215b9e0f8474e54d878d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><ref refid="XSTypes_8h_1acf810f9ed8d8a86485ab55ea3a879daba66f80a43a37215b9e0f8474e54d878d0" kindref="member">XSOrderedSame</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>Order<sp/>is<sp/>same<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257" refid="XSTypes_8h_1acf810f9ed8d8a86485ab55ea3a879dabaad336742fb9456f021e74ea04c37ef29" refkind="member"><highlight class="normal"><sp/><sp/><sp/><ref refid="XSTypes_8h_1acf810f9ed8d8a86485ab55ea3a879dabaad336742fb9456f021e74ea04c37ef29" kindref="member">XSOrderedDescending</ref><sp/>=<sp/>1<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>Order<sp/>is<sp/>descending<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="260"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="261"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>XSComparisonResult</highlight></codeline>
+<codeline lineno="262"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Comaprison<sp/>result<sp/>data-type</highlight></codeline>
+<codeline lineno="263"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264" refid="XSTypes_8h_1ac92ef3ceac9e3c679d877c42d03f1628" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref><sp/><ref refid="XSTypes_8h_1ac92ef3ceac9e3c679d877c42d03f1628" kindref="member" tooltip="Comaprison result data-type.">XSComparisonResult</ref>;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="266"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="267"><highlight class="comment"><sp/>*<sp/>@enum<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSDataType</highlight></codeline>
+<codeline lineno="268"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Intrisec<sp/>data<sp/>types<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="269"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270" refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="272" refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da3ed3ecd063d87580a109f3cdb7703cf4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da3ed3ecd063d87580a109f3cdb7703cf4" kindref="member">XSDataTypeChar</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>char<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273" refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8dab182b8038711c2312b99b38d1b86035d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8dab182b8038711c2312b99b38d1b86035d" kindref="member">XSDataTypeUChar</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x01,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>unsigned<sp/>char<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274" refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8dae0b7316d56f271a16403761165f0a3ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8dae0b7316d56f271a16403761165f0a3ea" kindref="member">XSDataTypeShort</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x02,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>short<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275" refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8daf0ca26373e45eb5ef7bc1efcec68002b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8daf0ca26373e45eb5ef7bc1efcec68002b" kindref="member">XSDataTypeUShort</ref><sp/><sp/><sp/><sp/>=<sp/>0x03,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>unsigned<sp/>short<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276" refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da1a3f9b8773d119d75b17669b359d8402" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da1a3f9b8773d119d75b17669b359d8402" kindref="member">XSDataTypeInt</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x04,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>int<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277" refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da98483def28d76a7888366502297b03df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da98483def28d76a7888366502297b03df" kindref="member">XSDataTypeUInt</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x05,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>unsigned<sp/>int<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278" refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da0ddc1541d88f8d7d756341ea050e72ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da0ddc1541d88f8d7d756341ea050e72ef" kindref="member">XSDataTypeLong</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x06,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>long<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279" refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da2df633a330e8992ad59e0a0a19e789ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da2df633a330e8992ad59e0a0a19e789ad" kindref="member">XSDataTypeULong</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x07,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>unsigned<sp/>long<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280" refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da70c19810fd0328b2e582278140454722" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da70c19810fd0328b2e582278140454722" kindref="member">XSDataTypeLongLong</ref><sp/><sp/>=<sp/>0x08,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>long<sp/>long<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281" refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8daf4493c58f0d6d4896d0b1edf8808e6e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8daf4493c58f0d6d4896d0b1edf8808e6e6" kindref="member">XSDataTypeULongLong</ref><sp/>=<sp/>0x09,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>unsigned<sp/>long<sp/>long<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282" refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da864555ff2324999bf05a954cd63ef3e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da864555ff2324999bf05a954cd63ef3e7" kindref="member">XSDataTypeFloat</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x0A,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>float<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283" refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8dafcbb1392218f48e48e7919cb78ecac63" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8dafcbb1392218f48e48e7919cb78ecac63" kindref="member">XSDataTypeDouble</ref><sp/><sp/><sp/><sp/>=<sp/>0x0B,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>double<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284" refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da13ee8bd97e00bca4bdec686c5d934821" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da13ee8bd97e00bca4bdec686c5d934821" kindref="member">XSDataTypeInteger</ref><sp/><sp/><sp/>=<sp/>0x0C,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>XSInteger<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285" refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da7cdce3dc1475b52a5479fcabf813d54c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8da7cdce3dc1475b52a5479fcabf813d54c" kindref="member">XSDataTypeUInteger</ref><sp/><sp/>=<sp/>0x0D<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>XSUInteger<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><ref refid="XSTypes_8h_1ac6719fa9e30f05e9fee73652fde7bf8d" kindref="member" tooltip="Intrisec data types.">XSDataType</ref>;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="289"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="290"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSStatic</highlight></codeline>
+<codeline lineno="291"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Marker<sp/>for<sp/>static<sp/>class<sp/>methods</highlight></codeline>
+<codeline lineno="292"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293" refid="XSTypes_8h_1a3310ef0367fe9a2e896f4b92ea6efe9a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XSStatic<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="294"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="295"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="296"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSAutoreleased</highlight></codeline>
+<codeline lineno="297"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Marker<sp/>for<sp/>methods<sp/>that<sp/>return<sp/>auto-released<sp/>objects</highlight></codeline>
+<codeline lineno="298"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299" refid="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XSAutoreleased<sp/><sp/></highlight></codeline>
+<codeline lineno="300"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="301"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="302"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>XSClassID</highlight></codeline>
+<codeline lineno="303"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Type<sp/>ID<sp/>foe<sp/>the<sp/>registered<sp/>runtime<sp/>classes</highlight></codeline>
+<codeline lineno="304"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305" refid="XSTypes_8h_1ab697493797a12574d517e2ca17bce7c0" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="XSTypes_8h_1ab697493797a12574d517e2ca17bce7c0" kindref="member" tooltip="Type ID foe the registered runtime classes.">XSClassID</ref>;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="307"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="308"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>XSObject</highlight></codeline>
+<codeline lineno="309"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Polymorphism<sp/>support<sp/>-<sp/>Generic<sp/>type<sp/>for<sp/>all<sp/>XSFoundation<sp/>objects</highlight></codeline>
+<codeline lineno="310"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="311" refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref>;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>XSString<sp/>is<sp/>required<sp/>here<sp/>as<sp/>the<sp/>objects<sp/>description<sp/>callbacks<sp/>use<sp/>that<sp/>type<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XSString_8h" kindref="compound" tooltip="XSString class functions.">XSString.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="316"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="317"><highlight class="comment"><sp/>*<sp/>@struct<sp/><sp/><sp/><sp/><sp/><sp/>XSClassInfos_Struct</highlight></codeline>
+<codeline lineno="318"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSFoundation<sp/>runtime<sp/>class<sp/>structure</highlight></codeline>
+<codeline lineno="319"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="320" refid="structXSClassInfos__Struct" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structXSClassInfos__Struct" kindref="compound" tooltip="XSFoundation runtime class structure.">XSClassInfos_Struct</ref></highlight></codeline>
+<codeline lineno="321"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="322" refid="structXSClassInfos__Struct_1adeda007866512b2d5c20350ff454b3da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="structXSClassInfos__Struct_1adeda007866512b2d5c20350ff454b3da" kindref="member">className</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>name<sp/>of<sp/>the<sp/>class<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="323" refid="structXSClassInfos__Struct_1aaad2b4cb6484fb268fd181f11e94f28d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structXSClassInfos__Struct_1aaad2b4cb6484fb268fd181f11e94f28d" kindref="member">instanceSize</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>size<sp/>of<sp/>the<sp/>class<sp/>instances<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324" refid="structXSClassInfos__Struct_1ac3bb7f3f9111999f536090f09e429678" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/>*<sp/><ref refid="structXSClassInfos__Struct_1ac3bb7f3f9111999f536090f09e429678" kindref="member">construct</ref><sp/>)(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>object<sp/>);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>class<sp/>constructor<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="325" refid="structXSClassInfos__Struct_1a71d93678475f3deef2e430f41b067b23" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/>*<sp/><ref refid="structXSClassInfos__Struct_1a71d93678475f3deef2e430f41b067b23" kindref="member">destruct</ref><sp/><sp/>)(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>object<sp/>);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>class<sp/>destructor<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="326" refid="structXSClassInfos__Struct_1a3308aeb642b06562abdb1f24420832ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><sp/><sp/><sp/><sp/>(<sp/>*<sp/><ref refid="structXSClassInfos__Struct_1a3308aeb642b06562abdb1f24420832ed" kindref="member">init</ref><sp/><sp/><sp/><sp/><sp/><sp/>)(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>object<sp/>);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>default<sp/>object<sp/>initializer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="327" refid="structXSClassInfos__Struct_1a7ad29d10e07365a215ed0927b064029c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/>*<sp/><ref refid="structXSClassInfos__Struct_1a7ad29d10e07365a215ed0927b064029c" kindref="member">copy</ref><sp/><sp/><sp/><sp/><sp/><sp/>)(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>source,<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>destination<sp/>);<sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>object&apos;s<sp/>copy<sp/>callback<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="328" refid="structXSClassInfos__Struct_1a053086735b4252c851fdfecf903d0336" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSString_8h_1ac40d6db58dd7e8d1846af120e2f5186e" kindref="member" tooltip="Opaque type for the XSString objects.">XSString</ref><sp/><sp/><sp/><sp/><sp/>(<sp/>*<sp/><ref refid="structXSClassInfos__Struct_1a053086735b4252c851fdfecf903d0336" kindref="member">toString</ref><sp/><sp/>)(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>object<sp/>);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>object&apos;s<sp/>description<sp/>callback<sp/>(used<sp/>in<sp/>XSLog)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="329" refid="structXSClassInfos__Struct_1ae3255663a4edc7e90eef9df466a0639f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/>*<sp/><ref refid="structXSClassInfos__Struct_1ae3255663a4edc7e90eef9df466a0639f" kindref="member">equals</ref><sp/><sp/><sp/><sp/>)(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>object1,<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>object2<sp/>);<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>object&apos;s<sp/>comparison<sp/>callback<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="332"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="333"><highlight class="comment"><sp/>*<sp/>@struct<sp/><sp/><sp/><sp/><sp/><sp/>XSClassInfos</highlight></codeline>
+<codeline lineno="334"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSFoundation<sp/>runtime<sp/>class<sp/>type</highlight></codeline>
+<codeline lineno="335"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="336" refid="XSTypes_8h_1a4cd8405a1087c32b26ab999748a29295" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structXSClassInfos__Struct" kindref="compound" tooltip="XSFoundation runtime class structure.">XSClassInfos_Struct</ref><sp/><ref refid="structXSClassInfos" kindref="compound" tooltip="XSFoundation runtime class type.">XSClassInfos</ref>;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="338"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="339"><highlight class="comment"><sp/>*<sp/>@struct<sp/><sp/><sp/><sp/><sp/><sp/>XSRuntimeClass_Struct</highlight></codeline>
+<codeline lineno="340"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Base<sp/>structure<sp/>for<sp/>the<sp/>runtime<sp/>classes</highlight></codeline>
+<codeline lineno="341"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="342" refid="structXSRuntimeClass__Struct" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structXSRuntimeClass__Struct" kindref="compound" tooltip="Base structure for the runtime classes.">XSRuntimeClass_Struct</ref></highlight></codeline>
+<codeline lineno="343"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="344" refid="structXSRuntimeClass__Struct_1a8beb3736efe8a036693d0a575c3ff4f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structXSClassInfos" kindref="compound" tooltip="XSFoundation runtime class type.">XSClassInfos</ref><sp/>*<sp/><ref refid="structXSRuntimeClass__Struct_1a8beb3736efe8a036693d0a575c3ff4f0" kindref="member">classInfos</ref>;<sp/><sp/></highlight><highlight class="comment">/*!<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>class<sp/>structure<sp/>for<sp/>the<sp/>object<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="347"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="348"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>XSRuntimeClass</highlight></codeline>
+<codeline lineno="349"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Base<sp/>type<sp/>for<sp/>the<sp/>runtime<sp/>classes</highlight></codeline>
+<codeline lineno="350"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>This<sp/>type<sp/>MUST<sp/>be<sp/>the<sp/>first<sp/>member<sp/>of<sp/>all<sp/>XSFoundation</highlight></codeline>
+<codeline lineno="351"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>classes.</highlight></codeline>
+<codeline lineno="352"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="353" refid="XSTypes_8h_1a393c00ed0b3c9f6b70cf9734388307a9" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structXSRuntimeClass__Struct" kindref="compound" tooltip="Base structure for the runtime classes.">XSRuntimeClass_Struct</ref><sp/><ref refid="structXSRuntimeClass__Struct" kindref="compound" tooltip="Base structure for the runtime classes.">XSRuntimeClass</ref>;</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="355"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="356"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>XSClass</highlight></codeline>
+<codeline lineno="357"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Polymorphism<sp/>support<sp/>-<sp/>Generic<sp/>type<sp/>for<sp/>all<sp/>XSFoundation<sp/>classes</highlight></codeline>
+<codeline lineno="358"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="359" refid="XSTypes_8h_1a15da511c970cd20e0dcedb0e5db118d2" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="structXSClassInfos" kindref="compound" tooltip="XSFoundation runtime class type.">XSClassInfos</ref><sp/>*<sp/><ref refid="XSTypes_8h_1a15da511c970cd20e0dcedb0e5db118d2" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation classes.">XSClass</ref>;</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="361"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="362"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nil</highlight></codeline>
+<codeline lineno="363"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>NULL<sp/>pointer<sp/>for<sp/>the<sp/>&apos;XSObject&apos;<sp/>type</highlight></codeline>
+<codeline lineno="364"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="365" refid="XSTypes_8h_1a7a7ca81d2a85873283b5ec82953b1b25" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>nil<sp/>(<sp/>XSObject<sp/>)0</highlight></codeline>
+<codeline lineno="366"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="367"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="368"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Nil</highlight></codeline>
+<codeline lineno="369"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>NULL<sp/>pointer<sp/>for<sp/>the<sp/>&apos;XSClass&apos;<sp/>type</highlight></codeline>
+<codeline lineno="370"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="371" refid="XSTypes_8h_1ae3b89c60b6c464ce16be3640106365f7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Nil<sp/>(<sp/>XSClass<sp/>)0</highlight></codeline>
+<codeline lineno="372"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><ref refid="XSMacros_8h_1a35fa049fa034476400f574516968a3a2" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; end.">XS_EXTERN_C_END</ref></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_XS_TYPES_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h"/>
+  </compounddef>
+</doxygen>

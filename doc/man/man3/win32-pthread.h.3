@@ -1,0 +1,228 @@
+.TH "win32-pthread.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+win32-pthread.h \- 
+.PP
+POSIX thread functions for Windows.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdint.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBpthread_attr_t_struct\fP"
+.br
+.RI "\fIThread attribute structure. \fP"
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBPTHREAD_MUTEX_INITIALIZER\fP   0"
+.br
+.RI "\fIInitializes a static mutex with default attributes. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBpthread_attr_t_struct\fP \fBpthread_attr_t\fP"
+.br
+.RI "\fIThread attribute type. \fP"
+.ti -1c
+.RI "typedef HANDLE \fBpthread_mutex_t\fP"
+.br
+.RI "\fIUsed to identify a thread mutex. \fP"
+.ti -1c
+.RI "typedef uint64_t \fBpthread_mutexattr_t\fP"
+.br
+.RI "\fIUsed to identify a thread mutex attribute. \fP"
+.ti -1c
+.RI "typedef uint32_t \fBpthread_t\fP"
+.br
+.RI "\fIUsed to identify a thread. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBpthread_exit\fP (void *value_ptr)"
+.br
+.RI "\fITerminates the calling thread and makes the value value_ptr available to any successful join with the terminating thread. \fP"
+.ti -1c
+.RI "int \fBpthread_mutex_destroy\fP (\fBpthread_mutex_t\fP *mutex)"
+.br
+.RI "\fIDestroys the mutex object referenced by mutex. \fP"
+.ti -1c
+.RI "int \fBpthread_mutex_init\fP (\fBpthread_mutex_t\fP *mutex, const \fBpthread_mutexattr_t\fP *attr)"
+.br
+.RI "\fIInitialises the mutex referenced by mutex with attributes specified by attr. \fP"
+.ti -1c
+.RI "int \fBpthread_mutex_lock\fP (\fBpthread_mutex_t\fP *mutex)"
+.br
+.RI "\fILocks a mutex. \fP"
+.ti -1c
+.RI "int \fBpthread_mutex_trylock\fP (\fBpthread_mutex_t\fP *mutex)"
+.br
+.RI "\fITries to lock a mutex. \fP"
+.ti -1c
+.RI "int \fBpthread_mutex_unlock\fP (\fBpthread_mutex_t\fP *mutex)"
+.br
+.RI "\fIReleases the mutex object referenced by mutex. \fP"
+.ti -1c
+.RI "\fBpthread_t\fP \fBpthread_self\fP (void)"
+.br
+.RI "\fIReturns the thread ID of the calling thread. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+POSIX thread functions for Windows. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBwin32-pthread.h\fP.
+.SH "Define Documentation"
+.PP 
+.SS "#define PTHREAD_MUTEX_INITIALIZER   0"
+.PP
+Initializes a static mutex with default attributes. 
+.PP
+Definition at line 87 of file win32-pthread.h.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBpthread_attr_t\fP"
+.PP
+Thread attribute type. 
+.PP
+Definition at line 81 of file win32-pthread.h.
+.SS "\fBpthread_mutex_t\fP"
+.PP
+Used to identify a thread mutex. 
+.PP
+Definition at line 58 of file win32-pthread.h.
+.SS "\fBpthread_mutexattr_t\fP"
+.PP
+Used to identify a thread mutex attribute. 
+.PP
+Definition at line 64 of file win32-pthread.h.
+.SS "\fBpthread_t\fP"
+.PP
+Used to identify a thread. 
+.PP
+Definition at line 52 of file win32-pthread.h.
+.SH "Function Documentation"
+.PP 
+.SS "void pthread_exit (void *value_ptr)"
+.PP
+Terminates the calling thread and makes the value value_ptr available to any successful join with the terminating thread. Any cancellation cleanup handlers that have been pushed and not yet popped are popped in the reverse order that they were pushed and then executed. After all cancellation cleanup handlers have been executed, if the thread has any thread-specific data, appropriate destructor functions will be called in an unspecified order. Thread termination does not release any application visible process resources, including, but not limited to, mutexes and file descriptors, nor does it perform any process level cleanup actions, including, but not limited to, calling any atexit() routines that may exist. An implicit call to \fBpthread_exit()\fP is made when a thread other than the thread in which main() was first invoked returns from the start routine that was used to create it. The function's return value serves as the thread's exit status. The behaviour of \fBpthread_exit()\fP is undefined if called from a cancellation cleanup handler or destructor function that was invoked as a result of either an implicit or explicit call to \fBpthread_exit()\fP. After a thread has terminated, the result of access to local (auto) variables of the thread is undefined. Thus, references to local variables of the exiting thread should not be used for the \fBpthread_exit()\fP value_ptr parameter value. The process exits with an exit status of 0 after the last thread has been terminated. The behaviour is as if the implementation called exit() with a zero argument at thread termination time. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue_ptr\fP The thread return value 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "int pthread_mutex_destroy (\fBpthread_mutex_t\fP *mutex)"
+.PP
+Destroys the mutex object referenced by mutex. The mutex object becomes, in effect, uninitialised. An implementation may cause \fBpthread_mutex_destroy()\fP to set the object referenced by mutex to an invalid value. A destroyed mutex object can be re-initialised using \fBpthread_mutex_init()\fP; the results of otherwise referencing the object after it has been destroyed are undefined. It is safe to destroy an initialised mutex that is unlocked. Attempting to destroy a locked mutex results in undefined behaviour. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImutex\fP The mutex 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Zero on success, otherwise an error number 
+.RE
+.PP
+
+.SS "int pthread_mutex_init (\fBpthread_mutex_t\fP *mutex, const \fBpthread_mutexattr_t\fP *attr)"
+.PP
+Initialises the mutex referenced by mutex with attributes specified by attr. If attr is NULL, the default mutex attributes are used; the effect is the same as passing the address of a default mutex attributes object. Upon successful initialisation, the state of the mutex becomes initialised and unlocked. Attempting to initialise an already initialised mutex results in undefined behaviour. In cases where default mutex attributes are appropriate, the macro PTHREAD_MUTEX_INITIALIZER can be used to initialise mutexes that are statically allocated. The effect is equivalent to dynamic initialisation by a call to \fBpthread_mutex_init()\fP with parameter attr specified as NULL, except that no error checks are performed. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImutex\fP The mutex 
+.br
+\fIattr\fP The mutex attributes 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Zero on success, otherwise an error number 
+.RE
+.PP
+
+.SS "int pthread_mutex_lock (\fBpthread_mutex_t\fP *mutex)"
+.PP
+Locks a mutex. If the mutex is already locked, the calling thread blocks until the mutex becomes available. This operation returns with the mutex object referenced by mutex in the locked state with the calling thread as its owner. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImutex\fP The mutex 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Zero on success, otherwise an error number 
+.RE
+.PP
+
+.SS "int pthread_mutex_trylock (\fBpthread_mutex_t\fP *mutex)"
+.PP
+Tries to lock a mutex. Identical to \fBpthread_mutex_lock()\fP except that if the mutex object referenced by mutex is currently locked (by any thread, including the current thread), the call returns immediately. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImutex\fP The mutex 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Zero on success, otherwise an error number 
+.RE
+.PP
+
+.SS "int pthread_mutex_unlock (\fBpthread_mutex_t\fP *mutex)"
+.PP
+Releases the mutex object referenced by mutex. The manner in which a mutex is released is dependent upon the mutex's type attribute. If there are threads blocked on the mutex object referenced by mutex when \fBpthread_mutex_unlock()\fP is called, resulting in the mutex becoming available, the scheduling policy is used to determine which thread shall acquire the mutex. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImutex\fP The mutex 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Zero on success, otherwise an error number 
+.RE
+.PP
+
+.SS "\fBpthread_t\fP pthread_self (void)"
+.PP
+Returns the thread ID of the calling thread. \fBReturns:\fP
+.RS 4
+The thread ID 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

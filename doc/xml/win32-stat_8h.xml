@@ -1,0 +1,509 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="win32-stat_8h" kind="file">
+    <compoundname>win32-stat.h</compoundname>
+    <includedby refid="win32_8h" local="yes">win32.h</includedby>
+    <invincdepgraph>
+      <node id="6592">
+        <label>win32.h</label>
+        <link refid="win32_8h"/>
+      </node>
+      <node id="6591">
+        <label>win32-stat.h</label>
+        <link refid="win32-stat.h"/>
+        <childnode refid="6592" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="win32-stat_8h_1a5c5b74a1cb1a1ae83572500b94e1938f" prot="public" static="no">
+        <name>S_IFBLK</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Block special. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="56" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1aef3a1d1ba22c83e30b5c834dd343b2a8" prot="public" static="no">
+        <name>S_IFCHR</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Character special. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="62" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1a11fb0652b963a735f3377eb1c9239f2d" prot="public" static="no">
+        <name>S_IFDIR</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Directory. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="68" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1a4966f25d9f03a7a06bc47ac729fd86cf" prot="public" static="no">
+        <name>S_IFIFO</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>FIFO special. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="74" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1afef163ce62372757e84bd9fc88c07aad" prot="public" static="no">
+        <name>S_IFLNK</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Symbolic link. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="86" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1ab5bee51e9ee68b83ab11d4b340f7200b" prot="public" static="no">
+        <name>S_IFMT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Type of file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="50" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1a1aaa48b192a5dd3b6d7ee91fc98cd17d" prot="public" static="no">
+        <name>S_IFREG</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Regular. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="80" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1a28e80cd43106882904be148b2a397d42" prot="public" static="no">
+        <name>S_IFSOCK</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Socket. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="92" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1a4f5f280b929768113739fb34d6f7be8a" prot="public" static="no">
+        <name>S_IRGRP</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Read permission, group. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="128" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1a071147a0cb995036967c80f64b1f74b9" prot="public" static="no">
+        <name>S_IROTH</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Read permission, others. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="151" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1a84c7dbf5cf2fdfb690f76348b60a8cb7" prot="public" static="no">
+        <name>S_IRUSR</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Read permission, owner. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="104" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1a230c642d2bb81f15f85c122b1883de5c" prot="public" static="no">
+        <name>S_IRWXG</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Read, write, execute/search by group. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="122" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1a5b93e0da7fe32bbd4926626bffad96b1" prot="public" static="no">
+        <name>S_IRWXO</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Read, write, execute/search by others. </para>        </briefdescription>
+        <detaileddescription>
+<para>Write permission, others. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="145" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1a5b93e0da7fe32bbd4926626bffad96b1" prot="public" static="no">
+        <name>S_IRWXO</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Read, write, execute/search by others. </para>        </briefdescription>
+        <detaileddescription>
+<para>Write permission, others. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="157" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1afe3da42e762f6362c93454682fad5eb5" prot="public" static="no">
+        <name>S_IRWXU</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Read, write, execute/search by owner. </para>        </briefdescription>
+        <detaileddescription>
+<para>Write permission, owner. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="98" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1afe3da42e762f6362c93454682fad5eb5" prot="public" static="no">
+        <name>S_IRWXU</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Read, write, execute/search by owner. </para>        </briefdescription>
+        <detaileddescription>
+<para>Write permission, owner. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="110" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1a9c9e4cc0a8acc43c99ae6c3d972ae2d8" prot="public" static="no">
+        <name>S_ISGID</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Set-group-ID on execution. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="175" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1a30384a8cd2feb1615efd5eadc243684b" prot="public" static="no">
+        <name>S_ISUID</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Set-user-ID on execution. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="169" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1ae6774871a90d9442f00abe18b87fee6e" prot="public" static="no">
+        <name>S_IWGRP</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Write permission, group. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="133" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1ad70001754261c15a1bdc8e876c6d09d7" prot="public" static="no">
+        <name>S_IWUSR</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Execute/search permission, owner. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="116" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1a042e69ac0e7dd56e5cfcd9e97d010323" prot="public" static="no">
+        <name>S_IXGRP</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Execute/search permission, group. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="139" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="win32-stat_8h_1a40223db1b95a04f5b28cceb3c34cfebd" prot="public" static="no">
+        <name>S_IXOTH</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Execute/search permission, others. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="163" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="win32-stat_8h_1a3dc1b07404b646712a144e2057359876" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int stat</definition>
+        <argsstring>(const char *path, struct stat *buf)</argsstring>
+        <name>stat</name>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>struct stat *</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+<para>Obtains information about the named file and write it to the area pointed to by the buf argument. </para>        </briefdescription>
+        <detaileddescription>
+<para>Read, write, or execute permission of the named file is not required. An implementation that provides additional or alternate file access control mechanisms may, under implementation-defined conditions, cause <ref refid="win32-stat_8h_1a3dc1b07404b646712a144e2057359876" kindref="member">stat()</ref> to fail. In particular, the system may deny the existence of the file specified by path. If the named file is a symbolic link, the <ref refid="win32-stat_8h_1a3dc1b07404b646712a144e2057359876" kindref="member">stat()</ref> function shall continue pathname resolution using the contents of the symbolic link, and shall return information pertaining to the resulting file if the file exists. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file path </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the stat information structure </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>O on success, otherwise -1. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h" line="193"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Stat functions for windows. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt; </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2011,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>win32-stat.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Stat<sp/>functions<sp/>for<sp/>windows</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_XS_WIN32_STAT_H_</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_XS_WIN32_STAT_H_</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="46"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IFMT</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Type<sp/>of<sp/>file</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="win32-stat_8h_1ab5bee51e9ee68b83ab11d4b340f7200b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IFMT<sp/><sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="51"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="52"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IFBLK</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Block<sp/>special</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="win32-stat_8h_1a5c5b74a1cb1a1ae83572500b94e1938f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IFBLK<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="58"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IFCHR</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Character<sp/>special</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="win32-stat_8h_1aef3a1d1ba22c83e30b5c834dd343b2a8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IFCHR<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="63"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="64"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IFDIR</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Directory</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="win32-stat_8h_1a11fb0652b963a735f3377eb1c9239f2d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IFDIR<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="69"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="70"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IFIFO</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>FIFO<sp/>special</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="win32-stat_8h_1a4966f25d9f03a7a06bc47ac729fd86cf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IFIFO<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="76"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IFREG</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Regular</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="win32-stat_8h_1a1aaa48b192a5dd3b6d7ee91fc98cd17d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IFREG<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="81"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="82"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IFLNK</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Symbolic<sp/>link</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="win32-stat_8h_1afef163ce62372757e84bd9fc88c07aad" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IFLNK<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="87"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="88"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IFSOCK</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Socket</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="win32-stat_8h_1a28e80cd43106882904be148b2a397d42" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IFSOCK<sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="93"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="94"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IRWXU</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Read,<sp/>write,<sp/>execute/search<sp/>by<sp/>owner</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IRWXU<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="99"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="100"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IRUSR</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Read<sp/>permission,<sp/>owner</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="win32-stat_8h_1a84c7dbf5cf2fdfb690f76348b60a8cb7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IRUSR<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="105"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="106"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IRWXU</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Write<sp/>permission,<sp/>owner</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="win32-stat_8h_1afe3da42e762f6362c93454682fad5eb5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IRWXU<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="111"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="112"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IWUSR</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Execute/search<sp/>permission,<sp/>owner</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="win32-stat_8h_1ad70001754261c15a1bdc8e876c6d09d7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IWUSR<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="117"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="118"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IRWXG</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Read,<sp/>write,<sp/>execute/search<sp/>by<sp/>group</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="win32-stat_8h_1a230c642d2bb81f15f85c122b1883de5c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IRWXG<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="123"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="124"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IRGRP</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Read<sp/>permission,<sp/>group</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="win32-stat_8h_1a4f5f280b929768113739fb34d6f7be8a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IRGRP<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="129"><highlight class="preprocessor"></highlight><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IWGRP</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Write<sp/>permission,<sp/>group</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="win32-stat_8h_1ae6774871a90d9442f00abe18b87fee6e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IWGRP<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="134"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="135"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IXGRP</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Execute/search<sp/>permission,<sp/>group</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="win32-stat_8h_1a042e69ac0e7dd56e5cfcd9e97d010323" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IXGRP<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="140"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="141"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IRWXO</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Read,<sp/>write,<sp/>execute/search<sp/>by<sp/>others</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IRWXO<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="146"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="147"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IROTH</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Read<sp/>permission,<sp/>others</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151" refid="win32-stat_8h_1a071147a0cb995036967c80f64b1f74b9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IROTH<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="152"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="153"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IRWXO</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Write<sp/>permission,<sp/>others</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157" refid="win32-stat_8h_1a5b93e0da7fe32bbd4926626bffad96b1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IRWXO<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="158"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="159"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_IXOTH</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Execute/search<sp/>permission,<sp/>others</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="win32-stat_8h_1a40223db1b95a04f5b28cceb3c34cfebd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_IXOTH<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="164"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="165"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_ISUID</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Set-user-ID<sp/>on<sp/>execution</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169" refid="win32-stat_8h_1a30384a8cd2feb1615efd5eadc243684b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_ISUID<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="170"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="171"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_ISGID</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Set-group-ID<sp/>on<sp/>execution</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175" refid="win32-stat_8h_1a9c9e4cc0a8acc43c99ae6c3d972ae2d8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>S_ISGID<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="176"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="177"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Obtains<sp/>information<sp/>about<sp/>the<sp/>named<sp/>file<sp/>and<sp/>write<sp/>it<sp/>to<sp/>the<sp/>area<sp/>pointed<sp/>to<sp/>by<sp/>the<sp/>buf<sp/>argument</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>Read,<sp/>write,<sp/>or<sp/>execute<sp/>permission<sp/>of<sp/>the<sp/>named<sp/>file<sp/>is<sp/>not</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>required.<sp/>An<sp/>implementation<sp/>that<sp/>provides<sp/>additional<sp/>or</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>alternate<sp/>file<sp/>access<sp/>control<sp/>mechanisms<sp/>may,<sp/>under</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>implementation-defined<sp/>conditions,<sp/>cause<sp/>stat()<sp/>to<sp/>fail.</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>In<sp/>particular,<sp/>the<sp/>system<sp/>may<sp/>deny<sp/>the<sp/>existence<sp/>of<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>specified<sp/>by<sp/>path.</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>If<sp/>the<sp/>named<sp/>file<sp/>is<sp/>a<sp/>symbolic<sp/>link,<sp/>the<sp/>stat()<sp/>function<sp/>shall</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>continue<sp/>pathname<sp/>resolution<sp/>using<sp/>the<sp/>contents<sp/>of<sp/>the<sp/>symbolic</highlight></codeline>
+<codeline lineno="187"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>link,<sp/>and<sp/>shall<sp/>return<sp/>information<sp/>pertaining<sp/>to<sp/>the<sp/>resulting</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>file<sp/>if<sp/>the<sp/>file<sp/>exists.</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>path<sp/><sp/><sp/><sp/>The<sp/>file<sp/>path</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>buf<sp/><sp/><sp/><sp/><sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>stat<sp/>information<sp/>structure</highlight></codeline>
+<codeline lineno="191"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>O<sp/>on<sp/>success,<sp/>otherwise<sp/>-1.</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="win32-stat_8h_1a3dc1b07404b646712a144e2057359876" kindref="member" tooltip="Obtains information about the named file and write it to the area pointed to by the buf argument...">stat</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>path,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="win32-stat_8h_1a3dc1b07404b646712a144e2057359876" kindref="member" tooltip="Obtains information about the named file and write it to the area pointed to by the buf argument...">stat</ref><sp/>*<sp/>buf<sp/>);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="196"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="198"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_XS_WIN32_STAT_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-stat.h"/>
+  </compounddef>
+</doxygen>

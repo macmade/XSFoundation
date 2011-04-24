@@ -1,0 +1,76 @@
+.TH "XSClassInfos_Struct" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XSClassInfos_Struct \- 
+.PP
+XSFoundation runtime class structure.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'XSTypes.h'\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBclassName\fP"
+.br
+.ti -1c
+.RI "void(* \fBconstruct\fP )(\fBXSObject\fP object)"
+.br
+.ti -1c
+.RI "void(* \fBcopy\fP )(\fBXSObject\fP source, \fBXSObject\fP destination)"
+.br
+.ti -1c
+.RI "void(* \fBdestruct\fP )(\fBXSObject\fP object)"
+.br
+.ti -1c
+.RI "\fBBOOL\fP(* \fBequals\fP )(\fBXSObject\fP object1, \fBXSObject\fP object2)"
+.br
+.ti -1c
+.RI "\fBXSObject\fP(* \fBinit\fP )(\fBXSObject\fP object)"
+.br
+.ti -1c
+.RI "size_t \fBinstanceSize\fP"
+.br
+.ti -1c
+.RI "\fBXSString\fP(* \fBtoString\fP )(\fBXSObject\fP object)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+XSFoundation runtime class structure. 
+.PP
+Definition at line 320 of file XSTypes.h.
+.SH "Field Documentation"
+.PP 
+.SS "const char* \fBXSClassInfos_Struct::className\fP"
+.PP
+Definition at line 322 of file XSTypes.h.
+.SS "void( *  \fBXSClassInfos_Struct::construct\fP)(\fBXSObject\fP object)"The size of the class instances 
+.PP
+Definition at line 324 of file XSTypes.h.
+.SS "void( *  \fBXSClassInfos_Struct::copy\fP)(\fBXSObject\fP source, \fBXSObject\fP destination)"The default object initializer 
+.PP
+Definition at line 327 of file XSTypes.h.
+.SS "void( *  \fBXSClassInfos_Struct::destruct\fP)(\fBXSObject\fP object)"The class constructor 
+.PP
+Definition at line 325 of file XSTypes.h.
+.SS "\fBBOOL\fP( *  \fBXSClassInfos_Struct::equals\fP)(\fBXSObject\fP object1, \fBXSObject\fP object2)"The object's description callback (used in XSLog) 
+.PP
+Definition at line 329 of file XSTypes.h.
+.SS "\fBXSObject\fP( *  \fBXSClassInfos_Struct::init\fP)(\fBXSObject\fP object)"The class destructor 
+.PP
+Definition at line 326 of file XSTypes.h.
+.SS "size_t \fBXSClassInfos_Struct::instanceSize\fP"The name of the class 
+.PP
+Definition at line 323 of file XSTypes.h.
+.SS "\fBXSString\fP( *  \fBXSClassInfos_Struct::toString\fP)(\fBXSObject\fP object)"The object's copy callback 
+.PP
+Definition at line 328 of file XSTypes.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

@@ -1,0 +1,379 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="std-bitwise_8h" kind="file">
+    <compoundname>std-bitwise.h</compoundname>
+    <includedby refid="std_8h" local="yes">std.h</includedby>
+    <invincdepgraph>
+      <node id="6153">
+        <label>__XSApplicationArgument.h</label>
+        <link refid="____XSApplicationArgument_8h"/>
+      </node>
+      <node id="6158">
+        <label>__XSColor.h</label>
+        <link refid="____XSColor_8h"/>
+      </node>
+      <node id="6170">
+        <label>__XSNull.h</label>
+        <link refid="____XSNull_8h"/>
+      </node>
+      <node id="6160">
+        <label>__XSDictionary.h</label>
+        <link refid="____XSDictionary_8h"/>
+      </node>
+      <node id="6148">
+        <label>XSMemory.h</label>
+        <link refid="XSMemory_8h"/>
+      </node>
+      <node id="6176">
+        <label>__XSTimer.h</label>
+        <link refid="____XSTimer_8h"/>
+      </node>
+      <node id="6149">
+        <label>XSMemoryDebug.h</label>
+        <link refid="XSMemoryDebug_8h"/>
+      </node>
+      <node id="6165">
+        <label>__XSLock.h</label>
+        <link refid="____XSLock_8h"/>
+      </node>
+      <node id="6154">
+        <label>__XSArray.h</label>
+        <link refid="____XSArray_8h"/>
+      </node>
+      <node id="6174">
+        <label>__XSString.h</label>
+        <link refid="____XSString_8h"/>
+      </node>
+      <node id="6152">
+        <label>__XSApplication.h</label>
+        <link refid="____XSApplication_8h"/>
+      </node>
+      <node id="6155">
+        <label>__XSBag.h</label>
+        <link refid="____XSBag_8h"/>
+      </node>
+      <node id="6179">
+        <label>XSRuntime.h</label>
+        <link refid="XSRuntime_8h"/>
+      </node>
+      <node id="6164">
+        <label>__XSHost.h</label>
+        <link refid="____XSHost_8h"/>
+      </node>
+      <node id="6171">
+        <label>__XSNumber.h</label>
+        <link refid="____XSNumber_8h"/>
+      </node>
+      <node id="6175">
+        <label>__XSThread.h</label>
+        <link refid="____XSThread_8h"/>
+      </node>
+      <node id="6146">
+        <label>XSTypes.h</label>
+        <link refid="XSTypes_8h"/>
+        <childnode refid="6147" relation="include">
+        </childnode>
+        <childnode refid="6148" relation="include">
+        </childnode>
+        <childnode refid="6149" relation="include">
+        </childnode>
+        <childnode refid="6150" relation="include">
+        </childnode>
+      </node>
+      <node id="6147">
+        <label>XSGeometry.h</label>
+        <link refid="XSGeometry_8h"/>
+      </node>
+      <node id="6173">
+        <label>__XSSort.h</label>
+        <link refid="____XSSort_8h"/>
+      </node>
+      <node id="6177">
+        <label>__XSURL.h</label>
+        <link refid="____XSURL_8h"/>
+      </node>
+      <node id="6169">
+        <label>__XSNotificationCenter.h</label>
+        <link refid="____XSNotificationCenter_8h"/>
+      </node>
+      <node id="6157">
+        <label>__XSBTree.h</label>
+        <link refid="____XSBTree_8h"/>
+      </node>
+      <node id="6145">
+        <label>std.h</label>
+        <link refid="std_8h"/>
+        <childnode refid="6146" relation="include">
+        </childnode>
+        <childnode refid="6151" relation="include">
+        </childnode>
+      </node>
+      <node id="6144">
+        <label>std-bitwise.h</label>
+        <link refid="std-bitwise.h"/>
+        <childnode refid="6145" relation="include">
+        </childnode>
+      </node>
+      <node id="6166">
+        <label>__XSMemory.h</label>
+        <link refid="____XSMemory_8h"/>
+        <childnode refid="6167" relation="include">
+        </childnode>
+      </node>
+      <node id="6167">
+        <label>__XSMemoryDebug.h</label>
+        <link refid="____XSMemoryDebug_8h"/>
+      </node>
+      <node id="6150">
+        <label>XSSort.h</label>
+        <link refid="XSSort_8h"/>
+      </node>
+      <node id="6161">
+        <label>__XSError.h</label>
+        <link refid="____XSError_8h"/>
+      </node>
+      <node id="6159">
+        <label>__XSData.h</label>
+        <link refid="____XSData_8h"/>
+      </node>
+      <node id="6162">
+        <label>__XSException.h</label>
+        <link refid="____XSException_8h"/>
+      </node>
+      <node id="6168">
+        <label>__XSNotification.h</label>
+        <link refid="____XSNotification_8h"/>
+      </node>
+      <node id="6156">
+        <label>__XSBool.h</label>
+        <link refid="____XSBool_8h"/>
+      </node>
+      <node id="6151">
+        <label>XS.h</label>
+        <link refid="XS_8h"/>
+        <childnode refid="6152" relation="include">
+        </childnode>
+        <childnode refid="6153" relation="include">
+        </childnode>
+        <childnode refid="6154" relation="include">
+        </childnode>
+        <childnode refid="6155" relation="include">
+        </childnode>
+        <childnode refid="6156" relation="include">
+        </childnode>
+        <childnode refid="6157" relation="include">
+        </childnode>
+        <childnode refid="6158" relation="include">
+        </childnode>
+        <childnode refid="6159" relation="include">
+        </childnode>
+        <childnode refid="6160" relation="include">
+        </childnode>
+        <childnode refid="6161" relation="include">
+        </childnode>
+        <childnode refid="6162" relation="include">
+        </childnode>
+        <childnode refid="6163" relation="include">
+        </childnode>
+        <childnode refid="6164" relation="include">
+        </childnode>
+        <childnode refid="6165" relation="include">
+        </childnode>
+        <childnode refid="6166" relation="include">
+        </childnode>
+        <childnode refid="6167" relation="include">
+        </childnode>
+        <childnode refid="6168" relation="include">
+        </childnode>
+        <childnode refid="6169" relation="include">
+        </childnode>
+        <childnode refid="6170" relation="include">
+        </childnode>
+        <childnode refid="6171" relation="include">
+        </childnode>
+        <childnode refid="6172" relation="include">
+        </childnode>
+        <childnode refid="6173" relation="include">
+        </childnode>
+        <childnode refid="6174" relation="include">
+        </childnode>
+        <childnode refid="6175" relation="include">
+        </childnode>
+        <childnode refid="6176" relation="include">
+        </childnode>
+        <childnode refid="6177" relation="include">
+        </childnode>
+        <childnode refid="6178" relation="include">
+        </childnode>
+        <childnode refid="6179" relation="include">
+        </childnode>
+      </node>
+      <node id="6172">
+        <label>__XSSet.h</label>
+        <link refid="____XSSet_8h"/>
+      </node>
+      <node id="6178">
+        <label>__XSURLRequest.h</label>
+        <link refid="____XSURLRequest_8h"/>
+      </node>
+      <node id="6163">
+        <label>__XSFile.h</label>
+        <link refid="____XSFile_8h"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="std-bitwise_8h_1a7f2e645db297617a18e4cb8112f138c9" prot="public" static="no">
+        <name>BITWISE_CLEAR</name>
+        <param><defname>v</defname></param>
+        <param><defname>f</defname></param>
+        <initializer>( ( v ) &amp;= ~( f ) )</initializer>
+        <briefdescription>
+<para>Clears a specific bit. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-bitwise.h" line="62" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-bitwise.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-bitwise_8h_1ae43bd15f174e21b8726ce7c6a0213eb0" prot="public" static="no">
+        <name>BITWISE_FLAG</name>
+        <param><defname>x</defname></param>
+        <initializer>(   1   &lt;&lt;  ( x ) )</initializer>
+        <briefdescription>
+<para>Flags a specific bit. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-bitwise.h" line="50" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-bitwise.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-bitwise_8h_1ac34f79a9082ea9f98279a802a2bb5938" prot="public" static="no">
+        <name>BITWISE_ISSET</name>
+        <param><defname>v</defname></param>
+        <param><defname>f</defname></param>
+        <initializer>( ( v ) &amp;   ( f ) )</initializer>
+        <briefdescription>
+<para>Tests for a specific bit. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-bitwise.h" line="68" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-bitwise.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-bitwise_8h_1a30ba2df8f33cd8e08a47e2e82cd971f4" prot="public" static="no">
+        <name>BITWISE_SET</name>
+        <param><defname>v</defname></param>
+        <param><defname>f</defname></param>
+        <initializer>( ( v ) |=  ( f ) )</initializer>
+        <briefdescription>
+<para>Sets a specific bit. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-bitwise.h" line="56" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-bitwise.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-bitwise_8h_1a316f4c5538f458aad3a8698110901599" prot="public" static="no">
+        <name>BITWISE_TOGGLE</name>
+        <param><defname>v</defname></param>
+        <param><defname>f</defname></param>
+        <initializer>( ( v ) ^=  ( f ) )</initializer>
+        <briefdescription>
+<para>Toggles a specific bit. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-bitwise.h" line="74" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-bitwise.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Bitwise operations. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt; </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2011,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std-bitwise.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Bitwise<sp/>operations</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_XS_STD_BITWISE_</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_XS_STD_BITWISE_</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="46"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BITWISE_FLAG</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Flags<sp/>a<sp/>specific<sp/>bit</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="std-bitwise_8h_1ae43bd15f174e21b8726ce7c6a0213eb0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BITWISE_FLAG(<sp/>x<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/><sp/><sp/>1<sp/><sp/><sp/>&lt;&lt;<sp/><sp/>(<sp/>x<sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="51"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="52"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BITWISE_SET</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sets<sp/>a<sp/>specific<sp/>bit</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="std-bitwise_8h_1a30ba2df8f33cd8e08a47e2e82cd971f4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BITWISE_SET(<sp/>v,<sp/>f<sp/>)<sp/><sp/><sp/><sp/><sp/>(<sp/>(<sp/>v<sp/>)<sp/>|=<sp/><sp/>(<sp/>f<sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="58"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BITWISE_CLEAR</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Clears<sp/>a<sp/>specific<sp/>bit</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="std-bitwise_8h_1a7f2e645db297617a18e4cb8112f138c9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BITWISE_CLEAR(<sp/>v,<sp/>f<sp/>)<sp/><sp/><sp/>(<sp/>(<sp/>v<sp/>)<sp/>&amp;=<sp/>~(<sp/>f<sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="63"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="64"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BITWISE_ISSET</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Tests<sp/>for<sp/>a<sp/>specific<sp/>bit</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="std-bitwise_8h_1ac34f79a9082ea9f98279a802a2bb5938" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BITWISE_ISSET(<sp/>v,<sp/>f<sp/>)<sp/><sp/><sp/>(<sp/>(<sp/>v<sp/>)<sp/>&amp;<sp/><sp/><sp/>(<sp/>f<sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="69"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="70"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BITWISE_TOGGLE</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Toggles<sp/>a<sp/>specific<sp/>bit</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="std-bitwise_8h_1a316f4c5538f458aad3a8698110901599" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BITWISE_TOGGLE(<sp/>v,<sp/>f<sp/>)<sp/><sp/>(<sp/>(<sp/>v<sp/>)<sp/>^=<sp/><sp/>(<sp/>f<sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="77"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="79"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_XS_STD_BITWISE_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-bitwise.h"/>
+  </compounddef>
+</doxygen>

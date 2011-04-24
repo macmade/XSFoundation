@@ -1,0 +1,41 @@
+.TH "win32-compat.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+win32-compat.h \- 
+.PP
+Compatibility macros and functions for Windows.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fB_CRT_SECURE_NO_WARNINGS\fP"
+.br
+.RI "\fIDo not warn about stupid Microsoft 'security enhancements'. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Compatibility macros and functions for Windows. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBwin32-compat.h\fP.
+.SH "Define Documentation"
+.PP 
+.SS "#define _CRT_SECURE_NO_WARNINGS"
+.PP
+Do not warn about stupid Microsoft 'security enhancements'. Microsoft provides 'security' enhanced version of standard C library functions, like sprintf, (with xxx_s counterparts), intended to prevent buffer overflows. Defining this macro turns off those annoying warnings in VisualStudio. Those 'enhancements' won't prevent a buffer overflow anyway. If you don't know what you are doing, then keep on coding in C# or Java. 
+.PP
+Definition at line 60 of file win32-compat.h.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

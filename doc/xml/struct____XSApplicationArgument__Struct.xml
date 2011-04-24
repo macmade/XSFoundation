@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="struct____XSApplicationArgument__Struct" kind="struct" prot="public">
+    <compoundname>__XSApplicationArgument_Struct</compoundname>
+    <includes refid="____XSApplicationArgument_8h" local="yes">__XSApplicationArgument.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct____XSApplicationArgument__Struct_1a3457428c2f50025d4cd8bdb4637f0857" prot="public" static="no" mutable="no">
+        <type><ref refid="structXSRuntimeClass__Struct" kindref="compound">XSRuntimeClass</ref></type>
+        <definition>XSRuntimeClass __XSApplicationArgument_Struct::__class</definition>
+        <argsstring></argsstring>
+        <name>__class</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" line="54" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSApplicationArgument__Struct_1a79e6e9ce4504ce5ea655527029c8ed3e" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL __XSApplicationArgument_Struct::flag_val</definition>
+        <argsstring></argsstring>
+        <name>flag_val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" line="60" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSApplicationArgument__Struct_1a598627a62fdcb2f990ac5a19e77eef63" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref></type>
+        <definition>XSFloat __XSApplicationArgument_Struct::float_val</definition>
+        <argsstring></argsstring>
+        <name>float_val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" line="61" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSApplicationArgument__Struct_1ae19edabb1dac6c5aac9dcb344410f3b8" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* __XSApplicationArgument_Struct::help</definition>
+        <argsstring></argsstring>
+        <name>help</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" line="62" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSApplicationArgument__Struct_1a8c764ead7fca043f30922c92f85b5217" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1ad90d5fa9cef2bbd82fa05476b1a79c1b" kindref="member">XSInteger</ref></type>
+        <definition>XSInteger __XSApplicationArgument_Struct::int_val</definition>
+        <argsstring></argsstring>
+        <name>int_val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" line="57" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSApplicationArgument__Struct_1a03b5902540dae25bb5779f436f509abc" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* __XSApplicationArgument_Struct::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Runtime class </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" line="55" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSApplicationArgument__Struct_1a3c77ded54f19925ae4aa2506266e5bb1" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* __XSApplicationArgument_Struct::str_val</definition>
+        <argsstring></argsstring>
+        <name>str_val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" line="59" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSApplicationArgument__Struct_1a5c2107e9e7bae876f5966d22f154f96d" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger __XSApplicationArgument_Struct::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" line="56" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSApplicationArgument__Struct_1a130314fc5779ccae6e19c52b3212c99f" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger __XSApplicationArgument_Struct::uint_val</definition>
+        <argsstring></argsstring>
+        <name>uint_val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" line="58" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>XSApplicationArgument class. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="304">
+        <label>XSClassInfos</label>
+        <link refid="structXSClassInfos"/>
+      </node>
+      <node id="299">
+        <label>float</label>
+      </node>
+      <node id="300">
+        <label>signed char</label>
+      </node>
+      <node id="301">
+        <label>int</label>
+      </node>
+      <node id="302">
+        <label>const char *</label>
+      </node>
+      <node id="298">
+        <label>__XSApplicationArgument_Struct</label>
+        <link refid="struct____XSApplicationArgument__Struct"/>
+        <childnode refid="299" relation="usage">
+          <edgelabel>float_val</edgelabel>
+        </childnode>
+        <childnode refid="300" relation="usage">
+          <edgelabel>flag_val</edgelabel>
+        </childnode>
+        <childnode refid="301" relation="usage">
+          <edgelabel>int_val</edgelabel>
+          <edgelabel>uint_val</edgelabel>
+          <edgelabel>type</edgelabel>
+        </childnode>
+        <childnode refid="302" relation="usage">
+          <edgelabel>help</edgelabel>
+          <edgelabel>str_val</edgelabel>
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="303" relation="usage">
+          <edgelabel>__class</edgelabel>
+        </childnode>
+      </node>
+      <node id="303">
+        <label>XSRuntimeClass_Struct</label>
+        <link refid="structXSRuntimeClass__Struct"/>
+        <childnode refid="304" relation="usage">
+          <edgelabel>classInfos</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" line="53" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSApplicationArgument.h" bodystart="52" bodyend="63"/>
+    <listofallmembers>
+      <member refid="struct____XSApplicationArgument__Struct_1a3457428c2f50025d4cd8bdb4637f0857" prot="public" virt="non-virtual"><scope>__XSApplicationArgument_Struct</scope><name>__class</name></member>
+      <member refid="struct____XSApplicationArgument__Struct_1a79e6e9ce4504ce5ea655527029c8ed3e" prot="public" virt="non-virtual"><scope>__XSApplicationArgument_Struct</scope><name>flag_val</name></member>
+      <member refid="struct____XSApplicationArgument__Struct_1a598627a62fdcb2f990ac5a19e77eef63" prot="public" virt="non-virtual"><scope>__XSApplicationArgument_Struct</scope><name>float_val</name></member>
+      <member refid="struct____XSApplicationArgument__Struct_1ae19edabb1dac6c5aac9dcb344410f3b8" prot="public" virt="non-virtual"><scope>__XSApplicationArgument_Struct</scope><name>help</name></member>
+      <member refid="struct____XSApplicationArgument__Struct_1a8c764ead7fca043f30922c92f85b5217" prot="public" virt="non-virtual"><scope>__XSApplicationArgument_Struct</scope><name>int_val</name></member>
+      <member refid="struct____XSApplicationArgument__Struct_1a03b5902540dae25bb5779f436f509abc" prot="public" virt="non-virtual"><scope>__XSApplicationArgument_Struct</scope><name>name</name></member>
+      <member refid="struct____XSApplicationArgument__Struct_1a3c77ded54f19925ae4aa2506266e5bb1" prot="public" virt="non-virtual"><scope>__XSApplicationArgument_Struct</scope><name>str_val</name></member>
+      <member refid="struct____XSApplicationArgument__Struct_1a5c2107e9e7bae876f5966d22f154f96d" prot="public" virt="non-virtual"><scope>__XSApplicationArgument_Struct</scope><name>type</name></member>
+      <member refid="struct____XSApplicationArgument__Struct_1a130314fc5779ccae6e19c52b3212c99f" prot="public" virt="non-virtual"><scope>__XSApplicationArgument_Struct</scope><name>uint_val</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

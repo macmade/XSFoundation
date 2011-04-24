@@ -1,0 +1,802 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="____XSColor_8h" kind="file">
+    <compoundname>__XSColor.h</compoundname>
+    <includes local="yes">../XSMacros.h</includes>
+    <includes refid="XS_8h" local="yes">XS.h</includes>
+    <incdepgraph>
+      <node id="4185">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="4173">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4146">
+        <label>__XSColor.h</label>
+        <link refid="__XSColor.h"/>
+        <childnode refid="4147" relation="include">
+        </childnode>
+        <childnode refid="4148" relation="include">
+        </childnode>
+      </node>
+      <node id="4179">
+        <label>grp.h</label>
+      </node>
+      <node id="4161">
+        <label>stdarg.h</label>
+      </node>
+      <node id="4196">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="4151">
+        <label>assert.h</label>
+      </node>
+      <node id="4154">
+        <label>float.h</label>
+      </node>
+      <node id="4234">
+        <label>XS/XSThread.h</label>
+      </node>
+      <node id="4169">
+        <label>wctype.h</label>
+      </node>
+      <node id="4213">
+        <label>XS/XSArray.h</label>
+      </node>
+      <node id="4171">
+        <label>fenv.h</label>
+      </node>
+      <node id="4235">
+        <label>XS/XSTimer.h</label>
+      </node>
+      <node id="4163">
+        <label>stdint.h</label>
+      </node>
+      <node id="4233">
+        <label>XS/XSString.h</label>
+      </node>
+      <node id="4165">
+        <label>stdlib.h</label>
+      </node>
+      <node id="4159">
+        <label>setjmp.h</label>
+      </node>
+      <node id="4229">
+        <label>XS/XSNotificationCenter.h</label>
+      </node>
+      <node id="4211">
+        <label>XS/XSApplicationArgument.h</label>
+      </node>
+      <node id="4183">
+        <label>sys/msg.h</label>
+      </node>
+      <node id="4153">
+        <label>errno.h</label>
+      </node>
+      <node id="4155">
+        <label>iso646.h</label>
+      </node>
+      <node id="4223">
+        <label>XS/XSFile.h</label>
+      </node>
+      <node id="4178">
+        <label>fcntl.h</label>
+      </node>
+      <node id="4191">
+        <label>termios.h</label>
+      </node>
+      <node id="4212">
+        <label>XS/XSApplication.h</label>
+      </node>
+      <node id="4175">
+        <label>std-posix.h</label>
+        <link refid="std-posix_8h"/>
+        <childnode refid="4176" relation="include">
+        </childnode>
+        <childnode refid="4177" relation="include">
+        </childnode>
+        <childnode refid="4178" relation="include">
+        </childnode>
+        <childnode refid="4179" relation="include">
+        </childnode>
+        <childnode refid="4180" relation="include">
+        </childnode>
+        <childnode refid="4181" relation="include">
+        </childnode>
+        <childnode refid="4182" relation="include">
+        </childnode>
+        <childnode refid="4183" relation="include">
+        </childnode>
+        <childnode refid="4184" relation="include">
+        </childnode>
+        <childnode refid="4185" relation="include">
+        </childnode>
+        <childnode refid="4186" relation="include">
+        </childnode>
+        <childnode refid="4187" relation="include">
+        </childnode>
+        <childnode refid="4188" relation="include">
+        </childnode>
+        <childnode refid="4189" relation="include">
+        </childnode>
+        <childnode refid="4190" relation="include">
+        </childnode>
+        <childnode refid="4191" relation="include">
+        </childnode>
+        <childnode refid="4192" relation="include">
+        </childnode>
+        <childnode refid="4193" relation="include">
+        </childnode>
+      </node>
+      <node id="4150">
+        <label>std-c99.h</label>
+        <link refid="std-c99_8h"/>
+        <childnode refid="4151" relation="include">
+        </childnode>
+        <childnode refid="4152" relation="include">
+        </childnode>
+        <childnode refid="4153" relation="include">
+        </childnode>
+        <childnode refid="4154" relation="include">
+        </childnode>
+        <childnode refid="4155" relation="include">
+        </childnode>
+        <childnode refid="4156" relation="include">
+        </childnode>
+        <childnode refid="4157" relation="include">
+        </childnode>
+        <childnode refid="4158" relation="include">
+        </childnode>
+        <childnode refid="4159" relation="include">
+        </childnode>
+        <childnode refid="4160" relation="include">
+        </childnode>
+        <childnode refid="4161" relation="include">
+        </childnode>
+        <childnode refid="4162" relation="include">
+        </childnode>
+        <childnode refid="4163" relation="include">
+        </childnode>
+        <childnode refid="4164" relation="include">
+        </childnode>
+        <childnode refid="4165" relation="include">
+        </childnode>
+        <childnode refid="4166" relation="include">
+        </childnode>
+        <childnode refid="4167" relation="include">
+        </childnode>
+        <childnode refid="4168" relation="include">
+        </childnode>
+        <childnode refid="4169" relation="include">
+        </childnode>
+        <childnode refid="4170" relation="include">
+        </childnode>
+        <childnode refid="4171" relation="include">
+        </childnode>
+        <childnode refid="4172" relation="include">
+        </childnode>
+        <childnode refid="4173" relation="include">
+        </childnode>
+        <childnode refid="4174" relation="include">
+        </childnode>
+      </node>
+      <node id="4207">
+        <label>XS/XSLog.h</label>
+      </node>
+      <node id="4184">
+        <label>sys/sem.h</label>
+      </node>
+      <node id="4162">
+        <label>stddef.h</label>
+      </node>
+      <node id="4228">
+        <label>XS/XSNotification.h</label>
+      </node>
+      <node id="4206">
+        <label>XS/XSTypes.h</label>
+      </node>
+      <node id="4195">
+        <label>netdb.h</label>
+      </node>
+      <node id="4227">
+        <label>XS/XSNull.h</label>
+      </node>
+      <node id="4236">
+        <label>XS/XSURL.h</label>
+      </node>
+      <node id="4156">
+        <label>limits.h</label>
+      </node>
+      <node id="4210">
+        <label>XS/XSRuntime.h</label>
+      </node>
+      <node id="4180">
+        <label>pthread.h</label>
+      </node>
+      <node id="4147">
+        <label>../XSMacros.h</label>
+      </node>
+      <node id="4208">
+        <label>XS/XSMemory.h</label>
+      </node>
+      <node id="4168">
+        <label>wchar.h</label>
+      </node>
+      <node id="4187">
+        <label>sys/types.h</label>
+      </node>
+      <node id="4226">
+        <label>XS/XSLock.h</label>
+      </node>
+      <node id="4166">
+        <label>string.h</label>
+      </node>
+      <node id="4193">
+        <label>utime.h</label>
+      </node>
+      <node id="4216">
+        <label>XS/XSBTree.h</label>
+      </node>
+      <node id="4197">
+        <label>std-keywords.h</label>
+        <link refid="std-keywords_8h"/>
+      </node>
+      <node id="4237">
+        <label>XS/XSURLRequest.h</label>
+      </node>
+      <node id="4198">
+        <label>std-bool.h</label>
+        <link refid="std-bool_8h"/>
+      </node>
+      <node id="4199">
+        <label>std-math.h</label>
+        <link refid="std-math_8h"/>
+      </node>
+      <node id="4192">
+        <label>unistd.h</label>
+      </node>
+      <node id="4149">
+        <label>std/std.h</label>
+        <link refid="std_8h"/>
+        <childnode refid="4150" relation="include">
+        </childnode>
+        <childnode refid="4175" relation="include">
+        </childnode>
+        <childnode refid="4194" relation="include">
+        </childnode>
+        <childnode refid="4195" relation="include">
+        </childnode>
+        <childnode refid="4196" relation="include">
+        </childnode>
+        <childnode refid="4197" relation="include">
+        </childnode>
+        <childnode refid="4198" relation="include">
+        </childnode>
+        <childnode refid="4199" relation="include">
+        </childnode>
+        <childnode refid="4200" relation="include">
+        </childnode>
+        <childnode refid="4201" relation="include">
+        </childnode>
+        <childnode refid="4202" relation="include">
+        </childnode>
+        <childnode refid="4203" relation="include">
+        </childnode>
+      </node>
+      <node id="4201">
+        <label>std-bitwise.h</label>
+        <link refid="std-bitwise_8h"/>
+      </node>
+      <node id="4174">
+        <label>tgmath.h</label>
+      </node>
+      <node id="4220">
+        <label>XS/XSDictionary.h</label>
+      </node>
+      <node id="4160">
+        <label>signal.h</label>
+      </node>
+      <node id="4170">
+        <label>complex.h</label>
+      </node>
+      <node id="4218">
+        <label>XS/XSDebugLog.h</label>
+      </node>
+      <node id="4182">
+        <label>sys/ipc.h</label>
+      </node>
+      <node id="4167">
+        <label>time.h</label>
+      </node>
+      <node id="4232">
+        <label>XS/XSSort.h</label>
+      </node>
+      <node id="4158">
+        <label>math.h</label>
+      </node>
+      <node id="4189">
+        <label>sys/wait.h</label>
+      </node>
+      <node id="4225">
+        <label>XS/XSHost.h</label>
+      </node>
+      <node id="4186">
+        <label>sys/time.h</label>
+      </node>
+      <node id="4215">
+        <label>XS/XSBool.h</label>
+      </node>
+      <node id="4152">
+        <label>ctype.h</label>
+      </node>
+      <node id="4194">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="4181">
+        <label>pwd.h</label>
+      </node>
+      <node id="4217">
+        <label>XS/XSColor.h</label>
+      </node>
+      <node id="4205">
+        <label>XS/XSConstants.h</label>
+      </node>
+      <node id="4209">
+        <label>XS/XSMemoryDebug.h</label>
+      </node>
+      <node id="4176">
+        <label>cpio.h</label>
+      </node>
+      <node id="4148">
+        <label>XS.h</label>
+        <link refid="XS_8h"/>
+        <childnode refid="4149" relation="include">
+        </childnode>
+        <childnode refid="4204" relation="include">
+        </childnode>
+        <childnode refid="4205" relation="include">
+        </childnode>
+        <childnode refid="4206" relation="include">
+        </childnode>
+        <childnode refid="4207" relation="include">
+        </childnode>
+        <childnode refid="4208" relation="include">
+        </childnode>
+        <childnode refid="4209" relation="include">
+        </childnode>
+        <childnode refid="4210" relation="include">
+        </childnode>
+        <childnode refid="4211" relation="include">
+        </childnode>
+        <childnode refid="4212" relation="include">
+        </childnode>
+        <childnode refid="4213" relation="include">
+        </childnode>
+        <childnode refid="4214" relation="include">
+        </childnode>
+        <childnode refid="4215" relation="include">
+        </childnode>
+        <childnode refid="4216" relation="include">
+        </childnode>
+        <childnode refid="4217" relation="include">
+        </childnode>
+        <childnode refid="4218" relation="include">
+        </childnode>
+        <childnode refid="4219" relation="include">
+        </childnode>
+        <childnode refid="4220" relation="include">
+        </childnode>
+        <childnode refid="4221" relation="include">
+        </childnode>
+        <childnode refid="4222" relation="include">
+        </childnode>
+        <childnode refid="4223" relation="include">
+        </childnode>
+        <childnode refid="4224" relation="include">
+        </childnode>
+        <childnode refid="4225" relation="include">
+        </childnode>
+        <childnode refid="4226" relation="include">
+        </childnode>
+        <childnode refid="4227" relation="include">
+        </childnode>
+        <childnode refid="4228" relation="include">
+        </childnode>
+        <childnode refid="4229" relation="include">
+        </childnode>
+        <childnode refid="4230" relation="include">
+        </childnode>
+        <childnode refid="4231" relation="include">
+        </childnode>
+        <childnode refid="4232" relation="include">
+        </childnode>
+        <childnode refid="4233" relation="include">
+        </childnode>
+        <childnode refid="4234" relation="include">
+        </childnode>
+        <childnode refid="4235" relation="include">
+        </childnode>
+        <childnode refid="4236" relation="include">
+        </childnode>
+        <childnode refid="4237" relation="include">
+        </childnode>
+      </node>
+      <node id="4190">
+        <label>tar.h</label>
+      </node>
+      <node id="4231">
+        <label>XS/XSSet.h</label>
+      </node>
+      <node id="4222">
+        <label>XS/XSException.h</label>
+      </node>
+      <node id="4203">
+        <label>std-string.h</label>
+        <link refid="std-string_8h"/>
+        <childnode refid="4197" relation="include">
+        </childnode>
+      </node>
+      <node id="4200">
+        <label>std-md5.h</label>
+        <link refid="std-md5_8h"/>
+      </node>
+      <node id="4230">
+        <label>XS/XSNumber.h</label>
+      </node>
+      <node id="4164">
+        <label>stdio.h</label>
+      </node>
+      <node id="4157">
+        <label>locale.h</label>
+      </node>
+      <node id="4204">
+        <label>XS/XSMacros.h</label>
+      </node>
+      <node id="4219">
+        <label>XS/XSData.h</label>
+      </node>
+      <node id="4214">
+        <label>XS/XSBag.h</label>
+      </node>
+      <node id="4188">
+        <label>sys/utsname.h</label>
+      </node>
+      <node id="4172">
+        <label>inttypes.h</label>
+      </node>
+      <node id="4224">
+        <label>XS/XSGeometry.h</label>
+      </node>
+      <node id="4221">
+        <label>XS/XSError.h</label>
+      </node>
+      <node id="4202">
+        <label>std-ascii.h</label>
+        <link refid="std-ascii_8h"/>
+      </node>
+      <node id="4177">
+        <label>dirent.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct____XSColor__Struct" prot="public">__XSColor_Struct</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="____XSColor_8h_1a7b2082c2310fe4cd0a01fe1513061953" prot="public" static="no">
+        <type>struct <ref refid="struct____XSColor__Struct" kindref="compound">__XSColor_Struct</ref></type>
+        <definition>__XSColor</definition>
+        <argsstring></argsstring>
+        <name>__XSColor</name>
+        <briefdescription>
+<para>XSColor class type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSColor.h" line="69" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSColor.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="____XSColor_8h_1a6083ba86759fa5919a1b8ba0504a5955" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSColor_HSLToHSV</definition>
+        <argsstring>(__XSColor *color)</argsstring>
+        <name>__XSColor_HSLToHSV</name>
+        <param>
+          <type><ref refid="struct____XSColor__Struct" kindref="compound">__XSColor</ref> *</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Converts the HSL components to HSV. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSColor.h" line="117"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSColor_8h_1a211e91abc45a62348f77002916da2a0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSColor_HSLToRGB</definition>
+        <argsstring>(__XSColor *color)</argsstring>
+        <name>__XSColor_HSLToRGB</name>
+        <param>
+          <type><ref refid="struct____XSColor__Struct" kindref="compound">__XSColor</ref> *</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Converts the HSL components to RGB. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSColor.h" line="110"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSColor_8h_1ad52f0bb3a87391b933df10dd8b1717b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSColor_HSVToHSL</definition>
+        <argsstring>(__XSColor *color)</argsstring>
+        <name>__XSColor_HSVToHSL</name>
+        <param>
+          <type><ref refid="struct____XSColor__Struct" kindref="compound">__XSColor</ref> *</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Converts the HSV components to HSL. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSColor.h" line="103"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSColor_8h_1a55e4b64b597fb434d7246e96f2de8e66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSColor_HSVToRGB</definition>
+        <argsstring>(__XSColor *color)</argsstring>
+        <name>__XSColor_HSVToRGB</name>
+        <param>
+          <type><ref refid="struct____XSColor__Struct" kindref="compound">__XSColor</ref> *</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Converts the HSV components to RGB. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSColor.h" line="96"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSColor_8h_1a9c65acb6d6d96ede055b01e8c56bbd0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSColor_Initialize</definition>
+        <argsstring>(void)</argsstring>
+        <name>__XSColor_Initialize</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Runtime initialization. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSColor.h" line="75"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSColor_8h_1a8e38f712f1eaa759f2f14f3c99be4155" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSColor_RGBToHSL</definition>
+        <argsstring>(__XSColor *color)</argsstring>
+        <name>__XSColor_RGBToHSL</name>
+        <param>
+          <type><ref refid="struct____XSColor__Struct" kindref="compound">__XSColor</ref> *</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Converts the RGB components to HSV. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSColor.h" line="82"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSColor_8h_1a413c065a436185d19465991b6496723f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSColor_RGBToHSV</definition>
+        <argsstring>(__XSColor *color)</argsstring>
+        <name>__XSColor_RGBToHSV</name>
+        <param>
+          <type><ref refid="struct____XSColor__Struct" kindref="compound">__XSColor</ref> *</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Converts the RGB components to HSL. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSColor.h" line="89"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Private XSColor class definitions. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt; </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2011,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__XSColor.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Private<sp/>XSColor<sp/>class<sp/>definitions</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>___XS_COLOR_H_</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>___XS_COLOR_H_</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../XSMacros.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="XSMacros_8h_1ae3fa7c5665557917f34badbe69a55828" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; start.">XS_EXTERN_C_BEGIN</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XS_8h" kindref="compound" tooltip="XSFoundation main header file.">XS.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="48"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>@struct<sp/><sp/><sp/><sp/><sp/><sp/>__XSColor_Struct</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSColor<sp/>class</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="struct____XSColor__Struct" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct____XSColor__Struct" kindref="compound" tooltip="XSColor class.">__XSColor_Struct</ref></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54" refid="struct____XSColor__Struct_1a095b6f0d6600c54f34f326e1421feb80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structXSRuntimeClass__Struct" kindref="compound" tooltip="Base structure for the runtime classes.">XSRuntimeClass</ref><sp/><ref refid="struct____XSColor__Struct_1a095b6f0d6600c54f34f326e1421feb80" kindref="member">__class</ref>;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>Runtime<sp/>class<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="struct____XSColor__Struct_1a2768008f212bae61d9e6a822cd186183" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSColor__Struct_1a2768008f212bae61d9e6a822cd186183" kindref="member">red</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="struct____XSColor__Struct_1a18fa60ed46f54788a8fd777376bb817a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSColor__Struct_1a18fa60ed46f54788a8fd777376bb817a" kindref="member">green</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="struct____XSColor__Struct_1ad2bd5d3e9ed6f0b760d346a77bc31288" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSColor__Struct_1ad2bd5d3e9ed6f0b760d346a77bc31288" kindref="member">blue</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="struct____XSColor__Struct_1a3bec66609cfb2e0ae43d9255c4a9f1f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSColor__Struct_1a3bec66609cfb2e0ae43d9255c4a9f1f9" kindref="member">hue</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="struct____XSColor__Struct_1ab3dc0e8fb159e18ae6a90fe193dfd9b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSColor__Struct_1ab3dc0e8fb159e18ae6a90fe193dfd9b4" kindref="member">saturation</ref>;<sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="struct____XSColor__Struct_1a10a4f48aae24cdc6e34801f62871c8d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSColor__Struct_1a10a4f48aae24cdc6e34801f62871c8d7" kindref="member">value</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="struct____XSColor__Struct_1a8faeea939a6709ea8b2485c5eef39248" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSColor__Struct_1a8faeea939a6709ea8b2485c5eef39248" kindref="member">luminance</ref>;<sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="struct____XSColor__Struct_1a2287b0d480a3e72df9789ad8536f5617" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab6cd7564f731c57e5f94d7dd6dd0f2e7" kindref="member">XSFloat</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSColor__Struct_1a2287b0d480a3e72df9789ad8536f5617" kindref="member">alpha</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="65"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>__XSColor</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSColor<sp/>class<sp/>type</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="____XSColor_8h_1a7b2082c2310fe4cd0a01fe1513061953" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct____XSColor__Struct" kindref="compound" tooltip="XSColor class.">__XSColor_Struct</ref><sp/><ref refid="struct____XSColor__Struct" kindref="compound" tooltip="XSColor class.">__XSColor</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="71"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Runtime<sp/>initialization</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSColor_8h_1a9c65acb6d6d96ede055b01e8c56bbd0e" kindref="member" tooltip="Runtime initialization.">__XSColor_Initialize</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="77"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Converts<sp/>the<sp/>RGB<sp/>components<sp/>to<sp/>HSV</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>color<sp/><sp/><sp/>The<sp/>color<sp/>object</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSColor_8h_1a8e38f712f1eaa759f2f14f3c99be4155" kindref="member" tooltip="Converts the RGB components to HSV.">__XSColor_RGBToHSL</ref>(<sp/><ref refid="struct____XSColor__Struct" kindref="compound" tooltip="XSColor class.">__XSColor</ref><sp/>*<sp/>color<sp/>);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="84"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Converts<sp/>the<sp/>RGB<sp/>components<sp/>to<sp/>HSL</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>color<sp/><sp/><sp/>The<sp/>color<sp/>object</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSColor_8h_1a413c065a436185d19465991b6496723f" kindref="member" tooltip="Converts the RGB components to HSL.">__XSColor_RGBToHSV</ref>(<sp/><ref refid="struct____XSColor__Struct" kindref="compound" tooltip="XSColor class.">__XSColor</ref><sp/>*<sp/>color<sp/>);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="91"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Converts<sp/>the<sp/>HSV<sp/>components<sp/>to<sp/>RGB</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>color<sp/><sp/><sp/>The<sp/>color<sp/>object</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSColor_8h_1a55e4b64b597fb434d7246e96f2de8e66" kindref="member" tooltip="Converts the HSV components to RGB.">__XSColor_HSVToRGB</ref>(<sp/><ref refid="struct____XSColor__Struct" kindref="compound" tooltip="XSColor class.">__XSColor</ref><sp/>*<sp/>color<sp/>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="98"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Converts<sp/>the<sp/>HSV<sp/>components<sp/>to<sp/>HSL</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>color<sp/><sp/><sp/>The<sp/>color<sp/>object</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSColor_8h_1ad52f0bb3a87391b933df10dd8b1717b4" kindref="member" tooltip="Converts the HSV components to HSL.">__XSColor_HSVToHSL</ref>(<sp/><ref refid="struct____XSColor__Struct" kindref="compound" tooltip="XSColor class.">__XSColor</ref><sp/>*<sp/>color<sp/>);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="105"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Converts<sp/>the<sp/>HSL<sp/>components<sp/>to<sp/>RGB</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>color<sp/><sp/><sp/>The<sp/>color<sp/>object</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSColor_8h_1a211e91abc45a62348f77002916da2a0e" kindref="member" tooltip="Converts the HSL components to RGB.">__XSColor_HSLToRGB</ref>(<sp/><ref refid="struct____XSColor__Struct" kindref="compound" tooltip="XSColor class.">__XSColor</ref><sp/>*<sp/>color<sp/>);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="112"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Converts<sp/>the<sp/>HSL<sp/>components<sp/>to<sp/>HSV</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>color<sp/><sp/><sp/>The<sp/>color<sp/>object</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSColor_8h_1a6083ba86759fa5919a1b8ba0504a5955" kindref="member" tooltip="Converts the HSL components to HSV.">__XSColor_HSLToHSV</ref>(<sp/><ref refid="struct____XSColor__Struct" kindref="compound" tooltip="XSColor class.">__XSColor</ref><sp/>*<sp/>color<sp/>);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><ref refid="XSMacros_8h_1a35fa049fa034476400f574516968a3a2" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; end.">XS_EXTERN_C_END</ref></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>___XS_COLOR_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSColor.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="structpthread__attr__t__struct" kind="struct" prot="public">
+    <compoundname>pthread_attr_t_struct</compoundname>
+    <includes refid="win32-pthread_8h" local="yes">win32-pthread.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structpthread__attr__t__struct_1aa8f39b093393058d7a41b31e2dc5e190" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pthread_attr_t_struct::detachstate</definition>
+        <argsstring></argsstring>
+        <name>detachstate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-pthread.h" line="72" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-pthread.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpthread__attr__t__struct_1ac21047bc5aeafe4e493e937200bc86ff" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* pthread_attr_t_struct::stackaddr</definition>
+        <argsstring></argsstring>
+        <name>stackaddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Detached state </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-pthread.h" line="73" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-pthread.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpthread__attr__t__struct_1a3e01b1799a5f46cf7453320354d5cccf" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t pthread_attr_t_struct::stacksize</definition>
+        <argsstring></argsstring>
+        <name>stacksize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stack address </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-pthread.h" line="74" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-pthread.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Thread attribute structure. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="493">
+        <label>size_t</label>
+      </node>
+      <node id="495">
+        <label>void *</label>
+      </node>
+      <node id="494">
+        <label>int</label>
+      </node>
+      <node id="492">
+        <label>pthread_attr_t_struct</label>
+        <link refid="structpthread__attr__t__struct"/>
+        <childnode refid="493" relation="usage">
+          <edgelabel>stacksize</edgelabel>
+        </childnode>
+        <childnode refid="494" relation="usage">
+          <edgelabel>detachstate</edgelabel>
+        </childnode>
+        <childnode refid="495" relation="usage">
+          <edgelabel>stackaddr</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-pthread.h" line="71" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/win32-pthread.h" bodystart="70" bodyend="75"/>
+    <listofallmembers>
+      <member refid="structpthread__attr__t__struct_1aa8f39b093393058d7a41b31e2dc5e190" prot="public" virt="non-virtual"><scope>pthread_attr_t_struct</scope><name>detachstate</name></member>
+      <member refid="structpthread__attr__t__struct_1ac21047bc5aeafe4e493e937200bc86ff" prot="public" virt="non-virtual"><scope>pthread_attr_t_struct</scope><name>stackaddr</name></member>
+      <member refid="structpthread__attr__t__struct_1a3e01b1799a5f46cf7453320354d5cccf" prot="public" virt="non-virtual"><scope>pthread_attr_t_struct</scope><name>stacksize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

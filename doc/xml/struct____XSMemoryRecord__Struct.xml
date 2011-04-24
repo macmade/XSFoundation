@@ -1,0 +1,263 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="struct____XSMemoryRecord__Struct" kind="struct" prot="public">
+    <compoundname>__XSMemoryRecord_Struct</compoundname>
+    <includes refid="____XSMemoryDebug_8h" local="yes">__XSMemoryDebug.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct____XSMemoryRecord__Struct_1a1496e0126d6b409f89f192484ef2c510" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* __XSMemoryRecord_Struct::allocFile</definition>
+        <argsstring></argsstring>
+        <name>allocFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="61" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSMemoryRecord__Struct_1a1d9fca5d5cc051e6b41b5667b8446904" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* __XSMemoryRecord_Struct::allocFunc</definition>
+        <argsstring></argsstring>
+        <name>allocFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="63" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSMemoryRecord__Struct_1a99c89a3bbd8fac81d605338933cf9ffb" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t __XSMemoryRecord_Struct::allocID</definition>
+        <argsstring></argsstring>
+        <name>allocID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="57" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSMemoryRecord__Struct_1a788195c68f3bc241728be04cee61c726" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int __XSMemoryRecord_Struct::allocLine</definition>
+        <argsstring></argsstring>
+        <name>allocLine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="62" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSMemoryRecord__Struct_1a5a42d742f00d065f2f195da77b04db42" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1ab697493797a12574d517e2ca17bce7c0" kindref="member">XSClassID</ref></type>
+        <definition>XSClassID __XSMemoryRecord_Struct::classID</definition>
+        <argsstring></argsstring>
+        <name>classID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="58" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSMemoryRecord__Struct_1a62e9cc69d571bbaebfa1ae33611b86de" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL __XSMemoryRecord_Struct::freed</definition>
+        <argsstring></argsstring>
+        <name>freed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="60" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSMemoryRecord__Struct_1a0fd6d2fb4db9959f3a6107fca167084a" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* __XSMemoryRecord_Struct::freeFile</definition>
+        <argsstring></argsstring>
+        <name>freeFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="64" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSMemoryRecord__Struct_1a1694d242f24d7365899659fa0a21c9f1" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* __XSMemoryRecord_Struct::freeFunc</definition>
+        <argsstring></argsstring>
+        <name>freeFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="66" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSMemoryRecord__Struct_1a29cb4a268d0d60ca6eb8c49861fa27db" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int __XSMemoryRecord_Struct::freeLine</definition>
+        <argsstring></argsstring>
+        <name>freeLine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="65" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSMemoryRecord__Struct_1ab59ffed0a19f983548bbd69ea664a076" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1ae8d29cea6ffaf89a545da4cd8f11f8e0" kindref="member">Str255</ref></type>
+        <definition>Str255 __XSMemoryRecord_Struct::hash</definition>
+        <argsstring></argsstring>
+        <name>hash</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="59" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSMemoryRecord__Struct_1af38fddff7daed8b44e2461066a5504ee" prot="public" static="no" mutable="no">
+        <type><ref refid="struct______XSMemoryObject__Struct" kindref="compound">__XSMemoryObject</ref> *</type>
+        <definition>__XSMemoryObject* __XSMemoryRecord_Struct::object</definition>
+        <argsstring></argsstring>
+        <name>object</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="55" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSMemoryRecord__Struct_1a84b4af36f6b43af1ac34bfba78ebae36" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t __XSMemoryRecord_Struct::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="56" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>... </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="393">
+        <label>size_t</label>
+      </node>
+      <node id="400">
+        <label>void *</label>
+      </node>
+      <node id="391">
+        <label>__XSMemoryRecord_Struct</label>
+        <link refid="struct____XSMemoryRecord__Struct"/>
+        <childnode refid="392" relation="usage">
+          <edgelabel>classID</edgelabel>
+        </childnode>
+        <childnode refid="393" relation="usage">
+          <edgelabel>allocID</edgelabel>
+          <edgelabel>size</edgelabel>
+        </childnode>
+        <childnode refid="394" relation="usage">
+          <edgelabel>allocLine</edgelabel>
+          <edgelabel>freeLine</edgelabel>
+        </childnode>
+        <childnode refid="395" relation="usage">
+          <edgelabel>freed</edgelabel>
+        </childnode>
+        <childnode refid="396" relation="usage">
+          <edgelabel>freeFunc</edgelabel>
+          <edgelabel>allocFile</edgelabel>
+          <edgelabel>freeFile</edgelabel>
+          <edgelabel>allocFunc</edgelabel>
+        </childnode>
+        <childnode refid="397" relation="usage">
+          <edgelabel>object</edgelabel>
+        </childnode>
+        <childnode refid="399" relation="usage">
+          <edgelabel>hash</edgelabel>
+        </childnode>
+      </node>
+      <node id="395">
+        <label>signed char</label>
+      </node>
+      <node id="397">
+        <label>___XSMemoryObject_Struct</label>
+        <link refid="struct______XSMemoryObject__Struct"/>
+        <childnode refid="392" relation="usage">
+          <edgelabel>classID</edgelabel>
+        </childnode>
+        <childnode refid="398" relation="usage">
+          <edgelabel>fence</edgelabel>
+        </childnode>
+        <childnode refid="393" relation="usage">
+          <edgelabel>allocID</edgelabel>
+          <edgelabel>size</edgelabel>
+        </childnode>
+        <childnode refid="394" relation="usage">
+          <edgelabel>retainCount</edgelabel>
+        </childnode>
+        <childnode refid="399" relation="usage">
+          <edgelabel>hash</edgelabel>
+        </childnode>
+        <childnode refid="400" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="398">
+        <label>unsigned char</label>
+      </node>
+      <node id="394">
+        <label>int</label>
+      </node>
+      <node id="396">
+        <label>const char *</label>
+      </node>
+      <node id="392">
+        <label>unsigned long</label>
+      </node>
+      <node id="399">
+        <label>unsigned char[256]</label>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="54" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" bodystart="53" bodyend="67"/>
+    <listofallmembers>
+      <member refid="struct____XSMemoryRecord__Struct_1a1496e0126d6b409f89f192484ef2c510" prot="public" virt="non-virtual"><scope>__XSMemoryRecord_Struct</scope><name>allocFile</name></member>
+      <member refid="struct____XSMemoryRecord__Struct_1a1d9fca5d5cc051e6b41b5667b8446904" prot="public" virt="non-virtual"><scope>__XSMemoryRecord_Struct</scope><name>allocFunc</name></member>
+      <member refid="struct____XSMemoryRecord__Struct_1a99c89a3bbd8fac81d605338933cf9ffb" prot="public" virt="non-virtual"><scope>__XSMemoryRecord_Struct</scope><name>allocID</name></member>
+      <member refid="struct____XSMemoryRecord__Struct_1a788195c68f3bc241728be04cee61c726" prot="public" virt="non-virtual"><scope>__XSMemoryRecord_Struct</scope><name>allocLine</name></member>
+      <member refid="struct____XSMemoryRecord__Struct_1a5a42d742f00d065f2f195da77b04db42" prot="public" virt="non-virtual"><scope>__XSMemoryRecord_Struct</scope><name>classID</name></member>
+      <member refid="struct____XSMemoryRecord__Struct_1a62e9cc69d571bbaebfa1ae33611b86de" prot="public" virt="non-virtual"><scope>__XSMemoryRecord_Struct</scope><name>freed</name></member>
+      <member refid="struct____XSMemoryRecord__Struct_1a0fd6d2fb4db9959f3a6107fca167084a" prot="public" virt="non-virtual"><scope>__XSMemoryRecord_Struct</scope><name>freeFile</name></member>
+      <member refid="struct____XSMemoryRecord__Struct_1a1694d242f24d7365899659fa0a21c9f1" prot="public" virt="non-virtual"><scope>__XSMemoryRecord_Struct</scope><name>freeFunc</name></member>
+      <member refid="struct____XSMemoryRecord__Struct_1a29cb4a268d0d60ca6eb8c49861fa27db" prot="public" virt="non-virtual"><scope>__XSMemoryRecord_Struct</scope><name>freeLine</name></member>
+      <member refid="struct____XSMemoryRecord__Struct_1ab59ffed0a19f983548bbd69ea664a076" prot="public" virt="non-virtual"><scope>__XSMemoryRecord_Struct</scope><name>hash</name></member>
+      <member refid="struct____XSMemoryRecord__Struct_1af38fddff7daed8b44e2461066a5504ee" prot="public" virt="non-virtual"><scope>__XSMemoryRecord_Struct</scope><name>object</name></member>
+      <member refid="struct____XSMemoryRecord__Struct_1a84b4af36f6b43af1ac34bfba78ebae36" prot="public" virt="non-virtual"><scope>__XSMemoryRecord_Struct</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

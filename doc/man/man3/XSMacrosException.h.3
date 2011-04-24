@@ -1,0 +1,202 @@
+.TH "XSMacrosException.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XSMacrosException.h \- 
+.PP
+Exception macros.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'XSMacros.h'\fP
+.br
+
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fB__XSCatch\fP(action)"
+.br
+.ti -1c
+.RI "#define \fB__XSMainCatch\fP(action, returnValue)"
+.br
+.ti -1c
+.RI "#define \fBXSCatch\fP(ex)   __XSCatch( ( ( ex ) = \fBXSExceptionContext\fP->e, 0 ) )"
+.br
+.ti -1c
+.RI "#define \fBXSMain\fP(argc, argv)   int main( int argc, char * argv[] )"
+.br
+.ti -1c
+.RI "#define \fBXSMainCatch\fP(ex, returnValue)   __XSMainCatch( ( ( ex ) = \fBXSExceptionContext\fP->e, 0 ), returnValue )"
+.br
+.ti -1c
+.RI "#define \fBXSMainEnd\fP(returnValue)"
+.br
+.ti -1c
+.RI "#define \fBXSMainFunctionEnd\fP(returnValue)"
+.br
+.ti -1c
+.RI "#define \fBXSMainStart\fP(argc, argv)"
+.br
+.ti -1c
+.RI "#define \fBXSThrow\fP   for( ; ; longjmp( *( \fBXSExceptionContext\fP->e_env ), 1 ) ) \fBXSExceptionContext\fP->e ="
+.br
+.ti -1c
+.RI "#define \fBXSTry\fP"
+.br
+.ti -1c
+.RI "#define \fBXSTryCatchEnd\fP(returnValue)"
+.br
+.ti -1c
+.RI "#define \fBXSTryCatchStart\fP()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Exception macros. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBXSMacrosException.h\fP.
+.SH "Define Documentation"
+.PP 
+.SS "#define __XSCatch(action)"\fBValue:\fP
+.PP
+.nf
+while( XSExceptionContext->caught = 0, XSExceptionContext->caught );    \
+        }                                                                           \
+        else                                                                        \
+        {                                                                           \
+            XSExceptionContext->caught = 1;                                         \
+        }                                                                           \
+                                                                                    \
+        XSExceptionContext->e_env = e_prev;                                         \
+    }                                                                               \
+    if( !XSExceptionContext->caught || action )                                     \
+    {}                                                                              \
+    else
+.fi
+.PP
+Definition at line 145 of file XSMacrosException.h.
+.SS "#define __XSMainCatch(action, returnValue)"\fBValue:\fP
+.PP
+.nf
+while( XSExceptionContext->caught = 0, XSExceptionContext->caught );    \
+        }                                                                           \
+        else                                                                        \
+        {                                                                           \
+            XSExceptionContext->caught = 1;                                         \
+        }                                                                           \
+                                                                                    \
+        XSExceptionContext->e_env = e_prev;                                         \
+    }                                                                               \
+    if( !XSExceptionContext->caught || action )                                     \
+    {                                                                               \
+        ExitProcess( returnValue );                                                 \
+    }                                                                               \
+    else
+.fi
+.PP
+Definition at line 159 of file XSMacrosException.h.
+.SS "#define XSCatch(ex)   __XSCatch( ( ( ex ) = \fBXSExceptionContext\fP->e, 0 ) )"
+.PP
+Definition at line 175 of file XSMacrosException.h.
+.SS "#define XSMain(argc, argv)   int main( int argc, char * argv[] )"
+.PP
+Definition at line 59 of file XSMacrosException.h.
+.SS "#define XSMainCatch(ex, returnValue)   __XSMainCatch( ( ( ex ) = \fBXSExceptionContext\fP->e, 0 ), returnValue )"
+.PP
+Definition at line 176 of file XSMacrosException.h.
+.SS "#define XSMainEnd(returnValue)"\fBValue:\fP
+.PP
+.nf
+XSMainFunctionEnd( returnValue )    \
+    }
+.fi
+.PP
+Definition at line 69 of file XSMacrosException.h.
+.SS "#define XSMainFunctionEnd(returnValue)"\fBValue:\fP
+.PP
+.nf
+}                                                   \
+            XSCatch( e )                                        \
+            {                                                   \
+                XSMemoryDebug_Disable();                        \
+                                                                \
+                XSLog                                           \
+                (                                               \
+                    'FATAL ERROR: uncaught exception: $@\n',    \
+                    e                                           \
+                );                                              \
+                exit( EXIT_FAILURE );                           \
+            }                                                   \
+        }                                                       \
+        return returnValue;                                     \
+    }
+.fi
+.PP
+Definition at line 112 of file XSMacrosException.h.
+.SS "#define XSMainStart(argc, argv)"\fBValue:\fP
+.PP
+.nf
+XSMain( argc, argv )                                    \
+    {                                                       \
+        XSApplication_Start( argc, ( const char ** )argv ); \
+        XSTryCatchStart()
+.fi
+.PP
+Definition at line 63 of file XSMacrosException.h.
+.SS "#define XSThrow   for( ; ; longjmp( *( \fBXSExceptionContext\fP->e_env ), 1 ) ) \fBXSExceptionContext\fP->e ="
+.PP
+Definition at line 131 of file XSMacrosException.h.
+.SS "#define XSTry"\fBValue:\fP
+.PP
+.nf
+{                                                           \
+        jmp_buf * e_prev;                                       \
+        jmp_buf   e_cur;                                        \
+                                                                \
+        e_prev                    = XSExceptionContext->e_env;  \
+        XSExceptionContext->e_env = &e_cur;                     \
+                                                                \
+        if( setjmp( e_cur ) == 0 )                              \
+        {                                                       \
+            do
+.fi
+.PP
+Definition at line 133 of file XSMacrosException.h.
+.SS "#define XSTryCatchEnd(returnValue)"\fBValue:\fP
+.PP
+.nf
+}                           \
+            XSCatch( e )                \
+            {                           \
+                XSThrow e;              \
+            }                           \
+        }                               \
+        return returnValue;             \
+    }
+.fi
+.PP
+Definition at line 81 of file XSMacrosException.h.
+.SS "#define XSTryCatchStart()"\fBValue:\fP
+.PP
+.nf
+{                                   \
+        {                               \
+            XSException  e;             \
+                                        \
+            XSTry                       \
+            {
+.fi
+.PP
+Definition at line 73 of file XSMacrosException.h.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

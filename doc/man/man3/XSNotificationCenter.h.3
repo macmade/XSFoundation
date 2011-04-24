@@ -1,0 +1,137 @@
+.TH "XSNotificationCenter.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XSNotificationCenter.h \- 
+.PP
+XSNotificationCenter class functions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'XSMacros.h'\fP
+.br
+\fC#include 'XSNotification.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB__XSNotificationCenter_Struct\fP * \fBXSNotificationCenter\fP"
+.br
+.RI "\fIOpaque type for the XSNotificationCenter objects. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBXSNotificationCenter_AddObserver\fP (\fBXSNotificationCenter\fP xsThis, \fBXSObject\fP object, \fBXSString\fP notificationName, void(*func)(\fBXSNotification\fP notification))"
+.br
+.RI "\fIAdds an observer attached to an object. \fP"
+.ti -1c
+.RI "XSStatic \fBXSObject\fP \fBXSNotificationCenter_Alloc\fP (void)"
+.br
+.RI "\fIObject allocator. \fP"
+.ti -1c
+.RI "XSStatic XSAutoreleased \fBXSNotificationCenter\fP \fBXSNotificationCenter_DefaultCenter\fP (void)"
+.br
+.RI "\fIGets the default notification center. \fP"
+.ti -1c
+.RI "\fBXSObject\fP \fBXSNotificationCenter_Init\fP (\fBXSObject\fP xsThis)"
+.br
+.RI "\fIInitializes a notification center. \fP"
+.ti -1c
+.RI "void \fBXSNotificationCenter_PostNotification\fP (\fBXSNotificationCenter\fP xsThis, \fBXSObject\fP object, \fBXSString\fP notificationName)"
+.br
+.RI "\fIPosts a notification. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+XSNotificationCenter class functions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBXSNotificationCenter.h\fP.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBXSNotificationCenter\fP"
+.PP
+Opaque type for the XSNotificationCenter objects. 
+.PP
+Definition at line 52 of file XSNotificationCenter.h.
+.SH "Function Documentation"
+.PP 
+.SS "void XSNotificationCenter_AddObserver (\fBXSNotificationCenter\fPxsThis, \fBXSObject\fPobject, \fBXSString\fPnotificationName, void(*)(\fBXSNotification\fP notification)func)"
+.PP
+Adds an observer attached to an object. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The notification center 
+.br
+\fIobject\fP The object to watch 
+.br
+\fInotificationName\fP The notification name 
+.br
+\fIfunc\fP The function that will receive the notifications 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "XSStatic \fBXSObject\fP XSNotificationCenter_Alloc (void)"
+.PP
+Object allocator. \fBReturns:\fP
+.RS 4
+The allocated object 
+.RE
+.PP
+
+.SS "XSStatic XSAutoreleased \fBXSNotificationCenter\fP XSNotificationCenter_DefaultCenter (void)"
+.PP
+Gets the default notification center. \fBReturns:\fP
+.RS 4
+The default notification center 
+.RE
+.PP
+
+.SS "\fBXSObject\fP XSNotificationCenter_Init (\fBXSObject\fPxsThis)"
+.PP
+Initializes a notification center. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The notification center 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The notification center 
+.RE
+.PP
+
+.SS "void XSNotificationCenter_PostNotification (\fBXSNotificationCenter\fPxsThis, \fBXSObject\fPobject, \fBXSString\fPnotificationName)"
+.PP
+Posts a notification. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The notification center 
+.br
+\fIobject\fP The object from which the notification is post 
+.br
+\fInotificationName\fP The notification name 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

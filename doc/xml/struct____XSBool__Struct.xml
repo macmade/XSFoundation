@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="struct____XSBool__Struct" kind="struct" prot="public">
+    <compoundname>__XSBool_Struct</compoundname>
+    <includes refid="____XSBool_8h" local="yes">__XSBool.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct____XSBool__Struct_1a9f97530f2685750ffb4d93c50b33cab9" prot="public" static="no" mutable="no">
+        <type><ref refid="structXSRuntimeClass__Struct" kindref="compound">XSRuntimeClass</ref></type>
+        <definition>XSRuntimeClass __XSBool_Struct::__class</definition>
+        <argsstring></argsstring>
+        <name>__class</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBool.h" line="54" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBool.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSBool__Struct_1a8d4629b49008cefd3030fc6caa5302bb" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL __XSBool_Struct::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBool.h" line="55" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBool.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>XSBool class. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="327">
+        <label>XSClassInfos</label>
+        <link refid="structXSClassInfos"/>
+      </node>
+      <node id="325">
+        <label>signed char</label>
+      </node>
+      <node id="324">
+        <label>__XSBool_Struct</label>
+        <link refid="struct____XSBool__Struct"/>
+        <childnode refid="325" relation="usage">
+          <edgelabel>value</edgelabel>
+        </childnode>
+        <childnode refid="326" relation="usage">
+          <edgelabel>__class</edgelabel>
+        </childnode>
+      </node>
+      <node id="326">
+        <label>XSRuntimeClass_Struct</label>
+        <link refid="structXSRuntimeClass__Struct"/>
+        <childnode refid="327" relation="usage">
+          <edgelabel>classInfos</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBool.h" line="53" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBool.h" bodystart="52" bodyend="56"/>
+    <listofallmembers>
+      <member refid="struct____XSBool__Struct_1a9f97530f2685750ffb4d93c50b33cab9" prot="public" virt="non-virtual"><scope>__XSBool_Struct</scope><name>__class</name></member>
+      <member refid="struct____XSBool__Struct_1a8d4629b49008cefd3030fc6caa5302bb" prot="public" virt="non-virtual"><scope>__XSBool_Struct</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

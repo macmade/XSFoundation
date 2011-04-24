@@ -1,0 +1,110 @@
+.TH "std-math.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+std-math.h \- 
+.PP
+Mathematical macros.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fB__LOG2\fP   0.301029995663981f"
+.br
+.RI "\fIConstant for the binary logarithm macro. \fP"
+.ti -1c
+.RI "#define \fBABS\fP(a)   ( ( a ) < 0 ? ( -( a ) ) : ( a ) )"
+.br
+.RI "\fIAbsolute value. \fP"
+.ti -1c
+.RI "#define \fBLOG2\fP(x)   ( log10( x ) / __LOG2 )"
+.br
+.RI "\fIBinary logarithm. \fP"
+.ti -1c
+.RI "#define \fBM_PI\fP   3.1415926535897932384626433832795"
+.br
+.RI "\fIPi (π) constant. \fP"
+.ti -1c
+.RI "#define \fBMAX\fP(a, b)   ( ( ( a ) > ( b ) ) ? a : b )"
+.br
+.RI "\fIGet the max of two values. \fP"
+.ti -1c
+.RI "#define \fBMIN\fP(a, b)   ( ( ( a ) < ( b ) ) ? a : b )"
+.br
+.RI "\fIGet the min of two values. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Mathematical macros. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBstd-math.h\fP.
+.SH "Define Documentation"
+.PP 
+.SS "#define __LOG2   0.301029995663981f"
+.PP
+Constant for the binary logarithm macro. 
+.PP
+Definition at line 62 of file std-math.h.
+.SS "#define ABS(a)   ( ( a ) < 0 ? ( -( a ) ) : ( a ) )"
+.PP
+Absolute value. \fBParameters:\fP
+.RS 4
+\fIa\fP The value 
+.RE
+.PP
+
+.PP
+Definition at line 104 of file std-math.h.
+.SS "#define LOG2(x)   ( log10( x ) / __LOG2 )"
+.PP
+Binary logarithm. \fBParameters:\fP
+.RS 4
+\fIx\fP The value 
+.RE
+.PP
+
+.PP
+Definition at line 69 of file std-math.h.
+.SS "#define M_PI   3.1415926535897932384626433832795"
+.PP
+Pi (π) constant. 
+.PP
+Definition at line 52 of file std-math.h.
+.SS "#define MAX(a, b)   ( ( ( a ) > ( b ) ) ? a : b )"
+.PP
+Get the max of two values. \fBParameters:\fP
+.RS 4
+\fIa\fP The first value 
+.br
+\fIb\fP The second value 
+.RE
+.PP
+
+.PP
+Definition at line 81 of file std-math.h.
+.SS "#define MIN(a, b)   ( ( ( a ) < ( b ) ) ? a : b )"
+.PP
+Get the min of two values. \fBParameters:\fP
+.RS 4
+\fIa\fP The first value 
+.br
+\fIb\fP The second value 
+.RE
+.PP
+
+.PP
+Definition at line 93 of file std-math.h.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

@@ -1,0 +1,664 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="XSBag_8h" kind="file">
+    <compoundname>XSBag.h</compoundname>
+    <includes refid="XSMacros_8h" local="yes">XSMacros.h</includes>
+    <incdepgraph>
+      <node id="6761">
+        <label>XSMacros.h</label>
+        <link refid="XSMacros_8h"/>
+        <childnode refid="6762" relation="include">
+        </childnode>
+        <childnode refid="6763" relation="include">
+        </childnode>
+      </node>
+      <node id="6762">
+        <label>XSMacrosTarget.h</label>
+        <link refid="XSMacrosTarget_8h"/>
+        <childnode refid="6761" relation="include">
+        </childnode>
+      </node>
+      <node id="6760">
+        <label>XSBag.h</label>
+        <link refid="XSBag.h"/>
+        <childnode refid="6761" relation="include">
+        </childnode>
+      </node>
+      <node id="6763">
+        <label>XSMacrosException.h</label>
+        <link refid="XSMacrosException_8h"/>
+        <childnode refid="6761" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="XSBag_8h_1a9dc438d5a07758cee1e2099ebec7650e" prot="public" static="no">
+        <type>struct <ref refid="struct____XSBag__Struct" kindref="compound">__XSBag_Struct</ref> *</type>
+        <definition>XSBag</definition>
+        <argsstring></argsstring>
+        <name>XSBag</name>
+        <briefdescription>
+<para>Opaque type for the XSBag objects. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBag.h" line="50" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBag.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="XSBag_8h_1aefd624a416381a4b96955eaa407d03dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XSBag_AddValue</definition>
+        <argsstring>(XSBag xsThis, XSObject value)</argsstring>
+        <name>XSBag_AddValue</name>
+        <param>
+          <type><ref refid="struct____XSBag__Struct" kindref="compound">XSBag</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Adds a value in the bag. </para>        </briefdescription>
+        <detaileddescription>
+<para>The new value will be retained <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bag object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to add </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBag.h" line="104"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBag_8h_1ae990d58b0f89a6b35e23b6b39f04d32a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSStatic <ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSStatic XSObject XSBag_Alloc</definition>
+        <argsstring>(void)</argsstring>
+        <name>XSBag_Alloc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Object allocator. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The allocated object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBag.h" line="56"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBag_8h_1a403f5fa945d5206e2ccc2a05adbfe6d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSBag_ContainsValue</definition>
+        <argsstring>(XSBag xsThis, XSObject value)</argsstring>
+        <name>XSBag_ContainsValue</name>
+        <param>
+          <type><ref refid="struct____XSBag__Struct" kindref="compound">XSBag</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Checks if a bag contains a value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bag object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to check </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the bag contains the value, otherwise false </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBag.h" line="95"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBag_8h_1aa88341508ad39c95b482d28bff48ec29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger XSBag_Count</definition>
+        <argsstring>(XSBag xsThis)</argsstring>
+        <name>XSBag_Count</name>
+        <param>
+          <type><ref refid="struct____XSBag__Struct" kindref="compound">XSBag</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Gets the number of values in the bag. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bag object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of values </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBag.h" line="87"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBag_8h_1ae93ec0f7a08c7552213db7fcf9cbcd14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSAutoreleased <ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSAutoreleased XSObject XSBag_Current</definition>
+        <argsstring>(XSBag xsThis)</argsstring>
+        <name>XSBag_Current</name>
+        <param>
+          <type><ref refid="struct____XSBag__Struct" kindref="compound">XSBag</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Gets the current bag value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bag object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The current bag value </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBag.h" line="137"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBag_8h_1aa70ccf0e23d6f2762d4b4ed04e46f42f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger XSBag_Index</definition>
+        <argsstring>(XSBag xsThis)</argsstring>
+        <name>XSBag_Index</name>
+        <param>
+          <type><ref refid="struct____XSBag__Struct" kindref="compound">XSBag</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Gets the current bag index. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bag object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The current bag index </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBag.h" line="130"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBag_8h_1a9e5fed405c084ebd18f0045acf670002" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSObject XSBag_Init</definition>
+        <argsstring>(XSObject xsThis)</argsstring>
+        <name>XSBag_Init</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Initializes an empty bag. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bag object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The bag object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBag.h" line="63"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBag_8h_1a361956796796b5965803cd335fd281a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct____XSBag__Struct" kindref="compound">XSBag</ref></type>
+        <definition>XSBag XSBag_InitWithCapacity</definition>
+        <argsstring>(XSBag xsThis, XSUInteger capacity)</argsstring>
+        <name>XSBag_InitWithCapacity</name>
+        <param>
+          <type><ref refid="struct____XSBag__Struct" kindref="compound">XSBag</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+          <declname>capacity</declname>
+        </param>
+        <briefdescription>
+<para>Initializes an empty bag with an initial capacity. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bag object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>capacity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initial capacityThe bag object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The bag object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBag.h" line="71"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBag_8h_1a703b53bf9aa6c210ea98a4f66b66104c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct____XSBag__Struct" kindref="compound">XSBag</ref></type>
+        <definition>XSBag XSBag_InitWithValues</definition>
+        <argsstring>(XSBag xsThis, XSObject value1,...)</argsstring>
+        <name>XSBag_InitWithValues</name>
+        <param>
+          <type><ref refid="struct____XSBag__Struct" kindref="compound">XSBag</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>value1</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>Initializes a bag with values. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bag object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Other values, terminated by a NULL fence </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The bag object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBag.h" line="80"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBag_8h_1af1f6f70c8ab4b636c73632f442e97936" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSAutoreleased <ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSAutoreleased XSObject XSBag_Next</definition>
+        <argsstring>(XSBag xsThis)</argsstring>
+        <name>XSBag_Next</name>
+        <param>
+          <type><ref refid="struct____XSBag__Struct" kindref="compound">XSBag</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Increases the internal value pointer and returns the value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bag object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The bag value </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBag.h" line="144"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBag_8h_1a511ce0c3499c37f8c0201aeb3689fc61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XSAutoreleased <ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSAutoreleased XSObject XSBag_Previous</definition>
+        <argsstring>(XSBag xsThis)</argsstring>
+        <name>XSBag_Previous</name>
+        <param>
+          <type><ref refid="struct____XSBag__Struct" kindref="compound">XSBag</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Decrease the internal value pointer and returns the value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bag object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The bag value </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBag.h" line="151"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBag_8h_1a94cbce22401b2d7b87da57bebde4b9c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XSBag_RemoveValue</definition>
+        <argsstring>(XSBag xsThis, XSObject value)</argsstring>
+        <name>XSBag_RemoveValue</name>
+        <param>
+          <type><ref refid="struct____XSBag__Struct" kindref="compound">XSBag</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Removes a value in the bag. </para>        </briefdescription>
+        <detaileddescription>
+<para>The removed value will be released <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bag object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to remove </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBag.h" line="113"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBag_8h_1a5726aef1a37698a8aa2d5d699f12cb9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XSBag_ReplaceValue</definition>
+        <argsstring>(XSBag xsThis, XSObject valueOld, XSObject valueNew)</argsstring>
+        <name>XSBag_ReplaceValue</name>
+        <param>
+          <type><ref refid="struct____XSBag__Struct" kindref="compound">XSBag</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>valueOld</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>valueNew</declname>
+        </param>
+        <briefdescription>
+<para>Replaces a value in the bag. </para>        </briefdescription>
+        <detaileddescription>
+<para>The old value will be released, and the new will be retained <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bag object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>valueOld</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to replace </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>valueNew</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBag.h" line="123"/>
+      </memberdef>
+      <memberdef kind="function" id="XSBag_8h_1a98f036f305b584ec66b62728753b2931" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XSBag_Rewind</definition>
+        <argsstring>(XSBag xsThis)</argsstring>
+        <name>XSBag_Rewind</name>
+        <param>
+          <type><ref refid="struct____XSBag__Struct" kindref="compound">XSBag</ref></type>
+          <declname>xsThis</declname>
+        </param>
+        <briefdescription>
+<para>Bags the internal value pointer to the first value in the bag. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xsThis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bag object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBag.h" line="158"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>XSBag class functions. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt; </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2011,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSBag.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSBag<sp/>class<sp/>functions</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_XS_BAG_H_</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_XS_BAG_H_</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XSMacros_8h" kindref="compound" tooltip="General macros.">XSMacros.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="XSMacros_8h_1ae3fa7c5665557917f34badbe69a55828" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; start.">XS_EXTERN_C_BEGIN</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="46"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>XSBag</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Opaque<sp/>type<sp/>for<sp/>the<sp/>XSBag<sp/>objects</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="XSBag_8h_1a9dc438d5a07758cee1e2099ebec7650e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct____XSBag__Struct" kindref="compound" tooltip="XSBag class.">__XSBag_Struct</ref><sp/>*<sp/><ref refid="XSBag_8h_1a9dc438d5a07758cee1e2099ebec7650e" kindref="member" tooltip="Opaque type for the XSBag objects.">XSBag</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="52"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Object<sp/>allocator</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>allocated<sp/>object</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><ref refid="XSTypes_8h_1a3310ef0367fe9a2e896f4b92ea6efe9a" kindref="member" tooltip="Marker for static class methods.">XSStatic</ref><sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSBag_8h_1ae990d58b0f89a6b35e23b6b39f04d32a" kindref="member" tooltip="Object allocator.">XSBag_Alloc</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="58"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initializes<sp/>an<sp/>empty<sp/>bag</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>bag<sp/>object</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>bag<sp/>object</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSBag_8h_1a9e5fed405c084ebd18f0045acf670002" kindref="member" tooltip="Initializes an empty bag.">XSBag_Init</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="65"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initializes<sp/>an<sp/>empty<sp/>bag<sp/>with<sp/>an<sp/>initial<sp/>capacity</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>bag<sp/>object</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>capacity<sp/><sp/><sp/><sp/>The<sp/>initial<sp/>capacityThe<sp/>bag<sp/>object</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>bag<sp/>object</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">XSBag<sp/><ref refid="XSBag_8h_1a361956796796b5965803cd335fd281a0" kindref="member" tooltip="Initializes an empty bag with an initial capacity.">XSBag_InitWithCapacity</ref>(<sp/>XSBag<sp/>xsThis,<sp/><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref><sp/><ref refid="struct____XSBag__Struct_1a93054c55ed87e128db28b97d6a1b8fbf" kindref="member">capacity</ref><sp/>);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="73"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initializes<sp/>a<sp/>bag<sp/>with<sp/>values</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>bag<sp/>object</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>value1<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>first<sp/>value</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Other<sp/>values,<sp/>terminated<sp/>by<sp/>a<sp/>NULL<sp/>fence</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>bag<sp/>object</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal">XSBag<sp/><ref refid="XSBag_8h_1a703b53bf9aa6c210ea98a4f66b66104c" kindref="member" tooltip="Initializes a bag with values.">XSBag_InitWithValues</ref>(<sp/>XSBag<sp/>xsThis,<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>value1,<sp/>...<sp/>);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="82"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>number<sp/>of<sp/>values<sp/>in<sp/>the<sp/>bag</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>bag<sp/>object</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>number<sp/>of<sp/>values</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref><sp/><ref refid="XSBag_8h_1aa88341508ad39c95b482d28bff48ec29" kindref="member" tooltip="Gets the number of values in the bag.">XSBag_Count</ref>(<sp/>XSBag<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="89"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>if<sp/>a<sp/>bag<sp/>contains<sp/>a<sp/>value</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>bag<sp/>object</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/><sp/><sp/>The<sp/>value<sp/>to<sp/>check</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>True<sp/>if<sp/>the<sp/>bag<sp/>contains<sp/>the<sp/>value,<sp/>otherwise<sp/>false</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSBag_8h_1a403f5fa945d5206e2ccc2a05adbfe6d0" kindref="member" tooltip="Checks if a bag contains a value.">XSBag_ContainsValue</ref>(<sp/>XSBag<sp/>xsThis,<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>value<sp/>);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="97"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Adds<sp/>a<sp/>value<sp/>in<sp/>the<sp/>bag</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>The<sp/>new<sp/>value<sp/>will<sp/>be<sp/>retained</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>bag<sp/>object</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/><sp/><sp/>The<sp/>value<sp/>to<sp/>add</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSBag_8h_1aefd624a416381a4b96955eaa407d03dc" kindref="member" tooltip="Adds a value in the bag.">XSBag_AddValue</ref>(<sp/>XSBag<sp/>xsThis,<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>value<sp/>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="106"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Removes<sp/>a<sp/>value<sp/>in<sp/>the<sp/>bag</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>The<sp/>removed<sp/>value<sp/>will<sp/>be<sp/>released</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>bag<sp/>object</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/><sp/><sp/>The<sp/>value<sp/>to<sp/>remove</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSBag_8h_1a94cbce22401b2d7b87da57bebde4b9c4" kindref="member" tooltip="Removes a value in the bag.">XSBag_RemoveValue</ref>(<sp/>XSBag<sp/>xsThis,<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>value<sp/>);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="115"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Replaces<sp/>a<sp/>value<sp/>in<sp/>the<sp/>bag</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>The<sp/>old<sp/>value<sp/>will<sp/>be<sp/>released,<sp/>and<sp/>the<sp/>new<sp/>will<sp/>be<sp/>retained</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>bag<sp/>object</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>valueOld<sp/><sp/><sp/><sp/>The<sp/>value<sp/>to<sp/>replace</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>valueNew<sp/><sp/><sp/><sp/>The<sp/>new<sp/>value</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSBag_8h_1a5726aef1a37698a8aa2d5d699f12cb9c" kindref="member" tooltip="Replaces a value in the bag.">XSBag_ReplaceValue</ref>(<sp/>XSBag<sp/>xsThis,<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>valueOld,<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>valueNew<sp/>);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="125"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>current<sp/>bag<sp/>index</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>bag<sp/>object</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>current<sp/>bag<sp/>index</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref><sp/><ref refid="XSBag_8h_1aa70ccf0e23d6f2762d4b4ed04e46f42f" kindref="member" tooltip="Gets the current bag index.">XSBag_Index</ref>(<sp/>XSBag<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="132"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>current<sp/>bag<sp/>value</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>bag<sp/>object</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>current<sp/>bag<sp/>value</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><ref refid="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" kindref="member" tooltip="Marker for methods that return auto-released objects.">XSAutoreleased</ref><sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSBag_8h_1ae93ec0f7a08c7552213db7fcf9cbcd14" kindref="member" tooltip="Gets the current bag value.">XSBag_Current</ref>(<sp/>XSBag<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="139"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Increases<sp/>the<sp/>internal<sp/>value<sp/>pointer<sp/>and<sp/>returns<sp/>the<sp/>value</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>bag<sp/>object</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>bag<sp/>value</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><ref refid="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" kindref="member" tooltip="Marker for methods that return auto-released objects.">XSAutoreleased</ref><sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSBag_8h_1af1f6f70c8ab4b636c73632f442e97936" kindref="member" tooltip="Increases the internal value pointer and returns the value.">XSBag_Next</ref>(<sp/>XSBag<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="146"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Decrease<sp/>the<sp/>internal<sp/>value<sp/>pointer<sp/>and<sp/>returns<sp/>the<sp/>value</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>bag<sp/>object</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>bag<sp/>value</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><ref refid="XSTypes_8h_1a578fbf5f2d5f8873330e18f5304c25fe" kindref="member" tooltip="Marker for methods that return auto-released objects.">XSAutoreleased</ref><sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSBag_8h_1a511ce0c3499c37f8c0201aeb3689fc61" kindref="member" tooltip="Decrease the internal value pointer and returns the value.">XSBag_Previous</ref>(<sp/>XSBag<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="153"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Bags<sp/>the<sp/>internal<sp/>value<sp/>pointer<sp/>to<sp/>the<sp/>first<sp/>value<sp/>in<sp/>the<sp/>bag</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>xsThis<sp/><sp/>The<sp/>bag<sp/>object</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSBag_8h_1a98f036f305b584ec66b62728753b2931" kindref="member" tooltip="Bags the internal value pointer to the first value in the bag.">XSBag_Rewind</ref>(<sp/>XSBag<sp/>xsThis<sp/>);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><ref refid="XSMacros_8h_1a35fa049fa034476400f574516968a3a2" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; end.">XS_EXTERN_C_END</ref></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_XS_BAG_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSBag.h"/>
+  </compounddef>
+</doxygen>

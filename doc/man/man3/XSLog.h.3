@@ -1,0 +1,74 @@
+.TH "XSLog.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XSLog.h \- 
+.PP
+Logging functions.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBXSLog\fP (const char *fmt,...) FORMAT_ATTRIBUTE(printf"
+.br
+.RI "\fIOutputs a log message to stdout. \fP"
+.ti -1c
+.RI "void void \fBXSVLog\fP (const char *fmt, va_list args) FORMAT_ATTRIBUTE(printf"
+.br
+.RI "\fIOutputs a log message to stdout. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Logging functions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBXSLog.h\fP.
+.SH "Function Documentation"
+.PP 
+.SS "void XSLog (const char *fmt, ...)"
+.PP
+Outputs a log message to stdout. The log message will be prefixed by the date/time, process name, ID, and thread ID (or MACH port if available). 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfmt\fP The message format 
+.br
+\fI...\fP Arguments for the format 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void void XSVLog (const char *fmt, va_listargs)"
+.PP
+Outputs a log message to stdout. The log message will be prefixed by the date/time, process name, ID, and thread ID (or MACH port if available). 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfmt\fP The message format 
+.br
+\fIargs\fP Arguments for the format 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

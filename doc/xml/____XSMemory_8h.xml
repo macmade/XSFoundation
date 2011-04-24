@@ -1,0 +1,867 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="____XSMemory_8h" kind="file">
+    <compoundname>__XSMemory.h</compoundname>
+    <includes local="yes">../XSMacros.h</includes>
+    <includes refid="XS_8h" local="yes">XS.h</includes>
+    <includedby refid="____XSMemoryDebug_8h" local="yes">__XSMemoryDebug.h</includedby>
+    <incdepgraph>
+      <node id="4932">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="4920">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4926">
+        <label>grp.h</label>
+      </node>
+      <node id="4908">
+        <label>stdarg.h</label>
+      </node>
+      <node id="4943">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="4898">
+        <label>assert.h</label>
+      </node>
+      <node id="4901">
+        <label>float.h</label>
+      </node>
+      <node id="4981">
+        <label>XS/XSThread.h</label>
+      </node>
+      <node id="4916">
+        <label>wctype.h</label>
+      </node>
+      <node id="4960">
+        <label>XS/XSArray.h</label>
+      </node>
+      <node id="4918">
+        <label>fenv.h</label>
+      </node>
+      <node id="4982">
+        <label>XS/XSTimer.h</label>
+      </node>
+      <node id="4910">
+        <label>stdint.h</label>
+      </node>
+      <node id="4980">
+        <label>XS/XSString.h</label>
+      </node>
+      <node id="4912">
+        <label>stdlib.h</label>
+      </node>
+      <node id="4906">
+        <label>setjmp.h</label>
+      </node>
+      <node id="4976">
+        <label>XS/XSNotificationCenter.h</label>
+      </node>
+      <node id="4958">
+        <label>XS/XSApplicationArgument.h</label>
+      </node>
+      <node id="4930">
+        <label>sys/msg.h</label>
+      </node>
+      <node id="4900">
+        <label>errno.h</label>
+      </node>
+      <node id="4902">
+        <label>iso646.h</label>
+      </node>
+      <node id="4970">
+        <label>XS/XSFile.h</label>
+      </node>
+      <node id="4925">
+        <label>fcntl.h</label>
+      </node>
+      <node id="4938">
+        <label>termios.h</label>
+      </node>
+      <node id="4959">
+        <label>XS/XSApplication.h</label>
+      </node>
+      <node id="4922">
+        <label>std-posix.h</label>
+        <link refid="std-posix_8h"/>
+        <childnode refid="4923" relation="include">
+        </childnode>
+        <childnode refid="4924" relation="include">
+        </childnode>
+        <childnode refid="4925" relation="include">
+        </childnode>
+        <childnode refid="4926" relation="include">
+        </childnode>
+        <childnode refid="4927" relation="include">
+        </childnode>
+        <childnode refid="4928" relation="include">
+        </childnode>
+        <childnode refid="4929" relation="include">
+        </childnode>
+        <childnode refid="4930" relation="include">
+        </childnode>
+        <childnode refid="4931" relation="include">
+        </childnode>
+        <childnode refid="4932" relation="include">
+        </childnode>
+        <childnode refid="4933" relation="include">
+        </childnode>
+        <childnode refid="4934" relation="include">
+        </childnode>
+        <childnode refid="4935" relation="include">
+        </childnode>
+        <childnode refid="4936" relation="include">
+        </childnode>
+        <childnode refid="4937" relation="include">
+        </childnode>
+        <childnode refid="4938" relation="include">
+        </childnode>
+        <childnode refid="4939" relation="include">
+        </childnode>
+        <childnode refid="4940" relation="include">
+        </childnode>
+      </node>
+      <node id="4897">
+        <label>std-c99.h</label>
+        <link refid="std-c99_8h"/>
+        <childnode refid="4898" relation="include">
+        </childnode>
+        <childnode refid="4899" relation="include">
+        </childnode>
+        <childnode refid="4900" relation="include">
+        </childnode>
+        <childnode refid="4901" relation="include">
+        </childnode>
+        <childnode refid="4902" relation="include">
+        </childnode>
+        <childnode refid="4903" relation="include">
+        </childnode>
+        <childnode refid="4904" relation="include">
+        </childnode>
+        <childnode refid="4905" relation="include">
+        </childnode>
+        <childnode refid="4906" relation="include">
+        </childnode>
+        <childnode refid="4907" relation="include">
+        </childnode>
+        <childnode refid="4908" relation="include">
+        </childnode>
+        <childnode refid="4909" relation="include">
+        </childnode>
+        <childnode refid="4910" relation="include">
+        </childnode>
+        <childnode refid="4911" relation="include">
+        </childnode>
+        <childnode refid="4912" relation="include">
+        </childnode>
+        <childnode refid="4913" relation="include">
+        </childnode>
+        <childnode refid="4914" relation="include">
+        </childnode>
+        <childnode refid="4915" relation="include">
+        </childnode>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4917" relation="include">
+        </childnode>
+        <childnode refid="4918" relation="include">
+        </childnode>
+        <childnode refid="4919" relation="include">
+        </childnode>
+        <childnode refid="4920" relation="include">
+        </childnode>
+        <childnode refid="4921" relation="include">
+        </childnode>
+      </node>
+      <node id="4954">
+        <label>XS/XSLog.h</label>
+      </node>
+      <node id="4931">
+        <label>sys/sem.h</label>
+      </node>
+      <node id="4909">
+        <label>stddef.h</label>
+      </node>
+      <node id="4975">
+        <label>XS/XSNotification.h</label>
+      </node>
+      <node id="4953">
+        <label>XS/XSTypes.h</label>
+      </node>
+      <node id="4942">
+        <label>netdb.h</label>
+      </node>
+      <node id="4974">
+        <label>XS/XSNull.h</label>
+      </node>
+      <node id="4983">
+        <label>XS/XSURL.h</label>
+      </node>
+      <node id="4903">
+        <label>limits.h</label>
+      </node>
+      <node id="4957">
+        <label>XS/XSRuntime.h</label>
+      </node>
+      <node id="4927">
+        <label>pthread.h</label>
+      </node>
+      <node id="4894">
+        <label>../XSMacros.h</label>
+      </node>
+      <node id="4955">
+        <label>XS/XSMemory.h</label>
+      </node>
+      <node id="4915">
+        <label>wchar.h</label>
+      </node>
+      <node id="4934">
+        <label>sys/types.h</label>
+      </node>
+      <node id="4973">
+        <label>XS/XSLock.h</label>
+      </node>
+      <node id="4913">
+        <label>string.h</label>
+      </node>
+      <node id="4940">
+        <label>utime.h</label>
+      </node>
+      <node id="4963">
+        <label>XS/XSBTree.h</label>
+      </node>
+      <node id="4944">
+        <label>std-keywords.h</label>
+        <link refid="std-keywords_8h"/>
+      </node>
+      <node id="4984">
+        <label>XS/XSURLRequest.h</label>
+      </node>
+      <node id="4945">
+        <label>std-bool.h</label>
+        <link refid="std-bool_8h"/>
+      </node>
+      <node id="4946">
+        <label>std-math.h</label>
+        <link refid="std-math_8h"/>
+      </node>
+      <node id="4939">
+        <label>unistd.h</label>
+      </node>
+      <node id="4896">
+        <label>std/std.h</label>
+        <link refid="std_8h"/>
+        <childnode refid="4897" relation="include">
+        </childnode>
+        <childnode refid="4922" relation="include">
+        </childnode>
+        <childnode refid="4941" relation="include">
+        </childnode>
+        <childnode refid="4942" relation="include">
+        </childnode>
+        <childnode refid="4943" relation="include">
+        </childnode>
+        <childnode refid="4944" relation="include">
+        </childnode>
+        <childnode refid="4945" relation="include">
+        </childnode>
+        <childnode refid="4946" relation="include">
+        </childnode>
+        <childnode refid="4947" relation="include">
+        </childnode>
+        <childnode refid="4948" relation="include">
+        </childnode>
+        <childnode refid="4949" relation="include">
+        </childnode>
+        <childnode refid="4950" relation="include">
+        </childnode>
+      </node>
+      <node id="4948">
+        <label>std-bitwise.h</label>
+        <link refid="std-bitwise_8h"/>
+      </node>
+      <node id="4921">
+        <label>tgmath.h</label>
+      </node>
+      <node id="4967">
+        <label>XS/XSDictionary.h</label>
+      </node>
+      <node id="4907">
+        <label>signal.h</label>
+      </node>
+      <node id="4893">
+        <label>__XSMemory.h</label>
+        <link refid="__XSMemory.h"/>
+        <childnode refid="4894" relation="include">
+        </childnode>
+        <childnode refid="4895" relation="include">
+        </childnode>
+      </node>
+      <node id="4917">
+        <label>complex.h</label>
+      </node>
+      <node id="4965">
+        <label>XS/XSDebugLog.h</label>
+      </node>
+      <node id="4929">
+        <label>sys/ipc.h</label>
+      </node>
+      <node id="4914">
+        <label>time.h</label>
+      </node>
+      <node id="4979">
+        <label>XS/XSSort.h</label>
+      </node>
+      <node id="4905">
+        <label>math.h</label>
+      </node>
+      <node id="4936">
+        <label>sys/wait.h</label>
+      </node>
+      <node id="4972">
+        <label>XS/XSHost.h</label>
+      </node>
+      <node id="4933">
+        <label>sys/time.h</label>
+      </node>
+      <node id="4962">
+        <label>XS/XSBool.h</label>
+      </node>
+      <node id="4899">
+        <label>ctype.h</label>
+      </node>
+      <node id="4941">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="4928">
+        <label>pwd.h</label>
+      </node>
+      <node id="4964">
+        <label>XS/XSColor.h</label>
+      </node>
+      <node id="4952">
+        <label>XS/XSConstants.h</label>
+      </node>
+      <node id="4956">
+        <label>XS/XSMemoryDebug.h</label>
+      </node>
+      <node id="4923">
+        <label>cpio.h</label>
+      </node>
+      <node id="4895">
+        <label>XS.h</label>
+        <link refid="XS_8h"/>
+        <childnode refid="4896" relation="include">
+        </childnode>
+        <childnode refid="4951" relation="include">
+        </childnode>
+        <childnode refid="4952" relation="include">
+        </childnode>
+        <childnode refid="4953" relation="include">
+        </childnode>
+        <childnode refid="4954" relation="include">
+        </childnode>
+        <childnode refid="4955" relation="include">
+        </childnode>
+        <childnode refid="4956" relation="include">
+        </childnode>
+        <childnode refid="4957" relation="include">
+        </childnode>
+        <childnode refid="4958" relation="include">
+        </childnode>
+        <childnode refid="4959" relation="include">
+        </childnode>
+        <childnode refid="4960" relation="include">
+        </childnode>
+        <childnode refid="4961" relation="include">
+        </childnode>
+        <childnode refid="4962" relation="include">
+        </childnode>
+        <childnode refid="4963" relation="include">
+        </childnode>
+        <childnode refid="4964" relation="include">
+        </childnode>
+        <childnode refid="4965" relation="include">
+        </childnode>
+        <childnode refid="4966" relation="include">
+        </childnode>
+        <childnode refid="4967" relation="include">
+        </childnode>
+        <childnode refid="4968" relation="include">
+        </childnode>
+        <childnode refid="4969" relation="include">
+        </childnode>
+        <childnode refid="4970" relation="include">
+        </childnode>
+        <childnode refid="4971" relation="include">
+        </childnode>
+        <childnode refid="4972" relation="include">
+        </childnode>
+        <childnode refid="4973" relation="include">
+        </childnode>
+        <childnode refid="4974" relation="include">
+        </childnode>
+        <childnode refid="4975" relation="include">
+        </childnode>
+        <childnode refid="4976" relation="include">
+        </childnode>
+        <childnode refid="4977" relation="include">
+        </childnode>
+        <childnode refid="4978" relation="include">
+        </childnode>
+        <childnode refid="4979" relation="include">
+        </childnode>
+        <childnode refid="4980" relation="include">
+        </childnode>
+        <childnode refid="4981" relation="include">
+        </childnode>
+        <childnode refid="4982" relation="include">
+        </childnode>
+        <childnode refid="4983" relation="include">
+        </childnode>
+        <childnode refid="4984" relation="include">
+        </childnode>
+      </node>
+      <node id="4937">
+        <label>tar.h</label>
+      </node>
+      <node id="4978">
+        <label>XS/XSSet.h</label>
+      </node>
+      <node id="4969">
+        <label>XS/XSException.h</label>
+      </node>
+      <node id="4950">
+        <label>std-string.h</label>
+        <link refid="std-string_8h"/>
+        <childnode refid="4944" relation="include">
+        </childnode>
+      </node>
+      <node id="4947">
+        <label>std-md5.h</label>
+        <link refid="std-md5_8h"/>
+      </node>
+      <node id="4977">
+        <label>XS/XSNumber.h</label>
+      </node>
+      <node id="4911">
+        <label>stdio.h</label>
+      </node>
+      <node id="4904">
+        <label>locale.h</label>
+      </node>
+      <node id="4951">
+        <label>XS/XSMacros.h</label>
+      </node>
+      <node id="4966">
+        <label>XS/XSData.h</label>
+      </node>
+      <node id="4961">
+        <label>XS/XSBag.h</label>
+      </node>
+      <node id="4935">
+        <label>sys/utsname.h</label>
+      </node>
+      <node id="4919">
+        <label>inttypes.h</label>
+      </node>
+      <node id="4971">
+        <label>XS/XSGeometry.h</label>
+      </node>
+      <node id="4968">
+        <label>XS/XSError.h</label>
+      </node>
+      <node id="4949">
+        <label>std-ascii.h</label>
+        <link refid="std-ascii_8h"/>
+      </node>
+      <node id="4924">
+        <label>dirent.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4985">
+        <label>__XSMemory.h</label>
+        <link refid="__XSMemory.h"/>
+        <childnode refid="4986" relation="include">
+        </childnode>
+      </node>
+      <node id="4986">
+        <label>__XSMemoryDebug.h</label>
+        <link refid="____XSMemoryDebug_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct______XSMemoryObject__Struct" prot="public">___XSMemoryObject_Struct</innerclass>
+    <innerclass refid="struct____XSAutoreleasePool__Struct" prot="public">__XSAutoreleasePool_Struct</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="____XSMemory_8h_1aba56342acfd56fba0f9719fc09746014" prot="public" static="no">
+        <name>XS_MEMORY_MAX_AR_POOLS</name>
+        <initializer>256</initializer>
+        <briefdescription>
+<para>Maximum number of auto-release pools. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" line="64" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="____XSMemory_8h_1af2fc9f151e7230858334a6f5e3a53891" prot="public" static="no">
+        <name>XS_MEMORY_NUM_OBJECTS</name>
+        <initializer>256</initializer>
+        <briefdescription>
+<para>Initial capacity of the auto-release pools. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" line="70" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="____XSMemory_8h_1a4738b78c7c4b7b8a058b400b0cc1c863" prot="public" static="no">
+        <type>struct <ref refid="struct____XSAutoreleasePool__Struct" kindref="compound">__XSAutoreleasePool_Struct</ref></type>
+        <definition>__XSAutoreleasePool</definition>
+        <argsstring></argsstring>
+        <name>__XSAutoreleasePool</name>
+        <briefdescription>
+<para>XSAutoreleasePool class type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" line="76" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="____XSMemory_8h_1a1444c6cd7a3673e2466eacda0579c19d" prot="public" static="no">
+        <type>struct <ref refid="struct______XSMemoryObject__Struct" kindref="compound">___XSMemoryObject_Struct</ref></type>
+        <definition>__XSMemoryObject</definition>
+        <argsstring></argsstring>
+        <name>__XSMemoryObject</name>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" line="97" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="____XSMemory_8h_1a2224681e785251695407df0743d08759" prot="public" static="no" mutable="no">
+        <type><ref refid="struct____XSAutoreleasePool__Struct" kindref="compound">__XSAutoreleasePool</ref> *</type>
+        <definition>__XSAutoreleasePool* __xsmemory_ar_pools[]</definition>
+        <argsstring>[]</argsstring>
+        <name>__xsmemory_ar_pools</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" line="140"/>
+      </memberdef>
+      <memberdef kind="variable" id="____XSMemory_8h_1af103b4d5bc71e4401288e7c5ba823a2e" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger __xsmemory_ar_pools_num</definition>
+        <argsstring></argsstring>
+        <name>__xsmemory_ar_pools_num</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" line="143"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="____XSMemory_8h_1a93da3ea29c6bb943bd152f24f61d88a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSAutoreleasePool_Copy</definition>
+        <argsstring>(XSObject source, XSObject destination)</argsstring>
+        <name>__XSAutoreleasePool_Copy</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>destination</declname>
+        </param>
+        <briefdescription>
+<para>Object copy. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>destination</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The destination object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" line="119"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSMemory_8h_1a3343df89cd93c023e981bb3f5e071169" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSAutoreleasePool_Destruct</definition>
+        <argsstring>(XSObject object)</argsstring>
+        <name>__XSAutoreleasePool_Destruct</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+<para>Destructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>A pointer to the object to be destructed <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object that will be destructed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" line="111"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSMemory_8h_1a35a430ba55ecf9c04fb37a6e8ee8624c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSAutoreleasePool_Initialize</definition>
+        <argsstring>(void)</argsstring>
+        <name>__XSAutoreleasePool_Initialize</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Runtime initialization. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" line="103"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSMemory_8h_1adf86bbf57093472de76737bb20a1a55e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSMemory_AutoreleasePoolDrain</definition>
+        <argsstring>(__XSAutoreleasePool *ap)</argsstring>
+        <name>__XSMemory_AutoreleasePoolDrain</name>
+        <param>
+          <type><ref refid="struct____XSAutoreleasePool__Struct" kindref="compound">__XSAutoreleasePool</ref> *</type>
+          <declname>ap</declname>
+        </param>
+        <briefdescription>
+<para>Releases all objects placed in the auto-release pool. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" line="131"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSMemory_8h_1a2e61d13f87985f9338ec817240f47b91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct____XSAutoreleasePool__Struct" kindref="compound">__XSAutoreleasePool</ref> *</type>
+        <definition>__XSAutoreleasePool* __XSMemory_GetCurrentAutoreleasePool</definition>
+        <argsstring>(void)</argsstring>
+        <name>__XSMemory_GetCurrentAutoreleasePool</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Gets a pointer to a memory records object from a pointer returned by the XS allocation functions. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The auto-release pool object or NULL if no aut-release pool were created </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" line="125"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSMemory_8h_1a809cda997c376a5ca62ec2bc886da894" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct______XSMemoryObject__Struct" kindref="compound">__XSMemoryObject</ref> *</type>
+        <definition>__XSMemoryObject* __XSMemory_GetMemoryObject</definition>
+        <argsstring>(void *ptr)</argsstring>
+        <name>__XSMemory_GetMemoryObject</name>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Gets the current (top-level) auto-release pool. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A pointer to the memory record object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h" line="137"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Private memory functions and private XSAutoreleasePool class definitions. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt; </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2011,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__XSMemory.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Private<sp/>memory<sp/>functions<sp/>and<sp/>private<sp/>XSAutoreleasePool<sp/>class<sp/>definitions</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>___XS_MEMORY_H_</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>___XS_MEMORY_H_</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../XSMacros.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="XSMacros_8h_1ae3fa7c5665557917f34badbe69a55828" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; start.">XS_EXTERN_C_BEGIN</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XS_8h" kindref="compound" tooltip="XSFoundation main header file.">XS.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="48"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>@struct<sp/><sp/><sp/><sp/><sp/><sp/>__XSAutoreleasePool_Struct</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSAutoreleasePool<sp/>class</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="struct____XSAutoreleasePool__Struct" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct____XSAutoreleasePool__Struct" kindref="compound" tooltip="XSAutoreleasePool class.">__XSAutoreleasePool_Struct</ref></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54" refid="struct____XSAutoreleasePool__Struct_1ac38c66899261405228f8a050d17a21be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structXSRuntimeClass__Struct" kindref="compound" tooltip="Base structure for the runtime classes.">XSRuntimeClass</ref><sp/><ref refid="struct____XSAutoreleasePool__Struct_1ac38c66899261405228f8a050d17a21be" kindref="member">__class</ref>;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>Runtime<sp/>class<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="struct____XSAutoreleasePool__Struct_1af135b235799eb2d1ac667cf2c10b1632" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSAutoreleasePool__Struct_1af135b235799eb2d1ac667cf2c10b1632" kindref="member">size</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="struct____XSAutoreleasePool__Struct_1aa82a9f073f56aa0929d2d8fcfe680d14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSAutoreleasePool__Struct_1aa82a9f073f56aa0929d2d8fcfe680d14" kindref="member">numObjects</ref>;<sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="struct____XSAutoreleasePool__Struct_1a78162298b162ead49b937c525cf329df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**<sp/><ref refid="struct____XSAutoreleasePool__Struct_1a78162298b162ead49b937c525cf329df" kindref="member">objects</ref>;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="60"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XS_MEMORY_MAX_AR_POOLS</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Maximum<sp/>number<sp/>of<sp/>auto-release<sp/>pools</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="____XSMemory_8h_1aba56342acfd56fba0f9719fc09746014" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XS_MEMORY_MAX_AR_POOLS<sp/><sp/>256</highlight></codeline>
+<codeline lineno="65"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="66"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XS_MEMORY_NUM_OBJECTS</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initial<sp/>capacity<sp/>of<sp/>the<sp/>auto-release<sp/>pools</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="____XSMemory_8h_1af2fc9f151e7230858334a6f5e3a53891" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XS_MEMORY_NUM_OBJECTS<sp/><sp/><sp/>256</highlight></codeline>
+<codeline lineno="71"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="72"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>__XSAutoreleasePool</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSAutoreleasePool<sp/>class<sp/>type</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="____XSMemory_8h_1a4738b78c7c4b7b8a058b400b0cc1c863" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct____XSAutoreleasePool__Struct" kindref="compound" tooltip="XSAutoreleasePool class.">__XSAutoreleasePool_Struct</ref><sp/><ref refid="struct____XSAutoreleasePool__Struct" kindref="compound" tooltip="XSAutoreleasePool class.">__XSAutoreleasePool</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="78"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/>@struct<sp/><sp/><sp/><sp/><sp/><sp/>___XSMemoryObject_Struct</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="struct______XSMemoryObject__Struct" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct______XSMemoryObject__Struct" kindref="compound" tooltip="...">___XSMemoryObject_Struct</ref></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84" refid="struct______XSMemoryObject__Struct_1af1050a462c8d1234ebb14aa9bea9109a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref><sp/><sp/><sp/><sp/><ref refid="struct______XSMemoryObject__Struct_1af1050a462c8d1234ebb14aa9bea9109a" kindref="member">retainCount</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>object&apos;s<sp/>retain<sp/>count<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="struct______XSMemoryObject__Struct_1a439bbc0cab92d2731db636b72a0f4f5f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct______XSMemoryObject__Struct_1a439bbc0cab92d2731db636b72a0f4f5f" kindref="member">size</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>allocated<sp/>data<sp/>size<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="struct______XSMemoryObject__Struct_1a9a0280e6288213252ce3aca7f91070e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct______XSMemoryObject__Struct_1a9a0280e6288213252ce3aca7f91070e3" kindref="member">allocID</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="struct______XSMemoryObject__Struct_1ab8e91b6d7051e46bfae4ba68c8a681ae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab697493797a12574d517e2ca17bce7c0" kindref="member" tooltip="Type ID foe the registered runtime classes.">XSClassID</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct______XSMemoryObject__Struct_1ab8e91b6d7051e46bfae4ba68c8a681ae" kindref="member">classID</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>The<sp/>class<sp/>ID<sp/>(only<sp/>for<sp/>allocated<sp/>objects)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="struct______XSMemoryObject__Struct_1afd5c482a4325bafa1e60a4262b157275" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ae8d29cea6ffaf89a545da4cd8f11f8e0" kindref="member">Str255</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct______XSMemoryObject__Struct_1afd5c482a4325bafa1e60a4262b157275" kindref="member">hash</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="struct______XSMemoryObject__Struct_1a211401c47e46eee6c5c837531d9b3471" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/><ref refid="struct______XSMemoryObject__Struct_1a211401c47e46eee6c5c837531d9b3471" kindref="member">data</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>allocated<sp/>data<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="struct______XSMemoryObject__Struct_1ac04611d1f629647ea3507702cfd4fb02" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="struct______XSMemoryObject__Struct_1ac04611d1f629647ea3507702cfd4fb02" kindref="member">fence</ref>[<sp/>12<sp/>];<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>Memory<sp/>fence<sp/>to<sp/>prevent<sp/>overflows<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="93"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>__XSMemoryObject</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="____XSMemory_8h_1a1444c6cd7a3673e2466eacda0579c19d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct______XSMemoryObject__Struct" kindref="compound" tooltip="...">___XSMemoryObject_Struct</ref><sp/><ref refid="struct______XSMemoryObject__Struct" kindref="compound" tooltip="...">__XSMemoryObject</ref>;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="99"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Runtime<sp/>initialization</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSMemory_8h_1a35a430ba55ecf9c04fb37a6e8ee8624c" kindref="member" tooltip="Runtime initialization.">__XSAutoreleasePool_Initialize</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="105"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Destructor</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>object<sp/>to<sp/>be<sp/>destructed</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>object<sp/><sp/>The<sp/>object<sp/>that<sp/>will<sp/>be<sp/>destructed</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSMemory_8h_1a3343df89cd93c023e981bb3f5e071169" kindref="member" tooltip="Destructor.">__XSAutoreleasePool_Destruct</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="113"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Object<sp/>copy</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>source<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>source<sp/>object</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>destination<sp/><sp/><sp/><sp/><sp/>The<sp/>destination<sp/>object</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSMemory_8h_1a93da3ea29c6bb943bd152f24f61d88a8" kindref="member" tooltip="Object copy.">__XSAutoreleasePool_Copy</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>source,<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/>destination<sp/>);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="121"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>a<sp/>pointer<sp/>to<sp/>a<sp/>memory<sp/>records<sp/>object<sp/>from<sp/>a<sp/>pointer<sp/>returned<sp/>by<sp/>the<sp/>XS<sp/>allocation<sp/>functions.</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>auto-release<sp/>pool<sp/>object<sp/>or<sp/>NULL<sp/>if<sp/>no<sp/>aut-release<sp/>pool<sp/>were<sp/>created</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><ref refid="struct____XSAutoreleasePool__Struct" kindref="compound" tooltip="XSAutoreleasePool class.">__XSAutoreleasePool</ref><sp/>*<sp/><ref refid="____XSMemory_8h_1a2e61d13f87985f9338ec817240f47b91" kindref="member" tooltip="Gets a pointer to a memory records object from a pointer returned by the XS allocation functions...">__XSMemory_GetCurrentAutoreleasePool</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="127"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Releases<sp/>all<sp/>objects<sp/>placed<sp/>in<sp/>the<sp/>auto-release<sp/>pool.</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSMemory_8h_1adf86bbf57093472de76737bb20a1a55e" kindref="member" tooltip="Releases all objects placed in the auto-release pool.">__XSMemory_AutoreleasePoolDrain</ref>(<sp/><ref refid="struct____XSAutoreleasePool__Struct" kindref="compound" tooltip="XSAutoreleasePool class.">__XSAutoreleasePool</ref><sp/>*<sp/>ap<sp/>);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="133"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>current<sp/>(top-level)<sp/>auto-release<sp/>pool</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>memory<sp/>record<sp/>object</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><ref refid="struct______XSMemoryObject__Struct" kindref="compound" tooltip="...">__XSMemoryObject</ref><sp/>*<sp/><ref refid="____XSMemory_8h_1a809cda997c376a5ca62ec2bc886da894" kindref="member" tooltip="Gets the current (top-level) auto-release pool.">__XSMemory_GetMemoryObject</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>ptr<sp/>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Storage<sp/>for<sp/>the<sp/>auto-release<sp/>pools<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="struct____XSAutoreleasePool__Struct" kindref="compound" tooltip="XSAutoreleasePool class.">__XSAutoreleasePool</ref><sp/>*<sp/><ref refid="____XSMemory_8h_1a2224681e785251695407df0743d08759" kindref="member">__xsmemory_ar_pools</ref>[];</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>NUmber<sp/>of<sp/>active<sp/>auto-release<sp/>pools<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref><sp/><ref refid="____XSMemory_8h_1af103b4d5bc71e4401288e7c5ba823a2e" kindref="member">__xsmemory_ar_pools_num</ref>;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><ref refid="XSMacros_8h_1a35fa049fa034476400f574516968a3a2" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; end.">XS_EXTERN_C_END</ref></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>___XS_MEMORY_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemory.h"/>
+  </compounddef>
+</doxygen>

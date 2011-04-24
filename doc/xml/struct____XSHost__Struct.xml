@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="struct____XSHost__Struct" kind="struct" prot="public">
+    <compoundname>__XSHost_Struct</compoundname>
+    <includes refid="____XSHost_8h" local="yes">__XSHost.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct____XSHost__Struct_1a52e5cf77626e45317edca536351a79ca" prot="public" static="no" mutable="no">
+        <type><ref refid="structXSRuntimeClass__Struct" kindref="compound">XSRuntimeClass</ref></type>
+        <definition>XSRuntimeClass __XSHost_Struct::__class</definition>
+        <argsstring></argsstring>
+        <name>__class</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" line="54" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSHost__Struct_1a41f7a76ef94457367d77bd3cfefe32d0" prot="public" static="no" mutable="no">
+        <type>struct addrinfo *</type>
+        <definition>struct addrinfo* __XSHost_Struct::addr</definition>
+        <argsstring></argsstring>
+        <name>addr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" line="59" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSHost__Struct_1a1b58db32c9bf8e1a1804b549d00a5ff5" prot="public" static="no" mutable="no">
+        <type><ref refid="struct____XSString__Struct" kindref="compound">XSString</ref></type>
+        <definition>XSString __XSHost_Struct::host</definition>
+        <argsstring></argsstring>
+        <name>host</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Runtime class </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" line="55" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSHost__Struct_1a8338cbd6bb6ebf91463c90fddbdb753e" prot="public" static="no" mutable="no">
+        <type>struct addrinfo *</type>
+        <definition>struct addrinfo* __XSHost_Struct::infos</definition>
+        <argsstring></argsstring>
+        <name>infos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" line="58" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSHost__Struct_1aeb8165054c95eaf3c165e34ed0772716" prot="public" static="no" mutable="no">
+        <type><ref refid="struct____XSString__Struct" kindref="compound">XSString</ref></type>
+        <definition>XSString __XSHost_Struct::ip</definition>
+        <argsstring></argsstring>
+        <name>ip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" line="56" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSHost__Struct_1ad18d881b0f60ac3833ec3352b75ba67c" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL __XSHost_Struct::isCopy</definition>
+        <argsstring></argsstring>
+        <name>isCopy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" line="61" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSHost__Struct_1ac58e688ec8bac722bb5268c4b1642358" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger __XSHost_Struct::port</definition>
+        <argsstring></argsstring>
+        <name>port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" line="57" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSHost__Struct_1a185fa8498899ff7216cbccacd5d87cda" prot="public" static="no" mutable="no">
+        <type>struct sockaddr_in *</type>
+        <definition>struct sockaddr_in* __XSHost_Struct::sock</definition>
+        <argsstring></argsstring>
+        <name>sock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" line="60" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>XSHost class. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="383">
+        <label>XSClassInfos</label>
+        <link refid="structXSClassInfos"/>
+      </node>
+      <node id="381">
+        <label>char *</label>
+      </node>
+      <node id="380">
+        <label>__XSString_Struct</label>
+        <link refid="struct____XSString__Struct"/>
+        <childnode refid="379" relation="usage">
+          <edgelabel>length</edgelabel>
+          <edgelabel>capacity</edgelabel>
+          <edgelabel>initialCapacity</edgelabel>
+        </childnode>
+        <childnode refid="381" relation="usage">
+          <edgelabel>str</edgelabel>
+        </childnode>
+        <childnode refid="382" relation="usage">
+          <edgelabel>__class</edgelabel>
+        </childnode>
+      </node>
+      <node id="378">
+        <label>signed char</label>
+      </node>
+      <node id="375">
+        <label>__XSHost_Struct</label>
+        <link refid="struct____XSHost__Struct"/>
+        <childnode refid="376" relation="usage">
+          <edgelabel>addr</edgelabel>
+          <edgelabel>infos</edgelabel>
+        </childnode>
+        <childnode refid="377" relation="usage">
+          <edgelabel>sock</edgelabel>
+        </childnode>
+        <childnode refid="378" relation="usage">
+          <edgelabel>isCopy</edgelabel>
+        </childnode>
+        <childnode refid="379" relation="usage">
+          <edgelabel>port</edgelabel>
+        </childnode>
+        <childnode refid="380" relation="usage">
+          <edgelabel>ip</edgelabel>
+          <edgelabel>host</edgelabel>
+        </childnode>
+        <childnode refid="382" relation="usage">
+          <edgelabel>__class</edgelabel>
+        </childnode>
+      </node>
+      <node id="379">
+        <label>int</label>
+      </node>
+      <node id="376">
+        <label>struct addrinfo *</label>
+      </node>
+      <node id="377">
+        <label>struct sockaddr_in *</label>
+      </node>
+      <node id="382">
+        <label>XSRuntimeClass_Struct</label>
+        <link refid="structXSRuntimeClass__Struct"/>
+        <childnode refid="383" relation="usage">
+          <edgelabel>classInfos</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" line="53" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSHost.h" bodystart="52" bodyend="62"/>
+    <listofallmembers>
+      <member refid="struct____XSHost__Struct_1a52e5cf77626e45317edca536351a79ca" prot="public" virt="non-virtual"><scope>__XSHost_Struct</scope><name>__class</name></member>
+      <member refid="struct____XSHost__Struct_1a41f7a76ef94457367d77bd3cfefe32d0" prot="public" virt="non-virtual"><scope>__XSHost_Struct</scope><name>addr</name></member>
+      <member refid="struct____XSHost__Struct_1a1b58db32c9bf8e1a1804b549d00a5ff5" prot="public" virt="non-virtual"><scope>__XSHost_Struct</scope><name>host</name></member>
+      <member refid="struct____XSHost__Struct_1a8338cbd6bb6ebf91463c90fddbdb753e" prot="public" virt="non-virtual"><scope>__XSHost_Struct</scope><name>infos</name></member>
+      <member refid="struct____XSHost__Struct_1aeb8165054c95eaf3c165e34ed0772716" prot="public" virt="non-virtual"><scope>__XSHost_Struct</scope><name>ip</name></member>
+      <member refid="struct____XSHost__Struct_1ad18d881b0f60ac3833ec3352b75ba67c" prot="public" virt="non-virtual"><scope>__XSHost_Struct</scope><name>isCopy</name></member>
+      <member refid="struct____XSHost__Struct_1ac58e688ec8bac722bb5268c4b1642358" prot="public" virt="non-virtual"><scope>__XSHost_Struct</scope><name>port</name></member>
+      <member refid="struct____XSHost__Struct_1a185fa8498899ff7216cbccacd5d87cda" prot="public" virt="non-virtual"><scope>__XSHost_Struct</scope><name>sock</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

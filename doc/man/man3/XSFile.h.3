@@ -1,0 +1,1126 @@
+.TH "XSFile.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XSFile.h \- 
+.PP
+XSFile class functions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'XSMacros.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB__XSFile_Struct\fP * \fBXSFile\fP"
+.br
+.RI "\fIOpaque type for the XSFile objects. \fP"
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBXSFileOpenMode\fP { \fBXSFileOpenModeText\fP =  0x00, \fBXSFileOpenModeBinary\fP =  0x01, \fBXSFileOpenModeRead\fP =  0x02, \fBXSFileOpenModeWrite\fP =  0x04, \fBXSFileOpenModeAppend\fP =  0x06, \fBXSFileOpenModeApendAtEnd\fP =  0x08, \fBXSFileOpenModeUpdate\fP =  0x0A, \fBXSFileOpenModeUpdateDiscard\fP =  0x0E }"
+.br
+.RI "\fIOpen modes for XSFile. \fP"
+.ti -1c
+.RI "enum \fBXSFileSeekPosition\fP { \fBXSFileSeekPositionCurent\fP =  SEEK_CUR, \fBXSFileSeekPositionStart\fP =  0, \fBXSFileSeekPositionEnd\fP =  SEEK_END, \fBXSFileOpenModeReadSet\fP =  SEEK_SET }"
+.br
+.RI "\fIOrigin position for the file seek operations. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "time_t \fBXSFile_AccessTime\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIGets the file's access time. \fP"
+.ti -1c
+.RI "XSStatic \fBXSObject\fP \fBXSFile_Alloc\fP (void)"
+.br
+.RI "\fIObject allocator. \fP"
+.ti -1c
+.RI "void \fBXSFile_ClearErr\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIClears end-of-file and error indicators. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSFile_Close\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fICloses the file stream (after flushing, if output stream) \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_Copy\fP (\fBXSFile\fP xsThis, char *new_name)"
+.br
+.RI "\fICopies the file to another destination. \fP"
+.ti -1c
+.RI "time_t \fBXSFile_CreationTime\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIGets the file's creation time. \fP"
+.ti -1c
+.RI "\fBdev_t\fP \fBXSFile_DeviceID\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIGets the device ID of the file. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSFile_EndOfFile\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks for the end of the file. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSFile_Error\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks for the error indicator. \fP"
+.ti -1c
+.RI "const char * \fBXSFile_Filename\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIGets the filename. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSFile_Flush\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIFlushes the file stream stream. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSFile_GetBit\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIGets the next bit in the file. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSFile_GetBits\fP (\fBXSFile\fP xsThis, \fBXSUInteger\fP count)"
+.br
+.RI "\fIGets bits from the file. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSFile_Getc\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIReturns the next character from the file. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSFile_GetPos\fP (\fBXSFile\fP xsThis, fpos_t *ptr)"
+.br
+.RI "\fIStores the current file position. \fP"
+.ti -1c
+.RI "\fBgid_t\fP \fBXSFile_GID\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIGets the file's group ID. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_HasSGID\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks if the file has the SGID bit set. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_HasSUID\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks if the file has the SUID bit set. \fP"
+.ti -1c
+.RI "\fBXSFloat\fP \fBXSFile_HumanReadableSize\fP (\fBXSFile\fP xsThis, char unit[])"
+.br
+.RI "\fIGets an human readable size for the size. \fP"
+.ti -1c
+.RI "\fBXSFile\fP \fBXSFile_Init\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIInitialize a file object. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_IsBlockDevice\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks if the file is a block device. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_IsCharacterDevice\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks if the file is a character device. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_IsFIFO\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks if the file is a FIFO. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_IsGroupExecutable\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks if the file is executable for the group. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_IsGroupReadable\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks if the file is readable for the group. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_IsGroupWriteable\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks if the file is writable for the group. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_IsLink\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks if the file is a link. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_IsReadable\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks if the file is readable. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_IsRegularFile\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks if the file is a regular file. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_IsSocket\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks if the file is a socket. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_ISUserExecutable\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks if the file is executable for the user. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_IsUserReadable\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks if the file is readable for the user. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_IsUserWriteable\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks if the file is writeable for the user. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_IsWorldExecutable\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks if the file is executable for the world. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_IsWorldReadable\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks if the file is readable for the world. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_IsWorldWriteable\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks if the file is writeable for the world. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSFile_IsWriteable\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIChecks if the file is writeable. \fP"
+.ti -1c
+.RI "time_t \fBXSFile_ModifictaionTime\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIGets the file's modification time. \fP"
+.ti -1c
+.RI "\fBnlink_t\fP \fBXSFile_NumberOfLinks\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIGets the number of links to the file. \fP"
+.ti -1c
+.RI "XSStatic \fBXSFile\fP \fBXSFile_Open\fP (const char *filename, \fBXSFileOpenMode\fP openMode)"
+.br
+.RI "\fIInitializes an XSFile instance and opens the represented file. \fP"
+.ti -1c
+.RI "const char * \fBXSFile_OpenMode\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIGets the file's open mode. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSFile_Printf\fP (\fBXSFile\fP xsThis, const char *format,...)"
+.br
+.RI "\fIConverts (according to format format) and writes output to the file. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSFile_PutBit\fP (\fBXSFile\fP xsThis, uint8_t bit)"
+.br
+.RI "\fIWrites a bit in the file. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSFile_PutBits\fP (\fBXSFile\fP xsThis, uint64_t bits, \fBXSUInteger\fP count)"
+.br
+.RI "\fIWrite bits to the file. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSFile_Putc\fP (\fBXSFile\fP xsThis, \fBXSInteger\fP c)"
+.br
+.RI "\fIWrites a character to the file. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSFile_Puts\fP (\fBXSFile\fP xsThis, const char *s)"
+.br
+.RI "\fIWrites a C string to the file. \fP"
+.ti -1c
+.RI "size_t \fBXSFile_Read\fP (\fBXSFile\fP xsThis, void *ptr, size_t size, size_t nobj)"
+.br
+.RI "\fIReads from the file. \fP"
+.ti -1c
+.RI "void \fBXSFile_Rewind\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIRewinds to the beginning of the file and clears the error indicators return void. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSFile_Seek\fP (\fBXSFile\fP xsThis, \fBXSInteger\fP offset, \fBXSFileSeekPosition\fP origin)"
+.br
+.RI "\fISets file position for the file and clears end-of-file indicator. \fP"
+.ti -1c
+.RI "ino_t \fBXSFile_SerialNumber\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIGets the serial number of the file. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSFile_SetPos\fP (\fBXSFile\fP xsThis, const fpos_t *ptr)"
+.br
+.RI "\fISets the current file position. \fP"
+.ti -1c
+.RI "size_t \fBXSFile_Size\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIGets the file size in bytes. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSFile_Tell\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIGets the current file position. \fP"
+.ti -1c
+.RI "\fBuid_t\fP \fBXSFile_UID\fP (\fBXSFile\fP xsThis)"
+.br
+.RI "\fIGets the file's user ID. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSFile_VPrintf\fP (\fBXSFile\fP xsThis, const char *format, va_list arg)"
+.br
+.RI "\fIEquivalent to fprintf with variable argument list replaced by arg. \fP"
+.ti -1c
+.RI "size_t \fBXSFile_Write\fP (\fBXSFile\fP xsThis, const void *ptr, size_t size, size_t nobj)"
+.br
+.RI "\fIWrites to the file. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBXSFile\fP \fBXSStderr\fP"
+.br
+.RI "\fIXSFile object representing stderr. \fP"
+.ti -1c
+.RI "\fBXSFile\fP \fBXSStdin\fP"
+.br
+.RI "\fIXSFile object representing stdin. \fP"
+.ti -1c
+.RI "\fBXSFile\fP \fBXSStdout\fP"
+.br
+.RI "\fIXSFile object representing stdout. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+XSFile class functions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBXSFile.h\fP.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBXSFile\fP"
+.PP
+Opaque type for the XSFile objects. 
+.PP
+Definition at line 50 of file XSFile.h.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBXSFileOpenMode\fP"
+.PP
+Open modes for XSFile. A specific mode can be ORed with XSFileOpenModeText XSFileOpenModeBinary to specify if working with text or binary files 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIXSFileOpenModeText \fP\fP
+.TP
+\fB\fIXSFileOpenModeBinary \fP\fP
+Text mode 
+.TP
+\fB\fIXSFileOpenModeRead \fP\fP
+Binary mode 
+.TP
+\fB\fIXSFileOpenModeWrite \fP\fP
+'r' - Text reading 
+.TP
+\fB\fIXSFileOpenModeAppend \fP\fP
+'w' - Text writing 
+.TP
+\fB\fIXSFileOpenModeApendAtEnd \fP\fP
+'a' - Text append 
+.TP
+\fB\fIXSFileOpenModeUpdate \fP\fP
+'a+' - Text append, reading, and writing at end 
+.TP
+\fB\fIXSFileOpenModeUpdateDiscard \fP\fP
+'r+' - Text update (reading and writing) 
+.PP
+Definition at line 59 of file XSFile.h.
+.SS "enum \fBXSFileSeekPosition\fP"
+.PP
+Origin position for the file seek operations. 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIXSFileSeekPositionCurent \fP\fP
+.TP
+\fB\fIXSFileSeekPositionStart \fP\fP
+Current position 
+.TP
+\fB\fIXSFileSeekPositionEnd \fP\fP
+Start of the file 
+.TP
+\fB\fIXSFileOpenModeReadSet \fP\fP
+End of the file 
+.PP
+Definition at line 76 of file XSFile.h.
+.SH "Function Documentation"
+.PP 
+.SS "time_t XSFile_AccessTime (\fBXSFile\fPxsThis)"
+.PP
+Gets the file's access time. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The file's access time 
+.RE
+.PP
+
+.SS "XSStatic \fBXSObject\fP XSFile_Alloc (void)"
+.PP
+Object allocator. \fBReturns:\fP
+.RS 4
+The allocated object 
+.RE
+.PP
+
+.SS "void XSFile_ClearErr (\fBXSFile\fPxsThis)"
+.PP
+Clears end-of-file and error indicators. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSFile_Close (\fBXSFile\fPxsThis)"
+.PP
+Closes the file stream (after flushing, if output stream) You're still responsible to release the file object after calling this function. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+EOF on error, zero otherwise. 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_Copy (\fBXSFile\fPxsThis, char *new_name)"
+.PP
+Copies the file to another destination. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.br
+\fInew_name\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if the file was copeid, otherwise false 
+.RE
+.PP
+
+.SS "time_t XSFile_CreationTime (\fBXSFile\fPxsThis)"
+.PP
+Gets the file's creation time. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The file's creation time 
+.RE
+.PP
+
+.SS "\fBdev_t\fP XSFile_DeviceID (\fBXSFile\fPxsThis)"
+.PP
+Gets the device ID of the file. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The file's device ID 
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSFile_EndOfFile (\fBXSFile\fPxsThis)"
+.PP
+Checks for the end of the file. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Non-zero if end-of-file indicator is set 
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSFile_Error (\fBXSFile\fPxsThis)"
+.PP
+Checks for the error indicator. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Non-zero if error indicator is set 
+.RE
+.PP
+
+.SS "const char* XSFile_Filename (\fBXSFile\fPxsThis)"
+.PP
+Gets the filename. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The name of the file 
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSFile_Flush (\fBXSFile\fPxsThis)"
+.PP
+Flushes the file stream stream. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Zero on success or EOF on error 
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSFile_GetBit (\fBXSFile\fPxsThis)"
+.PP
+Gets the next bit in the file. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSFile_GetBits (\fBXSFile\fPxsThis, \fBXSUInteger\fPcount)"
+.PP
+Gets bits from the file. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.br
+\fIcount\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSFile_Getc (\fBXSFile\fPxsThis)"
+.PP
+Returns the next character from the file. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The character or EOF on error 
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSFile_GetPos (\fBXSFile\fPxsThis, fpos_t *ptr)"
+.PP
+Stores the current file position. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.br
+\fIptr\fP A pointer where tos store the file position 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Non-zero on error 
+.RE
+.PP
+
+.SS "\fBgid_t\fP XSFile_GID (\fBXSFile\fPxsThis)"
+.PP
+Gets the file's group ID. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The file's group ID 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_HasSGID (\fBXSFile\fPxsThis)"
+.PP
+Checks if the file has the SGID bit set. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if the SGID bit is set, otherwise false 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_HasSUID (\fBXSFile\fPxsThis)"
+.PP
+Checks if the file has the SUID bit set. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if the SUID bit is set, otherwise false 
+.RE
+.PP
+
+.SS "\fBXSFloat\fP XSFile_HumanReadableSize (\fBXSFile\fPxsThis, charunit[])"
+.PP
+Gets an human readable size for the size. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.br
+\fIunit\fP A buffer to store the size unit 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The human readable size 
+.RE
+.PP
+
+.SS "\fBXSFile\fP XSFile_Init (\fBXSFile\fPxsThis)"
+.PP
+Initialize a file object. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A pointer to the file object 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_IsBlockDevice (\fBXSFile\fPxsThis)"
+.PP
+Checks if the file is a block device. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+YES is the file is a block device, otherwise NO 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_IsCharacterDevice (\fBXSFile\fPxsThis)"
+.PP
+Checks if the file is a character device. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+YES is the file is a character device otherwise NO 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_IsFIFO (\fBXSFile\fPxsThis)"
+.PP
+Checks if the file is a FIFO. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+YES is the file is a FIFO otherwise NO 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_IsGroupExecutable (\fBXSFile\fPxsThis)"
+.PP
+Checks if the file is executable for the group. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+YES is the file is executable for the group, otherwise NO 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_IsGroupReadable (\fBXSFile\fPxsThis)"
+.PP
+Checks if the file is readable for the group. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+YES is the file is readable for the group, otherwise NO 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_IsGroupWriteable (\fBXSFile\fPxsThis)"
+.PP
+Checks if the file is writable for the group. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+YES is the file is writable for the group, otherwise NO 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_IsLink (\fBXSFile\fPxsThis)"
+.PP
+Checks if the file is a link. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+YES is the file is a link otherwise NO 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_IsReadable (\fBXSFile\fPxsThis)"
+.PP
+Checks if the file is readable. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the file is readable, otherwise false 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_IsRegularFile (\fBXSFile\fPxsThis)"
+.PP
+Checks if the file is a regular file. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+YES is the file is a regular file otherwise NO 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_IsSocket (\fBXSFile\fPxsThis)"
+.PP
+Checks if the file is a socket. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+YES is the file is a socket otherwise NO 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_ISUserExecutable (\fBXSFile\fPxsThis)"
+.PP
+Checks if the file is executable for the user. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+YES is the file is executable for the user, otherwise NO 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_IsUserReadable (\fBXSFile\fPxsThis)"
+.PP
+Checks if the file is readable for the user. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+YES is the file is readable for the user, otherwise NO 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_IsUserWriteable (\fBXSFile\fPxsThis)"
+.PP
+Checks if the file is writeable for the user. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+YES is the file is writeable for the user, otherwise NO 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_IsWorldExecutable (\fBXSFile\fPxsThis)"
+.PP
+Checks if the file is executable for the world. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+YES is the file is executable for the world, otherwise NO 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_IsWorldReadable (\fBXSFile\fPxsThis)"
+.PP
+Checks if the file is readable for the world. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+YES is the file is readable for the world, otherwise NO 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_IsWorldWriteable (\fBXSFile\fPxsThis)"
+.PP
+Checks if the file is writeable for the world. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+YES is the file is writeable for the world, otherwise NO 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSFile_IsWriteable (\fBXSFile\fPxsThis)"
+.PP
+Checks if the file is writeable. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the file is writeable, otherwise false 
+.RE
+.PP
+
+.SS "time_t XSFile_ModifictaionTime (\fBXSFile\fPxsThis)"
+.PP
+Gets the file's modification time. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The file's modification time 
+.RE
+.PP
+
+.SS "\fBnlink_t\fP XSFile_NumberOfLinks (\fBXSFile\fPxsThis)"
+.PP
+Gets the number of links to the file. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of links to the file 
+.RE
+.PP
+
+.SS "XSStatic \fBXSFile\fP XSFile_Open (const char *filename, \fBXSFileOpenMode\fPopenMode)"
+.PP
+Initializes an XSFile instance and opens the represented file. This function may return NULL if the represented file has not been opened. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP The name of the file 
+.br
+\fIopenMode\fP The file open mode (see XSFileOpenMode) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The instance of XSFile 
+.RE
+.PP
+
+.SS "const char* XSFile_OpenMode (\fBXSFile\fPxsThis)"
+.PP
+Gets the file's open mode. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The file's open mode 
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSFile_Printf (\fBXSFile\fPxsThis, const char *format, ...)"
+.PP
+Converts (according to format format) and writes output to the file. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.br
+\fIformat\fP ... 
+.br
+\fI...\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of characters written, or negative value on error 
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSFile_PutBit (\fBXSFile\fPxsThis, uint8_tbit)"
+.PP
+Writes a bit in the file. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.br
+\fIbit\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSFile_PutBits (\fBXSFile\fPxsThis, uint64_tbits, \fBXSUInteger\fPcount)"
+.PP
+Write bits to the file. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.br
+\fIbits\fP ... 
+.br
+\fIcount\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSFile_Putc (\fBXSFile\fPxsThis, \fBXSInteger\fPc)"
+.PP
+Writes a character to the file. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.br
+\fIc\fP The character to write 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The character or EOF on error 
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSFile_Puts (\fBXSFile\fPxsThis, const char *s)"
+.PP
+Writes a C string to the file. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.br
+\fIs\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Non-negative on success or EOF on error. 
+.RE
+.PP
+
+.SS "size_t XSFile_Read (\fBXSFile\fPxsThis, void *ptr, size_tsize, size_tnobj)"
+.PP
+Reads from the file. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.br
+\fIptr\fP A pointer to the memory location in which the data will be placed. 
+.br
+\fIsize\fP The size of the objects to read 
+.br
+\fInobj\fP The number of objects to read 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of objects read 
+.RE
+.PP
+
+.SS "void XSFile_Rewind (\fBXSFile\fPxsThis)"
+.PP
+Rewinds to the beginning of the file and clears the error indicators return void. 
+.SS "\fBXSInteger\fP XSFile_Seek (\fBXSFile\fPxsThis, \fBXSInteger\fPoffset, \fBXSFileSeekPosition\fPorigin)"
+.PP
+Sets file position for the file and clears end-of-file indicator. For a binary stream, file position is set to offset bytes from the position indicated by origin: beginning of file for SEEK_SET, current position for SEEK_CUR, or end of file for SEEK_END. Behaviour is similar for a text stream, but offset must be zero or, for SEEK_SET only, a value returned by ftell. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.br
+\fIoffset\fP ... 
+.br
+\fIorigin\fP The seek origin (see XSFileSeekPosition) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Non-zero on error. 
+.RE
+.PP
+
+.SS "ino_t XSFile_SerialNumber (\fBXSFile\fPxsThis)"
+.PP
+Gets the serial number of the file. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The file's serial number 
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSFile_SetPos (\fBXSFile\fPxsThis, const fpos_t *ptr)"
+.PP
+Sets the current file position. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.br
+\fIptr\fP The file position 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Non-zero on error 
+.RE
+.PP
+
+.SS "size_t XSFile_Size (\fBXSFile\fPxsThis)"
+.PP
+Gets the file size in bytes. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The file size in bytes 
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSFile_Tell (\fBXSFile\fPxsThis)"
+.PP
+Gets the current file position. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The position or -1 on error 
+.RE
+.PP
+
+.SS "\fBuid_t\fP XSFile_UID (\fBXSFile\fPxsThis)"
+.PP
+Gets the file's user ID. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the file's user ID 
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSFile_VPrintf (\fBXSFile\fPxsThis, const char *format, va_listarg)"
+.PP
+Equivalent to fprintf with variable argument list replaced by arg. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.br
+\fIformat\fP ... 
+.br
+\fIarg\fP The variable arguments list 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of characters written, or negative value on error 
+.RE
+.PP
+
+.SS "size_t XSFile_Write (\fBXSFile\fPxsThis, const void *ptr, size_tsize, size_tnobj)"
+.PP
+Writes to the file. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The file object 
+.br
+\fIptr\fP The data to write 
+.br
+\fIsize\fP The size of the objects to write 
+.br
+\fInobj\fP The number of objects to write 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of objects written 
+.RE
+.PP
+
+.SH "Variable Documentation"
+.PP 
+.SS "\fBXSStderr\fP"
+.PP
+XSFile object representing stderr. 
+.SS "\fBXSStdin\fP"
+.PP
+XSFile object representing stdin. 
+.SS "\fBXSStdout\fP"
+.PP
+XSFile object representing stdout. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

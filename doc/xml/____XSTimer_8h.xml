@@ -1,0 +1,690 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="____XSTimer_8h" kind="file">
+    <compoundname>__XSTimer.h</compoundname>
+    <includes local="yes">../XSMacros.h</includes>
+    <includes refid="XS_8h" local="yes">XS.h</includes>
+    <incdepgraph>
+      <node id="5864">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="5852">
+        <label>stdbool.h</label>
+      </node>
+      <node id="5858">
+        <label>grp.h</label>
+      </node>
+      <node id="5840">
+        <label>stdarg.h</label>
+      </node>
+      <node id="5875">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="5830">
+        <label>assert.h</label>
+      </node>
+      <node id="5833">
+        <label>float.h</label>
+      </node>
+      <node id="5913">
+        <label>XS/XSThread.h</label>
+      </node>
+      <node id="5848">
+        <label>wctype.h</label>
+      </node>
+      <node id="5892">
+        <label>XS/XSArray.h</label>
+      </node>
+      <node id="5850">
+        <label>fenv.h</label>
+      </node>
+      <node id="5914">
+        <label>XS/XSTimer.h</label>
+      </node>
+      <node id="5842">
+        <label>stdint.h</label>
+      </node>
+      <node id="5825">
+        <label>__XSTimer.h</label>
+        <link refid="__XSTimer.h"/>
+        <childnode refid="5826" relation="include">
+        </childnode>
+        <childnode refid="5827" relation="include">
+        </childnode>
+      </node>
+      <node id="5912">
+        <label>XS/XSString.h</label>
+      </node>
+      <node id="5844">
+        <label>stdlib.h</label>
+      </node>
+      <node id="5838">
+        <label>setjmp.h</label>
+      </node>
+      <node id="5908">
+        <label>XS/XSNotificationCenter.h</label>
+      </node>
+      <node id="5890">
+        <label>XS/XSApplicationArgument.h</label>
+      </node>
+      <node id="5862">
+        <label>sys/msg.h</label>
+      </node>
+      <node id="5832">
+        <label>errno.h</label>
+      </node>
+      <node id="5834">
+        <label>iso646.h</label>
+      </node>
+      <node id="5902">
+        <label>XS/XSFile.h</label>
+      </node>
+      <node id="5857">
+        <label>fcntl.h</label>
+      </node>
+      <node id="5870">
+        <label>termios.h</label>
+      </node>
+      <node id="5891">
+        <label>XS/XSApplication.h</label>
+      </node>
+      <node id="5854">
+        <label>std-posix.h</label>
+        <link refid="std-posix_8h"/>
+        <childnode refid="5855" relation="include">
+        </childnode>
+        <childnode refid="5856" relation="include">
+        </childnode>
+        <childnode refid="5857" relation="include">
+        </childnode>
+        <childnode refid="5858" relation="include">
+        </childnode>
+        <childnode refid="5859" relation="include">
+        </childnode>
+        <childnode refid="5860" relation="include">
+        </childnode>
+        <childnode refid="5861" relation="include">
+        </childnode>
+        <childnode refid="5862" relation="include">
+        </childnode>
+        <childnode refid="5863" relation="include">
+        </childnode>
+        <childnode refid="5864" relation="include">
+        </childnode>
+        <childnode refid="5865" relation="include">
+        </childnode>
+        <childnode refid="5866" relation="include">
+        </childnode>
+        <childnode refid="5867" relation="include">
+        </childnode>
+        <childnode refid="5868" relation="include">
+        </childnode>
+        <childnode refid="5869" relation="include">
+        </childnode>
+        <childnode refid="5870" relation="include">
+        </childnode>
+        <childnode refid="5871" relation="include">
+        </childnode>
+        <childnode refid="5872" relation="include">
+        </childnode>
+      </node>
+      <node id="5829">
+        <label>std-c99.h</label>
+        <link refid="std-c99_8h"/>
+        <childnode refid="5830" relation="include">
+        </childnode>
+        <childnode refid="5831" relation="include">
+        </childnode>
+        <childnode refid="5832" relation="include">
+        </childnode>
+        <childnode refid="5833" relation="include">
+        </childnode>
+        <childnode refid="5834" relation="include">
+        </childnode>
+        <childnode refid="5835" relation="include">
+        </childnode>
+        <childnode refid="5836" relation="include">
+        </childnode>
+        <childnode refid="5837" relation="include">
+        </childnode>
+        <childnode refid="5838" relation="include">
+        </childnode>
+        <childnode refid="5839" relation="include">
+        </childnode>
+        <childnode refid="5840" relation="include">
+        </childnode>
+        <childnode refid="5841" relation="include">
+        </childnode>
+        <childnode refid="5842" relation="include">
+        </childnode>
+        <childnode refid="5843" relation="include">
+        </childnode>
+        <childnode refid="5844" relation="include">
+        </childnode>
+        <childnode refid="5845" relation="include">
+        </childnode>
+        <childnode refid="5846" relation="include">
+        </childnode>
+        <childnode refid="5847" relation="include">
+        </childnode>
+        <childnode refid="5848" relation="include">
+        </childnode>
+        <childnode refid="5849" relation="include">
+        </childnode>
+        <childnode refid="5850" relation="include">
+        </childnode>
+        <childnode refid="5851" relation="include">
+        </childnode>
+        <childnode refid="5852" relation="include">
+        </childnode>
+        <childnode refid="5853" relation="include">
+        </childnode>
+      </node>
+      <node id="5886">
+        <label>XS/XSLog.h</label>
+      </node>
+      <node id="5863">
+        <label>sys/sem.h</label>
+      </node>
+      <node id="5841">
+        <label>stddef.h</label>
+      </node>
+      <node id="5907">
+        <label>XS/XSNotification.h</label>
+      </node>
+      <node id="5885">
+        <label>XS/XSTypes.h</label>
+      </node>
+      <node id="5874">
+        <label>netdb.h</label>
+      </node>
+      <node id="5906">
+        <label>XS/XSNull.h</label>
+      </node>
+      <node id="5915">
+        <label>XS/XSURL.h</label>
+      </node>
+      <node id="5835">
+        <label>limits.h</label>
+      </node>
+      <node id="5889">
+        <label>XS/XSRuntime.h</label>
+      </node>
+      <node id="5859">
+        <label>pthread.h</label>
+      </node>
+      <node id="5826">
+        <label>../XSMacros.h</label>
+      </node>
+      <node id="5887">
+        <label>XS/XSMemory.h</label>
+      </node>
+      <node id="5847">
+        <label>wchar.h</label>
+      </node>
+      <node id="5866">
+        <label>sys/types.h</label>
+      </node>
+      <node id="5905">
+        <label>XS/XSLock.h</label>
+      </node>
+      <node id="5845">
+        <label>string.h</label>
+      </node>
+      <node id="5872">
+        <label>utime.h</label>
+      </node>
+      <node id="5895">
+        <label>XS/XSBTree.h</label>
+      </node>
+      <node id="5876">
+        <label>std-keywords.h</label>
+        <link refid="std-keywords_8h"/>
+      </node>
+      <node id="5916">
+        <label>XS/XSURLRequest.h</label>
+      </node>
+      <node id="5877">
+        <label>std-bool.h</label>
+        <link refid="std-bool_8h"/>
+      </node>
+      <node id="5878">
+        <label>std-math.h</label>
+        <link refid="std-math_8h"/>
+      </node>
+      <node id="5871">
+        <label>unistd.h</label>
+      </node>
+      <node id="5828">
+        <label>std/std.h</label>
+        <link refid="std_8h"/>
+        <childnode refid="5829" relation="include">
+        </childnode>
+        <childnode refid="5854" relation="include">
+        </childnode>
+        <childnode refid="5873" relation="include">
+        </childnode>
+        <childnode refid="5874" relation="include">
+        </childnode>
+        <childnode refid="5875" relation="include">
+        </childnode>
+        <childnode refid="5876" relation="include">
+        </childnode>
+        <childnode refid="5877" relation="include">
+        </childnode>
+        <childnode refid="5878" relation="include">
+        </childnode>
+        <childnode refid="5879" relation="include">
+        </childnode>
+        <childnode refid="5880" relation="include">
+        </childnode>
+        <childnode refid="5881" relation="include">
+        </childnode>
+        <childnode refid="5882" relation="include">
+        </childnode>
+      </node>
+      <node id="5880">
+        <label>std-bitwise.h</label>
+        <link refid="std-bitwise_8h"/>
+      </node>
+      <node id="5853">
+        <label>tgmath.h</label>
+      </node>
+      <node id="5899">
+        <label>XS/XSDictionary.h</label>
+      </node>
+      <node id="5839">
+        <label>signal.h</label>
+      </node>
+      <node id="5849">
+        <label>complex.h</label>
+      </node>
+      <node id="5897">
+        <label>XS/XSDebugLog.h</label>
+      </node>
+      <node id="5861">
+        <label>sys/ipc.h</label>
+      </node>
+      <node id="5846">
+        <label>time.h</label>
+      </node>
+      <node id="5911">
+        <label>XS/XSSort.h</label>
+      </node>
+      <node id="5837">
+        <label>math.h</label>
+      </node>
+      <node id="5868">
+        <label>sys/wait.h</label>
+      </node>
+      <node id="5904">
+        <label>XS/XSHost.h</label>
+      </node>
+      <node id="5865">
+        <label>sys/time.h</label>
+      </node>
+      <node id="5894">
+        <label>XS/XSBool.h</label>
+      </node>
+      <node id="5831">
+        <label>ctype.h</label>
+      </node>
+      <node id="5873">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="5860">
+        <label>pwd.h</label>
+      </node>
+      <node id="5896">
+        <label>XS/XSColor.h</label>
+      </node>
+      <node id="5884">
+        <label>XS/XSConstants.h</label>
+      </node>
+      <node id="5888">
+        <label>XS/XSMemoryDebug.h</label>
+      </node>
+      <node id="5855">
+        <label>cpio.h</label>
+      </node>
+      <node id="5827">
+        <label>XS.h</label>
+        <link refid="XS_8h"/>
+        <childnode refid="5828" relation="include">
+        </childnode>
+        <childnode refid="5883" relation="include">
+        </childnode>
+        <childnode refid="5884" relation="include">
+        </childnode>
+        <childnode refid="5885" relation="include">
+        </childnode>
+        <childnode refid="5886" relation="include">
+        </childnode>
+        <childnode refid="5887" relation="include">
+        </childnode>
+        <childnode refid="5888" relation="include">
+        </childnode>
+        <childnode refid="5889" relation="include">
+        </childnode>
+        <childnode refid="5890" relation="include">
+        </childnode>
+        <childnode refid="5891" relation="include">
+        </childnode>
+        <childnode refid="5892" relation="include">
+        </childnode>
+        <childnode refid="5893" relation="include">
+        </childnode>
+        <childnode refid="5894" relation="include">
+        </childnode>
+        <childnode refid="5895" relation="include">
+        </childnode>
+        <childnode refid="5896" relation="include">
+        </childnode>
+        <childnode refid="5897" relation="include">
+        </childnode>
+        <childnode refid="5898" relation="include">
+        </childnode>
+        <childnode refid="5899" relation="include">
+        </childnode>
+        <childnode refid="5900" relation="include">
+        </childnode>
+        <childnode refid="5901" relation="include">
+        </childnode>
+        <childnode refid="5902" relation="include">
+        </childnode>
+        <childnode refid="5903" relation="include">
+        </childnode>
+        <childnode refid="5904" relation="include">
+        </childnode>
+        <childnode refid="5905" relation="include">
+        </childnode>
+        <childnode refid="5906" relation="include">
+        </childnode>
+        <childnode refid="5907" relation="include">
+        </childnode>
+        <childnode refid="5908" relation="include">
+        </childnode>
+        <childnode refid="5909" relation="include">
+        </childnode>
+        <childnode refid="5910" relation="include">
+        </childnode>
+        <childnode refid="5911" relation="include">
+        </childnode>
+        <childnode refid="5912" relation="include">
+        </childnode>
+        <childnode refid="5913" relation="include">
+        </childnode>
+        <childnode refid="5914" relation="include">
+        </childnode>
+        <childnode refid="5915" relation="include">
+        </childnode>
+        <childnode refid="5916" relation="include">
+        </childnode>
+      </node>
+      <node id="5869">
+        <label>tar.h</label>
+      </node>
+      <node id="5910">
+        <label>XS/XSSet.h</label>
+      </node>
+      <node id="5901">
+        <label>XS/XSException.h</label>
+      </node>
+      <node id="5882">
+        <label>std-string.h</label>
+        <link refid="std-string_8h"/>
+        <childnode refid="5876" relation="include">
+        </childnode>
+      </node>
+      <node id="5879">
+        <label>std-md5.h</label>
+        <link refid="std-md5_8h"/>
+      </node>
+      <node id="5909">
+        <label>XS/XSNumber.h</label>
+      </node>
+      <node id="5843">
+        <label>stdio.h</label>
+      </node>
+      <node id="5836">
+        <label>locale.h</label>
+      </node>
+      <node id="5883">
+        <label>XS/XSMacros.h</label>
+      </node>
+      <node id="5898">
+        <label>XS/XSData.h</label>
+      </node>
+      <node id="5893">
+        <label>XS/XSBag.h</label>
+      </node>
+      <node id="5867">
+        <label>sys/utsname.h</label>
+      </node>
+      <node id="5851">
+        <label>inttypes.h</label>
+      </node>
+      <node id="5903">
+        <label>XS/XSGeometry.h</label>
+      </node>
+      <node id="5900">
+        <label>XS/XSError.h</label>
+      </node>
+      <node id="5881">
+        <label>std-ascii.h</label>
+        <link refid="std-ascii_8h"/>
+      </node>
+      <node id="5856">
+        <label>dirent.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct____XSTimer__Struct" prot="public">__XSTimer_Struct</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="____XSTimer_8h_1a3205d6e00802d2497e9db42d2fc92ecd" prot="public" static="no">
+        <type>struct <ref refid="struct____XSTimer__Struct" kindref="compound">__XSTimer_Struct</ref></type>
+        <definition>__XSTimer</definition>
+        <argsstring></argsstring>
+        <name>__XSTimer</name>
+        <briefdescription>
+<para>XSTimer class type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSTimer.h" line="65" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSTimer.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="____XSTimer_8h_1a7631de77141f22d20fd5bf56009d33a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSTimer_Initialize</definition>
+        <argsstring>(void)</argsstring>
+        <name>__XSTimer_Initialize</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Runtime initialization. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSTimer.h" line="71"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSTimer_8h_1adc02f48865d0743125ebc20fd434c5df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSTimer_RunAndRepeat</definition>
+        <argsstring>(XSThread thread, void *object)</argsstring>
+        <name>__XSTimer_RunAndRepeat</name>
+        <param>
+          <type><ref refid="struct____XSThread__Struct" kindref="compound">XSThread</ref></type>
+          <declname>thread</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+<para>Runs a timer object after its time interval, and repeats untile the timer is invalidated. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>thread</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thread object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timer object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSTimer.h" line="87"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSTimer_8h_1abfc573e18f75fa3ff2f31c7f55ac0397" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSTimer_RunOnce</definition>
+        <argsstring>(XSThread thread, void *object)</argsstring>
+        <name>__XSTimer_RunOnce</name>
+        <param>
+          <type><ref refid="struct____XSThread__Struct" kindref="compound">XSThread</ref></type>
+          <declname>thread</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+<para>Runs a timer object after its time interval. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>thread</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thread object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timer object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSTimer.h" line="79"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Private XSTimer class definitions. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt; </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2011,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__XSTimer.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Private<sp/>XSTimer<sp/>class<sp/>definitions</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>___XS_TIMER_H_</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>___XS_TIMER_H_</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../XSMacros.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="XSMacros_8h_1ae3fa7c5665557917f34badbe69a55828" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; start.">XS_EXTERN_C_BEGIN</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XS_8h" kindref="compound" tooltip="XSFoundation main header file.">XS.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="48"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>@struct<sp/><sp/><sp/><sp/><sp/><sp/>__XSTimer_Struct</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSTimer<sp/>class</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="struct____XSTimer__Struct" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct____XSTimer__Struct" kindref="compound" tooltip="XSTimer class.">__XSTimer_Struct</ref></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54" refid="struct____XSTimer__Struct_1a9e5ec6d8ea49ab1792b8615dc88ac11b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structXSRuntimeClass__Struct" kindref="compound" tooltip="Base structure for the runtime classes.">XSRuntimeClass</ref><sp/><ref refid="struct____XSTimer__Struct_1a9e5ec6d8ea49ab1792b8615dc88ac11b" kindref="member">__class</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>Runtime<sp/>class<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="struct____XSTimer__Struct_1a7f31547eed69b35d60fd66182d21ab64" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSTimer__Struct_1a7f31547eed69b35d60fd66182d21ab64" kindref="member">valid</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="struct____XSTimer__Struct_1a019f36f83ee95ab57260e6a82fdaa243" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSTimer__Struct_1a019f36f83ee95ab57260e6a82fdaa243" kindref="member">msecs</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="struct____XSTimer__Struct_1a63073c7f1d35cc6d34525d37daff7f62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(<sp/>*<sp/><ref refid="struct____XSTimer__Struct_1a63073c7f1d35cc6d34525d37daff7f62" kindref="member">func</ref><sp/>)(<sp/><ref refid="struct____XSTimer__Struct" kindref="compound" tooltip="XSTimer class.">XSTimer</ref><sp/>timer<sp/>);<sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="61"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>__XSTimer</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSTimer<sp/>class<sp/>type</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="____XSTimer_8h_1a3205d6e00802d2497e9db42d2fc92ecd" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct____XSTimer__Struct" kindref="compound" tooltip="XSTimer class.">__XSTimer_Struct</ref><sp/><ref refid="struct____XSTimer__Struct" kindref="compound" tooltip="XSTimer class.">__XSTimer</ref>;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="67"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Runtime<sp/>initialization</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSTimer_8h_1a7631de77141f22d20fd5bf56009d33a8" kindref="member" tooltip="Runtime initialization.">__XSTimer_Initialize</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="73"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Runs<sp/>a<sp/>timer<sp/>object<sp/>after<sp/>its<sp/>time<sp/>interval</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>thread<sp/><sp/>The<sp/>thread<sp/>object</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>object<sp/><sp/>The<sp/>timer<sp/>object</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>@return<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSTimer_8h_1abfc573e18f75fa3ff2f31c7f55ac0397" kindref="member" tooltip="Runs a timer object after its time interval.">__XSTimer_RunOnce</ref>(<sp/><ref refid="struct____XSThread__Struct" kindref="compound" tooltip="XSThread class.">XSThread</ref><sp/>thread,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="81"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Runs<sp/>a<sp/>timer<sp/>object<sp/>after<sp/>its<sp/>time<sp/>interval,<sp/>and<sp/>repeats<sp/>untile<sp/>the<sp/>timer<sp/>is<sp/>invalidated</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>thread<sp/><sp/>The<sp/>thread<sp/>object</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>object<sp/><sp/>The<sp/>timer<sp/>object</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*<sp/>@return<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSTimer_8h_1adc02f48865d0743125ebc20fd434c5df" kindref="member" tooltip="Runs a timer object after its time interval, and repeats untile the timer is invalidated.">__XSTimer_RunAndRepeat</ref>(<sp/><ref refid="struct____XSThread__Struct" kindref="compound" tooltip="XSThread class.">XSThread</ref><sp/>thread,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><ref refid="XSMacros_8h_1a35fa049fa034476400f574516968a3a2" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; end.">XS_EXTERN_C_END</ref></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>___XS_TIMER_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSTimer.h"/>
+  </compounddef>
+</doxygen>

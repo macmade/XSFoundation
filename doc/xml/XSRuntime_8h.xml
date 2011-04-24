@@ -1,0 +1,1132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="XSRuntime_8h" kind="file">
+    <compoundname>XSRuntime.h</compoundname>
+    <includes refid="XSMacros_8h" local="yes">XSMacros.h</includes>
+    <includes refid="XS_8h" local="yes">XS.h</includes>
+    <incdepgraph>
+      <node id="7045">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="7033">
+        <label>stdbool.h</label>
+      </node>
+      <node id="7005">
+        <label>XSMacros.h</label>
+        <link refid="XSMacros_8h"/>
+        <childnode refid="7006" relation="include">
+        </childnode>
+        <childnode refid="7007" relation="include">
+        </childnode>
+      </node>
+      <node id="7039">
+        <label>grp.h</label>
+      </node>
+      <node id="7021">
+        <label>stdarg.h</label>
+      </node>
+      <node id="7056">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="7006">
+        <label>XSMacrosTarget.h</label>
+        <link refid="XSMacrosTarget_8h"/>
+        <childnode refid="7005" relation="include">
+        </childnode>
+      </node>
+      <node id="7011">
+        <label>assert.h</label>
+      </node>
+      <node id="7014">
+        <label>float.h</label>
+      </node>
+      <node id="7094">
+        <label>XS/XSThread.h</label>
+      </node>
+      <node id="7029">
+        <label>wctype.h</label>
+      </node>
+      <node id="7073">
+        <label>XS/XSArray.h</label>
+      </node>
+      <node id="7031">
+        <label>fenv.h</label>
+      </node>
+      <node id="7095">
+        <label>XS/XSTimer.h</label>
+      </node>
+      <node id="7023">
+        <label>stdint.h</label>
+      </node>
+      <node id="7093">
+        <label>XS/XSString.h</label>
+      </node>
+      <node id="7025">
+        <label>stdlib.h</label>
+      </node>
+      <node id="7019">
+        <label>setjmp.h</label>
+      </node>
+      <node id="7089">
+        <label>XS/XSNotificationCenter.h</label>
+      </node>
+      <node id="7071">
+        <label>XS/XSApplicationArgument.h</label>
+      </node>
+      <node id="7043">
+        <label>sys/msg.h</label>
+      </node>
+      <node id="7013">
+        <label>errno.h</label>
+      </node>
+      <node id="7015">
+        <label>iso646.h</label>
+      </node>
+      <node id="7083">
+        <label>XS/XSFile.h</label>
+      </node>
+      <node id="7038">
+        <label>fcntl.h</label>
+      </node>
+      <node id="7051">
+        <label>termios.h</label>
+      </node>
+      <node id="7072">
+        <label>XS/XSApplication.h</label>
+      </node>
+      <node id="7035">
+        <label>std-posix.h</label>
+        <link refid="std-posix_8h"/>
+        <childnode refid="7036" relation="include">
+        </childnode>
+        <childnode refid="7037" relation="include">
+        </childnode>
+        <childnode refid="7038" relation="include">
+        </childnode>
+        <childnode refid="7039" relation="include">
+        </childnode>
+        <childnode refid="7040" relation="include">
+        </childnode>
+        <childnode refid="7041" relation="include">
+        </childnode>
+        <childnode refid="7042" relation="include">
+        </childnode>
+        <childnode refid="7043" relation="include">
+        </childnode>
+        <childnode refid="7044" relation="include">
+        </childnode>
+        <childnode refid="7045" relation="include">
+        </childnode>
+        <childnode refid="7046" relation="include">
+        </childnode>
+        <childnode refid="7047" relation="include">
+        </childnode>
+        <childnode refid="7048" relation="include">
+        </childnode>
+        <childnode refid="7049" relation="include">
+        </childnode>
+        <childnode refid="7050" relation="include">
+        </childnode>
+        <childnode refid="7051" relation="include">
+        </childnode>
+        <childnode refid="7052" relation="include">
+        </childnode>
+        <childnode refid="7053" relation="include">
+        </childnode>
+      </node>
+      <node id="7010">
+        <label>std-c99.h</label>
+        <link refid="std-c99_8h"/>
+        <childnode refid="7011" relation="include">
+        </childnode>
+        <childnode refid="7012" relation="include">
+        </childnode>
+        <childnode refid="7013" relation="include">
+        </childnode>
+        <childnode refid="7014" relation="include">
+        </childnode>
+        <childnode refid="7015" relation="include">
+        </childnode>
+        <childnode refid="7016" relation="include">
+        </childnode>
+        <childnode refid="7017" relation="include">
+        </childnode>
+        <childnode refid="7018" relation="include">
+        </childnode>
+        <childnode refid="7019" relation="include">
+        </childnode>
+        <childnode refid="7020" relation="include">
+        </childnode>
+        <childnode refid="7021" relation="include">
+        </childnode>
+        <childnode refid="7022" relation="include">
+        </childnode>
+        <childnode refid="7023" relation="include">
+        </childnode>
+        <childnode refid="7024" relation="include">
+        </childnode>
+        <childnode refid="7025" relation="include">
+        </childnode>
+        <childnode refid="7026" relation="include">
+        </childnode>
+        <childnode refid="7027" relation="include">
+        </childnode>
+        <childnode refid="7028" relation="include">
+        </childnode>
+        <childnode refid="7029" relation="include">
+        </childnode>
+        <childnode refid="7030" relation="include">
+        </childnode>
+        <childnode refid="7031" relation="include">
+        </childnode>
+        <childnode refid="7032" relation="include">
+        </childnode>
+        <childnode refid="7033" relation="include">
+        </childnode>
+        <childnode refid="7034" relation="include">
+        </childnode>
+      </node>
+      <node id="7067">
+        <label>XS/XSLog.h</label>
+      </node>
+      <node id="7004">
+        <label>XSRuntime.h</label>
+        <link refid="XSRuntime.h"/>
+        <childnode refid="7005" relation="include">
+        </childnode>
+        <childnode refid="7008" relation="include">
+        </childnode>
+      </node>
+      <node id="7044">
+        <label>sys/sem.h</label>
+      </node>
+      <node id="7022">
+        <label>stddef.h</label>
+      </node>
+      <node id="7088">
+        <label>XS/XSNotification.h</label>
+      </node>
+      <node id="7066">
+        <label>XS/XSTypes.h</label>
+      </node>
+      <node id="7055">
+        <label>netdb.h</label>
+      </node>
+      <node id="7087">
+        <label>XS/XSNull.h</label>
+      </node>
+      <node id="7096">
+        <label>XS/XSURL.h</label>
+      </node>
+      <node id="7016">
+        <label>limits.h</label>
+      </node>
+      <node id="7070">
+        <label>XS/XSRuntime.h</label>
+      </node>
+      <node id="7040">
+        <label>pthread.h</label>
+      </node>
+      <node id="7068">
+        <label>XS/XSMemory.h</label>
+      </node>
+      <node id="7028">
+        <label>wchar.h</label>
+      </node>
+      <node id="7047">
+        <label>sys/types.h</label>
+      </node>
+      <node id="7086">
+        <label>XS/XSLock.h</label>
+      </node>
+      <node id="7026">
+        <label>string.h</label>
+      </node>
+      <node id="7053">
+        <label>utime.h</label>
+      </node>
+      <node id="7076">
+        <label>XS/XSBTree.h</label>
+      </node>
+      <node id="7057">
+        <label>std-keywords.h</label>
+        <link refid="std-keywords_8h"/>
+      </node>
+      <node id="7097">
+        <label>XS/XSURLRequest.h</label>
+      </node>
+      <node id="7058">
+        <label>std-bool.h</label>
+        <link refid="std-bool_8h"/>
+      </node>
+      <node id="7059">
+        <label>std-math.h</label>
+        <link refid="std-math_8h"/>
+      </node>
+      <node id="7052">
+        <label>unistd.h</label>
+      </node>
+      <node id="7009">
+        <label>std/std.h</label>
+        <link refid="std_8h"/>
+        <childnode refid="7010" relation="include">
+        </childnode>
+        <childnode refid="7035" relation="include">
+        </childnode>
+        <childnode refid="7054" relation="include">
+        </childnode>
+        <childnode refid="7055" relation="include">
+        </childnode>
+        <childnode refid="7056" relation="include">
+        </childnode>
+        <childnode refid="7057" relation="include">
+        </childnode>
+        <childnode refid="7058" relation="include">
+        </childnode>
+        <childnode refid="7059" relation="include">
+        </childnode>
+        <childnode refid="7060" relation="include">
+        </childnode>
+        <childnode refid="7061" relation="include">
+        </childnode>
+        <childnode refid="7062" relation="include">
+        </childnode>
+        <childnode refid="7063" relation="include">
+        </childnode>
+      </node>
+      <node id="7061">
+        <label>std-bitwise.h</label>
+        <link refid="std-bitwise_8h"/>
+      </node>
+      <node id="7034">
+        <label>tgmath.h</label>
+      </node>
+      <node id="7080">
+        <label>XS/XSDictionary.h</label>
+      </node>
+      <node id="7020">
+        <label>signal.h</label>
+      </node>
+      <node id="7007">
+        <label>XSMacrosException.h</label>
+        <link refid="XSMacrosException_8h"/>
+        <childnode refid="7005" relation="include">
+        </childnode>
+      </node>
+      <node id="7030">
+        <label>complex.h</label>
+      </node>
+      <node id="7078">
+        <label>XS/XSDebugLog.h</label>
+      </node>
+      <node id="7042">
+        <label>sys/ipc.h</label>
+      </node>
+      <node id="7027">
+        <label>time.h</label>
+      </node>
+      <node id="7092">
+        <label>XS/XSSort.h</label>
+      </node>
+      <node id="7018">
+        <label>math.h</label>
+      </node>
+      <node id="7049">
+        <label>sys/wait.h</label>
+      </node>
+      <node id="7085">
+        <label>XS/XSHost.h</label>
+      </node>
+      <node id="7046">
+        <label>sys/time.h</label>
+      </node>
+      <node id="7075">
+        <label>XS/XSBool.h</label>
+      </node>
+      <node id="7012">
+        <label>ctype.h</label>
+      </node>
+      <node id="7054">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="7041">
+        <label>pwd.h</label>
+      </node>
+      <node id="7077">
+        <label>XS/XSColor.h</label>
+      </node>
+      <node id="7065">
+        <label>XS/XSConstants.h</label>
+      </node>
+      <node id="7069">
+        <label>XS/XSMemoryDebug.h</label>
+      </node>
+      <node id="7036">
+        <label>cpio.h</label>
+      </node>
+      <node id="7008">
+        <label>XS.h</label>
+        <link refid="XS_8h"/>
+        <childnode refid="7009" relation="include">
+        </childnode>
+        <childnode refid="7064" relation="include">
+        </childnode>
+        <childnode refid="7065" relation="include">
+        </childnode>
+        <childnode refid="7066" relation="include">
+        </childnode>
+        <childnode refid="7067" relation="include">
+        </childnode>
+        <childnode refid="7068" relation="include">
+        </childnode>
+        <childnode refid="7069" relation="include">
+        </childnode>
+        <childnode refid="7070" relation="include">
+        </childnode>
+        <childnode refid="7071" relation="include">
+        </childnode>
+        <childnode refid="7072" relation="include">
+        </childnode>
+        <childnode refid="7073" relation="include">
+        </childnode>
+        <childnode refid="7074" relation="include">
+        </childnode>
+        <childnode refid="7075" relation="include">
+        </childnode>
+        <childnode refid="7076" relation="include">
+        </childnode>
+        <childnode refid="7077" relation="include">
+        </childnode>
+        <childnode refid="7078" relation="include">
+        </childnode>
+        <childnode refid="7079" relation="include">
+        </childnode>
+        <childnode refid="7080" relation="include">
+        </childnode>
+        <childnode refid="7081" relation="include">
+        </childnode>
+        <childnode refid="7082" relation="include">
+        </childnode>
+        <childnode refid="7083" relation="include">
+        </childnode>
+        <childnode refid="7084" relation="include">
+        </childnode>
+        <childnode refid="7085" relation="include">
+        </childnode>
+        <childnode refid="7086" relation="include">
+        </childnode>
+        <childnode refid="7087" relation="include">
+        </childnode>
+        <childnode refid="7088" relation="include">
+        </childnode>
+        <childnode refid="7089" relation="include">
+        </childnode>
+        <childnode refid="7090" relation="include">
+        </childnode>
+        <childnode refid="7091" relation="include">
+        </childnode>
+        <childnode refid="7092" relation="include">
+        </childnode>
+        <childnode refid="7093" relation="include">
+        </childnode>
+        <childnode refid="7094" relation="include">
+        </childnode>
+        <childnode refid="7095" relation="include">
+        </childnode>
+        <childnode refid="7096" relation="include">
+        </childnode>
+        <childnode refid="7097" relation="include">
+        </childnode>
+      </node>
+      <node id="7050">
+        <label>tar.h</label>
+      </node>
+      <node id="7091">
+        <label>XS/XSSet.h</label>
+      </node>
+      <node id="7082">
+        <label>XS/XSException.h</label>
+      </node>
+      <node id="7063">
+        <label>std-string.h</label>
+        <link refid="std-string_8h"/>
+        <childnode refid="7057" relation="include">
+        </childnode>
+      </node>
+      <node id="7060">
+        <label>std-md5.h</label>
+        <link refid="std-md5_8h"/>
+      </node>
+      <node id="7090">
+        <label>XS/XSNumber.h</label>
+      </node>
+      <node id="7024">
+        <label>stdio.h</label>
+      </node>
+      <node id="7017">
+        <label>locale.h</label>
+      </node>
+      <node id="7064">
+        <label>XS/XSMacros.h</label>
+      </node>
+      <node id="7079">
+        <label>XS/XSData.h</label>
+      </node>
+      <node id="7074">
+        <label>XS/XSBag.h</label>
+      </node>
+      <node id="7048">
+        <label>sys/utsname.h</label>
+      </node>
+      <node id="7032">
+        <label>inttypes.h</label>
+      </node>
+      <node id="7084">
+        <label>XS/XSGeometry.h</label>
+      </node>
+      <node id="7081">
+        <label>XS/XSError.h</label>
+      </node>
+      <node id="7062">
+        <label>std-ascii.h</label>
+        <link refid="std-ascii_8h"/>
+      </node>
+      <node id="7037">
+        <label>dirent.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="XSRuntime_8h_1af8d54059b2d308f9f2452610f2ec6ef0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSObject XSRuntime_CreateInstance</definition>
+        <argsstring>(XSClassID classID)</argsstring>
+        <name>XSRuntime_CreateInstance</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1ab697493797a12574d517e2ca17bce7c0" kindref="member">XSClassID</ref></type>
+          <declname>classID</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a new instance of a registered class. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>classID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type ID </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The allocated instance </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSRuntime.h" line="94"/>
+      </memberdef>
+      <memberdef kind="function" id="XSRuntime_8h_1ae8d5a30048697cc77998fe8261387f30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSObject XSRuntime_CreateInstanceOfClass</definition>
+        <argsstring>(const XSClassInfos *const cls)</argsstring>
+        <name>XSRuntime_CreateInstanceOfClass</name>
+        <param>
+          <type>const <ref refid="structXSClassInfos" kindref="compound">XSClassInfos</ref> *const</type>
+          <declname>cls</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a new instance of a class. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cls</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The class structure </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The allocated instance </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSRuntime.h" line="80"/>
+      </memberdef>
+      <memberdef kind="function" id="XSRuntime_8h_1ae586e61deb0dae9a3d03b4e99879917c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+        <definition>XSObject XSRuntime_CreateInstanceOfClassWithName</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>XSRuntime_CreateInstanceOfClassWithName</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a new instance of a class with a specific name. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the class </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The allocated instance </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSRuntime.h" line="87"/>
+      </memberdef>
+      <memberdef kind="function" id="XSRuntime_8h_1a13b1790aca11a2719fafd6b0ef7836b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XSRuntime_Finalize</definition>
+        <argsstring>(void)</argsstring>
+        <name>XSRuntime_Finalize</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Finilization the XSFoundation runtime. </para>        </briefdescription>
+        <detaileddescription>
+<para>Do not call this function. Use the XSFOUNDATION_END() macro instead. <simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSRuntime.h" line="62"/>
+      </memberdef>
+      <memberdef kind="function" id="XSRuntime_8h_1ad83f9e5f2901f366466ace4d9f03b0cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structXSClassInfos" kindref="compound">XSClass</ref></type>
+        <definition>XSClass XSRuntime_GetClassForClassID</definition>
+        <argsstring>(XSClassID classID)</argsstring>
+        <name>XSRuntime_GetClassForClassID</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1ab697493797a12574d517e2ca17bce7c0" kindref="member">XSClassID</ref></type>
+          <declname>classID</declname>
+        </param>
+        <briefdescription>
+<para>Gets the class structure for a specific type ID. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>classID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The class ID </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The class corresponding to the type ID </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSRuntime.h" line="115"/>
+      </memberdef>
+      <memberdef kind="function" id="XSRuntime_8h_1a8a5e8595a27bd64cb59c90fe04a16331" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structXSClassInfos" kindref="compound">XSClass</ref></type>
+        <definition>XSClass XSRuntime_GetClassForObject</definition>
+        <argsstring>(XSObject object)</argsstring>
+        <name>XSRuntime_GetClassForObject</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+<para>Gets the class for an object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The object&apos;s class </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSRuntime.h" line="129"/>
+      </memberdef>
+      <memberdef kind="function" id="XSRuntime_8h_1ae3639630842bcd159a404d00fbae9ddb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ab697493797a12574d517e2ca17bce7c0" kindref="member">XSClassID</ref></type>
+        <definition>XSClassID XSRuntime_GetClassIDForClass</definition>
+        <argsstring>(XSClass cls)</argsstring>
+        <name>XSRuntime_GetClassIDForClass</name>
+        <param>
+          <type><ref refid="structXSClassInfos" kindref="compound">XSClass</ref></type>
+          <declname>cls</declname>
+        </param>
+        <briefdescription>
+<para>Gets the type ID for a specific class. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cls</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The class </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The class ID of the class </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSRuntime.h" line="122"/>
+      </memberdef>
+      <memberdef kind="function" id="XSRuntime_8h_1a171aa1ea018b07df647167a71d2c34af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* XSRuntime_GetClassNameForClass</definition>
+        <argsstring>(XSClass cls)</argsstring>
+        <name>XSRuntime_GetClassNameForClass</name>
+        <param>
+          <type><ref refid="structXSClassInfos" kindref="compound">XSClass</ref></type>
+          <declname>cls</declname>
+        </param>
+        <briefdescription>
+<para>Gets the class name for an object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cls</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The class </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The name of the class </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSRuntime.h" line="150"/>
+      </memberdef>
+      <memberdef kind="function" id="XSRuntime_8h_1a0a50b6cd3a4527ca03051310458bf768" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* XSRuntime_GetClassNameForClassID</definition>
+        <argsstring>(XSClassID classID)</argsstring>
+        <name>XSRuntime_GetClassNameForClassID</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1ab697493797a12574d517e2ca17bce7c0" kindref="member">XSClassID</ref></type>
+          <declname>classID</declname>
+        </param>
+        <briefdescription>
+<para>Gets the class name for an object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>classID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The class ID </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The name of the class </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSRuntime.h" line="143"/>
+      </memberdef>
+      <memberdef kind="function" id="XSRuntime_8h_1a0414074e399fe4647ff242949f94f975" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* XSRuntime_GetClassNameForObject</definition>
+        <argsstring>(XSObject object)</argsstring>
+        <name>XSRuntime_GetClassNameForObject</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+<para>Gets the class name for an object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The name of the class </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSRuntime.h" line="157"/>
+      </memberdef>
+      <memberdef kind="function" id="XSRuntime_8h_1a7ff7d0bbb2085f9bde98b5ffc5aef8d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ab697493797a12574d517e2ca17bce7c0" kindref="member">XSClassID</ref></type>
+        <definition>XSClassID XSRuntime_GetTypeIDForObject</definition>
+        <argsstring>(XSObject object)</argsstring>
+        <name>XSRuntime_GetTypeIDForObject</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+<para>Gets the class type ID for an object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The class ID for the object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSRuntime.h" line="136"/>
+      </memberdef>
+      <memberdef kind="function" id="XSRuntime_8h_1a846a8adde1437a48b3a0c4bae58e7ab1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XSRuntime_Initialize</definition>
+        <argsstring>(void)</argsstring>
+        <name>XSRuntime_Initialize</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initialize the XSFoundation runtime. </para>        </briefdescription>
+        <detaileddescription>
+<para>Do not call this function. Use the XSFOUNDATION_START() macro instead. <simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSRuntime.h" line="54"/>
+      </memberdef>
+      <memberdef kind="function" id="XSRuntime_8h_1a34615ee594765f4223db095041ecc874" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSRuntime_IsInstance</definition>
+        <argsstring>(void *ptr)</argsstring>
+        <name>XSRuntime_IsInstance</name>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether a pointer is an object instance. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pointer to check </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the pointer represents an instance, otherwise false </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSRuntime.h" line="108"/>
+      </memberdef>
+      <memberdef kind="function" id="XSRuntime_8h_1a2abd7b16937dfcda0aa99761d7d4566b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSRuntime_IsInstanceOfClass</definition>
+        <argsstring>(XSObject object, XSClass cls)</argsstring>
+        <name>XSRuntime_IsInstanceOfClass</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type><ref refid="structXSClassInfos" kindref="compound">XSClass</ref></type>
+          <declname>cls</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether an object is an instance of a class. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cls</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The class </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the object is an instance of the class, otherwise false </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSRuntime.h" line="165"/>
+      </memberdef>
+      <memberdef kind="function" id="XSRuntime_8h_1a5b0131f51b7b6b7021e7b7e6c6b02fec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL XSRuntime_IsInstanceOfClassName</definition>
+        <argsstring>(XSObject object, const char *name)</argsstring>
+        <name>XSRuntime_IsInstanceOfClassName</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref></type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether an object is an instance of a class name. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the class </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the object is an instance of the class name, otherwise false </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSRuntime.h" line="173"/>
+      </memberdef>
+      <memberdef kind="function" id="XSRuntime_8h_1af31d704f955b2fdc866ef6076ebb0321" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* XSRuntime_ObjectDescription</definition>
+        <argsstring>(void *ptr)</argsstring>
+        <name>XSRuntime_ObjectDescription</name>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Gets an object&apos;s description. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pointer to the object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The object&apos;s description </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSRuntime.h" line="101"/>
+      </memberdef>
+      <memberdef kind="function" id="XSRuntime_8h_1a400ad44164173dacd0044f8e91ac48d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1ab697493797a12574d517e2ca17bce7c0" kindref="member">XSClassID</ref></type>
+        <definition>XSClassID XSRuntime_RegisterClass</definition>
+        <argsstring>(const XSClassInfos *const cls)</argsstring>
+        <name>XSRuntime_RegisterClass</name>
+        <param>
+          <type>const <ref refid="structXSClassInfos" kindref="compound">XSClassInfos</ref> *const</type>
+          <declname>cls</declname>
+        </param>
+        <briefdescription>
+<para>Registers a class for the runtime. </para>        </briefdescription>
+        <detaileddescription>
+<para>All runtime classes needs to be registered before the runtime can use them and create instances. This function needs to be called once per class, ie using pthread_once(). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cls</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The class structure to register </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The runtime type ID for the class </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSRuntime.h" line="73"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Runtime functions. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt; </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2011,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSRuntime.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Runtime<sp/>functions</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_XS_RUNTIME_H_</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_XS_RUNTIME_H_</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XSMacros_8h" kindref="compound" tooltip="General macros.">XSMacros.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="XSMacros_8h_1ae3fa7c5665557917f34badbe69a55828" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; start.">XS_EXTERN_C_BEGIN</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XS_8h" kindref="compound" tooltip="XSFoundation main header file.">XS.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="48"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initialize<sp/>the<sp/>XSFoundation<sp/>runtime.</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>Do<sp/>not<sp/>call<sp/>this<sp/>function.<sp/>Use<sp/>the<sp/>XSFOUNDATION_START()</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>macro<sp/>instead.</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSRuntime_8h_1a846a8adde1437a48b3a0c4bae58e7ab1" kindref="member" tooltip="Initialize the XSFoundation runtime.">XSRuntime_Initialize</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="56"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Finilization<sp/>the<sp/>XSFoundation<sp/>runtime.</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>Do<sp/>not<sp/>call<sp/>this<sp/>function.<sp/>Use<sp/>the<sp/>XSFOUNDATION_END()</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>macro<sp/>instead.</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="XSRuntime_8h_1a13b1790aca11a2719fafd6b0ef7836b5" kindref="member" tooltip="Finilization the XSFoundation runtime.">XSRuntime_Finalize</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="64"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Registers<sp/>a<sp/>class<sp/>for<sp/>the<sp/>runtime</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>All<sp/>runtime<sp/>classes<sp/>needs<sp/>to<sp/>be<sp/>registered<sp/>before<sp/>the<sp/>runtime</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>can<sp/>use<sp/>them<sp/>and<sp/>create<sp/>instances.</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>function<sp/>needs<sp/>to<sp/>be<sp/>called<sp/>once<sp/>per<sp/>class,</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ie<sp/>using<sp/>pthread_once().</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>cls<sp/><sp/><sp/><sp/><sp/>The<sp/>class<sp/>structure<sp/>to<sp/>register</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>runtime<sp/>type<sp/>ID<sp/>for<sp/>the<sp/>class</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><ref refid="XSTypes_8h_1ab697493797a12574d517e2ca17bce7c0" kindref="member" tooltip="Type ID foe the registered runtime classes.">XSClassID</ref><sp/><ref refid="XSRuntime_8h_1a400ad44164173dacd0044f8e91ac48d9" kindref="member" tooltip="Registers a class for the runtime.">XSRuntime_RegisterClass</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structXSClassInfos" kindref="compound" tooltip="XSFoundation runtime class type.">XSClassInfos</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cls<sp/>);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="75"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initializes<sp/>a<sp/>new<sp/>instance<sp/>of<sp/>a<sp/>class</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>cls<sp/><sp/><sp/><sp/><sp/>The<sp/>class<sp/>structure</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>allocated<sp/>instance</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSRuntime_8h_1ae8d5a30048697cc77998fe8261387f30" kindref="member" tooltip="Initializes a new instance of a class.">XSRuntime_CreateInstanceOfClass</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structXSClassInfos" kindref="compound" tooltip="XSFoundation runtime class type.">XSClassInfos</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cls<sp/>);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="82"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initializes<sp/>a<sp/>new<sp/>instance<sp/>of<sp/>a<sp/>class<sp/>with<sp/>a<sp/>specific<sp/>name</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>name<sp/><sp/><sp/><sp/>The<sp/>name<sp/>of<sp/>the<sp/>class</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>allocated<sp/>instance</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSRuntime_8h_1ae586e61deb0dae9a3d03b4e99879917c" kindref="member" tooltip="Initializes a new instance of a class with a specific name.">XSRuntime_CreateInstanceOfClassWithName</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>name<sp/>);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="89"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Initializes<sp/>a<sp/>new<sp/>instance<sp/>of<sp/>a<sp/>registered<sp/>class</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>classID<sp/>The<sp/>type<sp/>ID</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>allocated<sp/>instance</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/><ref refid="XSRuntime_8h_1af8d54059b2d308f9f2452610f2ec6ef0" kindref="member" tooltip="Initializes a new instance of a registered class.">XSRuntime_CreateInstance</ref>(<sp/><ref refid="XSTypes_8h_1ab697493797a12574d517e2ca17bce7c0" kindref="member" tooltip="Type ID foe the registered runtime classes.">XSClassID</ref><sp/>classID<sp/>);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="96"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>an<sp/>object&apos;s<sp/>description</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/><sp/><sp/><sp/><sp/>The<sp/>pointer<sp/>to<sp/>the<sp/>object</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>object&apos;s<sp/>description</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="XSRuntime_8h_1af31d704f955b2fdc866ef6076ebb0321" kindref="member" tooltip="Gets an object&amp;#39;s description.">XSRuntime_ObjectDescription</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>ptr<sp/>);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="103"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>whether<sp/>a<sp/>pointer<sp/>is<sp/>an<sp/>object<sp/>instance</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/><sp/><sp/><sp/><sp/>The<sp/>pointer<sp/>to<sp/>check</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>True<sp/>if<sp/>the<sp/>pointer<sp/>represents<sp/>an<sp/>instance,<sp/>otherwise<sp/>false</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSRuntime_8h_1a34615ee594765f4223db095041ecc874" kindref="member" tooltip="Checks whether a pointer is an object instance.">XSRuntime_IsInstance</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>ptr<sp/>);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="110"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>class<sp/>structure<sp/>for<sp/>a<sp/>specific<sp/>type<sp/>ID</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>classID<sp/>The<sp/>class<sp/>ID</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>class<sp/>corresponding<sp/>to<sp/>the<sp/>type<sp/>ID</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><ref refid="structXSClassInfos" kindref="compound" tooltip="XSFoundation runtime class type.">XSClass</ref><sp/><ref refid="XSRuntime_8h_1ad83f9e5f2901f366466ace4d9f03b0cc" kindref="member" tooltip="Gets the class structure for a specific type ID.">XSRuntime_GetClassForClassID</ref>(<sp/><ref refid="XSTypes_8h_1ab697493797a12574d517e2ca17bce7c0" kindref="member" tooltip="Type ID foe the registered runtime classes.">XSClassID</ref><sp/>classID<sp/>);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="117"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>type<sp/>ID<sp/>for<sp/>a<sp/>specific<sp/>class</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>cls<sp/><sp/><sp/><sp/><sp/>The<sp/>class</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>class<sp/>ID<sp/>of<sp/>the<sp/>class</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><ref refid="XSTypes_8h_1ab697493797a12574d517e2ca17bce7c0" kindref="member" tooltip="Type ID foe the registered runtime classes.">XSClassID</ref><sp/><ref refid="XSRuntime_8h_1ae3639630842bcd159a404d00fbae9ddb" kindref="member" tooltip="Gets the type ID for a specific class.">XSRuntime_GetClassIDForClass</ref>(<sp/><ref refid="structXSClassInfos" kindref="compound" tooltip="XSFoundation runtime class type.">XSClass</ref><sp/>cls<sp/>);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="124"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>class<sp/>for<sp/>an<sp/>object</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>object<sp/><sp/>The<sp/>object</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>object&apos;s<sp/>class</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><ref refid="structXSClassInfos" kindref="compound" tooltip="XSFoundation runtime class type.">XSClass</ref><sp/><ref refid="XSRuntime_8h_1a8a5e8595a27bd64cb59c90fe04a16331" kindref="member" tooltip="Gets the class for an object.">XSRuntime_GetClassForObject</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="131"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>class<sp/>type<sp/>ID<sp/>for<sp/>an<sp/>object</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>object<sp/><sp/>The<sp/>object</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>class<sp/>ID<sp/>for<sp/>the<sp/>object</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><ref refid="XSTypes_8h_1ab697493797a12574d517e2ca17bce7c0" kindref="member" tooltip="Type ID foe the registered runtime classes.">XSClassID</ref><sp/><ref refid="XSRuntime_8h_1a7ff7d0bbb2085f9bde98b5ffc5aef8d5" kindref="member" tooltip="Gets the class type ID for an object.">XSRuntime_GetTypeIDForObject</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="138"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>class<sp/>name<sp/>for<sp/>an<sp/>object</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>classID<sp/>The<sp/>class<sp/>ID</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>name<sp/>of<sp/>the<sp/>class</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="XSRuntime_8h_1a0a50b6cd3a4527ca03051310458bf768" kindref="member" tooltip="Gets the class name for an object.">XSRuntime_GetClassNameForClassID</ref>(<sp/><ref refid="XSTypes_8h_1ab697493797a12574d517e2ca17bce7c0" kindref="member" tooltip="Type ID foe the registered runtime classes.">XSClassID</ref><sp/>classID<sp/>);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="145"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>class<sp/>name<sp/>for<sp/>an<sp/>object</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>cls<sp/><sp/><sp/><sp/><sp/>The<sp/>class</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>name<sp/>of<sp/>the<sp/>class</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="XSRuntime_8h_1a171aa1ea018b07df647167a71d2c34af" kindref="member" tooltip="Gets the class name for an object.">XSRuntime_GetClassNameForClass</ref>(<sp/><ref refid="structXSClassInfos" kindref="compound" tooltip="XSFoundation runtime class type.">XSClass</ref><sp/>cls<sp/>);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="152"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gets<sp/>the<sp/>class<sp/>name<sp/>for<sp/>an<sp/>object</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>object<sp/><sp/>The<sp/>object</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>name<sp/>of<sp/>the<sp/>class</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="XSRuntime_8h_1a0414074e399fe4647ff242949f94f975" kindref="member" tooltip="Gets the class name for an object.">XSRuntime_GetClassNameForObject</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="159"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>whether<sp/>an<sp/>object<sp/>is<sp/>an<sp/>instance<sp/>of<sp/>a<sp/>class</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>object<sp/><sp/>The<sp/>object</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>cls<sp/><sp/><sp/><sp/><sp/>The<sp/>class</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>True<sp/>if<sp/>the<sp/>object<sp/>is<sp/>an<sp/>instance<sp/>of<sp/>the<sp/>class,<sp/>otherwise<sp/>false</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSRuntime_8h_1a2abd7b16937dfcda0aa99761d7d4566b" kindref="member" tooltip="Checks whether an object is an instance of a class.">XSRuntime_IsInstanceOfClass</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/><ref refid="structXSClassInfos" kindref="compound" tooltip="XSFoundation runtime class type.">XSClass</ref><sp/>cls<sp/>);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="167"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Checks<sp/>whether<sp/>an<sp/>object<sp/>is<sp/>an<sp/>instance<sp/>of<sp/>a<sp/>class<sp/>name</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>object<sp/><sp/>The<sp/>object</highlight></codeline>
+<codeline lineno="170"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>name<sp/><sp/><sp/><sp/>The<sp/>name<sp/>of<sp/>the<sp/>class</highlight></codeline>
+<codeline lineno="171"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>True<sp/>if<sp/>the<sp/>object<sp/>is<sp/>an<sp/>instance<sp/>of<sp/>the<sp/>class<sp/>name,<sp/>otherwise<sp/>false</highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="XSRuntime_8h_1a5b0131f51b7b6b7021e7b7e6c6b02fec" kindref="member" tooltip="Checks whether an object is an instance of a class name.">XSRuntime_IsInstanceOfClassName</ref>(<sp/><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member" tooltip="Polymorphism support - Generic type for all XSFoundation objects.">XSObject</ref><sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>name<sp/>);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><ref refid="XSMacros_8h_1a35fa049fa034476400f574516968a3a2" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; end.">XS_EXTERN_C_END</ref></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_XS_RUNTIME_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSRuntime.h"/>
+  </compounddef>
+</doxygen>

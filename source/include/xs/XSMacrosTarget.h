@@ -379,8 +379,10 @@ XS_EXTERN_C_BEGIN
         #error unknown compiler
         
         #define TARGET_CPU_PPC          0
+        #define TARGET_CPU_PPC64        0
         #define TARGET_CPU_68K          0
         #define TARGET_CPU_X86          0
+        #define TARGET_CPU_X86_64       0
         #define TARGET_CPU_ARM          0
         #define TARGET_CPU_MIPS         0
         #define TARGET_CPU_SPARC        0

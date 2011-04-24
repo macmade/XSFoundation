@@ -1,0 +1,1241 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="____XSMemoryDebug_8h" kind="file">
+    <compoundname>__XSMemoryDebug.h</compoundname>
+    <includes local="yes">../XSMacros.h</includes>
+    <includes refid="XS_8h" local="yes">XS.h</includes>
+    <includes refid="____XSMemory_8h" local="yes">__XSMemory.h</includes>
+    <incdepgraph>
+      <node id="5026">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="5014">
+        <label>stdbool.h</label>
+      </node>
+      <node id="5020">
+        <label>grp.h</label>
+      </node>
+      <node id="5002">
+        <label>stdarg.h</label>
+      </node>
+      <node id="5037">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="4992">
+        <label>assert.h</label>
+      </node>
+      <node id="4995">
+        <label>float.h</label>
+      </node>
+      <node id="5075">
+        <label>XS/XSThread.h</label>
+      </node>
+      <node id="5010">
+        <label>wctype.h</label>
+      </node>
+      <node id="5054">
+        <label>XS/XSArray.h</label>
+      </node>
+      <node id="5012">
+        <label>fenv.h</label>
+      </node>
+      <node id="5076">
+        <label>XS/XSTimer.h</label>
+      </node>
+      <node id="5004">
+        <label>stdint.h</label>
+      </node>
+      <node id="5074">
+        <label>XS/XSString.h</label>
+      </node>
+      <node id="5006">
+        <label>stdlib.h</label>
+      </node>
+      <node id="5000">
+        <label>setjmp.h</label>
+      </node>
+      <node id="5070">
+        <label>XS/XSNotificationCenter.h</label>
+      </node>
+      <node id="5052">
+        <label>XS/XSApplicationArgument.h</label>
+      </node>
+      <node id="5024">
+        <label>sys/msg.h</label>
+      </node>
+      <node id="4994">
+        <label>errno.h</label>
+      </node>
+      <node id="4996">
+        <label>iso646.h</label>
+      </node>
+      <node id="5064">
+        <label>XS/XSFile.h</label>
+      </node>
+      <node id="5019">
+        <label>fcntl.h</label>
+      </node>
+      <node id="5032">
+        <label>termios.h</label>
+      </node>
+      <node id="5053">
+        <label>XS/XSApplication.h</label>
+      </node>
+      <node id="5016">
+        <label>std-posix.h</label>
+        <link refid="std-posix_8h"/>
+        <childnode refid="5017" relation="include">
+        </childnode>
+        <childnode refid="5018" relation="include">
+        </childnode>
+        <childnode refid="5019" relation="include">
+        </childnode>
+        <childnode refid="5020" relation="include">
+        </childnode>
+        <childnode refid="5021" relation="include">
+        </childnode>
+        <childnode refid="5022" relation="include">
+        </childnode>
+        <childnode refid="5023" relation="include">
+        </childnode>
+        <childnode refid="5024" relation="include">
+        </childnode>
+        <childnode refid="5025" relation="include">
+        </childnode>
+        <childnode refid="5026" relation="include">
+        </childnode>
+        <childnode refid="5027" relation="include">
+        </childnode>
+        <childnode refid="5028" relation="include">
+        </childnode>
+        <childnode refid="5029" relation="include">
+        </childnode>
+        <childnode refid="5030" relation="include">
+        </childnode>
+        <childnode refid="5031" relation="include">
+        </childnode>
+        <childnode refid="5032" relation="include">
+        </childnode>
+        <childnode refid="5033" relation="include">
+        </childnode>
+        <childnode refid="5034" relation="include">
+        </childnode>
+      </node>
+      <node id="4991">
+        <label>std-c99.h</label>
+        <link refid="std-c99_8h"/>
+        <childnode refid="4992" relation="include">
+        </childnode>
+        <childnode refid="4993" relation="include">
+        </childnode>
+        <childnode refid="4994" relation="include">
+        </childnode>
+        <childnode refid="4995" relation="include">
+        </childnode>
+        <childnode refid="4996" relation="include">
+        </childnode>
+        <childnode refid="4997" relation="include">
+        </childnode>
+        <childnode refid="4998" relation="include">
+        </childnode>
+        <childnode refid="4999" relation="include">
+        </childnode>
+        <childnode refid="5000" relation="include">
+        </childnode>
+        <childnode refid="5001" relation="include">
+        </childnode>
+        <childnode refid="5002" relation="include">
+        </childnode>
+        <childnode refid="5003" relation="include">
+        </childnode>
+        <childnode refid="5004" relation="include">
+        </childnode>
+        <childnode refid="5005" relation="include">
+        </childnode>
+        <childnode refid="5006" relation="include">
+        </childnode>
+        <childnode refid="5007" relation="include">
+        </childnode>
+        <childnode refid="5008" relation="include">
+        </childnode>
+        <childnode refid="5009" relation="include">
+        </childnode>
+        <childnode refid="5010" relation="include">
+        </childnode>
+        <childnode refid="5011" relation="include">
+        </childnode>
+        <childnode refid="5012" relation="include">
+        </childnode>
+        <childnode refid="5013" relation="include">
+        </childnode>
+        <childnode refid="5014" relation="include">
+        </childnode>
+        <childnode refid="5015" relation="include">
+        </childnode>
+      </node>
+      <node id="5048">
+        <label>XS/XSLog.h</label>
+      </node>
+      <node id="5025">
+        <label>sys/sem.h</label>
+      </node>
+      <node id="5003">
+        <label>stddef.h</label>
+      </node>
+      <node id="5069">
+        <label>XS/XSNotification.h</label>
+      </node>
+      <node id="5047">
+        <label>XS/XSTypes.h</label>
+      </node>
+      <node id="5036">
+        <label>netdb.h</label>
+      </node>
+      <node id="5068">
+        <label>XS/XSNull.h</label>
+      </node>
+      <node id="5077">
+        <label>XS/XSURL.h</label>
+      </node>
+      <node id="4997">
+        <label>limits.h</label>
+      </node>
+      <node id="5051">
+        <label>XS/XSRuntime.h</label>
+      </node>
+      <node id="5021">
+        <label>pthread.h</label>
+      </node>
+      <node id="4988">
+        <label>../XSMacros.h</label>
+      </node>
+      <node id="5049">
+        <label>XS/XSMemory.h</label>
+      </node>
+      <node id="5009">
+        <label>wchar.h</label>
+      </node>
+      <node id="5028">
+        <label>sys/types.h</label>
+      </node>
+      <node id="5067">
+        <label>XS/XSLock.h</label>
+      </node>
+      <node id="5007">
+        <label>string.h</label>
+      </node>
+      <node id="5034">
+        <label>utime.h</label>
+      </node>
+      <node id="5057">
+        <label>XS/XSBTree.h</label>
+      </node>
+      <node id="5038">
+        <label>std-keywords.h</label>
+        <link refid="std-keywords_8h"/>
+      </node>
+      <node id="5078">
+        <label>XS/XSURLRequest.h</label>
+      </node>
+      <node id="5039">
+        <label>std-bool.h</label>
+        <link refid="std-bool_8h"/>
+      </node>
+      <node id="5040">
+        <label>std-math.h</label>
+        <link refid="std-math_8h"/>
+      </node>
+      <node id="5033">
+        <label>unistd.h</label>
+      </node>
+      <node id="4990">
+        <label>std/std.h</label>
+        <link refid="std_8h"/>
+        <childnode refid="4991" relation="include">
+        </childnode>
+        <childnode refid="5016" relation="include">
+        </childnode>
+        <childnode refid="5035" relation="include">
+        </childnode>
+        <childnode refid="5036" relation="include">
+        </childnode>
+        <childnode refid="5037" relation="include">
+        </childnode>
+        <childnode refid="5038" relation="include">
+        </childnode>
+        <childnode refid="5039" relation="include">
+        </childnode>
+        <childnode refid="5040" relation="include">
+        </childnode>
+        <childnode refid="5041" relation="include">
+        </childnode>
+        <childnode refid="5042" relation="include">
+        </childnode>
+        <childnode refid="5043" relation="include">
+        </childnode>
+        <childnode refid="5044" relation="include">
+        </childnode>
+      </node>
+      <node id="5042">
+        <label>std-bitwise.h</label>
+        <link refid="std-bitwise_8h"/>
+      </node>
+      <node id="5015">
+        <label>tgmath.h</label>
+      </node>
+      <node id="5061">
+        <label>XS/XSDictionary.h</label>
+      </node>
+      <node id="5001">
+        <label>signal.h</label>
+      </node>
+      <node id="5079">
+        <label>__XSMemory.h</label>
+        <link refid="____XSMemory_8h"/>
+        <childnode refid="4988" relation="include">
+        </childnode>
+        <childnode refid="4989" relation="include">
+        </childnode>
+      </node>
+      <node id="5011">
+        <label>complex.h</label>
+      </node>
+      <node id="5059">
+        <label>XS/XSDebugLog.h</label>
+      </node>
+      <node id="5023">
+        <label>sys/ipc.h</label>
+      </node>
+      <node id="5008">
+        <label>time.h</label>
+      </node>
+      <node id="5073">
+        <label>XS/XSSort.h</label>
+      </node>
+      <node id="4999">
+        <label>math.h</label>
+      </node>
+      <node id="4987">
+        <label>__XSMemoryDebug.h</label>
+        <link refid="__XSMemoryDebug.h"/>
+        <childnode refid="4988" relation="include">
+        </childnode>
+        <childnode refid="4989" relation="include">
+        </childnode>
+        <childnode refid="5079" relation="include">
+        </childnode>
+      </node>
+      <node id="5030">
+        <label>sys/wait.h</label>
+      </node>
+      <node id="5066">
+        <label>XS/XSHost.h</label>
+      </node>
+      <node id="5027">
+        <label>sys/time.h</label>
+      </node>
+      <node id="5056">
+        <label>XS/XSBool.h</label>
+      </node>
+      <node id="4993">
+        <label>ctype.h</label>
+      </node>
+      <node id="5035">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="5022">
+        <label>pwd.h</label>
+      </node>
+      <node id="5058">
+        <label>XS/XSColor.h</label>
+      </node>
+      <node id="5046">
+        <label>XS/XSConstants.h</label>
+      </node>
+      <node id="5050">
+        <label>XS/XSMemoryDebug.h</label>
+      </node>
+      <node id="5017">
+        <label>cpio.h</label>
+      </node>
+      <node id="4989">
+        <label>XS.h</label>
+        <link refid="XS_8h"/>
+        <childnode refid="4990" relation="include">
+        </childnode>
+        <childnode refid="5045" relation="include">
+        </childnode>
+        <childnode refid="5046" relation="include">
+        </childnode>
+        <childnode refid="5047" relation="include">
+        </childnode>
+        <childnode refid="5048" relation="include">
+        </childnode>
+        <childnode refid="5049" relation="include">
+        </childnode>
+        <childnode refid="5050" relation="include">
+        </childnode>
+        <childnode refid="5051" relation="include">
+        </childnode>
+        <childnode refid="5052" relation="include">
+        </childnode>
+        <childnode refid="5053" relation="include">
+        </childnode>
+        <childnode refid="5054" relation="include">
+        </childnode>
+        <childnode refid="5055" relation="include">
+        </childnode>
+        <childnode refid="5056" relation="include">
+        </childnode>
+        <childnode refid="5057" relation="include">
+        </childnode>
+        <childnode refid="5058" relation="include">
+        </childnode>
+        <childnode refid="5059" relation="include">
+        </childnode>
+        <childnode refid="5060" relation="include">
+        </childnode>
+        <childnode refid="5061" relation="include">
+        </childnode>
+        <childnode refid="5062" relation="include">
+        </childnode>
+        <childnode refid="5063" relation="include">
+        </childnode>
+        <childnode refid="5064" relation="include">
+        </childnode>
+        <childnode refid="5065" relation="include">
+        </childnode>
+        <childnode refid="5066" relation="include">
+        </childnode>
+        <childnode refid="5067" relation="include">
+        </childnode>
+        <childnode refid="5068" relation="include">
+        </childnode>
+        <childnode refid="5069" relation="include">
+        </childnode>
+        <childnode refid="5070" relation="include">
+        </childnode>
+        <childnode refid="5071" relation="include">
+        </childnode>
+        <childnode refid="5072" relation="include">
+        </childnode>
+        <childnode refid="5073" relation="include">
+        </childnode>
+        <childnode refid="5074" relation="include">
+        </childnode>
+        <childnode refid="5075" relation="include">
+        </childnode>
+        <childnode refid="5076" relation="include">
+        </childnode>
+        <childnode refid="5077" relation="include">
+        </childnode>
+        <childnode refid="5078" relation="include">
+        </childnode>
+      </node>
+      <node id="5031">
+        <label>tar.h</label>
+      </node>
+      <node id="5072">
+        <label>XS/XSSet.h</label>
+      </node>
+      <node id="5063">
+        <label>XS/XSException.h</label>
+      </node>
+      <node id="5044">
+        <label>std-string.h</label>
+        <link refid="std-string_8h"/>
+        <childnode refid="5038" relation="include">
+        </childnode>
+      </node>
+      <node id="5041">
+        <label>std-md5.h</label>
+        <link refid="std-md5_8h"/>
+      </node>
+      <node id="5071">
+        <label>XS/XSNumber.h</label>
+      </node>
+      <node id="5005">
+        <label>stdio.h</label>
+      </node>
+      <node id="4998">
+        <label>locale.h</label>
+      </node>
+      <node id="5045">
+        <label>XS/XSMacros.h</label>
+      </node>
+      <node id="5060">
+        <label>XS/XSData.h</label>
+      </node>
+      <node id="5055">
+        <label>XS/XSBag.h</label>
+      </node>
+      <node id="5029">
+        <label>sys/utsname.h</label>
+      </node>
+      <node id="5013">
+        <label>inttypes.h</label>
+      </node>
+      <node id="5065">
+        <label>XS/XSGeometry.h</label>
+      </node>
+      <node id="5062">
+        <label>XS/XSError.h</label>
+      </node>
+      <node id="5043">
+        <label>std-ascii.h</label>
+        <link refid="std-ascii_8h"/>
+      </node>
+      <node id="5018">
+        <label>dirent.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct____XSMemoryRecord__Struct" prot="public">__XSMemoryRecord_Struct</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="____XSMemoryDebug_8h_1ab8c821c241999e24b7812522c45a4a05" prot="public" static="no">
+        <name>__XSMEMORY_RECORD_ALLOC</name>
+        <initializer>256</initializer>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="101" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="____XSMemoryDebug_8h_1ae25e231f53964c199f5a7d0147d9e9fa" prot="public" static="no">
+        <type>struct <ref refid="struct____XSMemoryRecord__Struct" kindref="compound">__XSMemoryRecord_Struct</ref></type>
+        <definition>__XSMemoryRecord</definition>
+        <argsstring></argsstring>
+        <name>__XSMemoryRecord</name>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="73" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="____XSMemoryDebug_8h_1ae1d4d8865b6316844d535fa6ae755564" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSMemoryDebug_AskOption</definition>
+        <argsstring>(__XSMemoryRecord *record)</argsstring>
+        <name>__XSMemoryDebug_AskOption</name>
+        <param>
+          <type><ref refid="struct____XSMemoryRecord__Struct" kindref="compound">__XSMemoryRecord</ref> *</type>
+          <declname>record</declname>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>record</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="196"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSMemoryDebug_8h_1ac1cbfbbcc14da8f091fb625dd2615a94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+        <definition>BOOL __XSMemoryDebug_CheckCorruption</definition>
+        <argsstring>(__XSMemoryObject *o)</argsstring>
+        <name>__XSMemoryDebug_CheckCorruption</name>
+        <param>
+          <type><ref refid="struct______XSMemoryObject__Struct" kindref="compound">__XSMemoryObject</ref> *</type>
+          <declname>o</declname>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>o</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>... </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="153"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSMemoryDebug_8h_1a1640f7ebe6bf5a8c8d5ed413f31f36f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSMemoryDebug_DumpRecord</definition>
+        <argsstring>(__XSMemoryRecord *record)</argsstring>
+        <name>__XSMemoryDebug_DumpRecord</name>
+        <param>
+          <type><ref refid="struct____XSMemoryRecord__Struct" kindref="compound">__XSMemoryRecord</ref> *</type>
+          <declname>record</declname>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>record</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="209"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSMemoryDebug_8h_1a0aa3998056446270223801b1ac22a306" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSMemoryDebug_Finalize</definition>
+        <argsstring>(void)</argsstring>
+        <name>__XSMemoryDebug_Finalize</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="202"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSMemoryDebug_8h_1a611bd5e702047a41a570196d8156d5d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct____XSMemoryRecord__Struct" kindref="compound">__XSMemoryRecord</ref> *</type>
+        <definition>__XSMemoryRecord* __XSMemoryDebug_GetRecord</definition>
+        <argsstring>(__XSMemoryObject *ptr)</argsstring>
+        <name>__XSMemoryDebug_GetRecord</name>
+        <param>
+          <type><ref refid="struct______XSMemoryObject__Struct" kindref="compound">__XSMemoryObject</ref> *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>... </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="114"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSMemoryDebug_8h_1a349c2de25dc88d8b645860e92ba1d0b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSMemoryDebug_InstallSignalHandlers</definition>
+        <argsstring>(void)</argsstring>
+        <name>__XSMemoryDebug_InstallSignalHandlers</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="107"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSMemoryDebug_8h_1ad1e8806e40dfedd5740b885efcb03bd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct____XSMemoryRecord__Struct" kindref="compound">__XSMemoryRecord</ref> *</type>
+        <definition>__XSMemoryRecord* __XSMemoryDebug_NewRecord</definition>
+        <argsstring>(__XSMemoryObject *ptr, const char *file, int line, const char *func)</argsstring>
+        <name>__XSMemoryDebug_NewRecord</name>
+        <param>
+          <type><ref refid="struct______XSMemoryObject__Struct" kindref="compound">__XSMemoryObject</ref> *</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>... </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="124"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSMemoryDebug_8h_1a1e0bd42814c72e2a1ee93694619040e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSMemoryDebug_PrintRecord</definition>
+        <argsstring>(__XSMemoryRecord *record)</argsstring>
+        <name>__XSMemoryDebug_PrintRecord</name>
+        <param>
+          <type><ref refid="struct____XSMemoryRecord__Struct" kindref="compound">__XSMemoryRecord</ref> *</type>
+          <declname>record</declname>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>record</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="175"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSMemoryDebug_8h_1acf55aa64556645065861586e95575ff7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSMemoryDebug_PrintRecords</definition>
+        <argsstring>(BOOL active, BOOL freed)</argsstring>
+        <name>__XSMemoryDebug_PrintRecords</name>
+        <param>
+          <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+          <declname>active</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+          <declname>freed</declname>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>active</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>freed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="183"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSMemoryDebug_8h_1a4cd2cd0af835eb92a3ec806560d5af14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSMemoryDebug_PrintStatistics</definition>
+        <argsstring>(void)</argsstring>
+        <name>__XSMemoryDebug_PrintStatistics</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="189"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSMemoryDebug_8h_1ac0f9234179745a992e366222ff3150bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct____XSMemoryRecord__Struct" kindref="compound">__XSMemoryRecord</ref> *</type>
+        <definition>__XSMemoryRecord* __XSMemoryDebug_ReleaseRecord</definition>
+        <argsstring>(__XSMemoryObject *ptr, BOOL marsAsFree, const char *file, int line, const char *func)</argsstring>
+        <name>__XSMemoryDebug_ReleaseRecord</name>
+        <param>
+          <type><ref refid="struct______XSMemoryObject__Struct" kindref="compound">__XSMemoryObject</ref> *</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref></type>
+          <declname>marsAsFree</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>marsAsFree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>... </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="146"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSMemoryDebug_8h_1af04f2979206394d872eceea06d4b92d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSMemoryDebug_SignalHandler</definition>
+        <argsstring>(int signo) NORETURN_ATTRIBUTE</argsstring>
+        <name>__XSMemoryDebug_SignalHandler</name>
+        <param>
+          <type>int</type>
+          <declname>signo</declname>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>signo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="160"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSMemoryDebug_8h_1aa2f1b3e244da34ad5bcbb470154d06de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct____XSMemoryRecord__Struct" kindref="compound">__XSMemoryRecord</ref> *</type>
+        <definition>__XSMemoryRecord* __XSMemoryDebug_UpdateRecord</definition>
+        <argsstring>(__XSMemoryObject *oldPtr, __XSMemoryObject *newPtr, const char *file, int line, const char *func)</argsstring>
+        <name>__XSMemoryDebug_UpdateRecord</name>
+        <param>
+          <type><ref refid="struct______XSMemoryObject__Struct" kindref="compound">__XSMemoryObject</ref> *</type>
+          <declname>oldPtr</declname>
+        </param>
+        <param>
+          <type><ref refid="struct______XSMemoryObject__Struct" kindref="compound">__XSMemoryObject</ref> *</type>
+          <declname>newPtr</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>oldPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>... </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="135"/>
+      </memberdef>
+      <memberdef kind="function" id="____XSMemoryDebug_8h_1aedb1891a7875658eb752302b667f105e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __XSMemoryDebug_Warning</definition>
+        <argsstring>(const char *message, __XSMemoryRecord *record)</argsstring>
+        <name>__XSMemoryDebug_Warning</name>
+        <param>
+          <type>const char *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type><ref refid="struct____XSMemoryRecord__Struct" kindref="compound">__XSMemoryRecord</ref> *</type>
+          <declname>record</declname>
+        </param>
+        <briefdescription>
+<para>... </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>record</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h" line="168"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Private memory debug functions. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt; </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2011,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__XSMemoryDebug.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Private<sp/>memory<sp/>debug<sp/>functions</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>___XS_MEMORY_DEBUG_H_</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>___XS_MEMORY_DEBUG_H_</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../XSMacros.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="XSMacros_8h_1ae3fa7c5665557917f34badbe69a55828" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; start.">XS_EXTERN_C_BEGIN</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="XS_8h" kindref="compound" tooltip="XSFoundation main header file.">XS.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="____XSMemory_8h" kindref="compound" tooltip="Private memory functions and private XSAutoreleasePool class definitions.">__XSMemory.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="49"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>@struct<sp/><sp/><sp/><sp/><sp/><sp/>__XSMemoryRecord_Struct</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="struct____XSMemoryRecord__Struct" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct____XSMemoryRecord__Struct" kindref="compound" tooltip="...">__XSMemoryRecord_Struct</ref></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55" refid="struct____XSMemoryRecord__Struct_1af38fddff7daed8b44e2461066a5504ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct______XSMemoryObject__Struct" kindref="compound" tooltip="...">__XSMemoryObject</ref><sp/>*<sp/><ref refid="struct____XSMemoryRecord__Struct_1af38fddff7daed8b44e2461066a5504ee" kindref="member">object</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="struct____XSMemoryRecord__Struct_1a84b4af36f6b43af1ac34bfba78ebae36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSMemoryRecord__Struct_1a84b4af36f6b43af1ac34bfba78ebae36" kindref="member">size</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="struct____XSMemoryRecord__Struct_1a99c89a3bbd8fac81d605338933cf9ffb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSMemoryRecord__Struct_1a99c89a3bbd8fac81d605338933cf9ffb" kindref="member">allocID</ref>;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="struct____XSMemoryRecord__Struct_1a5a42d742f00d065f2f195da77b04db42" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ab697493797a12574d517e2ca17bce7c0" kindref="member" tooltip="Type ID foe the registered runtime classes.">XSClassID</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSMemoryRecord__Struct_1a5a42d742f00d065f2f195da77b04db42" kindref="member">classID</ref>;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="struct____XSMemoryRecord__Struct_1ab59ffed0a19f983548bbd69ea664a076" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1ae8d29cea6ffaf89a545da4cd8f11f8e0" kindref="member">Str255</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSMemoryRecord__Struct_1ab59ffed0a19f983548bbd69ea664a076" kindref="member">hash</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="struct____XSMemoryRecord__Struct_1a62e9cc69d571bbaebfa1ae33611b86de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSMemoryRecord__Struct_1a62e9cc69d571bbaebfa1ae33611b86de" kindref="member">freed</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="struct____XSMemoryRecord__Struct_1a1496e0126d6b409f89f192484ef2c510" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/><ref refid="struct____XSMemoryRecord__Struct_1a1496e0126d6b409f89f192484ef2c510" kindref="member">allocFile</ref>;<sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="struct____XSMemoryRecord__Struct_1a788195c68f3bc241728be04cee61c726" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSMemoryRecord__Struct_1a788195c68f3bc241728be04cee61c726" kindref="member">allocLine</ref>;<sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="struct____XSMemoryRecord__Struct_1a1d9fca5d5cc051e6b41b5667b8446904" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/><ref refid="struct____XSMemoryRecord__Struct_1a1d9fca5d5cc051e6b41b5667b8446904" kindref="member">allocFunc</ref>;<sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="struct____XSMemoryRecord__Struct_1a0fd6d2fb4db9959f3a6107fca167084a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/><ref refid="struct____XSMemoryRecord__Struct_1a0fd6d2fb4db9959f3a6107fca167084a" kindref="member">freeFile</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="struct____XSMemoryRecord__Struct_1a29cb4a268d0d60ca6eb8c49861fa27db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct____XSMemoryRecord__Struct_1a29cb4a268d0d60ca6eb8c49861fa27db" kindref="member">freeLine</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="struct____XSMemoryRecord__Struct_1a1694d242f24d7365899659fa0a21c9f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/><ref refid="struct____XSMemoryRecord__Struct_1a1694d242f24d7365899659fa0a21c9f1" kindref="member">freeFunc</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*!<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="69"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/>@typedef<sp/><sp/><sp/><sp/><sp/>__XSMemoryRecord</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="____XSMemoryDebug_8h_1ae25e231f53964c199f5a7d0147d9e9fa" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct____XSMemoryRecord__Struct" kindref="compound" tooltip="...">__XSMemoryRecord_Struct</ref><sp/><ref refid="struct____XSMemoryRecord__Struct" kindref="compound" tooltip="...">__XSMemoryRecord</ref>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(<sp/>__APPLE__<sp/>)</highlight></codeline>
+<codeline lineno="76"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;execinfo.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="79"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>__XS_MEMORY_DEBUG_HAVE_EXECINFO_H</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>execinfo.h<sp/>header<sp/>file<sp/>is<sp/>available</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__XS_MEMORY_DEBUG_HAVE_EXECINFO_H</highlight></codeline>
+<codeline lineno="84"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(<sp/>__GLIBC__<sp/>)<sp/>&amp;&amp;<sp/>defined(<sp/>HAVE_EXECINFO_H<sp/>)</highlight></codeline>
+<codeline lineno="86"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;execinfo.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="89"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>__XS_MEMORY_DEBUG_HAVE_EXECINFO_H</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>execinfo.h<sp/>header<sp/>file<sp/>is<sp/>available</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__XS_MEMORY_DEBUG_HAVE_EXECINFO_H</highlight></codeline>
+<codeline lineno="94"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="96"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="97"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>__XSMEMORY_RECORD_ALLOC</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="____XSMemoryDebug_8h_1ab8c821c241999e24b7812522c45a4a05" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__XSMEMORY_RECORD_ALLOC<sp/>256</highlight></codeline>
+<codeline lineno="102"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="103"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSMemoryDebug_8h_1a349c2de25dc88d8b645860e92ba1d0b8" kindref="member" tooltip="...">__XSMemoryDebug_InstallSignalHandlers</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="109"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><ref refid="struct____XSMemoryRecord__Struct" kindref="compound" tooltip="...">__XSMemoryRecord</ref><sp/>*<sp/><ref refid="____XSMemoryDebug_8h_1a611bd5e702047a41a570196d8156d5d3" kindref="member" tooltip="...">__XSMemoryDebug_GetRecord</ref>(<sp/><ref refid="struct______XSMemoryObject__Struct" kindref="compound" tooltip="...">__XSMemoryObject</ref><sp/>*<sp/>ptr<sp/>);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="116"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>line<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>func<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><ref refid="struct____XSMemoryRecord__Struct" kindref="compound" tooltip="...">__XSMemoryRecord</ref><sp/>*<sp/><ref refid="____XSMemoryDebug_8h_1ad1e8806e40dfedd5740b885efcb03bd9" kindref="member" tooltip="...">__XSMemoryDebug_NewRecord</ref>(<sp/><ref refid="struct______XSMemoryObject__Struct" kindref="compound" tooltip="...">__XSMemoryObject</ref><sp/>*<sp/>ptr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>file,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>line,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>func<sp/>);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="126"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>oldPtr<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>newPtr<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>line<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>func<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><ref refid="struct____XSMemoryRecord__Struct" kindref="compound" tooltip="...">__XSMemoryRecord</ref><sp/>*<sp/><ref refid="____XSMemoryDebug_8h_1aa2f1b3e244da34ad5bcbb470154d06de" kindref="member" tooltip="...">__XSMemoryDebug_UpdateRecord</ref>(<sp/><ref refid="struct______XSMemoryObject__Struct" kindref="compound" tooltip="...">__XSMemoryObject</ref><sp/>*<sp/>oldPtr,<sp/><ref refid="struct______XSMemoryObject__Struct" kindref="compound" tooltip="...">__XSMemoryObject</ref><sp/>*<sp/>newPtr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>file,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>line,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>func<sp/>);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="137"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>marsAsFree<sp/><sp/>...</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>line<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>func<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><ref refid="struct____XSMemoryRecord__Struct" kindref="compound" tooltip="...">__XSMemoryRecord</ref><sp/>*<sp/><ref refid="____XSMemoryDebug_8h_1ac0f9234179745a992e366222ff3150bc" kindref="member" tooltip="...">__XSMemoryDebug_ReleaseRecord</ref>(<sp/><ref refid="struct______XSMemoryObject__Struct" kindref="compound" tooltip="...">__XSMemoryObject</ref><sp/>*<sp/>ptr,<sp/><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/>marsAsFree,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>file,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>line,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>func<sp/>);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="148"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>o<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="____XSMemoryDebug_8h_1ac1cbfbbcc14da8f091fb625dd2615a94" kindref="member" tooltip="...">__XSMemoryDebug_CheckCorruption</ref>(<sp/><ref refid="struct______XSMemoryObject__Struct" kindref="compound" tooltip="...">__XSMemoryObject</ref><sp/>*<sp/>o<sp/>);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="155"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>signo<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSMemoryDebug_8h_1af04f2979206394d872eceea06d4b92d5" kindref="member" tooltip="...">__XSMemoryDebug_SignalHandler</ref>(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>signo<sp/>)<sp/><ref refid="XSMacros_8h_1a7c9f8aad7910fa73e3b470c036e6a3b9" kindref="member" tooltip="Standardization of the noreturn compiler attribute.">NORETURN_ATTRIBUTE</ref>;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="162"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>message<sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>record<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSMemoryDebug_8h_1aedb1891a7875658eb752302b667f105e" kindref="member" tooltip="...">__XSMemoryDebug_Warning</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>message,<sp/><ref refid="struct____XSMemoryRecord__Struct" kindref="compound" tooltip="...">__XSMemoryRecord</ref><sp/>*<sp/>record<sp/>);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="170"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="171"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>record<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSMemoryDebug_8h_1a1e0bd42814c72e2a1ee93694619040e2" kindref="member" tooltip="...">__XSMemoryDebug_PrintRecord</ref>(<sp/><ref refid="struct____XSMemoryRecord__Struct" kindref="compound" tooltip="...">__XSMemoryRecord</ref><sp/>*<sp/>record<sp/>);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="177"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>active<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>freed<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSMemoryDebug_8h_1acf55aa64556645065861586e95575ff7" kindref="member" tooltip="...">__XSMemoryDebug_PrintRecords</ref>(<sp/><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/>active,<sp/><ref refid="XSTypes_8h_1a3ce465ee9d88528bf01edab6581d7000" kindref="member">BOOL</ref><sp/><ref refid="struct____XSMemoryRecord__Struct_1a62e9cc69d571bbaebfa1ae33611b86de" kindref="member">freed</ref><sp/>);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="185"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="187"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSMemoryDebug_8h_1a4cd2cd0af835eb92a3ec806560d5af14" kindref="member" tooltip="...">__XSMemoryDebug_PrintStatistics</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="191"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="193"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>record<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSMemoryDebug_8h_1ae1d4d8865b6316844d535fa6ae755564" kindref="member" tooltip="...">__XSMemoryDebug_AskOption</ref>(<sp/><ref refid="struct____XSMemoryRecord__Struct" kindref="compound" tooltip="...">__XSMemoryRecord</ref><sp/>*<sp/>record<sp/>);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="198"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="200"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="201"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSMemoryDebug_8h_1a0aa3998056446270223801b1ac22a306" kindref="member" tooltip="...">__XSMemoryDebug_Finalize</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="204"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="205"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="206"><highlight class="comment"><sp/>*<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/>record<sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="207"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="208"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="____XSMemoryDebug_8h_1a1640f7ebe6bf5a8c8d5ed413f31f36f6" kindref="member" tooltip="...">__XSMemoryDebug_DumpRecord</ref>(<sp/><ref refid="struct____XSMemoryRecord__Struct" kindref="compound" tooltip="...">__XSMemoryRecord</ref><sp/>*<sp/>record<sp/>);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(<sp/>__XS_MEMORY_DEBUG_HAVE_EXECINFO_H<sp/>)<sp/>||<sp/>defined(<sp/>_WIN32<sp/>)</highlight></codeline>
+<codeline lineno="212"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="213"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="214"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="215"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="216"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>__XSMemoryDebug_GetBacktrace(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="219"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="220"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="221"><highlight class="comment"><sp/>*<sp/>@result<sp/><sp/><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline lineno="222"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>__XSMemoryDebug_PrintBacktrace(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="226"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><ref refid="XSMacros_8h_1a35fa049fa034476400f574516968a3a2" kindref="member" tooltip="Substitution for &amp;#39;extern &amp;quot;C&amp;quot; {&amp;#39; end.">XS_EXTERN_C_END</ref></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>___XS_MEMORY_DEBUG_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSMemoryDebug.h"/>
+  </compounddef>
+</doxygen>

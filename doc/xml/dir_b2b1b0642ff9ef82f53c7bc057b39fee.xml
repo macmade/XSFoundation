@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_b2b1b0642ff9ef82f53c7bc057b39fee" kind="dir">
+    <compoundname>source/include/eos-skl/__private/</compoundname>
+    <innerdir refid="dir_b592fbfa9ebd9ba6ec56a264d6280dd6">source/include/eos-skl/__private/arch/</innerdir>
+    <innerfile refid="____machine_8h">__machine.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/eos-skl/__private/"/>
+  </compounddef>
+</doxygen>

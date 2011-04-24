@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_36aef0d8fee62aa601176d9a35cbce94" kind="dir">
+    <compoundname>source/include/win32/</compoundname>
+    <innerfile refid="win32-compat_8h">win32-compat.h</innerfile>
+    <innerfile refid="win32-getpid_8h">win32-getpid.h</innerfile>
+    <innerfile refid="win32-pthread_8h">win32-pthread.h</innerfile>
+    <innerfile refid="win32-signal_8h">win32-signal.h</innerfile>
+    <innerfile refid="win32-stat_8h">win32-stat.h</innerfile>
+    <innerfile refid="win32-types_8h">win32-types.h</innerfile>
+    <innerfile refid="win32-usleep_8h">win32-usleep.h</innerfile>
+    <innerfile refid="win32_8h">win32.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/win32/"/>
+  </compounddef>
+</doxygen>

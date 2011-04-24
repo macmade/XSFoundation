@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="struct____XSSet__Struct" kind="struct" prot="public">
+    <compoundname>__XSSet_Struct</compoundname>
+    <includes refid="____XSSet_8h" local="yes">__XSSet.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct____XSSet__Struct_1aab452388926fe68c4cbebabf2868b50e" prot="public" static="no" mutable="no">
+        <type><ref refid="structXSRuntimeClass__Struct" kindref="compound">XSRuntimeClass</ref></type>
+        <definition>XSRuntimeClass __XSSet_Struct::__class</definition>
+        <argsstring></argsstring>
+        <name>__class</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSSet.h" line="54" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSSet.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSSet__Struct_1af352a7d503bc33179d39dfdb2974be07" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger __XSSet_Struct::capacity</definition>
+        <argsstring></argsstring>
+        <name>capacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSSet.h" line="57" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSSet.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSSet__Struct_1a95c07d378b946e29c9e2c519fcfd1641" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger __XSSet_Struct::count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSSet.h" line="56" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSSet.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSSet__Struct_1aa03a881b6fbc35ab01689118eb3a4c07" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger __XSSet_Struct::cur</definition>
+        <argsstring></argsstring>
+        <name>cur</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSSet.h" line="59" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSSet.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSSet__Struct_1ab4a07597e1d6f10fabfa0849c2d15aae" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger __XSSet_Struct::initialCapacity</definition>
+        <argsstring></argsstring>
+        <name>initialCapacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSSet.h" line="58" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSSet.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSSet__Struct_1a8c312ac408757775e06ba3f851ba0c6c" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref> *</type>
+        <definition>XSObject* __XSSet_Struct::values</definition>
+        <argsstring></argsstring>
+        <name>values</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Runtime class </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSSet.h" line="55" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSSet.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>XSSet class. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="443">
+        <label>XSClassInfos</label>
+        <link refid="structXSClassInfos"/>
+      </node>
+      <node id="440">
+        <label>int</label>
+      </node>
+      <node id="441">
+        <label>XSObject *</label>
+      </node>
+      <node id="439">
+        <label>__XSSet_Struct</label>
+        <link refid="struct____XSSet__Struct"/>
+        <childnode refid="440" relation="usage">
+          <edgelabel>count</edgelabel>
+          <edgelabel>cur</edgelabel>
+          <edgelabel>capacity</edgelabel>
+          <edgelabel>initialCapacity</edgelabel>
+        </childnode>
+        <childnode refid="441" relation="usage">
+          <edgelabel>values</edgelabel>
+        </childnode>
+        <childnode refid="442" relation="usage">
+          <edgelabel>__class</edgelabel>
+        </childnode>
+      </node>
+      <node id="442">
+        <label>XSRuntimeClass_Struct</label>
+        <link refid="structXSRuntimeClass__Struct"/>
+        <childnode refid="443" relation="usage">
+          <edgelabel>classInfos</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSSet.h" line="53" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSSet.h" bodystart="52" bodyend="60"/>
+    <listofallmembers>
+      <member refid="struct____XSSet__Struct_1aab452388926fe68c4cbebabf2868b50e" prot="public" virt="non-virtual"><scope>__XSSet_Struct</scope><name>__class</name></member>
+      <member refid="struct____XSSet__Struct_1af352a7d503bc33179d39dfdb2974be07" prot="public" virt="non-virtual"><scope>__XSSet_Struct</scope><name>capacity</name></member>
+      <member refid="struct____XSSet__Struct_1a95c07d378b946e29c9e2c519fcfd1641" prot="public" virt="non-virtual"><scope>__XSSet_Struct</scope><name>count</name></member>
+      <member refid="struct____XSSet__Struct_1aa03a881b6fbc35ab01689118eb3a4c07" prot="public" virt="non-virtual"><scope>__XSSet_Struct</scope><name>cur</name></member>
+      <member refid="struct____XSSet__Struct_1ab4a07597e1d6f10fabfa0849c2d15aae" prot="public" virt="non-virtual"><scope>__XSSet_Struct</scope><name>initialCapacity</name></member>
+      <member refid="struct____XSSet__Struct_1a8c312ac408757775e06ba3f851ba0c6c" prot="public" virt="non-virtual"><scope>__XSSet_Struct</scope><name>values</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

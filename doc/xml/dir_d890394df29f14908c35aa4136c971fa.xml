@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_d890394df29f14908c35aa4136c971fa" kind="dir">
+    <compoundname>source/include/std/</compoundname>
+    <innerfile refid="std-ascii_8h">std-ascii.h</innerfile>
+    <innerfile refid="std-bitwise_8h">std-bitwise.h</innerfile>
+    <innerfile refid="std-bool_8h">std-bool.h</innerfile>
+    <innerfile refid="std-c99_8h">std-c99.h</innerfile>
+    <innerfile refid="std-keywords_8h">std-keywords.h</innerfile>
+    <innerfile refid="std-math_8h">std-math.h</innerfile>
+    <innerfile refid="std-md5_8h">std-md5.h</innerfile>
+    <innerfile refid="std-posix_8h">std-posix.h</innerfile>
+    <innerfile refid="std-string_8h">std-string.h</innerfile>
+    <innerfile refid="std_8h">std.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/"/>
+  </compounddef>
+</doxygen>

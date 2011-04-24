@@ -1,0 +1,829 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="std-ascii_8h" kind="file">
+    <compoundname>std-ascii.h</compoundname>
+    <includedby refid="std_8h" local="yes">std.h</includedby>
+    <invincdepgraph>
+      <node id="6116">
+        <label>__XSApplicationArgument.h</label>
+        <link refid="____XSApplicationArgument_8h"/>
+      </node>
+      <node id="6121">
+        <label>__XSColor.h</label>
+        <link refid="____XSColor_8h"/>
+      </node>
+      <node id="6133">
+        <label>__XSNull.h</label>
+        <link refid="____XSNull_8h"/>
+      </node>
+      <node id="6123">
+        <label>__XSDictionary.h</label>
+        <link refid="____XSDictionary_8h"/>
+      </node>
+      <node id="6111">
+        <label>XSMemory.h</label>
+        <link refid="XSMemory_8h"/>
+      </node>
+      <node id="6139">
+        <label>__XSTimer.h</label>
+        <link refid="____XSTimer_8h"/>
+      </node>
+      <node id="6112">
+        <label>XSMemoryDebug.h</label>
+        <link refid="XSMemoryDebug_8h"/>
+      </node>
+      <node id="6128">
+        <label>__XSLock.h</label>
+        <link refid="____XSLock_8h"/>
+      </node>
+      <node id="6117">
+        <label>__XSArray.h</label>
+        <link refid="____XSArray_8h"/>
+      </node>
+      <node id="6137">
+        <label>__XSString.h</label>
+        <link refid="____XSString_8h"/>
+      </node>
+      <node id="6115">
+        <label>__XSApplication.h</label>
+        <link refid="____XSApplication_8h"/>
+      </node>
+      <node id="6118">
+        <label>__XSBag.h</label>
+        <link refid="____XSBag_8h"/>
+      </node>
+      <node id="6142">
+        <label>XSRuntime.h</label>
+        <link refid="XSRuntime_8h"/>
+      </node>
+      <node id="6127">
+        <label>__XSHost.h</label>
+        <link refid="____XSHost_8h"/>
+      </node>
+      <node id="6134">
+        <label>__XSNumber.h</label>
+        <link refid="____XSNumber_8h"/>
+      </node>
+      <node id="6138">
+        <label>__XSThread.h</label>
+        <link refid="____XSThread_8h"/>
+      </node>
+      <node id="6109">
+        <label>XSTypes.h</label>
+        <link refid="XSTypes_8h"/>
+        <childnode refid="6110" relation="include">
+        </childnode>
+        <childnode refid="6111" relation="include">
+        </childnode>
+        <childnode refid="6112" relation="include">
+        </childnode>
+        <childnode refid="6113" relation="include">
+        </childnode>
+      </node>
+      <node id="6110">
+        <label>XSGeometry.h</label>
+        <link refid="XSGeometry_8h"/>
+      </node>
+      <node id="6136">
+        <label>__XSSort.h</label>
+        <link refid="____XSSort_8h"/>
+      </node>
+      <node id="6140">
+        <label>__XSURL.h</label>
+        <link refid="____XSURL_8h"/>
+      </node>
+      <node id="6132">
+        <label>__XSNotificationCenter.h</label>
+        <link refid="____XSNotificationCenter_8h"/>
+      </node>
+      <node id="6120">
+        <label>__XSBTree.h</label>
+        <link refid="____XSBTree_8h"/>
+      </node>
+      <node id="6108">
+        <label>std.h</label>
+        <link refid="std_8h"/>
+        <childnode refid="6109" relation="include">
+        </childnode>
+        <childnode refid="6114" relation="include">
+        </childnode>
+      </node>
+      <node id="6129">
+        <label>__XSMemory.h</label>
+        <link refid="____XSMemory_8h"/>
+        <childnode refid="6130" relation="include">
+        </childnode>
+      </node>
+      <node id="6130">
+        <label>__XSMemoryDebug.h</label>
+        <link refid="____XSMemoryDebug_8h"/>
+      </node>
+      <node id="6113">
+        <label>XSSort.h</label>
+        <link refid="XSSort_8h"/>
+      </node>
+      <node id="6124">
+        <label>__XSError.h</label>
+        <link refid="____XSError_8h"/>
+      </node>
+      <node id="6122">
+        <label>__XSData.h</label>
+        <link refid="____XSData_8h"/>
+      </node>
+      <node id="6125">
+        <label>__XSException.h</label>
+        <link refid="____XSException_8h"/>
+      </node>
+      <node id="6131">
+        <label>__XSNotification.h</label>
+        <link refid="____XSNotification_8h"/>
+      </node>
+      <node id="6119">
+        <label>__XSBool.h</label>
+        <link refid="____XSBool_8h"/>
+      </node>
+      <node id="6114">
+        <label>XS.h</label>
+        <link refid="XS_8h"/>
+        <childnode refid="6115" relation="include">
+        </childnode>
+        <childnode refid="6116" relation="include">
+        </childnode>
+        <childnode refid="6117" relation="include">
+        </childnode>
+        <childnode refid="6118" relation="include">
+        </childnode>
+        <childnode refid="6119" relation="include">
+        </childnode>
+        <childnode refid="6120" relation="include">
+        </childnode>
+        <childnode refid="6121" relation="include">
+        </childnode>
+        <childnode refid="6122" relation="include">
+        </childnode>
+        <childnode refid="6123" relation="include">
+        </childnode>
+        <childnode refid="6124" relation="include">
+        </childnode>
+        <childnode refid="6125" relation="include">
+        </childnode>
+        <childnode refid="6126" relation="include">
+        </childnode>
+        <childnode refid="6127" relation="include">
+        </childnode>
+        <childnode refid="6128" relation="include">
+        </childnode>
+        <childnode refid="6129" relation="include">
+        </childnode>
+        <childnode refid="6130" relation="include">
+        </childnode>
+        <childnode refid="6131" relation="include">
+        </childnode>
+        <childnode refid="6132" relation="include">
+        </childnode>
+        <childnode refid="6133" relation="include">
+        </childnode>
+        <childnode refid="6134" relation="include">
+        </childnode>
+        <childnode refid="6135" relation="include">
+        </childnode>
+        <childnode refid="6136" relation="include">
+        </childnode>
+        <childnode refid="6137" relation="include">
+        </childnode>
+        <childnode refid="6138" relation="include">
+        </childnode>
+        <childnode refid="6139" relation="include">
+        </childnode>
+        <childnode refid="6140" relation="include">
+        </childnode>
+        <childnode refid="6141" relation="include">
+        </childnode>
+        <childnode refid="6142" relation="include">
+        </childnode>
+      </node>
+      <node id="6135">
+        <label>__XSSet.h</label>
+        <link refid="____XSSet_8h"/>
+      </node>
+      <node id="6141">
+        <label>__XSURLRequest.h</label>
+        <link refid="____XSURLRequest_8h"/>
+      </node>
+      <node id="6126">
+        <label>__XSFile.h</label>
+        <link refid="____XSFile_8h"/>
+      </node>
+      <node id="6107">
+        <label>std-ascii.h</label>
+        <link refid="std-ascii.h"/>
+        <childnode refid="6108" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="std-ascii_8h_1a4d574508e99f3b2dd1ea87c604559cfe" prot="public" static="no">
+        <name>ASCII_ACK</name>
+        <initializer>&apos;\6&apos;</initializer>
+        <briefdescription>
+<para>Aknowledgment. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="86" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1aaced5820037559ab6f7fdd7d3256bc1f" prot="public" static="no">
+        <name>ASCII_BEL</name>
+        <initializer>&apos;\7&apos;</initializer>
+        <briefdescription>
+<para>Bell. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="92" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1a74cfd0b97396b41e6cbb25de858ece5b" prot="public" static="no">
+        <name>ASCII_BS</name>
+        <initializer>&apos;\8&apos;</initializer>
+        <briefdescription>
+<para>Backspace. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="98" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1a5be0a97ecec1e8ce051fe7e4ad4f4631" prot="public" static="no">
+        <name>ASCII_CAN</name>
+        <initializer>&apos;\24&apos;</initializer>
+        <briefdescription>
+<para>Cancel. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="194" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1a089ed4925403ab02a05e603967c74579" prot="public" static="no">
+        <name>ASCII_CR</name>
+        <initializer>&apos;\13&apos;</initializer>
+        <briefdescription>
+<para>Carriage return. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="128" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1abae18f9e6fd24a3fc0157e67b6d2b519" prot="public" static="no">
+        <name>ASCII_DC1</name>
+        <initializer>&apos;\17&apos;</initializer>
+        <briefdescription>
+<para>Device control 1 (oft. XON) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="152" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1a8fe9d0ce39f5d6206c5c6d43286bb89d" prot="public" static="no">
+        <name>ASCII_DC2</name>
+        <initializer>&apos;\18&apos;</initializer>
+        <briefdescription>
+<para>Device control 2. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="158" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1a6096cc78f76f5a990bdaf4c81294c5c6" prot="public" static="no">
+        <name>ASCII_DC3</name>
+        <initializer>&apos;\19&apos;</initializer>
+        <briefdescription>
+<para>Device control 3 (oft. XOFF) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="164" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1a78382bfb5c656eb94c5806025c063ec1" prot="public" static="no">
+        <name>ASCII_DC4</name>
+        <initializer>&apos;\20&apos;</initializer>
+        <briefdescription>
+<para>Device control 4. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="170" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1a8ce253d24e5e6c8cec6330a59e1d1f7a" prot="public" static="no">
+        <name>ASCII_DLE</name>
+        <initializer>&apos;\16&apos;</initializer>
+        <briefdescription>
+<para>Data link escape. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="146" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1acdbb7ea6b663256c73a97bee4d6e7175" prot="public" static="no">
+        <name>ASCII_EM</name>
+        <initializer>&apos;\25&apos;</initializer>
+        <briefdescription>
+<para>End of medium. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="200" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1aa463742642d45497f16a00651016aa66" prot="public" static="no">
+        <name>ASCII_ENQ</name>
+        <initializer>&apos;\5&apos;</initializer>
+        <briefdescription>
+<para>Enquiery. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="80" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1a3f12e7ac50742a3e7883ff43883e301b" prot="public" static="no">
+        <name>ASCII_EOT</name>
+        <initializer>&apos;\4&apos;</initializer>
+        <briefdescription>
+<para>End of transmission. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="74" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1af499a0b34ddf61832ae3dab05677ac7b" prot="public" static="no">
+        <name>ASCII_ESC</name>
+        <initializer>&apos;\27&apos;</initializer>
+        <briefdescription>
+<para>Escape. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="212" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1a66c970c6e7ca5bb4cfdb0a344087c14e" prot="public" static="no">
+        <name>ASCII_ETB</name>
+        <initializer>&apos;\23&apos;</initializer>
+        <briefdescription>
+<para>End of transmission block. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="188" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1a3dd933f3d08e02cdd26362b140ec205e" prot="public" static="no">
+        <name>ASCII_ETX</name>
+        <initializer>&apos;\3&apos;</initializer>
+        <briefdescription>
+<para>End of text. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="68" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1a0c327eae6ca8b55faf5a07684d33de78" prot="public" static="no">
+        <name>ASCII_FF</name>
+        <initializer>&apos;\12&apos;</initializer>
+        <briefdescription>
+<para>Form feed. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="122" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1a2caed8517fb455a9724d43cce66e11f0" prot="public" static="no">
+        <name>ASCII_FS</name>
+        <initializer>&apos;\28&apos;</initializer>
+        <briefdescription>
+<para>File separator. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="218" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1a513baea3222a28612f3b77771f4977c5" prot="public" static="no">
+        <name>ASCII_GS</name>
+        <initializer>&apos;\29&apos;</initializer>
+        <briefdescription>
+<para>Group separator. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="224" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1aca3b498f5936dbe4f3076a47c3e1810d" prot="public" static="no">
+        <name>ASCII_LF</name>
+        <initializer>&apos;\10&apos;</initializer>
+        <briefdescription>
+<para>Line feed. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="110" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1a93a313d38d19dadeb9862cde685ab3ce" prot="public" static="no">
+        <name>ASCII_NAK</name>
+        <initializer>&apos;\21&apos;</initializer>
+        <briefdescription>
+<para>Negative acknowledgement. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="176" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1a6f5ea474bad247b12e5f0cf77eef92e7" prot="public" static="no">
+        <name>ASCII_NUL</name>
+        <initializer>&apos;\0&apos;</initializer>
+        <briefdescription>
+<para>Null character. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="50" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1ac41b8cc240479a7bcd6422e7b7afce11" prot="public" static="no">
+        <name>ASCII_RS</name>
+        <initializer>&apos;\30&apos;</initializer>
+        <briefdescription>
+<para>Record separator. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="230" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="230" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1a82011134c113ab77386f3e1699b7935b" prot="public" static="no">
+        <name>ASCII_SI</name>
+        <initializer>&apos;\15&apos;</initializer>
+        <briefdescription>
+<para>Shift in. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="140" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1ab1113e83c3dc53011a20e127172e68b0" prot="public" static="no">
+        <name>ASCII_SO</name>
+        <initializer>&apos;\14&apos;</initializer>
+        <briefdescription>
+<para>Shift out. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="134" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1abdda07e7b54ae718408af5bbccbb3c11" prot="public" static="no">
+        <name>ASCII_SOH</name>
+        <initializer>&apos;\1&apos;</initializer>
+        <briefdescription>
+<para>Start of header. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="56" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1af3985efe66b98205adf6e55b846772c3" prot="public" static="no">
+        <name>ASCII_STX</name>
+        <initializer>&apos;\2&apos;</initializer>
+        <briefdescription>
+<para>Start of text. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="62" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1a12310ede0a0d446644621c5dc72f2246" prot="public" static="no">
+        <name>ASCII_SUB</name>
+        <initializer>&apos;\26&apos;</initializer>
+        <briefdescription>
+<para>Substitute. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="206" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1a284148979116bd5d70251aa64bd248e3" prot="public" static="no">
+        <name>ASCII_SYN</name>
+        <initializer>&apos;\22&apos;</initializer>
+        <briefdescription>
+<para>Synchronous idle. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="182" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1abcd3d8c3082acbb105816e2274d1fb2f" prot="public" static="no">
+        <name>ASCII_TAB</name>
+        <initializer>&apos;\9&apos;</initializer>
+        <briefdescription>
+<para>Horizontal tab. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="104" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1abf62c81255b27b9a11cc1e7ea53118b5" prot="public" static="no">
+        <name>ASCII_US</name>
+        <initializer>&apos;\31&apos;</initializer>
+        <briefdescription>
+<para>Unit separator. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="236" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="std-ascii_8h_1a017c26630721d8b408c4964ed77887e3" prot="public" static="no">
+        <name>ASCII_VT</name>
+        <initializer>&apos;\11&apos;</initializer>
+        <briefdescription>
+<para>Vertical tab. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" line="116" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>ASCII control characters. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt; </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2011,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std-ascii.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ASCII<sp/>control<sp/>characters</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_XS_STD_ASCII_H_</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_XS_STD_ASCII_H_</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="46"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_NUL</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Null<sp/>character</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="std-ascii_8h_1a6f5ea474bad247b12e5f0cf77eef92e7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_NUL<sp/><sp/><sp/>&apos;\0&apos;</highlight></codeline>
+<codeline lineno="51"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="52"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_SOH</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Start<sp/>of<sp/>header</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="std-ascii_8h_1abdda07e7b54ae718408af5bbccbb3c11" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_SOH<sp/><sp/><sp/>&apos;\1&apos;</highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="58"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_STX</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Start<sp/>of<sp/>text</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="std-ascii_8h_1af3985efe66b98205adf6e55b846772c3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_STX<sp/><sp/><sp/>&apos;\2&apos;</highlight></codeline>
+<codeline lineno="63"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="64"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_ETX</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>End<sp/>of<sp/>text</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="std-ascii_8h_1a3dd933f3d08e02cdd26362b140ec205e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_ETX<sp/><sp/><sp/>&apos;\3&apos;</highlight></codeline>
+<codeline lineno="69"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="70"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_EOT</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>End<sp/>of<sp/>transmission</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="std-ascii_8h_1a3f12e7ac50742a3e7883ff43883e301b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_EOT<sp/><sp/><sp/>&apos;\4&apos;</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="76"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_ENQ</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Enquiery</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="std-ascii_8h_1aa463742642d45497f16a00651016aa66" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_ENQ<sp/><sp/><sp/>&apos;\5&apos;</highlight></codeline>
+<codeline lineno="81"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="82"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_ACK</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Aknowledgment</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="std-ascii_8h_1a4d574508e99f3b2dd1ea87c604559cfe" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_ACK<sp/><sp/><sp/>&apos;\6&apos;</highlight></codeline>
+<codeline lineno="87"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="88"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_BEL</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Bell</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="std-ascii_8h_1aaced5820037559ab6f7fdd7d3256bc1f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_BEL<sp/><sp/><sp/>&apos;\7&apos;</highlight></codeline>
+<codeline lineno="93"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="94"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_BS</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Backspace</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="std-ascii_8h_1a74cfd0b97396b41e6cbb25de858ece5b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_BS<sp/><sp/><sp/><sp/>&apos;\8&apos;</highlight></codeline>
+<codeline lineno="99"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="100"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_TAB</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Horizontal<sp/>tab</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="std-ascii_8h_1abcd3d8c3082acbb105816e2274d1fb2f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_TAB<sp/><sp/><sp/>&apos;\9&apos;</highlight></codeline>
+<codeline lineno="105"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="106"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_LF</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Line<sp/>feed</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="std-ascii_8h_1aca3b498f5936dbe4f3076a47c3e1810d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_LF<sp/><sp/><sp/><sp/>&apos;\10&apos;</highlight></codeline>
+<codeline lineno="111"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="112"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_VT</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Vertical<sp/>tab</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="std-ascii_8h_1a017c26630721d8b408c4964ed77887e3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_VT<sp/><sp/><sp/><sp/>&apos;\11&apos;</highlight></codeline>
+<codeline lineno="117"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="118"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_FF</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Form<sp/>feed</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="std-ascii_8h_1a0c327eae6ca8b55faf5a07684d33de78" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_FF<sp/><sp/><sp/><sp/>&apos;\12&apos;</highlight></codeline>
+<codeline lineno="123"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="124"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_CR</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Carriage<sp/>return</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="std-ascii_8h_1a089ed4925403ab02a05e603967c74579" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_CR<sp/><sp/><sp/><sp/>&apos;\13&apos;</highlight></codeline>
+<codeline lineno="129"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="130"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_SO</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Shift<sp/>out</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="std-ascii_8h_1ab1113e83c3dc53011a20e127172e68b0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_SO<sp/><sp/><sp/><sp/>&apos;\14&apos;</highlight></codeline>
+<codeline lineno="135"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="136"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_SI</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Shift<sp/>in</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="std-ascii_8h_1a82011134c113ab77386f3e1699b7935b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_SI<sp/><sp/><sp/><sp/>&apos;\15&apos;</highlight></codeline>
+<codeline lineno="141"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="142"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_DLE</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Data<sp/>link<sp/>escape</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="std-ascii_8h_1a8ce253d24e5e6c8cec6330a59e1d1f7a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_DLE<sp/><sp/><sp/>&apos;\16&apos;</highlight></codeline>
+<codeline lineno="147"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="148"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_DC1</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Device<sp/>control<sp/>1<sp/>(oft.<sp/>XON)</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="std-ascii_8h_1abae18f9e6fd24a3fc0157e67b6d2b519" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_DC1<sp/><sp/><sp/>&apos;\17&apos;</highlight></codeline>
+<codeline lineno="153"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="154"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_DC2</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Device<sp/>control<sp/>2</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="std-ascii_8h_1a8fe9d0ce39f5d6206c5c6d43286bb89d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_DC2<sp/><sp/><sp/>&apos;\18&apos;</highlight></codeline>
+<codeline lineno="159"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="160"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_DC3</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Device<sp/>control<sp/>3<sp/>(oft.<sp/>XOFF)</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="std-ascii_8h_1a6096cc78f76f5a990bdaf4c81294c5c6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_DC3<sp/><sp/><sp/>&apos;\19&apos;</highlight></codeline>
+<codeline lineno="165"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="166"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_DC4</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Device<sp/>control<sp/>4</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170" refid="std-ascii_8h_1a78382bfb5c656eb94c5806025c063ec1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_DC4<sp/><sp/><sp/>&apos;\20&apos;</highlight></codeline>
+<codeline lineno="171"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="172"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_NAK</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Negative<sp/>acknowledgement</highlight></codeline>
+<codeline lineno="175"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176" refid="std-ascii_8h_1a93a313d38d19dadeb9862cde685ab3ce" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_NAK<sp/><sp/><sp/>&apos;\21&apos;</highlight></codeline>
+<codeline lineno="177"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="178"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_SYN</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Synchronous<sp/>idle</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182" refid="std-ascii_8h_1a284148979116bd5d70251aa64bd248e3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_SYN<sp/><sp/><sp/>&apos;\22&apos;</highlight></codeline>
+<codeline lineno="183"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="184"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_ETB</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>End<sp/>of<sp/>transmission<sp/>block</highlight></codeline>
+<codeline lineno="187"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="std-ascii_8h_1a66c970c6e7ca5bb4cfdb0a344087c14e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_ETB<sp/><sp/><sp/>&apos;\23&apos;</highlight></codeline>
+<codeline lineno="189"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="190"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="191"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_CAN</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Cancel</highlight></codeline>
+<codeline lineno="193"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194" refid="std-ascii_8h_1a5be0a97ecec1e8ce051fe7e4ad4f4631" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_CAN<sp/><sp/><sp/>&apos;\24&apos;</highlight></codeline>
+<codeline lineno="195"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="196"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_EM</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>End<sp/>of<sp/>medium</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200" refid="std-ascii_8h_1acdbb7ea6b663256c73a97bee4d6e7175" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_EM<sp/><sp/><sp/><sp/>&apos;\25&apos;</highlight></codeline>
+<codeline lineno="201"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="202"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="203"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_SUB</highlight></codeline>
+<codeline lineno="204"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Substitute</highlight></codeline>
+<codeline lineno="205"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206" refid="std-ascii_8h_1a12310ede0a0d446644621c5dc72f2246" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_SUB<sp/><sp/><sp/>&apos;\26&apos;</highlight></codeline>
+<codeline lineno="207"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="208"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="209"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_ESC</highlight></codeline>
+<codeline lineno="210"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Escape</highlight></codeline>
+<codeline lineno="211"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212" refid="std-ascii_8h_1af499a0b34ddf61832ae3dab05677ac7b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_ESC<sp/><sp/><sp/>&apos;\27&apos;</highlight></codeline>
+<codeline lineno="213"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="214"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="215"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_FS</highlight></codeline>
+<codeline lineno="216"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>File<sp/>separator</highlight></codeline>
+<codeline lineno="217"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218" refid="std-ascii_8h_1a2caed8517fb455a9724d43cce66e11f0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_FS<sp/><sp/><sp/><sp/>&apos;\28&apos;</highlight></codeline>
+<codeline lineno="219"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="220"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="221"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_GS</highlight></codeline>
+<codeline lineno="222"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Group<sp/>separator</highlight></codeline>
+<codeline lineno="223"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224" refid="std-ascii_8h_1a513baea3222a28612f3b77771f4977c5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_GS<sp/><sp/><sp/><sp/>&apos;\29&apos;</highlight></codeline>
+<codeline lineno="225"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="226"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="227"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_RS</highlight></codeline>
+<codeline lineno="228"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Record<sp/>separator</highlight></codeline>
+<codeline lineno="229"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230" refid="std-ascii_8h_1ac41b8cc240479a7bcd6422e7b7afce11" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_RS<sp/><sp/><sp/><sp/>&apos;\30&apos;</highlight></codeline>
+<codeline lineno="231"><highlight class="preprocessor"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="232"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="233"><highlight class="comment"><sp/>*<sp/>@def<sp/><sp/><sp/><sp/><sp/>ASCII_US</highlight></codeline>
+<codeline lineno="234"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/>Unit<sp/>separator</highlight></codeline>
+<codeline lineno="235"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236" refid="std-ascii_8h_1abf62c81255b27b9a11cc1e7ea53118b5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASCII_US<sp/><sp/><sp/><sp/>&apos;\31&apos;</highlight></codeline>
+<codeline lineno="237"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="239"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="241"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_XS_STD_ASCII_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/std/std-ascii.h"/>
+  </compounddef>
+</doxygen>

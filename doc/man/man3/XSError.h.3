@@ -1,0 +1,136 @@
+.TH "XSError.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XSError.h \- 
+.PP
+XSError class functions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'XSMacros.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB__XSError_Struct\fP * \fBXSError\fP"
+.br
+.RI "\fIOpaque type for the XSError objects. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "XSStatic \fBXSObject\fP \fBXSError_Alloc\fP (void)"
+.br
+.RI "\fIObject allocator. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSError_GetCode\fP (\fBXSError\fP xsThis)"
+.br
+.RI "\fIGets the error code. \fP"
+.ti -1c
+.RI "\fBXSString\fP \fBXSError_GetDomain\fP (\fBXSError\fP xsThis)"
+.br
+.RI "\fIGets the error domain. \fP"
+.ti -1c
+.RI "\fBXSString\fP \fBXSError_GetReason\fP (\fBXSError\fP xsThis)"
+.br
+.RI "\fIGets the error message. \fP"
+.ti -1c
+.RI "\fBXSError\fP \fBXSError_Init\fP (\fBXSError\fP xsThis, \fBXSInteger\fP code, \fBXSString\fP domain, \fBXSString\fP reason)"
+.br
+.RI "\fIInitializes an error. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+XSError class functions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBXSError.h\fP.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBXSError\fP"
+.PP
+Opaque type for the XSError objects. Opaque type for the XSHost objects. 
+.PP
+Definition at line 50 of file XSError.h.
+.SH "Function Documentation"
+.PP 
+.SS "XSStatic \fBXSObject\fP XSError_Alloc (void)"
+.PP
+Object allocator. \fBReturns:\fP
+.RS 4
+The allocated object 
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSError_GetCode (\fBXSError\fPxsThis)"
+.PP
+Gets the error code. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The error object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The error code 
+.RE
+.PP
+
+.SS "\fBXSString\fP XSError_GetDomain (\fBXSError\fPxsThis)"
+.PP
+Gets the error domain. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The error object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The error domain 
+.RE
+.PP
+
+.SS "\fBXSString\fP XSError_GetReason (\fBXSError\fPxsThis)"
+.PP
+Gets the error message. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The error object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The error message 
+.RE
+.PP
+
+.SS "\fBXSError\fP XSError_Init (\fBXSError\fPxsThis, \fBXSInteger\fPcode, \fBXSString\fPdomain, \fBXSString\fPreason)"
+.PP
+Initializes an error. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The error object 
+.br
+\fIcode\fP The error code 
+.br
+\fIdomain\fP The error domain 
+.br
+\fIreason\fP The error message 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The error object 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

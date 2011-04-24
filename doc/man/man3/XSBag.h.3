@@ -1,0 +1,305 @@
+.TH "XSBag.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XSBag.h \- 
+.PP
+XSBag class functions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'XSMacros.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB__XSBag_Struct\fP * \fBXSBag\fP"
+.br
+.RI "\fIOpaque type for the XSBag objects. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBXSBag_AddValue\fP (\fBXSBag\fP xsThis, \fBXSObject\fP value)"
+.br
+.RI "\fIAdds a value in the bag. \fP"
+.ti -1c
+.RI "XSStatic \fBXSObject\fP \fBXSBag_Alloc\fP (void)"
+.br
+.RI "\fIObject allocator. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSBag_ContainsValue\fP (\fBXSBag\fP xsThis, \fBXSObject\fP value)"
+.br
+.RI "\fIChecks if a bag contains a value. \fP"
+.ti -1c
+.RI "\fBXSUInteger\fP \fBXSBag_Count\fP (\fBXSBag\fP xsThis)"
+.br
+.RI "\fIGets the number of values in the bag. \fP"
+.ti -1c
+.RI "XSAutoreleased \fBXSObject\fP \fBXSBag_Current\fP (\fBXSBag\fP xsThis)"
+.br
+.RI "\fIGets the current bag value. \fP"
+.ti -1c
+.RI "\fBXSUInteger\fP \fBXSBag_Index\fP (\fBXSBag\fP xsThis)"
+.br
+.RI "\fIGets the current bag index. \fP"
+.ti -1c
+.RI "\fBXSObject\fP \fBXSBag_Init\fP (\fBXSObject\fP xsThis)"
+.br
+.RI "\fIInitializes an empty bag. \fP"
+.ti -1c
+.RI "\fBXSBag\fP \fBXSBag_InitWithCapacity\fP (\fBXSBag\fP xsThis, \fBXSUInteger\fP capacity)"
+.br
+.RI "\fIInitializes an empty bag with an initial capacity. \fP"
+.ti -1c
+.RI "\fBXSBag\fP \fBXSBag_InitWithValues\fP (\fBXSBag\fP xsThis, \fBXSObject\fP value1,...)"
+.br
+.RI "\fIInitializes a bag with values. \fP"
+.ti -1c
+.RI "XSAutoreleased \fBXSObject\fP \fBXSBag_Next\fP (\fBXSBag\fP xsThis)"
+.br
+.RI "\fIIncreases the internal value pointer and returns the value. \fP"
+.ti -1c
+.RI "XSAutoreleased \fBXSObject\fP \fBXSBag_Previous\fP (\fBXSBag\fP xsThis)"
+.br
+.RI "\fIDecrease the internal value pointer and returns the value. \fP"
+.ti -1c
+.RI "void \fBXSBag_RemoveValue\fP (\fBXSBag\fP xsThis, \fBXSObject\fP value)"
+.br
+.RI "\fIRemoves a value in the bag. \fP"
+.ti -1c
+.RI "void \fBXSBag_ReplaceValue\fP (\fBXSBag\fP xsThis, \fBXSObject\fP valueOld, \fBXSObject\fP valueNew)"
+.br
+.RI "\fIReplaces a value in the bag. \fP"
+.ti -1c
+.RI "void \fBXSBag_Rewind\fP (\fBXSBag\fP xsThis)"
+.br
+.RI "\fIBags the internal value pointer to the first value in the bag. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+XSBag class functions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBXSBag.h\fP.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBXSBag\fP"
+.PP
+Opaque type for the XSBag objects. 
+.PP
+Definition at line 50 of file XSBag.h.
+.SH "Function Documentation"
+.PP 
+.SS "void XSBag_AddValue (\fBXSBag\fPxsThis, \fBXSObject\fPvalue)"
+.PP
+Adds a value in the bag. The new value will be retained 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIxsThis\fP The bag object 
+.br
+\fIvalue\fP The value to add 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "XSStatic \fBXSObject\fP XSBag_Alloc (void)"
+.PP
+Object allocator. \fBReturns:\fP
+.RS 4
+The allocated object 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSBag_ContainsValue (\fBXSBag\fPxsThis, \fBXSObject\fPvalue)"
+.PP
+Checks if a bag contains a value. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The bag object 
+.br
+\fIvalue\fP The value to check 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if the bag contains the value, otherwise false 
+.RE
+.PP
+
+.SS "\fBXSUInteger\fP XSBag_Count (\fBXSBag\fPxsThis)"
+.PP
+Gets the number of values in the bag. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The bag object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of values 
+.RE
+.PP
+
+.SS "XSAutoreleased \fBXSObject\fP XSBag_Current (\fBXSBag\fPxsThis)"
+.PP
+Gets the current bag value. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The bag object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The current bag value 
+.RE
+.PP
+
+.SS "\fBXSUInteger\fP XSBag_Index (\fBXSBag\fPxsThis)"
+.PP
+Gets the current bag index. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The bag object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The current bag index 
+.RE
+.PP
+
+.SS "\fBXSObject\fP XSBag_Init (\fBXSObject\fPxsThis)"
+.PP
+Initializes an empty bag. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The bag object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The bag object 
+.RE
+.PP
+
+.SS "\fBXSBag\fP XSBag_InitWithCapacity (\fBXSBag\fPxsThis, \fBXSUInteger\fPcapacity)"
+.PP
+Initializes an empty bag with an initial capacity. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The bag object 
+.br
+\fIcapacity\fP The initial capacityThe bag object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The bag object 
+.RE
+.PP
+
+.SS "\fBXSBag\fP XSBag_InitWithValues (\fBXSBag\fPxsThis, \fBXSObject\fPvalue1, ...)"
+.PP
+Initializes a bag with values. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The bag object 
+.br
+\fIvalue1\fP The first value 
+.br
+\fI...\fP Other values, terminated by a NULL fence 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The bag object 
+.RE
+.PP
+
+.SS "XSAutoreleased \fBXSObject\fP XSBag_Next (\fBXSBag\fPxsThis)"
+.PP
+Increases the internal value pointer and returns the value. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The bag object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The bag value 
+.RE
+.PP
+
+.SS "XSAutoreleased \fBXSObject\fP XSBag_Previous (\fBXSBag\fPxsThis)"
+.PP
+Decrease the internal value pointer and returns the value. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The bag object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The bag value 
+.RE
+.PP
+
+.SS "void XSBag_RemoveValue (\fBXSBag\fPxsThis, \fBXSObject\fPvalue)"
+.PP
+Removes a value in the bag. The removed value will be released 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIxsThis\fP The bag object 
+.br
+\fIvalue\fP The value to remove 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void XSBag_ReplaceValue (\fBXSBag\fPxsThis, \fBXSObject\fPvalueOld, \fBXSObject\fPvalueNew)"
+.PP
+Replaces a value in the bag. The old value will be released, and the new will be retained 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIxsThis\fP The bag object 
+.br
+\fIvalueOld\fP The value to replace 
+.br
+\fIvalueNew\fP The new value 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void XSBag_Rewind (\fBXSBag\fPxsThis)"
+.PP
+Bags the internal value pointer to the first value in the bag. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The bag object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

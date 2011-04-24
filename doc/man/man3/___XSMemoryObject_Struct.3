@@ -1,0 +1,70 @@
+.TH "___XSMemoryObject_Struct" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+___XSMemoryObject_Struct \- 
+.PP
+...  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include '__XSMemory.h'\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "size_t \fBallocID\fP"
+.br
+.ti -1c
+.RI "\fBXSClassID\fP \fBclassID\fP"
+.br
+.ti -1c
+.RI "void * \fBdata\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBfence\fP [12]"
+.br
+.ti -1c
+.RI "\fBStr255\fP \fBhash\fP"
+.br
+.ti -1c
+.RI "\fBXSUInteger\fP \fBretainCount\fP"
+.br
+.ti -1c
+.RI "size_t \fBsize\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+... 
+.PP
+Definition at line 82 of file __XSMemory.h.
+.SH "Field Documentation"
+.PP 
+.SS "size_t \fB___XSMemoryObject_Struct::allocID\fP"The allocated data size 
+.PP
+Definition at line 86 of file __XSMemory.h.
+.SS "\fBXSClassID\fP \fB___XSMemoryObject_Struct::classID\fP"... 
+.PP
+Definition at line 87 of file __XSMemory.h.
+.SS "void* \fB___XSMemoryObject_Struct::data\fP"... 
+.PP
+Definition at line 89 of file __XSMemory.h.
+.SS "unsigned char \fB___XSMemoryObject_Struct::fence\fP[12]"A pointer to the allocated data 
+.PP
+Definition at line 90 of file __XSMemory.h.
+.SS "\fBStr255\fP \fB___XSMemoryObject_Struct::hash\fP"The class ID (only for allocated objects) 
+.PP
+Definition at line 88 of file __XSMemory.h.
+.SS "\fBXSUInteger\fP \fB___XSMemoryObject_Struct::retainCount\fP"
+.PP
+Definition at line 84 of file __XSMemory.h.
+.SS "size_t \fB___XSMemoryObject_Struct::size\fP"The object's retain count 
+.PP
+Definition at line 85 of file __XSMemory.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

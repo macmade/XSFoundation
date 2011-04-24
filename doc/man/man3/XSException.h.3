@@ -1,0 +1,153 @@
+.TH "XSException.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XSException.h \- 
+.PP
+XSException class functions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'XSMacros.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBXSExceptionContext_Struct\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB__XSException_Struct\fP * \fBXSException\fP"
+.br
+.RI "\fIOpaque type for the XSError objects. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "XSStatic \fBXSObject\fP \fBXSException_Alloc\fP (void)"
+.br
+.RI "\fIObject allocator. \fP"
+.ti -1c
+.RI "\fBXSInteger\fP \fBXSException_GetCode\fP (\fBXSException\fP xsThis)"
+.br
+.RI "\fIGets the exception code. \fP"
+.ti -1c
+.RI "\fBXSString\fP \fBXSException_GetReason\fP (\fBXSException\fP xsThis)"
+.br
+.RI "\fIGets the exception message. \fP"
+.ti -1c
+.RI "\fBXSException\fP \fBXSException_Init\fP (\fBXSException\fP xsThis, \fBXSInteger\fP code, \fBXSString\fP reason)"
+.br
+.RI "\fIInitializes an exception. \fP"
+.ti -1c
+.RI "XSStatic XSAutoreleased \fBXSException\fP \fBXSException_New\fP (\fBXSInteger\fP code, \fBXSString\fP reason)"
+.br
+.RI "\fIInitializes an exception. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "struct \fBXSExceptionContext_Struct\fP * \fBXSExceptionContext\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+XSException class functions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBXSException.h\fP.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBXSException\fP"
+.PP
+Opaque type for the XSError objects. 
+.PP
+Definition at line 50 of file XSException.h.
+.SH "Function Documentation"
+.PP 
+.SS "XSStatic \fBXSObject\fP XSException_Alloc (void)"
+.PP
+Object allocator. \fBReturns:\fP
+.RS 4
+The allocated object 
+.RE
+.PP
+
+.SS "\fBXSInteger\fP XSException_GetCode (\fBXSException\fPxsThis)"
+.PP
+Gets the exception code. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The exception object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The error code 
+.RE
+.PP
+
+.SS "\fBXSString\fP XSException_GetReason (\fBXSException\fPxsThis)"
+.PP
+Gets the exception message. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The exception object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The exception message 
+.RE
+.PP
+
+.SS "\fBXSException\fP XSException_Init (\fBXSException\fPxsThis, \fBXSInteger\fPcode, \fBXSString\fPreason)"
+.PP
+Initializes an exception. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The exception object 
+.br
+\fIcode\fP The exception code 
+.br
+\fIreason\fP The exception message 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The exception object 
+.RE
+.PP
+
+.SS "XSStatic XSAutoreleased \fBXSException\fP XSException_New (\fBXSInteger\fPcode, \fBXSString\fPreason)"
+.PP
+Initializes an exception. \fBParameters:\fP
+.RS 4
+\fIcode\fP The exception code 
+.br
+\fIreason\fP The exception message 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The exception object 
+.RE
+.PP
+
+.SH "Variable Documentation"
+.PP 
+.SS "struct \fBXSExceptionContext_Struct\fP* \fBXSExceptionContext\fP"
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

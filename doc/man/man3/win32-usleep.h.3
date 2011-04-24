@@ -1,0 +1,54 @@
+.TH "win32-usleep.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+win32-usleep.h \- 
+.PP
+Micro-seconds sleep function.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'win32-types.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBusleep\fP (\fBuseconds_t\fP usec)"
+.br
+.RI "\fISuspends execution of the calling process for (at least) usec microseconds. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Micro-seconds sleep function. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBwin32-usleep.h\fP.
+.SH "Function Documentation"
+.PP 
+.SS "int usleep (\fBuseconds_t\fPusec)"
+.PP
+Suspends execution of the calling process for (at least) usec microseconds. The sleep may be lengthened slightly by any system activity or by the time spent processing the call or by the granularity of system timers. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIusec\fP The number of microseconds 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 on success, -1 on error 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

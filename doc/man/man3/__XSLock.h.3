@@ -1,0 +1,123 @@
+.TH "__XSLock.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+__XSLock.h \- 
+.PP
+Private XSLock class definitions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '../XSMacros.h'\fP
+.br
+\fC#include 'XS.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fB__XSLock_Struct\fP"
+.br
+.RI "\fIXSLock class. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB__XSLock_Struct\fP \fB__XSLock\fP"
+.br
+.RI "\fIXSLock class type. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fB__XSLock_Construct\fP (\fBXSObject\fP object)"
+.br
+.RI "\fIConstructor. \fP"
+.ti -1c
+.RI "void \fB__XSLock_Destruct\fP (\fBXSObject\fP object)"
+.br
+.RI "\fIDestructor. \fP"
+.ti -1c
+.RI "void \fB__XSLock_Initialize\fP (void)"
+.br
+.RI "\fIRuntime initialization. \fP"
+.ti -1c
+.RI "\fBXSString\fP \fB__XSLock_ToString\fP (\fBXSObject\fP object)"
+.br
+.RI "\fIObject description. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Private XSLock class definitions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fB__XSLock.h\fP.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fB__XSLock\fP"
+.PP
+XSLock class type. 
+.PP
+Definition at line 63 of file __XSLock.h.
+.SH "Function Documentation"
+.PP 
+.SS "void __XSLock_Construct (\fBXSObject\fPobject)"
+.PP
+Constructor. \fBParameters:\fP
+.RS 4
+\fIobject\fP A pointer to the object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void __XSLock_Destruct (\fBXSObject\fPobject)"
+.PP
+Destructor. \fBParameters:\fP
+.RS 4
+\fIobject\fP A pointer to the object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void __XSLock_Initialize (void)"
+.PP
+Runtime initialization. \fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "\fBXSString\fP __XSLock_ToString (\fBXSObject\fPobject)"
+.PP
+Object description. \fBParameters:\fP
+.RS 4
+\fIobject\fP A pointer to the object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The object's description 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

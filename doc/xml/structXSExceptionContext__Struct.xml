@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="structXSExceptionContext__Struct" kind="struct" prot="public">
+    <compoundname>XSExceptionContext_Struct</compoundname>
+    <includes refid="XSException_8h" local="yes">XSException.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structXSExceptionContext__Struct_1a9542c7cba0052383298542773fcbaf12" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int XSExceptionContext_Struct::caught</definition>
+        <argsstring></argsstring>
+        <name>caught</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSException.h" line="55" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSException.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structXSExceptionContext__Struct_1a7b1ae34533beb7a3613192c0ec8a36ec" prot="public" static="no" mutable="no">
+        <type><ref refid="struct____XSException__Struct" kindref="compound">XSException</ref></type>
+        <definition>volatile XSException XSExceptionContext_Struct::e</definition>
+        <argsstring></argsstring>
+        <name>e</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSException.h" line="56" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSException.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structXSExceptionContext__Struct_1ad3e8385d4c4a2597ac7931c889c9ebe2" prot="public" static="no" mutable="no">
+        <type>jmp_buf *</type>
+        <definition>jmp_buf* XSExceptionContext_Struct::e_env</definition>
+        <argsstring></argsstring>
+        <name>e_env</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSException.h" line="54" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSException.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="539">
+        <label>XSClassInfos</label>
+        <link refid="structXSClassInfos"/>
+      </node>
+      <node id="540">
+        <label>jmp_buf *</label>
+      </node>
+      <node id="537">
+        <label>char *</label>
+      </node>
+      <node id="536">
+        <label>__XSString_Struct</label>
+        <link refid="struct____XSString__Struct"/>
+        <childnode refid="535" relation="usage">
+          <edgelabel>length</edgelabel>
+          <edgelabel>capacity</edgelabel>
+          <edgelabel>initialCapacity</edgelabel>
+        </childnode>
+        <childnode refid="537" relation="usage">
+          <edgelabel>str</edgelabel>
+        </childnode>
+        <childnode refid="538" relation="usage">
+          <edgelabel>__class</edgelabel>
+        </childnode>
+      </node>
+      <node id="534">
+        <label>__XSException_Struct</label>
+        <link refid="struct____XSException__Struct"/>
+        <childnode refid="535" relation="usage">
+          <edgelabel>code</edgelabel>
+        </childnode>
+        <childnode refid="536" relation="usage">
+          <edgelabel>reason</edgelabel>
+        </childnode>
+        <childnode refid="538" relation="usage">
+          <edgelabel>__class</edgelabel>
+        </childnode>
+      </node>
+      <node id="535">
+        <label>int</label>
+      </node>
+      <node id="533">
+        <label>XSExceptionContext_Struct</label>
+        <link refid="structXSExceptionContext__Struct"/>
+        <childnode refid="534" relation="usage">
+          <edgelabel>e</edgelabel>
+        </childnode>
+        <childnode refid="535" relation="usage">
+          <edgelabel>caught</edgelabel>
+        </childnode>
+        <childnode refid="540" relation="usage">
+          <edgelabel>e_env</edgelabel>
+        </childnode>
+      </node>
+      <node id="538">
+        <label>XSRuntimeClass_Struct</label>
+        <link refid="structXSRuntimeClass__Struct"/>
+        <childnode refid="539" relation="usage">
+          <edgelabel>classInfos</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSException.h" line="53" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSException.h" bodystart="52" bodyend="57"/>
+    <listofallmembers>
+      <member refid="structXSExceptionContext__Struct_1a9542c7cba0052383298542773fcbaf12" prot="public" virt="non-virtual"><scope>XSExceptionContext_Struct</scope><name>caught</name></member>
+      <member refid="structXSExceptionContext__Struct_1a7b1ae34533beb7a3613192c0ec8a36ec" prot="public" virt="non-virtual"><scope>XSExceptionContext_Struct</scope><name>e</name></member>
+      <member refid="structXSExceptionContext__Struct_1ad3e8385d4c4a2597ac7931c889c9ebe2" prot="public" virt="non-virtual"><scope>XSExceptionContext_Struct</scope><name>e_env</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_ab8e148e2b1a1ca23d887572ccdb579b" kind="dir">
+    <compoundname>source/include/xs/__private/</compoundname>
+    <innerfile refid="____XSApplication_8h">__XSApplication.h</innerfile>
+    <innerfile refid="____XSApplicationArgument_8h">__XSApplicationArgument.h</innerfile>
+    <innerfile refid="____XSArray_8h">__XSArray.h</innerfile>
+    <innerfile refid="____XSBag_8h">__XSBag.h</innerfile>
+    <innerfile refid="____XSBool_8h">__XSBool.h</innerfile>
+    <innerfile refid="____XSBTree_8h">__XSBTree.h</innerfile>
+    <innerfile refid="____XSColor_8h">__XSColor.h</innerfile>
+    <innerfile refid="____XSData_8h">__XSData.h</innerfile>
+    <innerfile refid="____XSDictionary_8h">__XSDictionary.h</innerfile>
+    <innerfile refid="____XSError_8h">__XSError.h</innerfile>
+    <innerfile refid="____XSException_8h">__XSException.h</innerfile>
+    <innerfile refid="____XSFile_8h">__XSFile.h</innerfile>
+    <innerfile refid="____XSHost_8h">__XSHost.h</innerfile>
+    <innerfile refid="____XSLock_8h">__XSLock.h</innerfile>
+    <innerfile refid="____XSLog_8h">__XSLog.h</innerfile>
+    <innerfile refid="____XSMemory_8h">__XSMemory.h</innerfile>
+    <innerfile refid="____XSMemoryDebug_8h">__XSMemoryDebug.h</innerfile>
+    <innerfile refid="____XSNotification_8h">__XSNotification.h</innerfile>
+    <innerfile refid="____XSNotificationCenter_8h">__XSNotificationCenter.h</innerfile>
+    <innerfile refid="____XSNull_8h">__XSNull.h</innerfile>
+    <innerfile refid="____XSNumber_8h">__XSNumber.h</innerfile>
+    <innerfile refid="____XSSet_8h">__XSSet.h</innerfile>
+    <innerfile refid="____XSSort_8h">__XSSort.h</innerfile>
+    <innerfile refid="____XSString_8h">__XSString.h</innerfile>
+    <innerfile refid="____XSThread_8h">__XSThread.h</innerfile>
+    <innerfile refid="____XSTimer_8h">__XSTimer.h</innerfile>
+    <innerfile refid="____XSURL_8h">__XSURL.h</innerfile>
+    <innerfile refid="____XSURLRequest_8h">__XSURLRequest.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/"/>
+  </compounddef>
+</doxygen>

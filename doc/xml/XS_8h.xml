@@ -1,0 +1,829 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="XS_8h" kind="file">
+    <compoundname>XS.h</compoundname>
+    <includes refid="std_8h" local="yes">std/std.h</includes>
+    <includes local="yes">XS/XSMacros.h</includes>
+    <includes local="yes">XS/XSConstants.h</includes>
+    <includes local="yes">XS/XSTypes.h</includes>
+    <includes local="yes">XS/XSLog.h</includes>
+    <includes local="yes">XS/XSMemory.h</includes>
+    <includes local="yes">XS/XSMemoryDebug.h</includes>
+    <includes local="yes">XS/XSRuntime.h</includes>
+    <includes local="yes">XS/XSApplicationArgument.h</includes>
+    <includes local="yes">XS/XSApplication.h</includes>
+    <includes local="yes">XS/XSArray.h</includes>
+    <includes local="yes">XS/XSBag.h</includes>
+    <includes local="yes">XS/XSBool.h</includes>
+    <includes local="yes">XS/XSBTree.h</includes>
+    <includes local="yes">XS/XSColor.h</includes>
+    <includes local="yes">XS/XSDebugLog.h</includes>
+    <includes local="yes">XS/XSData.h</includes>
+    <includes local="yes">XS/XSDictionary.h</includes>
+    <includes local="yes">XS/XSError.h</includes>
+    <includes local="yes">XS/XSException.h</includes>
+    <includes local="yes">XS/XSFile.h</includes>
+    <includes local="yes">XS/XSGeometry.h</includes>
+    <includes local="yes">XS/XSHost.h</includes>
+    <includes local="yes">XS/XSLock.h</includes>
+    <includes local="yes">XS/XSNull.h</includes>
+    <includes local="yes">XS/XSNotification.h</includes>
+    <includes local="yes">XS/XSNotificationCenter.h</includes>
+    <includes local="yes">XS/XSNumber.h</includes>
+    <includes local="yes">XS/XSSet.h</includes>
+    <includes local="yes">XS/XSSort.h</includes>
+    <includes local="yes">XS/XSString.h</includes>
+    <includes local="yes">XS/XSThread.h</includes>
+    <includes local="yes">XS/XSTimer.h</includes>
+    <includes local="yes">XS/XSURL.h</includes>
+    <includes local="yes">XS/XSURLRequest.h</includes>
+    <includedby refid="____XSApplication_8h" local="yes">__XSApplication.h</includedby>
+    <includedby refid="____XSApplicationArgument_8h" local="yes">__XSApplicationArgument.h</includedby>
+    <includedby refid="____XSArray_8h" local="yes">__XSArray.h</includedby>
+    <includedby refid="____XSBag_8h" local="yes">__XSBag.h</includedby>
+    <includedby refid="____XSBool_8h" local="yes">__XSBool.h</includedby>
+    <includedby refid="____XSBTree_8h" local="yes">__XSBTree.h</includedby>
+    <includedby refid="____XSColor_8h" local="yes">__XSColor.h</includedby>
+    <includedby refid="____XSData_8h" local="yes">__XSData.h</includedby>
+    <includedby refid="____XSDictionary_8h" local="yes">__XSDictionary.h</includedby>
+    <includedby refid="____XSError_8h" local="yes">__XSError.h</includedby>
+    <includedby refid="____XSException_8h" local="yes">__XSException.h</includedby>
+    <includedby refid="____XSFile_8h" local="yes">__XSFile.h</includedby>
+    <includedby refid="____XSHost_8h" local="yes">__XSHost.h</includedby>
+    <includedby refid="____XSLock_8h" local="yes">__XSLock.h</includedby>
+    <includedby refid="____XSMemory_8h" local="yes">__XSMemory.h</includedby>
+    <includedby refid="____XSMemoryDebug_8h" local="yes">__XSMemoryDebug.h</includedby>
+    <includedby refid="____XSNotification_8h" local="yes">__XSNotification.h</includedby>
+    <includedby refid="____XSNotificationCenter_8h" local="yes">__XSNotificationCenter.h</includedby>
+    <includedby refid="____XSNull_8h" local="yes">__XSNull.h</includedby>
+    <includedby refid="____XSNumber_8h" local="yes">__XSNumber.h</includedby>
+    <includedby refid="____XSSet_8h" local="yes">__XSSet.h</includedby>
+    <includedby refid="____XSSort_8h" local="yes">__XSSort.h</includedby>
+    <includedby refid="____XSString_8h" local="yes">__XSString.h</includedby>
+    <includedby refid="____XSThread_8h" local="yes">__XSThread.h</includedby>
+    <includedby refid="____XSTimer_8h" local="yes">__XSTimer.h</includedby>
+    <includedby refid="____XSURL_8h" local="yes">__XSURL.h</includedby>
+    <includedby refid="____XSURLRequest_8h" local="yes">__XSURLRequest.h</includedby>
+    <includedby refid="XSRuntime_8h" local="yes">XSRuntime.h</includedby>
+    <incdepgraph>
+      <node id="6652">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="6640">
+        <label>stdbool.h</label>
+      </node>
+      <node id="6646">
+        <label>grp.h</label>
+      </node>
+      <node id="6628">
+        <label>stdarg.h</label>
+      </node>
+      <node id="6663">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="6618">
+        <label>assert.h</label>
+      </node>
+      <node id="6621">
+        <label>float.h</label>
+      </node>
+      <node id="6701">
+        <label>XS/XSThread.h</label>
+      </node>
+      <node id="6636">
+        <label>wctype.h</label>
+      </node>
+      <node id="6680">
+        <label>XS/XSArray.h</label>
+      </node>
+      <node id="6638">
+        <label>fenv.h</label>
+      </node>
+      <node id="6702">
+        <label>XS/XSTimer.h</label>
+      </node>
+      <node id="6630">
+        <label>stdint.h</label>
+      </node>
+      <node id="6700">
+        <label>XS/XSString.h</label>
+      </node>
+      <node id="6632">
+        <label>stdlib.h</label>
+      </node>
+      <node id="6626">
+        <label>setjmp.h</label>
+      </node>
+      <node id="6696">
+        <label>XS/XSNotificationCenter.h</label>
+      </node>
+      <node id="6678">
+        <label>XS/XSApplicationArgument.h</label>
+      </node>
+      <node id="6650">
+        <label>sys/msg.h</label>
+      </node>
+      <node id="6620">
+        <label>errno.h</label>
+      </node>
+      <node id="6622">
+        <label>iso646.h</label>
+      </node>
+      <node id="6690">
+        <label>XS/XSFile.h</label>
+      </node>
+      <node id="6645">
+        <label>fcntl.h</label>
+      </node>
+      <node id="6658">
+        <label>termios.h</label>
+      </node>
+      <node id="6679">
+        <label>XS/XSApplication.h</label>
+      </node>
+      <node id="6642">
+        <label>std-posix.h</label>
+        <link refid="std-posix_8h"/>
+        <childnode refid="6643" relation="include">
+        </childnode>
+        <childnode refid="6644" relation="include">
+        </childnode>
+        <childnode refid="6645" relation="include">
+        </childnode>
+        <childnode refid="6646" relation="include">
+        </childnode>
+        <childnode refid="6647" relation="include">
+        </childnode>
+        <childnode refid="6648" relation="include">
+        </childnode>
+        <childnode refid="6649" relation="include">
+        </childnode>
+        <childnode refid="6650" relation="include">
+        </childnode>
+        <childnode refid="6651" relation="include">
+        </childnode>
+        <childnode refid="6652" relation="include">
+        </childnode>
+        <childnode refid="6653" relation="include">
+        </childnode>
+        <childnode refid="6654" relation="include">
+        </childnode>
+        <childnode refid="6655" relation="include">
+        </childnode>
+        <childnode refid="6656" relation="include">
+        </childnode>
+        <childnode refid="6657" relation="include">
+        </childnode>
+        <childnode refid="6658" relation="include">
+        </childnode>
+        <childnode refid="6659" relation="include">
+        </childnode>
+        <childnode refid="6660" relation="include">
+        </childnode>
+      </node>
+      <node id="6617">
+        <label>std-c99.h</label>
+        <link refid="std-c99_8h"/>
+        <childnode refid="6618" relation="include">
+        </childnode>
+        <childnode refid="6619" relation="include">
+        </childnode>
+        <childnode refid="6620" relation="include">
+        </childnode>
+        <childnode refid="6621" relation="include">
+        </childnode>
+        <childnode refid="6622" relation="include">
+        </childnode>
+        <childnode refid="6623" relation="include">
+        </childnode>
+        <childnode refid="6624" relation="include">
+        </childnode>
+        <childnode refid="6625" relation="include">
+        </childnode>
+        <childnode refid="6626" relation="include">
+        </childnode>
+        <childnode refid="6627" relation="include">
+        </childnode>
+        <childnode refid="6628" relation="include">
+        </childnode>
+        <childnode refid="6629" relation="include">
+        </childnode>
+        <childnode refid="6630" relation="include">
+        </childnode>
+        <childnode refid="6631" relation="include">
+        </childnode>
+        <childnode refid="6632" relation="include">
+        </childnode>
+        <childnode refid="6633" relation="include">
+        </childnode>
+        <childnode refid="6634" relation="include">
+        </childnode>
+        <childnode refid="6635" relation="include">
+        </childnode>
+        <childnode refid="6636" relation="include">
+        </childnode>
+        <childnode refid="6637" relation="include">
+        </childnode>
+        <childnode refid="6638" relation="include">
+        </childnode>
+        <childnode refid="6639" relation="include">
+        </childnode>
+        <childnode refid="6640" relation="include">
+        </childnode>
+        <childnode refid="6641" relation="include">
+        </childnode>
+      </node>
+      <node id="6674">
+        <label>XS/XSLog.h</label>
+      </node>
+      <node id="6651">
+        <label>sys/sem.h</label>
+      </node>
+      <node id="6629">
+        <label>stddef.h</label>
+      </node>
+      <node id="6695">
+        <label>XS/XSNotification.h</label>
+      </node>
+      <node id="6673">
+        <label>XS/XSTypes.h</label>
+      </node>
+      <node id="6662">
+        <label>netdb.h</label>
+      </node>
+      <node id="6694">
+        <label>XS/XSNull.h</label>
+      </node>
+      <node id="6703">
+        <label>XS/XSURL.h</label>
+      </node>
+      <node id="6623">
+        <label>limits.h</label>
+      </node>
+      <node id="6677">
+        <label>XS/XSRuntime.h</label>
+      </node>
+      <node id="6647">
+        <label>pthread.h</label>
+      </node>
+      <node id="6675">
+        <label>XS/XSMemory.h</label>
+      </node>
+      <node id="6635">
+        <label>wchar.h</label>
+      </node>
+      <node id="6654">
+        <label>sys/types.h</label>
+      </node>
+      <node id="6693">
+        <label>XS/XSLock.h</label>
+      </node>
+      <node id="6633">
+        <label>string.h</label>
+      </node>
+      <node id="6660">
+        <label>utime.h</label>
+      </node>
+      <node id="6683">
+        <label>XS/XSBTree.h</label>
+      </node>
+      <node id="6664">
+        <label>std-keywords.h</label>
+        <link refid="std-keywords_8h"/>
+      </node>
+      <node id="6704">
+        <label>XS/XSURLRequest.h</label>
+      </node>
+      <node id="6665">
+        <label>std-bool.h</label>
+        <link refid="std-bool_8h"/>
+      </node>
+      <node id="6666">
+        <label>std-math.h</label>
+        <link refid="std-math_8h"/>
+      </node>
+      <node id="6659">
+        <label>unistd.h</label>
+      </node>
+      <node id="6616">
+        <label>std/std.h</label>
+        <link refid="std_8h"/>
+        <childnode refid="6617" relation="include">
+        </childnode>
+        <childnode refid="6642" relation="include">
+        </childnode>
+        <childnode refid="6661" relation="include">
+        </childnode>
+        <childnode refid="6662" relation="include">
+        </childnode>
+        <childnode refid="6663" relation="include">
+        </childnode>
+        <childnode refid="6664" relation="include">
+        </childnode>
+        <childnode refid="6665" relation="include">
+        </childnode>
+        <childnode refid="6666" relation="include">
+        </childnode>
+        <childnode refid="6667" relation="include">
+        </childnode>
+        <childnode refid="6668" relation="include">
+        </childnode>
+        <childnode refid="6669" relation="include">
+        </childnode>
+        <childnode refid="6670" relation="include">
+        </childnode>
+      </node>
+      <node id="6668">
+        <label>std-bitwise.h</label>
+        <link refid="std-bitwise_8h"/>
+      </node>
+      <node id="6641">
+        <label>tgmath.h</label>
+      </node>
+      <node id="6687">
+        <label>XS/XSDictionary.h</label>
+      </node>
+      <node id="6627">
+        <label>signal.h</label>
+      </node>
+      <node id="6637">
+        <label>complex.h</label>
+      </node>
+      <node id="6685">
+        <label>XS/XSDebugLog.h</label>
+      </node>
+      <node id="6649">
+        <label>sys/ipc.h</label>
+      </node>
+      <node id="6634">
+        <label>time.h</label>
+      </node>
+      <node id="6699">
+        <label>XS/XSSort.h</label>
+      </node>
+      <node id="6625">
+        <label>math.h</label>
+      </node>
+      <node id="6656">
+        <label>sys/wait.h</label>
+      </node>
+      <node id="6692">
+        <label>XS/XSHost.h</label>
+      </node>
+      <node id="6653">
+        <label>sys/time.h</label>
+      </node>
+      <node id="6682">
+        <label>XS/XSBool.h</label>
+      </node>
+      <node id="6619">
+        <label>ctype.h</label>
+      </node>
+      <node id="6661">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="6648">
+        <label>pwd.h</label>
+      </node>
+      <node id="6684">
+        <label>XS/XSColor.h</label>
+      </node>
+      <node id="6672">
+        <label>XS/XSConstants.h</label>
+      </node>
+      <node id="6676">
+        <label>XS/XSMemoryDebug.h</label>
+      </node>
+      <node id="6643">
+        <label>cpio.h</label>
+      </node>
+      <node id="6615">
+        <label>XS.h</label>
+        <link refid="XS.h"/>
+        <childnode refid="6616" relation="include">
+        </childnode>
+        <childnode refid="6671" relation="include">
+        </childnode>
+        <childnode refid="6672" relation="include">
+        </childnode>
+        <childnode refid="6673" relation="include">
+        </childnode>
+        <childnode refid="6674" relation="include">
+        </childnode>
+        <childnode refid="6675" relation="include">
+        </childnode>
+        <childnode refid="6676" relation="include">
+        </childnode>
+        <childnode refid="6677" relation="include">
+        </childnode>
+        <childnode refid="6678" relation="include">
+        </childnode>
+        <childnode refid="6679" relation="include">
+        </childnode>
+        <childnode refid="6680" relation="include">
+        </childnode>
+        <childnode refid="6681" relation="include">
+        </childnode>
+        <childnode refid="6682" relation="include">
+        </childnode>
+        <childnode refid="6683" relation="include">
+        </childnode>
+        <childnode refid="6684" relation="include">
+        </childnode>
+        <childnode refid="6685" relation="include">
+        </childnode>
+        <childnode refid="6686" relation="include">
+        </childnode>
+        <childnode refid="6687" relation="include">
+        </childnode>
+        <childnode refid="6688" relation="include">
+        </childnode>
+        <childnode refid="6689" relation="include">
+        </childnode>
+        <childnode refid="6690" relation="include">
+        </childnode>
+        <childnode refid="6691" relation="include">
+        </childnode>
+        <childnode refid="6692" relation="include">
+        </childnode>
+        <childnode refid="6693" relation="include">
+        </childnode>
+        <childnode refid="6694" relation="include">
+        </childnode>
+        <childnode refid="6695" relation="include">
+        </childnode>
+        <childnode refid="6696" relation="include">
+        </childnode>
+        <childnode refid="6697" relation="include">
+        </childnode>
+        <childnode refid="6698" relation="include">
+        </childnode>
+        <childnode refid="6699" relation="include">
+        </childnode>
+        <childnode refid="6700" relation="include">
+        </childnode>
+        <childnode refid="6701" relation="include">
+        </childnode>
+        <childnode refid="6702" relation="include">
+        </childnode>
+        <childnode refid="6703" relation="include">
+        </childnode>
+        <childnode refid="6704" relation="include">
+        </childnode>
+      </node>
+      <node id="6657">
+        <label>tar.h</label>
+      </node>
+      <node id="6698">
+        <label>XS/XSSet.h</label>
+      </node>
+      <node id="6689">
+        <label>XS/XSException.h</label>
+      </node>
+      <node id="6670">
+        <label>std-string.h</label>
+        <link refid="std-string_8h"/>
+        <childnode refid="6664" relation="include">
+        </childnode>
+      </node>
+      <node id="6667">
+        <label>std-md5.h</label>
+        <link refid="std-md5_8h"/>
+      </node>
+      <node id="6697">
+        <label>XS/XSNumber.h</label>
+      </node>
+      <node id="6631">
+        <label>stdio.h</label>
+      </node>
+      <node id="6624">
+        <label>locale.h</label>
+      </node>
+      <node id="6671">
+        <label>XS/XSMacros.h</label>
+      </node>
+      <node id="6686">
+        <label>XS/XSData.h</label>
+      </node>
+      <node id="6681">
+        <label>XS/XSBag.h</label>
+      </node>
+      <node id="6655">
+        <label>sys/utsname.h</label>
+      </node>
+      <node id="6639">
+        <label>inttypes.h</label>
+      </node>
+      <node id="6691">
+        <label>XS/XSGeometry.h</label>
+      </node>
+      <node id="6688">
+        <label>XS/XSError.h</label>
+      </node>
+      <node id="6669">
+        <label>std-ascii.h</label>
+        <link refid="std-ascii_8h"/>
+      </node>
+      <node id="6644">
+        <label>dirent.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6707">
+        <label>__XSApplicationArgument.h</label>
+        <link refid="____XSApplicationArgument_8h"/>
+      </node>
+      <node id="6712">
+        <label>__XSColor.h</label>
+        <link refid="____XSColor_8h"/>
+      </node>
+      <node id="6724">
+        <label>__XSNull.h</label>
+        <link refid="____XSNull_8h"/>
+      </node>
+      <node id="6714">
+        <label>__XSDictionary.h</label>
+        <link refid="____XSDictionary_8h"/>
+      </node>
+      <node id="6730">
+        <label>__XSTimer.h</label>
+        <link refid="____XSTimer_8h"/>
+      </node>
+      <node id="6719">
+        <label>__XSLock.h</label>
+        <link refid="____XSLock_8h"/>
+      </node>
+      <node id="6708">
+        <label>__XSArray.h</label>
+        <link refid="____XSArray_8h"/>
+      </node>
+      <node id="6728">
+        <label>__XSString.h</label>
+        <link refid="____XSString_8h"/>
+      </node>
+      <node id="6706">
+        <label>__XSApplication.h</label>
+        <link refid="____XSApplication_8h"/>
+      </node>
+      <node id="6709">
+        <label>__XSBag.h</label>
+        <link refid="____XSBag_8h"/>
+      </node>
+      <node id="6733">
+        <label>XSRuntime.h</label>
+        <link refid="XSRuntime_8h"/>
+      </node>
+      <node id="6718">
+        <label>__XSHost.h</label>
+        <link refid="____XSHost_8h"/>
+      </node>
+      <node id="6725">
+        <label>__XSNumber.h</label>
+        <link refid="____XSNumber_8h"/>
+      </node>
+      <node id="6729">
+        <label>__XSThread.h</label>
+        <link refid="____XSThread_8h"/>
+      </node>
+      <node id="6727">
+        <label>__XSSort.h</label>
+        <link refid="____XSSort_8h"/>
+      </node>
+      <node id="6731">
+        <label>__XSURL.h</label>
+        <link refid="____XSURL_8h"/>
+      </node>
+      <node id="6723">
+        <label>__XSNotificationCenter.h</label>
+        <link refid="____XSNotificationCenter_8h"/>
+      </node>
+      <node id="6711">
+        <label>__XSBTree.h</label>
+        <link refid="____XSBTree_8h"/>
+      </node>
+      <node id="6720">
+        <label>__XSMemory.h</label>
+        <link refid="____XSMemory_8h"/>
+        <childnode refid="6721" relation="include">
+        </childnode>
+      </node>
+      <node id="6721">
+        <label>__XSMemoryDebug.h</label>
+        <link refid="____XSMemoryDebug_8h"/>
+      </node>
+      <node id="6715">
+        <label>__XSError.h</label>
+        <link refid="____XSError_8h"/>
+      </node>
+      <node id="6713">
+        <label>__XSData.h</label>
+        <link refid="____XSData_8h"/>
+      </node>
+      <node id="6716">
+        <label>__XSException.h</label>
+        <link refid="____XSException_8h"/>
+      </node>
+      <node id="6722">
+        <label>__XSNotification.h</label>
+        <link refid="____XSNotification_8h"/>
+      </node>
+      <node id="6710">
+        <label>__XSBool.h</label>
+        <link refid="____XSBool_8h"/>
+      </node>
+      <node id="6705">
+        <label>XS.h</label>
+        <link refid="XS.h"/>
+        <childnode refid="6706" relation="include">
+        </childnode>
+        <childnode refid="6707" relation="include">
+        </childnode>
+        <childnode refid="6708" relation="include">
+        </childnode>
+        <childnode refid="6709" relation="include">
+        </childnode>
+        <childnode refid="6710" relation="include">
+        </childnode>
+        <childnode refid="6711" relation="include">
+        </childnode>
+        <childnode refid="6712" relation="include">
+        </childnode>
+        <childnode refid="6713" relation="include">
+        </childnode>
+        <childnode refid="6714" relation="include">
+        </childnode>
+        <childnode refid="6715" relation="include">
+        </childnode>
+        <childnode refid="6716" relation="include">
+        </childnode>
+        <childnode refid="6717" relation="include">
+        </childnode>
+        <childnode refid="6718" relation="include">
+        </childnode>
+        <childnode refid="6719" relation="include">
+        </childnode>
+        <childnode refid="6720" relation="include">
+        </childnode>
+        <childnode refid="6721" relation="include">
+        </childnode>
+        <childnode refid="6722" relation="include">
+        </childnode>
+        <childnode refid="6723" relation="include">
+        </childnode>
+        <childnode refid="6724" relation="include">
+        </childnode>
+        <childnode refid="6725" relation="include">
+        </childnode>
+        <childnode refid="6726" relation="include">
+        </childnode>
+        <childnode refid="6727" relation="include">
+        </childnode>
+        <childnode refid="6728" relation="include">
+        </childnode>
+        <childnode refid="6729" relation="include">
+        </childnode>
+        <childnode refid="6730" relation="include">
+        </childnode>
+        <childnode refid="6731" relation="include">
+        </childnode>
+        <childnode refid="6732" relation="include">
+        </childnode>
+        <childnode refid="6733" relation="include">
+        </childnode>
+      </node>
+      <node id="6726">
+        <label>__XSSet.h</label>
+        <link refid="____XSSet_8h"/>
+      </node>
+      <node id="6732">
+        <label>__XSURLRequest.h</label>
+        <link refid="____XSURLRequest_8h"/>
+      </node>
+      <node id="6717">
+        <label>__XSFile.h</label>
+        <link refid="____XSFile_8h"/>
+      </node>
+    </invincdepgraph>
+    <briefdescription>
+<para>XSFoundation main header file. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jean-David Gadina &lt;<ulink url="mailto:macmade@eosgarden.com">macmade@eosgarden.com</ulink>&gt;</para></simplesect>
+This file should be included on projects using the XEOS C Foundation Library. Other header files should never be included directly. </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2011,<sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Distributed<sp/>under<sp/>the<sp/>Boost<sp/>Software<sp/>License,<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Boost<sp/>Software<sp/>License<sp/>-<sp/>Version<sp/>1.0<sp/>-<sp/>August<sp/>17th,<sp/>2003</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>or<sp/>organization</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>software<sp/>and<sp/>accompanying<sp/>documentation<sp/>covered<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>this<sp/>license<sp/>(the<sp/>&quot;Software&quot;)<sp/>to<sp/>use,<sp/>reproduce,<sp/>display,<sp/>distribute,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>execute,<sp/>and<sp/>transmit<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>prepare<sp/>derivative<sp/>works<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>third-parties<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>do<sp/>so,<sp/>all<sp/>subject<sp/>to<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>copyright<sp/>notices<sp/>in<sp/>the<sp/>Software<sp/>and<sp/>this<sp/>entire<sp/>statement,<sp/>including</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>above<sp/>license<sp/>grant,<sp/>this<sp/>restriction<sp/>and<sp/>the<sp/>following<sp/>disclaimer,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>must<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>in<sp/>whole<sp/>or<sp/>in<sp/>part,<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>all<sp/>derivative<sp/>works<sp/>of<sp/>the<sp/>Software,<sp/>unless<sp/>such<sp/>copies<sp/>or<sp/>derivative</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>works<sp/>are<sp/>solely<sp/>in<sp/>the<sp/>form<sp/>of<sp/>machine-executable<sp/>object<sp/>code<sp/>generated<sp/>by</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>a<sp/>source<sp/>language<sp/>processor.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE,<sp/>TITLE<sp/>AND<sp/>NON-INFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>OR<sp/>ANYONE<sp/>DISTRIBUTING<sp/>THE<sp/>SOFTWARE<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XS.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSFoundation<sp/>main<sp/>header<sp/>file</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@author<sp/><sp/><sp/><sp/><sp/><sp/>Jean-David<sp/>Gadina<sp/>&lt;macmade@eosgarden.com&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>@details<sp/><sp/><sp/><sp/><sp/>This<sp/>file<sp/>should<sp/>be<sp/>included<sp/>on<sp/>projects<sp/>using<sp/>the<sp/>XEOS<sp/>C</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Foundation<sp/>Library.<sp/>Other<sp/>header<sp/>files<sp/>should<sp/>never<sp/>be<sp/>included</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>directly.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="41"><highlight class="comment">/*!</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>@mainpage<sp/><sp/><sp/><sp/>XSFoundation<sp/>-<sp/>XEOS<sp/>C<sp/>Foundation<sp/>Library</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>@section<sp/><sp/><sp/><sp/><sp/>about_xeos<sp/><sp/>About<sp/>XEOS</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XEOS<sp/>is<sp/>an<sp/>experimental<sp/>32<sp/>bits<sp/>Operating<sp/>System<sp/>for<sp/>x86</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>platforms,<sp/>written<sp/>in<sp/>Assembly<sp/>and<sp/>C,<sp/>including<sp/>a<sp/>C89<sp/>Standard</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Library<sp/>(with<sp/>some<sp/>C99<sp/>parts).</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>@section<sp/><sp/><sp/><sp/><sp/>about_xs<sp/><sp/><sp/><sp/>About<sp/>XSFoundation</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>XEOS<sp/>C<sp/>Foundation<sp/>library<sp/>provides<sp/>the<sp/>base<sp/>for</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>object-oriented<sp/>C<sp/>style<sp/>coding,<sp/>reference<sp/>counting<sp/>memory</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>management<sp/>with<sp/>auto-release<sp/>capabilities,<sp/>reflection,<sp/>runtime</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>environment,<sp/>polymorphism,<sp/>exceptions,<sp/>and<sp/>basic<sp/>objects.</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>It&apos;s<sp/>purpose<sp/>is<sp/>to<sp/>be<sp/>integrated<sp/>in<sp/>the<sp/>XEOS<sp/>Operating<sp/>System,</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>once<sp/>its<sp/>C<sp/>standard<sp/>library<sp/>will<sp/>be<sp/>c</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>omplete.</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>For<sp/>now,<sp/>it&apos;s<sp/>just<sp/>a<sp/>standalone<sp/>project,<sp/>that<sp/>should<sp/>compile<sp/>on</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>every<sp/>OS<sp/>with<sp/>a<sp/>decent<sp/>C<sp/>compiler.</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/>@section<sp/><sp/><sp/><sp/><sp/>os<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Supported<sp/>OS</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSFoundation<sp/>can<sp/>be<sp/>used<sp/>on<sp/>POSIX<sp/>compliant<sp/>systems</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(Mac<sp/>OS<sp/>X,<sp/>Unix,<sp/>Linux)<sp/>as<sp/>well<sp/>as<sp/>on<sp/>Windows.</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/>@section<sp/><sp/><sp/><sp/><sp/>source<sp/><sp/><sp/><sp/><sp/><sp/>Source<sp/>access</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSFoundation<sp/>is<sp/>hosted<sp/>on<sp/>GitHub:</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>https://github.com/macmade/XSFoundation/</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/>@section<sp/><sp/><sp/><sp/><sp/>doc<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Documentation</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Source<sp/>code<sp/>documentation<sp/>can<sp/>be<sp/>found<sp/>at<sp/>the<sp/>following<sp/>address:</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>http://www.eosgarden.com/doxygen/xsfoundation/</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Wiki<sp/>can<sp/>be<sp/>found<sp/>on<sp/>GitHub:</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>https://github.com/macmade/XSFoundation/wiki</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/>@section<sp/><sp/><sp/><sp/><sp/>license<sp/><sp/><sp/><sp/><sp/>License</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XSFoundation<sp/>is<sp/>released<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>BOOST<sp/>Software</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>License<sp/>-<sp/>Version<sp/>1.0.</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_XS_H_</highlight></codeline>
+<codeline lineno="74"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_XS_H_</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="76"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="std_8h" kindref="compound" tooltip="C standardization.">std/std.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSMacros.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSConstants.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSTypes.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSLog.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSMemory.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSMemoryDebug.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSRuntime.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSApplicationArgument.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSApplication.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSArray.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSBag.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSBool.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSBTree.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSColor.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSDebugLog.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSData.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSDictionary.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSError.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSException.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSFile.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSGeometry.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSHost.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSLock.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSNull.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSNotification.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSNotificationCenter.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSNumber.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSSet.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSSort.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSString.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSThread.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSTimer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSURL.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;XS/XSURLRequest.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_XS_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/XS.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,125 @@
+.TH "__XSError.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+__XSError.h \- 
+.PP
+Private XSError class definitions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '../XSMacros.h'\fP
+.br
+\fC#include 'XS.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fB__XSError_Struct\fP"
+.br
+.RI "\fIXSError class. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB__XSError_Struct\fP \fB__XSError\fP"
+.br
+.RI "\fIXSError class type. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fB__XSError_Copy\fP (\fBXSObject\fP source, \fBXSObject\fP destination)"
+.br
+.RI "\fIObject copy. \fP"
+.ti -1c
+.RI "void \fB__XSError_Destruct\fP (\fBXSObject\fP object)"
+.br
+.RI "\fIDestructor. \fP"
+.ti -1c
+.RI "void \fB__XSError_Initialize\fP (void)"
+.br
+.RI "\fIRuntime initialization. \fP"
+.ti -1c
+.RI "\fBXSString\fP \fB__XSError_ToString\fP (\fBXSObject\fP object)"
+.br
+.RI "\fIObject description. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Private XSError class definitions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fB__XSError.h\fP.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fB__XSError\fP"
+.PP
+XSError class type. 
+.PP
+Definition at line 64 of file __XSError.h.
+.SH "Function Documentation"
+.PP 
+.SS "void __XSError_Copy (\fBXSObject\fPsource, \fBXSObject\fPdestination)"
+.PP
+Object copy. \fBParameters:\fP
+.RS 4
+\fIsource\fP The source object 
+.br
+\fIdestination\fP The destination object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void __XSError_Destruct (\fBXSObject\fPobject)"
+.PP
+Destructor. \fBParameters:\fP
+.RS 4
+\fIobject\fP A pointer to the object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void __XSError_Initialize (void)"
+.PP
+Runtime initialization. \fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "\fBXSString\fP __XSError_ToString (\fBXSObject\fPobject)"
+.PP
+Object description. \fBParameters:\fP
+.RS 4
+\fIobject\fP A pointer to the object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The object's description 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

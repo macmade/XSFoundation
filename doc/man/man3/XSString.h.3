@@ -1,0 +1,454 @@
+.TH "XSString.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XSString.h \- 
+.PP
+XSString class functions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'XSMacros.h'\fP
+.br
+\fC#include 'XSArray.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB__XSString_Struct\fP * \fBXSString\fP"
+.br
+.RI "\fIOpaque type for the XSString objects. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "XSStatic \fBXSObject\fP \fBXSString_Alloc\fP (void)"
+.br
+.RI "\fIObject allocator. \fP"
+.ti -1c
+.RI "void \fBXSString_AppendCString\fP (\fBXSString\fP xsThis, char *str)"
+.br
+.RI "\fIAppends a C string to the string object. \fP"
+.ti -1c
+.RI "void \fBXSString_AppendFormat\fP (\fBXSString\fP xsThis, char *format,...)"
+.br
+.ti -1c
+.RI "void \fBXSString_AppendString\fP (\fBXSString\fP xsThis, \fBXSString\fP str)"
+.br
+.RI "\fIAppends a string to the string object. \fP"
+.ti -1c
+.RI "char \fBXSString_CharacterAtIndex\fP (\fBXSString\fP xsThis, size_t i)"
+.br
+.RI "\fIGets a character at a specific index. \fP"
+.ti -1c
+.RI "const char * \fBXSString_CString\fP (\fBXSString\fP xsThis)"
+.br
+.RI "\fIGets the C string. \fP"
+.ti -1c
+.RI "\fBXSObject\fP \fBXSString_Init\fP (\fBXSObject\fP xsThis)"
+.br
+.RI "\fIInitializes an empty string. \fP"
+.ti -1c
+.RI "\fBXSString\fP \fBXSString_InitWithCapacity\fP (\fBXSString\fP xsThis, \fBXSUInteger\fP capacity)"
+.br
+.RI "\fIInitializes an empty string with an initial capacity. \fP"
+.ti -1c
+.RI "\fBXSString\fP \fBXSString_InitWithCString\fP (\fBXSString\fP xsThis, char *str)"
+.br
+.RI "\fIInitializes a string from a C string. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSString_IsEqualToString\fP (\fBXSString\fP xsThis, \fBXSString\fP str)"
+.br
+.RI "\fICompares the string with another string. \fP"
+.ti -1c
+.RI "size_t \fBXSString_Length\fP (\fBXSString\fP xsThis)"
+.br
+.RI "\fIGets the string length. \fP"
+.ti -1c
+.RI "XSAutoreleased \fBXSString\fP \fBXSString_LowercaseString\fP (\fBXSString\fP xsThis)"
+.br
+.RI "\fIGets a lower-case string. \fP"
+.ti -1c
+.RI "XSAutoreleased \fBXSString\fP \fBXSString_MD5Hash\fP (\fBXSString\fP xsThis)"
+.br
+.RI "\fIGets a MD5 hash of a string. \fP"
+.ti -1c
+.RI "\fBXSRange\fP \fBXSString_RangeOfCString\fP (\fBXSString\fP xsThis, char *str)"
+.br
+.RI "\fIGets the range of a C string in the string. \fP"
+.ti -1c
+.RI "\fBXSRange\fP \fBXSString_RangeOfString\fP (\fBXSString\fP xsThis, \fBXSString\fP str)"
+.br
+.RI "\fIGets the range of a string in the string. \fP"
+.ti -1c
+.RI "XSAutoreleased \fBXSArray\fP \fBXSString_SplitWithCString\fP (\fBXSString\fP xsThis, char *s)"
+.br
+.RI "\fISplits a string by a C string. \fP"
+.ti -1c
+.RI "XSAutoreleased \fBXSString\fP \fBXSString_StringByAppendingCString\fP (\fBXSString\fP xsThis, char *str)"
+.br
+.RI "\fIInitializes a new string by appending an C string. \fP"
+.ti -1c
+.RI "XSAutoreleased \fBXSString\fP \fBXSString_StringByAppendingString\fP (\fBXSString\fP xsThis, \fBXSString\fP str)"
+.br
+.RI "\fIInitializes a new string by appending an other string. \fP"
+.ti -1c
+.RI "XSAutoreleased \fBXSString\fP \fBXSString_SubstringFromIndex\fP (\fBXSString\fP xsThis, size_t i)"
+.br
+.RI "\fIGets a substring to a specific index. \fP"
+.ti -1c
+.RI "XSAutoreleased \fBXSString\fP \fBXSString_SubstringToIndex\fP (\fBXSString\fP xsThis, size_t i)"
+.br
+.RI "\fIGets a substring to a specific index. \fP"
+.ti -1c
+.RI "XSAutoreleased \fBXSString\fP \fBXSString_SubstringWithRange\fP (\fBXSString\fP xsThis, \fBXSRange\fP range)"
+.br
+.RI "\fIGets a substring within a specific range. \fP"
+.ti -1c
+.RI "XSAutoreleased \fBXSString\fP \fBXSString_UppercaseString\fP (\fBXSString\fP xsThis)"
+.br
+.RI "\fIGets a upper-case string. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+XSString class functions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBXSString.h\fP.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBXSString\fP"
+.PP
+Opaque type for the XSString objects. 
+.PP
+Definition at line 52 of file XSString.h.
+.SH "Function Documentation"
+.PP 
+.SS "XSStatic \fBXSObject\fP XSString_Alloc (void)"
+.PP
+Object allocator. \fBReturns:\fP
+.RS 4
+The allocated object 
+.RE
+.PP
+
+.SS "void XSString_AppendCString (\fBXSString\fPxsThis, char *str)"
+.PP
+Appends a C string to the string object. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.br
+\fIstr\fP The C string to append 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void XSString_AppendFormat (\fBXSString\fPxsThis, char *format, ...)"\fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.br
+\fIformat\fP ... 
+.br
+\fI...\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void XSString_AppendString (\fBXSString\fPxsThis, \fBXSString\fPstr)"
+.PP
+Appends a string to the string object. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.br
+\fIstr\fP The string to append 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "char XSString_CharacterAtIndex (\fBXSString\fPxsThis, size_ti)"
+.PP
+Gets a character at a specific index. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.br
+\fIi\fP The index 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The character 
+.RE
+.PP
+
+.SS "const char* XSString_CString (\fBXSString\fPxsThis)"
+.PP
+Gets the C string. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The C String 
+.RE
+.PP
+
+.SS "\fBXSObject\fP XSString_Init (\fBXSObject\fPxsThis)"
+.PP
+Initializes an empty string. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new string object 
+.RE
+.PP
+
+.SS "\fBXSString\fP XSString_InitWithCapacity (\fBXSString\fPxsThis, \fBXSUInteger\fPcapacity)"
+.PP
+Initializes an empty string with an initial capacity. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.br
+\fIcapacity\fP The initial string capacity 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new string object 
+.RE
+.PP
+
+.SS "\fBXSString\fP XSString_InitWithCString (\fBXSString\fPxsThis, char *str)"
+.PP
+Initializes a string from a C string. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.br
+\fIstr\fP The C string 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new string object 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSString_IsEqualToString (\fBXSString\fPxsThis, \fBXSString\fPstr)"
+.PP
+Compares the string with another string. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.br
+\fIstr\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+YES if both strings are equals, otherwise NO 
+.RE
+.PP
+
+.SS "size_t XSString_Length (\fBXSString\fPxsThis)"
+.PP
+Gets the string length. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The string length 
+.RE
+.PP
+
+.SS "XSAutoreleased \fBXSString\fP XSString_LowercaseString (\fBXSString\fPxsThis)"
+.PP
+Gets a lower-case string. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new string object 
+.RE
+.PP
+
+.SS "XSAutoreleased \fBXSString\fP XSString_MD5Hash (\fBXSString\fPxsThis)"
+.PP
+Gets a MD5 hash of a string. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The MD5 hash 
+.RE
+.PP
+
+.SS "\fBXSRange\fP XSString_RangeOfCString (\fBXSString\fPxsThis, char *str)"
+.PP
+Gets the range of a C string in the string. If the C string is not found, the location field of the range will equals XSNotFound. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.br
+\fIstr\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The range of the C string 
+.RE
+.PP
+
+.SS "\fBXSRange\fP XSString_RangeOfString (\fBXSString\fPxsThis, \fBXSString\fPstr)"
+.PP
+Gets the range of a string in the string. If the C string is not found, the location field of the range will equals XSNotFound. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.br
+\fIstr\fP ... 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The range of the string 
+.RE
+.PP
+
+.SS "XSAutoreleased \fBXSArray\fP XSString_SplitWithCString (\fBXSString\fPxsThis, char *s)"
+.PP
+Splits a string by a C string. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.br
+\fIs\fP The split string 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+An array with the string parts 
+.RE
+.PP
+
+.SS "XSAutoreleased \fBXSString\fP XSString_StringByAppendingCString (\fBXSString\fPxsThis, char *str)"
+.PP
+Initializes a new string by appending an C string. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.br
+\fIstr\fP The C string to append 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new string object 
+.RE
+.PP
+
+.SS "XSAutoreleased \fBXSString\fP XSString_StringByAppendingString (\fBXSString\fPxsThis, \fBXSString\fPstr)"
+.PP
+Initializes a new string by appending an other string. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.br
+\fIstr\fP The string to append 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new string object 
+.RE
+.PP
+
+.SS "XSAutoreleased \fBXSString\fP XSString_SubstringFromIndex (\fBXSString\fPxsThis, size_ti)"
+.PP
+Gets a substring to a specific index. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.br
+\fIi\fP The index 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new string object 
+.RE
+.PP
+
+.SS "XSAutoreleased \fBXSString\fP XSString_SubstringToIndex (\fBXSString\fPxsThis, size_ti)"
+.PP
+Gets a substring to a specific index. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.br
+\fIi\fP The index 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new string object 
+.RE
+.PP
+
+.SS "XSAutoreleased \fBXSString\fP XSString_SubstringWithRange (\fBXSString\fPxsThis, \fBXSRange\fPrange)"
+.PP
+Gets a substring within a specific range. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.br
+\fIrange\fP The range 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new string object 
+.RE
+.PP
+
+.SS "XSAutoreleased \fBXSString\fP XSString_UppercaseString (\fBXSString\fPxsThis)"
+.PP
+Gets a upper-case string. \fBParameters:\fP
+.RS 4
+\fIxsThis\fP The string object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new string object 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

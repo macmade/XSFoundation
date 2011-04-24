@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="structXSRange__Struct" kind="struct" prot="public">
+    <compoundname>XSRange_Struct</compoundname>
+    <includes refid="XSTypes_8h" local="yes">XSTypes.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structXSRange__Struct_1a6cb4efdc31759e950e73e02573a0618d" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger XSRange_Struct::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The start of the range </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="199" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structXSRange__Struct_1af60637eaf3ca98ac15f9f87cc49c706a" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger XSRange_Struct::location</definition>
+        <argsstring></argsstring>
+        <name>location</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="198" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Range data-type structure. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="546">
+        <label>int</label>
+      </node>
+      <node id="545">
+        <label>XSRange_Struct</label>
+        <link refid="structXSRange__Struct"/>
+        <childnode refid="546" relation="usage">
+          <edgelabel>length</edgelabel>
+          <edgelabel>location</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" line="197" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/XSTypes.h" bodystart="196" bodyend="200"/>
+    <listofallmembers>
+      <member refid="structXSRange__Struct_1a6cb4efdc31759e950e73e02573a0618d" prot="public" virt="non-virtual"><scope>XSRange_Struct</scope><name>length</name></member>
+      <member refid="structXSRange__Struct_1af60637eaf3ca98ac15f9f87cc49c706a" prot="public" virt="non-virtual"><scope>XSRange_Struct</scope><name>location</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

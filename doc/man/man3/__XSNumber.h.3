@@ -1,0 +1,214 @@
+.TH "__XSNumber.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+__XSNumber.h \- 
+.PP
+Private XSNumber class definitions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '../XSMacros.h'\fP
+.br
+\fC#include 'XS.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fB__XSNumber_Struct\fP"
+.br
+.RI "\fIXSNumber class. \fP"
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fB__XSNUMBER_TYPE_ALL\fP   0x7FFF"
+.br
+.ti -1c
+.RI "#define \fB__XSNUMBER_TYPE_BOOL\fP   0x0001"
+.br
+.ti -1c
+.RI "#define \fB__XSNUMBER_TYPE_DOUBLE\fP   0x1000"
+.br
+.ti -1c
+.RI "#define \fB__XSNUMBER_TYPE_FLOAT\fP   0x0800"
+.br
+.ti -1c
+.RI "#define \fB__XSNUMBER_TYPE_SCHAR\fP   0x0002"
+.br
+.ti -1c
+.RI "#define \fB__XSNUMBER_TYPE_SINT\fP   0x0020"
+.br
+.ti -1c
+.RI "#define \fB__XSNUMBER_TYPE_SINTEGER\fP   0x2000"
+.br
+.ti -1c
+.RI "#define \fB__XSNUMBER_TYPE_SLONG\fP   0x0080"
+.br
+.ti -1c
+.RI "#define \fB__XSNUMBER_TYPE_SLONGLONG\fP   0x0200"
+.br
+.ti -1c
+.RI "#define \fB__XSNUMBER_TYPE_SSHORT\fP   0x0008"
+.br
+.ti -1c
+.RI "#define \fB__XSNUMBER_TYPE_UCHAR\fP   0x0004"
+.br
+.ti -1c
+.RI "#define \fB__XSNUMBER_TYPE_UINT\fP   0x0040"
+.br
+.ti -1c
+.RI "#define \fB__XSNUMBER_TYPE_UINTEGER\fP   0x4000"
+.br
+.ti -1c
+.RI "#define \fB__XSNUMBER_TYPE_ULONG\fP   0x0100"
+.br
+.ti -1c
+.RI "#define \fB__XSNUMBER_TYPE_ULONGLONG\fP   0x0400"
+.br
+.ti -1c
+.RI "#define \fB__XSNUMBER_TYPE_USHORT\fP   0x0010"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB__XSNumber_Struct\fP \fB__XSNumber\fP"
+.br
+.RI "\fIXSNumber class type. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBOOL\fP \fB__XSNumber_Equals\fP (\fBXSObject\fP object1, \fBXSObject\fP object2)"
+.br
+.RI "\fIObject comparison. \fP"
+.ti -1c
+.RI "uint64_t \fB__XSNumber_GetUInt64Value\fP (\fB__XSNumber\fP *n)"
+.br
+.ti -1c
+.RI "void \fB__XSNumber_Initialize\fP (void)"
+.br
+.RI "\fIRuntime initialization. \fP"
+.ti -1c
+.RI "\fBXSString\fP \fB__XSNumber_ToString\fP (\fBXSObject\fP object)"
+.br
+.RI "\fIObject description. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Private XSNumber class definitions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fB__XSNumber.h\fP.
+.SH "Define Documentation"
+.PP 
+.SS "#define __XSNUMBER_TYPE_ALL   0x7FFF"
+.PP
+Definition at line 63 of file __XSNumber.h.
+.SS "#define __XSNUMBER_TYPE_BOOL   0x0001"
+.PP
+Definition at line 48 of file __XSNumber.h.
+.SS "#define __XSNUMBER_TYPE_DOUBLE   0x1000"
+.PP
+Definition at line 60 of file __XSNumber.h.
+.SS "#define __XSNUMBER_TYPE_FLOAT   0x0800"
+.PP
+Definition at line 59 of file __XSNumber.h.
+.SS "#define __XSNUMBER_TYPE_SCHAR   0x0002"
+.PP
+Definition at line 49 of file __XSNumber.h.
+.SS "#define __XSNUMBER_TYPE_SINT   0x0020"
+.PP
+Definition at line 53 of file __XSNumber.h.
+.SS "#define __XSNUMBER_TYPE_SINTEGER   0x2000"
+.PP
+Definition at line 61 of file __XSNumber.h.
+.SS "#define __XSNUMBER_TYPE_SLONG   0x0080"
+.PP
+Definition at line 55 of file __XSNumber.h.
+.SS "#define __XSNUMBER_TYPE_SLONGLONG   0x0200"
+.PP
+Definition at line 57 of file __XSNumber.h.
+.SS "#define __XSNUMBER_TYPE_SSHORT   0x0008"
+.PP
+Definition at line 51 of file __XSNumber.h.
+.SS "#define __XSNUMBER_TYPE_UCHAR   0x0004"
+.PP
+Definition at line 50 of file __XSNumber.h.
+.SS "#define __XSNUMBER_TYPE_UINT   0x0040"
+.PP
+Definition at line 54 of file __XSNumber.h.
+.SS "#define __XSNUMBER_TYPE_UINTEGER   0x4000"
+.PP
+Definition at line 62 of file __XSNumber.h.
+.SS "#define __XSNUMBER_TYPE_ULONG   0x0100"
+.PP
+Definition at line 56 of file __XSNumber.h.
+.SS "#define __XSNUMBER_TYPE_ULONGLONG   0x0400"
+.PP
+Definition at line 58 of file __XSNumber.h.
+.SS "#define __XSNUMBER_TYPE_USHORT   0x0010"
+.PP
+Definition at line 52 of file __XSNumber.h.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fB__XSNumber\fP"
+.PP
+XSNumber class type. 
+.PP
+Definition at line 95 of file __XSNumber.h.
+.SH "Function Documentation"
+.PP 
+.SS "\fBBOOL\fP __XSNumber_Equals (\fBXSObject\fPobject1, \fBXSObject\fPobject2)"
+.PP
+Object comparison. \fBParameters:\fP
+.RS 4
+\fIobject1\fP The first object to compare 
+.br
+\fIobject2\fP The second object to compare 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+YES if both objects are equals, otherwise NO 
+.RE
+.PP
+
+.SS "uint64_t __XSNumber_GetUInt64Value (\fB__XSNumber\fP *n)"
+.SS "void __XSNumber_Initialize (void)"
+.PP
+Runtime initialization. \fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "\fBXSString\fP __XSNumber_ToString (\fBXSObject\fPobject)"
+.PP
+Object description. \fBParameters:\fP
+.RS 4
+\fIobject\fP A pointer to the object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The object's description 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

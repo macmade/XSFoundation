@@ -142,7 +142,7 @@ typedef UInt32                  UTF32Char;
 #endif
 
 /*!
- * @typedef     XSPoint_Struct
+ * @struct      XSPoint_Struct
  * @brief       Point data-type structure
  */
 struct XSPoint_Struct
@@ -158,7 +158,7 @@ struct XSPoint_Struct
 typedef struct XSPoint_Struct XSPoint;
 
 /*!
- * @typedef     XSSize_Struct
+ * @struct      XSSize_Struct
  * @brief       Size data-type structure
  */
 struct XSSize_Struct
@@ -174,7 +174,7 @@ struct XSSize_Struct
 typedef struct XSSize_Struct XSSize;
 
 /*!
- * @typedef     XSRect_Struct
+ * @struct      XSRect_Struct
  * @brief       Rectangle data-type structure
  */
 struct XSRect_Struct
@@ -190,7 +190,7 @@ struct XSRect_Struct
 typedef struct XSRect_Struct XSRect;
 
 /*!
- * @typedef     XSRange_Struct 
+ * @struct      XSRange_Struct 
  * @brief       Range data-type structure
  */
 struct XSRange_Struct
@@ -212,7 +212,7 @@ typedef struct XSRange_Struct XSRange;
 #define XSNotFound XSUIntegerMax
 
 /*!
- * @typedef     XSEdgeInsets_Struct 
+ * @struct      XSEdgeInsets_Struct 
  * @brief       Inset distances structure
  */
 struct XSEdgeInsets_Struct
@@ -224,7 +224,7 @@ struct XSEdgeInsets_Struct
 };
 
 /*!
- * @typedef     XSEdgeInset 
+ * @typedef     XSEdgeInsets 
  * @brief       Inset distances
  */
 typedef struct XSEdgeInsets_Struct XSEdgeInsets;

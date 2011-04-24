@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="struct____XSBag__Struct" kind="struct" prot="public">
+    <compoundname>__XSBag_Struct</compoundname>
+    <includes refid="____XSBag_8h" local="yes">__XSBag.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct____XSBag__Struct_1a99067fc355dc532b43761081c5edbe81" prot="public" static="no" mutable="no">
+        <type><ref refid="structXSRuntimeClass__Struct" kindref="compound">XSRuntimeClass</ref></type>
+        <definition>XSRuntimeClass __XSBag_Struct::__class</definition>
+        <argsstring></argsstring>
+        <name>__class</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBag.h" line="54" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBag.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSBag__Struct_1a93054c55ed87e128db28b97d6a1b8fbf" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger __XSBag_Struct::capacity</definition>
+        <argsstring></argsstring>
+        <name>capacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBag.h" line="57" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBag.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSBag__Struct_1a2b857b8b72c86dc95c87f0a2b0602c99" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger __XSBag_Struct::count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBag.h" line="56" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBag.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSBag__Struct_1a2e75152c89b71e0187a1cb6d7254b142" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger __XSBag_Struct::cur</definition>
+        <argsstring></argsstring>
+        <name>cur</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBag.h" line="59" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBag.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSBag__Struct_1aa68c178b354df6c37f517ffefb3b26c7" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a5f524f1b9938f49ffc25c736036cb957" kindref="member">XSUInteger</ref></type>
+        <definition>XSUInteger __XSBag_Struct::initialCapacity</definition>
+        <argsstring></argsstring>
+        <name>initialCapacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBag.h" line="58" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBag.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct____XSBag__Struct_1ae2dd64b2acf0d73e7e8b7a459f9d0c6e" prot="public" static="no" mutable="no">
+        <type><ref refid="XSTypes_8h_1a4530ed5df7372e0e25aa4bf1dbdd0883" kindref="member">XSObject</ref> *</type>
+        <definition>XSObject* __XSBag_Struct::values</definition>
+        <argsstring></argsstring>
+        <name>values</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBag.h" line="55" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBag.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>XSBag class. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="322">
+        <label>XSClassInfos</label>
+        <link refid="structXSClassInfos"/>
+      </node>
+      <node id="319">
+        <label>int</label>
+      </node>
+      <node id="320">
+        <label>XSObject *</label>
+      </node>
+      <node id="318">
+        <label>__XSBag_Struct</label>
+        <link refid="struct____XSBag__Struct"/>
+        <childnode refid="319" relation="usage">
+          <edgelabel>count</edgelabel>
+          <edgelabel>cur</edgelabel>
+          <edgelabel>capacity</edgelabel>
+          <edgelabel>initialCapacity</edgelabel>
+        </childnode>
+        <childnode refid="320" relation="usage">
+          <edgelabel>values</edgelabel>
+        </childnode>
+        <childnode refid="321" relation="usage">
+          <edgelabel>__class</edgelabel>
+        </childnode>
+      </node>
+      <node id="321">
+        <label>XSRuntimeClass_Struct</label>
+        <link refid="structXSRuntimeClass__Struct"/>
+        <childnode refid="322" relation="usage">
+          <edgelabel>classInfos</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBag.h" line="53" bodyfile="/Users/macmade/Documents/Brain/GitHub/XSFoundation/source/include/xs/__private/__XSBag.h" bodystart="52" bodyend="60"/>
+    <listofallmembers>
+      <member refid="struct____XSBag__Struct_1a99067fc355dc532b43761081c5edbe81" prot="public" virt="non-virtual"><scope>__XSBag_Struct</scope><name>__class</name></member>
+      <member refid="struct____XSBag__Struct_1a93054c55ed87e128db28b97d6a1b8fbf" prot="public" virt="non-virtual"><scope>__XSBag_Struct</scope><name>capacity</name></member>
+      <member refid="struct____XSBag__Struct_1a2b857b8b72c86dc95c87f0a2b0602c99" prot="public" virt="non-virtual"><scope>__XSBag_Struct</scope><name>count</name></member>
+      <member refid="struct____XSBag__Struct_1a2e75152c89b71e0187a1cb6d7254b142" prot="public" virt="non-virtual"><scope>__XSBag_Struct</scope><name>cur</name></member>
+      <member refid="struct____XSBag__Struct_1aa68c178b354df6c37f517ffefb3b26c7" prot="public" virt="non-virtual"><scope>__XSBag_Struct</scope><name>initialCapacity</name></member>
+      <member refid="struct____XSBag__Struct_1ae2dd64b2acf0d73e7e8b7a459f9d0c6e" prot="public" virt="non-virtual"><scope>__XSBag_Struct</scope><name>values</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

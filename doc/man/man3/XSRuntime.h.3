@@ -1,0 +1,326 @@
+.TH "XSRuntime.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XSRuntime.h \- 
+.PP
+Runtime functions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'XSMacros.h'\fP
+.br
+\fC#include 'XS.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBXSObject\fP \fBXSRuntime_CreateInstance\fP (\fBXSClassID\fP classID)"
+.br
+.RI "\fIInitializes a new instance of a registered class. \fP"
+.ti -1c
+.RI "\fBXSObject\fP \fBXSRuntime_CreateInstanceOfClass\fP (const \fBXSClassInfos\fP *const cls)"
+.br
+.RI "\fIInitializes a new instance of a class. \fP"
+.ti -1c
+.RI "\fBXSObject\fP \fBXSRuntime_CreateInstanceOfClassWithName\fP (const char *name)"
+.br
+.RI "\fIInitializes a new instance of a class with a specific name. \fP"
+.ti -1c
+.RI "void \fBXSRuntime_Finalize\fP (void)"
+.br
+.RI "\fIFinilization the XSFoundation runtime. \fP"
+.ti -1c
+.RI "\fBXSClass\fP \fBXSRuntime_GetClassForClassID\fP (\fBXSClassID\fP classID)"
+.br
+.RI "\fIGets the class structure for a specific type ID. \fP"
+.ti -1c
+.RI "\fBXSClass\fP \fBXSRuntime_GetClassForObject\fP (\fBXSObject\fP object)"
+.br
+.RI "\fIGets the class for an object. \fP"
+.ti -1c
+.RI "\fBXSClassID\fP \fBXSRuntime_GetClassIDForClass\fP (\fBXSClass\fP cls)"
+.br
+.RI "\fIGets the type ID for a specific class. \fP"
+.ti -1c
+.RI "const char * \fBXSRuntime_GetClassNameForClass\fP (\fBXSClass\fP cls)"
+.br
+.RI "\fIGets the class name for an object. \fP"
+.ti -1c
+.RI "const char * \fBXSRuntime_GetClassNameForClassID\fP (\fBXSClassID\fP classID)"
+.br
+.RI "\fIGets the class name for an object. \fP"
+.ti -1c
+.RI "const char * \fBXSRuntime_GetClassNameForObject\fP (\fBXSObject\fP object)"
+.br
+.RI "\fIGets the class name for an object. \fP"
+.ti -1c
+.RI "\fBXSClassID\fP \fBXSRuntime_GetTypeIDForObject\fP (\fBXSObject\fP object)"
+.br
+.RI "\fIGets the class type ID for an object. \fP"
+.ti -1c
+.RI "void \fBXSRuntime_Initialize\fP (void)"
+.br
+.RI "\fIInitialize the XSFoundation runtime. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSRuntime_IsInstance\fP (void *ptr)"
+.br
+.RI "\fIChecks whether a pointer is an object instance. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSRuntime_IsInstanceOfClass\fP (\fBXSObject\fP object, \fBXSClass\fP cls)"
+.br
+.RI "\fIChecks whether an object is an instance of a class. \fP"
+.ti -1c
+.RI "\fBBOOL\fP \fBXSRuntime_IsInstanceOfClassName\fP (\fBXSObject\fP object, const char *name)"
+.br
+.RI "\fIChecks whether an object is an instance of a class name. \fP"
+.ti -1c
+.RI "const char * \fBXSRuntime_ObjectDescription\fP (void *ptr)"
+.br
+.RI "\fIGets an object's description. \fP"
+.ti -1c
+.RI "\fBXSClassID\fP \fBXSRuntime_RegisterClass\fP (const \fBXSClassInfos\fP *const cls)"
+.br
+.RI "\fIRegisters a class for the runtime. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Runtime functions. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBXSRuntime.h\fP.
+.SH "Function Documentation"
+.PP 
+.SS "\fBXSObject\fP XSRuntime_CreateInstance (\fBXSClassID\fPclassID)"
+.PP
+Initializes a new instance of a registered class. \fBParameters:\fP
+.RS 4
+\fIclassID\fP The type ID 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The allocated instance 
+.RE
+.PP
+
+.SS "\fBXSObject\fP XSRuntime_CreateInstanceOfClass (const \fBXSClassInfos\fP *constcls)"
+.PP
+Initializes a new instance of a class. \fBParameters:\fP
+.RS 4
+\fIcls\fP The class structure 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The allocated instance 
+.RE
+.PP
+
+.SS "\fBXSObject\fP XSRuntime_CreateInstanceOfClassWithName (const char *name)"
+.PP
+Initializes a new instance of a class with a specific name. \fBParameters:\fP
+.RS 4
+\fIname\fP The name of the class 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The allocated instance 
+.RE
+.PP
+
+.SS "void XSRuntime_Finalize (void)"
+.PP
+Finilization the XSFoundation runtime. Do not call this function. Use the XSFOUNDATION_END() macro instead. 
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "\fBXSClass\fP XSRuntime_GetClassForClassID (\fBXSClassID\fPclassID)"
+.PP
+Gets the class structure for a specific type ID. \fBParameters:\fP
+.RS 4
+\fIclassID\fP The class ID 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The class corresponding to the type ID 
+.RE
+.PP
+
+.SS "\fBXSClass\fP XSRuntime_GetClassForObject (\fBXSObject\fPobject)"
+.PP
+Gets the class for an object. \fBParameters:\fP
+.RS 4
+\fIobject\fP The object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The object's class 
+.RE
+.PP
+
+.SS "\fBXSClassID\fP XSRuntime_GetClassIDForClass (\fBXSClass\fPcls)"
+.PP
+Gets the type ID for a specific class. \fBParameters:\fP
+.RS 4
+\fIcls\fP The class 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The class ID of the class 
+.RE
+.PP
+
+.SS "const char* XSRuntime_GetClassNameForClass (\fBXSClass\fPcls)"
+.PP
+Gets the class name for an object. \fBParameters:\fP
+.RS 4
+\fIcls\fP The class 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The name of the class 
+.RE
+.PP
+
+.SS "const char* XSRuntime_GetClassNameForClassID (\fBXSClassID\fPclassID)"
+.PP
+Gets the class name for an object. \fBParameters:\fP
+.RS 4
+\fIclassID\fP The class ID 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The name of the class 
+.RE
+.PP
+
+.SS "const char* XSRuntime_GetClassNameForObject (\fBXSObject\fPobject)"
+.PP
+Gets the class name for an object. \fBParameters:\fP
+.RS 4
+\fIobject\fP The object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The name of the class 
+.RE
+.PP
+
+.SS "\fBXSClassID\fP XSRuntime_GetTypeIDForObject (\fBXSObject\fPobject)"
+.PP
+Gets the class type ID for an object. \fBParameters:\fP
+.RS 4
+\fIobject\fP The object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The class ID for the object 
+.RE
+.PP
+
+.SS "void XSRuntime_Initialize (void)"
+.PP
+Initialize the XSFoundation runtime. Do not call this function. Use the XSFOUNDATION_START() macro instead. 
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSRuntime_IsInstance (void *ptr)"
+.PP
+Checks whether a pointer is an object instance. \fBParameters:\fP
+.RS 4
+\fIptr\fP The pointer to check 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if the pointer represents an instance, otherwise false 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSRuntime_IsInstanceOfClass (\fBXSObject\fPobject, \fBXSClass\fPcls)"
+.PP
+Checks whether an object is an instance of a class. \fBParameters:\fP
+.RS 4
+\fIobject\fP The object 
+.br
+\fIcls\fP The class 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if the object is an instance of the class, otherwise false 
+.RE
+.PP
+
+.SS "\fBBOOL\fP XSRuntime_IsInstanceOfClassName (\fBXSObject\fPobject, const char *name)"
+.PP
+Checks whether an object is an instance of a class name. \fBParameters:\fP
+.RS 4
+\fIobject\fP The object 
+.br
+\fIname\fP The name of the class 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if the object is an instance of the class name, otherwise false 
+.RE
+.PP
+
+.SS "const char* XSRuntime_ObjectDescription (void *ptr)"
+.PP
+Gets an object's description. \fBParameters:\fP
+.RS 4
+\fIptr\fP The pointer to the object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The object's description 
+.RE
+.PP
+
+.SS "\fBXSClassID\fP XSRuntime_RegisterClass (const \fBXSClassInfos\fP *constcls)"
+.PP
+Registers a class for the runtime. All runtime classes needs to be registered before the runtime can use them and create instances. This function needs to be called once per class, ie using pthread_once(). 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcls\fP The class structure to register 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The runtime type ID for the class 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.

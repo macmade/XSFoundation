@@ -1,0 +1,77 @@
+.TH "std-bitwise.h" 3 "Sun Apr 24 2011" "Version 1.2.2-0" "XSFoundation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+std-bitwise.h \- 
+.PP
+Bitwise operations.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBBITWISE_CLEAR\fP(v, f)   ( ( v ) &= ~( f ) )"
+.br
+.RI "\fIClears a specific bit. \fP"
+.ti -1c
+.RI "#define \fBBITWISE_FLAG\fP(x)   (   1   <<  ( x ) )"
+.br
+.RI "\fIFlags a specific bit. \fP"
+.ti -1c
+.RI "#define \fBBITWISE_ISSET\fP(v, f)   ( ( v ) &   ( f ) )"
+.br
+.RI "\fITests for a specific bit. \fP"
+.ti -1c
+.RI "#define \fBBITWISE_SET\fP(v, f)   ( ( v ) |=  ( f ) )"
+.br
+.RI "\fISets a specific bit. \fP"
+.ti -1c
+.RI "#define \fBBITWISE_TOGGLE\fP(v, f)   ( ( v ) ^=  ( f ) )"
+.br
+.RI "\fIToggles a specific bit. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Bitwise operations. 
+
+\fBAuthor:\fP
+.RS 4
+Jean-David Gadina <macmade@eosgarden.com> 
+.RE
+.PP
+
+.PP
+Definition in file \fBstd-bitwise.h\fP.
+.SH "Define Documentation"
+.PP 
+.SS "#define BITWISE_CLEAR(v, f)   ( ( v ) &= ~( f ) )"
+.PP
+Clears a specific bit. 
+.PP
+Definition at line 62 of file std-bitwise.h.
+.SS "#define BITWISE_FLAG(x)   (   1   <<  ( x ) )"
+.PP
+Flags a specific bit. 
+.PP
+Definition at line 50 of file std-bitwise.h.
+.SS "#define BITWISE_ISSET(v, f)   ( ( v ) &   ( f ) )"
+.PP
+Tests for a specific bit. 
+.PP
+Definition at line 68 of file std-bitwise.h.
+.SS "#define BITWISE_SET(v, f)   ( ( v ) |=  ( f ) )"
+.PP
+Sets a specific bit. 
+.PP
+Definition at line 56 of file std-bitwise.h.
+.SS "#define BITWISE_TOGGLE(v, f)   ( ( v ) ^=  ( f ) )"
+.PP
+Toggles a specific bit. 
+.PP
+Definition at line 74 of file std-bitwise.h.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XSFoundation from the source code.
