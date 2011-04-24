@@ -46,9 +46,9 @@ extern "C" {
  */
 struct MD5_CTX_Struct
 {
-    unsigned long int state[ 4 ];       /*! < State (ABCD) */
-    unsigned long int count[ 2 ];       /*! < Number of bits, modulo 2^64 (LSB first) */
-    unsigned char     buffer[ 64 ];     /*! < Input buffer */
+    unsigned long int state[ 4 ];       /*! State (ABCD) */
+    unsigned long int count[ 2 ];       /*! Number of bits, modulo 2^64 (LSB first) */
+    unsigned char     buffer[ 64 ];     /*! Input buffer */
 };
 
 /*!
@@ -58,28 +58,28 @@ struct MD5_CTX_Struct
 typedef struct MD5_CTX_Struct MD5_CTX;
 
 /*!
- * @brief       ...
- * @param       context     ...
+ * @brief       initializes a MD5_CTX structure.
+ * @param       context     The MD5 contex
  * @result      void
  */
 void MD5_Init( MD5_CTX * context );
 
 /*!
- * @brief       ...
- * @param       context     ...
- * @param       data        ...
- * @param       length      ...
+ * @brief       Updates the MD5_CTX structure with chunks of the message to be hashed
+ * @param       context     The MD5 context
+ * @param       data        The message data
+ * @param       length      The length of the message data
  * @result      void
  */
 void MD5_Update( MD5_CTX * context, unsigned char * data, unsigned int length );
 
 /*!
- * @brief       ...
- * @param       digest      ...
- * @param       context     ...
+ * @brief       Finalizes the message digest
+ * @param       digest      The buffer for the digest (16 bytes)
+ * @param       context     The MD5 context
  * @result      void
  */
-void MD5_Final( unsigned char digest[ 16 ], MD5_CTX * context );
+void MD5_Final( unsigned char digest[ MD5_DIGEST_LENGTH ], MD5_CTX * context );
 
 #ifdef __cplusplus
 }
