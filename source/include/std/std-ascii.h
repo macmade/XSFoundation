@@ -43,37 +43,196 @@
 extern "C" {
 #endif
 
+/*!
+ * @def     ASCII_NUL
+ * @brief   ...
+ */
 #define ASCII_NUL   '\0'
+
+/*!
+ * @def     ASCII_SOH
+ * @brief   ...
+ */
 #define ASCII_SOH   '\1'
+
+/*!
+ * @def     ASCII_STX
+ * @brief   ...
+ */
 #define ASCII_STX   '\2'
+
+/*!
+ * @def     ASCII_ETX
+ * @brief   ...
+ */
 #define ASCII_ETX   '\3'
+
+/*!
+ * @def     ASCII_EOT
+ * @brief   ...
+ */
 #define ASCII_EOT   '\4'
+
+/*!
+ * @def     ASCII_ENQ
+ * @brief   ...
+ */
 #define ASCII_ENQ   '\5'
+
+/*!
+ * @def     ASCII_ACK
+ * @brief   ...
+ */
 #define ASCII_ACK   '\6'
+
+/*!
+ * @def     ASCII_BEL
+ * @brief   ...
+ */
 #define ASCII_BEL   '\7'
+
+/*!
+ * @def     ASCII_BS
+ * @brief   ...
+ */
 #define ASCII_BS    '\8'
+
+/*!
+ * @def     ASCII_TAB
+ * @brief   ...
+ */
 #define ASCII_TAB   '\9'
+
+/*!
+ * @def     ASCII_LF
+ * @brief   ...
+ */
 #define ASCII_LF    '\10'
+
+/*!
+ * @def     ASCII_VT
+ * @brief   ...
+ */
 #define ASCII_VT    '\11'
+
+/*!
+ * @def     ASCII_FF
+ * @brief   ...
+ */
 #define ASCII_FF    '\12'
+
+/*!
+ * @def     ASCII_CR
+ * @brief   ...
+ */
 #define ASCII_CR    '\13'
+
+/*!
+ * @def     ASCII_SO
+ * @brief   ...
+ */
 #define ASCII_SO    '\14'
+
+/*!
+ * @def     ASCII_SI
+ * @brief   ...
+ */
 #define ASCII_SI    '\15'
+
+/*!
+ * @def     ASCII_DLE
+ * @brief   ...
+ */
 #define ASCII_DLE   '\16'
+
+/*!
+ * @def     ASCII_DC1
+ * @brief   ...
+ */
 #define ASCII_DC1   '\17'
+
+/*!
+ * @def     ASCII_DC2
+ * @brief   ...
+ */
 #define ASCII_DC2   '\18'
+
+/*!
+ * @def     ASCII_DC3
+ * @brief   ...
+ */
 #define ASCII_DC3   '\19'
+
+/*!
+ * @def     ASCII_DC4
+ * @brief   ...
+ */
 #define ASCII_DC4   '\20'
+
+/*!
+ * @def     ASCII_NAK
+ * @brief   ...
+ */
 #define ASCII_NAK   '\21'
+
+/*!
+ * @def     ASCII_SYN
+ * @brief   ...
+ */
 #define ASCII_SYN   '\22'
+
+/*!
+ * @def     ASCII_ETB
+ * @brief   ...
+ */
 #define ASCII_ETB   '\23'
+
+/*!
+ * @def     ASCII_CAN
+ * @brief   ...
+ */
 #define ASCII_CAN   '\24'
+
+/*!
+ * @def     
+ * @brief   
+ */
 #define ASCII_EM    '\25'
+
+/*!
+ * @def     
+ * @brief   
+ */
 #define ASCII_SUB   '\26'
+
+/*!
+ * @def     
+ * @brief   
+ */
 #define ASCII_ESC   '\27'
+
+/*!
+ * @def     
+ * @brief   
+ */
 #define ASCII_FS    '\28'
+
+/*!
+ * @def     
+ * @brief   
+ */
 #define ASCII_GS    '\29'
+
+/*!
+ * @def     
+ * @brief   
+ */
 #define ASCII_RS    '\30'
+
+/*!
+ * @def     
+ * @brief   
+ */
 #define ASCII_US    '\31'
 
 #ifdef __cplusplus
