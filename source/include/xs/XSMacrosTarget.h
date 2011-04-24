@@ -38,22 +38,22 @@
  *              is being generated.  At most one of these is true, the rest are
  *              false:
  * 
- *              TARGET_CPU_PPC          - PowerPC instructions for 32-bit mode
- *              TARGET_CPU_PPC64        - PowerPC instructions for 64-bit mode
- *              TARGET_CPU_68K          - 680x0 instructions
- *              TARGET_CPU_X86          - x86 instructions
- *              TARGET_CPU_ARM          - ARM instructions
- *              TARGET_CPU_MIPS         - MIPS instructions
- *              TARGET_CPU_SPARC        - Sparc instructions
- *              TARGET_CPU_ALPHA        - Dec Alpha instructions
+ *              - TARGET_CPU_PPC          - PowerPC instructions for 32-bit mode
+ *              - TARGET_CPU_PPC64        - PowerPC instructions for 64-bit mode
+ *              - TARGET_CPU_68K          - 680x0 instructions
+ *              - TARGET_CPU_X86          - x86 instructions
+ *              - TARGET_CPU_ARM          - ARM instructions
+ *              - TARGET_CPU_MIPS         - MIPS instructions
+ *              - TARGET_CPU_SPARC        - Sparc instructions
+ *              - TARGET_CPU_ALPHA        - Dec Alpha instructions
  *
  *              TARGET_RT_* 
  *              These conditionals specify in which runtime the generated code
  *              will run.
  * 
- *              TARGET_RT_LITTLE_ENDIAN - Little endian format for integers
- *              TARGET_RT_BIG_ENDIAN    - Big endian format for integers
- *              TARGET_RT_64_BIT        - 64-bit pointers
+ *              - TARGET_RT_LITTLE_ENDIAN - Little endian format for integers
+ *              - TARGET_RT_BIG_ENDIAN    - Big endian format for integers
+ *              - TARGET_RT_64_BIT        - 64-bit pointers
  */
 
 #ifndef _XS_MACROS_TARGET_H_
@@ -63,6 +63,66 @@
 #include "XSMacros.h"
 
 XS_EXTERN_C_BEGIN
+
+/*!
+ * @def     TARGET_CPU_PPC
+ * @brief   PowerPC processor
+ */
+
+/*!
+ * @def     TARGET_CPU_PPC64
+ * @brief   64bits PowerPC processor
+ */
+
+/*!
+ * @def     TARGET_CPU_68K
+ * @brief   Motorola M68k processor
+ */
+
+/*!
+ * @def     TARGET_CPU_X86
+ * @brief   x86 processor
+ */
+
+/*!
+ * @def     TARGET_CPU_X86_64
+ * @brief   64bits x86 processor
+ */
+
+/*!
+ * @def     TARGET_CPU_ARM
+ * @brief   ARM processor
+ */
+
+/*!
+ * @def     TARGET_CPU_MIPS
+ * @brief   MIPS processor
+ */
+
+/*!
+ * @def     TARGET_CPU_SPARC
+ * @brief   SPARC processor
+ */
+
+/*!
+ * @def     TARGET_CPU_ALPHA
+ * @brief   Alpha processor
+ */
+
+/*!
+ * @def     TARGET_RT_LITTLE_ENDIAN
+ * @brief   Little endian system
+ */
+
+/*!
+ * @def     TARGET_RT_BIG_ENDIAN
+ * @brief   Bug endian system
+ */
+
+/*!
+ * @def     TARGET_RT_64_BIT
+ * @brief   64bits system
+ */
 
 #if defined( __GNUC__ )
     
