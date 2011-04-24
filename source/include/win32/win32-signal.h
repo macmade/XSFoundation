@@ -241,7 +241,7 @@ extern "C" {
 #ifndef SIGURG
 /*!
  * @def         SIGURG
- * @brief        Urgent data in socket
+ * @brief       Urgent data in socket
  */
 #define SIGURG      0x19
 #endif

@@ -45,201 +45,150 @@ extern "C" {
 
 /*!
  * @def         S_IFMT
- * @brief       ...
+ * @brief       Type of file
  */
 #define S_IFMT      0
 
 /*!
  * @def         S_IFBLK
- * @brief       ...
+ * @brief       Block special
  */
 #define S_IFBLK     0
 
 /*!
- * @def         S_IFMT
- * @brief       ...
- */
-#define S_IFMT      0
-
-/*!
  * @def         S_IFCHR
- * @brief       ...
+ * @brief       Character special
  */
 #define S_IFCHR     0
 
 /*!
- * @def         S_IFMT
- * @brief       ...
+ * @def         S_IFDIR
+ * @brief       Directory
  */
-#define S_IFMT      0
+#define S_IFDIR     0
 
 /*!
  * @def         S_IFIFO
- * @brief       ...
+ * @brief       FIFO special
  */
 #define S_IFIFO     0
 
 /*!
- * @def         S_IFMT
- * @brief       ...
- */
-#define S_IFMT      0
-
-/*!
  * @def         S_IFREG
- * @brief       ...
+ * @brief       Regular
  */
 #define S_IFREG     0
 
 /*!
- * @def         S_IFMT
- * @brief       ...
- */
-#define S_IFMT      0
-
-/*!
  * @def         S_IFLNK
- * @brief       ...
+ * @brief       Symbolic link
  */
 #define S_IFLNK     0
 
 /*!
- * @def         S_IFMT
- * @brief       ...
- */
-#define S_IFMT      0
-
-/*!
  * @def         S_IFSOCK
- * @brief       ...
+ * @brief       Socket
  */
 #define S_IFSOCK    0
 
 /*!
  * @def         S_IRWXU
- * @brief       ...
+ * @brief       Read, write, execute/search by owner
  */
 #define S_IRWXU     0
 
 /*!
  * @def         S_IRUSR
- * @brief       ...
+ * @brief       Read permission, owner
  */
 #define S_IRUSR     0
 
 /*!
  * @def         S_IRWXU
- * @brief       ...
+ * @brief       Write permission, owner
  */
 #define S_IRWXU     0
 
 /*!
  * @def         S_IWUSR
- * @brief       ...
+ * @brief       Execute/search permission, owner
  */
 #define S_IWUSR     0
 
 /*!
- * @def         S_IRWXU
- * @brief       ...
- */
-#define S_IRWXU     0
-
-/*!
- * @def         S_IXUSR
- * @brief       ...
- */
-#define S_IXUSR     0
-
-/*!
  * @def         S_IRWXG
- * @brief       ...
+ * @brief       Read, write, execute/search by group
  */
 #define S_IRWXG     0
 
 /*!
  * @def         S_IRGRP
- * @brief       ...
+ * @brief       Read permission, group
  */
 #define S_IRGRP     0
-
-/*!
- * @def         S_IRWXG
- * @brief       ...
- */
-#define S_IRWXG     0
-
 /*!
  * @def         S_IWGRP
- * @brief       ...
+ * @brief       Write permission, group
  */
 #define S_IWGRP     0
 
 /*!
- * @def         S_IRWXG
- * @brief       ...
- */
-#define S_IRWXG     0
-
-/*!
  * @def         S_IXGRP
- * @brief       ...
+ * @brief       Execute/search permission, group
  */
 #define S_IXGRP     0
 
 /*!
  * @def         S_IRWXO
- * @brief       ...
+ * @brief       Read, write, execute/search by others
  */
 #define S_IRWXO     0
 
 /*!
  * @def         S_IROTH
- * @brief       ...
+ * @brief       Read permission, others
  */
 #define S_IROTH     0
 
 /*!
  * @def         S_IRWXO
- * @brief       ...
- */
-#define S_IRWXO     0
-
-/*!
- * @def         S_IWOTH
- * @brief       ...
- */
-#define S_IWOTH     0
-
-/*!
- * @def         S_IRWXO
- * @brief       ...
+ * @brief       Write permission, others
  */
 #define S_IRWXO     0
 
 /*!
  * @def         S_IXOTH
- * @brief       ...
+ * @brief       Execute/search permission, others
  */
 #define S_IXOTH     0
 
 /*!
  * @def         S_ISUID
- * @brief       ...
+ * @brief       Set-user-ID on execution
  */
 #define S_ISUID     0
 
 /*!
  * @def         S_ISGID
- * @brief       ...
+ * @brief       Set-group-ID on execution
  */
 #define S_ISGID     0
 
 /*!
- * @brief       ...
- * @param       path    ...
- * @param       buf     ...
- * @result      ...
+ * @brief       Obtains information about the named file and write it to the area pointed to by the buf argument
+ * @details     Read, write, or execute permission of the named file is not
+ *              required. An implementation that provides additional or
+ *              alternate file access control mechanisms may, under
+ *              implementation-defined conditions, cause stat() to fail.
+ *              In particular, the system may deny the existence of the file
+ *              specified by path.
+ *              If the named file is a symbolic link, the stat() function shall
+ *              continue pathname resolution using the contents of the symbolic
+ *              link, and shall return information pertaining to the resulting
+ *              file if the file exists.
+ * @param       path    The file path
+ * @param       buf     A pointer to the stat information structure
+ * @result      O on success, otherwise -1.
  */
 int stat( const char * path, struct stat * buf );
 

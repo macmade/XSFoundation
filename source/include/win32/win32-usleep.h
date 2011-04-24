@@ -46,9 +46,12 @@ extern "C" {
 #include "win32-types.h"
 
 /*!
- * @brief       ...
- * @param       usec    ...
- * @result      ...
+ * @brief       Suspends execution of the calling process for (at least) usec microseconds
+ * @details     The sleep may be lengthened slightly by any system activity or
+ *              by the time spent processing the call or by the granularity of 
+ *              system timers.
+ * @param       usec    The number of microseconds
+ * @result      0 on success, -1 on error
  */
 int usleep( useconds_t usec );
 
