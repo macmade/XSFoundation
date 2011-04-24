@@ -57,7 +57,7 @@ typedef struct __XSApplication_Struct * XSApplication;
  * @brief       Object allocator
  * @result      The allocated object
  */
-XSStatic XSApplication XSApplication_Alloc( void );
+XSStatic XSObject XSApplication_Alloc( void );
 
 /*!
  * @brief       Initialize an application object
