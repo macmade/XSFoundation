@@ -288,10 +288,10 @@ XS_EXTERN_C_BEGIN
     #endif
 #endif
 
-/*******************************************************************************
- * Standardization macros for different compilers
- ******************************************************************************/
-
+/*!
+ * @def         NULL
+ * @brief       NULL value
+ */
 #if !defined( NULL )
     #if defined( __GNUG__ )
         #define NULL __null
@@ -302,14 +302,26 @@ XS_EXTERN_C_BEGIN
     #endif
 #endif
 
+/*!
+ * @def         TRUE
+ * @brief       TRUE value
+ */
 #if !defined( TRUE )
     #define TRUE    1
 #endif
 
+/*!
+ * @def         FALSE
+ * @brief       FALSE value
+ */
 #if !defined( FALSE )
     #define FALSE	0
 #endif
 
+/*!
+ * @def         __func__
+ * @brief       Function name
+ */
 #ifndef __func__
     #ifdef _WIN32
         #if defined( __FUNCTION__ )
