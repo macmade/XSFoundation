@@ -58,14 +58,14 @@ typedef struct __XSString_Struct * XSString;
 XSStatic XSObject XSString_Alloc( void );
 
 /*!
- * @brief       Creates an empty string
+ * @brief       Initializes an empty string
  * @param       xsThis      The string object
  * @result      A new string object
  */
 XSObject XSString_Init( XSObject xsThis );
 
 /*!
- * @brief       Creates an empty string with an initial capacity
+ * @brief       Initializes an empty string with an initial capacity
  * @param       xsThis      The string object
  * @param       capacity    The initial string capacity
  * @result      A new string object
@@ -73,7 +73,7 @@ XSObject XSString_Init( XSObject xsThis );
 XSString XSString_InitWithCapacity( XSString xsThis, XSUInteger capacity );
 
 /*!
- * @brief       Creates a string from a C string
+ * @brief       Initializes a string from a C string
  * @param       xsThis  The string object
  * @param       str     The C string
  * @result      A new string object
@@ -119,7 +119,7 @@ XSAutoreleased XSString XSString_LowercaseString( XSString xsThis );
 XSAutoreleased XSString XSString_UppercaseString( XSString xsThis );
 
 /*!
- * @brief       Creates a new string by appending an other string
+ * @brief       Initializes a new string by appending an other string
  * @param       xsThis  The string object
  * @param       str     The string to append
  * @result      A new string object
@@ -127,7 +127,7 @@ XSAutoreleased XSString XSString_UppercaseString( XSString xsThis );
 XSAutoreleased XSString XSString_StringByAppendingString( XSString xsThis, XSString str );
 
 /*!
- * @brief       Creates a new string by appending an C string
+ * @brief       Initializes a new string by appending an C string
  * @param       xsThis  The string object
  * @param       str     The C string to append
  * @result      A new string object

@@ -63,7 +63,7 @@ XSStatic XSObject XSColor_Alloc( void );
 XSObject XSColor_Init( XSObject xsThis );
 
 /*!
- * @brief       Creates a color with RGB components
+ * @brief       Initializes a color with RGB components
  * @param       xsThis  The color object
  * @param       r       The red value
  * @param       g       The green value
@@ -73,7 +73,7 @@ XSObject XSColor_Init( XSObject xsThis );
 XSColor XSColor_InitWithRGB( XSColor xsThis, XSFloat r, XSFloat g, XSFloat b );
 
 /*!
- * @brief       Creates a color with RGB components
+ * @brief       Initializes a color with RGB components
  * @param       xsThis  The color object
  * @param       h       The hue value
  * @param       s       The saturation value
@@ -83,7 +83,7 @@ XSColor XSColor_InitWithRGB( XSColor xsThis, XSFloat r, XSFloat g, XSFloat b );
 XSColor XSColor_InitWithHSL( XSColor xsThis, XSFloat h, XSFloat s, XSFloat l );
 
 /*!
- * @brief       Creates a color with HSL components
+ * @brief       Initializes a color with HSL components
  * @param       xsThis  The color object
  * @param       h       The hue value
  * @param       s       The saturation value
@@ -93,7 +93,7 @@ XSColor XSColor_InitWithHSL( XSColor xsThis, XSFloat h, XSFloat s, XSFloat l );
 XSColor XSColor_InitWithHSV( XSColor xsThis, XSFloat h, XSFloat s, XSFloat v );
 
 /*!
- * @brief       Creates a color with RGB components
+ * @brief       Initializes a color with RGB components
  * @param       xsThis  The color object
  * @param       r       The red value
  * @param       g       The green value
@@ -104,7 +104,7 @@ XSColor XSColor_InitWithHSV( XSColor xsThis, XSFloat h, XSFloat s, XSFloat v );
 XSColor XSColor_InitWithRGBA( XSColor xsThis, XSFloat r, XSFloat g, XSFloat b, XSFloat a );
 
 /*!
- * @brief       Creates a color with RGB components
+ * @brief       Initializes a color with RGB components
  * @param       xsThis  The color object
  * @param       h       The hue value
  * @param       s       The saturation value
@@ -115,7 +115,7 @@ XSColor XSColor_InitWithRGBA( XSColor xsThis, XSFloat r, XSFloat g, XSFloat b, X
 XSColor XSColor_InitWithHSLA( XSColor xsThis, XSFloat h, XSFloat s, XSFloat l, XSFloat a );
 
 /*!
- * @brief       Creates a color with HSL components
+ * @brief       Initializes a color with HSL components
  * @param       xsThis  The color object
  * @param       h       The hue value
  * @param       s       The saturation value
@@ -126,7 +126,7 @@ XSColor XSColor_InitWithHSLA( XSColor xsThis, XSFloat h, XSFloat s, XSFloat l, X
 XSColor XSColor_InitWithHSVA( XSColor xsThis, XSFloat h, XSFloat s, XSFloat v, XSFloat a );
 
 /*!
- * @brief       Creates a color with HSVA components
+ * @brief       Initializes a color with HSVA components
  * @result      The color object
  */
 XSAutoreleased XSStatic XSColor XSColor_BlackColor( void );
@@ -138,19 +138,19 @@ XSAutoreleased XSStatic XSColor XSColor_BlackColor( void );
 XSAutoreleased XSStatic XSColor XSColor_WhiteColor( void );
 
 /*!
- * @brief       Creates a red color object
+ * @brief       Initializes a red color object
  * @result      The color object
  */
 XSAutoreleased XSStatic XSColor XSColor_RedColor( void );
 
 /*!
- * @brief       Creates a green color object
+ * @brief       Initializes a green color object
  * @result      The color object
  */
 XSAutoreleased XSStatic XSColor XSColor_GreenColor( void );
 
 /*!
- * @brief       Creates a blue color object
+ * @brief       Initializes a blue color object
  * @result      The color object
  */
 XSAutoreleased XSStatic XSColor XSColor_BlueColor( void );

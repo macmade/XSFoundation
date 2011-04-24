@@ -56,7 +56,7 @@ typedef struct __XSTimer_Struct * XSTimer;
 XSStatic XSObject XSTimer_Alloc( void );
 
 /*!
- * @brief       Creates a timer object scheduled to run at a specific time
+ * @brief       Initializes a timer object scheduled to run at a specific time
  * @param       xsThis          The timer object
  * @param       func            A pointer to to function to call when the timer fires
  * @param       milliseconds    The timer interval, in milliseconds

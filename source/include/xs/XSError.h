@@ -56,7 +56,7 @@ typedef struct __XSError_Struct * XSError;
 XSStatic XSObject XSError_Alloc( void );
 
 /*!
- * @brief       Creates an error
+ * @brief       Initializes an error
  * @param       xsThis  The error object
  * @param       code    The error code
  * @param       domain  The error domain

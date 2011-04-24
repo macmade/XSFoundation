@@ -58,7 +58,7 @@ typedef struct __XSNotificationCenter_Struct * XSNotificationCenter;
 XSStatic XSObject XSNotificationCenter_Alloc( void );
 
 /*!
- * @brief       Creates a notification center
+ * @brief       Initializes a notification center
  * @param       xsThis  The notification center
  * @result      The notification center
  */

@@ -58,7 +58,7 @@ typedef struct __XSAutoreleasePool_Struct * XSAutoreleasePool;
 XSStatic XSObject XSAutoreleasePool_Alloc( void );
 
 /*!
- * @brief       Creates a new auto-release pool
+ * @brief       Initializes a new auto-release pool
  * @details     The newly created pool will be set as the active one, meaning
  *              objects auto-released after the pool creation will be placed
  *              inside it.

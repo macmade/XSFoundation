@@ -65,7 +65,7 @@ XSStatic XSObject XSThread_Alloc( void );
 XSObject XSThread_Init( XSObject xsThis );
 
 /*!
- * @brief       Creates and detaches a thread
+ * @brief       Initializes and detaches a thread
  * @details     The thread object will be automatically released when it
  *              exits. Do not release it explicitely.
  * @param       func    A pointer to the function to run on the thread

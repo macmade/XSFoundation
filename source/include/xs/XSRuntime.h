@@ -73,21 +73,21 @@ void XSRuntime_Finalize( void );
 XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls );
 
 /*!
- * @brief       Creates a new instance of a class
+ * @brief       Initializes a new instance of a class
  * @param       cls     The class structure
  * @result      The allocated instance
  */
 XSObject XSRuntime_CreateInstanceOfClass( const XSClassInfos * const cls );
 
 /*!
- * @brief       Creates a new instance of a class with a specific name
+ * @brief       Initializes a new instance of a class with a specific name
  * @param       name    The name of the class
  * @result      The allocated instance
  */
 XSObject XSRuntime_CreateInstanceOfClassWithName( const char * name );
 
 /*!
- * @brief       Creates a new instance of a registered class
+ * @brief       Initializes a new instance of a registered class
  * @param       classID The type ID
  * @result      The allocated instance
  */

@@ -56,14 +56,14 @@ typedef struct __XSBag_Struct * XSBag;
 XSStatic XSObject XSBag_Alloc( void );
 
 /*!
- * @brief       Creates an empty bag
+ * @brief       Initializes an empty bag
  * @param       xsThis  The bag object
  * @result      The bag object
  */
 XSObject XSBag_Init( XSObject xsThis );
 
 /*!
- * @brief       Creates an empty bag with an initial capacity
+ * @brief       Initializes an empty bag with an initial capacity
  * @param       xsThis      The bag object
  * @param       capacity    The initial capacityThe bag object
  * @result      The bag object
@@ -71,7 +71,7 @@ XSObject XSBag_Init( XSObject xsThis );
 XSBag XSBag_InitWithCapacity( XSBag xsThis, XSUInteger capacity );
 
 /*!
- * @brief       Creates a bag with values
+ * @brief       Initializes a bag with values
  * @param       xsThis      The bag object
  * @param       value1      The first value
  * @param       ...         Other values, terminated by a NULL fence

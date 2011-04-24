@@ -58,7 +58,7 @@ typedef struct __XSHost_Struct * XSHost;
 XSStatic XSObject XSHost_Alloc( void );
 
 /*!
- * @brief       Creates an error
+ * @brief       Initializes an error
  * @param       xsThis  The host object
  * @param       host    The host name
  * @param       port    The port number

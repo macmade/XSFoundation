@@ -56,14 +56,14 @@ typedef struct __XSObject_Struct * XSSet;
 XSStatic XSObject XSSet_Alloc( void );
 
 /*!
- * @brief       Creates an empty set
+ * @brief       Initializes an empty set
  * @param       xsThis  The set object
  * @result      The set object
  */
 XSObject XSSet_Init( XSObject xsThis );
 
 /*!
- * @brief       Creates an empty set with an initial capacity
+ * @brief       Initializes an empty set with an initial capacity
  * @param       xsThis      The set object
  * @param       capacity    The initial capacityThe set object
  * @result      The set object
@@ -71,7 +71,7 @@ XSObject XSSet_Init( XSObject xsThis );
 XSSet XSSet_InitWithCapacity( XSSet xsThis, XSUInteger capacity );
 
 /*!
- * @brief       Creates a set with values
+ * @brief       Initializes a set with values
  * @param       xsThis      The set object
  * @param       value1      The first value
  * @param       ...         Other values, terminated by a NULL fence

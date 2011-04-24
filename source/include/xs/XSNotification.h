@@ -56,7 +56,7 @@ typedef struct __XSNotification_Struct * XSNotification;
 XSStatic XSObject XSNotification_Alloc( void );
 
 /*!
- * @brief       Creates a notification object
+ * @brief       Initializes a notification object
  * @param       xsThis  The notification object
  * @result      The notification object
  */

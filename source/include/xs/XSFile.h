@@ -114,7 +114,7 @@ XSStatic XSObject XSFile_Alloc( void );
 XSFile XSFile_Init( XSFile xsThis );
 
 /*!
- * @brief       Creates an XSFile instance and opens the represented file.
+ * @brief       Initializes an XSFile instance and opens the represented file.
  * @details     This function may return NULL if the represented file has not
  *              been opened.
  * @param       filename    The name of the file

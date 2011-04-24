@@ -70,7 +70,7 @@ XSApplicationArgumentType;
 XSStatic XSApplicationArgument XSApplicationArgument_Alloc( void );
 
 /*!
- * @brief       Creates a CLI argument object
+ * @brief       Initializes a CLI argument object
  * @param       xsThis  The argument object
  * @param       name    The name of the CLI argument, including dashes (- or --)
  * @param       type    The type of the CLI argument

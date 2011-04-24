@@ -56,7 +56,7 @@ typedef struct __XSLock_Struct * XSLock;
 XSStatic XSObject XSLock_Alloc( void );
 
 /*!
- * @brief       Creates a lock
+ * @brief       Initializes a lock
  * @param       xsThis  The lock object
  * @result      The lock object
  */

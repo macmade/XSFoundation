@@ -56,14 +56,14 @@ typedef struct __XSData_Struct * XSData;
 XSStatic XSObject XSData_Alloc( void );
 
 /*!
- * @brief       Creates a data object
+ * @brief       Initializes a data object
  * @param       xsThis  The data object
  * @result      The data object
  */
 XSObject XSData_Init( XSObject xsThis );
 
 /*!
- * @brief       Creates a data object with an initial capacity
+ * @brief       Initializes a data object with an initial capacity
  * @param       xsThis      The data object
  * @param       capacity    The initial capacity
  * @result      The data object
@@ -71,7 +71,7 @@ XSObject XSData_Init( XSObject xsThis );
 XSData XSData_InitWithCapacity( XSData xsThis, XSUInteger capacity );
 
 /*!
- * @brief       Creates a data object with bytes
+ * @brief       Initializes a data object with bytes
  * @param       xsThis      The data object
  * @param       bytes       The data to copy
  * @param       length      The length of the data

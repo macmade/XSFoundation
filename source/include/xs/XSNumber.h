@@ -56,14 +56,14 @@ typedef struct __XSNumber_Struct * XSNumber;
 XSStatic XSObject XSNumber_Alloc( void );
 
 /*!
- * @brief       Creates a number
+ * @brief       Initializes a number
  * @param       xsThis      The number object
  * @result      The number object
  */
 XSObject XSNumber_Init( XSObject xsThis );
 
 /*!
- * @brief       Creates a number with a BOOL value
+ * @brief       Initializes a number with a BOOL value
  * @param       xsThis      The number object
  * @param       value       The BOOL value
  * @result      The number object
@@ -71,7 +71,7 @@ XSObject XSNumber_Init( XSObject xsThis );
 XSNumber XSNumber_InitWithBool( XSNumber xsThis, BOOL value );
 
 /*!
- * @brief       Creates a number with a char value
+ * @brief       Initializes a number with a char value
  * @param       xsThis      The number object
  * @param       value       The char value
  * @result      The number object
@@ -79,7 +79,7 @@ XSNumber XSNumber_InitWithBool( XSNumber xsThis, BOOL value );
 XSNumber XSNumber_InitWithChar( XSNumber xsThis, char value );
 
 /*!
- * @brief       Creates a number with an unsigned char value
+ * @brief       Initializes a number with an unsigned char value
  * @param       xsThis      The number object
  * @param       value       The unsigned char value
  * @result      The number object
@@ -87,7 +87,7 @@ XSNumber XSNumber_InitWithChar( XSNumber xsThis, char value );
 XSNumber XSNumber_InitWithUnsignedChar( XSNumber xsThis, unsigned char value );
 
 /*!
- * @brief       Creates a number with a short value
+ * @brief       Initializes a number with a short value
  * @param       xsThis      The number object
  * @param       value       The short value
  * @result      The number object
@@ -95,7 +95,7 @@ XSNumber XSNumber_InitWithUnsignedChar( XSNumber xsThis, unsigned char value );
 XSNumber XSNumber_InitWithShort( XSNumber xsThis, short value );
 
 /*!
- * @brief       Creates a number with an unsigned short value
+ * @brief       Initializes a number with an unsigned short value
  * @param       xsThis      The number object
  * @param       value       The unsigned short value
  * @result      The number object
@@ -103,7 +103,7 @@ XSNumber XSNumber_InitWithShort( XSNumber xsThis, short value );
 XSNumber XSNumber_InitWithUnsignedShort( XSNumber xsThis, unsigned short value );
 
 /*!
- * @brief       Creates a number with an int value
+ * @brief       Initializes a number with an int value
  * @param       xsThis      The number object
  * @param       value       The int value
  * @result      The number object
@@ -111,7 +111,7 @@ XSNumber XSNumber_InitWithUnsignedShort( XSNumber xsThis, unsigned short value )
 XSNumber XSNumber_InitWithInt( XSNumber xsThis, int value );
 
 /*!
- * @brief       Creates a number with an unsigned int value
+ * @brief       Initializes a number with an unsigned int value
  * @param       xsThis      The number object
  * @param       value       The unsigned int value
  * @result      The number object
@@ -119,7 +119,7 @@ XSNumber XSNumber_InitWithInt( XSNumber xsThis, int value );
 XSNumber XSNumber_InitWithUnsignedInt( XSNumber xsThis, unsigned int value );
 
 /*!
- * @brief       Creates a number with a long value
+ * @brief       Initializes a number with a long value
  * @param       xsThis      The number object
  * @param       value       The long value
  * @result      The number object
@@ -127,7 +127,7 @@ XSNumber XSNumber_InitWithUnsignedInt( XSNumber xsThis, unsigned int value );
 XSNumber XSNumber_InitWithLong( XSNumber xsThis, long value );
 
 /*!
- * @brief       Creates a number with an unsigned long value
+ * @brief       Initializes a number with an unsigned long value
  * @param       xsThis      The number object
  * @param       value       The unsigned long value
  * @result      The number object
@@ -135,7 +135,7 @@ XSNumber XSNumber_InitWithLong( XSNumber xsThis, long value );
 XSNumber XSNumber_InitWithUnsignedLong( XSNumber xsThis, unsigned long value );
 
 /*!
- * @brief       Creates a number with a long long value
+ * @brief       Initializes a number with a long long value
  * @param       xsThis      The number object
  * @param       value       The long long value
  * @result      The number object
@@ -143,7 +143,7 @@ XSNumber XSNumber_InitWithUnsignedLong( XSNumber xsThis, unsigned long value );
 XSNumber XSNumber_InitWithLongLong( XSNumber xsThis, long long value );
 
 /*!
- * @brief       Creates a number with an unsigned long long value
+ * @brief       Initializes a number with an unsigned long long value
  * @param       xsThis      The number object
  * @param       value       The unsigned long long value
  * @result      The number object
@@ -151,7 +151,7 @@ XSNumber XSNumber_InitWithLongLong( XSNumber xsThis, long long value );
 XSNumber XSNumber_InitWithUnsignedLongLong( XSNumber xsThis, unsigned long long value );
 
 /*!
- * @brief       Creates a number with a float value
+ * @brief       Initializes a number with a float value
  * @param       xsThis      The number object
  * @param       value       The float value
  * @result      The number object
@@ -159,7 +159,7 @@ XSNumber XSNumber_InitWithUnsignedLongLong( XSNumber xsThis, unsigned long long 
 XSNumber XSNumber_InitWithFloat( XSNumber xsThis, float value );
 
 /*!
- * @brief       Creates a number with a double value
+ * @brief       Initializes a number with a double value
  * @param       xsThis      The number object
  * @param       value       The double value
  * @result      The number object
@@ -167,7 +167,7 @@ XSNumber XSNumber_InitWithFloat( XSNumber xsThis, float value );
 XSNumber XSNumber_InitWithDouble( XSNumber xsThis, double value );
 
 /*!
- * @brief       Creates a number with an integer value
+ * @brief       Initializes a number with an integer value
  * @param       xsThis      The number object
  * @param       value       The integer value
  * @result      The number object
@@ -175,7 +175,7 @@ XSNumber XSNumber_InitWithDouble( XSNumber xsThis, double value );
 XSNumber XSNumber_InitWithInteger( XSNumber xsThis, XSInteger value );
 
 /*!
- * @brief       Creates a number with an unsigned integer value
+ * @brief       Initializes a number with an unsigned integer value
  * @param       xsThis      The number object
  * @param       value       The unsigned integer value
  * @result      The number object

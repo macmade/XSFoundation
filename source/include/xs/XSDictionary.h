@@ -62,14 +62,14 @@ typedef struct __XSDictionary_Struct * XSDictionary;
 XSStatic XSObject XSDictionary_Alloc( void );
 
 /*!
- * @brief       Creates an empty dictionary
+ * @brief       Initializes an empty dictionary
  * @param       xsThis  The dictionary object
  * @result      The new dictionary object
  */
 XSObject XSDictionary_Init( XSObject xsThis );
 
 /*!
- * @brief       Creates an empty dictionary with an initial capacity
+ * @brief       Initializes an empty dictionary with an initial capacity
  * @param       xsThis  The dictionary object
  * @param       capacity    The initial dictionary capacity
  * @result      The new dictionary object
@@ -77,7 +77,7 @@ XSObject XSDictionary_Init( XSObject xsThis );
 XSDictionary XSDictionary_InitWithCapacity( XSDictionary xsThis, XSUInteger capacity );
 
 /*!
- * @brief       Creates a dictionary with keys and values
+ * @brief       Initializes a dictionary with keys and values
  * @param       xsThis  The dictionary object
  * @param       key1    The first key
  * @param       value1  The first value

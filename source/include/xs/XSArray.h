@@ -56,14 +56,14 @@ typedef struct __XSArray_Struct * XSArray;
 XSStatic XSObject XSArray_Alloc( void );
 
 /*!
- * @brief       Creates an empty array
+ * @brief       Initializes an empty array
  * @param       xsThis  The array object
  * @result      The array object
  */
 XSObject XSArray_Init( XSObject xsThis );
 
 /*!
- * @brief       Creates an empty array with an initial capacity
+ * @brief       Initializes an empty array with an initial capacity
  * @param       xsThis      The array object
  * @param       capacity    The initial array capacity
  * @result      The array object
@@ -71,7 +71,7 @@ XSObject XSArray_Init( XSObject xsThis );
 XSArray XSArray_InitWithCapacity( XSArray xsThis, XSUInteger capacity );
 
 /*!
- * @brief       Creates an array with values
+ * @brief       Initializes an array with values
  * @param       xsThis      The array object
  * @param       value1      The first value
  * @param       ...         Other values, terminated by a NULL fence.

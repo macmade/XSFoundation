@@ -65,7 +65,7 @@ extern struct XSExceptionContext_Struct * XSExceptionContext;
 XSStatic XSObject XSException_Alloc( void );
 
 /*!
- * @brief       Creates an exception
+ * @brief       Initializes an exception
  * @param       code    The exception code
  * @param       reason  The exception message
  * @result      The exception object
@@ -73,7 +73,7 @@ XSStatic XSObject XSException_Alloc( void );
 XSStatic XSAutoreleased XSException XSException_New( XSInteger code, XSString reason );
 
 /*!
- * @brief       Creates an exception
+ * @brief       Initializes an exception
  * @param       xsThis  The exception object
  * @param       code    The exception code
  * @param       reason  The exception message

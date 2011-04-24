@@ -46,7 +46,7 @@ XS_EXTERN_C_BEGIN
 #include "XSTypes.h"
 
 /*!
- * @brief       Creates an XSPoint structure
+ * @brief       Initializes an XSPoint structure
  * @param       x   The X coordinate
  * @param       y   The Y coordinate
  * @result      An XSPoint structure
@@ -54,7 +54,7 @@ XS_EXTERN_C_BEGIN
 XSPoint XSMakePoint( XSFloat x, XSFloat y );
 
 /*!
- * @brief       Creates an XSSize structure
+ * @brief       Initializes an XSSize structure
  * @param       width   The width
  * @param       height  The height
  * @result      An XSSize structure
@@ -62,7 +62,7 @@ XSPoint XSMakePoint( XSFloat x, XSFloat y );
 XSSize XSMakeSize( XSFloat width, XSFloat height );
 
 /*!
- * @brief       Creates an XSRect structure
+ * @brief       Initializes an XSRect structure
  * @param       x       The X coordinate
  * @param       y       The Y coordinate
  * @param       width   The width
@@ -72,13 +72,13 @@ XSSize XSMakeSize( XSFloat width, XSFloat height );
 XSRect XSMakeRect( XSFloat x, XSFloat y, XSFloat width, XSFloat height );
 
 /*!
- * @brief       Creates an XSRect structure with 0 origin and size
+ * @brief       Initializes an XSRect structure with 0 origin and size
  * @result      An XSRect structure
  */
 XSRect XSRectZero( void );
 
 /*!
- * @brief       Creates an XSRange structure
+ * @brief       Initializes an XSRange structure
  * @param       location    The range location
  * @param       length      The range length
  * @result      An XSRange structure
@@ -86,7 +86,7 @@ XSRect XSRectZero( void );
 XSRange XSMakeRange( XSUInteger location, XSUInteger length );
 
 /*!
- * @brief       Creates an XSEdgeInsets structure
+ * @brief       Initializes an XSEdgeInsets structure
  * @param       left    The left coordinate
  * @param       top     The top coordinate
  * @param       right   The right coordinate
