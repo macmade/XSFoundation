@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSBag
  * @brief       Opaque type for the XSBag objects
  */
-typedef struct __XSNull * XSNull;
+typedef struct __XSNull_Struct * XSNull;
 
 /*!
  * @brief       Object allocator

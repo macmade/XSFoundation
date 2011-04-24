@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSNotification
  * @brief       Opaque type for the XSNotification objects
  */
-typedef struct __XSNotification * XSNotification;
+typedef struct __XSNotification_Struct * XSNotification;
 
 /*!
  * @brief       Object allocator

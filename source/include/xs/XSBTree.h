@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSBTree
  * @brief       Opaque type for the XSBTree objects
  */
-typedef struct __XSBTree * XSBTree;
+typedef struct __XSBTree_Struct * XSBTree;
 
 /*!
  * @brief       Object allocator

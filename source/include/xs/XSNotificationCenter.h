@@ -49,7 +49,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSNotificationCenter
  * @brief       Opaque type for the XSNotificationCenter objects
  */
-typedef struct __XSNotificationCenter * XSNotificationCenter;
+typedef struct __XSNotificationCenter_Struct * XSNotificationCenter;
 
 /*!
  * @brief       Object allocator
