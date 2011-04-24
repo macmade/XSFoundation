@@ -45,193 +45,193 @@ extern "C" {
 
 /*!
  * @def     ASCII_NUL
- * @brief   ...
+ * @brief   Null character
  */
 #define ASCII_NUL   '\0'
 
 /*!
  * @def     ASCII_SOH
- * @brief   ...
+ * @brief   Start of header
  */
 #define ASCII_SOH   '\1'
 
 /*!
  * @def     ASCII_STX
- * @brief   ...
+ * @brief   Start of text
  */
 #define ASCII_STX   '\2'
 
 /*!
  * @def     ASCII_ETX
- * @brief   ...
+ * @brief   End of text
  */
 #define ASCII_ETX   '\3'
 
 /*!
  * @def     ASCII_EOT
- * @brief   ...
+ * @brief   End of transmission
  */
 #define ASCII_EOT   '\4'
 
 /*!
  * @def     ASCII_ENQ
- * @brief   ...
+ * @brief   Enquiery
  */
 #define ASCII_ENQ   '\5'
 
 /*!
  * @def     ASCII_ACK
- * @brief   ...
+ * @brief   Aknowledgment
  */
 #define ASCII_ACK   '\6'
 
 /*!
  * @def     ASCII_BEL
- * @brief   ...
+ * @brief   Bell
  */
 #define ASCII_BEL   '\7'
 
 /*!
  * @def     ASCII_BS
- * @brief   ...
+ * @brief   Backspace
  */
 #define ASCII_BS    '\8'
 
 /*!
  * @def     ASCII_TAB
- * @brief   ...
+ * @brief   Horizontal tab
  */
 #define ASCII_TAB   '\9'
 
 /*!
  * @def     ASCII_LF
- * @brief   ...
+ * @brief   Line feed
  */
 #define ASCII_LF    '\10'
 
 /*!
  * @def     ASCII_VT
- * @brief   ...
+ * @brief   Vertical tab
  */
 #define ASCII_VT    '\11'
 
 /*!
  * @def     ASCII_FF
- * @brief   ...
+ * @brief   Form feed
  */
 #define ASCII_FF    '\12'
 
 /*!
  * @def     ASCII_CR
- * @brief   ...
+ * @brief   Carriage return
  */
 #define ASCII_CR    '\13'
 
 /*!
  * @def     ASCII_SO
- * @brief   ...
+ * @brief   Shift out
  */
 #define ASCII_SO    '\14'
 
 /*!
  * @def     ASCII_SI
- * @brief   ...
+ * @brief   Shift in
  */
 #define ASCII_SI    '\15'
 
 /*!
  * @def     ASCII_DLE
- * @brief   ...
+ * @brief   Data link escape
  */
 #define ASCII_DLE   '\16'
 
 /*!
  * @def     ASCII_DC1
- * @brief   ...
+ * @brief   Device control 1 (oft. XON)
  */
 #define ASCII_DC1   '\17'
 
 /*!
  * @def     ASCII_DC2
- * @brief   ...
+ * @brief   Device control 2
  */
 #define ASCII_DC2   '\18'
 
 /*!
  * @def     ASCII_DC3
- * @brief   ...
+ * @brief   Device control 3 (oft. XOFF)
  */
 #define ASCII_DC3   '\19'
 
 /*!
  * @def     ASCII_DC4
- * @brief   ...
+ * @brief   Device control 4
  */
 #define ASCII_DC4   '\20'
 
 /*!
  * @def     ASCII_NAK
- * @brief   ...
+ * @brief   Negative acknowledgement
  */
 #define ASCII_NAK   '\21'
 
 /*!
  * @def     ASCII_SYN
- * @brief   ...
+ * @brief   Synchronous idle
  */
 #define ASCII_SYN   '\22'
 
 /*!
  * @def     ASCII_ETB
- * @brief   ...
+ * @brief   End of transmission block
  */
 #define ASCII_ETB   '\23'
 
 /*!
  * @def     ASCII_CAN
- * @brief   ...
+ * @brief   Cancel
  */
 #define ASCII_CAN   '\24'
 
 /*!
- * @def     
- * @brief   
+ * @def     ASCII_EM
+ * @brief   End of medium
  */
 #define ASCII_EM    '\25'
 
 /*!
- * @def     
- * @brief   
+ * @def     ASCII_SUB
+ * @brief   Substitute
  */
 #define ASCII_SUB   '\26'
 
 /*!
- * @def     
- * @brief   
+ * @def     ASCII_ESC
+ * @brief   Escape
  */
 #define ASCII_ESC   '\27'
 
 /*!
- * @def     
- * @brief   
+ * @def     ASCII_FS
+ * @brief   File separator
  */
 #define ASCII_FS    '\28'
 
 /*!
- * @def     
- * @brief   
+ * @def     ASCII_GS
+ * @brief   Group separator
  */
 #define ASCII_GS    '\29'
 
 /*!
- * @def     
- * @brief   
+ * @def     ASCII_RS
+ * @brief   Record separator
  */
 #define ASCII_RS    '\30'
 
 /*!
- * @def     
- * @brief   
+ * @def     ASCII_US
+ * @brief   Unit separator
  */
 #define ASCII_US    '\31'
 
