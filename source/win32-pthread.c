@@ -39,17 +39,19 @@
 
 #ifndef _WIN32
 
-typedef uint32_t DWORD;
-typedef void * HANDLE;
-typedef const char * LPCTSTR;
-typedef void * LPVOID;
-typedef struct _SECURITY_ATTRIBUTES
+typedef uint32_t        DWORD;
+typedef void *          HANDLE;
+typedef const char *    LPCTSTR;
+typedef void *          LPVOID;
+typedef struct          _SECURITY_ATTRIBUTES
 {
     DWORD  nLength;
     LPVOID lpSecurityDescriptor;
     BOOL   bInheritHandle;
 }
-SECURITY_ATTRIBUTES, * PSECURITY_ATTRIBUTES, * LPSECURITY_ATTRIBUTES;
+  SECURITY_ATTRIBUTES,
+* PSECURITY_ATTRIBUTES,
+* LPSECURITY_ATTRIBUTES;
 
 #define WAIT_TIMEOUT    0
 

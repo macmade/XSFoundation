@@ -47,90 +47,150 @@ extern "C" {
 
 /*!
  * @typedef     pthread_t
- * @brief       ...
+ * @brief       Used to identify a thread
  */
 typedef uint32_t pthread_t;
 
 /*!
  * @typedef     pthread_mutex_t
- * @brief       ...
+ * @brief       Used to identify a thread mutex
  */
 typedef HANDLE   pthread_mutex_t;
 
 /*!
  * @typedef     pthread_mutexattr_t
- * @brief       ...
+ * @brief       Used to identify a thread mutex attribute
  */
 typedef uint64_t pthread_mutexattr_t;
 
 /*!
  * @struct      pthread_attr_t_struct
- * @brief       ...
+ * @brief       Thread attribute structure
  */
 struct pthread_attr_t_struct
 {
-    int      detachstate;   /*! ... */
-    void   * stackaddr;     /*! ... */
-    size_t   stacksize;     /*! ... */
+    int      detachstate;   /*! Detached state */
+    void   * stackaddr;     /*! Stack address */
+    size_t   stacksize;     /*! Stack size */
 };
 
 /*!
  * @typedef     pthread_attr_t
- * @brief       ...
+ * @brief       Thread attribute type
  */
 typedef struct pthread_attr_t_struct pthread_attr_t;
 
 /*!
  * @def         PTHREAD_MUTEX_INITIALIZER
- * @brief       ...
+ * @brief       Initializes a static mutex with default attributes
  */
 #define PTHREAD_MUTEX_INITIALIZER   0
 
 /*!
- * @brief       ...
- * @result      ...
+ * @brief       Returns the thread ID of the calling thread
+ * @result      The thread ID
  */
 pthread_t pthread_self( void );
 
 /*!
- * @brief       ...
+ * @brief       Terminates the calling thread and makes the value value_ptr available to any successful join with the terminating thread
+ * @details     Any cancellation cleanup handlers that have been pushed and not
+ *              yet popped are popped in the reverse order that they were pushed
+ *              and then executed. After all cancellation cleanup handlers have
+ *              been executed, if the thread has any thread-specific data,
+ *              appropriate destructor functions will be called in an
+ *              unspecified order. Thread termination does not release any
+ *              application visible process resources, including, but not
+ *              limited to, mutexes and file descriptors, nor does it perform
+ *              any process level cleanup actions, including, but not limited
+ *              to, calling any atexit() routines that may exist.
+ *              An implicit call to pthread_exit() is made when a thread other
+ *              than the thread in which main() was first invoked returns from
+ *              the start routine that was used to create it. The function's
+ *              return value serves as the thread's exit status.
+ *              The behaviour of pthread_exit() is undefined if called from a
+ *              cancellation cleanup handler or destructor function that was
+ *              invoked as a result of either an implicit or explicit call to
+ *              pthread_exit().
+ *              After a thread has terminated, the result of access to local
+ *              (auto) variables of the thread is undefined. Thus, references to
+ *              local variables of the exiting thread should not be used for the
+ *              pthread_exit() value_ptr parameter value.
+ *              The process exits with an exit status of 0 after the last thread
+ *              has been terminated. The behaviour is as if the implementation
+ *              called exit() with a zero argument at thread termination time.
+ * @param       value_ptr   The thread return value
  * @result      void
  */
-void pthread_exit( void * retval );
+void pthread_exit( void * value_ptr );
 
 /*!
- * @brief       ...
- * @param       mutex   ...
- * @param       attr    ...
- * @result      ...
+ * @brief       Initialises the mutex referenced by mutex with attributes specified by attr
+ * @details     If attr is NULL, the default mutex attributes are used;
+ *              the effect is the same as passing the address of a default mutex
+ *              attributes object. Upon successful initialisation, the state of
+ *              the mutex becomes initialised and unlocked.
+ *              Attempting to initialise an already initialised mutex results in
+ *              undefined behaviour.
+ *              In cases where default mutex attributes are appropriate, the
+ *              macro PTHREAD_MUTEX_INITIALIZER can be used to initialise
+ *              mutexes that are statically allocated. The effect is equivalent
+ *              to dynamic initialisation by a call to pthread_mutex_init() with
+ *              parameter attr specified as NULL, except that no error checks
+ *              are performed.
+ * @param       mutex   The mutex
+ * @param       attr    The mutex attributes
+ * @result      Zero on success, otherwise an error number
  */
 int pthread_mutex_init( pthread_mutex_t * mutex, const pthread_mutexattr_t * attr );
 
 /*!
- * @brief       ...
- * @param       mutex   ...
- * @result      ...
+ * @brief       Destroys the mutex object referenced by mutex
+ * @details     The mutex object becomes, in effect, uninitialised. An
+ *              implementation may cause pthread_mutex_destroy() to set the
+ *              object referenced by mutex to an invalid value.
+ *              A destroyed mutex object can be re-initialised using
+ *              pthread_mutex_init(); the results of otherwise referencing
+ *              the object after it has been destroyed are undefined.
+ *              It is safe to destroy an initialised mutex that is unlocked.
+ *              Attempting to destroy a locked mutex results in undefined
+ *              behaviour.
+ * @param       mutex   The mutex
+ * @result      Zero on success, otherwise an error number
  */
 int pthread_mutex_destroy( pthread_mutex_t * mutex );
 
 /*!
- * @brief       ...
- * @param       mutex   ...
- * @result      ...
+ * @brief       Locks a mutex
+ * @details     If the mutex is already locked, the calling thread blocks until
+ *              the mutex becomes available. This operation returns with the
+ *              mutex object referenced by mutex in the locked state with the
+ *              calling thread as its owner.
+ * @param       mutex   The mutex
+ * @result      Zero on success, otherwise an error number
  */
 int pthread_mutex_lock( pthread_mutex_t * mutex );
 
 /*!
- * @brief       ...
- * @param       mutex   ...
- * @result      ...
+ * @brief       Releases the mutex object referenced by mutex
+ * @details     The manner in which a mutex is released is dependent upon the
+ *              mutex's type attribute. If there are threads blocked on the
+ *              mutex object referenced by mutex when pthread_mutex_unlock() is
+ *              called, resulting in the mutex becoming available, the
+ *              scheduling policy is used to determine which thread shall
+ *              acquire the mutex.
+ * @param       mutex   The mutex
+ * @result      Zero on success, otherwise an error number
  */
 int pthread_mutex_unlock( pthread_mutex_t * mutex );
 
 /*!
- * @brief       ...
- * @param       mutex   ...
- * @result      ...
+ * @brief       Tries to lock a mutex
+ * @details     Identical to pthread_mutex_lock() except that if the mutex
+ *              object referenced by mutex is currently locked (by any thread,
+ *              including the current thread), the call returns immediately.
+ * @param       mutex   The mutex
+ * @result      Zero on success, otherwise an error number
  */
 int pthread_mutex_trylock( pthread_mutex_t * mutex );
     

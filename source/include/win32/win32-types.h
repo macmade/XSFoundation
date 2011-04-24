@@ -47,37 +47,37 @@ extern "C" {
 
 /*!
  * @typedef     useconds_t
- * @brief       ...
+ * @brief       Used for time in microseconds
  */
 typedef uint64_t useconds_t;
 
 /*!
  * @typedef     nlink_t
- * @brief       ...
+ * @brief       Used for link counts
  */
 typedef uint32_t nlink_t;
 
 /*!
  * @typedef     pid_t
- * @brief       ...
+ * @brief       Used for process IDs and process group IDs
  */
 typedef uint32_t pid_t;
 
 /*!
  * @typedef     uid_t
- * @brief       ...
+ * @brief       Used for user IDs
  */
 typedef uint32_t uid_t;
 
 /*!
  * @typedef     gid_t
- * @brief       ...
+ * @brief       Used for group IDs
  */
 typedef uint32_t gid_t;
 
 /*!
  * @typedef     dev_t
- * @brief       ...
+ * @brief       Used for device IDs
  */
 typedef uint32_t dev_t;
 
