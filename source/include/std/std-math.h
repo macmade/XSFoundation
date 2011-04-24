@@ -47,7 +47,7 @@ extern "C" {
     
     /*!
      * @def         M_PI
-     * @brief       ...
+     * @brief       Pi (π) constant
      */
     #define M_PI        3.1415926535897932384626433832795
     
@@ -57,13 +57,14 @@ extern "C" {
     
     /*!
      * @def         __LOG2
-     * @brief       ...
+     * @brief       Constant for the binary logarithm macro
      */
     #define __LOG2      0.301029995663981f
     
     /*!
      * @def         LOG2
-     * @brief       ...
+     * @brief       Binary logarithm
+     * @param       x   The value
      */
     #define LOG2( x )   ( log10( x ) / __LOG2 )
     
@@ -73,7 +74,9 @@ extern "C" {
     
     /*!
      * @def         MAX
-     * @brief       ...
+     * @brief       Get the max of two values
+     * @param       a   The first value
+     * @param       b   The second value
      */
     #define MAX( a, b ) ( ( ( a ) > ( b ) ) ? a : b )
     
@@ -83,7 +86,9 @@ extern "C" {
     
     /*!
      * @def         MIN
-     * @brief       ...
+     * @brief       Get the min of two values
+     * @param       a   The first value
+     * @param       b   The second value
      */
     #define MIN( a, b ) ( ( ( a ) < ( b ) ) ? a : b )
     
@@ -93,7 +98,8 @@ extern "C" {
     
     /*!
      * @def         ABS
-     * @brief       ...
+     * @brief       Absolute value
+     * @param       a   The value
      */
     #define ABS( a ) ( ( a ) < 0 ? ( -( a ) ) : ( a ) )
     
