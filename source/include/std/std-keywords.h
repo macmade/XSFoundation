@@ -49,7 +49,7 @@ extern "C" {
         
         /*!
          * @def         __asm__
-         * @brief       ...
+         * @brief       Inline assembly code
          */
         #define __asm__     asm
         
@@ -59,7 +59,7 @@ extern "C" {
         
         /*!
          * @def         __inline__
-         * @brief       ...
+         * @brief       Inline functions
          */
         #define __inline__  inline
         
