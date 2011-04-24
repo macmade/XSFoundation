@@ -274,7 +274,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @def         XS_INLINE
- * @brief       Standardization of the inline compiler keywork
+ * @brief       Standardization of the inline compiler keyword
  */
 #if !defined( XS_INLINE )
     #if defined( __GNUC__ ) && ( __GNUC__ == 4 ) && !defined( DEBUG )
