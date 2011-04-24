@@ -112,65 +112,65 @@ void XSApplication_PrintHelp( XSApplication xsThis, const char * description );
 void XSApplication_RegisterArgument( XSApplication xsThis, const char * name, XSApplicationArgumentType type, const char * help );
 
 /*!
- * @brief       
+ * @brief       ...
  * @param       xsThis  The application object
  * @param       name    ...
- * @result      
+ * @result      ...
  */
 XSApplicationArgument XSApplication_GetArgument( XSApplication xsThis, const char * name );
 
 /*!
- * @brief       
+ * @brief       ...
  * @param       xsThis  The application object
  * @param       name    ...
- * @result      
+ * @result      ...
  */
 BOOL XSApplication_HasArgument( XSApplication xsThis, const char * name );
 
 /*!
- * @brief       
+ * @brief       ...
  * @param       xsThis  The application object
  * @param       name    ...
- * @result      
+ * @result      ...
  */
 BOOL XSApplication_GetFlag( XSApplication xsThis, const char * name );
 
 /*!
- * @brief       
+ * @brief       ...
  * @param       xsThis  The application object
  * @param       name    ...
- * @result      
+ * @result      ...
  */
 XSInteger XSApplication_GetInteger( XSApplication xsThis, const char * name );
 
 /*!
- * @brief       
+ * @brief       ...
  * @param       xsThis  The application object
  * @param       name    ...
- * @result      
+ * @result      ...
  */
 XSUInteger XSApplication_GetUnsignedInteger( XSApplication xsThis, const char * name );
 
 /*!
- * @brief       
+ * @brief       ...
  * @param       xsThis  The application object
  * @param       name    ...
- * @result      
+ * @result      ...
  */
 XSString XSApplication_GetString( XSApplication xsThis, const char * name );
 
 /*!
- * @brief       
+ * @brief       ...
  * @param       xsThis  The application object
  * @param       name    ...
- * @result      
+ * @result      ...
  */
 XSFloat XSApplication_GetFloat( XSApplication xsThis, const char * name );
 
 /*!
- * @brief       
+ * @brief       ...
  * @param       xsThis  The application object
- * @result      
+ * @result      ...
  */
 XSAutoreleased XSArray XSApplication_GetUnnamedArguments( XSApplication xsThis );
 
