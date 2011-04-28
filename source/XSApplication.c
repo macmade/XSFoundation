@@ -40,14 +40,14 @@
 
 extern XSClassID __XSApplicationClassID;
 
-static __XSApplication    * __xsapp = NULL;
-static XSAutoreleasePool    __xsarp = NULL;
+static __XSApplication     * __xsapp = NULL;
+static XSAutoreleasePool     __xsarp = NULL;
 static BOOL __xsapp_argv_processed  = NO;
 
 struct XSExceptionContext_Struct   __XSExceptionContext;
 struct XSExceptionContext_Struct * XSExceptionContext;
 
-XSStatic XSApplication XSApplication_Alloc( void )
+XSStatic XSObject XSApplication_Alloc( void )
 {
     return ( XSObject )XSRuntime_CreateInstance( __XSApplicationClassID );
 }
@@ -69,7 +69,7 @@ XSStatic XSApplication XSApplication_Start( int argc, const char ** argv )
     XSRuntime_Initialize();
     
     __xsapp = ( __XSApplication * )XSApplication_Init( XSApplication_Alloc() );
-    __xsarp = XSAutoreleasePool_Init( XSAutoreleasePool_Alloc() );
+    __xsarp = ( XSAutoreleasePool )XSAutoreleasePool_Init( XSAutoreleasePool_Alloc() );
     
     __xsapp->argc       = argc - 1;
     __xsapp->argv       = argv + 1;
