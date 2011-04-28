@@ -36,6 +36,7 @@
  */
 
 #include "XS.h"
+#include "__XSRuntime.h"
 #include "__XSMemory.h"
 #include "__XSMemoryDebug.h"
 
