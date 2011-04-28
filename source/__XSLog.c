@@ -197,8 +197,8 @@ void __XSVLog( const char * fmt, va_list args )
     size_t           length;
     unsigned int     i;
     void           * va_ptr;
-    XSRuntimeClass * b;
-    XSClassInfos   * cls;
+    XSInstance       b;
+    XSClass          cls;
     XSString         description;
     
     #ifdef _WIN32
@@ -317,14 +317,14 @@ void __XSVLog( const char * fmt, va_list args )
             }
             else
             {
-                b      = ( XSRuntimeClass * )va_ptr;
-                cls    = b->classInfos;
+                b      = ( XSInstance )va_ptr;
+                cls    = b->__class;
                 
-                printf( "<%s: %p>", cls->className, va_ptr );
+                printf( "<%s: %p>", cls->classInfos->className, va_ptr );
                 
-                if( cls->toString != NULL )
+                if( cls->classInfos->toString != NULL )
                 {
-                    description = cls->toString( va_ptr );
+                    description = cls->classInfos->toString( va_ptr );
                     printf( " [ %s ]", XSString_CString( description ) );
                 }
             }
