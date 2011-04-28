@@ -51,9 +51,9 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSLock_Struct
 {
-    XSRuntimeClass  __class;    /*! Runtime class */
-    pthread_mutex_t mutex;      /*! ... */
-    BOOL            locked;     /*! ... */
+    XSRuntimeClass  * __class;    /*! Runtime class */
+    pthread_mutex_t   mutex;      /*! ... */
+    BOOL              locked;     /*! ... */
 };
 
 /*!

@@ -51,8 +51,8 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSBool_Struct
 {
-    XSRuntimeClass __class; /* Runtime class */
-    BOOL           value;   /* Boolean value */
+    XSRuntimeClass * __class; /* Runtime class */
+    BOOL             value;   /* Boolean value */
 };
 
 /*!

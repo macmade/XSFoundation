@@ -51,13 +51,13 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSApplication_Struct
 {
-    XSRuntimeClass          __class;        /*! Runtime class */
-    int                     argc;           /*! The number of CLI arguments */
-    const char           ** argv;           /*! A pointer to the CLI arguments */
-    const char            * executable;     /*! The executable name */
-    XSApplicationArgument * args;           /*! The registered arguments */
-    XSUInteger              arg_count;      /*! The number of registered arguments */
-    XSUInteger              arg_alloc;      /*! The allocation size for the registered arguments */
+    XSRuntimeClass         * __class;        /*! Runtime class */
+    int                      argc;           /*! The number of CLI arguments */
+    const char            ** argv;           /*! A pointer to the CLI arguments */
+    const char             * executable;     /*! The executable name */
+    XSApplicationArgument  * args;           /*! The registered arguments */
+    XSUInteger               arg_count;      /*! The number of registered arguments */
+    XSUInteger               arg_alloc;      /*! The allocation size for the registered arguments */
 };
 
 /*!

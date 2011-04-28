@@ -62,7 +62,7 @@ XSClassID __XSBoolClassID;
 
 void __XSBool_Initialize( void )
 {
-    __XSBoolClassID = XSRuntime_RegisterClass( &__XSBoolClass );
+    __XSBoolClassID = XSRuntime_NewClass( &__XSBoolClass );
 }
 
 XSString __XSBool_ToString( XSObject object )

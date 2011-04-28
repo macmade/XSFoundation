@@ -51,15 +51,15 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSApplicationArgument_Struct
 {
-    XSRuntimeClass __class;     /*! Runtime class */
-    const char   * name;        /*! ... */
-    XSUInteger     type;        /*! ... */
-    XSInteger      int_val;     /*! ... */
-    XSUInteger     uint_val;    /*! ... */
-    const char   * str_val;     /*! ... */
-    BOOL           flag_val;    /*! ... */
-    XSFloat        float_val;   /*! ... */
-    const char   * help;        /*! ... */
+    XSRuntimeClass * __class;     /*! Runtime class */
+    const char    * name;        /*! ... */
+    XSUInteger      type;        /*! ... */
+    XSInteger       int_val;     /*! ... */
+    XSUInteger      uint_val;    /*! ... */
+    const char    * str_val;     /*! ... */
+    BOOL            flag_val;    /*! ... */
+    XSFloat         float_val;   /*! ... */
+    const char    * help;        /*! ... */
 };
 
 /*!

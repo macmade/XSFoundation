@@ -51,11 +51,11 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSData_Struct
 {
-    XSRuntimeClass __class;         /*! Runtime class */
-    UInt8        * bytes;           /*! ... */
-    XSUInteger     length;          /*! ... */
-    XSUInteger     capacity;        /*! ... */
-    XSUInteger     initialCapacity; /*! ... */
+    XSRuntimeClass * __class;         /*! Runtime class */
+    UInt8          * bytes;           /*! ... */
+    XSUInteger       length;          /*! ... */
+    XSUInteger       capacity;        /*! ... */
+    XSUInteger       initialCapacity; /*! ... */
 };
 
 /*!

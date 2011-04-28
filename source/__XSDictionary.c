@@ -62,7 +62,7 @@ XSClassID __XSDictionaryClassID;
 
 void __XSDictionary_Initialize( void )
 {
-    __XSDictionaryClassID = XSRuntime_RegisterClass( &__XSDictionaryClass );
+    __XSDictionaryClassID = XSRuntime_NewClass( &__XSDictionaryClass );
 }
 
 void __XSDictionary_Destruct( XSObject object )

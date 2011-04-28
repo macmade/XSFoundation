@@ -62,7 +62,7 @@ XSClassID __XSLockClassID;
 
 void __XSLock_Initialize( void )
 {
-    __XSLockClassID = XSRuntime_RegisterClass( &__XSLockClass );
+    __XSLockClassID = XSRuntime_NewClass( &__XSLockClass );
 }
 
 void __XSLock_Construct( XSObject object )

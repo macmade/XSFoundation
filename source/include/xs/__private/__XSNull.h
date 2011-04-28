@@ -51,7 +51,7 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSNull_Struct
 {
-    XSRuntimeClass __class;     /*! Runtime class */
+    XSRuntimeClass * __class;     /*! Runtime class */
 };
 
 /*!

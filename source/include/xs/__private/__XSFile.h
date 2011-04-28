@@ -51,19 +51,19 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSFile_Struct
 {
-    XSRuntimeClass __class;                     /*! Runtime class */
-    FILE         * fp;                          /*! The FILE pointer */
-    char           filename[ FILENAME_MAX ];    /*! The name of the file */
-    char           mode[ 4 ];                   /*! The file open mode */
-    BOOL           writeable;                   /*! Whether the file is writeable */
-    BOOL           readable;                    /*! Whether the file is readabe */
-    BOOL           is_stdin;                    /*! Wheter the file represents stdin */
-    BOOL           is_stdout;                   /*! Wheter the file represents stdout */
-    BOOL           is_stderr;                   /*! Wheter the file represents stderr */
-    uint8_t        bit_buffer;                  /*! Bit buffer */
-    uint8_t        bit_count;                   /*! Bit count */
-    uint8_t        bit_offset;                  /*! Offset for the bit buffer */
-    struct stat    stat_buf;                    /*! Stat informations */
+    XSRuntimeClass * __class;                     /*! Runtime class */
+    FILE           * fp;                          /*! The FILE pointer */
+    char             filename[ FILENAME_MAX ];    /*! The name of the file */
+    char             mode[ 4 ];                   /*! The file open mode */
+    BOOL             writeable;                   /*! Whether the file is writeable */
+    BOOL             readable;                    /*! Whether the file is readabe */
+    BOOL             is_stdin;                    /*! Wheter the file represents stdin */
+    BOOL             is_stdout;                   /*! Wheter the file represents stdout */
+    BOOL             is_stderr;                   /*! Wheter the file represents stderr */
+    uint8_t          bit_buffer;                  /*! Bit buffer */
+    uint8_t          bit_count;                   /*! Bit count */
+    uint8_t          bit_offset;                  /*! Offset for the bit buffer */
+    struct stat      stat_buf;                    /*! Stat informations */
 };
 
 /*!

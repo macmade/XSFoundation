@@ -51,12 +51,12 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSArray_Struct
 {
-    XSRuntimeClass __class;             /*! Runtime class */
-    XSUInteger     count;               /*! Number of elements in the array */
-    XSUInteger     capacity;            /*! Current array capacity */
-    XSUInteger     initialCapacity;     /*! Initial capacity of the array */
-    XSUInteger     cur;                 /*! Index of the current value */
-    XSObject     * values;              /*! Array values */
+    XSRuntimeClass * __class;             /*! Runtime class */
+    XSUInteger      count;               /*! Number of elements in the array */
+    XSUInteger      capacity;            /*! Current array capacity */
+    XSUInteger      initialCapacity;     /*! Initial capacity of the array */
+    XSUInteger      cur;                 /*! Index of the current value */
+    XSObject      * values;              /*! Array values */
 };
 
 /*!

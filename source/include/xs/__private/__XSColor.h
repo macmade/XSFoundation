@@ -51,15 +51,15 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSColor_Struct
 {
-    XSRuntimeClass __class;     /*! Runtime class */
-    XSFloat        red;         /*! ... */
-    XSFloat        green;       /*! ... */
-    XSFloat        blue;        /*! ... */
-    XSFloat        hue;         /*! ... */
-    XSFloat        saturation;  /*! ... */
-    XSFloat        value;       /*! ... */
-    XSFloat        luminance;   /*! ... */
-    XSFloat        alpha;       /*! ... */
+    XSRuntimeClass * __class;     /*! Runtime class */
+    XSFloat          red;         /*! ... */
+    XSFloat          green;       /*! ... */
+    XSFloat          blue;        /*! ... */
+    XSFloat          hue;         /*! ... */
+    XSFloat          saturation;  /*! ... */
+    XSFloat          value;       /*! ... */
+    XSFloat          luminance;   /*! ... */
+    XSFloat          alpha;       /*! ... */
 };
 
 /*!

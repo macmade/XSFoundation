@@ -62,7 +62,7 @@ XSClassID __XSNumberClassID;
 
 void __XSNumber_Initialize( void )
 {
-    __XSNumberClassID = XSRuntime_RegisterClass( &__XSNumberClass );
+    __XSNumberClassID = XSRuntime_NewClass( &__XSNumberClass );
 }
 
 XSString __XSNumber_ToString( XSObject object )

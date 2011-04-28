@@ -51,8 +51,8 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSNotificationCenter_Struct
 {
-    XSRuntimeClass __class;     /*! Runtime class */
-    XSDictionary   objects;     /*! ... */
+    XSRuntimeClass * __class;     /*! Runtime class */
+    XSDictionary     objects;     /*! ... */
 };
 
 /*!

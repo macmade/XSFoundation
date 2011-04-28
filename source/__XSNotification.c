@@ -62,7 +62,7 @@ XSClassID __XSNotificationClassID;
 
 void __XSNotification_Initialize( void )
 {
-    __XSNotificationClassID = XSRuntime_RegisterClass( &__XSNotificationClass );
+    __XSNotificationClassID = XSRuntime_NewClass( &__XSNotificationClass );
 }
 
 void __XSNotification_Destruct( XSObject object )

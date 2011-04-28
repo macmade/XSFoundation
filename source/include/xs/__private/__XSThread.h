@@ -51,10 +51,10 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSThread_Struct
 {
-    XSRuntimeClass __class;                             /*! Runtime class */
-    XSObject       arg;                                 /*! ... */
-    XSUInteger     tid;                                 /*! ... */
-    void ( * func )( XSThread thread, void * arg );     /*! ... */
+    XSRuntimeClass * __class;                             /*! Runtime class */
+    XSObject         arg;                                 /*! ... */
+    XSUInteger       tid;                                 /*! ... */
+    void ( * func )( XSThread thread, void * arg );       /*! ... */
 };
 
 /*!

@@ -51,9 +51,9 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSException_Struct
 {
-    XSRuntimeClass __class; /*! Runtime class */
-    XSInteger      code;    /*! The exception code */
-    XSString       reason;  /*! The exception reason */
+    XSRuntimeClass * __class; /*! Runtime class */
+    XSInteger        code;    /*! The exception code */
+    XSString         reason;  /*! The exception reason */
 };
 
 /*!

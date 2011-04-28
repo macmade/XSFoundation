@@ -62,7 +62,7 @@ XSClassID __XSBTreeClassID;
 
 void __XSBTree_Initialize( void )
 {
-    __XSBTreeClassID = XSRuntime_RegisterClass( &__XSBTreeClass );
+    __XSBTreeClassID = XSRuntime_NewClass( &__XSBTreeClass );
 }
 
 void __XSBTree_Destruct( XSObject object )

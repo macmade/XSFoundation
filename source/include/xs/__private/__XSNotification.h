@@ -51,9 +51,9 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSNotification_Struct
 {
-    XSRuntimeClass __class;     /*! Runtime class */
-    XSObject       object;      /*! ... */
-    XSString       name;        /*! ... */
+    XSRuntimeClass * __class;     /*! Runtime class */
+    XSObject         object;      /*! ... */
+    XSString         name;        /*! ... */
 };
 
 /*!

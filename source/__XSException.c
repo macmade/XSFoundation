@@ -62,7 +62,7 @@ XSClassID __XSExceptionClassID;
 
 void __XSException_Initialize( void )
 {
-    __XSExceptionClassID = XSRuntime_RegisterClass( &__XSExceptionClass );
+    __XSExceptionClassID = XSRuntime_NewClass( &__XSExceptionClass );
 }
 
 void __XSException_Destruct( XSObject object )

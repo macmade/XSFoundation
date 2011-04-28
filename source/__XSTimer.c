@@ -62,7 +62,7 @@ XSClassID __XSTimerClassID;
 
 void __XSTimer_Initialize( void )
 {
-    __XSTimerClassID = XSRuntime_RegisterClass( &__XSTimerClass );
+    __XSTimerClassID = XSRuntime_NewClass( &__XSTimerClass );
 }
 
 void __XSTimer_RunOnce( XSThread thread, void * object )

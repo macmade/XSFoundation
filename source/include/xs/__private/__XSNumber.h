@@ -68,23 +68,23 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSNumber_Struct
 {
-    XSRuntimeClass      __class;            /*! Runtime class */
-    uint16_t            types;              /*! ... */
-    BOOL                boolValue;          /*! ... */
-    signed char         sCharValue;         /*! ... */
-    unsigned char       uCharValue;         /*! ... */
-    signed short        sShortValue;        /*! ... */
-    unsigned short      uShortValue;        /*! ... */
-    signed int          sIntValue;          /*! ... */
-    unsigned int        uIntValue;          /*! ... */
-    signed long         sLongValue;         /*! ... */
-    unsigned long       uLongValue;         /*! ... */
-    signed long long    sLongLongValue;     /*! ... */
-    unsigned long long  uLongLongValue;     /*! ... */
-    float               floatValue;         /*! ... */
-    double              doubleValue;        /*! ... */
-    XSInteger           sIntegerValue;      /*! ... */
-    XSUInteger          uIntegerValue;      /*! ... */
+    XSRuntimeClass      * __class;            /*! Runtime class */
+    uint16_t              types;              /*! ... */
+    BOOL                  boolValue;          /*! ... */
+    signed char           sCharValue;         /*! ... */
+    unsigned char         uCharValue;         /*! ... */
+    signed short          sShortValue;        /*! ... */
+    unsigned short        uShortValue;        /*! ... */
+    signed int            sIntValue;          /*! ... */
+    unsigned int          uIntValue;          /*! ... */
+    signed long           sLongValue;         /*! ... */
+    unsigned long         uLongValue;         /*! ... */
+    signed long long      sLongLongValue;     /*! ... */
+    unsigned long long    uLongLongValue;     /*! ... */
+    float                 floatValue;         /*! ... */
+    double                doubleValue;        /*! ... */
+    XSInteger             sIntegerValue;      /*! ... */
+    XSUInteger            uIntegerValue;      /*! ... */
     
 };
 

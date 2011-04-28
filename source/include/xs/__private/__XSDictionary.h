@@ -51,12 +51,12 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSDictionary_Struct
 {
-    XSRuntimeClass __class;         /*! Runtime class */
-    XSObject     * values;          /*! The dictionary values */
-    XSString     * keys;            /*! The dictionary keys */
-    XSUInteger     count;           /*! The number of values in the dictionary */
-    XSUInteger     capacity;        /*! The dictionary capacity */
-    XSUInteger     initialCapacity; /*! The initial dictionary capacity */
+    XSRuntimeClass * __class;         /*! Runtime class */
+    XSObject       * values;          /*! The dictionary values */
+    XSString       * keys;            /*! The dictionary keys */
+    XSUInteger       count;           /*! The number of values in the dictionary */
+    XSUInteger       capacity;        /*! The dictionary capacity */
+    XSUInteger       initialCapacity; /*! The initial dictionary capacity */
 };
 
 /*!

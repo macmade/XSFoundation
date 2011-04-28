@@ -62,7 +62,7 @@ XSClassID __XSURLRequestClassID;
 
 void __XSURLRequest_Initialize( void )
 {
-    __XSURLRequestClassID = XSRuntime_RegisterClass( &__XSURLRequestClass );
+    __XSURLRequestClassID = XSRuntime_NewClass( &__XSURLRequestClass );
 }
 
 void __XSURLRequest_Construct( XSObject object )

@@ -51,10 +51,10 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSError_Struct
 {
-    XSRuntimeClass __class; /*! Runtime class */
-    XSInteger      code;    /*! The error code */
-    XSString      domain;   /*! The error domain */
-    XSString      reason;   /*! The error message */
+    XSRuntimeClass * __class; /*! Runtime class */
+    XSInteger        code;    /*! The error code */
+    XSString         domain;  /*! The error domain */
+    XSString         reason;  /*! The error message */
 };
 
 /*!

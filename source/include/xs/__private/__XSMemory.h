@@ -51,10 +51,10 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSAutoreleasePool_Struct
 {
-    XSRuntimeClass __class;     /*! Runtime class */
-    size_t         size;        /*! ... */
-    size_t         numObjects;  /*! ... */
-    void        ** objects;     /*! ... */
+    XSRuntimeClass * __class;     /*! Runtime class */
+    size_t           size;        /*! ... */
+    size_t           numObjects;  /*! ... */
+    void          ** objects;     /*! ... */
 };
 
 /*!

@@ -62,7 +62,7 @@ XSClassID __XSFileClassID;
 
 void __XSFile_Initialize( void )
 {
-    __XSFileClassID = XSRuntime_RegisterClass( &__XSFileClass );
+    __XSFileClassID = XSRuntime_NewClass( &__XSFileClass );
 }
 
 void __XSFile_WriteAlign( __XSFile * file )

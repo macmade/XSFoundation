@@ -51,13 +51,13 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSURL_Struct
 {
-    XSRuntimeClass __class;     /*! Runtime class */
-    XSString       scheme;      /*! ... */
-    XSString       domain;      /*! ... */
-    XSUInteger     port;        /*! ... */
-    XSString       path;        /*! ... */
-    XSString       query;       /*! ... */
-    XSString       fragment;    /*! ... */
+    XSRuntimeClass * __class;     /*! Runtime class */
+    XSString         scheme;      /*! ... */
+    XSString         domain;      /*! ... */
+    XSUInteger       port;        /*! ... */
+    XSString         path;        /*! ... */
+    XSString         query;       /*! ... */
+    XSString         fragment;    /*! ... */
 };
 
 /*!

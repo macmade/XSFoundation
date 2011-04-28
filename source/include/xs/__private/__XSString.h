@@ -51,11 +51,11 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSString_Struct
 {
-    XSRuntimeClass __class;             /*! Runtime class */
-    XSUInteger     length;              /*! ... */
-    XSUInteger     capacity;            /*! ... */
-    XSUInteger     initialCapacity;     /*! ... */
-    char         * str;                 /*! ... */
+    XSRuntimeClass * __class;             /*! Runtime class */
+    XSUInteger       length;              /*! ... */
+    XSUInteger       capacity;            /*! ... */
+    XSUInteger       initialCapacity;     /*! ... */
+    char           * str;                 /*! ... */
 };
 
 /*!

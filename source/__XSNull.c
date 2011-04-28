@@ -62,7 +62,7 @@ XSClassID __XSNullClassID;
 
 void __XSNull_Initialize( void )
 {
-    __XSNullClassID = XSRuntime_RegisterClass( &__XSNullClass );
+    __XSNullClassID = XSRuntime_NewClass( &__XSNullClass );
 }
 
 BOOL __XSNull_Equals( XSObject object1, XSObject object2 )

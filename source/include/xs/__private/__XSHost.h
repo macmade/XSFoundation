@@ -51,14 +51,14 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSHost_Struct
 {
-    XSRuntimeClass       __class;   /*! Runtime class */
-    XSString             host;      /*! ... */
-    XSString             ip;        /*! ... */
-    XSUInteger           port;      /*! ... */
-    struct addrinfo    * infos;     /*! ... */
-    struct addrinfo    * addr;      /*! ... */
-    struct sockaddr_in * sock;      /*! ... */
-    BOOL                 isCopy;    /*! ... */
+    XSRuntimeClass       * __class;   /*! Runtime class */
+    XSString               host;      /*! ... */
+    XSString               ip;        /*! ... */
+    XSUInteger             port;      /*! ... */
+    struct addrinfo      * infos;     /*! ... */
+    struct addrinfo      * addr;      /*! ... */
+    struct sockaddr_in   * sock;      /*! ... */
+    BOOL                   isCopy;    /*! ... */
 };
 
 /*!

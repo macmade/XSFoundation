@@ -62,7 +62,7 @@ XSClassID __XSErrorClassID;
 
 void __XSError_Initialize( void )
 {
-    __XSErrorClassID = XSRuntime_RegisterClass( &__XSErrorClass );
+    __XSErrorClassID = XSRuntime_NewClass( &__XSErrorClass );
 }
 
 void __XSError_Destruct( XSObject object )

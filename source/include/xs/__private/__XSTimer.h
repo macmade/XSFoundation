@@ -51,10 +51,10 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSTimer_Struct
 {
-    XSRuntimeClass __class;             /*! Runtime class */
-    BOOL           valid;               /*! ... */
-    XSUInteger     msecs;               /*! ... */
-    void ( * func )( XSTimer timer );   /*! ... */
+    XSRuntimeClass * __class;             /*! Runtime class */
+    BOOL             valid;               /*! ... */
+    XSUInteger       msecs;               /*! ... */
+    void ( * func )( XSTimer timer );     /*! ... */
     
 };
 

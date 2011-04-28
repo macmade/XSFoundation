@@ -51,11 +51,11 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSBTree_Struct
 {
-    XSRuntimeClass            __class;  /*! Runtime class */
-    XSObject                  value;    /* ... */
-    struct __XSBTree_Struct * left;     /* ... */
-    struct __XSBTree_Struct * right;    /* ... */
-    struct __XSBTree_Struct * parent;   /* ... */
+    XSRuntimeClass           * __class;  /*! Runtime class */
+    XSObject                   value;    /* ... */
+    struct __XSBTree_Struct  * left;     /* ... */
+    struct __XSBTree_Struct  * right;    /* ... */
+    struct __XSBTree_Struct  * parent;   /* ... */
 };
 
 /*!

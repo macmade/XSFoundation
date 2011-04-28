@@ -51,14 +51,14 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSURLRequest_Struct
 {
-    XSRuntimeClass __class;     /*! Runtime class */
-    XSURL          url;         /*! ... */
-    XSHost         host;        /*! ... */
-    XSInteger      socket;      /*! ... */
-    XSString       status;      /*! ... */
-    XSDictionary   headers;     /*! ... */
-    XSData         data;        /*! ... */
-    BOOL           started;     /*! ... */
+    XSRuntimeClass * __class;     /*! Runtime class */
+    XSURL            url;         /*! ... */
+    XSHost           host;        /*! ... */
+    XSInteger        socket;      /*! ... */
+    XSString         status;      /*! ... */
+    XSDictionary     headers;     /*! ... */
+    XSData           data;        /*! ... */
+    BOOL             started;     /*! ... */
 };
 
 /*!

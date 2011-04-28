@@ -51,12 +51,12 @@ XS_EXTERN_C_BEGIN
  */
 struct __XSBag_Struct
 {
-    XSRuntimeClass __class;             /* Runtime class */
-    XSObject     * values;              /* ... */
-    XSUInteger     count;               /* ... */
-    XSUInteger     capacity;            /* ... */
-    XSUInteger     initialCapacity;     /* ... */
-    XSUInteger     cur;                 /* ... */
+    XSRuntimeClass * __class;             /* Runtime class */
+    XSObject       * values;              /* ... */
+    XSUInteger      count;               /* ... */
+    XSUInteger      capacity;            /* ... */
+    XSUInteger      initialCapacity;     /* ... */
+    XSUInteger      cur;                 /* ... */
 };
 
 /*!

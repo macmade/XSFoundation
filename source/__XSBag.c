@@ -62,7 +62,7 @@ XSClassID __XSBagClassID;
 
 void __XSBag_Initialize( void )
 {
-    __XSBagClassID = XSRuntime_RegisterClass( &__XSBagClass );
+    __XSBagClassID = XSRuntime_NewClass( &__XSBagClass );
 }
 
 void __XSBag_Destruct( XSObject object )
