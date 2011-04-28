@@ -319,14 +319,14 @@ typedef void * XSObject;
  */
 struct XSClassInfos_Struct
 {
-    const char * className;                                                 /*! The name of the class */
-    size_t       instanceSize;                                              /*! The size of the class instances */
-    void         ( * construct )( XSObject object );                        /*! The class constructor */
-    void         ( * destruct  )( XSObject object );                        /*! The class destructor */
-    XSObject     ( * init      )( XSObject object );                        /*! The default object initializer */
-    void         ( * copy      )( XSObject source, XSObject destination );  /*! The object's copy callback */
-    XSString     ( * toString  )( XSObject object );                        /*! The object's description callback (used in XSLog) */
-    BOOL         ( * equals    )( XSObject object1, XSObject object2 );     /*! The object's comparison callback */
+    const char * className;                                                     /*! The name of the class */
+    size_t       instanceSize;                                                  /*! The size of the class instances */
+    void         ( * construct )( XSObject object );                            /*! The class constructor */
+    void         ( * destruct  )( XSObject object );                            /*! The class destructor */
+    XSObject     ( * init      )( XSObject object );                            /*! The default object initializer */
+    void         ( * copy      )( XSObject source, XSObject destination );      /*! The object's copy callback */
+    XSString     ( * toString  )( XSObject object );                            /*! The object's description callback (used in XSLog) */
+    BOOL         ( * equals    )( XSObject object1, XSObject object2 );         /*! The object's comparison callback */
 };
 
 /*!
@@ -336,12 +336,34 @@ struct XSClassInfos_Struct
 typedef struct XSClassInfos_Struct XSClassInfos;
 
 /*!
+ * @struct      ...
+ * @brief       ...
+ */
+struct XSMethod_Struct
+{
+    char     * name;            /*! ... */
+    XSUInteger modifiers;       /*! ... */
+    void ( * func )( void );    /*! ... */
+    
+};
+
+/*!
+ * @typedef     XSMethod
+ * @brief       ...
+ * @details     ...
+ */
+typedef struct XSMethod_Struct XSMethod;
+
+/*!
  * @struct      XSRuntimeClass_Struct
  * @brief       Base structure for the runtime classes
  */
 struct XSRuntimeClass_Struct
 {
-    XSClassInfos * classInfos;  /*! A pointer to the class structure for the object */
+    XSClassInfos * classInfos;      /*! ... */
+    XSMethod     * methods;         /*! ... */
+    XSUInteger     methodCount;     /*! ... */
+    XSUInteger     methodSize;      /*! ... */
 };
 
 /*!
@@ -356,7 +378,22 @@ typedef struct XSRuntimeClass_Struct XSRuntimeClass;
  * @typedef     XSClass
  * @brief       Polymorphism support - Generic type for all XSFoundation classes
  */
-typedef XSClassInfos * XSClass;
+typedef XSRuntimeClass * XSClass;
+
+/*!
+ * @struct      ...
+ * @brief       ...
+ */
+struct XSInstance_Struct
+{
+    XSRuntimeClass * __class;
+};
+
+/*!
+ * @typedef     XSMethod
+ * @brief       ...
+ */
+typedef struct XSInstance_Struct * XSInstance;
 
 /*!
  * @def         nil
