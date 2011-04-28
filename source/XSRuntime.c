@@ -145,11 +145,18 @@ void XSRuntime_Initialize( void )
 
 void XSRuntime_Finalize( void )
 {
+    XSUInteger i;
+    
     __inited = NO;
     
     XSDebugLog( XSDebugLogLevelDebug, "Finalizing the XSFoundation runtime" );
     
-    XSRelease( __class_table );
+    for( i = 0; i < __class_count; i++ )
+    {
+        free( __class_table[ i ].methods );
+    }
+    
+    free( __class_table );
 }
 
 XSClassID XSRuntime_NewClass( const XSClassInfos * const cls )
@@ -160,7 +167,7 @@ XSClassID XSRuntime_NewClass( const XSClassInfos * const cls )
     {
         XSDebugLog( XSDebugLogLevelDebug, "Allocating space for the class table" );
         
-        if( NULL == ( __class_table = ( XSRuntimeClass * )XSAlloc( sizeof( XSRuntimeClass ) * __XS_RUNTIME_CLASS_TABLE_SIZE ) ) )
+        if( NULL == ( __class_table = ( XSRuntimeClass * )calloc( sizeof( XSRuntimeClass ), __XS_RUNTIME_CLASS_TABLE_SIZE ) ) )
         {
             fprintf( stderr, "Error: unable to allocate the runtime class table!\n" );
             exit( EXIT_FAILURE );
@@ -173,7 +180,7 @@ XSClassID XSRuntime_NewClass( const XSClassInfos * const cls )
     {
         XSDebugLog( XSDebugLogLevelDebug, "Reallocating space for the class table" );
         
-        if( NULL == ( __class_table = ( XSRuntimeClass * )XSRealloc( __class_table, sizeof( XSRuntimeClass ) * ( __XS_RUNTIME_CLASS_TABLE_SIZE + __class_size ) ) ) )
+        if( NULL == ( __class_table = ( XSRuntimeClass * )realloc( __class_table, sizeof( XSRuntimeClass ) * ( __XS_RUNTIME_CLASS_TABLE_SIZE + __class_size ) ) ) )
         {
             fprintf( stderr, "Error: unable to re-allocate the runtime class table!\n" );
             exit( EXIT_FAILURE );
@@ -185,6 +192,12 @@ XSClassID XSRuntime_NewClass( const XSClassInfos * const cls )
     XSDebugLog( XSDebugLogLevelDebug, "Registering class: %s", cls->className );
     
     __class_table[ __class_count ].classInfos = ( XSClassInfos * )cls;
+    
+    if( NULL == ( __class_table[ __class_count ].methods = calloc( sizeof( XSMethod ), 100 ) ) )
+    {
+        fprintf( stderr, "Error: unable to allocate the class methods table!\n" );
+        exit( EXIT_FAILURE );
+    }
     
     return ++__class_count;
 }

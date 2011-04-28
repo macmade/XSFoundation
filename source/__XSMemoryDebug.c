@@ -570,7 +570,7 @@ void __XSMemoryDebug_Finalize( void )
 {
     size_t i;
     
-    if( __xs_memory_records_active <= 1 || __xs_memory_fault_caught == YES || __xs_memory_debug_enabled == NO )
+    if( __xs_memory_records_active == 0 || __xs_memory_fault_caught == YES || __xs_memory_debug_enabled == NO )
     {
         return;
     }

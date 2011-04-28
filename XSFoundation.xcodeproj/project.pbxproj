@@ -170,6 +170,8 @@
 		05C9A095135F6761000DFEC8 /* __XSURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSURLRequest.h; sourceTree = "<group>"; };
 		05C9A096135F676D000DFEC8 /* XSURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSURLRequest.h; sourceTree = "<group>"; };
 		05C9A0A313601F3D000DFEC8 /* XSDebugLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSDebugLog.h; sourceTree = "<group>"; };
+		05CE342013699082006FE71A /* __XSRuntime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSRuntime.c; sourceTree = "<group>"; };
+		05CE3422136990A9006FE71A /* __XSRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSRuntime.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -211,6 +213,7 @@
 				050C25E7135C8C3A0009766B /* __XSNotificationCenter.c */,
 				050C25E8135C8C3A0009766B /* __XSNull.c */,
 				050C25E9135C8C3A0009766B /* __XSNumber.c */,
+				05CE342013699082006FE71A /* __XSRuntime.c */,
 				050C25EA135C8C3A0009766B /* __XSSet.c */,
 				050C25EB135C8C3A0009766B /* __XSSort.c */,
 				050C25EC135C8C3A0009766B /* __XSString.c */,
@@ -400,6 +403,7 @@
 				050C261E135C8C3A0009766B /* __XSNotificationCenter.h */,
 				050C261F135C8C3A0009766B /* __XSNull.h */,
 				050C2620135C8C3A0009766B /* __XSNumber.h */,
+				05CE3422136990A9006FE71A /* __XSRuntime.h */,
 				050C2621135C8C3A0009766B /* __XSSet.h */,
 				050C2622135C8C3A0009766B /* __XSSort.h */,
 				050C2623135C8C3A0009766B /* __XSString.h */,
