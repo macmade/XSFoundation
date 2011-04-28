@@ -120,6 +120,13 @@ XSClassID XSRuntime_NewClass( const XSClassInfos * const cls )
     return ++__xsruntime_class_count;
 }
 
+void XSRuntime_BindMethodToClassID( XSClassID classID, void ( * func )( void ), const char * name )
+{
+    ( void )classID;
+    ( void )func;
+    ( void )name;
+}
+
 XSObject XSRuntime_CreateInstance( XSClassID typeID )
 {
     XSRuntimeClass * cls;
