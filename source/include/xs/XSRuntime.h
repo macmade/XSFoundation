@@ -67,17 +67,17 @@ void XSRuntime_Finalize( void );
  *              can use them and create instances.
  *              This function needs to be called once per class,
  *              ie using pthread_once().
- * @param       cls     The class structure to register
+ * @param       cls     The class information structure to register
  * @result      The runtime type ID for the class
  */
-XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls );
+XSClassID XSRuntime_NewClass( const XSClassInfos * const cls );
 
 /*!
  * @brief       Initializes a new instance of a class
  * @param       cls     The class structure
  * @result      The allocated instance
  */
-XSObject XSRuntime_CreateInstanceOfClass( const XSClassInfos * const cls );
+XSObject XSRuntime_CreateInstanceOfClass( XSClass cls );
 
 /*!
  * @brief       Initializes a new instance of a class with a specific name

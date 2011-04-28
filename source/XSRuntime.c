@@ -62,7 +62,7 @@ static BOOL __inited = NO;
  * @var         __class_table
  * @brief       The runtime class table
  */
-static XSClassInfos ** __class_table;
+static XSRuntimeClass * __class_table;
 
 /*!
  * @var         __class_size
@@ -151,7 +151,7 @@ void XSRuntime_Finalize( void )
     XSRelease( __class_table );
 }
 
-XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls )
+XSClassID XSRuntime_NewClass( const XSClassInfos * const cls )
 {
     __XS___XS_RUNTIME_INIT_CHECK_INIT_CHECK
     
@@ -159,7 +159,7 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls )
     {
         XSDebugLog( XSDebugLogLevelDebug, "Allocating space for the class table" );
         
-        if( NULL == ( __class_table = ( XSClassInfos ** )XSAlloc( sizeof( XSClassInfos * ) * __XS_RUNTIME_CLASS_TABLE_SIZE ) ) )
+        if( NULL == ( __class_table = ( XSRuntimeClass * )XSAlloc( sizeof( XSRuntimeClass ) * __XS_RUNTIME_CLASS_TABLE_SIZE ) ) )
         {
             fprintf( stderr, "Error: unable to allocate the runtime class table!\n" );
             exit( EXIT_FAILURE );
@@ -172,7 +172,7 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls )
     {
         XSDebugLog( XSDebugLogLevelDebug, "Reallocating space for the class table" );
         
-        if( NULL == ( __class_table = ( XSClassInfos ** )XSRealloc( __class_table, sizeof( XSClassInfos * ) * ( __XS_RUNTIME_CLASS_TABLE_SIZE + __class_size ) ) ) )
+        if( NULL == ( __class_table = ( XSRuntimeClass * )XSRealloc( __class_table, sizeof( XSRuntimeClass ) * ( __XS_RUNTIME_CLASS_TABLE_SIZE + __class_size ) ) ) )
         {
             fprintf( stderr, "Error: unable to re-allocate the runtime class table!\n" );
             exit( EXIT_FAILURE );
@@ -183,17 +183,16 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls )
     
     XSDebugLog( XSDebugLogLevelDebug, "Registering class: %s", cls->className );
     
-    __class_table[ __class_count ] = ( XSClassInfos * )cls;
+    __class_table[ __class_count ].classInfos = ( XSClassInfos * )cls;
     
     return ++__class_count;
 }
 
 XSObject XSRuntime_CreateInstance( XSClassID typeID )
 {
-    XSRuntimeClass * b;
-    XSClassInfos   * cls;
+    XSRuntimeClass * cls;
     size_t           size;
-    XSObject         o;
+    XSInstance       o;
     
     __XS___XS_RUNTIME_INIT_CHECK_INIT_CHECK
     
@@ -202,16 +201,15 @@ XSObject XSRuntime_CreateInstance( XSClassID typeID )
         return NULL;
     }
     
-    cls           = __class_table[ typeID - 1 ];
-    size          = sizeof( cls ) + cls->instanceSize;
+    cls           = &( __class_table[ typeID - 1 ] );
+    size          = cls->classInfos->instanceSize;
     o             = XSAlloc( size, typeID );
-    b             = ( XSRuntimeClass * )o;
-    b->classInfos = cls;
+    o->__class    = cls;
     
-    return o;
+    return ( XSObject )o;
 }
 
-XSObject XSRuntime_CreateInstanceOfClass( const XSClassInfos * const cls )
+XSObject XSRuntime_CreateInstanceOfClass( XSClass cls )
 {
     XSClassID classID;
     
@@ -232,9 +230,9 @@ XSObject XSRuntime_CreateInstanceOfClass( const XSClassInfos * const cls )
 
 XSObject XSRuntime_CreateInstanceOfClassWithName( const char * name )
 {
-    size_t         i;
-    XSObject       o;
-    XSClassInfos * cls;
+    size_t           i;
+    XSObject         o;
+    XSRuntimeClass * cls;
     
     if( name == NULL )
     {
@@ -243,15 +241,15 @@ XSObject XSRuntime_CreateInstanceOfClassWithName( const char * name )
     
     for( i = 0; i < __class_count; i++ )
     {
-        cls = __class_table[ i ];
+        cls = &( __class_table[ i ] );
         
-        if( strcmp( cls->className, name ) == 0 )
+        if( strcmp( cls->classInfos->className, name ) == 0 )
         {
             o = XSRuntime_CreateInstance( i + 1 );
             
-            if( cls->init != NULL )
+            if( cls->classInfos->init != NULL )
             {
-                return cls->init( o );
+                return cls->classInfos->init( o );
             }
         }
     }
@@ -264,7 +262,7 @@ const char * XSRuntime_ObjectDescription( void * ptr )
     XSString           description;
     XSString           str;
     __XSMemoryObject * o;
-    XSClassInfos     * cls;
+    XSClass            cls;
     
     if( ptr == NULL )
     {
@@ -277,14 +275,14 @@ const char * XSRuntime_ObjectDescription( void * ptr )
     }
     
     o   = __XSMemory_GetMemoryObject( ptr );
-    cls = ( XSClassInfos * )XSRuntime_GetClassForClassID( o->classID );
+    cls = XSRuntime_GetClassForClassID( o->classID );
     str = XSAutorelease( XSString_Init( XSString_Alloc() ) );
     
-    XSString_AppendFormat( str, ( char * )"<%s: %p>", cls->className, ptr );
+    XSString_AppendFormat( str, ( char * )"<%s: %p>", cls->classInfos->className, ptr );
     
-    if( cls->toString != NULL )
+    if( cls->classInfos->toString != NULL )
     {
-        description = cls->toString( ptr );
+        description = cls->classInfos->toString( ptr );
         XSString_AppendFormat( str, ( char * )" [ %s ]", XSString_CString( description ) );
     }
     
@@ -322,24 +320,21 @@ XSClass XSRuntime_GetClassForClassID( XSClassID classID )
         return NULL;
     }
     
-    return ( XSClass )__class_table[ classID - 1 ];
+    return ( XSClass )&( __class_table[ classID - 1 ] );
 }
 
 XSClassID XSRuntime_GetClassIDForClass( XSClass cls )
 {
     XSUInteger       i;
-    XSClassInfos * _cls;
     
     if( cls == NULL )
     {
         return 0;
     }
     
-    _cls = ( XSClassInfos * )cls;
-    
     for( i = 0; i < __class_count; i++ )
     {
-        if( __class_table[ i ] == _cls )
+        if( &( __class_table[ i ] ) == cls )
         {
             return i + 1;
         }
@@ -360,7 +355,7 @@ XSClass XSRuntime_GetClassForObject( XSObject object )
         return NULL;
     }
     
-    return ( ( XSRuntimeClass * )object )->classInfos;
+    return ( ( XSInstance )object )->__class;
 }
 
 XSClassID XSRuntime_GetTypeIDForObject( XSObject object )
@@ -385,21 +380,17 @@ const char * XSRuntime_GetClassNameForClassID( XSClassID classID )
         return "N/A";
     }
     
-    return __class_table[ classID - 1 ]->className;
+    return __class_table[ classID - 1 ].classInfos->className;
 }
 
 const char * XSRuntime_GetClassNameForClass( XSClass cls )
 {
-    XSClassInfos * _cls;
-    
     if( cls == NULL )
     {
         return NULL;
     }
     
-    _cls = ( XSClassInfos * )cls;
-    
-    return _cls->className;
+    return cls->classInfos->className;
 }
 
 const char * XSRuntime_GetClassNameForObject( XSObject object )
@@ -414,7 +405,7 @@ const char * XSRuntime_GetClassNameForObject( XSObject object )
         return NULL;
     }
     
-    return ( ( XSRuntimeClass * )object )->classInfos->className;
+    return ( ( XSInstance )object )->__class->classInfos->className;
 }
 
 BOOL XSRuntime_IsInstanceOfClass( XSObject object, XSClass cls )
@@ -429,7 +420,7 @@ BOOL XSRuntime_IsInstanceOfClass( XSObject object, XSClass cls )
         return NO;
     }
     
-    if( ( ( XSRuntimeClass * )object )->classInfos == cls )
+    if( ( ( XSInstance )object )->__class == cls )
     {
         return YES;
     }
