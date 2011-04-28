@@ -46,22 +46,6 @@ XS_EXTERN_C_BEGIN
 #include "XS.h"
 
 /*!
- * @brief       Initialize the XSFoundation runtime.
- * @details     Do not call this function. Use the XSFOUNDATION_START()
- *              macro instead.
- * @result      void
- */
-void XSRuntime_Initialize( void );
-
-/*!
- * @brief       Finilization the XSFoundation runtime.
- * @details     Do not call this function. Use the XSFOUNDATION_END()
- *              macro instead.
- * @result      void
- */
-void XSRuntime_Finalize( void );
-
-/*!
  * @brief       Registers a class for the runtime
  * @details     All runtime classes needs to be registered before the runtime
  *              can use them and create instances.

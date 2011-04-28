@@ -37,6 +37,113 @@
 
 #include "XS.h"
 #include "__XSRuntime.h"
+#include "__XSMemoryDebug.h"
+
+/*!
+ * @var         __xsruntime_inited
+ * @brief       Whether the XSFoundation runtime has been initialized
+ */
+BOOL __xsruntime_inited = NO;
+
+/*!
+ * @var         __class_table
+ * @brief       The runtime class table
+ */
+XSRuntimeClass * __xsruntime_class_table;
+
+/*!
+ * @var         __class_size
+ * @brief       The allocated size of the runtime class table
+ */
+size_t __xsruntime_class_size;
+
+/*!
+ * @var         __class_count
+ * @brief       The number of registered classes in the runtime class table
+ */
+size_t __xsruntime_class_count;
+
+/* Prototypes for the initialization of the core runtime classes */
+void __XSMemoryObject_Initialize( void );
+void __XSApplication_Initialize( void );
+void __XSApplicationArgument_Initialize( void );
+void __XSArray_Initialize( void );
+void __XSBag_Initialize( void );
+void __XSBool_Initialize( void );
+void __XSBTree_Initialize( void );
+void __XSColor_Initialize( void );
+void __XSData_Initialize( void );
+void __XSDictionary_Initialize( void );
+void __XSError_Initialize( void );
+void __XSException_Initialize( void );
+void __XSFile_Initialize( void );
+void __XSHost_Initialize( void );
+void __XSLock_Initialize( void );
+void __XSNull_Initialize( void );
+void __XSNotification_Initialize( void );
+void __XSNotificationCenter_Initialize( void );
+void __XSNumber_Initialize( void );
+void __XSSet_Initialize( void );
+void __XSString_Initialize( void );
+void __XSThread_Initialize( void );
+void __XSTimer_Initialize( void );
+void __XSURL_Initialize( void );
+void __XSURLRequest_Initialize( void );
+
+void __XSRuntime_Initialize( void )
+{
+    XSDebugLog( XSDebugLogLevelDebug, "Initializing the XSFoundation runtime" );
+    
+    __xsruntime_inited = YES;
+    
+    atexit( __XSRuntime_Finalize );
+    atexit( __XSMemoryDebug_Finalize );
+    atexit( XSApplication_Exit );
+    
+    __XSMemoryDebug_InstallSignalHandlers();
+    
+    __XSAutoreleasePool_Initialize();
+    __XSArray_Initialize();
+    __XSApplication_Initialize();
+    __XSApplicationArgument_Initialize();
+    __XSBag_Initialize();
+    __XSBool_Initialize();
+    __XSBTree_Initialize();
+    __XSColor_Initialize();
+    __XSData_Initialize();
+    __XSDictionary_Initialize();
+    __XSError_Initialize();
+    __XSException_Initialize();
+    __XSFile_Initialize();
+    __XSHost_Initialize();
+    __XSLock_Initialize();
+    __XSNotification_Initialize();
+    __XSNotificationCenter_Initialize();
+    __XSNull_Initialize();
+    __XSNumber_Initialize();
+    __XSSet_Initialize();
+    __XSString_Initialize();
+    __XSThread_Initialize();
+    __XSTimer_Initialize();
+    __XSURL_Initialize();
+    __XSURLRequest_Initialize();
+}
+
+void __XSRuntime_Finalize( void )
+{
+    XSUInteger i;
+    
+    __xsruntime_inited = NO;
+    
+    XSDebugLog( XSDebugLogLevelDebug, "Finalizing the XSFoundation runtime" );
+    
+    for( i = 0; i < __xsruntime_class_count; i++ )
+    {
+        free( __xsruntime_class_table[ i ].methods );
+    }
+    
+    free( __xsruntime_class_table );
+}
 
 XSMethod * __XSRuntime_FindMethod( XSClass cls, char * name )
 {

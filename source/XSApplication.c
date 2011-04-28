@@ -37,6 +37,7 @@
 
 #include "XS.h"
 #include "__XSApplication.h"
+#include "__XSRuntime.h"
 
 extern XSClassID __XSApplicationClassID;
 
@@ -66,7 +67,7 @@ XSStatic XSApplication XSApplication_Start( int argc, const char ** argv )
     XSExceptionContext        = &__XSExceptionContext;
     XSExceptionContext->e_env = 0;
     
-    XSRuntime_Initialize();
+    __XSRuntime_Initialize();
     
     __xsapp = ( __XSApplication * )XSApplication_Init( XSApplication_Alloc() );
     __xsarp = ( XSAutoreleasePool )XSAutoreleasePool_Init( XSAutoreleasePool_Alloc() );

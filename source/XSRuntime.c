@@ -51,155 +51,73 @@
  * @brief       Checks if the runtime has been initialized
  * @details     This macro will produce a fatal error if the runtime has not been initialized.
  */
-#define __XS___XS_RUNTIME_INIT_CHECK_INIT_CHECK         if( __inited == NO ) { XSFatalError( "Error: the runtime has not been initialized\n" ) }
+#define __XS___XS_RUNTIME_INIT_CHECK_INIT_CHECK         if( __xsruntime_inited == NO ) { XSFatalError( "Error: the runtime has not been initialized\n" ) }
 
 /*!
- * @var         __inited
+ * @var         __xsruntime_inited
  * @brief       Whether the XSFoundation runtime has been initialized
  */
-static BOOL __inited = NO;
+extern BOOL __xsruntime_inited;
 
 /*!
  * @var         __class_table
  * @brief       The runtime class table
  */
-static XSRuntimeClass * __class_table;
+extern XSRuntimeClass * __xsruntime_class_table;
 
 /*!
  * @var         __class_size
  * @brief       The allocated size of the runtime class table
  */
-static size_t __class_size;
+extern size_t __xsruntime_class_size;
 
 /*!
  * @var         __class_count
  * @brief       The number of registered classes in the runtime class table
  */
-static size_t __class_count;
-
-/* Prototypes for the initialization of the core runtime classes */
-void __XSMemoryObject_Initialize( void );
-void __XSApplication_Initialize( void );
-void __XSApplicationArgument_Initialize( void );
-void __XSArray_Initialize( void );
-void __XSBag_Initialize( void );
-void __XSBool_Initialize( void );
-void __XSBTree_Initialize( void );
-void __XSColor_Initialize( void );
-void __XSData_Initialize( void );
-void __XSDictionary_Initialize( void );
-void __XSError_Initialize( void );
-void __XSException_Initialize( void );
-void __XSFile_Initialize( void );
-void __XSHost_Initialize( void );
-void __XSLock_Initialize( void );
-void __XSNull_Initialize( void );
-void __XSNotification_Initialize( void );
-void __XSNotificationCenter_Initialize( void );
-void __XSNumber_Initialize( void );
-void __XSSet_Initialize( void );
-void __XSString_Initialize( void );
-void __XSThread_Initialize( void );
-void __XSTimer_Initialize( void );
-void __XSURL_Initialize( void );
-void __XSURLRequest_Initialize( void );
-
-void XSRuntime_Initialize( void )
-{
-    XSDebugLog( XSDebugLogLevelDebug, "Initializing the XSFoundation runtime" );
-    
-    __inited = YES;
-    
-    atexit( XSRuntime_Finalize );
-    atexit( __XSMemoryDebug_Finalize );
-    atexit( XSApplication_Exit );
-    
-    __XSMemoryDebug_InstallSignalHandlers();
-    
-    __XSAutoreleasePool_Initialize();
-    __XSArray_Initialize();
-    __XSApplication_Initialize();
-    __XSApplicationArgument_Initialize();
-    __XSBag_Initialize();
-    __XSBool_Initialize();
-    __XSBTree_Initialize();
-    __XSColor_Initialize();
-    __XSData_Initialize();
-    __XSDictionary_Initialize();
-    __XSError_Initialize();
-    __XSException_Initialize();
-    __XSFile_Initialize();
-    __XSHost_Initialize();
-    __XSLock_Initialize();
-    __XSNotification_Initialize();
-    __XSNotificationCenter_Initialize();
-    __XSNull_Initialize();
-    __XSNumber_Initialize();
-    __XSSet_Initialize();
-    __XSString_Initialize();
-    __XSThread_Initialize();
-    __XSTimer_Initialize();
-    __XSURL_Initialize();
-    __XSURLRequest_Initialize();
-}
-
-void XSRuntime_Finalize( void )
-{
-    XSUInteger i;
-    
-    __inited = NO;
-    
-    XSDebugLog( XSDebugLogLevelDebug, "Finalizing the XSFoundation runtime" );
-    
-    for( i = 0; i < __class_count; i++ )
-    {
-        free( __class_table[ i ].methods );
-    }
-    
-    free( __class_table );
-}
+extern size_t __xsruntime_class_count;
 
 XSClassID XSRuntime_NewClass( const XSClassInfos * const cls )
 {
     __XS___XS_RUNTIME_INIT_CHECK_INIT_CHECK
     
-    if( __class_size == 0 )
+    if( __xsruntime_class_size == 0 )
     {
         XSDebugLog( XSDebugLogLevelDebug, "Allocating space for the class table" );
         
-        if( NULL == ( __class_table = ( XSRuntimeClass * )calloc( sizeof( XSRuntimeClass ), __XS_RUNTIME_CLASS_TABLE_SIZE ) ) )
+        if( NULL == ( __xsruntime_class_table = ( XSRuntimeClass * )calloc( sizeof( XSRuntimeClass ), __XS_RUNTIME_CLASS_TABLE_SIZE ) ) )
         {
             fprintf( stderr, "Error: unable to allocate the runtime class table!\n" );
             exit( EXIT_FAILURE );
         }
         
-        __class_size += __XS_RUNTIME_CLASS_TABLE_SIZE;
+        __xsruntime_class_size += __XS_RUNTIME_CLASS_TABLE_SIZE;
     }
     
-    if( __class_count == __class_size )
+    if( __xsruntime_class_count == __xsruntime_class_size )
     {
         XSDebugLog( XSDebugLogLevelDebug, "Reallocating space for the class table" );
         
-        if( NULL == ( __class_table = ( XSRuntimeClass * )realloc( __class_table, sizeof( XSRuntimeClass ) * ( __XS_RUNTIME_CLASS_TABLE_SIZE + __class_size ) ) ) )
+        if( NULL == ( __xsruntime_class_table = ( XSRuntimeClass * )realloc( __xsruntime_class_table, sizeof( XSRuntimeClass ) * ( __XS_RUNTIME_CLASS_TABLE_SIZE + __xsruntime_class_size ) ) ) )
         {
             fprintf( stderr, "Error: unable to re-allocate the runtime class table!\n" );
             exit( EXIT_FAILURE );
         }
         
-        __class_size += __XS_RUNTIME_CLASS_TABLE_SIZE;
+        __xsruntime_class_size += __XS_RUNTIME_CLASS_TABLE_SIZE;
     }
     
     XSDebugLog( XSDebugLogLevelDebug, "Registering class: %s", cls->className );
     
-    __class_table[ __class_count ].classInfos = ( XSClassInfos * )cls;
+    __xsruntime_class_table[ __xsruntime_class_count ].classInfos = ( XSClassInfos * )cls;
     
-    if( NULL == ( __class_table[ __class_count ].methods = calloc( sizeof( XSMethod ), 100 ) ) )
+    if( NULL == ( __xsruntime_class_table[ __xsruntime_class_count ].methods = calloc( sizeof( XSMethod ), 100 ) ) )
     {
         fprintf( stderr, "Error: unable to allocate the class methods table!\n" );
         exit( EXIT_FAILURE );
     }
     
-    return ++__class_count;
+    return ++__xsruntime_class_count;
 }
 
 XSObject XSRuntime_CreateInstance( XSClassID typeID )
@@ -210,12 +128,12 @@ XSObject XSRuntime_CreateInstance( XSClassID typeID )
     
     __XS___XS_RUNTIME_INIT_CHECK_INIT_CHECK
     
-    if( typeID > __class_count || typeID == 0 )
+    if( typeID > __xsruntime_class_count || typeID == 0 )
     {
         return NULL;
     }
     
-    cls           = &( __class_table[ typeID - 1 ] );
+    cls           = &( __xsruntime_class_table[ typeID - 1 ] );
     size          = cls->classInfos->instanceSize;
     o             = XSAlloc( size, typeID );
     
@@ -257,9 +175,9 @@ XSObject XSRuntime_CreateInstanceOfClassWithName( const char * name )
         return NULL;
     }
     
-    for( i = 0; i < __class_count; i++ )
+    for( i = 0; i < __xsruntime_class_count; i++ )
     {
-        cls = &( __class_table[ i ] );
+        cls = &( __xsruntime_class_table[ i ] );
         
         if( strcmp( cls->classInfos->className, name ) == 0 )
         {
@@ -333,12 +251,12 @@ XSClass XSRuntime_GetClassForClassID( XSClassID classID )
         return NULL;
     }
     
-    if( classID > __class_count )
+    if( classID > __xsruntime_class_count )
     {
         return NULL;
     }
     
-    return ( XSClass )&( __class_table[ classID - 1 ] );
+    return ( XSClass )&( __xsruntime_class_table[ classID - 1 ] );
 }
 
 XSClassID XSRuntime_GetClassIDForClass( XSClass cls )
@@ -350,9 +268,9 @@ XSClassID XSRuntime_GetClassIDForClass( XSClass cls )
         return 0;
     }
     
-    for( i = 0; i < __class_count; i++ )
+    for( i = 0; i < __xsruntime_class_count; i++ )
     {
-        if( &( __class_table[ i ] ) == cls )
+        if( &( __xsruntime_class_table[ i ] ) == cls )
         {
             return i + 1;
         }
@@ -393,12 +311,12 @@ XSClassID XSRuntime_GetTypeIDForObject( XSObject object )
 
 const char * XSRuntime_GetClassNameForClassID( XSClassID classID )
 {
-    if( classID == 0 || classID > __class_count )
+    if( classID == 0 || classID > __xsruntime_class_count )
     {
         return "N/A";
     }
     
-    return __class_table[ classID - 1 ].classInfos->className;
+    return __xsruntime_class_table[ classID - 1 ].classInfos->className;
 }
 
 const char * XSRuntime_GetClassNameForClass( XSClass cls )

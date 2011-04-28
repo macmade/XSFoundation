@@ -45,6 +45,22 @@ XS_EXTERN_C_BEGIN
 
 #include "XS.h"
 
+/*!
+ * @brief       Initialize the XSFoundation runtime.
+ * @result      void
+ */
+void __XSRuntime_Initialize( void );
+
+/*!
+ * @brief       Finilization the XSFoundation runtime.
+ * @result      void
+ */
+void __XSRuntime_Finalize( void );
+
+/*!
+ * @brief       ..
+ * @result      ...
+ */
 XSMethod * __XSRuntime_FindMethod( XSClass cls, char * name );
 
 XS_EXTERN_C_END
