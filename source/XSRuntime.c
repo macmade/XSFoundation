@@ -205,7 +205,11 @@ XSObject XSRuntime_CreateInstance( XSClassID typeID )
     cls           = &( __class_table[ typeID - 1 ] );
     size          = cls->classInfos->instanceSize;
     o             = XSAlloc( size, typeID );
-    o->__class    = cls;
+    
+    if( o != NULL )
+    {
+        o->__class = cls;
+    }
     
     return ( XSObject )o;
 }
