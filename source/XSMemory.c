@@ -92,7 +92,7 @@ void * XSAllocWithInfos( const char * file, int line, const char * func, size_t 
     __XSMemoryObject   * o;
     char               * ptr;
     XSClassID            classID;
-    const XSClassInfos * cls;
+    XSClass              cls;
     
     va_start( args, size );
     
@@ -154,9 +154,9 @@ void * XSAllocWithInfos( const char * file, int line, const char * func, size_t 
     {
         cls = XSRuntime_GetClassForClassID( o->classID );
         
-        if(  cls != NULL && cls->construct != NULL )
+        if( cls != NULL && cls->classInfos->construct != NULL )
         {
-            cls->construct( ptr );
+            cls->classInfos->construct( ptr );
         }
     }
     
@@ -230,8 +230,8 @@ void * XSRetain( void * ptr )
 
 void * XSReleaseWithInfos( const char * file, int line, const char * func, void * ptr )
 {
-    __XSMemoryObject   * o;
-    const XSClassInfos * cls;
+    __XSMemoryObject * o;
+    XSClass            cls;
     
     if( ptr == NULL )
     {
@@ -253,9 +253,9 @@ void * XSReleaseWithInfos( const char * file, int line, const char * func, void 
         {
             cls = XSRuntime_GetClassForClassID( o->classID );
             
-            if( cls != NULL && cls->destruct != NULL )
+            if( cls != NULL && cls->classInfos->destruct != NULL )
             {
-                cls->destruct( ptr );
+                cls->classInfos->destruct( ptr );
             }
         }
         
@@ -316,9 +316,9 @@ void * XSAutoAllocWithInfos( const char * file, int line, const char * func, siz
 
 void * XSCopyWithInfos( const char * file, int line, const char * func, void * ptr )
 {
-    __XSMemoryObject   * o;
-    void               * ptr2;
-    const XSClassInfos * cls;
+    __XSMemoryObject * o;
+    void             * ptr2;
+    XSClass            cls;
     
     if( ptr == NULL )
     {
@@ -339,9 +339,9 @@ void * XSCopyWithInfos( const char * file, int line, const char * func, void * p
         
         memcpy( ptr2, o->data, o->size );
         
-        if(  cls != NULL && cls->copy != NULL )
+        if(  cls != NULL && cls->classInfos->copy != NULL )
         {
-            cls->copy( ptr, ptr2 );
+            cls->classInfos->copy( ptr, ptr2 );
         }
     }
     else
@@ -361,8 +361,8 @@ void * XSCopyWithInfos( const char * file, int line, const char * func, void * p
 
 BOOL XSEquals( void * ptr1, void * ptr2 )
 {
-    __XSMemoryObject   * o;
-    const XSClassInfos * cls;
+    __XSMemoryObject * o;
+    XSClass            cls;
     
     if( ptr1 == NULL && ptr2 == NULL )
     {
@@ -380,9 +380,9 @@ BOOL XSEquals( void * ptr1, void * ptr2 )
     {
         cls = XSRuntime_GetClassForClassID( o->classID );
         
-        if(  cls != NULL && cls->equals != NULL )
+        if(  cls != NULL && cls->classInfos->equals != NULL )
         {
-            return cls->equals( ptr1, ptr2 );
+            return cls->classInfos->equals( ptr1, ptr2 );
         }
     }
     
@@ -391,9 +391,9 @@ BOOL XSEquals( void * ptr1, void * ptr2 )
 
 const char * XSHash( void * ptr )
 {
-    __XSMemoryObject   * o;
-    const XSClassInfos * cls;
-    Str255               size;
+    __XSMemoryObject * o;
+    XSClass            cls;
+    Str255             size;
     
     o = __XSMemory_GetMemoryObject( ptr );
     
@@ -406,12 +406,12 @@ const char * XSHash( void * ptr )
     {
         cls = XSRuntime_GetClassForClassID( o->classID );
         
-        utoa( cls->instanceSize, ( char * )size, 10 );
+        utoa( cls->classInfos->instanceSize, ( char * )size, 10 );
 
         strcat( ( char * )o->hash, "HASH:" );
         sprintf( ( char * )( o->hash + strlen( ( char * )o->hash ) ), "%08X", ( unsigned int )o->classID );
         strcat( ( char * )o->hash, ":" );
-        strcat( ( char * )o->hash, cls->className );
+        strcat( ( char * )o->hash, cls->classInfos->className );
         strcat( ( char * )o->hash, ":" );
         sprintf( ( char * )( o->hash + strlen( ( char * )o->hash ) ), "%08X", ( unsigned int )o->allocID );
         strcat( ( char * )o->hash, ":" );
