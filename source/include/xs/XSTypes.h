@@ -341,9 +341,9 @@ typedef struct XSClassInfos_Struct XSClassInfos;
  */
 struct XSMethod_Struct
 {
+    void   ( * func )( void );  /*! ... */
     char     * name;            /*! ... */
     XSUInteger modifiers;       /*! ... */
-    void ( * func )( void );    /*! ... */
     
 };
 
