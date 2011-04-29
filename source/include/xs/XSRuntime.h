@@ -66,6 +66,14 @@ XSClassID XSRuntime_NewClass( const XSClassInfos * const cls );
 void XSRuntime_BindMethodToClassID( XSClassID classID, void ( * func )( void ), const char * name );
 
 /*!
+ * @brief       ...
+ * @param       object      ...
+ * @param       name        ...
+ * @result      ...
+ */
+XSMethod * XSRuntime_GetMethod( XSObject object, const char * name );
+
+/*!
  * @brief       Initializes a new instance of a class
  * @param       cls     The class structure
  * @result      The allocated instance
@@ -113,6 +121,13 @@ XSClass XSRuntime_GetClassForClassID( XSClassID classID );
  * @result      The class ID of the class
  */
 XSClassID XSRuntime_GetClassIDForClass( XSClass cls );
+
+/*!
+ * @brief       ...
+ * @param       name    The class ID
+ * @result      ...
+ */
+XSClassID XSRuntime_GetClassIDForClassWithName( const char * name );
 
 /*!
  * @brief       Gets the class for an object
