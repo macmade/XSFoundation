@@ -86,6 +86,12 @@ XS_EXTERN_C_BEGIN
  */
 #define XSCall( cName, obj, mName, ... ) ( ( cName ## _ ## mName ## _Function * )XSRuntime_GetMethod( obj, #mName ) )->func( ( cName ## _ ## mName ## _Arguments ){ obj, __VA_ARGS__ } )
 
+/*!
+ * @def     XSNew
+ * @param   cName   ...
+ */
+#define XSNew( cName ) cName ## _ ## Alloc()
+
 XS_EXTERN_C_END
 
 #endif /* _XS_MACROS_OOP_H_ */
