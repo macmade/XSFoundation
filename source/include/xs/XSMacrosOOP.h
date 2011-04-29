@@ -45,16 +45,46 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @def     XSDeclareMethod
+ * @def     XSMethodPrototype
+ * @param   cName   ...
+ * @param   rType   ...
+ * @param   mName   ...
  */
 #define XSMethodPrototype( cName, rType, mName, ... )                           \
     typedef struct cName ## _ ## mName ## _Arguments_Struct                     \
         __VA_ARGS__                                                             \
-    cName ## _ ## mName ## _arguments;                                          \
-    rType cName ## _ ## mName( cName ## _ ## mName ## _Arguments arguments );
-
-#define XSMethodImplementation( cName, rType, mName, ... )                      \
+    cName ## _ ## mName ## _Arguments;                                          \
+    typedef struct cName ## _ ## mName ## _Function_Struct                      \
+    {                                                                           \
+        rType ( * func )( cName ## _ ## mName ## _Arguments arguments );        \
+    }                                                                           \
+    cName ## _ ## mName ## _Function;                                           \
     rType cName ## _ ## mName( cName ## _ ## mName ## _Arguments arguments )
+
+/*!
+ * @def     XSMethodImplementation
+ * @param   cName   ...
+ * @param   rType   ...
+ * @param   mName   ...
+ * @param   ...     ...
+ */
+#define XSMethodImplementation( cName, rType, mName, ... ) rType cName ## _ ## mName( cName ## _ ## mName ## _Arguments arguments )
+
+/*!
+ * @def     XSBindMethodToClass
+ * @param   cName   ...
+ * @param   mName   ...
+ */
+#define XSBindMethodToClass( cName, mName ) XSRuntime_BindMethodToClassID( XSRuntime_GetClassIDForClassWithName( #cName ), ( void ( * )( void ) )cName ## _ ## mName, #mName )
+
+/*!
+ * @def     XSCall
+ * @param   cName   ...
+ * @param   obj     ...
+ * @param   mName   ...
+ * @param   ...     ...
+ */
+#define XSCall( cName, obj, mName, ... ) ( ( cName ## _ ## mName ## _Function * )XSRuntime_GetMethod( obj, #mName ) )->func( ( cName ## _ ## mName ## _Arguments ){ obj, __VA_ARGS__ } )
 
 XS_EXTERN_C_END
 
