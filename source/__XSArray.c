@@ -62,7 +62,7 @@ XSClassID __XSArrayClassID;
 
 void __XSArray_Initialize( void )
 {
-    __XSArrayClassID = XSRuntime_NewClass( &__XSArrayClass );
+    __XSArrayClassID = XSRuntime_RegisterClass( &__XSArrayClass );
 }
 
 void __XSArray_Destruct( XSObject object )

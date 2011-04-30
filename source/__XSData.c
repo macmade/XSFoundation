@@ -62,7 +62,7 @@ XSClassID __XSDataClassID;
 
 void __XSData_Initialize( void )
 {
-    __XSDataClassID = XSRuntime_NewClass( &__XSDataClass );
+    __XSDataClassID = XSRuntime_RegisterClass( &__XSDataClass );
 }
 
 void __XSData_Destruct( XSObject object )

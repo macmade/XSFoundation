@@ -62,7 +62,7 @@ XSClassID __XSStringClassID;
 
 void __XSString_Initialize( void )
 {
-    __XSStringClassID = XSRuntime_NewClass( &__XSStringClass );
+    __XSStringClassID = XSRuntime_RegisterClass( &__XSStringClass );
 }
 
 void __XSString_Destruct( XSObject object )

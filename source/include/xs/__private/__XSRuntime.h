@@ -57,14 +57,6 @@ void __XSRuntime_Initialize( void );
  */
 void __XSRuntime_Finalize( void );
 
-/*!
- * @brief       ...
- * @param       cls     ...
- * @param       name    ...
- * @result      ...
- */
-XSMethod * __XSRuntime_FindMethod( XSClass cls, char * name );
-
 XS_EXTERN_C_END
 
 #endif /* ___XS_RUNTIME_H_ */

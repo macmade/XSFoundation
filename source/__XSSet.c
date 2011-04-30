@@ -62,7 +62,7 @@ XSClassID __XSSetClassID;
 
 void __XSSet_Initialize( void )
 {
-    __XSSetClassID = XSRuntime_NewClass( &__XSSetClass );
+    __XSSetClassID = XSRuntime_RegisterClass( &__XSSetClass );
 }
 
 void __XSSet_Destruct( XSObject object )

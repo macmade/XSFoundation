@@ -62,7 +62,7 @@ XSClassID __XSThreadClassID;
 
 void __XSThread_Initialize( void )
 {
-    __XSThreadClassID = XSRuntime_NewClass( &__XSThreadClass );
+    __XSThreadClassID = XSRuntime_RegisterClass( &__XSThreadClass );
 }
 
 BOOL __XSThread_Equals( XSObject object1, XSObject object2 )

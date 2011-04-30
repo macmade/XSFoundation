@@ -62,7 +62,7 @@ XSClassID __XSURLClassID;
 
 void __XSURL_Initialize( void )
 {
-    __XSURLClassID = XSRuntime_NewClass( &__XSURLClass );
+    __XSURLClassID = XSRuntime_RegisterClass( &__XSURLClass );
 }
 
 void __XSURL_Destruct( XSObject object )

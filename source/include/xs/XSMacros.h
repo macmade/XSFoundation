@@ -115,7 +115,6 @@ XS_EXTERN_C_BEGIN
 
 #include "XSMacrosTarget.h"
 #include "XSMacrosException.h"
-#include "XSMacrosOOP.h"
 
 /*!
  * @def         XSSTR

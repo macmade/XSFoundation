@@ -62,7 +62,7 @@ XSClassID __XSApplicationClassID;
 
 void __XSApplication_Initialize( void )
 {
-    __XSApplicationClassID = XSRuntime_NewClass( &__XSApplicationClass );
+    __XSApplicationClassID = XSRuntime_RegisterClass( &__XSApplicationClass );
 }
 
 void __XSApplication_Construct( XSObject object )

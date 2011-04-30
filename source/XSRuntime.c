@@ -77,7 +77,7 @@ extern size_t __xsruntime_class_size;
  */
 extern size_t __xsruntime_class_count;
 
-XSClassID XSRuntime_NewClass( const XSClassInfos * const cls )
+XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls )
 {
     __XS___XS_RUNTIME_INIT_CHECK_INIT_CHECK
     
@@ -111,53 +111,7 @@ XSClassID XSRuntime_NewClass( const XSClassInfos * const cls )
     
     __xsruntime_class_table[ __xsruntime_class_count ].classInfos = ( XSClassInfos * )cls;
     
-    if( NULL == ( __xsruntime_class_table[ __xsruntime_class_count ].methods = calloc( sizeof( XSMethod ), 100 ) ) )
-    {
-        fprintf( stderr, "Error: unable to allocate the class methods table!\n" );
-        exit( EXIT_FAILURE );
-    }
-    
     return ++__xsruntime_class_count;
-}
-
-void XSRuntime_BindMethodToClassID( XSClassID classID, void ( * func )( void ), const char * name )
-{
-    XSRuntimeClass * cls;
-    XSMethod       * method;
-    
-    if( classID > __xsruntime_class_count )
-    {
-        return;
-    }
-    
-    cls = &( __xsruntime_class_table[ classID - 1 ] );
-    
-    if( cls->methodCount == cls->methodSize )
-    {
-        if( NULL == ( cls->methods = realloc( cls->methods, sizeof( XSMethod ) * ( cls->methodCount + 100 ) ) ) )
-        {
-            fprintf( stderr, "Error: unable to re-allocate the class methods table!\n" );
-            exit( EXIT_FAILURE );
-        }
-    }
-    
-    method       = &( cls->methods[ cls->methodCount++ ] );
-    method->name = ( char * )name;
-    method->func = func;
-}
-
-XSMethod * XSRuntime_GetMethod( XSObject object, const char * name )
-{
-    XSClass cls;
-    
-    cls = XSRuntime_GetClassForObject( object );
-    
-    if( cls == NULL )
-    {
-        return NULL;
-    }
-    
-    return __XSRuntime_FindMethod( cls, ( char * )name );
 }
 
 XSObject XSRuntime_CreateInstance( XSClassID typeID )

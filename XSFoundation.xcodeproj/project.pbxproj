@@ -172,7 +172,6 @@
 		05C9A0A313601F3D000DFEC8 /* XSDebugLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSDebugLog.h; sourceTree = "<group>"; };
 		05CE342013699082006FE71A /* __XSRuntime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSRuntime.c; sourceTree = "<group>"; };
 		05CE3422136990A9006FE71A /* __XSRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSRuntime.h; sourceTree = "<group>"; };
-		05CE34231369A417006FE71A /* XSMacrosOOP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMacrosOOP.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -359,7 +358,6 @@
 				050C2633135C8C3A0009766B /* XSLock.h */,
 				050C2634135C8C3A0009766B /* XSLog.h */,
 				050C2635135C8C3A0009766B /* XSMacros.h */,
-				05CE34231369A417006FE71A /* XSMacrosOOP.h */,
 				050C2636135C8C3A0009766B /* XSMacrosTarget.h */,
 				0524117513612C5500CAF423 /* XSMacrosException.h */,
 				050C2637135C8C3A0009766B /* XSMemory.h */,

@@ -62,7 +62,7 @@ XSClassID __XSColorClassID;
 
 void __XSColor_Initialize( void )
 {
-    __XSColorClassID = XSRuntime_NewClass( &__XSColorClass );
+    __XSColorClassID = XSRuntime_RegisterClass( &__XSColorClass );
 }
 
 void __XSColor_RGBToHSL( __XSColor * color )

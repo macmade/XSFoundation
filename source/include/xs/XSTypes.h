@@ -336,34 +336,12 @@ struct XSClassInfos_Struct
 typedef struct XSClassInfos_Struct XSClassInfos;
 
 /*!
- * @struct      ...
- * @brief       ...
- */
-struct XSMethod_Struct
-{
-    void   ( * func )( void );  /*! ... */
-    char     * name;            /*! ... */
-    XSUInteger modifiers;       /*! ... */
-    
-};
-
-/*!
- * @typedef     XSMethod
- * @brief       ...
- * @details     ...
- */
-typedef struct XSMethod_Struct XSMethod;
-
-/*!
  * @struct      XSRuntimeClass_Struct
  * @brief       Base structure for the runtime classes
  */
 struct XSRuntimeClass_Struct
 {
     XSClassInfos * classInfos;      /*! ... */
-    XSMethod     * methods;         /*! ... */
-    XSUInteger     methodCount;     /*! ... */
-    XSUInteger     methodSize;      /*! ... */
 };
 
 /*!

@@ -131,31 +131,9 @@ void __XSRuntime_Initialize( void )
 
 void __XSRuntime_Finalize( void )
 {
-    XSUInteger i;
-    
     __xsruntime_inited = NO;
     
     XSDebugLog( XSDebugLogLevelDebug, "Finalizing the XSFoundation runtime" );
     
-    for( i = 0; i < __xsruntime_class_count; i++ )
-    {
-        free( __xsruntime_class_table[ i ].methods );
-    }
-    
     free( __xsruntime_class_table );
-}
-
-XSMethod * __XSRuntime_FindMethod( XSClass cls, char * name )
-{
-    XSUInteger i;
-    
-    for( i = 0; i < cls->methodCount; i++ )
-    {
-        if( strcmp( name, cls->methods[ i ].name ) == 0 )
-        {
-            return &( cls->methods[ i ] );
-        }
-    }
-    
-    return NULL;
 }

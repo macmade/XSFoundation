@@ -62,7 +62,7 @@ XSClassID __XSHostClassID;
 
 void __XSHost_Initialize( void )
 {
-    __XSHostClassID = XSRuntime_NewClass( &__XSHostClass );
+    __XSHostClassID = XSRuntime_RegisterClass( &__XSHostClass );
 }
 
 void __XSHost_Construct( XSObject object )

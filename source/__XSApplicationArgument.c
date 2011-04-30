@@ -62,5 +62,5 @@ XSClassID __XSApplicationArgumentClassID;
 
 void __XSApplicationArgument_Initialize( void )
 {
-    __XSApplicationArgumentClassID = XSRuntime_NewClass( &__XSApplicationArgumentClass );
+    __XSApplicationArgumentClassID = XSRuntime_RegisterClass( &__XSApplicationArgumentClass );
 }
