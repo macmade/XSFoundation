@@ -63,6 +63,18 @@ XSClassID __XSDictionaryClassID;
 void __XSDictionary_Initialize( void )
 {
     __XSDictionaryClassID = XSRuntime_RegisterClass( &__XSDictionaryClass );
+    
+    XSBindMethodToClass( XSDictionary, Init );
+    XSBindMethodToClass( XSDictionary, InitWithCapacity );
+    XSBindMethodToClass( XSDictionary, InitWithKeysAndValues );
+    XSBindMethodToClass( XSDictionary, Count );
+    XSBindMethodToClass( XSDictionary, Keys );
+    XSBindMethodToClass( XSDictionary, Values );
+    XSBindMethodToClass( XSDictionary, ValueForKey );
+    XSBindMethodToClass( XSDictionary, SetValueForKey );
+    XSBindMethodToClass( XSDictionary, RemoveValueForKey );
+    XSBindMethodToClass( XSDictionary, KeyExists );
+    XSBindMethodToClass( XSDictionary, ContainsValue );
 }
 
 void __XSDictionary_Destruct( XSObject object )

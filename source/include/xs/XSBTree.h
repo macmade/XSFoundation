@@ -89,11 +89,11 @@ XSUInteger XSBTree_GetDepth( XSBTree xsThis );
 
 XSAutoreleased XSBTree * XSBTree_GetLeafs( XSBTree xsThis );
 
-BOOL XSBtree_IsLeaf( XSBTree xsThis );
+BOOL XSBTree_IsLeaf( XSBTree xsThis );
 
-BOOL XSBtree_IsNode( XSBTree xsThis );
+BOOL XSBTree_IsNode( XSBTree xsThis );
 
-BOOL XSBtree_IsRoot( XSBTree xsThis );
+BOOL XSBTree_IsRoot( XSBTree xsThis );
 
 XS_EXTERN_C_END
 

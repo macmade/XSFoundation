@@ -63,6 +63,53 @@ XSClassID __XSNumberClassID;
 void __XSNumber_Initialize( void )
 {
     __XSNumberClassID = XSRuntime_RegisterClass( &__XSNumberClass );
+    
+    XSBindMethodToClass( XSNumber, Init );
+    XSBindMethodToClass( XSNumber, InitWithBool );
+    XSBindMethodToClass( XSNumber, InitWithChar );
+    XSBindMethodToClass( XSNumber, InitWithUnsignedChar );
+    XSBindMethodToClass( XSNumber, InitWithShort );
+    XSBindMethodToClass( XSNumber, InitWithUnsignedShort );
+    XSBindMethodToClass( XSNumber, InitWithInt );
+    XSBindMethodToClass( XSNumber, InitWithUnsignedInt );
+    XSBindMethodToClass( XSNumber, InitWithLong );
+    XSBindMethodToClass( XSNumber, InitWithUnsignedLong );
+    XSBindMethodToClass( XSNumber, InitWithLongLong );
+    XSBindMethodToClass( XSNumber, InitWithUnsignedLongLong );
+    XSBindMethodToClass( XSNumber, InitWithFloat );
+    XSBindMethodToClass( XSNumber, InitWithDouble );
+    XSBindMethodToClass( XSNumber, InitWithInteger );
+    XSBindMethodToClass( XSNumber, InitWithUnsignedInteger );
+    XSBindMethodToClass( XSNumber, GetBool );
+    XSBindMethodToClass( XSNumber, GetChar );
+    XSBindMethodToClass( XSNumber, GetUnsignedChar );
+    XSBindMethodToClass( XSNumber, GetShort );
+    XSBindMethodToClass( XSNumber, GetUnsignedShort );
+    XSBindMethodToClass( XSNumber, GetInt );
+    XSBindMethodToClass( XSNumber, GetUnsignedInt );
+    XSBindMethodToClass( XSNumber, GetLong );
+    XSBindMethodToClass( XSNumber, GetUnsignedLong );
+    XSBindMethodToClass( XSNumber, GetLongLong );
+    XSBindMethodToClass( XSNumber, GetUnsignedLongLong );
+    XSBindMethodToClass( XSNumber, GetFloat );
+    XSBindMethodToClass( XSNumber, GetDouble );
+    XSBindMethodToClass( XSNumber, GetInteger );
+    XSBindMethodToClass( XSNumber, GetUnsignedInteger );
+    XSBindMethodToClass( XSNumber, SetBool );
+    XSBindMethodToClass( XSNumber, SetChar );
+    XSBindMethodToClass( XSNumber, SetUnsignedChar );
+    XSBindMethodToClass( XSNumber, SetShort );
+    XSBindMethodToClass( XSNumber, SetUnsignedShort );
+    XSBindMethodToClass( XSNumber, SetInt );
+    XSBindMethodToClass( XSNumber, SetUnsignedInt );
+    XSBindMethodToClass( XSNumber, SetLong );
+    XSBindMethodToClass( XSNumber, SetUnsignedLong );
+    XSBindMethodToClass( XSNumber, SetLongLong );
+    XSBindMethodToClass( XSNumber, SetUnsignedLongLong );
+    XSBindMethodToClass( XSNumber, SetFloat );
+    XSBindMethodToClass( XSNumber, SetDouble );
+    XSBindMethodToClass( XSNumber, SetInteger );
+    XSBindMethodToClass( XSNumber, SetUnsignedInteger );
 }
 
 XSString __XSNumber_ToString( XSObject object )

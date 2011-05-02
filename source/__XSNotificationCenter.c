@@ -63,6 +63,10 @@ XSClassID __XSNotificationCenterClassID;
 void __XSNotificationCenter_Initialize( void )
 {
     __XSNotificationCenterClassID = XSRuntime_RegisterClass( &__XSNotificationCenterClass );
+    
+    XSBindMethodToClass( XSNotificationCenter, Init );
+    XSBindMethodToClass( XSNotificationCenter, AddObserver );
+    XSBindMethodToClass( XSNotificationCenter, PostNotification );
 }
 
 void __XSNotificationCenter_Destruct( XSObject object )

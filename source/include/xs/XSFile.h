@@ -394,7 +394,7 @@ time_t XSFile_AccessTime( XSFile xsThis );
  * @param       xsThis      The file object
  * @result      The file's modification time
  */
-time_t XSFile_ModifictaionTime( XSFile xsThis );
+time_t XSFile_ModificationTime( XSFile xsThis );
 
 /*!
  * @brief       Gets the file's creation time
@@ -464,7 +464,7 @@ BOOL XSFile_IsUserWriteable( XSFile xsThis );
  * @param       xsThis      The file object
  * @result      YES is the file is executable for the user, otherwise NO
  */
-BOOL XSFile_ISUserExecutable( XSFile xsThis );
+BOOL XSFile_IsUserExecutable( XSFile xsThis );
 
 /*!
  * @brief       Checks if the file is readable for the group

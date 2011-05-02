@@ -63,6 +63,30 @@ XSClassID __XSColorClassID;
 void __XSColor_Initialize( void )
 {
     __XSColorClassID = XSRuntime_RegisterClass( &__XSColorClass );
+    
+    XSBindMethodToClass( XSColor, Init );
+    XSBindMethodToClass( XSColor, InitWithRGB );
+    XSBindMethodToClass( XSColor, InitWithHSL );
+    XSBindMethodToClass( XSColor, InitWithHSV );
+    XSBindMethodToClass( XSColor, InitWithRGBA );
+    XSBindMethodToClass( XSColor, InitWithHSLA );
+    XSBindMethodToClass( XSColor, InitWithHSVA );
+    XSBindMethodToClass( XSColor, GetRed );
+    XSBindMethodToClass( XSColor, GetGreen );
+    XSBindMethodToClass( XSColor, GetBlue );
+    XSBindMethodToClass( XSColor, GetHue );
+    XSBindMethodToClass( XSColor, GetSaturation );
+    XSBindMethodToClass( XSColor, GetLuminance );
+    XSBindMethodToClass( XSColor, GetValue );
+    XSBindMethodToClass( XSColor, GetAlpha );
+    XSBindMethodToClass( XSColor, SetRed );
+    XSBindMethodToClass( XSColor, SetGreen );
+    XSBindMethodToClass( XSColor, SetBlue );
+    XSBindMethodToClass( XSColor, SetHue );
+    XSBindMethodToClass( XSColor, SetSaturation );
+    XSBindMethodToClass( XSColor, SetLuminance );
+    XSBindMethodToClass( XSColor, SetValue );
+    XSBindMethodToClass( XSColor, SetAlpha );
 }
 
 void __XSColor_RGBToHSL( __XSColor * color )

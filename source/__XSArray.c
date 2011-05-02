@@ -63,6 +63,22 @@ XSClassID __XSArrayClassID;
 void __XSArray_Initialize( void )
 {
     __XSArrayClassID = XSRuntime_RegisterClass( &__XSArrayClass );
+    
+    XSBindMethodToClass( XSArray, Init );
+    XSBindMethodToClass( XSArray, InitWithCapacity );
+    XSBindMethodToClass( XSArray, InitWithValues );
+    XSBindMethodToClass( XSArray, Count );
+    XSBindMethodToClass( XSArray, AppendValue );
+    XSBindMethodToClass( XSArray, InsertValueAtIndex );
+    XSBindMethodToClass( XSArray, ReplaceValueAtIndex );
+    XSBindMethodToClass( XSArray, ValueAtIndex );
+    XSBindMethodToClass( XSArray, RemoveValueAtIndex );
+    XSBindMethodToClass( XSArray, ContainsValue );
+    XSBindMethodToClass( XSArray, Index );
+    XSBindMethodToClass( XSArray, Current );
+    XSBindMethodToClass( XSArray, Next );
+    XSBindMethodToClass( XSArray, Previous );
+    XSBindMethodToClass( XSArray, Rewind );
 }
 
 void __XSArray_Destruct( XSObject object )

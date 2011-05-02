@@ -63,6 +63,14 @@ XSClassID __XSDataClassID;
 void __XSData_Initialize( void )
 {
     __XSDataClassID = XSRuntime_RegisterClass( &__XSDataClass );
+    
+    XSBindMethodToClass( XSData, Init );
+    XSBindMethodToClass( XSData, InitWithCapacity );
+    XSBindMethodToClass( XSData, InitWithBytes );
+    XSBindMethodToClass( XSData, GetLength );
+    XSBindMethodToClass( XSData, GetBytes );
+    XSBindMethodToClass( XSData, AppendBytes );
+    XSBindMethodToClass( XSData, GetBytesPointer );
 }
 
 void __XSData_Destruct( XSObject object )

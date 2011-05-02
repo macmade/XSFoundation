@@ -63,6 +63,20 @@ XSClassID __XSSetClassID;
 void __XSSet_Initialize( void )
 {
     __XSSetClassID = XSRuntime_RegisterClass( &__XSSetClass );
+    
+    XSBindMethodToClass( XSSet, Init );
+    XSBindMethodToClass( XSSet, InitWithCapacity );
+    XSBindMethodToClass( XSSet, InitWithValues );
+    XSBindMethodToClass( XSSet, Count );
+    XSBindMethodToClass( XSSet, ContainsValue );
+    XSBindMethodToClass( XSSet, AddValue );
+    XSBindMethodToClass( XSSet, RemoveValue );
+    XSBindMethodToClass( XSSet, ReplaceValue );
+    XSBindMethodToClass( XSSet, Index );
+    XSBindMethodToClass( XSSet, Current );
+    XSBindMethodToClass( XSSet, Next );
+    XSBindMethodToClass( XSSet, Previous );
+    XSBindMethodToClass( XSSet, Rewind );
 }
 
 void __XSSet_Destruct( XSObject object )

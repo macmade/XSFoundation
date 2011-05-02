@@ -63,6 +63,23 @@ XSClassID __XSURLClassID;
 void __XSURL_Initialize( void )
 {
     __XSURLClassID = XSRuntime_RegisterClass( &__XSURLClass );
+    
+    XSBindMethodToClass( XSURL, Init );
+    XSBindMethodToClass( XSURL, InitWithString );
+    XSBindMethodToClass( XSURL, InitWithCString );
+    XSBindMethodToClass( XSURL, GetURL );
+    XSBindMethodToClass( XSURL, SetScheme );
+    XSBindMethodToClass( XSURL, SetDomain );
+    XSBindMethodToClass( XSURL, SetPort );
+    XSBindMethodToClass( XSURL, SetPath );
+    XSBindMethodToClass( XSURL, SetQuery );
+    XSBindMethodToClass( XSURL, SetFragment );
+    XSBindMethodToClass( XSURL, GetScheme );
+    XSBindMethodToClass( XSURL, GetDomain );
+    XSBindMethodToClass( XSURL, GetPort );
+    XSBindMethodToClass( XSURL, GetPath );
+    XSBindMethodToClass( XSURL, GetQuery );
+    XSBindMethodToClass( XSURL, GetFragment );
 }
 
 void __XSURL_Destruct( XSObject object )

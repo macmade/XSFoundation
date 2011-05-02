@@ -63,6 +63,11 @@ XSClassID __XSErrorClassID;
 void __XSError_Initialize( void )
 {
     __XSErrorClassID = XSRuntime_RegisterClass( &__XSErrorClass );
+    
+    XSBindMethodToClass( XSError, Init );
+    XSBindMethodToClass( XSError, GetCode );
+    XSBindMethodToClass( XSError, GetDomain );
+    XSBindMethodToClass( XSError, GetReason );
 }
 
 void __XSError_Destruct( XSObject object )

@@ -76,6 +76,8 @@ XSClassID __XSAutoreleasePoolClassID;
 void __XSAutoreleasePool_Initialize( void )
 {
     __XSAutoreleasePoolClassID = XSRuntime_RegisterClass( &__XSAutoreleasePoolClass );
+    
+    XSBindMethodToClass( XSAutoreleasePool, Init );
 }
 
 void __XSAutoreleasePool_Destruct( XSObject object )

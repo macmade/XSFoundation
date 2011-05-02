@@ -63,6 +63,18 @@ XSClassID __XSApplicationClassID;
 void __XSApplication_Initialize( void )
 {
     __XSApplicationClassID = XSRuntime_RegisterClass( &__XSApplicationClass );
+    
+    XSBindMethodToClass( XSApplication, Init );
+    XSBindMethodToClass( XSApplication, PrintHelp );
+    XSBindMethodToClass( XSApplication, RegisterArgument );
+    XSBindMethodToClass( XSApplication, GetArgument );
+    XSBindMethodToClass( XSApplication, HasArgument );
+    XSBindMethodToClass( XSApplication, GetFlag );
+    XSBindMethodToClass( XSApplication, GetInteger );
+    XSBindMethodToClass( XSApplication, GetUnsignedInteger );
+    XSBindMethodToClass( XSApplication, GetString );
+    XSBindMethodToClass( XSApplication, GetFloat );
+    XSBindMethodToClass( XSApplication, GetUnnamedArguments );
 }
 
 void __XSApplication_Construct( XSObject object )

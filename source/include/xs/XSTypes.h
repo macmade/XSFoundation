@@ -336,12 +336,34 @@ struct XSClassInfos_Struct
 typedef struct XSClassInfos_Struct XSClassInfos;
 
 /*!
+ * @struct      XSMethod_Struct
+ * @brief       ...
+ */
+struct XSMethod_Struct
+{
+    void   ( * func )( void );  /*! ... */
+    char     * name;            /*! ... */
+    XSUInteger modifiers;       /*! ... */
+    
+};
+
+/*!
+ * @typedef     XSMethod
+ * @brief       ...
+ * @details     ...
+ */
+typedef struct XSMethod_Struct XSMethod;
+
+/*!
  * @struct      XSRuntimeClass_Struct
  * @brief       Base structure for the runtime classes
  */
 struct XSRuntimeClass_Struct
 {
     XSClassInfos * classInfos;      /*! ... */
+    XSMethod     * methods;         /*! ... */
+    XSUInteger     methodCount;     /*! ... */
+    XSUInteger     methodSize;      /*! ... */
 };
 
 /*!
@@ -359,7 +381,7 @@ typedef struct XSRuntimeClass_Struct XSRuntimeClass;
 typedef XSRuntimeClass * XSClass;
 
 /*!
- * @struct      ...
+ * @struct      XSInstance_Struct
  * @brief       ...
  */
 struct XSInstance_Struct
@@ -368,7 +390,7 @@ struct XSInstance_Struct
 };
 
 /*!
- * @typedef     XSMethod
+ * @typedef     XSInstance
  * @brief       ...
  */
 typedef struct XSInstance_Struct * XSInstance;

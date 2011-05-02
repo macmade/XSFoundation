@@ -124,6 +124,13 @@ XS_EXTERN_C_BEGIN
 #define XSSTR( s ) XSAutorelease( XSString_InitWithCString( XSString_Alloc(), s ) )
 
 /*!
+ * @def     XSBindMethodToClass
+ * @param   cName   ...
+ * @param   mName   ...
+ */
+#define XSBindMethodToClass( cName, mName ) XSRuntime_BindMethodToClassID( XSRuntime_GetClassIDForClassWithName( #cName ), ( void ( * )( void ) )cName ## _ ## mName, #mName )
+
+/*!
  * @def         __XSFatalError
  * @brief       Issues a fatal error message and aborts the program
  * @details     Never call this macro directly. Use XSFatalError instead.

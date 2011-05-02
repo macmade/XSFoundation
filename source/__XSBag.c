@@ -63,6 +63,20 @@ XSClassID __XSBagClassID;
 void __XSBag_Initialize( void )
 {
     __XSBagClassID = XSRuntime_RegisterClass( &__XSBagClass );
+
+    XSBindMethodToClass( XSBag, Init );
+    XSBindMethodToClass( XSBag, InitWithCapacity );
+    XSBindMethodToClass( XSBag, InitWithValues );
+    XSBindMethodToClass( XSBag, Count );
+    XSBindMethodToClass( XSBag, ContainsValue );
+    XSBindMethodToClass( XSBag, AddValue );
+    XSBindMethodToClass( XSBag, RemoveValue );
+    XSBindMethodToClass( XSBag, ReplaceValue );
+    XSBindMethodToClass( XSBag, Index );
+    XSBindMethodToClass( XSBag, Current );
+    XSBindMethodToClass( XSBag, Next );
+    XSBindMethodToClass( XSBag, Previous );
+    XSBindMethodToClass( XSBag, Rewind );
 }
 
 void __XSBag_Destruct( XSObject object )

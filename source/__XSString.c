@@ -63,6 +63,27 @@ XSClassID __XSStringClassID;
 void __XSString_Initialize( void )
 {
     __XSStringClassID = XSRuntime_RegisterClass( &__XSStringClass );
+    
+    XSBindMethodToClass( XSString, Init );
+    XSBindMethodToClass( XSString, InitWithCapacity );
+    XSBindMethodToClass( XSString, InitWithCString );
+    XSBindMethodToClass( XSString, SubstringFromIndex );
+    XSBindMethodToClass( XSString, SubstringToIndex );
+    XSBindMethodToClass( XSString, SubstringWithRange );
+    XSBindMethodToClass( XSString, LowercaseString );
+    XSBindMethodToClass( XSString, UppercaseString );
+    XSBindMethodToClass( XSString, StringByAppendingString );
+    XSBindMethodToClass( XSString, StringByAppendingCString );
+    XSBindMethodToClass( XSString, AppendFormat );
+    XSBindMethodToClass( XSString, AppendString );
+    XSBindMethodToClass( XSString, AppendCString );
+    XSBindMethodToClass( XSString, Length );
+    XSBindMethodToClass( XSString, CharacterAtIndex );
+    XSBindMethodToClass( XSString, CString );
+    XSBindMethodToClass( XSString, RangeOfString );
+    XSBindMethodToClass( XSString, IsEqualToString );
+    XSBindMethodToClass( XSString, MD5Hash );
+    XSBindMethodToClass( XSString, SplitWithCString );
 }
 
 void __XSString_Destruct( XSObject object )

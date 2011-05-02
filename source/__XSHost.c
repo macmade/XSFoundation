@@ -63,6 +63,15 @@ XSClassID __XSHostClassID;
 void __XSHost_Initialize( void )
 {
     __XSHostClassID = XSRuntime_RegisterClass( &__XSHostClass );
+    
+    XSBindMethodToClass( XSHost, Init );
+    XSBindMethodToClass( XSHost, InitWithURL );
+    XSBindMethodToClass( XSHost, GetHost );
+    XSBindMethodToClass( XSHost, GetIP );
+    XSBindMethodToClass( XSHost, GetPort );
+    XSBindMethodToClass( XSHost, GetSocket );
+    XSBindMethodToClass( XSHost, Connect );
+    XSBindMethodToClass( XSHost, Disconnect );
 }
 
 void __XSHost_Construct( XSObject object )

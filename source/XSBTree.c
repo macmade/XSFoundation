@@ -341,7 +341,7 @@ XSAutoreleased XSBTree * XSBTree_GetLeafs( XSBTree xsThis )
     return NULL;
 }
 
-BOOL XSBtree_IsLeaf( XSBTree xsThis )
+BOOL XSBTree_IsLeaf( XSBTree xsThis )
 {
     __XSBTree * node;
     
@@ -360,7 +360,7 @@ BOOL XSBtree_IsLeaf( XSBTree xsThis )
     return NO;
 }
 
-BOOL XSBtree_IsNode( XSBTree xsThis )
+BOOL XSBTree_IsNode( XSBTree xsThis )
 {
     __XSBTree * node;
     
@@ -379,7 +379,7 @@ BOOL XSBtree_IsNode( XSBTree xsThis )
     return NO;
 }
 
-BOOL XSBtree_IsRoot( XSBTree xsThis )
+BOOL XSBTree_IsRoot( XSBTree xsThis )
 {
     __XSBTree * node;
     

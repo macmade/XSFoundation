@@ -63,6 +63,27 @@ XSClassID __XSBTreeClassID;
 void __XSBTree_Initialize( void )
 {
     __XSBTreeClassID = XSRuntime_RegisterClass( &__XSBTreeClass );
+    
+    XSBindMethodToClass( XSBTree, Init );
+    XSBindMethodToClass( XSBTree, GetLeft );
+    XSBindMethodToClass( XSBTree, GetRight );
+    XSBindMethodToClass( XSBTree, GetParent );
+    XSBindMethodToClass( XSBTree, GetValue );
+    XSBindMethodToClass( XSBTree, CreateLeft );
+    XSBindMethodToClass( XSBTree, CreateRight );
+    XSBindMethodToClass( XSBTree, SetLeft );
+    XSBindMethodToClass( XSBTree, SetRight );
+    XSBindMethodToClass( XSBTree, SetParent );
+    XSBindMethodToClass( XSBTree, SetValue );
+    XSBindMethodToClass( XSBTree, RemoveLeft );
+    XSBindMethodToClass( XSBTree, RemoveRight );
+    XSBindMethodToClass( XSBTree, SwapChildren );
+    XSBindMethodToClass( XSBTree, GetRoot );
+    XSBindMethodToClass( XSBTree, GetDepth );
+    XSBindMethodToClass( XSBTree, GetLeafs );
+    XSBindMethodToClass( XSBTree, IsLeaf );
+    XSBindMethodToClass( XSBTree, IsNode );
+    XSBindMethodToClass( XSBTree, IsRoot );
 }
 
 void __XSBTree_Destruct( XSObject object )

@@ -63,6 +63,13 @@ XSClassID __XSLockClassID;
 void __XSLock_Initialize( void )
 {
     __XSLockClassID = XSRuntime_RegisterClass( &__XSLockClass );
+    
+    XSBindMethodToClass( XSLock, Init );
+    XSBindMethodToClass( XSLock, Lock );
+    XSBindMethodToClass( XSLock, TryLock );
+    XSBindMethodToClass( XSLock, WaitForLock );
+    XSBindMethodToClass( XSLock, Unlock );
+    XSBindMethodToClass( XSLock, IsLocked );
 }
 
 void __XSLock_Construct( XSObject object )

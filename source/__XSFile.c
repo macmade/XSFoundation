@@ -63,6 +63,60 @@ XSClassID __XSFileClassID;
 void __XSFile_Initialize( void )
 {
     __XSFileClassID = XSRuntime_RegisterClass( &__XSFileClass );
+    
+    XSBindMethodToClass( XSFile, Flush );
+    XSBindMethodToClass( XSFile, Close );
+    XSBindMethodToClass( XSFile, Printf );
+    XSBindMethodToClass( XSFile, VPrintf );
+    XSBindMethodToClass( XSFile, Getc );
+    XSBindMethodToClass( XSFile, Putc );
+    XSBindMethodToClass( XSFile, Puts );
+    XSBindMethodToClass( XSFile, Read );
+    XSBindMethodToClass( XSFile, Write );
+    XSBindMethodToClass( XSFile, Seek );
+    XSBindMethodToClass( XSFile, Tell );
+    XSBindMethodToClass( XSFile, Rewind );
+    XSBindMethodToClass( XSFile, GetPos );
+    XSBindMethodToClass( XSFile, SetPos );
+    XSBindMethodToClass( XSFile, ClearErr );
+    XSBindMethodToClass( XSFile, EndOfFile );
+    XSBindMethodToClass( XSFile, Error );
+    XSBindMethodToClass( XSFile, Filename );
+    XSBindMethodToClass( XSFile, OpenMode );
+    XSBindMethodToClass( XSFile, IsReadable );
+    XSBindMethodToClass( XSFile, IsWriteable );
+    XSBindMethodToClass( XSFile, Copy );
+    XSBindMethodToClass( XSFile, GetBit );
+    XSBindMethodToClass( XSFile, PutBit );
+    XSBindMethodToClass( XSFile, GetBits );
+    XSBindMethodToClass( XSFile, PutBits );
+    XSBindMethodToClass( XSFile, DeviceID );
+    XSBindMethodToClass( XSFile, SerialNumber );
+    XSBindMethodToClass( XSFile, NumberOfLinks );
+    XSBindMethodToClass( XSFile, UID );
+    XSBindMethodToClass( XSFile, GID );
+    XSBindMethodToClass( XSFile, Size );
+    XSBindMethodToClass( XSFile, HumanReadableSize );
+    XSBindMethodToClass( XSFile, AccessTime );
+    XSBindMethodToClass( XSFile, ModificationTime );
+    XSBindMethodToClass( XSFile, CreationTime );
+    XSBindMethodToClass( XSFile, IsBlockDevice );
+    XSBindMethodToClass( XSFile, IsCharacterDevice );
+    XSBindMethodToClass( XSFile, IsFIFO );
+    XSBindMethodToClass( XSFile, IsRegularFile );
+    XSBindMethodToClass( XSFile, IsLink );
+    XSBindMethodToClass( XSFile, IsSocket );
+    XSBindMethodToClass( XSFile, IsUserReadable );
+    XSBindMethodToClass( XSFile, IsUserWriteable );
+    XSBindMethodToClass( XSFile, IsUserExecutable );
+    XSBindMethodToClass( XSFile, IsGroupReadable );
+    XSBindMethodToClass( XSFile, IsGroupWriteable );
+    XSBindMethodToClass( XSFile, IsGroupExecutable );
+    XSBindMethodToClass( XSFile, IsWorldReadable );
+    XSBindMethodToClass( XSFile, IsWorldWriteable );
+    XSBindMethodToClass( XSFile, IsWorldExecutable );
+    XSBindMethodToClass( XSFile, HasSUID );
+    XSBindMethodToClass( XSFile, HasSGID );
 }
 
 void __XSFile_WriteAlign( __XSFile * file )

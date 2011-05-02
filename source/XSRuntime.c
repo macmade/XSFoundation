@@ -114,6 +114,46 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls )
     return ++__xsruntime_class_count;
 }
 
+void XSRuntime_BindMethodToClassID( XSClassID classID, void ( * func )( void ), const char * name )
+{
+    XSRuntimeClass * cls;
+    XSMethod       * method;
+    
+    if( classID > __xsruntime_class_count )
+    {
+        return;
+    }
+    
+    cls = &( __xsruntime_class_table[ classID - 1 ] );
+    
+    if( cls->methodCount == cls->methodSize )
+    {
+        if( NULL == ( cls->methods = realloc( cls->methods, sizeof( XSMethod ) * ( cls->methodCount + 100 ) ) ) )
+        {
+            fprintf( stderr, "Error: unable to re-allocate the class methods table!\n" );
+            exit( EXIT_FAILURE );
+        }
+    }
+    
+    method       = &( cls->methods[ cls->methodCount++ ] );
+    method->name = ( char * )name;
+    method->func = func;
+}
+
+XSMethod * XSRuntime_GetMethod( XSObject object, const char * name )
+{
+    XSClass cls;
+    
+    cls = XSRuntime_GetClassForObject( object );
+    
+    if( cls == NULL )
+    {
+        return NULL;
+    }
+    
+    return __XSRuntime_FindMethod( cls, ( char * )name );
+}
+
 XSObject XSRuntime_CreateInstance( XSClassID typeID )
 {
     XSRuntimeClass * cls;

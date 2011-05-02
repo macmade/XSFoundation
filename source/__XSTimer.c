@@ -63,6 +63,12 @@ XSClassID __XSTimerClassID;
 void __XSTimer_Initialize( void )
 {
     __XSTimerClassID = XSRuntime_RegisterClass( &__XSTimerClass );
+    
+    XSBindMethodToClass( XSTimer, Init );
+    XSBindMethodToClass( XSTimer, RunOnce );
+    XSBindMethodToClass( XSTimer, RunAndRepeat );
+    XSBindMethodToClass( XSTimer, Invalidate );
+    XSBindMethodToClass( XSTimer, IsValid );
 }
 
 void __XSTimer_RunOnce( XSThread thread, void * object )

@@ -957,7 +957,7 @@ time_t XSFile_AccessTime( XSFile xsThis )
     return _f->stat_buf.st_atime;
 }
 
-time_t XSFile_ModifictaionTime( XSFile xsThis )
+time_t XSFile_ModificationTime( XSFile xsThis )
 {
     __XSFile * _f;
     
@@ -1097,7 +1097,7 @@ BOOL XSFile_IsUserWriteable( XSFile xsThis )
     return ( ( ( _f->stat_buf.st_mode & S_IRWXU ) == S_IWUSR ) ) ? YES : NO;
 }
 
-BOOL XSFile_ISUserExecutable( XSFile xsThis )
+BOOL XSFile_IsUserExecutable( XSFile xsThis )
 {
     __XSFile * _f;
     

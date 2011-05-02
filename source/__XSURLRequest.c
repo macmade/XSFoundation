@@ -63,6 +63,12 @@ XSClassID __XSURLRequestClassID;
 void __XSURLRequest_Initialize( void )
 {
     __XSURLRequestClassID = XSRuntime_RegisterClass( &__XSURLRequestClass );
+    
+    XSBindMethodToClass( XSURLRequest, InitWithURL );
+    XSBindMethodToClass( XSURLRequest, GetURL );
+    XSBindMethodToClass( XSURLRequest, GetHTTPHeaders );
+    XSBindMethodToClass( XSURLRequest, GetRawBody );
+    XSBindMethodToClass( XSURLRequest, Start );
 }
 
 void __XSURLRequest_Construct( XSObject object )
