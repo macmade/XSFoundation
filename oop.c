@@ -49,6 +49,9 @@
 #define __XSClassToString( class )                      __XSConcatName3( __, class, _ToString )
 #define __XSClassEquals( class )                        __XSConcatName3( __, class, _Equals )
 
+#define __XSStringify( x )                              #x
+#define __XSExpendStringify( x )                        __XSStringify( x )
+
 /*******************************************************************************
  * Class definition macros
  ******************************************************************************/
@@ -76,7 +79,7 @@
     }                                                                           \
     const XSClassInfos __XSClassInfosName( XSCurrentClass ) =                   \
     {                                                                           \
-        "",                                                                     \
+        __XSExpendStringify( XSCurrentClass ),                                  \
         sizeof( __XSClassTypeName( XSCurrentClass ) ),                          \
         construct,                                                              \
         destruct,                                                               \
@@ -102,13 +105,20 @@
 
 #define XSBinding( name )
 
-#define XSMethodImplementation( ret, mName )                                                                                        \
+#define XSMethodImplementationStart
+
+#define XSMethodDefine( ret, mName )                                                                                                \
     ret __XSMethodName( XSCurrentClass, mName )( void * _context )                                                                  \
     {                                                                                                                               \
-        __XSMethodContextName( XSCurrentClass, mName ) * context = ( __XSMethodContextName( XSCurrentClass, mName ) * )_context;    \
-        XSCurrentClass self                                      = context->self;
+        __XSMethodContextName( XSCurrentClass, mName ) * context   = ( __XSMethodContextName( XSCurrentClass, mName ) * )_context;  \
+        XSCurrentClass self                                        = context->self;                                                 \
+        __XSMethodArgumentsName( XSCurrentClass, mName ) arguments = context->arguments;                                            \
+        _context                                                   = NULL;                                                          \
+        ( void )self;                                                                                                               \
+        ( void )arguments;                                                                                                          \
+        {
 
-#define XSMethodImplementationEnd }
+#define XSMethodImplementationEnd }}
 
 #define XSClassConstructor  __XSClassConstructor( XSCurrentClass )
 #define XSClassDestructor   __XSClassDestructor( XSCurrentClass )
@@ -117,15 +127,7 @@
 #define XSClassToString     __XSClassToString( XSCurrentClass )
 #define XSClassEquals       __XSClassEquals( XSCurrentClass )
 
-
-#define XSNew( class ) 0
-
-/* Adds a member method (and its arguments caster) to a class declaration.
- * It must be placed between XSClassBegin and XSClassEnd.
- */
-#define XSClassMember( ret, mName, ... )                                                            \
-    void * ( * __XSMethodMakeArgsLinkName( mName ) )( XSCurrentClass, __VA_ARGS__ );                \
-    ret ( * mName )( void * )
+#define XSNew( class ) __XSClassAlloc( class )()
 
 /* Defines a method prototype for the current class declaration.
  */
@@ -173,8 +175,10 @@ XSMethodPrototype( void, SayHelloUniverse,  { char * text; }, { text }, char * t
 XSClassDefine
 
 XSPropertiesStart
+    
     int x;
     int y;
+    
 XSPropertiesEnd
 
 XSBinding( SayHelloWorld );
@@ -190,18 +194,22 @@ XSClassCallbacks
     NULL
 );
 
-XSMethodImplementation( void, SayHelloWorld )
-{
+XSMethodImplementationStart
+    
+    XSMethodDefine( void, SayHelloWorld );
+
     printf( "hello, the world %s\n", context->arguments.text );
     printf( "x has the value: %u\n", self->x );
-}
+
 XSMethodImplementationEnd
 
-XSMethodImplementation( void, SayHelloUniverse )
-{
+XSMethodImplementationStart
+
+    XSMethodDefine( void, SayHelloUniverse );
+
     printf( "hello, the universe %s\n", context->arguments.text );
     printf( "x has the value: %u\n", self->x );
-}
+
 XSMethodImplementationEnd
 
 #undef XSCurrentClass
