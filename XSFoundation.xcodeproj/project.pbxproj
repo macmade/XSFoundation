@@ -157,6 +157,7 @@
 		0573D2AF135CABA400DC1C21 /* XSURL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSURL.c; sourceTree = "<group>"; };
 		0573D2B0135CABAE00DC1C21 /* __XSURL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSURL.c; sourceTree = "<group>"; };
 		05843CD7136021D6006D102B /* XSDebugLog.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSDebugLog.c; sourceTree = "<group>"; };
+		05C2392213719A0700CB2EB1 /* oop.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = oop.c; sourceTree = "<group>"; };
 		05C9A066135EE838000DFEC8 /* __XSHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __XSHost.h; sourceTree = "<group>"; };
 		05C9A068135EE848000DFEC8 /* XSHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSHost.h; sourceTree = "<group>"; };
 		05C9A069135EE856000DFEC8 /* __XSHost.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSHost.c; sourceTree = "<group>"; };
@@ -182,6 +183,7 @@
 				050C25D3135C8C3A0009766B /* LICENSE.md */,
 				050C25D4135C8C3A0009766B /* Makefile */,
 				050C25D5135C8C3A0009766B /* README.md */,
+				05C2392213719A0700CB2EB1 /* oop.c */,
 				050C2664135C8C3A0009766B /* test.c */,
 				050C2665135C8C3A0009766B /* XSFoundation.doxygen */,
 				050C25D6135C8C3A0009766B /* source */,

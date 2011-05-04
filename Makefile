@@ -174,3 +174,14 @@ test: __libclean __copyright test.c all
 	@echo 
 	@./$(DIR_BUILD)$@
 	@echo 
+
+oop: __libclean __copyright oop.c all
+	@echo 
+	@echo "Compiling the OOP test executable:"
+	@echo 
+	$(CC) -Wall -I$(DIR_INC) -o $(DIR_BUILD)$@ $(DIR_BUILD)$(LIBNAME)$(EXT_ARCHIVE) oop.c
+	@echo 
+	@echo "Running the OOP test executable:"
+	@echo 
+	@./$(DIR_BUILD)$@
+	@echo 
