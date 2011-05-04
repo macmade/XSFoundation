@@ -29,6 +29,7 @@
 
 #define __XSClassStructName( name )                     __XSConcatName3( __, name, _Struct )
 #define __XSClassTypeName( name )                       __XSConcatName2( __, name )
+#define __XSClassInfosName( name )                      __XSConcatName3( __, name, Class )
 #define __XSClassPropertyName( class )                  __XSConcatName3( __, class, _Properties )
 #define __XSClassPropertyStructName( class )            __XSConcatName3( __, class, _Properties_Struct )
 #define __XSMethodName( class, name )                   __XSConcatName3( class, _, name )
@@ -53,19 +54,27 @@
  ******************************************************************************/
 
 #define XSClassDeclare                                                      \
-    typedef struct __XSClassStructName( XSCurrentClass ) * XSCurrentClass;  \
+    typedef struct __XSClassStructName( XSCurrentClass ) * XSCurrentClass;
 
-#define XSClassDefine( construct, destruct, init, copy, toString, equals )  \
-    static XSClassID __classID;                             \
-                                                            \
-    XSObject __XSClassAlloc( XSCurrentClass )( void );      \
-    XSObject __XSClassAlloc( XSCurrentClass )( void )       \
-    {                                                       \
-        return XSRuntime_CreateInstance( __classID );       \
+#define XSClassDefine                                                               \
+    static XSClassID __classID;                                                     \
+                                                                                    \
+    void __XSClassConstructor( XSCurrentClass )( XSObject object );                 \
+    void __XSClassDestructor( XSCurrentClass )( XSObject object );                  \
+    void __XSClassInit( XSCurrentClass )( XSObject object );                        \
+    void __XSClassCopy( XSCurrentClass )( XSObject source, XSObject destination );  \
+    XSString __XSClassToString( XSCurrentClass )( XSObject object );                \
+    BOOL __XSClassEquals( XSCurrentClass )( XSObject object1, XSObject object2 );   \
+                                                                                    \
+    XSObject __XSClassAlloc( XSCurrentClass )( void );                              \
+    XSObject __XSClassAlloc( XSCurrentClass )( void )                               \
+    {                                                                               \
+        return XSRuntime_CreateInstance( __classID );                               \
     }
 
 #define XSClassCallbacks( construct, destruct, init, copy, toString, equals )   \
-    static const XSClassInfos __XSNullClass =                                   \
+    }                                                                           \
+    const XSClassInfos __XSClassInfosName( XSCurrentClass ) =                   \
     {                                                                           \
         "",                                                                     \
         sizeof( __XSClassTypeName( XSCurrentClass ) ),                          \
@@ -82,16 +91,16 @@
     {                                                       \
         XSRuntimeClass  * __class;
 
-#define XSPropertiesEnd                                     \
-    };                                                      \
-    void __XSClassInitialize( XSCurrentClass )( void );     \
-    void __XSClassInitialize( XSCurrentClass )( void )      \
-    {                                                       \
-        __classID = XSRuntime_RegisterClass( NULL );
+#define XSPropertiesEnd                                                                         \
+    };                                                                                          \
+    typedef struct __XSClassStructName( XSCurrentClass ) __XSClassTypeName( XSCurrentClass );   \
+    extern const XSClassInfos __XSClassInfosName( XSCurrentClass );                             \
+    void __XSClassInitialize( XSCurrentClass )( void );                                         \
+    void __XSClassInitialize( XSCurrentClass )( void )                                          \
+    {                                                                                           \
+        __classID = XSRuntime_RegisterClass( &__XSClassInfosName( XSCurrentClass ) );
 
 #define XSBinding( name )
-
-#define XSClassEnd }
 
 #define XSMethodImplementation( ret, mName )                                                                                        \
     ret __XSMethodName( XSCurrentClass, mName )( void * _context )                                                                  \
@@ -102,7 +111,7 @@
 #define XSMethodImplementationEnd }
 
 #define XSClassConstructor  __XSClassConstructor( XSCurrentClass )
-#define XSClassDestructor   __XSClassDestruct( XSCurrentClass )
+#define XSClassDestructor   __XSClassDestructor( XSCurrentClass )
 #define XSClassInit         __XSClassInit( XSCurrentClass )
 #define XSClassCopy         __XSClassCopy( XSCurrentClass )
 #define XSClassToString     __XSClassToString( XSCurrentClass )
@@ -168,20 +177,18 @@ XSPropertiesStart
     int y;
 XSPropertiesEnd
 
-XSClassCallbacks
-(
-    XSClassConstructor,
-    XSClassDestructor,
-    XSClassInit,
-    XSClassCopy,
-    XSClassToString,
-    NULL
-);
-
 XSBinding( SayHelloWorld );
 XSBinding( SayHelloUniverse );
 
-XSClassEnd
+XSClassCallbacks
+(
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL
+);
 
 XSMethodImplementation( void, SayHelloWorld )
 {
@@ -203,15 +210,14 @@ XSMethodImplementationEnd
  * main.c
  ******************************************************************************/
 
-int main( void )
+XSMainStart( argc, argv )
 {
     MyClass o;
     
-    //__MyClass_Initialize();
+    __MyClass_Initialize();
     
     o = XSNew( MyClass );
     
     //XSCall( o, SayHelloUniverse, ( char * )"is open !" );
-    
-    return 0;
 }
+XSMainEnd( EXIT_SUCCESS );
