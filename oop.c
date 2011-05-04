@@ -28,6 +28,7 @@
 #define __XSConcatName4( a, b, c, d ) a ## b ## c ## d
 
 #define __XSClassStructName( name )                     __XSConcatName3( __, name, _Struct )
+#define __XSClassTypeName( name )                       __XSConcatName2( __, name )
 #define __XSClassPropertyName( class )                  __XSConcatName3( __, class, _Properties )
 #define __XSClassPropertyStructName( class )            __XSConcatName3( __, class, _Properties_Struct )
 #define __XSMethodName( class, name )                   __XSConcatName3( class, _, name )
@@ -38,48 +39,84 @@
 #define __XSMethodMakeArgsName( class, name )           __XSConcatName4( class, _, name, _MakeArgs )
 #define __XSMethodMakeArgsLinkName( name )              __XSConcatName2( name, _MakeArgs )
 #define __XSMethodLinkerName( class )                   __XSConcatName2( class, _RT_Init )
+#define __XSClassAlloc( class )                         __XSConcatName2( class, _Alloc )
+#define __XSClassInitialize( class )                    __XSConcatName3( __, class, _Initialize )
+#define __XSClassConstructor( class )                   __XSConcatName3( __, class, _Construct )
+#define __XSClassDestructor( class )                    __XSConcatName3( __, class, _Destruct )
+#define __XSClassInit( class )                          __XSConcatName3( __, class, _Init )
+#define __XSClassCopy( class )                          __XSConcatName3( __, class, _Copy )
+#define __XSClassToString( class )                      __XSConcatName3( __, class, _ToString )
+#define __XSClassEquals( class )                        __XSConcatName3( __, class, _Equals )
 
+/*******************************************************************************
+ * Class definition macros
+ ******************************************************************************/
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Start of macros for the class definitions
- */
+#define XSClassDeclare                                                      \
+    typedef struct __XSClassStructName( XSCurrentClass ) * XSCurrentClass;  \
 
-/* Starts a class properties structure.
- * Note: one CANNOT put a ; at the end of XSClassPropertyBegin.
- */
-#define XSClassPropertyBegin                                \
-    struct __XSClassPropertyStructName( XSCurrentClass )    \
-    {
+#define XSClassDefine( construct, destruct, init, copy, toString, equals )  \
+    static XSClassID __classID;                             \
+                                                            \
+    XSObject __XSClassAlloc( XSCurrentClass )( void );      \
+    XSObject __XSClassAlloc( XSCurrentClass )( void )       \
+    {                                                       \
+        return XSRuntime_CreateInstance( __classID );       \
+    }
 
-/* Ends a class properties structure.
- * Note: one should not put a ; at the end of XSClassPropertyEnd.
- */
-#define XSClassPropertyEnd };
+#define XSClassCallbacks( construct, destruct, init, copy, toString, equals )   \
+    static const XSClassInfos __XSNullClass =                                   \
+    {                                                                           \
+        "",                                                                     \
+        sizeof( __XSClassTypeName( XSCurrentClass ) ),                          \
+        construct,                                                              \
+        destruct,                                                               \
+        init,                                                                   \
+        copy,                                                                   \
+        toString,                                                               \
+        equals                                                                  \
+    }
 
-#define XSClassDefine( XSCurrentClass )                                                                     \
-    typedef struct __XSClassPropertyStructName( XSCurrentClass ) * __XSClassPropertyName( XSCurrentClass ); \
-    typedef struct __XSClassStructName( XSCurrentClass )         * XSCurrentClass;                          \
-
-/* Starts a class declaration.
- * Note: one should not put a ; at the end of XSClassBegin.
- */
-#define XSClassBegin                                        \
+#define XSPropertiesStart                                   \
     struct __XSClassStructName( XSCurrentClass )            \
     {                                                       \
-        __XSClassPropertyName( XSCurrentClass ) properties;
-        
+        XSRuntimeClass  * __class;
+
+#define XSPropertiesEnd                                     \
+    };                                                      \
+    void __XSClassInitialize( XSCurrentClass )( void );     \
+    void __XSClassInitialize( XSCurrentClass )( void )      \
+    {                                                       \
+        __classID = XSRuntime_RegisterClass( NULL );
+
+#define XSBinding( name )
+
+#define XSClassEnd }
+
+#define XSMethodImplementation( ret, mName )                                                                                        \
+    ret __XSMethodName( XSCurrentClass, mName )( void * _context )                                                                  \
+    {                                                                                                                               \
+        __XSMethodContextName( XSCurrentClass, mName ) * context = ( __XSMethodContextName( XSCurrentClass, mName ) * )_context;    \
+        XSCurrentClass self                                      = context->self;
+
+#define XSMethodImplementationEnd }
+
+#define XSClassConstructor  __XSClassConstructor( XSCurrentClass )
+#define XSClassDestructor   __XSClassDestruct( XSCurrentClass )
+#define XSClassInit         __XSClassInit( XSCurrentClass )
+#define XSClassCopy         __XSClassCopy( XSCurrentClass )
+#define XSClassToString     __XSClassToString( XSCurrentClass )
+#define XSClassEquals       __XSClassEquals( XSCurrentClass )
+
+
+#define XSNew( class ) 0
+
 /* Adds a member method (and its arguments caster) to a class declaration.
  * It must be placed between XSClassBegin and XSClassEnd.
  */
 #define XSClassMember( ret, mName, ... )                                                            \
     void * ( * __XSMethodMakeArgsLinkName( mName ) )( XSCurrentClass, __VA_ARGS__ );                \
     ret ( * mName )( void * )
-
-/* Ends a class declaration.
- * Note: one should not put a ; at the end of XSClassEnd.
- */
-#define XSClassEnd };
-
 
 /* Defines a method prototype for the current class declaration.
  */
@@ -105,60 +142,6 @@
     }                                                                                               \
     ret __XSMethodName( XSCurrentClass, mName )( void * _context )
 
-
-/* Defines a method implementation for the current class declaration.
- */
-#define XSMethodImplementation( ret, mName, code )                                                                                  \
-    ret __XSMethodName( XSCurrentClass, mName )( void * _context )                                                                  \
-    {                                                                                                                               \
-        __XSMethodContextName( XSCurrentClass, mName ) * context = ( __XSMethodContextName( XSCurrentClass, mName ) * )_context;    \
-        XSCurrentClass self                                      = context->self;                                                   \
-        code                                                                                                                        \
-    }
-
-/* Declares the methods linker for the current class.
- */
-#define XSMethodLinker()                                                                            \
-    void __XSMethodLinkerName( XSCurrentClass )( XSCurrentClass o );                                \
-    void __XSMethodLinkerName( XSCurrentClass )( XSCurrentClass o )
-
-/* Allocates the memory for the properties of the current class.
- * (used within the XSMethodLinker declaration and only if properties have been declared for the class)
- */
-#define XSPropAlloc()                                                                               \
-    o->properties = ( struct __XSClassPropertyStructName( XSCurrentClass ) * )                          \
-    calloc( 1, sizeof( struct __XSClassPropertyStructName( XSCurrentClass ) ) )
-
-/* Inits a default value for a property of the class.
- * (used within the XSMethodLinker declaration, only after XSPropAlloc and only if properties have been declared for the class)
- */
-#define XSPropInit( pName, val )                                                                    \
-    o->properties->pName = val
-
-/* 
- */
-#define XSMethodLink( mName )                                                                       \
-    o->__XSMethodMakeArgsLinkName( mName )  = __XSMethodMakeArgsName( XSCurrentClass, mName );      \
-    o->mName                                = __XSMethodName( XSCurrentClass, mName );
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Start of the macro to be used in the "main" program.
- * Note that these macro makes no check of if something goes wrong ...
- */
-
-#define XSNew( cName, o )                                                                           \
-    o = ( cName )calloc( 1, sizeof( struct __XSClassStructName( cName ) ) );                        \
-    __XSMethodLinkerName( cName )( o )
-
-#define XSGet( o, pName )                                                                           \
-    o->properties->pName
-
-#define XSCall( o, mName, ... )                                                                     \
-    o->mName( o->__XSMethodMakeArgsLinkName( mName )( o, __VA_ARGS__ ) )
-
-
-
-
 /*******************************************************************************
  * MyClass.h
  ******************************************************************************/
@@ -166,8 +149,9 @@
 #undef  XSCurrentClass
 #define XSCurrentClass MyClass
 
-XSClassDefine( XSCurrentClass );
+XSClassDeclare
 
+XSMethodPrototype( void, SayHelloWorld,     { char * text; }, { text }, char * text );
 XSMethodPrototype( void, SayHelloUniverse,  { char * text; }, { text }, char * text );
 
 /*******************************************************************************
@@ -177,89 +161,57 @@ XSMethodPrototype( void, SayHelloUniverse,  { char * text; }, { text }, char * t
 #undef  XSCurrentClass
 #define XSCurrentClass MyClass
 
-XSClassPropertyBegin
+XSClassDefine
 
-    unsigned int x;
-    unsigned int y;
+XSPropertiesStart
+    int x;
+    int y;
+XSPropertiesEnd
 
-XSClassPropertyEnd
+XSClassCallbacks
+(
+    XSClassConstructor,
+    XSClassDestructor,
+    XSClassInit,
+    XSClassCopy,
+    XSClassToString,
+    NULL
+);
 
-XSClassBegin
-
-    XSClassMember( void, SayHelloUniverse,  char * text );
+XSBinding( SayHelloWorld );
+XSBinding( SayHelloUniverse );
 
 XSClassEnd
 
-XSMethodImplementation
-(
-    void,
-    SayHelloUniverse,
-    {
-        printf( "hello, the universe %s\n", context->arguments.text );
-        printf( "x has the value: %u\n", self->properties->x );
-    }
-)
-
-/* Declares the methods linker for this the current class.
- */
-XSMethodLinker()
+XSMethodImplementation( void, SayHelloWorld )
 {
-    XSMethodLink( SayHelloUniverse );
-    
-    /* This can be placed anywhere in XSMethodLinker, but MUST be placed before XSPropInit()
-     * and if can be here only if properties have been declared for the class ...
-     * (between XSClassPropertyBegin and XSClassPropertyEnd)
-     */
-    XSPropAlloc();
-    
-    /* inits the default values of the properties.
-     * Note: They can be here only if properties have been declared for the class ...
-     */
-    XSPropInit( x, 42 );
-    XSPropInit( y, 27 );
+    printf( "hello, the world %s\n", context->arguments.text );
+    printf( "x has the value: %u\n", self->x );
 }
+XSMethodImplementationEnd
 
-// Done for the implementation ... ;)
+XSMethodImplementation( void, SayHelloUniverse )
+{
+    printf( "hello, the universe %s\n", context->arguments.text );
+    printf( "x has the value: %u\n", self->x );
+}
+XSMethodImplementationEnd
 
-/* ------------------------------------------------------------------------------------------------------------------ */
-
-/* This is placed here just to demonstrate that,
- * from this point, XSCurrentClass is no more needed ... ;)
- */
 #undef XSCurrentClass
 
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Start of the "main" program (user code)
- */
+/*******************************************************************************
+ * main.c
+ ******************************************************************************/
 
 int main( void )
 {
     MyClass o;
     
-    XSNew( MyClass, o );
+    //__MyClass_Initialize();
     
-    XSCall( o, SayHelloUniverse, ( char * )"is open !" );
+    o = XSNew( MyClass );
+    
+    //XSCall( o, SayHelloUniverse, ( char * )"is open !" );
     
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
