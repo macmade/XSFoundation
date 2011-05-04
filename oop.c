@@ -42,12 +42,12 @@
 #define __XSMethodLinkerName( class )                   __XSConcatName2( class, _RT_Init )
 #define __XSClassAlloc( class )                         __XSConcatName2( class, _Alloc )
 #define __XSClassInitialize( class )                    __XSConcatName3( __, class, _Initialize )
-#define __XSClassConstructor( class )                   __XSConcatName3( __, class, _Construct )
-#define __XSClassDestructor( class )                    __XSConcatName3( __, class, _Destruct )
-#define __XSClassInit( class )                          __XSConcatName3( __, class, _Init )
-#define __XSClassCopy( class )                          __XSConcatName3( __, class, _Copy )
-#define __XSClassToString( class )                      __XSConcatName3( __, class, _ToString )
-#define __XSClassEquals( class )                        __XSConcatName3( __, class, _Equals )
+#define __XSClassConstructor( class )                   __XSConcatName2( class, _Construct )
+#define __XSClassDestructor( class )                    __XSConcatName2( class, _Destruct )
+#define __XSClassInit( class )                          __XSConcatName2( class, _Init )
+#define __XSClassCopy( class )                          __XSConcatName2( class, _Copy )
+#define __XSClassToString( class )                      __XSConcatName2( class, _ToString )
+#define __XSClassEquals( class )                        __XSConcatName2( class, _Equals )
 
 #define __XSStringify( x )                              #x
 #define __XSExpendStringify( x )                        __XSStringify( x )
@@ -103,7 +103,7 @@
     {                                                                                           \
         __classID = XSRuntime_RegisterClass( &__XSClassInfosName( XSCurrentClass ) );
 
-#define XSBinding( name )
+#define XSBinding( name ) XSRuntime_BindMethodToClassID( __classID, ( void ( * )( void ) )__XSMethodName( XSCurrentClass, name ), #name )
 
 #define XSMethodImplementationStart
 
@@ -111,14 +111,14 @@
     ret __XSMethodName( XSCurrentClass, mName )( void * _context )                                                                  \
     {                                                                                                                               \
         __XSMethodContextName( XSCurrentClass, mName ) * context   = ( __XSMethodContextName( XSCurrentClass, mName ) * )_context;  \
-        XSCurrentClass self                                        = context->self;                                                 \
+        __XSClassTypeName( XSCurrentClass ) * self                 = context->self;                                                 \
         __XSMethodArgumentsName( XSCurrentClass, mName ) arguments = context->arguments;                                            \
         _context                                                   = NULL;                                                          \
         ( void )self;                                                                                                               \
         ( void )arguments;                                                                                                          \
         {
 
-#define XSMethodImplementationEnd }}
+#define XSMethodImplementationEnd } XSRelease( context ); }
 
 #define XSClassConstructor  __XSClassConstructor( XSCurrentClass )
 #define XSClassDestructor   __XSClassDestructor( XSCurrentClass )
@@ -131,26 +131,27 @@
 
 /* Defines a method prototype for the current class declaration.
  */
-#define XSMethodPrototype( ret, mName, mArgs, argNames, ... )                                       \
-    typedef struct __XSMethodArgumentsStructName( XSCurrentClass, mName )                           \
-    mArgs                                                                                           \
-    __XSMethodArgumentsName( XSCurrentClass, mName );                                               \
-    typedef struct __XSMethodContextStructName( XSCurrentClass, mName )                             \
-    {                                                                                               \
-        XSCurrentClass    self;                                                                     \
-        __XSMethodArgumentsName( XSCurrentClass, mName ) arguments;                                 \
-    }                                                                                               \
-    __XSMethodContextName( XSCurrentClass, mName );                                                 \
-    void * __XSMethodMakeArgsName( XSCurrentClass, mName )( XSCurrentClass self, __VA_ARGS__ );     \
-    void * __XSMethodMakeArgsName( XSCurrentClass, mName )( XSCurrentClass self, __VA_ARGS__ )      \
-    {                                                                                               \
-        __XSMethodContextName( XSCurrentClass, mName ) * s =                                        \
-        ( __XSMethodContextName( XSCurrentClass, mName ) * )                                        \
-        calloc( 1, sizeof( __XSMethodContextName( XSCurrentClass, mName ) ) );                      \
-        s->self         = self;                                                                     \
-        s->arguments    = ( __XSMethodArgumentsName( XSCurrentClass, mName ) )argNames;             \
-        return ( void * )s;                                                                         \
-    }                                                                                               \
+#define XSMethodPrototype( ret, mName, mArgs, argNames, ... )                                           \
+    typedef struct __XSMethodArgumentsStructName( XSCurrentClass, mName )                               \
+    mArgs                                                                                               \
+    __XSMethodArgumentsName( XSCurrentClass, mName );                                                   \
+    typedef struct __XSMethodContextStructName( XSCurrentClass, mName )                                 \
+    {                                                                                                   \
+        XSCurrentClass    self;                                                                         \
+        __XSMethodArgumentsName( XSCurrentClass, mName ) arguments;                                     \
+    }                                                                                                   \
+    __XSMethodContextName( XSCurrentClass, mName );                                                     \
+    void * __XSMethodMakeArgsName( XSCurrentClass, mName )( XSCurrentClass self, __VA_ARGS__ );         \
+    void * __XSMethodMakeArgsName( XSCurrentClass, mName )( XSCurrentClass self, __VA_ARGS__ )          \
+    {                                                                                                   \
+        __XSMethodArgumentsName( XSCurrentClass, mName ) args = argNames;                               \
+        __XSMethodContextName( XSCurrentClass, mName ) * s =                                            \
+        ( __XSMethodContextName( XSCurrentClass, mName ) * )                                            \
+        XSAlloc( sizeof( __XSMethodContextName( XSCurrentClass, mName ) ) );                            \
+        s->self         = self;                                                                         \
+        memcpy( &( s->arguments ), &args, sizeof( __XSMethodArgumentsName( XSCurrentClass, mName ) ) ); \
+        return ( void * )s;                                                                             \
+    }                                                                                                   \
     ret __XSMethodName( XSCurrentClass, mName )( void * _context )
 
 /*******************************************************************************
@@ -164,6 +165,8 @@ XSClassDeclare
 
 XSMethodPrototype( void, SayHelloWorld,     { char * text; }, { text }, char * text );
 XSMethodPrototype( void, SayHelloUniverse,  { char * text; }, { text }, char * text );
+
+#undef XSCurrentClass
 
 /*******************************************************************************
  * MyClass.c
@@ -186,13 +189,18 @@ XSBinding( SayHelloUniverse );
 
 XSClassCallbacks
 (
-    NULL,
+    XSClassConstructor,
     NULL,
     NULL,
     NULL,
     NULL,
     NULL
 );
+
+void MyClass_Construct( XSObject object )
+{
+    XSLog( "MyClass object constructed" );
+}
 
 XSMethodImplementationStart
     
@@ -225,6 +233,12 @@ XSMainStart( argc, argv )
     __MyClass_Initialize();
     
     o = XSNew( MyClass );
+    
+    MyClass_SayHelloWorld( MyClass_SayHelloWorld_MakeArgs( o, ( char * )"is open" ) );
+    
+    printf( "%p", XSRuntime_GetMethod( o, ( char * )"SayHelloWorld" ) );
+    
+    XSRelease( o );
     
     //XSCall( o, SayHelloUniverse, ( char * )"is open !" );
 }
