@@ -70,13 +70,13 @@ XSFile XSStdin = ( XSFile )&__XSSStdin;
  * @var         XSStdout
  * @brief       XSFile object representing stdout
  */
-XSFile XSSStdout = ( XSFile )&__XSSStderr;
+XSFile XSStdout = ( XSFile )&__XSSStderr;
 
 /*!
  * @var         XSStderr
  * @brief       XSFile object representing stderr
  */
-XSFile XSSStderr = ( XSFile )&__XSSStderr;
+XSFile XSStderr = ( XSFile )&__XSSStderr;
 
 /*!
  * @define      __XSFILE_INIT
@@ -87,12 +87,13 @@ XSFile XSSStderr = ( XSFile )&__XSSStderr;
 #define __XSFILE_INIT( f )                      \
 if( __XSSTDStreamsInited == NO )                \
 {                                               \
-    ((__XSFile *)XSStdin)->fp  = stdin;         \
-    ((__XSFile *)XSStdin)->is_stdin  = YES;     \
-    ((__XSFile *)XSStdout)->fp = stdout;        \
+    ((__XSFile *)XSStdin)->fp         = stdin;  \
+    ((__XSFile *)XSStdin)->is_stdin   = YES;    \
+    ((__XSFile *)XSStdout)->fp        = stdout; \
     ((__XSFile *)XSStdout)->is_stdout = YES;    \
-    ((__XSFile *)XSStderr)->fp = stderr;        \
+    ((__XSFile *)XSStderr)->fp        = stderr; \
     ((__XSFile *)XSStderr)->is_stderr = YES;    \
+    __XSSTDStreamsInited              = YES;    \
 }
 
 XSStatic XSObject XSFile_Alloc( void )
