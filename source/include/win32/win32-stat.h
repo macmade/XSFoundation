@@ -107,13 +107,13 @@ extern "C" {
  * @def         S_IRWXU
  * @brief       Write permission, owner
  */
-#define S_IRWXU     0
+#define S_IWUSR     0
 
 /*!
  * @def         S_IWUSR
  * @brief       Execute/search permission, owner
  */
-#define S_IWUSR     0
+#define S_IXUSR     0
 
 /*!
  * @def         S_IRWXG
@@ -154,7 +154,7 @@ extern "C" {
  * @def         S_IRWXO
  * @brief       Write permission, others
  */
-#define S_IRWXO     0
+#define S_IWOTH     0
 
 /*!
  * @def         S_IXOTH

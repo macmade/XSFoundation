@@ -575,7 +575,7 @@ void __XSMemoryDebug_Finalize( void )
         return;
     }
     
-    XSLog( "Memory warning: %lu objects are not freed - leaking memory!", __xs_memory_records_active - 1 );
+    XSLog( "Memory warning: %lu objects are not freed - leaking memory!", __xs_memory_records_active );
     
     for( i = 0; i < __xs_memory_records_count; i++ )
     {
