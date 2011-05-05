@@ -269,20 +269,22 @@ typedef XSInteger XSComparisonResult;
  */
 typedef enum
 {
-    XSDataTypeChar      = 0x00,     /*! char */
-    XSDataTypeUChar     = 0x01,     /*! unsigned char */
-    XSDataTypeShort     = 0x02,     /*! short */
-    XSDataTypeUShort    = 0x03,     /*! unsigned short */
-    XSDataTypeInt       = 0x04,     /*! int */
-    XSDataTypeUInt      = 0x05,     /*! unsigned int */
-    XSDataTypeLong      = 0x06,     /*! long */
-    XSDataTypeULong     = 0x07,     /*! unsigned long */
-    XSDataTypeLongLong  = 0x08,     /*! long long */
-    XSDataTypeULongLong = 0x09,     /*! unsigned long long */
-    XSDataTypeFloat     = 0x0A,     /*! float */
-    XSDataTypeDouble    = 0x0B,     /*! double */
-    XSDataTypeInteger   = 0x0C,     /*! XSInteger */
-    XSDataTypeUInteger  = 0x0D      /*! XSUInteger */
+    XSDataTypeVoid      = 0x00,     /*! void */
+    XSDataTypeBool      = 0x01,     /*! BOOL */
+    XSDataTypeChar      = 0x02,     /*! char */
+    XSDataTypeUChar     = 0x03,     /*! unsigned char */
+    XSDataTypeShort     = 0x04,     /*! short */
+    XSDataTypeUShort    = 0x05,     /*! unsigned short */
+    XSDataTypeInt       = 0x06,     /*! int */
+    XSDataTypeUInt      = 0x07,     /*! unsigned int */
+    XSDataTypeLong      = 0x08,     /*! long */
+    XSDataTypeULong     = 0x09,     /*! unsigned long */
+    XSDataTypeLongLong  = 0x0A,     /*! long long */
+    XSDataTypeULongLong = 0x0B,     /*! unsigned long long */
+    XSDataTypeFloat     = 0x0C,     /*! float */
+    XSDataTypeDouble    = 0x0D,     /*! double */
+    XSDataTypeInteger   = 0x0E,     /*! XSInteger */
+    XSDataTypeUInteger  = 0x0F      /*! XSUInteger */
 }
 XSDataType;
 
