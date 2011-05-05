@@ -114,7 +114,7 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfos * const cls )
     return ++__xsruntime_class_count;
 }
 
-void XSRuntime_BindMethodToClassID( XSClassID classID, void ( * func )( void ), const char * name )
+void XSRuntime_BindMethodToClassID( XSClassID classID, void ( * func )( void ), const char * name, const char * returnType )
 {
     XSRuntimeClass * cls;
     XSMethod       * method;
@@ -138,6 +138,11 @@ void XSRuntime_BindMethodToClassID( XSClassID classID, void ( * func )( void ), 
     method       = &( cls->methods[ cls->methodCount++ ] );
     method->name = ( char * )name;
     method->func = func;
+    
+    if( strcmp( returnType, "unsigned int" ) == 0 )
+    {
+        
+    }
 }
 
 XSMethod * XSRuntime_GetMethod( XSObject object, const char * name )

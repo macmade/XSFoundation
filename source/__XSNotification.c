@@ -64,11 +64,11 @@ void __XSNotification_Initialize( void )
 {
     __XSNotificationClassID = XSRuntime_RegisterClass( &__XSNotificationClass );
     
-    XSBindMethodToClass( XSNotification, Init );
-    XSBindMethodToClass( XSNotification, GetObject );
-    XSBindMethodToClass( XSNotification, SetObject );
-    XSBindMethodToClass( XSNotification, GetName );
-    XSBindMethodToClass( XSNotification, SetName );
+    XSRuntime_BindMethodToClassID( __XSNotificationClassID, ( void ( * )( void ) )XSNotification_Init, "Init", "void" );
+    XSRuntime_BindMethodToClassID( __XSNotificationClassID, ( void ( * )( void ) )XSNotification_GetObject, "GetObject", "void" );
+    XSRuntime_BindMethodToClassID( __XSNotificationClassID, ( void ( * )( void ) )XSNotification_SetObject, "SetObject", "void" );
+    XSRuntime_BindMethodToClassID( __XSNotificationClassID, ( void ( * )( void ) )XSNotification_GetName, "GetName", "void" );
+    XSRuntime_BindMethodToClassID( __XSNotificationClassID, ( void ( * )( void ) )XSNotification_SetName, "SetName", "void" );
 }
 
 void __XSNotification_Destruct( XSObject object )

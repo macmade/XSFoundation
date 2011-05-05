@@ -64,26 +64,26 @@ void __XSBTree_Initialize( void )
 {
     __XSBTreeClassID = XSRuntime_RegisterClass( &__XSBTreeClass );
     
-    XSBindMethodToClass( XSBTree, Init );
-    XSBindMethodToClass( XSBTree, GetLeft );
-    XSBindMethodToClass( XSBTree, GetRight );
-    XSBindMethodToClass( XSBTree, GetParent );
-    XSBindMethodToClass( XSBTree, GetValue );
-    XSBindMethodToClass( XSBTree, CreateLeft );
-    XSBindMethodToClass( XSBTree, CreateRight );
-    XSBindMethodToClass( XSBTree, SetLeft );
-    XSBindMethodToClass( XSBTree, SetRight );
-    XSBindMethodToClass( XSBTree, SetParent );
-    XSBindMethodToClass( XSBTree, SetValue );
-    XSBindMethodToClass( XSBTree, RemoveLeft );
-    XSBindMethodToClass( XSBTree, RemoveRight );
-    XSBindMethodToClass( XSBTree, SwapChildren );
-    XSBindMethodToClass( XSBTree, GetRoot );
-    XSBindMethodToClass( XSBTree, GetDepth );
-    XSBindMethodToClass( XSBTree, GetLeafs );
-    XSBindMethodToClass( XSBTree, IsLeaf );
-    XSBindMethodToClass( XSBTree, IsNode );
-    XSBindMethodToClass( XSBTree, IsRoot );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_Init, "Init", "void" );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_GetLeft, "GetLeft", "void" );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_GetRight, "GetRight", "void" );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_GetParent, "GetParent", "void" );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_GetValue, "GetValue", "void" );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_CreateLeft, "CreateLeft", "void" );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_CreateRight, "CreateRight", "void" );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_SetLeft, "SetLeft", "void" );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_SetRight, "SetRight", "void" );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_SetParent, "SetParent", "void" );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_SetValue, "SetValue", "void" );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_RemoveLeft, "RemoveLeft", "void" );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_RemoveRight, "RemoveRight", "void" );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_SwapChildren, "SwapChildren", "void" );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_GetRoot, "GetRoot", "void" );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_GetDepth, "GetDepth", "void" );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_GetLeafs, "GetLeafs", "void" );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_IsLeaf, "IsLeaf", "void" );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_IsNode, "IsNode", "void" );
+    XSRuntime_BindMethodToClassID( __XSBTreeClassID, ( void ( * )( void ) )XSBTree_IsRoot, "IsRoot", "void" );
 }
 
 void __XSBTree_Destruct( XSObject object )

@@ -64,17 +64,17 @@ void __XSDictionary_Initialize( void )
 {
     __XSDictionaryClassID = XSRuntime_RegisterClass( &__XSDictionaryClass );
     
-    XSBindMethodToClass( XSDictionary, Init );
-    XSBindMethodToClass( XSDictionary, InitWithCapacity );
-    XSBindMethodToClass( XSDictionary, InitWithKeysAndValues );
-    XSBindMethodToClass( XSDictionary, Count );
-    XSBindMethodToClass( XSDictionary, Keys );
-    XSBindMethodToClass( XSDictionary, Values );
-    XSBindMethodToClass( XSDictionary, ValueForKey );
-    XSBindMethodToClass( XSDictionary, SetValueForKey );
-    XSBindMethodToClass( XSDictionary, RemoveValueForKey );
-    XSBindMethodToClass( XSDictionary, KeyExists );
-    XSBindMethodToClass( XSDictionary, ContainsValue );
+    XSRuntime_BindMethodToClassID( __XSDictionaryClassID, ( void ( * )( void ) )XSDictionary_Init, "Init", "void" );
+    XSRuntime_BindMethodToClassID( __XSDictionaryClassID, ( void ( * )( void ) )XSDictionary_InitWithCapacity, "InitWithCapacity", "void" );
+    XSRuntime_BindMethodToClassID( __XSDictionaryClassID, ( void ( * )( void ) )XSDictionary_InitWithKeysAndValues, "InitWithKeysAndValues", "void" );
+    XSRuntime_BindMethodToClassID( __XSDictionaryClassID, ( void ( * )( void ) )XSDictionary_Count, "Count", "void" );
+    XSRuntime_BindMethodToClassID( __XSDictionaryClassID, ( void ( * )( void ) )XSDictionary_Keys, "Keys", "void" );
+    XSRuntime_BindMethodToClassID( __XSDictionaryClassID, ( void ( * )( void ) )XSDictionary_Values, "Values", "void" );
+    XSRuntime_BindMethodToClassID( __XSDictionaryClassID, ( void ( * )( void ) )XSDictionary_ValueForKey, "ValueForKey", "void" );
+    XSRuntime_BindMethodToClassID( __XSDictionaryClassID, ( void ( * )( void ) )XSDictionary_SetValueForKey, "SetValueForKey", "void" );
+    XSRuntime_BindMethodToClassID( __XSDictionaryClassID, ( void ( * )( void ) )XSDictionary_RemoveValueForKey, "RemoveValueForKey", "void" );
+    XSRuntime_BindMethodToClassID( __XSDictionaryClassID, ( void ( * )( void ) )XSDictionary_KeyExists, "KeyExists", "void" );
+    XSRuntime_BindMethodToClassID( __XSDictionaryClassID, ( void ( * )( void ) )XSDictionary_ContainsValue, "ContainsValue", "void" );
 }
 
 void __XSDictionary_Destruct( XSObject object )

@@ -64,9 +64,9 @@ void __XSBool_Initialize( void )
 {
     __XSBoolClassID = XSRuntime_RegisterClass( &__XSBoolClass );
     
-    XSBindMethodToClass( XSBool, Init );
-    XSBindMethodToClass( XSBool, SetValue );
-    XSBindMethodToClass( XSBool, GetValue );
+    XSRuntime_BindMethodToClassID( __XSBoolClassID, ( void ( * )( void ) )XSBool_Init, "Init", "void" );
+    XSRuntime_BindMethodToClassID( __XSBoolClassID, ( void ( * )( void ) )XSBool_SetValue, "SetValue", "void" );
+    XSRuntime_BindMethodToClassID( __XSBoolClassID, ( void ( * )( void ) )XSBool_GetValue, "GetValue", "void" );
 }
 
 XSString __XSBool_ToString( XSObject object )

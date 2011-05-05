@@ -64,29 +64,29 @@ void __XSColor_Initialize( void )
 {
     __XSColorClassID = XSRuntime_RegisterClass( &__XSColorClass );
     
-    XSBindMethodToClass( XSColor, Init );
-    XSBindMethodToClass( XSColor, InitWithRGB );
-    XSBindMethodToClass( XSColor, InitWithHSL );
-    XSBindMethodToClass( XSColor, InitWithHSV );
-    XSBindMethodToClass( XSColor, InitWithRGBA );
-    XSBindMethodToClass( XSColor, InitWithHSLA );
-    XSBindMethodToClass( XSColor, InitWithHSVA );
-    XSBindMethodToClass( XSColor, GetRed );
-    XSBindMethodToClass( XSColor, GetGreen );
-    XSBindMethodToClass( XSColor, GetBlue );
-    XSBindMethodToClass( XSColor, GetHue );
-    XSBindMethodToClass( XSColor, GetSaturation );
-    XSBindMethodToClass( XSColor, GetLuminance );
-    XSBindMethodToClass( XSColor, GetValue );
-    XSBindMethodToClass( XSColor, GetAlpha );
-    XSBindMethodToClass( XSColor, SetRed );
-    XSBindMethodToClass( XSColor, SetGreen );
-    XSBindMethodToClass( XSColor, SetBlue );
-    XSBindMethodToClass( XSColor, SetHue );
-    XSBindMethodToClass( XSColor, SetSaturation );
-    XSBindMethodToClass( XSColor, SetLuminance );
-    XSBindMethodToClass( XSColor, SetValue );
-    XSBindMethodToClass( XSColor, SetAlpha );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_Init, "Init", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_InitWithRGB, "InitWithRGB", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_InitWithHSL, "InitWithHSL", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_InitWithHSV, "InitWithHSV", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_InitWithRGBA, "InitWithRGBA", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_InitWithHSLA, "InitWithHSLA", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_InitWithHSVA, "InitWithHSVA", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_GetRed, "GetRed", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_GetGreen, "GetGreen", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_GetBlue, "GetBlue", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_GetHue, "GetHue", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_GetSaturation, "GetSaturation", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_GetLuminance, "GetLuminance", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_GetValue, "GetValue", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_GetAlpha, "GetAlpha", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_SetRed, "SetRed", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_SetGreen, "SetGreen", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_SetBlue, "SetBlue", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_SetHue, "SetHue", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_SetSaturation, "SetSaturation", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_SetLuminance, "SetLuminance", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_SetValue, "SetValue", "void" );
+    XSRuntime_BindMethodToClassID( __XSColorClassID, ( void ( * )( void ) )XSColor_SetAlpha, "SetAlpha", "void" );
 }
 
 void __XSColor_RGBToHSL( __XSColor * color )

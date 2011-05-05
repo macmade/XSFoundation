@@ -64,9 +64,9 @@ void __XSNotificationCenter_Initialize( void )
 {
     __XSNotificationCenterClassID = XSRuntime_RegisterClass( &__XSNotificationCenterClass );
     
-    XSBindMethodToClass( XSNotificationCenter, Init );
-    XSBindMethodToClass( XSNotificationCenter, AddObserver );
-    XSBindMethodToClass( XSNotificationCenter, PostNotification );
+    XSRuntime_BindMethodToClassID( __XSNotificationCenterClassID, ( void ( * )( void ) )XSNotificationCenter_Init, "Init", "void" );
+    XSRuntime_BindMethodToClassID( __XSNotificationCenterClassID, ( void ( * )( void ) )XSNotificationCenter_AddObserver, "AddObserver", "void" );
+    XSRuntime_BindMethodToClassID( __XSNotificationCenterClassID, ( void ( * )( void ) )XSNotificationCenter_PostNotification, "PostNotification", "void" );
 }
 
 void __XSNotificationCenter_Destruct( XSObject object )

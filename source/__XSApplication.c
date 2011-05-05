@@ -64,17 +64,17 @@ void __XSApplication_Initialize( void )
 {
     __XSApplicationClassID = XSRuntime_RegisterClass( &__XSApplicationClass );
     
-    XSBindMethodToClass( XSApplication, Init );
-    XSBindMethodToClass( XSApplication, PrintHelp );
-    XSBindMethodToClass( XSApplication, RegisterArgument );
-    XSBindMethodToClass( XSApplication, GetArgument );
-    XSBindMethodToClass( XSApplication, HasArgument );
-    XSBindMethodToClass( XSApplication, GetFlag );
-    XSBindMethodToClass( XSApplication, GetInteger );
-    XSBindMethodToClass( XSApplication, GetUnsignedInteger );
-    XSBindMethodToClass( XSApplication, GetString );
-    XSBindMethodToClass( XSApplication, GetFloat );
-    XSBindMethodToClass( XSApplication, GetUnnamedArguments );
+    XSRuntime_BindMethodToClassID( __XSApplicationClassID, ( void ( * )( void ) )XSApplication_Init, "Init", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSApplicationClassID, ( void ( * )( void ) )XSApplication_PrintHelp, "PrintHelp", "void" );
+    XSRuntime_BindMethodToClassID( __XSApplicationClassID, ( void ( * )( void ) )XSApplication_RegisterArgument, "RegisterArgument", "void" );
+    XSRuntime_BindMethodToClassID( __XSApplicationClassID, ( void ( * )( void ) )XSApplication_GetArgument, "GetArgument", "XSApplicationArgument" );
+    XSRuntime_BindMethodToClassID( __XSApplicationClassID, ( void ( * )( void ) )XSApplication_HasArgument, "HasArgument", "BOOL" );
+    XSRuntime_BindMethodToClassID( __XSApplicationClassID, ( void ( * )( void ) )XSApplication_GetFlag, "GetFlag", "BOOL" );
+    XSRuntime_BindMethodToClassID( __XSApplicationClassID, ( void ( * )( void ) )XSApplication_GetInteger, "GetInteger", "XSInteger" );
+    XSRuntime_BindMethodToClassID( __XSApplicationClassID, ( void ( * )( void ) )XSApplication_GetUnsignedInteger, "GetUnsignedInteger", "XSUInteger" );
+    XSRuntime_BindMethodToClassID( __XSApplicationClassID, ( void ( * )( void ) )XSApplication_GetString, "GetString", "XSString" );
+    XSRuntime_BindMethodToClassID( __XSApplicationClassID, ( void ( * )( void ) )XSApplication_GetFloat, "GetFloat", "XSFloat" );
+    XSRuntime_BindMethodToClassID( __XSApplicationClassID, ( void ( * )( void ) )XSApplication_GetUnnamedArguments, "GetUnnamedArguments", "XSArray" );
 }
 
 void __XSApplication_Construct( XSObject object )

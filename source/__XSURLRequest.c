@@ -64,11 +64,11 @@ void __XSURLRequest_Initialize( void )
 {
     __XSURLRequestClassID = XSRuntime_RegisterClass( &__XSURLRequestClass );
     
-    XSBindMethodToClass( XSURLRequest, InitWithURL );
-    XSBindMethodToClass( XSURLRequest, GetURL );
-    XSBindMethodToClass( XSURLRequest, GetHTTPHeaders );
-    XSBindMethodToClass( XSURLRequest, GetRawBody );
-    XSBindMethodToClass( XSURLRequest, Start );
+    XSRuntime_BindMethodToClassID( __XSURLRequestClassID, ( void ( * )( void ) )XSURLRequest_InitWithURL, "InitWithURL", "void" );
+    XSRuntime_BindMethodToClassID( __XSURLRequestClassID, ( void ( * )( void ) )XSURLRequest_GetURL, "GetURL", "void" );
+    XSRuntime_BindMethodToClassID( __XSURLRequestClassID, ( void ( * )( void ) )XSURLRequest_GetHTTPHeaders, "GetHTTPHeaders", "void" );
+    XSRuntime_BindMethodToClassID( __XSURLRequestClassID, ( void ( * )( void ) )XSURLRequest_GetRawBody, "GetRawBody", "void" );
+    XSRuntime_BindMethodToClassID( __XSURLRequestClassID, ( void ( * )( void ) )XSURLRequest_Start, "Start", "void" );
 }
 
 void __XSURLRequest_Construct( XSObject object )

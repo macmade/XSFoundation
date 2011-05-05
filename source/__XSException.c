@@ -64,9 +64,9 @@ void __XSException_Initialize( void )
 {
     __XSExceptionClassID = XSRuntime_RegisterClass( &__XSExceptionClass );
     
-    XSBindMethodToClass( XSException, Init );
-    XSBindMethodToClass( XSException, GetCode );
-    XSBindMethodToClass( XSException, GetReason );
+    XSRuntime_BindMethodToClassID( __XSExceptionClassID, ( void ( * )( void ) )XSException_Init, "Init", "void" );
+    XSRuntime_BindMethodToClassID( __XSExceptionClassID, ( void ( * )( void ) )XSException_GetCode, "GetCode", "void" );
+    XSRuntime_BindMethodToClassID( __XSExceptionClassID, ( void ( * )( void ) )XSException_GetReason, "GetReason", "void" );
 }
 
 void __XSException_Destruct( XSObject object )

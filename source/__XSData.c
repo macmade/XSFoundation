@@ -64,13 +64,13 @@ void __XSData_Initialize( void )
 {
     __XSDataClassID = XSRuntime_RegisterClass( &__XSDataClass );
     
-    XSBindMethodToClass( XSData, Init );
-    XSBindMethodToClass( XSData, InitWithCapacity );
-    XSBindMethodToClass( XSData, InitWithBytes );
-    XSBindMethodToClass( XSData, GetLength );
-    XSBindMethodToClass( XSData, GetBytes );
-    XSBindMethodToClass( XSData, AppendBytes );
-    XSBindMethodToClass( XSData, GetBytesPointer );
+    XSRuntime_BindMethodToClassID( __XSDataClassID, ( void ( * )( void ) )XSData_Init, "Init", "void" );
+    XSRuntime_BindMethodToClassID( __XSDataClassID, ( void ( * )( void ) )XSData_InitWithCapacity, "InitWithCapacity", "void" );
+    XSRuntime_BindMethodToClassID( __XSDataClassID, ( void ( * )( void ) )XSData_InitWithBytes, "InitWithBytes", "void" );
+    XSRuntime_BindMethodToClassID( __XSDataClassID, ( void ( * )( void ) )XSData_GetLength, "GetLength", "void" );
+    XSRuntime_BindMethodToClassID( __XSDataClassID, ( void ( * )( void ) )XSData_GetBytes, "GetBytes", "void" );
+    XSRuntime_BindMethodToClassID( __XSDataClassID, ( void ( * )( void ) )XSData_AppendBytes, "AppendBytes", "void" );
+    XSRuntime_BindMethodToClassID( __XSDataClassID, ( void ( * )( void ) )XSData_GetBytesPointer, "GetBytesPointer", "void" );
 }
 
 void __XSData_Destruct( XSObject object )
