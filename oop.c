@@ -352,7 +352,5 @@ XSMainStart( argc, argv )
     __XSCall_Void( XSRuntime_GetMethod( o, ( char * )"SayHelloUniverse" ), MyClass_SayHelloWorld_MakeArgs( o, "is open" ) );
     
     XSRelease( o );
-    
-    //XSCall( o, SayHelloUniverse, ( char * )"is open !" );
 }
 XSMainEnd( EXIT_SUCCESS );
