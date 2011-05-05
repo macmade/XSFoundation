@@ -183,6 +183,15 @@ XS_EXTERN_C_BEGIN
 
 #define XSConstructorEnd }
 
+#define XSToStringStart \
+    XSString __XSClassToString( XSCurrentClass )( XSObject __self )                                      \
+    {                                                                                                   \
+        __XSClassTypeName( XSCurrentClass ) * self = ( __XSClassTypeName( XSCurrentClass ) * )__self;   \
+        __self                                     = NULL;                                              \
+        ( void )self;
+
+#define XSToStringEnd }
+
 #define XSNew( class ) __XSClassAlloc( class )()
 
 #define RegisterClass( class ) __XSClassInitialize( class )()

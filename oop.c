@@ -39,7 +39,7 @@ XSClassDefinitions
     NULL,
     NULL,
     NULL,
-    NULL,
+    XSClassToString,
     NULL
 );
 
@@ -50,6 +50,12 @@ XSConstructorStart
     self->x = 42;
     
 XSConstructorEnd
+
+XSToStringStart
+    
+    return XSSTR( "This is my class..." );
+    
+XSToStringEnd
 
 XSMethodImplementationStart
     
@@ -85,6 +91,8 @@ XSMainStart( argc, argv )
     
     XSCall_Void( XSRuntime_GetMethod( o, ( char * )"SayHelloWorld" ), MyClass_SayHelloWorld_MakeArgs( o, "is open" ) );
     XSCall_Void( XSRuntime_GetMethod( o, ( char * )"SayHelloUniverse" ), MyClass_SayHelloWorld_MakeArgs( o, "is open" ) );
+    
+    XSLog( "$@", o );
     
     XSRelease( o );
 }
