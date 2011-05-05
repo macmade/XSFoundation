@@ -103,7 +103,7 @@
     {                                                                                           \
         __classID = XSRuntime_RegisterClass( &__XSClassInfosName( XSCurrentClass ) );
 
-#define XSBinding( name ) XSRuntime_BindMethodToClassID( __classID, ( void ( * )( void ) )__XSMethodName( XSCurrentClass, name ), #name )
+#define XSBinding( ret, name ) XSRuntime_BindMethodToClassID( __classID, ( void ( * )( void ) )__XSMethodName( XSCurrentClass, name ), #name )
 
 #define XSMethodImplementationStart
 
@@ -295,8 +295,8 @@ XSPropertiesStart
     
 XSPropertiesEnd
 
-XSBinding( SayHelloWorld );
-XSBinding( SayHelloUniverse );
+XSBinding( void, SayHelloWorld );
+XSBinding( void, SayHelloUniverse );
 
 XSClassDefinitions
 (
