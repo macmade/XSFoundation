@@ -77,7 +77,7 @@ XSStatic XSApplicationArgument XSApplicationArgument_Alloc( void );
  * @param       help    The help text (pass NULL if none)
  * @result      The argument object
  */
-XSApplicationArgument XSApplicationArgument_Init( XSApplicationArgument xsThis, const char * name, XSApplicationArgumentType type, const char * help );
+XSObject XSApplicationArgument_Init( XSApplicationArgument xsThis, const char * name, XSApplicationArgumentType type, const char * help );
 
 /*!
  * @brief       Gets the name of the CLI argument
