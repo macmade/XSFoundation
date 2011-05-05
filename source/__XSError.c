@@ -64,10 +64,10 @@ void __XSError_Initialize( void )
 {
     __XSErrorClassID = XSRuntime_RegisterClass( &__XSErrorClass );
     
-    XSRuntime_BindMethodToClassID( __XSErrorClassID, ( void ( * )( void ) )XSError_Init, "Init", "void" );
-    XSRuntime_BindMethodToClassID( __XSErrorClassID, ( void ( * )( void ) )XSError_GetCode, "GetCode", "void" );
-    XSRuntime_BindMethodToClassID( __XSErrorClassID, ( void ( * )( void ) )XSError_GetDomain, "GetDomain", "void" );
-    XSRuntime_BindMethodToClassID( __XSErrorClassID, ( void ( * )( void ) )XSError_GetReason, "GetReason", "void" );
+    XSRuntime_BindMethodToClassID( __XSErrorClassID, ( void ( * )( void ) )XSError_Init, "Init", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSErrorClassID, ( void ( * )( void ) )XSError_GetCode, "GetCode", "XSInteger" );
+    XSRuntime_BindMethodToClassID( __XSErrorClassID, ( void ( * )( void ) )XSError_GetDomain, "GetDomain", "XSString" );
+    XSRuntime_BindMethodToClassID( __XSErrorClassID, ( void ( * )( void ) )XSError_GetReason, "GetReason", "XSString" );
 }
 
 void __XSError_Destruct( XSObject object )

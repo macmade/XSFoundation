@@ -64,18 +64,18 @@ void __XSBag_Initialize( void )
 {
     __XSBagClassID = XSRuntime_RegisterClass( &__XSBagClass );
 
-    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_Init, "Init", "void" );
-    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_InitWithCapacity, "InitWithCapacity", "void" );
-    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_InitWithValues, "InitWithValues", "void" );
-    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_Count, "Count", "void" );
-    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_ContainsValue, "ContainsValue", "void" );
+    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_Init, "Init", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_InitWithCapacity, "InitWithCapacity", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_InitWithValues, "InitWithValues", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_Count, "Count", "XSUInteger" );
+    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_ContainsValue, "ContainsValue", "BOOL" );
     XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_AddValue, "AddValue", "void" );
-    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_RemoveValue, "RemoveValue", "void" );
-    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_ReplaceValue, "ReplaceValue", "void" );
-    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_Index, "Index", "void" );
-    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_Current, "Current", "void" );
-    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_Next, "Next", "void" );
-    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_Previous, "Previous", "void" );
+    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_RemoveValue, "RemoveValue", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_ReplaceValue, "ReplaceValue", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_Index, "Index", "XSUInteger" );
+    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_Current, "Current", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_Next, "Next", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_Previous, "Previous", "XSObject" );
     XSRuntime_BindMethodToClassID( __XSBagClassID, ( void ( * )( void ) )XSBag_Rewind, "Rewind", "void" );
 }
 

@@ -64,12 +64,12 @@ void __XSLock_Initialize( void )
 {
     __XSLockClassID = XSRuntime_RegisterClass( &__XSLockClass );
     
-    XSRuntime_BindMethodToClassID( __XSLockClassID, ( void ( * )( void ) )XSLock_Init, "Init", "void" );
-    XSRuntime_BindMethodToClassID( __XSLockClassID, ( void ( * )( void ) )XSLock_Lock, "Lock", "void" );
-    XSRuntime_BindMethodToClassID( __XSLockClassID, ( void ( * )( void ) )XSLock_TryLock, "TryLock", "void" );
+    XSRuntime_BindMethodToClassID( __XSLockClassID, ( void ( * )( void ) )XSLock_Init, "Init", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSLockClassID, ( void ( * )( void ) )XSLock_Lock, "Lock", "BOOL" );
+    XSRuntime_BindMethodToClassID( __XSLockClassID, ( void ( * )( void ) )XSLock_TryLock, "TryLock", "BOOL" );
     XSRuntime_BindMethodToClassID( __XSLockClassID, ( void ( * )( void ) )XSLock_WaitForLock, "WaitForLock", "void" );
     XSRuntime_BindMethodToClassID( __XSLockClassID, ( void ( * )( void ) )XSLock_Unlock, "Unlock", "void" );
-    XSRuntime_BindMethodToClassID( __XSLockClassID, ( void ( * )( void ) )XSLock_IsLocked, "IsLocked", "void" );
+    XSRuntime_BindMethodToClassID( __XSLockClassID, ( void ( * )( void ) )XSLock_IsLocked, "IsLocked", "BOOL" );
 }
 
 void __XSLock_Construct( XSObject object )

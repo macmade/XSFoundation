@@ -241,7 +241,7 @@ XSUInteger XSSet_Index( XSSet xsThis )
     return set->cur;
 }
 
-void * XSSet_Current( XSSet xsThis )
+XSObject XSSet_Current( XSSet xsThis )
 {
     __XSSet  * set;
     
@@ -255,7 +255,7 @@ void * XSSet_Current( XSSet xsThis )
     return set->values[ set->cur ];
 }
 
-void * XSSet_Next( XSSet xsThis )
+XSObject XSSet_Next( XSSet xsThis )
 {
     __XSSet  * set;
     
@@ -274,7 +274,7 @@ void * XSSet_Next( XSSet xsThis )
     return set->values[ ++set->cur ];
 }
 
-void * XSSet_Previous( XSSet xsThis )
+XSObject XSSet_Previous( XSSet xsThis )
 {
     __XSSet  * set;
     

@@ -65,17 +65,17 @@ void __XSApplicationArgument_Initialize( void )
     __XSApplicationArgumentClassID = XSRuntime_RegisterClass( &__XSApplicationArgumentClass );
     
     XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_Init, "Init", "void" );
-    XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_GetName, "GetName", "void" );
-    XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_GetHelp, "GetHelp", "void" );
-    XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_GetType, "GetType", "void" );
+    XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_GetName, "GetName", "const char *" );
+    XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_GetHelp, "GetHelp", "const char *" );
+    XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_GetType, "GetType", "XSApplicationArgumentType" );
     XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_SetFlag, "SetFlag", "void" );
     XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_SetIntegerValue, "SetIntegerValue", "void" );
     XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_SetUnsignedIntegerValue, "SetUnsignedIntegerValue", "void" );
     XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_SetStringValue, "SetStringValue", "void" );
     XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_SetFloatValue, "SetFloatValue", "void" );
     XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_GetFlag, "GetFlag", "void" );
-    XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_GetIntegerValue, "GetIntegerValue", "void" );
-    XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_GetUnsignedIntegerValue, "GetUnsignedIntegerValue", "void" );
-    XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_GetStringValue, "GetStringValue", "void" );
-    XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_GetFloatValue, "GetFloatValue", "void" );
+    XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_GetIntegerValue, "GetIntegerValue", "XSInteger" );
+    XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_GetUnsignedIntegerValue, "GetUnsignedIntegerValue", "XSUInteger" );
+    XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_GetStringValue, "GetStringValue", "const char *" );
+    XSRuntime_BindMethodToClassID( __XSApplicationArgumentClassID, ( void ( * )( void ) )XSApplicationArgument_GetFloatValue, "GetFloatValue", "XSFloat" );
 }

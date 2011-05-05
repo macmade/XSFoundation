@@ -134,21 +134,21 @@ XSUInteger XSSet_Index( XSSet xsThis );
  * @param       xsThis  The set object
  * @result      The current set value
  */
-void * XSSet_Current( XSSet xsThis );
+XSObject XSSet_Current( XSSet xsThis );
 
 /*!
  * @brief       Increases the internal value pointer and returns the value
  * @param       xsThis  The set object
  * @result      The set value
  */
-void * XSSet_Next( XSSet xsThis );
+XSObject XSSet_Next( XSSet xsThis );
 
 /*!
  * @brief       Decrease the internal value pointer and returns the value
  * @param       xsThis  The set object
  * @result      The set value
  */
-void * XSSet_Previous( XSSet xsThis );
+XSObject XSSet_Previous( XSSet xsThis );
 
 /*!
  * @brief       Sets the internal value pointer to the first value in the set

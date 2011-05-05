@@ -64,7 +64,7 @@ void __XSNull_Initialize( void )
 {
     __XSNullClassID = XSRuntime_RegisterClass( &__XSNullClass );
     
-    XSRuntime_BindMethodToClassID( __XSNullClassID, ( void ( * )( void ) )XSNull_Init, "Init", "void" );
+    XSRuntime_BindMethodToClassID( __XSNullClassID, ( void ( * )( void ) )XSNull_Init, "Init", "XSObject" );
 }
 
 BOOL __XSNull_Equals( XSObject object1, XSObject object2 )

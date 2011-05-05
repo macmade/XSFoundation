@@ -64,10 +64,10 @@ void __XSURLRequest_Initialize( void )
 {
     __XSURLRequestClassID = XSRuntime_RegisterClass( &__XSURLRequestClass );
     
-    XSRuntime_BindMethodToClassID( __XSURLRequestClassID, ( void ( * )( void ) )XSURLRequest_InitWithURL, "InitWithURL", "void" );
-    XSRuntime_BindMethodToClassID( __XSURLRequestClassID, ( void ( * )( void ) )XSURLRequest_GetURL, "GetURL", "void" );
-    XSRuntime_BindMethodToClassID( __XSURLRequestClassID, ( void ( * )( void ) )XSURLRequest_GetHTTPHeaders, "GetHTTPHeaders", "void" );
-    XSRuntime_BindMethodToClassID( __XSURLRequestClassID, ( void ( * )( void ) )XSURLRequest_GetRawBody, "GetRawBody", "void" );
+    XSRuntime_BindMethodToClassID( __XSURLRequestClassID, ( void ( * )( void ) )XSURLRequest_InitWithURL, "InitWithURL", "XSString" );
+    XSRuntime_BindMethodToClassID( __XSURLRequestClassID, ( void ( * )( void ) )XSURLRequest_GetURL, "GetURL", "XSURL" );
+    XSRuntime_BindMethodToClassID( __XSURLRequestClassID, ( void ( * )( void ) )XSURLRequest_GetHTTPHeaders, "GetHTTPHeaders", "XSDictionary" );
+    XSRuntime_BindMethodToClassID( __XSURLRequestClassID, ( void ( * )( void ) )XSURLRequest_GetRawBody, "GetRawBody", "XSData" );
     XSRuntime_BindMethodToClassID( __XSURLRequestClassID, ( void ( * )( void ) )XSURLRequest_Start, "Start", "void" );
 }
 

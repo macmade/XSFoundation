@@ -64,18 +64,18 @@ void __XSSet_Initialize( void )
 {
     __XSSetClassID = XSRuntime_RegisterClass( &__XSSetClass );
     
-    XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_Init, "Init", "void" );
-    XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_InitWithCapacity, "InitWithCapacity", "void" );
-    XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_InitWithValues, "InitWithValues", "void" );
-    XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_Count, "Count", "void" );
-    XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_ContainsValue, "ContainsValue", "void" );
+    XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_Init, "Init", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_InitWithCapacity, "InitWithCapacity", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_InitWithValues, "InitWithValues", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_Count, "Count", "XSUInteger" );
+    XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_ContainsValue, "ContainsValue", "BOOL" );
     XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_AddValue, "AddValue", "void" );
     XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_RemoveValue, "RemoveValue", "void" );
     XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_ReplaceValue, "ReplaceValue", "void" );
-    XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_Index, "Index", "void" );
-    XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_Current, "Current", "void" );
-    XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_Next, "Next", "void" );
-    XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_Previous, "Previous", "void" );
+    XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_Index, "Index", "XSUInteger" );
+    XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_Current, "Current", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_Next, "Next", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_Previous, "Previous", "XSObject" );
     XSRuntime_BindMethodToClassID( __XSSetClassID, ( void ( * )( void ) )XSSet_Rewind, "Rewind", "void" );
 }
 

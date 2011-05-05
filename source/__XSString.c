@@ -64,26 +64,26 @@ void __XSString_Initialize( void )
 {
     __XSStringClassID = XSRuntime_RegisterClass( &__XSStringClass );
     
-    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_Init, "Init", "void" );
-    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_InitWithCapacity, "InitWithCapacity", "void" );
-    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_InitWithCString, "InitWithCString", "void" );
-    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_SubstringFromIndex, "SubstringFromIndex", "void" );
-    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_SubstringToIndex, "SubstringToIndex", "void" );
-    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_SubstringWithRange, "SubstringWithRange", "void" );
-    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_LowercaseString, "LowercaseString", "void" );
-    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_UppercaseString, "UppercaseString", "void" );
-    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_StringByAppendingString, "StringByAppendingString", "void" );
-    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_StringByAppendingCString, "StringByAppendingCString", "void" );
+    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_Init, "Init", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_InitWithCapacity, "InitWithCapacity", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_InitWithCString, "InitWithCString", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_SubstringFromIndex, "SubstringFromIndex", "XSString" );
+    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_SubstringToIndex, "SubstringToIndex", "XSString" );
+    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_SubstringWithRange, "SubstringWithRange", "XSString" );
+    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_LowercaseString, "LowercaseString", "XSString" );
+    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_UppercaseString, "UppercaseString", "XSString" );
+    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_StringByAppendingString, "StringByAppendingString", "XSString" );
+    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_StringByAppendingCString, "StringByAppendingCString", "XSString" );
     XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_AppendFormat, "AppendFormat", "void" );
     XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_AppendString, "AppendString", "void" );
     XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_AppendCString, "AppendCString", "void" );
-    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_Length, "Length", "void" );
-    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_CharacterAtIndex, "CharacterAtIndex", "void" );
-    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_CString, "CString", "void" );
-    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_RangeOfString, "RangeOfString", "void" );
-    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_IsEqualToString, "IsEqualToString", "void" );
-    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_MD5Hash, "MD5Hash", "void" );
-    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_SplitWithCString, "SplitWithCString", "void" );
+    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_Length, "Length", "size_t" );
+    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_CharacterAtIndex, "CharacterAtIndex", "char" );
+    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_CString, "CString", "const char *" );
+    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_RangeOfString, "RangeOfString", "XSRange" );
+    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_IsEqualToString, "IsEqualToString", "BOOL" );
+    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_MD5Hash, "MD5Hash", "XSString" );
+    XSRuntime_BindMethodToClassID( __XSStringClassID, ( void ( * )( void ) )XSString_SplitWithCString, "SplitWithCString", "XSArray" );
 }
 
 void __XSString_Destruct( XSObject object )

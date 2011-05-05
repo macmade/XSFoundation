@@ -64,11 +64,11 @@ void __XSTimer_Initialize( void )
 {
     __XSTimerClassID = XSRuntime_RegisterClass( &__XSTimerClass );
     
-    XSRuntime_BindMethodToClassID( __XSTimerClassID, ( void ( * )( void ) )XSTimer_Init, "Init", "void" );
+    XSRuntime_BindMethodToClassID( __XSTimerClassID, ( void ( * )( void ) )XSTimer_Init, "Init", "XSObject" );
     XSRuntime_BindMethodToClassID( __XSTimerClassID, ( void ( * )( void ) )XSTimer_RunOnce, "RunOnce", "void" );
     XSRuntime_BindMethodToClassID( __XSTimerClassID, ( void ( * )( void ) )XSTimer_RunAndRepeat, "RunAndRepeat", "void" );
     XSRuntime_BindMethodToClassID( __XSTimerClassID, ( void ( * )( void ) )XSTimer_Invalidate, "Invalidate", "void" );
-    XSRuntime_BindMethodToClassID( __XSTimerClassID, ( void ( * )( void ) )XSTimer_IsValid, "IsValid", "void" );
+    XSRuntime_BindMethodToClassID( __XSTimerClassID, ( void ( * )( void ) )XSTimer_IsValid, "IsValid", "BOOL" );
 }
 
 void __XSTimer_RunOnce( XSThread thread, void * object )

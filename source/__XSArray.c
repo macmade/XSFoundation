@@ -64,20 +64,20 @@ void __XSArray_Initialize( void )
 {
     __XSArrayClassID = XSRuntime_RegisterClass( &__XSArrayClass );
     
-    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_Init, "Init", "void" );
-    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_InitWithCapacity, "InitWithCapacity", "void" );
-    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_InitWithValues, "InitWithValues", "void" );
-    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_Count, "Count", "void" );
+    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_Init, "Init", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_InitWithCapacity, "InitWithCapacity", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_InitWithValues, "InitWithValues", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_Count, "Count", "XSUInteger" );
     XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_AppendValue, "AppendValue", "void" );
     XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_InsertValueAtIndex, "InsertValueAtIndex", "void" );
-    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_ReplaceValueAtIndex, "ReplaceValueAtIndex", "void" );
-    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_ValueAtIndex, "ValueAtIndex", "void" );
-    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_RemoveValueAtIndex, "RemoveValueAtIndex", "void" );
-    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_ContainsValue, "ContainsValue", "void" );
-    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_Index, "Index", "void" );
-    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_Current, "Current", "void" );
-    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_Next, "Next", "void" );
-    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_Previous, "Previous", "void" );
+    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_ReplaceValueAtIndex, "ReplaceValueAtIndex", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_ValueAtIndex, "ValueAtIndex", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_RemoveValueAtIndex, "RemoveValueAtIndex", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_ContainsValue, "ContainsValue", "BOOL" );
+    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_Index, "Index", "XSUInteger" );
+    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_Current, "Current", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_Next, "Next", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_Previous, "Previous", "XSObject" );
     XSRuntime_BindMethodToClassID( __XSArrayClassID, ( void ( * )( void ) )XSArray_Rewind, "Rewind", "void" );
 }
 

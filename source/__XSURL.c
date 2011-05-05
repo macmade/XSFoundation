@@ -64,22 +64,22 @@ void __XSURL_Initialize( void )
 {
     __XSURLClassID = XSRuntime_RegisterClass( &__XSURLClass );
     
-    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_Init, "Init", "void" );
-    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_InitWithString, "InitWithString", "void" );
-    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_InitWithCString, "InitWithCString", "void" );
-    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_GetURL, "GetURL", "void" );
+    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_Init, "Init", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_InitWithString, "InitWithString", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_InitWithCString, "InitWithCString", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_GetURL, "GetURL", "XSString" );
     XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_SetScheme, "SetScheme", "void" );
     XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_SetDomain, "SetDomain", "void" );
     XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_SetPort, "SetPort", "void" );
     XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_SetPath, "SetPath", "void" );
     XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_SetQuery, "SetQuery", "void" );
     XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_SetFragment, "SetFragment", "void" );
-    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_GetScheme, "GetScheme", "void" );
-    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_GetDomain, "GetDomain", "void" );
-    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_GetPort, "GetPort", "void" );
-    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_GetPath, "GetPath", "void" );
-    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_GetQuery, "GetQuery", "void" );
-    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_GetFragment, "GetFragment", "void" );
+    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_GetScheme, "GetScheme", "XSString" );
+    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_GetDomain, "GetDomain", "XSString" );
+    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_GetPort, "GetPort", "XSUInteger" );
+    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_GetPath, "GetPath", "XSString" );
+    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_GetQuery, "GetQuery", "XSString" );
+    XSRuntime_BindMethodToClassID( __XSURLClassID, ( void ( * )( void ) )XSURL_GetFragment, "GetFragment", "XSString" );
 }
 
 void __XSURL_Destruct( XSObject object )

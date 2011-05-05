@@ -64,8 +64,8 @@ void __XSThread_Initialize( void )
 {
     __XSThreadClassID = XSRuntime_RegisterClass( &__XSThreadClass );
     
-    XSRuntime_BindMethodToClassID( __XSThreadClassID, ( void ( * )( void ) )XSThread_Init, "Init", "void" );
-    XSRuntime_BindMethodToClassID( __XSThreadClassID, ( void ( * )( void ) )XSThread_GetID, "GetID", "void" );
+    XSRuntime_BindMethodToClassID( __XSThreadClassID, ( void ( * )( void ) )XSThread_Init, "Init", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSThreadClassID, ( void ( * )( void ) )XSThread_GetID, "GetID", "XSUInteger" );
 }
 
 BOOL __XSThread_Equals( XSObject object1, XSObject object2 )

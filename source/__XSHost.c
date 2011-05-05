@@ -64,14 +64,14 @@ void __XSHost_Initialize( void )
 {
     __XSHostClassID = XSRuntime_RegisterClass( &__XSHostClass );
     
-    XSRuntime_BindMethodToClassID( __XSHostClassID, ( void ( * )( void ) )XSHost_Init, "Init", "void" );
-    XSRuntime_BindMethodToClassID( __XSHostClassID, ( void ( * )( void ) )XSHost_InitWithURL, "InitWithURL", "void" );
-    XSRuntime_BindMethodToClassID( __XSHostClassID, ( void ( * )( void ) )XSHost_GetHost, "GetHost", "void" );
-    XSRuntime_BindMethodToClassID( __XSHostClassID, ( void ( * )( void ) )XSHost_GetIP, "GetIP", "void" );
-    XSRuntime_BindMethodToClassID( __XSHostClassID, ( void ( * )( void ) )XSHost_GetPort, "GetPort", "void" );
-    XSRuntime_BindMethodToClassID( __XSHostClassID, ( void ( * )( void ) )XSHost_GetSocket, "GetSocket", "void" );
-    XSRuntime_BindMethodToClassID( __XSHostClassID, ( void ( * )( void ) )XSHost_Connect, "Connect", "void" );
-    XSRuntime_BindMethodToClassID( __XSHostClassID, ( void ( * )( void ) )XSHost_Disconnect, "Disconnect", "void" );
+    XSRuntime_BindMethodToClassID( __XSHostClassID, ( void ( * )( void ) )XSHost_Init, "Init", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSHostClassID, ( void ( * )( void ) )XSHost_InitWithURL, "InitWithURL", "XSObject" );
+    XSRuntime_BindMethodToClassID( __XSHostClassID, ( void ( * )( void ) )XSHost_GetHost, "GetHost", "XSString" );
+    XSRuntime_BindMethodToClassID( __XSHostClassID, ( void ( * )( void ) )XSHost_GetIP, "GetIP", "XSString" );
+    XSRuntime_BindMethodToClassID( __XSHostClassID, ( void ( * )( void ) )XSHost_GetPort, "GetPort", "XSUInteger" );
+    XSRuntime_BindMethodToClassID( __XSHostClassID, ( void ( * )( void ) )XSHost_GetSocket, "GetSocket", "XSInteger" );
+    XSRuntime_BindMethodToClassID( __XSHostClassID, ( void ( * )( void ) )XSHost_Connect, "Connect", "XSInteger" );
+    XSRuntime_BindMethodToClassID( __XSHostClassID, ( void ( * )( void ) )XSHost_Disconnect, "Disconnect", "XSInteger" );
 }
 
 void __XSHost_Construct( XSObject object )
