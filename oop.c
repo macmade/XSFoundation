@@ -85,7 +85,7 @@ XSMainStart( argc, argv )
 {
     MyClass o;
     
-    RegisterClass( MyClass );
+    XSClassRegister( MyClass );
     
     o = XSNew( MyClass );
     

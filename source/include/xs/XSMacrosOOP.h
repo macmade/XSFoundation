@@ -150,7 +150,7 @@ XS_EXTERN_C_BEGIN
     {                                                                                           \
         __classID = XSRuntime_RegisterClass( &__XSClassInfosName( XSCurrentClass ) );
 
-#define XSBinding( ret, name ) XSRuntime_BindMethodToClassID( __classID, ( void ( * )( void ) )__XSMethodName( XSCurrentClass, name ), #name )
+#define XSBinding( ret, name ) XSRuntime_BindMethodToClassID( __classID, ( void ( * )( void ) )__XSMethodName( XSCurrentClass, name ), #name, #ret )
 
 #define XSMethodImplementationStart
 
@@ -194,7 +194,7 @@ XS_EXTERN_C_BEGIN
 
 #define XSNew( class ) __XSClassAlloc( class )()
 
-#define RegisterClass( class ) __XSClassInitialize( class )()
+#define XSClassRegister( class ) __XSClassInitialize( class )()
 
 #define XSMethodPrototype( ret, mName, mArgs, argNames, ... )                                           \
     typedef struct __XSMethodArgumentsStructName( XSCurrentClass, mName )                               \
