@@ -55,8 +55,8 @@ XSMethodImplementationStart
     
     XSMethodDefine( void, SayHelloWorld );
 
-    printf( "hello, the world %s\n", arguments.text );
-    printf( "x has the value: %u\n", self->x );
+    XSLog( "hello, the world %s", arguments.text );
+    XSLog( "x has the value: %u", self->x );
 
 XSMethodImplementationEnd
 
@@ -64,8 +64,8 @@ XSMethodImplementationStart
 
     XSMethodDefine( void, SayHelloUniverse );
 
-    printf( "hello, the universe %s\n", arguments.text );
-    printf( "x has the value: %u\n", self->x );
+    XSLog( "hello, the universe %s", arguments.text );
+    XSLog( "x has the value: %u", self->x );
 
 XSMethodImplementationEnd
 
