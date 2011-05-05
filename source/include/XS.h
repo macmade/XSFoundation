@@ -88,6 +88,7 @@
 #include "XS/XSBag.h"
 #include "XS/XSBool.h"
 #include "XS/XSBTree.h"
+#include "XS/XSCall.h"
 #include "XS/XSColor.h"
 #include "XS/XSDebugLog.h"
 #include "XS/XSData.h"
