@@ -118,7 +118,7 @@
         ( void )arguments;                                                                                                          \
         {
 
-#define XSMethodImplementationEnd } XSRelease( context ); }
+#define XSMethodImplementationEnd }}
 
 #define XSClassConstructor  __XSClassConstructor( XSCurrentClass )
 #define XSClassDestructor   __XSClassDestructor( XSCurrentClass )
@@ -137,6 +137,8 @@
 #define XSConstructorEnd }
 
 #define XSNew( class ) __XSClassAlloc( class )()
+
+#define RegisterClass( class ) __XSClassInitialize( class )()
 
 #define XSMethodPrototype( ret, mName, mArgs, argNames, ... )                                           \
     typedef struct __XSMethodArgumentsStructName( XSCurrentClass, mName )                               \
@@ -160,6 +162,108 @@
         return ( void * )s;                                                                             \
     }                                                                                                   \
     ret __XSMethodName( XSCurrentClass, mName )( void * _context )
+
+/*******************************************************************************
+ * Calling functions
+ ******************************************************************************/
+
+void __XSCall_Void( XSMethod * method, void * context );
+char __XSCall_Char( XSMethod * method, void * context );
+short __XSCall_Short( XSMethod * method, void * context );
+int __XSCall_Int( XSMethod * method, void * context );
+long __XSCall_Long( XSMethod * method, void * context );
+long long __XSCall_LongLong( XSMethod * method, void * context );
+float __XSCall_Float( XSMethod * method, void * context );
+double __XSCall_Double( XSMethod * method, void * context );
+void * __XSCall_Pointer( XSMethod * method, void * context );
+
+void __XSCall_Void( XSMethod * method, void * context )
+{
+    int ( * f )( void * ) = ( int ( * )( void * ) )( method->func );
+    
+    f( context );
+    XSRelease( context );
+}
+
+char __XSCall_Char( XSMethod * method, void * context )
+{
+    char ( * f )( void * ) = ( char ( * )( void * ) )( method->func );
+    char result            = f( context );
+    
+    XSRelease( context );
+    
+    return result;
+}
+
+short __XSCall_Short( XSMethod * method, void * context )
+{
+    short ( * f )( void * ) = ( short ( * )( void * ) )( method->func );
+    short result            = f( context );
+    
+    XSRelease( context );
+    
+    return result;
+}
+
+int __XSCall_Int( XSMethod * method, void * context )
+{
+    int ( * f )( void * ) = ( int ( * )( void * ) )( method->func );
+    int result            = f( context );
+    
+    XSRelease( context );
+    
+    return result;
+}
+
+long __XSCall_Long( XSMethod * method, void * context )
+{
+    long ( * f )( void * ) = ( long ( * )( void * ) )( method->func );
+    long result            = f( context );
+    
+    XSRelease( context );
+    
+    return result;
+}
+
+long long __XSCall_LongLong( XSMethod * method, void * context )
+{
+    long long ( * f )( void * ) = ( long long ( * )( void * ) )( method->func );
+    long long result            = f( context );
+    
+    XSRelease( context );
+    
+    return result;
+}
+
+float __XSCall_Float( XSMethod * method, void * context )
+{
+    float ( * f )( void * ) = ( float ( * )( void * ) )( method->func );
+    float result            = f( context );
+    
+    XSRelease( context );
+    
+    return result;
+}
+
+double __XSCall_Double( XSMethod * method, void * context )
+{
+    double ( * f )( void * ) = ( double ( * )( void * ) )( method->func );
+    double result            = f( context );
+    
+    XSRelease( context );
+    
+    return result;
+}
+
+void * __XSCall_Pointer( XSMethod * method, void * context )
+{
+    void * ( * f )( void * ) = ( void * ( * )( void * ) )( method->func );
+    void * result            = f( context );
+    
+    XSRelease( context );
+    
+    return result;
+}
 
 /*******************************************************************************
  * MyClass.h
@@ -240,13 +344,12 @@ XSMainStart( argc, argv )
 {
     MyClass o;
     
-    __MyClass_Initialize();
+    RegisterClass( MyClass );
     
     o = XSNew( MyClass );
     
-    MyClass_SayHelloWorld( MyClass_SayHelloWorld_MakeArgs( o, "is open" ) );
-    
-    printf( "%p", XSRuntime_GetMethod( o, ( char * )"SayHelloWorld" ) );
+    __XSCall_Void( XSRuntime_GetMethod( o, ( char * )"SayHelloWorld" ), MyClass_SayHelloWorld_MakeArgs( o, "is open" ) );
+    __XSCall_Void( XSRuntime_GetMethod( o, ( char * )"SayHelloUniverse" ), MyClass_SayHelloWorld_MakeArgs( o, "is open" ) );
     
     XSRelease( o );
     
