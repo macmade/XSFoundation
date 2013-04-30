@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) ___YEAR___, Jean-David Gadina <macmade@eosgarden.com>
+ * Copyright (c) ___YEAR___, Jean-David Gadina - www.xs-labs.com
  * Distributed under the Boost Software License, Version 1.0.
  * 
  * Boost Software License - Version 1.0 - August 17th, 2003
@@ -32,7 +32,7 @@
 /*!
  * @file        ___FILEBASENAME___.c
  * @brief       Implementation for the ___FILEBASENAME___ class
- * @author      Jean-David Gadina <macmade@eosgarden.com>
+ * @author      Jean-David Gadina - www.xs-labs.com
  */
 
 #include "XS.h"

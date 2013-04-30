@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011, Jean-David Gadina <macmade@eosgarden.com>
+ * Copyright (c) 2011, Jean-David Gadina - www.xs-labs.com
  * Distributed under the Boost Software License, Version 1.0.
  * 
  * Boost Software License - Version 1.0 - August 17th, 2003
@@ -32,7 +32,7 @@
 /*!
  * @file        __XSBool.c
  * @brief       Private implementation for the XSBool class
- * @author      Jean-David Gadina <macmade@eosgarden.com>
+ * @author      Jean-David Gadina - www.xs-labs.com
  */
 
 #include "XS.h"

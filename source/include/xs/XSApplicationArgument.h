@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011, Jean-David Gadina <macmade@eosgarden.com>
+ * Copyright (c) 2011, Jean-David Gadina - www.xs-labs.com
  * Distributed under the Boost Software License, Version 1.0.
  * 
  * Boost Software License - Version 1.0 - August 17th, 2003
@@ -32,7 +32,7 @@
 /*!
  * @file        XSApplicationArgument.h
  * @brief       XSApplicationArgument class functions
- * @author      Jean-David Gadina <macmade@eosgarden.com>
+ * @author      Jean-David Gadina - www.xs-labs.com
  */
 
 #ifndef _XS_APPLICATION_ARGUMENT_H_

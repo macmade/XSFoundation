@@ -1,80 +1,40 @@
 XSFoundation
 ============
 
-XEOS C Foundation Library
--------------------------
+About
+-----
 
-### About XEOS
+The XEOS C Foundation library provides the base for object-oriented C style coding, reference counting memory management with auto-release capabilities, reflection, runtime environment, polymorphism, exceptions, and basic objects.
 
-[XEOS][1] is an experimental 32 bits Operating System for x86 platforms, written in Assembly and C, including a C89 Standard Library (with some C99 parts).
-
-### About XSFoundation
-
-The [XEOS][1] C Foundation library provides the base for object-oriented C style coding, reference counting memory management with auto-release capabilities, reflection, runtime environment, polymorphism, exceptions, and basic objects.
-It's purpose is to be integrated in the [XEOS][1] Operating System, once its C standard library will be complete.
-
+Its purpose is to be integrated in the [XEOS Operating System](http://www.xs-labs.com/en/projects/xeos/), once its C standard library will be complete.
 For now, it's just a standalone project, that should compile on every OS with a decent C compiler.
 
 ### Supported OS
 
 XSFoundation can be used on POSIX compliant systems (Mac OS X, Unix, Linux) as well as on Windows.
 
-### Building
+Documentation
+-------------
 
-The standard command `make` will build static and dynamic versions of the XSFoundation library.
+Documentation can be found at: http://www.xs-labs.com/en/projects/xsfoundation/documentation/
 
-### Linking
+Project home
+------------
 
-Once built, you can link with the XSFoundation library:
+Project home can be found at: http://www.xs-labs.com/en/projects/xsfoundation/
 
-`gcc -Wall -o exec_name libxeos.a source.c`
+License
+-------
 
-### Header files
+ClangKit is released under the terms of the Boost Software License - Version 1.0.
 
-A main header file is provided: `XS.h`.
-No other header file should be directly included.
+Repository Infos
+----------------
 
-### Source access
-
-XSFoundation is hosted on GitHub: https://github.com/macmade/XSFoundation/
-
-### Documentation
-
-Source code documentation can be found at the following address: http://www.eosgarden.com/doxygen/xsfoundation/
-
-Wiki can be found on GitHub: https://github.com/macmade/XSFoundation/wiki
-
-### License
-
-XSFoundation is released under the terms of the [Boost][2] Software License - Version 1.0.
-
-[1]: http://www.eosgarden.com/en/opensource/xeos/   "XEOS"
-[2]: http://www.boost.org/LICENSE_1_0.txt           "BOOST"
-
-### Basic example
-
-    #include "XS.h"
-    
-    XSMainStart( argc, argv )
-    {
-        XSUInteger e;
-        XSString   str1;
-        XSString   str2;
-        XSString   str3;
-        
-        // String creation - The object will be released automatically
-        str1 = XSSTR( "hello, world" );
-        
-        // Substring - The object will be released automatically
-        str2 = XSString_SubstringtoIndex( str1, 5 );
-        
-        // String copy - The object will have to be released explicitly
-        str3 = XSCopy( str2 );
-        
-        // Prints "hello, world, world, world"    
-        XSLog( "This is a log message: $@$@$@", str1, str2, str3 );
-        
-        // Release memory
-        XSRelease( str3 );
-    }
-    XSMainEnd( EXIT_SUCCESS )
+    Owner:			Jean-David Gadina - XS-Labs
+    Web:			www.xs-labs.com
+    Blog:			www.noxeos.com
+    Twitter:		@macmade
+    GitHub:			github.com/macmade
+    LinkedIn:		ch.linkedin.com/in/macmade/
+    StackOverflow:	stackoverflow.com/users/182676/macmade

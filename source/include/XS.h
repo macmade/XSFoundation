@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011, Jean-David Gadina <macmade@eosgarden.com>
+ * Copyright (c) 2011, Jean-David Gadina - www.xs-labs.com
  * Distributed under the Boost Software License, Version 1.0.
  * 
  * Boost Software License - Version 1.0 - August 17th, 2003
@@ -32,7 +32,7 @@
 /*!
  * @file        XS.h
  * @brief       XSFoundation main header file
- * @author      Jean-David Gadina <macmade@eosgarden.com>
+ * @author      Jean-David Gadina - www.xs-labs.com
  * @details     This file should be included on projects using the XEOS C
  *              Foundation Library. Other header files should never be included
  *              directly.
@@ -60,11 +60,6 @@
  * @section     source      Source access
  *              XSFoundation is hosted on GitHub:
  *              https://github.com/macmade/XSFoundation/
- * @section     doc         Documentation
- *              Source code documentation can be found at the following address:
- *              http://www.eosgarden.com/doxygen/xsfoundation/
- *              Wiki can be found on GitHub:
- *              https://github.com/macmade/XSFoundation/wiki
  * @section     license     License
  *              XSFoundation is released under the terms of the BOOST Software
  *              License - Version 1.0.

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010, Jean-David Gadina <macmade@eosgarden.com>
+ * Copyright (c) 2010, Jean-David Gadina - www.xs-labs.com
  * Distributed under the Boost Software License, Version 1.0.
  * 
  * Boost Software License - Version 1.0 - August 17th, 2003
@@ -32,7 +32,7 @@
 /*!
  * @file            eos-skl.h
  * @brief           EOS-SKL (Source Kit Language) main header file
- * @author          Jean-David Gadina <macmade@eosgarden.com>
+ * @author          Jean-David Gadina - www.xs-labs.com
  * @version         4.5.3-8
  * @since           2.5.0
  */

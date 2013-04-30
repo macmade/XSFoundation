@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011, Jean-David Gadina <macmade@eosgarden.com>
+ * Copyright (c) 2011, Jean-David Gadina - www.xs-labs.com
  * Distributed under the Boost Software License, Version 1.0.
  * 
  * Boost Software License - Version 1.0 - August 17th, 2003
@@ -32,7 +32,7 @@
 /*!
  * @file        test.c
  * @brief       POSIX test executable
- * @author      Jean-David Gadina <macmade@eosgarden.com>
+ * @author      Jean-David Gadina - www.xs-labs.com
  */
 
 #include "XS.h"
@@ -140,7 +140,7 @@ XSMainStart( argc, argv )
     data    = XSData_InitWithBytes( XSData_Alloc(), ( UInt8 * )"hello, world", 12 );
     dict    = XSDictionary_InitWithKeysAndValues( XSDictionary_Alloc(), XSSTR( "test-1" ), str1, XSSTR( "test-2" ), str2, NULL );
     num     = XSNumber_InitWithShort( XSNumber_Alloc(), 0x0303 );
-    url     = XSURL_InitWithCString( XSURL_Alloc(), "http://www.eosgarden.com:80/en/contact/?test=1#test" );
+    url     = XSURL_InitWithCString( XSURL_Alloc(), "http://www.xs-labs.com:80/en/contact/?test=1#test" );
     host    = XSHost_InitWithURL( XSHost_Alloc(), url );
     request = XSURLRequest_InitWithURL( XSURLRequest_Alloc(), url );
     
