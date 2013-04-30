@@ -26,7 +26,7 @@ Project home can be found at: http://www.xs-labs.com/en/projects/xsfoundation/
 License
 -------
 
-ClangKit is released under the terms of the Boost Software License - Version 1.0.
+XSFoundation is released under the terms of the Boost Software License - Version 1.0.
 
 Repository Infos
 ----------------
