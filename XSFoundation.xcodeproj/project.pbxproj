@@ -456,7 +456,7 @@
 		050C25C2135C8C070009766B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				ORGANIZATIONNAME = eosgarden;
+				ORGANIZATIONNAME = XS-Labs;
 			};
 			buildConfigurationList = 050C25C5135C8C070009766B /* Build configuration list for PBXProject "XSFoundation" */;
 			compatibilityVersion = "Xcode 3.2";
