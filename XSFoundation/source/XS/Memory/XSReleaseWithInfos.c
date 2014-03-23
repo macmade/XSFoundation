@@ -68,11 +68,25 @@
  */
 
 #include <XS/XS.h>
+#include <XS/__private/XSMemory.h>
 
 void XSReleaseWithInfos( void * memory, const char * file, int line, const char * func )
 {
-    ( void )memory;
+    __XSMemoryObject * object;
+    
     ( void )file;
     ( void )line;
     ( void )func;
+    
+    if( memory == NULL )
+    {
+        return;
+    }
+    
+    object = ( __XSMemoryObject * )( ( void * )( ( char * )memory - sizeof( __XSMemoryObject ) ) );
+    
+    if( XSAtomicDecrement64( ( volatile XSInt64 * )&( object->retainCount ) ) == 0 )
+    {
+        free( object );
+    }
 }

@@ -68,10 +68,20 @@
  */
 
 #include <XS/XS.h>
+#include <XS/__private/XSMemory.h>
 
 void * XSRetain( void * memory )
 {
-    ( void )memory;
+    __XSMemoryObject * object;
     
+    if( memory == NULL )
+    {
+        return NULL;
+    }
+    
+    object = ( __XSMemoryObject * )( ( void * )( ( char * )memory - sizeof( __XSMemoryObject ) ) );
+    
+    XSAtomicIncrement64( ( volatile XSInt64 * )&( object->retainCount ) );
+        
     return NULL;
 }
