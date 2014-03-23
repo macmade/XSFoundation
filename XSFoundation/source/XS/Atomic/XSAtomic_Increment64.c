@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSAtomicCompareAndSwap64.c
+ * @file        XSAtomic_Increment64.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSAtomicCompareAndSwap64
+ * @abstract    Definition for XSAtomic_Increment64
  */
 
 #include <XS/XS.h>
@@ -73,9 +73,9 @@
 
 #include <system.h>
 
-bool XSAtomicCompareAndSwap64( XSInt64 oldValue, XSInt64 newValue, volatile XSInt64 * value )
+XSInt64 XSAtomic_Increment64( volatile XSInt64 * value )
 {
-    return ( System_Atomic_CompareAndSwap64( ( int64_t )oldValue, ( int64_t )newValue, ( volatile int64_t * )value ) ) ? true : false;
+    return ( XSInt64 )System_Atomic_Increment64( ( volatile int64_t * )value );
 }
 
 #elif defined( _WIN32 )
@@ -83,18 +83,18 @@ bool XSAtomicCompareAndSwap64( XSInt64 oldValue, XSInt64 newValue, volatile XSIn
 #include <Windows.h>
 #include <Winnt.h>
 
-bool XSAtomicCompareAndSwap64( XSInt64 oldValue, XSInt64 newValue, volatile XSInt64 * value )
+XSInt64 XSAtomic_Increment64( volatile XSInt64 * value )
 {
-    return ( InterlockedCompareExchange64( ( volatile LONGLONG * )value, newValue, oldValue ) == oldValue ) ? true : false;
+    return ( XSInt64 )InterlockedIncrement64( ( volatile LONGLONG * )value );
 }
 
 #else
 
 #include <libkern/OSAtomic.h>
 
-bool XSAtomicCompareAndSwap64( XSInt64 oldValue, XSInt64 newValue, volatile XSInt64 * value )
+XSInt64 XSAtomic_Increment64( volatile XSInt64 * value )
 {
-    return ( OSAtomicCompareAndSwap64( ( int64_t )oldValue, ( int64_t )newValue, ( volatile int64_t * )value ) ) ? true : false;
+    return ( XSInt64 )OSAtomicIncrement64( ( volatile int64_t * )value );
 }
 
 #endif

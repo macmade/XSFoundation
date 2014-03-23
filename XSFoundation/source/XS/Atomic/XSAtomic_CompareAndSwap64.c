@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSAtomicCompareAndSwapPointer.c
+ * @file        XSAtomic_CompareAndSwap64.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSAtomicCompareAndSwapPointer
+ * @abstract    Definition for XSAtomic_CompareAndSwap64
  */
 
 #include <XS/XS.h>
@@ -73,9 +73,9 @@
 
 #include <system.h>
 
-bool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
+bool XSAtomic_CompareAndSwap64( XSInt64 oldValue, XSInt64 newValue, volatile XSInt64 * value )
 {
-    return ( System_Atomic_CompareAndSwapPtr( oldValue, newValue, value ) ) ? true : false;
+    return ( System_Atomic_CompareAndSwap64( ( int64_t )oldValue, ( int64_t )newValue, ( volatile int64_t * )value ) ) ? true : false;
 }
 
 #elif defined( _WIN32 )
@@ -83,18 +83,18 @@ bool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * vol
 #include <Windows.h>
 #include <Winnt.h>
 
-bool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
+bool XSAtomic_CompareAndSwap64( XSInt64 oldValue, XSInt64 newValue, volatile XSInt64 * value )
 {
-    return ( InterlockedCompareExchangePointer( value, newValue, oldValue ) == oldValue ) ? true : false;
+    return ( InterlockedCompareExchange64( ( volatile LONGLONG * )value, newValue, oldValue ) == oldValue ) ? true : false;
 }
 
 #else
 
 #include <libkern/OSAtomic.h>
 
-bool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
+bool XSAtomic_CompareAndSwap64( XSInt64 oldValue, XSInt64 newValue, volatile XSInt64 * value )
 {
-    return ( OSAtomicCompareAndSwapPtr( oldValue, newValue, value ) ) ? true : false;
+    return ( OSAtomicCompareAndSwap64( ( int64_t )oldValue, ( int64_t )newValue, ( volatile int64_t * )value ) ) ? true : false;
 }
 
 #endif

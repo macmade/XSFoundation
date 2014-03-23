@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSAtomicIncrement32.c
+ * @file        XSAtomic_CompareAndSwap32.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSAtomicIncrement32
+ * @abstract    Definition for XSAtomic_CompareAndSwap32
  */
 
 #include <XS/XS.h>
@@ -73,9 +73,9 @@
 
 #include <system.h>
 
-XSInt32 XSAtomicIncrement32( volatile XSInt32 * value )
+bool XSAtomic_CompareAndSwap32( XSInt32 oldValue, XSInt32 newValue, volatile XSInt32 * value )
 {
-    return ( XSInt32 )System_Atomic_Increment32( ( volatile int32_t * )value );
+    return ( System_Atomic_CompareAndSwap32( ( int32_t )oldValue, ( int32_t )newValue, ( volatile int32_t * )value ) ) ? true : false;
 }
 
 #elif defined( _WIN32 )
@@ -83,18 +83,18 @@ XSInt32 XSAtomicIncrement32( volatile XSInt32 * value )
 #include <Windows.h>
 #include <Winnt.h>
 
-XSInt32 XSAtomicIncrement32( volatile XSInt32 * value )
+bool XSAtomic_CompareAndSwap32( XSInt32 oldValue, XSInt32 newValue, volatile XSInt32 * value )
 {
-    return ( XSInt32 )InterlockedIncrement( ( volatile LONG * )value );
+    return ( InterlockedCompareExchange( ( volatile LONG * )value, newValue, oldValue ) == oldValue ) ? true : false;
 }
 
 #else
 
 #include <libkern/OSAtomic.h>
 
-XSInt32 XSAtomicIncrement32( volatile XSInt32 * value )
+bool XSAtomic_CompareAndSwap32( XSInt32 oldValue, XSInt32 newValue, volatile XSInt32 * value )
 {
-    return ( XSInt32 )OSAtomicIncrement32( ( volatile int32_t * )value );
+    return ( OSAtomicCompareAndSwap32( ( int32_t )oldValue, ( int32_t )newValue, ( volatile int32_t * )value ) ) ? true : false;
 }
 
 #endif

@@ -90,7 +90,7 @@ void * XSAllocWithInfos( XSSize bytes, XSClassID classID, const char * file, int
     object->retainCount = 1;
     object->size        = bytes;
     object->classID     = classID;
-    object->allocID     = ( XSUInt64 )XSAtomicIncrement64( ( volatile XSInt64 * )&__XSMemoryAllocID );
+    object->allocID     = ( XSUInt64 )XSAtomic_Increment64( ( volatile XSInt64 * )&__XSMemoryAllocID );
     
     memcpy( &( object->fence ), __XSMemoryFenceData, __XS_MEMORY_FENCE_SIZE );
     memcpy( ( char * )object + ( size - __XS_MEMORY_FENCE_SIZE ), __XSMemoryFenceData, __XS_MEMORY_FENCE_SIZE );

@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSAtomicDecrement64.c
+ * @file        XSAtomic_CompareAndSwapPointer.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSAtomicDecrement64
+ * @abstract    Definition for XSAtomic_CompareAndSwapPointer
  */
 
 #include <XS/XS.h>
@@ -73,9 +73,9 @@
 
 #include <system.h>
 
-XSInt64 XSAtomicDecrement64( volatile XSInt64 * value )
+bool XSAtomic_CompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
 {
-    return ( XSInt64 )System_Atomic_Decrement64( ( volatile int64_t * )value );
+    return ( System_Atomic_CompareAndSwapPtr( oldValue, newValue, value ) ) ? true : false;
 }
 
 #elif defined( _WIN32 )
@@ -83,18 +83,18 @@ XSInt64 XSAtomicDecrement64( volatile XSInt64 * value )
 #include <Windows.h>
 #include <Winnt.h>
 
-XSInt64 XSAtomicDecrement64( volatile XSInt64 * value )
+bool XSAtomic_CompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
 {
-    return ( XSInt64 )InterlockedDecrement64( ( volatile LONGLONG * )value );
+    return ( InterlockedCompareExchangePointer( value, newValue, oldValue ) == oldValue ) ? true : false;
 }
 
 #else
 
 #include <libkern/OSAtomic.h>
 
-XSInt64 XSAtomicDecrement64( volatile XSInt64 * value )
+bool XSAtomic_CompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
 {
-    return ( XSInt64 )OSAtomicDecrement64( ( volatile int64_t * )value );
+    return ( OSAtomicCompareAndSwapPtr( oldValue, newValue, value ) ) ? true : false;
 }
 
 #endif

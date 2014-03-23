@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSAtomicIncrement64.c
+ * @file        XSAtomic_Decrement64.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSAtomicIncrement64
+ * @abstract    Definition for XSAtomic_Decrement64
  */
 
 #include <XS/XS.h>
@@ -73,9 +73,9 @@
 
 #include <system.h>
 
-XSInt64 XSAtomicIncrement64( volatile XSInt64 * value )
+XSInt64 XSAtomic_Decrement64( volatile XSInt64 * value )
 {
-    return ( XSInt64 )System_Atomic_Increment64( ( volatile int64_t * )value );
+    return ( XSInt64 )System_Atomic_Decrement64( ( volatile int64_t * )value );
 }
 
 #elif defined( _WIN32 )
@@ -83,18 +83,18 @@ XSInt64 XSAtomicIncrement64( volatile XSInt64 * value )
 #include <Windows.h>
 #include <Winnt.h>
 
-XSInt64 XSAtomicIncrement64( volatile XSInt64 * value )
+XSInt64 XSAtomic_Decrement64( volatile XSInt64 * value )
 {
-    return ( XSInt64 )InterlockedIncrement64( ( volatile LONGLONG * )value );
+    return ( XSInt64 )InterlockedDecrement64( ( volatile LONGLONG * )value );
 }
 
 #else
 
 #include <libkern/OSAtomic.h>
 
-XSInt64 XSAtomicIncrement64( volatile XSInt64 * value )
+XSInt64 XSAtomic_Decrement64( volatile XSInt64 * value )
 {
-    return ( XSInt64 )OSAtomicIncrement64( ( volatile int64_t * )value );
+    return ( XSInt64 )OSAtomicDecrement64( ( volatile int64_t * )value );
 }
 
 #endif

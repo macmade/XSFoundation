@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSAtomicDecrement32.c
+ * @file        XSAtomic_Decrement32.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSAtomicDecrement32
+ * @abstract    Definition for XSAtomic_Decrement32
  */
 
 #include <XS/XS.h>
@@ -73,7 +73,7 @@
 
 #include <system.h>
 
-XSInt32 XSAtomicDecrement32( volatile XSInt32 * value )
+XSInt32 XSAtomic_Decrement32( volatile XSInt32 * value )
 {
     return ( XSInt32 )System_Atomic_Decrement32( ( volatile int32_t * )value );
 }
@@ -83,7 +83,7 @@ XSInt32 XSAtomicDecrement32( volatile XSInt32 * value )
 #include <Windows.h>
 #include <Winnt.h>
 
-XSInt32 XSAtomicDecrement32( volatile XSInt32 * value )
+XSInt32 XSAtomic_Decrement32( volatile XSInt32 * value )
 {
     return ( XSInt32 )InterlockedDecrement( ( volatile LONG * )value );
 }
@@ -92,7 +92,7 @@ XSInt32 XSAtomicDecrement32( volatile XSInt32 * value )
 
 #include <libkern/OSAtomic.h>
 
-XSInt32 XSAtomicDecrement32( volatile XSInt32 * value )
+XSInt32 XSAtomic_Decrement32( volatile XSInt32 * value )
 {
     return ( XSInt32 )OSAtomicDecrement32( ( volatile int32_t * )value );
 }
