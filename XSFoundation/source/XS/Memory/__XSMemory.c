@@ -62,16 +62,18 @@
 /* $Id$ */
 
 /*!
- * @file        XSAutorelease.c
+ * @file        __XSMemory.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSAutorelease
+ * @abstract    Definitions for memory functions
  */
 
 #include <XS/XS.h>
+#include <XS/__private/XSMemory.h>
 
-void * XSAutorelease( void * memory )
+volatile XSInt64 __XSMemoryAllocID = 0;
+
+const char __XSMemoryFenceData[ __XS_MEMORY_FENCE_SIZE ] =
 {
-    ( void )memory;
-    
-    return NULL;
-}
+    '_', 'X', 'S', 'M', 'e', 'm', 'o', 'r',
+    'y', 'O', 'b', 'j', 'e', 'c', 't', '_' 
+};

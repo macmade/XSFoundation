@@ -74,17 +74,32 @@
 #ifndef __XS___PRIVATE_MEMORY_H__
 #define __XS___PRIVATE_MEMORY_H__
 
+#define __XS_MEMORY_FENCE_SIZE  16
+
 /*!
  * @typedef     __XSMemoryObject
  * @abstract    Memory object type
  */
-typedef struct __XSMemoryObject
+typedef struct
 {
-    XSUInt64        retainCount;      /*! The object's retain count */
-    XSSize          size;             /*! The allocated data size */
-    XSSize          allocID;          /*! ... */
-    XSClassID       classID;          /*! The class ID (only for allocated instances) */
-    unsigned char   fence[ 12 ];      /*! Memory fence to prevent overflows */
-};
+    XSUInt64        retainCount;                        /*! The object's retain count */
+    XSSize          size;                               /*! The allocated data size */
+    XSInt64         allocID;                            /*! ... */
+    XSClassID       classID;                            /*! The class ID (only for allocated instances) */
+    unsigned char   fence[ __XS_MEMORY_FENCE_SIZE ];    /*! Memory fence to prevent overflows */
+}
+__XSMemoryObject;
+
+/*!
+ * @typedef     __XSMemoryAllocID
+ * @abstract    The current allocation ID
+ */
+extern volatile XSInt64 __XSMemoryAllocID;
+
+/*!
+ * @typedef     __XSMemoryFenceData
+ * @abstract    The memory fence data
+ */
+extern const char __XSMemoryFenceData[ __XS_MEMORY_FENCE_SIZE ];
 
 #endif /* __XS___PRIVATE_MEMORY_H__ */

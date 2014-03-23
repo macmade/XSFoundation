@@ -78,9 +78,90 @@ XS_EXTERN_C_BEGIN
 
 #include <XS/XSTypes.h>
 
-XS_EXPORT void * XSAlloc( XSSize bytes );
+/*!
+ * @def         XSAlloc
+ * @abstract    Allocates memory
+ * @param       bytes       The number of bytes to allocate
+ * @return      The allocated memory, or NULL
+ */
+#define XSAlloc( _bytes_ )      XSAllocWithInfos( _bytes_, 0, __FILE__, __LINE__, __func__ )
+
+/*!
+ * @def         XSAutoAlloc
+ * @abstract    Allocates memory which will be automatically released
+ * @param       bytes       The number of bytes to allocate
+ * @discussion  The memory data will be placed in the instance of the current
+ *              auto-release pool, and will be released the next time
+ *              the auto-release pool is drained.
+ * @return      The allocated memory, or NULL
+ */
+#define XSAutoAlloc( _bytes_ )  XSAutoAllocWithInfos( _bytes_, 0, __FILE__, __LINE__, __func__ )
+
+/*!
+ * @def         XSRelease
+ * @abstract    Releases memory data
+ * @param       memory      The memory data to release
+ * @discussion  Memory may be freed if the retain count for the memory
+ *              data reaches 0.
+ */
+#define XSRelease( _memory_ )   XSReleaseWithInfos( _memory_, __FILE__, __LINE__, __func__ )
+
+/*!
+ * @function    XSAllocWithInfos
+ * @abstract    Allocates memory
+ * @param       bytes       The number of bytes to allocate
+ * @param       classID     The class ID, if any
+ * @param       file        The file in which the allocation occurs
+ * @param       line        The line number of the file in which the allocation occurs
+ * @param       func        The function in which the allocation occurs
+ * @return      The allocated memory, or NULL
+ */
+XS_EXPORT void * XSAllocWithInfos( XSSize bytes, XSClassID classID, const char * file, int line, const char * func );
+
+/*!
+ * @function    XSAutoAllocWithInfos
+ * @abstract    Allocates memory which will be automatically released
+ * @param       bytes       The number of bytes to allocate
+ * @param       classID     The class ID, if any
+ * @param       file        The file in which the allocation occurs
+ * @param       line        The line number of the file in which the allocation occurs
+ * @param       func        The function in which the allocation occurs
+ * @discussion  The memory data will be placed in the instance of the current
+ *              auto-release pool, and will be released the next time
+ *              the auto-release pool is drained.
+ * @return      The allocated memory, or NULL
+ */
+XS_EXPORT void * XSAutoAllocWithInfos( XSSize bytes, XSClassID classID, const char * file, int line, const char * func );
+
+/*!
+ * @function    XSRetainWithInfos
+ * @abstract    Retains memory data
+ * @param       memory      The memory data to retain
+ * @return      The memory data
+ */
 XS_EXPORT void * XSRetain( void * memory );
-XS_EXPORT void XSRelease( void * memory );
+
+/*!
+ * @function    XSReleaseWithInfos
+ * @abstract    Releases memory data
+ * @param       memory      The memory data to release
+ * @param       file        The file in which the allocation occurs
+ * @param       line        The line number of the file in which the allocation occurs
+ * @param       func        The function in which the allocation occurs
+ * @discussion  Memory may be freed if the retain count for the memory
+ *              data reaches 0.
+ */
+XS_EXPORT void XSReleaseWithInfos( void * memory, const char * file, int line, const char * func );
+
+/*!
+ * @function    XSAutorelease
+ * @abstract    Auto-releases memory data
+ * @param       memory      The memory data to release
+ * @discussion  The memory data will be placed in the instance of the current
+ *              auto-release pool, and will be released the next time
+ *              the auto-release pool is drained.
+ * @return      The memory data
+ */
 XS_EXPORT void * XSAutorelease( void * memory );
 
 XS_EXTERN_C_END

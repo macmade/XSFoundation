@@ -62,16 +62,17 @@
 /* $Id$ */
 
 /*!
- * @file        XSAutorelease.c
+ * @file        XSReleaseWithInfos.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSAutorelease
+ * @abstract    Definition for XSReleaseWithInfos
  */
 
 #include <XS/XS.h>
 
-void * XSAutorelease( void * memory )
+void XSReleaseWithInfos( void * memory, const char * file, int line, const char * func )
 {
     ( void )memory;
-    
-    return NULL;
+    ( void )file;
+    ( void )line;
+    ( void )func;
 }
