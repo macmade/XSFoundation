@@ -62,51 +62,38 @@
 /* $Id$ */
 
 /*!
- * @header      XSTypes.h
+ * @header      XSClassInfo.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    XSClassInfo type definition
  */
 
 #ifndef __XS_H__
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_TYPES_H__
-#define __XS_TYPES_H__
+#ifndef __XS_TYPES_XS_CLASS_INFO_H__
+#define __XS_TYPES_XS_CLASS_INFO_H__
 
 XS_EXTERN_C_BEGIN
 
-#include <XS/XSTypes/XSUInt8.h>
-#include <XS/XSTypes/XSUInt16.h>
-#include <XS/XSTypes/XSUInt32.h>
-#include <XS/XSTypes/XSUInt64.h>
-
-#include <XS/XSTypes/XSInt8.h>
-#include <XS/XSTypes/XSInt16.h>
-#include <XS/XSTypes/XSInt32.h>
-#include <XS/XSTypes/XSInt64.h>
-
-#include <XS/XSTypes/XSFloat32.h>
-#include <XS/XSTypes/XSFloat64.h>
-
-#include <XS/XSTypes/XSUInteger.h>
-#include <XS/XSTypes/XSInteger.h>
-#include <XS/XSTypes/XSFloat.h>
-
-#include <XS/XSTypes/XSSize.h>
-#include <XS/XSTypes/XSOffset.h>
-
-#include <XS/XSTypes/XSPoint.h>
-#include <XS/XSTypes/XSArea.h>
-#include <XS/XSTypes/XSRect.h>
-#include <XS/XSTypes/XSEdgeInsets.h>
-
-#include <XS/XSTypes/XSComparisonResult.h>
-
-#include <XS/XSTypes/XSClassID.h>
 #include <XS/XSTypes/XSObjectRef.h>
-#include <XS/XSTypes/XSClassInfo.h>
+
+/*!
+ * @struct      XSClassInfos_Struct
+ * @brief       XSFoundation runtime class structure
+ */
+typedef struct
+{
+    const char * className;                                                         /*! The name of the class */
+    XSSize       instanceSize;                                                      /*! The size of the class instances */
+    void         ( * construct )( XSObjectRef object );                             /*! The class constructor */
+    void         ( * destruct  )( XSObjectRef object );                             /*! The class destructor */
+    void         ( * copy      )( XSObjectRef source, XSObjectRef destination );    /*! The object's copy callback */
+    bool         ( * equals    )( XSObjectRef object1, XSObjectRef object2 );       /*! The object's comparison callback */
+    const char * ( * toString  )( XSObjectRef object );                             /*! The object's description callback */
+}
+XSClassInfo;
 
 XS_EXTERN_C_END
 
-#endif /* __XS_RUNTIME_H__ */
+#endif /* __XS_TYPES_XS_CLASS_INFO_H__ */
