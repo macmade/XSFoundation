@@ -61,11 +61,18 @@
 
 /* $Id$ */
 
-#include <XS/XS.h>
+/*!
+ * @file        XSAllocWithInfos.c
+ * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+ * @abstract    Definition for XSAllocWithInfos
+ */
 
-void * XSAlloc( XSSize bytes )
+#include <XS/XS.h>
+#include <XS/__private/XSRuntime.h>
+
+const char * XSRuntime_GetObjectClassName( XSObjectRef object )
 {
-    ( void )bytes;
+    ( void )object;
     
     return NULL;
 }

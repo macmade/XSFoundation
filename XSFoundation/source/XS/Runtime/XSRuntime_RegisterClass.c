@@ -62,106 +62,17 @@
 /* $Id$ */
 
 /*!
- * @header      XSRuntime.h
+ * @file        XSAllocWithInfos.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation runtime functions
+ * @abstract    Definition for XSAllocWithInfos
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/XSRuntime.h>
 
-#ifndef __XS_RUNTIME_H__
-#define __XS_RUNTIME_H__
-
-XS_EXTERN_C_BEGIN
-
-#include <XS/XSTypes.h>
-
-/*!
- * @function    XSRuntime_RegisterClass
- * @abstract    Registers a class for the runtime
- * @discussion  All runtime classes needs to be registered before the runtime
- *              can use them and create instances.
- *              This function needs to be called once per class,
- *              ie using pthread_once().
- * @param       cls         The class information structure to register
- * @result      The runtime type ID for the class
- */
-XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls );
-
-/*!
- * @function    XSRuntime_CreateInstance
- * @abstract    Initializes a new instance of a registered class
- * @param       classID     The class type ID
- * @result      The allocated instance
- */
-XSObjectRef XSRuntime_CreateInstance( XSClassID classID );
-
-/*!
- * @function    XSRuntime_CreateInstanceOfClassNamed
- * @abstract    Initializes a new instance of a class with a specific name
- * @param       name        The name of the class
- * @result      The allocated instance
- */
-XSObjectRef XSRuntime_CreateInstanceOfClassNamed( const char * name );
-
-/*!
- * @function    XSRuntime_GetDescription
- * @abstract    Gets an object's description
- * @param       object      The pointer to the object
- * @result      The object's description
- */
-const char * XSRuntime_GetDescription( XSObjectRef object );
-
-/*!
- * @function    XSRuntime_IsInstance
- * @abstract    Checks whether a pointer is an object instance
- * @param       ptr         The pointer to check
- * @result      True if the pointer represents an instance, otherwise false
- */
-bool XSRuntime_IsInstance( void * ptr );
-
-/*!
- * @function    XSRuntime_IsRegisteredClass
- * @abstract    Checks whether a class type ID corresponds to a registered class
- * @param       classID     The class type ID
- * @result      True if the class ID represents an valid class, otherwise false
- */
-bool XSRuntime_IsRegisteredClass( XSClassID classID );
-
-/*!
- * @function    XSRuntime_GetClassID
- * @abstract    Gets the class type ID for an object
- * @param       object      The object
- * @result      The class type ID for the object
- */
-XSClassID XSRuntime_GetClassID( XSObjectRef object );
-
-/*!
- * @function    XSRuntime_GetClassIDOfClassNamed
- * @abstract    Gets the class type ID for a class with a specific name
- * @param       className   The name of the class
- * @result      The class type ID
- */
-XSClassID XSRuntime_GetClassIDOfClassNamed( const char * className );
-
-/*!
- * @function    XSRuntime_GetClassName
- * @abstract    Gets the class name for an class type ID
- * @param       classID     The class type ID
- * @result      The name of the class
- */
-const char * XSRuntime_GetClassName( XSClassID classID );
-
-/*!
- * @function    XSRuntime_GetObjectClassName
- * @abstract    Gets the class name for an object
- * @param       object      The object
- * @result      The name of the class
- */
-const char * XSRuntime_GetObjectClassName( XSObjectRef object );
-
-XS_EXTERN_C_END
-
-#endif /* __XS_RUNTIME_H__ */
+XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls )
+{
+    ( void )cls;
+    
+    return 0;
+}
