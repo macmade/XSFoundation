@@ -79,7 +79,7 @@ XS_EXTERN_C_BEGIN
 #include <XS/XSTypes/XSFloat.h>
 
 /*!
- * @struct      XSEdgeInsets
+ * @typedef     XSEdgeInsets
  * @abstract    Edge insets type (structure)
  */
 typedef struct

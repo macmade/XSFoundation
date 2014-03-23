@@ -79,7 +79,7 @@ XS_EXTERN_C_BEGIN
 #include <XS/XSTypes/XSFloat.h>
 
 /*!
- * @struct      XSArea
+ * @typedef     XSArea
  * @abstract    Area type (structure)
  */
 typedef struct

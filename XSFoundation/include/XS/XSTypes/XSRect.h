@@ -80,7 +80,7 @@ XS_EXTERN_C_BEGIN
 #include <XS/XSTypes/XSArea.h>
 
 /*!
- * @struct      XSRect
+ * @typedef     XSRect
  * @abstract    Rectangle type (structure)
  */
 typedef struct

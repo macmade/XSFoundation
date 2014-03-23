@@ -79,7 +79,7 @@ XS_EXTERN_C_BEGIN
 #include <XS/XSTypes/XSFloat.h>
 
 /*!
- * @struct      XSPoint
+ * @typedef     XSPoint
  * @abstract    Point type (structure)
  */
 typedef struct

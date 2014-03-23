@@ -79,7 +79,7 @@ XS_EXTERN_C_BEGIN
 #include <XS/XSTypes/XSUInteger.h>
 
 /*!
- * @struct      XSRange
+ * @typedef     XSRange
  * @abstract    Range type (structure)
  */
 typedef struct
