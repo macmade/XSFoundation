@@ -61,6 +61,12 @@
 
 /* $Id$ */
 
+/*!
+ * @file        XSAtomicCompareAndSwap64.c
+ * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+ * @abstract    Definition for XSAtomicCompareAndSwap64
+ */
+
 #include <XS/XS.h>
 
 #if defined( __XEOS__ )
