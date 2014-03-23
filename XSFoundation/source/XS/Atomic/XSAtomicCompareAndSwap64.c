@@ -67,9 +67,9 @@
 
 #include <system.h>
 
-XSBool XSAtomicCompareAndSwap64( XSInt64 oldValue, XSInt64 newValue, volatile XSInt64 * value )
+bool XSAtomicCompareAndSwap64( XSInt64 oldValue, XSInt64 newValue, volatile XSInt64 * value )
 {
-    return ( System_Atomic_CompareAndSwap64( ( int64_t )oldValue, ( int64_t )newValue, ( volatile int64_t * )value ) ) ? XSTrue : XSFalse;
+    return ( System_Atomic_CompareAndSwap64( ( int64_t )oldValue, ( int64_t )newValue, ( volatile int64_t * )value ) ) ? true : false;
 }
 
 #elif defined( _WIN32 )
@@ -77,18 +77,18 @@ XSBool XSAtomicCompareAndSwap64( XSInt64 oldValue, XSInt64 newValue, volatile XS
 #include <Windows.h>
 #include <Winnt.h>
 
-XSBool XSAtomicCompareAndSwap64( XSInt64 oldValue, XSInt64 newValue, volatile XSInt64 * value )
+bool XSAtomicCompareAndSwap64( XSInt64 oldValue, XSInt64 newValue, volatile XSInt64 * value )
 {
-    return ( InterlockedCompareExchange64( ( volatile LONGLONG * )value, newValue, oldValue ) == oldValue ) ? XSTrue : XSFalse;
+    return ( InterlockedCompareExchange64( ( volatile LONGLONG * )value, newValue, oldValue ) == oldValue ) ? true : false;
 }
 
 #else
 
 #include <libkern/OSAtomic.h>
 
-XSBool XSAtomicCompareAndSwap64( XSInt64 oldValue, XSInt64 newValue, volatile XSInt64 * value )
+bool XSAtomicCompareAndSwap64( XSInt64 oldValue, XSInt64 newValue, volatile XSInt64 * value )
 {
-    return ( OSAtomicCompareAndSwap64( ( int64_t )oldValue, ( int64_t )newValue, ( volatile int64_t * )value ) ) ? XSTrue : XSFalse;
+    return ( OSAtomicCompareAndSwap64( ( int64_t )oldValue, ( int64_t )newValue, ( volatile int64_t * )value ) ) ? true : false;
 }
 
 #endif

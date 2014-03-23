@@ -93,8 +93,6 @@ XS_EXTERN_C_BEGIN
 #include <XS/XSTypes/XSInteger.h>
 #include <XS/XSTypes/XSFloat.h>
 
-#include <XS/XSTypes/XSBool.h>
-
 #include <XS/XSTypes/XSSize.h>
 #include <XS/XSTypes/XSOffset.h>
 

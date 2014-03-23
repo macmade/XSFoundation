@@ -57,7 +57,6 @@
 		05548E4118DF4B3E00BB970F /* XSMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 05548DB318DF37E700BB970F /* XSMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05548E4218DF4B3E00BB970F /* XSTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 051B66DE18DCAC8B0079238C /* XSTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05548E4318DF4B3E00BB970F /* XSArea.h in Headers */ = {isa = PBXBuildFile; fileRef = 05548DD118DF4B2700BB970F /* XSArea.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05548E4418DF4B3E00BB970F /* XSBool.h in Headers */ = {isa = PBXBuildFile; fileRef = 05548DD218DF4B2700BB970F /* XSBool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05548E4518DF4B3E00BB970F /* XSClassID.h in Headers */ = {isa = PBXBuildFile; fileRef = 05548DD318DF4B2700BB970F /* XSClassID.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05548E4618DF4B3E00BB970F /* XSComparisonResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 05548DD418DF4B2700BB970F /* XSComparisonResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05548E4718DF4B3E00BB970F /* XSEdgeInsets.h in Headers */ = {isa = PBXBuildFile; fileRef = 05548DD518DF4B2700BB970F /* XSEdgeInsets.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -87,7 +86,6 @@
 		05548E5F18DF4B3F00BB970F /* XSMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 05548DB318DF37E700BB970F /* XSMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05548E6018DF4B3F00BB970F /* XSTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 051B66DE18DCAC8B0079238C /* XSTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05548E6118DF4B3F00BB970F /* XSArea.h in Headers */ = {isa = PBXBuildFile; fileRef = 05548DD118DF4B2700BB970F /* XSArea.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05548E6218DF4B3F00BB970F /* XSBool.h in Headers */ = {isa = PBXBuildFile; fileRef = 05548DD218DF4B2700BB970F /* XSBool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05548E6318DF4B3F00BB970F /* XSClassID.h in Headers */ = {isa = PBXBuildFile; fileRef = 05548DD318DF4B2700BB970F /* XSClassID.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05548E6418DF4B3F00BB970F /* XSComparisonResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 05548DD418DF4B2700BB970F /* XSComparisonResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05548E6518DF4B3F00BB970F /* XSEdgeInsets.h in Headers */ = {isa = PBXBuildFile; fileRef = 05548DD518DF4B2700BB970F /* XSEdgeInsets.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -117,7 +115,6 @@
 		05548E7D18DF4B3F00BB970F /* XSMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 05548DB318DF37E700BB970F /* XSMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05548E7E18DF4B3F00BB970F /* XSTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 051B66DE18DCAC8B0079238C /* XSTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05548E7F18DF4B3F00BB970F /* XSArea.h in Headers */ = {isa = PBXBuildFile; fileRef = 05548DD118DF4B2700BB970F /* XSArea.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05548E8018DF4B3F00BB970F /* XSBool.h in Headers */ = {isa = PBXBuildFile; fileRef = 05548DD218DF4B2700BB970F /* XSBool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05548E8118DF4B3F00BB970F /* XSClassID.h in Headers */ = {isa = PBXBuildFile; fileRef = 05548DD318DF4B2700BB970F /* XSClassID.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05548E8218DF4B3F00BB970F /* XSComparisonResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 05548DD418DF4B2700BB970F /* XSComparisonResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05548E8318DF4B3F00BB970F /* XSEdgeInsets.h in Headers */ = {isa = PBXBuildFile; fileRef = 05548DD518DF4B2700BB970F /* XSEdgeInsets.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -231,7 +228,6 @@
 		05548DBB18DF3AEA00BB970F /* XSWarnings-Clang.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XSWarnings-Clang.h"; sourceTree = "<group>"; };
 		05548DBC18DF3AEA00BB970F /* XSWarnings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSWarnings.h; sourceTree = "<group>"; };
 		05548DD118DF4B2700BB970F /* XSArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSArea.h; sourceTree = "<group>"; };
-		05548DD218DF4B2700BB970F /* XSBool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSBool.h; sourceTree = "<group>"; };
 		05548DD318DF4B2700BB970F /* XSClassID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSClassID.h; sourceTree = "<group>"; };
 		05548DD418DF4B2700BB970F /* XSComparisonResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSComparisonResult.h; sourceTree = "<group>"; };
 		05548DD518DF4B2700BB970F /* XSEdgeInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSEdgeInsets.h; sourceTree = "<group>"; };
@@ -434,7 +430,6 @@
 			isa = PBXGroup;
 			children = (
 				05548DD118DF4B2700BB970F /* XSArea.h */,
-				05548DD218DF4B2700BB970F /* XSBool.h */,
 				05548DD318DF4B2700BB970F /* XSClassID.h */,
 				05548DD418DF4B2700BB970F /* XSComparisonResult.h */,
 				05548DD518DF4B2700BB970F /* XSEdgeInsets.h */,
@@ -480,7 +475,6 @@
 				05548E8818DF4B3F00BB970F /* XSInt32.h in Headers */,
 				05548E8318DF4B3F00BB970F /* XSEdgeInsets.h in Headers */,
 				05548E8718DF4B3F00BB970F /* XSInt16.h in Headers */,
-				05548E8018DF4B3F00BB970F /* XSBool.h in Headers */,
 				05548E8D18DF4B3F00BB970F /* XSOffset.h in Headers */,
 				05548E7E18DF4B3F00BB970F /* XSTypes.h in Headers */,
 				05548E7F18DF4B3F00BB970F /* XSArea.h in Headers */,
@@ -518,7 +512,6 @@
 				05548E6A18DF4B3F00BB970F /* XSInt32.h in Headers */,
 				05548E6518DF4B3F00BB970F /* XSEdgeInsets.h in Headers */,
 				05548E6918DF4B3F00BB970F /* XSInt16.h in Headers */,
-				05548E6218DF4B3F00BB970F /* XSBool.h in Headers */,
 				05548E6F18DF4B3F00BB970F /* XSOffset.h in Headers */,
 				05548E6018DF4B3F00BB970F /* XSTypes.h in Headers */,
 				05548E6118DF4B3F00BB970F /* XSArea.h in Headers */,
@@ -556,7 +549,6 @@
 				05548E4C18DF4B3E00BB970F /* XSInt32.h in Headers */,
 				05548E4718DF4B3E00BB970F /* XSEdgeInsets.h in Headers */,
 				05548E4B18DF4B3E00BB970F /* XSInt16.h in Headers */,
-				05548E4418DF4B3E00BB970F /* XSBool.h in Headers */,
 				05548E5118DF4B3E00BB970F /* XSOffset.h in Headers */,
 				05548E4218DF4B3E00BB970F /* XSTypes.h in Headers */,
 				05548E4318DF4B3E00BB970F /* XSArea.h in Headers */,

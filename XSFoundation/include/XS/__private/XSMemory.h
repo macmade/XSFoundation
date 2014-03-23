@@ -74,6 +74,17 @@
 #ifndef __XS___PRIVATE_MEMORY_H__
 #define __XS___PRIVATE_MEMORY_H__
 
-
+/*!
+ * @typedef     __XSMemoryObject
+ * @abstract    Memory object type
+ */
+typedef struct __XSMemoryObject
+{
+    XSUInt64        retainCount;      /*! The object's retain count */
+    XSSize          size;             /*! The allocated data size */
+    XSSize          allocID;          /*! ... */
+    XSClassID       classID;          /*! The class ID (only for allocated instances) */
+    unsigned char   fence[ 12 ];      /*! Memory fence to prevent overflows */
+};
 
 #endif /* __XS___PRIVATE_MEMORY_H__ */

@@ -67,7 +67,7 @@
 
 #include <system.h>
 
-XSBool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
+bool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
 {
     return ( System_Atomic_CompareAndSwapPtr( oldValue, newValue, value ) ) ? true : false;
 }
@@ -77,7 +77,7 @@ XSBool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * v
 #include <Windows.h>
 #include <Winnt.h>
 
-XSBool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
+bool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
 {
     return ( InterlockedCompareExchangePointer( value, newValue, oldValue ) == oldValue ) ? true : false;
 }
@@ -86,7 +86,7 @@ XSBool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * v
 
 #include <libkern/OSAtomic.h>
 
-XSBool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
+bool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
 {
     return ( OSAtomicCompareAndSwapPtr( oldValue, newValue, value ) ) ? true : false;
 }

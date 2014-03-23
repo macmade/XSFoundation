@@ -78,13 +78,67 @@ XS_EXTERN_C_BEGIN
 
 #include <XS/XSTypes.h>
 
+/*!
+ * @function    XSAtomicIncrement32
+ * @abstract    Atomically increments a 32 bits value
+ * @param       value   The 32 bits value to increment
+ * @return      The new value
+ */
 XS_EXPORT XSInt32 XSAtomicIncrement32( volatile XSInt32 * value );
+
+/*!
+ * @function    XSAtomicIncrement64
+ * @abstract    Atomically increments a 64 bits value
+ * @param       value   The 64 bits value to increment
+ * @return      The new value
+ */
 XS_EXPORT XSInt64 XSAtomicIncrement64( volatile XSInt64 * value );
+
+/*!
+ * @function    XSAtomicDecrement32
+ * @abstract    Atomically decrements a 32 bits value
+ * @param       value   The 32 bits value to decrement
+ * @return      The new value
+ */
 XS_EXPORT XSInt32 XSAtomicDecrement32( volatile XSInt32 * value );
+
+/*!
+ * @function    XSAtomicDecrement64
+ * @abstract    Atomically decrements a 64 bits value
+ * @param       value   The 64 bits value to decrement
+ * @return      The new value
+ */
 XS_EXPORT XSInt64 XSAtomicDecrement64( volatile XSInt64 * value );
-XS_EXPORT XSBool XSAtomicCompareAndSwap32( XSInt32 oldValue, XSInt32 newValue, volatile XSInt32 * value );
-XS_EXPORT XSBool XSAtomicCompareAndSwap64( XSInt64 oldValue, XSInt64 newValue, volatile XSInt64 * value );
-XS_EXPORT XSBool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value );
+
+/*!
+ * @function    XSAtomicCompareAndSwap32
+ * @abstract    Atomically compares and swaps a 32 bits value
+ * @param       oldValue    The 32 bits value to test
+ * @param       newValue    The 32 bits value to swap
+ * @param       value       The 32 bits value to compare and swap
+ * @return      True if the comparison was equal and the swap occured
+ */
+XS_EXPORT bool XSAtomicCompareAndSwap32( XSInt32 oldValue, XSInt32 newValue, volatile XSInt32 * value );
+
+/*!
+ * @function    XSAtomicCompareAndSwap64
+ * @abstract    Atomically compares and swaps a 64 bits value
+ * @param       oldValue    The 64 bits value to test
+ * @param       newValue    The 64 bits value to swap
+ * @param       value       The 64 bits value to compare and swap
+ * @return      True if the comparison was equal and the swap occured
+ */
+XS_EXPORT bool XSAtomicCompareAndSwap64( XSInt64 oldValue, XSInt64 newValue, volatile XSInt64 * value );
+
+/*!
+ * @function    XSAtomicCompareAndSwapPointer
+ * @abstract    Atomically compares and swaps a pointer value
+ * @param       oldValue    The pointer value to test
+ * @param       newValue    The pointer value to swap
+ * @param       value       The pointer value to compare and swap
+ * @return      True if the comparison was equal and the swap occured
+ */
+XS_EXPORT bool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value );
 
 XS_EXTERN_C_END
 
