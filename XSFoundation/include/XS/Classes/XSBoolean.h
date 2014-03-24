@@ -86,7 +86,7 @@ typedef struct __XSBoolean * XSBooleanRef;
 /*!
  * @function    XSBoolean_GetClassID
  * @abstract    Gets the class ID for XSBoolean
- * @result      Rhe class ID for XSBoolean
+ * @result      The class ID for XSBoolean
  */
 XS_EXPORT XSStatic XSClassID XSBoolean_GetClassID( void );
 
