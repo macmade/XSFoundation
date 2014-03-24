@@ -71,12 +71,12 @@
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS___PRIVATE_WARNINGS_H__
-#define __XS___PRIVATE_WARNINGS_H__
+#ifndef __XS___PRIVATE_XS_WARNINGS_H__
+#define __XS___PRIVATE_XS_WARNINGS_H__
 
 /* Warning flags for Clang */
 #ifdef __clang__
 #include <XS/__private/XSWarnings-Clang.h>
 #endif
 
-#endif /* __XS___PRIVATE_WARNINGS_H__ */
+#endif /* __XS___PRIVATE_XS_WARNINGS_H__ */

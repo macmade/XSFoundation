@@ -71,7 +71,30 @@
 #include <XS/__private/Functions/XSRuntime.h>
 
 /* Private class initializers */
+void XSStatic __XSApplication_Initialize( void );
+void XSStatic __XSApplicationArgument_Initialize( void );
+void XSStatic __XSArray_Initialize( void );
+void XSStatic __XSAutoreleasePool_Initialize( void );
+void XSStatic __XSBag_Initialize( void );
+void XSStatic __XSBinaryTree_Initialize( void );
 void XSStatic __XSBoolean_Initialize( void );
+void XSStatic __XSColor_Initialize( void );
+void XSStatic __XSData_Initialize( void );
+void XSStatic __XSDictionary_Initialize( void );
+void XSStatic __XSError_Initialize( void );
+void XSStatic __XSException_Initialize( void );
+void XSStatic __XSFile_Initialize( void );
+void XSStatic __XSLock_Initialize( void );
+void XSStatic __XSNode_Initialize( void );
+void XSStatic __XSNotification_Initialize( void );
+void XSStatic __XSNotificationCenter_Initialize( void );
+void XSStatic __XSNull_Initialize( void );
+void XSStatic __XSNumber_Initialize( void );
+void XSStatic __XSSet_Initialize( void );
+void XSStatic __XSString_Initialize( void );
+void XSStatic __XSThread_Initialize( void );
+void XSStatic __XSTimer_Initialize( void );
+void XSStatic __XSURL_Initialize( void );
 
 void XSRuntime_Initialize( void )
 {
@@ -99,5 +122,28 @@ void XSRuntime_Initialize( void )
     
     while( XSAtomic_CompareAndSwap32( __XSRuntime_InitStatusInitializing, __XSRuntime_InitStatusInited, ( volatile XSInt32 * )&__XSRuntime_Inited ) == false );
     
+    __XSApplication_Initialize();
+    __XSApplicationArgument_Initialize();
+    __XSArray_Initialize();
+    __XSAutoreleasePool_Initialize();
+    __XSBag_Initialize();
+    __XSBinaryTree_Initialize();
     __XSBoolean_Initialize();
+    __XSColor_Initialize();
+    __XSData_Initialize();
+    __XSDictionary_Initialize();
+    __XSError_Initialize();
+    __XSException_Initialize();
+    __XSFile_Initialize();
+    __XSLock_Initialize();
+    __XSNode_Initialize();
+    __XSNotification_Initialize();
+    __XSNotificationCenter_Initialize();
+    __XSNull_Initialize();
+    __XSNumber_Initialize();
+    __XSSet_Initialize();
+    __XSString_Initialize();
+    __XSThread_Initialize();
+    __XSTimer_Initialize();
+    __XSURL_Initialize();
 }

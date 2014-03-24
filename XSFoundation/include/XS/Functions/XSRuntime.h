@@ -71,8 +71,8 @@
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_RUNTIME_H__
-#define __XS_RUNTIME_H__
+#ifndef __XS_FUNCTIONS_XS_RUNTIME_H__
+#define __XS_FUNCTIONS_XS_RUNTIME_H__
 
 XS_EXTERN_C_BEGIN
 
@@ -183,4 +183,4 @@ void XSRuntime_FatalError( const char * file, int line, ... ) XS_NORETURN_ATTRIB
 
 XS_EXTERN_C_END
 
-#endif /* __XS_RUNTIME_H__ */
+#endif /* __XS_FUNCTIONS_XS_RUNTIME_H__ */

@@ -71,8 +71,8 @@
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS___PRIVATE_CLASSES_XSBOOLEAN_H__
-#define __XS___PRIVATE_CLASSES_XSBOOLEAN_H__
+#ifndef __XS___PRIVATE_CLASSES_XS_BOOLEAN_H__
+#define __XS___PRIVATE_CLASSES_XS_BOOLEAN_H__
 
 #include <XS/XSTypes.h>
 #include <XS/XSMacros.h>
@@ -97,6 +97,20 @@ XS_EXTERN XSClassID __XSBoolean_ClassID;
  * @abstract    Class initializer
  */
 void XSStatic __XSBoolean_Initialize( void );
+
+/*!
+ * @function    __XSBoolean_Constructor
+ * @abstract    Class constructor callback
+ * @param       object      The object beeing construct
+ */
+void __XSBoolean_Constructor( XSBooleanRef object );
+
+/*!
+ * @function    __XSBoolean_Destructor
+ * @abstract    Class destructor callback
+ * @param       object      The object beeing destruct
+ */
+void __XSBoolean_Destructor( XSBooleanRef object );
 
 /*!
  * @function    __XSBoolean_Copy
@@ -125,4 +139,4 @@ const char * __XSBoolean_ToString( XSBooleanRef object );
 
 XS_EXTERN XSClassInfo __XSBoolean_Class;
 
-#endif /* __XS___PRIVATE_CLASSES_XSBOOLEAN_H__ */
+#endif /* __XS___PRIVATE_CLASSES_XS_BOOLEAN_H__ */

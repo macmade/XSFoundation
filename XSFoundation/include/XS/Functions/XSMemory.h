@@ -71,8 +71,8 @@
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_MEMORY_H__
-#define __XS_MEMORY_H__
+#ifndef __XS_FUNCTIONS_XS_MEMORY_H__
+#define __XS_FUNCTIONS_XS_MEMORY_H__
 
 XS_EXTERN_C_BEGIN
 
@@ -197,4 +197,4 @@ XS_EXPORT XSObjectRef XSCopyWithInfos( void * memory, const char * file, int lin
 
 XS_EXTERN_C_END
 
-#endif /* __XS_MEMORY_H__ */
+#endif /* __XS_FUNCTIONS_XS_MEMORY_H__ */

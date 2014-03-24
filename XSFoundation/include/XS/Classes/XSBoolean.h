@@ -71,8 +71,8 @@
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_CLASSES_XSBOOLEAN_H__
-#define __XS_CLASSES_XSBOOLEAN_H__
+#ifndef __XS_CLASSES_XS_BOOLEAN_H__
+#define __XS_CLASSES_XS_BOOLEAN_H__
 
 #include <XS/XSTypes.h>
 #include <XS/XSMacros.h>
@@ -114,4 +114,4 @@ XS_EXPORT bool XSBoolean_GetValue( XSBooleanRef object );
  */
 XS_EXPORT void XSBoolean_SetValue( XSBooleanRef object, bool value );
 
-#endif /* __XS_CLASSES_XSBOOLEAN_H__ */
+#endif /* __XS_CLASSES_XS_BOOLEAN_H__ */

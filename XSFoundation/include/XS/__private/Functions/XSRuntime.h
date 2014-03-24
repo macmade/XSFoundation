@@ -71,8 +71,8 @@
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS___PRIVATE_RUNTIME_H__
-#define __XS___PRIVATE_RUNTIME_H__
+#ifndef __XS___PRIVATE_FUNCTIONS_XS_RUNTIME_H__
+#define __XS___PRIVATE_FUNCTIONS_XS_RUNTIME_H__
 
 #include <XS/XSTypes.h>
 
@@ -189,4 +189,4 @@ XSClassInfoToStringCallback __XSRuntime_GetToStringCallback( XSClassID classID )
 
 void __XSRuntime_Finalize( void );
 
-#endif /* __XS___PRIVATE_RUNTIME_H__ */
+#endif /* __XS___PRIVATE_FUNCTIONS_XS_RUNTIME_H__ */

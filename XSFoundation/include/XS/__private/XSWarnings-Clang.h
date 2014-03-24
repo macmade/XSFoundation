@@ -71,8 +71,8 @@
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS___PRIVATE_WARNINGS_CLANG_H__
-#define __XS___PRIVATE_WARNINGS_CLANG_H__
+#ifndef __XS___PRIVATE_XS_WARNINGS_CLANG_H__
+#define __XS___PRIVATE_XS_WARNINGS_CLANG_H__
 
 #ifndef __clang__
 #error "This file requires Clang as C compiler!"
@@ -489,4 +489,4 @@
 #pragma clang diagnostic fatal "-Wwrite-strings"
 #pragma clang diagnostic fatal "-Wzero-length-array"
 
-#endif /* __XS___PRIVATE_WARNINGS_CLANG_H__ */
+#endif /* __XS___PRIVATE_XS_WARNINGS_CLANG_H__ */

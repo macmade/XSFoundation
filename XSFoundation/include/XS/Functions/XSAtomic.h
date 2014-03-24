@@ -71,8 +71,8 @@
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_ATOMIC_H__
-#define __XS_ATOMIC_H__
+#ifndef __XS_FUNCTIONS_XS_ATOMIC_H__
+#define __XS_FUNCTIONS_XS_ATOMIC_H__
 
 XS_EXTERN_C_BEGIN
 
@@ -142,4 +142,4 @@ XS_EXPORT bool XSAtomic_CompareAndSwapPointer( void * oldValue, void * newValue,
 
 XS_EXTERN_C_END
 
-#endif /* __XS_ATOMIC_H__ */
+#endif /* __XS_FUNCTIONS_XS_ATOMIC_H__ */
