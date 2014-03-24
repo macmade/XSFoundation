@@ -154,34 +154,15 @@
                                     + __XS_VERS_PATCH__ )
 
 /*!
- * @def         XS_EXTERN
- * @abstract    ...
+ * @def         XSFatalError
+ * @abstract    Issues a fatal error message and aborts the program
+ * @param       ...         The error message with optional format arguments
  */
-#if defined( __cplusplus )
-    #define XS_EXTERN               extern "C" 
-#else
-    #define XS_EXTERN               extern
-#endif
-
-/*!
- * @def         XS_EXPORT
- * @brief       ...
- */
-#if defined( __WIN32__ )
-    #define XS_EXPORT               XS_EXTERN __declspec( dllimport )
-#else
-    #define XS_EXPORT               XS_EXTERN
-#endif
-
-/*!
- * @def         XS_IMPORT
- * @brief       ...
- */
-#define XS_IMPORT                   XS_EXTERN
+#define XSFatalError( ... )         XSRuntime_FatalError( __FILE__, __LINE__, __VA_ARGS__ )
 
 /*!
  * @def         XSEndian16_Swap
- * @brief       Swap endiannes of a 16 bits value
+ * @abstract    Swap endiannes of a 16 bits value
  * @param       _value_     The value to swap
  */
 #define XSEndian16_Swap( _value_ )                          \
@@ -192,7 +173,7 @@
 
 /*!
  * @def         XSEndian32_Swap
- * @brief       Swap endiannes of a 32 bits value
+ * @abstract    Swap endiannes of a 32 bits value
  * @param       _value_     The value to swap
  */
 #define XSEndian32_Swap( _value_ )                                  \
@@ -205,7 +186,7 @@
 
 /*!
  * @def         XSEndian64_Swap
- * @brief       Swap endiannes of a 64 bits value
+ * @abstract    Swap endiannes of a 64 bits value
  * @param       _value_     The value to swap
  */
 #define XSEndian64_Swap( _value_ )                                          \
@@ -219,6 +200,32 @@
         ( ( ( ( XSUInt64 )_value_ ) >> 40 ) & 0x000000000000FF00ULL )  |    \
         ( ( ( ( XSUInt64 )_value_ ) >> 56 ) & 0x00000000000000FFULL )       \
     )
+
+/*!
+ * @def         XS_EXTERN
+ * @abstract    ...
+ */
+#if defined( __cplusplus )
+    #define XS_EXTERN               extern "C" 
+#else
+    #define XS_EXTERN               extern
+#endif
+
+/*!
+ * @def         XS_EXPORT
+ * @abstract    ...
+ */
+#if defined( __WIN32__ )
+    #define XS_EXPORT               XS_EXTERN __declspec( dllimport )
+#else
+    #define XS_EXPORT               XS_EXTERN
+#endif
+
+/*!
+ * @def         XS_IMPORT
+ * @abstract    ...
+ */
+#define XS_IMPORT                   XS_EXTERN
 
 /*!
  * @def         XS_WEAK_ATTRIBUTE
