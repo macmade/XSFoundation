@@ -72,7 +72,14 @@
 
 XSClassInfoEqualsCallback __XSRuntime_GetEqualsCallback( XSClassID classID )
 {
-    ( void )classID;
+    XSClassInfo * info;
     
-    return NULL;
+    info = __XSRuntime_GetClassInfo( classID );
+    
+    if( info == NULL )
+    {
+        return NULL;
+    }
+    
+    return info->equals;
 }

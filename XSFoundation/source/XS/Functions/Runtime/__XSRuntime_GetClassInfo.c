@@ -62,77 +62,17 @@
 /* $Id$ */
 
 /*!
- * @header      XSClassInfo.h
+ * @file        __XSRuntime_GetToStringCallback.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSClassInfo type definition
+ * @abstract    Definition for __XSRuntime_GetToStringCallback
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Functions/XSRuntime.h>
 
-#ifndef __XS_TYPES_XS_CLASS_INFO_H__
-#define __XS_TYPES_XS_CLASS_INFO_H__
-
-XS_EXTERN_C_BEGIN
-
-#include <XS/XSTypes/XSObjectRef.h>
-
-/*!
- * @typedef     XSClassInfoConstructorCallback
- * @abstract    Class constructor callback
- * @param       object      The object beeing construct
- */
-typedef void ( * XSClassInfoConstructorCallback )( XSObjectRef object );
-
-/*!
- * @typedef     XSClassInfoDestructorCallback
- * @abstract    Class destructor callback
- * @param       object      The object beeing destruct
- */
-typedef void ( * XSClassInfoDestructorCallback )( XSObjectRef object );
-
-/*!
- * @typedef     XSClassInfoCopyCallback
- * @abstract    Class copy callback
- * @param       source      The object to copy
- * @param       destination The object beeing copied
- */
-typedef void ( * XSClassInfoCopyCallback )( XSObjectRef source, XSObjectRef destination );
-
-/*!
- * @typedef     XSClassInfoEqualsCallback
- * @abstract    Class equals callback
- * @param       object1     The first object to compare
- * @param       object2     The second object to compare
- * @result      True if both objects are equals, otherwise false
- */
-typedef bool ( * XSClassInfoEqualsCallback )( XSObjectRef object1, XSObjectRef object2 );
-
-/*!
- * @typedef     XSClassInfoToStringCallback
- * @abstract    Class to-string callback
- * @param       object      The object for which to get a description
- * @return      The object's description
- */
-typedef const char * ( * XSClassInfoToStringCallback )( XSObjectRef object );
-
-/*!
- * @struct      XSClassInfos_Struct
- * @brief       XSFoundation runtime class structure
- */
-typedef struct
+XSClassInfo * __XSRuntime_GetClassInfo( XSClassID classID )
 {
-    const char                    * className;      /*! The name of the class */
-    XSSize                          instanceSize;   /*! The size of the class instances */
-    XSClassInfoConstructorCallback  constructor;    /*! The class constructor */
-    XSClassInfoDestructorCallback   destructor;     /*! The class destructor */
-    XSClassInfoCopyCallback         copy;           /*! The object's copy callback */
-    XSClassInfoEqualsCallback       equals;         /*! The object's comparison callback */
-    XSClassInfoToStringCallback     toString;       /*! The object's description callback */
+    ( void )classID;
+    
+    return NULL;
 }
-XSClassInfo;
-
-XS_EXTERN_C_END
-
-#endif /* __XS_TYPES_XS_CLASS_INFO_H__ */
