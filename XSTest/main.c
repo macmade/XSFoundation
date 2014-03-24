@@ -85,6 +85,46 @@ int main( int argc, const char * argv[] )
         XSRelease( x2 );
     }
     
+    {
+        XSBooleanRef bool1;
+        XSBooleanRef bool2;
+        XSBooleanRef bool3;
+        
+        bool1 = XSBoolean_Create( true );
+        bool2 = XSBoolean_Create( true );
+        bool3 = XSBoolean_Create( false );
+        
+        printf( "bool1: %p\n", bool1 );
+        printf( "bool2: %p\n", bool2 );
+        printf( "bool3: %p\n", bool3 );
+        
+        printf( "bool1: %s\n", XSRuntime_GetDescription( bool1 ) );
+        printf( "bool2: %s\n", XSRuntime_GetDescription( bool2 ) );
+        printf( "bool3: %s\n", XSRuntime_GetDescription( bool3 ) );
+        
+        if( XSEquals( bool1, bool2 ) )
+        {
+            printf( "bool1 == bool2\n" );
+        }
+        else
+        {
+            printf( "bool1 != bool2\n" );
+        }
+        
+        if( XSEquals( bool1, bool3 ) )
+        {
+            printf( "bool1 == bool3\n" );
+        }
+        else
+        {
+            printf( "bool1 != bool3\n" );
+        }
+        
+        XSRelease( bool1 );
+        XSRelease( bool2 );
+        XSRelease( bool3 );
+    }
+    
     return 0;
 }
 
