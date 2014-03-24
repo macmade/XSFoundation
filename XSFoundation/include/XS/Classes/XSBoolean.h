@@ -74,6 +74,9 @@
 #ifndef __XS_CLASSES_XSBOOLEAN_H__
 #define __XS_CLASSES_XSBOOLEAN_H__
 
+#include <XS/XSTypes.h>
+#include <XS/XSMacros.h>
+
 
 
 #endif /* __XS_CLASSES_XSBOOLEAN_H__ */

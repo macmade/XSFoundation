@@ -74,6 +74,8 @@
 #ifndef __XS___PRIVATE_RUNTIME_H__
 #define __XS___PRIVATE_RUNTIME_H__
 
+#include <XS/XSTypes.h>
+
 /*!
  * @typedef     __XSRuntime_InitStatus
  * @abstract    Initialization status of the XSFoundation runtime

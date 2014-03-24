@@ -74,6 +74,9 @@
 #ifndef __XS___PRIVATE_CLASSES_XSBOOLEAN_H__
 #define __XS___PRIVATE_CLASSES_XSBOOLEAN_H__
 
+#include <XS/XSTypes.h>
+#include <XS/XSMacros.h>
+
 
 
 #endif /* __XS___PRIVATE_CLASSES_XSBOOLEAN_H__ */

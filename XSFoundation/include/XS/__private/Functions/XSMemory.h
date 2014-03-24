@@ -74,6 +74,8 @@
 #ifndef __XS___PRIVATE_MEMORY_H__
 #define __XS___PRIVATE_MEMORY_H__
 
+#include <XS/XSTypes.h>
+
 #define __XS_MEMORY_FENCE_SIZE  16
 
 /*!
