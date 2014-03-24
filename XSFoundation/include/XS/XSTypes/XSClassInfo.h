@@ -79,18 +79,57 @@ XS_EXTERN_C_BEGIN
 #include <XS/XSTypes/XSObjectRef.h>
 
 /*!
+ * @typedef     XSClassInfoConstructorCallback
+ * @abstract    Class constructor callback
+ * @param       object      The object beeing construct
+ */
+typedef void ( * XSClassInfoConstructorCallback )( XSObjectRef object );
+
+/*!
+ * @typedef     XSClassInfoDestructorCallback
+ * @abstract    Class destructor callback
+ * @param       object      The object beeing destruct
+ */
+typedef void ( * XSClassInfoDestructorCallback )( XSObjectRef object );
+
+/*!
+ * @typedef     XSClassInfoCopyCallback
+ * @abstract    Class copy callback
+ * @param       source      The object to copy
+ * @param       destination The object beeing copied
+ */
+typedef void ( * XSClassInfoCopyCallback )( XSObjectRef source, XSObjectRef destination );
+
+/*!
+ * @typedef     XSClassInfoEqualsCallback
+ * @abstract    Class equals callback
+ * @param       object1     The first object to compare
+ * @param       object2     The second object to compare
+ * @result      True if both objects are equals, otherwise false
+ */
+typedef bool ( * XSClassInfoEqualsCallback )( XSObjectRef object1, XSObjectRef object2 );
+
+/*!
+ * @typedef     XSClassInfoToStringCallback
+ * @abstract    Class to-string callback
+ * @param       object      The object for which to get a description
+ * @return      The object's description
+ */
+typedef const char * ( * XSClassInfoToStringCallback )( XSObjectRef object );
+
+/*!
  * @struct      XSClassInfos_Struct
  * @brief       XSFoundation runtime class structure
  */
 typedef struct
 {
-    const char * className;                                                         /*! The name of the class */
-    XSSize       instanceSize;                                                      /*! The size of the class instances */
-    void         ( * construct )( XSObjectRef object );                             /*! The class constructor */
-    void         ( * destruct  )( XSObjectRef object );                             /*! The class destructor */
-    void         ( * copy      )( XSObjectRef source, XSObjectRef destination );    /*! The object's copy callback */
-    bool         ( * equals    )( XSObjectRef object1, XSObjectRef object2 );       /*! The object's comparison callback */
-    const char * ( * toString  )( XSObjectRef object );                             /*! The object's description callback */
+    const char                    * className;      /*! The name of the class */
+    XSSize                          instanceSize;   /*! The size of the class instances */
+    XSClassInfoConstructorCallback  construct;      /*! The class constructor */
+    XSClassInfoDestructorCallback   destruct;       /*! The class destructor */
+    XSClassInfoCopyCallback         copy;           /*! The object's copy callback */
+    XSClassInfoEqualsCallback       equals;         /*! The object's comparison callback */
+    XSClassInfoToStringCallback     toString;       /*! The object's description callback */
 }
 XSClassInfo;
 
