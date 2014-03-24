@@ -70,9 +70,9 @@
 #include <XS/XS.h>
 #include <XS/__private/XSMemory.h>
 
-volatile XSUInt64 __XSMemoryAllocID = 0;
+volatile XSUInt64 __XSMemory_AllocID = 0;
 
-const char __XSMemoryFenceData[ __XS_MEMORY_FENCE_SIZE ] =
+const char __XSMemory_FenceData[ __XS_MEMORY_FENCE_SIZE ] =
 {
     '_', 'X', 'S', 'M', 'e', 'm', 'o', 'r',
     'y', 'O', 'b', 'j', 'e', 'c', 't', '_' 

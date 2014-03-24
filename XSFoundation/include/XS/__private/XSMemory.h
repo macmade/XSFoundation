@@ -94,12 +94,12 @@ __XSMemoryObject;
  * @typedef     __XSMemoryAllocID
  * @abstract    The current allocation ID
  */
-extern volatile XSUInt64 __XSMemoryAllocID;
+XS_EXTERN volatile XSUInt64 __XSMemory_AllocID;
 
 /*!
  * @typedef     __XSMemoryFenceData
  * @abstract    The memory fence data
  */
-extern const char __XSMemoryFenceData[ __XS_MEMORY_FENCE_SIZE ];
+XS_EXTERN const char __XSMemory_FenceData[ __XS_MEMORY_FENCE_SIZE ];
 
 #endif /* __XS___PRIVATE_MEMORY_H__ */
