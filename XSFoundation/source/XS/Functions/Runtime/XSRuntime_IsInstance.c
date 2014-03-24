@@ -72,7 +72,5 @@
 
 bool XSRuntime_IsInstance( void * ptr )
 {
-    ( void )ptr;
-    
-    return false;
+    return XSRuntime_IsRegisteredClass( XSRuntime_GetClassID( ptr ) );
 }

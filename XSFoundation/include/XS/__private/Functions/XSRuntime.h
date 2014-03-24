@@ -137,7 +137,7 @@ XS_EXTERN volatile XSUInt32 __XSRuntime_ClassCount;
  * @param       classID     The class ID
  * @result      The class info
  */
-XSClassInfo * __XSRuntime_GetClassInfo( XSClassID classID );
+const XSClassInfo * __XSRuntime_GetClassInfo( XSClassID classID );
 
 /*!
  * @var         __XSRuntime_GetInstanceSize

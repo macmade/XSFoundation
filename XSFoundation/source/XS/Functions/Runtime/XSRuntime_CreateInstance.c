@@ -88,7 +88,7 @@ XSObjectRef XSRuntime_CreateInstance( XSClassID classID )
         XSFatalError( "Cannot create an instance for a class with zero as instance size (class ID: %lu)", classID );
     }
     
-    object = ( XSObjectRef )calloc( instanceSize, 1 );
+    object = ( XSObjectRef )XSAllocWithInfos( instanceSize, classID, __FILE__, __LINE__, __func__ );
     
     if( object == NULL )
     {

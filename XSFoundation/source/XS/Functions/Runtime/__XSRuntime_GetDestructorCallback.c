@@ -72,7 +72,7 @@
 
 XSClassInfoDestructorCallback __XSRuntime_GetDestructorCallback( XSClassID classID )
 {
-    XSClassInfo * info;
+    const XSClassInfo * info;
     
     info = __XSRuntime_GetClassInfo( classID );
     

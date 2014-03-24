@@ -72,7 +72,5 @@
 
 XSObjectRef XSRuntime_CreateInstanceOfClassNamed( const char * name )
 {
-    ( void )name;
-    
-    return NULL;
+    return XSRuntime_CreateInstance( XSRuntime_GetClassIDOfClassNamed( name ) );
 }

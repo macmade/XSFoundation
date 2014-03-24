@@ -69,10 +69,18 @@
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSRuntime.h>
+#include <XS/__private/Functions/XSMemory.h>
 
 XSClassID XSRuntime_GetClassID( XSObjectRef object )
 {
-    ( void )object;
+    __XSMemoryObject * mem;
     
-    return 0;
+    if( object == NULL )
+    {
+        return 0;
+    }
+    
+    mem = __XSMemory_GetMemoryObject( object );
+    
+    return mem->classID;
 }

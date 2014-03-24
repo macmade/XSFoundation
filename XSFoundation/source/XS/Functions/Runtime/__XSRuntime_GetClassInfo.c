@@ -70,9 +70,36 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
-XSClassInfo * __XSRuntime_GetClassInfo( XSClassID classID )
+const XSClassInfo * __XSRuntime_GetClassInfo( XSClassID classID )
 {
-    ( void )classID;
+    __XSRuntime_ClassInfoList * info;
     
-    return NULL;
+    if( __XS_RUNTIME_IS_FINALIZING )
+    {
+        return NULL;
+    }
+    
+    if( __XS_RUNTIME_IS_INITED == false )
+    {
+        XSFatalError( "XSFoundation runtime has not been inited. Please call XSRuntime_Initialize()." );
+    }
+    
+    if( classID == 0 )
+    {
+        return NULL;
+    }
+    
+    info = __XSRuntime_Classes;
+    
+    while( --classID && info != NULL )
+    {
+        info = info->next;
+    }
+    
+    if( info == NULL )
+    {
+        return NULL;
+    }
+    
+    return info->info;
 }

@@ -72,7 +72,33 @@
 
 XSClassID XSRuntime_GetClassIDOfClassNamed( const char * className )
 {
-    ( void )className;
+    __XSRuntime_ClassInfoList * info;
+    XSClassID                   classID;
+    
+    if( __XS_RUNTIME_IS_FINALIZING )
+    {
+        return 0;
+    }
+    
+    if( __XS_RUNTIME_IS_INITED == false )
+    {
+        XSFatalError( "XSFoundation runtime has not been inited. Please call XSRuntime_Initialize()." );
+    }
+    
+    info    = __XSRuntime_Classes;
+    classID = 1;
+    
+    while( info != NULL )
+    {
+        if( info->info != NULL && strcmp( info->info->className, className ) == 0 )
+        {
+            return classID;
+        }
+        
+        classID++;
+        
+        info = info->next;
+    }
     
     return 0;
 }

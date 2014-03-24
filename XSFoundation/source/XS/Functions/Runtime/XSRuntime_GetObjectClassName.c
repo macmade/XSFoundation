@@ -72,7 +72,5 @@
 
 const char * XSRuntime_GetObjectClassName( XSObjectRef object )
 {
-    ( void )object;
-    
-    return NULL;
+    return XSRuntime_GetClassName( XSRuntime_GetClassID( object ) );
 }
