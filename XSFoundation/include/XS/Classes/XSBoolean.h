@@ -62,31 +62,18 @@
 /* $Id$ */
 
 /*!
- * @header      XS.h
+ * @header      XSBoolean.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    XSBoolean class
  */
 
 #ifndef __XS_H__
-#define __XS_H__
-
-/* Internal build only - Adds extra warning flags */
-#ifdef __XS_BUILD__
-#include <XS/__private/XSWarnings.h>
+#error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-/* Core */
-#include <XS/C99.h>
-#include <XS/XSMacros.h>
-#include <XS/XSTypes.h>
-#include <XS/XSAtomic.h>
-#include <XS/XSMemory.h>
-#include <XS/XSRuntime.h>
+#ifndef __XS_CLASSES_XSBOOLEAN_H__
+#define __XS_CLASSES_XSBOOLEAN_H__
 
-/* Classes */
-#include <XS/Classes/XSBoolean.h>
 
-#endif /* __XS_H__ */
+
+#endif /* __XS_CLASSES_XSBOOLEAN_H__ */

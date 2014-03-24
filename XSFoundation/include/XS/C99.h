@@ -67,6 +67,10 @@
  * @abstract    C99 include files
  */
 
+#ifndef __XS_H__
+#error "Please include '<XS/XS.h>' instead of this file!"
+#endif
+
 #ifndef __XS_C99_H__
 #define __XS_C99_H__
 
