@@ -73,6 +73,7 @@
 
 #include <system.h>
 
+/* XEOS */
 bool XSAtomic_CompareAndSwap32( XSInt32 oldValue, XSInt32 newValue, volatile XSInt32 * value )
 {
     return ( System_Atomic_CompareAndSwap32( ( int32_t )oldValue, ( int32_t )newValue, ( volatile int32_t * )value ) ) ? true : false;
@@ -83,6 +84,7 @@ bool XSAtomic_CompareAndSwap32( XSInt32 oldValue, XSInt32 newValue, volatile XSI
 #include <Windows.h>
 #include <Winnt.h>
 
+/* Windows */
 bool XSAtomic_CompareAndSwap32( XSInt32 oldValue, XSInt32 newValue, volatile XSInt32 * value )
 {
     return ( InterlockedCompareExchange( ( volatile LONG * )value, newValue, oldValue ) == oldValue ) ? true : false;
@@ -92,6 +94,7 @@ bool XSAtomic_CompareAndSwap32( XSInt32 oldValue, XSInt32 newValue, volatile XSI
 
 #include <libkern/OSAtomic.h>
 
+/* Mac OS X */
 bool XSAtomic_CompareAndSwap32( XSInt32 oldValue, XSInt32 newValue, volatile XSInt32 * value )
 {
     return ( OSAtomicCompareAndSwap32( ( int32_t )oldValue, ( int32_t )newValue, ( volatile int32_t * )value ) ) ? true : false;

@@ -73,6 +73,7 @@
 
 #include <system.h>
 
+/* XEOS */
 XSInt64 XSAtomic_Increment64( volatile XSInt64 * value )
 {
     return ( XSInt64 )System_Atomic_Increment64( ( volatile int64_t * )value );
@@ -83,6 +84,7 @@ XSInt64 XSAtomic_Increment64( volatile XSInt64 * value )
 #include <Windows.h>
 #include <Winnt.h>
 
+/* Windows */
 XSInt64 XSAtomic_Increment64( volatile XSInt64 * value )
 {
     return ( XSInt64 )InterlockedIncrement64( ( volatile LONGLONG * )value );
@@ -92,6 +94,7 @@ XSInt64 XSAtomic_Increment64( volatile XSInt64 * value )
 
 #include <libkern/OSAtomic.h>
 
+/* Mac OS X */
 XSInt64 XSAtomic_Increment64( volatile XSInt64 * value )
 {
     return ( XSInt64 )OSAtomicIncrement64( ( volatile int64_t * )value );

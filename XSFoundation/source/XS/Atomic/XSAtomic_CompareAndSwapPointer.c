@@ -73,6 +73,7 @@
 
 #include <system.h>
 
+/* XEOS */
 bool XSAtomic_CompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
 {
     return ( System_Atomic_CompareAndSwapPtr( oldValue, newValue, value ) ) ? true : false;
@@ -83,6 +84,7 @@ bool XSAtomic_CompareAndSwapPointer( void * oldValue, void * newValue, void * vo
 #include <Windows.h>
 #include <Winnt.h>
 
+/* Windows */
 bool XSAtomic_CompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
 {
     return ( InterlockedCompareExchangePointer( value, newValue, oldValue ) == oldValue ) ? true : false;
@@ -92,6 +94,7 @@ bool XSAtomic_CompareAndSwapPointer( void * oldValue, void * newValue, void * vo
 
 #include <libkern/OSAtomic.h>
 
+/* Mac OS X */
 bool XSAtomic_CompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
 {
     return ( OSAtomicCompareAndSwapPtr( oldValue, newValue, value ) ) ? true : false;

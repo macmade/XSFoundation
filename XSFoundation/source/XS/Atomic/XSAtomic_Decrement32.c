@@ -73,6 +73,7 @@
 
 #include <system.h>
 
+/* XEOS */
 XSInt32 XSAtomic_Decrement32( volatile XSInt32 * value )
 {
     return ( XSInt32 )System_Atomic_Decrement32( ( volatile int32_t * )value );
@@ -83,6 +84,7 @@ XSInt32 XSAtomic_Decrement32( volatile XSInt32 * value )
 #include <Windows.h>
 #include <Winnt.h>
 
+/* Windows */
 XSInt32 XSAtomic_Decrement32( volatile XSInt32 * value )
 {
     return ( XSInt32 )InterlockedDecrement( ( volatile LONG * )value );
@@ -92,6 +94,7 @@ XSInt32 XSAtomic_Decrement32( volatile XSInt32 * value )
 
 #include <libkern/OSAtomic.h>
 
+/* Mac OS X */
 XSInt32 XSAtomic_Decrement32( volatile XSInt32 * value )
 {
     return ( XSInt32 )OSAtomicDecrement32( ( volatile int32_t * )value );
