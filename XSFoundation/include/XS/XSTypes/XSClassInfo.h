@@ -119,7 +119,7 @@ typedef const char * ( * XSClassInfoToStringCallback )( XSObjectRef object );
 
 /*!
  * @struct      XSClassInfos_Struct
- * @brief       XSFoundation runtime class structure
+ * @abstract    XSFoundation runtime class structure
  */
 typedef struct
 {
