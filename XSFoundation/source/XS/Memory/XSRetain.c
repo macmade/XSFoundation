@@ -83,5 +83,5 @@ void * XSRetain( void * memory )
     
     XSAtomic_Increment64( ( volatile XSInt64 * )&( object->retainCount ) );
         
-    return NULL;
+    return memory;
 }

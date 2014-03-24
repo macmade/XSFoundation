@@ -71,7 +71,10 @@
 
 void * XSAutorelease( void * memory )
 {
-    ( void )memory;
+    if( memory == NULL )
+    {
+        return NULL;
+    }
     
-    return NULL;
+    return memory;
 }

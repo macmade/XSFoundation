@@ -88,7 +88,7 @@ XS_EXTERN_C_BEGIN
  * @param       cls         The class information structure to register
  * @result      The runtime type ID for the class
  */
-XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls );
+XS_EXPORT XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls );
 
 /*!
  * @function    XSRuntime_CreateInstance
@@ -96,7 +96,7 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls );
  * @param       classID     The class type ID
  * @result      The allocated instance
  */
-XSObjectRef XSRuntime_CreateInstance( XSClassID classID );
+XS_EXPORT XSObjectRef XSRuntime_CreateInstance( XSClassID classID );
 
 /*!
  * @function    XSRuntime_CreateInstanceOfClassNamed
@@ -104,7 +104,7 @@ XSObjectRef XSRuntime_CreateInstance( XSClassID classID );
  * @param       name        The name of the class
  * @result      The allocated instance
  */
-XSObjectRef XSRuntime_CreateInstanceOfClassNamed( const char * name );
+XS_EXPORT XSObjectRef XSRuntime_CreateInstanceOfClassNamed( const char * name );
 
 /*!
  * @function    XSRuntime_GetDescription
@@ -112,7 +112,7 @@ XSObjectRef XSRuntime_CreateInstanceOfClassNamed( const char * name );
  * @param       object      The pointer to the object
  * @result      The object's description
  */
-const char * XSRuntime_GetDescription( XSObjectRef object );
+XS_EXPORT const char * XSRuntime_GetDescription( XSObjectRef object );
 
 /*!
  * @function    XSRuntime_IsInstance
@@ -120,7 +120,7 @@ const char * XSRuntime_GetDescription( XSObjectRef object );
  * @param       ptr         The pointer to check
  * @result      True if the pointer represents an instance, otherwise false
  */
-bool XSRuntime_IsInstance( void * ptr );
+XS_EXPORT bool XSRuntime_IsInstance( void * ptr );
 
 /*!
  * @function    XSRuntime_IsRegisteredClass
@@ -128,7 +128,7 @@ bool XSRuntime_IsInstance( void * ptr );
  * @param       classID     The class type ID
  * @result      True if the class ID represents an valid class, otherwise false
  */
-bool XSRuntime_IsRegisteredClass( XSClassID classID );
+XS_EXPORT bool XSRuntime_IsRegisteredClass( XSClassID classID );
 
 /*!
  * @function    XSRuntime_GetClassID
@@ -136,7 +136,7 @@ bool XSRuntime_IsRegisteredClass( XSClassID classID );
  * @param       object      The object
  * @result      The class type ID for the object
  */
-XSClassID XSRuntime_GetClassID( XSObjectRef object );
+XS_EXPORT XSClassID XSRuntime_GetClassID( XSObjectRef object );
 
 /*!
  * @function    XSRuntime_GetClassIDOfClassNamed
@@ -144,7 +144,7 @@ XSClassID XSRuntime_GetClassID( XSObjectRef object );
  * @param       className   The name of the class
  * @result      The class type ID
  */
-XSClassID XSRuntime_GetClassIDOfClassNamed( const char * className );
+XS_EXPORT XSClassID XSRuntime_GetClassIDOfClassNamed( const char * className );
 
 /*!
  * @function    XSRuntime_GetClassName
@@ -152,7 +152,7 @@ XSClassID XSRuntime_GetClassIDOfClassNamed( const char * className );
  * @param       classID     The class type ID
  * @result      The name of the class
  */
-const char * XSRuntime_GetClassName( XSClassID classID );
+XS_EXPORT const char * XSRuntime_GetClassName( XSClassID classID );
 
 /*!
  * @function    XSRuntime_GetObjectClassName
@@ -160,7 +160,7 @@ const char * XSRuntime_GetClassName( XSClassID classID );
  * @param       object      The object
  * @result      The name of the class
  */
-const char * XSRuntime_GetObjectClassName( XSObjectRef object );
+XS_EXPORT const char * XSRuntime_GetObjectClassName( XSObjectRef object );
 
 XS_EXTERN_C_END
 
