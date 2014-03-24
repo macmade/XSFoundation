@@ -69,10 +69,12 @@
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemory.h>
+#include <XS/__private/Functions/XSRuntime.h>
 
 void XSReleaseWithInfos( void * memory, const char * file, int line, const char * func )
 {
-    __XSMemoryObject * object;
+    __XSMemoryObject            * object;
+    XSClassInfoDestructorCallback destructor;
     
     ( void )file;
     ( void )line;
@@ -87,6 +89,13 @@ void XSReleaseWithInfos( void * memory, const char * file, int line, const char 
     
     if( XSAtomic_Decrement64( ( volatile XSInt64 * )&( object->retainCount ) ) == 0 )
     {
+        destructor = __XSRuntime_GetDestructorCallback( object->classID );
+        
+        if( destructor != NULL )
+        {
+            destructor( object );
+        }
+        
         free( object );
     }
 }
