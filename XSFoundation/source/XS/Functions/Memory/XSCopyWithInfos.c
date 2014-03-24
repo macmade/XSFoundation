@@ -62,17 +62,44 @@
 /* $Id$ */
 
 /*!
- * @file        XSEquals.c
+ * @file        XSCopyWithInfos.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSEquals
+ * @abstract    Definition for XSCopyWithInfos
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemory.h>
+#include <XS/__private/Functions/XSRuntime.h>
 
-XSObjectRef XSCopy( XSObjectRef object )
+XSObjectRef XSCopyWithInfos( void * memory, const char * file, int line, const char * func )
 {
-    ( void )object;
+    __XSMemoryObject      * object;
+    void                  * data;
+    XSClassInfoCopyCallback copy;
     
-    return NULL;
+    if( memory == NULL )
+    {
+        return NULL;
+    }
+    
+    object  = __XSMemory_GetMemoryObject( memory );
+    data    = XSAllocWithInfos( object->size, object->classID, file, line, func );
+    
+    if( XSRuntime_IsRegisteredClass( object->classID ) == false )
+    {
+        copy = NULL;
+    }
+    else
+    {
+        copy = __XSRuntime_GetCopyCallback( object->classID );
+    }
+    
+    memcpy( data, memory, object->size );
+    
+    if( copy != NULL )
+    {
+        copy( memory, data );
+    }
+    
+    return data;
 }

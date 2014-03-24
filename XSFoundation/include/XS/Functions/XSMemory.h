@@ -81,7 +81,7 @@ XS_EXTERN_C_BEGIN
 /*!
  * @def         XSAlloc
  * @abstract    Allocates memory
- * @param       bytes       The number of bytes to allocate
+ * @param       _bytes_     The number of bytes to allocate
  * @return      The allocated memory, or NULL
  */
 #define XSAlloc( _bytes_ )      XSAllocWithInfos( _bytes_, 0, __FILE__, __LINE__, __func__ )
@@ -89,7 +89,7 @@ XS_EXTERN_C_BEGIN
 /*!
  * @def         XSAutoAlloc
  * @abstract    Allocates memory which will be automatically released
- * @param       bytes       The number of bytes to allocate
+ * @param       _bytes_     The number of bytes to allocate
  * @discussion  The memory data will be placed in the instance of the current
  *              auto-release pool, and will be released the next time
  *              the auto-release pool is drained.
@@ -100,11 +100,19 @@ XS_EXTERN_C_BEGIN
 /*!
  * @def         XSRelease
  * @abstract    Releases memory data
- * @param       memory      The memory data to release
+ * @param       _memory_    The memory data to release
  * @discussion  Memory may be freed if the retain count for the memory
  *              data reaches 0.
  */
 #define XSRelease( _memory_ )   XSReleaseWithInfos( _memory_, __FILE__, __LINE__, __func__ )
+
+/*!
+ * @def         XSCopy
+ * @abstract    Copies an object
+ * @param       _memory_    The object to copy 
+ * @return      The copy of the object
+ */
+#define XSCopy( _memory_ )      XSCopyWithInfos( _memory_, __FILE__, __LINE__, __func__ )
 
 /*!
  * @function    XSAllocWithInfos
@@ -114,6 +122,8 @@ XS_EXTERN_C_BEGIN
  * @param       file        The file in which the allocation occurs
  * @param       line        The line number of the file in which the allocation occurs
  * @param       func        The function in which the allocation occurs
+ * @discussion  Do not use this function directly. Use the XSAlloc macro
+ *              instead.
  * @return      The allocated memory, or NULL
  */
 XS_EXPORT void * XSAllocWithInfos( XSSize bytes, XSClassID classID, const char * file, int line, const char * func );
@@ -126,9 +136,8 @@ XS_EXPORT void * XSAllocWithInfos( XSSize bytes, XSClassID classID, const char *
  * @param       file        The file in which the allocation occurs
  * @param       line        The line number of the file in which the allocation occurs
  * @param       func        The function in which the allocation occurs
- * @discussion  The memory data will be placed in the instance of the current
- *              auto-release pool, and will be released the next time
- *              the auto-release pool is drained.
+ * @discussion  Do not use this function directly. Use the XSAutoAlloc macro
+ *              instead.
  * @return      The allocated memory, or NULL
  */
 XS_EXPORT void * XSAutoAllocWithInfos( XSSize bytes, XSClassID classID, const char * file, int line, const char * func );
@@ -148,8 +157,8 @@ XS_EXPORT void * XSRetain( void * memory );
  * @param       file        The file in which the allocation occurs
  * @param       line        The line number of the file in which the allocation occurs
  * @param       func        The function in which the allocation occurs
- * @discussion  Memory may be freed if the retain count for the memory
- *              data reaches 0.
+ * @discussion  Do not use this function directly. Use the XSRelease macro
+ *              instead.
  */
 XS_EXPORT void XSReleaseWithInfos( void * memory, const char * file, int line, const char * func );
 
@@ -167,19 +176,24 @@ XS_EXPORT void * XSAutorelease( void * memory );
 /*!
  * @function    XSEquals
  * @abstract    Checks whether two objects are equals
- * @param       object1     The first object to compare
- * @param       object2     The second object to compare
+ * @param       memory1     The first object to compare
+ * @param       memory2     The second object to compare
  * @return      True if both objects are equals, otherwise false
  */
-XS_EXPORT bool XSEquals( XSObjectRef object1, XSObjectRef object2 );
+XS_EXPORT bool XSEquals( void * memory1, void * memory2 );
 
 /*!
  * @function    XSCopy
  * @abstract    Copies an object
- * @param       object      The first object to copy
+ * @param       memory      The object to copy
+ * @param       file        The file in which the allocation occurs
+ * @param       line        The line number of the file in which the allocation occurs
+ * @param       func        The function in which the allocation occurs
+ * @discussion  Do not use this function directly. Use the XSCopy macro
+ *              instead.
  * @return      The copy of the object
  */
-XS_EXPORT XSObjectRef XSCopy( XSObjectRef object );
+XS_EXPORT XSObjectRef XSCopyWithInfos( void * memory, const char * file, int line, const char * func );
 
 XS_EXTERN_C_END
 
