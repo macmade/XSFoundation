@@ -68,11 +68,11 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/XSRuntime.h>
+#include <XS/__private/Functions/XSRuntime.h>
 
-bool XSRuntime_IsRegisteredClass( XSClassID classID )
+bool XSRuntime_IsInstance( void * ptr )
 {
-    ( void )classID;
+    ( void )ptr;
     
     return false;
 }

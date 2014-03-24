@@ -68,11 +68,11 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/XSRuntime.h>
+#include <XS/__private/Functions/XSRuntime.h>
 
-const char * XSRuntime_GetDescription( XSObjectRef object )
+XSClassID XSRuntime_GetClassID( XSObjectRef object )
 {
     ( void )object;
     
-    return NULL;
+    return 0;
 }

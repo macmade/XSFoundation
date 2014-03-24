@@ -68,62 +68,11 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/XSRuntime.h>
+#include <XS/__private/Functions/XSRuntime.h>
 
-XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls )
+XSClassID XSRuntime_GetClassIDOfClassNamed( const char * className )
 {
-    __XSRuntime_ClassInfoList * list;
-    __XSRuntime_ClassInfoList * new;
+    ( void )className;
     
-    if( __XS_RUNTIME_IS_FINALIZING )
-    {
-        return 0;
-    }
-    
-    if( __XS_RUNTIME_IS_INITED == false )
-    {
-        XSFatalError( "XSFoundation runtime has not been inited. Please call XSRuntime_Initialize()." );
-    }
-    
-    if( cls == NULL )
-    {
-        XSFatalError( "Cannot register NULL XSFoundation runtime class info" );
-    }
-    
-    add:
-    
-    list = __XSRuntime_Classes;
-    
-    while( list != NULL )
-    {
-        if( XSAtomic_CompareAndSwapPointer( NULL, ( void * )cls, ( void * volatile * )&( list->info ) ) )
-        {
-            return ( XSUInt32 )XSAtomic_Increment32( ( volatile XSInt32 * )&__XSRuntime_ClassCount );
-        }
-        
-        if( XSAtomic_CompareAndSwapPointer( NULL, NULL, ( void * volatile * )( list->next ) ) )
-        {
-            break;
-        }
-        
-        list = list->next;
-    }
-    
-    new = ( __XSRuntime_ClassInfoList * )calloc( sizeof( __XSRuntime_ClassInfoList ), 1 );
-    
-    new->info = cls;
-    new->next = NULL;
-    
-    if( new == NULL )
-    {
-        XSFatalError( "Cannot allocate memory for the XSFoundation runtime class informations" );
-    }
-    else if( XSAtomic_CompareAndSwapPointer( NULL, new, ( void * volatile * )&( list->next ) ) )
-    {
-        return ( XSUInt32 )XSAtomic_Increment32( ( volatile XSInt32 * )&__XSRuntime_ClassCount );
-    }
-    
-    free( new );
-    
-    goto add;
+    return 0;
 }

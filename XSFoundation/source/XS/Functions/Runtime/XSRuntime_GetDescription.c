@@ -62,37 +62,17 @@
 /* $Id$ */
 
 /*!
- * @file        XSRuntime_Initialize.c
+ * @file        XSAllocWithInfos.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntime_Initialize
+ * @abstract    Definition for XSAllocWithInfos
  */
 
 #include <XS/XS.h>
-#include <XS/__private/XSRuntime.h>
+#include <XS/__private/Functions/XSRuntime.h>
 
-void XSRuntime_Initialize( void )
+const char * XSRuntime_GetDescription( XSObjectRef object )
 {
-    __XSRuntime_ClassInfoList * classes;
+    ( void )object;
     
-    if( XSAtomic_CompareAndSwap32( __XSRuntime_InitStatusNotInited, __XSRuntime_InitStatusInitializing, ( volatile XSInt32 * )&__XSRuntime_Inited ) == false )
-    {
-        return;
-    }
-    
-    classes = ( __XSRuntime_ClassInfoList * )calloc( sizeof( __XSRuntime_ClassInfoList ), 1 );
-    
-    if( classes == NULL )
-    {
-        XSFatalError( "Cannot allocate memory for the XSFoundation runtime class informations" );
-    }
-    
-    if( atexit( __XSRuntime_Finalize ) != 0 )
-    {
-        XSFatalError( "Cannot register the XSFoundation finalizier function" );
-    }
-    
-    __XSRuntime_Classes     = classes;
-    __XSRuntime_ClassCount  = 0;
-    
-    while( XSAtomic_CompareAndSwap32( __XSRuntime_InitStatusInitializing, __XSRuntime_InitStatusInited, ( volatile XSInt32 * )&__XSRuntime_Inited ) == false );
+    return NULL;
 }

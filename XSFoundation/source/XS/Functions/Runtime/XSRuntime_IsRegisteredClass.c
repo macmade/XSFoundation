@@ -62,14 +62,17 @@
 /* $Id$ */
 
 /*!
- * @file        __XSRuntime.c
+ * @file        XSAllocWithInfos.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definitions for runtime functions
+ * @abstract    Definition for XSAllocWithInfos
  */
 
 #include <XS/XS.h>
-#include <XS/__private/XSRuntime.h>
+#include <XS/__private/Functions/XSRuntime.h>
 
-volatile XSUInt32                    __XSRuntime_Inited       = 0;
-         __XSRuntime_ClassInfoList * __XSRuntime_Classes      = NULL;
-volatile XSUInt32                    __XSRuntime_ClassCount   = 0;
+bool XSRuntime_IsRegisteredClass( XSClassID classID )
+{
+    ( void )classID;
+    
+    return false;
+}

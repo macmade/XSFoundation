@@ -82,9 +82,11 @@
 #include <XS/C99.h>
 #include <XS/XSMacros.h>
 #include <XS/XSTypes.h>
-#include <XS/XSAtomic.h>
-#include <XS/XSMemory.h>
-#include <XS/XSRuntime.h>
+
+/* Functions */
+#include <XS/Functions/XSAtomic.h>
+#include <XS/Functions/XSMemory.h>
+#include <XS/Functions/XSRuntime.h>
 
 /* Classes */
 #include <XS/Classes/XSBoolean.h>

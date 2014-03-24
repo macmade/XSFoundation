@@ -62,26 +62,31 @@
 /* $Id$ */
 
 /*!
- * @file        XSRetain.c
+ * @file        XSReleaseWithInfos.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRetain
+ * @abstract    Definition for XSReleaseWithInfos
  */
 
 #include <XS/XS.h>
-#include <XS/__private/XSMemory.h>
+#include <XS/__private/Functions/XSMemory.h>
 
-void * XSRetain( void * memory )
+void XSReleaseWithInfos( void * memory, const char * file, int line, const char * func )
 {
     __XSMemoryObject * object;
     
+    ( void )file;
+    ( void )line;
+    ( void )func;
+    
     if( memory == NULL )
     {
-        return NULL;
+        return;
     }
     
     object = ( __XSMemoryObject * )( ( void * )( ( char * )memory - sizeof( __XSMemoryObject ) ) );
     
-    XSAtomic_Increment64( ( volatile XSInt64 * )&( object->retainCount ) );
-        
-    return memory;
+    if( XSAtomic_Decrement64( ( volatile XSInt64 * )&( object->retainCount ) ) == 0 )
+    {
+        free( object );
+    }
 }

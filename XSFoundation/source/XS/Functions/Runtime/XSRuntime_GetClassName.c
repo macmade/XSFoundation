@@ -68,64 +68,11 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/XSRuntime.h>
+#include <XS/__private/Functions/XSRuntime.h>
 
-void XSRuntime_FatalError( const char * file, int line, ... )
+const char * XSRuntime_GetClassName( XSClassID classID )
 {
-    va_list      ap;
-    const char * message;
-    const char * filename;
+    ( void )classID;
     
-    if( file == NULL || strlen( file ) == 0 )
-    {
-        filename = "<unknown>";
-    }
-    else
-    {
-        #ifdef _WIN32
-        filename = strrchr( file, '\\' );
-        #else
-        filename = strrchr( file, '/' );
-        #endif
-        
-        if( filename == NULL || strlen( filename ) < 2 )
-        {
-            filename = file;
-        }
-        else
-        {
-            filename = filename + 1;
-        }
-    }
-    
-    va_start( ap, line );
-    
-    message = va_arg( ap, const char * );
-    
-    fprintf
-    (
-        stderr,
-        "XSFoundation - Fatal error\n"
-        "File:      %s\n"
-        "Line:      %i\n"
-        "Reason:    ",
-        filename,
-        line
-    );
-    
-    #ifdef __clang__
-    #pragma clang diagnostic push
-    #pragma clang diagnostic ignored "-Wformat-nonliteral"
-    #endif
-    
-    vfprintf( stderr, message, ap );
-    
-    #ifdef __clang__
-    #pragma clang diagnostic pop
-    #endif
-    
-    fprintf( stderr, "\n" );
-    
-    va_end( ap );
-    abort();
+    return NULL;
 }

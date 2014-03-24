@@ -62,38 +62,14 @@
 /* $Id$ */
 
 /*!
- * @file        XSAllocWithInfos.c
+ * @file        __XSRuntime.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSAllocWithInfos
+ * @abstract    Definitions for runtime functions
  */
 
 #include <XS/XS.h>
-#include <XS/__private/XSMemory.h>
+#include <XS/__private/Functions/XSRuntime.h>
 
-void * XSAllocWithInfos( XSSize bytes, XSClassID classID, const char * file, int line, const char * func )
-{
-    XSSize             size;
-    __XSMemoryObject * object;
-    
-    ( void )file;
-    ( void )line;
-    ( void )func;
-    
-    size    = bytes + sizeof( __XSMemoryObject ) + __XS_MEMORY_FENCE_SIZE;
-    object  = ( __XSMemoryObject * )calloc( size, 1 );
-    
-    if( object == NULL )
-    {
-        return NULL;
-    }
-    
-    object->retainCount = 1;
-    object->size        = bytes;
-    object->classID     = classID;
-    object->allocID     = ( XSUInt64 )XSAtomic_Increment64( ( volatile XSInt64 * )&__XSMemory_AllocID );
-    
-    memcpy( &( object->fence ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );
-    memcpy( ( char * )object + ( size - __XS_MEMORY_FENCE_SIZE ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );
-    
-    return ( char * )object + sizeof( __XSMemoryObject );
-}
+volatile XSUInt32                    __XSRuntime_Inited       = 0;
+         __XSRuntime_ClassInfoList * __XSRuntime_Classes      = NULL;
+volatile XSUInt32                    __XSRuntime_ClassCount   = 0;

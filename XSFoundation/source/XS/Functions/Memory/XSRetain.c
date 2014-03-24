@@ -62,17 +62,26 @@
 /* $Id$ */
 
 /*!
- * @file        XSAllocWithInfos.c
+ * @file        XSRetain.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSAllocWithInfos
+ * @abstract    Definition for XSRetain
  */
 
 #include <XS/XS.h>
-#include <XS/__private/XSRuntime.h>
+#include <XS/__private/Functions/XSMemory.h>
 
-bool XSRuntime_IsInstance( void * ptr )
+void * XSRetain( void * memory )
 {
-    ( void )ptr;
+    __XSMemoryObject * object;
     
-    return false;
+    if( memory == NULL )
+    {
+        return NULL;
+    }
+    
+    object = ( __XSMemoryObject * )( ( void * )( ( char * )memory - sizeof( __XSMemoryObject ) ) );
+    
+    XSAtomic_Increment64( ( volatile XSInt64 * )&( object->retainCount ) );
+        
+    return memory;
 }

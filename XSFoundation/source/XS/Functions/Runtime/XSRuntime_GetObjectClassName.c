@@ -68,11 +68,11 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/XSRuntime.h>
+#include <XS/__private/Functions/XSRuntime.h>
 
-XSObjectRef XSRuntime_CreateInstanceOfClassNamed( const char * name )
+const char * XSRuntime_GetObjectClassName( XSObjectRef object )
 {
-    ( void )name;
+    ( void )object;
     
     return NULL;
 }

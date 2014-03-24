@@ -62,31 +62,70 @@
 /* $Id$ */
 
 /*!
- * @file        XSReleaseWithInfos.c
+ * @file        XSAllocWithInfos.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSReleaseWithInfos
+ * @abstract    Definition for XSAllocWithInfos
  */
 
 #include <XS/XS.h>
-#include <XS/__private/XSMemory.h>
+#include <XS/__private/Functions/XSRuntime.h>
 
-void XSReleaseWithInfos( void * memory, const char * file, int line, const char * func )
+void XSRuntime_FatalError( const char * file, int line, ... )
 {
-    __XSMemoryObject * object;
+    va_list      ap;
+    const char * message;
+    const char * filename;
     
-    ( void )file;
-    ( void )line;
-    ( void )func;
-    
-    if( memory == NULL )
+    if( file == NULL || strlen( file ) == 0 )
     {
-        return;
+        filename = "<unknown>";
+    }
+    else
+    {
+        #ifdef _WIN32
+        filename = strrchr( file, '\\' );
+        #else
+        filename = strrchr( file, '/' );
+        #endif
+        
+        if( filename == NULL || strlen( filename ) < 2 )
+        {
+            filename = file;
+        }
+        else
+        {
+            filename = filename + 1;
+        }
     }
     
-    object = ( __XSMemoryObject * )( ( void * )( ( char * )memory - sizeof( __XSMemoryObject ) ) );
+    va_start( ap, line );
     
-    if( XSAtomic_Decrement64( ( volatile XSInt64 * )&( object->retainCount ) ) == 0 )
-    {
-        free( object );
-    }
+    message = va_arg( ap, const char * );
+    
+    fprintf
+    (
+        stderr,
+        "XSFoundation - Fatal error\n"
+        "File:      %s\n"
+        "Line:      %i\n"
+        "Reason:    ",
+        filename,
+        line
+    );
+    
+    #ifdef __clang__
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wformat-nonliteral"
+    #endif
+    
+    vfprintf( stderr, message, ap );
+    
+    #ifdef __clang__
+    #pragma clang diagnostic pop
+    #endif
+    
+    fprintf( stderr, "\n" );
+    
+    va_end( ap );
+    abort();
 }
