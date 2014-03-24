@@ -99,20 +99,6 @@ XS_EXTERN XSClassID __XSBoolean_ClassID;
 void XSStatic __XSBoolean_Initialize( void );
 
 /*!
- * @function    __XSBoolean_Constructor
- * @abstract    Class constructor callback
- * @param       object      The object beeing construct
- */
-void __XSBoolean_Constructor( XSBooleanRef object );
-
-/*!
- * @function    __XSBoolean_Destructor
- * @abstract    Class destructor callback
- * @param       object      The object beeing destruct
- */
-void __XSBoolean_Destructor( XSBooleanRef object );
-
-/*!
  * @function    __XSBoolean_Copy
  * @abstract    Class copy callback
  * @param       source      The object to copy
