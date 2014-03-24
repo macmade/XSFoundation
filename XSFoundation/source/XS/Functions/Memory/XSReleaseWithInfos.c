@@ -83,7 +83,7 @@ void XSReleaseWithInfos( void * memory, const char * file, int line, const char 
         return;
     }
     
-    object = ( __XSMemoryObject * )( ( void * )( ( char * )memory - sizeof( __XSMemoryObject ) ) );
+    object = __XSMemory_GetMemoryObject( memory );
     
     if( XSAtomic_Decrement64( ( volatile XSInt64 * )&( object->retainCount ) ) == 0 )
     {
