@@ -191,6 +191,22 @@
 		05A7964F18DF8A6700F28F3E /* XSRuntime_IsRegisteredClass.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A7964D18DF8A6700F28F3E /* XSRuntime_IsRegisteredClass.c */; };
 		05A7965018DF8A6700F28F3E /* XSRuntime_IsRegisteredClass.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A7964D18DF8A6700F28F3E /* XSRuntime_IsRegisteredClass.c */; };
 		05A7965118DF8A6700F28F3E /* XSRuntime_IsRegisteredClass.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A7964D18DF8A6700F28F3E /* XSRuntime_IsRegisteredClass.c */; };
+		05A7965618E0842100F28F3E /* XSRuntime_Initialize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A7965518E0842100F28F3E /* XSRuntime_Initialize.c */; };
+		05A7965718E0842100F28F3E /* XSRuntime_Initialize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A7965518E0842100F28F3E /* XSRuntime_Initialize.c */; };
+		05A7965818E0842100F28F3E /* XSRuntime_Initialize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A7965518E0842100F28F3E /* XSRuntime_Initialize.c */; };
+		05A7965918E0842100F28F3E /* XSRuntime_Initialize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A7965518E0842100F28F3E /* XSRuntime_Initialize.c */; };
+		05A7965B18E0844300F28F3E /* __XSRuntime.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A7965A18E0844300F28F3E /* __XSRuntime.c */; };
+		05A7965C18E0844300F28F3E /* __XSRuntime.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A7965A18E0844300F28F3E /* __XSRuntime.c */; };
+		05A7965D18E0844300F28F3E /* __XSRuntime.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A7965A18E0844300F28F3E /* __XSRuntime.c */; };
+		05A7965E18E0844300F28F3E /* __XSRuntime.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A7965A18E0844300F28F3E /* __XSRuntime.c */; };
+		05A7966318E089F700F28F3E /* XSRuntime_FatalError.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A7966218E089F700F28F3E /* XSRuntime_FatalError.c */; };
+		05A7966418E089F700F28F3E /* XSRuntime_FatalError.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A7966218E089F700F28F3E /* XSRuntime_FatalError.c */; };
+		05A7966518E089F700F28F3E /* XSRuntime_FatalError.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A7966218E089F700F28F3E /* XSRuntime_FatalError.c */; };
+		05A7966618E089F700F28F3E /* XSRuntime_FatalError.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A7966218E089F700F28F3E /* XSRuntime_FatalError.c */; };
+		05A7966B18E08EAC00F28F3E /* __XSRuntime_Finalize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A7966A18E08EAC00F28F3E /* __XSRuntime_Finalize.c */; };
+		05A7966C18E08EAC00F28F3E /* __XSRuntime_Finalize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A7966A18E08EAC00F28F3E /* __XSRuntime_Finalize.c */; };
+		05A7966D18E08EAC00F28F3E /* __XSRuntime_Finalize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A7966A18E08EAC00F28F3E /* __XSRuntime_Finalize.c */; };
+		05A7966E18E08EAC00F28F3E /* __XSRuntime_Finalize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A7966A18E08EAC00F28F3E /* __XSRuntime_Finalize.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -312,6 +328,10 @@
 		05A7962718DF897300F28F3E /* XSRuntime_IsInstance.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSRuntime_IsInstance.c; sourceTree = "<group>"; };
 		05A7962818DF897300F28F3E /* XSRuntime_RegisterClass.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSRuntime_RegisterClass.c; sourceTree = "<group>"; };
 		05A7964D18DF8A6700F28F3E /* XSRuntime_IsRegisteredClass.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSRuntime_IsRegisteredClass.c; sourceTree = "<group>"; };
+		05A7965518E0842100F28F3E /* XSRuntime_Initialize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSRuntime_Initialize.c; sourceTree = "<group>"; };
+		05A7965A18E0844300F28F3E /* __XSRuntime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSRuntime.c; sourceTree = "<group>"; };
+		05A7966218E089F700F28F3E /* XSRuntime_FatalError.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSRuntime_FatalError.c; sourceTree = "<group>"; };
+		05A7966A18E08EAC00F28F3E /* __XSRuntime_Finalize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSRuntime_Finalize.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -460,13 +480,17 @@
 		051B66C918DCABDD0079238C /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
+				05A7965A18E0844300F28F3E /* __XSRuntime.c */,
+				05A7966A18E08EAC00F28F3E /* __XSRuntime_Finalize.c */,
 				05A7962018DF897300F28F3E /* XSRuntime_CreateInstance.c */,
 				05A7962118DF897300F28F3E /* XSRuntime_CreateInstanceOfClassNamed.c */,
+				05A7966218E089F700F28F3E /* XSRuntime_FatalError.c */,
 				05A7962218DF897300F28F3E /* XSRuntime_GetClassID.c */,
 				05A7962318DF897300F28F3E /* XSRuntime_GetClassIDOfClassNamed.c */,
 				05A7962418DF897300F28F3E /* XSRuntime_GetClassName.c */,
 				05A7962518DF897300F28F3E /* XSRuntime_GetDescription.c */,
 				05A7962618DF897300F28F3E /* XSRuntime_GetObjectClassName.c */,
+				05A7965518E0842100F28F3E /* XSRuntime_Initialize.c */,
 				05A7962718DF897300F28F3E /* XSRuntime_IsInstance.c */,
 				05A7964D18DF8A6700F28F3E /* XSRuntime_IsRegisteredClass.c */,
 				05A7962818DF897300F28F3E /* XSRuntime_RegisterClass.c */,
@@ -787,6 +811,7 @@
 			files = (
 				05A7963918DF897300F28F3E /* XSRuntime_GetClassName.c in Sources */,
 				05A7964518DF897400F28F3E /* XSRuntime_IsInstance.c in Sources */,
+				05A7966B18E08EAC00F28F3E /* __XSRuntime_Finalize.c in Sources */,
 				051B670518DCB0DF0079238C /* XSAllocWithInfos.c in Sources */,
 				05A7964918DF897400F28F3E /* XSRuntime_RegisterClass.c in Sources */,
 				051B673418DD343F0079238C /* XSAtomic_CompareAndSwap32.c in Sources */,
@@ -800,14 +825,17 @@
 				05A7963118DF897300F28F3E /* XSRuntime_GetClassID.c in Sources */,
 				05A7964118DF897300F28F3E /* XSRuntime_GetObjectClassName.c in Sources */,
 				05A7962D18DF897300F28F3E /* XSRuntime_CreateInstanceOfClassNamed.c in Sources */,
+				05A7966318E089F700F28F3E /* XSRuntime_FatalError.c in Sources */,
 				051B670D18DCB0DF0079238C /* XSReleaseWithInfos.c in Sources */,
 				05548EEC18DF687800BB970F /* __XSMemory.c in Sources */,
 				051B673818DD343F0079238C /* XSAtomic_CompareAndSwap64.c in Sources */,
 				051B674418DD343F0079238C /* XSAtomic_Decrement64.c in Sources */,
 				05A7964E18DF8A6700F28F3E /* XSRuntime_IsRegisteredClass.c in Sources */,
+				05A7965B18E0844300F28F3E /* __XSRuntime.c in Sources */,
 				051B670918DCB0DF0079238C /* XSAutorelease.c in Sources */,
 				051B673C18DD343F0079238C /* XSAtomic_CompareAndSwapPointer.c in Sources */,
 				05A7963518DF897300F28F3E /* XSRuntime_GetClassIDOfClassNamed.c in Sources */,
+				05A7965618E0842100F28F3E /* XSRuntime_Initialize.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,7 +846,9 @@
 				051B670618DCB0DF0079238C /* XSAllocWithInfos.c in Sources */,
 				051B673518DD343F0079238C /* XSAtomic_CompareAndSwap32.c in Sources */,
 				051B674918DD343F0079238C /* XSAtomic_Increment32.c in Sources */,
+				05A7965C18E0844300F28F3E /* __XSRuntime.c in Sources */,
 				051B674D18DD343F0079238C /* XSAtomic_Increment64.c in Sources */,
+				05A7965718E0842100F28F3E /* XSRuntime_Initialize.c in Sources */,
 				05A7964A18DF897400F28F3E /* XSRuntime_RegisterClass.c in Sources */,
 				05A7963618DF897300F28F3E /* XSRuntime_GetClassIDOfClassNamed.c in Sources */,
 				051B674118DD343F0079238C /* XSAtomic_Decrement32.c in Sources */,
@@ -830,11 +860,13 @@
 				05548EED18DF687800BB970F /* __XSMemory.c in Sources */,
 				051B673918DD343F0079238C /* XSAtomic_CompareAndSwap64.c in Sources */,
 				05A7963218DF897300F28F3E /* XSRuntime_GetClassID.c in Sources */,
+				05A7966418E089F700F28F3E /* XSRuntime_FatalError.c in Sources */,
 				05A7963E18DF897300F28F3E /* XSRuntime_GetDescription.c in Sources */,
 				05A7964618DF897400F28F3E /* XSRuntime_IsInstance.c in Sources */,
 				051B674518DD343F0079238C /* XSAtomic_Decrement64.c in Sources */,
 				051B670A18DCB0DF0079238C /* XSAutorelease.c in Sources */,
 				05A7964218DF897300F28F3E /* XSRuntime_GetObjectClassName.c in Sources */,
+				05A7966C18E08EAC00F28F3E /* __XSRuntime_Finalize.c in Sources */,
 				05A7963A18DF897300F28F3E /* XSRuntime_GetClassName.c in Sources */,
 				051B673D18DD343F0079238C /* XSAtomic_CompareAndSwapPointer.c in Sources */,
 			);
@@ -847,7 +879,9 @@
 				051B670718DCB0DF0079238C /* XSAllocWithInfos.c in Sources */,
 				051B673618DD343F0079238C /* XSAtomic_CompareAndSwap32.c in Sources */,
 				051B674A18DD343F0079238C /* XSAtomic_Increment32.c in Sources */,
+				05A7965D18E0844300F28F3E /* __XSRuntime.c in Sources */,
 				051B674E18DD343F0079238C /* XSAtomic_Increment64.c in Sources */,
+				05A7965818E0842100F28F3E /* XSRuntime_Initialize.c in Sources */,
 				05A7964B18DF897400F28F3E /* XSRuntime_RegisterClass.c in Sources */,
 				05A7963718DF897300F28F3E /* XSRuntime_GetClassIDOfClassNamed.c in Sources */,
 				051B674218DD343F0079238C /* XSAtomic_Decrement32.c in Sources */,
@@ -859,11 +893,13 @@
 				05548EEE18DF687800BB970F /* __XSMemory.c in Sources */,
 				051B673A18DD343F0079238C /* XSAtomic_CompareAndSwap64.c in Sources */,
 				05A7963318DF897300F28F3E /* XSRuntime_GetClassID.c in Sources */,
+				05A7966518E089F700F28F3E /* XSRuntime_FatalError.c in Sources */,
 				05A7963F18DF897300F28F3E /* XSRuntime_GetDescription.c in Sources */,
 				05A7964718DF897400F28F3E /* XSRuntime_IsInstance.c in Sources */,
 				051B674618DD343F0079238C /* XSAtomic_Decrement64.c in Sources */,
 				051B670B18DCB0DF0079238C /* XSAutorelease.c in Sources */,
 				05A7964318DF897300F28F3E /* XSRuntime_GetObjectClassName.c in Sources */,
+				05A7966D18E08EAC00F28F3E /* __XSRuntime_Finalize.c in Sources */,
 				05A7963B18DF897300F28F3E /* XSRuntime_GetClassName.c in Sources */,
 				051B673E18DD343F0079238C /* XSAtomic_CompareAndSwapPointer.c in Sources */,
 			);
@@ -876,7 +912,9 @@
 				051B670818DCB0DF0079238C /* XSAllocWithInfos.c in Sources */,
 				051B673718DD343F0079238C /* XSAtomic_CompareAndSwap32.c in Sources */,
 				051B674B18DD343F0079238C /* XSAtomic_Increment32.c in Sources */,
+				05A7965E18E0844300F28F3E /* __XSRuntime.c in Sources */,
 				051B674F18DD343F0079238C /* XSAtomic_Increment64.c in Sources */,
+				05A7965918E0842100F28F3E /* XSRuntime_Initialize.c in Sources */,
 				05A7964C18DF897400F28F3E /* XSRuntime_RegisterClass.c in Sources */,
 				05A7963818DF897300F28F3E /* XSRuntime_GetClassIDOfClassNamed.c in Sources */,
 				051B674318DD343F0079238C /* XSAtomic_Decrement32.c in Sources */,
@@ -888,11 +926,13 @@
 				05548EEF18DF687800BB970F /* __XSMemory.c in Sources */,
 				051B673B18DD343F0079238C /* XSAtomic_CompareAndSwap64.c in Sources */,
 				05A7963418DF897300F28F3E /* XSRuntime_GetClassID.c in Sources */,
+				05A7966618E089F700F28F3E /* XSRuntime_FatalError.c in Sources */,
 				05A7964018DF897300F28F3E /* XSRuntime_GetDescription.c in Sources */,
 				05A7964818DF897400F28F3E /* XSRuntime_IsInstance.c in Sources */,
 				051B674718DD343F0079238C /* XSAtomic_Decrement64.c in Sources */,
 				051B670C18DCB0DF0079238C /* XSAutorelease.c in Sources */,
 				05A7964418DF897400F28F3E /* XSRuntime_GetObjectClassName.c in Sources */,
+				05A7966E18E08EAC00F28F3E /* __XSRuntime_Finalize.c in Sources */,
 				05A7963C18DF897300F28F3E /* XSRuntime_GetClassName.c in Sources */,
 				051B673F18DD343F0079238C /* XSAtomic_CompareAndSwapPointer.c in Sources */,
 			);

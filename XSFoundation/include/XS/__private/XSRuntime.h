@@ -74,6 +74,61 @@
 #ifndef __XS___PRIVATE_RUNTIME_H__
 #define __XS___PRIVATE_RUNTIME_H__
 
+/*!
+ * @typedef     __XSRuntime_InitStatus
+ * @abstract    Initialization status of the XSFoundation runtime
+ */
+typedef enum
+{
+    __XSRuntime_InitStatusNotInited     = 0x00, /*! XSFoundation runtime not inited */
+    __XSRuntime_InitStatusInited        = 0x01, /*! XSFoundation runtime inited */
+    __XSRuntime_InitStatusInitializing  = 0x02, /*! XSFoundation runtime initializing */
+    __XSRuntime_InitStatusFinalizing    = 0x03  /*! XSFoundation runtime finalizing */
+}
+__XSRuntime_InitStatus;
 
+/*!
+ * @typedef     __XSRuntime_ClassInfoList
+ * @abstract    Linked list for the XSFoundation class infos
+ */
+typedef struct __XSRuntime_ClassInfoList_Struct
+{
+    const XSClassInfo                       * info;
+    struct __XSRuntime_ClassInfoList_Struct * next;
+}
+__XSRuntime_ClassInfoList;
+
+/*!
+ * @def         __XS_RUNTIME_IS_INITED
+ * @abstract    Checks whether the XSFoundation runtime is inited
+ */
+#define __XS_RUNTIME_IS_INITED      XSAtomic_CompareAndSwap32( __XSRuntime_InitStatusInited,     __XSRuntime_InitStatusInited,     ( volatile XSInt32 * )&__XSRuntime_Inited )
+
+/*!
+ * @def         __XS_RUNTIME_IS_INITED
+ * @abstract    Checks whether the XSFoundation runtime is finalizing
+ */
+#define __XS_RUNTIME_IS_FINALIZING  XSAtomic_CompareAndSwap32( __XSRuntime_InitStatusFinalizing, __XSRuntime_InitStatusFinalizing, ( volatile XSInt32 * )&__XSRuntime_Inited )
+
+/*!
+ * @var         __XSRuntime_Inited
+ * @abstract    XSFoundation runtime initialization status
+ * @see         __XSRuntime_InitStatus
+ */
+XS_EXTERN volatile XSUInt32 __XSRuntime_Inited;
+
+/*!
+ * @var         __XSRuntime_ClassInfoList
+ * @abstract    Registered XSFoundation runtime class infos
+ */
+XS_EXTERN __XSRuntime_ClassInfoList * __XSRuntime_Classes;
+
+/*!
+ * @var         __XSRuntime_Inited
+ * @abstract    Number of registered XSFoundation runtime class infos
+ */
+XS_EXTERN volatile XSUInt32 __XSRuntime_ClassCount;
+
+void __XSRuntime_Finalize( void );
 
 #endif /* __XS___PRIVATE_RUNTIME_H__ */

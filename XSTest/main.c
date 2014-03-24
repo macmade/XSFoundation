@@ -68,6 +68,8 @@ int main( int argc, const char * argv[] )
     ( void )argc;
     ( void )argv;
     
+    XSRuntime_Initialize();
+    
     {
         void * x1;
         void * x2;

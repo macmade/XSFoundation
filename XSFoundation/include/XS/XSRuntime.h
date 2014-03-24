@@ -79,6 +79,14 @@ XS_EXTERN_C_BEGIN
 #include <XS/XSTypes.h>
 
 /*!
+ * @function    XSRuntime_Initialize
+ * @abstract    Initializes the XSFoundation runtime
+ * @discussion  This function must be called before using any XSFoundation
+ *              function.
+ */
+XS_EXPORT void XSRuntime_Initialize( void );
+
+/*!
  * @function    XSRuntime_RegisterClass
  * @abstract    Registers a class for the runtime
  * @discussion  All runtime classes needs to be registered before the runtime
@@ -161,6 +169,17 @@ XS_EXPORT const char * XSRuntime_GetClassName( XSClassID classID );
  * @result      The name of the class
  */
 XS_EXPORT const char * XSRuntime_GetObjectClassName( XSObjectRef object );
+
+/*!
+ * @function    XSRuntime_FatalError
+ * @abstract    Issues a fatal error message and aborts the program
+ * @param       file        The file in which the fatal error occured
+ * @param       line        The line number of the file in which the fatal error occured
+ * @param       ...         The error message with optional format arguments
+ * @discussion  Please do not call this function directly. Use the XSFatalError
+ *              macro instead.
+ */
+void XSRuntime_FatalError( const char * file, int line, ... ) XS_NORETURN_ATTRIBUTE;
 
 XS_EXTERN_C_END
 
