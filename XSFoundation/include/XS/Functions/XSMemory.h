@@ -164,6 +164,15 @@ XS_EXPORT void XSReleaseWithInfos( void * memory, const char * file, int line, c
  */
 XS_EXPORT void * XSAutorelease( void * memory );
 
+/*!
+ * @function    XSEquals
+ * @abstract    Checks whether two objects are equals
+ * @param       object1     The first object to compare
+ * @param       object2     The second object to compare
+ * @return      True if both objects are equals, otherwise false
+ */
+XS_EXPORT bool XSEquals( XSObjectRef object1, XSObjectRef object2 );
+
 XS_EXTERN_C_END
 
 #endif /* __XS_MEMORY_H__ */

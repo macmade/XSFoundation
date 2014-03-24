@@ -62,54 +62,20 @@
 /* $Id$ */
 
 /*!
- * @header      XSMemory.h
+ * @file        __XSMemory_GetMemoryObject.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSMemory.h
+ * @abstract    Definition for __XSMemory_GetMemoryObject
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Functions/XSMemory.h>
 
-#ifndef __XS___PRIVATE_MEMORY_H__
-#define __XS___PRIVATE_MEMORY_H__
-
-#include <XS/XSTypes.h>
-
-#define __XS_MEMORY_FENCE_SIZE  16
-
-/*!
- * @typedef     __XSMemoryObject
- * @abstract    Memory object type
- */
-typedef struct
+__XSMemoryObject * __XSMemory_GetMemoryObject( void * ptr )
 {
-    volatile XSUInt64   retainCount;                        /*! The object's retain count */
-    XSSize              size;                               /*! The allocated data size */
-    XSUInt64            allocID;                            /*! ... */
-    XSClassID           classID;                            /*! The class ID (only for allocated instances) */
-    unsigned char       fence[ __XS_MEMORY_FENCE_SIZE ];    /*! Memory fence to prevent overflows */
+    if( ptr == NULL )
+    {
+        return NULL;
+    }
+    
+    return ( __XSMemoryObject * )( ( void * )( ( char* )ptr - sizeof( __XSMemoryObject ) ) );
 }
-__XSMemoryObject;
-
-/*!
- * @typedef     __XSMemoryAllocID
- * @abstract    The current allocation ID
- */
-XS_EXTERN volatile XSUInt64 __XSMemory_AllocID;
-
-/*!
- * @typedef     __XSMemoryFenceData
- * @abstract    The memory fence data
- */
-XS_EXTERN const char __XSMemory_FenceData[ __XS_MEMORY_FENCE_SIZE ];
-
-/*!
- * @function    __XSMemory_GetMemoryObject
- * @abstract    Gets the memory object for a pointer
- * @param       ptr     The pointer for which to get the memory object
- * @result      The memory object
- */
-__XSMemoryObject * __XSMemory_GetMemoryObject( void * ptr );
-
-#endif /* __XS___PRIVATE_MEMORY_H__ */

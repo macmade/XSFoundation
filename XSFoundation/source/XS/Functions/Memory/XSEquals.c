@@ -62,54 +62,38 @@
 /* $Id$ */
 
 /*!
- * @header      XSMemory.h
+ * @file        XSEquals.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSMemory.h
+ * @abstract    Definition for XSEquals
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Functions/XSMemory.h>
 
-#ifndef __XS___PRIVATE_MEMORY_H__
-#define __XS___PRIVATE_MEMORY_H__
-
-#include <XS/XSTypes.h>
-
-#define __XS_MEMORY_FENCE_SIZE  16
-
-/*!
- * @typedef     __XSMemoryObject
- * @abstract    Memory object type
- */
-typedef struct
+bool XSEquals( XSObjectRef object1, XSObjectRef object2 )
 {
-    volatile XSUInt64   retainCount;                        /*! The object's retain count */
-    XSSize              size;                               /*! The allocated data size */
-    XSUInt64            allocID;                            /*! ... */
-    XSClassID           classID;                            /*! The class ID (only for allocated instances) */
-    unsigned char       fence[ __XS_MEMORY_FENCE_SIZE ];    /*! Memory fence to prevent overflows */
+    __XSMemoryObject * mem1;
+    __XSMemoryObject * mem2;
+    
+    if( object1 == NULL || object2 == NULL )
+    {
+        return false;
+    }
+    
+    mem1 = __XSMemory_GetMemoryObject( object1 );
+    mem2 = __XSMemory_GetMemoryObject( object2 );
+    
+    if( mem1->classID == 0 && mem2->classID == 0 )
+    {
+        return ( mem1 == mem2 ) ? true : false;
+    }
+    
+    if( mem1->classID != mem2->classID )
+    {
+        return false;
+    }
+    
+    /* Equals callback... */
+    
+    return false;
 }
-__XSMemoryObject;
-
-/*!
- * @typedef     __XSMemoryAllocID
- * @abstract    The current allocation ID
- */
-XS_EXTERN volatile XSUInt64 __XSMemory_AllocID;
-
-/*!
- * @typedef     __XSMemoryFenceData
- * @abstract    The memory fence data
- */
-XS_EXTERN const char __XSMemory_FenceData[ __XS_MEMORY_FENCE_SIZE ];
-
-/*!
- * @function    __XSMemory_GetMemoryObject
- * @abstract    Gets the memory object for a pointer
- * @param       ptr     The pointer for which to get the memory object
- * @result      The memory object
- */
-__XSMemoryObject * __XSMemory_GetMemoryObject( void * ptr );
-
-#endif /* __XS___PRIVATE_MEMORY_H__ */
