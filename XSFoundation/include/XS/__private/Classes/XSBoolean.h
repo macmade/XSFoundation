@@ -87,6 +87,12 @@ struct __XSBoolean
 };
 
 /*!
+ * @var         __XSBoolean_ClassID
+ * @abstract    Class ID
+ */
+XS_EXTERN XSClassID __XSBoolean_ClassID;
+
+/*!
  * @function    __XSBoolean_Initialize
  * @abstract    Class initializer
  */

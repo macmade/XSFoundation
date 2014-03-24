@@ -62,23 +62,20 @@
 /* $Id$ */
 
 /*!
- * @file        __XSBoolean.c
+ * @file        XSBoolean_GetValue.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definitions for XSBoolean functions
+ * @abstract    Definition for XSBoolean_GetValue
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSBoolean.h>
 
-XSClassID __XSBoolean_ClassID = 0;
-XSClassInfo __XSBoolean_Class =
+bool XSBoolean_GetValue( XSBooleanRef object )
 {
-    "XSBoolean",
-    sizeof( struct __XSBoolean ),
-    ( XSClassInfoConstructorCallback )__XSBoolean_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSBoolean_Destructor,
-    ( XSClassInfoCopyCallback        )__XSBoolean_Copy,
-    ( XSClassInfoEqualsCallback      )__XSBoolean_Equals,
-    ( XSClassInfoToStringCallback    )__XSBoolean_ToString
-};
-
+    if( object == NULL )
+    {
+        return false;
+    }
+    
+    return object->value;
+}

@@ -72,5 +72,5 @@
 
 void __XSBoolean_Initialize( void )
 {
-    XSRuntime_RegisterClass( &__XSBoolean_Class );
+    __XSBoolean_ClassID = XSRuntime_RegisterClass( &__XSBoolean_Class );
 }
