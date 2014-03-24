@@ -173,6 +173,14 @@ XS_EXPORT void * XSAutorelease( void * memory );
  */
 XS_EXPORT bool XSEquals( XSObjectRef object1, XSObjectRef object2 );
 
+/*!
+ * @function    XSCopy
+ * @abstract    Copies an object
+ * @param       object      The first object to copy
+ * @return      The copy of the object
+ */
+XS_EXPORT XSObjectRef XSCopy( XSObjectRef object );
+
 XS_EXTERN_C_END
 
 #endif /* __XS_MEMORY_H__ */
