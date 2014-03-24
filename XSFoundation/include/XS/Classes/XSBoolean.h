@@ -77,6 +77,10 @@
 #include <XS/XSTypes.h>
 #include <XS/XSMacros.h>
 
-
+/*!
+ * @typedef     XSBooleanRef
+ * @abstract    Opaque type for XSBoolean
+ */
+typedef struct __XSBoolean * XSBooleanRef;
 
 #endif /* __XS_CLASSES_XSBOOLEAN_H__ */

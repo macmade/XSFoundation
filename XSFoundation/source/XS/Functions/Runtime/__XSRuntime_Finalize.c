@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSRuntime_Initialize.c
+ * @file        __XSRuntime_Finalize.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntime_Initialize
+ * @abstract    Definition for __XSRuntime_Finalize
  */
 
 #include <XS/XS.h>

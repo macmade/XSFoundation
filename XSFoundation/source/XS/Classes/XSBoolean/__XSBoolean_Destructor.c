@@ -62,75 +62,15 @@
 /* $Id$ */
 
 /*!
- * @header      XSBoolean.h
+ * @file        __XSBoolean_Destructor.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSBoolean.h
+ * @abstract    Definition for __XSBoolean_Destructor
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Classes/XSBoolean.h>
 
-#ifndef __XS___PRIVATE_CLASSES_XSBOOLEAN_H__
-#define __XS___PRIVATE_CLASSES_XSBOOLEAN_H__
-
-#include <XS/XSTypes.h>
-#include <XS/XSMacros.h>
-
-/*!
- * @struct      __XSBoolean
- * @abstract    Structure for XSBoolean
- */
-struct __XSBoolean
+void __XSBoolean_Destructor( XSBooleanRef object )
 {
-    bool value; /*! The boolean value */
-};
-
-/*!
- * @function    __XSBoolean_Initialize
- * @abstract    Class initializer
- */
-void XSStatic __XSBoolean_Initialize( void );
-
-/*!
- * @function    __XSBoolean_Constructor
- * @abstract    Class constructor callback
- * @param       object      The object beeing construct
- */
-void __XSBoolean_Constructor( XSBooleanRef object );
-
-/*!
- * @function    __XSBoolean_Destructor
- * @abstract    Class destructor callback
- * @param       object      The object beeing destruct
- */
-void __XSBoolean_Destructor( XSBooleanRef object );
-
-/*!
- * @function    __XSBoolean_Copy
- * @abstract    Class copy callback
- * @param       source      The object to copy
- * @param       destination The object beeing copied
- */
-void __XSBoolean_Copy( XSBooleanRef source, XSBooleanRef destination );
-
-/*!
- * @function    __XSBoolean_Equals
- * @abstract    Class equals callback
- * @param       object1     The first object to compare
- * @param       object2     The second object to compare
- * @result      True if both objects are equals, otherwise false
- */
-bool __XSBoolean_Equals( XSBooleanRef object1, XSBooleanRef object2 );
-
-/*!
- * @function    __XSBoolean_ToString
- * @abstract    Class to-string callback
- * @param       object      The object for which to get a description
- * @return      The object's description
- */
-const char * __XSBoolean_ToString( XSBooleanRef object );
-
-XS_EXTERN XSClassInfo __XSBoolean_Class;
-
-#endif /* __XS___PRIVATE_CLASSES_XSBOOLEAN_H__ */
+    ( void )object;
+}

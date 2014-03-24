@@ -70,6 +70,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
+/* Private class initializers */
+void XSStatic __XSBoolean_Initialize( void );
+
 void XSRuntime_Initialize( void )
 {
     __XSRuntime_ClassInfoList * classes;
@@ -95,4 +98,6 @@ void XSRuntime_Initialize( void )
     __XSRuntime_ClassCount  = 0;
     
     while( XSAtomic_CompareAndSwap32( __XSRuntime_InitStatusInitializing, __XSRuntime_InitStatusInited, ( volatile XSInt32 * )&__XSRuntime_Inited ) == false );
+    
+    __XSBoolean_Initialize();
 }
