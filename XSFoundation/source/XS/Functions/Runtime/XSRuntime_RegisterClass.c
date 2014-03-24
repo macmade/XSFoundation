@@ -87,7 +87,7 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls )
     
     if( cls == NULL )
     {
-        XSFatalError( "Cannot register NULL XSFoundation runtime class info" );
+        XSFatalError( "Cannot register a NULL runtime class info" );
     }
     
     add:
@@ -116,7 +116,7 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls )
     
     if( new == NULL )
     {
-        XSFatalError( "Cannot allocate memory for the XSFoundation runtime class informations" );
+        XSFatalError( "Cannot allocate memory for the runtime class informations" );
     }
     else if( XSAtomic_CompareAndSwapPointer( NULL, new, ( void * volatile * )&( list->next ) ) )
     {
