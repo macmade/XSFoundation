@@ -72,7 +72,35 @@
 
 XSObjectRef XSRuntime_CreateInstance( XSClassID classID )
 {
-    ( void )classID;
+    XSObjectRef                     object;
+    XSSize                          instanceSize;
+    XSClassInfoConstructorCallback  constructor;
     
-    return NULL;
+    if( XSRuntime_IsRegisteredClass( classID ) == false )
+    {
+        XSFatalError( "Cannot create an instance for an unregistered class (class ID: %lu)", classID );
+    }
+    
+    instanceSize = __XSRuntime_GetInstanceSize( classID );
+    
+    if( instanceSize == 0 )
+    {
+        XSFatalError( "Cannot create an instance for a class with zero as instance size (class ID: %lu)", classID );
+    }
+    
+    object = ( XSObjectRef )calloc( instanceSize, 1 );
+    
+    if( object == NULL )
+    {
+        return NULL;
+    }
+    
+    constructor = __XSRuntime_GetConstructorCallback( classID );
+    
+    if( constructor != NULL )
+    {
+        constructor( object );
+    }
+    
+    return object;
 }
