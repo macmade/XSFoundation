@@ -71,36 +71,36 @@
 #include <XS/__private/Functions/XSMemory.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
-bool XSEquals( XSObjectRef object1, XSObjectRef object2 )
+XS_EXPORT bool XSEquals( void * memory1, void * memory2 )
 {
-    __XSMemoryObject        * mem1;
-    __XSMemoryObject        * mem2;
+    __XSMemoryObject        * object1;
+    __XSMemoryObject        * object2;
     XSClassInfoEqualsCallback equals;
     
-    if( object1 == NULL || object2 == NULL )
+    if( memory1 == NULL || memory2 == NULL )
     {
         return false;
     }
     
-    mem1 = __XSMemory_GetMemoryObject( object1 );
-    mem2 = __XSMemory_GetMemoryObject( object2 );
+    object1 = __XSMemory_GetMemoryObject( memory1 );
+    object2 = __XSMemory_GetMemoryObject( memory2 );
     
-    if( mem1->classID == 0 && mem2->classID == 0 )
+    if( XSRuntime_IsRegisteredClass( object1->classID ) == false || XSRuntime_IsRegisteredClass( object2->classID ) == false )
     {
-        return ( mem1 == mem2 ) ? true : false;
+        return ( object1 == object2 ) ? true : false;
     }
     
-    if( mem1->classID != mem2->classID )
+    if( object1->classID != object2->classID )
     {
         return false;
     }
     
-    equals = __XSRuntime_GetEqualsCallback( mem1->classID );
+    equals = __XSRuntime_GetEqualsCallback( object1->classID );
     
     if( equals == NULL )
     {
-        return ( mem1 == mem2 ) ? true : false;
+        return ( object1 == object2 ) ? true : false;
     }
     
-    return equals( object1, object2 );
+    return equals( memory1, memory2 );
 }
