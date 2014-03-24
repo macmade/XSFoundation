@@ -62,45 +62,17 @@
 /* $Id$ */
 
 /*!
- * @file        XSEquals.c
+ * @file        __XSRuntime_GetToStringCallback.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSEquals
+ * @abstract    Definition for __XSRuntime_GetToStringCallback
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSMemory.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
-bool XSEquals( XSObjectRef object1, XSObjectRef object2 )
+XSClassInfoToStringCallback __XSRuntime_GetToStringCallback( XSClassID classID )
 {
-    __XSMemoryObject        * mem1;
-    __XSMemoryObject        * mem2;
-    XSClassInfoEqualsCallback equals;
+    ( void )classID;
     
-    if( object1 == NULL || object2 == NULL )
-    {
-        return false;
-    }
-    
-    mem1 = __XSMemory_GetMemoryObject( object1 );
-    mem2 = __XSMemory_GetMemoryObject( object2 );
-    
-    if( mem1->classID == 0 && mem2->classID == 0 )
-    {
-        return ( mem1 == mem2 ) ? true : false;
-    }
-    
-    if( mem1->classID != mem2->classID )
-    {
-        return false;
-    }
-    
-    equals = __XSRuntime_GetEqualsCallback( mem1->classID );
-    
-    if( equals == NULL )
-    {
-        return ( mem1 == mem2 ) ? true : false;
-    }
-    
-    return equals( object1, object2 );
+    return NULL;
 }

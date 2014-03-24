@@ -131,6 +131,46 @@ XS_EXTERN __XSRuntime_ClassInfoList * __XSRuntime_Classes;
  */
 XS_EXTERN volatile XSUInt32 __XSRuntime_ClassCount;
 
+/*!
+ * @var         __XSRuntime_GetConstructorCallback
+ * @abstract    Gets the constructor callback for a class ID
+ * @param       classID     The class ID
+ * @result      The copy callback
+ */
+XSClassInfoConstructorCallback __XSRuntime_GetConstructorCallback( XSClassID classID );
+
+/*!
+ * @var         __XSRuntime_GetDestructorCallback
+ * @abstract    Gets the destructor callback for a class ID
+ * @param       classID     The class ID
+ * @result      The destructor callback
+ */
+XSClassInfoDestructorCallback __XSRuntime_GetDestructorCallback( XSClassID classID );
+
+/*!
+ * @var         __XSRuntime_GetCopyCallback
+ * @abstract    Gets the copy callback for a class ID
+ * @param       classID     The class ID
+ * @result      The copy callback
+ */
+XSClassInfoCopyCallback __XSRuntime_GetCopyCallback( XSClassID classID );
+
+/*!
+ * @var         __XSRuntime_GetEqualsCallback
+ * @abstract    Gets the equals callback for a class ID
+ * @param       classID     The class ID
+ * @result      The equals callback
+ */
+XSClassInfoEqualsCallback __XSRuntime_GetEqualsCallback( XSClassID classID );
+
+/*!
+ * @var         __XSRuntime_GetToStringCallback
+ * @abstract    Gets the to-string callback for a class ID
+ * @param       classID     The class ID
+ * @result      The to-string callback
+ */
+XSClassInfoToStringCallback __XSRuntime_GetToStringCallback( XSClassID classID );
+
 void __XSRuntime_Finalize( void );
 
 #endif /* __XS___PRIVATE_RUNTIME_H__ */
