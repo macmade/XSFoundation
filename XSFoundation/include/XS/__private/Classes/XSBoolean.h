@@ -93,6 +93,12 @@ struct __XSBoolean
 XS_EXTERN XSClassID __XSBoolean_ClassID;
 
 /*!
+ * @var         __XSBoolean_Class
+ * @abstract    Class info
+ */
+XS_EXTERN XSClassInfo __XSBoolean_Class;
+
+/*!
  * @function    __XSBoolean_Initialize
  * @abstract    Class initializer
  */
@@ -136,7 +142,5 @@ bool __XSBoolean_Equals( XSBooleanRef object1, XSBooleanRef object2 );
  * @return      The object's description
  */
 const char * __XSBoolean_ToString( XSBooleanRef object );
-
-XS_EXTERN XSClassInfo __XSBoolean_Class;
 
 #endif /* __XS___PRIVATE_CLASSES_XS_BOOLEAN_H__ */
