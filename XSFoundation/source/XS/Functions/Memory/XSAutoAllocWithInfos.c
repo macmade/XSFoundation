@@ -69,7 +69,7 @@
 
 #include <XS/XS.h>
 
-void * XSAutoAllocWithInfos( XSSize bytes, XSClassID classID, const char * file, int line, const char * func )
+void * XSAutoAllocWithInfos( XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func )
 {
     return XSAutorelease( XSAllocWithInfos( bytes, classID, file, line, func ) );
 }

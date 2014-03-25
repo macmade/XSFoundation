@@ -102,6 +102,7 @@
 #include <XS/Classes/XSBoolean.h>
 #include <XS/Classes/XSColor.h>
 #include <XS/Classes/XSData.h>
+#include <XS/Classes/XSDate.h>
 #include <XS/Classes/XSDictionary.h>
 #include <XS/Classes/XSError.h>
 #include <XS/Classes/XSException.h>
@@ -112,6 +113,8 @@
 #include <XS/Classes/XSNotificationCenter.h>
 #include <XS/Classes/XSNull.h>
 #include <XS/Classes/XSNumber.h>
+#include <XS/Classes/XSRecursiveLock.h>
+#include <XS/Classes/XSSemaphore.h>
 #include <XS/Classes/XSSet.h>
 #include <XS/Classes/XSString.h>
 #include <XS/Classes/XSThread.h>

@@ -62,28 +62,15 @@
 /* $Id$ */
 
 /*!
- * @header      XSOffset.h
+ * @file        XSDictionary_Create.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSOffset type definition
+ * @abstract    Definition for XSDictionary_Create
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Classes/XSDictionary.h>
 
-#ifndef __XS_TYPES_XS_OFFSET_H__
-#define __XS_TYPES_XS_OFFSET_H__
-
-XS_EXTERN_C_BEGIN
-
-#include <stdlib.h>
-
-/*!
- * @typedef     XSOffset
- * @abstract    Offset type
- */
-typedef off_t   XSOffset;
-
-XS_EXTERN_C_END
-
-#endif /* __XS_TYPES_XS_OFFSET_H__ */
+XSClassID XSDictionary_GetClassID( void )
+{
+    return __XSDictionary_ClassID;
+}

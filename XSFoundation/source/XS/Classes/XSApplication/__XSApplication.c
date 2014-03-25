@@ -62,33 +62,23 @@
 /* $Id$ */
 
 /*!
- * @header      XSArea.h
+ * @file        __XSApplication.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSArea type definition
+ * @abstract    Definitions for XSApplication functions
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Classes/XSApplication.h>
 
-#ifndef __XS_TYPES_XS_AREA_H__
-#define __XS_TYPES_XS_AREA_H__
-
-XS_EXTERN_C_BEGIN
-
-#include <XS/XSTypes/XSFloat.h>
-
-/*!
- * @typedef     XSArea
- * @abstract    Area type (structure)
- */
-typedef struct
+XSClassID __XSApplication_ClassID = 0;
+XSClassInfo __XSApplication_Class =
 {
-    XSFloat width;  /*! The area width */
-    XSFloat height; /*! The area height */
-}
-XSArea;
+    "XSApplication",
+    sizeof( struct __XSApplication ),
+    ( XSClassInfoConstructorCallback )__XSApplication_Constructor,
+    ( XSClassInfoDestructorCallback  )__XSApplication_Destructor,
+    ( XSClassInfoCopyCallback        )__XSApplication_Copy,
+    ( XSClassInfoEqualsCallback      )__XSApplication_Equals,
+    ( XSClassInfoToStringCallback    )__XSApplication_ToString
+};
 
-XS_EXTERN_C_END
-
-#endif /* __XS_TYPES_XS_AREA_H__ */

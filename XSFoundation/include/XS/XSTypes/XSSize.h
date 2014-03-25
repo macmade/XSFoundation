@@ -76,13 +76,18 @@
 
 XS_EXTERN_C_BEGIN
 
-#include <stdlib.h>
+#include <XS/XSTypes/XSFloat.h>
 
 /*!
  * @typedef     XSSize
- * @abstract    Size type
+ * @abstract    Size type (structure)
  */
-typedef size_t  XSSize;
+typedef struct
+{
+    XSFloat width;  /*! The size width */
+    XSFloat height; /*! The size height */
+}
+XSSize;
 
 XS_EXTERN_C_END
 

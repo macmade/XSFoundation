@@ -145,7 +145,7 @@ const XSClassInfo * __XSRuntime_GetClassInfo( XSClassID classID );
  * @param       classID     The class ID
  * @result      The instance size
  */
-XSSize __XSRuntime_GetInstanceSize( XSClassID classID );
+XSUInteger __XSRuntime_GetInstanceSize( XSClassID classID );
 
 /*!
  * @var         __XSRuntime_GetConstructorCallback

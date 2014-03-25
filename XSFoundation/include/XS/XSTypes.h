@@ -93,11 +93,8 @@ XS_EXTERN_C_BEGIN
 #include <XS/XSTypes/XSInteger.h>
 #include <XS/XSTypes/XSFloat.h>
 
-#include <XS/XSTypes/XSSize.h>
-#include <XS/XSTypes/XSOffset.h>
-
 #include <XS/XSTypes/XSPoint.h>
-#include <XS/XSTypes/XSArea.h>
+#include <XS/XSTypes/XSSize.h>
 #include <XS/XSTypes/XSRect.h>
 #include <XS/XSTypes/XSEdgeInsets.h>
 

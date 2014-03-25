@@ -70,7 +70,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
-XSSize __XSRuntime_GetInstanceSize( XSClassID classID )
+XSUInteger __XSRuntime_GetInstanceSize( XSClassID classID )
 {
     const XSClassInfo * info;
     

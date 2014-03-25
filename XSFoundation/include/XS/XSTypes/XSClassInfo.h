@@ -124,7 +124,7 @@ typedef const char * ( * XSClassInfoToStringCallback )( XSObjectRef object );
 typedef struct
 {
     const char                    * className;      /*! The name of the class */
-    XSSize                          instanceSize;   /*! The size of the class instances */
+    XSUInteger                      instanceSize;   /*! The size of the class instances */
     XSClassInfoConstructorCallback  constructor;    /*! The class constructor */
     XSClassInfoDestructorCallback   destructor;     /*! The class destructor */
     XSClassInfoCopyCallback         copy;           /*! The object's copy callback */

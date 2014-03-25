@@ -73,7 +73,7 @@
 XSObjectRef XSRuntime_CreateInstance( XSClassID classID )
 {
     XSObjectRef                     object;
-    XSSize                          instanceSize;
+    XSUInteger                      instanceSize;
     XSClassInfoConstructorCallback  constructor;
     
     if( XSRuntime_IsRegisteredClass( classID ) == false )

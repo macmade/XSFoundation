@@ -126,7 +126,7 @@ XS_EXTERN_C_BEGIN
  *              instead.
  * @return      The allocated memory, or NULL
  */
-XS_EXPORT void * XSAllocWithInfos( XSSize bytes, XSClassID classID, const char * file, int line, const char * func );
+XS_EXPORT void * XSAllocWithInfos( XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func );
 
 /*!
  * @function    XSAutoAllocWithInfos
@@ -140,7 +140,7 @@ XS_EXPORT void * XSAllocWithInfos( XSSize bytes, XSClassID classID, const char *
  *              instead.
  * @return      The allocated memory, or NULL
  */
-XS_EXPORT void * XSAutoAllocWithInfos( XSSize bytes, XSClassID classID, const char * file, int line, const char * func );
+XS_EXPORT void * XSAutoAllocWithInfos( XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func );
 
 /*!
  * @function    XSRetainWithInfos

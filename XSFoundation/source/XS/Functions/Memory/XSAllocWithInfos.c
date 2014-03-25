@@ -70,9 +70,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemory.h>
 
-void * XSAllocWithInfos( XSSize bytes, XSClassID classID, const char * file, int line, const char * func )
+void * XSAllocWithInfos( XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func )
 {
-    XSSize             size;
+    XSUInteger         size;
     __XSMemoryObject * object;
     
     ( void )file;

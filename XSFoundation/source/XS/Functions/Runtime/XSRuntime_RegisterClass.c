@@ -101,7 +101,7 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls )
             return ( XSUInt32 )XSAtomic_Increment32( ( volatile XSInt32 * )&__XSRuntime_ClassCount );
         }
         
-        if( XSAtomic_CompareAndSwapPointer( NULL, NULL, ( void * volatile * )( list->next ) ) )
+        if( XSAtomic_CompareAndSwapPointer( NULL, NULL, ( void * volatile * )&( list->next ) ) )
         {
             break;
         }

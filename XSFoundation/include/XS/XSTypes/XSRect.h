@@ -77,7 +77,7 @@
 XS_EXTERN_C_BEGIN
 
 #include <XS/XSTypes/XSPoint.h>
-#include <XS/XSTypes/XSArea.h>
+#include <XS/XSTypes/XSSize.h>
 
 /*!
  * @typedef     XSRect
@@ -86,7 +86,7 @@ XS_EXTERN_C_BEGIN
 typedef struct
 {
     XSPoint origin; /*! The rectangle's origin */
-    XSArea  area;   /*! The rectangle's area */
+    XSSize  size;   /*! The rectangle's size */
 }
 XSRect;
 
