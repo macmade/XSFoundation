@@ -86,7 +86,7 @@ typedef struct __XSSet * XSSetRef;
 /*!
  * @function    XSSet_GetClassID
  * @abstract    Gets the class ID for XSSet
- * @result      The class ID for XSSet
+ * @return      The class ID for XSSet
  */
 XS_EXPORT XSStatic XSClassID XSSet_GetClassID( void );
 

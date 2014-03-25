@@ -86,7 +86,7 @@ typedef struct __XSNode * XSNodeRef;
 /*!
  * @function    XSNode_GetClassID
  * @abstract    Gets the class ID for XSNode
- * @result      The class ID for XSNode
+ * @return      The class ID for XSNode
  */
 XS_EXPORT XSStatic XSClassID XSNode_GetClassID( void );
 

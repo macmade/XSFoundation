@@ -86,7 +86,7 @@ typedef struct __XSException * XSExceptionRef;
 /*!
  * @function    XSException_GetClassID
  * @abstract    Gets the class ID for XSException
- * @result      The class ID for XSException
+ * @return      The class ID for XSException
  */
 XS_EXPORT XSStatic XSClassID XSException_GetClassID( void );
 

@@ -86,7 +86,7 @@ typedef struct __XSThread * XSThreadRef;
 /*!
  * @function    XSThread_GetClassID
  * @abstract    Gets the class ID for XSThread
- * @result      The class ID for XSThread
+ * @return      The class ID for XSThread
  */
 XS_EXPORT XSStatic XSClassID XSThread_GetClassID( void );
 

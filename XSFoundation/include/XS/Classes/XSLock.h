@@ -86,7 +86,7 @@ typedef struct __XSLock * XSLockRef;
 /*!
  * @function    XSLock_GetClassID
  * @abstract    Gets the class ID for XSLock
- * @result      The class ID for XSLock
+ * @return      The class ID for XSLock
  */
 XS_EXPORT XSStatic XSClassID XSLock_GetClassID( void );
 

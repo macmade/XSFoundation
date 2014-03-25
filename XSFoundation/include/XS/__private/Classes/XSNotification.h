@@ -131,7 +131,7 @@ void __XSNotification_Copy( XSNotificationRef source, XSNotificationRef destinat
  * @abstract    Class equals callback
  * @param       object1     The first object to compare
  * @param       object2     The second object to compare
- * @result      True if both objects are equals, otherwise false
+ * @return      True if both objects are equals, otherwise false
  */
 bool __XSNotification_Equals( XSNotificationRef object1, XSNotificationRef object2 );
 

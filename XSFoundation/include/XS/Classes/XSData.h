@@ -86,7 +86,7 @@ typedef struct __XSData * XSDataRef;
 /*!
  * @function    XSData_GetClassID
  * @abstract    Gets the class ID for XSData
- * @result      The class ID for XSData
+ * @return      The class ID for XSData
  */
 XS_EXPORT XSStatic XSClassID XSData_GetClassID( void );
 

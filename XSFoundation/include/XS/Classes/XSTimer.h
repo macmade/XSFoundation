@@ -86,7 +86,7 @@ typedef struct __XSTimer * XSTimerRef;
 /*!
  * @function    XSTimer_GetClassID
  * @abstract    Gets the class ID for XSTimer
- * @result      The class ID for XSTimer
+ * @return      The class ID for XSTimer
  */
 XS_EXPORT XSStatic XSClassID XSTimer_GetClassID( void );
 

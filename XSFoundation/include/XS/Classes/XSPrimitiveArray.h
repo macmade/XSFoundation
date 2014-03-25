@@ -86,7 +86,7 @@ typedef struct __XSPrimitiveArray * XSPrimitiveArrayRef;
 /*!
  * @function    XSPrimitiveArray_GetClassID
  * @abstract    Gets the class ID for XSPrimitiveArray
- * @result      The class ID for XSPrimitiveArray
+ * @return      The class ID for XSPrimitiveArray
  */
 XS_EXPORT XSStatic XSClassID XSPrimitiveArray_GetClassID( void );
 

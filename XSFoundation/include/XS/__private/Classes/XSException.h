@@ -131,7 +131,7 @@ void __XSException_Copy( XSExceptionRef source, XSExceptionRef destination );
  * @abstract    Class equals callback
  * @param       object1     The first object to compare
  * @param       object2     The second object to compare
- * @result      True if both objects are equals, otherwise false
+ * @return      True if both objects are equals, otherwise false
  */
 bool __XSException_Equals( XSExceptionRef object1, XSExceptionRef object2 );
 

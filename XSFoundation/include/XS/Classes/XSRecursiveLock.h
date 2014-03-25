@@ -86,7 +86,7 @@ typedef struct __XSRecursiveLock * XSRecursiveLockRef;
 /*!
  * @function    XSRecursiveLock_GetClassID
  * @abstract    Gets the class ID for XSRecursiveLock
- * @result      The class ID for XSRecursiveLock
+ * @return      The class ID for XSRecursiveLock
  */
 XS_EXPORT XSStatic XSClassID XSRecursiveLock_GetClassID( void );
 

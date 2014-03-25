@@ -86,7 +86,7 @@ typedef struct __XSColor * XSColorRef;
 /*!
  * @function    XSColor_GetClassID
  * @abstract    Gets the class ID for XSColor
- * @result      The class ID for XSColor
+ * @return      The class ID for XSColor
  */
 XS_EXPORT XSStatic XSClassID XSColor_GetClassID( void );
 

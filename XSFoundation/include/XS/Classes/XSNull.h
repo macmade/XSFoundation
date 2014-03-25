@@ -86,14 +86,14 @@ typedef struct __XSNull * XSNullRef;
 /*!
  * @function    XSNull_GetClassID
  * @abstract    Gets the class ID for XSNull
- * @result      The class ID for XSNull
+ * @return      The class ID for XSNull
  */
 XS_EXPORT XSStatic XSClassID XSNull_GetClassID( void );
 
 /*!
  * @function    XSNull_Null
  * @abstract    Gets the shared XSNullRef object
- * @result      The XSNullRef object
+ * @return      The XSNullRef object
  */
 XS_EXPORT XSStatic XSNullRef XSNull_Null( void );
 

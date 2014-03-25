@@ -131,7 +131,7 @@ void __XSArray_Copy( XSArrayRef source, XSArrayRef destination );
  * @abstract    Class equals callback
  * @param       object1     The first object to compare
  * @param       object2     The second object to compare
- * @result      True if both objects are equals, otherwise false
+ * @return      True if both objects are equals, otherwise false
  */
 bool __XSArray_Equals( XSArrayRef object1, XSArrayRef object2 );
 

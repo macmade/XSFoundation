@@ -86,7 +86,7 @@ typedef struct __XSDictionary * XSDictionaryRef;
 /*!
  * @function    XSDictionary_GetClassID
  * @abstract    Gets the class ID for XSDictionary
- * @result      The class ID for XSDictionary
+ * @return      The class ID for XSDictionary
  */
 XS_EXPORT XSStatic XSClassID XSDictionary_GetClassID( void );
 

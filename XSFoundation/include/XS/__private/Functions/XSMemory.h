@@ -108,7 +108,7 @@ XS_EXTERN const char __XSMemory_FenceData[ __XS_MEMORY_FENCE_SIZE ];
  * @function    __XSMemory_GetMemoryObject
  * @abstract    Gets the memory object for a pointer
  * @param       ptr     The pointer for which to get the memory object
- * @result      The memory object
+ * @return      The memory object
  */
 __XSMemoryObject * __XSMemory_GetMemoryObject( void * ptr );
 

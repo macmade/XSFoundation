@@ -86,7 +86,7 @@ typedef struct __XSBag * XSBagRef;
 /*!
  * @function    XSBag_GetClassID
  * @abstract    Gets the class ID for XSBag
- * @result      The class ID for XSBag
+ * @return      The class ID for XSBag
  */
 XS_EXPORT XSStatic XSClassID XSBag_GetClassID( void );
 

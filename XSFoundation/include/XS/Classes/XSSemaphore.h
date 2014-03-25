@@ -86,7 +86,7 @@ typedef struct __XSSemaphore * XSSemaphoreRef;
 /*!
  * @function    XSSemaphore_GetClassID
  * @abstract    Gets the class ID for XSSemaphore
- * @result      The class ID for XSSemaphore
+ * @return      The class ID for XSSemaphore
  */
 XS_EXPORT XSStatic XSClassID XSSemaphore_GetClassID( void );
 

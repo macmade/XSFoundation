@@ -86,7 +86,7 @@ typedef struct __XSAutoreleasePool * XSAutoreleasePoolRef;
 /*!
  * @function    XSAutoreleasePool_GetClassID
  * @abstract    Gets the class ID for XSAutoreleasePool
- * @result      The class ID for XSAutoreleasePool
+ * @return      The class ID for XSAutoreleasePool
  */
 XS_EXPORT XSStatic XSClassID XSAutoreleasePool_GetClassID( void );
 

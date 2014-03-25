@@ -135,7 +135,7 @@ XS_EXTERN volatile XSUInt32 __XSRuntime_ClassCount;
  * @var         __XSRuntime_GetClassInfo
  * @abstract    Gets the class info for a class ID
  * @param       classID     The class ID
- * @result      The class info
+ * @return      The class info
  */
 const XSClassInfo * __XSRuntime_GetClassInfo( XSClassID classID );
 
@@ -143,7 +143,7 @@ const XSClassInfo * __XSRuntime_GetClassInfo( XSClassID classID );
  * @var         __XSRuntime_GetInstanceSize
  * @abstract    Gets the instance site for a class ID
  * @param       classID     The class ID
- * @result      The instance size
+ * @return      The instance size
  */
 XSUInteger __XSRuntime_GetInstanceSize( XSClassID classID );
 
@@ -151,7 +151,7 @@ XSUInteger __XSRuntime_GetInstanceSize( XSClassID classID );
  * @var         __XSRuntime_GetConstructorCallback
  * @abstract    Gets the constructor callback for a class ID
  * @param       classID     The class ID
- * @result      The copy callback
+ * @return      The copy callback
  */
 XSClassInfoConstructorCallback __XSRuntime_GetConstructorCallback( XSClassID classID );
 
@@ -159,7 +159,7 @@ XSClassInfoConstructorCallback __XSRuntime_GetConstructorCallback( XSClassID cla
  * @var         __XSRuntime_GetDestructorCallback
  * @abstract    Gets the destructor callback for a class ID
  * @param       classID     The class ID
- * @result      The destructor callback
+ * @return      The destructor callback
  */
 XSClassInfoDestructorCallback __XSRuntime_GetDestructorCallback( XSClassID classID );
 
@@ -167,7 +167,7 @@ XSClassInfoDestructorCallback __XSRuntime_GetDestructorCallback( XSClassID class
  * @var         __XSRuntime_GetCopyCallback
  * @abstract    Gets the copy callback for a class ID
  * @param       classID     The class ID
- * @result      The copy callback
+ * @return      The copy callback
  */
 XSClassInfoCopyCallback __XSRuntime_GetCopyCallback( XSClassID classID );
 
@@ -175,7 +175,7 @@ XSClassInfoCopyCallback __XSRuntime_GetCopyCallback( XSClassID classID );
  * @var         __XSRuntime_GetEqualsCallback
  * @abstract    Gets the equals callback for a class ID
  * @param       classID     The class ID
- * @result      The equals callback
+ * @return      The equals callback
  */
 XSClassInfoEqualsCallback __XSRuntime_GetEqualsCallback( XSClassID classID );
 
@@ -183,7 +183,7 @@ XSClassInfoEqualsCallback __XSRuntime_GetEqualsCallback( XSClassID classID );
  * @var         __XSRuntime_GetToStringCallback
  * @abstract    Gets the to-string callback for a class ID
  * @param       classID     The class ID
- * @result      The to-string callback
+ * @return      The to-string callback
  */
 XSClassInfoToStringCallback __XSRuntime_GetToStringCallback( XSClassID classID );
 

@@ -86,7 +86,7 @@ typedef struct __XSString * XSStringRef;
 /*!
  * @function    XSString_GetClassID
  * @abstract    Gets the class ID for XSString
- * @result      The class ID for XSString
+ * @return      The class ID for XSString
  */
 XS_EXPORT XSStatic XSClassID XSString_GetClassID( void );
 

@@ -131,7 +131,7 @@ void __XSURL_Copy( XSURLRef source, XSURLRef destination );
  * @abstract    Class equals callback
  * @param       object1     The first object to compare
  * @param       object2     The second object to compare
- * @result      True if both objects are equals, otherwise false
+ * @return      True if both objects are equals, otherwise false
  */
 bool __XSURL_Equals( XSURLRef object1, XSURLRef object2 );
 

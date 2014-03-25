@@ -131,7 +131,7 @@ void __XSNode_Copy( XSNodeRef source, XSNodeRef destination );
  * @abstract    Class equals callback
  * @param       object1     The first object to compare
  * @param       object2     The second object to compare
- * @result      True if both objects are equals, otherwise false
+ * @return      True if both objects are equals, otherwise false
  */
 bool __XSNode_Equals( XSNodeRef object1, XSNodeRef object2 );
 

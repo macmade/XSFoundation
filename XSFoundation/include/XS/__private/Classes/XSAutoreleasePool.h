@@ -131,7 +131,7 @@ void __XSAutoreleasePool_Copy( XSAutoreleasePoolRef source, XSAutoreleasePoolRef
  * @abstract    Class equals callback
  * @param       object1     The first object to compare
  * @param       object2     The second object to compare
- * @result      True if both objects are equals, otherwise false
+ * @return      True if both objects are equals, otherwise false
  */
 bool __XSAutoreleasePool_Equals( XSAutoreleasePoolRef object1, XSAutoreleasePoolRef object2 );
 

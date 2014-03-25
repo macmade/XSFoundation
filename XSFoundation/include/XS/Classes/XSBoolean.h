@@ -86,7 +86,7 @@ typedef struct __XSBoolean * XSBooleanRef;
 /*!
  * @function    XSBoolean_GetClassID
  * @abstract    Gets the class ID for XSBoolean
- * @result      The class ID for XSBoolean
+ * @return      The class ID for XSBoolean
  */
 XS_EXPORT XSStatic XSClassID XSBoolean_GetClassID( void );
 
@@ -94,7 +94,7 @@ XS_EXPORT XSStatic XSClassID XSBoolean_GetClassID( void );
  * @function    XSBooleanCreate
  * @abstract    Creates a XSBooleanRef object
  * @param       value       The boolean value
- * @result      The XSBooleanRef object
+ * @return      The XSBooleanRef object
  */
 XS_EXPORT XSStatic XSBooleanRef XSBoolean_Create( bool value );
 
@@ -102,7 +102,7 @@ XS_EXPORT XSStatic XSBooleanRef XSBoolean_Create( bool value );
  * @function    XSBooleanGetValue
  * @abstract    Gets the value of a XSBooleanRef object
  * @param       object      The XSBooleanRef object
- * @result      The XSBooleanRef object's value
+ * @return      The XSBooleanRef object's value
  */
 XS_EXPORT bool XSBoolean_GetValue( XSBooleanRef object );
 

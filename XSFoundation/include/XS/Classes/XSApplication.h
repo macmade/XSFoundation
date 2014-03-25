@@ -86,7 +86,7 @@ typedef struct __XSApplication * XSApplicationRef;
 /*!
  * @function    XSApplication_GetClassID
  * @abstract    Gets the class ID for XSApplication
- * @result      The class ID for XSApplication
+ * @return      The class ID for XSApplication
  */
 XS_EXPORT XSStatic XSClassID XSApplication_GetClassID( void );
 

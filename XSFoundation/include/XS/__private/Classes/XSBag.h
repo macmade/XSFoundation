@@ -131,7 +131,7 @@ void __XSBag_Copy( XSBagRef source, XSBagRef destination );
  * @abstract    Class equals callback
  * @param       object1     The first object to compare
  * @param       object2     The second object to compare
- * @result      True if both objects are equals, otherwise false
+ * @return      True if both objects are equals, otherwise false
  */
 bool __XSBag_Equals( XSBagRef object1, XSBagRef object2 );
 

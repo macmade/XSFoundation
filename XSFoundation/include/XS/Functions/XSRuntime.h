@@ -94,7 +94,7 @@ XS_EXPORT void XSRuntime_Initialize( void );
  *              This function needs to be called once per class,
  *              ie using pthread_once().
  * @param       cls         The class information structure to register
- * @result      The runtime type ID for the class
+ * @return      The runtime type ID for the class
  */
 XS_EXPORT XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls );
 
@@ -102,7 +102,7 @@ XS_EXPORT XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls );
  * @function    XSRuntime_CreateInstance
  * @abstract    Initializes a new instance of a registered class
  * @param       classID     The class type ID
- * @result      The allocated instance
+ * @return      The allocated instance
  */
 XS_EXPORT XSObjectRef XSRuntime_CreateInstance( XSClassID classID );
 
@@ -110,7 +110,7 @@ XS_EXPORT XSObjectRef XSRuntime_CreateInstance( XSClassID classID );
  * @function    XSRuntime_CreateInstanceOfClassNamed
  * @abstract    Initializes a new instance of a class with a specific name
  * @param       name        The name of the class
- * @result      The allocated instance
+ * @return      The allocated instance
  */
 XS_EXPORT XSObjectRef XSRuntime_CreateInstanceOfClassNamed( const char * name );
 
@@ -118,7 +118,7 @@ XS_EXPORT XSObjectRef XSRuntime_CreateInstanceOfClassNamed( const char * name );
  * @function    XSRuntime_GetDescription
  * @abstract    Gets an object's description
  * @param       object      The pointer to the object
- * @result      The object's description
+ * @return      The object's description
  */
 XS_EXPORT const char * XSRuntime_GetDescription( XSObjectRef object );
 
@@ -126,7 +126,7 @@ XS_EXPORT const char * XSRuntime_GetDescription( XSObjectRef object );
  * @function    XSRuntime_IsInstance
  * @abstract    Checks whether a pointer is an object instance
  * @param       ptr         The pointer to check
- * @result      True if the pointer represents an instance, otherwise false
+ * @return      True if the pointer represents an instance, otherwise false
  */
 XS_EXPORT bool XSRuntime_IsInstance( void * ptr );
 
@@ -134,7 +134,7 @@ XS_EXPORT bool XSRuntime_IsInstance( void * ptr );
  * @function    XSRuntime_IsRegisteredClass
  * @abstract    Checks whether a class type ID corresponds to a registered class
  * @param       classID     The class type ID
- * @result      True if the class ID represents an valid class, otherwise false
+ * @return      True if the class ID represents an valid class, otherwise false
  */
 XS_EXPORT bool XSRuntime_IsRegisteredClass( XSClassID classID );
 
@@ -142,7 +142,7 @@ XS_EXPORT bool XSRuntime_IsRegisteredClass( XSClassID classID );
  * @function    XSRuntime_GetClassID
  * @abstract    Gets the class type ID for an object
  * @param       object      The object
- * @result      The class type ID for the object
+ * @return      The class type ID for the object
  */
 XS_EXPORT XSClassID XSRuntime_GetClassID( XSObjectRef object );
 
@@ -150,7 +150,7 @@ XS_EXPORT XSClassID XSRuntime_GetClassID( XSObjectRef object );
  * @function    XSRuntime_GetClassIDOfClassNamed
  * @abstract    Gets the class type ID for a class with a specific name
  * @param       className   The name of the class
- * @result      The class type ID
+ * @return      The class type ID
  */
 XS_EXPORT XSClassID XSRuntime_GetClassIDOfClassNamed( const char * className );
 
@@ -158,7 +158,7 @@ XS_EXPORT XSClassID XSRuntime_GetClassIDOfClassNamed( const char * className );
  * @function    XSRuntime_GetClassName
  * @abstract    Gets the class name for an class type ID
  * @param       classID     The class type ID
- * @result      The name of the class
+ * @return      The name of the class
  */
 XS_EXPORT const char * XSRuntime_GetClassName( XSClassID classID );
 
@@ -166,7 +166,7 @@ XS_EXPORT const char * XSRuntime_GetClassName( XSClassID classID );
  * @function    XSRuntime_GetObjectClassName
  * @abstract    Gets the class name for an object
  * @param       object      The object
- * @result      The name of the class
+ * @return      The name of the class
  */
 XS_EXPORT const char * XSRuntime_GetObjectClassName( XSObjectRef object );
 

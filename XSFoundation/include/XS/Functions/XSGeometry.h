@@ -82,10 +82,47 @@ XS_EXTERN_C_BEGIN
  * XSPoint
  ******************************************************************************/
 
+/*!
+ * @function    XSPointMake
+ * @abstract    Creates a point with the specified coordinates
+ * @param       x       The X coordinate
+ * @param       y       The Y coordinate
+ * @return      The point
+ */
 XSPoint XSPointMake( XSFloat x, XSFloat y );
+
+/*!
+ * @function    XSPointZero
+ * @abstract    Creates a point with zero coordinates
+ * @return      The point
+ */
 XSPoint XSPointZero( void );
+
+/*!
+ * @function    XSPointIsEqualToPoint
+ * @abstract    Creates a point with zero coordinates
+ * @param       p1      The first point to compare
+ * @param       p2      The first second to compare
+ * @return      True if both points are equal, otherwise false
+ */
 bool XSPointIsEqualToPoint( XSPoint p1, XSPoint p2 );
+
+/*!
+ * @function    XSPointAngleBetweenPoints
+ * @abstract    Computes the angle between two points
+ * @param       p1      The first point
+ * @param       p2      The first second
+ * @return      The angle between the two points
+ */
 XSFloat XSPointAngleBetweenPoints( XSPoint p1, XSPoint p2 );
+
+/*!
+ * @function    XSPointDistanceBetweenPoints
+ * @abstract    Computes the distance between two points
+ * @param       p1      The first point
+ * @param       p2      The first second
+ * @return      The distance between the two points
+ */
 XSFloat XSPointDistanceBetweenPoints( XSPoint p1, XSPoint p2 );
 
 /*******************************************************************************

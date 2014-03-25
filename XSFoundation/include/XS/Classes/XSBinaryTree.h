@@ -86,7 +86,7 @@ typedef struct __XSBinaryTree * XSBinaryTreeRef;
 /*!
  * @function    XSBinaryTree_GetClassID
  * @abstract    Gets the class ID for XSBinaryTree
- * @result      The class ID for XSBinaryTree
+ * @return      The class ID for XSBinaryTree
  */
 XS_EXPORT XSStatic XSClassID XSBinaryTree_GetClassID( void );
 

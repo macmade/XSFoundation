@@ -86,7 +86,7 @@ typedef struct __XSDate * XSDateRef;
 /*!
  * @function    XSDate_GetClassID
  * @abstract    Gets the class ID for XSDate
- * @result      The class ID for XSDate
+ * @return      The class ID for XSDate
  */
 XS_EXPORT XSStatic XSClassID XSDate_GetClassID( void );
 

@@ -86,7 +86,7 @@ typedef struct __XSNotification * XSNotificationRef;
 /*!
  * @function    XSNotification_GetClassID
  * @abstract    Gets the class ID for XSNotification
- * @result      The class ID for XSNotification
+ * @return      The class ID for XSNotification
  */
 XS_EXPORT XSStatic XSClassID XSNotification_GetClassID( void );
 

@@ -86,7 +86,7 @@ typedef struct __XSArray * XSArrayRef;
 /*!
  * @function    XSArray_GetClassID
  * @abstract    Gets the class ID for XSArray
- * @result      The class ID for XSArray
+ * @return      The class ID for XSArray
  */
 XS_EXPORT XSStatic XSClassID XSArray_GetClassID( void );
 

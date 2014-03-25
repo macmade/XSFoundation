@@ -86,7 +86,7 @@ typedef struct __XSValue * XSValueRef;
 /*!
  * @function    XSValue_GetClassID
  * @abstract    Gets the class ID for XSValue
- * @result      The class ID for XSValue
+ * @return      The class ID for XSValue
  */
 XS_EXPORT XSStatic XSClassID XSValue_GetClassID( void );
 

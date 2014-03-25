@@ -86,7 +86,7 @@ typedef struct __XSURL * XSURLRef;
 /*!
  * @function    XSURL_GetClassID
  * @abstract    Gets the class ID for XSURL
- * @result      The class ID for XSURL
+ * @return      The class ID for XSURL
  */
 XS_EXPORT XSStatic XSClassID XSURL_GetClassID( void );
 

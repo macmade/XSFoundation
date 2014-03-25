@@ -82,7 +82,7 @@ XS_EXTERN_C_BEGIN
  * @function    XSFloatIsZero
  * @abstract    Checks if a float value is zero
  * @param       x       The float value to check
- * @result      True if the float value is zero, otherwise false
+ * @return      True if the float value is zero, otherwise false
  */
 bool XSFloatIsZero( XSFloat x );
 
@@ -91,14 +91,14 @@ bool XSFloatIsZero( XSFloat x );
  * @abstract    Checks if a float value is equal to another
  * @param       x1      The first float value to compare
  * @param       x2      The second float value to compare
- * @result      True if both float values are equal. otherwise false
+ * @return      True if both float values are equal. otherwise false
  */
 bool XSFloatIsEqualToFloat( XSFloat x1, XSFloat x2 );
 
 /*!
  * @function    XSFloatPI
  * @abstract    Gets the value of Pi
- * @result      The value of Pi
+ * @return      The value of Pi
  */
 XSFloat XSFloatPI( void );
 
@@ -106,7 +106,7 @@ XSFloat XSFloatPI( void );
  * @function    XSFloatCeil
  * @abstract    Computes the nearest integer not less than a float value
  * @param       x       The float value
- * @result      The nearest integer not less than the float value
+ * @return      The nearest integer not less than the float value
  */
 XSFloat XSFloatCeil( XSFloat x );
 
@@ -114,7 +114,7 @@ XSFloat XSFloatCeil( XSFloat x );
  * @function    XSFloatCeil
  * @abstract    Computes the nearest integer not greater than a float value
  * @param       x       The float value
- * @result      The nearest integer not greater than the float value
+ * @return      The nearest integer not greater than the float value
  */
 XSFloat XSFloatFloor( XSFloat x );
 
@@ -122,7 +122,7 @@ XSFloat XSFloatFloor( XSFloat x );
  * @function    XSFloatCeil
  * @abstract    Computes the nearest integer not greater in magnitude than a float value
  * @param       x       The float value
- * @result      the nearest integer not greater in magnitude than the float value
+ * @return      the nearest integer not greater in magnitude than the float value
  */
 XSFloat XSFloatTrunc( XSFloat x );
 
@@ -130,7 +130,7 @@ XSFloat XSFloatTrunc( XSFloat x );
  * @function    XSFloatCeil
  * @abstract    Computes the nearest integer to a float value
  * @param       x       The float value
- * @result      The nearest integer to a float value
+ * @return      The nearest integer to a float value
  */
 XSFloat XSFloatRound( XSFloat x );
 
@@ -138,7 +138,7 @@ XSFloat XSFloatRound( XSFloat x );
  * @function    XSFloatDegreesToRadians
  * @abstract    Converts degrees to radians
  * @param       x       The value in degrees
- * @result      The value in radians
+ * @return      The value in radians
  */
 XSFloat XSFloatDegreesToRadians( XSFloat x );
 
@@ -146,7 +146,7 @@ XSFloat XSFloatDegreesToRadians( XSFloat x );
  * @function    XSFloatRadiansToDegrees
  * @abstract    Converts radians to degrees
  * @param       x       The value in radians
- * @result      The value in degrees
+ * @return      The value in degrees
  */
 XSFloat XSFloatRadiansToDegrees( XSFloat x );
 

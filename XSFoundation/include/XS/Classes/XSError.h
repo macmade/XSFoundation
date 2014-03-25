@@ -86,7 +86,7 @@ typedef struct __XSError * XSErrorRef;
 /*!
  * @function    XSError_GetClassID
  * @abstract    Gets the class ID for XSError
- * @result      The class ID for XSError
+ * @return      The class ID for XSError
  */
 XS_EXPORT XSStatic XSClassID XSError_GetClassID( void );
 
