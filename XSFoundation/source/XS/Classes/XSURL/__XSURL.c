@@ -70,8 +70,8 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSURL.h>
 
-XSClassID __XSURL_ClassID = 0;
-XSClassInfo __XSURL_Class =
+XSClassID   __XSURL_ClassID = 0;
+XSClassInfo __XSURL_Class   =
 {
     "XSURL",
     sizeof( struct __XSURL ),

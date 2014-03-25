@@ -70,8 +70,8 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSBinaryTree.h>
 
-XSClassID __XSBinaryTree_ClassID = 0;
-XSClassInfo __XSBinaryTree_Class =
+XSClassID   __XSBinaryTree_ClassID = 0;
+XSClassInfo __XSBinaryTree_Class   =
 {
     "XSBinaryTree",
     sizeof( struct __XSBinaryTree ),

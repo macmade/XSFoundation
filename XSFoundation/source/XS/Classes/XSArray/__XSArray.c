@@ -70,8 +70,8 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSArray.h>
 
-XSClassID __XSArray_ClassID = 0;
-XSClassInfo __XSArray_Class =
+XSClassID   __XSArray_ClassID = 0;
+XSClassInfo __XSArray_Class   =
 {
     "XSArray",
     sizeof( struct __XSArray ),

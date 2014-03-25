@@ -70,8 +70,8 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSBag.h>
 
-XSClassID __XSBag_ClassID = 0;
-XSClassInfo __XSBag_Class =
+XSClassID   __XSBag_ClassID = 0;
+XSClassInfo __XSBag_Class   =
 {
     "XSBag",
     sizeof( struct __XSBag ),

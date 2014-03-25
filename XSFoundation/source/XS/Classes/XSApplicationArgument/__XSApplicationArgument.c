@@ -70,8 +70,8 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSApplicationArgument.h>
 
-XSClassID __XSApplicationArgument_ClassID = 0;
-XSClassInfo __XSApplicationArgument_Class =
+XSClassID   __XSApplicationArgument_ClassID = 0;
+XSClassInfo __XSApplicationArgument_Class   =
 {
     "XSApplicationArgument",
     sizeof( struct __XSApplicationArgument ),

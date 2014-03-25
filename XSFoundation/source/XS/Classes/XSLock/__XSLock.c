@@ -70,8 +70,8 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSLock.h>
 
-XSClassID __XSLock_ClassID = 0;
-XSClassInfo __XSLock_Class =
+XSClassID   __XSLock_ClassID = 0;
+XSClassInfo __XSLock_Class   =
 {
     "XSLock",
     sizeof( struct __XSLock ),

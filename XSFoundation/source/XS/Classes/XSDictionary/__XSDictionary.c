@@ -70,8 +70,8 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSDictionary.h>
 
-XSClassID __XSDictionary_ClassID = 0;
-XSClassInfo __XSDictionary_Class =
+XSClassID   __XSDictionary_ClassID = 0;
+XSClassInfo __XSDictionary_Class   =
 {
     "XSDictionary",
     sizeof( struct __XSDictionary ),

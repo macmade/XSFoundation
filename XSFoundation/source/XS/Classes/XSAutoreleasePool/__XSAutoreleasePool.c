@@ -70,8 +70,8 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSAutoreleasePool.h>
 
-XSClassID __XSAutoreleasePool_ClassID = 0;
-XSClassInfo __XSAutoreleasePool_Class =
+XSClassID   __XSAutoreleasePool_ClassID = 0;
+XSClassInfo __XSAutoreleasePool_Class   =
 {
     "XSAutoreleasePool",
     sizeof( struct __XSAutoreleasePool ),

@@ -70,8 +70,8 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSRecursiveLock.h>
 
-XSClassID __XSRecursiveLock_ClassID = 0;
-XSClassInfo __XSRecursiveLock_Class =
+XSClassID   __XSRecursiveLock_ClassID = 0;
+XSClassInfo __XSRecursiveLock_Class   =
 {
     "XSRecursiveLock",
     sizeof( struct __XSRecursiveLock ),

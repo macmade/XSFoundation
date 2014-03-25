@@ -70,8 +70,8 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSColor.h>
 
-XSClassID __XSColor_ClassID = 0;
-XSClassInfo __XSColor_Class =
+XSClassID   __XSColor_ClassID = 0;
+XSClassInfo __XSColor_Class   =
 {
     "XSColor",
     sizeof( struct __XSColor ),

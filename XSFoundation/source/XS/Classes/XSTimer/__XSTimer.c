@@ -70,8 +70,8 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSTimer.h>
 
-XSClassID __XSTimer_ClassID = 0;
-XSClassInfo __XSTimer_Class =
+XSClassID   __XSTimer_ClassID = 0;
+XSClassInfo __XSTimer_Class   =
 {
     "XSTimer",
     sizeof( struct __XSTimer ),

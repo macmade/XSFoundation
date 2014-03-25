@@ -70,8 +70,8 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSString.h>
 
-XSClassID __XSString_ClassID = 0;
-XSClassInfo __XSString_Class =
+XSClassID   __XSString_ClassID = 0;
+XSClassInfo __XSString_Class   =
 {
     "XSString",
     sizeof( struct __XSString ),

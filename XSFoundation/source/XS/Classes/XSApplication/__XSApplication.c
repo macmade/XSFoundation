@@ -70,8 +70,8 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSApplication.h>
 
-XSClassID __XSApplication_ClassID = 0;
-XSClassInfo __XSApplication_Class =
+XSClassID   __XSApplication_ClassID = 0;
+XSClassInfo __XSApplication_Class   =
 {
     "XSApplication",
     sizeof( struct __XSApplication ),

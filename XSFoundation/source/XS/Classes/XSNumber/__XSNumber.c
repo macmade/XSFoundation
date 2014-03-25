@@ -70,8 +70,8 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSNumber.h>
 
-XSClassID __XSNumber_ClassID = 0;
-XSClassInfo __XSNumber_Class =
+XSClassID   __XSNumber_ClassID = 0;
+XSClassInfo __XSNumber_Class   =
 {
     "XSNumber",
     sizeof( struct __XSNumber ),

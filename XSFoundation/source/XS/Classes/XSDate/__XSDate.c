@@ -70,8 +70,8 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSDate.h>
 
-XSClassID __XSDate_ClassID = 0;
-XSClassInfo __XSDate_Class =
+XSClassID   __XSDate_ClassID = 0;
+XSClassInfo __XSDate_Class   =
 {
     "XSDate",
     sizeof( struct __XSDate ),

@@ -70,8 +70,8 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSException.h>
 
-XSClassID __XSException_ClassID = 0;
-XSClassInfo __XSException_Class =
+XSClassID   __XSException_ClassID = 0;
+XSClassInfo __XSException_Class   =
 {
     "XSException",
     sizeof( struct __XSException ),

@@ -70,8 +70,8 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSSet.h>
 
-XSClassID __XSSet_ClassID = 0;
-XSClassInfo __XSSet_Class =
+XSClassID   __XSSet_ClassID = 0;
+XSClassInfo __XSSet_Class   =
 {
     "XSSet",
     sizeof( struct __XSSet ),
