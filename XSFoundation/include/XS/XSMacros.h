@@ -203,7 +203,7 @@
 
 /*!
  * @def         XS_EXTERN
- * @abstract    ...
+ * @abstract    Standardization of the extern keyword
  */
 #if defined( __cplusplus )
     #define XS_EXTERN               extern "C" 
@@ -213,7 +213,7 @@
 
 /*!
  * @def         XS_EXPORT
- * @abstract    ...
+ * @abstract    Standardization of the extern keyword for exported symbols
  */
 #if defined( __WIN32__ )
     #define XS_EXPORT               XS_EXTERN __declspec( dllimport )
@@ -223,7 +223,7 @@
 
 /*!
  * @def         XS_IMPORT
- * @abstract    ...
+ * @abstract    Standardization of the extern keyword for imported symbols
  */
 #define XS_IMPORT                   XS_EXTERN
 
