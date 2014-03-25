@@ -972,6 +972,10 @@
 		055D18EF18E1D42900894C7B /* XSURL_GetClassID.c in Sources */ = {isa = PBXBuildFile; fileRef = 055D158518E1D42800894C7B /* XSURL_GetClassID.c */; };
 		055D18F018E1D42900894C7B /* XSURL_GetClassID.c in Sources */ = {isa = PBXBuildFile; fileRef = 055D158518E1D42800894C7B /* XSURL_GetClassID.c */; };
 		055D18F118E1D42900894C7B /* XSURL_GetClassID.c in Sources */ = {isa = PBXBuildFile; fileRef = 055D158518E1D42800894C7B /* XSURL_GetClassID.c */; };
+		055D190118E1DDE800894C7B /* XSNull_Null.c in Sources */ = {isa = PBXBuildFile; fileRef = 055D190018E1DDE800894C7B /* XSNull_Null.c */; };
+		055D190218E1DDE800894C7B /* XSNull_Null.c in Sources */ = {isa = PBXBuildFile; fileRef = 055D190018E1DDE800894C7B /* XSNull_Null.c */; };
+		055D190318E1DDE800894C7B /* XSNull_Null.c in Sources */ = {isa = PBXBuildFile; fileRef = 055D190018E1DDE800894C7B /* XSNull_Null.c */; };
+		055D190418E1DDE800894C7B /* XSNull_Null.c in Sources */ = {isa = PBXBuildFile; fileRef = 055D190018E1DDE800894C7B /* XSNull_Null.c */; };
 		05A796CB18E09F4700F28F3E /* XSAtomic_CompareAndSwap32.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A796AE18E09F4700F28F3E /* XSAtomic_CompareAndSwap32.c */; };
 		05A796CC18E09F4700F28F3E /* XSAtomic_CompareAndSwap32.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A796AE18E09F4700F28F3E /* XSAtomic_CompareAndSwap32.c */; };
 		05A796CD18E09F4700F28F3E /* XSAtomic_CompareAndSwap32.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A796AE18E09F4700F28F3E /* XSAtomic_CompareAndSwap32.c */; };
@@ -1553,6 +1557,7 @@
 		055D158318E1D42800894C7B /* __XSURL_Initialize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSURL_Initialize.c; sourceTree = "<group>"; };
 		055D158418E1D42800894C7B /* __XSURL_ToString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSURL_ToString.c; sourceTree = "<group>"; };
 		055D158518E1D42800894C7B /* XSURL_GetClassID.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSURL_GetClassID.c; sourceTree = "<group>"; };
+		055D190018E1DDE800894C7B /* XSNull_Null.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNull_Null.c; sourceTree = "<group>"; };
 		05A7969118E09F0F00F28F3E /* XSMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMemory.h; sourceTree = "<group>"; };
 		05A7969218E09F0F00F28F3E /* XSRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSRuntime.h; sourceTree = "<group>"; };
 		05A796AE18E09F4700F28F3E /* XSAtomic_CompareAndSwap32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSAtomic_CompareAndSwap32.c; sourceTree = "<group>"; };
@@ -2077,6 +2082,7 @@
 				055D153B18E1D42800894C7B /* __XSNull_Initialize.c */,
 				055D153C18E1D42800894C7B /* __XSNull_ToString.c */,
 				055D153D18E1D42800894C7B /* XSNull_GetClassID.c */,
+				055D190018E1DDE800894C7B /* XSNull_Null.c */,
 			);
 			path = XSNull;
 			sourceTree = "<group>";
@@ -2811,6 +2817,7 @@
 				055D163E18E1D42800894C7B /* __XSBinaryTree_ToString.c in Sources */,
 				055D188218E1D42800894C7B /* __XSString_Equals.c in Sources */,
 				055D167E18E1D42800894C7B /* __XSColor_Destructor.c in Sources */,
+				055D190118E1DDE800894C7B /* XSNull_Null.c in Sources */,
 				055D18CA18E1D42800894C7B /* __XSTimer_ToString.c in Sources */,
 				055D174A18E1D42800894C7B /* __XSFile_ToString.c in Sources */,
 				05A7970B18E09F4700F28F3E /* XSRuntime_CreateInstanceOfClassNamed.c in Sources */,
@@ -3074,6 +3081,7 @@
 				055D163F18E1D42800894C7B /* __XSBinaryTree_ToString.c in Sources */,
 				055D188318E1D42800894C7B /* __XSString_Equals.c in Sources */,
 				055D167F18E1D42800894C7B /* __XSColor_Destructor.c in Sources */,
+				055D190218E1DDE800894C7B /* XSNull_Null.c in Sources */,
 				055D18CB18E1D42800894C7B /* __XSTimer_ToString.c in Sources */,
 				055D174B18E1D42800894C7B /* __XSFile_ToString.c in Sources */,
 				05A7970C18E09F4700F28F3E /* XSRuntime_CreateInstanceOfClassNamed.c in Sources */,
@@ -3337,6 +3345,7 @@
 				055D164018E1D42800894C7B /* __XSBinaryTree_ToString.c in Sources */,
 				055D188418E1D42800894C7B /* __XSString_Equals.c in Sources */,
 				055D168018E1D42800894C7B /* __XSColor_Destructor.c in Sources */,
+				055D190318E1DDE800894C7B /* XSNull_Null.c in Sources */,
 				055D18CC18E1D42800894C7B /* __XSTimer_ToString.c in Sources */,
 				055D174C18E1D42800894C7B /* __XSFile_ToString.c in Sources */,
 				05A7970D18E09F4700F28F3E /* XSRuntime_CreateInstanceOfClassNamed.c in Sources */,
@@ -3600,6 +3609,7 @@
 				055D164118E1D42800894C7B /* __XSBinaryTree_ToString.c in Sources */,
 				055D188518E1D42800894C7B /* __XSString_Equals.c in Sources */,
 				055D168118E1D42800894C7B /* __XSColor_Destructor.c in Sources */,
+				055D190418E1DDE800894C7B /* XSNull_Null.c in Sources */,
 				055D18CD18E1D42800894C7B /* __XSTimer_ToString.c in Sources */,
 				055D174D18E1D42800894C7B /* __XSFile_ToString.c in Sources */,
 				05A7970E18E09F4700F28F3E /* XSRuntime_CreateInstanceOfClassNamed.c in Sources */,

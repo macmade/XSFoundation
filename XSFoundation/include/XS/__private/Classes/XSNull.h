@@ -83,7 +83,7 @@
  */
 struct __XSNull
 {
-    void * temp; /*! Not yet implemented... */
+    void * null; /*! Dummy... */
 };
 
 /*!
@@ -97,6 +97,12 @@ XS_EXTERN XSClassID __XSNull_ClassID;
  * @abstract    Class info
  */
 XS_EXTERN XSClassInfo __XSNull_Class;
+
+/*!
+ * @var         __XSNull_Null
+ * @abstract    Shared XSNullRef object
+ */
+XS_EXTERN XSNullRef __XSNull_Null;
 
 /*!
  * @function    __XSNull_Initialize

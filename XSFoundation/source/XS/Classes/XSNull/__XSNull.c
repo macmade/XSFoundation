@@ -70,8 +70,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSNull.h>
 
-XSClassID __XSNull_ClassID = 0;
-XSClassInfo __XSNull_Class =
+XSNullRef   __XSNull_Null    = NULL;
+XSClassID   __XSNull_ClassID = 0;
+XSClassInfo __XSNull_Class   =
 {
     "XSNull",
     sizeof( struct __XSNull ),

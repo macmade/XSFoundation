@@ -62,39 +62,29 @@
 /* $Id$ */
 
 /*!
- * @header      XSNull.h
+ * @file        XSNull_Null.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSNull class
+ * @abstract    Definition for XSNull_Null
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Classes/XSNull.h>
 
-#ifndef __XS_CLASSES_XS_NULL_H__
-#define __XS_CLASSES_XS_NULL_H__
-
-#include <XS/XSTypes.h>
-#include <XS/XSMacros.h>
-
-/*!
- * @typedef     XSNullRef
- * @abstract    Opaque type for XSNull
- */
-typedef struct __XSNull * XSNullRef;
-
-/*!
- * @function    XSNull_GetClassID
- * @abstract    Gets the class ID for XSNull
- * @result      The class ID for XSNull
- */
-XS_EXPORT XSStatic XSClassID XSNull_GetClassID( void );
-
-/*!
- * @function    XSNull_Null
- * @abstract    Gets the shared XSNullRef object
- * @result      The XSNullRef object
- */
-XS_EXPORT XSStatic XSNullRef XSNull_Null( void );
-
-#endif /* __XS_CLASSES_XS_NULL_H__ */
+XSNullRef XSNull_Null( void )
+{
+    XSNullRef null;
+    
+    if( XSAtomic_CompareAndSwapPointer( NULL, NULL, ( void * volatile * )&__XSNull_Null ) == false )
+    {
+        return __XSNull_Null;
+    }
+    
+    null = XSRuntime_CreateInstance( XSNull_GetClassID() );
+    
+    if( XSAtomic_CompareAndSwapPointer( NULL, null, ( void * volatile * )&__XSNull_Null ) == false )
+    {
+        XSRelease( null );
+    }
+    
+    return __XSNull_Null;
+}

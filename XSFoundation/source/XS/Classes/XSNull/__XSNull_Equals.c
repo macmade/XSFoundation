@@ -72,5 +72,8 @@
 
 bool __XSNull_Equals( XSNullRef object1, XSNullRef object2 )
 {
-    return object1 == object2;
+    ( void)object1;
+    ( void)object2;
+    
+    return true;
 }
