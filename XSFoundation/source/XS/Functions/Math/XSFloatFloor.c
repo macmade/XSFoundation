@@ -62,94 +62,22 @@
 /* $Id$ */
 
 /*!
- * @header      XSMath.h
+ * @file        XSFloatRadiansToDegrees.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation math functions
+ * @abstract    Definition for XSFloatRadiansToDegrees
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
 
-#ifndef __XS_FUNCTIONS_XS_MATH_H__
-#define __XS_FUNCTIONS_XS_MATH_H__
-
-XS_EXTERN_C_BEGIN
-
-#include <XS/XSTypes.h>
-
-/*!
- * @function    XSFloatIsZero
- * @abstract    Checks if a float value is zero
- * @param       x       The float value to check
- * @result      True if the float value is zero, otherwise false
- */
-bool XSFloatIsZero( XSFloat x );
-
-/*!
- * @function    XSFloatIsEqualToFloat
- * @abstract    Checks if a float value is equal to another
- * @param       x1      The first float value to compare
- * @param       x2      The second float value to compare
- * @result      True if both float values are equal. otherwise false
- */
-bool XSFloatIsEqualToFloat( XSFloat x1, XSFloat x2 );
-
-/*!
- * @function    XSFloatPI
- * @abstract    Gets the value of Pi
- * @result      The value of Pi
- */
-XSFloat XSFloatPI( void );
-
-/*!
- * @function    XSFloatCeil
- * @abstract    Computes the nearest integer not less than a float value
- * @param       x       The float value
- * @result      The nearest integer not less than the float value
- */
-XSFloat XSFloatCeil( XSFloat x );
-
-/*!
- * @function    XSFloatCeil
- * @abstract    Computes the nearest integer not greater than a float value
- * @param       x       The float value
- * @result      The nearest integer not greater than the float value
- */
-XSFloat XSFloatFloor( XSFloat x );
-
-/*!
- * @function    XSFloatCeil
- * @abstract    Computes the nearest integer not greater in magnitude than a float value
- * @param       x       The float value
- * @result      the nearest integer not greater in magnitude than the float value
- */
-XSFloat XSFloatTrunc( XSFloat x );
-
-/*!
- * @function    XSFloatCeil
- * @abstract    Computes the nearest integer to a float value
- * @param       x       The float value
- * @result      The nearest integer to a float value
- */
-XSFloat XSFloatRound( XSFloat x );
-
-/*!
- * @function    XSFloatDegreesToRadians
- * @abstract    Converts degrees to radians
- * @param       x       The value in degrees
- * @result      The value in radians
- */
-XSFloat XSFloatDegreesToRadians( XSFloat x );
-
-/*!
- * @function    XSFloatRadiansToDegrees
- * @abstract    Converts radians to degrees
- * @param       x       The value in radians
- * @result      The value in degrees
- */
-XSFloat XSFloatRadiansToDegrees( XSFloat x );
-
-XS_EXTERN_C_END
-
-#endif /* __XS_FUNCTIONS_XS_MATH_H__ */
+XSFloat XSFloatFloor( XSFloat x )
+{
+    #ifdef __LP64__
+    
+    return floor( x );
+    
+    #else
+    
+    return floorf( x );
+    
+    #endif
+}
