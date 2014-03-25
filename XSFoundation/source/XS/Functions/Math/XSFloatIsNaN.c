@@ -62,105 +62,14 @@
 /* $Id$ */
 
 /*!
- * @header      XSMath.h
+ * @file        XSFloatIsInfinity.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation math functions
+ * @abstract    Definition for XSFloatIsInfinity
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
 
-#ifndef __XS_FUNCTIONS_XS_MATH_H__
-#define __XS_FUNCTIONS_XS_MATH_H__
-
-XS_EXTERN_C_BEGIN
-
-#include <XS/XSTypes.h>
-
-#ifdef M_PI
-
-#define XSMath_PI   ( ( XSFloat )( M_PI ) )
-
-#else
-
-#define XSMath_PI   ( ( XSFloat )( 3.1415926535897932384626433832795 ) )
-
-#endif
-
-/*!
- * @function    XSFloatIsZero
- * @abstract    Checks if a float value is zero
- * @param       x       The float value to check
- * @return      True if the float value is zero, otherwise false
- */
-XS_EXPORT bool XSFloatIsZero( XSFloat x );
-
-/*!
- * @function    XSFloatIsInfinity
- * @abstract    Checks if a float value is infinity
- * @param       x       The float value to check
- * @return      True if the float value is infinity, otherwise false
- */
-XS_EXPORT bool XSFloatIsInfinity( XSFloat x );
-
-/*!
- * @function    XSFloatIsNaN
- * @abstract    Checks if a float value is not a number (NaN)
- * @param       x       The float value to check
- * @return      True if the float value is not a number (NaN), otherwise false
- */
-XS_EXPORT bool XSFloatIsNaN( XSFloat x );
-
-/*!
- * @function    XSFloatIsEqualToFloat
- * @abstract    Checks if a float value is equal to another
- * @param       x1      The first float value to compare
- * @param       x2      The second float value to compare
- * @return      True if both float values are equal. otherwise false
- */
-XS_EXPORT bool XSFloatIsEqualToFloat( XSFloat x1, XSFloat x2 );
-
-/*!
- * @function    XSFloatAbsoluteValue
- * @abstract    Gets the absolute value of a float value
- * @param       x       The float value
- * @return      The absolute value of the float value
- */
-XS_EXPORT XSFloat XSFloatAbsoluteValue( XSFloat x );
-
-/*!
- * @function    XSFloatCeil
- * @abstract    Computes the nearest integer not less than a float value
- * @param       x       The float value
- * @return      The nearest integer not less than the float value
- */
-XS_EXPORT XSFloat XSFloatCeil( XSFloat x );
-
-/*!
- * @function    XSFloatCeil
- * @abstract    Computes the nearest integer not greater than a float value
- * @param       x       The float value
- * @return      The nearest integer not greater than the float value
- */
-XS_EXPORT XSFloat XSFloatFloor( XSFloat x );
-
-/*!
- * @function    XSFloatCeil
- * @abstract    Computes the nearest integer not greater in magnitude than a float value
- * @param       x       The float value
- * @return      the nearest integer not greater in magnitude than the float value
- */
-XS_EXPORT XSFloat XSFloatTrunc( XSFloat x );
-
-/*!
- * @function    XSFloatCeil
- * @abstract    Computes the nearest integer to a float value
- * @param       x       The float value
- * @return      The nearest integer to a float value
- */
-XS_EXPORT XSFloat XSFloatRound( XSFloat x );
-
-XS_EXTERN_C_END
-
-#endif /* __XS_FUNCTIONS_XS_MATH_H__ */
+bool XSFloatIsNaN( XSFloat x )
+{
+    return ( isnan( x ) > 0 ) ? true : false;
+}
