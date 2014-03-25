@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSString_Create.c
+ * @file        XSString_GetClassID.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSString_Create
+ * @abstract    Definition for XSString_GetClassID
  */
 
 #include <XS/XS.h>

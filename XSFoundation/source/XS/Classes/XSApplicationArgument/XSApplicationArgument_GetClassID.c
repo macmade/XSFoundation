@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSApplicationArgument_Create.c
+ * @file        XSApplicationArgument_GetClassID.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSApplicationArgument_Create
+ * @abstract    Definition for XSApplicationArgument_GetClassID
  */
 
 #include <XS/XS.h>

@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSNode_Create.c
+ * @file        XSNode_GetClassID.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSNode_Create
+ * @abstract    Definition for XSNode_GetClassID
  */
 
 #include <XS/XS.h>

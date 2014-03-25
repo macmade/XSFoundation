@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSRecursiveLock_Create.c
+ * @file        XSRecursiveLock_GetClassID.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRecursiveLock_Create
+ * @abstract    Definition for XSRecursiveLock_GetClassID
  */
 
 #include <XS/XS.h>

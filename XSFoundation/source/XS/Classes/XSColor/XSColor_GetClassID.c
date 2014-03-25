@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSColor_Create.c
+ * @file        XSColor_GetClassID.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSColor_Create
+ * @abstract    Definition for XSColor_GetClassID
  */
 
 #include <XS/XS.h>

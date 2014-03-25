@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSNull_Create.c
+ * @file        XSNull_GetClassID.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSNull_Create
+ * @abstract    Definition for XSNull_GetClassID
  */
 
 #include <XS/XS.h>

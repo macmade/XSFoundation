@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSThread_Create.c
+ * @file        XSThread_GetClassID.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSThread_Create
+ * @abstract    Definition for XSThread_GetClassID
  */
 
 #include <XS/XS.h>

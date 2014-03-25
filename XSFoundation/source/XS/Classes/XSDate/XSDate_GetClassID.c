@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSDate_Create.c
+ * @file        XSDate_GetClassID.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSDate_Create
+ * @abstract    Definition for XSDate_GetClassID
  */
 
 #include <XS/XS.h>

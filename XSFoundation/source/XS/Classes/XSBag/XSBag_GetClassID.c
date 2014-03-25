@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSBag_Create.c
+ * @file        XSBag_GetClassID.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSBag_Create
+ * @abstract    Definition for XSBag_GetClassID
  */
 
 #include <XS/XS.h>

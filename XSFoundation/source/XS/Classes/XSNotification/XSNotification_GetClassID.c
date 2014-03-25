@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSNotification_Create.c
+ * @file        XSNotification_GetClassID
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSNotification_Create
+ * @abstract    Definition for XSNotification_GetClassID.c
  */
 
 #include <XS/XS.h>

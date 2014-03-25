@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSTimer_Create.c
+ * @file        XSTimer_GetClassID.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSTimer_Create
+ * @abstract    Definition for XSTimer_GetClassID
  */
 
 #include <XS/XS.h>

@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSURL_Create.c
+ * @file        XSURL_GetClassID.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSURL_Create
+ * @abstract    Definition for XSURL_GetClassID
  */
 
 #include <XS/XS.h>

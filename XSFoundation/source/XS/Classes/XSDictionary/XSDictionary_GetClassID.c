@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSDictionary_Create.c
+ * @file        XSDictionary_GetClassID.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSDictionary_Create
+ * @abstract    Definition for XSDictionary_GetClassID
  */
 
 #include <XS/XS.h>

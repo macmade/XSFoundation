@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSSet_Create.c
+ * @file        XSSet_GetClassID.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSSet_Create
+ * @abstract    Definition for XSSet_GetClassID
  */
 
 #include <XS/XS.h>

@@ -62,9 +62,9 @@
 /* $Id$ */
 
 /*!
- * @file        XSApplication_Create.c
+ * @file        XSApplication_GetClassID.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSApplication_Create
+ * @abstract    Definition for XSApplication_GetClassID
  */
 
 #include <XS/XS.h>
