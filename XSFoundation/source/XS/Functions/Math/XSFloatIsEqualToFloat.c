@@ -69,7 +69,7 @@
 
 #include <XS/XS.h>
 
-bool XSFloatIsEqualToFloat( XSFloat x1, XSFloat x2 );
+bool XSFloatIsEqualToFloat( XSFloat x1, XSFloat x2 )
 {
     ( void )x1;
     ( void )x2;

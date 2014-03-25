@@ -62,89 +62,19 @@
 /* $Id$ */
 
 /*!
- * @header      XSGeometry.h
+ * @file        XSRectUnion.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation geometry functions
+ * @abstract    Definition for XSRectUnion
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
 
-#ifndef __XS_FUNCTIONS_XS_GEOMETRY_H__
-#define __XS_FUNCTIONS_XS_GEOMETRY_H__
-
-XS_EXTERN_C_BEGIN
-
-#include <XS/XSTypes.h>
-
-/*******************************************************************************
- * XSPoint
- ******************************************************************************/
-
-XSPoint XSPointMake( XSFloat x, XSFloat y );
-XSPoint XSPointZero( void );
-bool XSPointIsEqualToPoint( XSPoint p1, XSPoint p2 );
-XSFloat XSPointAngleBetweenPoints( XSPoint p1, XSPoint p2 );
-XSFloat XSPointDistanceBetweenPoints( XSPoint p1, XSPoint p2 );
-
-/*******************************************************************************
- * XSSize
- ******************************************************************************/
-
-XSSize XSSizeMake( XSFloat width, XSFloat height );
-XSSize XSSizeZero( void );
-bool XSSizeIsEqualToSize( XSSize s1, XSSize s2 );
-
-/*******************************************************************************
- * XSRect
- ******************************************************************************/
-
-XSRect XSRectMake( XSFloat x, XSFloat y, XSFloat width, XSFloat height );
-XSRect XSRectZero( void );
-bool XSRectIsEqualToToRect( XSRect r1, XSRect r2 );
-bool XSRectIntersectsRect( XSRect rect1, XSRect rect2 );
-bool XSRectContainsPoint( XSRect rect, XSPoint point );
-bool XSRectContainsRect( XSRect rect1, XSRect rect2 );
-bool XSRectIsEmpty( XSRect rect );
-bool XSRectIsInfinite( XSRect rect );
-void XSRectDivide( XSRect rect, XSRect * slice, XSRect * remainder, XSFloat amount, XSRectEdge edge );
-XSRect XSRectInset( XSRect rect, XSFloat dx, XSFloat dy );
-XSRect XSRectIntegral( XSRect rect );
-XSRect XSRectIntersection( XSRect r1, XSRect r2 );
-XSRect XSRectOffset( XSRect rect, XSFloat dx, XSFloat dy );
-XSRect XSRectStandardize( XSRect rect );
-XSRect XSRectUnion( XSRect r1, XSRect r2 );
-XSFloat XSRectGetMinX( XSRect rect );
-XSFloat XSRectGetMinY( XSRect rect );
-XSFloat XSRectGetMidX( XSRect rect );
-XSFloat XSRectGetMidY( XSRect rect );
-XSFloat XSRectGetMaxX( XSRect rect );
-XSFloat XSRectGetMaxY( XSRect rect );
-XSFloat XSRectGetHeight( XSRect rect );
-XSFloat XSRectGetWidth( XSRect rect );
-
-/*******************************************************************************
- * XSEdgeInsets
- ******************************************************************************/
-
-XSEdgeInsets XSEdgeInsetsMake( XSFloat left, XSFloat top, XSFloat right, XSFloat bottom );
-XSEdgeInsets XSEdgeInsetsZero( void );
-bool XSEdgeInsetsIsEqualsToEdgeInsets( XSEdgeInsets e1, XSEdgeInsets e2 );
-XSRect XSEdgeInsetsInsetRect( XSRect rect, XSEdgeInsets insets );
-
-/*******************************************************************************
- * XSRange
- ******************************************************************************/
-
-XSRange XSRangeMake( XSUInteger location, XSUInteger length );
-XSRange XSRangeZero( void );
-XSUInteger XSRangeMax( XSRange range );
-bool XSRangeIsEqualToRange( XSRange r1, XSRange r2 );
-bool XSRangeLocationInRange( XSUInteger location, XSRange range );
-XSRange XSRangeIntersection( XSRange r1, XSRange r2 );
-XSRange XSRangeUnion( XSRange r1, XSRange r2 );
-
-XS_EXTERN_C_END
-
-#endif /* __XS_FUNCTIONS_XS_GEOMETRY_H__ */
+XSRect XSRectUnion( XSRect r1, XSRect r2 )
+{
+    XSRect r;
+    
+    ( void )r1;
+    ( void )r2;
+    
+    return r;
+}
