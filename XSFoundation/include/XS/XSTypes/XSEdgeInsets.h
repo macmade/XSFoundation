@@ -84,10 +84,10 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct
 {
-    XSFloat left;       /*! The left coordinate */
-    XSFloat top;        /*! The top coordiante */
-    XSFloat right;      /*! The right coordinate */
-    XSFloat bottom;     /*! The bottom coordinate */
+    XSFloat top;        /*! The top inset */
+    XSFloat left;       /*! The left inset */
+    XSFloat bottom;     /*! The bottom inset */
+    XSFloat right;      /*! The right inset */
 }
 XSEdgeInsets;
 
