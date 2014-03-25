@@ -91,6 +91,7 @@ void XSStatic __XSNotification_Initialize( void );
 void XSStatic __XSNotificationCenter_Initialize( void );
 void XSStatic __XSNull_Initialize( void );
 void XSStatic __XSNumber_Initialize( void );
+void XSStatic __XSPrimitiveArray_Initialize( void );
 void XSStatic __XSRecursiveLock_Initialize( void );
 void XSStatic __XSSemaphore_Initialize( void );
 void XSStatic __XSSet_Initialize( void );
@@ -98,6 +99,7 @@ void XSStatic __XSString_Initialize( void );
 void XSStatic __XSThread_Initialize( void );
 void XSStatic __XSTimer_Initialize( void );
 void XSStatic __XSURL_Initialize( void );
+void XSStatic __XSValue_Initialize( void );
 
 void XSRuntime_Initialize( void )
 {
@@ -145,6 +147,7 @@ void XSRuntime_Initialize( void )
     __XSNotificationCenter_Initialize();
     __XSNull_Initialize();
     __XSNumber_Initialize();
+    __XSPrimitiveArray_Initialize();
     __XSRecursiveLock_Initialize();
     __XSSemaphore_Initialize();
     __XSSet_Initialize();
@@ -152,4 +155,5 @@ void XSRuntime_Initialize( void )
     __XSThread_Initialize();
     __XSTimer_Initialize();
     __XSURL_Initialize();
+    __XSValue_Initialize();
 }

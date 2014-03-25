@@ -62,65 +62,85 @@
 /* $Id$ */
 
 /*!
- * @header      XS.h
+ * @header      XSPrimitiveArray.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Private definitions for XSPrimitiveArray.h
  */
 
 #ifndef __XS_H__
-#define __XS_H__
-
-/* Internal build only - Adds extra warning flags */
-#ifdef __XS_BUILD__
-#include <XS/__private/XSWarnings.h>
+#error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-/* Core */
-#include <XS/C99.h>
-#include <XS/XSMacros.h>
+#ifndef __XS___PRIVATE_CLASSES_XS_PRIMITIVE_ARRAY_H__
+#define __XS___PRIVATE_CLASSES_XS_PRIMITIVE_ARRAY_H__
+
 #include <XS/XSTypes.h>
+#include <XS/XSMacros.h>
 
-/* Functions */
-#include <XS/Functions/XSAtomic.h>
-#include <XS/Functions/XSMemory.h>
-#include <XS/Functions/XSRuntime.h>
-#include <XS/Functions/XSMemoryDebug.h>
-#include <XS/Functions/XSLog.h>
-#include <XS/Functions/XSGeometry.h>
-#include <XS/Functions/XSSort.h>
+/*!
+ * @struct      __XSPrimitiveArray
+ * @abstract    Structure for XSPrimitiveArray
+ */
+struct __XSPrimitiveArray
+{
+    void * temp; /*! Not yet implemented... */
+};
 
-/* Classes */
-#include <XS/Classes/XSApplication.h>
-#include <XS/Classes/XSApplicationArgument.h>
-#include <XS/Classes/XSArray.h>
-#include <XS/Classes/XSAutoreleasePool.h>
-#include <XS/Classes/XSBag.h>
-#include <XS/Classes/XSBinaryTree.h>
-#include <XS/Classes/XSBoolean.h>
-#include <XS/Classes/XSColor.h>
-#include <XS/Classes/XSData.h>
-#include <XS/Classes/XSDate.h>
-#include <XS/Classes/XSDictionary.h>
-#include <XS/Classes/XSError.h>
-#include <XS/Classes/XSException.h>
-#include <XS/Classes/XSFile.h>
-#include <XS/Classes/XSLock.h>
-#include <XS/Classes/XSNode.h>
-#include <XS/Classes/XSNotification.h>
-#include <XS/Classes/XSNotificationCenter.h>
-#include <XS/Classes/XSNull.h>
-#include <XS/Classes/XSNumber.h>
-#include <XS/Classes/XSPrimitiveArray.h>
-#include <XS/Classes/XSRecursiveLock.h>
-#include <XS/Classes/XSSemaphore.h>
-#include <XS/Classes/XSSet.h>
-#include <XS/Classes/XSString.h>
-#include <XS/Classes/XSThread.h>
-#include <XS/Classes/XSTimer.h>
-#include <XS/Classes/XSURL.h>
-#include <XS/Classes/XSValue.h>
+/*!
+ * @var         __XSPrimitiveArray_ClassID
+ * @abstract    Class ID
+ */
+XS_EXTERN XSClassID __XSPrimitiveArray_ClassID;
 
-#endif /* __XS_H__ */
+/*!
+ * @var         __XSPrimitiveArray_Class
+ * @abstract    Class info
+ */
+XS_EXTERN XSClassInfo __XSPrimitiveArray_Class;
+
+/*!
+ * @function    __XSPrimitiveArray_Initialize
+ * @abstract    Class initializer
+ */
+void XSStatic __XSPrimitiveArray_Initialize( void );
+
+/*!
+ * @function    __XSPrimitiveArray_Constructor
+ * @abstract    Class constructor callback
+ * @param       object      The object beeing construct
+ */
+void __XSPrimitiveArray_Constructor( XSPrimitiveArrayRef object );
+
+/*!
+ * @function    __XSPrimitiveArray_Destructor
+ * @abstract    Class destructor callback
+ * @param       object      The object beeing destruct
+ */
+void __XSPrimitiveArray_Destructor( XSPrimitiveArrayRef object );
+
+/*!
+ * @function    __XSPrimitiveArray_Copy
+ * @abstract    Class copy callback
+ * @param       source      The object to copy
+ * @param       destination The object beeing copied
+ */
+void __XSPrimitiveArray_Copy( XSPrimitiveArrayRef source, XSPrimitiveArrayRef destination );
+
+/*!
+ * @function    __XSPrimitiveArray_Equals
+ * @abstract    Class equals callback
+ * @param       object1     The first object to compare
+ * @param       object2     The second object to compare
+ * @result      True if both objects are equals, otherwise false
+ */
+bool __XSPrimitiveArray_Equals( XSPrimitiveArrayRef object1, XSPrimitiveArrayRef object2 );
+
+/*!
+ * @function    __XSPrimitiveArray_ToString
+ * @abstract    Class to-string callback
+ * @param       object      The object for which to get a description
+ * @return      The object's description
+ */
+const char * __XSPrimitiveArray_ToString( XSPrimitiveArrayRef object );
+
+#endif /* __XS___PRIVATE_CLASSES_XS_PRIMITIVE_ARRAY_H__ */

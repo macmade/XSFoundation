@@ -62,65 +62,85 @@
 /* $Id$ */
 
 /*!
- * @header      XS.h
+ * @header      XSValue.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Private definitions for XSValue.h
  */
 
 #ifndef __XS_H__
-#define __XS_H__
-
-/* Internal build only - Adds extra warning flags */
-#ifdef __XS_BUILD__
-#include <XS/__private/XSWarnings.h>
+#error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-/* Core */
-#include <XS/C99.h>
-#include <XS/XSMacros.h>
+#ifndef __XS___PRIVATE_CLASSES_XS_VALUE_H__
+#define __XS___PRIVATE_CLASSES_XS_VALUE_H__
+
 #include <XS/XSTypes.h>
+#include <XS/XSMacros.h>
 
-/* Functions */
-#include <XS/Functions/XSAtomic.h>
-#include <XS/Functions/XSMemory.h>
-#include <XS/Functions/XSRuntime.h>
-#include <XS/Functions/XSMemoryDebug.h>
-#include <XS/Functions/XSLog.h>
-#include <XS/Functions/XSGeometry.h>
-#include <XS/Functions/XSSort.h>
+/*!
+ * @struct      __XSValue
+ * @abstract    Structure for XSValue
+ */
+struct __XSValue
+{
+    void * temp; /*! Not yet implemented... */
+};
 
-/* Classes */
-#include <XS/Classes/XSApplication.h>
-#include <XS/Classes/XSApplicationArgument.h>
-#include <XS/Classes/XSArray.h>
-#include <XS/Classes/XSAutoreleasePool.h>
-#include <XS/Classes/XSBag.h>
-#include <XS/Classes/XSBinaryTree.h>
-#include <XS/Classes/XSBoolean.h>
-#include <XS/Classes/XSColor.h>
-#include <XS/Classes/XSData.h>
-#include <XS/Classes/XSDate.h>
-#include <XS/Classes/XSDictionary.h>
-#include <XS/Classes/XSError.h>
-#include <XS/Classes/XSException.h>
-#include <XS/Classes/XSFile.h>
-#include <XS/Classes/XSLock.h>
-#include <XS/Classes/XSNode.h>
-#include <XS/Classes/XSNotification.h>
-#include <XS/Classes/XSNotificationCenter.h>
-#include <XS/Classes/XSNull.h>
-#include <XS/Classes/XSNumber.h>
-#include <XS/Classes/XSPrimitiveArray.h>
-#include <XS/Classes/XSRecursiveLock.h>
-#include <XS/Classes/XSSemaphore.h>
-#include <XS/Classes/XSSet.h>
-#include <XS/Classes/XSString.h>
-#include <XS/Classes/XSThread.h>
-#include <XS/Classes/XSTimer.h>
-#include <XS/Classes/XSURL.h>
-#include <XS/Classes/XSValue.h>
+/*!
+ * @var         __XSValue_ClassID
+ * @abstract    Class ID
+ */
+XS_EXTERN XSClassID __XSValue_ClassID;
 
-#endif /* __XS_H__ */
+/*!
+ * @var         __XSValue_Class
+ * @abstract    Class info
+ */
+XS_EXTERN XSClassInfo __XSValue_Class;
+
+/*!
+ * @function    __XSValue_Initialize
+ * @abstract    Class initializer
+ */
+void XSStatic __XSValue_Initialize( void );
+
+/*!
+ * @function    __XSValue_Constructor
+ * @abstract    Class constructor callback
+ * @param       object      The object beeing construct
+ */
+void __XSValue_Constructor( XSValueRef object );
+
+/*!
+ * @function    __XSValue_Destructor
+ * @abstract    Class destructor callback
+ * @param       object      The object beeing destruct
+ */
+void __XSValue_Destructor( XSValueRef object );
+
+/*!
+ * @function    __XSValue_Copy
+ * @abstract    Class copy callback
+ * @param       source      The object to copy
+ * @param       destination The object beeing copied
+ */
+void __XSValue_Copy( XSValueRef source, XSValueRef destination );
+
+/*!
+ * @function    __XSValue_Equals
+ * @abstract    Class equals callback
+ * @param       object1     The first object to compare
+ * @param       object2     The second object to compare
+ * @result      True if both objects are equals, otherwise false
+ */
+bool __XSValue_Equals( XSValueRef object1, XSValueRef object2 );
+
+/*!
+ * @function    __XSValue_ToString
+ * @abstract    Class to-string callback
+ * @param       object      The object for which to get a description
+ * @return      The object's description
+ */
+const char * __XSValue_ToString( XSValueRef object );
+
+#endif /* __XS___PRIVATE_CLASSES_XS_VALUE_H__ */
