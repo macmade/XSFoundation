@@ -100,9 +100,9 @@ XSPoint XSPointZero( void );
 
 /*!
  * @function    XSPointIsEqualToPoint
- * @abstract    Creates a point with zero coordinates
+ * @abstract    Checks if two points are equal
  * @param       p1      The first point to compare
- * @param       p2      The first second to compare
+ * @param       p2      The second second to compare
  * @return      True if both points are equal, otherwise false
  */
 bool XSPointIsEqualToPoint( XSPoint p1, XSPoint p2 );
@@ -111,7 +111,7 @@ bool XSPointIsEqualToPoint( XSPoint p1, XSPoint p2 );
  * @function    XSPointAngleBetweenPoints
  * @abstract    Computes the angle between two points
  * @param       p1      The first point
- * @param       p2      The first second
+ * @param       p2      The second second
  * @return      The angle between the two points
  */
 XSFloat XSPointAngleBetweenPoints( XSPoint p1, XSPoint p2 );
@@ -120,7 +120,7 @@ XSFloat XSPointAngleBetweenPoints( XSPoint p1, XSPoint p2 );
  * @function    XSPointDistanceBetweenPoints
  * @abstract    Computes the distance between two points
  * @param       p1      The first point
- * @param       p2      The first second
+ * @param       p2      The second second
  * @return      The distance between the two points
  */
 XSFloat XSPointDistanceBetweenPoints( XSPoint p1, XSPoint p2 );
@@ -129,57 +129,361 @@ XSFloat XSPointDistanceBetweenPoints( XSPoint p1, XSPoint p2 );
  * XSSize
  ******************************************************************************/
 
+/*!
+ * @function    XSSizeMake
+ * @abstract    Creates a size with the specified width and height
+ * @param       width   The width
+ * @param       height  The height
+ * @return      The size
+ */
 XSSize XSSizeMake( XSFloat width, XSFloat height );
+
+/*!
+ * @function    XSSizeZero
+ * @abstract    Creates a size with zero width and height
+ * @return      The size
+ */
 XSSize XSSizeZero( void );
+
+/*!
+ * @function    XSSizeIsEqualToSize
+ * @abstract    Checks if two sizes are equal
+ * @param       s1      The first size to compare
+ * @param       s2      The second size to compare
+ * @return      True if both sizes are equal, otherwise false
+ */
 bool XSSizeIsEqualToSize( XSSize s1, XSSize s2 );
 
 /*******************************************************************************
  * XSRect
  ******************************************************************************/
-
+ 
+/*!
+ * @function    XSRectMake
+ * @abstract    Creates a rectangle with the specified coordinates, width and height
+ * @param       x       The X coordinate
+ * @param       y       The Y coordinate
+ * @param       width   The width
+ * @param       height  The height
+ * @return      The rectangle
+ */
 XSRect XSRectMake( XSFloat x, XSFloat y, XSFloat width, XSFloat height );
+
+/*!
+ * @function    XSRectZero
+ * @abstract    Creates a rectangle with zero coordinates, width and height
+ * @return      The rectangle
+ */
 XSRect XSRectZero( void );
+
+/*!
+ * @function    XSRectNull
+ * @abstract    Creates a null rectangle
+ * @return      The null rectangle
+ */
+XSRect XSRectNull( void );
+
+/*!
+ * @function    XSRectIsEqualToToRect
+ * @abstract    Checks if two rectangles are equal
+ * @param       r1      The first rectangle to compare
+ * @param       r2      The second rectangle to compare
+ * @return      True if both rectangles are equal, otherwise false
+ */
 bool XSRectIsEqualToToRect( XSRect r1, XSRect r2 );
+
+/*!
+ * @function    XSRectIntersectsRect
+ * @abstract    Checks whether two rectangles intersect
+ * @param       rect1   The first rectangle
+ * @param       rect2   The second rectangle
+ * @return      True if the rectangles intersect, otherwise false
+ */
 bool XSRectIntersectsRect( XSRect rect1, XSRect rect2 );
+
+/*!
+ * @function    XSRectContainsPoint
+ * @abstract    Checks whether a rectangle contains a specified point
+ * @param       rect    The rectangle
+ * @param       point   The point
+ * @return      True if the rectangle contains the specified point, otherwise false
+ */
 bool XSRectContainsPoint( XSRect rect, XSPoint point );
+
+/*!
+ * @function    XSRectContainsRect
+ * @abstract    Checks whether a rectangle contains a second rectangle
+ * @param       rect1   The rectangle to examine for containment of the rectangle passed in rect2
+ * @param       rect2   The rectangle to examine for being contained in the rectangle passed in rect1
+ * @return      True if the first rectangle contains the second rectangle, otherwise false
+ */
 bool XSRectContainsRect( XSRect rect1, XSRect rect2 );
+
+/*!
+ * @function    XSRectIsEmpty
+ * @abstract    Checks whether a rectangle has zero width or height
+ * @param       rect    The rectangle
+ * @return      True if the rectangle has zero width or height, otherwise false
+ */
 bool XSRectIsEmpty( XSRect rect );
-bool XSRectIsInfinite( XSRect rect );
-void XSRectDivide( XSRect rect, XSRect * slice, XSRect * remainder, XSFloat amount, XSRectEdge edge );
+
+/*!
+ * @function    XSRectIsNull
+ * @abstract    Checks whether a rectangle is a null rectangle
+ * @param       rect    The rectangle
+ * @return      True if the rectangle is a null rectangle, otherwise false
+ */
+bool XSRectIsNull( XSRect rect );
+
+/*!
+ * @function    XSRectInset
+ * @abstract    Creates a rectangle that is smaller or larger than the source rectangle, with the same center point.
+ * @param       rect    The rectangle
+ * @param       dx      The X coordinate value to use for adjusting the source rectangle
+ * @param       dy      The Y coordinate value to use for adjusting the source rectangle
+ * @discussion  The origin value is offset in the X axis by the distance
+ *              specified by dx and in the Y axis by the distance specified by
+ *              dy, and its size adjusted by ( 2 * dx, 2 * dy ), relative to the
+ *              source rectangle.
+ *              If dx and dy are positive values, then the rectangle's size is
+ *              decreased.
+ *              If dx and dy are negative values, the rectangle's size is
+ *              increased.
+ * @return      The new rectangle
+ */
 XSRect XSRectInset( XSRect rect, XSFloat dx, XSFloat dy );
+
+/*!
+ * @function    XSRectIntegral
+ * @abstract    Creates the smallest rectangle that results from converting the source rectangle values to integers
+ * @param       rect    The rectangle
+ * @discussion  Given a rectangle with fractional origin or size values,
+ *              this function rounds the rectangle's origin downward and its
+ *              size upward to the nearest whole integers, such that the result
+ *              contains the original rectangle.
+ * @return      The new rectangle
+ */
 XSRect XSRectIntegral( XSRect rect );
+
+/*!
+ * @function    XSRectIntersection
+ * @abstract    Returns the intersection of two rectangles
+ * @param       r1      The first rectangle
+ * @param       r2      The second rectangle
+ * @discussion  Both rectangles are standardized prior to calculating the
+ *              intersection.
+ * @return      A rectangle that represents the intersection of the two specified rectangles or null rectangle
+ * @see         XSRectStandardize
+ * @see         XSRectIsNull
+ */
 XSRect XSRectIntersection( XSRect r1, XSRect r2 );
+
+/*!
+ * @function    XSRectOffset
+ * @abstract    Creates a rectangle with an origin that is offset from that of the source rectangle
+ * @param       rect    The first rectangle
+ * @param       dx      The offset value for the X coordinate
+ * @param       dy      The offset value for the Y coordinate
+ * @return      A rectangle that is the same size as the source, but with its origin offset by dx units along the x-axis and dy units along the y-axis with respect to the source
+ */
 XSRect XSRectOffset( XSRect rect, XSFloat dx, XSFloat dy );
+
+/*!
+ * @function    XSRectStandardize
+ * @abstract    Creates a rectangle with a positive width and height
+ * @param       rect    The rectangle
+ * @return      A rectangle with a positive width and height
+ */
 XSRect XSRectStandardize( XSRect rect );
+
+/*!
+ * @function    XSRectUnion
+ * @abstract    Creates the smallest rectangle that contains the two source rectangles
+ * @param       r1      The first rectangle
+ * @param       r2      The second rectangle
+ * @discussion  Both rectangles are standardized prior to calculating the union.
+ *              If either of the rectangles is a null rectangle, a copy of the
+ *              other rectangle is returned (resulting in a null rectangle if
+ *              both rectangles are null).
+ *              Otherwise a rectangle that completely contains the source
+ *              rectangles is returned.
+ * @return      The smallest rectangle that completely contains both of the source rectangles
+ * @see         XSRectStandardize
+ * @see         XSRectIsNull
+ */
 XSRect XSRectUnion( XSRect r1, XSRect r2 );
+
+/*!
+ * @function    XSRectGetMinX
+ * @abstract    Gets the smallest value for the X coordinate of the rectangle
+ * @param       rect    The rectangle
+ * @return      The smallest value for the X coordinate of the rectangle
+ */
 XSFloat XSRectGetMinX( XSRect rect );
+
+/*!
+ * @function    XSRectGetMinY
+ * @abstract    Gets the smallest value for the Y coordinate of the rectangle
+ * @param       rect    The rectangle
+ * @return      The smallest value for the Y coordinate of the rectangle
+ */
 XSFloat XSRectGetMinY( XSRect rect );
+
+/*!
+ * @function    XSRectGetMidX
+ * @abstract    Gets the X coordinate that establishes the center of the rectangle
+ * @param       rect    The rectangle
+ * @return      The X coordinate of the center of the specified rectangle
+ */
 XSFloat XSRectGetMidX( XSRect rect );
+
+/*!
+ * @function    XSRectGetMidY
+ * @abstract    Gets the Y coordinate that establishes the center of the rectangle
+ * @param       rect    The rectangle
+ * @return      The Y coordinate of the center of the specified rectangle
+ */
 XSFloat XSRectGetMidY( XSRect rect );
+
+/*!
+ * @function    XSRectGetMaxX
+ * @abstract    Gets the largest value for the X coordinate of the rectangle
+ * @param       rect    The rectangle
+ * @return      The largest value for the X coordinate of the rectangle
+ */
 XSFloat XSRectGetMaxX( XSRect rect );
+
+/*!
+ * @function    XSRectGetMaxY
+ * @abstract    Gets the largest value for the Y coordinate of the rectangle
+ * @param       rect    The rectangle
+ * @return      The largest value for the Y coordinate of the rectangle
+ */
 XSFloat XSRectGetMaxY( XSRect rect );
-XSFloat XSRectGetHeight( XSRect rect );
+
+/*!
+ * @function    XSRectGetWidth
+ * @abstract    Gets the width of a rectangle
+ * @param       rect    The rectangle
+ * @discussion  Regardless of whether the width is a positive or negative
+ *              number, this function returns the width as if the rectangle
+ *              were standardized.
+ *              That is, the result is never a negative number.
+ * @return      The width of the rectangle
+ * @see         XSRectStandardize
+ */
 XSFloat XSRectGetWidth( XSRect rect );
+
+/*!
+ * @function    XSRectGetHeight
+ * @abstract    Gets the height of a rectangle
+ * @param       rect    The rectangle
+ * @discussion  Regardless of whether the height is a positive or negative
+ *              number, this function returns the height as if the rectangle
+ *              were standardized.
+ *              That is, the result is never a negative number.
+ * @return      The height of the rectangle
+ * @see         XSRectStandardize
+ */
+XSFloat XSRectGetHeight( XSRect rect );
 
 /*******************************************************************************
  * XSEdgeInsets
  ******************************************************************************/
 
-XSEdgeInsets XSEdgeInsetsMake( XSFloat left, XSFloat top, XSFloat right, XSFloat bottom );
-XSEdgeInsets XSEdgeInsetsZero( void );
+/*!
+ * @function    XSEdgeInsetsMake
+ * @abstract    Creates an edge insets with the specified inset values
+ * @param       top     The inset at the top
+ * @param       left    The inset on the left
+ * @param       bottom  The inset on the bottom
+ * @param       right   The inset on the right
+ * @return      The edge insets
+ */
+XSEdgeInsets XSEdgeInsetsMake( XSFloat top, XSFloat left, XSFloat bottom, XSFloat right );
+
+/*!
+ * @function    XSEdgeInsetsIsEqualsToEdgeInsets
+ * @abstract    Checks if two edge insets are equal
+ * @param       e1      The first edge insets to compare
+ * @param       e2      The second edge insets to compare
+ * @return      True if both edge insets are equal, otherwise false
+ */
 bool XSEdgeInsetsIsEqualsToEdgeInsets( XSEdgeInsets e1, XSEdgeInsets e2 );
+
+/*!
+ * @function    XSEdgeInsetsInsetRect
+ * @abstract    Adjusts a rectangle by the given edge insets
+ * @param       rect    The rectangle to adjust
+ * @param       insets  The edge insets
+ * @return      The adjusted rectangle
+ */
 XSRect XSEdgeInsetsInsetRect( XSRect rect, XSEdgeInsets insets );
 
 /*******************************************************************************
  * XSRange
  ******************************************************************************/
 
+/*!
+ * @function    XSRangeMake
+ * @abstract    Creates an range with the specified location and length
+ * @param       location    The range's location
+ * @param       length      The range's length
+ * @return      The range
+ */
 XSRange XSRangeMake( XSUInteger location, XSUInteger length );
+
+/*!
+ * @function    XSRangeZero
+ * @abstract    Creates a range with zero location and length
+ * @return      The range
+ */
 XSRange XSRangeZero( void );
+
+/*!
+ * @function    XSRangeMax
+ * @abstract    Returns the sum of the location and length of the range
+ * @param       range       The range
+ * @return      The sum of the location and length of the range
+ */
 XSUInteger XSRangeMax( XSRange range );
+
+/*!
+ * @function    XSRangeIsEqualToRange
+ * @abstract    Checks if two ranges are equal
+ * @param       r1      The first range to compare
+ * @param       r2      The second range to compare
+ * @return      True if both ranges are equal, otherwise false
+ */
 bool XSRangeIsEqualToRange( XSRange r1, XSRange r2 );
+
+/*!
+ * @function    XSRangeLocationInRange
+ * @abstract    Checks whether a specified position is in a given range
+ * @param       location    The location
+ * @param       range       The range
+ * @return      True if the location is in the given range, otherwise false
+ */
 bool XSRangeLocationInRange( XSUInteger location, XSRange range );
+
+/*!
+ * @function    XSRangeIntersection
+ * @abstract    Returns the intersection of the specified ranges
+ * @param       r1      The first range
+ * @param       r2      The second range
+ * @return      A range containing the indices that exist in both ranges
+ */
 XSRange XSRangeIntersection( XSRange r1, XSRange r2 );
+
+/*!
+ * @function    XSRangeUnion
+ * @abstract    Returns the union of the specified ranges
+ * @param       r1      The first range
+ * @param       r2      The second range
+ * @discussion  If one range is completely contained in the other, the returned
+ *              range is equal to the larger range.
+ * @return      A range covering all indices in and between r1 and r2
+ */
 XSRange XSRangeUnion( XSRange r1, XSRange r2 );
 
 XS_EXTERN_C_END
