@@ -71,8 +71,13 @@
 
 bool XSFloatIsEqualToFloat( XSFloat x1, XSFloat x2 )
 {
-    ( void )x1;
-    ( void )x2;
+    #ifdef __LP64__
     
-    return false;
+    return ( bool )( fabs( x1 - x2 ) < DBL_EPSILON );
+    
+    #else
+    
+    return ( bool )( fabs( x2 - x1 ) < FLT_EPSILON );
+    
+    #endif
 }

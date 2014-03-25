@@ -71,7 +71,13 @@
 
 bool XSFloatIsZero( XSFloat x )
 {
-    ( void )x;
+    #ifdef __LP64__
     
-    return false;
+    return ( bool )( ( fabs( x ) < DBL_EPSILON ) );
+    
+    #else
+    
+    return ( bool )( ( fabs( x ) < FLT_EPSILON ) );
+    
+    #endif
 }

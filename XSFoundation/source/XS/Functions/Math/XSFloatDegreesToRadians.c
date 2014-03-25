@@ -73,5 +73,5 @@ XSFloat XSFloatDegreesToRadians( XSFloat x )
 {
     ( void )x;
     
-    return ( XSFloat )0;
+    return ( XSFloat )( ( x * XSFloatPI() ) / ( XSFloat )180 );
 }

@@ -71,5 +71,11 @@
 
 XSFloat XSFloatPI( void )
 {
-    return ( XSFloat )0;
+    #ifdef M_PI
+    
+    return ( XSFloat )( M_PI );
+    
+    #endif
+    
+    return ( XSFloat )( 3.1415926535897932384626433832795 );
 }
