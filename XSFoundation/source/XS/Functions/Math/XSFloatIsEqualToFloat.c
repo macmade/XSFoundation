@@ -77,7 +77,7 @@ bool XSFloatIsEqualToFloat( XSFloat x1, XSFloat x2 )
     
     #else
     
-    return ( bool )( fabs( x2 - x1 ) < FLT_EPSILON );
+    return ( bool )( fabsf( x2 - x1 ) < FLT_EPSILON );
     
     #endif
 }
