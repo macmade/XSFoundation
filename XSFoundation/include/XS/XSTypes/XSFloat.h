@@ -88,13 +88,19 @@ typedef double      XSFloat;
  * @def         XSFloatMax
  * @abstract    Maximum value for XSFloat
  */
-#define XSFloatMax  1.7976931348623157e+308
+#define XSFloatMax          1.7976931348623157e+308
 
 /*!
  * @def         XSFloatMin
  * @abstract    Minimum value for XSFloat
  */
-#define XSFloatMin  2.2250738585072014e-308
+#define XSFloatMin          2.2250738585072014e-308
+
+/*!
+ * @def         XSFloatInfinity
+ * @abstract    Infinity value for XSFloat
+ */
+#define XSFloatInfinity     HUGE_VAL
 
 #else
 
@@ -102,19 +108,25 @@ typedef double      XSFloat;
  * @typedef         XSFloat
  * @abstract        Floating-point number type
  */
-typedef float       XSFloat;
+typedef float               XSFloat;
 
 /*!
  * @def         XSFloatMax
  * @abstract    Maximum value for XSFloat
  */
-#define XSFloatMax  3.40282347e+38F
+#define XSFloatMax          3.40282347e+38F
 
 /*!
  * @def         XSFloatMin
  * @abstract    Minimum value for XSFloat
  */
-#define XSFloatMin  1.17549435e-38F
+#define XSFloatMin          1.17549435e-38F
+
+/*!
+ * @def         XSFloatInfinity
+ * @abstract    Infinity value for XSFloat
+ */
+#define XSFloatInfinity     HUGE_VALF
 
 #endif
 
