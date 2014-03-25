@@ -89,14 +89,14 @@ XS_EXTERN_C_BEGIN
  * @param       y       The Y coordinate
  * @return      The point
  */
-XSPoint XSPointMake( XSFloat x, XSFloat y );
+XS_EXPORT XSPoint XSPointMake( XSFloat x, XSFloat y );
 
 /*!
  * @function    XSPointZero
  * @abstract    Creates a point with zero coordinates
  * @return      The point
  */
-XSPoint XSPointZero( void );
+XS_EXPORT XSPoint XSPointZero( void );
 
 /*!
  * @function    XSPointIsEqualToPoint
@@ -105,25 +105,7 @@ XSPoint XSPointZero( void );
  * @param       p2      The second second to compare
  * @return      True if both points are equal, otherwise false
  */
-bool XSPointIsEqualToPoint( XSPoint p1, XSPoint p2 );
-
-/*!
- * @function    XSPointAngleBetweenPoints
- * @abstract    Computes the angle between two points
- * @param       p1      The first point
- * @param       p2      The second second
- * @return      The angle between the two points
- */
-XSFloat XSPointAngleBetweenPoints( XSPoint p1, XSPoint p2 );
-
-/*!
- * @function    XSPointDistanceBetweenPoints
- * @abstract    Computes the distance between two points
- * @param       p1      The first point
- * @param       p2      The second second
- * @return      The distance between the two points
- */
-XSFloat XSPointDistanceBetweenPoints( XSPoint p1, XSPoint p2 );
+XS_EXPORT bool XSPointIsEqualToPoint( XSPoint p1, XSPoint p2 );
 
 /*******************************************************************************
  * XSSize
@@ -136,14 +118,14 @@ XSFloat XSPointDistanceBetweenPoints( XSPoint p1, XSPoint p2 );
  * @param       height  The height
  * @return      The size
  */
-XSSize XSSizeMake( XSFloat width, XSFloat height );
+XS_EXPORT XSSize XSSizeMake( XSFloat width, XSFloat height );
 
 /*!
  * @function    XSSizeZero
  * @abstract    Creates a size with zero width and height
  * @return      The size
  */
-XSSize XSSizeZero( void );
+XS_EXPORT XSSize XSSizeZero( void );
 
 /*!
  * @function    XSSizeIsEqualToSize
@@ -152,7 +134,7 @@ XSSize XSSizeZero( void );
  * @param       s2      The second size to compare
  * @return      True if both sizes are equal, otherwise false
  */
-bool XSSizeIsEqualToSize( XSSize s1, XSSize s2 );
+XS_EXPORT bool XSSizeIsEqualToSize( XSSize s1, XSSize s2 );
 
 /*******************************************************************************
  * XSRect
@@ -167,21 +149,21 @@ bool XSSizeIsEqualToSize( XSSize s1, XSSize s2 );
  * @param       height  The height
  * @return      The rectangle
  */
-XSRect XSRectMake( XSFloat x, XSFloat y, XSFloat width, XSFloat height );
+XS_EXPORT XSRect XSRectMake( XSFloat x, XSFloat y, XSFloat width, XSFloat height );
 
 /*!
  * @function    XSRectZero
  * @abstract    Creates a rectangle with zero coordinates, width and height
  * @return      The rectangle
  */
-XSRect XSRectZero( void );
+XS_EXPORT XSRect XSRectZero( void );
 
 /*!
  * @function    XSRectNull
  * @abstract    Creates a null rectangle
  * @return      The null rectangle
  */
-XSRect XSRectNull( void );
+XS_EXPORT XSRect XSRectNull( void );
 
 /*!
  * @function    XSRectIsEqualToToRect
@@ -190,7 +172,7 @@ XSRect XSRectNull( void );
  * @param       r2      The second rectangle to compare
  * @return      True if both rectangles are equal, otherwise false
  */
-bool XSRectIsEqualToToRect( XSRect r1, XSRect r2 );
+XS_EXPORT bool XSRectIsEqualToToRect( XSRect r1, XSRect r2 );
 
 /*!
  * @function    XSRectIntersectsRect
@@ -199,7 +181,7 @@ bool XSRectIsEqualToToRect( XSRect r1, XSRect r2 );
  * @param       rect2   The second rectangle
  * @return      True if the rectangles intersect, otherwise false
  */
-bool XSRectIntersectsRect( XSRect rect1, XSRect rect2 );
+XS_EXPORT bool XSRectIntersectsRect( XSRect rect1, XSRect rect2 );
 
 /*!
  * @function    XSRectContainsPoint
@@ -208,7 +190,7 @@ bool XSRectIntersectsRect( XSRect rect1, XSRect rect2 );
  * @param       point   The point
  * @return      True if the rectangle contains the specified point, otherwise false
  */
-bool XSRectContainsPoint( XSRect rect, XSPoint point );
+XS_EXPORT bool XSRectContainsPoint( XSRect rect, XSPoint point );
 
 /*!
  * @function    XSRectContainsRect
@@ -217,7 +199,7 @@ bool XSRectContainsPoint( XSRect rect, XSPoint point );
  * @param       rect2   The rectangle to examine for being contained in the rectangle passed in rect1
  * @return      True if the first rectangle contains the second rectangle, otherwise false
  */
-bool XSRectContainsRect( XSRect rect1, XSRect rect2 );
+XS_EXPORT bool XSRectContainsRect( XSRect rect1, XSRect rect2 );
 
 /*!
  * @function    XSRectIsEmpty
@@ -225,7 +207,7 @@ bool XSRectContainsRect( XSRect rect1, XSRect rect2 );
  * @param       rect    The rectangle
  * @return      True if the rectangle has zero width or height, otherwise false
  */
-bool XSRectIsEmpty( XSRect rect );
+XS_EXPORT bool XSRectIsEmpty( XSRect rect );
 
 /*!
  * @function    XSRectIsNull
@@ -233,7 +215,7 @@ bool XSRectIsEmpty( XSRect rect );
  * @param       rect    The rectangle
  * @return      True if the rectangle is a null rectangle, otherwise false
  */
-bool XSRectIsNull( XSRect rect );
+XS_EXPORT bool XSRectIsNull( XSRect rect );
 
 /*!
  * @function    XSRectInset
@@ -251,7 +233,7 @@ bool XSRectIsNull( XSRect rect );
  *              increased.
  * @return      The new rectangle
  */
-XSRect XSRectInset( XSRect rect, XSFloat dx, XSFloat dy );
+XS_EXPORT XSRect XSRectInset( XSRect rect, XSFloat dx, XSFloat dy );
 
 /*!
  * @function    XSRectIntegral
@@ -263,7 +245,7 @@ XSRect XSRectInset( XSRect rect, XSFloat dx, XSFloat dy );
  *              contains the original rectangle.
  * @return      The new rectangle
  */
-XSRect XSRectIntegral( XSRect rect );
+XS_EXPORT XSRect XSRectIntegral( XSRect rect );
 
 /*!
  * @function    XSRectIntersection
@@ -276,7 +258,7 @@ XSRect XSRectIntegral( XSRect rect );
  * @see         XSRectStandardize
  * @see         XSRectIsNull
  */
-XSRect XSRectIntersection( XSRect r1, XSRect r2 );
+XS_EXPORT XSRect XSRectIntersection( XSRect r1, XSRect r2 );
 
 /*!
  * @function    XSRectOffset
@@ -286,7 +268,7 @@ XSRect XSRectIntersection( XSRect r1, XSRect r2 );
  * @param       dy      The offset value for the Y coordinate
  * @return      A rectangle that is the same size as the source, but with its origin offset by dx units along the x-axis and dy units along the y-axis with respect to the source
  */
-XSRect XSRectOffset( XSRect rect, XSFloat dx, XSFloat dy );
+XS_EXPORT XSRect XSRectOffset( XSRect rect, XSFloat dx, XSFloat dy );
 
 /*!
  * @function    XSRectStandardize
@@ -294,7 +276,7 @@ XSRect XSRectOffset( XSRect rect, XSFloat dx, XSFloat dy );
  * @param       rect    The rectangle
  * @return      A rectangle with a positive width and height
  */
-XSRect XSRectStandardize( XSRect rect );
+XS_EXPORT XSRect XSRectStandardize( XSRect rect );
 
 /*!
  * @function    XSRectUnion
@@ -311,7 +293,7 @@ XSRect XSRectStandardize( XSRect rect );
  * @see         XSRectStandardize
  * @see         XSRectIsNull
  */
-XSRect XSRectUnion( XSRect r1, XSRect r2 );
+XS_EXPORT XSRect XSRectUnion( XSRect r1, XSRect r2 );
 
 /*!
  * @function    XSRectGetMinX
@@ -319,7 +301,7 @@ XSRect XSRectUnion( XSRect r1, XSRect r2 );
  * @param       rect    The rectangle
  * @return      The smallest value for the X coordinate of the rectangle
  */
-XSFloat XSRectGetMinX( XSRect rect );
+XS_EXPORT XSFloat XSRectGetMinX( XSRect rect );
 
 /*!
  * @function    XSRectGetMinY
@@ -327,7 +309,7 @@ XSFloat XSRectGetMinX( XSRect rect );
  * @param       rect    The rectangle
  * @return      The smallest value for the Y coordinate of the rectangle
  */
-XSFloat XSRectGetMinY( XSRect rect );
+XS_EXPORT XSFloat XSRectGetMinY( XSRect rect );
 
 /*!
  * @function    XSRectGetMidX
@@ -335,7 +317,7 @@ XSFloat XSRectGetMinY( XSRect rect );
  * @param       rect    The rectangle
  * @return      The X coordinate of the center of the specified rectangle
  */
-XSFloat XSRectGetMidX( XSRect rect );
+XS_EXPORT XSFloat XSRectGetMidX( XSRect rect );
 
 /*!
  * @function    XSRectGetMidY
@@ -343,7 +325,7 @@ XSFloat XSRectGetMidX( XSRect rect );
  * @param       rect    The rectangle
  * @return      The Y coordinate of the center of the specified rectangle
  */
-XSFloat XSRectGetMidY( XSRect rect );
+XS_EXPORT XSFloat XSRectGetMidY( XSRect rect );
 
 /*!
  * @function    XSRectGetMaxX
@@ -351,7 +333,7 @@ XSFloat XSRectGetMidY( XSRect rect );
  * @param       rect    The rectangle
  * @return      The largest value for the X coordinate of the rectangle
  */
-XSFloat XSRectGetMaxX( XSRect rect );
+XS_EXPORT XSFloat XSRectGetMaxX( XSRect rect );
 
 /*!
  * @function    XSRectGetMaxY
@@ -359,7 +341,7 @@ XSFloat XSRectGetMaxX( XSRect rect );
  * @param       rect    The rectangle
  * @return      The largest value for the Y coordinate of the rectangle
  */
-XSFloat XSRectGetMaxY( XSRect rect );
+XS_EXPORT XSFloat XSRectGetMaxY( XSRect rect );
 
 /*!
  * @function    XSRectGetWidth
@@ -372,7 +354,7 @@ XSFloat XSRectGetMaxY( XSRect rect );
  * @return      The width of the rectangle
  * @see         XSRectStandardize
  */
-XSFloat XSRectGetWidth( XSRect rect );
+XS_EXPORT XSFloat XSRectGetWidth( XSRect rect );
 
 /*!
  * @function    XSRectGetHeight
@@ -385,7 +367,7 @@ XSFloat XSRectGetWidth( XSRect rect );
  * @return      The height of the rectangle
  * @see         XSRectStandardize
  */
-XSFloat XSRectGetHeight( XSRect rect );
+XS_EXPORT XSFloat XSRectGetHeight( XSRect rect );
 
 /*******************************************************************************
  * XSEdgeInsets
@@ -400,16 +382,16 @@ XSFloat XSRectGetHeight( XSRect rect );
  * @param       right   The inset on the right
  * @return      The edge insets
  */
-XSEdgeInsets XSEdgeInsetsMake( XSFloat top, XSFloat left, XSFloat bottom, XSFloat right );
+XS_EXPORT XSEdgeInsets XSEdgeInsetsMake( XSFloat top, XSFloat left, XSFloat bottom, XSFloat right );
 
 /*!
- * @function    XSEdgeInsetsIsEqualsToEdgeInsets
+ * @function    XSEdgeInsetsIsEqualToEdgeInsets
  * @abstract    Checks if two edge insets are equal
  * @param       e1      The first edge insets to compare
  * @param       e2      The second edge insets to compare
  * @return      True if both edge insets are equal, otherwise false
  */
-bool XSEdgeInsetsIsEqualsToEdgeInsets( XSEdgeInsets e1, XSEdgeInsets e2 );
+XS_EXPORT bool XSEdgeInsetsIsEqualToEdgeInsets( XSEdgeInsets e1, XSEdgeInsets e2 );
 
 /*!
  * @function    XSEdgeInsetsInsetRect
@@ -418,7 +400,7 @@ bool XSEdgeInsetsIsEqualsToEdgeInsets( XSEdgeInsets e1, XSEdgeInsets e2 );
  * @param       insets  The edge insets
  * @return      The adjusted rectangle
  */
-XSRect XSEdgeInsetsInsetRect( XSRect rect, XSEdgeInsets insets );
+XS_EXPORT XSRect XSEdgeInsetsInsetRect( XSRect rect, XSEdgeInsets insets );
 
 /*******************************************************************************
  * XSRange
@@ -431,14 +413,14 @@ XSRect XSEdgeInsetsInsetRect( XSRect rect, XSEdgeInsets insets );
  * @param       length      The range's length
  * @return      The range
  */
-XSRange XSRangeMake( XSUInteger location, XSUInteger length );
+XS_EXPORT XSRange XSRangeMake( XSUInteger location, XSUInteger length );
 
 /*!
  * @function    XSRangeZero
  * @abstract    Creates a range with zero location and length
  * @return      The range
  */
-XSRange XSRangeZero( void );
+XS_EXPORT XSRange XSRangeZero( void );
 
 /*!
  * @function    XSRangeMax
@@ -446,7 +428,7 @@ XSRange XSRangeZero( void );
  * @param       range       The range
  * @return      The sum of the location and length of the range
  */
-XSUInteger XSRangeMax( XSRange range );
+XS_EXPORT XSUInteger XSRangeMax( XSRange range );
 
 /*!
  * @function    XSRangeIsEqualToRange
@@ -455,7 +437,7 @@ XSUInteger XSRangeMax( XSRange range );
  * @param       r2      The second range to compare
  * @return      True if both ranges are equal, otherwise false
  */
-bool XSRangeIsEqualToRange( XSRange r1, XSRange r2 );
+XS_EXPORT bool XSRangeIsEqualToRange( XSRange r1, XSRange r2 );
 
 /*!
  * @function    XSRangeLocationInRange
@@ -464,7 +446,7 @@ bool XSRangeIsEqualToRange( XSRange r1, XSRange r2 );
  * @param       range       The range
  * @return      True if the location is in the given range, otherwise false
  */
-bool XSRangeLocationInRange( XSUInteger location, XSRange range );
+XS_EXPORT bool XSRangeLocationInRange( XSUInteger location, XSRange range );
 
 /*!
  * @function    XSRangeIntersection
@@ -473,7 +455,7 @@ bool XSRangeLocationInRange( XSUInteger location, XSRange range );
  * @param       r2      The second range
  * @return      A range containing the indices that exist in both ranges
  */
-XSRange XSRangeIntersection( XSRange r1, XSRange r2 );
+XS_EXPORT XSRange XSRangeIntersection( XSRange r1, XSRange r2 );
 
 /*!
  * @function    XSRangeUnion
@@ -484,7 +466,7 @@ XSRange XSRangeIntersection( XSRange r1, XSRange r2 );
  *              range is equal to the larger range.
  * @return      A range covering all indices in and between r1 and r2
  */
-XSRange XSRangeUnion( XSRange r1, XSRange r2 );
+XS_EXPORT XSRange XSRangeUnion( XSRange r1, XSRange r2 );
 
 XS_EXTERN_C_END
 
