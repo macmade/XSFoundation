@@ -77,45 +77,12 @@
 XS_EXTERN_C_BEGIN
 
 #include <XS/XSTypes/XSObjectRef.h>
+#include <XS/XSTypes/XSClassInfoConstructorCallback.h>
+#include <XS/XSTypes/XSClassInfoDestructorCallback.h>
+#include <XS/XSTypes/XSClassInfoCopyCallback.h>
+#include <XS/XSTypes/XSClassInfoEqualsCallback.h>
+#include <XS/XSTypes/XSClassInfoToStringCallback.h>
 
-/*!
- * @typedef     XSClassInfoConstructorCallback
- * @abstract    Class constructor callback
- * @param       object      The object beeing construct
- */
-typedef void ( * XSClassInfoConstructorCallback )( XSObjectRef object );
-
-/*!
- * @typedef     XSClassInfoDestructorCallback
- * @abstract    Class destructor callback
- * @param       object      The object beeing destruct
- */
-typedef void ( * XSClassInfoDestructorCallback )( XSObjectRef object );
-
-/*!
- * @typedef     XSClassInfoCopyCallback
- * @abstract    Class copy callback
- * @param       source      The object to copy
- * @param       destination The object beeing copied
- */
-typedef void ( * XSClassInfoCopyCallback )( XSObjectRef source, XSObjectRef destination );
-
-/*!
- * @typedef     XSClassInfoEqualsCallback
- * @abstract    Class equals callback
- * @param       object1     The first object to compare
- * @param       object2     The second object to compare
- * @return      True if both objects are equals, otherwise false
- */
-typedef bool ( * XSClassInfoEqualsCallback )( XSObjectRef object1, XSObjectRef object2 );
-
-/*!
- * @typedef     XSClassInfoToStringCallback
- * @abstract    Class to-string callback
- * @param       object      The object for which to get a description
- * @return      The object's description
- */
-typedef const char * ( * XSClassInfoToStringCallback )( XSObjectRef object );
 
 /*!
  * @struct      XSClassInfos_Struct

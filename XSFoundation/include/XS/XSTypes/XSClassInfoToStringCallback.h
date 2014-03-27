@@ -62,55 +62,30 @@
 /* $Id$ */
 
 /*!
- * @header      XSTypes.h
+ * @header      XSClassInfoToStringCallback.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    XSClassInfoToStringCallback type definition
  */
 
 #ifndef __XS_H__
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_TYPES_H__
-#define __XS_TYPES_H__
+#ifndef __XS_TYPES_XS_CLASS_INFO_TO_STRING_CALLBACK_H__
+#define __XS_TYPES_XS_CLASS_INFO_TO_STRING_CALLBACK_H__
 
 XS_EXTERN_C_BEGIN
 
-#include <XS/XSTypes/XSUInt8.h>
-#include <XS/XSTypes/XSUInt16.h>
-#include <XS/XSTypes/XSUInt32.h>
-#include <XS/XSTypes/XSUInt64.h>
-
-#include <XS/XSTypes/XSInt8.h>
-#include <XS/XSTypes/XSInt16.h>
-#include <XS/XSTypes/XSInt32.h>
-#include <XS/XSTypes/XSInt64.h>
-
-#include <XS/XSTypes/XSFloat32.h>
-#include <XS/XSTypes/XSFloat64.h>
-
-#include <XS/XSTypes/XSUInteger.h>
-#include <XS/XSTypes/XSInteger.h>
-#include <XS/XSTypes/XSFloat.h>
-
-#include <XS/XSTypes/XSPoint.h>
-#include <XS/XSTypes/XSSize.h>
-#include <XS/XSTypes/XSRect.h>
-#include <XS/XSTypes/XSRectEdge.h>
-#include <XS/XSTypes/XSEdgeInsets.h>
-
-#include <XS/XSTypes/XSRange.h>
-#include <XS/XSTypes/XSComparisonResult.h>
-
-#include <XS/XSTypes/XSClassID.h>
 #include <XS/XSTypes/XSObjectRef.h>
-#include <XS/XSTypes/XSClassInfo.h>
-#include <XS/XSTypes/XSClassInfoConstructorCallback.h>
-#include <XS/XSTypes/XSClassInfoDestructorCallback.h>
-#include <XS/XSTypes/XSClassInfoCopyCallback.h>
-#include <XS/XSTypes/XSClassInfoEqualsCallback.h>
-#include <XS/XSTypes/XSClassInfoToStringCallback.h>
+
+/*!
+ * @typedef     XSClassInfoToStringCallback
+ * @abstract    Class to-string callback
+ * @param       object      The object for which to get a description
+ * @return      The object's description
+ */
+typedef const char * ( * XSClassInfoToStringCallback )( XSObjectRef object );
 
 XS_EXTERN_C_END
 
-#endif /* __XS_RUNTIME_H__ */
+#endif /* __XS_TYPES_XS_CLASS_INFO_TO_STRING_CALLBACK_H__ */
