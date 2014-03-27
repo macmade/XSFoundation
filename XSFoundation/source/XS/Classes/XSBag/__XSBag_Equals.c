@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSBag.h>
+#include <__private/Classes/XSBag.h>
 
 bool __XSBag_Equals( XSBagRef object1, XSBagRef object2 )
 {

@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSThread.h>
+#include <__private/Classes/XSThread.h>
 
 void __XSThread_Initialize( void )
 {

@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSAutoreleasePool.h>
+#include <__private/Classes/XSAutoreleasePool.h>
 
 XSClassID XSAutoreleasePool_GetClassID( void )
 {

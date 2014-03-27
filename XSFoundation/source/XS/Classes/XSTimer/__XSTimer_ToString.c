@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSTimer.h>
+#include <__private/Classes/XSTimer.h>
 
 const char * __XSTimer_ToString( XSTimerRef object )
 {

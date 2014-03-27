@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSRecursiveLock.h>
+#include <__private/Classes/XSRecursiveLock.h>
 
 void __XSRecursiveLock_Initialize( void )
 {

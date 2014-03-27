@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSBinaryTree.h>
+#include <__private/Classes/XSBinaryTree.h>
 
 void __XSBinaryTree_Constructor( XSBinaryTreeRef object )
 {

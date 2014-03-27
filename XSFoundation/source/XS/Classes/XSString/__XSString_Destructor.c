@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSString.h>
+#include <__private/Classes/XSString.h>
 
 void __XSString_Destructor( XSStringRef object )
 {

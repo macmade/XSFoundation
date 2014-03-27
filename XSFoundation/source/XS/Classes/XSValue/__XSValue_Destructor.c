@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSValue.h>
+#include <__private/Classes/XSValue.h>
 
 void __XSValue_Destructor( XSValueRef object )
 {

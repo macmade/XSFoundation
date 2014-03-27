@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSException.h>
+#include <__private/Classes/XSException.h>
 
 const char * __XSException_ToString( XSExceptionRef object )
 {

@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSBoolean.h>
+#include <__private/Classes/XSBoolean.h>
 
 bool XSBoolean_GetValue( XSBooleanRef object )
 {

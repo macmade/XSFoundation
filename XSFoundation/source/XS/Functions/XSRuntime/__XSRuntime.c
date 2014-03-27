@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSRuntime.h>
+#include <__private/Functions/XSRuntime.h>
 
 volatile XSUInt32                    __XSRuntime_Inited       = 0;
          __XSRuntime_ClassInfoList * __XSRuntime_Classes      = NULL;

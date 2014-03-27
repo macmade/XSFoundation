@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSNull.h>
+#include <__private/Classes/XSNull.h>
 
 XSNullRef   __XSNull_Null    = NULL;
 XSClassID   __XSNull_ClassID = 0;

@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSBag.h>
+#include <__private/Classes/XSBag.h>
 
 XSClassID XSBag_GetClassID( void )
 {

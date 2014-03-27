@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSAutoreleasePool.h>
+#include <__private/Classes/XSAutoreleasePool.h>
 
 XSClassID   __XSAutoreleasePool_ClassID = 0;
 XSClassInfo __XSAutoreleasePool_Class   =

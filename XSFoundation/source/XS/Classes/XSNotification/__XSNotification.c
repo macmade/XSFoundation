@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSNotification.h>
+#include <__private/Classes/XSNotification.h>
 
 XSClassID   __XSNotification_ClassID = 0;
 XSClassInfo __XSNotification_Class   =

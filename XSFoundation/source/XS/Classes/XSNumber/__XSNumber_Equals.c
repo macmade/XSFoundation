@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSNumber.h>
+#include <__private/Classes/XSNumber.h>
 
 bool __XSNumber_Equals( XSNumberRef object1, XSNumberRef object2 )
 {

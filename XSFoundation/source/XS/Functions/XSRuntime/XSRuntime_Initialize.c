@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSRuntime.h>
+#include <__private/Functions/XSRuntime.h>
 
 /* Private class initializers */
 void XSStatic __XSApplication_Initialize( void );

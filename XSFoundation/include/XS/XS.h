@@ -75,7 +75,7 @@
 
 /* Internal build only - Adds extra warning flags */
 #ifdef __XS_BUILD__
-#include <XS/__private/XSWarnings.h>
+#include <__private/XSWarnings.h>
 #endif
 
 /* Core */

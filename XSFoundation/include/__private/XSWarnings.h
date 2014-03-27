@@ -76,7 +76,7 @@
 
 /* Warning flags for Clang */
 #ifdef __clang__
-#include <XS/__private/XSWarnings-Clang.h>
+#include <__private/XSWarnings-Clang.h>
 #endif
 
 #endif /* __XS___PRIVATE_XS_WARNINGS_H__ */

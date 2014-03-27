@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSSet.h>
+#include <__private/Classes/XSSet.h>
 
 void __XSSet_Initialize( void )
 {

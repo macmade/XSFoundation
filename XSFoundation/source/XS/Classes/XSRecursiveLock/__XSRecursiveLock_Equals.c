@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSRecursiveLock.h>
+#include <__private/Classes/XSRecursiveLock.h>
 
 bool __XSRecursiveLock_Equals( XSRecursiveLockRef object1, XSRecursiveLockRef object2 )
 {

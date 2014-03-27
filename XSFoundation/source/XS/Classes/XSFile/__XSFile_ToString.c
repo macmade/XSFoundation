@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSFile.h>
+#include <__private/Classes/XSFile.h>
 
 const char * __XSFile_ToString( XSFileRef object )
 {

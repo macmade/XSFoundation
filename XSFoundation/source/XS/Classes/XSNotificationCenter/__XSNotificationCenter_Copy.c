@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSNotificationCenter.h>
+#include <__private/Classes/XSNotificationCenter.h>
 
 void __XSNotificationCenter_Copy( XSNotificationCenterRef source, XSNotificationCenterRef destination )
 {

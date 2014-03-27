@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSDate.h>
+#include <__private/Classes/XSDate.h>
 
 void __XSDate_Initialize( void )
 {

@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSLock.h>
+#include <__private/Classes/XSLock.h>
 
 XSClassID XSLock_GetClassID( void )
 {

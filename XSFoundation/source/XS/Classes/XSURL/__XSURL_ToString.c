@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSURL.h>
+#include <__private/Classes/XSURL.h>
 
 const char * __XSURL_ToString( XSURLRef object )
 {

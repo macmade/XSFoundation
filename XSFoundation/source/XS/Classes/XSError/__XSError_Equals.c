@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSError.h>
+#include <__private/Classes/XSError.h>
 
 bool __XSError_Equals( XSErrorRef object1, XSErrorRef object2 )
 {

@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSNull.h>
+#include <__private/Classes/XSNull.h>
 
 const char * __XSNull_ToString( XSNullRef object )
 {

@@ -68,8 +68,8 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSMemory.h>
-#include <XS/__private/Functions/XSRuntime.h>
+#include <__private/Functions/XSMemory.h>
+#include <__private/Functions/XSRuntime.h>
 
 XS_EXPORT bool XSEquals( void * memory1, void * memory2 )
 {

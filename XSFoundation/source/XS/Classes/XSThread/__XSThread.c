@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSThread.h>
+#include <__private/Classes/XSThread.h>
 
 XSClassID   __XSThread_ClassID = 0;
 XSClassInfo __XSThread_Class   =

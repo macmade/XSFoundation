@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSBoolean.h>
+#include <__private/Classes/XSBoolean.h>
 
 const char * __XSBoolean_ToString( XSBooleanRef object )
 {

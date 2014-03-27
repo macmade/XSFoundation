@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSFile.h>
+#include <__private/Classes/XSFile.h>
 
 XSClassID   __XSFile_ClassID = 0;
 XSClassInfo __XSFile_Class   =

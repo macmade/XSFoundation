@@ -68,8 +68,8 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSMemory.h>
-#include <XS/__private/Functions/XSRuntime.h>
+#include <__private/Functions/XSMemory.h>
+#include <__private/Functions/XSRuntime.h>
 
 XSObjectRef XSCopyWithInfos( void * memory, const char * file, int line, const char * func )
 {

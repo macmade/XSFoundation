@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSArray.h>
+#include <__private/Classes/XSArray.h>
 
 XSClassID XSArray_GetClassID( void )
 {

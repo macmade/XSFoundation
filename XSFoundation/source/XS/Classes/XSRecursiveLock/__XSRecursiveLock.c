@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSRecursiveLock.h>
+#include <__private/Classes/XSRecursiveLock.h>
 
 XSClassID   __XSRecursiveLock_ClassID = 0;
 XSClassInfo __XSRecursiveLock_Class   =

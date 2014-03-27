@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSDictionary.h>
+#include <__private/Classes/XSDictionary.h>
 
 void __XSDictionary_Initialize( void )
 {

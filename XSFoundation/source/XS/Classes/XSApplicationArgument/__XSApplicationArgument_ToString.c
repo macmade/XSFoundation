@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSApplicationArgument.h>
+#include <__private/Classes/XSApplicationArgument.h>
 
 const char * __XSApplicationArgument_ToString( XSApplicationArgumentRef object )
 {

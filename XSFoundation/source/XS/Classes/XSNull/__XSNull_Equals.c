@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSNull.h>
+#include <__private/Classes/XSNull.h>
 
 bool __XSNull_Equals( XSNullRef object1, XSNullRef object2 )
 {

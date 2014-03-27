@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSData.h>
+#include <__private/Classes/XSData.h>
 
 void __XSData_Constructor( XSDataRef object )
 {

@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSRuntime.h>
+#include <__private/Functions/XSRuntime.h>
 
 XSClassInfoCopyCallback __XSRuntime_GetCopyCallback( XSClassID classID )
 {

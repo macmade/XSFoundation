@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSNumber.h>
+#include <__private/Classes/XSNumber.h>
 
 void __XSNumber_Constructor( XSNumberRef object )
 {

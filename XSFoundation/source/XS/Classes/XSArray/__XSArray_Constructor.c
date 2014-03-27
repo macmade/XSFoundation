@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSArray.h>
+#include <__private/Classes/XSArray.h>
 
 void __XSArray_Constructor( XSArrayRef object )
 {

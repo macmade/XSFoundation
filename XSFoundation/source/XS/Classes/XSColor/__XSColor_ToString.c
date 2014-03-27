@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSColor.h>
+#include <__private/Classes/XSColor.h>
 
 const char * __XSColor_ToString( XSColorRef object )
 {

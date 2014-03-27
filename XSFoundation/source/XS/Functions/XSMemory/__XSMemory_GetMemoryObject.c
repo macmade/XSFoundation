@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSMemory.h>
+#include <__private/Functions/XSMemory.h>
 
 __XSMemoryObject * __XSMemory_GetMemoryObject( void * ptr )
 {

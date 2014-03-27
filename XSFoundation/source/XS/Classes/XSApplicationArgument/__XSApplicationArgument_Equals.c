@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSApplicationArgument.h>
+#include <__private/Classes/XSApplicationArgument.h>
 
 bool __XSApplicationArgument_Equals( XSApplicationArgumentRef object1, XSApplicationArgumentRef object2 )
 {

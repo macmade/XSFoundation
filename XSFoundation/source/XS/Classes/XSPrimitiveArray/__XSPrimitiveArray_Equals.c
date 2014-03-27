@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSPrimitiveArray.h>
+#include <__private/Classes/XSPrimitiveArray.h>
 
 bool __XSPrimitiveArray_Equals( XSPrimitiveArrayRef object1, XSPrimitiveArrayRef object2 )
 {

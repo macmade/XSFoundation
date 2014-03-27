@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSError.h>
+#include <__private/Classes/XSError.h>
 
 XSClassID   __XSError_ClassID = 0;
 XSClassInfo __XSError_Class   =
