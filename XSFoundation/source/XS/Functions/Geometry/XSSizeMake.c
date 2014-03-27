@@ -73,8 +73,8 @@ XSSize XSSizeMake( XSFloat width, XSFloat height )
 {
     XSSize s;
     
-    ( void )width;
-    ( void )height;
+    s.width  = width;
+    s.height = height;
     
     return s;
 }

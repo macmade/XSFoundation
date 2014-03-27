@@ -71,7 +71,5 @@
 
 XSUInteger XSRangeMax( XSRange range )
 {
-    ( void )range;
-    
-    return 0;
+    return range.location + range.length;
 }

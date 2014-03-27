@@ -73,9 +73,9 @@ XSRect XSRectInset( XSRect rect, XSFloat dx, XSFloat dy )
 {
     XSRect r;
     
-    ( void )rect;
-    ( void )dx;
-    ( void )dy;
+    r              = XSRectOffset( rect, dx, dy );
+    r.size.width  -= ( ( XSFloat )2 * dx );
+    r.size.height -= ( ( XSFloat )2 * dy );
     
     return r;
 }

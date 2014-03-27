@@ -62,30 +62,20 @@
 /* $Id$ */
 
 /*!
- * @file        XSRectIntersectsRect.c
+ * @file        XSRangeMax.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRectIntersectsRect
+ * @abstract    Definition for XSRangeMax
  */
 
 #include <XS/XS.h>
 
-bool XSRectIntersectsRect( XSRect rect1, XSRect rect2 )
+XSRange XSRangeMake( XSUInteger location, XSUInteger length )
 {
-    if( XSRectIsEmpty( rect1 ) || XSRectIsEmpty( rect2 ) )
-    {
-        return false;
-    }
+    XSRange r;
     
-    if
-    (
-           XSRectGetMaxX( rect1 ) <= rect2.origin.x
-        || XSRectGetMaxY( rect1 ) <= rect2.origin.y
-        || XSRectGetMaxX( rect2 ) <= rect1.origin.x
-        || XSRectGetMaxY( rect2 ) <= rect1.origin.y
-    )
-    {
-        return false;
-    }
+    r.location = location;
+    r.length   = length;
     
-    return true;
+    return r;
 }
+

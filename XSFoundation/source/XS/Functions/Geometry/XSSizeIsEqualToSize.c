@@ -71,8 +71,14 @@
 
 bool XSSizeIsEqualToSize( XSSize s1, XSSize s2 )
 {
-    ( void )s1;
-    ( void )s2;
+    if
+    (
+           XSFloatIsEqualToFloat( s1.width,  s2.width )
+        && XSFloatIsEqualToFloat( s1.height, s2.height )
+    )
+    {
+        return true;
+    }
     
     return false;
 }

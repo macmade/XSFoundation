@@ -71,7 +71,5 @@
 
 XSFloat XSRectGetMaxY( XSRect rect )
 {
-    ( void )rect;
-    
-    return ( XSFloat )0;
+    return rect.origin.y + rect.size.height;
 }

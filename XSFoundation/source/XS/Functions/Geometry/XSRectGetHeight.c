@@ -71,7 +71,7 @@
 
 XSFloat XSRectGetHeight( XSRect rect )
 {
-    ( void )rect;
+    rect = XSRectStandardize( rect );
     
-    return ( XSFloat )0;
+    return rect.size.height;
 }

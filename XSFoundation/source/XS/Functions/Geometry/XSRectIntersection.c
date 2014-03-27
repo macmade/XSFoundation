@@ -73,8 +73,55 @@ XSRect XSRectIntersection( XSRect r1, XSRect r2 )
 {
     XSRect r;
     
-    ( void )r1;
-    ( void )r2;
+    r1 = XSRectStandardize( r1 );
+    r2 = XSRectStandardize( r2 );
+    
+    if
+    (
+           XSRectGetMaxX( r1 ) <= r2.origin.x
+        || XSRectGetMaxY( r1 ) <= r2.origin.y
+        || XSRectGetMaxX( r2 ) <= r1.origin.x
+        || XSRectGetMaxY( r2 ) <= r1.origin.y
+    )
+    {
+        return XSRectZero();
+    }
+    
+    if( r1.origin.x <= r2.origin.x )
+    {
+        r.origin.x = r2.origin.x;
+    }
+    else
+    {
+        r.origin.x = r1.origin.x;
+    }
+    
+    if( r1.origin.y <= r2.origin.y )
+    {
+        r.origin.y = r2.origin.y;
+    }
+    else
+    {
+        r.origin.y = r1.origin.y;
+    }
+    
+    if( XSRectGetMaxX( r1 ) >= XSRectGetMaxX( r2 ) )
+    {
+        r.size.width = XSRectGetMaxX( r2 ) - r.origin.x;
+    }
+    else
+    {
+        r.size.width = XSRectGetMaxX( r1 ) - r.origin.x;
+    }
+    
+    if( XSRectGetMaxY( r1 ) >= XSRectGetMaxY( r2 ) )
+    {
+        r.size.height = XSRectGetMaxY( r2 ) - r.origin.y;
+    }
+    else
+    {
+        r.size.height = XSRectGetMaxY( r1 ) - r.origin.y;
+    }
     
     return r;
 }

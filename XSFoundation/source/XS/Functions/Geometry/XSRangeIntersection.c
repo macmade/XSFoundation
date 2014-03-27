@@ -73,8 +73,13 @@ XSRange XSRangeIntersection( XSRange r1, XSRange r2 )
 {
     XSRange r;
     
-    ( void )r1;
-    ( void )r2;
+    if( XSRangeMax( r1 ) < r2.location || XSRangeMax( r2 ) < r1.location )
+    {
+        return XSRangeZero();
+    }
+    
+    r.location = XS_MAX( r1.location, r2.location );
+    r.length   = XS_MIN( XSRangeMax( r1 ), XSRangeMax( r2 ) ) - r.location;
     
     return r;
 }

@@ -71,7 +71,5 @@
 
 XSSize XSSizeZero( void )
 {
-    XSSize s;
-    
-    return s;
+    return XSSizeMake( ( XSFloat )0, ( XSFloat )0 );
 }

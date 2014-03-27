@@ -71,7 +71,5 @@
 
 XSRange XSRangeZero( void )
 {
-    XSRange r;
-    
-    return r;
+    return XSRangeMake( 0, 0 );
 }

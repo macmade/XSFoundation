@@ -71,8 +71,10 @@
 
 bool XSRangeIsEqualToRange( XSRange r1, XSRange r2 )
 {
-    ( void )r1;
-    ( void )r2;
+    if( r1.location == r2.location && r1.length == r2.length )
+    {
+        return true;
+    }
     
     return false;
 }

@@ -71,7 +71,10 @@
 
 bool XSRectIsEmpty( XSRect rect )
 {
-    ( void )rect;
+    if( XSFloatIsZero( rect.size.width ) || XSFloatIsZero( rect.size.height ) )
+    {
+        return true;
+    }
     
     return false;
 }

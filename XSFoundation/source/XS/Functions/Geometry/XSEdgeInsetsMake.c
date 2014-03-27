@@ -69,14 +69,14 @@
 
 #include <XS/XS.h>
 
-XSEdgeInsets XSEdgeInsetsMake( XSFloat left, XSFloat top, XSFloat right, XSFloat bottom )
+XSEdgeInsets XSEdgeInsetsMake( XSFloat top, XSFloat left, XSFloat bottom, XSFloat right )
 {
     XSEdgeInsets e;
     
-    ( void )left;
-    ( void )top;
-    ( void )right;
-    ( void )bottom;
+    e.top    = top;
+    e.left   = left;
+    e.bottom = bottom;
+    e.right  = right;
     
     return e;
 }

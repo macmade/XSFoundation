@@ -71,8 +71,10 @@
 
 bool XSRangeLocationInRange( XSUInteger location, XSRange range )
 {
-    ( void )location;
-    ( void )range;
+    if( location >= range.location && location < ( range.location + range.length ) )
+    {
+        return true;
+    }
     
     return false;
 }

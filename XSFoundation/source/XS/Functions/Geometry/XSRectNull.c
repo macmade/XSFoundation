@@ -62,30 +62,21 @@
 /* $Id$ */
 
 /*!
- * @file        XSRectIntersectsRect.c
+ * @file        XSRectNull.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRectIntersectsRect
+ * @abstract    Definition for XSRectNull
  */
 
 #include <XS/XS.h>
 
-bool XSRectIntersectsRect( XSRect rect1, XSRect rect2 )
+XSRect XSRectNull( void )
 {
-    if( XSRectIsEmpty( rect1 ) || XSRectIsEmpty( rect2 ) )
-    {
-        return false;
-    }
+    XSRect r;
     
-    if
-    (
-           XSRectGetMaxX( rect1 ) <= rect2.origin.x
-        || XSRectGetMaxY( rect1 ) <= rect2.origin.y
-        || XSRectGetMaxX( rect2 ) <= rect1.origin.x
-        || XSRectGetMaxY( rect2 ) <= rect1.origin.y
-    )
-    {
-        return false;
-    }
+    r.origin.x    = XSFloatInfinity;
+    r.origin.y    = XSFloatInfinity;
+    r.size.width  = XSFloatInfinity;
+    r.size.height = XSFloatInfinity;
     
-    return true;
+    return r;
 }

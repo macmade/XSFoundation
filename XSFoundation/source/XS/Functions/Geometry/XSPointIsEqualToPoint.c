@@ -71,8 +71,14 @@
 
 bool XSPointIsEqualToPoint( XSPoint p1, XSPoint p2 )
 {
-    ( void )p1;
-    ( void )p2;
+    if
+    (
+           XSFloatIsEqualToFloat( p1.x, p2.x )
+        && XSFloatIsEqualToFloat( p1.y, p2.y )
+    )
+    {
+        return true;
+    }
     
     return false;
 }

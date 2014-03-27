@@ -71,8 +71,21 @@
 
 bool XSRectIsEqualToToRect( XSRect r1, XSRect r2 )
 {
-    ( void )r1;
-    ( void )r2;
+    if( XSRectIsNull( r1 ) && XSRectIsNull( r2 ) )
+    {
+        return true;
+    }
+    
+    if
+    (
+           XSFloatIsEqualToFloat( r1.origin.x,   r2.origin.y )
+        && XSFloatIsEqualToFloat( r1.origin.y,   r2.origin.y )
+        && XSFloatIsEqualToFloat( r1.size.width, r2.size.width )
+        && XSFloatIsEqualToFloat( r1.size.width, r2.size.height )
+    )
+    {
+        return true;
+    }
     
     return false;
 }

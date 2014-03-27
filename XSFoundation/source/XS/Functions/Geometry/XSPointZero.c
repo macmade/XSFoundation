@@ -71,7 +71,5 @@
 
 XSPoint XSPointZero( void )
 {
-    XSPoint p;
-    
-    return p;
+    return XSPointMake( ( XSFloat )0, ( XSFloat )0 );
 }

@@ -62,30 +62,25 @@
 /* $Id$ */
 
 /*!
- * @file        XSRectIntersectsRect.c
+ * @file        XSEdgeInsetsIsEqualToEdgeInsets.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRectIntersectsRect
+ * @abstract    Definition for XSEdgeInsetsIsEqualToEdgeInsets
  */
 
 #include <XS/XS.h>
 
-bool XSRectIntersectsRect( XSRect rect1, XSRect rect2 )
+bool XSEdgeInsetsIsEqualToEdgeInsets( XSEdgeInsets e1, XSEdgeInsets e2 )
 {
-    if( XSRectIsEmpty( rect1 ) || XSRectIsEmpty( rect2 ) )
-    {
-        return false;
-    }
-    
     if
     (
-           XSRectGetMaxX( rect1 ) <= rect2.origin.x
-        || XSRectGetMaxY( rect1 ) <= rect2.origin.y
-        || XSRectGetMaxX( rect2 ) <= rect1.origin.x
-        || XSRectGetMaxY( rect2 ) <= rect1.origin.y
+           XSFloatIsEqualToFloat( e1.left,   e2.top )
+        && XSFloatIsEqualToFloat( e1.top,    e2.top )
+        && XSFloatIsEqualToFloat( e1.right,  e2.right )
+        && XSFloatIsEqualToFloat( e1.bottom, e2.bottom )
     )
     {
-        return false;
+        return true;
     }
     
-    return true;
+    return false;
 }

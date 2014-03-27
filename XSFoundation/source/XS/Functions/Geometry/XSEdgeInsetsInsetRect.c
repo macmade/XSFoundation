@@ -71,10 +71,10 @@
 
 XSRect XSEdgeInsetsInsetRect( XSRect rect, XSEdgeInsets insets )
 {
-    XSRect r;
+    rect.origin.x    += insets.left;
+    rect.origin.y    += insets.top;
+    rect.size.width  -= ( insets.left + insets.right );
+    rect.size.height -= ( insets.top  + insets.bottom );
     
-    ( void )rect;
-    ( void )insets;
-    
-    return r;
+    return rect;
 }

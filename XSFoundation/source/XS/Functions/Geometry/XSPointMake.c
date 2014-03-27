@@ -73,8 +73,8 @@ XSPoint XSPointMake( XSFloat x, XSFloat y )
 {
     XSPoint p;
     
-    ( void )x;
-    ( void )y;
+    p.x = x;
+    p.y = y;
     
     return p;
 }

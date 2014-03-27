@@ -71,8 +71,16 @@
 
 bool XSRectContainsPoint( XSRect rect, XSPoint point )
 {
-    ( void )rect;
-    ( void )point;
+    if
+    (
+           ( point.x >= rect.origin.x )
+        && ( point.y >= rect.origin.y )
+        && ( point.x <  XSRectGetMaxX( rect ) )
+        && ( point.y <  XSRectGetMaxY( rect ) )
+    )
+    {
+        return true;
+    }
     
     return false;
 }

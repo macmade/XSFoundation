@@ -71,9 +71,8 @@
 
 XSRect XSRectStandardize( XSRect rect )
 {
-    XSRect r;
+    rect.size.width  = XSFloatAbsoluteValue( rect.size.width );
+    rect.size.height = XSFloatAbsoluteValue( rect.size.height );
     
-    ( void )rect;
-    
-    return r;
+    return rect;
 }

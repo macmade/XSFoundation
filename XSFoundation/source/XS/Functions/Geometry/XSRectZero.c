@@ -71,7 +71,5 @@
 
 XSRect XSRectZero( void )
 {
-    XSRect r;
-    
-    return r;
+    return XSRectMake( ( XSFloat )0, ( XSFloat )0, ( XSFloat )0, ( XSFloat )0 );
 }

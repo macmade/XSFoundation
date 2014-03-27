@@ -71,7 +71,5 @@
 
 XSFloat XSRectGetMidX( XSRect rect )
 {
-    ( void )rect;
-    
-    return ( XSFloat )0;
+    return rect.origin.x + ( rect.size.width * ( XSFloat )0.5 );
 }

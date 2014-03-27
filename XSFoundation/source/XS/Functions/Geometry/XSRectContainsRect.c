@@ -71,8 +71,21 @@
 
 bool XSRectContainsRect( XSRect rect1, XSRect rect2 )
 {
-    ( void )rect1;
-    ( void )rect2;
+    if( XSRectIsEmpty( rect2 ) )
+    {
+        return false;
+    }
+    
+    if
+    (
+           ( rect1.origin.x <= rect2.origin.x )
+        && ( rect1.origin.y <= rect2.origin.y )
+        && ( XSRectGetMaxX( rect1 ) >= XSRectGetMaxX( rect2 ) )
+        && ( XSRectGetMaxY( rect1 ) >= XSRectGetMaxY( rect2 ) )
+    )
+    {
+        return true;
+    }
     
     return false;
 }

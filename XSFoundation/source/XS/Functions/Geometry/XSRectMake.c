@@ -73,10 +73,10 @@ XSRect XSRectMake( XSFloat x, XSFloat y, XSFloat width, XSFloat height )
 {
     XSRect r;
     
-    ( void )x;
-    ( void )y;
-    ( void )width;
-    ( void )height;
+    r.origin.x    = x;
+    r.origin.y    = y;
+    r.size.width  = width;
+    r.size.height = height;
     
     return r;
 }

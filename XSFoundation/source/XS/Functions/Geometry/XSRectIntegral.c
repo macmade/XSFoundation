@@ -73,7 +73,15 @@ XSRect XSRectIntegral( XSRect rect )
 {
     XSRect r;
     
-    ( void )rect;
+    if( XSRectIsEmpty( rect ) )
+    {
+        return XSRectZero();
+    }
+    
+    r.origin.x    = XSFloatFloor( rect.origin.x );
+    r.origin.y    = XSFloatFloor( rect.origin.y );
+    r.size.width  = XSFloatCeil( XSRectGetMaxX( rect ) ) - r.origin.x;
+    r.size.height = XSFloatCeil( XSRectGetMaxY( rect ) ) - r.origin.y;
     
     return r;
 }

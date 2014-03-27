@@ -73,8 +73,8 @@ XSRange XSRangeUnion( XSRange r1, XSRange r2 )
 {
     XSRange r;
     
-    ( void )r1;
-    ( void )r2;
+    r.location = XS_MIN( r1.location, r2.location );
+    r.length   = XS_MAX( XSRangeMax( r1 ), XSRangeMax( r2 ) ) - r.location;
     
     return r;
 }

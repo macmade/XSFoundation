@@ -71,11 +71,8 @@
 
 XSRect XSRectOffset( XSRect rect, XSFloat dx, XSFloat dy )
 {
-    XSRect r;
+    rect.origin.x += dx;
+    rect.origin.y += dy;
     
-    ( void )rect;
-    ( void )dx;
-    ( void )dy;
-    
-    return r;
+    return rect;
 }

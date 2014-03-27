@@ -72,9 +72,32 @@
 XSRect XSRectUnion( XSRect r1, XSRect r2 )
 {
     XSRect r;
+    bool   empty1;
+    bool   empty2;
     
-    ( void )r1;
-    ( void )r2;
+    r1 = XSRectStandardize( r1 );
+    r2 = XSRectStandardize( r2 );
+    
+    empty1 = XSRectIsEmpty( r1 );
+    empty2 = XSRectIsEmpty( r2 );
+    
+    if( empty1 && empty2 )
+    {
+        return XSRectZero();
+    }
+    else if( empty1 )
+    {
+        return r2;
+    }
+    else if( empty2 )
+    {
+        return r1;
+    }
+    
+    r.origin.x    = XS_MIN( r1.origin.x, r2.origin.x );
+    r.origin.y    = XS_MIN( r1.origin.y, r2.origin.y );
+    r.size.width  = XS_MAX( XSRectGetMaxX( r1 ), XSRectGetMaxX( r2 ) ) - r.origin.x;
+    r.size.height = XS_MAX( XSRectGetMaxY( r1 ), XSRectGetMaxY( r2 ) ) - r.origin.y;
     
     return r;
 }
