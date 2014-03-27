@@ -91,7 +91,7 @@ int main( int argc, const char * argv[] )
         XSBooleanRef bool3;
         
         bool1 = XSBoolean_Create( true );
-        bool2 = XSBoolean_Create( true );
+        bool2 = XSCopy( bool1 );
         bool3 = XSBoolean_Create( false );
         
         printf( "bool1: %p\n", bool1 );
