@@ -62,22 +62,84 @@
 /* $Id$ */
 
 /*!
- * @header      XSGeometry.h
+ * @header      XSRange.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation geometry functions
+ * @abstract    XSRange functions
  */
 
 #ifndef __XS_H__
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_FUNCTIONS_XS_GEOMETRY_H__
-#define __XS_FUNCTIONS_XS_GEOMETRY_H__
+#ifndef __XS_FUNCTIONS_XS_GEOMETRY_XS_RANGE_H__
+#define __XS_FUNCTIONS_XS_GEOMETRY_XS_RANGE_H__
 
-#include <XS/Functions/XSGeometry/XSPoint.h>
-#include <XS/Functions/XSGeometry/XSSize.h>
-#include <XS/Functions/XSGeometry/XSRect.h>
-#include <XS/Functions/XSGeometry/XSEdgeInsets.h>
-#include <XS/Functions/XSGeometry/XSRange.h>
+XS_EXTERN_C_BEGIN
 
-#endif /* __XS_FUNCTIONS_XS_GEOMETRY_H__ */
+#include <XS/XSTypes.h>
+
+/*!
+ * @function    XSRangeMake
+ * @abstract    Creates an range with the specified location and length
+ * @param       location    The range's location
+ * @param       length      The range's length
+ * @return      The range
+ */
+XS_EXPORT XSRange XSRangeMake( XSUInteger location, XSUInteger length );
+
+/*!
+ * @function    XSRangeZero
+ * @abstract    Creates a range with zero location and length
+ * @return      The range
+ */
+XS_EXPORT XSRange XSRangeZero( void );
+
+/*!
+ * @function    XSRangeMax
+ * @abstract    Returns the sum of the location and length of the range
+ * @param       range       The range
+ * @return      The sum of the location and length of the range
+ */
+XS_EXPORT XSUInteger XSRangeMax( XSRange range );
+
+/*!
+ * @function    XSRangeIsEqualToRange
+ * @abstract    Checks if two ranges are equal
+ * @param       r1      The first range to compare
+ * @param       r2      The second range to compare
+ * @return      True if both ranges are equal, otherwise false
+ */
+XS_EXPORT bool XSRangeIsEqualToRange( XSRange r1, XSRange r2 );
+
+/*!
+ * @function    XSRangeLocationInRange
+ * @abstract    Checks whether a specified position is in a given range
+ * @param       location    The location
+ * @param       range       The range
+ * @return      True if the location is in the given range, otherwise false
+ */
+XS_EXPORT bool XSRangeLocationInRange( XSUInteger location, XSRange range );
+
+/*!
+ * @function    XSRangeIntersection
+ * @abstract    Returns the intersection of the specified ranges
+ * @param       r1      The first range
+ * @param       r2      The second range
+ * @return      A range containing the indices that exist in both ranges
+ */
+XS_EXPORT XSRange XSRangeIntersection( XSRange r1, XSRange r2 );
+
+/*!
+ * @function    XSRangeUnion
+ * @abstract    Returns the union of the specified ranges
+ * @param       r1      The first range
+ * @param       r2      The second range
+ * @discussion  If one range is completely contained in the other, the returned
+ *              range is equal to the larger range.
+ * @return      A range covering all indices in and between r1 and r2
+ */
+XS_EXPORT XSRange XSRangeUnion( XSRange r1, XSRange r2 );
+
+XS_EXTERN_C_END
+
+#endif /* __XS_FUNCTIONS_XS_GEOMETRY_XS_RANGE_H__ */

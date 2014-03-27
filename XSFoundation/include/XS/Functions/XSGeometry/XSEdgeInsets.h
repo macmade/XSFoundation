@@ -62,22 +62,51 @@
 /* $Id$ */
 
 /*!
- * @header      XSGeometry.h
+ * @header      XSEdgeInsets.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation geometry functions
+ * @abstract    XSEdgeInsets functions
  */
 
 #ifndef __XS_H__
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_FUNCTIONS_XS_GEOMETRY_H__
-#define __XS_FUNCTIONS_XS_GEOMETRY_H__
+#ifndef __XS_FUNCTIONS_XS_GEOMETRY_XS_EDGE_INSETS_H__
+#define __XS_FUNCTIONS_XS_GEOMETRY_XS_EDGE_INSETS_H__
 
-#include <XS/Functions/XSGeometry/XSPoint.h>
-#include <XS/Functions/XSGeometry/XSSize.h>
-#include <XS/Functions/XSGeometry/XSRect.h>
-#include <XS/Functions/XSGeometry/XSEdgeInsets.h>
-#include <XS/Functions/XSGeometry/XSRange.h>
+XS_EXTERN_C_BEGIN
 
-#endif /* __XS_FUNCTIONS_XS_GEOMETRY_H__ */
+#include <XS/XSTypes.h>
+
+/*!
+ * @function    XSEdgeInsetsMake
+ * @abstract    Creates an edge insets with the specified inset values
+ * @param       top     The inset at the top
+ * @param       left    The inset on the left
+ * @param       bottom  The inset on the bottom
+ * @param       right   The inset on the right
+ * @return      The edge insets
+ */
+XS_EXPORT XSEdgeInsets XSEdgeInsetsMake( XSFloat top, XSFloat left, XSFloat bottom, XSFloat right );
+
+/*!
+ * @function    XSEdgeInsetsIsEqualToEdgeInsets
+ * @abstract    Checks if two edge insets are equal
+ * @param       e1      The first edge insets to compare
+ * @param       e2      The second edge insets to compare
+ * @return      True if both edge insets are equal, otherwise false
+ */
+XS_EXPORT bool XSEdgeInsetsIsEqualToEdgeInsets( XSEdgeInsets e1, XSEdgeInsets e2 );
+
+/*!
+ * @function    XSEdgeInsetsInsetRect
+ * @abstract    Adjusts a rectangle by the given edge insets
+ * @param       rect    The rectangle to adjust
+ * @param       insets  The edge insets
+ * @return      The adjusted rectangle
+ */
+XS_EXPORT XSRect XSEdgeInsetsInsetRect( XSRect rect, XSEdgeInsets insets );
+
+XS_EXTERN_C_END
+
+#endif /* __XS_FUNCTIONS_XS_GEOMETRY_XS_EDGE_INSETS_H__ */

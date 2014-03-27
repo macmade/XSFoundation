@@ -62,22 +62,47 @@
 /* $Id$ */
 
 /*!
- * @header      XSGeometry.h
+ * @header      XSPoint.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation geometry functions
+ * @abstract    XSPoint functions
  */
 
 #ifndef __XS_H__
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_FUNCTIONS_XS_GEOMETRY_H__
-#define __XS_FUNCTIONS_XS_GEOMETRY_H__
+#ifndef __XS_FUNCTIONS_XS_GEOMETRY_XS_POINT_H__
+#define __XS_FUNCTIONS_XS_GEOMETRY_XS_POINT_H__
 
-#include <XS/Functions/XSGeometry/XSPoint.h>
-#include <XS/Functions/XSGeometry/XSSize.h>
-#include <XS/Functions/XSGeometry/XSRect.h>
-#include <XS/Functions/XSGeometry/XSEdgeInsets.h>
-#include <XS/Functions/XSGeometry/XSRange.h>
+XS_EXTERN_C_BEGIN
 
-#endif /* __XS_FUNCTIONS_XS_GEOMETRY_H__ */
+#include <XS/XSTypes.h>
+
+/*!
+ * @function    XSPointMake
+ * @abstract    Creates a point with the specified coordinates
+ * @param       x       The X coordinate
+ * @param       y       The Y coordinate
+ * @return      The point
+ */
+XS_EXPORT XSPoint XSPointMake( XSFloat x, XSFloat y );
+
+/*!
+ * @function    XSPointZero
+ * @abstract    Creates a point with zero coordinates
+ * @return      The point
+ */
+XS_EXPORT XSPoint XSPointZero( void );
+
+/*!
+ * @function    XSPointIsEqualToPoint
+ * @abstract    Checks if two points are equal
+ * @param       p1      The first point to compare
+ * @param       p2      The second second to compare
+ * @return      True if both points are equal, otherwise false
+ */
+XS_EXPORT bool XSPointIsEqualToPoint( XSPoint p1, XSPoint p2 );
+
+XS_EXTERN_C_END
+
+#endif /* __XS_FUNCTIONS_XS_GEOMETRY_XS_POINT_H__ */

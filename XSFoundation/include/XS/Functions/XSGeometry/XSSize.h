@@ -62,22 +62,47 @@
 /* $Id$ */
 
 /*!
- * @header      XSGeometry.h
+ * @header      XSSize.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation geometry functions
+ * @abstract    XSSize functions
  */
 
 #ifndef __XS_H__
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_FUNCTIONS_XS_GEOMETRY_H__
-#define __XS_FUNCTIONS_XS_GEOMETRY_H__
+#ifndef __XS_FUNCTIONS_XS_GEOMETRY_XS_SIZE_H__
+#define __XS_FUNCTIONS_XS_GEOMETRY_XS_SIZE_H__
 
-#include <XS/Functions/XSGeometry/XSPoint.h>
-#include <XS/Functions/XSGeometry/XSSize.h>
-#include <XS/Functions/XSGeometry/XSRect.h>
-#include <XS/Functions/XSGeometry/XSEdgeInsets.h>
-#include <XS/Functions/XSGeometry/XSRange.h>
+XS_EXTERN_C_BEGIN
 
-#endif /* __XS_FUNCTIONS_XS_GEOMETRY_H__ */
+#include <XS/XSTypes.h>
+
+/*!
+ * @function    XSSizeMake
+ * @abstract    Creates a size with the specified width and height
+ * @param       width   The width
+ * @param       height  The height
+ * @return      The size
+ */
+XS_EXPORT XSSize XSSizeMake( XSFloat width, XSFloat height );
+
+/*!
+ * @function    XSSizeZero
+ * @abstract    Creates a size with zero width and height
+ * @return      The size
+ */
+XS_EXPORT XSSize XSSizeZero( void );
+
+/*!
+ * @function    XSSizeIsEqualToSize
+ * @abstract    Checks if two sizes are equal
+ * @param       s1      The first size to compare
+ * @param       s2      The second size to compare
+ * @return      True if both sizes are equal, otherwise false
+ */
+XS_EXPORT bool XSSizeIsEqualToSize( XSSize s1, XSSize s2 );
+
+XS_EXTERN_C_END
+
+#endif /* __XS_FUNCTIONS_XS_GEOMETRY_XS_SIZE_H__ */
