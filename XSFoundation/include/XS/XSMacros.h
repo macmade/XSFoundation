@@ -153,6 +153,64 @@
                                     + __XS_VERS_BUG__ * 100     \
                                     + __XS_VERS_PATCH__ )
 
+#if !defined( __STRICT_ANSI__ ) && ( defined( __GNUC__ ) || defined( __clang__ ) )
+    
+    /*!
+     * @def             XS_MIN
+     * @abstract        Gets the minimum value of two values
+     * @param           _a_     The first value
+     * @param           _b_     The second value
+     * @return          The minimum value of the two values
+     */
+    #define XS_MIN( _a_, _b_ )      ( { __typeof__( _a_ ) __a; __typeof__( _b_ ) __b; __a = ( _a_ ); __b = ( _b_ ); ( __a < __b ) ? __a : __b; } )
+    
+    /*!
+     * @def             XS_MAX
+     * @abstract        Gets the maximum value of two values
+     * @param           _a_     The first value
+     * @param           _b_     The second value
+     * @return          The maximum value of the two values
+     */
+    #define XS_MAX( _a_, _b_ )      ( { __typeof__( _a_ ) __a; __typeof__( _b_ ) __b; __a = ( _a_ ); __b = ( _b_ ); ( __a < __b ) ? __b : __a; } )
+    
+    /*!
+     * @def             XS_ABS
+     * @abstract        Gets an absolute value of a value
+     * @param           _a_     The value
+     * @return          The absolute value of the value
+     */
+    #define XS_ABS( _a_ )           ( { __typeof__( _a_ ) __a = ( _a_ ); ( __a < 0 ) ? -__a : __a; } )
+    
+#else
+    
+    /*!
+     * @def             XS_MIN
+     * @abstract        Gets the minimum value of two values
+     * @param           _a_     The first value
+     * @param           _b_     The second value
+     * @return          The minimum value of the two values
+     */
+    #define XS_MIN( _a_, _b_ )      ( ( ( _a_ ) < ( _b_ ) ) ? ( _a_ ) : ( _b_ ) )
+    
+    /*!
+     * @def             XS_MAX
+     * @abstract        Gets the maximum value of two values
+     * @param           _a_     The first value
+     * @param           _b_     The second value
+     * @return          The maximum value of the two values
+     */
+    #define XS_MAX( _a_, _b_ )      ( ( ( _a_ ) > ( _b_ ) ) ? ( _a_ ) : ( _b_ ) )
+    
+    /*!
+     * @def             XS_ABS
+     * @abstract        Gets an absolute value of a value
+     * @param           _a_     The value
+     * @return          The absolute value of the value
+     */
+    #define XS_ABS( _a_ )           ( ( ( _a_ ) < 0 ) ? ( -( _a_ ) ) : ( _a_ ) )
+    
+#endif
+
 /*!
  * @def         XSFatalError
  * @abstract    Issues a fatal error message and aborts the program
