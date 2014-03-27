@@ -95,6 +95,14 @@ XS_EXPORT XSInt32 XSAtomic_Increment32( volatile XSInt32 * value );
 XS_EXPORT XSInt64 XSAtomic_Increment64( volatile XSInt64 * value );
 
 /*!
+ * @function    XSAtomic_IncrementInteger
+ * @abstract    Atomically increments an integer value
+ * @param       value   The integer value to increment
+ * @return      The new value
+ */
+XS_EXPORT XSInteger XSAtomic_IncrementInteger( volatile XSInteger * value );
+
+/*!
  * @function    XSAtomic_Decrement32
  * @abstract    Atomically decrements a 32 bits value
  * @param       value   The 32 bits value to decrement
@@ -109,6 +117,14 @@ XS_EXPORT XSInt32 XSAtomic_Decrement32( volatile XSInt32 * value );
  * @return      The new value
  */
 XS_EXPORT XSInt64 XSAtomic_Decrement64( volatile XSInt64 * value );
+
+/*!
+ * @function    XSAtomic_DecrementInteger
+ * @abstract    Atomically decrements an integer value
+ * @param       value   The integer value to decrement
+ * @return      The new value
+ */
+XS_EXPORT XSInteger XSAtomic_DecrementInteger( volatile XSInteger * value );
 
 /*!
  * @function    XSAtomic_CompareAndSwap32
@@ -129,6 +145,16 @@ XS_EXPORT bool XSAtomic_CompareAndSwap32( XSInt32 oldValue, XSInt32 newValue, vo
  * @return      True if the comparison was equal and the swap occured
  */
 XS_EXPORT bool XSAtomic_CompareAndSwap64( XSInt64 oldValue, XSInt64 newValue, volatile XSInt64 * value );
+
+/*!
+ * @function    XSAtomic_CompareAndSwapInteger
+ * @abstract    Atomically compares and swaps an integer value
+ * @param       oldValue    The integer value to test
+ * @param       newValue    The integer value to swap
+ * @param       value       The integer value to compare and swap
+ * @return      True if the comparison was equal and the swap occured
+ */
+XS_EXPORT bool XSAtomic_CompareAndSwapInteger( XSInteger oldValue, XSInteger newValue, volatile XSInteger * value );
 
 /*!
  * @function    XSAtomic_CompareAndSwapPointer
