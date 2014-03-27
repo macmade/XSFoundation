@@ -64,6 +64,7 @@
 /*!
  * @header      XSApplicationArgument.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+ * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSApplicationArgument class
  */
 

@@ -64,6 +64,7 @@
 /*!
  * @header      XS.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+ * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSFoundation main include file
  * @discussion  This file should be included on projects using the XEOS C
  *              Foundation Library. Other header files should never be included

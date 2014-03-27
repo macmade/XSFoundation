@@ -64,6 +64,7 @@
 /*!
  * @header      XSFloat64.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+ * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSFloat64 type definition
  */
 

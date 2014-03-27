@@ -64,6 +64,7 @@
 /*!
  * @file        XSAtomic_Increment64.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+ * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    Definition for XSAtomic_Increment64
  */
 
