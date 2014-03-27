@@ -71,7 +71,10 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSLog.h>
 
-void XSLogRect( XSRect r )
+void XSLogSizeWithInfos( XSSize s, const char * file, int line, const char * func )
 {
-    ( void )r;
+    ( void )s;
+    ( void )file;
+    ( void )line;
+    ( void )func;
 }

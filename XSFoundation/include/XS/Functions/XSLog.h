@@ -222,6 +222,41 @@ XS_EXTERN_C_BEGIN
 #define XSFatalError( ... )                 XSFatalErrorWithInfos( __FILE__, __LINE__, __func__, __VA_ARGS__ )
 
 /*!
+ * @def         XSLogPointWithInfos
+ * @abstract    Logs a point structure to the standard error output
+ * @param       _p_     The point structure (XSPoint)
+ */
+#define XSLogPoint( _p_ )                   XSLogPointWithInfos( _p_, __FILE__, __LINE__, __func__ )
+
+/*!
+ * @def         XSLogSizeWithInfos
+ * @abstract    Logs a size structure to the standard error output
+ * @param       _s_     The size structure (XSSize)
+ */
+#define XSLogSize( _s_ )                    XSLogSizeWithInfos( _s_, __FILE__, __LINE__, __func__ )
+
+/*!
+ * @def         XSLogRectWithInfos
+ * @abstract    Logs a rectangle structure to the standard error output
+ * @param       _r_     The rectangle structure (XSRect)
+ */
+#define XSLogRect( _r_ )                    XSLogRectWithInfos( _r_, __FILE__, __LINE__, __func__ )
+
+/*!
+ * @def         XSLogEdgeInsetsWithInfos
+ * @abstract    Logs an edge insets structure to the standard error output
+ * @param       _e_     The edge insets structure (XSEdgeInsets)
+ */
+#define XSLogEdgeInsets( _e_ )              XSLogEdgeInsetsWithInfos( _e_, __FILE__, __LINE__, __func__ )
+
+/*!
+ * @def         XSLogRangeWithInfos
+ * @abstract    Logs a range structure to the standard error output
+ * @param       _r_     The range structure (XSRange)
+ */
+#define XSLogRange( _r_ )                   XSLogRangeWithInfos( _r_, __FILE__, __LINE__, __func__ )
+
+/*!
  * @function    XSSetLogLevel
  * @abstract    Gets the log level for XSLog functions/macros
  * @return      The actual log level
@@ -277,39 +312,64 @@ void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char 
 void XSFatalErrorWithInfos( const char * file, int line, const char * func, const char * fmt, ... ) XS_FORMAT_ATTRIBUTE( printf, 4, 5 );
 
 /*!
- * @function    XSLogPoint
+ * @function    XSLogPointWithInfos
  * @abstract    Logs a point structure to the standard error output
  * @param       p       The point structure
+ * @param       file    The file in which the log occurs
+ * @param       line    The line number of the file in which the log occurs
+ * @param       func    The function in which the log occurs
+ * @discussion  Do not use this function directly. Use the XSLogPoint macro
+ *              instead.
  */
-void XSLogPoint( XSPoint p );
+void XSLogPointWithInfos( XSPoint p, const char * file, int line, const char * func );
 
 /*!
- * @function    XSLogSize
+ * @function    XSLogSizeWithInfos
  * @abstract    Logs a size structure to the standard error output
  * @param       s       The size structure
+ * @param       file    The file in which the log occurs
+ * @param       line    The line number of the file in which the log occurs
+ * @param       func    The function in which the log occurs
+ * @discussion  Do not use this function directly. Use the XSLogSize macro
+ *              instead.
  */
-void XSLogSize( XSSize s );
+void XSLogSizeWithInfos( XSSize s, const char * file, int line, const char * func );
 
 /*!
- * @function    XSLogRect
+ * @function    XSLogRectWithInfos
  * @abstract    Logs a rectangle structure to the standard error output
  * @param       r       The rectangle structure
+ * @param       file    The file in which the log occurs
+ * @param       line    The line number of the file in which the log occurs
+ * @param       func    The function in which the log occurs
+ * @discussion  Do not use this function directly. Use the XSLogRect macro
+ *              instead.
  */
-void XSLogRect( XSRect r );
+void XSLogRectWithInfos( XSRect r, const char * file, int line, const char * func );
 
 /*!
- * @function    XSLogEdgeInsets
+ * @function    XSLogEdgeInsetsWithInfos
  * @abstract    Logs an edge insets structure to the standard error output
  * @param       e       The edge insets structure
+ * @param       file    The file in which the log occurs
+ * @param       line    The line number of the file in which the log occurs
+ * @param       func    The function in which the log occurs
+ * @discussion  Do not use this function directly. Use the XSLogEdgeInsets macro
+ *              instead.
  */
-void XSLogEdgeInsets( XSEdgeInsets e );
+void XSLogEdgeInsetsWithInfos( XSEdgeInsets e, const char * file, int line, const char * func );
 
 /*!
- * @function    XSLogRange
+ * @function    XSLogRangeWithInfos
  * @abstract    Logs a range structure to the standard error output
  * @param       r       The range structure
+ * @param       file    The file in which the log occurs
+ * @param       line    The line number of the file in which the log occurs
+ * @param       func    The function in which the log occurs
+ * @discussion  Do not use this function directly. Use the XSLogRange macro
+ *              instead.
  */
-void XSLogRange( XSRange r );
+void XSLogRangeWithInfos( XSRange r, const char * file, int line, const char * func );
 
 XS_EXTERN_C_END
 

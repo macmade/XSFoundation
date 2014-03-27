@@ -71,7 +71,10 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSLog.h>
 
-void XSLogPoint( XSPoint p )
+void XSLogRangeWithInfos( XSRange r, const char * file, int line, const char * func )
 {
-    ( void )p;
+    ( void )r;
+    ( void )file;
+    ( void )line;
+    ( void )func;
 }

@@ -71,7 +71,10 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSLog.h>
 
-void XSLogEdgeInsets( XSEdgeInsets e )
+void XSLogRectWithInfos( XSRect r, const char * file, int line, const char * func )
 {
-    ( void )e;
+    ( void )r;
+    ( void )file;
+    ( void )line;
+    ( void )func;
 }
