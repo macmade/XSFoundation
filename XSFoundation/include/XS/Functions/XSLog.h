@@ -78,7 +78,191 @@ XS_EXTERN_C_BEGIN
 
 #include <XS/XSTypes.h>
 
+/*!
+ * @def         XSLog
+ * @abstract    Logs a message (info level) to the standard error output
+ * @param       _fmt_   The format string (printf like)
+ * @param       ...     Arguments for the format
+ */
+#define XSLog( _fmt_, ... )                 XSLogWithInfos( _fmt_, XSLogLevelInfo, __FILE__, __LINE__, __func__, __VA_ARGS__ )
 
+/*!
+ * @def         XSLogEmergency
+ * @abstract    Logs a message (emergency level) to the standard error output
+ * @param       _fmt_   The format string (printf like)
+ * @param       ...     Arguments for the format
+ */
+#define XSLogEmergency( _fmt_, ... )        XSLogWithInfos( _fmt_, XSLogLevelEmergency, __FILE__, __LINE__, __func__, __VA_ARGS__ )
+
+/*!
+ * @def         XSLogAlert
+ * @abstract    Logs a message (alert level) to the standard error output
+ * @param       _fmt_   The format string (printf like)
+ * @param       ...     Arguments for the format
+ */
+#define XSLogAlert( _fmt_, ... )            XSLogWithInfos( _fmt_, XSLogLevelAlert, __FILE__, __LINE__, __func__, __VA_ARGS__ )
+
+/*!
+ * @def         XSLogCritical
+ * @abstract    Logs a message (critical level) to the standard error output
+ * @param       _fmt_   The format string (printf like)
+ * @param       ...     Arguments for the format
+ */
+#define XSLogCritical( _fmt_, ... )         XSLogWithInfos( _fmt_, XSLogLevelCritical, __FILE__, __LINE__, __func__, __VA_ARGS__ )
+
+/*!
+ * @def         XSLogError
+ * @abstract    Logs a message (error level) to the standard error output
+ * @param       _fmt_   The format string (printf like)
+ * @param       ...     Arguments for the format
+ */
+#define XSLogError( _fmt_, ... )            XSLogWithInfos( _fmt_, XSLogLevelError, __FILE__, __LINE__, __func__, __VA_ARGS__ )
+
+/*!
+ * @def         XSLogWarning
+ * @abstract    Logs a message (warning level) to the standard error output
+ * @param       _fmt_   The format string (printf like)
+ * @param       ...     Arguments for the format
+ */
+#define XSLogWarning( _fmt_, ... )          XSLogWithInfos( _fmt_, XSLogLevelWarning, __FILE__, __LINE__, __func__, __VA_ARGS__ )
+
+/*!
+ * @def         XSLogNotice
+ * @abstract    Logs a message (notice level) to the standard error output
+ * @param       _fmt_   The format string (printf like)
+ * @param       ...     Arguments for the format
+ */
+#define XSLogNotice( _fmt_, ... )           XSLogWithInfos( _fmt_, XSLogLevelNotice, __FILE__, __LINE__, __func__, __VA_ARGS__ )
+
+/*!
+ * @def         XSLogInfo
+ * @abstract    Logs a message (info level) to the standard error output
+ * @param       _fmt_   The format string (printf like)
+ * @param       ...     Arguments for the format
+ */
+#define XSLogInfo( _fmt_, ... )             XSLogWithInfos( _fmt_, XSLogLevelInfo, __FILE__, __LINE__, __func__, __VA_ARGS__ )
+
+/*!
+ * @def         XSLogDebug
+ * @abstract    Logs a message (debug level) to the standard error output
+ * @param       _fmt_   The format string (printf like)
+ * @param       ...     Arguments for the format
+ */
+#define XSLogDebug( _fmt_, ... )            XSLogWithInfos( _fmt_, XSLogLevelDebug, __FILE__, __LINE__, __func__, __VA_ARGS__ )
+
+/*!
+ * @def         XSVLog
+ * @abstract    Logs a message (info level) to the standard error output
+ * @param       _fmt_   The format string (printf like)
+ * @param       _args_  Arguments for the format (va_list)
+ */
+#define XSVLog( _fmt_, _args_ )             XSLogWithInfos( _fmt_, XSLogLevelInfo, __FILE__, __LINE__, __func__, _args_ )
+
+/*!
+ * @def         XSVLogEmergency
+ * @abstract    Logs a message (emergency level) to the standard error output
+ * @param       _fmt_   The format string (printf like)
+ * @param       _args_  Arguments for the format (va_list)
+ */
+#define XSVLogEmergency( _fmt_, _args_ )    XSLogWithInfos( _fmt_, XSLogLevelEmergency, __FILE__, __LINE__, __func__, _args_ )
+
+/*!
+ * @def         XSVLogAlert
+ * @abstract    Logs a message (alert level) to the standard error output
+ * @param       _fmt_   The format string (printf like)
+ * @param       _args_  Arguments for the format (va_list)
+ */
+#define XSVLogAlert( _fmt_, _args_ )        XSLogWithInfos( _fmt_, XSLogLevelAlert, __FILE__, __LINE__, __func__, _args_ )
+
+/*!
+ * @def         XSVLogCritical
+ * @abstract    Logs a message (critical level) to the standard error output
+ * @param       _fmt_   The format string (printf like)
+ * @param       _args_  Arguments for the format (va_list)
+ */
+#define XSVLogCritical( _fmt_, _args_ )     XSLogWithInfos( _fmt_, XSLogLevelCritical, __FILE__, __LINE__, __func__, _args_ )
+
+/*!
+ * @def         XSVLogError
+ * @abstract    Logs a message (error level) to the standard error output
+ * @param       _fmt_   The format string (printf like)
+ * @param       _args_  Arguments for the format (va_list)
+ */
+#define XSVLogError( _fmt_, _args_ )        XSLogWithInfos( _fmt_, XSLogLevelError, __FILE__, __LINE__, __func__, _args_ )
+
+/*!
+ * @def         XSVLogWarning
+ * @abstract    Logs a message (warning level) to the standard error output
+ * @param       _fmt_   The format string (printf like)
+ * @param       _args_  Arguments for the format (va_list)
+ */
+#define XSVLogWarning( _fmt_, _args_ )      XSLogWithInfos( _fmt_, XSLogLevelWarning, __FILE__, __LINE__, __func__, _args_ )
+
+/*!
+ * @def         XSVLogNotice
+ * @abstract    Logs a message (notice level) to the standard error output
+ * @param       _fmt_   The format string (printf like)
+ * @param       _args_  Arguments for the format (va_list)
+ */
+#define XSVLogNotice( _fmt_, _args_ )       XSLogWithInfos( _fmt_, XSLogLevelNotice, __FILE__, __LINE__, __func__, _args_ )
+
+/*!
+ * @def         XSVLogInfo
+ * @abstract    Logs a message (info level) to the standard error output
+ * @param       _fmt_   The format string (printf like)
+ * @param       _args_  Arguments for the format (va_list)
+ */
+#define XSVLogInfo( _fmt_, _args_ )         XSLogWithInfos( _fmt_, XSLogLevelInfo, __FILE__, __LINE__, __func__, _args_ )
+
+/*!
+ * @def         XSVLogDebug
+ * @abstract    Logs a message (debug level) to the standard error output
+ * @param       _fmt_   The format string (printf like)
+ * @param       _args_  Arguments for the format (va_list)
+ */
+#define XSVLogDebug( _fmt_, _args_ )        XSLogWithInfos( _fmt_, XSLogLevelDebug, __FILE__, __LINE__, __func__, _args_ )
+
+/*!
+ * @function    XSSetLogLevel
+ * @abstract    Gets the log level for XSLog functions/macros
+ * @return      The actual log level
+ * @see         XSLogLevel
+ */
+XSInteger XSGetLogLevel( void );
+
+/*!
+ * @function    XSSetLogLevel
+ * @abstract    Sets the log level for XSLog functions/macros
+ * @param       level   The desired log level
+ * @see         XSLogLevel
+ */
+void XSSetLogLevel( XSInteger level );
+
+/*!
+ * @function    XSLogWithInfos
+ * @abstract    Logs a message to the standard error output
+ * @param       fmt     The format string (printf like)
+ * @param       file    The file in which the log occurs
+ * @param       line    The line number of the file in which the log occurs
+ * @param       func    The function in which the log occurs
+ * @param       ...     Arguments for the format
+ * @discussion  Do not use this function directly. Use the XSLog... macros
+ *              instead.
+ */
+void XSLogWithInfos( const char * fmt, XSLogLevel level, const char * file, int line, const char * func, ... ) XS_FORMAT_ATTRIBUTE( printf, 1, 6 );
+
+/*!
+ * @function    XSVLogWithInfos
+ * @abstract    Logs a message to the standard error output
+ * @param       fmt     The format string (printf like)
+ * @param       file    The file in which the log occurs
+ * @param       line    The line number of the file in which the log occurs
+ * @param       func    The function in which the log occurs
+ * @param       args    Arguments for the format
+ * @discussion  Do not use this function directly. Use the XSVLog... macros
+ *              instead.
+ */
+void XSVLogWithInfos( const char * fmt, XSLogLevel level, const char * file, int line, const char * func, va_list args ) XS_FORMAT_ATTRIBUTE( printf, 1, 0 );
 
 XS_EXTERN_C_END
 

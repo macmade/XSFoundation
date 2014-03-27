@@ -1616,6 +1616,7 @@
 		0573873618E4A0A800A8BF4A /* XSTypes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = XSTypes; sourceTree = "<group>"; };
 		0573873718E4A0A800A8BF4A /* XSTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSTypes.h; sourceTree = "<group>"; };
 		0573876918E4D38800A8BF4A /* __private */ = {isa = PBXFileReference; lastKnownFileType = folder; path = __private; sourceTree = "<group>"; };
+		0573876A18E4D6E800A8BF4A /* XSLogLevel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XSLogLevel.h; path = XSFoundation/include/XS/XSTypes/XSLogLevel.h; sourceTree = "<group>"; };
 		0593E24518E4919D00BABBA9 /* XSAtomic_CompareAndSwap32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSAtomic_CompareAndSwap32.c; sourceTree = "<group>"; };
 		0593E24618E4919D00BABBA9 /* XSAtomic_CompareAndSwap64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSAtomic_CompareAndSwap64.c; sourceTree = "<group>"; };
 		0593E24718E4919D00BABBA9 /* XSAtomic_CompareAndSwapPointer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSAtomic_CompareAndSwapPointer.c; sourceTree = "<group>"; };
@@ -1746,6 +1747,7 @@
 		051B662118DCA7160079238C = {
 			isa = PBXGroup;
 			children = (
+				0573876A18E4D6E800A8BF4A /* XSLogLevel.h */,
 				051B663118DCA7350079238C /* XSFoundation */,
 				051B66B718DCAAC30079238C /* XSTest */,
 				051B662B18DCA7160079238C /* Products */,
