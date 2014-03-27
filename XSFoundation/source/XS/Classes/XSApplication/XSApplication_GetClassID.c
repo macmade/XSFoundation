@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSApplication.h>
+#include <XS/__private/Classes/XSApplication.h>
 
 XSClassID XSApplication_GetClassID( void )
 {

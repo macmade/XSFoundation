@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSSemaphore.h>
+#include <XS/__private/Classes/XSSemaphore.h>
 
 bool __XSSemaphore_Equals( XSSemaphoreRef object1, XSSemaphoreRef object2 )
 {

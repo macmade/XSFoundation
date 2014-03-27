@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSError.h>
+#include <XS/__private/Classes/XSError.h>
 
 void __XSError_Initialize( void )
 {

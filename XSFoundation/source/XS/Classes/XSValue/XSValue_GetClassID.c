@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSValue.h>
+#include <XS/__private/Classes/XSValue.h>
 
 XSClassID XSValue_GetClassID( void )
 {

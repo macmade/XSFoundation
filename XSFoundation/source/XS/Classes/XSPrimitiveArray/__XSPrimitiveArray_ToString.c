@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSPrimitiveArray.h>
+#include <XS/__private/Classes/XSPrimitiveArray.h>
 
 const char * __XSPrimitiveArray_ToString( XSPrimitiveArrayRef object )
 {

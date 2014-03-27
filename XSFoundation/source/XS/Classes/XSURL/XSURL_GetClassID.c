@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSURL.h>
+#include <XS/__private/Classes/XSURL.h>
 
 XSClassID XSURL_GetClassID( void )
 {

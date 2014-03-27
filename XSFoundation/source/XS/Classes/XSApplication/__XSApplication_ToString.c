@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSApplication.h>
+#include <XS/__private/Classes/XSApplication.h>
 
 const char * __XSApplication_ToString( XSApplicationRef object )
 {

@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSNull.h>
+#include <XS/__private/Classes/XSNull.h>
 
 XSClassID XSNull_GetClassID( void )
 {

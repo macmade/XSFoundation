@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSException.h>
+#include <XS/__private/Classes/XSException.h>
 
 bool __XSException_Equals( XSExceptionRef object1, XSExceptionRef object2 )
 {

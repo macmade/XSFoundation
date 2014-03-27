@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSNotification.h>
+#include <XS/__private/Classes/XSNotification.h>
 
 void __XSNotification_Constructor( XSNotificationRef object )
 {

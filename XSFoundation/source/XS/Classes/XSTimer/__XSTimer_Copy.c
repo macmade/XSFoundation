@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSTimer.h>
+#include <XS/__private/Classes/XSTimer.h>
 
 void __XSTimer_Copy( XSTimerRef source, XSTimerRef destination )
 {

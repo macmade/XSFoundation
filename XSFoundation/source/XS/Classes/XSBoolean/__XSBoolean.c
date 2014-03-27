@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSBoolean.h>
+#include <XS/__private/Classes/XSBoolean.h>
 
 XSClassID   __XSBoolean_ClassID = 0;
 XSClassInfo __XSBoolean_Class   =

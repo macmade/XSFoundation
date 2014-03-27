@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSNumber.h>
+#include <XS/__private/Classes/XSNumber.h>
 
 void __XSNumber_Copy( XSNumberRef source, XSNumberRef destination )
 {

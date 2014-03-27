@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSAutoreleasePool.h>
+#include <XS/__private/Classes/XSAutoreleasePool.h>
 
 void __XSAutoreleasePool_Initialize( void )
 {

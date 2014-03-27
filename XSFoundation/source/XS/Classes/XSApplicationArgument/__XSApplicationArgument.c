@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSApplicationArgument.h>
+#include <XS/__private/Classes/XSApplicationArgument.h>
 
 XSClassID   __XSApplicationArgument_ClassID = 0;
 XSClassInfo __XSApplicationArgument_Class   =

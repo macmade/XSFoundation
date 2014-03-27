@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSBoolean.h>
+#include <XS/__private/Classes/XSBoolean.h>
 
 XSClassID XSBoolean_GetClassID( void )
 {

@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSError.h>
+#include <XS/__private/Classes/XSError.h>
 
 const char * __XSError_ToString( XSErrorRef object )
 {

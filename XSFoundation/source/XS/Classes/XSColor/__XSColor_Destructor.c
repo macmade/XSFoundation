@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSColor.h>
+#include <XS/__private/Classes/XSColor.h>
 
 void __XSColor_Destructor( XSColorRef object )
 {

@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSBag.h>
+#include <XS/__private/Classes/XSBag.h>
 
 void __XSBag_Initialize( void )
 {

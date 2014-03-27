@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSValue.h>
+#include <XS/__private/Classes/XSValue.h>
 
 bool __XSValue_Equals( XSValueRef object1, XSValueRef object2 )
 {

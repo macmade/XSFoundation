@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSArray.h>
+#include <XS/__private/Classes/XSArray.h>
 
 const char * __XSArray_ToString( XSArrayRef object )
 {

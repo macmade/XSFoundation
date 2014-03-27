@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Functions/XSRuntime.h>
+#include <XS/__private/Functions/XSRuntime.h>
 
 XSClassInfoDestructorCallback __XSRuntime_GetDestructorCallback( XSClassID classID )
 {

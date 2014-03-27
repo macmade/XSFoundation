@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSPrimitiveArray.h>
+#include <XS/__private/Classes/XSPrimitiveArray.h>
 
 XSClassID   __XSPrimitiveArray_ClassID = 0;
 XSClassInfo __XSPrimitiveArray_Class   =

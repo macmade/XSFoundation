@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSFile.h>
+#include <XS/__private/Classes/XSFile.h>
 
 bool __XSFile_Equals( XSFileRef object1, XSFileRef object2 )
 {

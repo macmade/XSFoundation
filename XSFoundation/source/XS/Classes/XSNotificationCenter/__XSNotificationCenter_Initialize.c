@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSNotificationCenter.h>
+#include <XS/__private/Classes/XSNotificationCenter.h>
 
 void __XSNotificationCenter_Initialize( void )
 {

@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSTimer.h>
+#include <XS/__private/Classes/XSTimer.h>
 
 XSClassID   __XSTimer_ClassID = 0;
 XSClassInfo __XSTimer_Class   =

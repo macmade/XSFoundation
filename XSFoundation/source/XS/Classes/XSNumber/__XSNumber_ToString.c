@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSNumber.h>
+#include <XS/__private/Classes/XSNumber.h>
 
 const char * __XSNumber_ToString( XSNumberRef object )
 {

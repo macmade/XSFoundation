@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSAutoreleasePool.h>
+#include <XS/__private/Classes/XSAutoreleasePool.h>
 
 const char * __XSAutoreleasePool_ToString( XSAutoreleasePoolRef object )
 {

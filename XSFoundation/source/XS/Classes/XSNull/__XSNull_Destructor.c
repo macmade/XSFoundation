@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSNull.h>
+#include <XS/__private/Classes/XSNull.h>
 
 void __XSNull_Destructor( XSNullRef object )
 {

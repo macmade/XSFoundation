@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSDate.h>
+#include <XS/__private/Classes/XSDate.h>
 
 void __XSDate_Copy( XSDateRef source, XSDateRef destination )
 {

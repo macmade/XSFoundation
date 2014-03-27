@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSApplicationArgument.h>
+#include <XS/__private/Classes/XSApplicationArgument.h>
 
 void __XSApplicationArgument_Constructor( XSApplicationArgumentRef object )
 {

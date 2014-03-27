@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSLock.h>
+#include <XS/__private/Classes/XSLock.h>
 
 void __XSLock_Copy( XSLockRef source, XSLockRef destination )
 {

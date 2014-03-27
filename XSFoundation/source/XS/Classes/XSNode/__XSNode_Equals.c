@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSNode.h>
+#include <XS/__private/Classes/XSNode.h>
 
 bool __XSNode_Equals( XSNodeRef object1, XSNodeRef object2 )
 {

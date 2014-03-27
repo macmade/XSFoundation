@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSThread.h>
+#include <XS/__private/Classes/XSThread.h>
 
 bool __XSThread_Equals( XSThreadRef object1, XSThreadRef object2 )
 {

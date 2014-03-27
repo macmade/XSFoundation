@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSDate.h>
+#include <XS/__private/Classes/XSDate.h>
 
 XSClassID   __XSDate_ClassID = 0;
 XSClassInfo __XSDate_Class   =

@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSBoolean.h>
+#include <XS/__private/Classes/XSBoolean.h>
 
 bool __XSBoolean_Equals( XSBooleanRef object1, XSBooleanRef object2 )
 {

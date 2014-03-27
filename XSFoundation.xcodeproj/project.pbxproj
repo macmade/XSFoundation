@@ -1608,10 +1608,6 @@
 		055D194218E1F47D00894C7B /* __XSValue_Initialize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSValue_Initialize.c; sourceTree = "<group>"; };
 		055D194318E1F47D00894C7B /* __XSValue_ToString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSValue_ToString.c; sourceTree = "<group>"; };
 		055D194418E1F47D00894C7B /* XSValue_GetClassID.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_GetClassID.c; sourceTree = "<group>"; };
-		0573872D18E4A09A00A8BF4A /* Classes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Classes; sourceTree = "<group>"; };
-		0573872E18E4A09A00A8BF4A /* Functions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Functions; sourceTree = "<group>"; };
-		0573872F18E4A09A00A8BF4A /* XSWarnings-Clang.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XSWarnings-Clang.h"; sourceTree = "<group>"; };
-		0573873018E4A09A00A8BF4A /* XSWarnings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSWarnings.h; sourceTree = "<group>"; };
 		0573873118E4A0A800A8BF4A /* C99.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = C99.h; sourceTree = "<group>"; };
 		0573873218E4A0A800A8BF4A /* Classes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Classes; sourceTree = "<group>"; };
 		0573873318E4A0A800A8BF4A /* Functions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Functions; sourceTree = "<group>"; };
@@ -1619,6 +1615,7 @@
 		0573873518E4A0A800A8BF4A /* XSMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSMacros.h; sourceTree = "<group>"; };
 		0573873618E4A0A800A8BF4A /* XSTypes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = XSTypes; sourceTree = "<group>"; };
 		0573873718E4A0A800A8BF4A /* XSTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSTypes.h; sourceTree = "<group>"; };
+		0573876918E4D38800A8BF4A /* __private */ = {isa = PBXFileReference; lastKnownFileType = folder; path = __private; sourceTree = "<group>"; };
 		0593E24518E4919D00BABBA9 /* XSAtomic_CompareAndSwap32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSAtomic_CompareAndSwap32.c; sourceTree = "<group>"; };
 		0593E24618E4919D00BABBA9 /* XSAtomic_CompareAndSwap64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSAtomic_CompareAndSwap64.c; sourceTree = "<group>"; };
 		0593E24718E4919D00BABBA9 /* XSAtomic_CompareAndSwapPointer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSAtomic_CompareAndSwapPointer.c; sourceTree = "<group>"; };
@@ -1780,7 +1777,6 @@
 		051B663218DCA7350079238C /* include */ = {
 			isa = PBXGroup;
 			children = (
-				0573864F18E4A08B00A8BF4A /* __private */,
 				0573867318E4A08B00A8BF4A /* XS */,
 			);
 			path = include;
@@ -2258,20 +2254,10 @@
 			path = XSValue;
 			sourceTree = "<group>";
 		};
-		0573864F18E4A08B00A8BF4A /* __private */ = {
-			isa = PBXGroup;
-			children = (
-				0573872D18E4A09A00A8BF4A /* Classes */,
-				0573872E18E4A09A00A8BF4A /* Functions */,
-				0573872F18E4A09A00A8BF4A /* XSWarnings-Clang.h */,
-				0573873018E4A09A00A8BF4A /* XSWarnings.h */,
-			);
-			path = __private;
-			sourceTree = "<group>";
-		};
 		0573867318E4A08B00A8BF4A /* XS */ = {
 			isa = PBXGroup;
 			children = (
+				0573876918E4D38800A8BF4A /* __private */,
 				0573873118E4A0A800A8BF4A /* C99.h */,
 				0573873218E4A0A800A8BF4A /* Classes */,
 				0573873318E4A0A800A8BF4A /* Functions */,
@@ -2498,10 +2484,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0573874118E4A19800A8BF4A /* C99.h in Headers */,
 				0573874218E4A19800A8BF4A /* Classes in Headers */,
 				0573874318E4A19800A8BF4A /* Functions in Headers */,
 				0573874618E4A19800A8BF4A /* XSTypes in Headers */,
+				0573874118E4A19800A8BF4A /* C99.h in Headers */,
 				0573874418E4A19800A8BF4A /* XS.h in Headers */,
 				0573874518E4A19800A8BF4A /* XSMacros.h in Headers */,
 				0573874718E4A19800A8BF4A /* XSTypes.h in Headers */,
@@ -2512,10 +2498,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0573874818E4A1A700A8BF4A /* C99.h in Headers */,
 				0573874918E4A1A700A8BF4A /* Classes in Headers */,
 				0573874A18E4A1A700A8BF4A /* Functions in Headers */,
 				0573874D18E4A1A700A8BF4A /* XSTypes in Headers */,
+				0573874818E4A1A700A8BF4A /* C99.h in Headers */,
 				0573874B18E4A1A700A8BF4A /* XS.h in Headers */,
 				0573874C18E4A1A700A8BF4A /* XSMacros.h in Headers */,
 				0573874E18E4A1A700A8BF4A /* XSTypes.h in Headers */,
@@ -2526,12 +2512,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0573873818E4A0B300A8BF4A /* C99.h in Headers */,
 				0573873918E4A0B500A8BF4A /* Classes in Headers */,
 				0573873A18E4A0B700A8BF4A /* Functions in Headers */,
+				0573873D18E4A0C200A8BF4A /* XSTypes in Headers */,
+				0573873818E4A0B300A8BF4A /* C99.h in Headers */,
 				0573873B18E4A0BA00A8BF4A /* XS.h in Headers */,
 				0573873C18E4A0BD00A8BF4A /* XSMacros.h in Headers */,
-				0573873D18E4A0C200A8BF4A /* XSTypes in Headers */,
 				0573873E18E4A0C500A8BF4A /* XSTypes.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

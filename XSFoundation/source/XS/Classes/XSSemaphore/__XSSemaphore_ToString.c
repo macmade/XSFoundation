@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSSemaphore.h>
+#include <XS/__private/Classes/XSSemaphore.h>
 
 const char * __XSSemaphore_ToString( XSSemaphoreRef object )
 {

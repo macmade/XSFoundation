@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSDate.h>
+#include <XS/__private/Classes/XSDate.h>
 
 const char * __XSDate_ToString( XSDateRef object )
 {

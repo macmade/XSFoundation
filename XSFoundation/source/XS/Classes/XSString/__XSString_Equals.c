@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSString.h>
+#include <XS/__private/Classes/XSString.h>
 
 bool __XSString_Equals( XSStringRef object1, XSStringRef object2 )
 {

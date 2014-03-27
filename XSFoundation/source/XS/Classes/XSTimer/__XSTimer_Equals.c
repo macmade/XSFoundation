@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSTimer.h>
+#include <XS/__private/Classes/XSTimer.h>
 
 bool __XSTimer_Equals( XSTimerRef object1, XSTimerRef object2 )
 {

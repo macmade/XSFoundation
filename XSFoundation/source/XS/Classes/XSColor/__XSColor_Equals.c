@@ -68,7 +68,7 @@
  */
 
 #include <XS/XS.h>
-#include <__private/Classes/XSColor.h>
+#include <XS/__private/Classes/XSColor.h>
 
 bool __XSColor_Equals( XSColorRef object1, XSColorRef object2 )
 {
