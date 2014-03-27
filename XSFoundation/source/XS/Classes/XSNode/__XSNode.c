@@ -75,10 +75,10 @@ XSClassInfo __XSNode_Class   =
 {
     "XSNode",
     sizeof( struct __XSNode ),
-    ( XSClassInfoConstructorCallback )__XSNode_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSNode_Destructor,
-    ( XSClassInfoCopyCallback        )__XSNode_Copy,
-    ( XSClassInfoEqualsCallback      )__XSNode_Equals,
-    ( XSClassInfoToStringCallback    )__XSNode_ToString
+    ( XSClassCallbackConstructor )__XSNode_Constructor,
+    ( XSClassCallbackDestructor  )__XSNode_Destructor,
+    ( XSClassCallbackCopy        )__XSNode_Copy,
+    ( XSClassCallbackEquals      )__XSNode_Equals,
+    ( XSClassCallbackToString    )__XSNode_ToString
 };
 

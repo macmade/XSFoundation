@@ -62,29 +62,30 @@
 /* $Id$ */
 
 /*!
- * @header      XSClassInfoConstructorCallback.h
+ * @header      XSClassCallbackToString.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSClassInfoConstructorCallback type definition
+ * @abstract    XSClassCallbackToString type definition
  */
 
 #ifndef __XS_H__
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_TYPES_XS_CLASS_INFO_CONSTRUCTOR_CALLBACK_H__
-#define __XS_TYPES_XS_CLASS_INFO_CONSTRUCTOR_CALLBACK_H__
+#ifndef __XS_TYPES_XS_CLASS_CALLBACK_TO_STRING_H__
+#define __XS_TYPES_XS_CLASS_CALLBACK_TO_STRING_H__
 
 XS_EXTERN_C_BEGIN
 
 #include <XS/XSTypes/XSObjectRef.h>
 
 /*!
- * @typedef     XSClassInfoConstructorCallback
- * @abstract    Class constructor callback
- * @param       object      The object beeing construct
+ * @typedef     XSClassCallbackToString
+ * @abstract    Class to-string callback
+ * @param       object      The object for which to get a description
+ * @return      The object's description
  */
-typedef void ( * XSClassInfoConstructorCallback )( XSObjectRef object );
+typedef const char * ( * XSClassCallbackToString )( XSObjectRef object );
 
 XS_EXTERN_C_END
 
-#endif /* __XS_TYPES_XS_CLASS_INFO_CONSTRUCTOR_CALLBACK_H__ */
+#endif /* __XS_TYPES_XS_CLASS_CALLBACK_TO_STRING_H__ */

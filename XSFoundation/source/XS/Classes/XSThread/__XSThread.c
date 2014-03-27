@@ -75,10 +75,10 @@ XSClassInfo __XSThread_Class   =
 {
     "XSThread",
     sizeof( struct __XSThread ),
-    ( XSClassInfoConstructorCallback )__XSThread_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSThread_Destructor,
-    ( XSClassInfoCopyCallback        )__XSThread_Copy,
-    ( XSClassInfoEqualsCallback      )__XSThread_Equals,
-    ( XSClassInfoToStringCallback    )__XSThread_ToString
+    ( XSClassCallbackConstructor )__XSThread_Constructor,
+    ( XSClassCallbackDestructor  )__XSThread_Destructor,
+    ( XSClassCallbackCopy        )__XSThread_Copy,
+    ( XSClassCallbackEquals      )__XSThread_Equals,
+    ( XSClassCallbackToString    )__XSThread_ToString
 };
 

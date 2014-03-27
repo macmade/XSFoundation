@@ -75,10 +75,10 @@ XSClassInfo __XSDate_Class   =
 {
     "XSDate",
     sizeof( struct __XSDate ),
-    ( XSClassInfoConstructorCallback )__XSDate_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSDate_Destructor,
-    ( XSClassInfoCopyCallback        )__XSDate_Copy,
-    ( XSClassInfoEqualsCallback      )__XSDate_Equals,
-    ( XSClassInfoToStringCallback    )__XSDate_ToString
+    ( XSClassCallbackConstructor )__XSDate_Constructor,
+    ( XSClassCallbackDestructor  )__XSDate_Destructor,
+    ( XSClassCallbackCopy        )__XSDate_Copy,
+    ( XSClassCallbackEquals      )__XSDate_Equals,
+    ( XSClassCallbackToString    )__XSDate_ToString
 };
 

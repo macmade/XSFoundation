@@ -75,10 +75,10 @@ XSClassInfo __XSRecursiveLock_Class   =
 {
     "XSRecursiveLock",
     sizeof( struct __XSRecursiveLock ),
-    ( XSClassInfoConstructorCallback )__XSRecursiveLock_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSRecursiveLock_Destructor,
-    ( XSClassInfoCopyCallback        )__XSRecursiveLock_Copy,
-    ( XSClassInfoEqualsCallback      )__XSRecursiveLock_Equals,
-    ( XSClassInfoToStringCallback    )__XSRecursiveLock_ToString
+    ( XSClassCallbackConstructor )__XSRecursiveLock_Constructor,
+    ( XSClassCallbackDestructor  )__XSRecursiveLock_Destructor,
+    ( XSClassCallbackCopy        )__XSRecursiveLock_Copy,
+    ( XSClassCallbackEquals      )__XSRecursiveLock_Equals,
+    ( XSClassCallbackToString    )__XSRecursiveLock_ToString
 };
 

@@ -74,7 +74,7 @@
 void XSReleaseWithInfos( void * memory, const char * file, int line, const char * func )
 {
     __XSMemoryObject            * object;
-    XSClassInfoDestructorCallback destructor;
+    XSClassCallbackDestructor destructor;
     
     ( void )file;
     ( void )line;

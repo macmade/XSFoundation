@@ -62,30 +62,30 @@
 /* $Id$ */
 
 /*!
- * @header      XSClassInfoToStringCallback.h
+ * @header      XSClassCallbackCopy.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSClassInfoToStringCallback type definition
+ * @abstract    XSClassCallbackCopy type definition
  */
 
 #ifndef __XS_H__
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_TYPES_XS_CLASS_INFO_TO_STRING_CALLBACK_H__
-#define __XS_TYPES_XS_CLASS_INFO_TO_STRING_CALLBACK_H__
+#ifndef __XS_TYPES_XS_CLASS_CALLBACK_COPY_H__
+#define __XS_TYPES_XS_CLASS_CALLBACK_COPY_H__
 
 XS_EXTERN_C_BEGIN
 
 #include <XS/XSTypes/XSObjectRef.h>
 
 /*!
- * @typedef     XSClassInfoToStringCallback
- * @abstract    Class to-string callback
- * @param       object      The object for which to get a description
- * @return      The object's description
+ * @typedef     XSClassCallbackCopy
+ * @abstract    Class copy callback
+ * @param       source      The object to copy
+ * @param       destination The object beeing copied
  */
-typedef const char * ( * XSClassInfoToStringCallback )( XSObjectRef object );
+typedef void ( * XSClassCallbackCopy )( XSObjectRef source, XSObjectRef destination );
 
 XS_EXTERN_C_END
 
-#endif /* __XS_TYPES_XS_CLASS_INFO_TO_STRING_CALLBACK_H__ */
+#endif /* __XS_TYPES_XS_CLASS_CALLBACK_COPY_H__ */

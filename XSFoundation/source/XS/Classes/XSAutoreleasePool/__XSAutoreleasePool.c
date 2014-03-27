@@ -75,10 +75,10 @@ XSClassInfo __XSAutoreleasePool_Class   =
 {
     "XSAutoreleasePool",
     sizeof( struct __XSAutoreleasePool ),
-    ( XSClassInfoConstructorCallback )__XSAutoreleasePool_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSAutoreleasePool_Destructor,
-    ( XSClassInfoCopyCallback        )__XSAutoreleasePool_Copy,
-    ( XSClassInfoEqualsCallback      )__XSAutoreleasePool_Equals,
-    ( XSClassInfoToStringCallback    )__XSAutoreleasePool_ToString
+    ( XSClassCallbackConstructor )__XSAutoreleasePool_Constructor,
+    ( XSClassCallbackDestructor  )__XSAutoreleasePool_Destructor,
+    ( XSClassCallbackCopy        )__XSAutoreleasePool_Copy,
+    ( XSClassCallbackEquals      )__XSAutoreleasePool_Equals,
+    ( XSClassCallbackToString    )__XSAutoreleasePool_ToString
 };
 

@@ -75,10 +75,10 @@ XSClassInfo __XSString_Class   =
 {
     "XSString",
     sizeof( struct __XSString ),
-    ( XSClassInfoConstructorCallback )__XSString_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSString_Destructor,
-    ( XSClassInfoCopyCallback        )__XSString_Copy,
-    ( XSClassInfoEqualsCallback      )__XSString_Equals,
-    ( XSClassInfoToStringCallback    )__XSString_ToString
+    ( XSClassCallbackConstructor )__XSString_Constructor,
+    ( XSClassCallbackDestructor  )__XSString_Destructor,
+    ( XSClassCallbackCopy        )__XSString_Copy,
+    ( XSClassCallbackEquals      )__XSString_Equals,
+    ( XSClassCallbackToString    )__XSString_ToString
 };
 

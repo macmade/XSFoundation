@@ -75,10 +75,10 @@ XSClassInfo __XSNumber_Class   =
 {
     "XSNumber",
     sizeof( struct __XSNumber ),
-    ( XSClassInfoConstructorCallback )__XSNumber_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSNumber_Destructor,
-    ( XSClassInfoCopyCallback        )__XSNumber_Copy,
-    ( XSClassInfoEqualsCallback      )__XSNumber_Equals,
-    ( XSClassInfoToStringCallback    )__XSNumber_ToString
+    ( XSClassCallbackConstructor )__XSNumber_Constructor,
+    ( XSClassCallbackDestructor  )__XSNumber_Destructor,
+    ( XSClassCallbackCopy        )__XSNumber_Copy,
+    ( XSClassCallbackEquals      )__XSNumber_Equals,
+    ( XSClassCallbackToString    )__XSNumber_ToString
 };
 

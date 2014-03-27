@@ -75,10 +75,10 @@ XSClassInfo __XSSet_Class   =
 {
     "XSSet",
     sizeof( struct __XSSet ),
-    ( XSClassInfoConstructorCallback )__XSSet_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSSet_Destructor,
-    ( XSClassInfoCopyCallback        )__XSSet_Copy,
-    ( XSClassInfoEqualsCallback      )__XSSet_Equals,
-    ( XSClassInfoToStringCallback    )__XSSet_ToString
+    ( XSClassCallbackConstructor )__XSSet_Constructor,
+    ( XSClassCallbackDestructor  )__XSSet_Destructor,
+    ( XSClassCallbackCopy        )__XSSet_Copy,
+    ( XSClassCallbackEquals      )__XSSet_Equals,
+    ( XSClassCallbackToString    )__XSSet_ToString
 };
 

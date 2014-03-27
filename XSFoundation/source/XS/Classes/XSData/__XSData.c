@@ -75,10 +75,10 @@ XSClassInfo __XSData_Class   =
 {
     "XSData",
     sizeof( struct __XSData ),
-    ( XSClassInfoConstructorCallback )__XSData_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSData_Destructor,
-    ( XSClassInfoCopyCallback        )__XSData_Copy,
-    ( XSClassInfoEqualsCallback      )__XSData_Equals,
-    ( XSClassInfoToStringCallback    )__XSData_ToString
+    ( XSClassCallbackConstructor )__XSData_Constructor,
+    ( XSClassCallbackDestructor  )__XSData_Destructor,
+    ( XSClassCallbackCopy        )__XSData_Copy,
+    ( XSClassCallbackEquals      )__XSData_Equals,
+    ( XSClassCallbackToString    )__XSData_ToString
 };
 

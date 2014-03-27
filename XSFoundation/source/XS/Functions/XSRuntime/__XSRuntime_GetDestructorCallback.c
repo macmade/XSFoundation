@@ -70,7 +70,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
-XSClassInfoDestructorCallback __XSRuntime_GetDestructorCallback( XSClassID classID )
+XSClassCallbackDestructor __XSRuntime_GetDestructorCallback( XSClassID classID )
 {
     const XSClassInfo * info;
     

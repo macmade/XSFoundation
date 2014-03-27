@@ -62,31 +62,29 @@
 /* $Id$ */
 
 /*!
- * @header      XSClassInfoEqualsCallback.h
+ * @header      XSClassCallbackDestructor.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSClassInfoEqualsCallback type definition
+ * @abstract    XSClassCallbackDestructor type definition
  */
 
 #ifndef __XS_H__
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_TYPES_XS_CLASS_INFO_EQUALS_CALLBACK_H__
-#define __XS_TYPES_XS_CLASS_INFO_EQUALS_CALLBACK_H__
+#ifndef __XS_TYPES_XS_CLASS_CALLBACK_DESTRUCTOR_H__
+#define __XS_TYPES_XS_CLASS_CALLBACK_DESTRUCTOR_H__
 
 XS_EXTERN_C_BEGIN
 
 #include <XS/XSTypes/XSObjectRef.h>
 
 /*!
- * @typedef     XSClassInfoEqualsCallback
- * @abstract    Class equals callback
- * @param       object1     The first object to compare
- * @param       object2     The second object to compare
- * @return      True if both objects are equals, otherwise false
+ * @typedef     XSClassCallbackDestructor
+ * @abstract    Class destructor callback
+ * @param       object      The object beeing destruct
  */
-typedef bool ( * XSClassInfoEqualsCallback )( XSObjectRef object1, XSObjectRef object2 );
+typedef void ( * XSClassCallbackDestructor )( XSObjectRef object );
 
 XS_EXTERN_C_END
 
-#endif /* __XS_TYPES_XS_CLASS_INFO_EQUALS_CALLBACK_H__ */
+#endif /* __XS_TYPES_XS_CLASS_CALLBACK_DESTRUCTOR_H__ */

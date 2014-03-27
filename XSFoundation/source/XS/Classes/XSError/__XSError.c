@@ -75,10 +75,10 @@ XSClassInfo __XSError_Class   =
 {
     "XSError",
     sizeof( struct __XSError ),
-    ( XSClassInfoConstructorCallback )__XSError_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSError_Destructor,
-    ( XSClassInfoCopyCallback        )__XSError_Copy,
-    ( XSClassInfoEqualsCallback      )__XSError_Equals,
-    ( XSClassInfoToStringCallback    )__XSError_ToString
+    ( XSClassCallbackConstructor )__XSError_Constructor,
+    ( XSClassCallbackDestructor  )__XSError_Destructor,
+    ( XSClassCallbackCopy        )__XSError_Copy,
+    ( XSClassCallbackEquals      )__XSError_Equals,
+    ( XSClassCallbackToString    )__XSError_ToString
 };
 

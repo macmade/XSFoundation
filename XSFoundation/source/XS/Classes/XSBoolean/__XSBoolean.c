@@ -75,10 +75,10 @@ XSClassInfo __XSBoolean_Class   =
 {
     "XSBoolean",
     sizeof( struct __XSBoolean ),
-    ( XSClassInfoConstructorCallback )__XSBoolean_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSBoolean_Destructor,
-    ( XSClassInfoCopyCallback        )__XSBoolean_Copy,
-    ( XSClassInfoEqualsCallback      )__XSBoolean_Equals,
-    ( XSClassInfoToStringCallback    )__XSBoolean_ToString
+    ( XSClassCallbackConstructor )__XSBoolean_Constructor,
+    ( XSClassCallbackDestructor  )__XSBoolean_Destructor,
+    ( XSClassCallbackCopy        )__XSBoolean_Copy,
+    ( XSClassCallbackEquals      )__XSBoolean_Equals,
+    ( XSClassCallbackToString    )__XSBoolean_ToString
 };
 

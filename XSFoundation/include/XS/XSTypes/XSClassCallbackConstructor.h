@@ -62,29 +62,29 @@
 /* $Id$ */
 
 /*!
- * @header      XSClassInfoDestructorCallback.h
+ * @header      XSClassCallbackConstructor.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSClassInfoDestructorCallback type definition
+ * @abstract    XSClassCallbackConstructor type definition
  */
 
 #ifndef __XS_H__
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_TYPES_XS_CLASS_INFO_DESTRUCTOR_CALLBACK_H__
-#define __XS_TYPES_XS_CLASS_INFO_DESTRUCTOR_CALLBACK_H__
+#ifndef __XS_TYPES_XS_CLASS_CALLBACK_CONSTRUCTOR_H__
+#define __XS_TYPES_XS_CLASS_CALLBACK_CONSTRUCTOR_H__
 
 XS_EXTERN_C_BEGIN
 
 #include <XS/XSTypes/XSObjectRef.h>
 
 /*!
- * @typedef     XSClassInfoDestructorCallback
- * @abstract    Class destructor callback
- * @param       object      The object beeing destruct
+ * @typedef     XSClassCallbackConstructor
+ * @abstract    Class constructor callback
+ * @param       object      The object beeing construct
  */
-typedef void ( * XSClassInfoDestructorCallback )( XSObjectRef object );
+typedef void ( * XSClassCallbackConstructor )( XSObjectRef object );
 
 XS_EXTERN_C_END
 
-#endif /* __XS_TYPES_XS_CLASS_INFO_DESTRUCTOR_CALLBACK_H__ */
+#endif /* __XS_TYPES_XS_CLASS_CALLBACK_CONSTRUCTOR_H__ */

@@ -75,7 +75,7 @@ XS_EXPORT bool XSEquals( void * memory1, void * memory2 )
 {
     __XSMemoryObject        * object1;
     __XSMemoryObject        * object2;
-    XSClassInfoEqualsCallback equals;
+    XSClassCallbackEquals equals;
     
     if( memory1 == NULL || memory2 == NULL )
     {

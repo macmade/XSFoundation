@@ -75,7 +75,7 @@ XSObjectRef XSCopyWithInfos( void * memory, const char * file, int line, const c
 {
     __XSMemoryObject      * object;
     void                  * data;
-    XSClassInfoCopyCallback copy;
+    XSClassCallbackCopy copy;
     
     if( memory == NULL )
     {

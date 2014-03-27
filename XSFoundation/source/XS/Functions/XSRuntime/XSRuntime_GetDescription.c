@@ -72,7 +72,7 @@
 
 const char * XSRuntime_GetDescription( XSObjectRef object )
 {
-    XSClassInfoToStringCallback toString;
+    XSClassCallbackToString toString;
     
     toString = __XSRuntime_GetToStringCallback( XSRuntime_GetClassID( object ) );
     

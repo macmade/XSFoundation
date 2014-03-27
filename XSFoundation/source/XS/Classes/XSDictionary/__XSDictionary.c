@@ -75,10 +75,10 @@ XSClassInfo __XSDictionary_Class   =
 {
     "XSDictionary",
     sizeof( struct __XSDictionary ),
-    ( XSClassInfoConstructorCallback )__XSDictionary_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSDictionary_Destructor,
-    ( XSClassInfoCopyCallback        )__XSDictionary_Copy,
-    ( XSClassInfoEqualsCallback      )__XSDictionary_Equals,
-    ( XSClassInfoToStringCallback    )__XSDictionary_ToString
+    ( XSClassCallbackConstructor )__XSDictionary_Constructor,
+    ( XSClassCallbackDestructor  )__XSDictionary_Destructor,
+    ( XSClassCallbackCopy        )__XSDictionary_Copy,
+    ( XSClassCallbackEquals      )__XSDictionary_Equals,
+    ( XSClassCallbackToString    )__XSDictionary_ToString
 };
 

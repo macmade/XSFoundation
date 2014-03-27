@@ -62,30 +62,31 @@
 /* $Id$ */
 
 /*!
- * @header      XSClassInfoCopyCallback.h
+ * @header      XSClassCallbackEquals.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    XSClassInfoCopyCallback type definition
+ * @abstract    XSClassCallbackEquals type definition
  */
 
 #ifndef __XS_H__
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_TYPES_XS_CLASS_INFO_COPY_CALLBACK_H__
-#define __XS_TYPES_XS_CLASS_INFO_COPY_CALLBACK_H__
+#ifndef __XS_TYPES_XS_CLASS_CALLBACK_EQUALS_H__
+#define __XS_TYPES_XS_CLASS_CALLBACK_EQUALS_H__
 
 XS_EXTERN_C_BEGIN
 
 #include <XS/XSTypes/XSObjectRef.h>
 
 /*!
- * @typedef     XSClassInfoCopyCallback
- * @abstract    Class copy callback
- * @param       source      The object to copy
- * @param       destination The object beeing copied
+ * @typedef     XSClassCallbackEquals
+ * @abstract    Class equals callback
+ * @param       object1     The first object to compare
+ * @param       object2     The second object to compare
+ * @return      True if both objects are equals, otherwise false
  */
-typedef void ( * XSClassInfoCopyCallback )( XSObjectRef source, XSObjectRef destination );
+typedef bool ( * XSClassCallbackEquals )( XSObjectRef object1, XSObjectRef object2 );
 
 XS_EXTERN_C_END
 
-#endif /* __XS_TYPES_XS_CLASS_INFO_COPY_CALLBACK_H__ */
+#endif /* __XS_TYPES_XS_CLASS_CALLBACK_EQUALS_H__ */

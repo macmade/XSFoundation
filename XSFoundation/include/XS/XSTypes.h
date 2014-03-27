@@ -104,12 +104,12 @@ XS_EXTERN_C_BEGIN
 
 #include <XS/XSTypes/XSClassID.h>
 #include <XS/XSTypes/XSObjectRef.h>
+#include <XS/XSTypes/XSClassCallbackConstructor.h>
+#include <XS/XSTypes/XSClassCallbackDestructor.h>
+#include <XS/XSTypes/XSClassCallbackCopy.h>
+#include <XS/XSTypes/XSClassCallbackEquals.h>
+#include <XS/XSTypes/XSClassCallbackToString.h>
 #include <XS/XSTypes/XSClassInfo.h>
-#include <XS/XSTypes/XSClassInfoConstructorCallback.h>
-#include <XS/XSTypes/XSClassInfoDestructorCallback.h>
-#include <XS/XSTypes/XSClassInfoCopyCallback.h>
-#include <XS/XSTypes/XSClassInfoEqualsCallback.h>
-#include <XS/XSTypes/XSClassInfoToStringCallback.h>
 
 XS_EXTERN_C_END
 

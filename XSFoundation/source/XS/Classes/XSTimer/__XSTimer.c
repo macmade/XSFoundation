@@ -75,10 +75,10 @@ XSClassInfo __XSTimer_Class   =
 {
     "XSTimer",
     sizeof( struct __XSTimer ),
-    ( XSClassInfoConstructorCallback )__XSTimer_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSTimer_Destructor,
-    ( XSClassInfoCopyCallback        )__XSTimer_Copy,
-    ( XSClassInfoEqualsCallback      )__XSTimer_Equals,
-    ( XSClassInfoToStringCallback    )__XSTimer_ToString
+    ( XSClassCallbackConstructor )__XSTimer_Constructor,
+    ( XSClassCallbackDestructor  )__XSTimer_Destructor,
+    ( XSClassCallbackCopy        )__XSTimer_Copy,
+    ( XSClassCallbackEquals      )__XSTimer_Equals,
+    ( XSClassCallbackToString    )__XSTimer_ToString
 };
 

@@ -75,10 +75,10 @@ XSClassInfo __XSBag_Class   =
 {
     "XSBag",
     sizeof( struct __XSBag ),
-    ( XSClassInfoConstructorCallback )__XSBag_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSBag_Destructor,
-    ( XSClassInfoCopyCallback        )__XSBag_Copy,
-    ( XSClassInfoEqualsCallback      )__XSBag_Equals,
-    ( XSClassInfoToStringCallback    )__XSBag_ToString
+    ( XSClassCallbackConstructor )__XSBag_Constructor,
+    ( XSClassCallbackDestructor  )__XSBag_Destructor,
+    ( XSClassCallbackCopy        )__XSBag_Copy,
+    ( XSClassCallbackEquals      )__XSBag_Equals,
+    ( XSClassCallbackToString    )__XSBag_ToString
 };
 

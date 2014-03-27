@@ -75,10 +75,10 @@ XSClassInfo __XSLock_Class   =
 {
     "XSLock",
     sizeof( struct __XSLock ),
-    ( XSClassInfoConstructorCallback )__XSLock_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSLock_Destructor,
-    ( XSClassInfoCopyCallback        )__XSLock_Copy,
-    ( XSClassInfoEqualsCallback      )__XSLock_Equals,
-    ( XSClassInfoToStringCallback    )__XSLock_ToString
+    ( XSClassCallbackConstructor )__XSLock_Constructor,
+    ( XSClassCallbackDestructor  )__XSLock_Destructor,
+    ( XSClassCallbackCopy        )__XSLock_Copy,
+    ( XSClassCallbackEquals      )__XSLock_Equals,
+    ( XSClassCallbackToString    )__XSLock_ToString
 };
 

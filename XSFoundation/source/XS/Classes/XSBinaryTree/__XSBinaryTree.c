@@ -75,10 +75,10 @@ XSClassInfo __XSBinaryTree_Class   =
 {
     "XSBinaryTree",
     sizeof( struct __XSBinaryTree ),
-    ( XSClassInfoConstructorCallback )__XSBinaryTree_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSBinaryTree_Destructor,
-    ( XSClassInfoCopyCallback        )__XSBinaryTree_Copy,
-    ( XSClassInfoEqualsCallback      )__XSBinaryTree_Equals,
-    ( XSClassInfoToStringCallback    )__XSBinaryTree_ToString
+    ( XSClassCallbackConstructor )__XSBinaryTree_Constructor,
+    ( XSClassCallbackDestructor  )__XSBinaryTree_Destructor,
+    ( XSClassCallbackCopy        )__XSBinaryTree_Copy,
+    ( XSClassCallbackEquals      )__XSBinaryTree_Equals,
+    ( XSClassCallbackToString    )__XSBinaryTree_ToString
 };
 

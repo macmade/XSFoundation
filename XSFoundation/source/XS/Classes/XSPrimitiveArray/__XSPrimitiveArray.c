@@ -75,10 +75,10 @@ XSClassInfo __XSPrimitiveArray_Class   =
 {
     "XSPrimitiveArray",
     sizeof( struct __XSPrimitiveArray ),
-    ( XSClassInfoConstructorCallback )__XSPrimitiveArray_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSPrimitiveArray_Destructor,
-    ( XSClassInfoCopyCallback        )__XSPrimitiveArray_Copy,
-    ( XSClassInfoEqualsCallback      )__XSPrimitiveArray_Equals,
-    ( XSClassInfoToStringCallback    )__XSPrimitiveArray_ToString
+    ( XSClassCallbackConstructor )__XSPrimitiveArray_Constructor,
+    ( XSClassCallbackDestructor  )__XSPrimitiveArray_Destructor,
+    ( XSClassCallbackCopy        )__XSPrimitiveArray_Copy,
+    ( XSClassCallbackEquals      )__XSPrimitiveArray_Equals,
+    ( XSClassCallbackToString    )__XSPrimitiveArray_ToString
 };
 

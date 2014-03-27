@@ -75,10 +75,10 @@ XSClassInfo __XSFile_Class   =
 {
     "XSFile",
     sizeof( struct __XSFile ),
-    ( XSClassInfoConstructorCallback )__XSFile_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSFile_Destructor,
-    ( XSClassInfoCopyCallback        )__XSFile_Copy,
-    ( XSClassInfoEqualsCallback      )__XSFile_Equals,
-    ( XSClassInfoToStringCallback    )__XSFile_ToString
+    ( XSClassCallbackConstructor )__XSFile_Constructor,
+    ( XSClassCallbackDestructor  )__XSFile_Destructor,
+    ( XSClassCallbackCopy        )__XSFile_Copy,
+    ( XSClassCallbackEquals      )__XSFile_Equals,
+    ( XSClassCallbackToString    )__XSFile_ToString
 };
 

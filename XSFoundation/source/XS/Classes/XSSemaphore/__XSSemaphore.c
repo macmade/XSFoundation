@@ -75,10 +75,10 @@ XSClassInfo __XSSemaphore_Class   =
 {
     "XSSemaphore",
     sizeof( struct __XSSemaphore ),
-    ( XSClassInfoConstructorCallback )__XSSemaphore_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSSemaphore_Destructor,
-    ( XSClassInfoCopyCallback        )__XSSemaphore_Copy,
-    ( XSClassInfoEqualsCallback      )__XSSemaphore_Equals,
-    ( XSClassInfoToStringCallback    )__XSSemaphore_ToString
+    ( XSClassCallbackConstructor )__XSSemaphore_Constructor,
+    ( XSClassCallbackDestructor  )__XSSemaphore_Destructor,
+    ( XSClassCallbackCopy        )__XSSemaphore_Copy,
+    ( XSClassCallbackEquals      )__XSSemaphore_Equals,
+    ( XSClassCallbackToString    )__XSSemaphore_ToString
 };
 

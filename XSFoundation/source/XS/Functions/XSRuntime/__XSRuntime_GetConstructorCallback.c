@@ -70,7 +70,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
-XSClassInfoConstructorCallback __XSRuntime_GetConstructorCallback( XSClassID classID )
+XSClassCallbackConstructor __XSRuntime_GetConstructorCallback( XSClassID classID )
 {
     const XSClassInfo * info;
     

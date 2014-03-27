@@ -76,10 +76,10 @@ XSClassInfo __XSNull_Class   =
 {
     "XSNull",
     sizeof( struct __XSNull ),
-    ( XSClassInfoConstructorCallback )__XSNull_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSNull_Destructor,
-    ( XSClassInfoCopyCallback        )__XSNull_Copy,
-    ( XSClassInfoEqualsCallback      )__XSNull_Equals,
-    ( XSClassInfoToStringCallback    )__XSNull_ToString
+    ( XSClassCallbackConstructor )__XSNull_Constructor,
+    ( XSClassCallbackDestructor  )__XSNull_Destructor,
+    ( XSClassCallbackCopy        )__XSNull_Copy,
+    ( XSClassCallbackEquals      )__XSNull_Equals,
+    ( XSClassCallbackToString    )__XSNull_ToString
 };
 

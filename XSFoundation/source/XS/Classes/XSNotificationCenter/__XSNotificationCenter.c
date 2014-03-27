@@ -75,10 +75,10 @@ XSClassInfo __XSNotificationCenter_Class   =
 {
     "XSNotificationCenter",
     sizeof( struct __XSNotificationCenter ),
-    ( XSClassInfoConstructorCallback )__XSNotificationCenter_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSNotificationCenter_Destructor,
-    ( XSClassInfoCopyCallback        )__XSNotificationCenter_Copy,
-    ( XSClassInfoEqualsCallback      )__XSNotificationCenter_Equals,
-    ( XSClassInfoToStringCallback    )__XSNotificationCenter_ToString
+    ( XSClassCallbackConstructor )__XSNotificationCenter_Constructor,
+    ( XSClassCallbackDestructor  )__XSNotificationCenter_Destructor,
+    ( XSClassCallbackCopy        )__XSNotificationCenter_Copy,
+    ( XSClassCallbackEquals      )__XSNotificationCenter_Equals,
+    ( XSClassCallbackToString    )__XSNotificationCenter_ToString
 };
 

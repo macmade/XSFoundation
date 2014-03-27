@@ -75,10 +75,10 @@ XSClassInfo __XSColor_Class   =
 {
     "XSColor",
     sizeof( struct __XSColor ),
-    ( XSClassInfoConstructorCallback )__XSColor_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSColor_Destructor,
-    ( XSClassInfoCopyCallback        )__XSColor_Copy,
-    ( XSClassInfoEqualsCallback      )__XSColor_Equals,
-    ( XSClassInfoToStringCallback    )__XSColor_ToString
+    ( XSClassCallbackConstructor )__XSColor_Constructor,
+    ( XSClassCallbackDestructor  )__XSColor_Destructor,
+    ( XSClassCallbackCopy        )__XSColor_Copy,
+    ( XSClassCallbackEquals      )__XSColor_Equals,
+    ( XSClassCallbackToString    )__XSColor_ToString
 };
 

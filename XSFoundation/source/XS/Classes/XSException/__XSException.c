@@ -75,10 +75,10 @@ XSClassInfo __XSException_Class   =
 {
     "XSException",
     sizeof( struct __XSException ),
-    ( XSClassInfoConstructorCallback )__XSException_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSException_Destructor,
-    ( XSClassInfoCopyCallback        )__XSException_Copy,
-    ( XSClassInfoEqualsCallback      )__XSException_Equals,
-    ( XSClassInfoToStringCallback    )__XSException_ToString
+    ( XSClassCallbackConstructor )__XSException_Constructor,
+    ( XSClassCallbackDestructor  )__XSException_Destructor,
+    ( XSClassCallbackCopy        )__XSException_Copy,
+    ( XSClassCallbackEquals      )__XSException_Equals,
+    ( XSClassCallbackToString    )__XSException_ToString
 };
 

@@ -75,10 +75,10 @@ XSClassInfo __XSURL_Class   =
 {
     "XSURL",
     sizeof( struct __XSURL ),
-    ( XSClassInfoConstructorCallback )__XSURL_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSURL_Destructor,
-    ( XSClassInfoCopyCallback        )__XSURL_Copy,
-    ( XSClassInfoEqualsCallback      )__XSURL_Equals,
-    ( XSClassInfoToStringCallback    )__XSURL_ToString
+    ( XSClassCallbackConstructor )__XSURL_Constructor,
+    ( XSClassCallbackDestructor  )__XSURL_Destructor,
+    ( XSClassCallbackCopy        )__XSURL_Copy,
+    ( XSClassCallbackEquals      )__XSURL_Equals,
+    ( XSClassCallbackToString    )__XSURL_ToString
 };
 

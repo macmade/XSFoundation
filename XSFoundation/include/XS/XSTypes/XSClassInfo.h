@@ -77,11 +77,11 @@
 XS_EXTERN_C_BEGIN
 
 #include <XS/XSTypes/XSObjectRef.h>
-#include <XS/XSTypes/XSClassInfoConstructorCallback.h>
-#include <XS/XSTypes/XSClassInfoDestructorCallback.h>
-#include <XS/XSTypes/XSClassInfoCopyCallback.h>
-#include <XS/XSTypes/XSClassInfoEqualsCallback.h>
-#include <XS/XSTypes/XSClassInfoToStringCallback.h>
+#include <XS/XSTypes/XSClassCallbackConstructor.h>
+#include <XS/XSTypes/XSClassCallbackDestructor.h>
+#include <XS/XSTypes/XSClassCallbackCopy.h>
+#include <XS/XSTypes/XSClassCallbackEquals.h>
+#include <XS/XSTypes/XSClassCallbackToString.h>
 
 
 /*!
@@ -90,13 +90,13 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct
 {
-    const char                    * className;      /*! The name of the class */
-    XSUInteger                      instanceSize;   /*! The size of the class instances */
-    XSClassInfoConstructorCallback  constructor;    /*! The class constructor */
-    XSClassInfoDestructorCallback   destructor;     /*! The class destructor */
-    XSClassInfoCopyCallback         copy;           /*! The object's copy callback */
-    XSClassInfoEqualsCallback       equals;         /*! The object's comparison callback */
-    XSClassInfoToStringCallback     toString;       /*! The object's description callback */
+    const char                * className;      /*! The name of the class */
+    XSUInteger                  instanceSize;   /*! The size of the class instances */
+    XSClassCallbackConstructor  constructor;    /*! The class constructor */
+    XSClassCallbackDestructor   destructor;     /*! The class destructor */
+    XSClassCallbackCopy         copy;           /*! The object's copy callback */
+    XSClassCallbackEquals       equals;         /*! The object's comparison callback */
+    XSClassCallbackToString     toString;       /*! The object's description callback */
 }
 XSClassInfo;
 

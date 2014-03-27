@@ -75,10 +75,10 @@ XSClassInfo __XSArray_Class   =
 {
     "XSArray",
     sizeof( struct __XSArray ),
-    ( XSClassInfoConstructorCallback )__XSArray_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSArray_Destructor,
-    ( XSClassInfoCopyCallback        )__XSArray_Copy,
-    ( XSClassInfoEqualsCallback      )__XSArray_Equals,
-    ( XSClassInfoToStringCallback    )__XSArray_ToString
+    ( XSClassCallbackConstructor )__XSArray_Constructor,
+    ( XSClassCallbackDestructor  )__XSArray_Destructor,
+    ( XSClassCallbackCopy        )__XSArray_Copy,
+    ( XSClassCallbackEquals      )__XSArray_Equals,
+    ( XSClassCallbackToString    )__XSArray_ToString
 };
 

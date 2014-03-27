@@ -75,10 +75,10 @@ XSClassInfo __XSApplication_Class   =
 {
     "XSApplication",
     sizeof( struct __XSApplication ),
-    ( XSClassInfoConstructorCallback )__XSApplication_Constructor,
-    ( XSClassInfoDestructorCallback  )__XSApplication_Destructor,
-    ( XSClassInfoCopyCallback        )__XSApplication_Copy,
-    ( XSClassInfoEqualsCallback      )__XSApplication_Equals,
-    ( XSClassInfoToStringCallback    )__XSApplication_ToString
+    ( XSClassCallbackConstructor )__XSApplication_Constructor,
+    ( XSClassCallbackDestructor  )__XSApplication_Destructor,
+    ( XSClassCallbackCopy        )__XSApplication_Copy,
+    ( XSClassCallbackEquals      )__XSApplication_Equals,
+    ( XSClassCallbackToString    )__XSApplication_ToString
 };
 
