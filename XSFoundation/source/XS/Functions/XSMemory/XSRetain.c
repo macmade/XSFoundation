@@ -81,7 +81,7 @@ void * XSRetain( void * memory )
     
     object = __XSMemory_GetMemoryObject( memory );
     
-    XSAtomic_Increment64( ( volatile XSInt64 * )&( object->retainCount ) );
+    XSAtomic_IncrementInteger( &( object->retainCount ) );
         
     return memory;
 }

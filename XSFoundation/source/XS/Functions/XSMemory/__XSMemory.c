@@ -70,7 +70,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemory.h>
 
-volatile XSUInt64 __XSMemory_AllocID = 0;
+volatile XSInteger __XSMemory_AllocID = 0;
 
 const char __XSMemory_FenceData[ __XS_MEMORY_FENCE_SIZE ] =
 {

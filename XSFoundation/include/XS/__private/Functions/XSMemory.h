@@ -84,9 +84,9 @@
  */
 typedef struct
 {
-    volatile XSUInt64   retainCount;                        /*! The object's retain count */
+    volatile XSInteger  retainCount;                        /*! The object's retain count */
     XSUInteger          size;                               /*! The allocated data size */
-    XSUInt64            allocID;                            /*! ... */
+    XSInteger           allocID;                            /*! ... */
     XSClassID           classID;                            /*! The class ID (only for allocated instances) */
     unsigned char       fence[ __XS_MEMORY_FENCE_SIZE ];    /*! Memory fence to prevent overflows */
 }
@@ -96,7 +96,7 @@ __XSMemoryObject;
  * @typedef     __XSMemoryAllocID
  * @abstract    The current allocation ID
  */
-XS_EXTERN volatile XSUInt64 __XSMemory_AllocID;
+XS_EXTERN volatile XSInteger __XSMemory_AllocID;
 
 /*!
  * @typedef     __XSMemoryFenceData

@@ -82,7 +82,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSClassID
  * @abstract    XSFoundation class ID type
  */
-typedef XSUInteger  XSClassID;
+typedef XSInteger   XSClassID;
 
 XS_EXTERN_C_END
 

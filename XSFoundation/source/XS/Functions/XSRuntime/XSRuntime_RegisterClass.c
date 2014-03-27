@@ -98,7 +98,7 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls )
     {
         if( XSAtomic_CompareAndSwapPointer( NULL, ( void * )cls, ( void * volatile * )&( list->info ) ) )
         {
-            return ( XSUInt32 )XSAtomic_Increment32( ( volatile XSInt32 * )&__XSRuntime_ClassCount );
+            return XSAtomic_IncrementInteger( &__XSRuntime_ClassCount );
         }
         
         if( XSAtomic_CompareAndSwapPointer( NULL, NULL, ( void * volatile * )&( list->next ) ) )
@@ -120,7 +120,7 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls )
     }
     else if( XSAtomic_CompareAndSwapPointer( NULL, new, ( void * volatile * )&( list->next ) ) )
     {
-        return ( XSUInt32 )XSAtomic_Increment32( ( volatile XSInt32 * )&__XSRuntime_ClassCount );
+        return XSAtomic_IncrementInteger( &__XSRuntime_ClassCount );
     }
     
     free( new );

@@ -104,20 +104,20 @@ __XSRuntime_ClassInfoList;
  * @def         __XS_RUNTIME_IS_INITED
  * @abstract    Checks whether the XSFoundation runtime is inited
  */
-#define __XS_RUNTIME_IS_INITED      XSAtomic_CompareAndSwap32( __XSRuntime_InitStatusInited,     __XSRuntime_InitStatusInited,     ( volatile XSInt32 * )&__XSRuntime_Inited )
+#define __XS_RUNTIME_IS_INITED      XSAtomic_CompareAndSwapInteger( __XSRuntime_InitStatusInited, __XSRuntime_InitStatusInited, &__XSRuntime_Inited )
 
 /*!
  * @def         __XS_RUNTIME_IS_INITED
  * @abstract    Checks whether the XSFoundation runtime is finalizing
  */
-#define __XS_RUNTIME_IS_FINALIZING  XSAtomic_CompareAndSwap32( __XSRuntime_InitStatusFinalizing, __XSRuntime_InitStatusFinalizing, ( volatile XSInt32 * )&__XSRuntime_Inited )
+#define __XS_RUNTIME_IS_FINALIZING  XSAtomic_CompareAndSwapInteger( __XSRuntime_InitStatusFinalizing, __XSRuntime_InitStatusFinalizing, &__XSRuntime_Inited )
 
 /*!
  * @var         __XSRuntime_Inited
  * @abstract    XSFoundation runtime initialization status
  * @see         __XSRuntime_InitStatus
  */
-XS_EXTERN volatile XSUInt32 __XSRuntime_Inited;
+XS_EXTERN volatile XSInteger __XSRuntime_Inited;
 
 /*!
  * @var         __XSRuntime_ClassInfoList
@@ -129,7 +129,7 @@ XS_EXTERN __XSRuntime_ClassInfoList * __XSRuntime_Classes;
  * @var         __XSRuntime_Inited
  * @abstract    Number of registered XSFoundation runtime class infos
  */
-XS_EXTERN volatile XSUInt32 __XSRuntime_ClassCount;
+XS_EXTERN volatile XSInteger __XSRuntime_ClassCount;
 
 /*!
  * @var         __XSRuntime_GetClassInfo

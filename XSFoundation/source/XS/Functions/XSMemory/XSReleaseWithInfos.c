@@ -87,7 +87,7 @@ void XSReleaseWithInfos( void * memory, const char * file, int line, const char 
     
     object = __XSMemory_GetMemoryObject( memory );
     
-    if( XSAtomic_Decrement64( ( volatile XSInt64 * )&( object->retainCount ) ) == 0 )
+    if( XSAtomic_DecrementInteger( &( object->retainCount ) ) == 0 )
     {
         destructor = __XSRuntime_GetDestructorCallback( object->classID );
         
