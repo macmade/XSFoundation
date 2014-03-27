@@ -212,13 +212,6 @@
 #endif
 
 /*!
- * @def         XSFatalError
- * @abstract    Issues a fatal error message and aborts the program
- * @param       ...         The error message with optional format arguments
- */
-#define XSFatalError( ... )         XSRuntime_FatalError( __FILE__, __LINE__, __VA_ARGS__ )
-
-/*!
  * @def         XSEndian16_Swap
  * @abstract    Swap endiannes of a 16 bits value
  * @param       _value_     The value to swap

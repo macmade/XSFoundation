@@ -170,17 +170,6 @@ XS_EXPORT const char * XSRuntime_GetClassName( XSClassID classID );
  */
 XS_EXPORT const char * XSRuntime_GetObjectClassName( XSObjectRef object );
 
-/*!
- * @function    XSRuntime_FatalError
- * @abstract    Issues a fatal error message and aborts the program
- * @param       file        The file in which the fatal error occured
- * @param       line        The line number of the file in which the fatal error occured
- * @param       ...         The error message with optional format arguments
- * @discussion  Please do not call this function directly. Use the XSFatalError
- *              macro instead.
- */
-void XSRuntime_FatalError( const char * file, int line, ... ) XS_NORETURN_ATTRIBUTE;
-
 XS_EXTERN_C_END
 
 #endif /* __XS_FUNCTIONS_XS_RUNTIME_H__ */

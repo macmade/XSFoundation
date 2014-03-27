@@ -62,45 +62,24 @@
 /* $Id$ */
 
 /*!
- * @file        XSAllocWithInfos.c
+ * @header      XSLog.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSAllocWithInfos
+ * @abstract    Private definitions for XSLog.h
  */
 
-#include <XS/XS.h>
-#include <XS/__private/Functions/XSRuntime.h>
+#ifndef __XS_H__
+#error "Please include '<XS/XS.h>' instead of this file!"
+#endif
 
-XSObjectRef XSRuntime_CreateInstance( XSClassID classID )
-{
-    XSObjectRef                     object;
-    XSUInteger                      instanceSize;
-    XSClassCallbackConstructor  constructor;
-    
-    if( XSRuntime_IsRegisteredClass( classID ) == false )
-    {
-        XSFatalError( "Cannot create an instance for an unregistered class (class ID: %li)", ( long )classID );
-    }
-    
-    instanceSize = __XSRuntime_GetInstanceSize( classID );
-    
-    if( instanceSize == 0 )
-    {
-        XSFatalError( "Cannot create an instance for a class with zero as instance size (class ID: %li)", ( long )classID );
-    }
-    
-    object = ( XSObjectRef )XSAllocWithInfos( instanceSize, classID, __FILE__, __LINE__, __func__ );
-    
-    if( object == NULL )
-    {
-        return NULL;
-    }
-    
-    constructor = __XSRuntime_GetConstructorCallback( classID );
-    
-    if( constructor != NULL )
-    {
-        constructor( object );
-    }
-    
-    return object;
-}
+#ifndef __XS___PRIVATE_FUNCTIONS_XS_LOG_H__
+#define __XS___PRIVATE_FUNCTIONS_XS_LOG_H__
+
+#include <XS/XSTypes.h>
+
+/*!
+ * @typedef     __XSLog_Level
+ * @abstract    The current log level
+ */
+XS_EXTERN volatile XSInteger __XSLog_Level;
+
+#endif /* __XS___PRIVATE_FUNCTIONS_XS_LOG_H__ */
