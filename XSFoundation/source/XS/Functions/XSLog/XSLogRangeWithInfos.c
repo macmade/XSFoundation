@@ -62,10 +62,10 @@
 /* $Id$ */
 
 /*!
- * @file        __XSLog.c
+ * @file        XSLogRangeWithInfos.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definitions for log functions
+ * @abstract    Definitions for XSLogRangeWithInfos
  */
 
 #include <XS/XS.h>
@@ -73,8 +73,14 @@
 
 void XSLogRangeWithInfos( XSRange r, const char * file, int line, const char * func )
 {
-    ( void )r;
-    ( void )file;
-    ( void )line;
-    ( void )func;
+    XSLogWithInfos
+    (
+        XSLogLevelInfo,
+        file,
+        line,
+        func,
+        "<XSRange> { I: %lu, L: %lu }",
+        ( unsigned long )( r.location ),
+        ( unsigned long )( r.length )
+    );
 }

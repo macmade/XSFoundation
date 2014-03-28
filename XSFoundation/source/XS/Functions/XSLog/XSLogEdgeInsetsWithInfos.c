@@ -62,10 +62,10 @@
 /* $Id$ */
 
 /*!
- * @file        __XSLog.c
+ * @file        XSLogEdgeInsetsWithInfos.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definitions for log functions
+ * @abstract    Definitions for XSLogEdgeInsetsWithInfos
  */
 
 #include <XS/XS.h>
@@ -73,8 +73,16 @@
 
 void XSLogEdgeInsetsWithInfos( XSEdgeInsets e, const char * file, int line, const char * func )
 {
-    ( void )e;
-    ( void )file;
-    ( void )line;
-    ( void )func;
+    XSLogWithInfos
+    (
+        XSLogLevelInfo,
+        file,
+        line,
+        func,
+        "<XSEdgeInsets> { T: %.02f, L: %.02f, B: %.02f, R: %.02f }",
+        e.top,
+        e.left,
+        e.bottom,
+        e.right
+    );
 }

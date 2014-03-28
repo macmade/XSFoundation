@@ -62,10 +62,10 @@
 /* $Id$ */
 
 /*!
- * @file        __XSLog.c
+ * @file        XSVLogWithInfos.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definitions for log functions
+ * @abstract    Definitions for XSVLogWithInfos
  */
 
 #include <XS/XS.h>
@@ -73,10 +73,15 @@
 
 void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char * func, const char * fmt, va_list args )
 {
-    ( void )level;
+    if( ( XSGetLogLevel() & level ) == 0 )
+    {
+        return;
+    }
+    
     ( void )file;
     ( void )line;
     ( void )func;
-    ( void )fmt;
-    ( void )args;
+    
+    vfprintf( stderr, fmt, args );
+    fprintf( stderr, "\n" );
 }

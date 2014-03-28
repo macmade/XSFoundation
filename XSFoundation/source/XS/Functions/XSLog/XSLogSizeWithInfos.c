@@ -62,10 +62,10 @@
 /* $Id$ */
 
 /*!
- * @file        __XSLog.c
+ * @file        XSLogSizeWithInfos.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definitions for log functions
+ * @abstract    Definitions for XSLogSizeWithInfos
  */
 
 #include <XS/XS.h>
@@ -73,8 +73,14 @@
 
 void XSLogSizeWithInfos( XSSize s, const char * file, int line, const char * func )
 {
-    ( void )s;
-    ( void )file;
-    ( void )line;
-    ( void )func;
+    XSLogWithInfos
+    (
+        XSLogLevelInfo,
+        file,
+        line,
+        func,
+        "<XSSize> { W: %.02f, H: %.02f }",
+        s.width,
+        s.height
+    );
 }

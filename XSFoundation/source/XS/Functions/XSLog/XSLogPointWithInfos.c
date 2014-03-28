@@ -62,10 +62,10 @@
 /* $Id$ */
 
 /*!
- * @file        __XSLog.c
+ * @file        XSLogPointWithInfos.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definitions for log functions
+ * @abstract    Definitions for XSLogPointWithInfos
  */
 
 #include <XS/XS.h>
@@ -73,8 +73,14 @@
 
 void XSLogPointWithInfos( XSPoint p, const char * file, int line, const char * func )
 {
-    ( void )p;
-    ( void )file;
-    ( void )line;
-    ( void )func;
+    XSLogWithInfos
+    (
+        XSLogLevelInfo,
+        file,
+        line,
+        func,
+        "<XSPoint> { X: %.02f, Y: %.02f }",
+        p.x,
+        p.y
+    );
 }

@@ -62,16 +62,16 @@
 /* $Id$ */
 
 /*!
- * @file        __XSLog.c
+ * @file        XSSetLogLevel.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definitions for log functions
+ * @abstract    Definitions for XSSetLogLevel
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSLog.h>
 
-void XSSetLogLevel( XSInteger level )
+void XSSetLogLevel( XSUInteger level )
 {
     ( void )level;
 }

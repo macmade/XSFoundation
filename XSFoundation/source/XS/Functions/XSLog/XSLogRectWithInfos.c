@@ -62,10 +62,10 @@
 /* $Id$ */
 
 /*!
- * @file        __XSLog.c
+ * @file        XSLogRectWithInfos.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definitions for log functions
+ * @abstract    Definitions for XSLogRectWithInfos
  */
 
 #include <XS/XS.h>
@@ -73,8 +73,16 @@
 
 void XSLogRectWithInfos( XSRect r, const char * file, int line, const char * func )
 {
-    ( void )r;
-    ( void )file;
-    ( void )line;
-    ( void )func;
+    XSLogWithInfos
+    (
+        XSLogLevelInfo,
+        file,
+        line,
+        func,
+        "<XSRect> { { X: %.02f, Y: %.02f }, { W: %.02f, H: %.02f } }",
+        r.origin.x,
+        r.origin.y,
+        r.size.width,
+        r.size.height
+    );
 }
