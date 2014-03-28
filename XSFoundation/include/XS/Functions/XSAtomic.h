@@ -167,6 +167,57 @@ XS_EXPORT bool XSAtomic_CompareAndSwapInteger( XSInteger oldValue, XSInteger new
  */
 XS_EXPORT bool XSAtomic_CompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value );
 
+/*!
+ * @function    XSAtomic_Add32
+ * @abstract    Atomically adds to a 32 bits value
+ * @param       amount  The amount to add
+ * @param       value   The 32 bits value to modify
+ * @return      The new value
+ */
+XSInt32 XSAtomic_Add32( XSInt32 amount, volatile XSInt32 * value );
+
+/*!
+ * @function    XSAtomic_Add64
+ * @abstract    Atomically adds to a 64 bits value
+ * @param       amount  The amount to add
+ * @param       value   The 64 bits value to modify
+ * @return      The new value
+ */
+XSInt64 XSAtomic_Add64( XSInt64 amount, volatile XSInt64 * value );
+
+/*!
+ * @function    XSAtomic_AddInteger
+ * @abstract    Atomically adds to an integer value
+ * @param       amount  The amount to add
+ * @param       value   The integer value to modify
+ * @return      The new value
+ */
+XSInteger XSAtomic_AddInteger( XSInteger amount, volatile XSInteger * value );
+
+/*!
+ * @function    XSAtomic_Read32
+ * @abstract    Atomically reads a 32 bits value
+ * @param       value   The 32 bits value to read
+ * @return      The 32 bits value
+ */
+XSInt32 XSAtomic_Read32( volatile XSInt32 * value );
+
+/*!
+ * @function    XSAtomic_Read64
+ * @abstract    Atomically reads a 64 bits value
+ * @param       value   The 64 bits value to read
+ * @return      The 64 bits value
+ */
+XSInt64 XSAtomic_Read64( volatile XSInt64 * value );
+
+/*!
+ * @function    XSAtomic_ReadInteger
+ * @abstract    Atomically reads an integer value
+ * @param       value   The integer value to read
+ * @return      The integer value
+ */
+XSInteger XSAtomic_ReadInteger( volatile XSInteger * value );
+
 XS_EXTERN_C_END
 
 #endif /* __XS_FUNCTIONS_XS_ATOMIC_H__ */

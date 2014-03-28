@@ -61,83 +61,16 @@
 
 /* $Id$ */
 
+/*!
+ * @file        XSAtomic_Read64.c
+ * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+ * @author      Jean-David Gadina - www.xs-labs.com
+ * @abstract    Definition for XSAtomic_Read64
+ */
+
 #include <XS/XS.h>
 
-int main( int argc, const char * argv[] )
+XSInt64 XSAtomic_Read64( volatile XSInt64 * value )
 {
-    ( void )argc;
-    ( void )argv;
-    
-    XSRuntime_Initialize();
-    
-    {
-        void * x1;
-        void * x2;
-        
-        x1 = XSAlloc( 10 );
-        x2 = XSAlloc( 100 );
-        
-        XSRelease( x1 );
-        XSRetain( x2 );
-        XSRetain( x2 );
-        XSRelease( x2 );
-        XSRelease( x2 );
-        XSRelease( x2 );
-    }
-    
-    {
-        XSBooleanRef bool1;
-        XSBooleanRef bool2;
-        XSBooleanRef bool3;
-        
-        bool1 = XSBoolean_Create( true );
-        bool2 = XSCopy( bool1 );
-        bool3 = XSBoolean_Create( false );
-        
-        printf( "bool1: %p\n", bool1 );
-        printf( "bool2: %p\n", bool2 );
-        printf( "bool3: %p\n", bool3 );
-        
-        printf( "bool1: %s\n", XSRuntime_GetDescription( bool1 ) );
-        printf( "bool2: %s\n", XSRuntime_GetDescription( bool2 ) );
-        printf( "bool3: %s\n", XSRuntime_GetDescription( bool3 ) );
-        
-        if( XSEquals( bool1, bool2 ) )
-        {
-            printf( "bool1 == bool2\n" );
-        }
-        else
-        {
-            printf( "bool1 != bool2\n" );
-        }
-        
-        if( XSEquals( bool1, bool3 ) )
-        {
-            printf( "bool1 == bool3\n" );
-        }
-        else
-        {
-            printf( "bool1 != bool3\n" );
-        }
-        
-        XSRelease( bool1 );
-        XSRelease( bool2 );
-        XSRelease( bool3 );
-    }
-    
-    XSInteger x;
-    
-    x = 42;
-    
-    XSAtomic_IncrementInteger( &x );
-    
-    printf( "%li\n", ( long )x );
-    
-    XSAtomic_AddInteger( 42, &x );
-    
-    printf( "%li\n", ( long )x );
-    printf( "%li\n", XSAtomic_ReadInteger( &x ) );
-    
-    return 0;
+    return XSAtomic_Add64( 0, value );
 }
-

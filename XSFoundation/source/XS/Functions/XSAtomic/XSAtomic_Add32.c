@@ -61,83 +61,44 @@
 
 /* $Id$ */
 
+/*!
+ * @file        XSAtomic_Add32.c
+ * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+ * @author      Jean-David Gadina - www.xs-labs.com
+ * @abstract    Definition for XSAtomic_Add32
+ */
+
 #include <XS/XS.h>
 
-int main( int argc, const char * argv[] )
+#if defined( __XEOS__ )
+
+#include <system.h>
+
+/* XEOS */
+XSInt32 XSAtomic_Add32( XSInt32 amount, volatile XSInt32 * value )
 {
-    ( void )argc;
-    ( void )argv;
-    
-    XSRuntime_Initialize();
-    
-    {
-        void * x1;
-        void * x2;
-        
-        x1 = XSAlloc( 10 );
-        x2 = XSAlloc( 100 );
-        
-        XSRelease( x1 );
-        XSRetain( x2 );
-        XSRetain( x2 );
-        XSRelease( x2 );
-        XSRelease( x2 );
-        XSRelease( x2 );
-    }
-    
-    {
-        XSBooleanRef bool1;
-        XSBooleanRef bool2;
-        XSBooleanRef bool3;
-        
-        bool1 = XSBoolean_Create( true );
-        bool2 = XSCopy( bool1 );
-        bool3 = XSBoolean_Create( false );
-        
-        printf( "bool1: %p\n", bool1 );
-        printf( "bool2: %p\n", bool2 );
-        printf( "bool3: %p\n", bool3 );
-        
-        printf( "bool1: %s\n", XSRuntime_GetDescription( bool1 ) );
-        printf( "bool2: %s\n", XSRuntime_GetDescription( bool2 ) );
-        printf( "bool3: %s\n", XSRuntime_GetDescription( bool3 ) );
-        
-        if( XSEquals( bool1, bool2 ) )
-        {
-            printf( "bool1 == bool2\n" );
-        }
-        else
-        {
-            printf( "bool1 != bool2\n" );
-        }
-        
-        if( XSEquals( bool1, bool3 ) )
-        {
-            printf( "bool1 == bool3\n" );
-        }
-        else
-        {
-            printf( "bool1 != bool3\n" );
-        }
-        
-        XSRelease( bool1 );
-        XSRelease( bool2 );
-        XSRelease( bool3 );
-    }
-    
-    XSInteger x;
-    
-    x = 42;
-    
-    XSAtomic_IncrementInteger( &x );
-    
-    printf( "%li\n", ( long )x );
-    
-    XSAtomic_AddInteger( 42, &x );
-    
-    printf( "%li\n", ( long )x );
-    printf( "%li\n", XSAtomic_ReadInteger( &x ) );
-    
-    return 0;
+    return ( XSInt32 )System_Atomic_Add32( ( int32_t )value, ( volatile int32_t * )value );
 }
 
+#elif defined( _WIN32 )
+
+#include <Windows.h>
+#include <Winnt.h>
+
+/* Windows */
+XSInt32 XSAtomic_Add32( XSInt32 amount, volatile XSInt32 * value )
+{
+    return ( XSInt32 )InterlockedExchangeAdd( ( LONG volatile * )value, ( LONG )amount ) + amount;
+}
+
+#else
+
+#include <libkern/OSAtomic.h>
+
+/* Mac OS X */
+XSInt32 XSAtomic_Add32( XSInt32 amount, volatile XSInt32 * value )
+{
+    return ( XSInt32 )OSAtomicAdd32( ( int32_t )amount, ( volatile int32_t * )value );
+}
+
+#endif
