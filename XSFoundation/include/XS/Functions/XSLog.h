@@ -262,7 +262,7 @@ XS_EXTERN_C_BEGIN
  * @return      The actual log level
  * @see         XSLogLevel
  */
-XSInteger XSGetLogLevel( void );
+XSUInteger XSGetLogLevel( void );
 
 /*!
  * @function    XSSetLogLevel
@@ -270,7 +270,7 @@ XSInteger XSGetLogLevel( void );
  * @param       level   The desired log level
  * @see         XSLogLevel
  */
-void XSSetLogLevel( XSInteger level );
+void XSSetLogLevel( XSUInteger level );
 
 /*!
  * @function    XSLogWithInfos

@@ -62,47 +62,31 @@
 /* $Id$ */
 
 /*!
- * @header      C99.h
+ * @header      XSTLSKey.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    C99 include files
+ * @abstract    XSTLSKey type definition
  */
 
 #ifndef __XS_H__
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_C99_H__
-#define __XS_C99_H__
+#ifndef __XS_TYPES_XS_TLS_KEY_H__
+#define __XS_TYPES_XS_TLS_KEY_H__
 
-#include <assert.h>     /* Diagnostics. */
-#include <ctype.h>      /* Character class tests. */
-#include <errno.h>      /* Error codes reported by (some) library functions. */
-#include <float.h>      /* Implementation-defined floating-point limits. */
-#include <iso646.h>     /* Programming in ISO 646 variant character sets. */
-#include <limits.h>     /* Implementation-defined limits. */
-#include <locale.h>     /* Locale-specific information. */
-#include <math.h>       /* Mathematical functions. */
-#include <setjmp.h>     /* Non-local jumps. */
-#include <signal.h>     /* Signals. */
-#include <stdarg.h>     /* Variable argument lists. */
-#include <stddef.h>     /* Definitions of general use. */
-#include <stdint.h>     /* Definition of various integer types. */
-#include <stdio.h>      /* Input and output. */
-#include <stdlib.h>     /* Utility functions. */
-#include <string.h>     /* String functions. */
-#include <time.h>       /* Time and date functions. */
-#include <wchar.h>      /* Manipulation of wide streams and several kinds of strings using wide characters. */
-#include <wctype.h>     /* Wide characters classification. */
+XS_EXTERN_C_BEGIN
 
-#ifndef _WIN32
-
-#include <complex.h>    /* Complex numbers manupilations. */
-#include <fenv.h>       /* Control of floating-point environment. */
-#include <inttypes.h>   /* Precise conversion between integer types. */
-#include <stdbool.h>    /* Boolean data type. */
-#include <tgmath.h>     /* Type-generic mathematical functions. */
-
+/*!
+ * @typedef     XSTLSKey
+ * @abstract    Mutex type
+ */
+#ifdef _WIN32
+typedef DWORD XSTLSKey;
+#else
+typedef pthread_key_t XSTLSKey;
 #endif
 
-#endif /* __XS_C99_H__ */
+XS_EXTERN_C_END
+
+#endif /* __XS_TYPES_XS_TLS_KEY_H__ */

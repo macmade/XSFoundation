@@ -62,62 +62,36 @@
 /* $Id$ */
 
 /*!
- * @header      XSTypes.h
+ * @header      STD-POSIX.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    POSIX include files
  */
 
 #ifndef __XS_H__
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_TYPES_H__
-#define __XS_TYPES_H__
+#ifndef __XS_STD_POSIX_H__
+#define __XS_STD_POSIX_H__
 
-XS_EXTERN_C_BEGIN
+#include <cpio.h>           /* Magic numbers for the cpio archive format. */
+#include <dirent.h>         /* Allows the opening and listing of directories. */
+#include <fcntl.h>          /* File opening, locking and other operations. */
+#include <grp.h>            /* User group information and control. */
+#include <pthread.h>        /* Defines an API for creating and manipulating POSIX threads. */
+#include <pwd.h>            /* passwd (user information) access and control. */
+#include <sys/ipc.h>        /* Inter-process communication (IPC). */
+#include <sys/msg.h>        /* POSIX message queues. */
+#include <sys/sem.h>        /* POSIX semaphores. */
+#include <sys/stat.h>       /* File information (stat et al.). */
+#include <sys/time.h>       /* Time and date functions and structures. */
+#include <sys/types.h>      /* Various data types used elsewhere. */
+#include <sys/utsname.h>    /* uname and related structures. */
+#include <sys/wait.h>       /* Status of terminated child processes (see wait). */
+#include <tar.h>            /* Magic numbers for the tar archive format. */
+#include <termios.h>        /* Allows terminal I/O interfaces. */
+#include <unistd.h>         /* Various essential POSIX functions and constants. */
+#include <utime.h>          /* inode access and modification times. */
 
-#include <XS/XSTypes/XSUInt8.h>
-#include <XS/XSTypes/XSUInt16.h>
-#include <XS/XSTypes/XSUInt32.h>
-#include <XS/XSTypes/XSUInt64.h>
-
-#include <XS/XSTypes/XSInt8.h>
-#include <XS/XSTypes/XSInt16.h>
-#include <XS/XSTypes/XSInt32.h>
-#include <XS/XSTypes/XSInt64.h>
-
-#include <XS/XSTypes/XSFloat32.h>
-#include <XS/XSTypes/XSFloat64.h>
-
-#include <XS/XSTypes/XSUInteger.h>
-#include <XS/XSTypes/XSInteger.h>
-#include <XS/XSTypes/XSFloat.h>
-
-#include <XS/XSTypes/XSMutex.h>
-#include <XS/XSTypes/XSTLSKey.h>
-#include <XS/XSTypes/XSTLSObjectAssociation.h>
-
-#include <XS/XSTypes/XSPoint.h>
-#include <XS/XSTypes/XSSize.h>
-#include <XS/XSTypes/XSRect.h>
-#include <XS/XSTypes/XSRectEdge.h>
-#include <XS/XSTypes/XSEdgeInsets.h>
-
-#include <XS/XSTypes/XSLogLevel.h>
-
-#include <XS/XSTypes/XSRange.h>
-#include <XS/XSTypes/XSComparisonResult.h>
-
-#include <XS/XSTypes/XSClassID.h>
-#include <XS/XSTypes/XSObjectRef.h>
-#include <XS/XSTypes/XSClassCallbackConstructor.h>
-#include <XS/XSTypes/XSClassCallbackDestructor.h>
-#include <XS/XSTypes/XSClassCallbackCopy.h>
-#include <XS/XSTypes/XSClassCallbackEquals.h>
-#include <XS/XSTypes/XSClassCallbackToString.h>
-#include <XS/XSTypes/XSClassInfo.h>
-
-XS_EXTERN_C_END
-
-#endif /* __XS_RUNTIME_H__ */
+#endif /* __XS_STD_POSIX_H__ */

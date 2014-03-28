@@ -62,62 +62,47 @@
 /* $Id$ */
 
 /*!
- * @header      XSTypes.h
+ * @header      STD-C99.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    C99 include files
  */
 
 #ifndef __XS_H__
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_TYPES_H__
-#define __XS_TYPES_H__
+#ifndef __XS_STD_C99_H__
+#define __XS_STD_C99_H__
 
-XS_EXTERN_C_BEGIN
+#include <assert.h>     /* Diagnostics. */
+#include <ctype.h>      /* Character class tests. */
+#include <errno.h>      /* Error codes reported by (some) library functions. */
+#include <float.h>      /* Implementation-defined floating-point limits. */
+#include <iso646.h>     /* Programming in ISO 646 variant character sets. */
+#include <limits.h>     /* Implementation-defined limits. */
+#include <locale.h>     /* Locale-specific information. */
+#include <math.h>       /* Mathematical functions. */
+#include <setjmp.h>     /* Non-local jumps. */
+#include <signal.h>     /* Signals. */
+#include <stdarg.h>     /* Variable argument lists. */
+#include <stddef.h>     /* Definitions of general use. */
+#include <stdint.h>     /* Definition of various integer types. */
+#include <stdio.h>      /* Input and output. */
+#include <stdlib.h>     /* Utility functions. */
+#include <string.h>     /* String functions. */
+#include <time.h>       /* Time and date functions. */
+#include <wchar.h>      /* Manipulation of wide streams and several kinds of strings using wide characters. */
+#include <wctype.h>     /* Wide characters classification. */
 
-#include <XS/XSTypes/XSUInt8.h>
-#include <XS/XSTypes/XSUInt16.h>
-#include <XS/XSTypes/XSUInt32.h>
-#include <XS/XSTypes/XSUInt64.h>
+#ifndef _WIN32
 
-#include <XS/XSTypes/XSInt8.h>
-#include <XS/XSTypes/XSInt16.h>
-#include <XS/XSTypes/XSInt32.h>
-#include <XS/XSTypes/XSInt64.h>
+#include <complex.h>    /* Complex numbers manupilations. */
+#include <fenv.h>       /* Control of floating-point environment. */
+#include <inttypes.h>   /* Precise conversion between integer types. */
+#include <stdbool.h>    /* Boolean data type. */
+#include <tgmath.h>     /* Type-generic mathematical functions. */
 
-#include <XS/XSTypes/XSFloat32.h>
-#include <XS/XSTypes/XSFloat64.h>
+#endif
 
-#include <XS/XSTypes/XSUInteger.h>
-#include <XS/XSTypes/XSInteger.h>
-#include <XS/XSTypes/XSFloat.h>
-
-#include <XS/XSTypes/XSMutex.h>
-#include <XS/XSTypes/XSTLSKey.h>
-#include <XS/XSTypes/XSTLSObjectAssociation.h>
-
-#include <XS/XSTypes/XSPoint.h>
-#include <XS/XSTypes/XSSize.h>
-#include <XS/XSTypes/XSRect.h>
-#include <XS/XSTypes/XSRectEdge.h>
-#include <XS/XSTypes/XSEdgeInsets.h>
-
-#include <XS/XSTypes/XSLogLevel.h>
-
-#include <XS/XSTypes/XSRange.h>
-#include <XS/XSTypes/XSComparisonResult.h>
-
-#include <XS/XSTypes/XSClassID.h>
-#include <XS/XSTypes/XSObjectRef.h>
-#include <XS/XSTypes/XSClassCallbackConstructor.h>
-#include <XS/XSTypes/XSClassCallbackDestructor.h>
-#include <XS/XSTypes/XSClassCallbackCopy.h>
-#include <XS/XSTypes/XSClassCallbackEquals.h>
-#include <XS/XSTypes/XSClassCallbackToString.h>
-#include <XS/XSTypes/XSClassInfo.h>
-
-XS_EXTERN_C_END
-
-#endif /* __XS_RUNTIME_H__ */
+#endif /* __XS_STD_C99_H__ */
