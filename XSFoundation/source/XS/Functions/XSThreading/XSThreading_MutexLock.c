@@ -71,9 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSThreading.h>
 
-bool XSThreading_MutexLock( XSMutex * mutex )
+void XSThreading_MutexLock( XSMutex * mutex )
 {
     ( void )mutex;
-    
-    return false;
 }

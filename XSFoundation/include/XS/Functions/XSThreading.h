@@ -81,22 +81,107 @@ XS_EXTERN_C_BEGIN
 
 #include <XS/XSTypes.h>
 
+/*!
+ * @function    XSThreading_GetCurrentThreadID
+ * @abstract    Gets the ID of the current thread
+ * @return      The ID of the current thread
+ */
 XSUInteger XSThreading_GetCurrentThreadID( void );
+
+/*!
+ * @function    XSThreading_SetCurrentThreadName
+ * @abstract    Sets the name of the current thread
+ * @param       name    The name for the current thread
+ */
 void XSThreading_SetCurrentThreadName( const char * name );
 
+/*!
+ * @function    XSThreading_TLSKeyCreate
+ * @abstract    Creates a TLS key
+ * @param       key     A pointer to an uninitialized TLS key
+ * @return      True if the key was successfully created, otherwise false
+ */
 bool XSThreading_TLSKeyCreate( XSTLSKey * key );
+
+/*!
+ * @function    XSThreading_TLSKeyDelete
+ * @abstract    Deletes a TLS key
+ * @param       key     A pointer to the TLS key to delete
+ */
 void XSThreading_TLSKeyDelete( XSTLSKey * key );
 
+/*!
+ * @function    XSThreading_TLSGetValue
+ * @abstract    Gets a TLS value
+ * @param       key     The TLS key
+ * @return      The TLS value
+ */
 void * XSThreading_TLSGetValue( XSTLSKey * key );
+
+/*!
+ * @function    XSThreading_TLSSetValue
+ * @abstract    Sets a TLS value
+ * @param       key     The TLS key
+ * @param       data    The TLS value
+ */
 void XSThreading_TLSSetValue( XSTLSKey * key, void * data );
+
+/*!
+ * @function    XSThreading_TLSGetObject
+ * @abstract    Gets a TLS object
+ * @param       key     The TLS key
+ * @return      The TLS object
+ */
 XSObjectRef XSThreading_TLSGetObject( XSTLSKey * key );
+
+/*!
+ * @function    XSThreading_TLSSetObject
+ * @abstract    Sets a TLS object
+ * @param       key             The TLS key
+ * @param       object          The TLS object
+ * @param       association     The object association
+ * @see         XSTLSObjectAssociation
+ */
 void XSThreading_TLSSetObject( XSTLSKey * key, XSObjectRef object, XSTLSObjectAssociation association );
 
+/*!
+ * @function    XSThreading_MutexCreate
+ * @abstract    Creates a mutex
+ * @param       mutex   A pointer to an uninitialized mutex
+ * @return      True if the mutex was successfully created, otherwise false
+ */
 bool XSThreading_MutexCreate( XSMutex * mutex );
+
+/*!
+ * @function    XSThreading_MutexDelete
+ * @abstract    Deletes a mutex
+ * @param       mutex   A pointer to the mutex to delete
+ */
 void XSThreading_MutexDelete( XSMutex * mutex );
-bool XSThreading_MutexLock( XSMutex * mutex );
+
+/*!
+ * @function    XSThreading_MutexLock
+ * @abstract    Locks a mutex
+ * @param       mutex   The mutex to lock
+ */
+void XSThreading_MutexLock( XSMutex * mutex );
+
+/*!
+ * @function    XSThreading_MutexTryLock
+ * @abstract    Tries to lock a mutex
+ * @param       mutex   The mutex to lock, if possible
+ * @discussion  If the mutex can't be locked, this function will return
+ *              immediately, rather than waiting.
+ * @result      True if the mutex was locked, otherwise false
+ */
 bool XSThreading_MutexTryLock( XSMutex * mutex );
-bool XSThreading_MutexUnlock( XSMutex * mutex );
+
+/*!
+ * @function    XSThreading_MutexUnlock
+ * @abstract    Unlocks a mutex
+ * @param       mutex   The mutex to unlock
+ */
+void XSThreading_MutexUnlock( XSMutex * mutex );
 
 XS_EXTERN_C_END
 
