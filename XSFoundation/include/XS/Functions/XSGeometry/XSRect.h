@@ -80,7 +80,7 @@ XS_EXTERN_C_BEGIN
 #include <XS/XSTypes.h>
  
 /*!
- * @function    XSRectMake
+ * @function    XSRect_Make
  * @abstract    Creates a rectangle with the specified coordinates, width and height
  * @param       x       The X coordinate
  * @param       y       The Y coordinate
@@ -88,76 +88,76 @@ XS_EXTERN_C_BEGIN
  * @param       height  The height
  * @return      The rectangle
  */
-XS_EXPORT XSRect XSRectMake( XSFloat x, XSFloat y, XSFloat width, XSFloat height );
+XS_EXPORT XSRect XSRect_Make( XSFloat x, XSFloat y, XSFloat width, XSFloat height );
 
 /*!
- * @function    XSRectZero
+ * @function    XSRect_Zero
  * @abstract    Creates a rectangle with zero coordinates, width and height
  * @return      The rectangle
  */
-XS_EXPORT XSRect XSRectZero( void );
+XS_EXPORT XSRect XSRect_Zero( void );
 
 /*!
- * @function    XSRectNull
+ * @function    XSRect_Null
  * @abstract    Creates a null rectangle
  * @return      The null rectangle
  */
-XS_EXPORT XSRect XSRectNull( void );
+XS_EXPORT XSRect XSRect_Null( void );
 
 /*!
- * @function    XSRectIsEqualToToRect
+ * @function    XSRect_IsEqualToToRect
  * @abstract    Checks if two rectangles are equal
  * @param       r1      The first rectangle to compare
  * @param       r2      The second rectangle to compare
  * @return      True if both rectangles are equal, otherwise false
  */
-XS_EXPORT bool XSRectIsEqualToToRect( XSRect r1, XSRect r2 );
+XS_EXPORT bool XSRect_IsEqualToToRect( XSRect r1, XSRect r2 );
 
 /*!
- * @function    XSRectIntersectsRect
+ * @function    XSRect_IntersectsRect
  * @abstract    Checks whether two rectangles intersect
  * @param       rect1   The first rectangle
  * @param       rect2   The second rectangle
  * @return      True if the rectangles intersect, otherwise false
  */
-XS_EXPORT bool XSRectIntersectsRect( XSRect rect1, XSRect rect2 );
+XS_EXPORT bool XSRect_IntersectsRect( XSRect rect1, XSRect rect2 );
 
 /*!
- * @function    XSRectContainsPoint
+ * @function    XSRect_ContainsPoint
  * @abstract    Checks whether a rectangle contains a specified point
  * @param       rect    The rectangle
  * @param       point   The point
  * @return      True if the rectangle contains the specified point, otherwise false
  */
-XS_EXPORT bool XSRectContainsPoint( XSRect rect, XSPoint point );
+XS_EXPORT bool XSRect_ContainsPoint( XSRect rect, XSPoint point );
 
 /*!
- * @function    XSRectContainsRect
+ * @function    XSRect_ContainsRect
  * @abstract    Checks whether a rectangle contains a second rectangle
  * @param       rect1   The rectangle to examine for containment of the rectangle passed in rect2
  * @param       rect2   The rectangle to examine for being contained in the rectangle passed in rect1
  * @return      True if the first rectangle contains the second rectangle, otherwise false
  */
-XS_EXPORT bool XSRectContainsRect( XSRect rect1, XSRect rect2 );
+XS_EXPORT bool XSRect_ContainsRect( XSRect rect1, XSRect rect2 );
 
 /*!
- * @function    XSRectIsEmpty
+ * @function    XSRect_IsEmpty
  * @abstract    Checks whether a rectangle has zero width or height
  * @param       rect    The rectangle
  * @return      True if the rectangle has zero width or height, otherwise false
  */
-XS_EXPORT bool XSRectIsEmpty( XSRect rect );
+XS_EXPORT bool XSRect_IsEmpty( XSRect rect );
 
 /*!
- * @function    XSRectIsNull
+ * @function    XSRect_IsNull
  * @abstract    Checks whether a rectangle is a null rectangle
  * @param       rect    The rectangle
  * @return      True if the rectangle is a null rectangle, otherwise false
  */
-XS_EXPORT bool XSRectIsNull( XSRect rect );
+XS_EXPORT bool XSRect_IsNull( XSRect rect );
 
 /*!
- * @function    XSRectInset
+ * @function    XSRect_Inset
  * @abstract    Creates a rectangle that is smaller or larger than the source rectangle, with the same center point.
  * @param       rect    The rectangle
  * @param       dx      The X coordinate value to use for adjusting the source rectangle
@@ -172,10 +172,10 @@ XS_EXPORT bool XSRectIsNull( XSRect rect );
  *              increased.
  * @return      The new rectangle
  */
-XS_EXPORT XSRect XSRectInset( XSRect rect, XSFloat dx, XSFloat dy );
+XS_EXPORT XSRect XSRect_Inset( XSRect rect, XSFloat dx, XSFloat dy );
 
 /*!
- * @function    XSRectIntegral
+ * @function    XSRect_Integral
  * @abstract    Creates the smallest rectangle that results from converting the source rectangle values to integers
  * @param       rect    The rectangle
  * @discussion  Given a rectangle with fractional origin or size values,
@@ -184,10 +184,10 @@ XS_EXPORT XSRect XSRectInset( XSRect rect, XSFloat dx, XSFloat dy );
  *              contains the original rectangle.
  * @return      The new rectangle
  */
-XS_EXPORT XSRect XSRectIntegral( XSRect rect );
+XS_EXPORT XSRect XSRect_Integral( XSRect rect );
 
 /*!
- * @function    XSRectIntersection
+ * @function    XSRect_Intersection
  * @abstract    Returns the intersection of two rectangles
  * @param       r1      The first rectangle
  * @param       r2      The second rectangle
@@ -197,28 +197,28 @@ XS_EXPORT XSRect XSRectIntegral( XSRect rect );
  * @see         XSRectStandardize
  * @see         XSRectIsNull
  */
-XS_EXPORT XSRect XSRectIntersection( XSRect r1, XSRect r2 );
+XS_EXPORT XSRect XSRect_Intersection( XSRect r1, XSRect r2 );
 
 /*!
- * @function    XSRectOffset
+ * @function    XSRect_Offset
  * @abstract    Creates a rectangle with an origin that is offset from that of the source rectangle
  * @param       rect    The first rectangle
  * @param       dx      The offset value for the X coordinate
  * @param       dy      The offset value for the Y coordinate
  * @return      A rectangle that is the same size as the source, but with its origin offset by dx units along the x-axis and dy units along the y-axis with respect to the source
  */
-XS_EXPORT XSRect XSRectOffset( XSRect rect, XSFloat dx, XSFloat dy );
+XS_EXPORT XSRect XSRect_Offset( XSRect rect, XSFloat dx, XSFloat dy );
 
 /*!
- * @function    XSRectStandardize
+ * @function    XSRect_Standardize
  * @abstract    Creates a rectangle with a positive width and height
  * @param       rect    The rectangle
  * @return      A rectangle with a positive width and height
  */
-XS_EXPORT XSRect XSRectStandardize( XSRect rect );
+XS_EXPORT XSRect XSRect_Standardize( XSRect rect );
 
 /*!
- * @function    XSRectUnion
+ * @function    XSRect_Union
  * @abstract    Creates the smallest rectangle that contains the two source rectangles
  * @param       r1      The first rectangle
  * @param       r2      The second rectangle
@@ -232,58 +232,58 @@ XS_EXPORT XSRect XSRectStandardize( XSRect rect );
  * @see         XSRectStandardize
  * @see         XSRectIsNull
  */
-XS_EXPORT XSRect XSRectUnion( XSRect r1, XSRect r2 );
+XS_EXPORT XSRect XSRect_Union( XSRect r1, XSRect r2 );
 
 /*!
- * @function    XSRectGetMinX
+ * @function    XSRect_GetMinX
  * @abstract    Gets the smallest value for the X coordinate of the rectangle
  * @param       rect    The rectangle
  * @return      The smallest value for the X coordinate of the rectangle
  */
-XS_EXPORT XSFloat XSRectGetMinX( XSRect rect );
+XS_EXPORT XSFloat XSRect_GetMinX( XSRect rect );
 
 /*!
- * @function    XSRectGetMinY
+ * @function    XSRect_GetMinY
  * @abstract    Gets the smallest value for the Y coordinate of the rectangle
  * @param       rect    The rectangle
  * @return      The smallest value for the Y coordinate of the rectangle
  */
-XS_EXPORT XSFloat XSRectGetMinY( XSRect rect );
+XS_EXPORT XSFloat XSRect_GetMinY( XSRect rect );
 
 /*!
- * @function    XSRectGetMidX
+ * @function    XSRect_GetMidX
  * @abstract    Gets the X coordinate that establishes the center of the rectangle
  * @param       rect    The rectangle
  * @return      The X coordinate of the center of the specified rectangle
  */
-XS_EXPORT XSFloat XSRectGetMidX( XSRect rect );
+XS_EXPORT XSFloat XSRect_GetMidX( XSRect rect );
 
 /*!
- * @function    XSRectGetMidY
+ * @function    XSRect_GetMidY
  * @abstract    Gets the Y coordinate that establishes the center of the rectangle
  * @param       rect    The rectangle
  * @return      The Y coordinate of the center of the specified rectangle
  */
-XS_EXPORT XSFloat XSRectGetMidY( XSRect rect );
+XS_EXPORT XSFloat XSRect_GetMidY( XSRect rect );
 
 /*!
- * @function    XSRectGetMaxX
+ * @function    XSRect_GetMaxX
  * @abstract    Gets the largest value for the X coordinate of the rectangle
  * @param       rect    The rectangle
  * @return      The largest value for the X coordinate of the rectangle
  */
-XS_EXPORT XSFloat XSRectGetMaxX( XSRect rect );
+XS_EXPORT XSFloat XSRect_GetMaxX( XSRect rect );
 
 /*!
- * @function    XSRectGetMaxY
+ * @function    XSRect_GetMaxY
  * @abstract    Gets the largest value for the Y coordinate of the rectangle
  * @param       rect    The rectangle
  * @return      The largest value for the Y coordinate of the rectangle
  */
-XS_EXPORT XSFloat XSRectGetMaxY( XSRect rect );
+XS_EXPORT XSFloat XSRect_GetMaxY( XSRect rect );
 
 /*!
- * @function    XSRectGetWidth
+ * @function    XSRect_GetWidth
  * @abstract    Gets the width of a rectangle
  * @param       rect    The rectangle
  * @discussion  Regardless of whether the width is a positive or negative
@@ -293,10 +293,10 @@ XS_EXPORT XSFloat XSRectGetMaxY( XSRect rect );
  * @return      The width of the rectangle
  * @see         XSRectStandardize
  */
-XS_EXPORT XSFloat XSRectGetWidth( XSRect rect );
+XS_EXPORT XSFloat XSRect_GetWidth( XSRect rect );
 
 /*!
- * @function    XSRectGetHeight
+ * @function    XSRect_GetHeight
  * @abstract    Gets the height of a rectangle
  * @param       rect    The rectangle
  * @discussion  Regardless of whether the height is a positive or negative
@@ -306,7 +306,7 @@ XS_EXPORT XSFloat XSRectGetWidth( XSRect rect );
  * @return      The height of the rectangle
  * @see         XSRectStandardize
  */
-XS_EXPORT XSFloat XSRectGetHeight( XSRect rect );
+XS_EXPORT XSFloat XSRect_GetHeight( XSRect rect );
 
 XS_EXTERN_C_END
 

@@ -62,52 +62,20 @@
 /* $Id$ */
 
 /*!
- * @header      XSEdgeInsets.h
+ * @file        XSRange_Union.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSEdgeInsets functions
+ * @abstract    Definition for XSRange_Union
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
 
-#ifndef __XS_FUNCTIONS_XS_GEOMETRY_XS_EDGE_INSETS_H__
-#define __XS_FUNCTIONS_XS_GEOMETRY_XS_EDGE_INSETS_H__
-
-XS_EXTERN_C_BEGIN
-
-#include <XS/XSTypes.h>
-
-/*!
- * @function    XSEdgeInsets_Make
- * @abstract    Creates an edge insets with the specified inset values
- * @param       top     The inset at the top
- * @param       left    The inset on the left
- * @param       bottom  The inset on the bottom
- * @param       right   The inset on the right
- * @return      The edge insets
- */
-XS_EXPORT XSEdgeInsets XSEdgeInsets_Make( XSFloat top, XSFloat left, XSFloat bottom, XSFloat right );
-
-/*!
- * @function    XSEdgeInsets_IsEqualToEdgeInsets
- * @abstract    Checks if two edge insets are equal
- * @param       e1      The first edge insets to compare
- * @param       e2      The second edge insets to compare
- * @return      True if both edge insets are equal, otherwise false
- */
-XS_EXPORT bool XSEdgeInsets_IsEqualToEdgeInsets( XSEdgeInsets e1, XSEdgeInsets e2 );
-
-/*!
- * @function    XSEdgeInsets_InsetRect
- * @abstract    Adjusts a rectangle by the given edge insets
- * @param       rect    The rectangle to adjust
- * @param       insets  The edge insets
- * @return      The adjusted rectangle
- */
-XS_EXPORT XSRect XSEdgeInsets_InsetRect( XSRect rect, XSEdgeInsets insets );
-
-XS_EXTERN_C_END
-
-#endif /* __XS_FUNCTIONS_XS_GEOMETRY_XS_EDGE_INSETS_H__ */
+XSRange XSRange_Union( XSRange r1, XSRange r2 )
+{
+    XSRange r;
+    
+    r.location = XS_MIN( r1.location, r2.location );
+    r.length   = XS_MAX( XSRange_Max( r1 ), XSRange_Max( r2 ) ) - r.location;
+    
+    return r;
+}

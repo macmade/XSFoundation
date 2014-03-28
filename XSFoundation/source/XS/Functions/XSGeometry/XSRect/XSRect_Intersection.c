@@ -62,52 +62,67 @@
 /* $Id$ */
 
 /*!
- * @header      XSEdgeInsets.h
+ * @file        XSRect_Intersection.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSEdgeInsets functions
+ * @abstract    Definition for XSRect_Intersection
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
 
-#ifndef __XS_FUNCTIONS_XS_GEOMETRY_XS_EDGE_INSETS_H__
-#define __XS_FUNCTIONS_XS_GEOMETRY_XS_EDGE_INSETS_H__
-
-XS_EXTERN_C_BEGIN
-
-#include <XS/XSTypes.h>
-
-/*!
- * @function    XSEdgeInsets_Make
- * @abstract    Creates an edge insets with the specified inset values
- * @param       top     The inset at the top
- * @param       left    The inset on the left
- * @param       bottom  The inset on the bottom
- * @param       right   The inset on the right
- * @return      The edge insets
- */
-XS_EXPORT XSEdgeInsets XSEdgeInsets_Make( XSFloat top, XSFloat left, XSFloat bottom, XSFloat right );
-
-/*!
- * @function    XSEdgeInsets_IsEqualToEdgeInsets
- * @abstract    Checks if two edge insets are equal
- * @param       e1      The first edge insets to compare
- * @param       e2      The second edge insets to compare
- * @return      True if both edge insets are equal, otherwise false
- */
-XS_EXPORT bool XSEdgeInsets_IsEqualToEdgeInsets( XSEdgeInsets e1, XSEdgeInsets e2 );
-
-/*!
- * @function    XSEdgeInsets_InsetRect
- * @abstract    Adjusts a rectangle by the given edge insets
- * @param       rect    The rectangle to adjust
- * @param       insets  The edge insets
- * @return      The adjusted rectangle
- */
-XS_EXPORT XSRect XSEdgeInsets_InsetRect( XSRect rect, XSEdgeInsets insets );
-
-XS_EXTERN_C_END
-
-#endif /* __XS_FUNCTIONS_XS_GEOMETRY_XS_EDGE_INSETS_H__ */
+XSRect XSRect_Intersection( XSRect r1, XSRect r2 )
+{
+    XSRect r;
+    
+    r1 = XSRect_Standardize( r1 );
+    r2 = XSRect_Standardize( r2 );
+    
+    if
+    (
+           XSRect_GetMaxX( r1 ) <= r2.origin.x
+        || XSRect_GetMaxY( r1 ) <= r2.origin.y
+        || XSRect_GetMaxX( r2 ) <= r1.origin.x
+        || XSRect_GetMaxY( r2 ) <= r1.origin.y
+    )
+    {
+        return XSRect_Zero();
+    }
+    
+    if( r1.origin.x <= r2.origin.x )
+    {
+        r.origin.x = r2.origin.x;
+    }
+    else
+    {
+        r.origin.x = r1.origin.x;
+    }
+    
+    if( r1.origin.y <= r2.origin.y )
+    {
+        r.origin.y = r2.origin.y;
+    }
+    else
+    {
+        r.origin.y = r1.origin.y;
+    }
+    
+    if( XSRect_GetMaxX( r1 ) >= XSRect_GetMaxX( r2 ) )
+    {
+        r.size.width = XSRect_GetMaxX( r2 ) - r.origin.x;
+    }
+    else
+    {
+        r.size.width = XSRect_GetMaxX( r1 ) - r.origin.x;
+    }
+    
+    if( XSRect_GetMaxY( r1 ) >= XSRect_GetMaxY( r2 ) )
+    {
+        r.size.height = XSRect_GetMaxY( r2 ) - r.origin.y;
+    }
+    else
+    {
+        r.size.height = XSRect_GetMaxY( r1 ) - r.origin.y;
+    }
+    
+    return r;
+}

@@ -80,58 +80,58 @@ XS_EXTERN_C_BEGIN
 #include <XS/XSTypes.h>
 
 /*!
- * @function    XSRangeMake
+ * @function    XSRange_Make
  * @abstract    Creates an range with the specified location and length
  * @param       location    The range's location
  * @param       length      The range's length
  * @return      The range
  */
-XS_EXPORT XSRange XSRangeMake( XSUInteger location, XSUInteger length );
+XS_EXPORT XSRange XSRange_Make( XSUInteger location, XSUInteger length );
 
 /*!
- * @function    XSRangeZero
+ * @function    XSRange_Zero
  * @abstract    Creates a range with zero location and length
  * @return      The range
  */
-XS_EXPORT XSRange XSRangeZero( void );
+XS_EXPORT XSRange XSRange_Zero( void );
 
 /*!
- * @function    XSRangeMax
+ * @function    XSRange_Max
  * @abstract    Returns the sum of the location and length of the range
  * @param       range       The range
  * @return      The sum of the location and length of the range
  */
-XS_EXPORT XSUInteger XSRangeMax( XSRange range );
+XS_EXPORT XSUInteger XSRange_Max( XSRange range );
 
 /*!
- * @function    XSRangeIsEqualToRange
+ * @function    XSRange_IsEqualToRange
  * @abstract    Checks if two ranges are equal
  * @param       r1      The first range to compare
  * @param       r2      The second range to compare
  * @return      True if both ranges are equal, otherwise false
  */
-XS_EXPORT bool XSRangeIsEqualToRange( XSRange r1, XSRange r2 );
+XS_EXPORT bool XSRange_IsEqualToRange( XSRange r1, XSRange r2 );
 
 /*!
- * @function    XSRangeLocationInRange
+ * @function    XSRange_LocationInRange
  * @abstract    Checks whether a specified position is in a given range
  * @param       location    The location
  * @param       range       The range
  * @return      True if the location is in the given range, otherwise false
  */
-XS_EXPORT bool XSRangeLocationInRange( XSUInteger location, XSRange range );
+XS_EXPORT bool XSRange_LocationInRange( XSUInteger location, XSRange range );
 
 /*!
- * @function    XSRangeIntersection
+ * @function    XSRange_Intersection
  * @abstract    Returns the intersection of the specified ranges
  * @param       r1      The first range
  * @param       r2      The second range
  * @return      A range containing the indices that exist in both ranges
  */
-XS_EXPORT XSRange XSRangeIntersection( XSRange r1, XSRange r2 );
+XS_EXPORT XSRange XSRange_Intersection( XSRange r1, XSRange r2 );
 
 /*!
- * @function    XSRangeUnion
+ * @function    XSRange_Union
  * @abstract    Returns the union of the specified ranges
  * @param       r1      The first range
  * @param       r2      The second range
@@ -139,7 +139,7 @@ XS_EXPORT XSRange XSRangeIntersection( XSRange r1, XSRange r2 );
  *              range is equal to the larger range.
  * @return      A range covering all indices in and between r1 and r2
  */
-XS_EXPORT XSRange XSRangeUnion( XSRange r1, XSRange r2 );
+XS_EXPORT XSRange XSRange_Union( XSRange r1, XSRange r2 );
 
 XS_EXTERN_C_END
 

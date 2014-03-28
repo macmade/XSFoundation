@@ -80,29 +80,29 @@ XS_EXTERN_C_BEGIN
 #include <XS/XSTypes.h>
 
 /*!
- * @function    XSSizeMake
+ * @function    XSSize_Make
  * @abstract    Creates a size with the specified width and height
  * @param       width   The width
  * @param       height  The height
  * @return      The size
  */
-XS_EXPORT XSSize XSSizeMake( XSFloat width, XSFloat height );
+XS_EXPORT XSSize XSSize_Make( XSFloat width, XSFloat height );
 
 /*!
- * @function    XSSizeZero
+ * @function    XSSize_Zero
  * @abstract    Creates a size with zero width and height
  * @return      The size
  */
-XS_EXPORT XSSize XSSizeZero( void );
+XS_EXPORT XSSize XSSize_Zero( void );
 
 /*!
- * @function    XSSizeIsEqualToSize
+ * @function    XSSize_IsEqualToSize
  * @abstract    Checks if two sizes are equal
  * @param       s1      The first size to compare
  * @param       s2      The second size to compare
  * @return      True if both sizes are equal, otherwise false
  */
-XS_EXPORT bool XSSizeIsEqualToSize( XSSize s1, XSSize s2 );
+XS_EXPORT bool XSSize_IsEqualToSize( XSSize s1, XSSize s2 );
 
 XS_EXTERN_C_END
 

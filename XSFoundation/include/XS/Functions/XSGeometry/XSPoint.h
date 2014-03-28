@@ -80,29 +80,29 @@ XS_EXTERN_C_BEGIN
 #include <XS/XSTypes.h>
 
 /*!
- * @function    XSPointMake
+ * @function    XSPoint_Make
  * @abstract    Creates a point with the specified coordinates
  * @param       x       The X coordinate
  * @param       y       The Y coordinate
  * @return      The point
  */
-XS_EXPORT XSPoint XSPointMake( XSFloat x, XSFloat y );
+XS_EXPORT XSPoint XSPoint_Make( XSFloat x, XSFloat y );
 
 /*!
- * @function    XSPointZero
+ * @function    XSPoint_Zero
  * @abstract    Creates a point with zero coordinates
  * @return      The point
  */
-XS_EXPORT XSPoint XSPointZero( void );
+XS_EXPORT XSPoint XSPoint_Zero( void );
 
 /*!
- * @function    XSPointIsEqualToPoint
+ * @function    XSPoint_IsEqualToPoint
  * @abstract    Checks if two points are equal
  * @param       p1      The first point to compare
  * @param       p2      The second second to compare
  * @return      True if both points are equal, otherwise false
  */
-XS_EXPORT bool XSPointIsEqualToPoint( XSPoint p1, XSPoint p2 );
+XS_EXPORT bool XSPoint_IsEqualToPoint( XSPoint p1, XSPoint p2 );
 
 XS_EXTERN_C_END
 
