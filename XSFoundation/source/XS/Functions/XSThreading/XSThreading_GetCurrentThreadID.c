@@ -91,7 +91,7 @@ XSUInteger XSThreading_GetCurrentThreadID( void )
     
     #elif defined( __unix__ )
     
-    return thr_self();
+    return ( XSUInteger )thr_self();
     
     #else
     
