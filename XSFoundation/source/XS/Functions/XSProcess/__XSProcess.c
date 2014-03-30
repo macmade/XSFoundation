@@ -62,88 +62,14 @@
 /* $Id$ */
 
 /*!
- * @file        XSProcess_GetProcessName.c
+ * @file        __XSProcess.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSProcess_GetProcessName
+ * @abstract    Definitions for process functions
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSProcess.h>
 
-#ifdef __APPLE__
-#include <mach-o/dyld.h>
-#endif
-
-const char * XSProcess_GetProcessName( void )
-{
-    if( XSAtomic_CompareAndSwapInteger( __XSProcess_ProcNameStatusNotInited, __XSProcess_ProcNameStatusInitializing, &__XSProcess_ProcessNameStatus ) )
-    {
-        memset( __XSProcess_ProcessName, 0, __XS_PROCESS_NAME_MAX );
-        
-        #if defined( _WIN32 )
-        
-        {
-            TCHAR  name[ __XS_PROCESS_NAME_MAX ];
-            char * pos;
-            
-            memset( name, 0, __XS_PROCESS_NAME_MAX );
-            
-            GetModuleFileName( NULL, ( LPTSTR )name, MAX_PATH );
-            
-            pos = strrchr( name, '\' );
-            
-            if( pos != NULL )
-            {
-                strcpy_s( __XSProcess_ProcessName, __XS_PROCESS_NAME_MAX, pos + 1 );
-            }
-            else
-            {
-                strcpy_s( __XSProcess_ProcessName, __XS_PROCESS_NAME_MAX, name );
-            }
-            
-            if( strlen( __XSProcess_ProcessName ) == 0 )
-            {
-                strcpy_s( __XSProcess_ProcessName, __XS_PROCESS_NAME_MAX, "unknown" );
-            }
-        }
-        
-        #elif defined( __APPLE__ )
-        
-        {
-            char     name[ __XS_PROCESS_NAME_MAX ];
-            XSUInt32 size;
-            char   * pos;
-            
-            _NSGetExecutablePath( name, &size );
-            
-            pos = strrchr( name, '/' );
-            
-            if( pos != NULL )
-            {
-                strlcpy( __XSProcess_ProcessName, pos + 1, __XS_PROCESS_NAME_MAX );
-            }
-            else
-            {
-                strlcpy( __XSProcess_ProcessName, name, __XS_PROCESS_NAME_MAX );
-            }
-            
-            if( strlen( __XSProcess_ProcessName ) == 0 )
-            {
-                strlcpy( __XSProcess_ProcessName, "unknown", __XS_PROCESS_NAME_MAX );
-            }
-        }
-        
-        #else
-        
-        strcpy( __XSProcess_ProcessName, "unknown" );
-        
-        #endif
-        
-        while( XSAtomic_CompareAndSwapInteger( __XSProcess_ProcNameStatusInitializing, __XSProcess_ProcNameStatusInited, &__XSProcess_ProcessNameStatus ) == false );
-    }
-    
-    while( XSAtomic_CompareAndSwapInteger( __XSProcess_ProcNameStatusInited, __XSProcess_ProcNameStatusInited, &__XSProcess_ProcessNameStatus ) == false );
-    
-    return __XSProcess_ProcessName;
-}
+char __XSProcess_ProcessName[ __XS_PROCESS_NAME_MAX ];
+volatile XSInteger __XSProcess_ProcessNameStatus = __XSProcess_ProcNameStatusNotInited;

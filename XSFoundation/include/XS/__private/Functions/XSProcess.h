@@ -62,88 +62,59 @@
 /* $Id$ */
 
 /*!
- * @file        XSProcess_GetProcessName.c
+ * @header      XSProcess.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSProcess_GetProcessName
+ * @abstract    Private definitions for XSProcess.h
  */
 
-#include <XS/XS.h>
-#include <XS/__private/Functions/XSProcess.h>
-
-#ifdef __APPLE__
-#include <mach-o/dyld.h>
+#ifndef __XS_H__
+#error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-const char * XSProcess_GetProcessName( void )
+#ifndef __XS___PRIVATE_FUNCTIONS_XS_PROCESS_H__
+#define __XS___PRIVATE_FUNCTIONS_XS_PROCESS_H__
+
+#include <XS/XSTypes.h>
+
+#ifdef __APPLE__
+#include <sys/syslimits.h>
+#endif
+
+/*!
+ * @def         __XS_PROCESS_NAME_MAX
+ * @abstract    Maximum length for a process name
+ */
+#if defined( _WIN32 )
+    #define __XS_PROCESS_NAME_MAX   MAX_PATH
+#elif defined( __APPLE__ )
+    #define __XS_PROCESS_NAME_MAX   PATH_MAX
+#else
+    #define __XS_PROCESS_NAME_MAX   1024
+#endif
+
+/*!
+ * @typedef     __XSProcess_ProcNameStatus
+ * @abstract    Process name status
+ */
+typedef enum
 {
-    if( XSAtomic_CompareAndSwapInteger( __XSProcess_ProcNameStatusNotInited, __XSProcess_ProcNameStatusInitializing, &__XSProcess_ProcessNameStatus ) )
-    {
-        memset( __XSProcess_ProcessName, 0, __XS_PROCESS_NAME_MAX );
-        
-        #if defined( _WIN32 )
-        
-        {
-            TCHAR  name[ __XS_PROCESS_NAME_MAX ];
-            char * pos;
-            
-            memset( name, 0, __XS_PROCESS_NAME_MAX );
-            
-            GetModuleFileName( NULL, ( LPTSTR )name, MAX_PATH );
-            
-            pos = strrchr( name, '\' );
-            
-            if( pos != NULL )
-            {
-                strcpy_s( __XSProcess_ProcessName, __XS_PROCESS_NAME_MAX, pos + 1 );
-            }
-            else
-            {
-                strcpy_s( __XSProcess_ProcessName, __XS_PROCESS_NAME_MAX, name );
-            }
-            
-            if( strlen( __XSProcess_ProcessName ) == 0 )
-            {
-                strcpy_s( __XSProcess_ProcessName, __XS_PROCESS_NAME_MAX, "unknown" );
-            }
-        }
-        
-        #elif defined( __APPLE__ )
-        
-        {
-            char     name[ __XS_PROCESS_NAME_MAX ];
-            XSUInt32 size;
-            char   * pos;
-            
-            _NSGetExecutablePath( name, &size );
-            
-            pos = strrchr( name, '/' );
-            
-            if( pos != NULL )
-            {
-                strlcpy( __XSProcess_ProcessName, pos + 1, __XS_PROCESS_NAME_MAX );
-            }
-            else
-            {
-                strlcpy( __XSProcess_ProcessName, name, __XS_PROCESS_NAME_MAX );
-            }
-            
-            if( strlen( __XSProcess_ProcessName ) == 0 )
-            {
-                strlcpy( __XSProcess_ProcessName, "unknown", __XS_PROCESS_NAME_MAX );
-            }
-        }
-        
-        #else
-        
-        strcpy( __XSProcess_ProcessName, "unknown" );
-        
-        #endif
-        
-        while( XSAtomic_CompareAndSwapInteger( __XSProcess_ProcNameStatusInitializing, __XSProcess_ProcNameStatusInited, &__XSProcess_ProcessNameStatus ) == false );
-    }
-    
-    while( XSAtomic_CompareAndSwapInteger( __XSProcess_ProcNameStatusInited, __XSProcess_ProcNameStatusInited, &__XSProcess_ProcessNameStatus ) == false );
-    
-    return __XSProcess_ProcessName;
+    __XSProcess_ProcNameStatusNotInited     = 0x00, /*! Process name not inited */
+    __XSProcess_ProcNameStatusInited        = 0x01, /*! Process name inited */
+    __XSProcess_ProcNameStatusInitializing  = 0x02, /*! Process name initializing */
 }
+__XSProcess_ProcNameStatus;
+
+/*!
+ * @typedef     __XSProcess_ProcessName
+ * @abstract    Process name
+ */
+XS_EXTERN char __XSProcess_ProcessName[ __XS_PROCESS_NAME_MAX ];
+
+/*!
+ * @typedef     __XSProcess_ProcNameStatus
+ * @abstract    Process name status
+ */
+XS_EXTERN volatile XSInteger __XSProcess_ProcessNameStatus;
+
+#endif /* __XS___PRIVATE_FUNCTIONS_XS_PROCESS_H__ */

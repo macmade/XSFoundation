@@ -69,6 +69,7 @@
  */
 
 #include <XS/XS.h>
+#include <XS/__private/Functions/XSProcess.h>
 
 XSUInteger XSProcess_GetProcessID( void )
 {
