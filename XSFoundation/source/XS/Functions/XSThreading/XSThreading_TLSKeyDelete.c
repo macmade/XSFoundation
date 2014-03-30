@@ -73,5 +73,18 @@
 
 void XSThreading_TLSKeyDelete( XSTLSKey * key )
 {
-    ( void )key;
+    if( key == NULL )
+    {
+        return;
+    }
+    
+    #ifdef _WIN32
+    
+    
+    
+    #else
+    
+    
+    
+    #endif
 }

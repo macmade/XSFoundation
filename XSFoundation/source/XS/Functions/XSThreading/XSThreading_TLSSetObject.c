@@ -73,7 +73,11 @@
 
 void XSThreading_TLSSetObject( XSTLSKey * key, XSObjectRef object, XSTLSObjectAssociation association )
 {
-    ( void )key;
+    if( key == NULL )
+    {
+        return;
+    }
+    
     ( void )object;
     ( void )association;
 }

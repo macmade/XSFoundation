@@ -94,30 +94,30 @@ int main( int argc, const char * argv[] )
         bool2 = XSCopy( bool1 );
         bool3 = XSBoolean_Create( false );
         
-        printf( "bool1: %p\n", bool1 );
-        printf( "bool2: %p\n", bool2 );
-        printf( "bool3: %p\n", bool3 );
+        XSLog( "bool1: %p", bool1 );
+        XSLog( "bool2: %p", bool2 );
+        XSLog( "bool3: %p", bool3 );
         
-        printf( "bool1: %s\n", XSRuntime_GetDescription( bool1 ) );
-        printf( "bool2: %s\n", XSRuntime_GetDescription( bool2 ) );
-        printf( "bool3: %s\n", XSRuntime_GetDescription( bool3 ) );
+        XSLog( "bool1: %s", XSRuntime_GetDescription( bool1 ) );
+        XSLog( "bool2: %s", XSRuntime_GetDescription( bool2 ) );
+        XSLog( "bool3: %s", XSRuntime_GetDescription( bool3 ) );
         
         if( XSEquals( bool1, bool2 ) )
         {
-            printf( "bool1 == bool2\n" );
+            XSLog( "bool1 == bool2" );
         }
         else
         {
-            printf( "bool1 != bool2\n" );
+            XSLog( "bool1 != bool2" );
         }
         
         if( XSEquals( bool1, bool3 ) )
         {
-            printf( "bool1 == bool3\n" );
+            XSLog( "bool1 == bool3" );
         }
         else
         {
-            printf( "bool1 != bool3\n" );
+            XSLog( "bool1 != bool3" );
         }
         
         XSRelease( bool1 );
@@ -131,12 +131,15 @@ int main( int argc, const char * argv[] )
     
     XSAtomic_IncrementInteger( &x );
     
-    printf( "%li\n", ( long )x );
+    XSLog( "%li", ( long )x );
     
     XSAtomic_AddInteger( 42, &x );
     
-    printf( "%li\n", ( long )x );
-    printf( "%li\n", XSAtomic_ReadInteger( &x ) );
+    XSLog( "%li", ( long )x );
+    XSLog( "%li", XSAtomic_ReadInteger( &x ) );
+    
+    XSLog( "%lu", ( unsigned long )XSProcess_GetProcessID() );
+    XSLog( "%s", XSProcess_GetProcessName() );
     
     return 0;
 }

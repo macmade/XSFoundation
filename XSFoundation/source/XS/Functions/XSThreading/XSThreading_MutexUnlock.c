@@ -73,5 +73,18 @@
 
 void XSThreading_MutexUnlock( XSMutex * mutex )
 {
-    ( void )mutex;
+    if( mutex == NULL )
+    {
+        return;
+    }
+    
+    #ifdef _WIN32
+    
+    
+    
+    #else
+    
+    pthread_mutex_unlock( mutex );
+    
+    #endif
 }

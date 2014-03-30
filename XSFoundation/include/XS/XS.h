@@ -80,12 +80,7 @@
 #endif
 
 /* Standard includes */
-#include <XS/STD-C99.h>
-#ifdef _WIN32
-#include <XS/STD-WIN32.h>
-#else
-#include <XS/STD-POSIX.h>
-#endif
+#include <XS/STD.h>
 
 /* Core */
 #include <XS/XSMacros.h>
@@ -96,6 +91,7 @@
 #include <XS/Functions/XSMemory.h>
 #include <XS/Functions/XSRuntime.h>
 #include <XS/Functions/XSMemoryDebug.h>
+#include <XS/Functions/XSProcess.h>
 #include <XS/Functions/XSThreading.h>
 #include <XS/Functions/XSLog.h>
 #include <XS/Functions/XSMath.h>

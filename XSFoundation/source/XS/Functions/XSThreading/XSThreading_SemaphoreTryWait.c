@@ -62,31 +62,29 @@
 /* $Id$ */
 
 /*!
- * @file        XSThreading_TLSKeyCreate.c
+ * @file        XSThreading_SemaphoreTryWait.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSThreading_TLSKeyCreate
+ * @abstract    Definition for XSThreading_SemaphoreTryWait
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSThreading.h>
 
-bool XSThreading_TLSKeyCreate( XSTLSKey * key )
+bool XSThreading_SemaphoreTryWait( XSSemaphore * sem )
 {
-    if( key == NULL )
+    if( sem == NULL )
     {
         return false;
     }
     
     #ifdef _WIN32
     
-    
+    return false;
     
     #else
     
-    
+    return false;
     
     #endif
-    
-    return false;
 }

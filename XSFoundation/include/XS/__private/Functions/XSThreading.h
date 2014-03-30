@@ -77,6 +77,15 @@
 
 #include <XS/XSTypes.h>
 
-
+/*!
+ * @typedef     __XSThreading_TLSValue
+ * @abstract    TLS value container
+ */
+typedef struct
+{
+    void                  * value;          /*! The TLS value */
+    XSTLSObjectAssociation  association;    /*! The TLS association */
+}
+__XSThreading_TLSValue;
 
 #endif /* __XS___PRIVATE_FUNCTIONS_XS_THREADING_H__ */

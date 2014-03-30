@@ -62,31 +62,25 @@
 /* $Id$ */
 
 /*!
- * @file        XSThreading_TLSKeyCreate.c
+ * @header      STD.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSThreading_TLSKeyCreate
+ * @abstract    Standard include files
  */
 
-#include <XS/XS.h>
-#include <XS/__private/Functions/XSThreading.h>
+#ifndef __XS_H__
+#error "Please include '<XS/XS.h>' instead of this file!"
+#endif
 
-bool XSThreading_TLSKeyCreate( XSTLSKey * key )
-{
-    if( key == NULL )
-    {
-        return false;
-    }
-    
-    #ifdef _WIN32
-    
-    
-    
-    #else
-    
-    
-    
-    #endif
-    
-    return false;
-}
+#ifndef __XS_STD_H__
+#define __XS_STD_H__
+
+#include <XS/STD-C99.h>
+
+#ifdef _WIN32
+#include <XS/STD-WIN32.h>
+#else
+#include <XS/STD-POSIX.h>
+#endif
+
+#endif /* __XS_STD_H__ */

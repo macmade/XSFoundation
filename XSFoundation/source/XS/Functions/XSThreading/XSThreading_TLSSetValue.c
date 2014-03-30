@@ -73,6 +73,10 @@
 
 void XSThreading_TLSSetValue( XSTLSKey * key, void * data )
 {
-    ( void )key;
+    if( key == NULL )
+    {
+        return;
+    }
+    
     ( void )data;
 }

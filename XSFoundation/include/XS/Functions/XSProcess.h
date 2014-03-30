@@ -62,31 +62,37 @@
 /* $Id$ */
 
 /*!
- * @file        XSThreading_TLSKeyCreate.c
+ * @header      XSProcess.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSThreading_TLSKeyCreate
+ * @abstract    XSFoundation process functions
  */
 
-#include <XS/XS.h>
-#include <XS/__private/Functions/XSThreading.h>
+#ifndef __XS_H__
+#error "Please include '<XS/XS.h>' instead of this file!"
+#endif
 
-bool XSThreading_TLSKeyCreate( XSTLSKey * key )
-{
-    if( key == NULL )
-    {
-        return false;
-    }
-    
-    #ifdef _WIN32
-    
-    
-    
-    #else
-    
-    
-    
-    #endif
-    
-    return false;
-}
+#ifndef __XS_FUNCTIONS_XS_PROCESS_H__
+#define __XS_FUNCTIONS_XS_PROCESS_H__
+
+XS_EXTERN_C_BEGIN
+
+#include <XS/XSTypes.h>
+
+/*!
+ * @function    XSProcess_GetProcessID
+ * @abstract    Gets the ID of the current process
+ * @return      The ID of the current process
+ */
+XSUInteger XSProcess_GetProcessID( void );
+
+/*!
+ * @function    XSProcess_GetProcessID
+ * @abstract    Gets the name of the current process
+ * @return      The name of the current process
+ */
+const char * XSProcess_GetProcessName( void );
+
+XS_EXTERN_C_END
+
+#endif /* __XS_FUNCTIONS_XS_PROCESS_H__ */

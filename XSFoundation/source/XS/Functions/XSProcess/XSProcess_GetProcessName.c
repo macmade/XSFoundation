@@ -62,31 +62,33 @@
 /* $Id$ */
 
 /*!
- * @file        XSThreading_TLSKeyCreate.c
+ * @file        XSProcess_GetProcessName.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSThreading_TLSKeyCreate
+ * @abstract    Definition for XSProcess_GetProcessName
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSThreading.h>
 
-bool XSThreading_TLSKeyCreate( XSTLSKey * key )
+#if defined( _WIN32 )
+
+const char * XSProcess_GetProcessName( void )
 {
-    if( key == NULL )
-    {
-        return false;
-    }
-    
-    #ifdef _WIN32
-    
-    
-    
-    #else
-    
-    
-    
-    #endif
-    
-    return false;
+    return "unknown";
 }
+
+#elif defined( __APPLE__ )
+
+const char * XSProcess_GetProcessName( void )
+{
+    return "unknown";
+}
+
+#else
+
+const char * XSProcess_GetProcessName( void )
+{
+    return "unknown";
+}
+
+#endif

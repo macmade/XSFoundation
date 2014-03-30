@@ -73,7 +73,20 @@
 
 XSObjectRef XSThreading_TLSGetObject( XSTLSKey * key )
 {
-    ( void )key;
+    if( key == NULL )
+    {
+        return NULL;
+    }
+    
+    #ifdef _WIN32
+    
+    
+    
+    #else
+    
+    
+    
+    #endif
     
     return NULL;
 }

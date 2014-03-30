@@ -62,31 +62,23 @@
 /* $Id$ */
 
 /*!
- * @file        XSThreading_TLSKeyCreate.c
+ * @file        XSProcess_GetProcessID.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSThreading_TLSKeyCreate
+ * @abstract    Definition for XSProcess_GetProcessID
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSThreading.h>
 
-bool XSThreading_TLSKeyCreate( XSTLSKey * key )
+XSUInteger XSProcess_GetProcessID( void )
 {
-    if( key == NULL )
-    {
-        return false;
-    }
-    
     #ifdef _WIN32
     
-    
+    return ( XSUInteger )GetCurrentProcessId();
     
     #else
     
-    
+    return ( XSUInteger )getpid();
     
     #endif
-    
-    return false;
 }

@@ -81,6 +81,7 @@
 #include <grp.h>            /* User group information and control. */
 #include <pthread.h>        /* Defines an API for creating and manipulating POSIX threads. */
 #include <pwd.h>            /* passwd (user information) access and control. */
+#include <semaphore.h>      /* Semaphores */
 #include <sys/ipc.h>        /* Inter-process communication (IPC). */
 #include <sys/msg.h>        /* POSIX message queues. */
 #include <sys/sem.h>        /* POSIX semaphores. */

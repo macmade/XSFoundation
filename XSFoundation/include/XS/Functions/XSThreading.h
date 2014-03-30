@@ -66,8 +66,9 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSFoundation threading functions
- * @discussion  Whenever possible, prefer using the XSThread/XSLock classes
- *              rather than this set of functions.
+ * @discussion  Whenever possible, prefer using the XSFoundation class types
+ *              like XSThreaRef, XSLockRef, XSSemaphoreRef, etc over this set
+ *              of functions.
  */
 
 #ifndef __XS_H__
@@ -163,6 +164,7 @@ void XSThreading_MutexDelete( XSMutex * mutex );
  * @function    XSThreading_MutexLock
  * @abstract    Locks a mutex
  * @param       mutex   The mutex to lock
+ * @discussion  Note that mutexes are recursive on Windows.
  */
 void XSThreading_MutexLock( XSMutex * mutex );
 
@@ -182,6 +184,46 @@ bool XSThreading_MutexTryLock( XSMutex * mutex );
  * @param       mutex   The mutex to unlock
  */
 void XSThreading_MutexUnlock( XSMutex * mutex );
+
+/*!
+ * @function    XSThreading_SemaphoreCreate
+ * @abstract    Creates a semaphore
+ * @param       sem     A pointer to an uninitialized semaphore
+ * @param       count   The maximum count for the semaphore
+ * @return      True if the semaphore was successfully created, otherwise false
+ */
+bool XSThreading_SemaphoreCreate( XSSemaphore * sem, XSUInteger count );
+
+/*!
+ * @function    XSThreading_SemaphoreDelete
+ * @abstract    Deletes a semaphore
+ * @param       sem     A pointer to the semaphore to delete
+ */
+void XSThreading_SemaphoreDelete( XSSemaphore * sem );
+
+/*!
+ * @function    XSThreading_SemaphoreWait
+ * @abstract    Locks a semaphore
+ * @param       sem     The semaphore to lock
+ */
+void XSThreading_SemaphoreWait( XSSemaphore * sem );
+
+/*!
+ * @function    XSThreading_SemaphoreTryWait
+ * @abstract    Tries to lock a semaphore
+ * @param       sem     The semaphore to lock, if possible
+ * @discussion  If the semaphore can't be locked, this function will return
+ *              immediately, rather than waiting.
+ * @result      True if the semaphore was locked, otherwise false
+ */
+bool XSThreading_SemaphoreTryWait( XSSemaphore * sem );
+
+/*!
+ * @function    XSThreading_SemaphoreEndWait
+ * @abstract    Unlocks a semaphore
+ * @param       sem     The semaphore to unlock
+ */
+void XSThreading_SemaphoreEndWait( XSSemaphore * sem );
 
 XS_EXTERN_C_END
 

@@ -73,15 +73,29 @@
 
 void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char * func, const char * fmt, va_list args )
 {
+    const char * levelName;
+    
     if( ( XSGetLogLevel() & level ) == 0 )
     {
         return;
     }
     
+    levelName = "INFO";
+    
+    if( level == XSLogLevelEmergency ) { levelName = "EMERGENCY"; }
+    if( level == XSLogLevelAlert     ) { levelName = "ALERT";     }
+    if( level == XSLogLevelCritical  ) { levelName = "CRITICAL";  }
+    if( level == XSLogLevelError     ) { levelName = "ERROR";     }
+    if( level == XSLogLevelWarning   ) { levelName = "WARNING";   }
+    if( level == XSLogLevelNotice    ) { levelName = "NOTICE";    }
+    if( level == XSLogLevelInfo      ) { levelName = "INFO";      }
+    if( level == XSLogLevelDebug     ) { levelName = "DEBUG";     }
+    
     ( void )file;
     ( void )line;
     ( void )func;
     
+    fprintf( stderr, "XSFoundation [%s]: ", levelName );
     vfprintf( stderr, fmt, args );
     fprintf( stderr, "\n" );
 }

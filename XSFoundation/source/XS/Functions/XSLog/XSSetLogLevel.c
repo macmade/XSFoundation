@@ -73,5 +73,5 @@
 
 void XSSetLogLevel( XSUInteger level )
 {
-    ( void )level;
+    XSAtomic_CompareAndSwapInteger( ( XSInteger )XSGetLogLevel(), ( XSInteger )level, ( volatile XSInteger * )&level );
 }

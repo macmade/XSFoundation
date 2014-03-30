@@ -73,5 +73,18 @@
 
 void XSThreading_MutexDelete( XSMutex * mutex )
 {
-    ( void )mutex;
+    if( mutex == NULL )
+    {
+        return;
+    }
+    
+    #ifdef _WIN32
+    
+    
+    
+    #else
+    
+    pthread_mutex_destroy( mutex );
+    
+    #endif
 }

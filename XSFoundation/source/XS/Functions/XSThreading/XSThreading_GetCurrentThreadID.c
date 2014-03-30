@@ -73,5 +73,17 @@
 
 XSUInteger XSThreading_GetCurrentThreadID( void )
 {
+    #if defined( _WIN32 )
+    
+    return ( XSUInteger )GetCurrentThreadId();
+    
+    #elif defined( __APPLE__ )
+    
     return 0;
+    
+    #else
+    
+    return 0;
+    
+    #endif
 }

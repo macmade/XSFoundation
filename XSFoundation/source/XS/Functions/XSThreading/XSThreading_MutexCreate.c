@@ -73,7 +73,36 @@
 
 bool XSThreading_MutexCreate( XSMutex * mutex )
 {
-    ( void )mutex;
+    if( mutex == NULL )
+    {
+        return false;
+    }
     
-    return false;
+    #ifdef _WIN32
+    
+    
+    
+    #else
+    
+    {
+        pthread_mutexattr_t attr;
+        
+        if( pthread_mutexattr_init( &attr ) != 0 )
+        {
+            return false;
+        }
+        
+        if( pthread_mutex_init( mutex, &attr ) != 0 )
+        {
+            pthread_mutexattr_destroy( &attr );
+            
+            return false;
+        }
+        
+        pthread_mutexattr_destroy( &attr );
+        
+        return true;
+    }
+    
+    #endif
 }

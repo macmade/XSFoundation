@@ -73,5 +73,5 @@
 
 XSUInteger XSGetLogLevel( void )
 {
-    return 0;
+    return ( XSUInteger )XSAtomic_ReadInteger( &__XSLog_Level );
 }

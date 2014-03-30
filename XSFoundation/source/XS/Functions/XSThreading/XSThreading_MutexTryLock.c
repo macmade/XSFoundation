@@ -73,7 +73,18 @@
 
 bool XSThreading_MutexTryLock( XSMutex * mutex )
 {
-    ( void )mutex;
+    if( mutex == NULL )
+    {
+        return false;
+    }
+    
+    #ifdef _WIN32
     
     return false;
+    
+    #else
+    
+    return ( pthread_mutex_trylock( mutex ) == 0 ) ? true : false;
+    
+    #endif
 }
