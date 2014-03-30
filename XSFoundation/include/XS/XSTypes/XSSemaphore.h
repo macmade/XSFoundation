@@ -81,8 +81,10 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSSemaphore
  * @abstract    Semaphore type
  */
-#ifdef _WIN32
+#if defined( _WIN32 )
 typedef HANDLE XSSemaphore;
+#elif defined( __APPLE__ )
+typedef semaphore_t XSSemaphore; /* OS X does not support unnamed POSIX semaphores */
 #else
 typedef sem_t XSSemaphore;
 #endif

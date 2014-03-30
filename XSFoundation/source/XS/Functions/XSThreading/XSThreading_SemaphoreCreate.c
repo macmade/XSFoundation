@@ -71,6 +71,12 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSThreading.h>
 
+#ifdef __APPLE__
+#include <mach/mach_init.h>
+#include <mach/task.h>
+#include <mach/semaphore.h>
+#endif
+
 bool XSThreading_SemaphoreCreate( XSSemaphore * sem, XSUInteger count )
 {
     if( sem == NULL || count == 0 )
@@ -78,11 +84,15 @@ bool XSThreading_SemaphoreCreate( XSSemaphore * sem, XSUInteger count )
         return false;
     }
     
-    #ifdef _WIN32
+    #if defined( _WIN32 )
     
     *( sem ) = CreateSemaphore( NULL, ( LONG )0, ( LONG )count, NULL );
     
     return ( *( sem ) == NULL ) ? false : true;
+    
+    #elif defined( __APPLE__ )
+    
+    return ( semaphore_create( mach_task_self(), sem, SYNC_POLICY_FIFO, ( int )count ) == KERN_SUCCESS ) ? true : false;
     
     #else
     

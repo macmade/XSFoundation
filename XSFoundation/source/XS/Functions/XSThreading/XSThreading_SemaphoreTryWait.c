@@ -71,6 +71,12 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSThreading.h>
 
+#ifdef __APPLE__
+#include <mach/mach_init.h>
+#include <mach/task.h>
+#include <mach/semaphore.h>
+#endif
+
 bool XSThreading_SemaphoreTryWait( XSSemaphore * sem )
 {
     if( sem == NULL )
@@ -78,9 +84,20 @@ bool XSThreading_SemaphoreTryWait( XSSemaphore * sem )
         return false;
     }
     
-    #ifdef _WIN32
+    #if defined( _WIN32 )
     
-    return ( WaitForSingleObject( *( sem ), 10 ) == WAIT_OBJECT_0 ) ? true : false;
+    return ( WaitForSingleObject( *( sem ), 1 ) == WAIT_OBJECT_0 ) ? true : false;
+    
+    #elif defined( __APPLE__ )
+    
+    {
+        mach_timespec_t ts;
+        
+        ts.tv_sec  = 0;
+        ts.tv_nsec = 1000;
+        
+        return ( semaphore_timedwait( *( sem ), ts ) == KERN_SUCCESS ) ? true : false;
+    }
     
     #else
     

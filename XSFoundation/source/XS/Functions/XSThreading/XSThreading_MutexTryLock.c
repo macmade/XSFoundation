@@ -80,7 +80,7 @@ bool XSThreading_MutexTryLock( XSMutex * mutex )
     
     #ifdef _WIN32
     
-    return ( WaitForSingleObject( *( mutex ), 10 ) == WAIT_OBJECT_0 ) ? true : false;
+    return ( WaitForSingleObject( *( mutex ), 1 ) == WAIT_OBJECT_0 ) ? true : false;
     
     #else
     

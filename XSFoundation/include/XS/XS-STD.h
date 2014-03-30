@@ -62,72 +62,29 @@
 /* $Id$ */
 
 /*!
- * @header      XS.h
+ * @header      STD.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Standard include files
  */
 
 #ifndef __XS_H__
-#define __XS_H__
-
-/* Internal build only - Adds extra warning flags */
-#ifdef __XS_BUILD__
-#include <XS/__private/XSWarnings.h>
+#error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-/* Standard includes */
-#include <XS/XS-STD.h>
+#ifndef __XS_STD_H__
+#define __XS_STD_H__
 
-/* Core */
-#include <XS/XSMacros.h>
-#include <XS/XSMacros-X.h>
-#include <XS/XSTypes.h>
+#include <XS/XS-STD/C99.h>
 
-/* Functions */
-#include <XS/Functions/XSAtomic.h>
-#include <XS/Functions/XSMemory.h>
-#include <XS/Functions/XSRuntime.h>
-#include <XS/Functions/XSMemoryDebug.h>
-#include <XS/Functions/XSProcess.h>
-#include <XS/Functions/XSThreading.h>
-#include <XS/Functions/XSLog.h>
-#include <XS/Functions/XSMath.h>
-#include <XS/Functions/XSGeometry.h>
-#include <XS/Functions/XSSort.h>
+#ifdef _WIN32
+#include <XS/XS-STD/WIN32.h>
+#else
+#include <XS/XS-STD/POSIX.h>
+#endif
 
-/* Classes */
-#include <XS/Classes/XSApplication.h>
-#include <XS/Classes/XSApplicationArgument.h>
-#include <XS/Classes/XSArray.h>
-#include <XS/Classes/XSAutoreleasePool.h>
-#include <XS/Classes/XSBag.h>
-#include <XS/Classes/XSBinaryTree.h>
-#include <XS/Classes/XSBoolean.h>
-#include <XS/Classes/XSColor.h>
-#include <XS/Classes/XSData.h>
-#include <XS/Classes/XSDate.h>
-#include <XS/Classes/XSDictionary.h>
-#include <XS/Classes/XSError.h>
-#include <XS/Classes/XSException.h>
-#include <XS/Classes/XSFile.h>
-#include <XS/Classes/XSLock.h>
-#include <XS/Classes/XSNode.h>
-#include <XS/Classes/XSNotification.h>
-#include <XS/Classes/XSNotificationCenter.h>
-#include <XS/Classes/XSNull.h>
-#include <XS/Classes/XSNumber.h>
-#include <XS/Classes/XSPrimitiveArray.h>
-#include <XS/Classes/XSRecursiveLock.h>
-#include <XS/Classes/XSSemaphore.h>
-#include <XS/Classes/XSSet.h>
-#include <XS/Classes/XSString.h>
-#include <XS/Classes/XSThread.h>
-#include <XS/Classes/XSTimer.h>
-#include <XS/Classes/XSURL.h>
-#include <XS/Classes/XSValue.h>
+#ifdef __APPLE__
+#include <XS/XS-STD/Apple.h>
+#endif
 
-#endif /* __XS_H__ */
+#endif /* __XS_STD_H__ */

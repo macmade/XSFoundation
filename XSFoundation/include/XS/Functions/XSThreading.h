@@ -219,11 +219,11 @@ void XSThreading_SemaphoreWait( XSSemaphore * sem );
 bool XSThreading_SemaphoreTryWait( XSSemaphore * sem );
 
 /*!
- * @function    XSThreading_SemaphoreEndWait
+ * @function    XSThreading_SemaphoreSignal
  * @abstract    Unlocks a semaphore
  * @param       sem     The semaphore to unlock
  */
-void XSThreading_SemaphoreEndWait( XSSemaphore * sem );
+void XSThreading_SemaphoreSignal( XSSemaphore * sem );
 
 XS_EXTERN_C_END
 

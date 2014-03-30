@@ -71,6 +71,12 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSThreading.h>
 
+#ifdef __APPLE__
+#include <mach/mach_init.h>
+#include <mach/task.h>
+#include <mach/semaphore.h>
+#endif
+
 void XSThreading_SemaphoreDelete( XSSemaphore * sem )
 {
     if( sem == NULL )
@@ -78,9 +84,13 @@ void XSThreading_SemaphoreDelete( XSSemaphore * sem )
         return;
     }
     
-    #ifdef _WIN32
+    #if defined( _WIN32 )
     
     CloseHandle( *( sem ) );
+    
+    #elif defined( __APPLE__ )
+    
+    semaphore_destroy( mach_task_self(), *( sem ) );
     
     #else
     

@@ -62,29 +62,19 @@
 /* $Id$ */
 
 /*!
- * @file        XSThreading_SemaphoreEndWait.c
+ * @header      STD-WIN32.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSThreading_SemaphoreEndWait
+ * @abstract    WIN32 include files
  */
 
-#include <XS/XS.h>
-#include <XS/__private/Functions/XSThreading.h>
+#ifndef __XS_H__
+#error "Please include '<XS/XS.h>' instead of this file!"
+#endif
 
-void XSThreading_SemaphoreEndWait( XSSemaphore * sem )
-{
-    if( sem == NULL )
-    {
-        return;
-    }
-    
-    #ifdef _WIN32
-    
-    ReleaseSemaphore( *( sem ) );
-    
-    #else
-    
-    sem_post( sem );
-    
-    #endif
-}
+#ifndef __XS_STD_APPLE_H__
+#define __XS_STD_APPLE_H__
+
+#include <mach/mach_types.h>
+
+#endif /* __XS_STD_APPLE_H__ */

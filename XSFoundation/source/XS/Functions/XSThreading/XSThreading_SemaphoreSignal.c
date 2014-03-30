@@ -62,25 +62,39 @@
 /* $Id$ */
 
 /*!
- * @header      STD.h
+ * @file        XSThreading_SemaphoreSignal.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Standard include files
+ * @abstract    Definition for XSThreading_SemaphoreSignal
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
+#include <XS/XS.h>
+#include <XS/__private/Functions/XSThreading.h>
+
+#ifdef __APPLE__
+#include <mach/mach_init.h>
+#include <mach/task.h>
+#include <mach/semaphore.h>
 #endif
 
-#ifndef __XS_STD_H__
-#define __XS_STD_H__
-
-#include <XS/STD-C99.h>
-
-#ifdef _WIN32
-#include <XS/STD-WIN32.h>
-#else
-#include <XS/STD-POSIX.h>
-#endif
-
-#endif /* __XS_STD_H__ */
+void XSThreading_SemaphoreSignal( XSSemaphore * sem )
+{
+    if( sem == NULL )
+    {
+        return;
+    }
+    
+    #if defined( _WIN32 )
+    
+    ReleaseSemaphore( *( sem ) );
+    
+    #elif defined( __APPLE__ )
+    
+    semaphore_signal( *( sem ) );
+    
+    #else
+    
+    sem_post( sem );
+    
+    #endif
+}
