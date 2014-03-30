@@ -80,11 +80,11 @@ void XSThreading_SemaphoreWait( XSSemaphore * sem )
     
     #ifdef _WIN32
     
-    
+    WaitForSingleObject( *( sem ), INFINITE );
     
     #else
     
-    
+    sem_wait( sem );
     
     #endif
 }

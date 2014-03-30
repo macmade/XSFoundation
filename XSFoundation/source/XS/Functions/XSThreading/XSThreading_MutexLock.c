@@ -80,7 +80,7 @@ void XSThreading_MutexLock( XSMutex * mutex )
     
     #ifdef _WIN32
     
-    
+    WaitForSingleObject( *( mutex ), INFINITE );
     
     #else
     

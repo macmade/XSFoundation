@@ -80,11 +80,11 @@ void XSThreading_SemaphoreDelete( XSSemaphore * sem )
     
     #ifdef _WIN32
     
-    
+    CloseHandle( *( sem ) );
     
     #else
     
-    
+    sem_destroy( sem );
     
     #endif
 }

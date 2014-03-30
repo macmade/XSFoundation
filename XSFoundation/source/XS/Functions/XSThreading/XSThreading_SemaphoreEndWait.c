@@ -80,11 +80,11 @@ void XSThreading_SemaphoreEndWait( XSSemaphore * sem )
     
     #ifdef _WIN32
     
-    
+    ReleaseSemaphore( *( sem ) );
     
     #else
     
-    
+    sem_post( sem );
     
     #endif
 }

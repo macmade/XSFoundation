@@ -80,7 +80,7 @@ void XSThreading_MutexUnlock( XSMutex * mutex )
     
     #ifdef _WIN32
     
-    
+    ReleaseMutex( *( mutex ) );
     
     #else
     

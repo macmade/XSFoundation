@@ -80,11 +80,13 @@ bool XSThreading_SemaphoreCreate( XSSemaphore * sem, XSUInteger count )
     
     #ifdef _WIN32
     
-    return false;
+    *( sem ) = CreateSemaphore( NULL, ( LONG )0, ( LONG )count, NULL );
+    
+    return ( *( sem ) == NULL ) ? false : true;
     
     #else
     
-    return false;
+    return ( sem_init( sem, 0, ( unsigned int )count ) == 0 ) ? true : false;
     
     #endif
 }

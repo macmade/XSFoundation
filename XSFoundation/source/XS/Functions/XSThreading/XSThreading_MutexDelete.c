@@ -80,7 +80,7 @@ void XSThreading_MutexDelete( XSMutex * mutex )
     
     #ifdef _WIN32
     
-    
+    CloseHandle( *( mutex ) );
     
     #else
     

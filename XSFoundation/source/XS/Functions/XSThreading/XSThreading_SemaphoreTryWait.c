@@ -80,11 +80,11 @@ bool XSThreading_SemaphoreTryWait( XSSemaphore * sem )
     
     #ifdef _WIN32
     
-    return false;
+    return ( WaitForSingleObject( *( sem ), 10 ) == WAIT_OBJECT_0 ) ? true : false;
     
     #else
     
-    return false;
+    return sem_trywait( sem );
     
     #endif
 }

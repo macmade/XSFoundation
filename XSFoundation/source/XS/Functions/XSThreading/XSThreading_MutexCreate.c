@@ -80,7 +80,9 @@ bool XSThreading_MutexCreate( XSMutex * mutex )
     
     #ifdef _WIN32
     
+    *( mutex ) = CreateMutex( NULL, FALSE, NULL );
     
+    return ( *( mutex ) == NULL ) ? false : true;
     
     #else
     
@@ -89,6 +91,13 @@ bool XSThreading_MutexCreate( XSMutex * mutex )
         
         if( pthread_mutexattr_init( &attr ) != 0 )
         {
+            return false;
+        }
+        
+        if( pthread_mutexattr_settype( &attr, PTHREAD_MUTEX_RECURSIVE ) != 0 )
+        {
+            pthread_mutexattr_destroy( &attr );
+            
             return false;
         }
         

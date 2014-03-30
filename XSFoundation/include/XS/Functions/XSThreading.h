@@ -149,6 +149,7 @@ void XSThreading_TLSSetObject( XSTLSKey * key, XSObjectRef object, XSTLSObjectAs
  * @function    XSThreading_MutexCreate
  * @abstract    Creates a mutex
  * @param       mutex   A pointer to an uninitialized mutex
+ * @discussion  Mutexes are created recursive.
  * @return      True if the mutex was successfully created, otherwise false
  */
 bool XSThreading_MutexCreate( XSMutex * mutex );
@@ -164,7 +165,6 @@ void XSThreading_MutexDelete( XSMutex * mutex );
  * @function    XSThreading_MutexLock
  * @abstract    Locks a mutex
  * @param       mutex   The mutex to lock
- * @discussion  Note that mutexes are recursive on Windows.
  */
 void XSThreading_MutexLock( XSMutex * mutex );
 
