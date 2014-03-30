@@ -98,7 +98,7 @@ void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char 
     fprintf
     (
         stderr,
-        "%s[%lu:%lu] - %s: ",
+        "%s[%lu:%lX] - %s: ",
         XSProcess_GetProcessName(),
         ( unsigned long )XSProcess_GetProcessID(),
         ( unsigned long )XSThreading_GetCurrentThreadID(),

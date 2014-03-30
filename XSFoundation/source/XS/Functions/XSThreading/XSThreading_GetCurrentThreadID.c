@@ -71,6 +71,10 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSThreading.h>
 
+#ifdef __linux
+#include <sys/types.h>
+#endif
+
 XSUInteger XSThreading_GetCurrentThreadID( void )
 {
     #if defined( _WIN32 )
@@ -79,7 +83,15 @@ XSUInteger XSThreading_GetCurrentThreadID( void )
     
     #elif defined( __APPLE__ )
     
-    return 0;
+    return ( XSUInteger )pthread_mach_thread_np( pthread_self() );
+    
+    #elif defined( __linux )
+    
+    return ( XSUInteger )gettid();
+    
+    #elif defined( __unix__ )
+    
+    return thr_self();
     
     #else
     

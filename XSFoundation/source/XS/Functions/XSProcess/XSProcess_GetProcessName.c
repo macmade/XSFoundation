@@ -136,6 +136,14 @@ const char * XSProcess_GetProcessName( void )
             }
         }
         
+        #elif defined( __linux )
+        
+        strcpy( __XSProcess_ProcessName, getenv( "_" ) );
+        
+        #elif defined( __unix__ )
+        
+        strcpy( __XSProcess_ProcessName, getprogname() );
+        
         #else
         
         strcpy( __XSProcess_ProcessName, "unknown" );
