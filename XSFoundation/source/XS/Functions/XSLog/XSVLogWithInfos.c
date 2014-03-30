@@ -82,20 +82,28 @@ void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char 
     
     levelName = "INFO";
     
-    if( level == XSLogLevelEmergency ) { levelName = "EMERGENCY"; }
-    if( level == XSLogLevelAlert     ) { levelName = "ALERT";     }
-    if( level == XSLogLevelCritical  ) { levelName = "CRITICAL";  }
-    if( level == XSLogLevelError     ) { levelName = "ERROR";     }
-    if( level == XSLogLevelWarning   ) { levelName = "WARNING";   }
-    if( level == XSLogLevelNotice    ) { levelName = "NOTICE";    }
-    if( level == XSLogLevelInfo      ) { levelName = "INFO";      }
-    if( level == XSLogLevelDebug     ) { levelName = "DEBUG";     }
+    if( level == XSLogLevelEmergency ) { levelName = "Emergency"; }
+    if( level == XSLogLevelAlert     ) { levelName = "Alert";     }
+    if( level == XSLogLevelCritical  ) { levelName = "Critical";  }
+    if( level == XSLogLevelError     ) { levelName = "Error";     }
+    if( level == XSLogLevelWarning   ) { levelName = "Warning";   }
+    if( level == XSLogLevelNotice    ) { levelName = "Notice";    }
+    if( level == XSLogLevelInfo      ) { levelName = "Info";      }
+    if( level == XSLogLevelDebug     ) { levelName = "Debug";     }
     
     ( void )file;
     ( void )line;
     ( void )func;
     
-    fprintf( stderr, "XSFoundation [%s]: ", levelName );
+    fprintf
+    (
+        stderr,
+        "%s[%lu:%lu] - %s: ",
+        XSProcess_GetProcessName(),
+        ( unsigned long )XSProcess_GetProcessID(),
+        ( unsigned long )XSThreading_GetCurrentThreadID(),
+        levelName
+    );
     vfprintf( stderr, fmt, args );
     fprintf( stderr, "\n" );
 }

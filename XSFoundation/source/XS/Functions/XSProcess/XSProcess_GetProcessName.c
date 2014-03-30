@@ -115,6 +115,8 @@ const char * XSProcess_GetProcessName( void )
             XSUInt32 size;
             char   * pos;
             
+            size = __XS_PROCESS_NAME_MAX;
+            
             _NSGetExecutablePath( name, &size );
             
             pos = strrchr( name, '/' );
