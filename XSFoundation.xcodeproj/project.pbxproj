@@ -13,6 +13,9 @@
 		0530420718E89D5E0001F9D0 /* __XSProcess.c in Sources */ = {isa = PBXBuildFile; fileRef = 0530420518E89D5E0001F9D0 /* __XSProcess.c */; };
 		0530420818E89D5E0001F9D0 /* __XSProcess.c in Sources */ = {isa = PBXBuildFile; fileRef = 0530420518E89D5E0001F9D0 /* __XSProcess.c */; };
 		0530420918E89D5E0001F9D0 /* __XSProcess.c in Sources */ = {isa = PBXBuildFile; fileRef = 0530420518E89D5E0001F9D0 /* __XSProcess.c */; };
+		0530420B18E8C3D90001F9D0 /* XSMacros-X.h in Headers */ = {isa = PBXBuildFile; fileRef = 0530420A18E8C3530001F9D0 /* XSMacros-X.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0530420C18E8C3DD0001F9D0 /* XSMacros-X.h in Headers */ = {isa = PBXBuildFile; fileRef = 0530420A18E8C3530001F9D0 /* XSMacros-X.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0530420D18E8C3E40001F9D0 /* XSMacros-X.h in Headers */ = {isa = PBXBuildFile; fileRef = 0530420A18E8C3530001F9D0 /* XSMacros-X.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		055D158618E1D42800894C7B /* __XSApplication.c in Sources */ = {isa = PBXBuildFile; fileRef = 055D149118E1D42800894C7B /* __XSApplication.c */; };
 		055D158718E1D42800894C7B /* __XSApplication.c in Sources */ = {isa = PBXBuildFile; fileRef = 055D149118E1D42800894C7B /* __XSApplication.c */; };
 		055D158818E1D42800894C7B /* __XSApplication.c in Sources */ = {isa = PBXBuildFile; fileRef = 055D149118E1D42800894C7B /* __XSApplication.c */; };
@@ -1543,6 +1546,7 @@
 		051B66B618DCAAC20079238C /* XSTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = XSTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		051B66B818DCAAC30079238C /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		0530420518E89D5E0001F9D0 /* __XSProcess.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSProcess.c; sourceTree = "<group>"; };
+		0530420A18E8C3530001F9D0 /* XSMacros-X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XSMacros-X.h"; sourceTree = "<group>"; };
 		055D149118E1D42800894C7B /* __XSApplication.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSApplication.c; sourceTree = "<group>"; };
 		055D149218E1D42800894C7B /* __XSApplication_Constructor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSApplication_Constructor.c; sourceTree = "<group>"; };
 		055D149318E1D42800894C7B /* __XSApplication_Copy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSApplication_Copy.c; sourceTree = "<group>"; };
@@ -2478,6 +2482,7 @@
 				0573898E18E5C60100A8BF4A /* STD.h */,
 				0573873418E4A0A800A8BF4A /* XS.h */,
 				0573873518E4A0A800A8BF4A /* XSMacros.h */,
+				0530420A18E8C3530001F9D0 /* XSMacros-X.h */,
 				0573873618E4A0A800A8BF4A /* XSTypes */,
 				0573873718E4A0A800A8BF4A /* XSTypes.h */,
 			);
@@ -2772,6 +2777,7 @@
 				0573899118E5C61100A8BF4A /* STD.h in Headers */,
 				0573874418E4A19800A8BF4A /* XS.h in Headers */,
 				0573874518E4A19800A8BF4A /* XSMacros.h in Headers */,
+				0530420B18E8C3D90001F9D0 /* XSMacros-X.h in Headers */,
 				0573874718E4A19800A8BF4A /* XSTypes.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2789,6 +2795,7 @@
 				0573899018E5C60E00A8BF4A /* STD.h in Headers */,
 				0573874B18E4A1A700A8BF4A /* XS.h in Headers */,
 				0573874C18E4A1A700A8BF4A /* XSMacros.h in Headers */,
+				0530420C18E8C3DD0001F9D0 /* XSMacros-X.h in Headers */,
 				0573874E18E4A1A700A8BF4A /* XSTypes.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2806,6 +2813,7 @@
 				0573898F18E5C60900A8BF4A /* STD.h in Headers */,
 				0573873B18E4A0BA00A8BF4A /* XS.h in Headers */,
 				0573873C18E4A0BD00A8BF4A /* XSMacros.h in Headers */,
+				0530420D18E8C3E40001F9D0 /* XSMacros-X.h in Headers */,
 				0573873E18E4A0C500A8BF4A /* XSTypes.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

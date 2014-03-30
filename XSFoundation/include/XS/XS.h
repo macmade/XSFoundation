@@ -84,6 +84,7 @@
 
 /* Core */
 #include <XS/XSMacros.h>
+#include <XS/XSMacros-X.h>
 #include <XS/XSTypes.h>
 
 /* Functions */
