@@ -93,6 +93,10 @@ XSUInteger XSThreading_GetCurrentThreadID( void )
     
     return ( XSUInteger )thr_self();
     
+    #elif defined( __XEOS__ )
+    
+    return 0;
+    
     #else
     
     return 0;

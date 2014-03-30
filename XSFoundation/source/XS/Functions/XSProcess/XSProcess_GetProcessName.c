@@ -144,6 +144,10 @@ const char * XSProcess_GetProcessName( void )
         
         strcpy( __XSProcess_ProcessName, getprogname() );
         
+        #elif defined( __XEOS__ )
+        
+        strcpy( __XSProcess_ProcessName, "unknown" );
+        
         #else
         
         strcpy( __XSProcess_ProcessName, "unknown" );
