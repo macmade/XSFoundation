@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "052303AA18E9D2EF00C29627"
-               BuildableName = "Makefile Build"
-               BlueprintName = "Makefile Build"
+               BuildableName = "Makefile Build - Debug"
+               BlueprintName = "Makefile Build - Debug"
                ReferencedContainer = "container:XSFoundation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

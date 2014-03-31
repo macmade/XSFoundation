@@ -2753,16 +2753,30 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXLegacyTarget section */
-		052303AA18E9D2EF00C29627 /* Makefile Build */ = {
+		052303AA18E9D2EF00C29627 /* Makefile Build - Debug */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "DEBUG=1 $(ACTION)";
+			buildConfigurationList = 052303AB18E9D2EF00C29627 /* Build configuration list for PBXLegacyTarget "Makefile Build - Debug" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = "Makefile Build - Debug";
+			passBuildSettingsInEnvironment = 1;
+			productName = "Makefile Build";
+		};
+		052303CE18E9DAF000C29627 /* Makefile Build - Release */ = {
 			isa = PBXLegacyTarget;
 			buildArgumentsString = "$(ACTION)";
-			buildConfigurationList = 052303AB18E9D2EF00C29627 /* Build configuration list for PBXLegacyTarget "Makefile Build" */;
+			buildConfigurationList = 052303CF18E9DAF000C29627 /* Build configuration list for PBXLegacyTarget "Makefile Build - Release" */;
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
 			dependencies = (
 			);
-			name = "Makefile Build";
+			name = "Makefile Build - Release";
 			passBuildSettingsInEnvironment = 1;
 			productName = "Makefile Build";
 		};
@@ -2885,7 +2899,8 @@
 				051B665818DCA96B0079238C /* XSFoundation - Mac Framework */,
 				051B668B18DCAA5E0079238C /* XSFoundation - iOS Static Library */,
 				051B66B518DCAAC20079238C /* XSFoundation - Test */,
-				052303AA18E9D2EF00C29627 /* Makefile Build */,
+				052303AA18E9D2EF00C29627 /* Makefile Build - Debug */,
+				052303CE18E9DAF000C29627 /* Makefile Build - Release */,
 			);
 		};
 /* End PBXProject section */
@@ -4743,6 +4758,20 @@
 			};
 			name = Release;
 		};
+		052303D018E9DAF000C29627 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "Makefile Build - Debug copy";
+			};
+			name = Debug;
+		};
+		052303D118E9DAF000C29627 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "Makefile Build - Debug copy";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -4800,13 +4829,22 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		052303AB18E9D2EF00C29627 /* Build configuration list for PBXLegacyTarget "Makefile Build" */ = {
+		052303AB18E9D2EF00C29627 /* Build configuration list for PBXLegacyTarget "Makefile Build - Debug" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				052303AC18E9D2EF00C29627 /* Debug */,
 				052303AD18E9D2EF00C29627 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+		};
+		052303CF18E9DAF000C29627 /* Build configuration list for PBXLegacyTarget "Makefile Build - Release" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				052303D018E9DAF000C29627 /* Debug */,
+				052303D118E9DAF000C29627 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
