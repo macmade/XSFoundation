@@ -189,10 +189,11 @@ void XSThreading_MutexUnlock( XSMutex * mutex );
  * @function    XSThreading_SemaphoreCreate
  * @abstract    Creates a semaphore
  * @param       sem     A pointer to an uninitialized semaphore
+ * @param       name    Optional: the name of the semaphore. Pass NULL to create an unnamed semaphore
  * @param       count   The maximum count for the semaphore
  * @return      True if the semaphore was successfully created, otherwise false
  */
-bool XSThreading_SemaphoreCreate( XSSemaphore * sem, XSUInteger count );
+bool XSThreading_SemaphoreCreate( XSSemaphore * sem, const char * name, XSUInteger count );
 
 /*!
  * @function    XSThreading_SemaphoreDelete

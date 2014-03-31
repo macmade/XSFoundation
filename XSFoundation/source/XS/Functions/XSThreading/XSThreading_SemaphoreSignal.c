@@ -86,15 +86,29 @@ void XSThreading_SemaphoreSignal( XSSemaphore * sem )
     
     #if defined( _WIN32 )
     
-    ReleaseSemaphore( *( sem ) );
-    
-    #elif defined( __APPLE__ )
-    
-    semaphore_signal( *( sem ) );
+    ReleaseSemaphore( sem->sem );
     
     #else
     
-    sem_post( sem );
+    if( sem->named )
+    {
+        if( sem->semp != NULL )
+        {
+            sem_post( sem->semp );
+        }
+    }
+    else
+    {
+        #if defined( __APPLE__ )
+        
+        semaphore_signal( sem->semaphore );
+        
+        #else
+        
+        sem_post( &( sem->sem ) );
+        
+        #endif
+    }
     
     #endif
 }

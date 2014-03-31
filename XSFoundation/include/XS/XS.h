@@ -112,7 +112,6 @@
 #include <XS/Classes/XSDate.h>
 #include <XS/Classes/XSDictionary.h>
 #include <XS/Classes/XSError.h>
-#include <XS/Classes/XSException.h>
 #include <XS/Classes/XSFile.h>
 #include <XS/Classes/XSLock.h>
 #include <XS/Classes/XSNode.h>

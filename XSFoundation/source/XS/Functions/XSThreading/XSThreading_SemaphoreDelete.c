@@ -86,15 +86,31 @@ void XSThreading_SemaphoreDelete( XSSemaphore * sem )
     
     #if defined( _WIN32 )
     
-    CloseHandle( *( sem ) );
-    
-    #elif defined( __APPLE__ )
-    
-    semaphore_destroy( mach_task_self(), *( sem ) );
+    CloseHandle( sem->sem );
     
     #else
     
-    sem_destroy( sem );
+    if( sem->named )
+    {
+        if( sem->semp != NULL )
+        {
+            sem_close( sem->semp );
+            
+            sem->semp = NULL;
+        }
+    }
+    else
+    {
+        #if defined( __APPLE__ )
+        
+        semaphore_destroy( mach_task_self(), sem->semaphore );
+        
+        #else
+        
+        sem_destroy( &( sem->sem ) );
+        
+        #endif
+    }
     
     #endif
 }

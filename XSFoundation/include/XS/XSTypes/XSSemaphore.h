@@ -81,13 +81,21 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSSemaphore
  * @abstract    Semaphore type
  */
-#if defined( _WIN32 )
-typedef HANDLE XSSemaphore;
-#elif defined( __APPLE__ )
-typedef semaphore_t XSSemaphore; /* OS X does not support unnamed POSIX semaphores */
-#else
-typedef sem_t XSSemaphore;
-#endif
+typedef struct
+{
+    #if defined( _WIN32 )
+    HANDLE sem;                 /*! The semaphore */
+    #else
+    sem_t * semp;               /*! The semaphore pointer, for POSIX named semaphores */
+    sem_t   sem;                /*! The semaphore, for POSIX unnamed semaphores */
+    #if defined( __APPLE__ )
+    semaphore_t semaphore;      /*! The semaphore, for OS X unnamed semaphores */
+    #endif
+    #endif
+    bool named;                 /* Whether the semaphore is named or not */
+    char __pad_0[ 7 ];          /* Padding */
+}
+XSSemaphore;
 
 XS_EXTERN_C_END
 

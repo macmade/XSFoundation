@@ -73,6 +73,8 @@
 
 XSObjectRef XSThreading_TLSGetObject( XSTLSKey * key )
 {
+    __XSThreading_TLSValue * tls;
+    
     if( key == NULL )
     {
         return NULL;
@@ -80,13 +82,18 @@ XSObjectRef XSThreading_TLSGetObject( XSTLSKey * key )
     
     #ifdef _WIN32
     
-    
+    tls = ( __XSThreading_TLSValue * )TlsGetValue( *( key ) );
     
     #else
     
-    
+    tls = ( __XSThreading_TLSValue * )pthread_getspecific( *( key ) );
     
     #endif
     
-    return NULL;
+    if( tls == NULL )
+    {
+        return NULL;
+    }
+    
+    return ( XSObjectRef )( tls->value );
 }

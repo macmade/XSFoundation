@@ -80,16 +80,14 @@ void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char 
         return;
     }
     
-    levelName = "INFO";
+    levelName = "Info";
     
-    if( level == XSLogLevelEmergency ) { levelName = "Emergency"; }
-    if( level == XSLogLevelAlert     ) { levelName = "Alert";     }
-    if( level == XSLogLevelCritical  ) { levelName = "Critical";  }
-    if( level == XSLogLevelError     ) { levelName = "Error";     }
-    if( level == XSLogLevelWarning   ) { levelName = "Warning";   }
-    if( level == XSLogLevelNotice    ) { levelName = "Notice";    }
-    if( level == XSLogLevelInfo      ) { levelName = "Info";      }
-    if( level == XSLogLevelDebug     ) { levelName = "Debug";     }
+    if( level == XSLogLevelFatal     ) { levelName = "Fatal";   }
+    if( level == XSLogLevelError     ) { levelName = "Error";   }
+    if( level == XSLogLevelWarning   ) { levelName = "Warning"; }
+    if( level == XSLogLevelNotice    ) { levelName = "Notice";  }
+    if( level == XSLogLevelInfo      ) { levelName = "Info";    }
+    if( level == XSLogLevelDebug     ) { levelName = "Debug";   }
     
     ( void )file;
     ( void )line;

@@ -77,26 +77,41 @@
 #include <mach/semaphore.h>
 #endif
 
-bool XSThreading_SemaphoreCreate( XSSemaphore * sem, XSUInteger count )
+bool XSThreading_SemaphoreCreate( XSSemaphore * sem, const char * name, XSUInteger count )
 {
     if( sem == NULL || count == 0 )
     {
         return false;
     }
     
+    sem->named = ( name == NULL ) ? false : true;
+    
     #if defined( _WIN32 )
     
-    *( sem ) = CreateSemaphore( NULL, ( LONG )0, ( LONG )count, NULL );
+    sem->sem = CreateSemaphore( name, ( LONG )0, ( LONG )count, NULL );
     
     return ( *( sem ) == NULL ) ? false : true;
     
-    #elif defined( __APPLE__ )
-    
-    return ( semaphore_create( mach_task_self(), sem, SYNC_POLICY_FIFO, ( int )count ) == KERN_SUCCESS ) ? true : false;
-    
     #else
     
-    return ( sem_init( sem, 0, ( unsigned int )count ) == 0 ) ? true : false;
+    if( sem->named )
+    {
+        sem->semp = sem_open( name, O_CREAT, S_IRUSR | S_IWUSR, ( unsigned int )count );
+        
+        return ( sem->semp == NULL ) ? false : true;
+    }
+    else
+    {
+        #if defined( __APPLE__ )
+        
+        return ( semaphore_create( mach_task_self(), &( sem->semaphore ), SYNC_POLICY_FIFO, ( int )count ) == KERN_SUCCESS ) ? true : false;
+        
+        #else
+        
+        return ( sem_init( &( sem->sem ), 0, ( unsigned int )count ) == 0 ) ? true : false;
+        
+        #endif
+    }
     
     #endif
 }

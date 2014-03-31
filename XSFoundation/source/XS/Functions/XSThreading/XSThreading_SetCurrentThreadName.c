@@ -71,7 +71,71 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSThreading.h>
 
+#ifdef _WIN32
+
+/*!
+ * @def         __MS_VC_EXCEPTION
+ * @abstract    Exception number to set the thread name
+ */
+#define __MS_VC_EXCEPTION   0x406D1388
+
+#pragma pack( push, 8 )
+
+/*!
+ * @typedef     THREADNAME_INFO
+ * @abstract    Thread name info structure
+ */
+typedef struct tagTHREADNAME_INFO
+{
+   DWORD  dwType;       /*! Must be 0x1000 */
+   LPCSTR szName;       /*! Pointer to name (in user addr space) */
+   DWORD  dwThreadID;   /*! Thread ID (-1=caller thread) */
+   DWORD  dwFlags;      /*! Reserved for future use, must be zero */
+}
+THREADNAME_INFO;
+
+#pragma pack( pop )
+
+#endif
+
 void XSThreading_SetCurrentThreadName( const char * name )
 {
+    #if defined( _WIN32 )
+    
+    THREADNAME_INFO info;
+    
+    info.dwType     = ( DWORD )0x1000;
+    info.szName     = ( LPCSTR )name;
+    info.dwThreadID = ( DWORD )-1;
+    info.dwFlags    = ( DWORD )0;
+    
+    /* See: http://msdn.microsoft.com/en-us/library/xcb2z8hs.aspx */
+    __try
+    {
+        RaiseException( __MS_VC_EXCEPTION, 0, sizeof( info ) / sizeof( ULONG_PTR ), ( ULONG_PTR * )&info );
+    }
+    __except( EXCEPTION_EXECUTE_HANDLER )
+    {}
+    
+    #elif defined( __APPLE__ )
+    
+    pthread_setname_np( name );
+    
+    #elif defined( __linux )
+    
+    pthread_setname_np( pthread_self(), name );
+    
+    #elif defined( __unix__ )
+    
+    pthread_set_name_np( pthread_self(), name );
+    
+    #elif defined( __XEOS__ )
+    
     ( void )name;
+    
+    #else
+    
+    ( void )name;
+    
+    #endif
 }

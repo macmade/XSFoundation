@@ -83,15 +83,13 @@ XS_EXTERN_C_BEGIN
  */
 typedef enum
 {
-    XSLogLevelEmergency    = 0x01,
-    XSLogLevelAlert        = 0x02,
-    XSLogLevelCritical     = 0x04,
-    XSLogLevelError        = 0x08,
-    XSLogLevelWarning      = 0x10,
-    XSLogLevelNotice       = 0x20,
-    XSLogLevelInfo         = 0x40,
-    XSLogLevelDebug        = 0x80,
-    XSLogLevelAll          = 0xFF
+    XSLogLevelFatal     = 0x01, /*! Fatal error */
+    XSLogLevelError     = 0x02, /*! Error */
+    XSLogLevelWarning   = 0x04, /*! Warning */
+    XSLogLevelNotice    = 0x08, /*! Notice */
+    XSLogLevelInfo      = 0x10, /*! Information */
+    XSLogLevelDebug     = 0x20, /*! Debug information */
+    XSLogLevelAll       = 0xFF  /*! All possible levels */
 }
 XSLogLevel;
 

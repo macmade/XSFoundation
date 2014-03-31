@@ -80,11 +80,11 @@ void XSThreading_TLSKeyDelete( XSTLSKey * key )
     
     #ifdef _WIN32
     
-    
+    TlsFree( *( key ) );
     
     #else
     
-    
+    pthread_key_delete( *( key ) );
     
     #endif
 }

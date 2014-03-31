@@ -86,22 +86,38 @@ bool XSThreading_SemaphoreTryWait( XSSemaphore * sem )
     
     #if defined( _WIN32 )
     
-    return ( WaitForSingleObject( *( sem ), 1 ) == WAIT_OBJECT_0 ) ? true : false;
-    
-    #elif defined( __APPLE__ )
-    
-    {
-        mach_timespec_t ts;
-        
-        ts.tv_sec  = 0;
-        ts.tv_nsec = 1000;
-        
-        return ( semaphore_timedwait( *( sem ), ts ) == KERN_SUCCESS ) ? true : false;
-    }
+    return ( WaitForSingleObject( sem->sem, 0 ) == WAIT_OBJECT_0 ) ? true : false;
     
     #else
     
-    return sem_trywait( sem );
+    if( sem->named )
+    {
+        if( sem->semp != NULL )
+        {
+            return ( sem_trywait( sem->semp ) == 0 ) ? true : false;
+        }
+        
+        return false;
+    }
+    else
+    {
+        #if defined( __APPLE__ )
+        
+        {
+            mach_timespec_t ts;
+            
+            ts.tv_sec  = 0;
+            ts.tv_nsec = 0;
+            
+            return ( semaphore_timedwait( sem->semaphore, ts ) == KERN_SUCCESS ) ? true : false;
+        }
+        
+        #else
+        
+        return ( sem_trywait( &( sem->sem ) ) == 0 ) ? true : false;
+        
+        #endif
+    }
     
     #endif
 }

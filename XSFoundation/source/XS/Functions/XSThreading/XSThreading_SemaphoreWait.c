@@ -86,15 +86,29 @@ void XSThreading_SemaphoreWait( XSSemaphore * sem )
     
     #if defined( _WIN32 )
     
-    WaitForSingleObject( *( sem ), INFINITE );
-    
-    #elif defined( __APPLE__ )
-    
-    semaphore_wait( *( sem ) );
+    WaitForSingleObject( sem->sem, INFINITE );
     
     #else
     
-    sem_wait( sem );
+    if( sem->named )
+    {
+        if( sem->semp != NULL )
+        {
+            sem_wait( sem->semp );
+        }
+    }
+    else
+    {
+        #if defined( __APPLE__ )
+        
+        semaphore_wait( sem->semaphore );
+        
+        #else
+        
+        sem_wait( &( sem->sem ) );
+        
+        #endif
+    }
     
     #endif
 }

@@ -136,10 +136,26 @@ int main( int argc, const char * argv[] )
     XSAtomic_AddInteger( 42, &x );
     
     XSLog( "%li", ( long )x );
-    XSLog( "%li", XSAtomic_ReadInteger( &x ) );
+    XSLog( "%li", ( long )XSAtomic_ReadInteger( &x ) );
     
     XSLog( "%lu", ( unsigned long )XSProcess_GetProcessID() );
     XSLog( "%s", XSProcess_GetProcessName() );
+    
+    {
+        XSBooleanRef b;
+        XSTLSKey     k;
+        
+        b = XSBoolean_Create( true );
+        
+        XSLog( "%p", b );
+        XSThreading_TLSKeyCreate( &k );
+        XSThreading_TLSSetObject( &k, b, XSTLSObjectAssociationRetain );
+        XSRelease( b );
+        XSLog( "%p", XSThreading_TLSGetObject( &k ) );
+        XSLog( "%s", XSRuntime_GetDescription( XSThreading_TLSGetObject( &k ) ) );
+        XSThreading_TLSSetObject( &k, NULL, XSTLSObjectAssociationRetain );
+        XSLog( "%p", XSThreading_TLSGetObject( &k ) );
+    }
     
     return 0;
 }

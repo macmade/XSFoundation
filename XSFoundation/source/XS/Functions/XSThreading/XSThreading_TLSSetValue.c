@@ -78,5 +78,5 @@ void XSThreading_TLSSetValue( XSTLSKey * key, void * data )
         return;
     }
     
-    ( void )data;
+    XSThreading_TLSSetObject( key, ( XSObjectRef )data, XSTLSObjectAssociationAssign );
 }

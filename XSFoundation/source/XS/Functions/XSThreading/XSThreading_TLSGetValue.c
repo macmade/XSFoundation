@@ -73,20 +73,5 @@
 
 void * XSThreading_TLSGetValue( XSTLSKey * key )
 {
-    if( key == NULL )
-    {
-        return NULL;
-    }
-    
-    #ifdef _WIN32
-    
-    
-    
-    #else
-    
-    
-    
-    #endif
-    
-    return NULL;
+    return XSThreading_TLSGetObject( key );
 }

@@ -73,11 +73,69 @@
 
 void XSThreading_TLSSetObject( XSTLSKey * key, XSObjectRef object, XSTLSObjectAssociation association )
 {
+    __XSThreading_TLSValue * tls;
+    
     if( key == NULL )
     {
         return;
     }
     
-    ( void )object;
-    ( void )association;
+    #ifdef _WIN32
+    
+    tls = ( __XSThreading_TLSValue * )TlsGetValue( *( key ) );
+    
+    #else
+    
+    tls = ( __XSThreading_TLSValue * )pthread_getspecific( *( key ) );
+    
+    #endif
+    
+    if( tls != NULL )
+    {
+        if( tls->association == XSTLSObjectAssociationRetain || tls->association == XSTLSObjectAssociationCopy )
+        {
+            XSRelease( tls->value );
+        }
+        
+        tls->value = NULL;
+    }
+    else if( object != NULL )
+    {
+        tls = calloc( sizeof( __XSThreading_TLSValue ), 1 );
+    }
+    else
+    {
+        tls = NULL;
+    }
+    
+    if( object == NULL )
+    {
+        free( tls );
+        
+        tls = NULL;
+    }
+    else
+    {
+        if( association == XSTLSObjectAssociationRetain )
+        {
+            object = XSRetain( object );
+        }
+        else if( association == XSTLSObjectAssociationCopy )
+        {
+            object = XSCopy( object );
+        }
+        
+        tls->association = association;
+        tls->value       = object;
+    }
+    
+    #ifdef _WIN32
+    
+    TlsSetValue( *( key ), tls );
+    
+    #else
+    
+    pthread_setspecific( *( key ), tls );
+    
+    #endif
 }

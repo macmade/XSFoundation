@@ -80,13 +80,13 @@ bool XSThreading_TLSKeyCreate( XSTLSKey * key )
     
     #ifdef _WIN32
     
+    *( key ) = TlsAlloc();
     
+    return ( *( key ) == TLS_OUT_OF_INDEXES ) ? false : true;
     
     #else
     
-    
+    return ( pthread_key_create( key, NULL ) == 0 ) ? true : false;
     
     #endif
-    
-    return false;
 }
