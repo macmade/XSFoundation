@@ -1507,6 +1507,8 @@
 		051B668C18DCAA5E0079238C /* libxs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libxs.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		051B66B618DCAAC20079238C /* XSTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = XSTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		051B66B818DCAAC30079238C /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		0523039818E9D2BD00C29627 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		0523039918E9D2BD00C29627 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		0530420518E89D5E0001F9D0 /* __XSProcess.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSProcess.c; sourceTree = "<group>"; };
 		0530420A18E8C3530001F9D0 /* XSMacros-X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XSMacros-X.h"; sourceTree = "<group>"; };
 		0530421118E8D97F0001F9D0 /* XS-STD */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "XS-STD"; sourceTree = "<group>"; };
@@ -1914,6 +1916,8 @@
 		051B662118DCA7160079238C = {
 			isa = PBXGroup;
 			children = (
+				0523039818E9D2BD00C29627 /* Makefile */,
+				0523039918E9D2BD00C29627 /* README.md */,
 				051B663118DCA7350079238C /* XSFoundation */,
 				051B66B718DCAAC30079238C /* XSTest */,
 				051B662B18DCA7160079238C /* Products */,
@@ -2748,6 +2752,22 @@
 		};
 /* End PBXHeadersBuildPhase section */
 
+/* Begin PBXLegacyTarget section */
+		052303AA18E9D2EF00C29627 /* Makefile Build */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 052303AB18E9D2EF00C29627 /* Build configuration list for PBXLegacyTarget "Makefile Build" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			dependencies = (
+			);
+			name = "Makefile Build";
+			passBuildSettingsInEnvironment = 1;
+			productName = "Makefile Build";
+		};
+/* End PBXLegacyTarget section */
+
 /* Begin PBXNativeTarget section */
 		051B662918DCA7160079238C /* XSFoundation - Mac Static Library */ = {
 			isa = PBXNativeTarget;
@@ -2865,6 +2885,7 @@
 				051B665818DCA96B0079238C /* XSFoundation - Mac Framework */,
 				051B668B18DCAA5E0079238C /* XSFoundation - iOS Static Library */,
 				051B66B518DCAAC20079238C /* XSFoundation - Test */,
+				052303AA18E9D2EF00C29627 /* Makefile Build */,
 			);
 		};
 /* End PBXProject section */
@@ -4710,6 +4731,18 @@
 			};
 			name = Release;
 		};
+		052303AC18E9D2EF00C29627 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		052303AD18E9D2EF00C29627 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -4766,6 +4799,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		052303AB18E9D2EF00C29627 /* Build configuration list for PBXLegacyTarget "Makefile Build" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				052303AC18E9D2EF00C29627 /* Debug */,
+				052303AD18E9D2EF00C29627 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
