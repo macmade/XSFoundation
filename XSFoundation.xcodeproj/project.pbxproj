@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		051B66B918DCAAC30079238C /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 051B66B818DCAAC30079238C /* main.c */; };
 		051B66C718DCAB1B0079238C /* libxs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 051B662A18DCA7160079238C /* libxs.a */; };
+		0523044618EB2CC600C29627 /* XSShowWithInfos.c in Sources */ = {isa = PBXBuildFile; fileRef = 0523044518EB2CC600C29627 /* XSShowWithInfos.c */; };
+		0523044718EB2CC600C29627 /* XSShowWithInfos.c in Sources */ = {isa = PBXBuildFile; fileRef = 0523044518EB2CC600C29627 /* XSShowWithInfos.c */; };
+		0523044818EB2CC600C29627 /* XSShowWithInfos.c in Sources */ = {isa = PBXBuildFile; fileRef = 0523044518EB2CC600C29627 /* XSShowWithInfos.c */; };
+		0523044918EB2CC600C29627 /* XSShowWithInfos.c in Sources */ = {isa = PBXBuildFile; fileRef = 0523044518EB2CC600C29627 /* XSShowWithInfos.c */; };
 		0530420618E89D5E0001F9D0 /* __XSProcess.c in Sources */ = {isa = PBXBuildFile; fileRef = 0530420518E89D5E0001F9D0 /* __XSProcess.c */; };
 		0530420718E89D5E0001F9D0 /* __XSProcess.c in Sources */ = {isa = PBXBuildFile; fileRef = 0530420518E89D5E0001F9D0 /* __XSProcess.c */; };
 		0530420818E89D5E0001F9D0 /* __XSProcess.c in Sources */ = {isa = PBXBuildFile; fileRef = 0530420518E89D5E0001F9D0 /* __XSProcess.c */; };
@@ -1509,6 +1513,7 @@
 		051B66B818DCAAC30079238C /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		0523039818E9D2BD00C29627 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		0523039918E9D2BD00C29627 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		0523044518EB2CC600C29627 /* XSShowWithInfos.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSShowWithInfos.c; sourceTree = "<group>"; };
 		0530420518E89D5E0001F9D0 /* __XSProcess.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSProcess.c; sourceTree = "<group>"; };
 		0530420A18E8C3530001F9D0 /* XSMacros-X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XSMacros-X.h"; sourceTree = "<group>"; };
 		0530421118E8D97F0001F9D0 /* XS-STD */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "XS-STD"; sourceTree = "<group>"; };
@@ -2442,6 +2447,7 @@
 				0573878518E4E7DD00A8BF4A /* XSLogWithInfos.c */,
 				0573878618E4E7DD00A8BF4A /* XSSetLogLevel.c */,
 				0573878718E4E7DD00A8BF4A /* XSVLogWithInfos.c */,
+				0523044518EB2CC600C29627 /* XSShowWithInfos.c */,
 			);
 			path = XSLog;
 			sourceTree = "<group>";
@@ -2945,6 +2951,7 @@
 				0593E3C218E4919D00BABBA9 /* XSRuntime_CreateInstance.c in Sources */,
 				0573877618E4DEDA00A8BF4A /* XSAtomic_IncrementInteger.c in Sources */,
 				055D159E18E1D42800894C7B /* __XSApplication_ToString.c in Sources */,
+				0523044618EB2CC600C29627 /* XSShowWithInfos.c in Sources */,
 				055D168E18E1D42800894C7B /* XSColor_GetClassID.c in Sources */,
 				055D179E18E1D42800894C7B /* __XSNotification_Destructor.c in Sources */,
 				055D15A218E1D42800894C7B /* XSApplication_GetClassID.c in Sources */,
@@ -3304,6 +3311,7 @@
 				0593E3C318E4919D00BABBA9 /* XSRuntime_CreateInstance.c in Sources */,
 				0573877718E4DEDA00A8BF4A /* XSAtomic_IncrementInteger.c in Sources */,
 				055D159F18E1D42800894C7B /* __XSApplication_ToString.c in Sources */,
+				0523044718EB2CC600C29627 /* XSShowWithInfos.c in Sources */,
 				055D168F18E1D42800894C7B /* XSColor_GetClassID.c in Sources */,
 				055D179F18E1D42800894C7B /* __XSNotification_Destructor.c in Sources */,
 				055D15A318E1D42800894C7B /* XSApplication_GetClassID.c in Sources */,
@@ -3663,6 +3671,7 @@
 				0593E3C418E4919D00BABBA9 /* XSRuntime_CreateInstance.c in Sources */,
 				0573877818E4DEDA00A8BF4A /* XSAtomic_IncrementInteger.c in Sources */,
 				055D15A018E1D42800894C7B /* __XSApplication_ToString.c in Sources */,
+				0523044818EB2CC600C29627 /* XSShowWithInfos.c in Sources */,
 				055D169018E1D42800894C7B /* XSColor_GetClassID.c in Sources */,
 				055D17A018E1D42800894C7B /* __XSNotification_Destructor.c in Sources */,
 				055D15A418E1D42800894C7B /* XSApplication_GetClassID.c in Sources */,
@@ -4022,6 +4031,7 @@
 				0593E3C518E4919D00BABBA9 /* XSRuntime_CreateInstance.c in Sources */,
 				0573877918E4DEDA00A8BF4A /* XSAtomic_IncrementInteger.c in Sources */,
 				055D15A118E1D42800894C7B /* __XSApplication_ToString.c in Sources */,
+				0523044918EB2CC600C29627 /* XSShowWithInfos.c in Sources */,
 				055D169118E1D42800894C7B /* XSColor_GetClassID.c in Sources */,
 				055D17A118E1D42800894C7B /* __XSNotification_Destructor.c in Sources */,
 				055D15A518E1D42800894C7B /* XSApplication_GetClassID.c in Sources */,

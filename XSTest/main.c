@@ -147,6 +147,8 @@ int main( int argc, const char * argv[] )
         
         b = XSBoolean_Create( true );
         
+        XSShow( b );
+        
         XSLog( "%p", b );
         XSThreading_TLSKeyCreate( &k );
         XSThreading_TLSSetObject( &k, b, XSTLSObjectAssociationRetain );

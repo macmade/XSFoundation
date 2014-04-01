@@ -62,37 +62,40 @@
 /* $Id$ */
 
 /*!
- * @header      XSLog.h
+ * @file        XSVLogWithInfos.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSLog.h
+ * @abstract    Definitions for XSVLogWithInfos
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Functions/XSLog.h>
 
-#ifndef __XS___PRIVATE_FUNCTIONS_XS_LOG_H__
-#define __XS___PRIVATE_FUNCTIONS_XS_LOG_H__
-
-#include <XS/XSTypes.h>
-
-/*!
- * @typedef     __XSLog_Level
- * @abstract    The current log level
- */
-XS_EXTERN volatile XSInteger __XSLog_Level;
-
-/*!
- * @typedef     __XSLog_Mutex
- * @abstract    Mutex for log calls
- */
-XS_EXTERN XSMutex __XSLog_Mutex;
-
-/*!
- * @typedef     __XSLog_MutexStatus
- * @abstract    MUtex init status
- */
-XS_EXTERN volatile XSInteger __XSLog_MutexStatus;
-
-#endif /* __XS___PRIVATE_FUNCTIONS_XS_LOG_H__ */
+void XSShowWithInfos( XSObjectRef object, const char * file, int line, const char * func )
+{
+    if( object == NULL )
+    {
+        XSLogWithInfos
+        (
+            XSLogLevelInfo,
+            file,
+            line,
+            func,
+            "(null)"
+        );
+    }
+    else
+    {
+        XSLogWithInfos
+        (
+            XSLogLevelInfo,
+            file,
+            line,
+            func,
+            "<%s %p> %s",
+            XSRuntime_GetObjectClassName( object ),
+            object,
+            XSRuntime_GetDescription( object )
+        );
+    }
+}

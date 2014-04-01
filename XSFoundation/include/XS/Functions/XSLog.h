@@ -222,6 +222,13 @@ XS_EXTERN_C_BEGIN
 #define XSFatalError( ... )                 XSFatalErrorWithInfos( __FILE__, __LINE__, __func__, __VA_ARGS__ )
 
 /*!
+ * @def         XSShow
+ * @abstract    Logs the description of an object to the console
+ * @param       _obj_   The object to log
+ */
+#define XSShow( _obj_ )                     XSShowWithInfos( _obj_, __FILE__, __LINE__, __func__ )
+
+/*!
  * @def         XSLogPointWithInfos
  * @abstract    Logs a point structure to the standard error output
  * @param       _p_     The point structure (XSPoint)
@@ -310,6 +317,18 @@ void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char 
  *              instead.
  */
 void XSFatalErrorWithInfos( const char * file, int line, const char * func, const char * fmt, ... ) XS_FORMAT_ATTRIBUTE( printf, 4, 5 );
+
+/*!
+ * @function    XSShow
+ * @abstract    Logs the description of an object to the console
+ * @param       object  The object to log
+ * @param       file    The file in which the log occurs
+ * @param       line    The line number of the file in which the log occurs
+ * @param       func    The function in which the log occurs
+ * @discussion  Do not use this function directly. Use the XSShow macro
+ *              instead.
+ */
+void XSShowWithInfos( XSObjectRef object, const char * file, int line, const char * func );
 
 /*!
  * @function    XSLogPointWithInfos

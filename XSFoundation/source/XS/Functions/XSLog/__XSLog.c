@@ -71,4 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSLog.h>
 
-volatile XSInteger __XSLog_Level = XSLogLevelAll;
+volatile XSInteger __XSLog_Level        = XSLogLevelAll;
+volatile XSInteger __XSLog_MutexStatus  = XSInitStatusNotInited;
+
+XSMutex __XSLog_Mutex;

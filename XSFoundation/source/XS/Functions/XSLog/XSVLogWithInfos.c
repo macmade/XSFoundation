@@ -74,6 +74,18 @@
 void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char * func, const char * fmt, va_list args )
 {
     const char * levelName;
+    const char * filename;
+    char         date[ 255 ];
+    XSUInt64     milliseconds;
+    
+    if( XSAtomic_CompareAndSwapInteger( XSInitStatusNotInited, XSInitStatusInitializing, &__XSLog_MutexStatus ) )
+    {
+        XSThreading_MutexCreate( &__XSLog_Mutex );
+        
+        while( XSAtomic_CompareAndSwapInteger( XSInitStatusInitializing, XSInitStatusInited, &__XSLog_MutexStatus ) == false );
+    }
+    
+    while( XSAtomic_CompareAndSwapInteger( XSInitStatusInited, XSInitStatusInited, &__XSLog_MutexStatus ) == false );
     
     if( ( XSGetLogLevel() & level ) == 0 )
     {
@@ -89,19 +101,76 @@ void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char 
     if( level == XSLogLevelInfo      ) { levelName = "Info";    }
     if( level == XSLogLevelDebug     ) { levelName = "Debug";   }
     
-    ( void )file;
-    ( void )line;
-    ( void )func;
+    #ifdef _WIN32
+    filename = strrchr( file, '\' );
+    #else
+    filename = strrchr( file, '/' );
+    #endif
+    
+    filename = ( filename == NULL ) ? file : filename + 1;
+    
+    if( strlen( filename ) == 0 )
+    {
+        filename = "unknown";
+    }
+    
+    if( strlen( func ) == 0 )
+    {
+        func = "unknown";
+    }
+    
+    
+    XSThreading_MutexLock( &__XSLog_Mutex );
+    
+    #ifdef _WIN32
+    
+    {
+        time_t     t;
+        struct tm  now;
+        SYSTEMTIME time;
+        
+        time( &t );
+        GetSystemTime( &time );
+        localtime_s( &now, &t );
+        strftime( ( char * )date, 255, "%Y-%m-%d %H:%M:%S", &now );
+        
+        milliseconds = time.wMilliseconds;
+    }
+    
+    #else
+    
+    {
+        time_t         t;
+        struct tm    * now;
+        struct timeval tv;
+        
+        t   = time( NULL );
+        now = localtime( &t );
+        
+        gettimeofday( &tv, NULL );
+        strftime( ( char * )date, 255, "%Y-%m-%d %H:%M:%S", now );
+        
+        milliseconds = ( XSUInt64 )( tv.tv_usec / 1000 );
+    }
+    
+    #endif
     
     fprintf
     (
         stderr,
-        "%s[%lu:%lX] - %s: ",
+        "%s.%lu %s[%lu:%lX] <%s:%s:%i> %s: ",
+        date,
+        ( unsigned long )milliseconds,
         XSProcess_GetProcessName(),
         ( unsigned long )XSProcess_GetProcessID(),
         ( unsigned long )XSThreading_GetCurrentThreadID(),
+        func,
+        filename,
+        line,
         levelName
     );
     vfprintf( stderr, fmt, args );
     fprintf( stderr, "\n" );
+    
+    XSThreading_MutexUnlock( &__XSLog_Mutex );
 }
