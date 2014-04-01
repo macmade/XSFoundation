@@ -73,29 +73,13 @@
 
 void XSShowWithInfos( XSObjectRef object, const char * file, int line, const char * func )
 {
-    if( object == NULL )
-    {
-        XSLogWithInfos
-        (
-            XSLogLevelInfo,
-            file,
-            line,
-            func,
-            "(null)"
-        );
-    }
-    else
-    {
-        XSLogWithInfos
-        (
-            XSLogLevelInfo,
-            file,
-            line,
-            func,
-            "<%s %p> %s",
-            XSRuntime_GetObjectClassName( object ),
-            object,
-            XSRuntime_GetDescription( object )
-        );
-    }
+    XSLogWithInfos
+    (
+        XSLogLevelInfo,
+        file,
+        line,
+        func,
+        "%s",
+        XSRuntime_GetDescription( object )
+    );
 }

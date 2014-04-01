@@ -316,7 +316,7 @@ void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char 
  * @discussion  Do not use this function directly. Use the XSFatalError macro
  *              instead.
  */
-void XSFatalErrorWithInfos( const char * file, int line, const char * func, const char * fmt, ... ) XS_FORMAT_ATTRIBUTE( printf, 4, 5 );
+void XSFatalErrorWithInfos( const char * file, int line, const char * func, const char * fmt, ... ) XS_FORMAT_ATTRIBUTE( printf, 4, 5 ) XS_NORETURN_ATTRIBUTE;
 
 /*!
  * @function    XSShow
