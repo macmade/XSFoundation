@@ -286,6 +286,8 @@ _MAKE_FRAMEWORK_BIN = $(CC)                                                 \
     -o $(3)                                                                 \
     $(4)
 
+_XCODE_SDK_VALUE = $(shell /usr/libexec/PlistBuddy -c "Print $(1)" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
+
 #-------------------------------------------------------------------------------
 # Phony targets
 #-------------------------------------------------------------------------------
@@ -298,23 +300,39 @@ all: $(_BUILD_TYPE)
 # Cleans all build files
 clean:
 	
+	@echo $(call _PRINT,Cleaning,i386,Cleaning all intermediate files)
 	@rm -rf $(DIR_BUILD_TEMP_INTEL_32_OBJ)*
 	@rm -rf $(DIR_BUILD_TEMP_INTEL_32_BIN)*
+	
+	@echo $(call _PRINT,Cleaning,x86-64,Cleaning all intermediate files)
 	@rm -rf $(DIR_BUILD_TEMP_INTEL_64_OBJ)*
 	@rm -rf $(DIR_BUILD_TEMP_INTEL_64_BIN)*
+	
+	@echo $(call _PRINT,Cleaning,armv7,Cleaning all intermediate files)
 	@rm -rf $(DIR_BUILD_TEMP_ARM_7_OBJ)*
 	@rm -rf $(DIR_BUILD_TEMP_ARM_7_BIN)*
+	
+	@echo $(call _PRINT,Cleaning,armv7s,Cleaning all intermediate files)
 	@rm -rf $(DIR_BUILD_TEMP_ARM_7S_OBJ)*
 	@rm -rf $(DIR_BUILD_TEMP_ARM_7S_BIN)*
+	
+	@echo $(call _PRINT,Cleaning,arm64,Cleaning all intermediate files)
 	@rm -rf $(DIR_BUILD_TEMP_ARM_64_OBJ)*
 	@rm -rf $(DIR_BUILD_TEMP_ARM_64_BIN)*
+	
+	@echo $(call _PRINT,Cleaning,universal,Cleaning all product files)
 	@rm -rf $(DIR_BUILD_PRODUCTS)*
 
 # Build for OS-X
 os-x: lib dylib ios-lib mac-framework
 	
-	@:
-
+	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_LIB),universal,Linking the i386 binary)
+	@libtool -static -arch_only i386 -o $(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_LIB)$(EXT_LIB) $(_FILES_C_BUILD_INTEL_32)
+	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_LIB),universal,Linking the x86-64 binary)
+	@libtool -static -arch_only x86_64 -o $(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_LIB)$(EXT_LIB) $(_FILES_C_BUILD_INTEL_64)
+	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_LIB),universal,Linking the universal binary)
+	@libtool -static $(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_LIB)$(EXT_LIB) $(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_LIB)$(EXT_LIB) -o $(DIR_BUILD_PRODUCTS)$(PRODUCT_LIB)$(EXT_LIB)
+	
 # Build for Unix-like systems (non OS-X)
 unix-like: lib dylib
 	
@@ -357,24 +375,24 @@ mac-framework: $(_FILES_C_BUILD_INTEL_32) $(_FILES_C_BUILD_INTEL_64)
 	@cp -rf $(DIR_RES)$(PRODUCT_MAC_FRAMEWORK)-Info.plist $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
 	@plutil -insert BuildMachineOSBuild -string $(shell sw_vers -buildVersion) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
 	@plutil -insert DTSDKName -string macosx$(MAC_TARGET) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
-	@plutil -insert DTCompiler -string $(shell /usr/libexec/PlistBuddy -c "Print DTCompiler" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
-	@plutil -insert DTPlatformBuild -string $(shell /usr/libexec/PlistBuddy -c "Print DTPlatformBuild" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
-	@plutil -insert DTPlatformVersion -string $(shell /usr/libexec/PlistBuddy -c "Print DTPlatformVersion" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
-	@plutil -insert DTSDKBuild -string $(shell /usr/libexec/PlistBuddy -c "Print DTSDKBuild" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
-	@plutil -insert DTXcode -string $(shell /usr/libexec/PlistBuddy -c "Print DTXcode" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
-	@plutil -insert DTXcodeBuild -string $(shell /usr/libexec/PlistBuddy -c "Print DTXcodeBuild" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
+	@plutil -insert DTCompiler -string $(call _XCODE_SDK_VALUE,DTCompiler)
+	@plutil -insert DTPlatformBuild -string $(call _XCODE_SDK_VALUE,DTPlatformBuild)
+	@plutil -insert DTPlatformVersion -string $(call _XCODE_SDK_VALUE,DTPlatformVersion)
+	@plutil -insert DTSDKBuild -string $(call _XCODE_SDK_VALUE,DTSDKBuild)
+	@plutil -insert DTXcode -string $(call _XCODE_SDK_VALUE,DTXcode)
+	@plutil -insert DTXcodeBuild -string $(call _XCODE_SDK_VALUE,DTXcodeBuild)
 	
 	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Copying the bundle resources)
 	@:
 	
 	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Linking the i386 binary)
-	@$(call _MAKE_FRAMEWORK_BIN,i386,$(notdir $(PRODUCT_MAC_FRAMEWORK)),$(DIR_BUILD_TEMP_INTEL_32_BIN)$(notdir $(PRODUCT_MAC_FRAMEWORK)),$(_FILES_C_BUILD_INTEL_32))
+	@$(call _MAKE_FRAMEWORK_BIN,i386,$(notdir $(PRODUCT_MAC_FRAMEWORK)),$(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_MAC_FRAMEWORK),$(_FILES_C_BUILD_INTEL_32))
 	
 	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Linking the x86-64 binary)
-	@$(call _MAKE_FRAMEWORK_BIN,x86_64,$(notdir $(PRODUCT_MAC_FRAMEWORK)),$(DIR_BUILD_TEMP_INTEL_64_BIN)$(notdir $(PRODUCT_MAC_FRAMEWORK)),$(_FILES_C_BUILD_INTEL_64))
+	@$(call _MAKE_FRAMEWORK_BIN,x86_64,$(notdir $(PRODUCT_MAC_FRAMEWORK)),$(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_MAC_FRAMEWORK),$(_FILES_C_BUILD_INTEL_64))
 	
 	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Linking the universal binary)
-	@lipo -create $(DIR_BUILD_TEMP_INTEL_32_BIN)$(notdir $(PRODUCT_MAC_FRAMEWORK)) $(DIR_BUILD_TEMP_INTEL_64_BIN)$(notdir $(PRODUCT_MAC_FRAMEWORK)) -output $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/$(notdir $(PRODUCT_MAC_FRAMEWORK))
+	@lipo -create $(DIR_BUILD_TEMP_INTEL_32_BIN)$(notdir $(PRODUCT_MAC_FRAMEWORK)) $(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_MAC_FRAMEWORK) -output $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/$(notdir $(PRODUCT_MAC_FRAMEWORK))
 
 #-------------------------------------------------------------------------------
 # Targets with second expansion
