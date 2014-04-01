@@ -95,4 +95,16 @@ XS_EXTERN XSMutex __XSLog_Mutex;
  */
 XS_EXTERN volatile XSInteger __XSLog_MutexStatus;
 
+/*!
+ * @function    __XSLog_StartLog
+ * @abstract    Starts a log session
+ */
+void __XSLog_StartLog( XSLogLevel level, const char * file, int line, const char * func );
+
+/*!
+ * @function    __XSLog_EndLog
+ * @abstract    Ends a log session
+ */
+void __XSLog_EndLog( void );
+
 #endif /* __XS___PRIVATE_FUNCTIONS_XS_LOG_H__ */

@@ -62,27 +62,18 @@
 /* $Id$ */
 
 /*!
- * @file        XSFatalErrorWithInfos.c
+ * @file        __XSLog_EndLog.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definitions for XSFatalErrorWithInfos
+ * @abstract    Definitions for __XSLog_EndLog
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSLog.h>
 
-void XSFatalErrorWithInfos( const char * file, int line, const char * func, const char * fmt, ... )
+void __XSLog_EndLog( void )
 {
-    va_list ap;
+    fprintf( stderr, "\n" );
     
-    if( ( XSGetLogLevel() & XSLogLevelFatal ) != 0 )
-    {
-        va_start( ap, fmt );
-        __XSLog_StartLog( XSLogLevelFatal, file, line, func );
-        vfprintf( stderr, fmt, ap );
-        __XSLog_EndLog();
-        va_end( ap );
-    }
-    
-    abort();
+    XSThreading_MutexUnlock( &__XSLog_Mutex );
 }

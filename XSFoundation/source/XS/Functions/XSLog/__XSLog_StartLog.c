@@ -62,27 +62,129 @@
 /* $Id$ */
 
 /*!
- * @file        XSFatalErrorWithInfos.c
+ * @file        __XSLog_StartLog.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definitions for XSFatalErrorWithInfos
+ * @abstract    Definitions for __XSLog_StartLog
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSLog.h>
 
-void XSFatalErrorWithInfos( const char * file, int line, const char * func, const char * fmt, ... )
+void __XSLog_StartLog( XSLogLevel level, const char * file, int line, const char * func )
 {
-    va_list ap;
     
-    if( ( XSGetLogLevel() & XSLogLevelFatal ) != 0 )
+    const char * levelName;
+    const char * filename;
+    char         date[ 255 ];
+    XSUInt64     milliseconds;
+    
+    if( XSAtomic_CompareAndSwapInteger( XSInitStatusNotInited, XSInitStatusInitializing, &__XSLog_MutexStatus ) )
     {
-        va_start( ap, fmt );
-        __XSLog_StartLog( XSLogLevelFatal, file, line, func );
-        vfprintf( stderr, fmt, ap );
-        __XSLog_EndLog();
-        va_end( ap );
+        XSThreading_MutexCreate( &__XSLog_Mutex );
+        
+        while( XSAtomic_CompareAndSwapInteger( XSInitStatusInitializing, XSInitStatusInited, &__XSLog_MutexStatus ) == false );
     }
     
-    abort();
+    while( XSAtomic_CompareAndSwapInteger( XSInitStatusInited, XSInitStatusInited, &__XSLog_MutexStatus ) == false );
+    
+    levelName = "Info";
+    
+    if( level == XSLogLevelFatal     ) { levelName = "Fatal";   }
+    if( level == XSLogLevelError     ) { levelName = "Error";   }
+    if( level == XSLogLevelWarning   ) { levelName = "Warning"; }
+    if( level == XSLogLevelNotice    ) { levelName = "Notice";  }
+    if( level == XSLogLevelInfo      ) { levelName = "Info";    }
+    if( level == XSLogLevelDebug     ) { levelName = "Debug";   }
+    
+    XSThreading_MutexLock( &__XSLog_Mutex );
+    
+    #ifdef _WIN32
+    
+    {
+        time_t     t;
+        struct tm  now;
+        SYSTEMTIME time;
+        
+        time( &t );
+        GetSystemTime( &time );
+        localtime_s( &now, &t );
+        strftime( ( char * )date, 255, "%Y-%m-%d %H:%M:%S", &now );
+        
+        milliseconds = time.wMilliseconds;
+    }
+    
+    #else
+    
+    {
+        time_t         t;
+        struct tm    * now;
+        struct timeval tv;
+        
+        t   = time( NULL );
+        now = localtime( &t );
+        
+        gettimeofday( &tv, NULL );
+        strftime( ( char * )date, 255, "%Y-%m-%d %H:%M:%S", now );
+        
+        milliseconds = ( XSUInt64 )( tv.tv_usec / 1000 );
+    }
+    
+    #endif
+    
+    #ifdef DEBUG
+    
+    #ifdef _WIN32
+    filename = strrchr( file, '\' );
+    #else
+    filename = strrchr( file, '/' );
+    #endif
+    
+    filename = ( filename == NULL ) ? file : filename + 1;
+    
+    if( strlen( filename ) == 0 )
+    {
+        filename = "unknown";
+    }
+    
+    if( strlen( func ) == 0 )
+    {
+        func = "unknown";
+    }
+    
+    fprintf
+    (
+        stderr,
+        "%s.%lu %s[%lu:%lX] <%s:%s:%i> %s: ",
+        date,
+        ( unsigned long )milliseconds,
+        XSProcess_GetProcessName(),
+        ( unsigned long )XSProcess_GetProcessID(),
+        ( unsigned long )XSThreading_GetCurrentThreadID(),
+        func,
+        filename,
+        line,
+        levelName
+    );
+    
+    #else
+    
+    ( void )file;
+    ( void )filename;
+    ( void )line;
+    ( void )func;
+    
+    fprintf
+    (
+        stderr,
+        "%s.%lu %s[%lu:%lX] %s: ",
+        date,
+        ( unsigned long )milliseconds,
+        XSProcess_GetProcessName(),
+        ( unsigned long )XSProcess_GetProcessID(),
+        ( unsigned long )XSThreading_GetCurrentThreadID(),
+        levelName
+    );
+    
+    #endif
 }
