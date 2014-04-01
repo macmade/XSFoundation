@@ -70,6 +70,7 @@
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemory.h>
+#include <XS/__private/Functions/XSMemoryDebug.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
 XS_EXPORT void * XSReallocWithInfos( void * memory, XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func )

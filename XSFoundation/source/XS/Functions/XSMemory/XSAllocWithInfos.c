@@ -70,6 +70,7 @@
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemory.h>
+#include <XS/__private/Functions/XSMemoryDebug.h>
 
 void * XSAllocWithInfos( XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func )
 {

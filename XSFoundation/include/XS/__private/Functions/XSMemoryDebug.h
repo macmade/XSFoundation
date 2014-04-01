@@ -62,42 +62,21 @@
 /* $Id$ */
 
 /*!
- * @file        XSReleaseWithInfos.c
+ * @header      XSMemoryDebug.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSReleaseWithInfos
+ * @abstract    Private definitions for XSMemoryDebug.h
  */
 
-#include <XS/XS.h>
-#include <XS/__private/Functions/XSMemory.h>
-#include <XS/__private/Functions/XSMemoryDebug.h>
-#include <XS/__private/Functions/XSRuntime.h>
+#ifndef __XS_H__
+#error "Please include '<XS/XS.h>' instead of this file!"
+#endif
 
-void XSReleaseWithInfos( void * memory, const char * file, int line, const char * func )
-{
-    __XSMemoryObject            * object;
-    XSClassCallbackDestructor destructor;
-    
-    ( void )file;
-    ( void )line;
-    ( void )func;
-    
-    if( memory == NULL )
-    {
-        return;
-    }
-    
-    object = __XSMemory_GetMemoryObject( memory );
-    
-    if( XSAtomic_DecrementInteger( &( object->retainCount ) ) == 0 )
-    {
-        destructor = __XSRuntime_GetDestructorCallback( object->classID );
-        
-        if( destructor != NULL )
-        {
-            destructor( object );
-        }
-        
-        free( object );
-    }
-}
+#ifndef __XS___PRIVATE_FUNCTIONS_XS_MEMORY_DEBUG_H__
+#define __XS___PRIVATE_FUNCTIONS_XS_MEMORY_DEBUG_H__
+
+#include <XS/XSTypes.h>
+
+
+
+#endif /* __XS___PRIVATE_FUNCTIONS_XS_MEMORY_DEBUG_H__ */
