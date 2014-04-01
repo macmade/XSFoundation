@@ -101,7 +101,7 @@ void XSThreading_TLSSetObject( XSTLSKey * key, XSObjectRef object, XSTLSObjectAs
     }
     else if( object != NULL )
     {
-        tls = calloc( sizeof( __XSThreading_TLSValue ), 1 );
+        tls = XSAlloc( sizeof( __XSThreading_TLSValue ) );
     }
     else
     {
@@ -110,7 +110,7 @@ void XSThreading_TLSSetObject( XSTLSKey * key, XSObjectRef object, XSTLSObjectAs
     
     if( object == NULL )
     {
-        free( tls );
+        XSRelease( tls );
         
         tls = NULL;
     }
