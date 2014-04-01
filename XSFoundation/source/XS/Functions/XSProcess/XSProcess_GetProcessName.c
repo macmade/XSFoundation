@@ -77,7 +77,7 @@
 
 const char * XSProcess_GetProcessName( void )
 {
-    if( XSAtomic_CompareAndSwapInteger( __XSProcess_ProcNameStatusNotInited, __XSProcess_ProcNameStatusInitializing, &__XSProcess_ProcessNameStatus ) )
+    if( XSAtomic_CompareAndSwapInteger( XSInitStatusNotInited, XSInitStatusInitializing, &__XSProcess_ProcessNameStatus ) )
     {
         memset( __XSProcess_ProcessName, 0, __XS_PROCESS_NAME_MAX );
         
@@ -154,10 +154,10 @@ const char * XSProcess_GetProcessName( void )
         
         #endif
         
-        while( XSAtomic_CompareAndSwapInteger( __XSProcess_ProcNameStatusInitializing, __XSProcess_ProcNameStatusInited, &__XSProcess_ProcessNameStatus ) == false );
+        while( XSAtomic_CompareAndSwapInteger( XSInitStatusInitializing, XSInitStatusInited, &__XSProcess_ProcessNameStatus ) == false );
     }
     
-    while( XSAtomic_CompareAndSwapInteger( __XSProcess_ProcNameStatusInited, __XSProcess_ProcNameStatusInited, &__XSProcess_ProcessNameStatus ) == false );
+    while( XSAtomic_CompareAndSwapInteger( XSInitStatusInited, XSInitStatusInited, &__XSProcess_ProcessNameStatus ) == false );
     
     return __XSProcess_ProcessName;
 }

@@ -105,6 +105,7 @@ XS_EXTERN_C_BEGIN
 #include <XS/XSTypes/XSRectEdge.h>
 #include <XS/XSTypes/XSEdgeInsets.h>
 
+#include <XS/XSTypes/XSInitStatus.h>
 #include <XS/XSTypes/XSLogLevel.h>
 
 #include <XS/XSTypes/XSRange.h>

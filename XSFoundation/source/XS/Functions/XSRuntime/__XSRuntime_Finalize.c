@@ -76,7 +76,7 @@ void __XSRuntime_Finalize( void )
     __XSRuntime_ClassInfoList * list;
     __XSRuntime_ClassInfoList * next;
     
-    if( XSAtomic_CompareAndSwapInteger( __XSRuntime_InitStatusInited, __XSRuntime_InitStatusFinalizing, &__XSRuntime_Inited ) == false )
+    if( XSAtomic_CompareAndSwapInteger( XSInitStatusInited, XSInitStatusFinalizing, &__XSRuntime_InitStatus ) == false )
     {
         return;
     }
@@ -94,5 +94,5 @@ void __XSRuntime_Finalize( void )
         free( list );
     }
     
-    while( XSAtomic_CompareAndSwapInteger( __XSRuntime_InitStatusFinalizing, __XSRuntime_InitStatusNotInited, &__XSRuntime_Inited ) == false );
+    while( XSAtomic_CompareAndSwapInteger( XSInitStatusFinalizing, XSInitStatusNotInited, &__XSRuntime_InitStatus ) == false );
 }

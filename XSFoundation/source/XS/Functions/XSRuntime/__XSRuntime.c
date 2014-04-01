@@ -71,6 +71,6 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
-volatile XSInteger                   __XSRuntime_Inited       = 0;
-         __XSRuntime_ClassInfoList * __XSRuntime_Classes      = NULL;
-volatile XSInteger                   __XSRuntime_ClassCount   = 0;
+volatile XSInteger                   __XSRuntime_InitStatus = XSInitStatusNotInited;
+         __XSRuntime_ClassInfoList * __XSRuntime_Classes    = NULL;
+volatile XSInteger                   __XSRuntime_ClassCount = 0;

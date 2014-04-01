@@ -72,4 +72,4 @@
 #include <XS/__private/Functions/XSProcess.h>
 
 char __XSProcess_ProcessName[ __XS_PROCESS_NAME_MAX ];
-volatile XSInteger __XSProcess_ProcessNameStatus = __XSProcess_ProcNameStatusNotInited;
+volatile XSInteger __XSProcess_ProcessNameStatus = XSInitStatusNotInited;

@@ -62,118 +62,34 @@
 /* $Id$ */
 
 /*!
- * @header      XSRuntime.h
+ * @header      XSInitStatus.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSRuntime.h
+ * @abstract    XSInitStatus type definition
  */
 
 #ifndef __XS_H__
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS___PRIVATE_FUNCTIONS_XS_RUNTIME_H__
-#define __XS___PRIVATE_FUNCTIONS_XS_RUNTIME_H__
+#ifndef __XS_TYPES_XS_INIT_STATUS_H__
+#define __XS_TYPES_XS_INIT_STATUS_H__
 
-#include <XS/XSTypes.h>
+XS_EXTERN_C_BEGIN
 
 /*!
- * @typedef     __XSRuntime_ClassInfoList
- * @abstract    Linked list for the XSFoundation class infos
+ * @typedef     XSInitStatus
+ * @abstract    Initialization status
  */
-typedef struct __XSRuntime_ClassInfoList_Struct
+typedef enum
 {
-    const XSClassInfo                       * info;
-    struct __XSRuntime_ClassInfoList_Struct * next;
+    XSInitStatusNotInited     = 0x00, /*! Not inited */
+    XSInitStatusInited        = 0x01, /*! Inited */
+    XSInitStatusInitializing  = 0x02, /*! Initializing */
+    XSInitStatusFinalizing    = 0x03  /*! Finalizing */
 }
-__XSRuntime_ClassInfoList;
+XSInitStatus;
 
-/*!
- * @def         __XS_RUNTIME_IS_INITED
- * @abstract    Checks whether the XSFoundation runtime is inited
- */
-#define __XS_RUNTIME_IS_INITED      XSAtomic_CompareAndSwapInteger( XSInitStatusInited, XSInitStatusInited, &__XSRuntime_InitStatus )
+XS_EXTERN_C_END
 
-/*!
- * @def         __XS_RUNTIME_IS_INITED
- * @abstract    Checks whether the XSFoundation runtime is finalizing
- */
-#define __XS_RUNTIME_IS_FINALIZING  XSAtomic_CompareAndSwapInteger( XSInitStatusFinalizing, XSInitStatusFinalizing, &__XSRuntime_InitStatus )
-
-/*!
- * @var         __XSRuntime_InitStatus
- * @abstract    XSFoundation runtime initialization status
- */
-XS_EXTERN volatile XSInteger __XSRuntime_InitStatus;
-
-/*!
- * @var         __XSRuntime_ClassInfoList
- * @abstract    Registered XSFoundation runtime class infos
- */
-XS_EXTERN __XSRuntime_ClassInfoList * __XSRuntime_Classes;
-
-/*!
- * @var         __XSRuntime_Inited
- * @abstract    Number of registered XSFoundation runtime class infos
- */
-XS_EXTERN volatile XSInteger __XSRuntime_ClassCount;
-
-/*!
- * @var         __XSRuntime_GetClassInfo
- * @abstract    Gets the class info for a class ID
- * @param       classID     The class ID
- * @return      The class info
- */
-const XSClassInfo * __XSRuntime_GetClassInfo( XSClassID classID );
-
-/*!
- * @var         __XSRuntime_GetInstanceSize
- * @abstract    Gets the instance site for a class ID
- * @param       classID     The class ID
- * @return      The instance size
- */
-XSUInteger __XSRuntime_GetInstanceSize( XSClassID classID );
-
-/*!
- * @var         __XSRuntime_GetConstructorCallback
- * @abstract    Gets the constructor callback for a class ID
- * @param       classID     The class ID
- * @return      The copy callback
- */
-XSClassCallbackConstructor __XSRuntime_GetConstructorCallback( XSClassID classID );
-
-/*!
- * @var         __XSRuntime_GetDestructorCallback
- * @abstract    Gets the destructor callback for a class ID
- * @param       classID     The class ID
- * @return      The destructor callback
- */
-XSClassCallbackDestructor __XSRuntime_GetDestructorCallback( XSClassID classID );
-
-/*!
- * @var         __XSRuntime_GetCopyCallback
- * @abstract    Gets the copy callback for a class ID
- * @param       classID     The class ID
- * @return      The copy callback
- */
-XSClassCallbackCopy __XSRuntime_GetCopyCallback( XSClassID classID );
-
-/*!
- * @var         __XSRuntime_GetEqualsCallback
- * @abstract    Gets the equals callback for a class ID
- * @param       classID     The class ID
- * @return      The equals callback
- */
-XSClassCallbackEquals __XSRuntime_GetEqualsCallback( XSClassID classID );
-
-/*!
- * @var         __XSRuntime_GetToStringCallback
- * @abstract    Gets the to-string callback for a class ID
- * @param       classID     The class ID
- * @return      The to-string callback
- */
-XSClassCallbackToString __XSRuntime_GetToStringCallback( XSClassID classID );
-
-void __XSRuntime_Finalize( void );
-
-#endif /* __XS___PRIVATE_FUNCTIONS_XS_RUNTIME_H__ */
+#endif /* __XS_TYPES_XS_INIT_STATUS_H__ */

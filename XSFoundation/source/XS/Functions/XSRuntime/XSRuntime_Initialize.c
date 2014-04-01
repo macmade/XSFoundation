@@ -105,7 +105,7 @@ void XSRuntime_Initialize( void )
 {
     __XSRuntime_ClassInfoList * classes;
     
-    if( XSAtomic_CompareAndSwapInteger( __XSRuntime_InitStatusNotInited, __XSRuntime_InitStatusInitializing, &__XSRuntime_Inited ) == false )
+    if( XSAtomic_CompareAndSwapInteger( XSInitStatusNotInited, XSInitStatusInitializing, &__XSRuntime_InitStatus ) == false )
     {
         return;
     }
@@ -125,7 +125,7 @@ void XSRuntime_Initialize( void )
     __XSRuntime_Classes     = classes;
     __XSRuntime_ClassCount  = 0;
     
-    while( XSAtomic_CompareAndSwapInteger( __XSRuntime_InitStatusInitializing, __XSRuntime_InitStatusInited, &__XSRuntime_Inited ) == false );
+    while( XSAtomic_CompareAndSwapInteger( XSInitStatusInitializing, XSInitStatusInited, &__XSRuntime_InitStatus ) == false );
     
     __XSApplication_Initialize();
     __XSApplicationArgument_Initialize();

@@ -94,18 +94,6 @@
 #endif
 
 /*!
- * @typedef     __XSProcess_ProcNameStatus
- * @abstract    Process name status
- */
-typedef enum
-{
-    __XSProcess_ProcNameStatusNotInited     = 0x00, /*! Process name not inited */
-    __XSProcess_ProcNameStatusInited        = 0x01, /*! Process name inited */
-    __XSProcess_ProcNameStatusInitializing  = 0x02, /*! Process name initializing */
-}
-__XSProcess_ProcNameStatus;
-
-/*!
  * @typedef     __XSProcess_ProcessName
  * @abstract    Process name
  */
