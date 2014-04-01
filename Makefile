@@ -361,32 +361,54 @@ lib: $(_FILES_C_BUILD_INTEL_32) $(_FILES_C_BUILD_INTEL_64)
 	
 	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_LIB),universal,Linking the i386 binary)
 	@libtool -static -arch_only i386 -o $(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_LIB)$(EXT_LIB) $(_FILES_C_BUILD_INTEL_32)
+	
 	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_LIB),universal,Linking the x86-64 binary)
 	@libtool -static -arch_only x86_64 -o $(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_LIB)$(EXT_LIB) $(_FILES_C_BUILD_INTEL_64)
+	
 	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_LIB),universal,Linking the universal binary)
 	@libtool -static $(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_LIB)$(EXT_LIB) $(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_LIB)$(EXT_LIB) -o $(DIR_BUILD_PRODUCTS)$(PRODUCT_LIB)$(EXT_LIB)
-
+	
+ifeq ($(findstring 1,$(DEBUG)),)
+	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_LIB),universal,Stripping the debug symbols)
+	@strip -S $(DIR_BUILD_PRODUCTS)$(PRODUCT_LIB)$(EXT_LIB)
+endif
+	
 # Builds a dynamic library (generic)
 dylib: $(_FILES_C_BUILD_INTEL_32) $(_FILES_C_BUILD_INTEL_64)
 	
 	@echo $(call _PRINT,$(PRODUCT_DYLIB)$(EXT_DYLIB),universal,Linking the i386 binary)
 	@$(call _MAKE_DYLIB_BIN,i386,$(PRODUCT_DYLIB),$(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_DYLIB),$(_FILES_C_BUILD_INTEL_32))
+	
 	@echo $(call _PRINT,$(PRODUCT_DYLIB)$(EXT_DYLIB),universal,Linking the x86-64 binary)
 	@$(call _MAKE_DYLIB_BIN,x86_64,$(PRODUCT_DYLIB),$(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_DYLIB),$(_FILES_C_BUILD_INTEL_64))
+	
 	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_DYLIB),universal,Linking the universal binary)
 	@lipo -create $(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_DYLIB)$(EXT_DYLIB) $(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_DYLIB)$(EXT_DYLIB) -output $(DIR_BUILD_PRODUCTS)$(PRODUCT_DYLIB)$(EXT_DYLIB)
+	
+ifeq ($(findstring 1,$(DEBUG)),)
+	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_DYLIB),universal,Stripping the debug symbols)
+	@strip -S $(DIR_BUILD_PRODUCTS)$(PRODUCT_LIB)$(EXT_DYLIB)
+endif
 
 # Builds an iOS static library (OS-X only)
 ios-lib: $(_FILES_C_BUILD_ARM_7) $(_FILES_C_BUILD_ARM_7S) $(_FILES_C_BUILD_ARM_64)
 	
 	@echo $(call _PRINT,$(PRODUCT_IOS_LIB)$(EXT_LIB),universal,Linking the armv7 binary)
 	@libtool -static -arch_only armv7 -o $(DIR_BUILD_TEMP_ARM_7_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) $(_FILES_C_BUILD_ARM_7)
+	
 	@echo $(call _PRINT,$(PRODUCT_IOS_LIB)$(EXT_LIB),universal,Linking the armv7s binary)
 	@libtool -static -arch_only armv7s -o $(DIR_BUILD_TEMP_ARM_7S_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) $(_FILES_C_BUILD_ARM_7S)
+	
 	@echo $(call _PRINT,$(PRODUCT_IOS_LIB)$(EXT_LIB),universal,Linking the arm64 binary)
 	@libtool -static -arch_only arm64 -o $(DIR_BUILD_TEMP_ARM_64_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) $(_FILES_C_BUILD_ARM_64)
+	
 	@echo $(call _PRINT,$(PRODUCT_IOS_LIB)$(EXT_LIB),universal,Linking the universal binary)
 	@libtool -static $(DIR_BUILD_TEMP_ARM_7_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) $(DIR_BUILD_TEMP_ARM_7S_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) $(DIR_BUILD_TEMP_ARM_64_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) -o $(DIR_BUILD_PRODUCTS)$(PRODUCT_IOS_LIB)$(EXT_LIB)
+	
+ifeq ($(findstring 1,$(DEBUG)),)
+	@echo $(call _PRINT,$(PRODUCT_IOS_LIB)$(EXT_LIB),universal,Stripping the debug symbols)
+	@strip -S $(DIR_BUILD_PRODUCTS)$(PRODUCT_IOS_LIB)$(EXT_LIB)
+endif
 
 # Builds an Mac framework (OS-X only)
 mac-framework: $(_FILES_C_BUILD_INTEL_32) $(_FILES_C_BUILD_INTEL_64)
@@ -428,6 +450,11 @@ mac-framework: $(_FILES_C_BUILD_INTEL_32) $(_FILES_C_BUILD_INTEL_64)
 	
 	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Linking the universal binary)
 	@lipo -create $(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_MAC_FRAMEWORK) $(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_MAC_FRAMEWORK) -output $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/$(PRODUCT_MAC_FRAMEWORK)
+	
+ifeq ($(findstring 1,$(DEBUG)),)
+	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Stripping the debug symbols)
+	@strip -S $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/$(PRODUCT_MAC_FRAMEWORK)
+endif
 
 #-------------------------------------------------------------------------------
 # Targets with second expansion
