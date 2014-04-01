@@ -63,18 +63,32 @@
 # Configuration
 #-------------------------------------------------------------------------------
 
-OPTIM   := Os
-IOS_SDK := 7.1
+CC          := clang
+MAC_TARGET  := 10.9
+IOS_SDK     := 7.1
+OPTIM       := Os
+
+#-------------------------------------------------------------------------------
+# Products
+#-------------------------------------------------------------------------------
+
+PRODUCT_LIB             := libxs
+PRODUCT_DYLIB           := libxs
+PRODUCT_MAC_FRAMEWORK   := XSFoundation
+PRODUCT_IOS_LIB         := libxs-ios
 
 #-------------------------------------------------------------------------------
 # Paths
 #-------------------------------------------------------------------------------
 
+# Root directory
+DIR                             := ./
+
 # Root build directory (debug or release)
 ifeq ($(findstring 1,$(DEBUG)),)
-    DIR_BUILD   := ./Build/Release/
+    DIR_BUILD                   := $(DIR)Build/Release/
 else
-    DIR_BUILD   := ./Build/Debug/
+    DIR_BUILD                   := $(DIR)Build/Debug/
 endif
 
 # Relative build directories
@@ -99,6 +113,7 @@ DIR_BUILD_TEMP_ARM_64_OBJ       := $(DIR_BUILD_TEMP_ARM_64)obj/
 
 # Source directories
 DIR_INC                         := ./XSFoundation/include/
+DIR_RES                         := ./XSFoundation/resources/
 DIR_SRC                         := ./XSFoundation/source/XS/
 DIR_SRC_FUNCTIONS               := $(DIR_SRC)Functions/
 DIR_SRC_CLASSES                 := $(DIR_SRC)Classes/
@@ -115,9 +130,12 @@ vpath %$(EXT_C) $(DIR_SRC)
 #-------------------------------------------------------------------------------
 
 # File extensions
-EXT_C   := .c
-EXT_H   := .h
-EXT_O   := .o
+EXT_C           := .c
+EXT_H           := .h
+EXT_O           := .o
+EXT_LIB         := .a
+EXT_DYLIB       := .dylib
+EXT_FRAMEWORK   := .framework
 
 # Adds the suffixes used in this file
 .SUFFIXES: $(EXT_C) $(EXT_H) $(EXT_O)
@@ -188,13 +206,12 @@ _FILES_C_BUILD_ARM_64   = $(addprefix $(DIR_BUILD_TEMP_ARM_64_OBJ),$(_FILES_C_OB
 # Commands configuration
 #-------------------------------------------------------------------------------
 
-# C compiler
-CC  := clang -Werror -$(OPTIM) -std=c99 -I$(DIR_INC) -D__XS_BUILD__
+_CC = $(CC) -Werror -$(OPTIM) -std=c99 -I$(DIR_INC) -D__XS_BUILD__
 
 # C compiler - Debug mode
 ifneq ($(findstring 1,$(DEBUG)),)
-CC  += -DDEBUG=1
-CC  += -g
+_CC  += -DDEBUG=1
+_CC  += -g
 endif
 
 # iOS SDK root
@@ -215,10 +232,11 @@ COLOR_PURPLE                            := "\x1b[35;01m"
 COLOR_CYAN                              := "\x1b[36;01m"
 
 # Pretty printing
+_PRINT_FILE = $(call _PRINT,$(1),$(2),$(patsubst %.,%,$(subst /,.,$(dir $(patsubst $(DIR_SRC)%,%,$<)))).)$(COLOR_GRAY)"$(notdir $(3))"$(COLOR_NONE)
 ifeq ($(findstring 1,$(DEBUG)),)
-_PRINT_CC   = "["$(COLOR_GREEN)" XSFoundation "$(COLOR_NONE)"]> Compiling C file [ "$(COLOR_CYAN)"Release - $(3)"$(COLOR_NONE)" ]: "$(COLOR_YELLOW)"$(patsubst %.,%,$(subst /,.,$(dir $(patsubst $(DIR_SRC)%,%,$<))))."$(COLOR_NONE)$(COLOR_GRAY)"$(notdir $(1))"$(COLOR_NONE)
+_PRINT      = "["$(COLOR_GREEN)" XSFoundation "$(COLOR_NONE)"]> $(1) [ "$(COLOR_CYAN)"Release - $(2)"$(COLOR_NONE)" ]: "$(COLOR_YELLOW)"$(3)"$(COLOR_NONE)
 else
-_PRINT_CC   = "["$(COLOR_GREEN)" XSFoundation "$(COLOR_NONE)"]> Compiling C file [ "$(COLOR_CYAN)"Debug - $(3)"$(COLOR_NONE)" ]: "$(COLOR_YELLOW)"$(patsubst %.,%,$(subst /,.,$(dir $(patsubst $(DIR_SRC)%,%,$<))))."$(COLOR_NONE)$(COLOR_GRAY)"$(notdir $(1))"$(COLOR_NONE)
+_PRINT      = "["$(COLOR_GREEN)" XSFoundation "$(COLOR_NONE)"]> $(1) [ "$(COLOR_CYAN)"Debug - $(2)"$(COLOR_NONE)" ]: "$(COLOR_YELLOW)"$(3)"$(COLOR_NONE)
 endif
 
 #-------------------------------------------------------------------------------
@@ -252,6 +270,21 @@ endif
             $(DIR_BUILD_TEMP_ARM_7_OBJ)%$(EXT_O)    \
             $(DIR_BUILD_TEMP_ARM_7S_OBJ)%$(EXT_O)   \
             $(DIR_BUILD_TEMP_ARM_64_OBJ)%$(EXT_O)
+
+#-------------------------------------------------------------------------------
+# Functions
+#-------------------------------------------------------------------------------
+
+_MAKE_FRAMEWORK_BIN = $(CC)                                                 \
+    -Werror                                                                 \
+    -arch $(1)                                                              \
+    -dynamiclib                                                             \
+    -mmacosx-version-min=$(MAC_TARGET)                                      \
+    -single_module                                                          \
+    -current_version 1                                                      \
+    -install_name /Library/Frameworks/$(2).$(EXT_FRAMEWORK)/Versions/A/$(2) \
+    -o $(3)                                                                 \
+    $(4)
 
 #-------------------------------------------------------------------------------
 # Phony targets
@@ -305,7 +338,43 @@ ios-lib: $(_FILES_C_BUILD_ARM_7) $(_FILES_C_BUILD_ARM_7S) $(_FILES_C_BUILD_ARM_6
 # Builds an Mac framework (OS-X only)
 mac-framework: $(_FILES_C_BUILD_INTEL_32) $(_FILES_C_BUILD_INTEL_64)
 	
+	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Creating the directory structure)
+	@rm -rf $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)
+	@mkdir -p $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Headers/
+	@mkdir -p $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/
+	
+	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Creating the symbolic links)
+	@ln -s A/ $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/Current
+	@ln -s Versions/A/Headers/ $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Headers
+	@ln -s Versions/A/Resources/ $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Resources
+	@ln -s Versions/A/$(notdir $(PRODUCT_MAC_FRAMEWORK)) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/$(notdir $(PRODUCT_MAC_FRAMEWORK))
+
+	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Copying the public header files)
+	@cp -rf $(DIR_INC)XS/* $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Headers/
+	@rm -rf $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Headers/__private/
+	
+	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Creating the Info.plist file)
+	@cp -rf $(DIR_RES)$(PRODUCT_MAC_FRAMEWORK)-Info.plist $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
+	@plutil -insert BuildMachineOSBuild -string $(shell sw_vers -buildVersion) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
+	@plutil -insert DTSDKName -string macosx$(MAC_TARGET) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
+	@plutil -insert DTCompiler -string $(shell /usr/libexec/PlistBuddy -c "Print DTCompiler" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
+	@plutil -insert DTPlatformBuild -string $(shell /usr/libexec/PlistBuddy -c "Print DTPlatformBuild" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
+	@plutil -insert DTPlatformVersion -string $(shell /usr/libexec/PlistBuddy -c "Print DTPlatformVersion" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
+	@plutil -insert DTSDKBuild -string $(shell /usr/libexec/PlistBuddy -c "Print DTSDKBuild" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
+	@plutil -insert DTXcode -string $(shell /usr/libexec/PlistBuddy -c "Print DTXcode" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
+	@plutil -insert DTXcodeBuild -string $(shell /usr/libexec/PlistBuddy -c "Print DTXcodeBuild" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
+	
+	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Copying the bundle resources)
 	@:
+	
+	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Linking the i386 binary)
+	@$(call _MAKE_FRAMEWORK_BIN,i386,$(notdir $(PRODUCT_MAC_FRAMEWORK)),$(DIR_BUILD_TEMP_INTEL_32_BIN)$(notdir $(PRODUCT_MAC_FRAMEWORK)),$(_FILES_C_BUILD_INTEL_32))
+	
+	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Linking the x86-64 binary)
+	@$(call _MAKE_FRAMEWORK_BIN,x86_64,$(notdir $(PRODUCT_MAC_FRAMEWORK)),$(DIR_BUILD_TEMP_INTEL_64_BIN)$(notdir $(PRODUCT_MAC_FRAMEWORK)),$(_FILES_C_BUILD_INTEL_64))
+	
+	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Linking the universal binary)
+	@lipo -create $(DIR_BUILD_TEMP_INTEL_32_BIN)$(notdir $(PRODUCT_MAC_FRAMEWORK)) $(DIR_BUILD_TEMP_INTEL_64_BIN)$(notdir $(PRODUCT_MAC_FRAMEWORK)) -output $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/$(notdir $(PRODUCT_MAC_FRAMEWORK))
 
 #-------------------------------------------------------------------------------
 # Targets with second expansion
@@ -316,29 +385,29 @@ mac-framework: $(_FILES_C_BUILD_INTEL_32) $(_FILES_C_BUILD_INTEL_64)
 # Target: i386
 $(DIR_BUILD_TEMP_INTEL_32_OBJ)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
-	@echo $(call _PRINT_CC,$<,$@,i386)
-	@$(CC) -arch i386 -o $@ -c $<
+	@echo $(call _PRINT_FILE,"Compiling C file",i386,$<)
+	@$(_CC) -arch i386 -o $@ -c $<
 
 # Target: x86_64
 $(DIR_BUILD_TEMP_INTEL_64_OBJ)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
-	@echo $(call _PRINT_CC,$<,$@,x86_64)
-	@$(CC) -arch x86_64 -o $@ -c $<
+	@echo $(call _PRINT_FILE,"Compiling C file",x86-64,$<)
+	@$(_CC) -arch x86_64 -o $@ -c $<
 
 # Target: armv7
 $(DIR_BUILD_TEMP_ARM_7_OBJ)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
-	@echo $(call _PRINT_CC,$<,$@,armv7)
-	@$(CC) -arch armv7 -isysroot $(_IOS_SDK_PATH) -o $@ -c $<
+	@echo $(call _PRINT_FILE,"Compiling C file",armv7,$<)
+	@$(_CC) -arch armv7 -isysroot $(_IOS_SDK_PATH) -o $@ -c $<
 
 # Target: armv7s
 $(DIR_BUILD_TEMP_ARM_7S_OBJ)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
-	@echo $(call _PRINT_CC,$<,$@,armv7s)
-	@$(CC) -arch armv7s -isysroot $(_IOS_SDK_PATH) -o $@ -c $<
+	@echo $(call _PRINT_FILE,"Compiling C file",armv7s,$<)
+	@$(_CC) -arch armv7s -isysroot $(_IOS_SDK_PATH) -o $@ -c $<
 
 # Target: arm64
 $(DIR_BUILD_TEMP_ARM_64_OBJ)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
-	@echo $(call _PRINT_CC,$<,$@,arm64)
-	@$(CC) -arch arm64 -isysroot $(_IOS_SDK_PATH) -o $@ -c $<
+	@echo $(call _PRINT_FILE,"Compiling C file",arm64,$<)
+	@$(_CC) -arch arm64 -isysroot $(_IOS_SDK_PATH) -o $@ -c $<
