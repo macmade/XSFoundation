@@ -155,6 +155,8 @@ void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char 
     
     #endif
     
+    #ifdef DEBUG
+    
     fprintf
     (
         stderr,
@@ -169,6 +171,26 @@ void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char 
         line,
         levelName
     );
+    
+    #else
+    
+    ( void )func;
+    ( void )line;
+    
+    fprintf
+    (
+        stderr,
+        "%s.%lu %s[%lu:%lX] %s: ",
+        date,
+        ( unsigned long )milliseconds,
+        XSProcess_GetProcessName(),
+        ( unsigned long )XSProcess_GetProcessID(),
+        ( unsigned long )XSThreading_GetCurrentThreadID(),
+        levelName
+    );
+    
+    #endif
+    
     vfprintf( stderr, fmt, args );
     fprintf( stderr, "\n" );
     
