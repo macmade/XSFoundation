@@ -96,9 +96,14 @@ XS_EXPORT void * XSReallocWithInfos( void * memory, XSUInteger bytes, XSClassID 
     
     object = __XSMemory_GetMemoryObject( memory );
     
-    if( XSRuntime_IsRegisteredClass( classID ) || XSRuntime_IsRegisteredClass( object->classID ) )
+    if( XSRuntime_IsRegisteredClass( classID ) )
     {
         XSFatalError( "Trying to reallocate an instance of class %s", XSRuntime_GetClassName( classID ) );
+    }
+    
+    if( XSRuntime_IsRegisteredClass( object->classID ) )
+    {
+        XSFatalError( "Trying to reallocate an instance of class %s", XSRuntime_GetClassName( object->classID ) );
     }
     
     if( object->classID != classID )
