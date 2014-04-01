@@ -62,38 +62,73 @@
 /* $Id$ */
 
 /*!
- * @file        XSAllocWithInfos.c
+ * @file        XSReleaseWithInfos.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSAllocWithInfos
+ * @abstract    Definition for XSReleaseWithInfos
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemory.h>
+#include <XS/__private/Functions/XSRuntime.h>
 
-void * XSAllocWithInfos( XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func )
+XS_EXPORT void * XSReallocWithInfos( void * memory, XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func )
 {
     XSUInteger         size;
+    XSUInteger         oldSize;
     __XSMemoryObject * object;
     
     ( void )file;
     ( void )line;
     ( void )func;
     
-    size    = bytes + sizeof( __XSMemoryObject ) + __XS_MEMORY_FENCE_SIZE;
-    object  = ( __XSMemoryObject * )calloc( size, 1 );
-    
-    if( object == NULL )
+    if( memory == NULL )
     {
-        XSLogError( "Cannot allocate memory (%lu bytes)", ( unsigned long )bytes );
+        return NULL;
+    }
+    
+    if( bytes == 0 )
+    {
+        XSRelease( memory );
         
         return NULL;
     }
     
-    object->retainCount = 1;
-    object->size        = bytes;
-    object->classID     = classID;
-    object->allocID     = XSAtomic_IncrementInteger( &__XSMemory_AllocID );
+    object = __XSMemory_GetMemoryObject( memory );
+    
+    if( XSRuntime_IsRegisteredClass( classID ) || XSRuntime_IsRegisteredClass( object->classID ) )
+    {
+        XSFatalError( "Trying to reallocate an instance of class %s", XSRuntime_GetClassName( classID ) );
+    }
+    
+    if( object->classID != classID )
+    {
+        XSFatalError( "Trying to reallocate memory with different types (%lu - %lu)", ( unsigned long )classID, ( unsigned long )( object->classID ) );
+    }
+    
+    oldSize = object->size;
+    
+    if( oldSize == bytes )
+    {
+        return memory;
+    }
+    
+    size    = bytes + sizeof( __XSMemoryObject ) + __XS_MEMORY_FENCE_SIZE;
+    object  = realloc( object, size );
+    
+    if( object == NULL )
+    {
+        XSLogError( "Cannot reallocate memory (%lu bytes)", ( unsigned long )bytes );
+        
+        return NULL;
+    }
+    
+    object->size = bytes;
+    
+    if( size > oldSize )
+    {
+        memset( ( char * )object + sizeof( __XSMemoryObject ) + oldSize, 0, size - oldSize );
+    }
     
     memcpy( &( object->fence ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );
     memcpy( ( char * )object + ( size - __XS_MEMORY_FENCE_SIZE ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );

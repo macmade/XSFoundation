@@ -159,6 +159,20 @@ int main( int argc, const char * argv[] )
         XSLog( "%p", XSThreading_TLSGetObject( &k ) );
     }
     
+    {
+        char * s;
+        
+        s       = XSAlloc( 2 );
+        s[ 0 ]  = 'a';
+        
+        XSLog( "%s", s );
+        
+        s       = XSRealloc( s, 3 );
+        s[ 1 ]  = 'b';
+        
+        XSLog( "%s", s );
+    }
+    
     return 0;
 }
 
