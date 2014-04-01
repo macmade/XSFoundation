@@ -210,9 +210,11 @@ _CC = $(CC) -Werror -$(OPTIM) -std=c99 -I$(DIR_INC) -D__XS_BUILD__
 
 # C compiler - Debug mode
 ifneq ($(findstring 1,$(DEBUG)),)
-_CC  += -DDEBUG=1
-_CC  += -g
+_CC += -DDEBUG=1
+_CC += -g
 endif
+
+_CC_XS = $(_CC) -D__XS_BUILD__
 
 # iOS SDK root
 _IOS_SDK_PATH := /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IOS_SDK).sdk
@@ -309,6 +311,14 @@ _XCODE_SDK_VALUE = $(shell /usr/libexec/PlistBuddy -c "Print $(1)" /Applications
 all: $(_BUILD_TYPE)
 	
 	@:
+	
+# Test target
+test: all
+	
+	@echo $(call _PRINT,XSTest,universal,Compiling test file)
+	@$(_CC) -arch i386 -arch x86_64 XSTest/main.c $(DIR_BUILD_PRODUCTS)$(PRODUCT_LIB)$(EXT_LIB) -o $(DIR_BUILD_PRODUCTS)XSTest
+	@echo $(call _PRINT,XSTest,universal,Running test file)
+	@$(DIR_BUILD_PRODUCTS)XSTest
 
 # Cleans all build files
 clean:
@@ -429,28 +439,28 @@ mac-framework: $(_FILES_C_BUILD_INTEL_32) $(_FILES_C_BUILD_INTEL_64)
 $(DIR_BUILD_TEMP_INTEL_32_OBJ)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
 	@echo $(call _PRINT_FILE,"Compiling C file",i386,$<)
-	@$(_CC) -arch i386 -o $@ -c $<
+	@$(_CC_XS) -arch i386 -o $@ -c $<
 
 # Target: x86_64
 $(DIR_BUILD_TEMP_INTEL_64_OBJ)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
 	@echo $(call _PRINT_FILE,"Compiling C file",x86-64,$<)
-	@$(_CC) -arch x86_64 -o $@ -c $<
+	@$(_CC_XS) -arch x86_64 -o $@ -c $<
 
 # Target: armv7
 $(DIR_BUILD_TEMP_ARM_7_OBJ)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
 	@echo $(call _PRINT_FILE,"Compiling C file",armv7,$<)
-	@$(_CC) -arch armv7 -isysroot $(_IOS_SDK_PATH) -o $@ -c $<
+	@$(_CC_XS) -arch armv7 -isysroot $(_IOS_SDK_PATH) -o $@ -c $<
 
 # Target: armv7s
 $(DIR_BUILD_TEMP_ARM_7S_OBJ)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
 	@echo $(call _PRINT_FILE,"Compiling C file",armv7s,$<)
-	@$(_CC) -arch armv7s -isysroot $(_IOS_SDK_PATH) -o $@ -c $<
+	@$(_CC_XS) -arch armv7s -isysroot $(_IOS_SDK_PATH) -o $@ -c $<
 
 # Target: arm64
 $(DIR_BUILD_TEMP_ARM_64_OBJ)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
 	@echo $(call _PRINT_FILE,"Compiling C file",arm64,$<)
-	@$(_CC) -arch arm64 -isysroot $(_IOS_SDK_PATH) -o $@ -c $<
+	@$(_CC_XS) -arch arm64 -isysroot $(_IOS_SDK_PATH) -o $@ -c $<
