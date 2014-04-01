@@ -337,7 +337,7 @@ clean:
 	@rm -rf $(DIR_BUILD_PRODUCTS)*
 
 # Build for OS-X
-os-x: lib dylib ios-lib mac-framework
+os-x: lib dylib mac-framework ios-lib
 	
 	@:
 	
