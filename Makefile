@@ -369,7 +369,14 @@ dylib: $(_FILES_C_BUILD_INTEL_32) $(_FILES_C_BUILD_INTEL_64)
 # Builds an iOS static library (OS-X only)
 ios-lib: $(_FILES_C_BUILD_ARM_7) $(_FILES_C_BUILD_ARM_7S) $(_FILES_C_BUILD_ARM_64)
 	
-	@:
+	@echo $(call _PRINT,$(PRODUCT_IOS_LIB)$(EXT_LIB),universal,Linking the armv7 binary)
+	@libtool -static -arch_only armv7 -o $(DIR_BUILD_TEMP_ARM_7_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) $(_FILES_C_BUILD_ARM_7)
+	@echo $(call _PRINT,$(PRODUCT_IOS_LIB)$(EXT_LIB),universal,Linking the armv7s binary)
+	@libtool -static -arch_only armv7s -o $(DIR_BUILD_TEMP_ARM_7S_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) $(_FILES_C_BUILD_ARM_7S)
+	@echo $(call _PRINT,$(PRODUCT_IOS_LIB)$(EXT_LIB),universal,Linking the arm64 binary)
+	@libtool -static -arch_only arm64 -o $(DIR_BUILD_TEMP_ARM_64_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) $(_FILES_C_BUILD_ARM_64)
+	@echo $(call _PRINT,$(PRODUCT_IOS_LIB)$(EXT_LIB),universal,Linking the universal binary)
+	@libtool -static $(DIR_BUILD_TEMP_ARM_7_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) $(DIR_BUILD_TEMP_ARM_7S_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) $(DIR_BUILD_TEMP_ARM_64_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) -o $(DIR_BUILD_PRODUCTS)$(PRODUCT_IOS_LIB)$(EXT_LIB)
 
 # Builds an Mac framework (OS-X only)
 mac-framework: $(_FILES_C_BUILD_INTEL_32) $(_FILES_C_BUILD_INTEL_64)
