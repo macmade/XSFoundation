@@ -281,9 +281,22 @@ _MAKE_FRAMEWORK_BIN = $(CC)                                                 \
     -dynamiclib                                                             \
     -mmacosx-version-min=$(MAC_TARGET)                                      \
     -single_module                                                          \
+    -compatibility_version 1                                                \
     -current_version 1                                                      \
-    -install_name /Library/Frameworks/$(2).$(EXT_FRAMEWORK)/Versions/A/$(2) \
+    -install_name /Library/Frameworks/$(2)$(EXT_FRAMEWORK)/Versions/A/$(2)  \
     -o $(3)                                                                 \
+    $(4)
+
+_MAKE_DYLIB_BIN = $(CC)                             \
+    -Werror                                         \
+    -arch $(1)                                      \
+    -dynamiclib                                     \
+    -install_name /usr/local/lib/$(2)$(EXT_DYLIB)   \
+    -mmacosx-version-min=$(MAC_TARGET)              \
+    -single_module                                  \
+    -compatibility_version 1                        \
+    -current_version 1                              \
+    -o $(3)$(EXT_DYLIB)                             \
     $(4)
 
 _XCODE_SDK_VALUE = $(shell /usr/libexec/PlistBuddy -c "Print $(1)" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
@@ -326,12 +339,7 @@ clean:
 # Build for OS-X
 os-x: lib dylib ios-lib mac-framework
 	
-	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_LIB),universal,Linking the i386 binary)
-	@libtool -static -arch_only i386 -o $(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_LIB)$(EXT_LIB) $(_FILES_C_BUILD_INTEL_32)
-	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_LIB),universal,Linking the x86-64 binary)
-	@libtool -static -arch_only x86_64 -o $(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_LIB)$(EXT_LIB) $(_FILES_C_BUILD_INTEL_64)
-	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_LIB),universal,Linking the universal binary)
-	@libtool -static $(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_LIB)$(EXT_LIB) $(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_LIB)$(EXT_LIB) -o $(DIR_BUILD_PRODUCTS)$(PRODUCT_LIB)$(EXT_LIB)
+	@:
 	
 # Build for Unix-like systems (non OS-X)
 unix-like: lib dylib
@@ -341,12 +349,22 @@ unix-like: lib dylib
 # Builds a static library (generic)
 lib: $(_FILES_C_BUILD_INTEL_32) $(_FILES_C_BUILD_INTEL_64)
 	
-	@:
+	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_LIB),universal,Linking the i386 binary)
+	@libtool -static -arch_only i386 -o $(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_LIB)$(EXT_LIB) $(_FILES_C_BUILD_INTEL_32)
+	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_LIB),universal,Linking the x86-64 binary)
+	@libtool -static -arch_only x86_64 -o $(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_LIB)$(EXT_LIB) $(_FILES_C_BUILD_INTEL_64)
+	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_LIB),universal,Linking the universal binary)
+	@libtool -static $(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_LIB)$(EXT_LIB) $(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_LIB)$(EXT_LIB) -o $(DIR_BUILD_PRODUCTS)$(PRODUCT_LIB)$(EXT_LIB)
 
 # Builds a dynamic library (generic)
 dylib: $(_FILES_C_BUILD_INTEL_32) $(_FILES_C_BUILD_INTEL_64)
 	
-	@:
+	@echo $(call _PRINT,$(PRODUCT_DYLIB)$(EXT_DYLIB),universal,Linking the i386 binary)
+	@$(call _MAKE_DYLIB_BIN,i386,$(PRODUCT_DYLIB),$(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_DYLIB),$(_FILES_C_BUILD_INTEL_32))
+	@echo $(call _PRINT,$(PRODUCT_DYLIB)$(EXT_DYLIB),universal,Linking the x86-64 binary)
+	@$(call _MAKE_DYLIB_BIN,x86_64,$(PRODUCT_DYLIB),$(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_DYLIB),$(_FILES_C_BUILD_INTEL_64))
+	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_DYLIB),universal,Linking the universal binary)
+	@lipo -create $(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_DYLIB)$(EXT_DYLIB) $(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_DYLIB)$(EXT_DYLIB) -output $(DIR_BUILD_PRODUCTS)$(PRODUCT_DYLIB)$(EXT_DYLIB)
 
 # Builds an iOS static library (OS-X only)
 ios-lib: $(_FILES_C_BUILD_ARM_7) $(_FILES_C_BUILD_ARM_7S) $(_FILES_C_BUILD_ARM_64)
@@ -365,7 +383,7 @@ mac-framework: $(_FILES_C_BUILD_INTEL_32) $(_FILES_C_BUILD_INTEL_64)
 	@ln -s A/ $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/Current
 	@ln -s Versions/A/Headers/ $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Headers
 	@ln -s Versions/A/Resources/ $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Resources
-	@ln -s Versions/A/$(notdir $(PRODUCT_MAC_FRAMEWORK)) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/$(notdir $(PRODUCT_MAC_FRAMEWORK))
+	@ln -s Versions/A/$(PRODUCT_MAC_FRAMEWORK) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/$(PRODUCT_MAC_FRAMEWORK)
 
 	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Copying the public header files)
 	@cp -rf $(DIR_INC)XS/* $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Headers/
@@ -386,13 +404,13 @@ mac-framework: $(_FILES_C_BUILD_INTEL_32) $(_FILES_C_BUILD_INTEL_64)
 	@:
 	
 	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Linking the i386 binary)
-	@$(call _MAKE_FRAMEWORK_BIN,i386,$(notdir $(PRODUCT_MAC_FRAMEWORK)),$(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_MAC_FRAMEWORK),$(_FILES_C_BUILD_INTEL_32))
+	@$(call _MAKE_FRAMEWORK_BIN,i386,$(PRODUCT_MAC_FRAMEWORK),$(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_MAC_FRAMEWORK),$(_FILES_C_BUILD_INTEL_32))
 	
 	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Linking the x86-64 binary)
-	@$(call _MAKE_FRAMEWORK_BIN,x86_64,$(notdir $(PRODUCT_MAC_FRAMEWORK)),$(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_MAC_FRAMEWORK),$(_FILES_C_BUILD_INTEL_64))
+	@$(call _MAKE_FRAMEWORK_BIN,x86_64,$(PRODUCT_MAC_FRAMEWORK),$(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_MAC_FRAMEWORK),$(_FILES_C_BUILD_INTEL_64))
 	
 	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Linking the universal binary)
-	@lipo -create $(DIR_BUILD_TEMP_INTEL_32_BIN)$(notdir $(PRODUCT_MAC_FRAMEWORK)) $(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_MAC_FRAMEWORK) -output $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/$(notdir $(PRODUCT_MAC_FRAMEWORK))
+	@lipo -create $(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_MAC_FRAMEWORK) $(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_MAC_FRAMEWORK) -output $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/$(PRODUCT_MAC_FRAMEWORK)
 
 #-------------------------------------------------------------------------------
 # Targets with second expansion
