@@ -173,6 +173,48 @@ int main( int argc, const char * argv[] )
         XSLog( "%s", s );
     }
     
+    {
+        XSStringRef str1;
+        XSStringRef str2;
+        XSRange     r;
+        
+        str1 = XSString_StringWithCString( "Abcdefg" );
+        
+        XSShow( str1 );
+        XSShow( XSString_LowercaseString( str1 ) );
+        XSShow( XSString_UppercaseString( str1 ) );
+        
+        XSShow( XSString_SubstringWithRange( str1, XSRange_Make( 2, 2 ) ) );
+        
+        str2 = XSCopy( str1 );
+        
+        XSShow( XSString_StringByAppendingString( XSSTR( "hello" ), XSSTR( ", world" ) ) );
+        
+        r = XSString_RangeOfString( str1, XSSTR( "cdefg" ) );
+        
+        if( r.location == XSNotFound )
+        {
+            XSLog( "Not found..." );
+        }
+        else
+        {
+            XSLog( "%lu %lu", ( unsigned long )( r.location ), ( unsigned long )( r.length ) );
+        }
+        
+        XSLog
+        (
+            "%i %i",
+            XSString_ContainsString( XSSTR( "abc" ), XSSTR( "bc" ) ),
+            XSString_ContainsString( XSSTR( "abc" ), XSSTR( "def" ) )
+        );
+        
+        XSShow( XSString_StringWithFormat( "%s %i %p %f", "ok", 42, str1, ( XSFloat )42 ) );
+        XSShow( XSString_StringByAppendingFormat( XSSTR( "test" ), " %i", 42 ) );
+        
+        XSRelease( str1 );
+        XSRelease( str2 );
+    }
+    
     return 0;
 }
 
