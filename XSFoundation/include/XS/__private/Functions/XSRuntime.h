@@ -83,8 +83,8 @@
  */
 typedef struct __XSRuntime_ClassInfoList_Struct
 {
-    const XSClassInfo                       * info;
-    struct __XSRuntime_ClassInfoList_Struct * next;
+    const XSClassInfo                       * info; /*! The class info */
+    struct __XSRuntime_ClassInfoList_Struct * next; /*! The next entry, if any */
 }
 __XSRuntime_ClassInfoList;
 
