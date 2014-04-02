@@ -73,8 +73,45 @@
 
 void __XSMemoryDebug_NewRecord( __XSMemoryObject * object, const char * file, int line, const char * func )
 {
-    ( void )object;
-    ( void )file;
-    ( void )line;
-    ( void )func;
+    __XSMemoryDebug_Record *          rec;
+    __XSMemoryDebug_Record * volatile list;
+    
+    if( object == NULL )
+    {
+        return;
+    }
+    
+    rec = calloc( sizeof( __XSMemoryDebug_Record ), 1 );
+    
+    if( rec == NULL )
+    {
+        XSFatalError( "Cannot allocate memory for a memory record" );
+    }
+    
+    rec->object     = object;
+    rec->data       = object + sizeof( __XSMemoryObject );
+    rec->allocFile  = file;
+    rec->allocLine  = line;
+    rec->allocFunc  = func;
+    
+    if( XSAtomic_CompareAndSwapPointer( NULL, rec, ( void * volatile * )&__XSMemoryDebug_Records ) )
+    {
+        return;
+    }
+    
+    add:
+    
+    list = __XSMemoryDebug_Records;
+    
+    while( list != NULL )
+    {
+        if( XSAtomic_CompareAndSwapPointer( NULL, rec, ( void * volatile * )&( list->next ) ) )
+        {
+            return;
+        }
+        
+        list = list->next;
+    }
+    
+    goto add;
 }
