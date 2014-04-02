@@ -77,10 +77,6 @@ void * XSAllocWithInfos( XSUInteger bytes, XSClassID classID, const char * file,
     XSUInteger         size;
     __XSMemoryObject * object;
     
-    ( void )file;
-    ( void )line;
-    ( void )func;
-    
     size    = bytes + sizeof( __XSMemoryObject ) + __XS_MEMORY_FENCE_SIZE;
     object  = ( __XSMemoryObject * )calloc( size, 1 );
     
@@ -98,6 +94,8 @@ void * XSAllocWithInfos( XSUInteger bytes, XSClassID classID, const char * file,
     
     memcpy( &( object->fence ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );
     memcpy( ( char * )object + ( size - __XS_MEMORY_FENCE_SIZE ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );
+    
+    __XSMemoryDebug_NewRecord( object, file, line, func );
     
     return ( char * )object + sizeof( __XSMemoryObject );
 }

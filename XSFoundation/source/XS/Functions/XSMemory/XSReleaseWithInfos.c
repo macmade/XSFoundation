@@ -78,10 +78,6 @@ void XSReleaseWithInfos( void * memory, const char * file, int line, const char 
     __XSMemoryObject            * object;
     XSClassCallbackDestructor destructor;
     
-    ( void )file;
-    ( void )line;
-    ( void )func;
-    
     if( memory == NULL )
     {
         return;
@@ -91,6 +87,8 @@ void XSReleaseWithInfos( void * memory, const char * file, int line, const char 
     
     if( XSAtomic_DecrementInteger( &( object->retainCount ) ) == 0 )
     {
+        __XSMemoryDebug_ReleaseRecord( object, true, file, line, func );
+        
         destructor = __XSRuntime_GetDestructorCallback( object->classID );
         
         if( destructor != NULL )
@@ -99,5 +97,9 @@ void XSReleaseWithInfos( void * memory, const char * file, int line, const char 
         }
         
         free( object );
+    }
+    else
+    {
+        __XSMemoryDebug_ReleaseRecord( object, false, file, line, func );
     }
 }

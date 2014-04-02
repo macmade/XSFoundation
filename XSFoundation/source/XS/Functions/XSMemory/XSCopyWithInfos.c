@@ -70,6 +70,7 @@
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemory.h>
+#include <XS/__private/Functions/XSMemoryDebug.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
 XSObjectRef XSCopyWithInfos( void * memory, const char * file, int line, const char * func )
@@ -83,8 +84,11 @@ XSObjectRef XSCopyWithInfos( void * memory, const char * file, int line, const c
         return NULL;
     }
     
-    object  = __XSMemory_GetMemoryObject( memory );
-    data    = XSAllocWithInfos( object->size, object->classID, file, line, func );
+    object = __XSMemory_GetMemoryObject( memory );
+    
+    __XSMemoryDebug_CheckObjectIntegrity( object );
+    
+    data = XSAllocWithInfos( object->size, object->classID, file, line, func );
     
     if( XSRuntime_IsRegisteredClass( object->classID ) == false )
     {
