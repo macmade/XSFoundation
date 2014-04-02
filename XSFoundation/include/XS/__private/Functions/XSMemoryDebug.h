@@ -76,7 +76,80 @@
 #define __XS___PRIVATE_FUNCTIONS_XS_MEMORY_DEBUG_H__
 
 #include <XS/XSTypes.h>
+#include <XS/__private/Functions/XSMemory.h>
 
+/*!
+ * @typedef     __XSMemoryDebug_Record
+ * @abstract    Memory record for the memory debugger
+ */
+typedef struct __XSMemoryDebug_Record_Struct
+{
+    struct __XSMemoryDebug_Record_Struct * next;            /*! The next record, if any */
+    __XSMemoryObject                     * object;          /*! The memory object */
+    void                                 * data;            /*! The user data pointer */
+    const char                           * allocFile;       /*! The file in which the object was allocated */
+    const char                           * freeFile;        /*! The file in which the object was freed */
+    const char                           * allocFunc;       /*! The function in which the object was allocated */
+    const char                           * freeFunc;        /*! The function in which the object was freed */
+    int                                    allocLine;       /*! The line of the file in which the object was allocated */
+    int                                    freeLine;        /*! The line of the file in which the object was freed */
+    bool                                   freed;           /*! Whether the object has been freed */
+    char                                   __pad_0[ 7 ];    /*! Padding */
+    
+}
+__XSMemoryDebug_Record;
 
+/*!
+ * @var         __XSMemoryDebug_Records
+ * @abstract    The list of the memory records
+ */
+XS_EXTERN __XSMemoryDebug_Record * volatile __XSMemoryDebug_Records;
+
+/*!
+ * @function    __XSMemoryDebug_NewRecord
+ * @abstract    Creates a new memory record
+ * @param       object  The memory object for which to create a record
+ * @param       file    The file in which the allocation occured
+ * @param       line    The line of the file in which the allocation occured
+ * @param       func    The function in which the allocation occured
+ */
+void __XSMemoryDebug_NewRecord( __XSMemoryObject * object, const char * file, int line, const char * func );
+
+/*!
+ * @function    __XSMemoryDebug_UpdateRecord
+ * @abstract    Updates a memory record (eg. after a reallocation)
+ * @param       oldObject   The address of the old memory object
+ * @param       newObject   The new memory object
+ * @param       file        The file in which the reallocation occured
+ * @param       line        The line of the file in which the reallocation occured
+ * @param       func        The function in which the reallocation occured
+ */
+void __XSMemoryDebug_UpdateRecord( void * oldObject, __XSMemoryObject * newObject, const char * file, int line, const char * func );
+
+/*!
+ * @function    __XSMemoryDebug_ReleaseRecord
+ * @abstract    Informs the debugger that an memory object has been released
+ * @param       object      The memory object that has been released
+ * @param       markAsFreed Whether the memory object has been freed
+ * @param       file        The file in which the release occured
+ * @param       line        The line of the file in which the release occured
+ * @param       func        The function in which the release occured
+ */
+void __XSMemoryDebug_ReleaseRecord( __XSMemoryObject * object, bool markAsFreed, const char * file, int line, const char * func );
+
+/*!
+ * @function    __XSMemoryDebug_GetRecord
+ * @abstract    Gets the memory record associated to a memory object
+ * @param       object      The memory object
+ * @return      The memory record
+ */
+__XSMemoryDebug_Record * __XSMemoryDebug_GetRecord( __XSMemoryObject * object );
+
+/*!
+ * @function    __XSMemoryDebug_CheckObjectIntegrity
+ * @abstract    Checks for buffer overflows/underflows
+ * @param       object      The memory object to check
+ */
+void __XSMemoryDebug_CheckObjectIntegrity( __XSMemoryObject * object );
 
 #endif /* __XS___PRIVATE_FUNCTIONS_XS_MEMORY_DEBUG_H__ */
