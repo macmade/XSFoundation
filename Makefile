@@ -206,7 +206,7 @@ _FILES_C_BUILD_ARM_64   = $(addprefix $(DIR_BUILD_TEMP_ARM_64_OBJ),$(_FILES_C_OB
 # Commands configuration
 #-------------------------------------------------------------------------------
 
-_CC = $(CC) -Werror -$(OPTIM) -std=c99 -I$(DIR_INC) -D__XS_BUILD__
+_CC = $(CC) -Werror -$(OPTIM) -std=c99 -fno-strict-aliasing -I$(DIR_INC) -D__XS_BUILD__
 
 # C compiler - Debug mode
 ifneq ($(findstring 1,$(DEBUG)),)
