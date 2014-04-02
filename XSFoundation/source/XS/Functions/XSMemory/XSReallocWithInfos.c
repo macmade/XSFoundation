@@ -78,10 +78,8 @@ XS_EXPORT void * XSReallocWithInfos( void * memory, XSUInteger bytes, XSClassID 
     XSUInteger         size;
     XSUInteger         oldSize;
     __XSMemoryObject * object;
-    
-    ( void )file;
-    ( void )line;
-    ( void )func;
+    __XSMemoryObject * newObject;
+    __XSMemoryObject * oldObject;
     
     if( memory == NULL )
     {
@@ -95,7 +93,10 @@ XS_EXPORT void * XSReallocWithInfos( void * memory, XSUInteger bytes, XSClassID 
         return NULL;
     }
     
-    object = __XSMemory_GetMemoryObject( memory );
+    object    = __XSMemory_GetMemoryObject( memory );
+    oldObject = __XSMemory_GetMemoryObject( memory ); /* So the static analyzer doesn't complain about using memory which has been freed... */
+    
+    __XSMemoryDebug_CheckObjectIntegrity( object );
     
     if( XSRuntime_IsRegisteredClass( classID ) )
     {
@@ -119,25 +120,27 @@ XS_EXPORT void * XSReallocWithInfos( void * memory, XSUInteger bytes, XSClassID 
         return memory;
     }
     
-    size    = bytes + sizeof( __XSMemoryObject ) + __XS_MEMORY_FENCE_SIZE;
-    object  = realloc( object, size );
+    size        = bytes + sizeof( __XSMemoryObject ) + __XS_MEMORY_FENCE_SIZE;
+    newObject   = realloc( object, size );
     
-    if( object == NULL )
+    if( newObject == NULL )
     {
         XSLogError( "Cannot reallocate memory (%lu bytes)", ( unsigned long )bytes );
         
         return NULL;
     }
     
-    object->size = bytes;
+    newObject->size = bytes;
     
-    if( size > oldSize )
+    if( bytes > oldSize )
     {
-        memset( ( char * )object + sizeof( __XSMemoryObject ) + oldSize, 0, size - oldSize );
+        memset( ( char * )newObject + sizeof( __XSMemoryObject ) + oldSize, 0, bytes - oldSize );
     }
     
-    memcpy( &( object->fence ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );
-    memcpy( ( char * )object + ( size - __XS_MEMORY_FENCE_SIZE ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );
+    memcpy( &( newObject->fence ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );
+    memcpy( ( char * )newObject + ( size - __XS_MEMORY_FENCE_SIZE ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );
     
-    return ( char * )object + sizeof( __XSMemoryObject );
+    __XSMemoryDebug_UpdateRecord( oldObject, newObject, file, line, func );
+    
+    return ( char * )newObject + sizeof( __XSMemoryObject );
 }
