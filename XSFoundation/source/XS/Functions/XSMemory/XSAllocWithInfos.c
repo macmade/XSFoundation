@@ -71,11 +71,17 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemory.h>
 #include <XS/__private/Functions/XSMemoryDebug.h>
+#include <XS/__private/Functions/XSRuntime.h>
 
 void * XSAllocWithInfos( XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func )
 {
     XSUInteger         size;
     __XSMemoryObject * object;
+    
+    if( XSRuntime_IsRegisteredClass( classID ) && __XSRuntime_GetInstanceSize( classID ) != bytes )
+    {
+        XSFatalError( "Cannot allocate memory for class ID %lu (%s): requested bytes do not match the class instance size", ( unsigned long )classID, XSRuntime_GetClassName( classID ) );
+    }
     
     size    = bytes + sizeof( __XSMemoryObject ) + __XS_MEMORY_FENCE_SIZE;
     object  = ( __XSMemoryObject * )calloc( size, 1 );

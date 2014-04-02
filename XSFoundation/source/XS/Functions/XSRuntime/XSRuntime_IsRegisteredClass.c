@@ -80,7 +80,7 @@ bool XSRuntime_IsRegisteredClass( XSClassID classID )
     
     if( __XS_RUNTIME_IS_INITED == false )
     {
-        XSFatalError( "XSFoundation runtime has not been inited. Please call XSRuntime_Initialize()." );
+        XSFatalError( "XSFoundation runtime has not been inited. Please call XSRuntime_Initialize()" );
     }
     
     if( classID == 0 )

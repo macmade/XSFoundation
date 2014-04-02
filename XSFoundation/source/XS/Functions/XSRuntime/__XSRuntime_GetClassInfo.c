@@ -82,7 +82,7 @@ const XSClassInfo * __XSRuntime_GetClassInfo( XSClassID classID )
     
     if( __XS_RUNTIME_IS_INITED == false )
     {
-        XSFatalError( "XSFoundation runtime has not been inited. Please call XSRuntime_Initialize()." );
+        XSFatalError( "XSFoundation runtime has not been inited. Please call XSRuntime_Initialize()" );
     }
     
     if( XSRuntime_IsRegisteredClass( classID ) == false )
