@@ -62,55 +62,51 @@
 /* $Id$ */
 
 /*!
- * @header      XSLog.h
+ * @file        XSRuntime_RegisterFinalizer.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSLog.h
+ * @abstract    Definition for XSRuntime_RegisterFinalizer
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Functions/XSRuntime.h>
 
-#ifndef __XS___PRIVATE_FUNCTIONS_XS_LOG_H__
-#define __XS___PRIVATE_FUNCTIONS_XS_LOG_H__
-
-#include <XS/XSTypes.h>
-
-/*!
- * @typedef     __XSLog_Level
- * @abstract    The current log level
- */
-XS_EXTERN volatile XSInteger __XSLog_Level;
-
-/*!
- * @typedef     __XSLog_Mutex
- * @abstract    Mutex for log calls
- */
-XS_EXTERN XSMutex __XSLog_Mutex;
-
-/*!
- * @typedef     __XSLog_MutexStatus
- * @abstract    MUtex init status
- */
-XS_EXTERN volatile XSInteger __XSLog_MutexStatus;
-
-/*!
- * @function    __XSLog_StartLog
- * @abstract    Starts a log session
- */
-void __XSLog_StartLog( XSLogLevel level, const char * file, int line, const char * func );
-
-/*!
- * @function    __XSLog_EndLog
- * @abstract    Ends a log session
- */
-void __XSLog_EndLog( void );
-
-/*!
- * @function    __XSLog_Exit
- * @abstract    XSLog finalizer function
- */
-void __XSLog_Exit( void );
-
-#endif /* __XS___PRIVATE_FUNCTIONS_XS_LOG_H__ */
+void XSRuntime_RegisterFinalizer( void ( * func )( void ) )
+{
+    __XSRuntime_FinalizerList *          finalizer;
+    __XSRuntime_FinalizerList * volatile list;
+    
+    if( func == NULL )
+    {
+        return;
+    }
+    
+    finalizer            = calloc( sizeof( __XSRuntime_FinalizerList ), 1 );
+    finalizer->finalizer = func;
+    
+    if( finalizer == NULL )
+    {
+        XSFatalError( "Cannot allocate memory for finalizer function %p", func );
+    }
+    
+    if( XSAtomic_CompareAndSwapPointer( NULL, finalizer, ( void * volatile * )&__XSRuntime_Finalizers ) )
+    {
+        return;
+    }
+    
+    add:
+    
+    list = __XSRuntime_Finalizers;
+    
+    while( list != NULL )
+    {
+        if( XSAtomic_CompareAndSwapPointer( NULL, finalizer, ( void * volatile * )&( list->next ) ) )
+        {
+            return;
+        }
+        
+        list = list->next;
+    }
+    
+    goto add;
+}

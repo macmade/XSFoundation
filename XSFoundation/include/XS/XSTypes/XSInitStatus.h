@@ -86,7 +86,8 @@ typedef enum
     XSInitStatusNotInited     = 0x00, /*! Not inited */
     XSInitStatusInited        = 0x01, /*! Inited */
     XSInitStatusInitializing  = 0x02, /*! Initializing */
-    XSInitStatusFinalizing    = 0x03  /*! Finalizing */
+    XSInitStatusFinalizing    = 0x03, /*! Finalizing */
+    XSInitStatusFinalized     = 0x04  /*! Finalized */
 }
 XSInitStatus;
 

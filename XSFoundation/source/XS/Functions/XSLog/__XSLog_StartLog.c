@@ -70,6 +70,7 @@
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSLog.h>
+#include <XS/__private/Functions/XSRuntime.h>
 
 void __XSLog_StartLog( XSLogLevel level, const char * file, int line, const char * func )
 {
@@ -79,11 +80,18 @@ void __XSLog_StartLog( XSLogLevel level, const char * file, int line, const char
     char         date[ 255 ];
     XSUInt64     milliseconds;
     
+    if( XSAtomic_CompareAndSwapInteger( XSInitStatusFinalized, XSInitStatusFinalized, &__XSLog_MutexStatus ) )
+    {
+        return;
+    }
+    
     if( XSAtomic_CompareAndSwapInteger( XSInitStatusNotInited, XSInitStatusInitializing, &__XSLog_MutexStatus ) )
     {
         XSThreading_MutexCreate( &__XSLog_Mutex );
         
         while( XSAtomic_CompareAndSwapInteger( XSInitStatusInitializing, XSInitStatusInited, &__XSLog_MutexStatus ) == false );
+        
+        XSRuntime_RegisterFinalizer( __XSLog_Exit );
     }
     
     while( XSAtomic_CompareAndSwapInteger( XSInitStatusInited, XSInitStatusInited, &__XSLog_MutexStatus ) == false );

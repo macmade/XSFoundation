@@ -76,7 +76,7 @@ XSClassID XSRuntime_GetClassIDOfClassNamed( const char * className )
     __XSRuntime_ClassInfoList * info;
     XSClassID                   classID;
     
-    if( __XS_RUNTIME_IS_FINALIZING )
+    if( __XS_RUNTIME_IS_FINALIZING || __XS_RUNTIME_IS_FINALIZED )
     {
         return 0;
     }

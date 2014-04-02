@@ -95,10 +95,16 @@ __XSRuntime_ClassInfoList;
 #define __XS_RUNTIME_IS_INITED      XSAtomic_CompareAndSwapInteger( XSInitStatusInited, XSInitStatusInited, &__XSRuntime_InitStatus )
 
 /*!
- * @def         __XS_RUNTIME_IS_INITED
+ * @def         __XS_RUNTIME_IS_FINALIZING
  * @abstract    Checks whether the XSFoundation runtime is finalizing
  */
 #define __XS_RUNTIME_IS_FINALIZING  XSAtomic_CompareAndSwapInteger( XSInitStatusFinalizing, XSInitStatusFinalizing, &__XSRuntime_InitStatus )
+
+/*!
+ * @def         __XS_RUNTIME_IS_FINALIZED
+ * @abstract    Checks whether the XSFoundation runtime is finalized
+ */
+#define __XS_RUNTIME_IS_FINALIZED   XSAtomic_CompareAndSwapInteger( XSInitStatusFinalized, XSInitStatusFinalized, &__XSRuntime_InitStatus )
 
 /*!
  * @var         __XSRuntime_InitStatus
@@ -107,10 +113,16 @@ __XSRuntime_ClassInfoList;
 XS_EXTERN volatile XSInteger __XSRuntime_InitStatus;
 
 /*!
+ * @var         __XSRuntime_IsFinalizing
+ * @abstract    1 if the runtime is finalizing, otherwise 0
+ */
+XS_EXTERN volatile XSInteger __XSRuntime_IsFinalizing;
+
+/*!
  * @var         __XSRuntime_ClassInfoList
  * @abstract    Registered XSFoundation runtime class infos
  */
-XS_EXTERN __XSRuntime_ClassInfoList * __XSRuntime_Classes;
+XS_EXTERN __XSRuntime_ClassInfoList * volatile __XSRuntime_Classes;
 
 /*!
  * @var         __XSRuntime_Inited
@@ -119,7 +131,24 @@ XS_EXTERN __XSRuntime_ClassInfoList * __XSRuntime_Classes;
 XS_EXTERN volatile XSInteger __XSRuntime_ClassCount;
 
 /*!
- * @var         __XSRuntime_GetClassInfo
+ * @typedef     __XSRuntime_FinalizerList
+ * @abstract    List of finalizer functions
+ */
+typedef struct __XSRuntime_FinalizerList_Struct
+{
+    void ( * finalizer )( void );                       /*! The finalizer function */
+    struct __XSRuntime_FinalizerList_Struct * next;     /*! The next entry */
+}
+__XSRuntime_FinalizerList;
+
+/*!
+ * @var         __XSRuntime_Finalizers
+ * @abstract    Registered finalizer functions
+ */
+XS_EXTERN __XSRuntime_FinalizerList * volatile __XSRuntime_Finalizers;
+
+/*!
+ * @function    __XSRuntime_GetClassInfo
  * @abstract    Gets the class info for a class ID
  * @param       classID     The class ID
  * @return      The class info
@@ -127,7 +156,7 @@ XS_EXTERN volatile XSInteger __XSRuntime_ClassCount;
 const XSClassInfo * __XSRuntime_GetClassInfo( XSClassID classID );
 
 /*!
- * @var         __XSRuntime_GetInstanceSize
+ * @function    __XSRuntime_GetInstanceSize
  * @abstract    Gets the instance site for a class ID
  * @param       classID     The class ID
  * @return      The instance size
@@ -135,7 +164,7 @@ const XSClassInfo * __XSRuntime_GetClassInfo( XSClassID classID );
 XSUInteger __XSRuntime_GetInstanceSize( XSClassID classID );
 
 /*!
- * @var         __XSRuntime_GetConstructorCallback
+ * @function    __XSRuntime_GetConstructorCallback
  * @abstract    Gets the constructor callback for a class ID
  * @param       classID     The class ID
  * @return      The copy callback
@@ -143,7 +172,7 @@ XSUInteger __XSRuntime_GetInstanceSize( XSClassID classID );
 XSClassCallbackConstructor __XSRuntime_GetConstructorCallback( XSClassID classID );
 
 /*!
- * @var         __XSRuntime_GetDestructorCallback
+ * @function    __XSRuntime_GetDestructorCallback
  * @abstract    Gets the destructor callback for a class ID
  * @param       classID     The class ID
  * @return      The destructor callback
@@ -151,7 +180,7 @@ XSClassCallbackConstructor __XSRuntime_GetConstructorCallback( XSClassID classID
 XSClassCallbackDestructor __XSRuntime_GetDestructorCallback( XSClassID classID );
 
 /*!
- * @var         __XSRuntime_GetCopyCallback
+ * @function    __XSRuntime_GetCopyCallback
  * @abstract    Gets the copy callback for a class ID
  * @param       classID     The class ID
  * @return      The copy callback
@@ -159,7 +188,7 @@ XSClassCallbackDestructor __XSRuntime_GetDestructorCallback( XSClassID classID )
 XSClassCallbackCopy __XSRuntime_GetCopyCallback( XSClassID classID );
 
 /*!
- * @var         __XSRuntime_GetEqualsCallback
+ * @function    __XSRuntime_GetEqualsCallback
  * @abstract    Gets the equals callback for a class ID
  * @param       classID     The class ID
  * @return      The equals callback
@@ -167,13 +196,19 @@ XSClassCallbackCopy __XSRuntime_GetCopyCallback( XSClassID classID );
 XSClassCallbackEquals __XSRuntime_GetEqualsCallback( XSClassID classID );
 
 /*!
- * @var         __XSRuntime_GetToStringCallback
+ * @function    __XSRuntime_GetToStringCallback
  * @abstract    Gets the to-string callback for a class ID
  * @param       classID     The class ID
  * @return      The to-string callback
  */
 XSClassCallbackToString __XSRuntime_GetToStringCallback( XSClassID classID );
 
+/*!
+ * @function    __XSRuntime_Finalize
+ * @abstract    XSFoundation runtime finalizer function
+ * @discussion  Never call this function directly. It will be automatically
+ *              called when the program exits.
+ */
 void __XSRuntime_Finalize( void );
 
 #endif /* __XS___PRIVATE_FUNCTIONS_XS_RUNTIME_H__ */

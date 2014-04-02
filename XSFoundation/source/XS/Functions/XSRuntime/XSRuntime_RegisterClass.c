@@ -76,7 +76,7 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls )
     __XSRuntime_ClassInfoList * list;
     __XSRuntime_ClassInfoList * new;
     
-    if( __XS_RUNTIME_IS_FINALIZING )
+    if( __XS_RUNTIME_IS_FINALIZING || __XS_RUNTIME_IS_FINALIZED )
     {
         return 0;
     }

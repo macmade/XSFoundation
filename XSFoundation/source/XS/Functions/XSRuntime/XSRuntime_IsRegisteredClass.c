@@ -73,7 +73,7 @@
 
 bool XSRuntime_IsRegisteredClass( XSClassID classID )
 {
-    if( __XS_RUNTIME_IS_FINALIZING )
+    if( __XS_RUNTIME_IS_FINALIZING || __XS_RUNTIME_IS_FINALIZED )
     {
         return false;
     }

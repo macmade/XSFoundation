@@ -171,6 +171,15 @@ XS_EXPORT const char * XSRuntime_GetClassName( XSClassID classID );
  */
 XS_EXPORT const char * XSRuntime_GetObjectClassName( XSObjectRef object );
 
+/*!
+ * @function    XSRuntime_RegisterFinalizer
+ * @abstract    Registers a finalizer function, to be called when the program exits
+ * @param       func        The finalizer function
+ * @discussion  Based on its address, a finalizer function will only be
+ *              registered once.
+ */
+void XSRuntime_RegisterFinalizer( void ( * func )( void ) );
+
 XS_EXTERN_C_END
 
 #endif /* __XS_FUNCTIONS_XS_RUNTIME_H__ */

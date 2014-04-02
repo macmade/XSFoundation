@@ -73,26 +73,49 @@
 
 void __XSRuntime_Finalize( void )
 {
-    __XSRuntime_ClassInfoList * list;
-    __XSRuntime_ClassInfoList * next;
+    __XSRuntime_ClassInfoList * classList;
+    __XSRuntime_ClassInfoList * nextClass;
+    __XSRuntime_FinalizerList * finalizerList;
+    __XSRuntime_FinalizerList * nextFinalizer;
+    
+    if( XSAtomic_CompareAndSwapInteger( 0, 1, &__XSRuntime_IsFinalizing ) == false )
+    {
+        return;
+    }
+    
+    finalizerList = __XSRuntime_Finalizers;
+    nextFinalizer = finalizerList;
+    
+    while( nextFinalizer != NULL )
+    {
+        if( nextFinalizer->finalizer != NULL )
+        {
+            nextFinalizer->finalizer();
+        }
+        
+        finalizerList = nextFinalizer;
+        nextFinalizer = finalizerList->next;
+        
+        free( finalizerList );
+    }
     
     if( XSAtomic_CompareAndSwapInteger( XSInitStatusInited, XSInitStatusFinalizing, &__XSRuntime_InitStatus ) == false )
     {
         return;
     }
     
-    list                   = __XSRuntime_Classes;
-    next                   = list;
-    __XSRuntime_ClassCount = 0;
-    __XSRuntime_Classes    = NULL;
+    classList               = __XSRuntime_Classes;
+    nextClass               = classList;
+    __XSRuntime_ClassCount  = 0;
+    __XSRuntime_Classes     = NULL;
     
-    while( next != NULL )
+    while( nextClass != NULL )
     {
-        list = next;
-        next = list->next;
+        classList = nextClass;
+        nextClass = classList->next;
         
-        free( list );
+        free( classList );
     }
     
-    while( XSAtomic_CompareAndSwapInteger( XSInitStatusFinalizing, XSInitStatusNotInited, &__XSRuntime_InitStatus ) == false );
+    while( XSAtomic_CompareAndSwapInteger( XSInitStatusFinalizing, XSInitStatusFinalized, &__XSRuntime_InitStatus ) == false );
 }

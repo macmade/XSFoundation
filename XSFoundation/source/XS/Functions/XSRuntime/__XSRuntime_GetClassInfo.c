@@ -75,7 +75,7 @@ const XSClassInfo * __XSRuntime_GetClassInfo( XSClassID classID )
 {
     __XSRuntime_ClassInfoList * info;
     
-    if( __XS_RUNTIME_IS_FINALIZING )
+    if( __XS_RUNTIME_IS_FINALIZING || __XS_RUNTIME_IS_FINALIZED )
     {
         return NULL;
     }
