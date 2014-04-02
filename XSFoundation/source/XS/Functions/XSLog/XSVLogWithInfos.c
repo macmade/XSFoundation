@@ -73,10 +73,7 @@
 
 void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char * func, const char * fmt, va_list args )
 {
-    if( XSAtomic_CompareAndSwapInteger( XSInitStatusFinalized, XSInitStatusFinalized, &__XSLog_MutexStatus ) )
-    {
-        return;
-    }
+    while( XSAtomic_CompareAndSwapInteger( 0, 0, &__XSLog_IsPaused ) == false );
     
     if( ( XSGetLogLevel() & level ) != 0 )
     {

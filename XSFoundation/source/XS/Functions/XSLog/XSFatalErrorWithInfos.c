@@ -75,6 +75,8 @@ void XSFatalErrorWithInfos( const char * file, int line, const char * func, cons
 {
     va_list ap;
     
+    while( XSAtomic_CompareAndSwapInteger( 0, 0, &__XSLog_IsPaused ) == false );
+    
     if( ( XSGetLogLevel() & XSLogLevelFatal ) != 0 )
     {
         va_start( ap, fmt );

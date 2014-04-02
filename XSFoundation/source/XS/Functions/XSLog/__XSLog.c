@@ -73,5 +73,6 @@
 
 volatile XSInteger __XSLog_Level        = XSLogLevelAll;
 volatile XSInteger __XSLog_MutexStatus  = XSInitStatusNotInited;
+volatile XSInteger __XSLog_IsPaused     = 0;
 
 XSMutex __XSLog_Mutex;

@@ -91,9 +91,15 @@ XS_EXTERN XSMutex __XSLog_Mutex;
 
 /*!
  * @typedef     __XSLog_MutexStatus
- * @abstract    MUtex init status
+ * @abstract    Mutex init status
  */
 XS_EXTERN volatile XSInteger __XSLog_MutexStatus;
+
+/*!
+ * @typedef     __XSLog_IsPaused
+ * @abstract    1 if any log call should be hold, otherwise 0
+ */
+XS_EXTERN volatile XSInteger __XSLog_IsPaused;
 
 /*!
  * @function    __XSLog_StartLog
@@ -106,6 +112,18 @@ void __XSLog_StartLog( XSLogLevel level, const char * file, int line, const char
  * @abstract    Ends a log session
  */
 void __XSLog_EndLog( void );
+
+/*!
+ * @function    __XSLog_Pause
+ * @abstract    Holds any log request
+ */
+void __XSLog_Pause( void );
+
+/*!
+ * @function    __XSLog_Resume
+ * @abstract    Resumes all log requests
+ */
+void __XSLog_Resume( void );
 
 /*!
  * @function    __XSLog_Exit
