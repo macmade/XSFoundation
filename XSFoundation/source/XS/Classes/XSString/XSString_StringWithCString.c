@@ -62,16 +62,16 @@
 /* $Id$ */
 
 /*!
- * @file        __XSString_Destructor.c
+ * @file        XSString_StringWithCString.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSString_Destructor
+ * @abstract    Definition for XSString_StringWithCString
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSString.h>
 
-void __XSString_Destructor( XSStringRef object )
+XSStatic XSAutoreleased XSStringRef XSString_StringWithCString( const char * s )
 {
-    XSRelease( object->cString );
+    return XSAutorelease( XSString_CreateWithCString( s ) );
 }

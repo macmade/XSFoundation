@@ -79,6 +79,14 @@
 #include <XS/XSMacros.h>
 
 /*!
+ * @def         XSSTR
+ * @abstract    Gets an XSString object from a C string
+ * @param       _s_     The C string (const char *)
+ * @return      An XSString object (autoreleased)
+ */
+#define XSSTR( _s_ )    XSString_StringWithCString( _s_ )
+
+/*!
  * @typedef     XSStringRef
  * @abstract    Opaque type for XSString
  */
@@ -90,5 +98,194 @@ typedef struct __XSString * XSStringRef;
  * @return      The class ID for XSString
  */
 XS_EXPORT XSStatic XSClassID XSString_GetClassID( void );
+
+/*!
+ * @function    XSString_StringWithCString
+ * @abstract    Gets an XSString object from a C string
+ * @param       s       The C string (const char *)
+ * @return      An XSString object (autoreleased)
+ */
+XS_EXPORT XSStatic XSAutoreleased XSStringRef XSString_StringWithCString( const char * s );
+
+/*!
+ * @function    XSString_StringWithFormat
+ * @abstract    Gets an XSString object from a format string with arguments
+ * @param       format  The format string
+ * @param       ...     The format arguments
+ * @return      An XSString object (autoreleased)
+ */
+XS_EXPORT XSStatic XSAutoreleased XSStringRef XSString_StringWithFormat( const char * format, ... ) XS_FORMAT_ATTRIBUTE( printf, 1, 2 );
+
+/*!
+ * @function    XSString_StringWithFormat
+ * @abstract    Gets an XSString object from a format string with arguments
+ * @param       format  The format string
+ * @param       args     The format arguments
+ * @return      An XSString object (autoreleased)
+ */
+XS_EXPORT XSStatic XSAutoreleased XSStringRef XSString_StringWithFormatAndArgs( const char * format, va_list args ) XS_FORMAT_ATTRIBUTE( printf, 1, 0 );
+
+/*!
+ * @function    XSString_CreateWithCString
+ * @abstract    Creates an XSString object from a C string
+ * @param       s       The C string (const char *)
+ * @return      An XSString object
+ */
+XS_EXPORT XSStatic XSStringRef XSString_CreateWithCString( const char * s );
+
+/*!
+ * @function    XSString_CreateWithFormat
+ * @abstract    Creates an XSString object from a format string with arguments
+ * @param       format  The format string
+ * @param       ...     The format arguments
+ * @return      An XSString object
+ */
+XS_EXPORT XSStatic XSStringRef XSString_CreateWithFormat( const char * format, ... ) XS_FORMAT_ATTRIBUTE( printf, 1, 2 );
+
+/*!
+ * @function    XSString_CreateWithFormat
+ * @abstract    Creates an XSString object from a format string with arguments
+ * @param       format  The format string
+ * @param       args    The format arguments
+ * @return      An XSString object
+ */
+XS_EXPORT XSStatic XSStringRef XSString_CreateWithFormatAndArgs( const char * format, va_list args ) XS_FORMAT_ATTRIBUTE( printf, 1, 0 );
+
+/*!
+ * @function    XSString_GetLength
+ * @abstract    Gets the length of a string
+ * @param       object  The string object
+ * @return      The length of the string
+ */
+XS_EXPORT XSUInteger XSString_GetLength( XSStringRef object );
+
+/*!
+ * @function    XSString_GetCString
+ * @abstract    Gets the internal C string pointer
+ * @param       object  The string object
+ * @discussion  Do not alter the content of the C string.
+ * @return      A pointer to the C string
+ */
+XS_EXPORT const char * XSString_GetCString( XSStringRef object );
+
+/*!
+ * @function    XSString_SubstringFromIndex
+ * @abstract    Gets a substring from a specific index to the end of the string
+ * @param       object  The string object
+ * @param       i       The index
+ * @return      The substring (autoreleased)
+ */
+XS_EXPORT XSAutoreleased XSStringRef XSString_SubstringFromIndex( XSStringRef object, XSUInteger i );
+
+/*!
+ * @function    XSString_SubstringFromIndex
+ * @abstract    Gets a substring from the start of the string to a specific index
+ * @param       object  The string object
+ * @param       i       The index
+ * @return      The substring (autoreleased)
+ */
+XS_EXPORT XSAutoreleased XSStringRef XSString_SubstringToIndex( XSStringRef object, XSUInteger i );
+
+/*!
+ * @function    XSString_SubstringWithRange
+ * @abstract    Gets a substring based on a specific range
+ * @param       object  The string object
+ * @param       range   The range
+ * @return      The substring (autoreleased)
+ */
+XS_EXPORT XSAutoreleased XSStringRef XSString_SubstringWithRange( XSStringRef object, XSRange range );
+
+/*!
+ * @function    XSString_LowercaseString
+ * @abstract    Gets a lowercase version of a string
+ * @param       object  The string object
+ * @return      The lowercase string (autoreleased)
+ */
+XS_EXPORT XSAutoreleased XSStringRef XSString_LowercaseString( XSStringRef object );
+
+/*!
+ * @function    XSString_LowercaseString
+ * @abstract    Gets an uppercase version of a string
+ * @param       object  The string object
+ * @return      The uppercase string (autoreleased)
+ */
+XS_EXPORT XSAutoreleased XSStringRef XSString_UppercaseString( XSStringRef object );
+
+/*!
+ * @function    XSString_StringByAppendingString
+ * @abstract    Gets a string by appending a string to another
+ * @param       object  The string object
+ * @param       s       The string to append
+ * @return      The resulting string (autoreleased)
+ */
+XS_EXPORT XSAutoreleased XSStringRef XSString_StringByAppendingString( XSStringRef object, XSStringRef s );
+
+/*!
+ * @function    XSString_StringByAppendingCString
+ * @abstract    Gets a string by appending a C string to a string
+ * @param       object  The string object
+ * @param       s       The C string to append
+ * @return      The resulting string (autoreleased)
+ */
+XS_EXPORT XSAutoreleased XSStringRef XSString_StringByAppendingCString( XSStringRef object, const char * s );
+
+/*!
+ * @function    XSString_StringByAppendingCString
+ * @abstract    Gets a string by appending a format string with arguments to a string
+ * @param       object  The string object
+ * @param       format  The format string
+ * @param       ...     The format arguments
+ * @return      The resulting string (autoreleased)
+ */
+XS_EXPORT XSAutoreleased XSStringRef XSString_StringByAppendingFormat( XSStringRef object, const char * format, ... ) XS_FORMAT_ATTRIBUTE( printf, 2, 3 );
+
+/*!
+ * @function    XSString_RangeOfString
+ * @abstract    Gets the range of a string in a string
+ * @param       object  The string object
+ * @param       s       The string to search for
+ * @discussion  If the 's' string is not found in the receiver string, the
+ *              range's location will be equal to XSNotFound.
+ * @return      The range of the 's' string in the receiver string
+ */
+XS_EXPORT XSRange XSString_RangeOfString( XSStringRef object, XSStringRef s );
+
+/*!
+ * @function    XSString_RangeOfCString
+ * @abstract    Gets the range of a C string in a string
+ * @param       object  The string object
+ * @param       s       The C string to search for
+ * @discussion  If the C string is not found in the receiver string, the
+ *              range's location will be equal to XSNotFound.
+ * @return      The range of the C string in the receiver string
+ */
+XS_EXPORT XSRange XSString_RangeOfCString( XSStringRef object, const char * s );
+
+/*!
+ * @function    XSString_IsEqualToString
+ * @abstract    Compares two string for equality
+ * @param       object  The string object
+ * @param       s       The string to compare with
+ * @return      True if both strings are equal, otherwise false
+ */
+XS_EXPORT bool XSString_IsEqualToString( XSStringRef object, XSStringRef s );
+
+/*!
+ * @function    XSString_ContainsCString
+ * @abstract    Checks whether a string contains a C string
+ * @param       object  The string object
+ * @param       s       The C string to check for
+ * @return      True if the receiver string contains the C string, otherwise false
+ */
+XS_EXPORT bool XSString_ContainsCString( XSStringRef object, const char * s );
+
+/*!
+ * @function    XSString_ContainsString
+ * @abstract    Checks whether a string contains another string
+ * @param       object  The string object
+ * @param       s       The string to check for
+ * @return      True if the receiver string contains the 's' string, otherwise false
+ */
+XS_EXPORT bool XSString_ContainsString( XSStringRef object, XSStringRef s );
 
 #endif /* __XS_CLASSES_XS_STRING_H__ */

@@ -84,7 +84,8 @@
  */
 struct __XSString
 {
-    void * temp; /*! Not yet implemented... */
+    char     * cString;     /*! The C string */
+    XSUInteger length;      /* The length */
 };
 
 /*!

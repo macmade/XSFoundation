@@ -62,16 +62,43 @@
 /* $Id$ */
 
 /*!
- * @file        __XSString_Destructor.c
+ * @file        XSString_RangeOfCString.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSString_Destructor
+ * @abstract    Definition for XSString_RangeOfCString
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSString.h>
 
-void __XSString_Destructor( XSStringRef object )
+XSRange XSString_RangeOfCString( XSStringRef object, const char * s )
 {
-    XSRelease( object->cString );
+    XSRange      range;
+    char       * pos;
+    const char * s2;
+    
+    range.location = XSNotFound;
+    range.length   = 0;
+    
+    if( object == NULL || s == NULL )
+    {
+        return range;
+    }
+    
+    if( XSString_GetLength( object ) == 0 || ( range.length = strlen( s ) ) == 0 )
+    {
+        return range;
+    }
+    
+    s2  = XSString_GetCString( object );
+    pos = strstr( s2, s );
+    
+    if( pos == NULL )
+    {
+        return range;
+    }
+    
+    range.location = ( XSUInteger )( pos - s2 );
+    
+    return range;
 }

@@ -62,16 +62,21 @@
 /* $Id$ */
 
 /*!
- * @file        __XSString_Destructor.c
+ * @file        XSString_SubstringFromIndex.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSString_Destructor
+ * @abstract    Definition for XSString_SubstringFromIndex
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSString.h>
 
-void __XSString_Destructor( XSStringRef object )
+XSAutoreleased XSStringRef XSString_SubstringFromIndex( XSStringRef object, XSUInteger i )
 {
-    XSRelease( object->cString );
+    if( object == NULL || i >= XSString_GetLength( object ) )
+    {
+        return NULL;
+    }
+    
+    return XSString_SubstringWithRange( object, XSRange_Make( i, XSString_GetLength( object ) - i ) );
 }

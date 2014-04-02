@@ -74,5 +74,6 @@
 void __XSString_Copy( XSStringRef source, XSStringRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    XSRetain( destination->cString );
 }

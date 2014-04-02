@@ -62,16 +62,63 @@
 /* $Id$ */
 
 /*!
- * @file        __XSString_Destructor.c
+ * @file        XSString_CreateWithFormatAndArgs.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSString_Destructor
+ * @abstract    Definition for XSString_CreateWithFormatAndArgs
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSString.h>
 
-void __XSString_Destructor( XSStringRef object )
+XSStatic XSStringRef XSString_CreateWithFormatAndArgs( const char * format, va_list args )
 {
-    XSRelease( object->cString );
+    XSInteger   length;
+    char      * s;
+    XSStringRef str;
+    va_list     ap;
+    
+    if( format == NULL || strlen( format ) == 0 )
+    {
+        return NULL;
+    }
+    
+    va_copy( ap, args );
+    
+    length = vsnprintf( NULL, 0, format, args );
+    
+    if( length <= 0 )
+    {
+        va_end( ap );
+        
+        return NULL;
+    }
+    
+    s = XSAlloc( ( XSUInteger )length + 1 );
+    
+    if( s == NULL )
+    {
+        va_end( ap );
+        
+        return NULL;
+    }
+    
+    str = XSRuntime_CreateInstance( XSString_GetClassID() );
+    
+    if( str == NULL )
+    {
+        XSRelease( s );
+        
+        va_end( ap );
+        
+        return NULL;
+    }
+    
+    vsnprintf( s, length + 1, format, ap );
+    va_end( ap );
+    
+    str->cString = s;
+    str->length  = ( XSUInteger )length;
+    
+    return str;
 }

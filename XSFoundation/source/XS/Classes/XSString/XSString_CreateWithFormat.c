@@ -62,16 +62,25 @@
 /* $Id$ */
 
 /*!
- * @file        __XSString_Destructor.c
+ * @file        XSString_CreateWithFormat.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSString_Destructor
+ * @abstract    Definition for XSString_CreateWithFormat
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSString.h>
 
-void __XSString_Destructor( XSStringRef object )
+XSStatic XSStringRef XSString_CreateWithFormat( const char * format, ... )
 {
-    XSRelease( object->cString );
+    va_list     ap;
+    XSStringRef str;
+    
+    va_start( ap, format );
+    
+    str = XSString_CreateWithFormatAndArgs( format, ap );
+    
+    va_end( ap );
+    
+    return str;
 }

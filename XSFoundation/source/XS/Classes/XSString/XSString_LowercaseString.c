@@ -62,16 +62,49 @@
 /* $Id$ */
 
 /*!
- * @file        __XSString_Destructor.c
+ * @file        XSString_LowercaseString.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSString_Destructor
+ * @abstract    Definition for XSString_LowercaseString
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSString.h>
 
-void __XSString_Destructor( XSStringRef object )
+XSAutoreleased XSStringRef XSString_LowercaseString( XSStringRef object )
 {
-    XSRelease( object->cString );
+    char      * s;
+    XSUInteger  i;
+    XSStringRef str;
+    
+    if( object == NULL || object->cString == NULL )
+    {
+        return NULL;
+    }
+    
+    s = XSCopy( object->cString );
+    
+    if( s == NULL )
+    {
+        return NULL;
+    }
+    
+    for( i = 0; i < object->length; i++ )
+    {
+        s[ i ] = ( char )tolower( s[ i ] );
+    }
+    
+    str = XSRuntime_CreateInstance( XSString_GetClassID() );
+    
+    if( str == NULL )
+    {
+        XSRelease( s );
+        
+        return NULL;
+    }
+    
+    str->cString = s;
+    str->length  = object->length;
+    
+    return XSAutorelease( str );
 }

@@ -62,16 +62,44 @@
 /* $Id$ */
 
 /*!
- * @file        __XSString_Destructor.c
+ * @file        XSString_CreateWithCString.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSString_Destructor
+ * @abstract    Definition for XSString_CreateWithCString
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSString.h>
 
-void __XSString_Destructor( XSStringRef object )
+XSStatic XSStringRef XSString_CreateWithCString( const char * s )
 {
-    XSRelease( object->cString );
+    XSStringRef object;
+    
+    if( s == NULL )
+    {
+        return NULL;
+    }
+    
+    object = XSRuntime_CreateInstance( XSString_GetClassID() );
+    
+    if( object != NULL )
+    {
+        object->length = strlen( s );
+        
+        if( object->length > 0 )
+        {
+            object->cString = XSAlloc( object->length + 1 );
+            
+            if( object->cString == NULL )
+            {
+                XSRelease( object );
+                
+                return NULL;
+            }
+            
+            memcpy( object->cString, s, object->length );
+        }
+    }
+    
+    return object;
 }

@@ -62,16 +62,54 @@
 /* $Id$ */
 
 /*!
- * @file        __XSString_Destructor.c
+ * @file        XSString_SubstringWithRange.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSString_Destructor
+ * @abstract    Definition for XSString_SubstringWithRange
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSString.h>
 
-void __XSString_Destructor( XSStringRef object )
+XSAutoreleased XSStringRef XSString_SubstringWithRange( XSStringRef object, XSRange range )
 {
-    XSRelease( object->cString );
+    XSUInteger  length;
+    char      * s;
+    XSStringRef str;
+    
+    if( object == NULL || range.length == 0 )
+    {
+        return NULL;
+    }
+    
+    length = XSString_GetLength( object );
+    
+    if( range.location >= length )
+    {
+        return NULL;
+    }
+    
+    range.length = XS_MIN( range.length, length - range.location );
+    s            = XSAlloc( range.length + 1 );
+    
+    if( s == NULL )
+    {
+        return NULL;
+    }
+    
+    str = XSRuntime_CreateInstance( XSString_GetClassID() );
+    
+    if( str == NULL )
+    {
+        XSRelease( s );
+        
+        return NULL;
+    }
+    
+    str->cString = s;
+    str->length  = range.length;
+    
+    memcpy( s, XSString_GetCString( object ) + range.location, range.length );
+    
+    return XSAutorelease( str );
 }

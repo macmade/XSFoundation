@@ -73,7 +73,5 @@
 
 const char * __XSString_ToString( XSStringRef object )
 {
-    ( void )object;
-    
-    return NULL;
+    return object->cString;
 }

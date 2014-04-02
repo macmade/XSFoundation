@@ -62,16 +62,16 @@
 /* $Id$ */
 
 /*!
- * @file        __XSString_Destructor.c
+ * @file        XSString_StringWithFormatAndArgs.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSString_Destructor
+ * @abstract    Definition for XSString_StringWithFormatAndArgs
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSString.h>
 
-void __XSString_Destructor( XSStringRef object )
+XSStatic XSAutoreleased XSStringRef XSString_StringWithFormatAndArgs( const char * format, va_list args )
 {
-    XSRelease( object->cString );
+    return XSAutorelease( XSString_CreateWithFormatAndArgs( format, args ) );
 }

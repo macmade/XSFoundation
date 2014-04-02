@@ -62,16 +62,21 @@
 /* $Id$ */
 
 /*!
- * @file        __XSString_Destructor.c
+ * @file        XSString_GetLength.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSString_Destructor
+ * @abstract    Definition for XSString_GetLength
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSString.h>
 
-void __XSString_Destructor( XSStringRef object )
+XSUInteger XSString_GetLength( XSStringRef object )
 {
-    XSRelease( object->cString );
+    if( object == NULL )
+    {
+        return 0;
+    }
+    
+    return object->length;
 }

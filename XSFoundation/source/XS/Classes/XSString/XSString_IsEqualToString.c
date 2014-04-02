@@ -62,16 +62,21 @@
 /* $Id$ */
 
 /*!
- * @file        __XSString_Destructor.c
+ * @file        XSString_IsEqualToString.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSString_Destructor
+ * @abstract    Definition for XSString_IsEqualToString
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSString.h>
 
-void __XSString_Destructor( XSStringRef object )
+bool XSString_IsEqualToString( XSStringRef object, XSStringRef s )
 {
-    XSRelease( object->cString );
+    if( object == NULL || s == NULL )
+    {
+        return false;
+    }
+    
+    return ( strcmp( XSString_GetCString( object ), XSString_GetCString( s ) ) == 0 ) ? true : false;
 }

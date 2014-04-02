@@ -62,16 +62,60 @@
 /* $Id$ */
 
 /*!
- * @file        __XSString_Destructor.c
+ * @file        XSString_StringByAppendingCString.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSString_Destructor
+ * @abstract    Definition for XSString_StringByAppendingCString
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSString.h>
 
-void __XSString_Destructor( XSStringRef object )
+XSAutoreleased XSStringRef XSString_StringByAppendingCString( XSStringRef object, const char * s )
 {
-    XSRelease( object->cString );
+    XSUInteger  length1;
+    XSUInteger  length2;
+    char      * s2;
+    XSStringRef str;
+    
+    if( object == NULL )
+    {
+        return NULL;
+    }
+    
+    length1 = XSString_GetLength( object );
+    
+    if( length1 == 0 )
+    {
+        return XSString_StringWithCString( s );
+    }
+    
+    if( s == NULL || ( length2 = strlen( s ) ) == 0 )
+    {
+        return XSAutorelease( XSCopy( object ) );
+    }
+    
+    s2 = XSAlloc( length1 + length2 + 1 );
+    
+    if( s2 == NULL )
+    {
+        return NULL;
+    }
+    
+    str = XSRuntime_CreateInstance( XSString_GetClassID() );
+    
+    if( str == NULL )
+    {
+        XSRelease( s2 );
+        
+        return NULL;
+    }
+    
+    str->cString = s2;
+    str->length  = length1 + length2;
+    
+    memcpy( s2, XSString_GetCString( object ), length1 );
+    memcpy( s2 + length1, s, length2 );
+    
+    return XSAutorelease( str );
 }
