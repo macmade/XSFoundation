@@ -152,4 +152,10 @@ __XSMemoryDebug_Record * __XSMemoryDebug_GetRecord( __XSMemoryObject * object );
  */
 void __XSMemoryDebug_CheckObjectIntegrity( __XSMemoryObject * object );
 
+/*!
+ * @function    __XSMemoryDebug_Exit
+ * @abstract    XSMemoryDebug finalizer function
+ */
+void __XSMemoryDebug_Exit( void );
+
 #endif /* __XS___PRIVATE_FUNCTIONS_XS_MEMORY_DEBUG_H__ */

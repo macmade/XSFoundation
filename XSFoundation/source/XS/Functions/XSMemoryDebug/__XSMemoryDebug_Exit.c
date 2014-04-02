@@ -62,58 +62,14 @@
 /* $Id$ */
 
 /*!
- * @file        __XSMemoryDebug_NewRecord.c
+ * @file        __XSMemoryDebug_Exit.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSMemoryDebug_NewRecord
+ * @abstract    Definition for __XSMemoryDebug_Exit
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemoryDebug.h>
 
-void __XSMemoryDebug_NewRecord( __XSMemoryObject * object, const char * file, int line, const char * func )
-{
-    __XSMemoryDebug_Record *          rec;
-    __XSMemoryDebug_Record * volatile list;
-    
-    if( object == NULL )
-    {
-        return;
-    }
-    
-    rec = calloc( sizeof( __XSMemoryDebug_Record ), 1 );
-    
-    if( rec == NULL )
-    {
-        XSFatalError( "Cannot allocate memory for a memory record" );
-    }
-    
-    rec->object     = object;
-    rec->data       = object + sizeof( __XSMemoryObject );
-    rec->allocFile  = file;
-    rec->allocLine  = line;
-    rec->allocFunc  = func;
-    
-    if( XSAtomic_CompareAndSwapPointer( NULL, rec, ( void * volatile * )&__XSMemoryDebug_Records ) )
-    {
-        XSRuntime_RegisterFinalizer( __XSMemoryDebug_Exit );
-        
-        return;
-    }
-    
-    add:
-    
-    list = __XSMemoryDebug_Records;
-    
-    while( list != NULL )
-    {
-        if( XSAtomic_CompareAndSwapPointer( NULL, rec, ( void * volatile * )&( list->next ) ) )
-        {
-            return;
-        }
-        
-        list = list->next;
-    }
-    
-    goto add;
-}
+void __XSMemoryDebug_Exit( void )
+{}
