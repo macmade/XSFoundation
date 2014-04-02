@@ -74,13 +74,31 @@
 const char * XSRuntime_GetDescription( XSObjectRef object )
 {
     XSClassCallbackToString toString;
+    XSStringRef             description;
+    const char            * className;
     
-    toString = __XSRuntime_GetToStringCallback( XSRuntime_GetClassID( object ) );
-    
-    if( toString == NULL )
+    if( object == NULL )
     {
-        return NULL;
+        return "(null)";
+    }
+    else
+    {
+        className = XSRuntime_GetObjectClassName( object );
+        toString  = __XSRuntime_GetToStringCallback( XSRuntime_GetClassID( object ) );
+        
+        if( className == NULL )
+        {
+            description = XSString_StringWithFormat( "<%p>", object );
+        }
+        else if( toString != NULL )
+        {
+            description = XSString_StringWithFormat( "<%s %p> %s", className, object, toString( object ) );
+        }
+        else
+        {
+            description = XSString_StringWithFormat( "<%s %p>", className, object );
+        }
     }
     
-    return toString( object );
+    return XSString_GetCString( description );
 }

@@ -148,6 +148,7 @@ int main( int argc, const char * argv[] )
         b = XSBoolean_Create( true );
         
         XSShow( b );
+        XSShow( NULL );
         
         XSLog( "%p", b );
         XSThreading_TLSKeyCreate( &k );
@@ -166,6 +167,7 @@ int main( int argc, const char * argv[] )
         s[ 0 ]  = 'a';
         
         XSLog( "%s", s );
+        XSShow( s );
         
         s       = XSRealloc( s, 3 );
         s[ 1 ]  = 'b';
