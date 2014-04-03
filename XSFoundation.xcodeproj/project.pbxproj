@@ -1566,6 +1566,10 @@
 		05632F8318ECB9B900EB76D2 /* __XSMemoryDebug_Exit.c in Sources */ = {isa = PBXBuildFile; fileRef = 05632F8118ECB9B900EB76D2 /* __XSMemoryDebug_Exit.c */; };
 		05632F8418ECB9B900EB76D2 /* __XSMemoryDebug_Exit.c in Sources */ = {isa = PBXBuildFile; fileRef = 05632F8118ECB9B900EB76D2 /* __XSMemoryDebug_Exit.c */; };
 		05632F8518ECB9B900EB76D2 /* __XSMemoryDebug_Exit.c in Sources */ = {isa = PBXBuildFile; fileRef = 05632F8118ECB9B900EB76D2 /* __XSMemoryDebug_Exit.c */; };
+		05632F8718ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c in Sources */ = {isa = PBXBuildFile; fileRef = 05632F8618ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c */; };
+		05632F8818ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c in Sources */ = {isa = PBXBuildFile; fileRef = 05632F8618ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c */; };
+		05632F8918ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c in Sources */ = {isa = PBXBuildFile; fileRef = 05632F8618ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c */; };
+		05632F8A18ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c in Sources */ = {isa = PBXBuildFile; fileRef = 05632F8618ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c */; };
 		0573873918E4A0B500A8BF4A /* Classes in Headers */ = {isa = PBXBuildFile; fileRef = 0573873218E4A0A800A8BF4A /* Classes */; settings = {ATTRIBUTES = (Public, ); }; };
 		0573873A18E4A0B700A8BF4A /* Functions in Headers */ = {isa = PBXBuildFile; fileRef = 0573873318E4A0A800A8BF4A /* Functions */; settings = {ATTRIBUTES = (Public, ); }; };
 		0573873B18E4A0BA00A8BF4A /* XS.h in Headers */ = {isa = PBXBuildFile; fileRef = 0573873418E4A0A800A8BF4A /* XS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -2043,6 +2047,8 @@
 		05632F7718ECB74E00EB76D2 /* __XSLog_Pause.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSLog_Pause.c; sourceTree = "<group>"; };
 		05632F7818ECB74E00EB76D2 /* __XSLog_Resume.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSLog_Resume.c; sourceTree = "<group>"; };
 		05632F8118ECB9B900EB76D2 /* __XSMemoryDebug_Exit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemoryDebug_Exit.c; sourceTree = "<group>"; };
+		05632F8618ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemoryDebug_IssueWarning.c; sourceTree = "<group>"; };
+		05632FAD18EDBEF600EB76D2 /* Strip-Symbols.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "Strip-Symbols.sh"; sourceTree = "<group>"; };
 		0573873218E4A0A800A8BF4A /* Classes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Classes; sourceTree = "<group>"; };
 		0573873318E4A0A800A8BF4A /* Functions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Functions; sourceTree = "<group>"; };
 		0573873418E4A0A800A8BF4A /* XS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XS.h; sourceTree = "<group>"; };
@@ -2097,6 +2103,7 @@
 			isa = PBXGroup;
 			children = (
 				0523039818E9D2BD00C29627 /* Makefile */,
+				05632FAC18EDBEF600EB76D2 /* Scripts */,
 				0523039918E9D2BD00C29627 /* README.md */,
 				051B663118DCA7350079238C /* XSFoundation */,
 				051B66B718DCAAC30079238C /* XSTest */,
@@ -2343,6 +2350,7 @@
 				052306F018EBFEF200C29627 /* __XSMemoryDebug_ReleaseRecord.c */,
 				052306F118EBFEF200C29627 /* __XSMemoryDebug_UpdateRecord.c */,
 				05F6F3BC18EC399C000AB87C /* __XSMemoryDebug_CheckObjectIntegrity.c */,
+				05632F8618ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c */,
 				05632F8118ECB9B900EB76D2 /* __XSMemoryDebug_Exit.c */,
 			);
 			path = XSMemoryDebug;
@@ -2855,6 +2863,14 @@
 			path = XSValue;
 			sourceTree = "<group>";
 		};
+		05632FAC18EDBEF600EB76D2 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				05632FAD18EDBEF600EB76D2 /* Strip-Symbols.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
 		0573867318E4A08B00A8BF4A /* XS */ = {
 			isa = PBXGroup;
 			children = (
@@ -3256,6 +3272,7 @@
 				052305A818EB4B1F00C29627 /* XSRect_Offset.c in Sources */,
 				0523067C18EB4B1F00C29627 /* XSRuntime_GetClassName.c in Sources */,
 				05632F2A18EC513F00EB76D2 /* XSString_StringByAppendingCString.c in Sources */,
+				05632F8718ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c in Sources */,
 				055D163E18E1D42800894C7B /* __XSBinaryTree_ToString.c in Sources */,
 				05632F3E18EC513F00EB76D2 /* XSString_SubstringToIndex.c in Sources */,
 				055D188218E1D42800894C7B /* __XSString_Equals.c in Sources */,
@@ -3651,6 +3668,7 @@
 				052305A918EB4B1F00C29627 /* XSRect_Offset.c in Sources */,
 				0523067D18EB4B1F00C29627 /* XSRuntime_GetClassName.c in Sources */,
 				05632F2B18EC513F00EB76D2 /* XSString_StringByAppendingCString.c in Sources */,
+				05632F8818ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c in Sources */,
 				055D163F18E1D42800894C7B /* __XSBinaryTree_ToString.c in Sources */,
 				05632F3F18EC513F00EB76D2 /* XSString_SubstringToIndex.c in Sources */,
 				055D188318E1D42800894C7B /* __XSString_Equals.c in Sources */,
@@ -4046,6 +4064,7 @@
 				052305AA18EB4B1F00C29627 /* XSRect_Offset.c in Sources */,
 				0523067E18EB4B1F00C29627 /* XSRuntime_GetClassName.c in Sources */,
 				05632F2C18EC513F00EB76D2 /* XSString_StringByAppendingCString.c in Sources */,
+				05632F8918ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c in Sources */,
 				055D164018E1D42800894C7B /* __XSBinaryTree_ToString.c in Sources */,
 				05632F4018EC513F00EB76D2 /* XSString_SubstringToIndex.c in Sources */,
 				055D188418E1D42800894C7B /* __XSString_Equals.c in Sources */,
@@ -4441,6 +4460,7 @@
 				052305AB18EB4B1F00C29627 /* XSRect_Offset.c in Sources */,
 				0523067F18EB4B1F00C29627 /* XSRuntime_GetClassName.c in Sources */,
 				05632F2D18EC513F00EB76D2 /* XSString_StringByAppendingCString.c in Sources */,
+				05632F8A18ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c in Sources */,
 				055D164118E1D42800894C7B /* __XSBinaryTree_ToString.c in Sources */,
 				05632F4118EC513F00EB76D2 /* XSString_SubstringToIndex.c in Sources */,
 				055D188518E1D42800894C7B /* __XSString_Equals.c in Sources */,

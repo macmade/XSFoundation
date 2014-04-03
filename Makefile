@@ -112,11 +112,14 @@ DIR_BUILD_TEMP_ARM_64_BIN       := $(DIR_BUILD_TEMP_ARM_64)bin/
 DIR_BUILD_TEMP_ARM_64_OBJ       := $(DIR_BUILD_TEMP_ARM_64)obj/
 
 # Source directories
-DIR_INC                         := ./XSFoundation/include/
-DIR_RES                         := ./XSFoundation/resources/
-DIR_SRC                         := ./XSFoundation/source/XS/
+DIR_INC                         := $(DIR)XSFoundation/include/
+DIR_RES                         := $(DIR)XSFoundation/resources/
+DIR_SRC                         := $(DIR)XSFoundation/source/XS/
 DIR_SRC_FUNCTIONS               := $(DIR_SRC)Functions/
 DIR_SRC_CLASSES                 := $(DIR_SRC)Classes/
+
+# Scripts directory
+DIR_SCRIPTS                     := $(DIR)Scripts/
 
 #-------------------------------------------------------------------------------
 # Search paths
@@ -265,7 +268,12 @@ endif
         lib             \
         dylib           \
         ios-lib         \
-        mac-framework
+        mac-framework   \
+        i386            \
+        x86-64          \
+        armv7           \
+        armv7s          \
+        arm64
 
 # Declaration for precious targets, to avoid cleaning of intermediate files
 .PRECIOUS:  $(DIR_BUILD_TEMP_INTEL_32_OBJ)%$(EXT_O) \
@@ -358,13 +366,13 @@ unix-like: lib dylib
 	@:
 
 # Builds a static library (generic)
-lib: $(_FILES_C_BUILD_INTEL_32) $(_FILES_C_BUILD_INTEL_64)
+lib: i386 x86-64
 	
 	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_LIB),universal,Linking the i386 binary)
-	@libtool -static -arch_only i386 -o $(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_LIB)$(EXT_LIB) $(_FILES_C_BUILD_INTEL_32)
+	@libtool -static -arch_only i386 -o $(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_LIB)$(EXT_LIB) $(DIR_BUILD_TEMP_INTEL_32_OBJ)XSFoundation$(EXT_O)
 	
 	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_LIB),universal,Linking the x86-64 binary)
-	@libtool -static -arch_only x86_64 -o $(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_LIB)$(EXT_LIB) $(_FILES_C_BUILD_INTEL_64)
+	@libtool -static -arch_only x86_64 -o $(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_LIB)$(EXT_LIB) $(DIR_BUILD_TEMP_INTEL_64_OBJ)XSFoundation$(EXT_O)
 	
 	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_LIB),universal,Linking the universal binary)
 	@libtool -static $(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_LIB)$(EXT_LIB) $(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_LIB)$(EXT_LIB) -o $(DIR_BUILD_PRODUCTS)$(PRODUCT_LIB)$(EXT_LIB)
@@ -375,13 +383,13 @@ ifeq ($(findstring 1,$(DEBUG)),)
 endif
 	
 # Builds a dynamic library (generic)
-dylib: $(_FILES_C_BUILD_INTEL_32) $(_FILES_C_BUILD_INTEL_64)
+dylib: i386 x86-64
 	
 	@echo $(call _PRINT,$(PRODUCT_DYLIB)$(EXT_DYLIB),universal,Linking the i386 binary)
-	@$(call _MAKE_DYLIB_BIN,i386,$(PRODUCT_DYLIB),$(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_DYLIB),$(_FILES_C_BUILD_INTEL_32))
+	@$(call _MAKE_DYLIB_BIN,i386,$(PRODUCT_DYLIB),$(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_DYLIB),$(DIR_BUILD_TEMP_INTEL_32_OBJ)XSFoundation$(EXT_O))
 	
 	@echo $(call _PRINT,$(PRODUCT_DYLIB)$(EXT_DYLIB),universal,Linking the x86-64 binary)
-	@$(call _MAKE_DYLIB_BIN,x86_64,$(PRODUCT_DYLIB),$(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_DYLIB),$(_FILES_C_BUILD_INTEL_64))
+	@$(call _MAKE_DYLIB_BIN,x86_64,$(PRODUCT_DYLIB),$(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_DYLIB),$(DIR_BUILD_TEMP_INTEL_64_OBJ)XSFoundation$(EXT_O))
 	
 	@echo $(call _PRINT,$(PRODUCT_LIB)$(EXT_DYLIB),universal,Linking the universal binary)
 	@lipo -create $(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_DYLIB)$(EXT_DYLIB) $(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_DYLIB)$(EXT_DYLIB) -output $(DIR_BUILD_PRODUCTS)$(PRODUCT_DYLIB)$(EXT_DYLIB)
@@ -392,16 +400,16 @@ ifeq ($(findstring 1,$(DEBUG)),)
 endif
 
 # Builds an iOS static library (OS-X only)
-ios-lib: $(_FILES_C_BUILD_ARM_7) $(_FILES_C_BUILD_ARM_7S) $(_FILES_C_BUILD_ARM_64)
+ios-lib: armv7 armv7s arm64
 	
 	@echo $(call _PRINT,$(PRODUCT_IOS_LIB)$(EXT_LIB),universal,Linking the armv7 binary)
-	@libtool -static -arch_only armv7 -o $(DIR_BUILD_TEMP_ARM_7_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) $(_FILES_C_BUILD_ARM_7)
+	@libtool -static -arch_only armv7 -o $(DIR_BUILD_TEMP_ARM_7_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) $(DIR_BUILD_TEMP_ARM_7_OBJ)XSFoundation$(EXT_O)
 	
 	@echo $(call _PRINT,$(PRODUCT_IOS_LIB)$(EXT_LIB),universal,Linking the armv7s binary)
-	@libtool -static -arch_only armv7s -o $(DIR_BUILD_TEMP_ARM_7S_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) $(_FILES_C_BUILD_ARM_7S)
+	@libtool -static -arch_only armv7s -o $(DIR_BUILD_TEMP_ARM_7S_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) $(DIR_BUILD_TEMP_ARM_7S_OBJ)XSFoundation$(EXT_O)
 	
 	@echo $(call _PRINT,$(PRODUCT_IOS_LIB)$(EXT_LIB),universal,Linking the arm64 binary)
-	@libtool -static -arch_only arm64 -o $(DIR_BUILD_TEMP_ARM_64_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) $(_FILES_C_BUILD_ARM_64)
+	@libtool -static -arch_only arm64 -o $(DIR_BUILD_TEMP_ARM_64_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) $(DIR_BUILD_TEMP_ARM_64_OBJ)XSFoundation$(EXT_O)
 	
 	@echo $(call _PRINT,$(PRODUCT_IOS_LIB)$(EXT_LIB),universal,Linking the universal binary)
 	@libtool -static $(DIR_BUILD_TEMP_ARM_7_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) $(DIR_BUILD_TEMP_ARM_7S_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) $(DIR_BUILD_TEMP_ARM_64_BIN)$(PRODUCT_IOS_LIB)$(EXT_LIB) -o $(DIR_BUILD_PRODUCTS)$(PRODUCT_IOS_LIB)$(EXT_LIB)
@@ -412,7 +420,7 @@ ifeq ($(findstring 1,$(DEBUG)),)
 endif
 
 # Builds an Mac framework (OS-X only)
-mac-framework: $(_FILES_C_BUILD_INTEL_32) $(_FILES_C_BUILD_INTEL_64)
+mac-framework: i386 x86-64
 	
 	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Creating the directory structure)
 	@rm -rf $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)
@@ -444,10 +452,10 @@ mac-framework: $(_FILES_C_BUILD_INTEL_32) $(_FILES_C_BUILD_INTEL_64)
 	@:
 	
 	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Linking the i386 binary)
-	@$(call _MAKE_FRAMEWORK_BIN,i386,$(PRODUCT_MAC_FRAMEWORK),$(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_MAC_FRAMEWORK),$(_FILES_C_BUILD_INTEL_32))
+	@$(call _MAKE_FRAMEWORK_BIN,i386,$(PRODUCT_MAC_FRAMEWORK),$(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_MAC_FRAMEWORK),$(DIR_BUILD_TEMP_INTEL_32_OBJ)XSFoundation$(EXT_O))
 	
 	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Linking the x86-64 binary)
-	@$(call _MAKE_FRAMEWORK_BIN,x86_64,$(PRODUCT_MAC_FRAMEWORK),$(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_MAC_FRAMEWORK),$(_FILES_C_BUILD_INTEL_64))
+	@$(call _MAKE_FRAMEWORK_BIN,x86_64,$(PRODUCT_MAC_FRAMEWORK),$(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_MAC_FRAMEWORK),$(DIR_BUILD_TEMP_INTEL_64_OBJ)XSFoundation$(EXT_O))
 	
 	@echo $(call _PRINT,$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK),universal,Linking the universal binary)
 	@lipo -create $(DIR_BUILD_TEMP_INTEL_32_BIN)$(PRODUCT_MAC_FRAMEWORK) $(DIR_BUILD_TEMP_INTEL_64_BIN)$(PRODUCT_MAC_FRAMEWORK) -output $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/$(PRODUCT_MAC_FRAMEWORK)
@@ -457,37 +465,102 @@ ifeq ($(findstring 1,$(DEBUG)),)
 	@strip -S $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/$(PRODUCT_MAC_FRAMEWORK)
 endif
 
+# Target: i386
+i386: $(_FILES_C_BUILD_INTEL_32)
+	
+	@echo $(call _PRINT,Linking object files,i386,XSFoundation$(EXT_O))
+	@rm -rf $(DIR_BUILD_TEMP_ARM_64_OBJ)XSFoundation$(EXT_O)
+	@ld -r $(_FILES_C_BUILD_INTEL_32) -o $(DIR_BUILD_TEMP_INTEL_32_OBJ)XSFoundation$(EXT_O)
+	
+ifeq ($(findstring 1,$(DEBUG)),)
+	@echo $(call _PRINT,XSFoundation$(EXT_O),i386,Stripping the private symbols)
+	@$(shell chmod u+x $(DIR_SCRIPTS)Strip-Symbols.sh)
+	@$(DIR_SCRIPTS)Strip-Symbols.sh "$(DIR_BUILD_TEMP_INTEL_32_OBJ)XSFoundation$(EXT_O)" ^___XS
+endif
+
+# Target: x86-64
+x86-64: $(_FILES_C_BUILD_INTEL_64)
+	
+	@echo $(call _PRINT,Linking object files,x86-64,XSFoundation$(EXT_O))
+	@rm -rf $(DIR_BUILD_TEMP_ARM_64_OBJ)XSFoundation$(EXT_O)
+	@ld -r $(_FILES_C_BUILD_INTEL_64) -o $(DIR_BUILD_TEMP_INTEL_64_OBJ)XSFoundation$(EXT_O)
+	
+ifeq ($(findstring 1,$(DEBUG)),)
+	@echo $(call _PRINT,XSFoundation$(EXT_O),x86-64,Stripping the private symbols)
+	@$(shell chmod u+x $(DIR_SCRIPTS)Strip-Symbols.sh)
+	@$(DIR_SCRIPTS)Strip-Symbols.sh $(DIR_BUILD_TEMP_INTEL_64_OBJ)XSFoundation$(EXT_O) ^___XS
+endif
+
+# Target: armv7
+armv7: $(_FILES_C_BUILD_ARM_7)
+	
+	@echo $(call _PRINT,Linking object files,armv7,XSFoundation$(EXT_O))
+	@rm -rf $(DIR_BUILD_TEMP_ARM_64_OBJ)XSFoundation$(EXT_O)
+	@ld -r $(_FILES_C_BUILD_ARM_7) -o $(DIR_BUILD_TEMP_ARM_7_OBJ)XSFoundation$(EXT_O)
+	
+#ifeq ($(findstring 1,$(DEBUG)),)
+#	@echo $(call _PRINT,XSFoundation$(EXT_O),armv7,Stripping the private symbols)
+#	@$(shell chmod u+x $(DIR_SCRIPTS)Strip-Symbols.sh)
+#	@$(DIR_SCRIPTS)Strip-Symbols.sh $(DIR_BUILD_TEMP_ARM_7_OBJ)XSFoundation$(EXT_O) ^___XS
+#endif
+
+# Target: armv7s
+armv7s: $(_FILES_C_BUILD_ARM_7S)
+	
+	@echo $(call _PRINT,Linking object files,armv7s,XSFoundation$(EXT_O))
+	@rm -rf $(DIR_BUILD_TEMP_ARM_64_OBJ)XSFoundation$(EXT_O)
+	@ld -r $(_FILES_C_BUILD_ARM_7S) -o $(DIR_BUILD_TEMP_ARM_7S_OBJ)XSFoundation$(EXT_O)
+	
+#ifeq ($(findstring 1,$(DEBUG)),)
+#	@echo $(call _PRINT,XSFoundation$(EXT_O),armv7s,Stripping the private symbols)
+#	@$(shell chmod u+x $(DIR_SCRIPTS)Strip-Symbols.sh)
+#	@$(DIR_SCRIPTS)Strip-Symbols.sh $(DIR_BUILD_TEMP_ARM_7S_OBJ)XSFoundation$(EXT_O) ^___XS
+#endif
+
+# Target: arm64
+arm64: $(_FILES_C_BUILD_ARM_64)
+	
+	@echo $(call _PRINT,Linking object files,arm64,XSFoundation$(EXT_O))
+	@rm -rf $(DIR_BUILD_TEMP_ARM_64_OBJ)XSFoundation$(EXT_O)
+	@ld -r $(_FILES_C_BUILD_ARM_64) -o $(DIR_BUILD_TEMP_ARM_64_OBJ)XSFoundation$(EXT_O)
+	
+#ifeq ($(findstring 1,$(DEBUG)),)
+#	@echo $(call _PRINT,XSFoundation$(EXT_O),arm64,Stripping the private symbols)
+#	@$(shell chmod u+x $(DIR_SCRIPTS)Strip-Symbols.sh)
+#	@$(DIR_SCRIPTS)Strip-Symbols.sh $(DIR_BUILD_TEMP_ARM_64_OBJ)XSFoundation$(EXT_O) ^___XS
+#endif
+
 #-------------------------------------------------------------------------------
 # Targets with second expansion
 #-------------------------------------------------------------------------------
 
 .SECONDEXPANSION:
 
-# Target: i386
+# Target: i386 object file
 $(DIR_BUILD_TEMP_INTEL_32_OBJ)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
 	@echo $(call _PRINT_FILE,"Compiling C file",i386,$<)
 	@$(_CC_XS) -arch i386 -o $@ -c $<
 
-# Target: x86_64
+# Target: x86_64 object file
 $(DIR_BUILD_TEMP_INTEL_64_OBJ)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
 	@echo $(call _PRINT_FILE,"Compiling C file",x86-64,$<)
 	@$(_CC_XS) -arch x86_64 -o $@ -c $<
 
-# Target: armv7
+# Target: armv7 object file
 $(DIR_BUILD_TEMP_ARM_7_OBJ)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
 	@echo $(call _PRINT_FILE,"Compiling C file",armv7,$<)
 	@$(_CC_XS) -arch armv7 -isysroot $(_IOS_SDK_PATH) -o $@ -c $<
 
-# Target: armv7s
+# Target: armv7s object file
 $(DIR_BUILD_TEMP_ARM_7S_OBJ)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
 	@echo $(call _PRINT_FILE,"Compiling C file",armv7s,$<)
 	@$(_CC_XS) -arch armv7s -isysroot $(_IOS_SDK_PATH) -o $@ -c $<
 
-# Target: arm64
+# Target: arm64 object file
 $(DIR_BUILD_TEMP_ARM_64_OBJ)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
 	@echo $(call _PRINT_FILE,"Compiling C file",arm64,$<)
