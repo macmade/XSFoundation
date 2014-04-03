@@ -72,4 +72,23 @@
 #include <XS/__private/Functions/XSMemoryDebug.h>
 
 void __XSMemoryDebug_Exit( void )
-{}
+{
+    __XSMemoryDebug_Record * rec;
+    
+    rec = __XSMemoryDebug_Records;
+    
+    while( rec != NULL )
+    {
+        if( rec->object == NULL )
+        {
+            continue;
+        }
+        
+        if( rec->freed == false )
+        {
+            __XSMemoryDebug_IssueWarning( "Unfreed memory record at application exit point", rec );
+        }
+        
+        rec = rec->next;
+    }
+}

@@ -87,6 +87,8 @@ typedef struct __XSMemoryDebug_Record_Struct
     struct __XSMemoryDebug_Record_Struct * next;            /*! The next record, if any */
     __XSMemoryObject                     * object;          /*! The memory object */
     void                                 * data;            /*! The user data pointer */
+    XSUInteger                             allocThreadID;   /*! The ID of the thread in which the object was allocated */
+    XSUInteger                             freeThreadID;    /*! The ID of the thread in which the object was freed */
     const char                           * allocFile;       /*! The file in which the object was allocated */
     const char                           * freeFile;        /*! The file in which the object was freed */
     const char                           * allocFunc;       /*! The function in which the object was allocated */
@@ -151,6 +153,16 @@ __XSMemoryDebug_Record * __XSMemoryDebug_GetRecord( __XSMemoryObject * object );
  * @param       object      The memory object to check
  */
 void __XSMemoryDebug_CheckObjectIntegrity( __XSMemoryObject * object );
+
+/*!
+ * @function    __XSMemoryDebug_IssueWarning
+ * @abstract    Issues a memory warning
+ * @param       message     The warning message
+ * @param       record      The memory record involved, if any
+ * @discussion  In debug mode, this will show the memory debug console.
+ *              In release mode, the program will be aborted after the warning.
+ */
+void __XSMemoryDebug_IssueWarning( const char * message, __XSMemoryDebug_Record * record );
 
 /*!
  * @function    __XSMemoryDebug_Exit

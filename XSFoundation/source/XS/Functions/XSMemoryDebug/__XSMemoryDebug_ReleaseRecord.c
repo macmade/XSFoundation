@@ -86,9 +86,10 @@ void __XSMemoryDebug_ReleaseRecord( __XSMemoryObject * object, bool markAsFreed,
     
     if( markAsFreed )
     {
-        rec->freeFile = file;
-        rec->freeLine = line;
-        rec->freeFunc = func;
-        rec->freed    = true;
+        rec->freeFile       = file;
+        rec->freeLine       = line;
+        rec->freeFunc       = func;
+        rec->freed          = true;
+        rec->freeThreadID   = XSThreading_GetCurrentThreadID();
     }
 }

@@ -62,59 +62,117 @@
 /* $Id$ */
 
 /*!
- * @file        __XSMemoryDebug_NewRecord.c
+ * @file        __XSMemoryDebug_Exit.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSMemoryDebug_NewRecord
+ * @abstract    Definition for __XSMemoryDebug_Exit
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemoryDebug.h>
+#include <XS/__private/Functions/XSLog.h>
 
-void __XSMemoryDebug_NewRecord( __XSMemoryObject * object, const char * file, int line, const char * func )
+void __XSMemoryDebug_IssueWarning( const char * message, __XSMemoryDebug_Record * record )
 {
-    __XSMemoryDebug_Record *          rec;
-    __XSMemoryDebug_Record * volatile list;
+    const char * allocFile;
+    const char * allocFunc;
+    const char * freeFile;
+    const char * freeFunc;
+    const char * pos1;
+    const char * pos2;
+    const char * classname;
     
-    if( object == NULL )
+    __XSLog_Pause();
+    
+    fprintf
+    (
+        stderr,
+        "*****************************************\n"
+        "* !!! XSFoundation - Memory warning !!! *\n"
+        "*****************************************\n"
+        "\n"
+        "Reason: %s\n\n",
+        message
+    );
+    
+    if( record != NULL && record->object != NULL )
     {
-        return;
-    }
-    
-    rec = calloc( sizeof( __XSMemoryDebug_Record ), 1 );
-    
-    if( rec == NULL )
-    {
-        XSFatalError( "Cannot allocate memory for a memory record" );
-    }
-    
-    rec->object         = object;
-    rec->data           = object + sizeof( __XSMemoryObject );
-    rec->allocFile      = file;
-    rec->allocLine      = line;
-    rec->allocFunc      = func;
-    rec->allocThreadID  = XSThreading_GetCurrentThreadID();
-    
-    if( XSAtomic_CompareAndSwapPointer( NULL, rec, ( void * volatile * )&__XSMemoryDebug_Records ) )
-    {
-        XSRuntime_RegisterFinalizer( __XSMemoryDebug_Exit );
+        allocFile = ( record->allocFile == NULL ) ? "unknown" : record->allocFile;
+        allocFunc = ( record->allocFunc == NULL ) ? "unknown" : record->allocFunc;
+        freeFile  = ( record->freeFile  == NULL ) ? "unknown" : record->freeFile;
+        freeFunc  = ( record->freeFunc  == NULL ) ? "unknown" : record->freeFunc;
+        classname = XSRuntime_GetClassName( record->object->classID );
         
-        return;
-    }
-    
-    add:
-    
-    list = __XSMemoryDebug_Records;
-    
-    while( list != NULL )
-    {
-        if( XSAtomic_CompareAndSwapPointer( NULL, rec, ( void * volatile * )&( list->next ) ) )
+        #ifdef _WIN32
+        pos1 = strrchr( allocFile, '\\' );
+        pos2 = strrchr( freeFile, '\\' );
+        #else
+        pos1 = strrchr( allocFile, '/' );
+        pos2 = strrchr( freeFile, '/' );
+        #endif
+        
+        if( pos1 != NULL ) { allocFile = pos1 + 1; }
+        if( pos2 != NULL ) { freeFile  = pos2 + 1; }
+        
+        if( strlen( allocFile ) == 0 ) { allocFile = "unknown"; }
+        if( strlen( allocFunc ) == 0 ) { allocFunc = "unknown"; }
+        if( strlen( freeFile  ) == 0 ) { freeFile  = "unknown"; }
+        if( strlen( freeFunc  ) == 0 ) { freeFunc  = "unknown"; }
+        
+        fprintf
+        (
+            stderr,
+            "Memory object ID:      %lu\n"
+            "Class ID:              %lu - %s\n"
+            "Data pointer:          %p\n"
+            "Allocated in file:     %s:%i\n"
+            "Allocated in function: %s\n"
+            "Allocated in thread:   %lX\n",
+            ( unsigned long )( record->object->allocID ),
+            ( unsigned long )( record->object->classID ),
+            ( classname == NULL ) ? "N/A" : classname,
+            record->data,
+            allocFile,
+            record->allocLine,
+            allocFunc,
+            ( unsigned long )( record->allocThreadID )
+        );
+        
+        if( record->freed )
         {
-            return;
+            fprintf
+            (
+                stderr,
+                "Freed in file:         %s:%i\n"
+                "Freed in function:     %s\n"
+                "Freed in thread:       %lX\n",
+                freeFile,
+                record->freeLine,
+                freeFunc,
+                ( unsigned long )( record->freeThreadID )
+            );
         }
-        
-        list = list->next;
+        else
+        {
+            fprintf
+            (
+                stderr,
+                "Freed in file:         N/A\n"
+                "Freed in function:     N/A\n"
+                "Freed in thread:       N/A\n"
+            );
+        }
+    }
+    else
+    {
+        fprintf
+        (
+            stderr,
+            "Memory object: None\n"
+        );
     }
     
-    goto add;
+    fprintf( stderr, "\n" );
+    
+    __XSLog_Resume();
 }
