@@ -82,9 +82,17 @@ XS_EXTERN_C_BEGIN
  * @abstract    Mutex type
  */
 #ifdef _WIN32
+
+#define XS_MUTEX_INITIALIZER    NULL
+
 typedef HANDLE XSMutex;
+
 #else
+
+#define XS_MUTEX_INITIALIZER    PTHREAD_MUTEX_INITIALIZER
+
 typedef pthread_mutex_t XSMutex;
+
 #endif
 
 XS_EXTERN_C_END

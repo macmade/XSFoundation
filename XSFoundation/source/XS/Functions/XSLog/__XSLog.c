@@ -75,4 +75,8 @@ volatile XSInteger __XSLog_Level        = XSLogLevelAll;
 volatile XSInteger __XSLog_MutexStatus  = XSInitStatusNotInited;
 volatile XSInteger __XSLog_IsPaused     = 0;
 
-XSMutex __XSLog_Mutex;
+#ifdef _WIN32
+XSMutex __XSLog_Mutex = XS_MUTEX_INITIALIZER;
+#else
+XSMutex __XSLog_Mutex = XS_MUTEX_INITIALIZER;
+#endif
