@@ -83,6 +83,7 @@ XS_EXTERN_C_BEGIN
  * @def         XSAlloc
  * @abstract    Allocates memory
  * @param       _bytes_     The number of bytes to allocate
+ * @discussion  The allocated memory will be zero-filled
  * @return      The allocated memory, or NULL
  */
 #define XSAlloc( _bytes_ )              XSAllocWithInfos( _bytes_, 0, __FILE__, __LINE__, __func__ )
@@ -92,6 +93,8 @@ XS_EXTERN_C_BEGIN
  * @abstract    Reallocates memory
  * @param       _memory_    The memory data to reallocate
  * @param       _bytes_     The number of bytes to reallocate
+ * @discussion  If the requested bytes are larger than the previous allocation
+ *              size, additional data will be zero-filled.
  * @return      The reallocated memory, or NULL
  */
 #define XSRealloc( _memory_, _bytes_ )  XSReallocWithInfos( _memory_, _bytes_, 0, __FILE__, __LINE__, __func__ )
@@ -103,6 +106,7 @@ XS_EXTERN_C_BEGIN
  * @discussion  The memory data will be placed in the instance of the current
  *              auto-release pool, and will be released the next time
  *              the auto-release pool is drained.
+ *              The allocated memory will be zero-filled
  * @return      The allocated memory, or NULL
  */
 #define XSAutoAlloc( _bytes_ )          XSAutoAllocWithInfos( _bytes_, 0, __FILE__, __LINE__, __func__ )
