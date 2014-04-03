@@ -91,7 +91,7 @@ const char * XSProcess_GetProcessName( void )
             
             GetModuleFileName( NULL, ( LPTSTR )name, MAX_PATH );
             
-            pos = strrchr( name, '\' );
+            pos = strrchr( name, '\\' );
             
             if( pos != NULL )
             {
