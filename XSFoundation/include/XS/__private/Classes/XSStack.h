@@ -62,99 +62,86 @@
 /* $Id$ */
 
 /*!
- * @file        XSRuntime_Initialize.c
+ * @header      XSStack.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntime_Initialize
+ * @abstract    Private definitions for XSStack.h
  */
 
-#include <XS/XS.h>
-#include <XS/__private/Functions/XSRuntime.h>
+#ifndef __XS_H__
+#error "Please include '<XS/XS.h>' instead of this file!"
+#endif
 
-/* Private class initializers */
-void XSStatic __XSApplication_Initialize( void );
-void XSStatic __XSApplicationArgument_Initialize( void );
-void XSStatic __XSArray_Initialize( void );
-void XSStatic __XSAutoreleasePool_Initialize( void );
-void XSStatic __XSBag_Initialize( void );
-void XSStatic __XSBinaryTree_Initialize( void );
-void XSStatic __XSBoolean_Initialize( void );
-void XSStatic __XSColor_Initialize( void );
-void XSStatic __XSData_Initialize( void );
-void XSStatic __XSDate_Initialize( void );
-void XSStatic __XSDictionary_Initialize( void );
-void XSStatic __XSError_Initialize( void );
-void XSStatic __XSFile_Initialize( void );
-void XSStatic __XSLock_Initialize( void );
-void XSStatic __XSNode_Initialize( void );
-void XSStatic __XSNotification_Initialize( void );
-void XSStatic __XSNotificationCenter_Initialize( void );
-void XSStatic __XSNull_Initialize( void );
-void XSStatic __XSNumber_Initialize( void );
-void XSStatic __XSPrimitiveArray_Initialize( void );
-void XSStatic __XSRecursiveLock_Initialize( void );
-void XSStatic __XSSemaphore_Initialize( void );
-void XSStatic __XSSet_Initialize( void );
-void XSStatic __XSStack_Initialize( void );
-void XSStatic __XSString_Initialize( void );
-void XSStatic __XSThread_Initialize( void );
-void XSStatic __XSTimer_Initialize( void );
-void XSStatic __XSURL_Initialize( void );
-void XSStatic __XSValue_Initialize( void );
+#ifndef __XS___PRIVATE_CLASSES_XS_STACK_H__
+#define __XS___PRIVATE_CLASSES_XS_STACK_H__
 
-void XSRuntime_Initialize( void )
+#include <XS/XSTypes.h>
+#include <XS/XSMacros.h>
+
+/*!
+ * @struct      __XSStack
+ * @abstract    Structure for XSStack
+ */
+struct __XSStack
 {
-    __XSRuntime_ClassInfoList * classes;
-    
-    if( XSAtomic_CompareAndSwapInteger( XSInitStatusNotInited, XSInitStatusInitializing, &__XSRuntime_InitStatus ) == false )
-    {
-        return;
-    }
-    
-    classes = ( __XSRuntime_ClassInfoList * )calloc( sizeof( __XSRuntime_ClassInfoList ), 1 );
-    
-    if( classes == NULL )
-    {
-        XSFatalError( "Cannot allocate memory for the runtime class informations" );
-    }
-    
-    if( atexit( __XSRuntime_Finalize ) != 0 )
-    {
-        XSFatalError( "Cannot register the XSFoundation finalizier function" );
-    }
-    
-    __XSRuntime_Classes     = classes;
-    __XSRuntime_ClassCount  = 0;
-    
-    while( XSAtomic_CompareAndSwapInteger( XSInitStatusInitializing, XSInitStatusInited, &__XSRuntime_InitStatus ) == false );
-    
-    __XSApplication_Initialize();
-    __XSApplicationArgument_Initialize();
-    __XSArray_Initialize();
-    __XSAutoreleasePool_Initialize();
-    __XSBag_Initialize();
-    __XSBinaryTree_Initialize();
-    __XSBoolean_Initialize();
-    __XSColor_Initialize();
-    __XSData_Initialize();
-    __XSDate_Initialize();
-    __XSDictionary_Initialize();
-    __XSError_Initialize();
-    __XSFile_Initialize();
-    __XSLock_Initialize();
-    __XSNode_Initialize();
-    __XSNotification_Initialize();
-    __XSNotificationCenter_Initialize();
-    __XSNull_Initialize();
-    __XSNumber_Initialize();
-    __XSPrimitiveArray_Initialize();
-    __XSRecursiveLock_Initialize();
-    __XSSemaphore_Initialize();
-    __XSSet_Initialize();
-    __XSStack_Initialize();
-    __XSString_Initialize();
-    __XSThread_Initialize();
-    __XSTimer_Initialize();
-    __XSURL_Initialize();
-    __XSValue_Initialize();
-}
+    void * temp; /*! Not yet implemented... */
+};
+
+/*!
+ * @var         __XSStack_ClassID
+ * @abstract    Class ID
+ */
+XS_EXTERN XSClassID __XSStack_ClassID;
+
+/*!
+ * @var         __XSStack_Class
+ * @abstract    Class info
+ */
+XS_EXTERN XSClassInfo __XSStack_Class;
+
+/*!
+ * @function    __XSStack_Initialize
+ * @abstract    Class initializer
+ */
+void XSStatic __XSStack_Initialize( void );
+
+/*!
+ * @function    __XSStack_Constructor
+ * @abstract    Class constructor callback
+ * @param       object      The object beeing construct
+ */
+void __XSStack_Constructor( XSStackRef object );
+
+/*!
+ * @function    __XSStack_Destructor
+ * @abstract    Class destructor callback
+ * @param       object      The object beeing destruct
+ */
+void __XSStack_Destructor( XSStackRef object );
+
+/*!
+ * @function    __XSStack_Copy
+ * @abstract    Class copy callback
+ * @param       source      The object to copy
+ * @param       destination The object beeing copied
+ */
+void __XSStack_Copy( XSStackRef source, XSStackRef destination );
+
+/*!
+ * @function    __XSStack_Equals
+ * @abstract    Class equals callback
+ * @param       object1     The first object to compare
+ * @param       object2     The second object to compare
+ * @return      True if both objects are equals, otherwise false
+ */
+bool __XSStack_Equals( XSStackRef object1, XSStackRef object2 );
+
+/*!
+ * @function    __XSStack_ToString
+ * @abstract    Class to-string callback
+ * @param       object      The object for which to get a description
+ * @return      The object's description
+ */
+const char * __XSStack_ToString( XSStackRef object );
+
+#endif /* __XS___PRIVATE_CLASSES_XS_STACK_H__ */

@@ -122,6 +122,7 @@
 #include <XS/Classes/XSRecursiveLock.h>
 #include <XS/Classes/XSSemaphore.h>
 #include <XS/Classes/XSSet.h>
+#include <XS/Classes/XSStack.h>
 #include <XS/Classes/XSString.h>
 #include <XS/Classes/XSThread.h>
 #include <XS/Classes/XSTimer.h>
