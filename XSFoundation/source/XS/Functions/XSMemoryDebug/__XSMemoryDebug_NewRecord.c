@@ -90,6 +90,8 @@ void __XSMemoryDebug_NewRecord( __XSMemoryObject * object, const char * file, in
     
     rec->object         = object;
     rec->data           = object + sizeof( __XSMemoryObject );
+    rec->allocID        = object->allocID;
+    rec->classID        = object->classID;
     rec->allocFile      = file;
     rec->allocLine      = line;
     rec->allocFunc      = func;

@@ -1570,6 +1570,10 @@
 		05632F8818ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c in Sources */ = {isa = PBXBuildFile; fileRef = 05632F8618ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c */; };
 		05632F8918ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c in Sources */ = {isa = PBXBuildFile; fileRef = 05632F8618ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c */; };
 		05632F8A18ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c in Sources */ = {isa = PBXBuildFile; fileRef = 05632F8618ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c */; };
+		05632FEA18EE253100EB76D2 /* __XSMemoryDebug_PrintRecord.c in Sources */ = {isa = PBXBuildFile; fileRef = 05632FE918EE253100EB76D2 /* __XSMemoryDebug_PrintRecord.c */; };
+		05632FEB18EE253100EB76D2 /* __XSMemoryDebug_PrintRecord.c in Sources */ = {isa = PBXBuildFile; fileRef = 05632FE918EE253100EB76D2 /* __XSMemoryDebug_PrintRecord.c */; };
+		05632FEC18EE253100EB76D2 /* __XSMemoryDebug_PrintRecord.c in Sources */ = {isa = PBXBuildFile; fileRef = 05632FE918EE253100EB76D2 /* __XSMemoryDebug_PrintRecord.c */; };
+		05632FED18EE253100EB76D2 /* __XSMemoryDebug_PrintRecord.c in Sources */ = {isa = PBXBuildFile; fileRef = 05632FE918EE253100EB76D2 /* __XSMemoryDebug_PrintRecord.c */; };
 		0573873918E4A0B500A8BF4A /* Classes in Headers */ = {isa = PBXBuildFile; fileRef = 0573873218E4A0A800A8BF4A /* Classes */; settings = {ATTRIBUTES = (Public, ); }; };
 		0573873A18E4A0B700A8BF4A /* Functions in Headers */ = {isa = PBXBuildFile; fileRef = 0573873318E4A0A800A8BF4A /* Functions */; settings = {ATTRIBUTES = (Public, ); }; };
 		0573873B18E4A0BA00A8BF4A /* XS.h in Headers */ = {isa = PBXBuildFile; fileRef = 0573873418E4A0A800A8BF4A /* XS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -2049,6 +2053,7 @@
 		05632F8118ECB9B900EB76D2 /* __XSMemoryDebug_Exit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemoryDebug_Exit.c; sourceTree = "<group>"; };
 		05632F8618ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemoryDebug_IssueWarning.c; sourceTree = "<group>"; };
 		05632FAD18EDBEF600EB76D2 /* Strip-Symbols.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "Strip-Symbols.sh"; sourceTree = "<group>"; };
+		05632FE918EE253100EB76D2 /* __XSMemoryDebug_PrintRecord.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemoryDebug_PrintRecord.c; sourceTree = "<group>"; };
 		0573873218E4A0A800A8BF4A /* Classes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Classes; sourceTree = "<group>"; };
 		0573873318E4A0A800A8BF4A /* Functions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Functions; sourceTree = "<group>"; };
 		0573873418E4A0A800A8BF4A /* XS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XS.h; sourceTree = "<group>"; };
@@ -2351,6 +2356,7 @@
 				052306F118EBFEF200C29627 /* __XSMemoryDebug_UpdateRecord.c */,
 				05F6F3BC18EC399C000AB87C /* __XSMemoryDebug_CheckObjectIntegrity.c */,
 				05632F8618ED505200EB76D2 /* __XSMemoryDebug_IssueWarning.c */,
+				05632FE918EE253100EB76D2 /* __XSMemoryDebug_PrintRecord.c */,
 				05632F8118ECB9B900EB76D2 /* __XSMemoryDebug_Exit.c */,
 			);
 			path = XSMemoryDebug;
@@ -3360,6 +3366,7 @@
 				055D17A218E1D42800894C7B /* __XSNotification_Equals.c in Sources */,
 				055D174618E1D42800894C7B /* __XSFile_Initialize.c in Sources */,
 				055D16E618E1D42800894C7B /* __XSDictionary_Initialize.c in Sources */,
+				05632FEA18EE253100EB76D2 /* __XSMemoryDebug_PrintRecord.c in Sources */,
 				055D196518E1F47D00894C7B /* __XSValue.c in Sources */,
 				0523053418EB4B1F00C29627 /* XSPoint_IsEqualToPoint.c in Sources */,
 				055D16AE18E1D42800894C7B /* XSData_GetClassID.c in Sources */,
@@ -3756,6 +3763,7 @@
 				055D17A318E1D42800894C7B /* __XSNotification_Equals.c in Sources */,
 				055D174718E1D42800894C7B /* __XSFile_Initialize.c in Sources */,
 				055D16E718E1D42800894C7B /* __XSDictionary_Initialize.c in Sources */,
+				05632FEB18EE253100EB76D2 /* __XSMemoryDebug_PrintRecord.c in Sources */,
 				055D196618E1F47D00894C7B /* __XSValue.c in Sources */,
 				0523053518EB4B1F00C29627 /* XSPoint_IsEqualToPoint.c in Sources */,
 				055D16AF18E1D42800894C7B /* XSData_GetClassID.c in Sources */,
@@ -4152,6 +4160,7 @@
 				055D17A418E1D42800894C7B /* __XSNotification_Equals.c in Sources */,
 				055D174818E1D42800894C7B /* __XSFile_Initialize.c in Sources */,
 				055D16E818E1D42800894C7B /* __XSDictionary_Initialize.c in Sources */,
+				05632FEC18EE253100EB76D2 /* __XSMemoryDebug_PrintRecord.c in Sources */,
 				055D196718E1F47D00894C7B /* __XSValue.c in Sources */,
 				0523053618EB4B1F00C29627 /* XSPoint_IsEqualToPoint.c in Sources */,
 				055D16B018E1D42800894C7B /* XSData_GetClassID.c in Sources */,
@@ -4548,6 +4557,7 @@
 				055D17A518E1D42800894C7B /* __XSNotification_Equals.c in Sources */,
 				055D174918E1D42800894C7B /* __XSFile_Initialize.c in Sources */,
 				055D16E918E1D42800894C7B /* __XSDictionary_Initialize.c in Sources */,
+				05632FED18EE253100EB76D2 /* __XSMemoryDebug_PrintRecord.c in Sources */,
 				055D196818E1F47D00894C7B /* __XSValue.c in Sources */,
 				0523053718EB4B1F00C29627 /* XSPoint_IsEqualToPoint.c in Sources */,
 				055D16B118E1D42800894C7B /* XSData_GetClassID.c in Sources */,

@@ -62,25 +62,107 @@
 /* $Id$ */
 
 /*!
- * @header      XSMemoryDebug.h
+ * @file        __XSMemoryDebug_Exit.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation memory debug functions
+ * @abstract    Definition for __XSMemoryDebug_Exit
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Functions/XSMemoryDebug.h>
 
-#ifndef __XS_FUNCTIONS_XS_MEMORY_DEBUG_H__
-#define __XS_FUNCTIONS_XS_MEMORY_DEBUG_H__
-
-XS_EXTERN_C_BEGIN
-
-#include <XS/XSTypes.h>
-
-
-
-XS_EXTERN_C_END
-
-#endif /* __XS_FUNCTIONS_XS_MEMORY_DEBUG_H__ */
+void __XSMemoryDebug_PrintRecord( __XSMemoryDebug_Record * record )
+{
+    const char * allocFile;
+    const char * allocFunc;
+    const char * freeFile;
+    const char * freeFunc;
+    const char * pos1;
+    const char * pos2;
+    const char * classname;
+    
+    if( record != NULL && record->object != NULL )
+    {
+        allocFile = record->allocFile;
+        allocFunc = record->allocFunc;
+        freeFile  = record->freeFile;
+        freeFunc  = record->freeFunc;
+        classname = XSRuntime_GetClassName( record->classID );
+        
+        #ifdef _WIN32
+        pos1 = ( allocFile != NULL ) ? strrchr( allocFile, '\\' ) : NULL;
+        pos2 = ( freeFile  != NULL ) ? strrchr( freeFile,  '\\' ) : NULL;
+        #else
+        pos1 = ( allocFile != NULL ) ? strrchr( allocFile, '/' ) : NULL;
+        pos2 = ( freeFile  != NULL ) ? strrchr( freeFile, '/' )  : NULL;
+        #endif
+        
+        if( pos1 != NULL ) { allocFile = pos1 + 1; }
+        if( pos2 != NULL ) { freeFile  = pos2 + 1; }
+        
+        fprintf
+        (
+            stderr,
+            "Memory object ID:      %lu\n"
+            "Class ID:              %lu - %s\n"
+            "Data pointer:          %p\n",
+            ( unsigned long )( record->allocID ),
+            ( unsigned long )( record->classID ),
+            ( classname == NULL ) ? "N/A" : classname,
+            record->data
+        );
+        
+        if( allocFile != NULL )
+        {
+            fprintf
+            (
+                stderr,
+                "Allocated in file:     %s:%i\n",
+                allocFile,
+                record->allocLine
+            );
+        }
+        else
+        {
+            fprintf
+            (
+                stderr,
+                "Allocated in file:     N/A\n"
+            );
+        }
+        
+        fprintf
+        (
+            stderr,
+            "Allocated in function: %s\n"
+            "Allocated in thread:   %lX\n",
+            ( allocFunc == NULL ) ? "N/A" : allocFunc,
+            ( unsigned long )( record->allocThreadID )
+        );
+        
+        if( record->freed )
+        {
+            fprintf
+            (
+                stderr,
+                "Freed in file:         %s:%i\n"
+                "Freed in function:     %s\n"
+                "Freed in thread:       %lX\n",
+                freeFile,
+                record->freeLine,
+                freeFunc,
+                ( unsigned long )( record->freeThreadID )
+            );
+        }
+        else
+        {
+            fprintf
+            (
+                stderr,
+                "Freed in file:         N/A\n"
+                "Freed in function:     N/A\n"
+                "Freed in thread:       N/A\n"
+            );
+        }
+    }
+}
