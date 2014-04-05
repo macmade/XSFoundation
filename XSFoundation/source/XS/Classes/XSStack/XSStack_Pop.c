@@ -62,64 +62,39 @@
 /* $Id$ */
 
 /*!
- * @header      XSStack.h
+ * @file        XSStack_GetClassID.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSStack class
+ * @abstract    Definition for XSStack_GetClassID
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Classes/XSStack.h>
 
-#ifndef __XS_CLASSES_XS_STACK_H__
-#define __XS_CLASSES_XS_STACK_H__
-
-#include <XS/XSTypes.h>
-#include <XS/XSMacros.h>
-
-/*!
- * @typedef     XSStackRef
- * @abstract    Opaque type for XSStack
- */
-typedef struct __XSStack * XSStackRef;
-
-/*!
- * @function    XSStack_GetClassID
- * @abstract    Gets the class ID for XSStack
- * @return      The class ID for XSStack
- */
-XS_EXPORT XSStatic XSClassID XSStack_GetClassID( void );
-
-/*!
- * @function    XSStack_Create
- * @abstract    Creates a XSStackRef object
- * @return      The XSStackRef object
- */
-XS_EXPORT XSStatic XSStackRef XSStack_Create( void );
-
-/*!
- * @function    XSStack_GetCount
- * @abstract    Gets the number of object in a XSStackRef object
- * @param       stack       The XSStackRef object
- * @return      The number of object in the XSStackRef object
- */
-XS_EXPORT XSUInteger XSStack_GetCount( XSStackRef stack );
-
-/*!
- * @function    XSStack_Push
- * @abstract    Pushes an object in a XSStackRef object
- * @param       stack       The XSStackRef object
- * @param       object      The object to push
- */
-XS_EXPORT void XSStack_Push( XSStackRef stack, XSObjectRef object );
-
-/*!
- * @function    XSStack_Pop
- * @abstract    Pops an object from a XSStackRef object
- * @param       stack       The XSStackRef object
- * @return      The popped object
- */
-XS_EXPORT XSObjectRef XSStack_Pop( XSStackRef stack );
-
-#endif /* __XS_CLASSES_XS_STACK_H__ */
+XSObjectRef XSStack_Pop( XSStackRef stack )
+{
+    __XSStack_Item * item;
+    XSObjectRef      object;
+    
+    pop:
+    
+    item = stack->top;
+    
+    if( item == NULL )
+    {
+        return NULL;
+    }
+    
+    if( XSAtomic_CompareAndSwapPointer( item, item->next, ( void * volatile * )&( stack->top ) ) )
+    {
+        XSAtomic_DecrementInteger( ( volatile XSInteger * )&( stack->count ) );
+        
+        object = item->object;
+        
+        XSRelease( item );
+        
+        return XSAutorelease( object );
+    }
+    
+    goto pop;
+}

@@ -79,12 +79,24 @@
 #include <XS/XSMacros.h>
 
 /*!
+ * @typedef     __XSStack_Item
+ * @abstract    Stack item
+ */
+typedef struct __XSStack_ItemStruct
+{
+    XSObjectRef                            object;   /*! The contained object */
+    struct __XSStack_ItemStruct * volatile next;     /*! The next element in the stack */
+}
+__XSStack_Item;
+
+/*!
  * @struct      __XSStack
  * @abstract    Structure for XSStack
  */
 struct __XSStack
 {
-    void * temp; /*! Not yet implemented... */
+    __XSStack_Item * volatile top;   /*! The top element in the stack */
+    volatile XSUInteger       count; /*! The number of elements in the stack */
 };
 
 /*!
