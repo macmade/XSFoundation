@@ -73,5 +73,5 @@
 
 void __XSRecursiveLock_Constructor( XSRecursiveLockRef object )
 {
-    ( void )object;
+    XSThreading_MutexCreate( &( object->mutex ) );
 }

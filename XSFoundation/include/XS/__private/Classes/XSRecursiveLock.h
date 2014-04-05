@@ -84,7 +84,7 @@
  */
 struct __XSRecursiveLock
 {
-    void * temp; /*! Not yet implemented... */
+    XSMutex mutex; /* The mutex */
 };
 
 /*!

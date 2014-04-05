@@ -62,16 +62,21 @@
 /* $Id$ */
 
 /*!
- * @file        __XSRecursiveLock_Destructor.c
+ * @file        XSRecursiveLock_Lock.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSRecursiveLock_Destructor
+ * @abstract    Definition for XSRecursiveLock_Lock
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSRecursiveLock.h>
 
-void __XSRecursiveLock_Destructor( XSRecursiveLockRef object )
+void XSRecursiveLock_Lock( XSRecursiveLockRef lock )
 {
-    XSThreading_MutexDelete( &( object->mutex ) );
+    if( lock == NULL )
+    {
+        return;
+    }
+    
+    XSThreading_MutexLock( &( lock->mutex ) );
 }

@@ -74,5 +74,6 @@
 void __XSRecursiveLock_Copy( XSRecursiveLockRef source, XSRecursiveLockRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    XSThreading_MutexCreate( &( destination->mutex ) );
 }
