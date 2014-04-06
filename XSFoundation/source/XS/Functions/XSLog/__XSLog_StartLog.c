@@ -91,13 +91,12 @@ void __XSLog_StartLog( XSLogLevel level, const char * file, int line, const char
     
     while( XSAtomic_CompareAndSwapInteger( XSInitStatusInited, XSInitStatusInited, &__XSLog_MutexStatus ) == false );
     
-    levelName = "Info";
+    levelName = NULL;
     
     if( level == XSLogLevelFatal     ) { levelName = "Fatal";   }
     if( level == XSLogLevelError     ) { levelName = "Error";   }
     if( level == XSLogLevelWarning   ) { levelName = "Warning"; }
     if( level == XSLogLevelNotice    ) { levelName = "Notice";  }
-    if( level == XSLogLevelInfo      ) { levelName = "Info";    }
     if( level == XSLogLevelDebug     ) { levelName = "Debug";   }
     
     XSThreading_MutexLock( &__XSLog_Mutex );
@@ -155,20 +154,39 @@ void __XSLog_StartLog( XSLogLevel level, const char * file, int line, const char
         func = "unknown";
     }
     
-    fprintf
-    (
-        stderr,
-        "%s.%lu %s[%lu:%lX] <%s:%s:%i> %s: ",
-        date,
-        ( unsigned long )milliseconds,
-        XSProcess_GetProcessName(),
-        ( unsigned long )XSProcess_GetProcessID(),
-        ( unsigned long )XSThreading_GetCurrentThreadID(),
-        func,
-        filename,
-        line,
-        levelName
-    );
+    if( levelName != NULL )
+    {
+        fprintf
+        (
+            stderr,
+            "%s.%lu %s[%lu:%lX] <%s:%s:%i>: %s - ",
+            date,
+            ( unsigned long )milliseconds,
+            XSProcess_GetProcessName(),
+            ( unsigned long )XSProcess_GetProcessID(),
+            ( unsigned long )XSThreading_GetCurrentThreadID(),
+            func,
+            filename,
+            line,
+            levelName
+        );
+    }
+    else
+    {
+        fprintf
+        (
+            stderr,
+            "%s.%lu %s[%lu:%lX] <%s:%s:%i>: ",
+            date,
+            ( unsigned long )milliseconds,
+            XSProcess_GetProcessName(),
+            ( unsigned long )XSProcess_GetProcessID(),
+            ( unsigned long )XSThreading_GetCurrentThreadID(),
+            func,
+            filename,
+            line
+        );
+    }
     
     #else
     
@@ -177,17 +195,33 @@ void __XSLog_StartLog( XSLogLevel level, const char * file, int line, const char
     ( void )line;
     ( void )func;
     
-    fprintf
-    (
-        stderr,
-        "%s.%lu %s[%lu:%lX] %s: ",
-        date,
-        ( unsigned long )milliseconds,
-        XSProcess_GetProcessName(),
-        ( unsigned long )XSProcess_GetProcessID(),
-        ( unsigned long )XSThreading_GetCurrentThreadID(),
-        levelName
-    );
+    if( levelName != NULL )
+    {
+        fprintf
+        (
+            stderr,
+            "%s.%lu %s[%lu:%lX]: %s - ",
+            date,
+            ( unsigned long )milliseconds,
+            XSProcess_GetProcessName(),
+            ( unsigned long )XSProcess_GetProcessID(),
+            ( unsigned long )XSThreading_GetCurrentThreadID(),
+            levelName
+        );
+    }
+    else
+    {
+        fprintf
+        (
+            stderr,
+            "%s.%lu %s[%lu:%lX]: ",
+            date,
+            ( unsigned long )milliseconds,
+            XSProcess_GetProcessName(),
+            ( unsigned long )XSProcess_GetProcessID(),
+            ( unsigned long )XSThreading_GetCurrentThreadID()
+        );
+    }
     
     #endif
 }
