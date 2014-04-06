@@ -110,6 +110,12 @@ __XSMemoryDebug_Record;
 XS_EXTERN __XSMemoryDebug_Record * volatile __XSMemoryDebug_Records;
 
 /*!
+ * @function    __XSMemoryDebug_Initialize
+ * @abstract    Initialize the memory debug system
+ */
+void __XSMemoryDebug_Initialize( void );
+
+/*!
  * @function    __XSMemoryDebug_NewRecord
  * @abstract    Creates a new memory record
  * @param       object  The memory object for which to create a record

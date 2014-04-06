@@ -1756,6 +1756,10 @@
 		05F3577A18F1FBD70070111A /* XSThread_IsMainThread.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3577818F1FBD70070111A /* XSThread_IsMainThread.c */; };
 		05F3577B18F1FBD70070111A /* XSThread_IsMainThread.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3577818F1FBD70070111A /* XSThread_IsMainThread.c */; };
 		05F3577C18F1FBD70070111A /* XSThread_IsMainThread.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3577818F1FBD70070111A /* XSThread_IsMainThread.c */; };
+		05F3577E18F1FCE70070111A /* __XSMemoryDebug_Initialize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3577D18F1FCE70070111A /* __XSMemoryDebug_Initialize.c */; };
+		05F3577F18F1FCE70070111A /* __XSMemoryDebug_Initialize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3577D18F1FCE70070111A /* __XSMemoryDebug_Initialize.c */; };
+		05F3578018F1FCE70070111A /* __XSMemoryDebug_Initialize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3577D18F1FCE70070111A /* __XSMemoryDebug_Initialize.c */; };
+		05F3578118F1FCE70070111A /* __XSMemoryDebug_Initialize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3577D18F1FCE70070111A /* __XSMemoryDebug_Initialize.c */; };
 		05F6F3BD18EC399C000AB87C /* __XSMemoryDebug_CheckObjectIntegrity.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F6F3BC18EC399C000AB87C /* __XSMemoryDebug_CheckObjectIntegrity.c */; };
 		05F6F3BE18EC399C000AB87C /* __XSMemoryDebug_CheckObjectIntegrity.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F6F3BC18EC399C000AB87C /* __XSMemoryDebug_CheckObjectIntegrity.c */; };
 		05F6F3BF18EC399C000AB87C /* __XSMemoryDebug_CheckObjectIntegrity.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F6F3BC18EC399C000AB87C /* __XSMemoryDebug_CheckObjectIntegrity.c */; };
@@ -2266,6 +2270,7 @@
 		05F3576B18F1CD030070111A /* __XSThread_Finalize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSThread_Finalize.c; sourceTree = "<group>"; };
 		05F3577318F1FB380070111A /* XSThread_GetMainThread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSThread_GetMainThread.c; sourceTree = "<group>"; };
 		05F3577818F1FBD70070111A /* XSThread_IsMainThread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSThread_IsMainThread.c; sourceTree = "<group>"; };
+		05F3577D18F1FCE70070111A /* __XSMemoryDebug_Initialize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemoryDebug_Initialize.c; sourceTree = "<group>"; };
 		05F6F3BC18EC399C000AB87C /* __XSMemoryDebug_CheckObjectIntegrity.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemoryDebug_CheckObjectIntegrity.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2555,6 +2560,7 @@
 			isa = PBXGroup;
 			children = (
 				052306F218EBFEF200C29627 /* __XSMemoryDebug.c */,
+				05F3577D18F1FCE70070111A /* __XSMemoryDebug_Initialize.c */,
 				0523070318EBFF2F00C29627 /* __XSMemoryDebug_GetRecord.c */,
 				052306EF18EBFEF200C29627 /* __XSMemoryDebug_NewRecord.c */,
 				052306F018EBFEF200C29627 /* __XSMemoryDebug_ReleaseRecord.c */,
@@ -3603,6 +3609,7 @@
 				055D160E18E1D42800894C7B /* __XSBag_Copy.c in Sources */,
 				0523059818EB4B1F00C29627 /* XSRect_IsEqualToToRect.c in Sources */,
 				0523062418EB4B1F00C29627 /* XSAutoAllocWithInfos.c in Sources */,
+				05F3577E18F1FCE70070111A /* __XSMemoryDebug_Initialize.c in Sources */,
 				0523054C18EB4B1F00C29627 /* XSRange_Make.c in Sources */,
 				0523054018EB4B1F00C29627 /* XSRange_Intersection.c in Sources */,
 				055D18AA18E1D42800894C7B /* __XSThread_ToString.c in Sources */,
@@ -4041,6 +4048,7 @@
 				055D160F18E1D42800894C7B /* __XSBag_Copy.c in Sources */,
 				0523059918EB4B1F00C29627 /* XSRect_IsEqualToToRect.c in Sources */,
 				0523062518EB4B1F00C29627 /* XSAutoAllocWithInfos.c in Sources */,
+				05F3577F18F1FCE70070111A /* __XSMemoryDebug_Initialize.c in Sources */,
 				0523054D18EB4B1F00C29627 /* XSRange_Make.c in Sources */,
 				0523054118EB4B1F00C29627 /* XSRange_Intersection.c in Sources */,
 				055D18AB18E1D42800894C7B /* __XSThread_ToString.c in Sources */,
@@ -4479,6 +4487,7 @@
 				055D161018E1D42800894C7B /* __XSBag_Copy.c in Sources */,
 				0523059A18EB4B1F00C29627 /* XSRect_IsEqualToToRect.c in Sources */,
 				0523062618EB4B1F00C29627 /* XSAutoAllocWithInfos.c in Sources */,
+				05F3578018F1FCE70070111A /* __XSMemoryDebug_Initialize.c in Sources */,
 				0523054E18EB4B1F00C29627 /* XSRange_Make.c in Sources */,
 				0523054218EB4B1F00C29627 /* XSRange_Intersection.c in Sources */,
 				055D18AC18E1D42800894C7B /* __XSThread_ToString.c in Sources */,
@@ -4917,6 +4926,7 @@
 				055D161118E1D42800894C7B /* __XSBag_Copy.c in Sources */,
 				0523059B18EB4B1F00C29627 /* XSRect_IsEqualToToRect.c in Sources */,
 				0523062718EB4B1F00C29627 /* XSAutoAllocWithInfos.c in Sources */,
+				05F3578118F1FCE70070111A /* __XSMemoryDebug_Initialize.c in Sources */,
 				0523054F18EB4B1F00C29627 /* XSRange_Make.c in Sources */,
 				0523054318EB4B1F00C29627 /* XSRange_Intersection.c in Sources */,
 				055D18AD18E1D42800894C7B /* __XSThread_ToString.c in Sources */,

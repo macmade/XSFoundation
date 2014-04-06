@@ -99,8 +99,6 @@ void __XSMemoryDebug_NewRecord( __XSMemoryObject * object, const char * file, in
     
     if( XSAtomic_CompareAndSwapPointer( NULL, rec, ( void * volatile * )&__XSMemoryDebug_Records ) )
     {
-        XSRuntime_RegisterFinalizer( __XSMemoryDebug_Exit );
-        
         return;
     }
     
