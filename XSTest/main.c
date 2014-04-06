@@ -82,7 +82,6 @@ int main( int argc, const char * argv[] )
         XSRetain( x2 );
         XSRelease( x2 );
         XSRelease( x2 );
-        XSRelease( x2 );
     }
     
     {
@@ -171,6 +170,7 @@ int main( int argc, const char * argv[] )
         
         s       = XSRealloc( s, 3 );
         s[ 1 ]  = 'b';
+        s[ 10 ] = 'b';
         
         XSLog( "%s", s );
     }
@@ -215,6 +215,34 @@ int main( int argc, const char * argv[] )
         
         XSRelease( str1 );
         XSRelease( str2 );
+    }
+    
+    {
+        XSStackRef   stack;
+        XSBooleanRef b1;
+        XSBooleanRef b2;
+        XSBooleanRef b3;
+        
+        stack = XSStack_Create();
+        b1    = XSBoolean_Create( true );
+        b2    = XSBoolean_Create( true );
+        b3    = XSBoolean_Create( true );
+        
+        XSStack_Push( stack, b1 );
+        XSStack_Push( stack, b2 );
+        XSStack_Push( stack, b3 );
+        
+        XSLog( "B1: %p",        b1 );
+        XSLog( "B2: %p",        b2 );
+        XSLog( "B3: %p",        b3 );
+        XSLog( "Stack pop: %p", XSStack_Pop( stack ) );
+        XSLog( "Stack pop: %p", XSStack_Pop( stack ) );
+        XSLog( "Stack pop: %p", XSStack_Pop( stack ) );
+        XSLog( "Stack pop: %p", XSStack_Pop( stack ) );
+        
+        XSRelease( b1 );
+        XSRelease( b2 );
+        XSRelease( b3 );
     }
     
     return 0;
