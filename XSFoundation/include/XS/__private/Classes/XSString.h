@@ -104,7 +104,7 @@ XS_EXTERN XSClassInfo __XSString_Class;
  * @function    __XSString_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSString_Initialize( void );
+XSStatic void __XSString_Initialize( void );
 
 /*!
  * @function    __XSString_Constructor

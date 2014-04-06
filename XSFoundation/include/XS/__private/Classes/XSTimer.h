@@ -103,7 +103,7 @@ XS_EXTERN XSClassInfo __XSTimer_Class;
  * @function    __XSTimer_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSTimer_Initialize( void );
+XSStatic void __XSTimer_Initialize( void );
 
 /*!
  * @function    __XSTimer_Constructor

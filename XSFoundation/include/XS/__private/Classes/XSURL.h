@@ -103,7 +103,7 @@ XS_EXTERN XSClassInfo __XSURL_Class;
  * @function    __XSURL_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSURL_Initialize( void );
+XSStatic void __XSURL_Initialize( void );
 
 /*!
  * @function    __XSURL_Constructor

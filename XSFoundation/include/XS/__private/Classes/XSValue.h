@@ -103,7 +103,7 @@ XS_EXTERN XSClassInfo __XSValue_Class;
  * @function    __XSValue_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSValue_Initialize( void );
+XSStatic void __XSValue_Initialize( void );
 
 /*!
  * @function    __XSValue_Constructor

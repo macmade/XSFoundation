@@ -104,7 +104,7 @@ XS_EXTERN XSClassInfo __XSLock_Class;
  * @function    __XSLock_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSLock_Initialize( void );
+XSStatic void __XSLock_Initialize( void );
 
 /*!
  * @function    __XSLock_Constructor

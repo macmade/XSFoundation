@@ -109,7 +109,7 @@ XS_EXTERN XSNullRef __XSNull_Null;
  * @function    __XSNull_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSNull_Initialize( void );
+XSStatic void __XSNull_Initialize( void );
 
 /*!
  * @function    __XSNull_Constructor

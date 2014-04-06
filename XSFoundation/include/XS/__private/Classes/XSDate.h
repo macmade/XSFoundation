@@ -103,7 +103,7 @@ XS_EXTERN XSClassInfo __XSDate_Class;
  * @function    __XSDate_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSDate_Initialize( void );
+XSStatic void __XSDate_Initialize( void );
 
 /*!
  * @function    __XSDate_Constructor

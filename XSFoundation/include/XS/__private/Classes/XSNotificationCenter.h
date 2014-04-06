@@ -103,7 +103,7 @@ XS_EXTERN XSClassInfo __XSNotificationCenter_Class;
  * @function    __XSNotificationCenter_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSNotificationCenter_Initialize( void );
+XSStatic void __XSNotificationCenter_Initialize( void );
 
 /*!
  * @function    __XSNotificationCenter_Constructor

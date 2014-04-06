@@ -103,7 +103,7 @@ XS_EXTERN XSClassInfo __XSRecursiveLock_Class;
  * @function    __XSRecursiveLock_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSRecursiveLock_Initialize( void );
+XSStatic void __XSRecursiveLock_Initialize( void );
 
 /*!
  * @function    __XSRecursiveLock_Constructor

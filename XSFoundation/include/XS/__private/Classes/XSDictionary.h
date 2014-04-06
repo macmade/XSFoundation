@@ -103,7 +103,7 @@ XS_EXTERN XSClassInfo __XSDictionary_Class;
  * @function    __XSDictionary_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSDictionary_Initialize( void );
+XSStatic void __XSDictionary_Initialize( void );
 
 /*!
  * @function    __XSDictionary_Constructor

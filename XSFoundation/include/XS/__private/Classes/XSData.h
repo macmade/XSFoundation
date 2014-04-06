@@ -103,7 +103,7 @@ XS_EXTERN XSClassInfo __XSData_Class;
  * @function    __XSData_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSData_Initialize( void );
+XSStatic void __XSData_Initialize( void );
 
 /*!
  * @function    __XSData_Constructor

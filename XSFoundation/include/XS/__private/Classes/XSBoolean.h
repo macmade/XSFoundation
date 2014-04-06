@@ -103,7 +103,7 @@ XS_EXTERN XSClassInfo __XSBoolean_Class;
  * @function    __XSBoolean_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSBoolean_Initialize( void );
+XSStatic void __XSBoolean_Initialize( void );
 
 /*!
  * @function    __XSBoolean_Constructor

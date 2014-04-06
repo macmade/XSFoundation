@@ -103,7 +103,7 @@ XS_EXTERN XSClassInfo __XSApplication_Class;
  * @function    __XSApplication_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSApplication_Initialize( void );
+XSStatic void __XSApplication_Initialize( void );
 
 /*!
  * @function    __XSApplication_Constructor

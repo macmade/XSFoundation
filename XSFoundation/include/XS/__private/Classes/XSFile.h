@@ -103,7 +103,7 @@ XS_EXTERN XSClassInfo __XSFile_Class;
  * @function    __XSFile_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSFile_Initialize( void );
+XSStatic void __XSFile_Initialize( void );
 
 /*!
  * @function    __XSFile_Constructor

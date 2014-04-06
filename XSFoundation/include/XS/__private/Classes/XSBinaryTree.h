@@ -103,7 +103,7 @@ XS_EXTERN XSClassInfo __XSBinaryTree_Class;
  * @function    __XSBinaryTree_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSBinaryTree_Initialize( void );
+XSStatic void __XSBinaryTree_Initialize( void );
 
 /*!
  * @function    __XSBinaryTree_Constructor

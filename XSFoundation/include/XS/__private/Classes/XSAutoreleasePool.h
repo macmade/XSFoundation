@@ -109,7 +109,7 @@ XS_EXTERN XSTLSKey __XSAutoreleasePool_TLSKey;
  * @function    __XSAutoreleasePool_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSAutoreleasePool_Initialize( void );
+XSStatic void __XSAutoreleasePool_Initialize( void );
 
 /*!
  * @function    __XSAutoreleasePool_Constructor

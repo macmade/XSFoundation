@@ -103,7 +103,7 @@ XS_EXTERN XSClassInfo __XSNode_Class;
  * @function    __XSNode_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSNode_Initialize( void );
+XSStatic void __XSNode_Initialize( void );
 
 /*!
  * @function    __XSNode_Constructor

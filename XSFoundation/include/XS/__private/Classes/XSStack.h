@@ -116,7 +116,7 @@ XS_EXTERN XSClassInfo __XSStack_Class;
  * @function    __XSStack_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSStack_Initialize( void );
+XSStatic void __XSStack_Initialize( void );
 
 /*!
  * @function    __XSStack_Constructor

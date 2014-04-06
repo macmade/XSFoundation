@@ -103,7 +103,7 @@ XS_EXTERN XSClassInfo __XSError_Class;
  * @function    __XSError_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSError_Initialize( void );
+XSStatic void __XSError_Initialize( void );
 
 /*!
  * @function    __XSError_Constructor

@@ -103,7 +103,7 @@ XS_EXTERN XSClassInfo __XSPrimitiveArray_Class;
  * @function    __XSPrimitiveArray_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSPrimitiveArray_Initialize( void );
+XSStatic void __XSPrimitiveArray_Initialize( void );
 
 /*!
  * @function    __XSPrimitiveArray_Constructor

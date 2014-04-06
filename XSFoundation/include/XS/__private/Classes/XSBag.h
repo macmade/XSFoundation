@@ -103,7 +103,7 @@ XS_EXTERN XSClassInfo __XSBag_Class;
  * @function    __XSBag_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSBag_Initialize( void );
+XSStatic void __XSBag_Initialize( void );
 
 /*!
  * @function    __XSBag_Constructor

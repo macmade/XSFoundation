@@ -103,7 +103,7 @@ XS_EXTERN XSClassInfo __XSColor_Class;
  * @function    __XSColor_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSColor_Initialize( void );
+XSStatic void __XSColor_Initialize( void );
 
 /*!
  * @function    __XSColor_Constructor

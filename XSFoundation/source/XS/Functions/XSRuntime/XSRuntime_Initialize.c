@@ -72,35 +72,35 @@
 #include <XS/__private/Functions/XSRuntime.h>
 
 /* Private class initializers */
-void XSStatic __XSApplication_Initialize( void );
-void XSStatic __XSApplicationArgument_Initialize( void );
-void XSStatic __XSArray_Initialize( void );
-void XSStatic __XSAutoreleasePool_Initialize( void );
-void XSStatic __XSBag_Initialize( void );
-void XSStatic __XSBinaryTree_Initialize( void );
-void XSStatic __XSBoolean_Initialize( void );
-void XSStatic __XSColor_Initialize( void );
-void XSStatic __XSData_Initialize( void );
-void XSStatic __XSDate_Initialize( void );
-void XSStatic __XSDictionary_Initialize( void );
-void XSStatic __XSError_Initialize( void );
-void XSStatic __XSFile_Initialize( void );
-void XSStatic __XSLock_Initialize( void );
-void XSStatic __XSNode_Initialize( void );
-void XSStatic __XSNotification_Initialize( void );
-void XSStatic __XSNotificationCenter_Initialize( void );
-void XSStatic __XSNull_Initialize( void );
-void XSStatic __XSNumber_Initialize( void );
-void XSStatic __XSPrimitiveArray_Initialize( void );
-void XSStatic __XSRecursiveLock_Initialize( void );
-void XSStatic __XSSemaphore_Initialize( void );
-void XSStatic __XSSet_Initialize( void );
-void XSStatic __XSStack_Initialize( void );
-void XSStatic __XSString_Initialize( void );
-void XSStatic __XSThread_Initialize( void );
-void XSStatic __XSTimer_Initialize( void );
-void XSStatic __XSURL_Initialize( void );
-void XSStatic __XSValue_Initialize( void );
+XSStatic void __XSApplication_Initialize( void );
+XSStatic void __XSApplicationArgument_Initialize( void );
+XSStatic void __XSArray_Initialize( void );
+XSStatic void __XSAutoreleasePool_Initialize( void );
+XSStatic void __XSBag_Initialize( void );
+XSStatic void __XSBinaryTree_Initialize( void );
+XSStatic void __XSBoolean_Initialize( void );
+XSStatic void __XSColor_Initialize( void );
+XSStatic void __XSData_Initialize( void );
+XSStatic void __XSDate_Initialize( void );
+XSStatic void __XSDictionary_Initialize( void );
+XSStatic void __XSError_Initialize( void );
+XSStatic void __XSFile_Initialize( void );
+XSStatic void __XSLock_Initialize( void );
+XSStatic void __XSNode_Initialize( void );
+XSStatic void __XSNotification_Initialize( void );
+XSStatic void __XSNotificationCenter_Initialize( void );
+XSStatic void __XSNull_Initialize( void );
+XSStatic void __XSNumber_Initialize( void );
+XSStatic void __XSPrimitiveArray_Initialize( void );
+XSStatic void __XSRecursiveLock_Initialize( void );
+XSStatic void __XSSemaphore_Initialize( void );
+XSStatic void __XSSet_Initialize( void );
+XSStatic void __XSStack_Initialize( void );
+XSStatic void __XSString_Initialize( void );
+XSStatic void __XSThread_Initialize( void );
+XSStatic void __XSTimer_Initialize( void );
+XSStatic void __XSURL_Initialize( void );
+XSStatic void __XSValue_Initialize( void );
 
 void XSRuntime_Initialize( void )
 {

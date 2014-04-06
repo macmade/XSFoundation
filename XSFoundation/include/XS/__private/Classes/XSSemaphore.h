@@ -105,7 +105,7 @@ XS_EXTERN XSClassInfo __XSSemaphore_Class;
  * @function    __XSSemaphore_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSSemaphore_Initialize( void );
+XSStatic void __XSSemaphore_Initialize( void );
 
 /*!
  * @function    __XSSemaphore_Constructor

@@ -103,7 +103,7 @@ XS_EXTERN XSClassInfo __XSArray_Class;
  * @function    __XSArray_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSArray_Initialize( void );
+XSStatic void __XSArray_Initialize( void );
 
 /*!
  * @function    __XSArray_Constructor
