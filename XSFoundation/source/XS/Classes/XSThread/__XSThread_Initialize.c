@@ -86,9 +86,7 @@ void __XSThread_Initialize( void )
     
     if( __XSThread_MainThread == NULL )
     {
-        XSLogWarning( "Error creating an XSThread object" );
-        
-        return;
+        XSFatalError( "Error creating an XSThread object for the main thread" );
     }
     
     XSThreading_TLSSetObject( &__XSThread_TLSKey, __XSThread_MainThread, XSTLSObjectAssociationAssign );
