@@ -75,6 +75,8 @@ void __XSThread_Detach( __XSThread_Arguments * args )
 {
     #ifdef _WIN32
     
+    CreateThread( NULL, 0, ( LPTHREAD_START_ROUTINE )__XSThread_Proxy, args, 0, NULL );
+    
     #else
     
     {

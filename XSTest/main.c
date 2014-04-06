@@ -67,6 +67,8 @@ static void __threadedFunc( XSBooleanRef * boolean )
 {
     XSShow( XSThread_GetCurrentThread() );
     XSShow( boolean );
+    
+    sleep( 1 );
 }
 
 int main( int argc, const char * argv[] )
@@ -260,10 +262,15 @@ int main( int argc, const char * argv[] )
     
     {
         XSBooleanRef b;
+        int          i;
         
+        i = 5;
         b = XSBoolean_Create( true );
         
-        XSThread_DetachFunctionWithArgument( ( XSThread_FunctionWithArgument )__threadedFunc, b );
+        while( i-- )
+        {
+            XSThread_DetachFunctionWithArgument( ( XSThread_FunctionWithArgument )__threadedFunc, b );
+        }
     }
     
     sleep( 1 );
