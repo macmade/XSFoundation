@@ -62,111 +62,17 @@
 /* $Id$ */
 
 /*!
- * @header      XSThread.h
+ * @file        XSThread_DetachFunctionWithArgument.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSThread class
+ * @abstract    Definition for XSThread_DetachFunctionWithArgument
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Classes/XSThread.h>
 
-#ifndef __XS_CLASSES_XS_THREAD_H__
-#define __XS_CLASSES_XS_THREAD_H__
-
-#include <XS/XSTypes.h>
-#include <XS/XSMacros.h>
-
-/*!
- * @typedef     XSThreadRef
- * @abstract    Opaque type for XSThread
- */
-typedef struct __XSThread * XSThreadRef;
-
-/*!
- * @typedef     XSThread_Method
- * @abstract    Threaded method
- */
-typedef void ( * XSThread_Method )( XSObjectRef object );
-
-/*!
- * @typedef     XSThread_MethodWithArgument
- * @abstract    Threaded method with an argument
- */
-typedef void ( * XSThread_MethodWithArgument )( XSObjectRef object, void * arg );
-
-/*!
- * @typedef     XSThread_Function
- * @abstract    Threaded function
- */
-typedef void ( * XSThread_Function )( void );
-
-/*!
- * @typedef     XSThread_FunctionWithArgument
- * @abstract    Threaded function with an argument
- */
-typedef void ( * XSThread_FunctionWithArgument )( void * arg );
-
-/*!
- * @function    XSThread_GetClassID
- * @abstract    Gets the class ID for XSThread
- * @return      The class ID for XSThread
- */
-XS_EXPORT XSStatic XSClassID XSThread_GetClassID( void );
-
-/*!
- * @function    XSThread_GetCurrentThread
- * @abstract    Gets the instance of the current thread
- * @return      The instance of the current thread
- */
-XS_EXPORT XSStatic XSThreadRef XSThread_GetCurrentThread( void );
-
-/*!
- * @function    XSThread_CurrentThread
- * @abstract    Gets the instance of the current thread
- * @return      The instance of the current thread
- */
-XS_EXPORT XSStatic XSUInteger XSThread_GetCurrentThreadID( void );
-
-/*!
- * @function    XSThread_DetachMethod
- * @abstract    Creates a thread with an object's method as entry point
- * @param       object      The receiver object
- * @param       method      The receiver object's method to detach
- */
-XS_EXPORT XSStatic void XSThread_DetachMethod( XSObjectRef object, XSThread_Method method );
-
-/*!
- * @function    XSThread_DetachMethod
- * @abstract    Creates a thread with an object's method as entry point and with an argument
- * @param       object      The receiver object
- * @param       method      The receiver object's method to detach
- * @param       arg         The argument to pass to the threaded method
- */
-XS_EXPORT XSStatic void XSThread_DetachMethodWithArgument( XSObjectRef object, XSThread_MethodWithArgument method, void * arg );
-
-/*!
- * @function    XSThread_DetachMethod
- * @abstract    Creates a thread with an object's method as entry point
- * @param       func        The function to detach
- */
-XS_EXPORT XSStatic void XSThread_DetachFunction( XSThread_Function func );
-
-/*!
- * @function    XSThread_DetachMethod
- * @abstract    Creates a thread with an object's method as entry point and with an argument
- * @param       func        The function to detach
- * @param       arg         The argument to pass to the threaded function
- */
-XS_EXPORT XSStatic void XSThread_DetachFunctionWithArgument( XSThread_FunctionWithArgument func, void * arg );
-
-/*!
- * @function    XSThread_GetID
- * @abstract    Gets the ID of a thread
- * @param       thread      The thread object
- * @return      The thread ID
- */
-XS_EXPORT XSUInteger XSThread_GetID( XSThreadRef thread );
-
-#endif /* __XS_CLASSES_XS_THREAD_H__ */
+XSStatic void XSThread_DetachFunctionWithArgument( XSThread_FunctionWithArgument func, void * arg )
+{
+    ( void )func;
+    ( void )arg;
+}

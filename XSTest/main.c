@@ -63,6 +63,11 @@
 
 #include <XS/XS.h>
 
+static void __threadedFunc( XSBooleanRef * boolean )
+{
+    XSShow( boolean );
+}
+
 int main( int argc, const char * argv[] )
 {
     ( void )argc;
@@ -251,6 +256,16 @@ int main( int argc, const char * argv[] )
         XSRelease( b2 );
         XSRelease( b3 );
     }
+    
+    {
+        XSBooleanRef b;
+        
+        b = XSBoolean_Create( true );
+        
+        XSThread_DetachFunctionWithArgument( ( XSThread_FunctionWithArgument )__threadedFunc, b );
+    }
+    
+    sleep( 1 );
     
     return 0;
 }
