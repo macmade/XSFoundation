@@ -78,6 +78,15 @@ XSStackRef __XSStack_Copy( XSStackRef source, XSStackRef destination )
     __XSStack_Item * nextItem;
     __XSStack_Item * prevItem;
     
+    destination->lock = XSRecursiveLock_Create();
+    
+    if( destination->lock == NULL )
+    {
+        XSLogWarning( "Error creating a lock for XSStack" );
+        
+        return NULL;
+    }
+    
     XSRecursiveLock_Lock( source->lock );
     
     item     = source->top;
