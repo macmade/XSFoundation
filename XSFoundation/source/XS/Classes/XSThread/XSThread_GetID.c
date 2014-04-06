@@ -78,5 +78,5 @@ XSUInteger XSThread_GetID( XSThreadRef thread )
         return 0;
     }
     
-    return 0;
+    return thread->threadID;
 }

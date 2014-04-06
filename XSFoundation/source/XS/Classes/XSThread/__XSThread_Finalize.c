@@ -62,31 +62,16 @@
 /* $Id$ */
 
 /*!
- * @file        XSThread_DetachMethod.c
+ * @file        __XSThread_Finalize.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSThread_DetachMethod
+ * @abstract    Definition for __XSThread_Finalize
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSThread.h>
 
-XSStatic void XSThread_DetachMethod( XSObjectRef object, XSThread_Method method )
+void __XSThread_Finalize( void )
 {
-    __XSThread_Arguments * args;
-    
-    args = XSAlloc( sizeof( __XSThread_Arguments ) );
-    
-    if( args == NULL )
-    {
-        XSLogWarning( "Error allocating memory for XSThread arguments" );
-        
-        return;
-    }
-    
-    args->type      = __XSThread_TypeMethod;
-    args->method    = method;
-    args->object    = XSRetain( object );
-    
-    __XSThread_Detach( args );
+    XSThreading_TLSKeyDelete( &__XSThread_TLSKey );
 }

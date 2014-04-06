@@ -62,31 +62,30 @@
 /* $Id$ */
 
 /*!
- * @file        XSThread_DetachMethod.c
+ * @file        __XSThread_Detach.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSThread_DetachMethod
+ * @abstract    Definition for __XSThread_Detach
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSThread.h>
 
-XSStatic void XSThread_DetachMethod( XSObjectRef object, XSThread_Method method )
+void __XSThread_Detach( __XSThread_Arguments * args )
 {
-    __XSThread_Arguments * args;
+    #ifdef _WIN32
     
-    args = XSAlloc( sizeof( __XSThread_Arguments ) );
+    #else
     
-    if( args == NULL )
     {
-        XSLogWarning( "Error allocating memory for XSThread arguments" );
+        pthread_attr_t ta;
+        pthread_t      t;
         
-        return;
+        pthread_attr_init( &ta );
+        pthread_attr_setdetachstate( &ta, PTHREAD_CREATE_DETACHED );
+        pthread_create( &t, &ta, ( void * ( * )( void * ) )__XSThread_Proxy, args );
+        pthread_attr_destroy( &ta );
     }
     
-    args->type      = __XSThread_TypeMethod;
-    args->method    = method;
-    args->object    = XSRetain( object );
-    
-    __XSThread_Detach( args );
+    #endif
 }

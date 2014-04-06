@@ -74,4 +74,11 @@
 void __XSThread_Initialize( void )
 {
     __XSThread_ClassID = XSRuntime_RegisterClass( &__XSThread_Class );
+    
+    if( XSThreading_TLSKeyCreate( &__XSThread_TLSKey ) == false )
+    {
+        XSFatalError( "Error creating the TLS key for XSThread" );
+    }
+    
+    XSRuntime_RegisterFinalizer( __XSThread_Finalize );
 }

@@ -73,5 +73,5 @@
 
 XSStatic XSThreadRef XSThread_GetCurrentThread( void )
 {
-    return NULL;
+    return XSThreading_TLSGetObject( &__XSThread_TLSKey );
 }

@@ -62,31 +62,68 @@
 /* $Id$ */
 
 /*!
- * @file        XSThread_DetachMethod.c
+ * @file        __XSThread_Proxy.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSThread_DetachMethod
+ * @abstract    Definition for __XSThread_Proxy
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSThread.h>
 
-XSStatic void XSThread_DetachMethod( XSObjectRef object, XSThread_Method method )
+#ifdef _WIN32
+DWORD __XSThread_Proxy( __XSThread_Arguments * args )
+#else
+void * __XSThread_Proxy( __XSThread_Arguments * args )
+#endif
 {
-    __XSThread_Arguments * args;
+    XSThreadRef thread;
     
-    args = XSAlloc( sizeof( __XSThread_Arguments ) );
+    thread = XSRuntime_CreateInstance( XSThread_GetClassID() );
+    
+    if( thread == NULL )
+    {
+        XSLogWarning( "Error creating an XSThread object" );
+        
+        return NULL;
+    }
+    
+    XSThreading_TLSSetObject( &__XSThread_TLSKey, thread, XSTLSObjectAssociationAssign );
     
     if( args == NULL )
     {
-        XSLogWarning( "Error allocating memory for XSThread arguments" );
+        XSLogWarning( "No arguments passed to the XSThread proxy" );
+        XSRelease( args );
         
-        return;
+        return NULL;
     }
     
-    args->type      = __XSThread_TypeMethod;
-    args->method    = method;
-    args->object    = XSRetain( object );
+    if( args->type == __XSThread_TypeMethod )
+    {
+        args->method( args->object );
+        XSRelease( args->object );
+    }
+    else if( args->type == __XSThread_TypeMethodWithArgument )
+    {
+        args->methodWithArgument( args->object, args->arg );
+        XSRelease( args->object );
+    }
+    else if( args->type == __XSThread_TypeFunction )
+    {
+        args->function();
+    }
+    else if( args->type == __XSThread_TypeFunctionWithArgument )
+    {
+        args->functionWithArgument( args->arg );
+    }
+    else
+    {
+        XSLogWarning( "Unknown thread type" );
+    }
     
-    __XSThread_Detach( args );
+    XSThreading_TLSSetObject( &__XSThread_TLSKey, NULL, XSTLSObjectAssociationAssign );
+    XSRelease( thread );
+    XSRelease( args );
+    
+    return NULL;
 }

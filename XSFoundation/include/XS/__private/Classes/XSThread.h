@@ -79,12 +79,48 @@
 #include <XS/XSMacros.h>
 
 /*!
+ * @typedef     __XSThread_Type
+ * @abstract    Thread type
+ */
+typedef enum
+{
+    __XSThread_TypeMethod               = 0x00, /*! Thread detached with a method */
+    __XSThread_TypeMethodWithArgument   = 0x01, /*! Thread detached with a method and an argument */
+    __XSThread_TypeFunction             = 0x02, /*! Thread detached with a function */
+    __XSThread_TypeFunctionWithArgument = 0x03  /*! Thread detached with a function and an argument */
+}
+__XSThread_Type;
+
+/*!
+ * @typedef     __XSThread_Arguments
+ * @abstract    Thread arguments
+ */
+typedef struct
+{
+    void                          * arg;                    /*! The thread function/method argument */
+    XSObjectRef                     object;                 /*! The receiver object, if any */
+    XSThread_Method                 method;                 /*! The method to call, if any */
+    XSThread_MethodWithArgument     methodWithArgument;     /*! The method to call with an argument, if any */
+    XSThread_Function               function;               /*! The function to call, if any */
+    XSThread_FunctionWithArgument   functionWithArgument;   /*! The function to call with an argument, if any */
+    __XSThread_Type                 type;                   /*! The thread type */
+    char                            __pad_0[ 4 ];           /*! Padding */
+}
+__XSThread_Arguments;
+
+/*!
+ * @var         __XSThread_TLSKey
+ * @abstract    The TLS key for threads
+ */
+XS_EXTERN XSTLSKey __XSThread_TLSKey;
+
+/*!
  * @struct      __XSThread
  * @abstract    Structure for XSThread
  */
 struct __XSThread
 {
-    void * temp; /*! Not yet implemented... */
+    XSUInteger threadID;    /* The thread ID */
 };
 
 /*!
@@ -103,7 +139,14 @@ XS_EXTERN XSClassInfo __XSThread_Class;
  * @function    __XSThread_Initialize
  * @abstract    Class initializer
  */
-void XSStatic __XSThread_Initialize( void );
+XSStatic void __XSThread_Initialize( void );
+
+
+/*!
+ * @function    __XSThread_Finalize
+ * @abstract    Class finalizer
+ */
+XSStatic void __XSThread_Finalize( void );
 
 /*!
  * @function    __XSThread_Constructor
@@ -145,5 +188,23 @@ bool __XSThread_Equals( XSThreadRef object1, XSThreadRef object2 );
  * @return      The object's description
  */
 const char * __XSThread_ToString( XSThreadRef object );
+
+/*!
+ * @function    __XSThread_Proxy
+ * @abstract    Thread proxy
+ * @param       args        The thread arguments
+ */
+XSStatic void __XSThread_Detach( __XSThread_Arguments * args );
+
+/*!
+ * @function    __XSThread_Proxy
+ * @abstract    Thread proxy
+ * @param       args        The thread arguments
+ */
+#ifdef _WIN32
+DWORD XSStatic__XSThread_Proxy( __XSThread_Arguments * args );
+#else
+void * __XSThread_Proxy( __XSThread_Arguments * args );
+#endif
 
 #endif /* __XS___PRIVATE_CLASSES_XS_THREAD_H__ */

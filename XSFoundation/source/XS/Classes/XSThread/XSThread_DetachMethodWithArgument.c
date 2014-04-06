@@ -73,7 +73,21 @@
 
 XSStatic void XSThread_DetachMethodWithArgument( XSObjectRef object, XSThread_MethodWithArgument method, void * arg )
 {
-    ( void )object;
-    ( void )method;
-    ( void )arg;
+    __XSThread_Arguments * args;
+    
+    args = XSAlloc( sizeof( __XSThread_Arguments ) );
+    
+    if( args == NULL )
+    {
+        XSLogWarning( "Error allocating memory for XSThread arguments" );
+        
+        return;
+    }
+    
+    args->type                  = __XSThread_TypeMethodWithArgument;
+    args->methodWithArgument    = method;
+    args->object                = XSRetain( object );
+    args->arg                   = arg;
+    
+    __XSThread_Detach( args );
 }
