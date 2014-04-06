@@ -84,7 +84,7 @@
  */
 struct __XSAutoreleasePool
 {
-    void * temp; /*! Not yet implemented... */
+    XSStackRef items;   /* The items to be released */
 };
 
 /*!
@@ -98,6 +98,12 @@ XS_EXTERN XSClassID __XSAutoreleasePool_ClassID;
  * @abstract    Class info
  */
 XS_EXTERN XSClassInfo __XSAutoreleasePool_Class;
+
+/*!
+ * @var         __XSAutoreleasePool_TLSKey
+ * @abstract    The TLS key for autorelease pools
+ */
+XS_EXTERN XSTLSKey __XSAutoreleasePool_TLSKey;
 
 /*!
  * @function    __XSAutoreleasePool_Initialize

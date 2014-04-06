@@ -91,4 +91,19 @@ typedef struct __XSAutoreleasePool * XSAutoreleasePoolRef;
  */
 XS_EXPORT XSStatic XSClassID XSAutoreleasePool_GetClassID( void );
 
+/*!
+ * @function    XSAutoreleasePool_Create
+ * @abstract    Creates an autorelease pool
+ * @return      The autorelease pool object
+ */
+XS_EXPORT XSStatic XSAutoreleasePoolRef XSAutoreleasePool_Create( void );
+
+/*!
+ * @function    XSAutoreleasePool_AddObject
+ * @abstract    Adds an object to an autorelease pool
+ * @param       ap      The autorelease pool object
+ * @param       object  The object to add to the autorelease pool
+ */
+XS_EXPORT void XSAutoreleasePool_AddObject( XSAutoreleasePoolRef ap, XSObjectRef object );
+
 #endif /* __XS_CLASSES_XS_AUTORELEASE_POOL_H__ */

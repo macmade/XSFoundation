@@ -73,5 +73,12 @@
 
 void __XSAutoreleasePool_Destructor( XSAutoreleasePoolRef object )
 {
-    ( void )object;
+    XSObjectRef obj;
+    
+    while( ( obj = XSStack_Pop( object->items ) ) != NULL )
+    {
+        XSRelease( obj );
+    }
+    
+    XSRelease( object->items );
 }

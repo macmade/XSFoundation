@@ -62,16 +62,21 @@
 /* $Id$ */
 
 /*!
- * @file        __XSAutoreleasePool_Constructor.c
+ * @file        XSAutoreleasePool_GetClassID.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSAutoreleasePool_Constructor
+ * @abstract    Definition for XSAutoreleasePool_GetClassID
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSAutoreleasePool.h>
 
-void __XSAutoreleasePool_Constructor( XSAutoreleasePoolRef object )
+void XSAutoreleasePool_AddObject( XSAutoreleasePoolRef ap, XSObjectRef object )
 {
-    object->items = XSStack_Create();
+    if( ap == NULL )
+    {
+        return;
+    }
+    
+    XSStack_Push( ap->items, object );
 }

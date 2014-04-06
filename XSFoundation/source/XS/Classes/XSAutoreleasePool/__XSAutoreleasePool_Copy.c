@@ -73,6 +73,5 @@
 
 void __XSAutoreleasePool_Copy( XSAutoreleasePoolRef source, XSAutoreleasePoolRef destination )
 {
-    ( void )source;
-    ( void )destination;
+    destination->items = XSCopy( source->items );
 }

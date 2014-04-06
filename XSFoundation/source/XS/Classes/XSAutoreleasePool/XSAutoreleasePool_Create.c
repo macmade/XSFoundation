@@ -62,16 +62,16 @@
 /* $Id$ */
 
 /*!
- * @file        __XSAutoreleasePool_Constructor.c
+ * @file        XSAutoreleasePool_Create.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSAutoreleasePool_Constructor
+ * @abstract    Definition for XSAutoreleasePool_Create
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSAutoreleasePool.h>
 
-void __XSAutoreleasePool_Constructor( XSAutoreleasePoolRef object )
+XSStatic XSAutoreleasePoolRef XSAutoreleasePool_Create( void )
 {
-    object->items = XSStack_Create();
+    return NULL;
 }
