@@ -1660,6 +1660,54 @@
 		05F356AE18F093BF0070111A /* XSRecursiveLock_Unlock.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F356A018F093BF0070111A /* XSRecursiveLock_Unlock.c */; };
 		05F356AF18F093BF0070111A /* XSRecursiveLock_Unlock.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F356A018F093BF0070111A /* XSRecursiveLock_Unlock.c */; };
 		05F356B018F093BF0070111A /* XSRecursiveLock_Unlock.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F356A018F093BF0070111A /* XSRecursiveLock_Unlock.c */; };
+		05F356B518F095D20070111A /* XSLock_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F356B118F095D20070111A /* XSLock_Create.c */; };
+		05F356B618F095D20070111A /* XSLock_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F356B118F095D20070111A /* XSLock_Create.c */; };
+		05F356B718F095D20070111A /* XSLock_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F356B118F095D20070111A /* XSLock_Create.c */; };
+		05F356B818F095D20070111A /* XSLock_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F356B118F095D20070111A /* XSLock_Create.c */; };
+		05F356B918F095D20070111A /* XSLock_Lock.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F356B218F095D20070111A /* XSLock_Lock.c */; };
+		05F356BA18F095D20070111A /* XSLock_Lock.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F356B218F095D20070111A /* XSLock_Lock.c */; };
+		05F356BB18F095D20070111A /* XSLock_Lock.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F356B218F095D20070111A /* XSLock_Lock.c */; };
+		05F356BC18F095D20070111A /* XSLock_Lock.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F356B218F095D20070111A /* XSLock_Lock.c */; };
+		05F356BD18F095D20070111A /* XSLock_TryLock.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F356B318F095D20070111A /* XSLock_TryLock.c */; };
+		05F356BE18F095D20070111A /* XSLock_TryLock.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F356B318F095D20070111A /* XSLock_TryLock.c */; };
+		05F356BF18F095D20070111A /* XSLock_TryLock.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F356B318F095D20070111A /* XSLock_TryLock.c */; };
+		05F356C018F095D20070111A /* XSLock_TryLock.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F356B318F095D20070111A /* XSLock_TryLock.c */; };
+		05F356C118F095D20070111A /* XSLock_Unlock.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F356B418F095D20070111A /* XSLock_Unlock.c */; };
+		05F356C218F095D20070111A /* XSLock_Unlock.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F356B418F095D20070111A /* XSLock_Unlock.c */; };
+		05F356C318F095D20070111A /* XSLock_Unlock.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F356B418F095D20070111A /* XSLock_Unlock.c */; };
+		05F356C418F095D20070111A /* XSLock_Unlock.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F356B418F095D20070111A /* XSLock_Unlock.c */; };
+		05F3571B18F190660070111A /* XSSemaphore_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571618F190660070111A /* XSSemaphore_Create.c */; };
+		05F3571C18F190660070111A /* XSSemaphore_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571618F190660070111A /* XSSemaphore_Create.c */; };
+		05F3571D18F190660070111A /* XSSemaphore_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571618F190660070111A /* XSSemaphore_Create.c */; };
+		05F3571E18F190660070111A /* XSSemaphore_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571618F190660070111A /* XSSemaphore_Create.c */; };
+		05F3571F18F190660070111A /* XSSemaphore_CreateWithName.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571718F190660070111A /* XSSemaphore_CreateWithName.c */; };
+		05F3572018F190660070111A /* XSSemaphore_CreateWithName.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571718F190660070111A /* XSSemaphore_CreateWithName.c */; };
+		05F3572118F190660070111A /* XSSemaphore_CreateWithName.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571718F190660070111A /* XSSemaphore_CreateWithName.c */; };
+		05F3572218F190660070111A /* XSSemaphore_CreateWithName.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571718F190660070111A /* XSSemaphore_CreateWithName.c */; };
+		05F3572318F190660070111A /* XSSemaphore_Signal.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571818F190660070111A /* XSSemaphore_Signal.c */; };
+		05F3572418F190660070111A /* XSSemaphore_Signal.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571818F190660070111A /* XSSemaphore_Signal.c */; };
+		05F3572518F190660070111A /* XSSemaphore_Signal.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571818F190660070111A /* XSSemaphore_Signal.c */; };
+		05F3572618F190660070111A /* XSSemaphore_Signal.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571818F190660070111A /* XSSemaphore_Signal.c */; };
+		05F3572718F190660070111A /* XSSemaphore_TryWait.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571918F190660070111A /* XSSemaphore_TryWait.c */; };
+		05F3572818F190660070111A /* XSSemaphore_TryWait.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571918F190660070111A /* XSSemaphore_TryWait.c */; };
+		05F3572918F190660070111A /* XSSemaphore_TryWait.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571918F190660070111A /* XSSemaphore_TryWait.c */; };
+		05F3572A18F190660070111A /* XSSemaphore_TryWait.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571918F190660070111A /* XSSemaphore_TryWait.c */; };
+		05F3572B18F190660070111A /* XSSemaphore_Wait.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571A18F190660070111A /* XSSemaphore_Wait.c */; };
+		05F3572C18F190660070111A /* XSSemaphore_Wait.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571A18F190660070111A /* XSSemaphore_Wait.c */; };
+		05F3572D18F190660070111A /* XSSemaphore_Wait.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571A18F190660070111A /* XSSemaphore_Wait.c */; };
+		05F3572E18F190660070111A /* XSSemaphore_Wait.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3571A18F190660070111A /* XSSemaphore_Wait.c */; };
+		05F3573018F192200070111A /* XSAutoreleasePool_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3572F18F192200070111A /* XSAutoreleasePool_Create.c */; };
+		05F3573118F192200070111A /* XSAutoreleasePool_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3572F18F192200070111A /* XSAutoreleasePool_Create.c */; };
+		05F3573218F192200070111A /* XSAutoreleasePool_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3572F18F192200070111A /* XSAutoreleasePool_Create.c */; };
+		05F3573318F192200070111A /* XSAutoreleasePool_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3572F18F192200070111A /* XSAutoreleasePool_Create.c */; };
+		05F3573618F195D60070111A /* XSSemaphore_GetName.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3573418F195D60070111A /* XSSemaphore_GetName.c */; };
+		05F3573718F195D60070111A /* XSSemaphore_GetName.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3573418F195D60070111A /* XSSemaphore_GetName.c */; };
+		05F3573818F195D60070111A /* XSSemaphore_GetName.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3573418F195D60070111A /* XSSemaphore_GetName.c */; };
+		05F3573918F195D60070111A /* XSSemaphore_GetName.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3573418F195D60070111A /* XSSemaphore_GetName.c */; };
+		05F3573A18F195D60070111A /* XSSemaphore_IsNamed.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3573518F195D60070111A /* XSSemaphore_IsNamed.c */; };
+		05F3573B18F195D60070111A /* XSSemaphore_IsNamed.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3573518F195D60070111A /* XSSemaphore_IsNamed.c */; };
+		05F3573C18F195D60070111A /* XSSemaphore_IsNamed.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3573518F195D60070111A /* XSSemaphore_IsNamed.c */; };
+		05F3573D18F195D60070111A /* XSSemaphore_IsNamed.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3573518F195D60070111A /* XSSemaphore_IsNamed.c */; };
 		05F6F3BD18EC399C000AB87C /* __XSMemoryDebug_CheckObjectIntegrity.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F6F3BC18EC399C000AB87C /* __XSMemoryDebug_CheckObjectIntegrity.c */; };
 		05F6F3BE18EC399C000AB87C /* __XSMemoryDebug_CheckObjectIntegrity.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F6F3BC18EC399C000AB87C /* __XSMemoryDebug_CheckObjectIntegrity.c */; };
 		05F6F3BF18EC399C000AB87C /* __XSMemoryDebug_CheckObjectIntegrity.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F6F3BC18EC399C000AB87C /* __XSMemoryDebug_CheckObjectIntegrity.c */; };
@@ -2146,6 +2194,18 @@
 		05F3569E18F093BF0070111A /* XSRecursiveLock_Lock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSRecursiveLock_Lock.c; sourceTree = "<group>"; };
 		05F3569F18F093BF0070111A /* XSRecursiveLock_TryLock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSRecursiveLock_TryLock.c; sourceTree = "<group>"; };
 		05F356A018F093BF0070111A /* XSRecursiveLock_Unlock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSRecursiveLock_Unlock.c; sourceTree = "<group>"; };
+		05F356B118F095D20070111A /* XSLock_Create.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSLock_Create.c; sourceTree = "<group>"; };
+		05F356B218F095D20070111A /* XSLock_Lock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSLock_Lock.c; sourceTree = "<group>"; };
+		05F356B318F095D20070111A /* XSLock_TryLock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSLock_TryLock.c; sourceTree = "<group>"; };
+		05F356B418F095D20070111A /* XSLock_Unlock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSLock_Unlock.c; sourceTree = "<group>"; };
+		05F3571618F190660070111A /* XSSemaphore_Create.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSSemaphore_Create.c; sourceTree = "<group>"; };
+		05F3571718F190660070111A /* XSSemaphore_CreateWithName.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSSemaphore_CreateWithName.c; sourceTree = "<group>"; };
+		05F3571818F190660070111A /* XSSemaphore_Signal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSSemaphore_Signal.c; sourceTree = "<group>"; };
+		05F3571918F190660070111A /* XSSemaphore_TryWait.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSSemaphore_TryWait.c; sourceTree = "<group>"; };
+		05F3571A18F190660070111A /* XSSemaphore_Wait.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSSemaphore_Wait.c; sourceTree = "<group>"; };
+		05F3572F18F192200070111A /* XSAutoreleasePool_Create.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSAutoreleasePool_Create.c; sourceTree = "<group>"; };
+		05F3573418F195D60070111A /* XSSemaphore_GetName.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSSemaphore_GetName.c; sourceTree = "<group>"; };
+		05F3573518F195D60070111A /* XSSemaphore_IsNamed.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSSemaphore_IsNamed.c; sourceTree = "<group>"; };
 		05F6F3BC18EC399C000AB87C /* __XSMemoryDebug_CheckObjectIntegrity.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemoryDebug_CheckObjectIntegrity.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2566,6 +2626,7 @@
 				055D14B118E1D42800894C7B /* __XSAutoreleasePool_Initialize.c */,
 				055D14B218E1D42800894C7B /* __XSAutoreleasePool_ToString.c */,
 				055D14B318E1D42800894C7B /* XSAutoreleasePool_GetClassID.c */,
+				05F3572F18F192200070111A /* XSAutoreleasePool_Create.c */,
 				05F3569818F08F730070111A /* XSAutoreleasePool_AddObject.c */,
 			);
 			path = XSAutoreleasePool;
@@ -2720,6 +2781,10 @@
 				055D151718E1D42800894C7B /* __XSLock_Initialize.c */,
 				055D151818E1D42800894C7B /* __XSLock_ToString.c */,
 				055D151918E1D42800894C7B /* XSLock_GetClassID.c */,
+				05F356B118F095D20070111A /* XSLock_Create.c */,
+				05F356B218F095D20070111A /* XSLock_Lock.c */,
+				05F356B318F095D20070111A /* XSLock_TryLock.c */,
+				05F356B418F095D20070111A /* XSLock_Unlock.c */,
 			);
 			path = XSLock;
 			sourceTree = "<group>";
@@ -2829,6 +2894,13 @@
 				055D155618E1D42800894C7B /* __XSSemaphore_Initialize.c */,
 				055D155718E1D42800894C7B /* __XSSemaphore_ToString.c */,
 				055D155818E1D42800894C7B /* XSSemaphore_GetClassID.c */,
+				05F3571618F190660070111A /* XSSemaphore_Create.c */,
+				05F3571718F190660070111A /* XSSemaphore_CreateWithName.c */,
+				05F3571818F190660070111A /* XSSemaphore_Signal.c */,
+				05F3571918F190660070111A /* XSSemaphore_TryWait.c */,
+				05F3571A18F190660070111A /* XSSemaphore_Wait.c */,
+				05F3573418F195D60070111A /* XSSemaphore_GetName.c */,
+				05F3573518F195D60070111A /* XSSemaphore_IsNamed.c */,
 			);
 			path = XSSemaphore;
 			sourceTree = "<group>";
@@ -3344,6 +3416,7 @@
 				055D180A18E1D42800894C7B /* __XSNumber_ToString.c in Sources */,
 				055D160218E1D42800894C7B /* XSAutoreleasePool_GetClassID.c in Sources */,
 				0523066018EB4B1F00C29627 /* __XSRuntime_GetEqualsCallback.c in Sources */,
+				05F356B918F095D20070111A /* XSLock_Lock.c in Sources */,
 				0523068018EB4B1F00C29627 /* XSRuntime_GetDescription.c in Sources */,
 				055D173E18E1D42800894C7B /* __XSFile_Destructor.c in Sources */,
 				055D17CE18E1D42800894C7B /* XSNotificationCenter_GetClassID.c in Sources */,
@@ -3362,8 +3435,10 @@
 				055D169E18E1D42800894C7B /* __XSData_Destructor.c in Sources */,
 				055D179618E1D42800894C7B /* __XSNotification_Constructor.c in Sources */,
 				055D189218E1D42800894C7B /* __XSThread.c in Sources */,
+				05F3572318F190660070111A /* XSSemaphore_Signal.c in Sources */,
 				055D17B218E1D42800894C7B /* __XSNotificationCenter.c in Sources */,
 				055D165218E1D42800894C7B /* __XSBoolean_Destructor.c in Sources */,
+				05F3571F18F190660070111A /* XSSemaphore_CreateWithName.c in Sources */,
 				055D177218E1D42800894C7B /* __XSNode.c in Sources */,
 				055D158618E1D42800894C7B /* __XSApplication.c in Sources */,
 				055D16A618E1D42800894C7B /* __XSData_Initialize.c in Sources */,
@@ -3375,6 +3450,7 @@
 				0523063018EB4B1F00C29627 /* XSEquals.c in Sources */,
 				0523058818EB4B1F00C29627 /* XSRect_Integral.c in Sources */,
 				055D17D618E1D42800894C7B /* __XSNull_Constructor.c in Sources */,
+				05F3572B18F190660070111A /* XSSemaphore_Wait.c in Sources */,
 				052305C018EB4B1F00C29627 /* XSSize_Zero.c in Sources */,
 				055D168A18E1D42800894C7B /* __XSColor_ToString.c in Sources */,
 				0523055C18EB4B1F00C29627 /* XSRect_ContainsPoint.c in Sources */,
@@ -3442,6 +3518,7 @@
 				055D16DE18E1D42800894C7B /* __XSDictionary_Destructor.c in Sources */,
 				055D167218E1D42800894C7B /* __XSColor.c in Sources */,
 				055D18EA18E1D42900894C7B /* __XSURL_ToString.c in Sources */,
+				05F3571B18F190660070111A /* XSSemaphore_Create.c in Sources */,
 				05632F7918ECB74E00EB76D2 /* __XSLog_Pause.c in Sources */,
 				0523068418EB4B1F00C29627 /* XSRuntime_GetObjectClassName.c in Sources */,
 				052305D018EB4B1F00C29627 /* XSLogEdgeInsetsWithInfos.c in Sources */,
@@ -3464,6 +3541,7 @@
 				0523051018EB4B1F00C29627 /* XSAtomic_Increment32.c in Sources */,
 				052306F318EBFEF200C29627 /* __XSMemoryDebug_NewRecord.c in Sources */,
 				055D18DA18E1D42800894C7B /* __XSURL_Copy.c in Sources */,
+				05F356C118F095D20070111A /* XSLock_Unlock.c in Sources */,
 				055D178618E1D42800894C7B /* __XSNode_Initialize.c in Sources */,
 				05F3569918F08F730070111A /* XSAutoreleasePool_AddObject.c in Sources */,
 				052306CC18EB4B1F00C29627 /* XSThreading_TLSGetValue.c in Sources */,
@@ -3498,6 +3576,7 @@
 				055D15C618E1D42800894C7B /* __XSArray.c in Sources */,
 				055D18A618E1D42800894C7B /* __XSThread_Initialize.c in Sources */,
 				0523066418EB4B1F00C29627 /* __XSRuntime_GetInstanceSize.c in Sources */,
+				05F3573A18F195D60070111A /* XSSemaphore_IsNamed.c in Sources */,
 				052306C418EB4B1F00C29627 /* XSThreading_SetCurrentThreadName.c in Sources */,
 				055D158E18E1D42800894C7B /* __XSApplication_Copy.c in Sources */,
 				055D196D18E1F47D00894C7B /* __XSValue_Copy.c in Sources */,
@@ -3549,6 +3628,7 @@
 				0523058418EB4B1F00C29627 /* XSRect_Inset.c in Sources */,
 				055D178A18E1D42800894C7B /* __XSNode_ToString.c in Sources */,
 				05632F7318ECB0CE00EB76D2 /* __XSLog_Exit.c in Sources */,
+				05F356BD18F095D20070111A /* XSLock_TryLock.c in Sources */,
 				05632FF718EEF5F900EB76D2 /* __XSStack.c in Sources */,
 				0563301318EEF5F900EB76D2 /* XSStack_GetClassID.c in Sources */,
 				055D186218E1D42800894C7B /* __XSSet_Equals.c in Sources */,
@@ -3596,8 +3676,10 @@
 				055D162618E1D42800894C7B /* __XSBinaryTree.c in Sources */,
 				0523051418EB4B1F00C29627 /* XSAtomic_Increment64.c in Sources */,
 				052304EC18EB4B1F00C29627 /* XSAtomic_Add64.c in Sources */,
+				05F3573618F195D60070111A /* XSSemaphore_GetName.c in Sources */,
 				055D17C218E1D42800894C7B /* __XSNotificationCenter_Equals.c in Sources */,
 				052306F718EBFEF200C29627 /* __XSMemoryDebug_ReleaseRecord.c in Sources */,
+				05F3572718F190660070111A /* XSSemaphore_TryWait.c in Sources */,
 				052305E018EB4B1F00C29627 /* XSLogSizeWithInfos.c in Sources */,
 				05F3569018EEF8410070111A /* XSStack_Pop.c in Sources */,
 				0523062818EB4B1F00C29627 /* XSAutorelease.c in Sources */,
@@ -3630,6 +3712,7 @@
 				055D160618E1D42800894C7B /* __XSBag.c in Sources */,
 				055D198118E1F47D00894C7B /* XSValue_GetClassID.c in Sources */,
 				05F3568818EEF8410070111A /* XSStack_Create.c in Sources */,
+				05F3573018F192200070111A /* XSAutoreleasePool_Create.c in Sources */,
 				055D178E18E1D42800894C7B /* XSNode_GetClassID.c in Sources */,
 				055D189E18E1D42800894C7B /* __XSThread_Destructor.c in Sources */,
 				055D170218E1D42800894C7B /* __XSError_Equals.c in Sources */,
@@ -3659,6 +3742,7 @@
 				052305F818EB4B1F00C29627 /* XSFloat_Ceil.c in Sources */,
 				05F356A918F093BF0070111A /* XSRecursiveLock_TryLock.c in Sources */,
 				055D16C218E1D42800894C7B /* __XSDate_Equals.c in Sources */,
+				05F356B518F095D20070111A /* XSLock_Create.c in Sources */,
 				055D169618E1D42800894C7B /* __XSData_Constructor.c in Sources */,
 				055D163A18E1D42800894C7B /* __XSBinaryTree_Initialize.c in Sources */,
 				055D178218E1D42800894C7B /* __XSNode_Equals.c in Sources */,
@@ -3758,6 +3842,7 @@
 				055D180B18E1D42800894C7B /* __XSNumber_ToString.c in Sources */,
 				055D160318E1D42800894C7B /* XSAutoreleasePool_GetClassID.c in Sources */,
 				0523066118EB4B1F00C29627 /* __XSRuntime_GetEqualsCallback.c in Sources */,
+				05F356BA18F095D20070111A /* XSLock_Lock.c in Sources */,
 				0523068118EB4B1F00C29627 /* XSRuntime_GetDescription.c in Sources */,
 				055D173F18E1D42800894C7B /* __XSFile_Destructor.c in Sources */,
 				055D17CF18E1D42800894C7B /* XSNotificationCenter_GetClassID.c in Sources */,
@@ -3776,8 +3861,10 @@
 				055D169F18E1D42800894C7B /* __XSData_Destructor.c in Sources */,
 				055D179718E1D42800894C7B /* __XSNotification_Constructor.c in Sources */,
 				055D189318E1D42800894C7B /* __XSThread.c in Sources */,
+				05F3572418F190660070111A /* XSSemaphore_Signal.c in Sources */,
 				055D17B318E1D42800894C7B /* __XSNotificationCenter.c in Sources */,
 				055D165318E1D42800894C7B /* __XSBoolean_Destructor.c in Sources */,
+				05F3572018F190660070111A /* XSSemaphore_CreateWithName.c in Sources */,
 				055D177318E1D42800894C7B /* __XSNode.c in Sources */,
 				055D158718E1D42800894C7B /* __XSApplication.c in Sources */,
 				055D16A718E1D42800894C7B /* __XSData_Initialize.c in Sources */,
@@ -3789,6 +3876,7 @@
 				0523063118EB4B1F00C29627 /* XSEquals.c in Sources */,
 				0523058918EB4B1F00C29627 /* XSRect_Integral.c in Sources */,
 				055D17D718E1D42800894C7B /* __XSNull_Constructor.c in Sources */,
+				05F3572C18F190660070111A /* XSSemaphore_Wait.c in Sources */,
 				052305C118EB4B1F00C29627 /* XSSize_Zero.c in Sources */,
 				055D168B18E1D42800894C7B /* __XSColor_ToString.c in Sources */,
 				0523055D18EB4B1F00C29627 /* XSRect_ContainsPoint.c in Sources */,
@@ -3856,6 +3944,7 @@
 				055D16DF18E1D42800894C7B /* __XSDictionary_Destructor.c in Sources */,
 				055D167318E1D42800894C7B /* __XSColor.c in Sources */,
 				055D18EB18E1D42900894C7B /* __XSURL_ToString.c in Sources */,
+				05F3571C18F190660070111A /* XSSemaphore_Create.c in Sources */,
 				05632F7A18ECB74E00EB76D2 /* __XSLog_Pause.c in Sources */,
 				0523068518EB4B1F00C29627 /* XSRuntime_GetObjectClassName.c in Sources */,
 				052305D118EB4B1F00C29627 /* XSLogEdgeInsetsWithInfos.c in Sources */,
@@ -3878,6 +3967,7 @@
 				0523051118EB4B1F00C29627 /* XSAtomic_Increment32.c in Sources */,
 				052306F418EBFEF200C29627 /* __XSMemoryDebug_NewRecord.c in Sources */,
 				055D18DB18E1D42900894C7B /* __XSURL_Copy.c in Sources */,
+				05F356C218F095D20070111A /* XSLock_Unlock.c in Sources */,
 				055D178718E1D42800894C7B /* __XSNode_Initialize.c in Sources */,
 				05F3569A18F08F730070111A /* XSAutoreleasePool_AddObject.c in Sources */,
 				052306CD18EB4B1F00C29627 /* XSThreading_TLSGetValue.c in Sources */,
@@ -3912,6 +4002,7 @@
 				055D15C718E1D42800894C7B /* __XSArray.c in Sources */,
 				055D18A718E1D42800894C7B /* __XSThread_Initialize.c in Sources */,
 				0523066518EB4B1F00C29627 /* __XSRuntime_GetInstanceSize.c in Sources */,
+				05F3573B18F195D60070111A /* XSSemaphore_IsNamed.c in Sources */,
 				052306C518EB4B1F00C29627 /* XSThreading_SetCurrentThreadName.c in Sources */,
 				055D158F18E1D42800894C7B /* __XSApplication_Copy.c in Sources */,
 				055D196E18E1F47D00894C7B /* __XSValue_Copy.c in Sources */,
@@ -3963,6 +4054,7 @@
 				0523058518EB4B1F00C29627 /* XSRect_Inset.c in Sources */,
 				055D178B18E1D42800894C7B /* __XSNode_ToString.c in Sources */,
 				05632F7418ECB0CE00EB76D2 /* __XSLog_Exit.c in Sources */,
+				05F356BE18F095D20070111A /* XSLock_TryLock.c in Sources */,
 				05632FF818EEF5F900EB76D2 /* __XSStack.c in Sources */,
 				0563301418EEF5F900EB76D2 /* XSStack_GetClassID.c in Sources */,
 				055D186318E1D42800894C7B /* __XSSet_Equals.c in Sources */,
@@ -4010,8 +4102,10 @@
 				055D162718E1D42800894C7B /* __XSBinaryTree.c in Sources */,
 				0523051518EB4B1F00C29627 /* XSAtomic_Increment64.c in Sources */,
 				052304ED18EB4B1F00C29627 /* XSAtomic_Add64.c in Sources */,
+				05F3573718F195D60070111A /* XSSemaphore_GetName.c in Sources */,
 				055D17C318E1D42800894C7B /* __XSNotificationCenter_Equals.c in Sources */,
 				052306F818EBFEF200C29627 /* __XSMemoryDebug_ReleaseRecord.c in Sources */,
+				05F3572818F190660070111A /* XSSemaphore_TryWait.c in Sources */,
 				052305E118EB4B1F00C29627 /* XSLogSizeWithInfos.c in Sources */,
 				05F3569118EEF8410070111A /* XSStack_Pop.c in Sources */,
 				0523062918EB4B1F00C29627 /* XSAutorelease.c in Sources */,
@@ -4044,6 +4138,7 @@
 				055D160718E1D42800894C7B /* __XSBag.c in Sources */,
 				055D198218E1F47D00894C7B /* XSValue_GetClassID.c in Sources */,
 				05F3568918EEF8410070111A /* XSStack_Create.c in Sources */,
+				05F3573118F192200070111A /* XSAutoreleasePool_Create.c in Sources */,
 				055D178F18E1D42800894C7B /* XSNode_GetClassID.c in Sources */,
 				055D189F18E1D42800894C7B /* __XSThread_Destructor.c in Sources */,
 				055D170318E1D42800894C7B /* __XSError_Equals.c in Sources */,
@@ -4073,6 +4168,7 @@
 				052305F918EB4B1F00C29627 /* XSFloat_Ceil.c in Sources */,
 				05F356AA18F093BF0070111A /* XSRecursiveLock_TryLock.c in Sources */,
 				055D16C318E1D42800894C7B /* __XSDate_Equals.c in Sources */,
+				05F356B618F095D20070111A /* XSLock_Create.c in Sources */,
 				055D169718E1D42800894C7B /* __XSData_Constructor.c in Sources */,
 				055D163B18E1D42800894C7B /* __XSBinaryTree_Initialize.c in Sources */,
 				055D178318E1D42800894C7B /* __XSNode_Equals.c in Sources */,
@@ -4172,6 +4268,7 @@
 				055D180C18E1D42800894C7B /* __XSNumber_ToString.c in Sources */,
 				055D160418E1D42800894C7B /* XSAutoreleasePool_GetClassID.c in Sources */,
 				0523066218EB4B1F00C29627 /* __XSRuntime_GetEqualsCallback.c in Sources */,
+				05F356BB18F095D20070111A /* XSLock_Lock.c in Sources */,
 				0523068218EB4B1F00C29627 /* XSRuntime_GetDescription.c in Sources */,
 				055D174018E1D42800894C7B /* __XSFile_Destructor.c in Sources */,
 				055D17D018E1D42800894C7B /* XSNotificationCenter_GetClassID.c in Sources */,
@@ -4190,8 +4287,10 @@
 				055D16A018E1D42800894C7B /* __XSData_Destructor.c in Sources */,
 				055D179818E1D42800894C7B /* __XSNotification_Constructor.c in Sources */,
 				055D189418E1D42800894C7B /* __XSThread.c in Sources */,
+				05F3572518F190660070111A /* XSSemaphore_Signal.c in Sources */,
 				055D17B418E1D42800894C7B /* __XSNotificationCenter.c in Sources */,
 				055D165418E1D42800894C7B /* __XSBoolean_Destructor.c in Sources */,
+				05F3572118F190660070111A /* XSSemaphore_CreateWithName.c in Sources */,
 				055D177418E1D42800894C7B /* __XSNode.c in Sources */,
 				055D158818E1D42800894C7B /* __XSApplication.c in Sources */,
 				055D16A818E1D42800894C7B /* __XSData_Initialize.c in Sources */,
@@ -4203,6 +4302,7 @@
 				0523063218EB4B1F00C29627 /* XSEquals.c in Sources */,
 				0523058A18EB4B1F00C29627 /* XSRect_Integral.c in Sources */,
 				055D17D818E1D42800894C7B /* __XSNull_Constructor.c in Sources */,
+				05F3572D18F190660070111A /* XSSemaphore_Wait.c in Sources */,
 				052305C218EB4B1F00C29627 /* XSSize_Zero.c in Sources */,
 				055D168C18E1D42800894C7B /* __XSColor_ToString.c in Sources */,
 				0523055E18EB4B1F00C29627 /* XSRect_ContainsPoint.c in Sources */,
@@ -4270,6 +4370,7 @@
 				055D16E018E1D42800894C7B /* __XSDictionary_Destructor.c in Sources */,
 				055D167418E1D42800894C7B /* __XSColor.c in Sources */,
 				055D18EC18E1D42900894C7B /* __XSURL_ToString.c in Sources */,
+				05F3571D18F190660070111A /* XSSemaphore_Create.c in Sources */,
 				05632F7B18ECB74E00EB76D2 /* __XSLog_Pause.c in Sources */,
 				0523068618EB4B1F00C29627 /* XSRuntime_GetObjectClassName.c in Sources */,
 				052305D218EB4B1F00C29627 /* XSLogEdgeInsetsWithInfos.c in Sources */,
@@ -4292,6 +4393,7 @@
 				0523051218EB4B1F00C29627 /* XSAtomic_Increment32.c in Sources */,
 				052306F518EBFEF200C29627 /* __XSMemoryDebug_NewRecord.c in Sources */,
 				055D18DC18E1D42900894C7B /* __XSURL_Copy.c in Sources */,
+				05F356C318F095D20070111A /* XSLock_Unlock.c in Sources */,
 				055D178818E1D42800894C7B /* __XSNode_Initialize.c in Sources */,
 				05F3569B18F08F730070111A /* XSAutoreleasePool_AddObject.c in Sources */,
 				052306CE18EB4B1F00C29627 /* XSThreading_TLSGetValue.c in Sources */,
@@ -4326,6 +4428,7 @@
 				055D15C818E1D42800894C7B /* __XSArray.c in Sources */,
 				055D18A818E1D42800894C7B /* __XSThread_Initialize.c in Sources */,
 				0523066618EB4B1F00C29627 /* __XSRuntime_GetInstanceSize.c in Sources */,
+				05F3573C18F195D60070111A /* XSSemaphore_IsNamed.c in Sources */,
 				052306C618EB4B1F00C29627 /* XSThreading_SetCurrentThreadName.c in Sources */,
 				055D159018E1D42800894C7B /* __XSApplication_Copy.c in Sources */,
 				055D196F18E1F47D00894C7B /* __XSValue_Copy.c in Sources */,
@@ -4377,6 +4480,7 @@
 				0523058618EB4B1F00C29627 /* XSRect_Inset.c in Sources */,
 				055D178C18E1D42800894C7B /* __XSNode_ToString.c in Sources */,
 				05632F7518ECB0CE00EB76D2 /* __XSLog_Exit.c in Sources */,
+				05F356BF18F095D20070111A /* XSLock_TryLock.c in Sources */,
 				05632FF918EEF5F900EB76D2 /* __XSStack.c in Sources */,
 				0563301518EEF5F900EB76D2 /* XSStack_GetClassID.c in Sources */,
 				055D186418E1D42800894C7B /* __XSSet_Equals.c in Sources */,
@@ -4424,8 +4528,10 @@
 				055D162818E1D42800894C7B /* __XSBinaryTree.c in Sources */,
 				0523051618EB4B1F00C29627 /* XSAtomic_Increment64.c in Sources */,
 				052304EE18EB4B1F00C29627 /* XSAtomic_Add64.c in Sources */,
+				05F3573818F195D60070111A /* XSSemaphore_GetName.c in Sources */,
 				055D17C418E1D42800894C7B /* __XSNotificationCenter_Equals.c in Sources */,
 				052306F918EBFEF200C29627 /* __XSMemoryDebug_ReleaseRecord.c in Sources */,
+				05F3572918F190660070111A /* XSSemaphore_TryWait.c in Sources */,
 				052305E218EB4B1F00C29627 /* XSLogSizeWithInfos.c in Sources */,
 				05F3569218EEF8410070111A /* XSStack_Pop.c in Sources */,
 				0523062A18EB4B1F00C29627 /* XSAutorelease.c in Sources */,
@@ -4458,6 +4564,7 @@
 				055D160818E1D42800894C7B /* __XSBag.c in Sources */,
 				055D198318E1F47D00894C7B /* XSValue_GetClassID.c in Sources */,
 				05F3568A18EEF8410070111A /* XSStack_Create.c in Sources */,
+				05F3573218F192200070111A /* XSAutoreleasePool_Create.c in Sources */,
 				055D179018E1D42800894C7B /* XSNode_GetClassID.c in Sources */,
 				055D18A018E1D42800894C7B /* __XSThread_Destructor.c in Sources */,
 				055D170418E1D42800894C7B /* __XSError_Equals.c in Sources */,
@@ -4487,6 +4594,7 @@
 				052305FA18EB4B1F00C29627 /* XSFloat_Ceil.c in Sources */,
 				05F356AB18F093BF0070111A /* XSRecursiveLock_TryLock.c in Sources */,
 				055D16C418E1D42800894C7B /* __XSDate_Equals.c in Sources */,
+				05F356B718F095D20070111A /* XSLock_Create.c in Sources */,
 				055D169818E1D42800894C7B /* __XSData_Constructor.c in Sources */,
 				055D163C18E1D42800894C7B /* __XSBinaryTree_Initialize.c in Sources */,
 				055D178418E1D42800894C7B /* __XSNode_Equals.c in Sources */,
@@ -4586,6 +4694,7 @@
 				055D180D18E1D42800894C7B /* __XSNumber_ToString.c in Sources */,
 				055D160518E1D42800894C7B /* XSAutoreleasePool_GetClassID.c in Sources */,
 				0523066318EB4B1F00C29627 /* __XSRuntime_GetEqualsCallback.c in Sources */,
+				05F356BC18F095D20070111A /* XSLock_Lock.c in Sources */,
 				0523068318EB4B1F00C29627 /* XSRuntime_GetDescription.c in Sources */,
 				055D174118E1D42800894C7B /* __XSFile_Destructor.c in Sources */,
 				055D17D118E1D42800894C7B /* XSNotificationCenter_GetClassID.c in Sources */,
@@ -4604,8 +4713,10 @@
 				055D16A118E1D42800894C7B /* __XSData_Destructor.c in Sources */,
 				055D179918E1D42800894C7B /* __XSNotification_Constructor.c in Sources */,
 				055D189518E1D42800894C7B /* __XSThread.c in Sources */,
+				05F3572618F190660070111A /* XSSemaphore_Signal.c in Sources */,
 				055D17B518E1D42800894C7B /* __XSNotificationCenter.c in Sources */,
 				055D165518E1D42800894C7B /* __XSBoolean_Destructor.c in Sources */,
+				05F3572218F190660070111A /* XSSemaphore_CreateWithName.c in Sources */,
 				055D177518E1D42800894C7B /* __XSNode.c in Sources */,
 				055D158918E1D42800894C7B /* __XSApplication.c in Sources */,
 				055D16A918E1D42800894C7B /* __XSData_Initialize.c in Sources */,
@@ -4617,6 +4728,7 @@
 				0523063318EB4B1F00C29627 /* XSEquals.c in Sources */,
 				0523058B18EB4B1F00C29627 /* XSRect_Integral.c in Sources */,
 				055D17D918E1D42800894C7B /* __XSNull_Constructor.c in Sources */,
+				05F3572E18F190660070111A /* XSSemaphore_Wait.c in Sources */,
 				052305C318EB4B1F00C29627 /* XSSize_Zero.c in Sources */,
 				055D168D18E1D42800894C7B /* __XSColor_ToString.c in Sources */,
 				0523055F18EB4B1F00C29627 /* XSRect_ContainsPoint.c in Sources */,
@@ -4684,6 +4796,7 @@
 				055D16E118E1D42800894C7B /* __XSDictionary_Destructor.c in Sources */,
 				055D167518E1D42800894C7B /* __XSColor.c in Sources */,
 				055D18ED18E1D42900894C7B /* __XSURL_ToString.c in Sources */,
+				05F3571E18F190660070111A /* XSSemaphore_Create.c in Sources */,
 				05632F7C18ECB74E00EB76D2 /* __XSLog_Pause.c in Sources */,
 				0523068718EB4B1F00C29627 /* XSRuntime_GetObjectClassName.c in Sources */,
 				052305D318EB4B1F00C29627 /* XSLogEdgeInsetsWithInfos.c in Sources */,
@@ -4706,6 +4819,7 @@
 				0523051318EB4B1F00C29627 /* XSAtomic_Increment32.c in Sources */,
 				052306F618EBFEF200C29627 /* __XSMemoryDebug_NewRecord.c in Sources */,
 				055D18DD18E1D42900894C7B /* __XSURL_Copy.c in Sources */,
+				05F356C418F095D20070111A /* XSLock_Unlock.c in Sources */,
 				055D178918E1D42800894C7B /* __XSNode_Initialize.c in Sources */,
 				05F3569C18F08F730070111A /* XSAutoreleasePool_AddObject.c in Sources */,
 				052306CF18EB4B1F00C29627 /* XSThreading_TLSGetValue.c in Sources */,
@@ -4740,6 +4854,7 @@
 				055D15C918E1D42800894C7B /* __XSArray.c in Sources */,
 				055D18A918E1D42800894C7B /* __XSThread_Initialize.c in Sources */,
 				0523066718EB4B1F00C29627 /* __XSRuntime_GetInstanceSize.c in Sources */,
+				05F3573D18F195D60070111A /* XSSemaphore_IsNamed.c in Sources */,
 				052306C718EB4B1F00C29627 /* XSThreading_SetCurrentThreadName.c in Sources */,
 				055D159118E1D42800894C7B /* __XSApplication_Copy.c in Sources */,
 				055D197018E1F47D00894C7B /* __XSValue_Copy.c in Sources */,
@@ -4791,6 +4906,7 @@
 				0523058718EB4B1F00C29627 /* XSRect_Inset.c in Sources */,
 				055D178D18E1D42800894C7B /* __XSNode_ToString.c in Sources */,
 				05632F7618ECB0CE00EB76D2 /* __XSLog_Exit.c in Sources */,
+				05F356C018F095D20070111A /* XSLock_TryLock.c in Sources */,
 				05632FFA18EEF5F900EB76D2 /* __XSStack.c in Sources */,
 				0563301618EEF5F900EB76D2 /* XSStack_GetClassID.c in Sources */,
 				055D186518E1D42800894C7B /* __XSSet_Equals.c in Sources */,
@@ -4838,8 +4954,10 @@
 				055D162918E1D42800894C7B /* __XSBinaryTree.c in Sources */,
 				0523051718EB4B1F00C29627 /* XSAtomic_Increment64.c in Sources */,
 				052304EF18EB4B1F00C29627 /* XSAtomic_Add64.c in Sources */,
+				05F3573918F195D60070111A /* XSSemaphore_GetName.c in Sources */,
 				055D17C518E1D42800894C7B /* __XSNotificationCenter_Equals.c in Sources */,
 				052306FA18EBFEF200C29627 /* __XSMemoryDebug_ReleaseRecord.c in Sources */,
+				05F3572A18F190660070111A /* XSSemaphore_TryWait.c in Sources */,
 				052305E318EB4B1F00C29627 /* XSLogSizeWithInfos.c in Sources */,
 				05F3569318EEF8410070111A /* XSStack_Pop.c in Sources */,
 				0523062B18EB4B1F00C29627 /* XSAutorelease.c in Sources */,
@@ -4872,6 +4990,7 @@
 				055D160918E1D42800894C7B /* __XSBag.c in Sources */,
 				055D198418E1F47D00894C7B /* XSValue_GetClassID.c in Sources */,
 				05F3568B18EEF8410070111A /* XSStack_Create.c in Sources */,
+				05F3573318F192200070111A /* XSAutoreleasePool_Create.c in Sources */,
 				055D179118E1D42800894C7B /* XSNode_GetClassID.c in Sources */,
 				055D18A118E1D42800894C7B /* __XSThread_Destructor.c in Sources */,
 				055D170518E1D42800894C7B /* __XSError_Equals.c in Sources */,
@@ -4901,6 +5020,7 @@
 				052305FB18EB4B1F00C29627 /* XSFloat_Ceil.c in Sources */,
 				05F356AC18F093BF0070111A /* XSRecursiveLock_TryLock.c in Sources */,
 				055D16C518E1D42800894C7B /* __XSDate_Equals.c in Sources */,
+				05F356B818F095D20070111A /* XSLock_Create.c in Sources */,
 				055D169918E1D42800894C7B /* __XSData_Constructor.c in Sources */,
 				055D163D18E1D42800894C7B /* __XSBinaryTree_Initialize.c in Sources */,
 				055D178518E1D42800894C7B /* __XSNode_Equals.c in Sources */,
