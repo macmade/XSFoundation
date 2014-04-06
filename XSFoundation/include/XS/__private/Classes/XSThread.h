@@ -105,6 +105,10 @@ typedef struct
     XSThread_FunctionWithArgument   functionWithArgument;   /*! The function to call with an argument, if any */
     __XSThread_Type                 type;                   /*! The thread type */
     char                            __pad_0[ 4 ];           /*! Padding */
+    
+    #ifdef _WIN32
+    HANDLE                          handle;
+    #endif
 }
 __XSThread_Arguments;
 

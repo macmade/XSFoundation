@@ -121,6 +121,12 @@ void * __XSThread_Proxy( __XSThread_Arguments * args )
         XSLogWarning( "Unknown thread type" );
     }
     
+    #ifdef _WIN32
+    
+    CloseHandle( args->handle );
+    
+    #endif
+    
     XSThreading_TLSSetObject( &__XSThread_TLSKey, NULL, XSTLSObjectAssociationAssign );
     XSRelease( thread );
     XSRelease( args );

@@ -73,9 +73,17 @@
 
 void __XSThread_Detach( __XSThread_Arguments * args )
 {
+    if( args == NULL )
+    {
+        XSLogWarning( "No arguments passed to the XSThread proxy" );
+        XSRelease( args );
+        
+        return;
+    }
+    
     #ifdef _WIN32
     
-    CreateThread( NULL, 0, ( LPTHREAD_START_ROUTINE )__XSThread_Proxy, args, 0, NULL );
+    args->handle = CreateThread( NULL, 0, ( LPTHREAD_START_ROUTINE )__XSThread_Proxy, args, 0, NULL );
     
     #else
     
