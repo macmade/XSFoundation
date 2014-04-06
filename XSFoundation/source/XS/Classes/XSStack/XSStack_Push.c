@@ -75,6 +75,11 @@ void XSStack_Push( XSStackRef stack, XSObjectRef object )
 {
     __XSStack_Item * item;
     
+    if( stack == NULL )
+    {
+        return;
+    }
+    
     item = XSAlloc( sizeof( __XSStack_Item ) );
     
     if( item == NULL )
@@ -84,16 +89,12 @@ void XSStack_Push( XSStackRef stack, XSObjectRef object )
     
     item->object = XSRetain( object );
     
-    push:
+    XSRecursiveLock_Lock( stack->lock );
     
     item->next = stack->top;
+    stack->top = item;
     
-    if( XSAtomic_CompareAndSwapPointer( item->next, item, ( void * volatile * )&( stack->top ) ) )
-    {
-        XSAtomic_IncrementInteger( ( volatile XSInteger * )&( stack->count ) );
-        
-        return;
-    }
+    stack->count++;
     
-    goto push;
+    XSRecursiveLock_Unlock( stack->lock );
 }

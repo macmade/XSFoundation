@@ -76,25 +76,29 @@ XSObjectRef XSStack_Pop( XSStackRef stack )
     __XSStack_Item * item;
     XSObjectRef      object;
     
-    pop:
+    if( stack == NULL )
+    {
+        return NULL;
+    }
+    
+    XSRecursiveLock_Lock( stack->lock );
     
     item = stack->top;
     
     if( item == NULL )
     {
+        XSRecursiveLock_Unlock( stack->lock );
+        
         return NULL;
     }
     
-    if( XSAtomic_CompareAndSwapPointer( item, item->next, ( void * volatile * )&( stack->top ) ) )
-    {
-        XSAtomic_DecrementInteger( ( volatile XSInteger * )&( stack->count ) );
-        
-        object = item->object;
-        
-        XSRelease( item );
-        
-        return XSAutorelease( object );
-    }
+    stack->top = item->next;
+    object     = item->object;
     
-    goto pop;
+    stack->count--;
+        
+    XSRelease( item );
+    XSRecursiveLock_Unlock( stack->lock );
+    
+    return XSAutorelease( object );
 }

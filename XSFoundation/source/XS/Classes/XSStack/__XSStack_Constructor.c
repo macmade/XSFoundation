@@ -73,5 +73,12 @@
 
 XSStackRef __XSStack_Constructor( XSStackRef object )
 {
+    object->lock = XSRecursiveLock_Create();
+    
+    if( object->lock == NULL )
+    {
+        return NULL;
+    }
+    
     return object;
 }

@@ -73,7 +73,58 @@
 
 XSStackRef __XSStack_Copy( XSStackRef source, XSStackRef destination )
 {
-    ( void )source;
+    __XSStack_Item * item;
+    __XSStack_Item * newItem;
+    __XSStack_Item * nextItem;
+    __XSStack_Item * prevItem;
+    
+    XSRecursiveLock_Lock( source->lock );
+    
+    item     = source->top;
+    prevItem = NULL;
+    
+    while( item != NULL )
+    {
+        newItem = XSAlloc( sizeof( __XSStack_Item ) );
+        
+        if( newItem == NULL )
+        {
+            goto fail;
+        }
+        
+        newItem->object = XSRetain( item->object );
+        
+        if( prevItem == NULL )
+        {
+            destination->top = newItem;
+        }
+        else
+        {
+            prevItem->next = newItem;
+        }
+        
+        prevItem = newItem;
+        item     = item->next;
+    }
+    
+    XSRecursiveLock_Unlock( source->lock );
     
     return destination;
+    
+    fail:
+    
+    item = destination->top;
+    
+    while( item != NULL )
+    {
+        XSRelease( item->object );
+        
+        nextItem = item->next;
+        
+        XSRelease( item );
+        
+        item = nextItem;
+    }
+    
+    return NULL;
 }

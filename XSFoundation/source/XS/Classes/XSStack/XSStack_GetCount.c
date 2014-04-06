@@ -73,5 +73,13 @@
 
 XSUInteger XSStack_GetCount( XSStackRef stack )
 {
-    return ( XSUInteger )XSAtomic_ReadInteger( ( volatile XSInteger * )&( stack->count ) );
+    XSUInteger c;
+    
+    XSRecursiveLock_Lock( stack->lock );
+    
+    c = stack->count;
+    
+    XSRecursiveLock_Unlock( stack->lock );
+    
+    return c;
 }

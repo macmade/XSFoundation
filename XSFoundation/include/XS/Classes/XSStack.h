@@ -81,6 +81,7 @@
 /*!
  * @typedef     XSStackRef
  * @abstract    Opaque type for XSStack
+ * @discussion  XSStackRef objects are thread-safe
  */
 typedef struct __XSStack * XSStackRef;
 

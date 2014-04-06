@@ -218,27 +218,34 @@ int main( int argc, const char * argv[] )
     }
     
     {
-        XSStackRef   stack;
+        XSStackRef   s1;
+        XSStackRef   s2;
         XSBooleanRef b1;
         XSBooleanRef b2;
         XSBooleanRef b3;
         
-        stack = XSStack_Create();
+        s1    = XSStack_Create();
         b1    = XSBoolean_Create( true );
         b2    = XSBoolean_Create( true );
         b3    = XSBoolean_Create( true );
         
-        XSStack_Push( stack, b1 );
-        XSStack_Push( stack, b2 );
-        XSStack_Push( stack, b3 );
+        XSStack_Push( s1, b1 );
+        XSStack_Push( s1, b2 );
+        XSStack_Push( s1, b3 );
+        
+        s2 = XSCopy( s1 );
         
         XSLog( "B1: %p",        b1 );
         XSLog( "B2: %p",        b2 );
         XSLog( "B3: %p",        b3 );
-        XSLog( "Stack pop: %p", XSStack_Pop( stack ) );
-        XSLog( "Stack pop: %p", XSStack_Pop( stack ) );
-        XSLog( "Stack pop: %p", XSStack_Pop( stack ) );
-        XSLog( "Stack pop: %p", XSStack_Pop( stack ) );
+        XSLog( "Stack pop: %p", XSStack_Pop( s1 ) );
+        XSLog( "Stack pop: %p", XSStack_Pop( s1 ) );
+        XSLog( "Stack pop: %p", XSStack_Pop( s1 ) );
+        XSLog( "Stack pop: %p", XSStack_Pop( s1 ) );
+        XSLog( "Stack pop: %p", XSStack_Pop( s2 ) );
+        XSLog( "Stack pop: %p", XSStack_Pop( s2 ) );
+        XSLog( "Stack pop: %p", XSStack_Pop( s2 ) );
+        XSLog( "Stack pop: %p", XSStack_Pop( s2 ) );
         
         XSRelease( b1 );
         XSRelease( b2 );
