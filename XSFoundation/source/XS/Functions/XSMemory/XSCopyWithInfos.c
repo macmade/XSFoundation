@@ -77,7 +77,8 @@ XSObjectRef XSCopyWithInfos( void * memory, const char * file, int line, const c
 {
     __XSMemoryObject      * object;
     void                  * data;
-    XSClassCallbackCopy copy;
+    void                  * copiedData;
+    XSClassCallbackCopy     copy;
     
     if( memory == NULL )
     {
@@ -103,7 +104,18 @@ XSObjectRef XSCopyWithInfos( void * memory, const char * file, int line, const c
     
     if( copy != NULL )
     {
-        copy( memory, data );
+        copiedData = copy( memory, data );
+        
+        if( copiedData == NULL )
+        {
+            XSRelease( data );
+            
+            data = NULL;
+        }
+        else
+        {
+            data = copiedData;
+        }
     }
     
     return data;

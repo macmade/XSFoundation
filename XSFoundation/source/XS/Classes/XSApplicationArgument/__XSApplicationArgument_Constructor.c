@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSApplicationArgument.h>
 
-void __XSApplicationArgument_Constructor( XSApplicationArgumentRef object )
+XSApplicationArgumentRef __XSApplicationArgument_Constructor( XSApplicationArgumentRef object )
 {
-    ( void )object;
+    return object;
 }

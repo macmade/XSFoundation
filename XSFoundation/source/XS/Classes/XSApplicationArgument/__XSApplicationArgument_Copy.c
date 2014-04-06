@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSApplicationArgument.h>
 
-void __XSApplicationArgument_Copy( XSApplicationArgumentRef source, XSApplicationArgumentRef destination )
+XSApplicationArgumentRef __XSApplicationArgument_Copy( XSApplicationArgumentRef source, XSApplicationArgumentRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    return destination;
 }

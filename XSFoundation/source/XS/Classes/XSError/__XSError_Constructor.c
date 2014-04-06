@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSError.h>
 
-void __XSError_Constructor( XSErrorRef object )
+XSErrorRef __XSError_Constructor( XSErrorRef object )
 {
-    ( void )object;
+    return object;
 }

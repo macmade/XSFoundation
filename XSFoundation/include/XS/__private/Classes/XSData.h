@@ -109,8 +109,9 @@ void XSStatic __XSData_Initialize( void );
  * @function    __XSData_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSData_Constructor( XSDataRef object );
+XSDataRef __XSData_Constructor( XSDataRef object );
 
 /*!
  * @function    __XSData_Destructor
@@ -124,8 +125,9 @@ void __XSData_Destructor( XSDataRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSData_Copy( XSDataRef source, XSDataRef destination );
+XSDataRef __XSData_Copy( XSDataRef source, XSDataRef destination );
 
 /*!
  * @function    __XSData_Equals

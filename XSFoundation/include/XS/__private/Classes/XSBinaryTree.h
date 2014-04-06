@@ -109,8 +109,9 @@ void XSStatic __XSBinaryTree_Initialize( void );
  * @function    __XSBinaryTree_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSBinaryTree_Constructor( XSBinaryTreeRef object );
+XSBinaryTreeRef __XSBinaryTree_Constructor( XSBinaryTreeRef object );
 
 /*!
  * @function    __XSBinaryTree_Destructor
@@ -124,8 +125,9 @@ void __XSBinaryTree_Destructor( XSBinaryTreeRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSBinaryTree_Copy( XSBinaryTreeRef source, XSBinaryTreeRef destination );
+XSBinaryTreeRef __XSBinaryTree_Copy( XSBinaryTreeRef source, XSBinaryTreeRef destination );
 
 /*!
  * @function    __XSBinaryTree_Equals

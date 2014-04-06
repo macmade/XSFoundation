@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSSet.h>
 
-void __XSSet_Copy( XSSetRef source, XSSetRef destination )
+XSSetRef __XSSet_Copy( XSSetRef source, XSSetRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    return destination;
 }

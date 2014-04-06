@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSNull.h>
 
-void __XSNull_Copy( XSNullRef source, XSNullRef destination )
+XSNullRef __XSNull_Copy( XSNullRef source, XSNullRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    return destination;
 }

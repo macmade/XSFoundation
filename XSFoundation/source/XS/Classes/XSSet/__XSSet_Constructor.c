@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSSet.h>
 
-void __XSSet_Constructor( XSSetRef object )
+XSSetRef __XSSet_Constructor( XSSetRef object )
 {
-    ( void )object;
+    return object;
 }

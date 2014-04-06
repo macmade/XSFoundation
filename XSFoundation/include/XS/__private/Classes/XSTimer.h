@@ -109,8 +109,9 @@ void XSStatic __XSTimer_Initialize( void );
  * @function    __XSTimer_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSTimer_Constructor( XSTimerRef object );
+XSTimerRef __XSTimer_Constructor( XSTimerRef object );
 
 /*!
  * @function    __XSTimer_Destructor
@@ -124,8 +125,9 @@ void __XSTimer_Destructor( XSTimerRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSTimer_Copy( XSTimerRef source, XSTimerRef destination );
+XSTimerRef __XSTimer_Copy( XSTimerRef source, XSTimerRef destination );
 
 /*!
  * @function    __XSTimer_Equals

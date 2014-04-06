@@ -111,8 +111,9 @@ void XSStatic __XSSemaphore_Initialize( void );
  * @function    __XSSemaphore_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSSemaphore_Constructor( XSSemaphoreRef object );
+XSSemaphoreRef __XSSemaphore_Constructor( XSSemaphoreRef object );
 
 /*!
  * @function    __XSSemaphore_Destructor
@@ -126,8 +127,9 @@ void __XSSemaphore_Destructor( XSSemaphoreRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSSemaphore_Copy( XSSemaphoreRef source, XSSemaphoreRef destination );
+XSSemaphoreRef __XSSemaphore_Copy( XSSemaphoreRef source, XSSemaphoreRef destination );
 
 /*!
  * @function    __XSSemaphore_Equals

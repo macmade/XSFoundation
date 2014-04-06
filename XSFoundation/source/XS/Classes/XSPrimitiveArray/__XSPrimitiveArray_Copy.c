@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSPrimitiveArray.h>
 
-void __XSPrimitiveArray_Copy( XSPrimitiveArrayRef source, XSPrimitiveArrayRef destination )
+XSPrimitiveArrayRef __XSPrimitiveArray_Copy( XSPrimitiveArrayRef source, XSPrimitiveArrayRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    return destination;
 }

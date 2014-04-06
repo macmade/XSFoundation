@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSArray.h>
 
-void __XSArray_Constructor( XSArrayRef object )
+XSArrayRef __XSArray_Constructor( XSArrayRef object )
 {
-    ( void )object;
+    return object;
 }

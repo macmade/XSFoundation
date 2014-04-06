@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSDate.h>
 
-void __XSDate_Constructor( XSDateRef object )
+XSDateRef __XSDate_Constructor( XSDateRef object )
 {
-    ( void )object;
+    return object;
 }

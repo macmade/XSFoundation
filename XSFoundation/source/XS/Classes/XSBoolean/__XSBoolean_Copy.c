@@ -71,7 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSBoolean.h>
 
-void __XSBoolean_Copy( XSBooleanRef source, XSBooleanRef destination )
+XSBooleanRef __XSBoolean_Copy( XSBooleanRef source, XSBooleanRef destination )
 {
     destination->value = source->value;
+    
+    return destination;
 }

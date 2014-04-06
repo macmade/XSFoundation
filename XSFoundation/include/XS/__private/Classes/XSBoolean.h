@@ -109,8 +109,9 @@ void XSStatic __XSBoolean_Initialize( void );
  * @function    __XSBoolean_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSBoolean_Constructor( XSBooleanRef object );
+XSBooleanRef __XSBoolean_Constructor( XSBooleanRef object );
 
 /*!
  * @function    __XSBoolean_Destructor
@@ -124,8 +125,9 @@ void __XSBoolean_Destructor( XSBooleanRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSBoolean_Copy( XSBooleanRef source, XSBooleanRef destination );
+XSBooleanRef __XSBoolean_Copy( XSBooleanRef source, XSBooleanRef destination );
 
 /*!
  * @function    __XSBoolean_Equals

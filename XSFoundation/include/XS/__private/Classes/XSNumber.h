@@ -109,8 +109,9 @@ void XSStatic __XSNumber_Initialize( void );
  * @function    __XSNumber_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSNumber_Constructor( XSNumberRef object );
+XSNumberRef __XSNumber_Constructor( XSNumberRef object );
 
 /*!
  * @function    __XSNumber_Destructor
@@ -124,8 +125,9 @@ void __XSNumber_Destructor( XSNumberRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSNumber_Copy( XSNumberRef source, XSNumberRef destination );
+XSNumberRef __XSNumber_Copy( XSNumberRef source, XSNumberRef destination );
 
 /*!
  * @function    __XSNumber_Equals

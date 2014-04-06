@@ -109,8 +109,9 @@ void XSStatic __XSPrimitiveArray_Initialize( void );
  * @function    __XSPrimitiveArray_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSPrimitiveArray_Constructor( XSPrimitiveArrayRef object );
+XSPrimitiveArrayRef __XSPrimitiveArray_Constructor( XSPrimitiveArrayRef object );
 
 /*!
  * @function    __XSPrimitiveArray_Destructor
@@ -124,8 +125,9 @@ void __XSPrimitiveArray_Destructor( XSPrimitiveArrayRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSPrimitiveArray_Copy( XSPrimitiveArrayRef source, XSPrimitiveArrayRef destination );
+XSPrimitiveArrayRef __XSPrimitiveArray_Copy( XSPrimitiveArrayRef source, XSPrimitiveArrayRef destination );
 
 /*!
  * @function    __XSPrimitiveArray_Equals

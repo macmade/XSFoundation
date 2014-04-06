@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSColor.h>
 
-void __XSColor_Copy( XSColorRef source, XSColorRef destination )
+XSColorRef __XSColor_Copy( XSColorRef source, XSColorRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    return destination;
 }

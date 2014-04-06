@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSBag.h>
 
-void __XSBag_Copy( XSBagRef source, XSBagRef destination )
+XSBagRef __XSBag_Copy( XSBagRef source, XSBagRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    return destination;
 }

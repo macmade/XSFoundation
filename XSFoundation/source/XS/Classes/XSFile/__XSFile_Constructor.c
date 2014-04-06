@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSFile.h>
 
-void __XSFile_Constructor( XSFileRef object )
+XSFileRef __XSFile_Constructor( XSFileRef object )
 {
-    ( void )object;
+    return object;
 }

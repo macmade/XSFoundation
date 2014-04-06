@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSURL.h>
 
-void __XSURL_Copy( XSURLRef source, XSURLRef destination )
+XSURLRef __XSURL_Copy( XSURLRef source, XSURLRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    return destination;
 }

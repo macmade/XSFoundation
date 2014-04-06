@@ -71,10 +71,12 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSLock.h>
 
-void __XSLock_Copy( XSLockRef source, XSLockRef destination )
+XSLockRef __XSLock_Copy( XSLockRef source, XSLockRef destination )
 {
     ( void )source;
     
     XSThreading_MutexCreate( &( destination->mutex ) );
     XSThreading_SemaphoreCreate( &( destination->sem ), NULL, 1 );
+    
+    return destination;
 }

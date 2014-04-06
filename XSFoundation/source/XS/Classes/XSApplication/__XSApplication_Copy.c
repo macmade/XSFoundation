@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSApplication.h>
 
-void __XSApplication_Copy( XSApplicationRef source, XSApplicationRef destination )
+XSApplicationRef __XSApplication_Copy( XSApplicationRef source, XSApplicationRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    return destination;
 }

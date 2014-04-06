@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSString.h>
 
-void __XSString_Constructor( XSStringRef object )
+XSStringRef __XSString_Constructor( XSStringRef object )
 {
-    ( void )object;
+    return object;
 }

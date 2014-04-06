@@ -115,8 +115,9 @@ void XSStatic __XSAutoreleasePool_Initialize( void );
  * @function    __XSAutoreleasePool_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSAutoreleasePool_Constructor( XSAutoreleasePoolRef object );
+XSAutoreleasePoolRef __XSAutoreleasePool_Constructor( XSAutoreleasePoolRef object );
 
 /*!
  * @function    __XSAutoreleasePool_Destructor
@@ -130,8 +131,9 @@ void __XSAutoreleasePool_Destructor( XSAutoreleasePoolRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSAutoreleasePool_Copy( XSAutoreleasePoolRef source, XSAutoreleasePoolRef destination );
+XSAutoreleasePoolRef __XSAutoreleasePool_Copy( XSAutoreleasePoolRef source, XSAutoreleasePoolRef destination );
 
 /*!
  * @function    __XSAutoreleasePool_Equals

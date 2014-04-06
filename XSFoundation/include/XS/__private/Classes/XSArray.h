@@ -109,8 +109,9 @@ void XSStatic __XSArray_Initialize( void );
  * @function    __XSArray_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSArray_Constructor( XSArrayRef object );
+XSArrayRef __XSArray_Constructor( XSArrayRef object );
 
 /*!
  * @function    __XSArray_Destructor
@@ -124,8 +125,9 @@ void __XSArray_Destructor( XSArrayRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSArray_Copy( XSArrayRef source, XSArrayRef destination );
+XSArrayRef __XSArray_Copy( XSArrayRef source, XSArrayRef destination );
 
 /*!
  * @function    __XSArray_Equals

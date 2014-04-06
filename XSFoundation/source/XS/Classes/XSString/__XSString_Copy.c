@@ -71,9 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSString.h>
 
-void __XSString_Copy( XSStringRef source, XSStringRef destination )
+XSStringRef __XSString_Copy( XSStringRef source, XSStringRef destination )
 {
     ( void )source;
     
     XSRetain( destination->cString );
+    
+    return destination;
 }

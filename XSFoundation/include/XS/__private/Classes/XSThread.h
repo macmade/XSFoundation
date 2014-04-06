@@ -109,8 +109,9 @@ void XSStatic __XSThread_Initialize( void );
  * @function    __XSThread_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSThread_Constructor( XSThreadRef object );
+XSThreadRef __XSThread_Constructor( XSThreadRef object );
 
 /*!
  * @function    __XSThread_Destructor
@@ -124,8 +125,9 @@ void __XSThread_Destructor( XSThreadRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSThread_Copy( XSThreadRef source, XSThreadRef destination );
+XSThreadRef __XSThread_Copy( XSThreadRef source, XSThreadRef destination );
 
 /*!
  * @function    __XSThread_Equals

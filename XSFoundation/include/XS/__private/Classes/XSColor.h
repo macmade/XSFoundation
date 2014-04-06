@@ -109,8 +109,9 @@ void XSStatic __XSColor_Initialize( void );
  * @function    __XSColor_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSColor_Constructor( XSColorRef object );
+XSColorRef __XSColor_Constructor( XSColorRef object );
 
 /*!
  * @function    __XSColor_Destructor
@@ -124,8 +125,9 @@ void __XSColor_Destructor( XSColorRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSColor_Copy( XSColorRef source, XSColorRef destination );
+XSColorRef __XSColor_Copy( XSColorRef source, XSColorRef destination );
 
 /*!
  * @function    __XSColor_Equals

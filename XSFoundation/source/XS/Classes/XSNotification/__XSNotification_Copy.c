@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSNotification.h>
 
-void __XSNotification_Copy( XSNotificationRef source, XSNotificationRef destination )
+XSNotificationRef __XSNotification_Copy( XSNotificationRef source, XSNotificationRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    return destination;
 }

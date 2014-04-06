@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSNull.h>
 
-void __XSNull_Constructor( XSNullRef object )
+XSNullRef __XSNull_Constructor( XSNullRef object )
 {
-    ( void )object;
+    return object;
 }

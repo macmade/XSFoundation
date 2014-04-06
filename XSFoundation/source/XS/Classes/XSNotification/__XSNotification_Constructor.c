@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSNotification.h>
 
-void __XSNotification_Constructor( XSNotificationRef object )
+XSNotificationRef __XSNotification_Constructor( XSNotificationRef object )
 {
-    ( void )object;
+    return object;
 }

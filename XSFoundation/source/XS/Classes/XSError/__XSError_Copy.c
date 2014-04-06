@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSError.h>
 
-void __XSError_Copy( XSErrorRef source, XSErrorRef destination )
+XSErrorRef __XSError_Copy( XSErrorRef source, XSErrorRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    return destination;
 }

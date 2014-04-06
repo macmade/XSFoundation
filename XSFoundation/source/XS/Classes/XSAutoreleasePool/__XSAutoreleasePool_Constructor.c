@@ -71,7 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSAutoreleasePool.h>
 
-void __XSAutoreleasePool_Constructor( XSAutoreleasePoolRef object )
+XSAutoreleasePoolRef __XSAutoreleasePool_Constructor( XSAutoreleasePoolRef object )
 {
     object->items = XSStack_Create();
+    
+    return object;
 }

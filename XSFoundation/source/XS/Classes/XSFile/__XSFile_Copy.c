@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSFile.h>
 
-void __XSFile_Copy( XSFileRef source, XSFileRef destination )
+XSFileRef __XSFile_Copy( XSFileRef source, XSFileRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    return destination;
 }

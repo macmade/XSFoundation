@@ -115,8 +115,9 @@ void XSStatic __XSNull_Initialize( void );
  * @function    __XSNull_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSNull_Constructor( XSNullRef object );
+XSNullRef __XSNull_Constructor( XSNullRef object );
 
 /*!
  * @function    __XSNull_Destructor
@@ -130,8 +131,9 @@ void __XSNull_Destructor( XSNullRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSNull_Copy( XSNullRef source, XSNullRef destination );
+XSNullRef __XSNull_Copy( XSNullRef source, XSNullRef destination );
 
 /*!
  * @function    __XSNull_Equals

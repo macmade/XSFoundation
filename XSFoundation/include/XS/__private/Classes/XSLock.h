@@ -110,8 +110,9 @@ void XSStatic __XSLock_Initialize( void );
  * @function    __XSLock_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSLock_Constructor( XSLockRef object );
+XSLockRef __XSLock_Constructor( XSLockRef object );
 
 /*!
  * @function    __XSLock_Destructor
@@ -125,8 +126,9 @@ void __XSLock_Destructor( XSLockRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSLock_Copy( XSLockRef source, XSLockRef destination );
+XSLockRef __XSLock_Copy( XSLockRef source, XSLockRef destination );
 
 /*!
  * @function    __XSLock_Equals

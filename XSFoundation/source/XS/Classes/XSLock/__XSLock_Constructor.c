@@ -71,8 +71,10 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSLock.h>
 
-void __XSLock_Constructor( XSLockRef object )
+XSLockRef __XSLock_Constructor( XSLockRef object )
 {
     XSThreading_MutexCreate( &( object->mutex ) );
     XSThreading_SemaphoreCreate( &( object->sem ), NULL, 1 );
+    
+    return object;
 }

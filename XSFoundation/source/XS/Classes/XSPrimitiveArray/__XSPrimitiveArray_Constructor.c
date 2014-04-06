@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSPrimitiveArray.h>
 
-void __XSPrimitiveArray_Constructor( XSPrimitiveArrayRef object )
+XSPrimitiveArrayRef __XSPrimitiveArray_Constructor( XSPrimitiveArrayRef object )
 {
-    ( void )object;
+    return object;
 }

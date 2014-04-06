@@ -121,8 +121,9 @@ void XSStatic __XSStack_Initialize( void );
  * @function    __XSStack_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSStack_Constructor( XSStackRef object );
+XSStackRef __XSStack_Constructor( XSStackRef object );
 
 /*!
  * @function    __XSStack_Destructor
@@ -136,8 +137,9 @@ void __XSStack_Destructor( XSStackRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSStack_Copy( XSStackRef source, XSStackRef destination );
+XSStackRef __XSStack_Copy( XSStackRef source, XSStackRef destination );
 
 /*!
  * @function    __XSStack_Equals

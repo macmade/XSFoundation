@@ -109,8 +109,9 @@ void XSStatic __XSSet_Initialize( void );
  * @function    __XSSet_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSSet_Constructor( XSSetRef object );
+XSSetRef __XSSet_Constructor( XSSetRef object );
 
 /*!
  * @function    __XSSet_Destructor
@@ -124,8 +125,9 @@ void __XSSet_Destructor( XSSetRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSSet_Copy( XSSetRef source, XSSetRef destination );
+XSSetRef __XSSet_Copy( XSSetRef source, XSSetRef destination );
 
 /*!
  * @function    __XSSet_Equals

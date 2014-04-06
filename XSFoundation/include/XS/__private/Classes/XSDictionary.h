@@ -109,8 +109,9 @@ void XSStatic __XSDictionary_Initialize( void );
  * @function    __XSDictionary_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSDictionary_Constructor( XSDictionaryRef object );
+XSDictionaryRef __XSDictionary_Constructor( XSDictionaryRef object );
 
 /*!
  * @function    __XSDictionary_Destructor
@@ -124,8 +125,9 @@ void __XSDictionary_Destructor( XSDictionaryRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSDictionary_Copy( XSDictionaryRef source, XSDictionaryRef destination );
+XSDictionaryRef __XSDictionary_Copy( XSDictionaryRef source, XSDictionaryRef destination );
 
 /*!
  * @function    __XSDictionary_Equals

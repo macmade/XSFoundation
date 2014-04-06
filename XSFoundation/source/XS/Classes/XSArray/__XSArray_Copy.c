@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSArray.h>
 
-void __XSArray_Copy( XSArrayRef source, XSArrayRef destination )
+XSArrayRef __XSArray_Copy( XSArrayRef source, XSArrayRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    return destination;
 }

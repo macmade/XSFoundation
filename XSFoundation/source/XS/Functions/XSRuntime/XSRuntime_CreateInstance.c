@@ -74,6 +74,7 @@
 XSObjectRef XSRuntime_CreateInstance( XSClassID classID )
 {
     XSObjectRef                 object;
+    XSObjectRef                 newObject;
     XSUInteger                  instanceSize;
     XSClassCallbackConstructor  constructor;
     
@@ -100,7 +101,18 @@ XSObjectRef XSRuntime_CreateInstance( XSClassID classID )
     
     if( constructor != NULL )
     {
-        constructor( object );
+        newObject = constructor( object );
+        
+        if( newObject == NULL )
+        {
+            XSRelease( object );
+            
+            object = NULL;
+        }
+        else
+        {
+            object = newObject;
+        }
     }
     
     return object;

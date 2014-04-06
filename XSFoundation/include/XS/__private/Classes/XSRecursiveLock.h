@@ -109,8 +109,9 @@ void XSStatic __XSRecursiveLock_Initialize( void );
  * @function    __XSRecursiveLock_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSRecursiveLock_Constructor( XSRecursiveLockRef object );
+XSRecursiveLockRef __XSRecursiveLock_Constructor( XSRecursiveLockRef object );
 
 /*!
  * @function    __XSRecursiveLock_Destructor
@@ -124,8 +125,9 @@ void __XSRecursiveLock_Destructor( XSRecursiveLockRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSRecursiveLock_Copy( XSRecursiveLockRef source, XSRecursiveLockRef destination );
+XSRecursiveLockRef __XSRecursiveLock_Copy( XSRecursiveLockRef source, XSRecursiveLockRef destination );
 
 /*!
  * @function    __XSRecursiveLock_Equals

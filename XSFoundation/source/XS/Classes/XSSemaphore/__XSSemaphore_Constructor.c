@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSSemaphore.h>
 
-void __XSSemaphore_Constructor( XSSemaphoreRef object )
+XSSemaphoreRef __XSSemaphore_Constructor( XSSemaphoreRef object )
 {
-    ( void )object;
+    return object;
 }

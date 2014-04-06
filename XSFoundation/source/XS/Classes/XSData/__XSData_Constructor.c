@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSData.h>
 
-void __XSData_Constructor( XSDataRef object )
+XSDataRef __XSData_Constructor( XSDataRef object )
 {
-    ( void )object;
+    return object;
 }

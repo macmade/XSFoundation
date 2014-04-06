@@ -71,7 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSAutoreleasePool.h>
 
-void __XSAutoreleasePool_Copy( XSAutoreleasePoolRef source, XSAutoreleasePoolRef destination )
+XSAutoreleasePoolRef __XSAutoreleasePool_Copy( XSAutoreleasePoolRef source, XSAutoreleasePoolRef destination )
 {
     destination->items = XSCopy( source->items );
+    
+    return destination;
 }

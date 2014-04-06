@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSValue.h>
 
-void __XSValue_Constructor( XSValueRef object )
+XSValueRef __XSValue_Constructor( XSValueRef object )
 {
-    ( void )object;
+    return object;
 }

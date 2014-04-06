@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSBinaryTree.h>
 
-void __XSBinaryTree_Copy( XSBinaryTreeRef source, XSBinaryTreeRef destination )
+XSBinaryTreeRef __XSBinaryTree_Copy( XSBinaryTreeRef source, XSBinaryTreeRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    return destination;
 }

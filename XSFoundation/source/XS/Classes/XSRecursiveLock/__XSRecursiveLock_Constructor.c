@@ -71,7 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSRecursiveLock.h>
 
-void __XSRecursiveLock_Constructor( XSRecursiveLockRef object )
+XSRecursiveLockRef __XSRecursiveLock_Constructor( XSRecursiveLockRef object )
 {
     XSThreading_MutexCreate( &( object->mutex ) );
+    
+    return object;
 }

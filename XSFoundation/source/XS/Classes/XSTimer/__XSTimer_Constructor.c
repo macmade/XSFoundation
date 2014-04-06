@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSTimer.h>
 
-void __XSTimer_Constructor( XSTimerRef object )
+XSTimerRef __XSTimer_Constructor( XSTimerRef object )
 {
-    ( void )object;
+    return object;
 }

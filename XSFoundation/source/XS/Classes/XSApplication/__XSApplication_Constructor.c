@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSApplication.h>
 
-void __XSApplication_Constructor( XSApplicationRef object )
+XSApplicationRef __XSApplication_Constructor( XSApplicationRef object )
 {
-    ( void )object;
+    return object;
 }

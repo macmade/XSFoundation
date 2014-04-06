@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSDictionary.h>
 
-void __XSDictionary_Constructor( XSDictionaryRef object )
+XSDictionaryRef __XSDictionary_Constructor( XSDictionaryRef object )
 {
-    ( void )object;
+    return object;
 }

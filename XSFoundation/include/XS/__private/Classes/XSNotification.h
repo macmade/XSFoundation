@@ -109,8 +109,9 @@ void XSStatic __XSNotification_Initialize( void );
  * @function    __XSNotification_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSNotification_Constructor( XSNotificationRef object );
+XSNotificationRef __XSNotification_Constructor( XSNotificationRef object );
 
 /*!
  * @function    __XSNotification_Destructor
@@ -124,8 +125,9 @@ void __XSNotification_Destructor( XSNotificationRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSNotification_Copy( XSNotificationRef source, XSNotificationRef destination );
+XSNotificationRef __XSNotification_Copy( XSNotificationRef source, XSNotificationRef destination );
 
 /*!
  * @function    __XSNotification_Equals

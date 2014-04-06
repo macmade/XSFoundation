@@ -109,8 +109,9 @@ void XSStatic __XSDate_Initialize( void );
  * @function    __XSDate_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSDate_Constructor( XSDateRef object );
+XSDateRef __XSDate_Constructor( XSDateRef object );
 
 /*!
  * @function    __XSDate_Destructor
@@ -124,8 +125,9 @@ void __XSDate_Destructor( XSDateRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSDate_Copy( XSDateRef source, XSDateRef destination );
+XSDateRef __XSDate_Copy( XSDateRef source, XSDateRef destination );
 
 /*!
  * @function    __XSDate_Equals

@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSThread.h>
 
-void __XSThread_Constructor( XSThreadRef object )
+XSThreadRef __XSThread_Constructor( XSThreadRef object )
 {
-    ( void )object;
+    return object;
 }

@@ -83,8 +83,13 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSClassCallbackConstructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @discussion  The return value is usually 'object', but can be another
+ *              object.
+ *              If NULL is returned, the 'object' will be deallocated by the
+ *              caller automatically.
+ * @result      The new object
  */
-typedef void ( * XSClassCallbackConstructor )( XSObjectRef object );
+typedef XSObjectRef ( * XSClassCallbackConstructor )( XSObjectRef object );
 
 XS_EXTERN_C_END
 

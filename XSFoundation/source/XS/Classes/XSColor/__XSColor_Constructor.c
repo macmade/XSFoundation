@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSColor.h>
 
-void __XSColor_Constructor( XSColorRef object )
+XSColorRef __XSColor_Constructor( XSColorRef object )
 {
-    ( void )object;
+    return object;
 }

@@ -71,9 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSRecursiveLock.h>
 
-void __XSRecursiveLock_Copy( XSRecursiveLockRef source, XSRecursiveLockRef destination )
+XSRecursiveLockRef __XSRecursiveLock_Copy( XSRecursiveLockRef source, XSRecursiveLockRef destination )
 {
     ( void )source;
     
     XSThreading_MutexCreate( &( destination->mutex ) );
+    
+    return destination;
 }

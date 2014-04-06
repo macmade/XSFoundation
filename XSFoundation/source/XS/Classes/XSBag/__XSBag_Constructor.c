@@ -65,13 +65,13 @@
  * @file        __XSBag_Constructor.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSBag_Constructor
+ * @abstract     Definition for __XSBag_Constructor
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSBag.h>
 
-void __XSBag_Constructor( XSBagRef object )
+XSBagRef __XSBag_Constructor( XSBagRef object )
 {
-    ( void )object;
+    return object;
 }

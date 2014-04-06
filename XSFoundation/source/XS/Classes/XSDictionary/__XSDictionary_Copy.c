@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSDictionary.h>
 
-void __XSDictionary_Copy( XSDictionaryRef source, XSDictionaryRef destination )
+XSDictionaryRef __XSDictionary_Copy( XSDictionaryRef source, XSDictionaryRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    return destination;
 }

@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSThread.h>
 
-void __XSThread_Copy( XSThreadRef source, XSThreadRef destination )
+XSThreadRef __XSThread_Copy( XSThreadRef source, XSThreadRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    return destination;
 }

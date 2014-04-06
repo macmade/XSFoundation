@@ -109,8 +109,9 @@ void XSStatic __XSFile_Initialize( void );
  * @function    __XSFile_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSFile_Constructor( XSFileRef object );
+XSFileRef __XSFile_Constructor( XSFileRef object );
 
 /*!
  * @function    __XSFile_Destructor
@@ -124,8 +125,9 @@ void __XSFile_Destructor( XSFileRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSFile_Copy( XSFileRef source, XSFileRef destination );
+XSFileRef __XSFile_Copy( XSFileRef source, XSFileRef destination );
 
 /*!
  * @function    __XSFile_Equals

@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSValue.h>
 
-void __XSValue_Copy( XSValueRef source, XSValueRef destination )
+XSValueRef __XSValue_Copy( XSValueRef source, XSValueRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    return destination;
 }

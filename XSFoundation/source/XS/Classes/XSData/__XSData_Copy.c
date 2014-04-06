@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSData.h>
 
-void __XSData_Copy( XSDataRef source, XSDataRef destination )
+XSDataRef __XSData_Copy( XSDataRef source, XSDataRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    return destination;
 }

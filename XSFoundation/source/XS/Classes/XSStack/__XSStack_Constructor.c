@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSStack.h>
 
-void __XSStack_Constructor( XSStackRef object )
+XSStackRef __XSStack_Constructor( XSStackRef object )
 {
-    ( void )object;
+    return object;
 }

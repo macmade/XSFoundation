@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSDate.h>
 
-void __XSDate_Copy( XSDateRef source, XSDateRef destination )
+XSDateRef __XSDate_Copy( XSDateRef source, XSDateRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    return destination;
 }

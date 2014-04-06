@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSSemaphore.h>
 
-void __XSSemaphore_Copy( XSSemaphoreRef source, XSSemaphoreRef destination )
+XSSemaphoreRef __XSSemaphore_Copy( XSSemaphoreRef source, XSSemaphoreRef destination )
 {
     if( XSSemaphore_IsNamed( source ) )
     {
@@ -82,4 +82,6 @@ void __XSSemaphore_Copy( XSSemaphoreRef source, XSSemaphoreRef destination )
     {
         XSThreading_SemaphoreCreate( &( destination->sem ), NULL, source->count );
     }
+    
+    return destination;
 }

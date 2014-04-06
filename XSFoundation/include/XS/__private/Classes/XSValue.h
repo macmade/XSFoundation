@@ -109,8 +109,9 @@ void XSStatic __XSValue_Initialize( void );
  * @function    __XSValue_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSValue_Constructor( XSValueRef object );
+XSValueRef __XSValue_Constructor( XSValueRef object );
 
 /*!
  * @function    __XSValue_Destructor
@@ -124,8 +125,9 @@ void __XSValue_Destructor( XSValueRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSValue_Copy( XSValueRef source, XSValueRef destination );
+XSValueRef __XSValue_Copy( XSValueRef source, XSValueRef destination );
 
 /*!
  * @function    __XSValue_Equals

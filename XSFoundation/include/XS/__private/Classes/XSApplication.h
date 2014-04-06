@@ -109,8 +109,9 @@ void XSStatic __XSApplication_Initialize( void );
  * @function    __XSApplication_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSApplication_Constructor( XSApplicationRef object );
+XSApplicationRef __XSApplication_Constructor( XSApplicationRef object );
 
 /*!
  * @function    __XSApplication_Destructor
@@ -124,8 +125,9 @@ void __XSApplication_Destructor( XSApplicationRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSApplication_Copy( XSApplicationRef source, XSApplicationRef destination );
+XSApplicationRef __XSApplication_Copy( XSApplicationRef source, XSApplicationRef destination );
 
 /*!
  * @function    __XSApplication_Equals

@@ -109,8 +109,9 @@ void XSStatic __XSError_Initialize( void );
  * @function    __XSError_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSError_Constructor( XSErrorRef object );
+XSErrorRef __XSError_Constructor( XSErrorRef object );
 
 /*!
  * @function    __XSError_Destructor
@@ -124,8 +125,9 @@ void __XSError_Destructor( XSErrorRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSError_Copy( XSErrorRef source, XSErrorRef destination );
+XSErrorRef __XSError_Copy( XSErrorRef source, XSErrorRef destination );
 
 /*!
  * @function    __XSError_Equals

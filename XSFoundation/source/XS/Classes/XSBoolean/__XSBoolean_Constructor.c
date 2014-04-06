@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSBoolean.h>
 
-void __XSBoolean_Constructor( XSBooleanRef object )
+XSBooleanRef __XSBoolean_Constructor( XSBooleanRef object )
 {
-    ( void )object;
+    return object;
 }

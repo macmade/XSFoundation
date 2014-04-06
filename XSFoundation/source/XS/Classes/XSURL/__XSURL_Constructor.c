@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSURL.h>
 
-void __XSURL_Constructor( XSURLRef object )
+XSURLRef __XSURL_Constructor( XSURLRef object )
 {
-    ( void )object;
+    return object;
 }

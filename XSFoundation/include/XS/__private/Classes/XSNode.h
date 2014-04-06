@@ -109,8 +109,9 @@ void XSStatic __XSNode_Initialize( void );
  * @function    __XSNode_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSNode_Constructor( XSNodeRef object );
+XSNodeRef __XSNode_Constructor( XSNodeRef object );
 
 /*!
  * @function    __XSNode_Destructor
@@ -124,8 +125,9 @@ void __XSNode_Destructor( XSNodeRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSNode_Copy( XSNodeRef source, XSNodeRef destination );
+XSNodeRef __XSNode_Copy( XSNodeRef source, XSNodeRef destination );
 
 /*!
  * @function    __XSNode_Equals

@@ -109,8 +109,9 @@ void XSStatic __XSURL_Initialize( void );
  * @function    __XSURL_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSURL_Constructor( XSURLRef object );
+XSURLRef __XSURL_Constructor( XSURLRef object );
 
 /*!
  * @function    __XSURL_Destructor
@@ -124,8 +125,9 @@ void __XSURL_Destructor( XSURLRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSURL_Copy( XSURLRef source, XSURLRef destination );
+XSURLRef __XSURL_Copy( XSURLRef source, XSURLRef destination );
 
 /*!
  * @function    __XSURL_Equals

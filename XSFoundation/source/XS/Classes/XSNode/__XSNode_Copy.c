@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSNode.h>
 
-void __XSNode_Copy( XSNodeRef source, XSNodeRef destination )
+XSNodeRef __XSNode_Copy( XSNodeRef source, XSNodeRef destination )
 {
     ( void )source;
-    ( void )destination;
+    
+    return destination;
 }

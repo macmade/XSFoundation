@@ -109,8 +109,9 @@ void XSStatic __XSBag_Initialize( void );
  * @function    __XSBag_Constructor
  * @abstract    Class constructor callback
  * @param       object      The object beeing construct
+ * @return      The new object
  */
-void __XSBag_Constructor( XSBagRef object );
+XSBagRef __XSBag_Constructor( XSBagRef object );
 
 /*!
  * @function    __XSBag_Destructor
@@ -124,8 +125,9 @@ void __XSBag_Destructor( XSBagRef object );
  * @abstract    Class copy callback
  * @param       source      The object to copy
  * @param       destination The object beeing copied
+ * @result      The copied object
  */
-void __XSBag_Copy( XSBagRef source, XSBagRef destination );
+XSBagRef __XSBag_Copy( XSBagRef source, XSBagRef destination );
 
 /*!
  * @function    __XSBag_Equals

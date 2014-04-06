@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSNode.h>
 
-void __XSNode_Constructor( XSNodeRef object )
+XSNodeRef __XSNode_Constructor( XSNodeRef object )
 {
-    ( void )object;
+    return object;
 }
