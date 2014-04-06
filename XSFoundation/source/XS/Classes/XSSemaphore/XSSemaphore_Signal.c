@@ -62,88 +62,21 @@
 /* $Id$ */
 
 /*!
- * @header      XSSemaphore.h
+ * @file        XSSemaphore_Signal.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSSemaphore.h
+ * @abstract    Definition for XSSemaphore_Signal
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Classes/XSSemaphore.h>
 
-#ifndef __XS___PRIVATE_CLASSES_XS_SEMAPHORE_H__
-#define __XS___PRIVATE_CLASSES_XS_SEMAPHORE_H__
-
-#include <XS/XSTypes.h>
-#include <XS/XSMacros.h>
-
-/*!
- * @struct      __XSSemaphore
- * @abstract    Structure for XSSemaphore
- */
-struct __XSSemaphore
+void XSSemaphore_Signal( XSSemaphoreRef semaphore )
 {
-    XSSemaphore  sem;   /*! The semaphore */
-    const char * name;  /*! The semaphore name, if any */
-    XSUInteger   count; /*! The maximum count for the semaphore */
-};
-
-/*!
- * @var         __XSSemaphore_ClassID
- * @abstract    Class ID
- */
-XS_EXTERN XSClassID __XSSemaphore_ClassID;
-
-/*!
- * @var         __XSSemaphore_Class
- * @abstract    Class info
- */
-XS_EXTERN XSClassInfo __XSSemaphore_Class;
-
-/*!
- * @function    __XSSemaphore_Initialize
- * @abstract    Class initializer
- */
-void XSStatic __XSSemaphore_Initialize( void );
-
-/*!
- * @function    __XSSemaphore_Constructor
- * @abstract    Class constructor callback
- * @param       object      The object beeing construct
- */
-void __XSSemaphore_Constructor( XSSemaphoreRef object );
-
-/*!
- * @function    __XSSemaphore_Destructor
- * @abstract    Class destructor callback
- * @param       object      The object beeing destruct
- */
-void __XSSemaphore_Destructor( XSSemaphoreRef object );
-
-/*!
- * @function    __XSSemaphore_Copy
- * @abstract    Class copy callback
- * @param       source      The object to copy
- * @param       destination The object beeing copied
- */
-void __XSSemaphore_Copy( XSSemaphoreRef source, XSSemaphoreRef destination );
-
-/*!
- * @function    __XSSemaphore_Equals
- * @abstract    Class equals callback
- * @param       object1     The first object to compare
- * @param       object2     The second object to compare
- * @return      True if both objects are equals, otherwise false
- */
-bool __XSSemaphore_Equals( XSSemaphoreRef object1, XSSemaphoreRef object2 );
-
-/*!
- * @function    __XSSemaphore_ToString
- * @abstract    Class to-string callback
- * @param       object      The object for which to get a description
- * @return      The object's description
- */
-const char * __XSSemaphore_ToString( XSSemaphoreRef object );
-
-#endif /* __XS___PRIVATE_CLASSES_XS_SEMAPHORE_H__ */
+    if( semaphore == NULL )
+    {
+        return;
+    }
+    
+    XSThreading_SemaphoreSignal( &( semaphore->sem ) );
+}

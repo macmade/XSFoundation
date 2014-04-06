@@ -91,4 +91,61 @@ typedef struct __XSSemaphore * XSSemaphoreRef;
  */
 XS_EXPORT XSStatic XSClassID XSSemaphore_GetClassID( void );
 
+/*!
+ * @function    XSSemaphore_Create
+ * @abstract    Creates an unnamed semaphore
+ * @param       count   The maximum count for the semaphore
+ * @return      The semaphore object
+ */
+XS_EXPORT XSStatic XSSemaphoreRef XSSemaphore_Create( XSUInteger count );
+
+/*!
+ * @function    XSSemaphore_GetClassID
+ * @abstract    Creates a named semaphore
+ * @param       name    The semaphore name
+ * @param       count   The maximum count for the semaphore
+ * @return      The semaphore object
+ */
+XS_EXPORT XSStatic XSSemaphoreRef XSSemaphore_CreateWithName( const char * name, XSUInteger count );
+
+/*!
+ * @function    XSSemaphore_Wait
+ * @abstract    Locks a semaphore
+ * @param       semaphore   The semaphore object
+ */
+XS_EXPORT void XSSemaphore_Wait( XSSemaphoreRef semaphore );
+
+/*!
+ * @function    XSSemaphore_TryWait
+ * @abstract    Tries to lock a semaphore
+ * @param       semaphore   The semaphore object
+ * @discussion  If the semaphore can't be locked, this function will return
+ *              immediately, rather than waiting.
+ * @result      True if the semaphore was locked, otherwise false
+ */
+XS_EXPORT bool XSSemaphore_TryWait( XSSemaphoreRef semaphore );
+
+/*!
+ * @function    XSSemaphore_Signal
+ * @abstract    Unlocks a semaphore
+ * @param       semaphore   The semaphore object
+ */
+XS_EXPORT void XSSemaphore_Signal( XSSemaphoreRef semaphore );
+
+/*!
+ * @function    XSSemaphore_Signal
+ * @abstract    Checks whether a semaphore is named or not
+ * @param       semaphore   The semaphore object
+ * @result      True if the semaphore is named, otherwise false
+ */
+XS_EXPORT bool XSSemaphore_IsNamed( XSSemaphoreRef semaphore );
+
+/*!
+ * @function    XSSemaphore_GetName
+ * @abstract    Gets the name of a semaphore
+ * @param       semaphore   The semaphore object
+ * @return      The semaphore name, or NULL if the semaphore is unnamed
+ */
+XS_EXPORT const char * XSSemaphore_GetName( XSSemaphoreRef semaphore );
+
 #endif /* __XS_CLASSES_XS_SEMAPHORE_H__ */

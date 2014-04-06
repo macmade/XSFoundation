@@ -73,5 +73,6 @@
 
 void __XSSemaphore_Destructor( XSSemaphoreRef object )
 {
-    ( void )object;
+    XSThreading_SemaphoreDelete( &( object->sem ) );
+    XSRelease( ( void * )( object->name ) );
 }

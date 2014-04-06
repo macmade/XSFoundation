@@ -73,6 +73,13 @@
 
 void __XSSemaphore_Copy( XSSemaphoreRef source, XSSemaphoreRef destination )
 {
-    ( void )source;
-    ( void )destination;
+    if( XSSemaphore_IsNamed( source ) )
+    {
+        XSRetain( ( void * )( destination->name ) );
+        XSThreading_SemaphoreCreate( &( destination->sem ), destination->name, source->count );
+    }
+    else
+    {
+        XSThreading_SemaphoreCreate( &( destination->sem ), NULL, source->count );
+    }
 }
