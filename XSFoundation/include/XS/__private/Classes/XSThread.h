@@ -156,7 +156,7 @@ XSStatic void __XSThread_Initialize( void );
  * @function    __XSThread_Finalize
  * @abstract    Class finalizer
  */
-XSStatic void __XSThread_Finalize( void );
+XSStatic void __XSThread_Exit( void );
 
 /*!
  * @function    __XSThread_Constructor

@@ -100,6 +100,8 @@ void XSRuntime_RegisterFinalizer( void ( * func )( void ) )
     
     while( list != NULL )
     {
+        finalizer->previous = list;
+        
         if( XSAtomic_CompareAndSwapPointer( NULL, finalizer, ( void * volatile * )&( list->next ) ) )
         {
             return;

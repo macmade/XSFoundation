@@ -62,16 +62,16 @@
 /* $Id$ */
 
 /*!
- * @file        __XSThread_Finalize.c
+ * @file        __XSThread_Exit.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSThread_Finalize
+ * @abstract    Definition for __XSThread_Exit
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSThread.h>
 
-void __XSThread_Finalize( void )
+void __XSThread_Exit( void )
 {
     XSThreading_TLSSetObject( &__XSThread_TLSKey, NULL, XSTLSObjectAssociationAssign );
     XSRelease( __XSThread_MainThread );

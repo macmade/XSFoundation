@@ -138,6 +138,7 @@ typedef struct __XSRuntime_FinalizerList_Struct
 {
     void ( * finalizer )( void );                       /*! The finalizer function */
     struct __XSRuntime_FinalizerList_Struct * next;     /*! The next entry */
+    struct __XSRuntime_FinalizerList_Struct * previous; /*! The previous entry */
 }
 __XSRuntime_FinalizerList;
 

@@ -76,7 +76,7 @@ void __XSRuntime_Finalize( void )
     __XSRuntime_ClassInfoList * classList;
     __XSRuntime_ClassInfoList * nextClass;
     __XSRuntime_FinalizerList * finalizerList;
-    __XSRuntime_FinalizerList * nextFinalizer;
+    __XSRuntime_FinalizerList * finalizer;
     
     if( XSAtomic_CompareAndSwapInteger( 0, 1, &__XSRuntime_IsFinalizing ) == false )
     {
@@ -84,17 +84,25 @@ void __XSRuntime_Finalize( void )
     }
     
     finalizerList = __XSRuntime_Finalizers;
-    nextFinalizer = finalizerList;
+    finalizer     = finalizerList;
     
-    while( nextFinalizer != NULL )
+    while( finalizer != NULL )
     {
-        if( nextFinalizer->finalizer != NULL )
+        finalizerList = finalizer;
+        finalizer     = finalizer->next;
+    }
+    
+    finalizer = finalizerList;
+    
+    while( finalizer != NULL )
+    {
+        if( finalizer->finalizer != NULL )
         {
-            nextFinalizer->finalizer();
+            finalizer->finalizer();
         }
         
-        finalizerList = nextFinalizer;
-        nextFinalizer = finalizerList->next;
+        finalizerList = finalizer;
+        finalizer     = finalizerList->previous;
         
         free( finalizerList );
     }

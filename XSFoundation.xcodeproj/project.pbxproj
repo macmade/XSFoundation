@@ -1744,10 +1744,10 @@
 		05F3576818F1CB7E0070111A /* __XSThread_Detach.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3576618F1CB7D0070111A /* __XSThread_Detach.c */; };
 		05F3576918F1CB7E0070111A /* __XSThread_Detach.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3576618F1CB7D0070111A /* __XSThread_Detach.c */; };
 		05F3576A18F1CB7E0070111A /* __XSThread_Detach.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3576618F1CB7D0070111A /* __XSThread_Detach.c */; };
-		05F3576C18F1CD030070111A /* __XSThread_Finalize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3576B18F1CD030070111A /* __XSThread_Finalize.c */; };
-		05F3576D18F1CD030070111A /* __XSThread_Finalize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3576B18F1CD030070111A /* __XSThread_Finalize.c */; };
-		05F3576E18F1CD030070111A /* __XSThread_Finalize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3576B18F1CD030070111A /* __XSThread_Finalize.c */; };
-		05F3576F18F1CD030070111A /* __XSThread_Finalize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3576B18F1CD030070111A /* __XSThread_Finalize.c */; };
+		05F3576C18F1CD030070111A /* __XSThread_Exit.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3576B18F1CD030070111A /* __XSThread_Exit.c */; };
+		05F3576D18F1CD030070111A /* __XSThread_Exit.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3576B18F1CD030070111A /* __XSThread_Exit.c */; };
+		05F3576E18F1CD030070111A /* __XSThread_Exit.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3576B18F1CD030070111A /* __XSThread_Exit.c */; };
+		05F3576F18F1CD030070111A /* __XSThread_Exit.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3576B18F1CD030070111A /* __XSThread_Exit.c */; };
 		05F3577418F1FB380070111A /* XSThread_GetMainThread.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3577318F1FB380070111A /* XSThread_GetMainThread.c */; };
 		05F3577518F1FB380070111A /* XSThread_GetMainThread.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3577318F1FB380070111A /* XSThread_GetMainThread.c */; };
 		05F3577618F1FB380070111A /* XSThread_GetMainThread.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3577318F1FB380070111A /* XSThread_GetMainThread.c */; };
@@ -2267,7 +2267,7 @@
 		05F3575C18F1C1E00070111A /* XSThread_GetID.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSThread_GetID.c; sourceTree = "<group>"; };
 		05F3576118F1C8660070111A /* __XSThread_Proxy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSThread_Proxy.c; sourceTree = "<group>"; };
 		05F3576618F1CB7D0070111A /* __XSThread_Detach.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSThread_Detach.c; sourceTree = "<group>"; };
-		05F3576B18F1CD030070111A /* __XSThread_Finalize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSThread_Finalize.c; sourceTree = "<group>"; };
+		05F3576B18F1CD030070111A /* __XSThread_Exit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSThread_Exit.c; sourceTree = "<group>"; };
 		05F3577318F1FB380070111A /* XSThread_GetMainThread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSThread_GetMainThread.c; sourceTree = "<group>"; };
 		05F3577818F1FBD70070111A /* XSThread_IsMainThread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSThread_IsMainThread.c; sourceTree = "<group>"; };
 		05F3577D18F1FCE70070111A /* __XSMemoryDebug_Initialize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemoryDebug_Initialize.c; sourceTree = "<group>"; };
@@ -3031,7 +3031,7 @@
 				055D156F18E1D42800894C7B /* __XSThread_Destructor.c */,
 				055D157018E1D42800894C7B /* __XSThread_Equals.c */,
 				055D157118E1D42800894C7B /* __XSThread_Initialize.c */,
-				05F3576B18F1CD030070111A /* __XSThread_Finalize.c */,
+				05F3576B18F1CD030070111A /* __XSThread_Exit.c */,
 				055D157218E1D42800894C7B /* __XSThread_ToString.c */,
 				05F3576618F1CB7D0070111A /* __XSThread_Detach.c */,
 				05F3576118F1C8660070111A /* __XSThread_Proxy.c */,
@@ -3845,7 +3845,7 @@
 				055D16B618E1D42800894C7B /* __XSDate_Constructor.c in Sources */,
 				05F356AD18F093BF0070111A /* XSRecursiveLock_Unlock.c in Sources */,
 				0523053818EB4B1F00C29627 /* XSPoint_Make.c in Sources */,
-				05F3576C18F1CD030070111A /* __XSThread_Finalize.c in Sources */,
+				05F3576C18F1CD030070111A /* __XSThread_Exit.c in Sources */,
 				055D16BE18E1D42800894C7B /* __XSDate_Destructor.c in Sources */,
 				0523060C18EB4B1F00C29627 /* XSFloat_IsZero.c in Sources */,
 				052304F418EB4B1F00C29627 /* XSAtomic_CompareAndSwap32.c in Sources */,
@@ -4284,7 +4284,7 @@
 				055D16B718E1D42800894C7B /* __XSDate_Constructor.c in Sources */,
 				05F356AE18F093BF0070111A /* XSRecursiveLock_Unlock.c in Sources */,
 				0523053918EB4B1F00C29627 /* XSPoint_Make.c in Sources */,
-				05F3576D18F1CD030070111A /* __XSThread_Finalize.c in Sources */,
+				05F3576D18F1CD030070111A /* __XSThread_Exit.c in Sources */,
 				055D16BF18E1D42800894C7B /* __XSDate_Destructor.c in Sources */,
 				0523060D18EB4B1F00C29627 /* XSFloat_IsZero.c in Sources */,
 				052304F518EB4B1F00C29627 /* XSAtomic_CompareAndSwap32.c in Sources */,
@@ -4723,7 +4723,7 @@
 				055D16B818E1D42800894C7B /* __XSDate_Constructor.c in Sources */,
 				05F356AF18F093BF0070111A /* XSRecursiveLock_Unlock.c in Sources */,
 				0523053A18EB4B1F00C29627 /* XSPoint_Make.c in Sources */,
-				05F3576E18F1CD030070111A /* __XSThread_Finalize.c in Sources */,
+				05F3576E18F1CD030070111A /* __XSThread_Exit.c in Sources */,
 				055D16C018E1D42800894C7B /* __XSDate_Destructor.c in Sources */,
 				0523060E18EB4B1F00C29627 /* XSFloat_IsZero.c in Sources */,
 				052304F618EB4B1F00C29627 /* XSAtomic_CompareAndSwap32.c in Sources */,
@@ -5162,7 +5162,7 @@
 				055D16B918E1D42800894C7B /* __XSDate_Constructor.c in Sources */,
 				05F356B018F093BF0070111A /* XSRecursiveLock_Unlock.c in Sources */,
 				0523053B18EB4B1F00C29627 /* XSPoint_Make.c in Sources */,
-				05F3576F18F1CD030070111A /* __XSThread_Finalize.c in Sources */,
+				05F3576F18F1CD030070111A /* __XSThread_Exit.c in Sources */,
 				055D16C118E1D42800894C7B /* __XSDate_Destructor.c in Sources */,
 				0523060F18EB4B1F00C29627 /* XSFloat_IsZero.c in Sources */,
 				052304F718EB4B1F00C29627 /* XSAtomic_CompareAndSwap32.c in Sources */,

@@ -80,7 +80,7 @@ void __XSThread_Initialize( void )
         XSFatalError( "Error creating the TLS key for XSThread" );
     }
     
-    XSRuntime_RegisterFinalizer( __XSThread_Finalize );
+    XSRuntime_RegisterFinalizer( __XSThread_Exit );
     
     __XSThread_MainThread = XSRuntime_CreateInstance( XSThread_GetClassID() );
     
