@@ -77,27 +77,11 @@
 
 #include <XS/XSTypes.h>
 
-#ifdef __APPLE__
-#include <sys/syslimits.h>
-#endif
-
-/*!
- * @def         __XS_PROCESS_NAME_MAX
- * @abstract    Maximum length for a process name
- */
-#if defined( _WIN32 )
-    #define __XS_PROCESS_NAME_MAX   MAX_PATH
-#elif defined( __APPLE__ )
-    #define __XS_PROCESS_NAME_MAX   PATH_MAX
-#else
-    #define __XS_PROCESS_NAME_MAX   1024
-#endif
-
 /*!
  * @typedef     __XSProcess_ProcessName
  * @abstract    Process name
  */
-XS_EXTERN char __XSProcess_ProcessName[ __XS_PROCESS_NAME_MAX ];
+XS_EXTERN char __XSProcess_ProcessName[ XS_PATH_MAX ];
 
 /*!
  * @typedef     __XSProcess_ProcNameStatus

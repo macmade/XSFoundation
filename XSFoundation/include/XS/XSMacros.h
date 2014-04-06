@@ -213,6 +213,16 @@
 #endif
 
 /*!
+ * @def         XS_PATH_MAX
+ * @abstract    Maximum length for a path
+ */
+#if defined( _WIN32 )
+    #define XS_PATH_MAX     MAX_PATH
+#else
+    #define XS_PATH_MAX     PATH_MAX
+#endif
+
+/*!
  * @def         XSEndian16_Swap
  * @abstract    Swap endiannes of a 16 bits value
  * @param       _value_     The value to swap

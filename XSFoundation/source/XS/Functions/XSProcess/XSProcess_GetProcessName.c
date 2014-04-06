@@ -79,43 +79,43 @@ const char * XSProcess_GetProcessName( void )
 {
     if( XSAtomic_CompareAndSwapInteger( XSInitStatusNotInited, XSInitStatusInitializing, &__XSProcess_ProcessNameStatus ) )
     {
-        memset( __XSProcess_ProcessName, 0, __XS_PROCESS_NAME_MAX );
+        memset( __XSProcess_ProcessName, 0, XS_PATH_MAX );
         
         #if defined( _WIN32 )
         
         {
-            TCHAR  name[ __XS_PROCESS_NAME_MAX ];
+            TCHAR  name[ XS_PATH_MAX ];
             char * pos;
             
-            memset( name, 0, __XS_PROCESS_NAME_MAX );
+            memset( name, 0, XS_PATH_MAX );
             
-            GetModuleFileName( NULL, ( LPTSTR )name, MAX_PATH );
+            GetModuleFileName( NULL, ( LPTSTR )name, XS_PATH_MAX );
             
             pos = strrchr( name, '\\' );
             
             if( pos != NULL )
             {
-                strcpy_s( __XSProcess_ProcessName, __XS_PROCESS_NAME_MAX, pos + 1 );
+                strcpy_s( __XSProcess_ProcessName, XS_PATH_MAX, pos + 1 );
             }
             else
             {
-                strcpy_s( __XSProcess_ProcessName, __XS_PROCESS_NAME_MAX, name );
+                strcpy_s( __XSProcess_ProcessName, XS_PATH_MAX, name );
             }
             
             if( strlen( __XSProcess_ProcessName ) == 0 )
             {
-                strcpy_s( __XSProcess_ProcessName, __XS_PROCESS_NAME_MAX, "unknown" );
+                strcpy_s( __XSProcess_ProcessName, XS_PATH_MAX, "unknown" );
             }
         }
         
         #elif defined( __APPLE__ )
         
         {
-            char     name[ __XS_PROCESS_NAME_MAX ];
+            char     name[ XS_PATH_MAX ];
             XSUInt32 size;
             char   * pos;
             
-            size = __XS_PROCESS_NAME_MAX;
+            size = XS_PATH_MAX;
             
             _NSGetExecutablePath( name, &size );
             
@@ -123,16 +123,16 @@ const char * XSProcess_GetProcessName( void )
             
             if( pos != NULL )
             {
-                strlcpy( __XSProcess_ProcessName, pos + 1, __XS_PROCESS_NAME_MAX );
+                strlcpy( __XSProcess_ProcessName, pos + 1, XS_PATH_MAX );
             }
             else
             {
-                strlcpy( __XSProcess_ProcessName, name, __XS_PROCESS_NAME_MAX );
+                strlcpy( __XSProcess_ProcessName, name, XS_PATH_MAX );
             }
             
             if( strlen( __XSProcess_ProcessName ) == 0 )
             {
-                strlcpy( __XSProcess_ProcessName, "unknown", __XS_PROCESS_NAME_MAX );
+                strlcpy( __XSProcess_ProcessName, "unknown", XS_PATH_MAX );
             }
         }
         

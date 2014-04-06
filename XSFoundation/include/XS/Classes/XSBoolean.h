@@ -93,24 +93,24 @@ XS_EXPORT XSStatic XSClassID XSBoolean_GetClassID( void );
 
 /*!
  * @function    XSBooleanCreate
- * @abstract    Creates a XSBooleanRef object
+ * @abstract    Creates a boolean object
  * @param       value       The boolean value
- * @return      The XSBooleanRef object
+ * @return      The boolean object
  */
 XS_EXPORT XSStatic XSBooleanRef XSBoolean_Create( bool value );
 
 /*!
  * @function    XSBooleanGetValue
- * @abstract    Gets the value of a XSBooleanRef object
- * @param       object      The XSBooleanRef object
- * @return      The XSBooleanRef object's value
+ * @abstract    Gets the value of a boolean object
+ * @param       object      The boolean object
+ * @return      The boolean object's value
  */
 XS_EXPORT bool XSBoolean_GetValue( XSBooleanRef object );
 
 /*!
  * @function    XSBooleanSetValue
- * @abstract    Sets the value of a XSBooleanRef object
- * @param       object      The XSBooleanRef object
+ * @abstract    Sets the value of a boolean object
+ * @param       object      The boolean object
  * @param       value       The boolean value
  */
 XS_EXPORT void XSBoolean_SetValue( XSBooleanRef object, bool value );

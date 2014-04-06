@@ -71,5 +71,5 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSProcess.h>
 
-char __XSProcess_ProcessName[ __XS_PROCESS_NAME_MAX ] = { 0 };
+char __XSProcess_ProcessName[ XS_PATH_MAX ]      = { 0 };
 volatile XSInteger __XSProcess_ProcessNameStatus = XSInitStatusNotInited;
