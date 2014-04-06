@@ -91,4 +91,36 @@ typedef struct __XSLock * XSLockRef;
  */
 XS_EXPORT XSStatic XSClassID XSLock_GetClassID( void );
 
+/*!
+ * @function    XSLock_Create
+ * @abstract    Creates a lock object
+ * @return      The lock object
+ */
+XS_EXPORT XSStatic XSLockRef XSLock_Create( void );
+
+/*!
+ * @function    XSLock_Lock
+ * @abstract    Locks a lock object
+ * @param       lock    The lock object
+ */
+XS_EXPORT void XSLock_Lock( XSLockRef lock );
+
+/*!
+ * @function    XSLock_TryLock
+ * @abstract    Tries to lock a lock object
+ * @return      The class ID for XSLock
+ * @param       lock    The lock object
+ * @discussion  If the lock can't be qcquired, this function will return
+ *              immediately, rather than waiting.
+ * @return      True if the lock was acquired, otherwise false
+ */
+XS_EXPORT bool XSLock_TryLock( XSLockRef lock );
+
+/*!
+ * @function    XSLock_Lock
+ * @abstract    Unlocks a lock object
+ * @param       lock    The lock object
+ */
+XS_EXPORT void XSLock_Unlock( XSLockRef lock );
+
 #endif /* __XS_CLASSES_XS_LOCK_H__ */

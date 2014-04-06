@@ -73,5 +73,6 @@
 
 void __XSLock_Destructor( XSLockRef object )
 {
-    ( void )object;
+    XSThreading_MutexDelete( &( object->mutex ) );
+    XSThreading_SemaphoreDelete( &( object->sem ) );
 }

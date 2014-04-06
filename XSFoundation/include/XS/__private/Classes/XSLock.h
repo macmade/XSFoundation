@@ -84,7 +84,8 @@
  */
 struct __XSLock
 {
-    void * temp; /*! Not yet implemented... */
+    XSMutex     mutex;  /* The mutex */
+    XSSemaphore sem;    /* The semaphore */
 };
 
 /*!

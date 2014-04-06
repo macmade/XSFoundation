@@ -62,17 +62,22 @@
 /* $Id$ */
 
 /*!
- * @file        __XSLock_Constructor.c
+ * @file        XSLock_Lock.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSLock_Constructor
+ * @abstract    Definition for XSLock_Lock
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSLock.h>
 
-void __XSLock_Constructor( XSLockRef object )
+void XSLock_Lock( XSLockRef lock )
 {
-    XSThreading_MutexCreate( &( object->mutex ) );
-    XSThreading_SemaphoreCreate( &( object->sem ), NULL, 1 );
+    if( lock == NULL )
+    {
+        return;
+    }
+    
+    XSThreading_MutexLock( &( lock->mutex ) );
+    XSThreading_SemaphoreWait( &( lock->sem ) );
 }
