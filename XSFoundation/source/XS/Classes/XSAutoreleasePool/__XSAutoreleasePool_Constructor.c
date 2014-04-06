@@ -77,6 +77,8 @@ XSAutoreleasePoolRef __XSAutoreleasePool_Constructor( XSAutoreleasePoolRef objec
     
     if( object->items == NULL )
     {
+        XSLogWarning( "Error allocating memory for XSAutoreleasePool items" );
+        
         return NULL;
     }
     

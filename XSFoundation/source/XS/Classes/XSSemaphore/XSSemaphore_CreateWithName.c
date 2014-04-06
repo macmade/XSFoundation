@@ -80,6 +80,8 @@ XSStatic XSSemaphoreRef XSSemaphore_CreateWithName( const char * name, XSUIntege
     
     if( name == 0 )
     {
+        XSLogWarning( "Error creating an XSemaphore object" );
+        
         return NULL;
     }
     
@@ -95,6 +97,7 @@ XSStatic XSSemaphoreRef XSSemaphore_CreateWithName( const char * name, XSUIntege
     
     if( sem->name == NULL )
     {
+        XSLogWarning( "Error creating an XSemaphore object - No name specified" );
         XSRelease( sem );
         
         return NULL;
@@ -102,7 +105,13 @@ XSStatic XSSemaphoreRef XSSemaphore_CreateWithName( const char * name, XSUIntege
     
     memcpy( &( sem->name ), name, length );
     
-    XSThreading_SemaphoreCreate( &( sem->sem ), sem->name, count );
+    if( XSThreading_SemaphoreCreate( &( sem->sem ), sem->name, count ) == false )
+    {
+        XSLogWarning( "Error creating a semaphore for XSSemaphore" );
+        XSRelease( sem );
+        
+        return NULL;
+    }
     
     return sem;
 }

@@ -73,5 +73,16 @@
 
 XSStatic XSAutoreleasePoolRef XSAutoreleasePool_Create( void )
 {
-    return NULL;
+    XSAutoreleasePoolRef object;
+    
+    object = XSRuntime_CreateInstance( XSAutoreleasePool_GetClassID() );
+    
+    if( object == NULL )
+    {
+        XSLogWarning( "Error creating an XSAutoreleasePool object" );
+        
+        return NULL;
+    }
+    
+    return object;
 }

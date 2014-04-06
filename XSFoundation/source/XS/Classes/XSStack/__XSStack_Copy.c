@@ -89,6 +89,7 @@ XSStackRef __XSStack_Copy( XSStackRef source, XSStackRef destination )
         
         if( newItem == NULL )
         {
+            XSLogWarning( "Error creating an item for XSStack" );
             XSRecursiveLock_Unlock( source->lock );
             
             goto fail;

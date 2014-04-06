@@ -75,11 +75,15 @@ XSLockRef __XSLock_Constructor( XSLockRef object )
 {
     if( XSThreading_MutexCreate( &( object->mutex ) ) == false )
     {
+        XSLogWarning( "Error creating a mutex for XSLock" );
+        
         return NULL;
     }
     
     if( XSThreading_SemaphoreCreate( &( object->sem ), NULL, 1 ) == false )
     {
+        XSLogWarning( "Error creating a semaphore for XSLock" );
+        
         return NULL;
     }
     

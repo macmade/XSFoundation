@@ -77,10 +77,14 @@ XSBooleanRef XSBoolean_Create( bool value )
     
     object = XSRuntime_CreateInstance( XSBoolean_GetClassID() );
     
-    if( object != NULL )
+    if( object == NULL )
     {
-        object->value = value;
+        XSLogWarning( "Error creating an XSBoolean object" );
+        
+        return NULL;
     }
+    
+    object->value = value;
     
     return object;
 }

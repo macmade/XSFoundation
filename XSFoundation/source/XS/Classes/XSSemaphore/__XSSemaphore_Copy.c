@@ -79,6 +79,8 @@ XSSemaphoreRef __XSSemaphore_Copy( XSSemaphoreRef source, XSSemaphoreRef destina
         
         if( XSThreading_SemaphoreCreate( &( destination->sem ), destination->name, source->count ) == false )
         {
+            XSLogWarning( "Error creating a semaphore for XSSemaphore" );
+            
             return NULL;
         }
     }
@@ -86,6 +88,8 @@ XSSemaphoreRef __XSSemaphore_Copy( XSSemaphoreRef source, XSSemaphoreRef destina
     {
         if( XSThreading_SemaphoreCreate( &( destination->sem ), NULL, source->count ) == false )
         {
+            XSLogWarning( "Error creating a semaphore for XSSemaphore" );
+            
             return NULL;
         }
     }

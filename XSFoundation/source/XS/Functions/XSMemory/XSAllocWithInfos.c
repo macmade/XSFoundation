@@ -88,7 +88,7 @@ void * XSAllocWithInfos( XSUInteger bytes, XSClassID classID, const char * file,
     
     if( object == NULL )
     {
-        XSLogError( "Cannot allocate memory (%lu bytes)", ( unsigned long )bytes );
+        XSLogWarning( "Cannot allocate memory (%lu bytes)", ( unsigned long )bytes );
         
         return NULL;
     }

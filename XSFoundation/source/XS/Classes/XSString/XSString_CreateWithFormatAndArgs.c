@@ -80,6 +80,8 @@ XSStatic XSStringRef XSString_CreateWithFormatAndArgs( const char * format, va_l
     
     if( format == NULL || strlen( format ) == 0 )
     {
+        XSLogWarning( "Error creating an XSString object - No format specified" );
+        
         return NULL;
     }
     
@@ -89,6 +91,7 @@ XSStatic XSStringRef XSString_CreateWithFormatAndArgs( const char * format, va_l
     
     if( length <= 0 )
     {
+        XSLogWarning( "Error creating an XSString object - Invalid format" );
         va_end( ap );
         
         return NULL;
@@ -98,6 +101,7 @@ XSStatic XSStringRef XSString_CreateWithFormatAndArgs( const char * format, va_l
     
     if( s == NULL )
     {
+        XSLogWarning( "Error allocating memory for XSString C format string" );
         va_end( ap );
         
         return NULL;
@@ -107,6 +111,7 @@ XSStatic XSStringRef XSString_CreateWithFormatAndArgs( const char * format, va_l
     
     if( str == NULL )
     {
+        XSLogWarning( "Error creating an XSString object" );
         XSRelease( s );
         
         va_end( ap );

@@ -77,6 +77,8 @@ XSAutoreleasePoolRef __XSAutoreleasePool_Copy( XSAutoreleasePoolRef source, XSAu
     
     if( destination->items == NULL )
     {
+        XSLogWarning( "Error allocating memory for XSAutoreleasePool items" );
+        
         return NULL;
     }
     

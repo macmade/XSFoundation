@@ -77,11 +77,15 @@ XSLockRef __XSLock_Copy( XSLockRef source, XSLockRef destination )
     
     if( XSThreading_MutexCreate( &( destination->mutex ) ) == false )
     {
+        XSLogWarning( "Error creating a mutex for XSLock" );
+        
         return NULL;
     }
     
     if( XSThreading_SemaphoreCreate( &( destination->sem ), NULL, 1 ) )
     {
+        XSLogWarning( "Error creating a semaphore for XSLock" );
+        
         return NULL;
     }
     

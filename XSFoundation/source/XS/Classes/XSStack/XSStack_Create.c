@@ -73,5 +73,16 @@
 
 XSStatic XSStackRef XSStack_Create( void )
 {
-    return XSRuntime_CreateInstance( XSStack_GetClassID() );
+    XSStackRef object;
+    
+    object = XSRuntime_CreateInstance( XSStack_GetClassID() );
+    
+    if( object == NULL )
+    {
+        XSLogWarning( "Error creating an XSStack object" );
+        
+        return NULL;
+    }
+    
+    return object;
 }

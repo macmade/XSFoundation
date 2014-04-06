@@ -77,6 +77,8 @@ XSRecursiveLockRef __XSRecursiveLock_Copy( XSRecursiveLockRef source, XSRecursiv
     
     if( XSThreading_MutexCreate( &( destination->mutex ) ) == false )
     {
+        XSLogWarning( "Error creating a mutex for XSRecursiveLock" );
+        
         return NULL;
     }
     

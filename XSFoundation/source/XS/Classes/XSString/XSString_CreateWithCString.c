@@ -77,28 +77,35 @@ XSStatic XSStringRef XSString_CreateWithCString( const char * s )
     
     if( s == NULL )
     {
+        XSLogWarning( "Error creating an XSString object - No C string specified" );
+        
         return NULL;
     }
     
     object = XSRuntime_CreateInstance( XSString_GetClassID() );
     
-    if( object != NULL )
+    if( object == NULL )
     {
-        object->length = strlen( s );
+        XSLogWarning( "Error creating an XSString object" );
         
-        if( object->length > 0 )
+        return NULL;
+    }
+    
+    object->length = strlen( s );
+    
+    if( object->length > 0 )
+    {
+        object->cString = XSAlloc( object->length + 1 );
+        
+        if( object->cString == NULL )
         {
-            object->cString = XSAlloc( object->length + 1 );
+            XSLogWarning( "Error allocating memory for XSString C string" );
+            XSRelease( object );
             
-            if( object->cString == NULL )
-            {
-                XSRelease( object );
-                
-                return NULL;
-            }
-            
-            memcpy( object->cString, s, object->length );
+            return NULL;
         }
+        
+        memcpy( object->cString, s, object->length );
     }
     
     return object;

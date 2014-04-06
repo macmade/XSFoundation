@@ -77,6 +77,8 @@ XSStackRef __XSStack_Constructor( XSStackRef object )
     
     if( object->lock == NULL )
     {
+        XSLogWarning( "Error creating a lock for XSStack" );
+        
         return NULL;
     }
     
