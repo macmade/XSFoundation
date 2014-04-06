@@ -93,15 +93,15 @@ XS_EXPORT XSStatic XSClassID XSStack_GetClassID( void );
 
 /*!
  * @function    XSStack_Create
- * @abstract    Creates a XSStackRef object
- * @return      The XSStackRef object
+ * @abstract    Creates a stack object
+ * @return      The stack object
  */
 XS_EXPORT XSStatic XSStackRef XSStack_Create( void );
 
 /*!
  * @function    XSStack_GetCount
  * @abstract    Gets the number of object in a XSStackRef object
- * @param       stack       The XSStackRef object
+ * @param       stack       The stack object
  * @return      The number of object in the XSStackRef object
  */
 XS_EXPORT XSUInteger XSStack_GetCount( XSStackRef stack );
@@ -109,7 +109,7 @@ XS_EXPORT XSUInteger XSStack_GetCount( XSStackRef stack );
 /*!
  * @function    XSStack_Push
  * @abstract    Pushes an object in a XSStackRef object
- * @param       stack       The XSStackRef object
+ * @param       stack       The stack object
  * @param       object      The object to push
  */
 XS_EXPORT void XSStack_Push( XSStackRef stack, XSObjectRef object );
@@ -117,7 +117,7 @@ XS_EXPORT void XSStack_Push( XSStackRef stack, XSObjectRef object );
 /*!
  * @function    XSStack_Pop
  * @abstract    Pops an object from a XSStackRef object
- * @param       stack       The XSStackRef object
+ * @param       stack       The stack object
  * @return      The popped object
  */
 XS_EXPORT XSObjectRef XSStack_Pop( XSStackRef stack );

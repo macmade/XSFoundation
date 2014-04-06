@@ -93,15 +93,15 @@ XS_EXPORT XSStatic XSClassID XSRecursiveLock_GetClassID( void );
 
 /*!
  * @function    XSRecursiveLock_Create
- * @abstract    Creates a XSRecursiveLockRef object
- * @return      The XSRecursiveLockRef object
+ * @abstract    Creates a recursive lock object
+ * @return      The recursive lock object
  */
 XS_EXPORT XSStatic XSRecursiveLockRef XSRecursiveLock_Create( void );
 
 /*!
  * @function    XSRecursiveLock_Lock
  * @abstract    Locks a recursive lock object
- * @param       lock    The lock object
+ * @param       lock    The recursive lock object
  */
 XS_EXPORT void XSRecursiveLock_Lock( XSRecursiveLockRef lock );
 
@@ -109,7 +109,9 @@ XS_EXPORT void XSRecursiveLock_Lock( XSRecursiveLockRef lock );
  * @function    XSRecursiveLock_TryLock
  * @abstract    Tries to lock a recursive lock object
  * @return      The class ID for XSRecursiveLock
- * @param       lock    The lock object
+ * @param       lock    The recursive lock object
+ * @discussion  If the recursive lock can't be qcquired, this function will
+ *              return immediately, rather than waiting.
  * @return      True if the lock was acquired, otherwise false
  */
 XS_EXPORT bool XSRecursiveLock_TryLock( XSRecursiveLockRef lock );
@@ -117,7 +119,7 @@ XS_EXPORT bool XSRecursiveLock_TryLock( XSRecursiveLockRef lock );
 /*!
  * @function    XSRecursiveLock_Lock
  * @abstract    Unlocks a recursive lock object
- * @param       lock    The lock object
+ * @param       lock    The recursive lock object
  */
 XS_EXPORT void XSRecursiveLock_Unlock( XSRecursiveLockRef lock );
 

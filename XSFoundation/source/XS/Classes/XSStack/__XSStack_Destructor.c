@@ -73,5 +73,5 @@
 
 void __XSStack_Destructor( XSStackRef object )
 {
-    ( void )object;
+    while( XSStack_Pop( object ) != NULL );
 }
