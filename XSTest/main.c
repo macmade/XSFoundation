@@ -65,8 +65,9 @@
 
 static void __threadedFunc( XSBooleanRef * boolean )
 {
-    XSShow( XSThread_GetCurrentThread() );
     XSShow( boolean );
+    XSShow( XSThread_GetCurrentThread() );
+    XSShow( XSThread_GetMainThread() );
     
     sleep( 1 );
 }

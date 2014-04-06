@@ -116,6 +116,13 @@ typedef void ( * XSThread_FunctionWithArgument )( void * arg );
 XS_EXPORT XSStatic XSClassID XSThread_GetClassID( void );
 
 /*!
+ * @function    XSThread_GetMainThread
+ * @abstract    Gets the instance of the main thread
+ * @return      The instance of the main thread
+ */
+XS_EXPORT XSStatic XSThreadRef XSThread_GetMainThread( void );
+
+/*!
  * @function    XSThread_GetCurrentThread
  * @abstract    Gets the instance of the current thread
  * @return      The instance of the current thread
@@ -168,5 +175,14 @@ XS_EXPORT XSStatic void XSThread_DetachFunctionWithArgument( XSThread_FunctionWi
  * @return      The thread ID
  */
 XS_EXPORT XSUInteger XSThread_GetID( XSThreadRef thread );
+
+/*!
+ * @function    XSThread_IsMainThread
+ * @abstract    Checks if a thread is the main thread
+ * @param       thread      The thread object
+ * @return      True if the thread is the main thread, otherwise false
+ */
+XS_EXPORT bool XSThread_IsMainThread( XSThreadRef thread );
+
 
 #endif /* __XS_CLASSES_XS_THREAD_H__ */

@@ -73,5 +73,7 @@
 
 void __XSThread_Finalize( void )
 {
+    XSThreading_TLSSetObject( &__XSThread_TLSKey, NULL, XSTLSObjectAssociationAssign );
+    XSRelease( __XSThread_MainThread );
     XSThreading_TLSKeyDelete( &__XSThread_TLSKey );
 }

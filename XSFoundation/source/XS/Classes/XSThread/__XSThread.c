@@ -71,9 +71,10 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSThread.h>
 
-XSTLSKey    __XSThread_TLSKey   = 0;
-XSClassID   __XSThread_ClassID  = 0;
-XSClassInfo __XSThread_Class    =
+XSTLSKey    __XSThread_TLSKey       = 0;
+XSClassID   __XSThread_ClassID      = 0;
+XSThreadRef __XSThread_MainThread   = NULL;
+XSClassInfo __XSThread_Class        =
 {
     "XSThread",
     sizeof( struct __XSThread ),

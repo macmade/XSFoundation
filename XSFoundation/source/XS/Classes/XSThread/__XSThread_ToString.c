@@ -75,7 +75,14 @@ const char * __XSThread_ToString( XSThreadRef object )
 {
     XSStringRef str;
     
-    str = XSString_StringWithFormat( "Thread ID: %lX", ( unsigned long )( object->threadID ) );
+    if( XSThread_IsMainThread( object ) )
+    {
+        str = XSString_StringWithFormat( "Thread ID: %lX (main thread)", ( unsigned long )( object->threadID ) );
+    }
+    else
+    {
+        str = XSString_StringWithFormat( "Thread ID: %lX", ( unsigned long )( object->threadID ) );
+    }
     
     return XSString_GetCString( str );
 }

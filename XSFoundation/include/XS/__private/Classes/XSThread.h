@@ -119,6 +119,12 @@ __XSThread_Arguments;
 XS_EXTERN XSTLSKey __XSThread_TLSKey;
 
 /*!
+ * @var         __XSThread_MainThread
+ * @abstract    The main thread
+ */
+XS_EXTERN XSThreadRef __XSThread_MainThread;
+
+/*!
  * @struct      __XSThread
  * @abstract    Structure for XSThread
  */

@@ -62,34 +62,16 @@
 /* $Id$ */
 
 /*!
- * @file        __XSThread_Initialize.c
+ * @file        XSThread_IsMainThread.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSThread_Initialize
+ * @abstract    Definition for XSThread_IsMainThread
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSThread.h>
 
-void __XSThread_Initialize( void )
+bool XSThread_IsMainThread( XSThreadRef thread )
 {
-    __XSThread_ClassID = XSRuntime_RegisterClass( &__XSThread_Class );
-    
-    if( XSThreading_TLSKeyCreate( &__XSThread_TLSKey ) == false )
-    {
-        XSFatalError( "Error creating the TLS key for XSThread" );
-    }
-    
-    XSRuntime_RegisterFinalizer( __XSThread_Finalize );
-    
-    __XSThread_MainThread = XSRuntime_CreateInstance( XSThread_GetClassID() );
-    
-    if( __XSThread_MainThread == NULL )
-    {
-        XSLogWarning( "Error creating an XSThread object" );
-        
-        return;
-    }
-    
-    XSThreading_TLSSetObject( &__XSThread_TLSKey, __XSThread_MainThread, XSTLSObjectAssociationAssign );
+    return ( thread == __XSThread_MainThread ) ? true : false;
 }
