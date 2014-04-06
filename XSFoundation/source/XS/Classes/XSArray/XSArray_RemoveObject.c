@@ -62,78 +62,17 @@
 /* $Id$ */
 
 /*!
- * @header      XSArray.h
+ * @file        XSArray_RemoveObject.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSArray class
+ * @abstract    Definition for XSArray_RemoveObject
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Classes/XSArray.h>
 
-#ifndef __XS_CLASSES_XS_ARRAY_H__
-#define __XS_CLASSES_XS_ARRAY_H__
-
-#include <XS/XSTypes.h>
-#include <XS/XSMacros.h>
-
-/*!
- * @typedef     XSArrayRef
- * @abstract    Opaque type for XSArray
- */
-typedef struct __XSArray * XSArrayRef;
-
-typedef void ( * XSArray_ApplierFunction )( XSObjectRef value, XSUInteger index, bool * stop );
-typedef void ( * XSArray_ApplierMethod )( XSObjectRef object, XSObjectRef value, XSUInteger index, bool * stop );
-
-typedef bool ( * XSArray_FilterFunction )( XSObjectRef value, XSUInteger index, bool * stop );
-typedef bool ( * XSArray_FilterMethod )( XSObjectRef object, XSObjectRef value, XSUInteger index, bool * stop );
-
-typedef XSComparisonResult ( * XSArray_SortFunction )( XSObjectRef value, bool * stop );
-typedef XSComparisonResult ( * XSArray_SortMethod )( XSObjectRef object, XSObjectRef value, bool * stop );
-
-/*!
- * @function    XSArray_GetClassID
- * @abstract    Gets the class ID for XSArray
- * @return      The class ID for XSArray
- */
-XS_EXPORT XSStatic XSClassID XSArray_GetClassID( void );
-
-XS_EXPORT XSStatic XSAutoreleased XSArrayRef XSArray_Array( void );
-XS_EXPORT XSStatic XSAutoreleased XSArrayRef XSArray_ArrayWithObjects( XSObjectRef firstObject, ... );
-
-XS_EXPORT XSStatic XSArrayRef XSArray_Create( void );
-XS_EXPORT XSStatic XSArrayRef XSArray_CreateWithObjects( XSObjectRef firstObject, ... );
-
-XS_EXPORT XSUInteger XSArray_GetCount( XSArrayRef array );
-XS_EXPORT XSUInteger XSArray_GetCountOfObject( XSArrayRef array, XSObjectRef object );
-XS_EXPORT bool XSArray_ContainsObject( XSArrayRef array, XSObjectRef object );
-
-XS_EXPORT XSObjectRef XSArray_GetObjectAtIndex( XSArrayRef array );
-XS_EXPORT XSObjectRef XSArray_GetLastObject( XSArrayRef array );
-XS_EXPORT XSUInteger XSArray_GetFirstIndexOfObject( XSArrayRef array, XSObjectRef object );
-XS_EXPORT XSUInteger XSArray_GetLastIndexOfObject( XSArrayRef array, XSObjectRef object );
-
-XS_EXPORT void XSArray_AddObject( XSArrayRef array, XSObjectRef object );
-XS_EXPORT void XSArray_InsertObjectAtIndex( XSArrayRef array, XSUInteger index, XSObjectRef object );
-XS_EXPORT void XSArray_ReplaceObjectAtIndex( XSArrayRef array, XSUInteger index, XSObjectRef newObject );
-XS_EXPORT void XSArray_AppendArray( XSArrayRef array, XSArrayRef values );
-
-XS_EXPORT void XSArray_RemoveAllObjects( XSArrayRef array );
-XS_EXPORT void XSArray_RemoveLastObject( XSArrayRef array );
-XS_EXPORT void XSArray_RemoveObject( XSArrayRef array, XSObjectRef object );
-XS_EXPORT void XSArray_RemoveObjectAtIndex( XSArrayRef array, XSUInteger index );
-XS_EXPORT void XSArray_RemoveObjectsInArray( XSArrayRef array, XSUInteger objects );
-XS_EXPORT void XSArray_RemoveObjectsInRange( XSArrayRef array, XSRange range );
-
-XS_EXPORT void XSArray_ApplyFunction( XSArrayRef array, XSArray_ApplierFunction function );
-XS_EXPORT void XSArray_ApplyMethod( XSArrayRef array, XSObjectRef object, XSArray_ApplierMethod method );
-
-XS_EXPORT void XSArray_FilterWithFunction( XSArrayRef array, XSArray_FilterFunction function );
-XS_EXPORT void XSArray_FilterWithMethod( XSArrayRef array, XSObjectRef object, XSArray_FilterMethod method );
-
-XS_EXPORT void XSArray_SortWithFunction( XSArrayRef array, XSArray_SortFunction function );
-XS_EXPORT void XSArray_SortWithMethod( XSArrayRef array, XSObjectRef object, XSArray_SortMethod method );
-
-#endif /* __XS_CLASSES_XS_ARRAY_H__ */
+void XSArray_RemoveObject( XSArrayRef array, XSObjectRef object )
+{
+    ( void )array;
+    ( void )object;
+}
