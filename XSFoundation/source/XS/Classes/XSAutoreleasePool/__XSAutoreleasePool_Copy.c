@@ -75,5 +75,10 @@ XSAutoreleasePoolRef __XSAutoreleasePool_Copy( XSAutoreleasePoolRef source, XSAu
 {
     destination->items = XSCopy( source->items );
     
+    if( destination->items == NULL )
+    {
+        return NULL;
+    }
+    
     return destination;
 }

@@ -75,8 +75,15 @@ XSLockRef __XSLock_Copy( XSLockRef source, XSLockRef destination )
 {
     ( void )source;
     
-    XSThreading_MutexCreate( &( destination->mutex ) );
-    XSThreading_SemaphoreCreate( &( destination->sem ), NULL, 1 );
+    if( XSThreading_MutexCreate( &( destination->mutex ) ) == false )
+    {
+        return NULL;
+    }
+    
+    if( XSThreading_SemaphoreCreate( &( destination->sem ), NULL, 1 ) )
+    {
+        return NULL;
+    }
     
     return destination;
 }

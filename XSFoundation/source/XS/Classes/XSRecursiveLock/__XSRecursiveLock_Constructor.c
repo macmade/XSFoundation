@@ -73,7 +73,10 @@
 
 XSRecursiveLockRef __XSRecursiveLock_Constructor( XSRecursiveLockRef object )
 {
-    XSThreading_MutexCreate( &( object->mutex ) );
+    if( XSThreading_MutexCreate( &( object->mutex ) ) == false )
+    {
+        return NULL;
+    }
     
     return object;
 }

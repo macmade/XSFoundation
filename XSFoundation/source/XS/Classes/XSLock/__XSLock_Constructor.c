@@ -73,8 +73,15 @@
 
 XSLockRef __XSLock_Constructor( XSLockRef object )
 {
-    XSThreading_MutexCreate( &( object->mutex ) );
-    XSThreading_SemaphoreCreate( &( object->sem ), NULL, 1 );
+    if( XSThreading_MutexCreate( &( object->mutex ) ) == false )
+    {
+        return NULL;
+    }
+    
+    if( XSThreading_SemaphoreCreate( &( object->sem ), NULL, 1 ) == false )
+    {
+        return NULL;
+    }
     
     return object;
 }

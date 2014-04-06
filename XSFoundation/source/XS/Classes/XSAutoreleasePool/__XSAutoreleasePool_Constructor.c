@@ -75,5 +75,10 @@ XSAutoreleasePoolRef __XSAutoreleasePool_Constructor( XSAutoreleasePoolRef objec
 {
     object->items = XSStack_Create();
     
+    if( object->items == NULL )
+    {
+        return NULL;
+    }
+    
     return object;
 }
