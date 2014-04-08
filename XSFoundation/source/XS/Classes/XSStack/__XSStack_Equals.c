@@ -73,5 +73,45 @@
 
 bool __XSStack_Equals( XSStackRef object1, XSStackRef object2 )
 {
-    return object1 == object2;
+    bool              equals;
+    __XSStack_Value * value1;
+    __XSStack_Value * value2;
+    
+    if( object1 == object2 )
+    {
+        return true;
+    }
+    
+    equals = false;
+    
+    XSRecursiveLock_Lock( object1->lock );
+    XSRecursiveLock_Lock( object2->lock );
+    
+    if( object1->count != object2->count )
+    {
+        goto end;
+    }
+    
+    value1 = object1->top;
+    value2 = object2->top;
+    
+    while( value1 != NULL && value2 != NULL )
+    {
+        if( XSEquals( value1->object, value2->object ) == false )
+        {
+            goto end;
+        }
+        
+        value1 = value1->next;
+        value2 = value2->next;
+    }
+    
+    equals = true;
+    
+    end:
+    
+    XSRecursiveLock_Unlock( object1->lock );
+    XSRecursiveLock_Unlock( object2->lock );
+    
+    return equals;
 }
