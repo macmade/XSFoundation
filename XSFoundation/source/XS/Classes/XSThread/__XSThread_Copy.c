@@ -74,6 +74,9 @@
 XSThreadRef __XSThread_Copy( XSThreadRef source, XSThreadRef destination )
 {
     ( void )source;
+    ( void )destination;
     
-    return destination;
+    XSLogNotice( "Copying an XSThread object is not allowed" );
+    
+    return NULL;
 }

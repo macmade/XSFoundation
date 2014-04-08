@@ -73,14 +73,10 @@
 
 XSAutoreleasePoolRef __XSAutoreleasePool_Copy( XSAutoreleasePoolRef source, XSAutoreleasePoolRef destination )
 {
-    destination->items = XSCopy( source->items );
+    ( void )source;
+    ( void )destination;
     
-    if( destination->items == NULL )
-    {
-        XSLogWarning( "Error allocating memory for XSAutoreleasePool items" );
-        
-        return NULL;
-    }
+    XSLogNotice( "Copying an XSAutoreleasePool object is not allowed" );
     
-    return destination;
+    return NULL;
 }

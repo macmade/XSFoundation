@@ -74,20 +74,9 @@
 XSLockRef __XSLock_Copy( XSLockRef source, XSLockRef destination )
 {
     ( void )source;
+    ( void )destination;
     
-    if( XSThreading_MutexCreate( &( destination->mutex ) ) == false )
-    {
-        XSLogWarning( "Error creating a mutex for XSLock" );
-        
-        return NULL;
-    }
+    XSLogNotice( "Copying an XSLock object is not allowed" );
     
-    if( XSThreading_SemaphoreCreate( &( destination->sem ), NULL, 1 ) )
-    {
-        XSLogWarning( "Error creating a semaphore for XSLock" );
-        
-        return NULL;
-    }
-    
-    return destination;
+    return NULL;
 }

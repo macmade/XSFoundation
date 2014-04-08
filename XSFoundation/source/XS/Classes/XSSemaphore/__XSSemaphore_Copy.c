@@ -73,26 +73,10 @@
 
 XSSemaphoreRef __XSSemaphore_Copy( XSSemaphoreRef source, XSSemaphoreRef destination )
 {
-    if( XSSemaphore_IsNamed( source ) )
-    {
-        XSRetain( ( void * )( destination->name ) );
-        
-        if( XSThreading_SemaphoreCreate( &( destination->sem ), destination->name, source->count ) == false )
-        {
-            XSLogWarning( "Error creating a semaphore for XSSemaphore" );
-            
-            return NULL;
-        }
-    }
-    else
-    {
-        if( XSThreading_SemaphoreCreate( &( destination->sem ), NULL, source->count ) == false )
-        {
-            XSLogWarning( "Error creating a semaphore for XSSemaphore" );
-            
-            return NULL;
-        }
-    }
+    ( void )source;
+    ( void )destination;
     
-    return destination;
+    XSLogNotice( "Copying an XSSemaphore object is not allowed" );
+    
+    return NULL;
 }

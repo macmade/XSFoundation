@@ -74,13 +74,9 @@
 XSRecursiveLockRef __XSRecursiveLock_Copy( XSRecursiveLockRef source, XSRecursiveLockRef destination )
 {
     ( void )source;
+    ( void )destination;
     
-    if( XSThreading_MutexCreate( &( destination->mutex ) ) == false )
-    {
-        XSLogWarning( "Error creating a mutex for XSRecursiveLock" );
-        
-        return NULL;
-    }
+    XSLogNotice( "Copying an XSRecursiveLock object is not allowed" );
     
-    return destination;
+    return NULL;
 }
