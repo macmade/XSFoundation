@@ -73,7 +73,24 @@
 
 const char * __XSStack_ToString( XSStackRef object )
 {
-    ( void )object;
+    XSStringRef       description;
+    __XSStack_Value * value;
     
-    return NULL;
+    XSRecursiveLock_Lock( object->lock );
+    
+    description = XSString_StringWithFormat( "%lu items\n{", ( unsigned long )( object->count ) );
+    
+    value = object->top;
+    
+    while( value != NULL )
+    {
+        description = XSString_StringByAppendingFormat( description, "\n    %s", XSRuntime_GetDescription( value->object ) );
+        value       = value->next;
+    }
+    
+    description = XSString_StringByAppendingCString( description, "\n}" );
+    
+    XSRecursiveLock_Unlock( object->lock );
+    
+    return XSString_GetCString( description );
 }
