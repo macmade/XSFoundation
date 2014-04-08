@@ -73,5 +73,45 @@
 
 bool __XSArray_Equals( XSArrayRef object1, XSArrayRef object2 )
 {
-    return object1 == object2;
+    bool              equals;
+    __XSArray_Value * value1;
+    __XSArray_Value * value2;
+    
+    if( object1 == object2 )
+    {
+        return true;
+    }
+    
+    equals = false;
+    
+    XSRecursiveLock_Lock( object1->lock );
+    XSRecursiveLock_Lock( object2->lock );
+    
+    if( object1->count != object2->count )
+    {
+        goto end;
+    }
+    
+    value1 = object1->first;
+    value2 = object2->first;
+    
+    while( value1 != NULL && value2 != NULL )
+    {
+        if( XSEquals( value1->object, value2->object ) == false )
+        {
+            goto end;
+        }
+        
+        value1 = value1->next;
+        value2 = value2->next;
+    }
+    
+    equals = true;
+    
+    end:
+    
+    XSRecursiveLock_Unlock( object1->lock );
+    XSRecursiveLock_Unlock( object2->lock );
+    
+    return equals;
 }

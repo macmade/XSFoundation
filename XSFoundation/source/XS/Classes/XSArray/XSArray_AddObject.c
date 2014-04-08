@@ -73,6 +73,45 @@
 
 void XSArray_AddObject( XSArrayRef array, XSObjectRef object )
 {
-    ( void )array;
-    ( void )object;
+    __XSArray_Value * value;
+    
+    if( array == NULL )
+    {
+        return;
+    }
+    
+    if( object == NULL )
+    {
+        XSFatalError( "Cannot insert NULL in an XSArray" );
+    }
+    
+    XSRecursiveLock_Lock( array->lock );
+    
+    value = XSAlloc( sizeof( __XSArray_Value ) );
+    
+    if( value == NULL )
+    {
+        XSLogWarning( "Error allocating memory for an XSArray value" );
+        XSRecursiveLock_Unlock( array->lock );
+        
+        return;
+    }
+    
+    value->object = XSRetain( object );
+    
+    if( array->last == NULL )
+    {
+        array->first = value;
+        array->last  = value;
+    }
+    else
+    {
+        array->last->next = value;
+        value->previous   = array->last;
+        array->last       = value;
+    }
+    
+    array->count++;
+    
+    XSRecursiveLock_Unlock( array->lock );
 }

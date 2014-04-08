@@ -79,12 +79,27 @@
 #include <XS/XSMacros.h>
 
 /*!
+ * @struct      __XSArray_Value
+ * @abstract    XSArray value holder
+ */
+typedef struct __XSArray_ValueStruct
+{
+    XSObjectRef                    object;
+    struct __XSArray_ValueStruct * previous;
+    struct __XSArray_ValueStruct * next;
+}
+__XSArray_Value;
+
+/*!
  * @struct      __XSArray
  * @abstract    Structure for XSArray
  */
 struct __XSArray
 {
-    void * temp; /*! Not yet implemented... */
+    XSUInteger         count; /*! The number of elements in the array */
+    XSRecursiveLockRef lock;  /*! The lock for thread-safety */
+    __XSArray_Value  * first; /*! First object in the array */
+    __XSArray_Value  * last;  /*! Last object in the array */
 };
 
 /*!
@@ -145,5 +160,14 @@ bool __XSArray_Equals( XSArrayRef object1, XSArrayRef object2 );
  * @return      The object's description
  */
 const char * __XSArray_ToString( XSArrayRef object );
+
+/*!
+ * @function    __XSArray_CreateWithFirstObjectAndArgs
+ * @abstract    Creates an array object with objects from a va_list
+ * @param       firstObject The first object
+ * @param       args        The other objects, as va_list
+ * @return      The array object
+ */
+XSStatic XSArrayRef __XSArray_CreateWithFirstObjectAndArgs( XSObjectRef firstObject, va_list args );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_ARRAY_H__ */

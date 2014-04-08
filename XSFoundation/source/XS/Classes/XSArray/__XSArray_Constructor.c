@@ -73,5 +73,14 @@
 
 XSArrayRef __XSArray_Constructor( XSArrayRef object )
 {
+    object->lock = XSRecursiveLock_Create();
+    
+    if( object->lock == NULL )
+    {
+        XSLogWarning( "Error creating a lock for XSArray" );
+        
+        return NULL;
+    }
+    
     return object;
 }

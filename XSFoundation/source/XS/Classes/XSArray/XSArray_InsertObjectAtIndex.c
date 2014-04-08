@@ -73,7 +73,77 @@
 
 void XSArray_InsertObjectAtIndex( XSArrayRef array, XSUInteger index, XSObjectRef object )
 {
-    ( void )array;
-    ( void )index;
-    ( void )object;
+    XSUInteger        i;
+    __XSArray_Value * value;
+    __XSArray_Value * newValue;
+    
+    if( array == NULL )
+    {
+        return;
+    }
+    
+    if( object == NULL )
+    {
+        XSFatalError( "Cannot insert NULL in an XSArray" );
+    }
+    
+    XSRecursiveLock_Lock( array->lock );
+    
+    if( index > array->count )
+    {
+        XSRecursiveLock_Unlock( array->lock );
+        XSFatalError( "Cannot insert object in an XSArray - Index %lu out of bounds", ( unsigned long )index );
+    }
+    else if( index == array->count )
+    {
+        XSArray_AddObject( array, object );
+        XSRecursiveLock_Unlock( array->lock );
+        
+        return;
+    }
+    
+    value = array->first;
+    i     = 0;
+    
+    newValue = XSAlloc( sizeof( __XSArray_Value ) );
+    
+    if( newValue == NULL )
+    {
+        XSLogWarning( "Error allocating memory for an XSArray value" );
+        XSRecursiveLock_Unlock( array->lock );
+        
+        return;
+    }
+    
+    newValue->object = XSRetain( object );
+    
+    while( value != NULL )
+    {
+        if( i == index )
+        {
+            if( value->previous == NULL )
+            {
+                array->first    = newValue;
+                newValue->next  = value;
+                value->previous = newValue;
+            }
+            else
+            {
+                value->previous->next = newValue;
+                newValue->previous    = value->previous;
+                newValue->next        = value;
+                value->previous       = newValue;
+            }
+            
+            array->count++;
+            
+            break;
+        }
+        
+        value = value->next;
+        
+        i++;
+    }
+    
+    XSRecursiveLock_Unlock( array->lock );
 }

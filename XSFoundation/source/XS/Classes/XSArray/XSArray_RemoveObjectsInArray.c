@@ -71,8 +71,57 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSArray.h>
 
-void XSArray_RemoveObjectsInArray( XSArrayRef array, XSUInteger objects )
+void XSArray_RemoveObjectsInArray( XSArrayRef array, XSArrayRef objects )
 {
-    ( void )array;
-    ( void )objects;
+    __XSArray_Value * value;
+    __XSArray_Value * removedValue;
+    
+    if( array == NULL || objects == NULL )
+    {
+        return;
+    }
+    
+    XSRecursiveLock_Lock( array->lock );
+    XSRecursiveLock_Lock( objects->lock );
+    
+    value = array->first;
+    
+    while( value != NULL )
+    {
+        if( XSArray_ContainsObject( objects, value->object ) )
+        {
+            if( value->previous != NULL )
+            {
+                value->previous->next = value->next;
+            }
+            else
+            {
+                array->first = value->next;
+            }
+            
+            if( value->next != NULL )
+            {
+                value->next->previous = value->previous;
+            }
+            else
+            {
+                array->last = value->previous;
+            }
+            
+            removedValue = value;
+            value        = value->next;
+            
+            XSRelease( removedValue->object );
+            XSRelease( removedValue );
+            
+            array->count--;
+        }
+        else
+        {
+            value = value->next;
+        }
+    }
+    
+    XSRecursiveLock_Unlock( objects->lock );
+    XSRecursiveLock_Unlock( array->lock );
 }

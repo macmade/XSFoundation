@@ -73,8 +73,30 @@
 
 bool XSArray_ContainsObject( XSArrayRef array, XSObjectRef object )
 {
-    ( void )array;
-    ( void )object;
+    __XSArray_Value * value;
+    
+    if( array == NULL || object == NULL )
+    {
+        return false;
+    }
+    
+    XSRecursiveLock_Lock( array->lock );
+    
+    value = array->first;
+    
+    while( value != NULL )
+    {
+        if( XSEquals( value->object, object ) )
+        {
+            XSRecursiveLock_Unlock( array->lock );
+            
+            return true;
+        }
+        
+        value = value->next;
+    }
+    
+    XSRecursiveLock_Unlock( array->lock );
     
     return false;
 }

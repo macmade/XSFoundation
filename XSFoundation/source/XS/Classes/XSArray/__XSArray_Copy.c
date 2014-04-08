@@ -73,7 +73,56 @@
 
 XSArrayRef __XSArray_Copy( XSArrayRef source, XSArrayRef destination )
 {
-    ( void )source;
+    __XSArray_Value * value;
+    __XSArray_Value * newValue;
+    __XSArray_Value * previousValue;
+    
+    destination->lock = XSRecursiveLock_Create();
+    
+    if( destination->lock == NULL )
+    {
+        XSLogWarning( "Error creating a lock for XSArray" );
+        
+        return NULL;
+    }
+    
+    XSRecursiveLock_Lock( source->lock );
+    
+    value           = source->first;
+    previousValue   = NULL;
+    
+    while( value != NULL )
+    {
+        newValue = XSAlloc( sizeof( __XSArray_Value ) );
+        
+        if( newValue == NULL )
+        {
+            XSLogWarning( "Error allocating memory for an XSArray value" );
+            XSRecursiveLock_Unlock( source->lock );
+            
+            return NULL;
+        }
+        
+        newValue->object = XSRetain( value->object );
+        
+        if( previousValue == NULL )
+        {
+            destination->first = newValue;
+        }
+        else
+        {
+            previousValue->next = newValue;
+            newValue->previous  = previousValue;
+        }
+        
+        destination->last   = newValue;
+        previousValue       = newValue;
+        value               = value->next;
+        
+        destination->count++;
+    }
+    
+    XSRecursiveLock_Unlock( source->lock );
     
     return destination;
 }

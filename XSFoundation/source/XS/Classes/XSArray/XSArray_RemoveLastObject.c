@@ -73,5 +73,35 @@
 
 void XSArray_RemoveLastObject( XSArrayRef array )
 {
-    ( void )array;
+    __XSArray_Value * value;
+    
+    if( array == NULL )
+    {
+        return;
+    }
+    
+    XSRecursiveLock_Lock( array->lock );
+    
+    value = array->last;
+    
+    if( value != NULL )
+    {
+        if( value->previous != NULL )
+        {
+            value->previous->next = NULL;
+            array->last           = value->previous;
+        }
+        else
+        {
+            array->first = NULL;
+            array->last  = NULL;
+        }
+        
+        XSRelease( value->object );
+        XSRelease( value );
+        
+        array->count--;
+    }
+    
+    XSRecursiveLock_Unlock( array->lock );
 }

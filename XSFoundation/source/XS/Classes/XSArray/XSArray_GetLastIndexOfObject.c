@@ -73,8 +73,41 @@
 
 XSUInteger XSArray_GetLastIndexOfObject( XSArrayRef array, XSObjectRef object )
 {
-    ( void )array;
-    ( void )object;
+    __XSArray_Value * value;
+    XSUInteger        i;
     
-    return 0;
+    if( array == NULL || object == NULL )
+    {
+        return XSNotFound;
+    }
+    
+    XSRecursiveLock_Lock( array->lock );
+    
+    if( array->count == 0 )
+    {
+        XSRecursiveLock_Unlock( array->lock );
+        
+        return XSNotFound;
+    }
+    
+    value = array->last;
+    i     = array->count - 1;
+    
+    while( value != NULL )
+    {
+        if( XSEquals( value->object, object ) )
+        {
+            XSRecursiveLock_Unlock( array->lock );
+            
+            return i;
+        }
+        
+        value = value->previous;
+        
+        i--;
+    }
+    
+    XSRecursiveLock_Unlock( array->lock );
+    
+    return XSNotFound;
 }

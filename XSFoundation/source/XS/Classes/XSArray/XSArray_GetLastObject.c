@@ -73,7 +73,25 @@
 
 XSObjectRef XSArray_GetLastObject( XSArrayRef array )
 {
-    ( void )array;
+    XSObjectRef object;
     
-    return NULL;
+    if( array == NULL )
+    {
+        return NULL;
+    }
+    
+    XSRecursiveLock_Lock( array->lock );
+    
+    if( array->last != NULL )
+    {
+        object = array->last->object;
+    }
+    else
+    {
+        object = NULL;
+    }
+    
+    XSRecursiveLock_Unlock( array->lock );
+    
+    return object;
 }

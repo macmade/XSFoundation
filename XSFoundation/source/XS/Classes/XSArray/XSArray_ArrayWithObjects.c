@@ -73,7 +73,14 @@
 
 XSStatic XSAutoreleased XSArrayRef XSArray_ArrayWithObjects( XSObjectRef firstObject, ... )
 {
-    ( void )firstObject;
+    va_list     ap;
+    XSArrayRef  array;
     
-    return NULL;
+    va_start( ap, firstObject );
+    
+    array = __XSArray_CreateWithFirstObjectAndArgs( firstObject, ap );
+    
+    va_end( ap );
+    
+    return XSAutorelease( array );
 }

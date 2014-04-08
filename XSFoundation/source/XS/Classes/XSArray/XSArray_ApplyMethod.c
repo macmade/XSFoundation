@@ -73,7 +73,34 @@
 
 void XSArray_ApplyMethod( XSArrayRef array, XSObjectRef object, XSArray_ApplierMethod method )
 {
-    ( void )array;
-    ( void )object;
-    ( void )method;
+    __XSArray_Value * value;
+    bool              stop;
+    XSUInteger        index;
+    
+    if( array == NULL || object == NULL || method == NULL )
+    {
+        return;
+    }
+    
+    XSRecursiveLock_Lock( array->lock );
+    
+    value = array->first;
+    stop  = false;
+    index = 0;
+    
+    while( value != NULL )
+    {
+        method( object, value->object, index, &stop );
+        
+        if( stop == true )
+        {
+            break;
+        }
+        
+        value = value->next;
+        
+        index++;
+    }
+    
+    XSRecursiveLock_Unlock( array->lock );
 }

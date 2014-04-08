@@ -71,8 +71,27 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSArray.h>
 
-void XSArray_AppendArray( XSArrayRef array, XSArrayRef values )
+void XSArray_AppendArray( XSArrayRef array, XSArrayRef objects )
 {
-    ( void )array;
-    ( void )values;
+    __XSArray_Value * value;
+    
+    if( array == NULL || objects == NULL )
+    {
+        return;
+    }
+    
+    XSRecursiveLock_Lock( array->lock );
+    XSRecursiveLock_Lock( objects->lock );
+    
+    value = objects->first;
+    
+    while( value != NULL )
+    {
+        XSArray_AddObject( array, value->object );
+        
+        value = value->next;
+    }
+    
+    XSRecursiveLock_Unlock( objects->lock );
+    XSRecursiveLock_Unlock( array->lock );
 }

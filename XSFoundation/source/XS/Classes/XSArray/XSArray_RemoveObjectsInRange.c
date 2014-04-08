@@ -73,6 +73,69 @@
 
 void XSArray_RemoveObjectsInRange( XSArrayRef array, XSRange range )
 {
-    ( void )array;
-    ( void )range;
+    XSUInteger        i;
+    __XSArray_Value * value;
+    __XSArray_Value * removedValue;
+    
+    if( array == NULL )
+    {
+        return;
+    }
+    
+    XSRecursiveLock_Lock( array->lock );
+    
+    if( range.location >= array->count )
+    {
+        XSRecursiveLock_Unlock( array->lock );
+        
+        return;
+    }
+    
+    value = array->first;
+    i     = 0;
+    
+    while( value != NULL )
+    {
+        if( i > range.location + range.length )
+        {
+            break;
+        }
+        
+        if( i >= range.location && i < range.location + range.length )
+        {
+            if( value->previous != NULL )
+            {
+                value->previous->next = value->next;
+            }
+            else
+            {
+                array->first = value->next;
+            }
+            
+            if( value->next != NULL )
+            {
+                value->next->previous = value->previous;
+            }
+            else
+            {
+                array->last = value->previous;
+            }
+            
+            removedValue = value;
+            value        = value->next;
+            
+            XSRelease( removedValue->object );
+            XSRelease( removedValue );
+            
+            array->count--;
+        }
+        else
+        {
+            value = value->next;
+        }
+        
+        i++;
+    }
+    
+    XSRecursiveLock_Unlock( array->lock );
 }

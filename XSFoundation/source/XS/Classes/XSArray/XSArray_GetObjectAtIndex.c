@@ -71,9 +71,42 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSArray.h>
 
-XSObjectRef XSArray_GetObjectAtIndex( XSArrayRef array )
+XSObjectRef XSArray_GetObjectAtIndex( XSArrayRef array, XSUInteger index )
 {
-    ( void )array;
+    XSObjectRef       object;
+    XSUInteger        i;
+    __XSArray_Value * value;
     
-    return NULL;
+    if( array == NULL )
+    {
+        return NULL;
+    }
+    
+    XSRecursiveLock_Lock( array->lock );
+    
+    object = NULL;
+    i      = 0;
+    
+    if( index < array->count )
+    {
+        value = array->first;
+        
+        while( value != NULL )
+        {
+            if( i == index )
+            {
+                object = value->object;
+                
+                break;
+            }
+            
+            value = value->next;
+            
+            i++;
+        }
+    }
+    
+    XSRecursiveLock_Unlock( array->lock );
+    
+    return object;
 }

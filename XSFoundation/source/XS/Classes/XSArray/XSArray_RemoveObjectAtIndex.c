@@ -73,6 +73,60 @@
 
 void XSArray_RemoveObjectAtIndex( XSArrayRef array, XSUInteger index )
 {
-    ( void )array;
-    ( void )index;
+    XSUInteger        i;
+    __XSArray_Value * value;
+    
+    if( array == NULL )
+    {
+        return;
+    }
+    
+    XSRecursiveLock_Lock( array->lock );
+    
+    if( index >= array->count )
+    {
+        XSRecursiveLock_Unlock( array->lock );
+        
+        return;
+    }
+    
+    i     = 0;
+    value = array->first;
+    
+    while( value != NULL )
+    {
+        if( i == index )
+        {
+            if( value->previous != NULL )
+            {
+                value->previous->next = value->next;
+            }
+            else
+            {
+                array->first = value->next;
+            }
+            
+            if( value->next != NULL )
+            {
+                value->next->previous = value->previous;
+            }
+            else
+            {
+                array->last = value->previous;
+            }
+            
+            XSRelease( value->object );
+            XSRelease( value );
+            
+            array->count--;
+            
+            break;
+        }
+        
+        value = value->next;
+        
+        i++;
+    }
+    
+    XSRecursiveLock_Unlock( array->lock );
 }

@@ -73,6 +73,53 @@
 
 void XSArray_RemoveObject( XSArrayRef array, XSObjectRef object )
 {
-    ( void )array;
-    ( void )object;
+    __XSArray_Value * value;
+    __XSArray_Value * removedValue;
+    
+    if( array == NULL || object == NULL )
+    {
+        return;
+    }
+    
+    XSRecursiveLock_Lock( array->lock );
+    
+    value = array->first;
+    
+    while( value != NULL )
+    {
+        if( XSEquals( value->object, object ) )
+        {
+            if( value->previous != NULL )
+            {
+                value->previous->next = value->next;
+            }
+            else
+            {
+                array->first = value->next;
+            }
+            
+            if( value->next != NULL )
+            {
+                value->next->previous = value->previous;
+            }
+            else
+            {
+                array->last = value->previous;
+            }
+            
+            removedValue = value;
+            value        = value->next;
+            
+            XSRelease( removedValue->object );
+            XSRelease( removedValue );
+            
+            array->count--;
+        }
+        else
+        {
+            value = value->next;
+        }
+    }
+    
+    XSRecursiveLock_Unlock( array->lock );
 }

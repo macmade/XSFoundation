@@ -73,7 +73,45 @@
 
 void XSArray_ReplaceObjectAtIndex( XSArrayRef array, XSUInteger index, XSObjectRef newObject )
 {
-    ( void )array;
-    ( void )index;
-    ( void )newObject;
+    __XSArray_Value * value;
+    XSUInteger        i;
+    
+    if( array == NULL )
+    {
+        return;
+    }
+    
+    if( newObject == NULL )
+    {
+        XSFatalError( "Cannot insert NULL in an XSArray" );
+    }
+    
+    XSRecursiveLock_Lock( array->lock );
+    
+    if( index >= array->count )
+    {
+        XSRecursiveLock_Unlock( array->lock );
+        XSFatalError( "Cannot insert object in an XSArray - Index %lu out of bounds", ( unsigned long )index );
+    }
+    
+    i     = 0;
+    value = array->first;
+    
+    while( value != NULL )
+    {
+        if( i == index )
+        {
+            XSRelease( value->object );
+            
+            value->object = XSRetain( newObject );
+            
+            break;
+        }
+        
+        value = value->next;
+        
+        i++;
+    }
+    
+    XSRecursiveLock_Unlock( array->lock );
 }

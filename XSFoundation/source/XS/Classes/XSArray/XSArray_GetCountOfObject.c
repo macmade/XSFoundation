@@ -73,8 +73,30 @@
 
 XSUInteger XSArray_GetCountOfObject( XSArrayRef array, XSObjectRef object )
 {
-    ( void )array;
-    ( void )object;
+    __XSArray_Value * value;
+    XSUInteger        i;
     
-    return 0;
+    if( array == NULL || object == NULL )
+    {
+        return 0;
+    }
+    
+    XSRecursiveLock_Lock( array->lock );
+    
+    value = array->first;
+    i     = 0;
+    
+    while( value != NULL )
+    {
+        if( XSEquals( value->object, object ) )
+        {
+            i++;
+        }
+        
+        value = value->next;
+    }
+    
+    XSRecursiveLock_Unlock( array->lock );
+    
+    return i;
 }

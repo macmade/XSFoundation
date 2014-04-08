@@ -73,5 +73,30 @@
 
 void XSArray_RemoveAllObjects( XSArrayRef array )
 {
-    ( void )array;
+    __XSArray_Value * value;
+    __XSArray_Value * removedValue;
+    
+    if( array == NULL )
+    {
+        return;
+    }
+    
+    XSRecursiveLock_Lock( array->lock );
+    
+    value = array->first;
+    
+    while( value != NULL )
+    {
+        removedValue    = value;
+        value           = value->next;
+        
+        XSRelease( removedValue->object );
+        XSRelease( removedValue );
+    }
+    
+    array->first = NULL;
+    array->last  = NULL;
+    array->count = 0;
+    
+    XSRecursiveLock_Unlock( array->lock );
 }

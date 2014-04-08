@@ -72,6 +72,14 @@ static void __threadedFunc( XSBooleanRef * boolean )
     sleep( 1 );
 }
 
+static bool __filterArray( XSObjectRef object, XSUInteger index, bool * stop )
+{
+    ( void )index;
+    ( void )stop;
+    
+    return XSEquals( object, XSSTR( "str5" ) );
+}
+
 int main( int argc, const char * argv[] )
 {
     ( void )argc;
@@ -244,6 +252,8 @@ int main( int argc, const char * argv[] )
         
         s2 = XSCopy( s1 );
         
+        XSShow( s2 );
+        
         XSLog( "B1: %p",        b1 );
         XSLog( "B2: %p",        b2 );
         XSLog( "B3: %p",        b3 );
@@ -259,6 +269,42 @@ int main( int argc, const char * argv[] )
         XSRelease( b1 );
         XSRelease( b2 );
         XSRelease( b3 );
+    }
+    
+    {
+        XSArrayRef a1;
+        XSArrayRef a2;
+        
+        a1 = XSArray_ArrayWithObjects( XSSTR( "str1" ), XSSTR( "str2" ), XSSTR( "str3" ), XSSTR( "str4" ), XSSTR( "str5" ), NULL );
+        a2 = XSCopy( a1 );
+        
+        XSArray_AddObject( a2 , XSSTR( "str6" ) );
+        XSArray_AddObject( a2 , a1 );
+        XSArray_AppendArray( a2, a1 );
+        
+        XSLog( "Count:       %lu", ( unsigned long )XSArray_GetCount( a2 ) );
+        XSLog( "First index: %lu", ( unsigned long )XSArray_GetFirstIndexOfObject( a2, XSSTR( "str2" ) ) );
+        XSLog( "Last index:  %lu", ( unsigned long )XSArray_GetLastIndexOfObject( a2, XSSTR( "str2" ) ) );
+        
+        XSShow( a1 );
+        XSShow( a2 );
+        
+        XSArray_FilterWithFunction( a2, __filterArray );
+        XSShow( a2 );
+        
+        XSArray_InsertObjectAtIndex( a2, 1, XSSTR( "hello, world" ) );
+        XSShow( a2 );
+        
+        XSArray_ReplaceObjectAtIndex( a2, 2, XSSTR( "hello, universe" ) );
+        XSShow( a2 );
+        
+        XSArray_RemoveObjectsInRange( a2, XSRange_Make( 0, 1 ) );
+        XSShow( a2 );
+        
+        XSArray_RemoveAllObjects( a2 );
+        XSShow( a2 );
+        
+        XSRelease( a2 );
     }
     
     {

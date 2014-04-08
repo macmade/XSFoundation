@@ -73,7 +73,14 @@
 
 XSStatic XSArrayRef XSArray_CreateWithObjects( XSObjectRef firstObject, ... )
 {
-    ( void )firstObject;
+    va_list     ap;
+    XSArrayRef  array;
     
-    return NULL;
+    va_start( ap, firstObject );
+    
+    array = __XSArray_CreateWithFirstObjectAndArgs( firstObject, ap );
+    
+    va_end( ap );
+    
+    return array;
 }

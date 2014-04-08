@@ -73,6 +73,64 @@
 
 void XSArray_FilterWithFunction( XSArrayRef array, XSArray_FilterFunction function )
 {
-    ( void )array;
-    ( void )function;
+    __XSArray_Value * value;
+    __XSArray_Value * removedValue;
+    XSUInteger        i;
+    bool              stop;
+    
+    if( array == NULL || function == NULL )
+    {
+        return;
+    }
+    
+    XSRecursiveLock_Lock( array->lock );
+    
+    value = array->first;
+    i     = 0;
+    stop  = false;
+    
+    while( value != NULL )
+    {
+        if( function( value->object, i, &stop ) == false )
+        {
+            array->count--;
+            
+            if( value->previous != NULL )
+            {
+                value->previous->next = value->next;
+            }
+            else
+            {
+                array->first = value->next;
+            }
+            
+            if( value->next != NULL )
+            {
+                value->next->previous = value->previous;
+            }
+            else
+            {
+                array->last = value->previous;
+            }
+            
+            removedValue = value;
+            value        = value->next;
+            
+            XSRelease( removedValue->object );
+            XSRelease( removedValue );
+        }
+        else
+        {
+            value = value->next;
+        }
+        
+        if( stop == true )
+        {
+            break;
+        }
+        
+        i++;
+    }
+    
+    XSRecursiveLock_Unlock( array->lock );
 }

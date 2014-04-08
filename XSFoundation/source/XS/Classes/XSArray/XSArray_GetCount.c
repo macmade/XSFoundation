@@ -73,7 +73,18 @@
 
 XSUInteger XSArray_GetCount( XSArrayRef array )
 {
-    ( void )array;
+    XSUInteger c;
     
-    return 0;
+    if( array == NULL )
+    {
+        return 0;
+    }
+    
+    XSRecursiveLock_Lock( array->lock );
+    
+    c = array->count;
+    
+    XSRecursiveLock_Unlock( array->lock );
+    
+    return c;
 }
