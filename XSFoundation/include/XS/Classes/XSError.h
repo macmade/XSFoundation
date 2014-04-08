@@ -77,6 +77,8 @@
 
 #include <XS/XSTypes.h>
 #include <XS/XSMacros.h>
+#include <XS/Classes/XSString.h>
+#include <XS/Classes/XSDictionary.h>
 
 /*!
  * @typedef     XSErrorRef
@@ -90,5 +92,59 @@ typedef struct __XSError * XSErrorRef;
  * @return      The class ID for XSError
  */
 XS_EXPORT XSStatic XSClassID XSError_GetClassID( void );
+
+/*!
+ * @function    XSError_Error
+ * @abstract    Gets an error object
+ * @param       domain      The error domain
+ * @param       code        The error code
+ * @param       reason      The error reason
+ * @param       userInfo    The error user infos
+ * @return      The error object
+ */
+XS_EXPORT XSStatic XSAutoreleased XSErrorRef XSError_Error( XSStringRef domain, XSInteger code, XSStringRef reason, XSDictionaryRef userInfo );
+
+/*!
+ * @function    XSError_Create
+ * @abstract    Creates an error object
+ * @param       domain      The error domain
+ * @param       code        The error code
+ * @param       reason      The error reason
+ * @param       userInfo    The error user infos
+ * @return      The error object
+ */
+XS_EXPORT XSStatic XSErrorRef XSError_Create( XSStringRef domain, XSInteger code, XSStringRef reason, XSDictionaryRef userInfo );
+
+/*!
+ * @function    XSError_GetDomain
+ * @abstract    Gets the error domain
+ * @param       error       The error object
+ * @return      The error domain
+ */
+XS_EXPORT XSStringRef XSError_GetDomain( XSErrorRef error );
+
+/*!
+ * @function    XSError_GetCode
+ * @abstract    Gets the error code
+ * @param       error       The error object
+ * @return      The error code
+ */
+XS_EXPORT XSInteger XSError_GetCode( XSErrorRef error );
+
+/*!
+ * @function    XSError_GetReason
+ * @abstract    Gets the error reason
+ * @param       error       The error object
+ * @return      The error reason
+ */
+XS_EXPORT XSStringRef XSError_GetReason( XSErrorRef error );
+
+/*!
+ * @function    XSError_GetUserInfo
+ * @abstract    Gets the error user infos
+ * @param       error       The error object
+ * @return      The error user infos
+ */
+XS_EXPORT XSDictionaryRef XSError_GetUserInfo( XSErrorRef error );
 
 #endif /* __XS_CLASSES_XS_ERROR_H__ */

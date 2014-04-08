@@ -62,91 +62,32 @@
 /* $Id$ */
 
 /*!
- * @header      XSError.h
+ * @file        XSError_Create.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSError.h
+ * @abstract    Definition for XSError_Create
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Classes/XSError.h>
 
-#ifndef __XS___PRIVATE_CLASSES_XS_ERROR_H__
-#define __XS___PRIVATE_CLASSES_XS_ERROR_H__
-
-#include <XS/XSTypes.h>
-#include <XS/XSMacros.h>
-
-/*!
- * @struct      __XSError
- * @abstract    Structure for XSError
- */
-struct __XSError
+XSStatic XSErrorRef XSError_Create( XSStringRef domain, XSInteger code, XSStringRef reason, XSDictionaryRef userInfo )
 {
-    XSStringRef     domain;     /*! The error domain */
-    XSStringRef     reason;     /*! The error reason */
-    XSDictionaryRef userInfo;   /*! The error user infos */
-    XSInteger       code;       /*! The error code */
-};
-
-/*!
- * @var         __XSError_ClassID
- * @abstract    Class ID
- */
-XS_EXTERN XSClassID __XSError_ClassID;
-
-/*!
- * @var         __XSError_Class
- * @abstract    Class info
- */
-XS_EXTERN XSClassInfo __XSError_Class;
-
-/*!
- * @function    __XSError_Initialize
- * @abstract    Class initializer
- */
-XSStatic void __XSError_Initialize( void );
-
-/*!
- * @function    __XSError_Constructor
- * @abstract    Class constructor callback
- * @param       object      The object beeing construct
- * @return      The new object
- */
-XSErrorRef __XSError_Constructor( XSErrorRef object );
-
-/*!
- * @function    __XSError_Destructor
- * @abstract    Class destructor callback
- * @param       object      The object beeing destruct
- */
-void __XSError_Destructor( XSErrorRef object );
-
-/*!
- * @function    __XSError_Copy
- * @abstract    Class copy callback
- * @param       source      The object to copy
- * @param       destination The object beeing copied
- * @result      The copied object
- */
-XSErrorRef __XSError_Copy( XSErrorRef source, XSErrorRef destination );
-
-/*!
- * @function    __XSError_Equals
- * @abstract    Class equals callback
- * @param       object1     The first object to compare
- * @param       object2     The second object to compare
- * @return      True if both objects are equals, otherwise false
- */
-bool __XSError_Equals( XSErrorRef object1, XSErrorRef object2 );
-
-/*!
- * @function    __XSError_ToString
- * @abstract    Class to-string callback
- * @param       object      The object for which to get a description
- * @return      The object's description
- */
-const char * __XSError_ToString( XSErrorRef object );
-
-#endif /* __XS___PRIVATE_CLASSES_XS_ERROR_H__ */
+    XSErrorRef error;
+    
+    error = XSRuntime_CreateInstance( XSError_GetClassID() );
+    
+    if( error == NULL )
+    {
+        XSLogWarning( "Error creating an XSError object" );
+        
+        return NULL;
+    }
+    
+    error->code     = code;
+    error->domain   = XSRetain( domain );
+    error->reason   = XSRetain( reason );
+    error->userInfo = XSRetain( userInfo );
+    
+    return error;
+}
