@@ -93,7 +93,7 @@ void XSReleaseWithInfos( void * memory, const char * file, int line, const char 
         
         if( destructor != NULL )
         {
-            destructor( object );
+            destructor( memory );
         }
         
         free( object );
