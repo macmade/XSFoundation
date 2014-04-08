@@ -73,26 +73,28 @@
 
 void XSStack_Push( XSStackRef stack, XSObjectRef object )
 {
-    __XSStack_Item * item;
+    __XSStack_Value * value;
     
     if( stack == NULL )
     {
         return;
     }
     
-    item = XSAlloc( sizeof( __XSStack_Item ) );
+    value = XSAlloc( sizeof( value ) );
     
-    if( item == NULL )
+    if( value == NULL )
     {
+        XSLogWarning( "Error allocating memory for an XSStack value" );
+        
         return;
     }
     
-    item->object = XSRetain( object );
+    value->object = XSRetain( object );
     
     XSRecursiveLock_Lock( stack->lock );
     
-    item->next = stack->top;
-    stack->top = item;
+    value->next = stack->top;
+    stack->top  = value;
     
     stack->count++;
     

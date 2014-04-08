@@ -73,8 +73,8 @@
 
 XSObjectRef XSStack_Pop( XSStackRef stack )
 {
-    __XSStack_Item * item;
-    XSObjectRef      object;
+    __XSStack_Value * value;
+    XSObjectRef       object;
     
     if( stack == NULL )
     {
@@ -83,21 +83,21 @@ XSObjectRef XSStack_Pop( XSStackRef stack )
     
     XSRecursiveLock_Lock( stack->lock );
     
-    item = stack->top;
+    value = stack->top;
     
-    if( item == NULL )
+    if( value == NULL )
     {
         XSRecursiveLock_Unlock( stack->lock );
         
         return NULL;
     }
     
-    stack->top = item->next;
-    object     = item->object;
+    stack->top = value->next;
+    object     = value->object;
     
     stack->count--;
         
-    XSRelease( item );
+    XSRelease( value );
     XSRecursiveLock_Unlock( stack->lock );
     
     return XSAutorelease( object );

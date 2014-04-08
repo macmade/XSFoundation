@@ -79,15 +79,15 @@
 #include <XS/XSMacros.h>
 
 /*!
- * @typedef     __XSStack_Item
- * @abstract    Stack item
+ * @typedef     __XSStack_Value
+ * @abstract    Stack value holder
  */
-typedef struct __XSStack_ItemStruct
+typedef struct __XSStack_ValueStruct
 {
-    XSObjectRef                            object;   /*! The contained object */
-    struct __XSStack_ItemStruct * volatile next;     /*! The next element in the stack */
+    XSObjectRef                             object; /*! The contained object */
+    struct __XSStack_ValueStruct * volatile next;   /*! The next element in the stack */
 }
-__XSStack_Item;
+__XSStack_Value;
 
 /*!
  * @struct      __XSStack
@@ -95,7 +95,7 @@ __XSStack_Item;
  */
 struct __XSStack
 {
-    __XSStack_Item   * top;   /*! The top element in the stack */
+    __XSStack_Value  * top;   /*! The top element in the stack */
     XSUInteger         count; /*! The number of elements in the stack */
     XSRecursiveLockRef lock;  /*! The lock for thread-safety */
 };

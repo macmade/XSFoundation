@@ -73,10 +73,9 @@
 
 XSStackRef __XSStack_Copy( XSStackRef source, XSStackRef destination )
 {
-    __XSStack_Item * item;
-    __XSStack_Item * newItem;
-    __XSStack_Item * nextItem;
-    __XSStack_Item * prevItem;
+    __XSStack_Value * value;
+    __XSStack_Value * newValue;
+    __XSStack_Value * previousValue;
     
     destination->lock = XSRecursiveLock_Create();
     
@@ -89,54 +88,39 @@ XSStackRef __XSStack_Copy( XSStackRef source, XSStackRef destination )
     
     XSRecursiveLock_Lock( source->lock );
     
-    item     = source->top;
-    prevItem = NULL;
+    value         = source->top;
+    previousValue = NULL;
     
-    while( item != NULL )
+    while( value != NULL )
     {
-        newItem = XSAlloc( sizeof( __XSStack_Item ) );
+        newValue = XSAlloc( sizeof( __XSStack_Value ) );
         
-        if( newItem == NULL )
+        if( newValue == NULL )
         {
-            XSLogWarning( "Error creating an item for XSStack" );
+            XSLogWarning( "Error allocating memory for an XSStack value" );
             XSRecursiveLock_Unlock( source->lock );
             
-            goto fail;
+            return NULL;
         }
         
-        newItem->object = XSRetain( item->object );
+        newValue->object = XSRetain( value->object );
         
-        if( prevItem == NULL )
+        if( previousValue == NULL )
         {
-            destination->top = newItem;
+            destination->top = newValue;
         }
         else
         {
-            prevItem->next = newItem;
+            previousValue->next = newValue;
         }
         
-        prevItem = newItem;
-        item     = item->next;
+        destination->count++;
+        
+        previousValue = newValue;
+        value         = value->next;
     }
     
     XSRecursiveLock_Unlock( source->lock );
     
     return destination;
-    
-    fail:
-    
-    item = destination->top;
-    
-    while( item != NULL )
-    {
-        XSRelease( item->object );
-        
-        nextItem = item->next;
-        
-        XSRelease( item );
-        
-        item = nextItem;
-    }
-    
-    return NULL;
 }
