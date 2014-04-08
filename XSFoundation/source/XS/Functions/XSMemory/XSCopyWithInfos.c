@@ -93,14 +93,12 @@ XSObjectRef XSCopyWithInfos( void * memory, const char * file, int line, const c
     
     if( XSRuntime_IsRegisteredClass( object->classID ) == false )
     {
-        copy = NULL;
-    }
-    else
-    {
-        copy = __XSRuntime_GetCopyCallback( object->classID );
+        memcpy( data, memory, object->size );
+        
+        return data;
     }
     
-    memcpy( data, memory, object->size );
+    copy = __XSRuntime_GetCopyCallback( object->classID );
     
     if( copy != NULL )
     {
@@ -116,6 +114,10 @@ XSObjectRef XSCopyWithInfos( void * memory, const char * file, int line, const c
         {
             data = copiedData;
         }
+    }
+    else
+    {
+        memcpy( data, memory, object->size );
     }
     
     return data;
