@@ -73,5 +73,7 @@
 
 void __XSError_Destructor( XSErrorRef object )
 {
-    ( void )object;
+    XSRelease( object->domain );
+    XSRelease( object->reason );
+    XSRelease( object->userInfo );
 }

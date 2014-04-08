@@ -73,7 +73,20 @@
 
 const char * __XSError_ToString( XSErrorRef object )
 {
-    ( void )object;
+    XSStringRef  description;
+    const char * domain;
+    const char * reason;
     
-    return NULL;
+    domain = XSString_GetCString( object->domain );
+    reason = XSString_GetCString( object->reason );
+    
+    description = XSString_StringWithFormat
+    (
+        "%s / %lu - %s",
+        ( domain == NULL ) ? "unknown" : domain,
+        ( unsigned long )( object->code ),
+        ( reason == NULL ) ? "unknown" : reason
+    );
+    
+    return XSString_GetCString( description );
 }

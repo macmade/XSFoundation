@@ -73,7 +73,10 @@
 
 XSErrorRef __XSError_Copy( XSErrorRef source, XSErrorRef destination )
 {
-    ( void )source;
+    destination->code     = source->code;
+    destination->domain   = XSRetain( source->domain );
+    destination->reason   = XSRetain( source->reason );
+    destination->userInfo = XSRetain( source->userInfo );
     
     return destination;
 }

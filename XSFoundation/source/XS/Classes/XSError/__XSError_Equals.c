@@ -73,5 +73,25 @@
 
 bool __XSError_Equals( XSErrorRef object1, XSErrorRef object2 )
 {
-    return object1 == object2;
+    if( object1->code != object2->code )
+    {
+        return false;
+    }
+    
+    if( XSEquals( object1->domain, object2->domain ) == false )
+    {
+        return false;
+    }
+    
+    if( XSEquals( object1->reason, object2->reason ) == false )
+    {
+        return false;
+    }
+    
+    if( XSEquals( object1->userInfo, object2->userInfo ) == false )
+    {
+        return false;
+    }
+    
+    return true;
 }
