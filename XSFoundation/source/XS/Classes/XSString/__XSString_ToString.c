@@ -73,5 +73,9 @@
 
 const char * __XSString_ToString( XSStringRef object )
 {
-    return object->cString;
+    XSStringRef description;
+    
+    description = XSString_StringWithFormat( "\"%s\"", XSString_GetCString( object ) );
+    
+    return XSString_GetCString( description );
 }
