@@ -231,6 +231,7 @@ XS_EXPORT XSObjectRef XSArray_GetLastObject( XSArrayRef array );
  * @function    XSArray_GetFirstIndexOfObject
  * @abstract    Gets the first index of an object in an array
  * @param       array       The array
+ * @param       object      The object
  * @return      The first index of the object, or XSNotFound
  */
 XS_EXPORT XSUInteger XSArray_GetFirstIndexOfObject( XSArrayRef array, XSObjectRef object );
@@ -239,6 +240,7 @@ XS_EXPORT XSUInteger XSArray_GetFirstIndexOfObject( XSArrayRef array, XSObjectRe
  * @function    XSArray_GetLastIndexOfObject
  * @abstract    Gets the last index of an object in an array
  * @param       array       The array
+ * @param       object      The object
  * @return      The last index of the object, or XSNotFound
  */
 XS_EXPORT XSUInteger XSArray_GetLastIndexOfObject( XSArrayRef array, XSObjectRef object );

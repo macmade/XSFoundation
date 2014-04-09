@@ -84,9 +84,9 @@
  */
 typedef struct __XSArray_ValueStruct
 {
-    XSObjectRef                    object;
-    struct __XSArray_ValueStruct * previous;
-    struct __XSArray_ValueStruct * next;
+    XSObjectRef                    object;      /*! The contained object */
+    struct __XSArray_ValueStruct * previous;    /*! The previous value */
+    struct __XSArray_ValueStruct * next;        /*! The next value */
 }
 __XSArray_Value;
 

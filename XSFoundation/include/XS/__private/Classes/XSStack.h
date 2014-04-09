@@ -85,7 +85,7 @@
 typedef struct __XSStack_ValueStruct
 {
     XSObjectRef                             object; /*! The contained object */
-    struct __XSStack_ValueStruct * volatile next;   /*! The next element in the stack */
+    struct __XSStack_ValueStruct * volatile next;   /*! The next value */
 }
 __XSStack_Value;
 
