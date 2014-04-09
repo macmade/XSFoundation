@@ -75,6 +75,7 @@ XSClassID   __XSError_ClassID = 0;
 XSClassInfo __XSError_Class   =
 {
     "XSError",
+    XSClassTypeNormal,
     sizeof( struct __XSError ),
     ( XSClassCallbackConstructor )__XSError_Constructor,
     ( XSClassCallbackDestructor  )__XSError_Destructor,

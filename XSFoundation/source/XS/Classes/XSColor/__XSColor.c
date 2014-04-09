@@ -75,6 +75,7 @@ XSClassID   __XSColor_ClassID = 0;
 XSClassInfo __XSColor_Class   =
 {
     "XSColor",
+    XSClassTypeNormal,
     sizeof( struct __XSColor ),
     ( XSClassCallbackConstructor )__XSColor_Constructor,
     ( XSClassCallbackDestructor  )__XSColor_Destructor,

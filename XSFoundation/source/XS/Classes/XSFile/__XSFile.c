@@ -75,6 +75,7 @@ XSClassID   __XSFile_ClassID = 0;
 XSClassInfo __XSFile_Class   =
 {
     "XSFile",
+    XSClassTypeNormal,
     sizeof( struct __XSFile ),
     ( XSClassCallbackConstructor )__XSFile_Constructor,
     ( XSClassCallbackDestructor  )__XSFile_Destructor,

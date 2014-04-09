@@ -75,6 +75,7 @@ XSClassID   __XSDate_ClassID = 0;
 XSClassInfo __XSDate_Class   =
 {
     "XSDate",
+    XSClassTypeNormal,
     sizeof( struct __XSDate ),
     ( XSClassCallbackConstructor )__XSDate_Constructor,
     ( XSClassCallbackDestructor  )__XSDate_Destructor,

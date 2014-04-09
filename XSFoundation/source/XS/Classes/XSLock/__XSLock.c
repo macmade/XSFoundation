@@ -75,6 +75,7 @@ XSClassID   __XSLock_ClassID = 0;
 XSClassInfo __XSLock_Class   =
 {
     "XSLock",
+    XSClassTypeNormal,
     sizeof( struct __XSLock ),
     ( XSClassCallbackConstructor )__XSLock_Constructor,
     ( XSClassCallbackDestructor  )__XSLock_Destructor,

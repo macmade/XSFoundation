@@ -75,6 +75,7 @@ XSClassID   __XSNumber_ClassID = 0;
 XSClassInfo __XSNumber_Class   =
 {
     "XSNumber",
+    XSClassTypeNormal,
     sizeof( struct __XSNumber ),
     ( XSClassCallbackConstructor )__XSNumber_Constructor,
     ( XSClassCallbackDestructor  )__XSNumber_Destructor,

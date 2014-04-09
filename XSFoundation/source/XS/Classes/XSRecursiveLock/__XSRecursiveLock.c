@@ -75,6 +75,7 @@ XSClassID   __XSRecursiveLock_ClassID = 0;
 XSClassInfo __XSRecursiveLock_Class   =
 {
     "XSRecursiveLock",
+    XSClassTypeNormal,
     sizeof( struct __XSRecursiveLock ),
     ( XSClassCallbackConstructor )__XSRecursiveLock_Constructor,
     ( XSClassCallbackDestructor  )__XSRecursiveLock_Destructor,

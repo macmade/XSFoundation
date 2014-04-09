@@ -75,6 +75,7 @@ XSClassID   __XSNotification_ClassID = 0;
 XSClassInfo __XSNotification_Class   =
 {
     "XSNotification",
+    XSClassTypeNormal,
     sizeof( struct __XSNotification ),
     ( XSClassCallbackConstructor )__XSNotification_Constructor,
     ( XSClassCallbackDestructor  )__XSNotification_Destructor,

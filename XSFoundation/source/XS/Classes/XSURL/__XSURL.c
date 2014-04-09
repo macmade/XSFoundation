@@ -75,6 +75,7 @@ XSClassID   __XSURL_ClassID = 0;
 XSClassInfo __XSURL_Class   =
 {
     "XSURL",
+    XSClassTypeNormal,
     sizeof( struct __XSURL ),
     ( XSClassCallbackConstructor )__XSURL_Constructor,
     ( XSClassCallbackDestructor  )__XSURL_Destructor,

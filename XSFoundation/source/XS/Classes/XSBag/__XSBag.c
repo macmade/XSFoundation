@@ -75,6 +75,7 @@ XSClassID   __XSBag_ClassID = 0;
 XSClassInfo __XSBag_Class   =
 {
     "XSBag",
+    XSClassTypeNormal,
     sizeof( struct __XSBag ),
     ( XSClassCallbackConstructor )__XSBag_Constructor,
     ( XSClassCallbackDestructor  )__XSBag_Destructor,

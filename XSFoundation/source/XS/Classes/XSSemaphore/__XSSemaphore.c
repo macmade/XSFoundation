@@ -75,6 +75,7 @@ XSClassID   __XSSemaphore_ClassID = 0;
 XSClassInfo __XSSemaphore_Class   =
 {
     "XSSemaphore",
+    XSClassTypeNormal,
     sizeof( struct __XSSemaphore ),
     ( XSClassCallbackConstructor )__XSSemaphore_Constructor,
     ( XSClassCallbackDestructor  )__XSSemaphore_Destructor,

@@ -75,6 +75,7 @@ XSClassID   __XSString_ClassID = 0;
 XSClassInfo __XSString_Class   =
 {
     "XSString",
+    XSClassTypeNormal,
     sizeof( struct __XSString ),
     ( XSClassCallbackConstructor )__XSString_Constructor,
     ( XSClassCallbackDestructor  )__XSString_Destructor,

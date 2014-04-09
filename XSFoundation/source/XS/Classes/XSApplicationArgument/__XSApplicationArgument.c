@@ -75,6 +75,7 @@ XSClassID   __XSApplicationArgument_ClassID = 0;
 XSClassInfo __XSApplicationArgument_Class   =
 {
     "XSApplicationArgument",
+    XSClassTypeNormal,
     sizeof( struct __XSApplicationArgument ),
     ( XSClassCallbackConstructor )__XSApplicationArgument_Constructor,
     ( XSClassCallbackDestructor  )__XSApplicationArgument_Destructor,

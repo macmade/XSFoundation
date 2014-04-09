@@ -75,6 +75,7 @@ XSClassID   __XSArray_ClassID = 0;
 XSClassInfo __XSArray_Class   =
 {
     "XSArray",
+    XSClassTypeNormal,
     sizeof( struct __XSArray ),
     ( XSClassCallbackConstructor )__XSArray_Constructor,
     ( XSClassCallbackDestructor  )__XSArray_Destructor,

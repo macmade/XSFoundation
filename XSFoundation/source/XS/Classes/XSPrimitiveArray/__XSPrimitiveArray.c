@@ -75,6 +75,7 @@ XSClassID   __XSPrimitiveArray_ClassID = 0;
 XSClassInfo __XSPrimitiveArray_Class   =
 {
     "XSPrimitiveArray",
+    XSClassTypeNormal,
     sizeof( struct __XSPrimitiveArray ),
     ( XSClassCallbackConstructor )__XSPrimitiveArray_Constructor,
     ( XSClassCallbackDestructor  )__XSPrimitiveArray_Destructor,

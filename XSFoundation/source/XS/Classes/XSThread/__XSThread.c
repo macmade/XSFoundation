@@ -77,6 +77,7 @@ XSThreadRef __XSThread_MainThread   = NULL;
 XSClassInfo __XSThread_Class        =
 {
     "XSThread",
+    XSClassTypeNormal,
     sizeof( struct __XSThread ),
     ( XSClassCallbackConstructor )__XSThread_Constructor,
     ( XSClassCallbackDestructor  )__XSThread_Destructor,

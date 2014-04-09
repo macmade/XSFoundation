@@ -75,6 +75,7 @@ XSClassID   __XSDictionary_ClassID = 0;
 XSClassInfo __XSDictionary_Class   =
 {
     "XSDictionary",
+    XSClassTypeNormal,
     sizeof( struct __XSDictionary ),
     ( XSClassCallbackConstructor )__XSDictionary_Constructor,
     ( XSClassCallbackDestructor  )__XSDictionary_Destructor,

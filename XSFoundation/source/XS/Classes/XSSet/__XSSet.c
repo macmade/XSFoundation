@@ -75,6 +75,7 @@ XSClassID   __XSSet_ClassID = 0;
 XSClassInfo __XSSet_Class   =
 {
     "XSSet",
+    XSClassTypeNormal,
     sizeof( struct __XSSet ),
     ( XSClassCallbackConstructor )__XSSet_Constructor,
     ( XSClassCallbackDestructor  )__XSSet_Destructor,

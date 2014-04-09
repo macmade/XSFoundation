@@ -75,6 +75,7 @@ XSClassID   __XSApplication_ClassID = 0;
 XSClassInfo __XSApplication_Class   =
 {
     "XSApplication",
+    XSClassTypeNormal,
     sizeof( struct __XSApplication ),
     ( XSClassCallbackConstructor )__XSApplication_Constructor,
     ( XSClassCallbackDestructor  )__XSApplication_Destructor,

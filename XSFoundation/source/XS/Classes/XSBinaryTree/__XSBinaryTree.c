@@ -75,6 +75,7 @@ XSClassID   __XSBinaryTree_ClassID = 0;
 XSClassInfo __XSBinaryTree_Class   =
 {
     "XSBinaryTree",
+    XSClassTypeNormal,
     sizeof( struct __XSBinaryTree ),
     ( XSClassCallbackConstructor )__XSBinaryTree_Constructor,
     ( XSClassCallbackDestructor  )__XSBinaryTree_Destructor,

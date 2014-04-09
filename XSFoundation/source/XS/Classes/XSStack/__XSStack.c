@@ -75,6 +75,7 @@ XSClassID   __XSStack_ClassID = 0;
 XSClassInfo __XSStack_Class   =
 {
     "XSStack",
+    XSClassTypeNormal,
     sizeof( struct __XSStack ),
     ( XSClassCallbackConstructor )__XSStack_Constructor,
     ( XSClassCallbackDestructor  )__XSStack_Destructor,

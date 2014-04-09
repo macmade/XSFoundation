@@ -76,6 +76,7 @@ XSTLSKey    __XSAutoreleasePool_TLSKey  = 0;
 XSClassInfo __XSAutoreleasePool_Class   =
 {
     "XSAutoreleasePool",
+    XSClassTypeNormal,
     sizeof( struct __XSAutoreleasePool ),
     ( XSClassCallbackConstructor )__XSAutoreleasePool_Constructor,
     ( XSClassCallbackDestructor  )__XSAutoreleasePool_Destructor,

@@ -75,6 +75,7 @@ XSClassID   __XSTimer_ClassID = 0;
 XSClassInfo __XSTimer_Class   =
 {
     "XSTimer",
+    XSClassTypeNormal,
     sizeof( struct __XSTimer ),
     ( XSClassCallbackConstructor )__XSTimer_Constructor,
     ( XSClassCallbackDestructor  )__XSTimer_Destructor,

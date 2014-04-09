@@ -75,6 +75,7 @@ XSClassID   __XSBoolean_ClassID = 0;
 XSClassInfo __XSBoolean_Class   =
 {
     "XSBoolean",
+    XSClassTypeNormal,
     sizeof( struct __XSBoolean ),
     ( XSClassCallbackConstructor )__XSBoolean_Constructor,
     ( XSClassCallbackDestructor  )__XSBoolean_Destructor,
