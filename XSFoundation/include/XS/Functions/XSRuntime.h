@@ -116,6 +116,14 @@ XS_EXPORT XSObjectRef XSRuntime_CreateInstance( XSClassID classID );
 XS_EXPORT XSObjectRef XSRuntime_CreateInstanceOfClassNamed( const char * name );
 
 /*!
+ * @function    XSRuntime_GetSharedInstance
+ * @abstract    Gets the shared instance of a registered class
+ * @param       classID     The class type ID
+ * @return      The shared instance if it exists, otherwise NULL
+ */
+XS_EXPORT XSObjectRef XSRuntime_GetSharedInstance( XSClassID classID );
+
+/*!
  * @function    XSRuntime_GetDescription
  * @abstract    Gets an object's description
  * @param       object      The pointer to the object

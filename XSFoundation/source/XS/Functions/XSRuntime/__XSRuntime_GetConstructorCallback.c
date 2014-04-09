@@ -73,7 +73,7 @@
 
 XSClassCallbackConstructor __XSRuntime_GetConstructorCallback( XSClassID classID )
 {
-    const XSClassInfo * info;
+    const __XSRuntime_ClassInfoList * info;
     
     info = __XSRuntime_GetClassInfo( classID );
     
@@ -82,5 +82,5 @@ XSClassCallbackConstructor __XSRuntime_GetConstructorCallback( XSClassID classID
         return NULL;
     }
     
-    return info->constructor;
+    return info->cls->constructor;
 }

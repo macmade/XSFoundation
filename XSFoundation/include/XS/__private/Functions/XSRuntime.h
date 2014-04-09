@@ -83,8 +83,9 @@
  */
 typedef struct __XSRuntime_ClassInfoList_Struct
 {
-    const XSClassInfo                       * info; /*! The class info */
-    struct __XSRuntime_ClassInfoList_Struct * next; /*! The next entry, if any */
+    const XSClassInfo                       * cls;              /*! The class info */
+    XSObjectRef                             * sharedInstance;   /*! The shared instance, if any */
+    struct __XSRuntime_ClassInfoList_Struct * next;             /*! The next entry, if any */
 }
 __XSRuntime_ClassInfoList;
 
@@ -154,7 +155,7 @@ XS_EXTERN __XSRuntime_FinalizerList * volatile __XSRuntime_Finalizers;
  * @param       classID     The class ID
  * @return      The class info
  */
-const XSClassInfo * __XSRuntime_GetClassInfo( XSClassID classID );
+const __XSRuntime_ClassInfoList * __XSRuntime_GetClassInfo( XSClassID classID );
 
 /*!
  * @function    __XSRuntime_GetInstanceSize

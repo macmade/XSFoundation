@@ -73,7 +73,7 @@
 
 XSUInteger __XSRuntime_GetInstanceSize( XSClassID classID )
 {
-    const XSClassInfo * info;
+    const __XSRuntime_ClassInfoList * info;
     
     info = __XSRuntime_GetClassInfo( classID );
     
@@ -82,5 +82,5 @@ XSUInteger __XSRuntime_GetInstanceSize( XSClassID classID )
         return 0;
     }
     
-    return info->instanceSize;
+    return info->cls->instanceSize;
 }

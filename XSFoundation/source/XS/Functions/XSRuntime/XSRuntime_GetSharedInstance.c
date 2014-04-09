@@ -62,45 +62,25 @@
 /* $Id$ */
 
 /*!
- * @file        __XSRuntime_GetToStringCallback.c
+ * @file        XSRuntime_GetSharedInstance.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSRuntime_GetToStringCallback
+ * @abstract    Definition for XSAllocWithInfos
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
-const __XSRuntime_ClassInfoList * __XSRuntime_GetClassInfo( XSClassID classID )
+XSObjectRef XSRuntime_GetSharedInstance( XSClassID classID )
 {
-    __XSRuntime_ClassInfoList * info;
+    const __XSRuntime_ClassInfoList * info;
     
-    if( __XS_RUNTIME_IS_FINALIZING || __XS_RUNTIME_IS_FINALIZED )
-    {
-        return NULL;
-    }
-    
-    if( __XS_RUNTIME_IS_INITED == false )
-    {
-        XSFatalError( "XSFoundation runtime has not been inited. Please call XSRuntime_Initialize()" );
-    }
-    
-    if( XSRuntime_IsRegisteredClass( classID ) == false )
-    {
-        return NULL;
-    }
-    
-    info = __XSRuntime_Classes;
-    
-    while( --classID && info != NULL )
-    {
-        info = info->next;
-    }
+    info = __XSRuntime_GetClassInfo( classID );
     
     if( info == NULL )
     {
         return NULL;
     }
     
-    return info;
+    return info->sharedInstance;
 }

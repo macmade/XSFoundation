@@ -73,7 +73,7 @@
 
 XSClassCallbackCopy __XSRuntime_GetCopyCallback( XSClassID classID )
 {
-    const XSClassInfo * info;
+    const __XSRuntime_ClassInfoList * info;
     
     info = __XSRuntime_GetClassInfo( classID );
     
@@ -82,5 +82,5 @@ XSClassCallbackCopy __XSRuntime_GetCopyCallback( XSClassID classID )
         return NULL;
     }
     
-    return info->copy;
+    return info->cls->copy;
 }

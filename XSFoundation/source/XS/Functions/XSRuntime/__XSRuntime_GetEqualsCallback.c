@@ -73,7 +73,7 @@
 
 XSClassCallbackEquals __XSRuntime_GetEqualsCallback( XSClassID classID )
 {
-    const XSClassInfo * info;
+    const __XSRuntime_ClassInfoList * info;
     
     info = __XSRuntime_GetClassInfo( classID );
     
@@ -82,5 +82,5 @@ XSClassCallbackEquals __XSRuntime_GetEqualsCallback( XSClassID classID )
         return NULL;
     }
     
-    return info->equals;
+    return info->cls->equals;
 }

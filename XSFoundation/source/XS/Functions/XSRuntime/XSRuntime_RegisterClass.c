@@ -97,7 +97,7 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls )
     
     while( list != NULL )
     {
-        if( XSAtomic_CompareAndSwapPointer( NULL, ( void * )cls, ( void * volatile * )&( list->info ) ) )
+        if( XSAtomic_CompareAndSwapPointer( NULL, ( void * )cls, ( void * volatile * )&( list->cls ) ) )
         {
             return XSAtomic_IncrementInteger( &__XSRuntime_ClassCount );
         }
@@ -112,7 +112,7 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls )
     
     new = ( __XSRuntime_ClassInfoList * )calloc( sizeof( __XSRuntime_ClassInfoList ), 1 );
     
-    new->info = cls;
+    new->cls  = cls;
     new->next = NULL;
     
     if( new == NULL )

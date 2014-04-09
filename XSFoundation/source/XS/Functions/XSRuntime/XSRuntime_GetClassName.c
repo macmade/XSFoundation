@@ -73,7 +73,7 @@
 
 const char * XSRuntime_GetClassName( XSClassID classID )
 {
-    const XSClassInfo * info;
+    const __XSRuntime_ClassInfoList * info;
     
     info = __XSRuntime_GetClassInfo( classID );
     
@@ -82,5 +82,5 @@ const char * XSRuntime_GetClassName( XSClassID classID )
         return NULL;
     }
     
-    return info->className;
+    return info->cls->className;
 }

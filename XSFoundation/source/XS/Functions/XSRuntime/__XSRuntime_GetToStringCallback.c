@@ -73,7 +73,7 @@
 
 XSClassCallbackToString __XSRuntime_GetToStringCallback( XSClassID classID )
 {
-    const XSClassInfo * info;
+    const __XSRuntime_ClassInfoList * info;
     
     info = __XSRuntime_GetClassInfo( classID );
     
@@ -82,5 +82,5 @@ XSClassCallbackToString __XSRuntime_GetToStringCallback( XSClassID classID )
         return NULL;
     }
     
-    return info->toString;
+    return info->cls->toString;
 }

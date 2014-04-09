@@ -91,7 +91,7 @@ XSClassID XSRuntime_GetClassIDOfClassNamed( const char * className )
     
     while( info != NULL )
     {
-        if( info->info != NULL && strcmp( info->info->className, className ) == 0 )
+        if( info->cls != NULL && strcmp( info->cls->className, className ) == 0 )
         {
             return classID;
         }
