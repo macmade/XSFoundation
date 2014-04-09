@@ -78,12 +78,12 @@
 XS_EXTERN_C_BEGIN
 
 #include <XS/XSTypes/XSObjectRef.h>
+#include <XS/XSTypes/XSClassType.h>
 #include <XS/XSTypes/XSClassCallbackConstructor.h>
 #include <XS/XSTypes/XSClassCallbackDestructor.h>
 #include <XS/XSTypes/XSClassCallbackCopy.h>
 #include <XS/XSTypes/XSClassCallbackEquals.h>
 #include <XS/XSTypes/XSClassCallbackToString.h>
-
 
 /*!
  * @struct      XSClassInfos_Struct
@@ -92,6 +92,7 @@ XS_EXTERN_C_BEGIN
 typedef struct
 {
     const char                * className;      /*! The name of the class */
+    XSUInteger                  type;           /*! The class type */
     XSUInteger                  instanceSize;   /*! The size of the class instances */
     XSClassCallbackConstructor  constructor;    /*! The class constructor */
     XSClassCallbackDestructor   destructor;     /*! The class destructor */
