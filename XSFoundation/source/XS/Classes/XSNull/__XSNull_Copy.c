@@ -74,6 +74,7 @@
 XSNullRef __XSNull_Copy( XSNullRef source, XSNullRef destination )
 {
     ( void )source;
+    ( void )destination;
     
-    return destination;
+    return NULL;
 }

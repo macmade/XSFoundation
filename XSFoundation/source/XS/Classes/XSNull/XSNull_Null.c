@@ -62,26 +62,16 @@
 /* $Id$ */
 
 /*!
- * @file        __XSNull.c
+ * @file        XSNull_Null.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definitions for XSNull functions
+ * @abstract    Definition for XSNull_Null
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSNull.h>
 
-XSNullRef   __XSNull_Null    = NULL;
-XSClassID   __XSNull_ClassID = 0;
-XSClassInfo __XSNull_Class   =
+XSStatic XSNullRef XSNull_Null( void )
 {
-    "XSNull",
-    XSClassTypeSingleton,
-    sizeof( struct __XSNull ),
-    ( XSClassCallbackConstructor )__XSNull_Constructor,
-    ( XSClassCallbackDestructor  )__XSNull_Destructor,
-    ( XSClassCallbackCopy        )__XSNull_Copy,
-    ( XSClassCallbackEquals      )__XSNull_Equals,
-    ( XSClassCallbackToString    )__XSNull_ToString
-};
-
+    return XSRuntime_GetSharedInstance( XSNull_GetClassID() );
+}

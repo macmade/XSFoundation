@@ -1768,6 +1768,10 @@
 		05A153F418F5C0D800365881 /* XSOrderedSet_SortWithMethod.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A1538218F5C0D800365881 /* XSOrderedSet_SortWithMethod.c */; };
 		05A153F518F5C0D800365881 /* XSOrderedSet_SortWithMethod.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A1538218F5C0D800365881 /* XSOrderedSet_SortWithMethod.c */; };
 		05A153F618F5C0D800365881 /* XSOrderedSet_SortWithMethod.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A1538218F5C0D800365881 /* XSOrderedSet_SortWithMethod.c */; };
+		05A153F818F5D83500365881 /* XSNull_Null.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A153F718F5D83500365881 /* XSNull_Null.c */; };
+		05A153F918F5D83500365881 /* XSNull_Null.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A153F718F5D83500365881 /* XSNull_Null.c */; };
+		05A153FA18F5D83500365881 /* XSNull_Null.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A153F718F5D83500365881 /* XSNull_Null.c */; };
+		05A153FB18F5D83500365881 /* XSNull_Null.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A153F718F5D83500365881 /* XSNull_Null.c */; };
 		05A58C2218F21152006961E7 /* __XSArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3581D18F20EF10070111A /* __XSArray.c */; };
 		05A58C2318F21152006961E7 /* __XSArray_Constructor.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3581E18F20EF10070111A /* __XSArray_Constructor.c */; };
 		05A58C2418F21152006961E7 /* __XSArray_Copy.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3581F18F20EF10070111A /* __XSArray_Copy.c */; };
@@ -2562,6 +2566,7 @@
 		05A1538018F5C0D800365881 /* XSOrderedSet_ReplaceObjectAtIndex.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSOrderedSet_ReplaceObjectAtIndex.c; sourceTree = "<group>"; };
 		05A1538118F5C0D800365881 /* XSOrderedSet_SortWithFunction.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSOrderedSet_SortWithFunction.c; sourceTree = "<group>"; };
 		05A1538218F5C0D800365881 /* XSOrderedSet_SortWithMethod.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSOrderedSet_SortWithMethod.c; sourceTree = "<group>"; };
+		05A153F718F5D83500365881 /* XSNull_Null.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNull_Null.c; sourceTree = "<group>"; };
 		05F3568418EEF8410070111A /* XSStack_Create.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSStack_Create.c; sourceTree = "<group>"; };
 		05F3568518EEF8410070111A /* XSStack_GetCount.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSStack_GetCount.c; sourceTree = "<group>"; };
 		05F3568618EEF8410070111A /* XSStack_Pop.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSStack_Pop.c; sourceTree = "<group>"; };
@@ -3265,6 +3270,7 @@
 				055D153B18E1D42800894C7B /* __XSNull_Initialize.c */,
 				055D153C18E1D42800894C7B /* __XSNull_ToString.c */,
 				055D153D18E1D42800894C7B /* XSNull_GetClassID.c */,
+				05A153F718F5D83500365881 /* XSNull_Null.c */,
 			);
 			path = XSNull;
 			sourceTree = "<group>";
@@ -4225,6 +4231,7 @@
 				05632F2E18EC513F00EB76D2 /* XSString_StringByAppendingFormat.c in Sources */,
 				0563300718EEF5F900EB76D2 /* __XSStack_Equals.c in Sources */,
 				0523051C18EB4B1F00C29627 /* XSAtomic_Read32.c in Sources */,
+				05A153F818F5D83500365881 /* XSNull_Null.c in Sources */,
 				05A1534118F53F2D00365881 /* __XSOrderedSet_Constructor.c in Sources */,
 				0523053C18EB4B1F00C29627 /* XSPoint_Zero.c in Sources */,
 				05A153DF18F5C0D800365881 /* XSOrderedSet_RemoveObjectAtIndex.c in Sources */,
@@ -4736,6 +4743,7 @@
 				055D168718E1D42800894C7B /* __XSColor_Initialize.c in Sources */,
 				055D170B18E1D42800894C7B /* __XSError_ToString.c in Sources */,
 				05632F2F18EC513F00EB76D2 /* XSString_StringByAppendingFormat.c in Sources */,
+				05A153F918F5D83500365881 /* XSNull_Null.c in Sources */,
 				05A1534218F53F2D00365881 /* __XSOrderedSet_Constructor.c in Sources */,
 				0563300818EEF5F900EB76D2 /* __XSStack_Equals.c in Sources */,
 				05A153E018F5C0D800365881 /* XSOrderedSet_RemoveObjectAtIndex.c in Sources */,
@@ -5247,6 +5255,7 @@
 				055D168818E1D42800894C7B /* __XSColor_Initialize.c in Sources */,
 				055D170C18E1D42800894C7B /* __XSError_ToString.c in Sources */,
 				05632F3018EC513F00EB76D2 /* XSString_StringByAppendingFormat.c in Sources */,
+				05A153FA18F5D83500365881 /* XSNull_Null.c in Sources */,
 				05A1534318F53F2D00365881 /* __XSOrderedSet_Constructor.c in Sources */,
 				0563300918EEF5F900EB76D2 /* __XSStack_Equals.c in Sources */,
 				05A153E118F5C0D800365881 /* XSOrderedSet_RemoveObjectAtIndex.c in Sources */,
@@ -5758,6 +5767,7 @@
 				055D168918E1D42800894C7B /* __XSColor_Initialize.c in Sources */,
 				055D170D18E1D42800894C7B /* __XSError_ToString.c in Sources */,
 				05632F3118EC513F00EB76D2 /* XSString_StringByAppendingFormat.c in Sources */,
+				05A153FB18F5D83500365881 /* XSNull_Null.c in Sources */,
 				05A1534418F53F2D00365881 /* __XSOrderedSet_Constructor.c in Sources */,
 				0563300A18EEF5F900EB76D2 /* __XSStack_Equals.c in Sources */,
 				05A153E218F5C0D800365881 /* XSOrderedSet_RemoveObjectAtIndex.c in Sources */,
