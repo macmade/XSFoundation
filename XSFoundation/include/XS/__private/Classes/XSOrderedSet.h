@@ -62,72 +62,112 @@
 /* $Id$ */
 
 /*!
- * @header      XS.h
+ * @header      XSOrderedSet.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Private definitions for XSOrderedSet.h
  */
 
 #ifndef __XS_H__
-#define __XS_H__
-
-/* Internal build only - Adds extra warning flags */
-#ifdef __XS_BUILD__
-#include <XS/__private/XSWarnings.h>
+#error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-/* Standard includes */
-#include <XS/XS-STD.h>
+#ifndef __XS___PRIVATE_CLASSES_XS_ORDERED_SET_H__
+#define __XS___PRIVATE_CLASSES_XS_ORDERED_SET_H__
 
-/* Core */
-#include <XS/XSMacros.h>
-#include <XS/XSMacros-X.h>
 #include <XS/XSTypes.h>
+#include <XS/XSMacros.h>
 
-/* Functions */
-#include <XS/Functions/XSAtomic.h>
-#include <XS/Functions/XSMemory.h>
-#include <XS/Functions/XSRuntime.h>
-#include <XS/Functions/XSProcess.h>
-#include <XS/Functions/XSThreading.h>
-#include <XS/Functions/XSLog.h>
-#include <XS/Functions/XSMath.h>
-#include <XS/Functions/XSGeometry.h>
-#include <XS/Functions/XSSort.h>
+/*!
+ * @struct      __XSOrderedSet_Value
+ * @abstract    XSOrderedSet value holder
+ */
+typedef struct __XSOrderedSet_ValueStruct
+{
+    XSObjectRef                         object;     /*! The contained object */
+    struct __XSOrderedSet_ValueStruct * previous;   /*! The previous value */
+    struct __XSOrderedSet_ValueStruct * next;       /*! The next value */
+}
+__XSOrderedSet_Value;
 
-/* Classes */
-#include <XS/Classes/XSApplication.h>
-#include <XS/Classes/XSApplicationArgument.h>
-#include <XS/Classes/XSArray.h>
-#include <XS/Classes/XSAutoreleasePool.h>
-#include <XS/Classes/XSBag.h>
-#include <XS/Classes/XSBinaryTree.h>
-#include <XS/Classes/XSBoolean.h>
-#include <XS/Classes/XSColor.h>
-#include <XS/Classes/XSData.h>
-#include <XS/Classes/XSDate.h>
-#include <XS/Classes/XSDictionary.h>
-#include <XS/Classes/XSError.h>
-#include <XS/Classes/XSFile.h>
-#include <XS/Classes/XSLock.h>
-#include <XS/Classes/XSNode.h>
-#include <XS/Classes/XSNotification.h>
-#include <XS/Classes/XSNotificationCenter.h>
-#include <XS/Classes/XSNull.h>
-#include <XS/Classes/XSNumber.h>
-#include <XS/Classes/XSOrderedSet.h>
-#include <XS/Classes/XSPrimitiveArray.h>
-#include <XS/Classes/XSRecursiveLock.h>
-#include <XS/Classes/XSSemaphore.h>
-#include <XS/Classes/XSSet.h>
-#include <XS/Classes/XSStack.h>
-#include <XS/Classes/XSString.h>
-#include <XS/Classes/XSThread.h>
-#include <XS/Classes/XSTimer.h>
-#include <XS/Classes/XSURL.h>
-#include <XS/Classes/XSValue.h>
+/*!
+ * @struct      __XSOrderedSet
+ * @abstract    Structure for XSOrderedSet
+ */
+struct __XSOrderedSet
+{
+    XSUInteger              count;  /*! The number of elements in the ordered set */
+    XSRecursiveLockRef      lock;   /*! The lock for thread-safety */
+    __XSOrderedSet_Value  * first;  /*! First object in the ordered set */
+    __XSOrderedSet_Value  * last;   /*! Last object in the ordered set */
+};
 
-#endif /* __XS_H__ */
+/*!
+ * @var         __XSOrderedSet_ClassID
+ * @abstract    Class ID
+ */
+XS_EXTERN XSClassID __XSOrderedSet_ClassID;
+
+/*!
+ * @var         __XSOrderedSet_Class
+ * @abstract    Class info
+ */
+XS_EXTERN XSClassInfo __XSOrderedSet_Class;
+
+/*!
+ * @function    __XSOrderedSet_Initialize
+ * @abstract    Class initializer
+ */
+XSStatic void __XSOrderedSet_Initialize( void );
+
+/*!
+ * @function    __XSOrderedSet_Constructor
+ * @abstract    Class constructor callback
+ * @param       object      The object beeing construct
+ * @return      The new object
+ */
+XSOrderedSetRef __XSOrderedSet_Constructor( XSOrderedSetRef object );
+
+/*!
+ * @function    __XSOrderedSet_Destructor
+ * @abstract    Class destructor callback
+ * @param       object      The object beeing destruct
+ */
+void __XSOrderedSet_Destructor( XSOrderedSetRef object );
+
+/*!
+ * @function    __XSOrderedSet_Copy
+ * @abstract    Class copy callback
+ * @param       source      The object to copy
+ * @param       destination The object beeing copied
+ * @result      The copied object
+ */
+XSOrderedSetRef __XSOrderedSet_Copy( XSOrderedSetRef source, XSOrderedSetRef destination );
+
+/*!
+ * @function    __XSOrderedSet_Equals
+ * @abstract    Class equals callback
+ * @param       object1     The first object to compare
+ * @param       object2     The second object to compare
+ * @return      True if both objects are equals, otherwise false
+ */
+bool __XSOrderedSet_Equals( XSOrderedSetRef object1, XSOrderedSetRef object2 );
+
+/*!
+ * @function    __XSOrderedSet_ToString
+ * @abstract    Class to-string callback
+ * @param       object      The object for which to get a description
+ * @return      The object's description
+ */
+const char * __XSOrderedSet_ToString( XSOrderedSetRef object );
+
+/*!
+ * @function    __XSOrderedSet_CreateWithFirstObjectAndArgs
+ * @abstract    Creates an ordered set object with objects from a va_list
+ * @param       firstObject The first object
+ * @param       args        The other objects, as va_list
+ * @return      The ordered set object
+ */
+XSStatic XSOrderedSetRef __XSOrderedSet_CreateWithFirstObjectAndArgs( XSObjectRef firstObject, va_list args );
+
+#endif /* __XS___PRIVATE_CLASSES_XS_ORDERED_SET_H__ */
