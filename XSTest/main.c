@@ -305,6 +305,14 @@ int main( int argc, const char * argv[] )
         XSShow( a2 );
         
         XSRelease( a2 );
+        
+        a1 = XSArray_Array();
+        a2 = XSArray_ArrayWithObjects( XSSTR( "1" ), XSSTR( "2" ), XSSTR( "3" ), NULL );
+        
+        XSArray_AppendArray( a1, a2 );
+        XSShow( a1 );
+        XSArray_AppendArray( a1, a2 );
+        XSShow( a1 );
     }
     
     {

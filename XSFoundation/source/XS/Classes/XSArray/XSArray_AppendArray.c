@@ -74,6 +74,7 @@
 void XSArray_AppendArray( XSArrayRef array, XSArrayRef objects )
 {
     __XSArray_Value * value;
+    __XSArray_Value * newValue;
     
     if( array == NULL || objects == NULL )
     {
@@ -83,13 +84,63 @@ void XSArray_AppendArray( XSArrayRef array, XSArrayRef objects )
     XSRecursiveLock_Lock( array->lock );
     XSRecursiveLock_Lock( objects->lock );
     
-    value = objects->first;
-    
-    while( value != NULL )
+    if( objects->count == 0 )
     {
-        XSArray_AddObject( array, value->object );
+        XSRecursiveLock_Unlock( objects->lock );
+        XSRecursiveLock_Unlock( array->lock );
         
-        value = value->next;
+        return;
+    }
+    
+    value = array->last;
+    
+    if( value == NULL )
+    {
+        value = XSAlloc( sizeof( __XSArray_Value ) );
+        
+        if( value == NULL )
+        {
+            XSLogWarning( "Error allocating memory for an XSArray value" );
+            XSRecursiveLock_Unlock( objects->lock );
+            XSRecursiveLock_Unlock( array->lock );
+            
+            return;
+        }
+        
+        value->object = XSRetain( objects->first->object );
+        
+        array->first = value;
+        array->last  = value;
+        
+        array->count++;
+        
+        newValue = objects->first->next;
+    }
+    else
+    {
+        newValue = objects->first;
+    }
+    
+    while( newValue != NULL )
+    {
+        value->next = XSAlloc( sizeof( __XSArray_Value ) );
+        
+        if( value == NULL )
+        {
+            XSLogWarning( "Error allocating memory for an XSArray value" );
+            XSRecursiveLock_Unlock( objects->lock );
+            XSRecursiveLock_Unlock( array->lock );
+            
+            return;
+        }
+        
+        value->next->object = XSRetain( newValue->object );
+        array->last         = value->next;
+        
+        array->count++;
+        
+        value    = value->next;
+        newValue = newValue->next;
     }
     
     XSRecursiveLock_Unlock( objects->lock );
