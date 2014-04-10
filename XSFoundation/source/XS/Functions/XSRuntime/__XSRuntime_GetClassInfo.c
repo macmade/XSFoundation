@@ -97,10 +97,5 @@ const __XSRuntime_ClassInfoList * __XSRuntime_GetClassInfo( XSClassID classID )
         info = info->next;
     }
     
-    if( info == NULL )
-    {
-        return NULL;
-    }
-    
     return info;
 }
