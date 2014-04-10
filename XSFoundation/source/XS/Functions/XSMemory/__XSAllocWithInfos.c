@@ -62,31 +62,41 @@
 /* $Id$ */
 
 /*!
- * @file        XSReleaseWithInfos.c
+ * @file        __XSAllocWithInfos.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSReleaseWithInfos
+ * @abstract    Definition for __XSAllocWithInfos
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemory.h>
+#include <XS/__private/Functions/XSMemoryDebug.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
-void XSReleaseWithInfos( void * memory, const char * file, int line, const char * func )
+void * __XSAllocWithInfos( XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func )
 {
+    XSUInteger         size;
     __XSMemoryObject * object;
     
-    if( memory == NULL )
+    size    = bytes + sizeof( __XSMemoryObject ) + __XS_MEMORY_FENCE_SIZE;
+    object  = ( __XSMemoryObject * )calloc( size, 1 );
+    
+    if( object == NULL )
     {
-        return;
+        XSLogWarning( "Cannot allocate memory (%lu bytes)", ( unsigned long )bytes );
+        
+        return NULL;
     }
     
-    object = __XSMemory_GetMemoryObject( memory );
+    object->retainCount = 1;
+    object->size        = bytes;
+    object->classID     = classID;
+    object->allocID     = XSAtomic_IncrementInteger( &__XSMemory_AllocID );
     
-    if( XSRuntime_IsRegisteredClass( object->classID ) && XSRuntime_GetClassType( object->classID ) != XSClassTypeNormal && memory == XSRuntime_GetSharedInstance( object->classID ) )
-    {
-        return;
-    }
+    memcpy( &( object->fence ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );
+    memcpy( ( char * )object + ( size - __XS_MEMORY_FENCE_SIZE ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );
     
-    __XSReleaseWithInfos( memory, file, line, func );
+    __XSMemoryDebug_NewRecord( object, file, line, func );
+    
+    return ( char * )object + sizeof( __XSMemoryObject );
 }

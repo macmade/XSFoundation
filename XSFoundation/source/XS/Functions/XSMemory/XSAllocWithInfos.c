@@ -70,38 +70,29 @@
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemory.h>
-#include <XS/__private/Functions/XSMemoryDebug.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
 void * XSAllocWithInfos( XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func )
 {
-    XSUInteger         size;
-    __XSMemoryObject * object;
-    
     if( XSRuntime_IsRegisteredClass( classID ) && __XSRuntime_GetInstanceSize( classID ) != bytes )
     {
-        XSFatalError( "Cannot allocate memory for class ID %lu (%s): requested bytes do not match the class instance size", ( unsigned long )classID, XSRuntime_GetClassName( classID ) );
+        XSFatalError
+        (
+            "Cannot allocate memory for class ID %lu (%s): requested bytes do not match the class instance size",
+            ( unsigned long )classID,
+            XSRuntime_GetClassName( classID )
+        );
     }
     
-    size    = bytes + sizeof( __XSMemoryObject ) + __XS_MEMORY_FENCE_SIZE;
-    object  = ( __XSMemoryObject * )calloc( size, 1 );
-    
-    if( object == NULL )
+    if( XSRuntime_IsRegisteredClass( classID ) && XSRuntime_GetClassType( classID ) == XSClassTypeSingleton )
     {
-        XSLogWarning( "Cannot allocate memory (%lu bytes)", ( unsigned long )bytes );
-        
-        return NULL;
+        XSFatalError
+        (
+            "Cannot allocate memory for class ID %lu (%s): class is declared as a singleton",
+            ( unsigned long )classID, 
+            XSRuntime_GetClassName( classID )
+        );
     }
     
-    object->retainCount = 1;
-    object->size        = bytes;
-    object->classID     = classID;
-    object->allocID     = XSAtomic_IncrementInteger( &__XSMemory_AllocID );
-    
-    memcpy( &( object->fence ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );
-    memcpy( ( char * )object + ( size - __XS_MEMORY_FENCE_SIZE ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );
-    
-    __XSMemoryDebug_NewRecord( object, file, line, func );
-    
-    return ( char * )object + sizeof( __XSMemoryObject );
+    return __XSAllocWithInfos( bytes, classID, file, line, func );
 }

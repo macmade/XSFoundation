@@ -62,19 +62,21 @@
 /* $Id$ */
 
 /*!
- * @file        XSReleaseWithInfos.c
+ * @file        __XSReleaseWithInfos.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSReleaseWithInfos
+ * @abstract    Definition for __XSReleaseWithInfos
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemory.h>
+#include <XS/__private/Functions/XSMemoryDebug.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
-void XSReleaseWithInfos( void * memory, const char * file, int line, const char * func )
+void __XSReleaseWithInfos( void * memory, const char * file, int line, const char * func )
 {
-    __XSMemoryObject * object;
+    __XSMemoryObject        * object;
+    XSClassCallbackDestructor destructor;
     
     if( memory == NULL )
     {
@@ -83,10 +85,21 @@ void XSReleaseWithInfos( void * memory, const char * file, int line, const char 
     
     object = __XSMemory_GetMemoryObject( memory );
     
-    if( XSRuntime_IsRegisteredClass( object->classID ) && XSRuntime_GetClassType( object->classID ) != XSClassTypeNormal && memory == XSRuntime_GetSharedInstance( object->classID ) )
+    if( XSAtomic_DecrementInteger( &( object->retainCount ) ) == 0 )
     {
-        return;
+        __XSMemoryDebug_ReleaseRecord( object, true, file, line, func );
+        
+        destructor = __XSRuntime_GetDestructorCallback( object->classID );
+        
+        if( destructor != NULL )
+        {
+            destructor( memory );
+        }
+        
+        free( object );
     }
-    
-    __XSReleaseWithInfos( memory, file, line, func );
+    else
+    {
+        __XSMemoryDebug_ReleaseRecord( object, false, file, line, func );
+    }
 }
