@@ -63,7 +63,8 @@
 
 #include <XS/XS.h>
 
-static void __threadedFunc( XSBooleanRef * boolean )
+void __threadedFunc( XSBooleanRef boolean );
+void __threadedFunc( XSBooleanRef boolean )
 {
     XSShow( boolean );
     XSShow( XSThread_GetCurrentThread() );
@@ -313,6 +314,12 @@ int main( int argc, const char * argv[] )
         XSShow( a1 );
         XSArray_AppendArray( a1, a2 );
         XSShow( a1 );
+    }
+    
+    {
+        XSShow( XSNull_Null() );
+        XSShow( XSNull_Null() );
+        XSRelease( XSNull_Null() );
     }
     
     {

@@ -70,6 +70,7 @@
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSRuntime.h>
+#include <XS/__private/Functions/XSMemory.h>
 
 void __XSRuntime_Finalize( void )
 {
@@ -81,6 +82,18 @@ void __XSRuntime_Finalize( void )
     if( XSAtomic_CompareAndSwapInteger( 0, 1, &__XSRuntime_IsFinalizing ) == false )
     {
         return;
+    }
+    
+    classList = __XSRuntime_Classes;
+    
+    while( classList != NULL )
+    {
+        if( classList->sharedInstance != NULL )
+        {
+            __XSReleaseWithInfos( classList->sharedInstance, __FILE__, __LINE__, __func__ );
+        }
+        
+        classList = classList->next;
     }
     
     finalizerList = __XSRuntime_Finalizers;

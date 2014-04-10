@@ -69,12 +69,14 @@
  */
 
 #include <XS/XS.h>
+#include <XS/__private/Functions/XSMemory.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
 XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls )
 {
     __XSRuntime_ClassInfoList * list;
     __XSRuntime_ClassInfoList * new;
+    XSClassID                   classID;
     
     if( __XS_RUNTIME_IS_FINALIZING || __XS_RUNTIME_IS_FINALIZED )
     {
@@ -99,7 +101,9 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls )
     {
         if( XSAtomic_CompareAndSwapPointer( NULL, ( void * )cls, ( void * volatile * )&( list->cls ) ) )
         {
-            return XSAtomic_IncrementInteger( &__XSRuntime_ClassCount );
+            classID = XSAtomic_IncrementInteger( &__XSRuntime_ClassCount );
+            
+            goto success;
         }
         
         if( XSAtomic_CompareAndSwapPointer( NULL, NULL, ( void * volatile * )&( list->next ) ) )
@@ -113,7 +117,6 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls )
     new = ( __XSRuntime_ClassInfoList * )calloc( sizeof( __XSRuntime_ClassInfoList ), 1 );
     
     new->cls  = cls;
-    new->next = NULL;
     
     if( new == NULL )
     {
@@ -121,10 +124,22 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls )
     }
     else if( XSAtomic_CompareAndSwapPointer( NULL, new, ( void * volatile * )&( list->next ) ) )
     {
-        return XSAtomic_IncrementInteger( &__XSRuntime_ClassCount );
+        classID = XSAtomic_IncrementInteger( &__XSRuntime_ClassCount );
+        list    = new;
+        
+        goto success;
     }
     
     free( new );
     
     goto add;
+    
+    success:
+    
+    if( cls->type == XSClassTypeSingleton || cls->type == XSClassTypeSharedInstance )
+    {
+        list->sharedInstance = __XSAllocWithInfos( cls->instanceSize, classID, __FILE__, __LINE__, __func__ );
+    }
+    
+    return classID;
 }

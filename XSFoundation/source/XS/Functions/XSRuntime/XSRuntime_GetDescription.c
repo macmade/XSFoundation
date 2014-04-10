@@ -73,6 +73,7 @@
 
 const char * XSRuntime_GetDescription( XSObjectRef object )
 {
+    XSClassID               classID;
     XSClassCallbackToString toString;
     XSStringRef             description;
     const char            * className;
@@ -84,8 +85,9 @@ const char * XSRuntime_GetDescription( XSObjectRef object )
     }
     else
     {
-        className           = XSRuntime_GetObjectClassName( object );
-        toString            = __XSRuntime_GetToStringCallback( XSRuntime_GetClassID( object ) );
+        classID             = XSRuntime_GetClassID( object );
+        className           = XSRuntime_GetClassName( classID );
+        toString            = __XSRuntime_GetToStringCallback( classID );
         objectDescription   = NULL;
         
         if( className == NULL )
