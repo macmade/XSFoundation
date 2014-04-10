@@ -164,20 +164,20 @@ XS_EXPORT XSClassID XSRuntime_GetClassID( XSObjectRef object );
 XS_EXPORT XSClassID XSRuntime_GetClassIDOfClassNamed( const char * className );
 
 /*!
+ * @function    XSRuntime_GetClassType
+ * @abstract    Gets the class type for an class type ID
+ * @param       classID     The class type ID
+ * @return      The type of the class
+ */
+XS_EXPORT XSClassType XSRuntime_GetClassType( XSClassID classID );
+
+/*!
  * @function    XSRuntime_GetClassName
  * @abstract    Gets the class name for an class type ID
  * @param       classID     The class type ID
  * @return      The name of the class
  */
 XS_EXPORT const char * XSRuntime_GetClassName( XSClassID classID );
-
-/*!
- * @function    XSRuntime_GetObjectClassName
- * @abstract    Gets the class name for an object
- * @param       object      The object
- * @return      The name of the class
- */
-XS_EXPORT const char * XSRuntime_GetObjectClassName( XSObjectRef object );
 
 /*!
  * @function    XSRuntime_RegisterFinalizer

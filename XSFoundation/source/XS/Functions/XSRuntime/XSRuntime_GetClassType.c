@@ -62,16 +62,25 @@
 /* $Id$ */
 
 /*!
- * @file        XSAllocWithInfos.c
+ * @file        XSRuntime_GetClassType.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSAllocWithInfos
+ * @abstract    Definition for XSRuntime_GetClassType
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
-const char * XSRuntime_GetObjectClassName( XSObjectRef object )
+XSClassType XSRuntime_GetClassType( XSClassID classID )
 {
-    return XSRuntime_GetClassName( XSRuntime_GetClassID( object ) );
+    const __XSRuntime_ClassInfoList * info;
+    
+    info = __XSRuntime_GetClassInfo( classID );
+    
+    if( info == NULL )
+    {
+        return XSClassTypeNormal;
+    }
+    
+    return ( XSClassType )( info->cls->type );
 }
