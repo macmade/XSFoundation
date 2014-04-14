@@ -69,13 +69,25 @@
  */
 
 #include <XS/XS.h>
+#include <XS/__private/Classes/XSAutoreleasePool.h>
 
 void * XSAutorelease( void * memory )
 {
+    XSAutoreleasePoolRef ap;
+    
     if( memory == NULL )
     {
         return NULL;
     }
+    
+    ap = __XSAutoreleasePool_GetCurrent();
+    
+    if( ap == NULL )
+    {
+        XSLogWarning( "Autoreleasing object of type %s while no autorelease pool in place - Leaking memory", XSRuntime_GetClassName( XSRuntime_GetClassID( memory ) ) );
+    }
+    
+    XSAutoreleasePool_AddObject( ap, memory );
     
     return memory;
 }

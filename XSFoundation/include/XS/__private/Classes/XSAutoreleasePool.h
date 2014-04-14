@@ -79,12 +79,35 @@
 #include <XS/XSMacros.h>
 
 /*!
+ * @struct      __XSAutoreleasePool_List
+ * @abstract    Autorelease pool list
+ */
+typedef struct __XSAutoreleasePool_ListStruct
+{
+    XSAutoreleasePoolRef                    ap;
+    struct __XSAutoreleasePool_ListStruct * next;
+}
+__XSAutoreleasePool_List;
+
+/*!
+ * @typedef     __XSAutoreleasePool_Value
+ * @abstract    Autorelease pool value holder
+ */
+typedef struct __XSAutoreleasePool_ValueStruct
+{
+    XSObjectRef                              object;    /*! The contained object */
+    struct __XSAutoreleasePool_ValueStruct * next;      /*! The next value */
+}
+__XSAutoreleasePool_Value;
+
+/*!
  * @struct      __XSAutoreleasePool
  * @abstract    Structure for XSAutoreleasePool
  */
 struct __XSAutoreleasePool
 {
-    XSStackRef items;   /* The items to be released */
+    __XSAutoreleasePool_Value * first;    /* The first value */
+    XSUInteger                  threadID; /*! The ID of the thread the autorelease pool belongs to */
 };
 
 /*!
@@ -151,5 +174,32 @@ bool __XSAutoreleasePool_Equals( XSAutoreleasePoolRef object1, XSAutoreleasePool
  * @return      The object's description
  */
 const char * __XSAutoreleasePool_ToString( XSAutoreleasePoolRef object );
+
+/*!
+ * @function    __XSAutoreleasePool_Exit
+ * @abstract    Class finalizer
+ */
+void __XSAutoreleasePool_Exit( void );
+
+/*!
+ * @function    __XSAutoreleasePool_Register
+ * @abstract    Registers an autorelease pool in the current thread
+ * @param       ap          The autorelease pool
+ */
+void __XSAutoreleasePool_Register( XSAutoreleasePoolRef ap );
+
+/*!
+ * @function    __XSAutoreleasePool_Unregister
+ * @abstract    Unregisters an autorelease pool in the current thread
+ * @param       ap          The autorelease pool
+ */
+void __XSAutoreleasePool_Unregister( XSAutoreleasePoolRef ap );
+
+/*!
+ * @function    __XSAutoreleasePool_GetCurrent
+ * @abstract    Gets the current autorepease pool for the current thread
+ * @return      The current autorelease pool, if one exists
+ */
+XSAutoreleasePoolRef __XSAutoreleasePool_GetCurrent( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_AUTORELEASE_POOL_H__ */

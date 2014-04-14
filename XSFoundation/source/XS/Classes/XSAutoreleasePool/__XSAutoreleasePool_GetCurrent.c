@@ -62,55 +62,33 @@
 /* $Id$ */
 
 /*!
- * @header      XSAutoreleasePool.h
+ * @file        __XSAutoreleasePool_GetCurrent.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSAutoreleasePool class
+ * @abstract    Definition for __XSAutoreleasePool_GetCurrent
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Classes/XSAutoreleasePool.h>
 
-#ifndef __XS_CLASSES_XS_AUTORELEASE_POOL_H__
-#define __XS_CLASSES_XS_AUTORELEASE_POOL_H__
-
-#include <XS/XSTypes.h>
-#include <XS/XSMacros.h>
-
-/*!
- * @typedef     XSAutoreleasePoolRef
- * @abstract    Opaque type for XSAutoreleasePool
- */
-typedef struct __XSAutoreleasePool * XSAutoreleasePoolRef;
-
-/*!
- * @function    XSAutoreleasePool_GetClassID
- * @abstract    Gets the class ID for XSAutoreleasePool
- * @return      The class ID for XSAutoreleasePool
- */
-XS_EXPORT XSStatic XSClassID XSAutoreleasePool_GetClassID( void );
-
-/*!
- * @function    XSAutoreleasePool_Create
- * @abstract    Creates an autorelease pool
- * @return      The autorelease pool object
- */
-XS_EXPORT XSStatic XSAutoreleasePoolRef XSAutoreleasePool_Create( void );
-
-/*!
- * @function    XSAutoreleasePool_AddObject
- * @abstract    Adds an object to an autorelease pool
- * @param       ap      The autorelease pool object
- * @param       object  The object to add to the autorelease pool
- */
-XS_EXPORT void XSAutoreleasePool_AddObject( XSAutoreleasePoolRef ap, XSObjectRef object );
-
-/*!
- * @function    XSAutoreleasePool_Drain
- * @abstract    Drains an autorelease pool
- * @param       ap      The autorelease pool object
- */
-XS_EXPORT void XSAutoreleasePool_Drain( XSAutoreleasePoolRef ap );
-
-#endif /* __XS_CLASSES_XS_AUTORELEASE_POOL_H__ */
+XSAutoreleasePoolRef __XSAutoreleasePool_GetCurrent( void )
+{
+    __XSAutoreleasePool_List * list;
+    __XSAutoreleasePool_List * item;
+    
+    list = XSThreading_TLSGetValue( &__XSAutoreleasePool_TLSKey );
+    item = NULL;
+    
+    if( list == NULL )
+    {
+        return NULL;
+    }
+    
+    while( list != NULL )
+    {
+        item = list;
+        list = list->next;
+    }
+    
+    return item->ap;
+}

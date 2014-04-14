@@ -73,14 +73,9 @@
 
 XSAutoreleasePoolRef __XSAutoreleasePool_Constructor( XSAutoreleasePoolRef object )
 {
-    object->items = XSStack_Create();
+    object->threadID = XSThreading_GetCurrentThreadID();
     
-    if( object->items == NULL )
-    {
-        XSLogWarning( "Error allocating memory for XSAutoreleasePool items" );
-        
-        return NULL;
-    }
+    __XSAutoreleasePool_Register( object );
     
     return object;
 }

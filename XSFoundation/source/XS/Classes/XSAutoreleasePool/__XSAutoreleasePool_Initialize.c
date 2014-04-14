@@ -74,4 +74,7 @@
 void __XSAutoreleasePool_Initialize( void )
 {
     __XSAutoreleasePool_ClassID = XSRuntime_RegisterClass( &__XSAutoreleasePool_Class );
+    
+    XSThreading_TLSKeyCreate( &__XSAutoreleasePool_TLSKey );
+    XSRuntime_RegisterFinalizer( __XSAutoreleasePool_Exit );
 }

@@ -73,10 +73,47 @@
 
 void XSAutoreleasePool_AddObject( XSAutoreleasePoolRef ap, XSObjectRef object )
 {
+    __XSAutoreleasePool_Value * value;
+    __XSAutoreleasePool_Value * list;
+    
     if( ap == NULL )
     {
         return;
     }
     
-    XSStack_Push( ap->items, object );
+    if( XSThreading_GetCurrentThreadID() != ap->threadID )
+    {
+        XSFatalError( "An autorelease pool object can only be used on the same thread it was created" );
+    }
+    
+    value = XSAlloc( sizeof( __XSAutoreleasePool_Value ) );
+    
+    if( value == NULL )
+    {
+        XSLogWarning( "Error allocating memory for an XSAutoreleasePool value" );
+        
+        return;
+    }
+    
+    value->object = object;
+    list          = ap->first;
+    
+    if( list == NULL )
+    {
+        ap->first = value;
+        
+        return;
+    }
+    
+    while( list != NULL )
+    {
+        if( list->next == NULL )
+        {
+            list->next = value;
+            
+            break;
+        }
+        
+        list = list->next;
+    }
 }

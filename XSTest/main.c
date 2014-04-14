@@ -73,7 +73,8 @@ void __threadedFunc( XSBooleanRef boolean )
     sleep( 1 );
 }
 
-static bool __filterArray( XSObjectRef object, XSUInteger index, bool * stop )
+bool __filterArray( XSObjectRef object, XSUInteger index, bool * stop );
+bool __filterArray( XSObjectRef object, XSUInteger index, bool * stop )
 {
     ( void )index;
     ( void )stop;
@@ -83,10 +84,25 @@ static bool __filterArray( XSObjectRef object, XSUInteger index, bool * stop )
 
 int main( int argc, const char * argv[] )
 {
+    XSAutoreleasePoolRef ap1;
+    XSAutoreleasePoolRef ap2;
+    
     ( void )argc;
     ( void )argv;
     
     XSRuntime_Initialize();
+    
+    ap1 = XSAutoreleasePool_Create();
+    
+    XSAutoAlloc( 1024 );
+    XSAutoAlloc( 1024 );
+    
+    ap2 = XSAutoreleasePool_Create();
+    
+    XSArray_Array();
+    
+    XSRelease( ap2 );
+    XSRelease( ap1 );
     
     {
         void * x1;
