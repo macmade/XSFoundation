@@ -151,7 +151,6 @@ XS_EXTERN XSClassInfo __XSThread_Class;
  */
 XSStatic void __XSThread_Initialize( void );
 
-
 /*!
  * @function    __XSThread_Finalize
  * @abstract    Class finalizer
