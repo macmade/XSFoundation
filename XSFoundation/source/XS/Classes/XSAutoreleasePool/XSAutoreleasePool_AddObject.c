@@ -86,6 +86,11 @@ void XSAutoreleasePool_AddObject( XSAutoreleasePoolRef ap, XSObjectRef object )
         XSFatalError( "An autorelease pool object can only be used on the same thread it was created" );
     }
     
+    if( XSRuntime_GetClassID( object ) == XSAutoreleasePool_GetClassID() )
+    {
+        XSFatalError( "An autorelease pool cannot be added to an other autorelease pool" );
+    }
+    
     value = XSAlloc( sizeof( __XSAutoreleasePool_Value ) );
     
     if( value == NULL )
