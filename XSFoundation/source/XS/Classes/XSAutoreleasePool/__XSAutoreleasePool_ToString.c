@@ -73,7 +73,24 @@
 
 const char * __XSAutoreleasePool_ToString( XSAutoreleasePoolRef object )
 {
-    ( void )object;
+    XSStringRef                 description;
+    __XSAutoreleasePool_Value * value;
     
-    return NULL;
+    if( XSThreading_GetCurrentThreadID() != object->threadID )
+    {
+        return NULL;
+    }
+    
+    value       = object->first;
+    description = XSString_StringWithCString( "" );
+    
+    while( value != NULL )
+    {
+        description = XSString_StringByAppendingFormat( description, "\n    %s", XSRuntime_GetDescription( value->object ) );
+        value       = value->next;
+    }
+    
+    description = XSString_StringByAppendingCString( description, "\n}" );
+    
+    return XSString_GetCString( description );
 }
