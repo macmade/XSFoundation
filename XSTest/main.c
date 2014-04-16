@@ -104,6 +104,8 @@ int main( int argc, const char * argv[] )
     XSRelease( ap2 );
     XSRelease( ap1 );
     
+    ap1 = XSAutoreleasePool_Create();
+    
     {
         void * x1;
         void * x2;
@@ -112,9 +114,6 @@ int main( int argc, const char * argv[] )
         x2 = XSAlloc( 100 );
         
         XSRelease( x1 );
-        XSRetain( x2 );
-        XSRetain( x2 );
-        XSRelease( x2 );
         XSRelease( x2 );
     }
     
@@ -207,6 +206,7 @@ int main( int argc, const char * argv[] )
         s[ 10 ] = 'b';
         
         XSLog( "%s", s );
+        XSRelease( s );
     }
     
     {
@@ -286,6 +286,8 @@ int main( int argc, const char * argv[] )
         XSRelease( b1 );
         XSRelease( b2 );
         XSRelease( b3 );
+        XSRelease( s1 );
+        XSRelease( s2 );
     }
     
     {
@@ -342,14 +344,19 @@ int main( int argc, const char * argv[] )
         XSBooleanRef b;
         int          i;
         
-        i = 5;
+        i = 10;
         b = XSBoolean_Create( true );
         
         while( i-- )
         {
             XSThread_DetachFunctionWithArgument( ( XSThread_FunctionWithArgument )__threadedFunc, b );
         }
+        
+        XSRelease( b );
     }
+    
+    XSShow( ap1 );
+    XSRelease( ap1 );
     
     sleep( 1 );
     
