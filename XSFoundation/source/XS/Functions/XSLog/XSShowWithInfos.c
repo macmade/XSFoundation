@@ -73,6 +73,10 @@
 
 void XSShowWithInfos( XSObjectRef object, const char * file, int line, const char * func )
 {
+    XSAutoreleasePoolRef ap;
+    
+    ap = XSAutoreleasePool_Create();
+    
     XSLogWithInfos
     (
         XSLogLevelInfo,
@@ -82,4 +86,6 @@ void XSShowWithInfos( XSObjectRef object, const char * file, int line, const cha
         "%s",
         XSRuntime_GetDescription( object )
     );
+    
+    XSRelease( ap );
 }
