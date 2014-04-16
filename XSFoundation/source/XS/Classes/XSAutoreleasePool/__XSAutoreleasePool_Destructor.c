@@ -74,7 +74,6 @@
 void __XSAutoreleasePool_Destructor( XSAutoreleasePoolRef object )
 {
     XSAutoreleasePool_Drain( object );
-    XSRelease( object->first );
     
     __XSAutoreleasePool_Unregister( object );
 }
