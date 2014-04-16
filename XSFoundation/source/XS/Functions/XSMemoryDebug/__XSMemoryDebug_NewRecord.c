@@ -74,6 +74,7 @@
 void __XSMemoryDebug_NewRecord( __XSMemoryObject * object, const char * file, int line, const char * func )
 {
     __XSMemoryDebug_Record *          rec;
+    __XSMemoryDebug_Record *          previous;
     __XSMemoryDebug_Record * volatile list;
     
     if( object == NULL )
@@ -88,33 +89,60 @@ void __XSMemoryDebug_NewRecord( __XSMemoryObject * object, const char * file, in
         XSFatalError( "Cannot allocate memory for a memory record" );
     }
     
-    rec->object         = object;
-    rec->data           = object + sizeof( __XSMemoryObject );
-    rec->allocID        = object->allocID;
-    rec->classID        = object->classID;
-    rec->allocFile      = file;
-    rec->allocLine      = line;
-    rec->allocFunc      = func;
-    rec->allocThreadID  = XSThreading_GetCurrentThreadID();
+    previous = __XSMemoryDebug_GetRecord( object );
     
-    if( XSAtomic_CompareAndSwapPointer( NULL, rec, ( void * volatile * )&__XSMemoryDebug_Records ) )
+    if( previous != NULL )
     {
-        return;
+        memcpy( rec, previous, sizeof( __XSMemoryDebug_Record ) );
+        
+        rec->next                = NULL;
+        previous->archived       = rec;
+        
+        previous->freed          = false;
+        previous->freeFile       = NULL;
+        previous->freeLine       = 0;
+        previous->freeFunc       = NULL;
+        previous->freeThreadID   = 0;
+        
+        previous->object         = object;
+        previous->data           = object + sizeof( __XSMemoryObject );
+        previous->allocID        = object->allocID;
+        previous->classID        = object->classID;
+        previous->allocFile      = file;
+        previous->allocLine      = line;
+        previous->allocFunc      = func;
+        previous->allocThreadID  = XSThreading_GetCurrentThreadID();
     }
-    
-    add:
-    
-    list = __XSMemoryDebug_Records;
-    
-    while( list != NULL )
+    else
     {
-        if( XSAtomic_CompareAndSwapPointer( NULL, rec, ( void * volatile * )&( list->next ) ) )
+        rec->object         = object;
+        rec->data           = object + sizeof( __XSMemoryObject );
+        rec->allocID        = object->allocID;
+        rec->classID        = object->classID;
+        rec->allocFile      = file;
+        rec->allocLine      = line;
+        rec->allocFunc      = func;
+        rec->allocThreadID  = XSThreading_GetCurrentThreadID();
+        
+        if( XSAtomic_CompareAndSwapPointer( NULL, rec, ( void * volatile * )&__XSMemoryDebug_Records ) )
         {
             return;
         }
         
-        list = list->next;
+        add:
+        
+        list = __XSMemoryDebug_Records;
+        
+        while( list != NULL )
+        {
+            if( XSAtomic_CompareAndSwapPointer( NULL, rec, ( void * volatile * )&( list->next ) ) )
+            {
+                return;
+            }
+            
+            list = list->next;
+        }
+        
+        goto add;
     }
-    
-    goto add;
 }

@@ -85,6 +85,7 @@
 typedef struct __XSMemoryDebug_Record_Struct
 {
     struct __XSMemoryDebug_Record_Struct * next;            /*! The next record, if any */
+    struct __XSMemoryDebug_Record_Struct * archived;        /*! Archived records which had the same address, if any */
     __XSMemoryObject                     * object;          /*! The memory object */
     void                                 * data;            /*! The user data pointer */
     XSInteger                              allocID;         /*! The allocation ID */
