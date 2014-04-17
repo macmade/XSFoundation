@@ -86,7 +86,8 @@ void XSAutoreleasePool_Drain( XSAutoreleasePoolRef ap )
         XSFatalError( "An autorelease pool object can only be used on the same thread it was created" );
     }
     
-    list = ap->first;
+    list      = ap->first;
+    ap->first = NULL;
     
     while( list != NULL )
     {
