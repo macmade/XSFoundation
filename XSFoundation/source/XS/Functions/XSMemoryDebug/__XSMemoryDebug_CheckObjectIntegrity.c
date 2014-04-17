@@ -73,6 +73,14 @@
 
 void __XSMemoryDebug_CheckObjectIntegrity( __XSMemoryObject * object )
 {
+    #ifndef DEBUG
+    
+    ( void )object;
+    
+    return;
+    
+    #endif
+    
     if( object == NULL )
     {
         return;

@@ -77,6 +77,20 @@ void __XSMemoryDebug_NewRecord( __XSMemoryObject * object, const char * file, in
     __XSMemoryDebug_Record *          previous;
     __XSMemoryDebug_Record * volatile list;
     
+    #ifndef DEBUG
+    
+    ( void )object;
+    ( void )file;
+    ( void )line;
+    ( void )func;
+    ( void )rec;
+    ( void )previous;
+    ( void )list;
+    
+    return;
+    
+    #endif
+    
     if( object == NULL )
     {
         return;

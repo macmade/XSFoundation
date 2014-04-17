@@ -75,6 +75,19 @@ void __XSMemoryDebug_UpdateRecord( void * oldObject, __XSMemoryObject * newObjec
 {
     __XSMemoryDebug_Record * rec;
     
+    #ifndef DEBUG
+    
+    ( void )oldObject;
+    ( void )newObject;
+    ( void )file;
+    ( void )line;
+    ( void )func;
+    ( void )rec;
+    
+    return;
+    
+    #endif
+    
     rec = __XSMemoryDebug_GetRecord( oldObject );
     
     if( rec == NULL )

@@ -75,6 +75,14 @@ void __XSMemoryDebug_Exit( void )
 {
     __XSMemoryDebug_Record * rec;
     
+    #ifndef DEBUG
+    
+    ( void )rec;
+    
+    return;
+    
+    #endif
+    
     rec = __XSMemoryDebug_Records;
     
     while( rec != NULL )

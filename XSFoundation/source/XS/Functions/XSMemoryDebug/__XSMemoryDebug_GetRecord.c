@@ -75,6 +75,15 @@ __XSMemoryDebug_Record * __XSMemoryDebug_GetRecord( __XSMemoryObject * object )
 {
     __XSMemoryDebug_Record * rec;
     
+    #ifndef DEBUG
+    
+    ( void )object;
+    ( void )rec;
+    
+    return NULL;
+    
+    #endif
+    
     rec = __XSMemoryDebug_Records;
     
     while( rec != NULL )

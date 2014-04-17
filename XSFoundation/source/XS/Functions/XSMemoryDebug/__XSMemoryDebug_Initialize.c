@@ -73,5 +73,11 @@
 
 void __XSMemoryDebug_Initialize( void )
 {
+    #ifndef DEBUG
+    
+    return;
+    
+    #endif
+    
     XSRuntime_RegisterFinalizer( __XSMemoryDebug_Exit );
 }

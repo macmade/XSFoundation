@@ -81,6 +81,21 @@ void __XSMemoryDebug_PrintRecord( __XSMemoryDebug_Record * record )
     const char * pos2;
     const char * classname;
     
+    #ifndef DEBUG
+    
+    ( void )record;
+    ( void )allocFile;
+    ( void )allocFunc;
+    ( void )freeFile;
+    ( void )freeFunc;
+    ( void )pos1;
+    ( void )pos2;
+    ( void )classname;
+    
+    return;
+    
+    #endif
+    
     if( record != NULL && record->object != NULL )
     {
         allocFile = record->allocFile;

@@ -75,6 +75,19 @@ void __XSMemoryDebug_ReleaseRecord( __XSMemoryObject * object, bool markAsFreed,
 {
     __XSMemoryDebug_Record * rec;
     
+    #ifndef DEBUG
+    
+    ( void )object;
+    ( void )markAsFreed;
+    ( void )file;
+    ( void )line;
+    ( void )func;
+    ( void )rec;
+    
+    return;
+    
+    #endif
+    
     __XSMemoryDebug_CheckObjectIntegrity( object );
     
     rec = __XSMemoryDebug_GetRecord( object );

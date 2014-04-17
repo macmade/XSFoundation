@@ -74,6 +74,15 @@
 
 void __XSMemoryDebug_IssueWarning( const char * message, __XSMemoryDebug_Record * record )
 {
+    #ifndef DEBUG
+    
+    ( void )message;
+    ( void )record;
+    
+    return;
+    
+    #endif
+    
     __XSLog_Pause();
     
     fprintf
