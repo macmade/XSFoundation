@@ -97,6 +97,7 @@ void __XSMemoryDebug_UpdateRecord( void * oldObject, __XSMemoryObject * newObjec
     
     rec->object    = newObject;
     rec->data      = ( char * )newObject + sizeof( __XSMemoryObject );
+    rec->size      = newObject->size;
     rec->allocFile = file;
     rec->allocLine = line;
     rec->allocFunc = func;

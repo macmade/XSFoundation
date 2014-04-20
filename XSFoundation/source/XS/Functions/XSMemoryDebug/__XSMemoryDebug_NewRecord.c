@@ -120,6 +120,7 @@ void __XSMemoryDebug_NewRecord( __XSMemoryObject * object, const char * file, in
         
         previous->object         = object;
         previous->data           = object + sizeof( __XSMemoryObject );
+        previous->size           = object->size;
         previous->allocID        = object->allocID;
         previous->classID        = object->classID;
         previous->allocFile      = file;
@@ -131,6 +132,7 @@ void __XSMemoryDebug_NewRecord( __XSMemoryObject * object, const char * file, in
     {
         rec->object         = object;
         rec->data           = object + sizeof( __XSMemoryObject );
+        rec->size           = object->size;
         rec->allocID        = object->allocID;
         rec->classID        = object->classID;
         rec->allocFile      = file;

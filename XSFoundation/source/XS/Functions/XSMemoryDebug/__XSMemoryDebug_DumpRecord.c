@@ -62,129 +62,130 @@
 /* $Id$ */
 
 /*!
- * @file        __XSMemoryDebug_PrintRecord.c
+ * @file        __XSMemoryDebug_DumpRecord.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSMemoryDebug_PrintRecord
+ * @abstract    Definition for __XSMemoryDebug_DumpRecord
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemoryDebug.h>
 
-void __XSMemoryDebug_PrintRecord( __XSMemoryDebug_Record * record )
+void __XSMemoryDebug_DumpRecord( __XSMemoryDebug_Record * record )
 {
-    const char * allocFile;
-    const char * allocFunc;
-    const char * freeFile;
-    const char * freeFunc;
-    const char * pos1;
-    const char * pos2;
-    const char * classname;
-    
     #ifndef DEBUG
     
     ( void )record;
-    ( void )allocFile;
-    ( void )allocFunc;
-    ( void )freeFile;
-    ( void )freeFunc;
-    ( void )pos1;
-    ( void )pos2;
-    ( void )classname;
     
     return;
     
     #endif
     
-    if( record == NULL || record->object == NULL )
+    if( record == NULL || record->object == NULL || record->freed )
     {
         return;
     }
-    
-    allocFile = record->allocFile;
-    allocFunc = record->allocFunc;
-    freeFile  = record->freeFile;
-    freeFunc  = record->freeFunc;
-    classname = XSRuntime_GetClassName( record->classID );
-    
-    #ifdef _WIN32
-    pos1 = ( allocFile != NULL ) ? strrchr( allocFile, '\\' ) : NULL;
-    pos2 = ( freeFile  != NULL ) ? strrchr( freeFile,  '\\' ) : NULL;
-    #else
-    pos1 = ( allocFile != NULL ) ? strrchr( allocFile, '/' ) : NULL;
-    pos2 = ( freeFile  != NULL ) ? strrchr( freeFile, '/' )  : NULL;
-    #endif
-    
-    if( pos1 != NULL ) { allocFile = pos1 + 1; }
-    if( pos2 != NULL ) { freeFile  = pos2 + 1; }
     
     fprintf
     (
         stderr,
         "\n"
         "#-------------------------------------------------------------------------------\n"
-        "# Memory object ID:      %lu\n"
-        "# Class ID:              %lu - %s\n"
-        "# Allocation size:       %lu bytes\n"
-        "# Data pointer:          %p\n",
-        ( unsigned long )( record->allocID ),
-        ( unsigned long )( record->classID ),
-        ( classname == NULL ) ? "N/A" : classname,
-        ( unsigned long )( record->size ),
-        record->data
     );
     
-    if( allocFile != NULL )
     {
-        fprintf
-        (
-            stderr,
-            "# Allocated in file:     %s:%i\n",
-            allocFile,
-            record->allocLine
-        );
-    }
-    else
-    {
-        fprintf
-        (
-            stderr,
-            "# Allocated in file:     N/A\n"
-        );
-    }
-    
-    fprintf
-    (
-        stderr,
-        "# Allocated in function: %s\n"
-        "# Allocated in thread:   %lX\n",
-        ( allocFunc == NULL ) ? "N/A" : allocFunc,
-        ( unsigned long )( record->allocThreadID )
-    );
-    
-    if( record->freed )
-    {
-        fprintf
-        (
-            stderr,
-            "# Freed in file:         %s:%i\n"
-            "# Freed in function:     %s\n"
-            "# Freed in thread:       %lX\n",
-            freeFile,
-            record->freeLine,
-            freeFunc,
-            ( unsigned long )( record->freeThreadID )
-        );
-    }
-    else
-    {
-        fprintf
-        (
-            stderr,
-            "# Freed in file:         N/A\n"
-            "# Freed in function:     N/A\n"
-            "# Freed in thread:       N/A\n"
-        );
+        XSUInteger   s;
+        XSUInteger   i;
+        const char * data;
+        
+        data = ( const char * )( record->object );
+        s    = record->size;
+        s   += sizeof( __XSMemoryObject );
+        s   += __XS_MEMORY_FENCE_SIZE;
+        i    = 0;
+        
+        while( i < s && s - i >= 19 )
+        {
+            fprintf
+            (
+                stderr,
+                "# %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X | %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",
+                data[ i      ] & 0xFF,
+                data[ i +  1 ] & 0xFF,
+                data[ i +  2 ] & 0xFF,
+                data[ i +  3 ] & 0xFF,
+                data[ i +  4 ] & 0xFF,
+                data[ i +  5 ] & 0xFF,
+                data[ i +  6 ] & 0xFF,
+                data[ i +  7 ] & 0xFF,
+                data[ i +  8 ] & 0xFF,
+                data[ i +  9 ] & 0xFF,
+                data[ i + 10 ] & 0xFF,
+                data[ i + 11 ] & 0xFF,
+                data[ i + 12 ] & 0xFF,
+                data[ i + 13 ] & 0xFF,
+                data[ i + 14 ] & 0xFF,
+                data[ i + 15 ] & 0xFF,
+                data[ i + 16 ] & 0xFF,
+                data[ i + 17 ] & 0xFF,
+                data[ i + 18 ] & 0xFF,
+                ( isprint( data[ i      ] & 0xFF ) ) ? data[ i      ] & 0xFF : '.',
+                ( isprint( data[ i +  1 ] & 0xFF ) ) ? data[ i +  1 ] & 0xFF : '.',
+                ( isprint( data[ i +  2 ] & 0xFF ) ) ? data[ i +  2 ] & 0xFF : '.',
+                ( isprint( data[ i +  3 ] & 0xFF ) ) ? data[ i +  3 ] & 0xFF : '.',
+                ( isprint( data[ i +  4 ] & 0xFF ) ) ? data[ i +  4 ] & 0xFF : '.',
+                ( isprint( data[ i +  5 ] & 0xFF ) ) ? data[ i +  5 ] & 0xFF : '.',
+                ( isprint( data[ i +  6 ] & 0xFF ) ) ? data[ i +  6 ] & 0xFF : '.',
+                ( isprint( data[ i +  7 ] & 0xFF ) ) ? data[ i +  7 ] & 0xFF : '.',
+                ( isprint( data[ i +  8 ] & 0xFF ) ) ? data[ i +  8 ] & 0xFF : '.',
+                ( isprint( data[ i +  9 ] & 0xFF ) ) ? data[ i +  9 ] & 0xFF : '.',
+                ( isprint( data[ i + 10 ] & 0xFF ) ) ? data[ i + 10 ] & 0xFF : '.',
+                ( isprint( data[ i + 11 ] & 0xFF ) ) ? data[ i + 11 ] & 0xFF : '.',
+                ( isprint( data[ i + 12 ] & 0xFF ) ) ? data[ i + 12 ] & 0xFF : '.',
+                ( isprint( data[ i + 13 ] & 0xFF ) ) ? data[ i + 13 ] & 0xFF : '.',
+                ( isprint( data[ i + 14 ] & 0xFF ) ) ? data[ i + 14 ] & 0xFF : '.',
+                ( isprint( data[ i + 15 ] & 0xFF ) ) ? data[ i + 15 ] & 0xFF : '.',
+                ( isprint( data[ i + 16 ] & 0xFF ) ) ? data[ i + 16 ] & 0xFF : '.',
+                ( isprint( data[ i + 17 ] & 0xFF ) ) ? data[ i + 17 ] & 0xFF : '.',
+                ( isprint( data[ i + 18 ] & 0xFF ) ) ? data[ i + 18 ] & 0xFF : '.'
+            );
+            
+            i += 19;
+        }
+        
+        if( i > 0 && i % 19 == 0 )
+        {
+            {
+                XSUInteger j;
+                
+                fprintf( stderr, "#" );
+                
+                j = i;
+                
+                while( i < s )
+                {
+                    fprintf( stderr, " %02X", data[ i ] & 0xFF );
+                    
+                    i++;
+                }
+                
+                for( i = 0; i < 19 - ( s - j ); i++ )
+                {
+                    fprintf( stderr, "   " );
+                }
+                
+                fprintf( stderr, " |" );
+                
+                while( j < s )
+                {
+                    fprintf( stderr, "%c", ( isprint( data[ j ] & 0xFF ) ) ? data[ j ] & 0xFF : '.' );
+                    
+                    j++;
+                }
+                
+                fprintf( stderr, "\n" );
+            }
+        }
     }
     
     fprintf

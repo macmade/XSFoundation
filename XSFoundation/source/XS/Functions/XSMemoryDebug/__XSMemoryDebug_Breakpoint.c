@@ -62,22 +62,183 @@
 /* $Id$ */
 
 /*!
- * @file        __XSMemoryDebug_Initialize.c
+ * @file        __XSMemoryDebug_Breakpoint.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSMemoryDebug_Initialize
+ * @abstract    Definition for __XSMemoryDebug_Breakpoint
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemoryDebug.h>
+#include <XS/__private/Functions/XSLog.h>
 
-void __XSMemoryDebug_Initialize( void )
+void __XSMemoryDebug_Breakpoint( const char * message, __XSMemoryDebug_Record * record )
 {
     #ifndef DEBUG
+    
+    ( void )message;
+    ( void )record;
     
     return;
     
     #endif
     
-    XSRuntime_RegisterFinalizer( __XSMemoryDebug_Exit );
+    __XSLog_Pause();
+    
+    fprintf
+    (
+        stderr,
+        "\n"
+    );
+    
+    start:
+    
+    fprintf
+    (
+        stderr,
+        "#-------------------------------------------------------------------------------\n"
+        "# XSFOUNDATION - BREAKPOINT\n"
+        "#-------------------------------------------------------------------------------\n"
+        "# \n"
+        "# The XSFoundation memory debugger triggered a breakpoint.\n"
+        "# Reason:\n"
+        "# \n"
+        "#     %s\n"
+        "# \n",
+        message
+    );
+    
+    if( record != NULL )
+    {
+        
+    }
+    
+    fprintf
+    (
+        stderr,
+        "#-------------------------------------------------------------------------------\n"
+        "# \n"
+        "# Available commands:\n"
+        "# \n"
+        "#     c:    Continues the program's execution (default)\n"
+        "#     q:    Aborts the program's execution\n"
+        "#     b:    Displays the current backtrace\n"
+    );
+    
+    if( record != NULL )
+    {
+        fprintf
+        (
+            stderr,
+            "#     p:    Prints information about the memory record involved\n"
+            "#     s:    Shows the memory record's description\n"
+            "#     d:    Dumps the memory record's data\n"
+        );
+    }
+    
+    fprintf
+    (
+        stderr,
+        "# \n"
+        "#-------------------------------------------------------------------------------\n"
+        "\n"
+        "Choice: "
+    );
+    
+    fflush( stderr );
+    
+    {
+        int c;
+        
+        c = getchar();
+        
+        if( c == '\n' )
+        {
+            c = 'c';
+        }
+        else
+        {
+            while( getchar() != '\n' );
+        }
+        
+        switch( c )
+        {
+            case '\n':
+            case 'c':
+                
+                return;
+                
+            case 'q':
+                
+                exit( EXIT_SUCCESS );
+                
+                break;
+                
+            case 'b':
+                
+                
+                break;
+                
+            case 'p':
+                
+                if( record != NULL )
+                {
+                    __XSMemoryDebug_PrintRecord( record );
+                }
+                
+                break;
+                
+            case 's':
+                
+                
+                
+                break;
+                
+            case 'd':
+                
+                if( record == NULL )
+                {
+                    fprintf
+                    (
+                        stderr,
+                        "\nError: unknown command\n\n"
+                    );
+                    
+                    break;
+                }
+                
+                if( record->freed )
+                {
+                    fprintf
+                    (
+                        stderr,
+                        "\nError: cannot dump a freed memory record\n\n"
+                    );
+                    
+                    break;
+                }
+                
+                __XSMemoryDebug_DumpRecord( record );
+                
+                break;
+                
+            default:
+                
+                fprintf
+                (
+                    stderr,
+                    "\nError: unknown command\n\n"
+                );
+                
+                break;
+        }
+        
+        goto start;
+    }
+    
+    //__XSMemoryDebug_PrintRecord( record );
+    
+    fprintf( stderr, "\n" );
+    
+    __XSLog_Resume();
 }

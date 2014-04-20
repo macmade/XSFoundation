@@ -88,6 +88,7 @@ typedef struct __XSMemoryDebug_Record_Struct
     struct __XSMemoryDebug_Record_Struct * archived;        /*! Archived records which had the same address, if any */
     __XSMemoryObject                     * object;          /*! The memory object */
     void                                 * data;            /*! The user data pointer */
+    XSUInteger                             size;            /*! The allocated data size */
     XSInteger                              allocID;         /*! The allocation ID */
     XSClassID                              classID;         /*! The class ID (only for allocated instances) */
     XSUInteger                             allocThreadID;   /*! The ID of the thread in which the object was allocated */
@@ -164,14 +165,14 @@ __XSMemoryDebug_Record * __XSMemoryDebug_GetRecord( __XSMemoryObject * object );
 void __XSMemoryDebug_CheckObjectIntegrity( __XSMemoryObject * object );
 
 /*!
- * @function    __XSMemoryDebug_IssueWarning
+ * @function    __XSMemoryDebug_Breakpoint
  * @abstract    Issues a memory warning
  * @param       message     The warning message
  * @param       record      The memory record involved, if any
  * @discussion  In debug mode, this will show the memory debug console.
  *              In release mode, the program will be aborted after the warning.
  */
-void __XSMemoryDebug_IssueWarning( const char * message, __XSMemoryDebug_Record * record );
+void __XSMemoryDebug_Breakpoint( const char * message, __XSMemoryDebug_Record * record );
 
 /*!
  * @function    __XSMemoryDebug_PrintRecord
@@ -179,6 +180,13 @@ void __XSMemoryDebug_IssueWarning( const char * message, __XSMemoryDebug_Record 
  * @param       record      The memory record to print
  */
 void __XSMemoryDebug_PrintRecord( __XSMemoryDebug_Record * record );
+
+/*!
+ * @function    __XSMemoryDebug_DumpRecord
+ * @abstract    Dumps a memory record
+ * @param       record      The memory record to dump
+ */
+void __XSMemoryDebug_DumpRecord( __XSMemoryDebug_Record * record );
 
 /*!
  * @function    __XSMemoryDebug_Exit

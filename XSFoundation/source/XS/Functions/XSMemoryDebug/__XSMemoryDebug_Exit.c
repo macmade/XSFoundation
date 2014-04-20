@@ -94,7 +94,7 @@ void __XSMemoryDebug_Exit( void )
         
         if( rec->freed == false )
         {
-            __XSMemoryDebug_IssueWarning( "Unfreed memory record at application exit point", rec );
+            __XSMemoryDebug_Breakpoint( "Unfreed memory record at application exit point", rec );
         }
         
         rec = rec->next;
