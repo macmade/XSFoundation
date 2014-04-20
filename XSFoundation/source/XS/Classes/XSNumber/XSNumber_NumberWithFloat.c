@@ -62,43 +62,16 @@
 /* $Id$ */
 
 /*!
- * @file        __XSMemoryDebug_Exit.c
+ * @file        XSNumber_NumberWithFloat.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSMemoryDebug_Exit
+ * @abstract    Definition for XSNumber_NumberWithFloat
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSMemoryDebug.h>
-#include <XS/__private/Functions/XSLog.h>
+#include <XS/__private/Classes/XSNumber.h>
 
-void __XSMemoryDebug_IssueWarning( const char * message, __XSMemoryDebug_Record * record )
+XSStatic XSAutoreleased XSNumberRef XSNumber_NumberWithFloat( float value )
 {
-    #ifndef DEBUG
-    
-    ( void )message;
-    ( void )record;
-    
-    return;
-    
-    #endif
-    
-    __XSLog_Pause();
-    
-    fprintf
-    (
-        stderr,
-        "*****************************************\n"
-        "* !!! XSFoundation - Memory warning !!! *\n"
-        "*****************************************\n"
-        "\n"
-        "Reason: %s\n\n",
-        message
-    );
-    
-    __XSMemoryDebug_PrintRecord( record );
-    
-    fprintf( stderr, "\n" );
-    
-    __XSLog_Resume();
+    return XSAutorelease( XSNumber_CreateWithFloat( value ) );
 }

@@ -62,91 +62,16 @@
 /* $Id$ */
 
 /*!
- * @header      XSNumber.h
+ * @file        XSNumber_NumberWithUnsignedChar.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSNumber.h
+ * @abstract    Definition for XSNumber_NumberWithUnsignedChar
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Classes/XSNumber.h>
 
-#ifndef __XS___PRIVATE_CLASSES_XS_NUMBER_H__
-#define __XS___PRIVATE_CLASSES_XS_NUMBER_H__
-
-#include <XS/XSTypes.h>
-#include <XS/XSMacros.h>
-
-/*!
- * @struct      __XSNumber
- * @abstract    Structure for XSNumber
- */
-struct __XSNumber
+XSStatic XSAutoreleased XSNumberRef XSNumber_NumberWithUnsignedChar( unsigned char value )
 {
-    XSUInt64  integerValue;
-    XSFloat64 floatValue;
-    bool      isFloat;
-    char      __pad_0[ 7 ];
-};
-
-/*!
- * @var         __XSNumber_ClassID
- * @abstract    Class ID
- */
-XS_EXTERN XSClassID __XSNumber_ClassID;
-
-/*!
- * @var         __XSNumber_Class
- * @abstract    Class info
- */
-XS_EXTERN XSClassInfo __XSNumber_Class;
-
-/*!
- * @function    __XSNumber_Initialize
- * @abstract    Class initializer
- */
-XSStatic void __XSNumber_Initialize( void );
-
-/*!
- * @function    __XSNumber_Constructor
- * @abstract    Class constructor callback
- * @param       object      The object beeing construct
- * @return      The new object
- */
-XSNumberRef __XSNumber_Constructor( XSNumberRef object );
-
-/*!
- * @function    __XSNumber_Destructor
- * @abstract    Class destructor callback
- * @param       object      The object beeing destruct
- */
-void __XSNumber_Destructor( XSNumberRef object );
-
-/*!
- * @function    __XSNumber_Copy
- * @abstract    Class copy callback
- * @param       source      The object to copy
- * @param       destination The object beeing copied
- * @result      The copied object
- */
-XSNumberRef __XSNumber_Copy( XSNumberRef source, XSNumberRef destination );
-
-/*!
- * @function    __XSNumber_Equals
- * @abstract    Class equals callback
- * @param       object1     The first object to compare
- * @param       object2     The second object to compare
- * @return      True if both objects are equals, otherwise false
- */
-bool __XSNumber_Equals( XSNumberRef object1, XSNumberRef object2 );
-
-/*!
- * @function    __XSNumber_ToString
- * @abstract    Class to-string callback
- * @param       object      The object for which to get a description
- * @return      The object's description
- */
-const char * __XSNumber_ToString( XSNumberRef object );
-
-#endif /* __XS___PRIVATE_CLASSES_XS_NUMBER_H__ */
+    return XSAutorelease( XSNumber_CreateWithUnsignedChar( value ) );
+}
