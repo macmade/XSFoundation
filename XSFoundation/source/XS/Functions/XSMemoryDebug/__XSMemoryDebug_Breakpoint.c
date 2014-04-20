@@ -81,7 +81,7 @@ void __XSMemoryDebug_Breakpoint( const char * message, __XSMemoryDebug_Record * 
     
     return;
     
-    #endif
+    #else
     
     __XSLog_Pause();
     
@@ -241,4 +241,6 @@ void __XSMemoryDebug_Breakpoint( const char * message, __XSMemoryDebug_Record * 
     fprintf( stderr, "\n" );
     
     __XSLog_Resume();
+    
+    #endif
 }

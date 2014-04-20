@@ -77,7 +77,15 @@
 
 #include <XS/XSTypes.h>
 
+/*!
+ * @typedef     __XS_MEMORY_FENCE_SIZE
+ * @abstract    The size of the memory fence to prevent overflows
+ */
+#ifdef DEBUG
 #define __XS_MEMORY_FENCE_SIZE  16
+#else
+#define __XS_MEMORY_FENCE_SIZE  0
+#endif
 
 /*!
  * @typedef     __XSMemoryObject
@@ -89,7 +97,9 @@ typedef struct
     XSUInteger          size;                               /*! The allocated data size */
     XSInteger           allocID;                            /*! The allocation ID */
     XSClassID           classID;                            /*! The class ID (only for allocated instances) */
-    unsigned char       fence[ __XS_MEMORY_FENCE_SIZE ];    /*! Memory fence to prevent overflows */
+    #ifdef DEBUG
+    unsigned char       fence[ __XS_MEMORY_FENCE_SIZE ];    /*! Memory fence to prevent overflows (DEBUG builds only) */
+    #endif
 }
 __XSMemoryObject;
 
@@ -99,11 +109,16 @@ __XSMemoryObject;
  */
 XS_EXTERN volatile XSInteger __XSMemory_AllocID;
 
+#ifdef DEBUG
+
 /*!
  * @typedef     __XSMemoryFenceData
  * @abstract    The memory fence data
  */
 XS_EXTERN const char __XSMemory_FenceData[ __XS_MEMORY_FENCE_SIZE ];
+
+#endif
+
 
 /*!
  * @function    __XSMemory_GetMemoryObject

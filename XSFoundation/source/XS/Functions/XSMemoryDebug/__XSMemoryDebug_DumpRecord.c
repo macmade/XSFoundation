@@ -79,7 +79,7 @@ void __XSMemoryDebug_DumpRecord( __XSMemoryDebug_Record * record )
     
     return;
     
-    #endif
+    #else
     
     if( record == NULL || record->object == NULL || record->freed )
     {
@@ -174,7 +174,7 @@ void __XSMemoryDebug_DumpRecord( __XSMemoryDebug_Record * record )
                     fprintf( stderr, "   " );
                 }
                 
-                fprintf( stderr, " |" );
+                fprintf( stderr, " | " );
                 
                 while( j < s )
                 {
@@ -194,4 +194,6 @@ void __XSMemoryDebug_DumpRecord( __XSMemoryDebug_Record * record )
         "#-------------------------------------------------------------------------------\n"
         "\n"
     );
+    
+    #endif
 }

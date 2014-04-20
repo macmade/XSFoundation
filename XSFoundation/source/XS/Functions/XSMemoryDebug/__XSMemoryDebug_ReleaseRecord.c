@@ -86,7 +86,7 @@ void __XSMemoryDebug_ReleaseRecord( __XSMemoryObject * object, bool markAsFreed,
     
     return;
     
-    #endif
+    #else
     
     __XSMemoryDebug_CheckObjectIntegrity( object );
     
@@ -105,4 +105,6 @@ void __XSMemoryDebug_ReleaseRecord( __XSMemoryObject * object, bool markAsFreed,
         rec->freed          = true;
         rec->freeThreadID   = XSThreading_GetCurrentThreadID();
     }
+    
+    #endif
 }

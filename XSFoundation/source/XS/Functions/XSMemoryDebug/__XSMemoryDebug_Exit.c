@@ -81,7 +81,7 @@ void __XSMemoryDebug_Exit( void )
     
     return;
     
-    #endif
+    #else
     
     rec = __XSMemoryDebug_Records;
     
@@ -99,4 +99,6 @@ void __XSMemoryDebug_Exit( void )
         
         rec = rec->next;
     }
+    
+    #endif
 }

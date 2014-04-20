@@ -93,8 +93,10 @@ void * __XSAllocWithInfos( XSUInteger bytes, XSClassID classID, const char * fil
     object->classID     = classID;
     object->allocID     = XSAtomic_IncrementInteger( &__XSMemory_AllocID );
     
+    #ifdef DEBUG
     memcpy( &( object->fence ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );
     memcpy( ( char * )object + ( size - __XS_MEMORY_FENCE_SIZE ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );
+    #endif
     
     __XSMemoryDebug_NewRecord( object, file, line, func );
     

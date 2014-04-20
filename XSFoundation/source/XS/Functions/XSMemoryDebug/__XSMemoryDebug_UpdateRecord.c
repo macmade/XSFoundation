@@ -86,7 +86,7 @@ void __XSMemoryDebug_UpdateRecord( void * oldObject, __XSMemoryObject * newObjec
     
     return;
     
-    #endif
+    #else
     
     rec = __XSMemoryDebug_GetRecord( oldObject );
     
@@ -101,4 +101,6 @@ void __XSMemoryDebug_UpdateRecord( void * oldObject, __XSMemoryObject * newObjec
     rec->allocFile = file;
     rec->allocLine = line;
     rec->allocFunc = func;
+    
+    #endif
 }

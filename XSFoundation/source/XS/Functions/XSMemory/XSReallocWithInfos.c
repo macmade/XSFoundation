@@ -137,8 +137,10 @@ XS_EXPORT void * XSReallocWithInfos( void * memory, XSUInteger bytes, XSClassID 
         memset( ( char * )newObject + sizeof( __XSMemoryObject ) + oldSize, 0, bytes - oldSize );
     }
     
+    #ifdef DEBUG
     memcpy( &( newObject->fence ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );
     memcpy( ( char * )newObject + ( size - __XS_MEMORY_FENCE_SIZE ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );
+    #endif
     
     __XSMemoryDebug_UpdateRecord( oldObject, newObject, file, line, func );
     

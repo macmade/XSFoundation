@@ -73,8 +73,12 @@
 
 volatile XSInteger __XSMemory_AllocID = 0;
 
+#ifdef DEBUG
+
 const char __XSMemory_FenceData[ __XS_MEMORY_FENCE_SIZE ] =
 {
     '_', 'X', 'S', 'M', 'e', 'm', 'o', 'r',
     'y', 'O', 'b', 'j', 'e', 'c', 't', '_' 
 };
+
+#endif

@@ -89,7 +89,7 @@ void __XSMemoryDebug_NewRecord( __XSMemoryObject * object, const char * file, in
     
     return;
     
-    #endif
+    #else
     
     if( object == NULL )
     {
@@ -161,4 +161,6 @@ void __XSMemoryDebug_NewRecord( __XSMemoryObject * object, const char * file, in
         
         goto add;
     }
+    
+    #endif
 }

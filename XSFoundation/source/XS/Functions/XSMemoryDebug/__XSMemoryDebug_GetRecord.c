@@ -82,7 +82,7 @@ __XSMemoryDebug_Record * __XSMemoryDebug_GetRecord( __XSMemoryObject * object )
     
     return NULL;
     
-    #endif
+    #else
     
     rec = __XSMemoryDebug_Records;
     
@@ -97,4 +97,6 @@ __XSMemoryDebug_Record * __XSMemoryDebug_GetRecord( __XSMemoryObject * object )
     }
     
     return NULL;
+    
+    #endif
 }

@@ -79,7 +79,7 @@ void __XSMemoryDebug_CheckObjectIntegrity( __XSMemoryObject * object )
     
     return;
     
-    #endif
+    #else
     
     if( object == NULL )
     {
@@ -94,4 +94,6 @@ void __XSMemoryDebug_CheckObjectIntegrity( __XSMemoryObject * object )
     {
         
     }
+    
+    #endif
 }

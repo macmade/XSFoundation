@@ -94,7 +94,7 @@ void __XSMemoryDebug_PrintRecord( __XSMemoryDebug_Record * record )
     
     return;
     
-    #endif
+    #else
     
     if( record == NULL || record->object == NULL )
     {
@@ -193,4 +193,6 @@ void __XSMemoryDebug_PrintRecord( __XSMemoryDebug_Record * record )
         "#-------------------------------------------------------------------------------\n"
         "\n"
     );
+    
+    #endif
 }
