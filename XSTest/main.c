@@ -247,7 +247,6 @@ int main( int argc, const char * argv[] )
         XSShow( XSString_StringWithFormat( "%s %i %p %f", "ok", 42, str1, ( XSFloat )42 ) );
         XSShow( XSString_StringByAppendingFormat( XSSTR( "test" ), " %i", 42 ) );
         
-        XSRelease( str1 );
         XSRelease( str2 );
     }
     
