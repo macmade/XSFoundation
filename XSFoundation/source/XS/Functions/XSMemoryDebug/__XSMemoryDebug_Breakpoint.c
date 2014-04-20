@@ -74,10 +74,13 @@
 
 void __XSMemoryDebug_Breakpoint( const char * message, __XSMemoryDebug_Record * record )
 {
+    int c;
+    
     #ifndef DEBUG
     
     ( void )message;
     ( void )record;
+    ( void )c;
     
     return;
     
@@ -85,11 +88,7 @@ void __XSMemoryDebug_Breakpoint( const char * message, __XSMemoryDebug_Record * 
     
     __XSLog_Pause();
     
-    fprintf
-    (
-        stderr,
-        "\n"
-    );
+    fprintf( stderr, "\n" );
     
     start:
     
@@ -131,7 +130,6 @@ void __XSMemoryDebug_Breakpoint( const char * message, __XSMemoryDebug_Record * 
         (
             stderr,
             "#     p:    Prints information about the memory record involved\n"
-            "#     s:    Shows the memory record's description\n"
             "#     d:    Dumps the memory record's data\n"
         );
     }
@@ -147,96 +145,81 @@ void __XSMemoryDebug_Breakpoint( const char * message, __XSMemoryDebug_Record * 
     
     fflush( stderr );
     
+    c = getchar();
+    
+    if( c == '\n' )
     {
-        int c;
-        
-        c = getchar();
-        
-        if( c == '\n' )
-        {
-            c = 'c';
-        }
-        else
-        {
-            while( getchar() != '\n' );
-        }
-        
-        switch( c )
-        {
-            case '\n':
-            case 'c':
-                
-                return;
-                
-            case 'q':
-                
-                exit( EXIT_SUCCESS );
-                
-                break;
-                
-            case 'b':
-                
-                
-                break;
-                
-            case 'p':
-                
-                if( record != NULL )
-                {
-                    __XSMemoryDebug_PrintRecord( record );
-                }
-                
-                break;
-                
-            case 's':
-                
-                
-                
-                break;
-                
-            case 'd':
-                
-                if( record == NULL )
-                {
-                    fprintf
-                    (
-                        stderr,
-                        "\nError: unknown command\n\n"
-                    );
-                    
-                    break;
-                }
-                
-                if( record->freed )
-                {
-                    fprintf
-                    (
-                        stderr,
-                        "\nError: cannot dump a freed memory record\n\n"
-                    );
-                    
-                    break;
-                }
-                
-                __XSMemoryDebug_DumpRecord( record );
-                
-                break;
-                
-            default:
-                
-                fprintf
-                (
-                    stderr,
-                    "\nError: unknown command\n\n"
-                );
-                
-                break;
-        }
-        
-        goto start;
+        c = 'c';
+    }
+    else
+    {
+        while( getchar() != '\n' );
     }
     
-    //__XSMemoryDebug_PrintRecord( record );
+    switch( c )
+    {
+        case '\n':
+        case 'c':
+            
+            goto end;
+            
+        case 'q':
+            
+            exit( EXIT_SUCCESS );
+            
+            break;
+            
+        case 'b':
+            
+            
+            break;
+            
+        case 'p':
+            
+            if( record == NULL )
+            {
+                fprintf( stderr, "\nError: unknown command\n\n" );
+                
+                break;
+            }
+            
+            if( record != NULL )
+            {
+                __XSMemoryDebug_PrintRecord( record );
+            }
+            
+            break;
+            
+        case 'd':
+            
+            if( record == NULL )
+            {
+                fprintf( stderr, "\nError: unknown command\n\n" );
+                
+                break;
+            }
+            
+            if( record->freed )
+            {
+                fprintf( stderr, "\nError: cannot dump a freed memory record\n\n" );
+                
+                break;
+            }
+            
+            __XSMemoryDebug_DumpRecord( record );
+            
+            break;
+            
+        default:
+            
+            fprintf( stderr, "\nError: unknown command\n\n" );
+            
+            break;
+    }
+    
+    goto start;
+    
+    end:
     
     fprintf( stderr, "\n" );
     
