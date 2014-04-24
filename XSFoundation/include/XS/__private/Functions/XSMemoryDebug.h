@@ -78,6 +78,28 @@
 #include <XS/XSTypes.h>
 #include <XS/__private/Functions/XSMemory.h>
 
+#if defined( __APPLE__ )
+
+#include <execinfo.h>
+
+/*!
+ * @def     __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+ * @brief   execinfo.h header file is available
+ */
+#define __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+
+#elif defined( __GLIBC__ ) && defined( HAVE_EXECINFO_H )
+
+#include <execinfo.h>
+
+/*!
+ * @def     __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+ * @brief   execinfo.h header file is available
+ */
+#define __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+
+#endif
+
 /*!
  * @typedef     __XSMemoryDebug_Record
  * @abstract    Memory record for the memory debugger
@@ -187,6 +209,12 @@ void __XSMemoryDebug_PrintRecord( __XSMemoryDebug_Record * record );
  * @param       record      The memory record to dump
  */
 void __XSMemoryDebug_DumpRecord( __XSMemoryDebug_Record * record );
+
+/*!
+ * @function    __XSMemoryDebug_PrintBacktrace
+ * @abstract    Prints the current backtrace
+ */
+void __XSMemoryDebug_PrintBacktrace( void );
 
 /*!
  * @function    __XSMemoryDebug_Exit

@@ -62,168 +62,119 @@
 /* $Id$ */
 
 /*!
- * @file        __XSMemoryDebug_Breakpoint.c
+ * @file        __XSMemoryDebug_PrintBacktrace.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSMemoryDebug_Breakpoint
+ * @abstract    Definition for __XSMemoryDebug_PrintBacktrace
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemoryDebug.h>
-#include <XS/__private/Functions/XSLog.h>
 
-void __XSMemoryDebug_Breakpoint( const char * message, __XSMemoryDebug_Record * record )
+void __XSMemoryDebug_PrintBacktrace( void )
 {
-    int c;
+    void ** bt;
     
     #ifndef DEBUG
     
-    ( void )message;
-    ( void )record;
-    ( void )c;
+    ( void )bt;
     
     return;
     
     #else
     
-    __XSLog_Pause();
-    
-    fprintf( stderr, "\n" );
-    
-    start:
-    
     fprintf
     (
         stderr,
-        "#-------------------------------------------------------------------------------\n"
-        "# XSFOUNDATION - BREAKPOINT\n"
-        "#-------------------------------------------------------------------------------\n"
-        "# \n"
-        "# The XSFoundation memory debugger triggered a breakpoint.\n"
-        "# Reason:\n"
-        "# \n"
-        "#     %s\n"
-        "# \n",
-        message
-    );
-    
-    if( record != NULL )
-    {
-        
-    }
-    
-    fprintf
-    (
-        stderr,
-        "#-------------------------------------------------------------------------------\n"
-        "# \n"
-        "# Available commands:\n"
-        "# \n"
-        "#     c:    Continues the program's execution (default)\n"
-        "#     q:    Aborts the program's execution\n"
-        "#     b:    Displays the current backtrace\n"
-    );
-    
-    if( record != NULL )
-    {
-        fprintf
-        (
-            stderr,
-            "#     p:    Prints information about the memory record involved\n"
-            "#     d:    Dumps the memory record's data\n"
-        );
-    }
-    
-    fprintf
-    (
-        stderr,
-        "# \n"
-        "#-------------------------------------------------------------------------------\n"
         "\n"
-        "Choice: "
+        "#-------------------------------------------------------------------------------\n"
     );
     
-    fflush( stderr );
+    bt = calloc( sizeof( void * ), 100 );
     
-    c = getchar();
-    
-    if( c == '\n' )
+    if( bt == NULL )
     {
-        c = 'c';
-    }
-    else
-    {
-        while( getchar() != '\n' );
+        goto error;
     }
     
-    switch( c )
+    #if defined( _WIN32 )
+    
     {
-        case '\n':
-        case 'c':
-            
-            goto end;
-            
-        case 'q':
-            
-            exit( EXIT_SUCCESS );
-            
-            break;
-            
-        case 'b':
-            
-            __XSMemoryDebug_PrintBacktrace();
-            break;
-            
-        case 'p':
-            
-            if( record == NULL )
-            {
-                fprintf( stderr, "\nError: unknown command\n\n" );
-                
-                break;
-            }
-            
-            if( record != NULL )
-            {
-                __XSMemoryDebug_PrintRecord( record );
-            }
-            
-            break;
-            
-        case 'd':
-            
-            if( record == NULL )
-            {
-                fprintf( stderr, "\nError: unknown command\n\n" );
-                
-                break;
-            }
-            
-            if( record->freed )
-            {
-                fprintf( stderr, "\nError: cannot dump a freed memory record\n\n" );
-                
-                break;
-            }
-            
-            __XSMemoryDebug_DumpRecord( record );
-            
-            break;
-            
-        default:
-            
-            fprintf( stderr, "\nError: unknown command\n\n" );
-            
-            break;
+        SYMBOL_INFO * symbol;
+        HANDLE        process;
+        int           n;
+        
+        process = GetCurrentProcess();
+        
+        SymInitialize( process, NULL, TRUE );
+
+        n      = CaptureStackBackTrace( 0, 100, bt, NULL );
+        symbol = ( SYMBOL_INFO * )calloc( sizeof( SYMBOL_INFO ) + 256, 1 );
+        
+        if( symbol == NULL )
+        {
+            goto error;
+        }
+        
+        symbol->MaxNameLen = 255;
+        symbol->SizeOfStruct = sizeof( SYMBOL_INFO );
+
+        for( i = 1; i < n; i++ )
+        {
+            SymFromAddr( process, ( DWORD64 )( bt[ i ] ), 0, symbol );
+            printf( "#   %02u: 0x%016x %s\n", i, ( unsigned int )symbol->Address, symbol->Name );
+        }
+
+        free( symbol );
     }
     
-    goto start;
+    #elif defined( __XS_MEMORY_DEBUG_HAVE_EXECINFO_H )
+    
+    {
+        char ** syms;
+        int     i;
+        int     n;
+        
+        n    = backtrace( bt, 100 );
+        syms = backtrace_symbols( bt, n );
+        
+        if( syms == NULL )
+        {
+            goto error;
+        }
+        
+        for( i = 1; i < n; i++ )
+        {
+            printf( "# %s\n", syms[ i ] );
+        }
+        
+        free( syms );
+    }
+    
+    goto end;
+    
+    #else
+    
+    goto error;
+    
+    #endif
+    
+    error:
+        
+        fprintf( stderr, "# Error: backtrace is not available\n" );
+    
+    goto end;
     
     end:
     
-    fprintf( stderr, "\n" );
+    free( bt );
     
-    __XSLog_Resume();
+    fprintf
+    (
+        stderr,
+        "#-------------------------------------------------------------------------------\n"
+        "\n"
+    );
     
     #endif
 }
