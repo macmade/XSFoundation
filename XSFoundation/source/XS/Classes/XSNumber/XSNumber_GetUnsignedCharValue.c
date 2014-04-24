@@ -73,7 +73,10 @@
 
 unsigned char XSNumber_GetUnsignedCharValue( XSNumberRef number )
 {
-    ( void )number;
+    if( number == NULL )
+    {
+        return 0;
+    }
     
-    return 0;
+    return ( number->isFloat ) ? ( unsigned char )( number->floatValue ) : ( unsigned char )( number->integerValue );
 }

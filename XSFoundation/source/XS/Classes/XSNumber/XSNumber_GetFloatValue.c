@@ -73,7 +73,10 @@
 
 float XSNumber_GetFloatValue( XSNumberRef number )
 {
-    ( void )number;
+    if( number == NULL )
+    {
+        return ( float )0;
+    }
     
-    return ( float )0;
+    return ( number->isFloat ) ? ( float )( number->floatValue ) : ( float )( number->integerValue );
 }

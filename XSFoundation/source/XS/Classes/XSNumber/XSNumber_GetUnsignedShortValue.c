@@ -73,7 +73,10 @@
 
 unsigned short XSNumber_GetUnsignedShortValue( XSNumberRef number )
 {
-    ( void )number;
+    if( number == NULL )
+    {
+        return 0;
+    }
     
-    return 0;
+    return ( number->isFloat ) ? ( unsigned short )( number->floatValue ) : ( unsigned short )( number->integerValue );
 }

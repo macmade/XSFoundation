@@ -73,7 +73,15 @@
 
 bool XSNumber_GetBoolValue( XSNumberRef number )
 {
-    ( void )number;
+    if( number == NULL )
+    {
+        return false;
+    }
     
-    return false;
+    if( number->isFloat )
+    {
+        return ( XSFloat_IsZero( ( XSFloat )( number->floatValue ) ) ) ? false : true;
+    }
+    
+    return ( number->integerValue ) ? true : false;
 }

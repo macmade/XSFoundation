@@ -73,7 +73,19 @@
 
 XSStatic XSNumberRef XSNumber_CreateWithLong( long value )
 {
-    ( void )value;
+    XSNumberRef object;
     
-    return NULL;
+    object = XSRuntime_CreateInstance( XSNumber_GetClassID() );
+    
+    if( object == NULL )
+    {
+        XSLogWarning( "Error creating an XSNumber object" );
+        
+        return NULL;
+    }
+    
+    object->integerValue = ( XSUInt64 )value;
+    object->isFloat      = false;
+    
+    return object;
 }

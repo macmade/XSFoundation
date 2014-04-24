@@ -73,7 +73,10 @@
 
 bool XSNumber_IsFloatType( XSNumberRef number )
 {
-    ( void )number;
+    if( number == NULL )
+    {
+        return false;
+    }
     
-    return false;
+    return number->isFloat;
 }

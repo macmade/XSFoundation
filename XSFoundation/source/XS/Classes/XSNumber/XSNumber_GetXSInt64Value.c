@@ -73,7 +73,10 @@
 
 XSInt64 XSNumber_GetXSInt64Value( XSNumberRef number )
 {
-    ( void )number;
+    if( number == NULL )
+    {
+        return 0;
+    }
     
-    return 0;
+    return ( number->isFloat ) ? ( XSInt64 )( number->floatValue ) : ( XSInt64 )( number->integerValue );
 }

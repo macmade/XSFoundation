@@ -73,7 +73,10 @@
 
 double XSNumber_GetDoubleValue( XSNumberRef number )
 {
-    ( void )number;
+    if( number == NULL )
+    {
+        return ( double )0;
+    }
     
-    return ( double )0;
+    return ( number->isFloat ) ? ( double )( number->floatValue ) : ( double )( number->integerValue );
 }

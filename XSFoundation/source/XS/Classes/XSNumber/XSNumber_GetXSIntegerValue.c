@@ -73,7 +73,10 @@
 
 XSInteger XSNumber_GetXSIntegerValue( XSNumberRef number )
 {
-    ( void )number;
+    if( number == NULL )
+    {
+        return 0;
+    }
     
-    return 0;
+    return ( number->isFloat ) ? ( XSInteger )( number->floatValue ) : ( XSInteger )( number->integerValue );
 }

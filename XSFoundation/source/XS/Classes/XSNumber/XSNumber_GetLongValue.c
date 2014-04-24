@@ -73,7 +73,10 @@
 
 long XSNumber_GetLongValue( XSNumberRef number )
 {
-    ( void )number;
+    if( number == NULL )
+    {
+        return 0;
+    }
     
-    return 0;
+    return ( number->isFloat ) ? ( long )( number->floatValue ) : ( long )( number->integerValue );
 }

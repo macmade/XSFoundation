@@ -73,7 +73,10 @@
 
 unsigned long XSNumber_GetUnsignedLongValue( XSNumberRef number )
 {
-    ( void )number;
+    if( number == NULL )
+    {
+        return 0;
+    }
     
-    return 0;
+    return ( number->isFloat ) ? ( unsigned long )( number->floatValue ) : ( unsigned long )( number->integerValue );
 }

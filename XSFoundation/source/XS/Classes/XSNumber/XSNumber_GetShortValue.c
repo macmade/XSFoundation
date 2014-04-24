@@ -73,7 +73,10 @@
 
 short XSNumber_GetShortValue( XSNumberRef number )
 {
-    ( void )number;
+    if( number == NULL )
+    {
+        return 0;
+    }
     
-    return 0;
+    return ( number->isFloat ) ? ( short )( number->floatValue ) : ( short )( number->integerValue );
 }

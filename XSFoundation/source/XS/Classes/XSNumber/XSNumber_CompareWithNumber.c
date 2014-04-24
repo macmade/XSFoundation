@@ -73,8 +73,38 @@
 
 XSComparisonResult XSNumber_CompareWithNumber( XSNumberRef number, XSNumberRef otherNumber )
 {
-    ( void )number;
-    ( void )otherNumber;
+    if( number == NULL || otherNumber == NULL )
+    {
+        return false;
+    }
+    
+    if( number->isFloat )
+    {
+        if( fabs( number->floatValue - otherNumber->floatValue ) < DBL_EPSILON )
+        {
+            return XSComparisonResultOrderSame;
+        }
+        
+        if( number->floatValue > otherNumber->floatValue )
+        {
+            return XSComparisonResultOrderDescending;
+        }
+        
+        if( number->floatValue < otherNumber->floatValue )
+        {
+            return XSComparisonResultOrderAscending;
+        }
+    }
+    
+    if( number->integerValue > otherNumber->integerValue )
+    {
+        return XSComparisonResultOrderDescending;
+    }
+    
+    if( number->integerValue < otherNumber->integerValue )
+    {
+        return XSComparisonResultOrderAscending;
+    }
     
     return XSComparisonResultOrderSame;
 }

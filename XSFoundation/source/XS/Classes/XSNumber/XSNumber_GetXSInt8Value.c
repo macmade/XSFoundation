@@ -73,7 +73,10 @@
 
 XSInt8 XSNumber_GetXSInt8Value( XSNumberRef number )
 {
-    ( void )number;
+    if( number == NULL )
+    {
+        return 0;
+    }
     
-    return 0;
+    return ( number->isFloat ) ? ( XSInt8 )( number->floatValue ) : ( XSInt8 )( number->integerValue );
 }
