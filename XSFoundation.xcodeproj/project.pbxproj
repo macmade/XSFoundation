@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		051B66B918DCAAC30079238C /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 051B66B818DCAAC30079238C /* main.c */; };
 		051B66C718DCAB1B0079238C /* libxs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 051B662A18DCA7160079238C /* libxs.a */; };
+		0522052B19065C90009AC515 /* __XSMemoryDebug_PrintBacktrace.c in Sources */ = {isa = PBXBuildFile; fileRef = 0522052A19065C90009AC515 /* __XSMemoryDebug_PrintBacktrace.c */; };
+		0522052C19065C90009AC515 /* __XSMemoryDebug_PrintBacktrace.c in Sources */ = {isa = PBXBuildFile; fileRef = 0522052A19065C90009AC515 /* __XSMemoryDebug_PrintBacktrace.c */; };
+		0522052D19065C90009AC515 /* __XSMemoryDebug_PrintBacktrace.c in Sources */ = {isa = PBXBuildFile; fileRef = 0522052A19065C90009AC515 /* __XSMemoryDebug_PrintBacktrace.c */; };
+		0522052E19065C90009AC515 /* __XSMemoryDebug_PrintBacktrace.c in Sources */ = {isa = PBXBuildFile; fileRef = 0522052A19065C90009AC515 /* __XSMemoryDebug_PrintBacktrace.c */; };
 		052304E818EB4B1F00C29627 /* XSAtomic_Add32.c in Sources */ = {isa = PBXBuildFile; fileRef = 0523045D18EB4B1F00C29627 /* XSAtomic_Add32.c */; };
 		052304E918EB4B1F00C29627 /* XSAtomic_Add32.c in Sources */ = {isa = PBXBuildFile; fileRef = 0523045D18EB4B1F00C29627 /* XSAtomic_Add32.c */; };
 		052304EA18EB4B1F00C29627 /* XSAtomic_Add32.c in Sources */ = {isa = PBXBuildFile; fileRef = 0523045D18EB4B1F00C29627 /* XSAtomic_Add32.c */; };
@@ -2447,6 +2451,7 @@
 		051B668C18DCAA5E0079238C /* libxs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libxs.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		051B66B618DCAAC20079238C /* XSTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = XSTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		051B66B818DCAAC30079238C /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		0522052A19065C90009AC515 /* __XSMemoryDebug_PrintBacktrace.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSMemoryDebug_PrintBacktrace.c; sourceTree = "<group>"; };
 		0523039818E9D2BD00C29627 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		0523039918E9D2BD00C29627 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		0523045D18EB4B1F00C29627 /* XSAtomic_Add32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSAtomic_Add32.c; sourceTree = "<group>"; };
@@ -3346,6 +3351,7 @@
 				05632F8618ED505200EB76D2 /* __XSMemoryDebug_Breakpoint.c */,
 				05632FE918EE253100EB76D2 /* __XSMemoryDebug_PrintRecord.c */,
 				0551524619005F55002EBDB1 /* __XSMemoryDebug_DumpRecord.c */,
+				0522052A19065C90009AC515 /* __XSMemoryDebug_PrintBacktrace.c */,
 				05632F8118ECB9B900EB76D2 /* __XSMemoryDebug_Exit.c */,
 			);
 			path = XSMemoryDebug;
@@ -4944,6 +4950,7 @@
 				05F3585318F20EF10070111A /* XSArray_FilterWithMethod.c in Sources */,
 				055D187618E1D42800894C7B /* __XSString_Constructor.c in Sources */,
 				055D16DA18E1D42800894C7B /* __XSDictionary_Copy.c in Sources */,
+				0522052B19065C90009AC515 /* __XSMemoryDebug_PrintBacktrace.c in Sources */,
 				0528E6311900C82400CCFD28 /* XSNumber_GetBoolValue.c in Sources */,
 				055D185618E1D42800894C7B /* __XSSet_Constructor.c in Sources */,
 				05A153B318F5C0D800365881 /* XSOrderedSet_GetCount.c in Sources */,
@@ -5538,6 +5545,7 @@
 				05A58C7918F21153006961E7 /* XSArray_FilterWithMethod.c in Sources */,
 				055D187718E1D42800894C7B /* __XSString_Constructor.c in Sources */,
 				055D16DB18E1D42800894C7B /* __XSDictionary_Copy.c in Sources */,
+				0522052C19065C90009AC515 /* __XSMemoryDebug_PrintBacktrace.c in Sources */,
 				0528E6321900C82400CCFD28 /* XSNumber_GetBoolValue.c in Sources */,
 				055D185718E1D42800894C7B /* __XSSet_Constructor.c in Sources */,
 				05A153B418F5C0D800365881 /* XSOrderedSet_GetCount.c in Sources */,
@@ -6132,6 +6140,7 @@
 				05A58C5618F21152006961E7 /* XSArray_FilterWithMethod.c in Sources */,
 				055D187818E1D42800894C7B /* __XSString_Constructor.c in Sources */,
 				055D16DC18E1D42800894C7B /* __XSDictionary_Copy.c in Sources */,
+				0522052D19065C90009AC515 /* __XSMemoryDebug_PrintBacktrace.c in Sources */,
 				0528E6331900C82400CCFD28 /* XSNumber_GetBoolValue.c in Sources */,
 				055D185818E1D42800894C7B /* __XSSet_Constructor.c in Sources */,
 				05A153B518F5C0D800365881 /* XSOrderedSet_GetCount.c in Sources */,
@@ -6726,6 +6735,7 @@
 				05A58C3318F21152006961E7 /* XSArray_FilterWithMethod.c in Sources */,
 				055D187918E1D42800894C7B /* __XSString_Constructor.c in Sources */,
 				055D16DD18E1D42800894C7B /* __XSDictionary_Copy.c in Sources */,
+				0522052E19065C90009AC515 /* __XSMemoryDebug_PrintBacktrace.c in Sources */,
 				0528E6341900C82400CCFD28 /* XSNumber_GetBoolValue.c in Sources */,
 				055D185918E1D42800894C7B /* __XSSet_Constructor.c in Sources */,
 				05A153B618F5C0D800365881 /* XSOrderedSet_GetCount.c in Sources */,
