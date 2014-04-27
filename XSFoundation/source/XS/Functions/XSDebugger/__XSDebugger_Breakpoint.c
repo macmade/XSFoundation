@@ -99,7 +99,7 @@ void __XSDebugger_Breakpoint( const char * message, __XSDebugger_MemoryRecord * 
         "# XSFOUNDATION - BREAKPOINT\n"
         "#-------------------------------------------------------------------------------\n"
         "# \n"
-        "# The XSFoundation memory debugger triggered a breakpoint.\n"
+        "# The XSFoundation debugger triggered a breakpoint.\n"
         "# Reason:\n"
         "# \n"
         "#     %s\n"
