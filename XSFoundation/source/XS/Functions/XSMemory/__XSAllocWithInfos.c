@@ -70,7 +70,7 @@
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemory.h>
-#include <XS/__private/Functions/XSMemoryDebug.h>
+#include <XS/__private/Functions/XSDebugger.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
 void * __XSAllocWithInfos( XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func )
@@ -98,7 +98,7 @@ void * __XSAllocWithInfos( XSUInteger bytes, XSClassID classID, const char * fil
     memcpy( ( char * )object + ( size - __XS_MEMORY_FENCE_SIZE ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );
     #endif
     
-    __XSMemoryDebug_NewRecord( object, file, line, func );
+    __XSDebugger_NewMemoryRecord( object, file, line, func );
     
     return ( char * )object + sizeof( __XSMemoryObject );
 }

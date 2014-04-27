@@ -70,7 +70,7 @@
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemory.h>
-#include <XS/__private/Functions/XSMemoryDebug.h>
+#include <XS/__private/Functions/XSDebugger.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
 void __XSReleaseWithInfos( void * memory, const char * file, int line, const char * func )
@@ -87,7 +87,7 @@ void __XSReleaseWithInfos( void * memory, const char * file, int line, const cha
     
     if( XSAtomic_DecrementInteger( &( object->retainCount ) ) == 0 )
     {
-        __XSMemoryDebug_ReleaseRecord( object, true, file, line, func );
+        __XSDebugger_ReleaseMemoryRecord( object, true, file, line, func );
         
         destructor = __XSRuntime_GetDestructorCallback( object->classID );
         
@@ -100,6 +100,6 @@ void __XSReleaseWithInfos( void * memory, const char * file, int line, const cha
     }
     else
     {
-        __XSMemoryDebug_ReleaseRecord( object, false, file, line, func );
+        __XSDebugger_ReleaseMemoryRecord( object, false, file, line, func );
     }
 }

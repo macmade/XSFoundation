@@ -72,7 +72,7 @@
 #include <XS/__private/Functions/XSRuntime.h>
 
 /* Private initializers */
-void __XSMemoryDebug_Initialize( void );
+void __XSDebugger_Initialize( void );
 
 /* Private class initializers */
 XSStatic void __XSApplication_Initialize( void );
@@ -131,7 +131,7 @@ void XSRuntime_Initialize( void )
     
     while( XSAtomic_CompareAndSwapInteger( XSInitStatusInitializing, XSInitStatusInited, &__XSRuntime_InitStatus ) == false );
     
-    __XSMemoryDebug_Initialize();
+    __XSDebugger_Initialize();
 
     __XSApplication_Initialize();
     __XSApplicationArgument_Initialize();

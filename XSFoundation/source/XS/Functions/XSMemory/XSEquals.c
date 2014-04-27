@@ -70,7 +70,7 @@
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemory.h>
-#include <XS/__private/Functions/XSMemoryDebug.h>
+#include <XS/__private/Functions/XSDebugger.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
 XS_EXPORT bool XSEquals( void * memory1, void * memory2 )
@@ -87,8 +87,8 @@ XS_EXPORT bool XSEquals( void * memory1, void * memory2 )
     object1 = __XSMemory_GetMemoryObject( memory1 );
     object2 = __XSMemory_GetMemoryObject( memory2 );
     
-    __XSMemoryDebug_CheckObjectIntegrity( object1 );
-    __XSMemoryDebug_CheckObjectIntegrity( object2 );
+    __XSDebugger_CheckObjectIntegrity( object1 );
+    __XSDebugger_CheckObjectIntegrity( object2 );
     
     if( XSRuntime_IsRegisteredClass( object1->classID ) == false || XSRuntime_IsRegisteredClass( object2->classID ) == false )
     {

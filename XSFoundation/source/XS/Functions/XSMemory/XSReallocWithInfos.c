@@ -70,7 +70,7 @@
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemory.h>
-#include <XS/__private/Functions/XSMemoryDebug.h>
+#include <XS/__private/Functions/XSDebugger.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
 XS_EXPORT void * XSReallocWithInfos( void * memory, XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func )
@@ -96,7 +96,7 @@ XS_EXPORT void * XSReallocWithInfos( void * memory, XSUInteger bytes, XSClassID 
     object    = __XSMemory_GetMemoryObject( memory );
     oldObject = __XSMemory_GetMemoryObject( memory ); /* So the static analyzer doesn't complain about using memory which has been freed... */
     
-    __XSMemoryDebug_CheckObjectIntegrity( object );
+    __XSDebugger_CheckObjectIntegrity( object );
     
     if( XSRuntime_IsRegisteredClass( classID ) )
     {
@@ -142,7 +142,7 @@ XS_EXPORT void * XSReallocWithInfos( void * memory, XSUInteger bytes, XSClassID 
     memcpy( ( char * )newObject + ( size - __XS_MEMORY_FENCE_SIZE ), __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE );
     #endif
     
-    __XSMemoryDebug_UpdateRecord( oldObject, newObject, file, line, func );
+    __XSDebugger_UpdateMemoryRecord( oldObject, newObject, file, line, func );
     
     return ( char * )newObject + sizeof( __XSMemoryObject );
 }
