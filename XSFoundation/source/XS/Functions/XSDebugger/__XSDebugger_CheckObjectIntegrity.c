@@ -92,7 +92,7 @@ void __XSDebugger_CheckObjectIntegrity( __XSMemoryObject * object )
         || memcmp( ( char * )object + sizeof( __XSMemoryObject ) + object->size, __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE ) != 0
     )
     {
-        
+        __XSDebugger_Breakpoint( "Heap corruption detected - Invalid checksum for memory object", __XSDebugger_GetMemoryRecord( object ) );
     }
     
     #endif

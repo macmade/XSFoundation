@@ -100,6 +100,7 @@ int main( int argc, const char * argv[] )
     ap2 = XSAutoreleasePool_Create();
     
     XSArray_Array();
+    XSString_CreateWithCString( "hello, world" );
     
     XSRelease( ap2 );
     XSRelease( ap1 );
