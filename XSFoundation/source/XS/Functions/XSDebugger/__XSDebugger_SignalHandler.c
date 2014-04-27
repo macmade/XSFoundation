@@ -62,60 +62,33 @@
 /* $Id$ */
 
 /*!
- * @file        __XSDebugger_Initialize.c
+ * @file        __XSDebugger_SignalHandler.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSDebugger_Initialize
+ * @abstract    Definition for __XSDebugger_SignalHandler
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSDebugger.h>
 
-void __XSDebugger_Initialize( void )
+void __XSDebugger_SignalHandler( int sig )
 {
     #ifndef DEBUG
+    
+    ( void )sig;
     
     return;
     
     #else
     
-    XSRuntime_RegisterFinalizer( __XSDebugger_Exit );
-    
-    #ifdef _WIN32
-
-    if( signal( SIGSEGV, __XSDebugger_SignalHandler ) == SIG_ERR )
+    if( sig == SIGSEGV )
     {
-        XSFatalError( "Error setting a signal handler for SIGSEGV" );
+        __XSDebugger_Breakpoint( "Segmentation fault (SIGSEGV) detected", NULL );
     }
-    
-    if( signal( SIGBUS,  __XSDebugger_SignalHandler ) ) == SIG_ERR )
+    else if( sig == SIGBUS )
     {
-        XSFatalError( "Error setting a signal handler for SIGBUS" );
+        __XSDebugger_Breakpoint( "Bus error (SIGBUS) detected", NULL );
     }
-
-    #else
-    
-    {
-        struct sigaction sa1;
-        struct sigaction sa2;
-        
-        sa1.sa_handler = __XSDebugger_SignalHandler;
-        sa1.sa_flags   = 0;
-        
-        sigemptyset( &sa1.sa_mask );
-        
-        if( sigaction( SIGSEGV, &sa1, &sa2 ) != 0 )
-        {
-            XSFatalError( "Error setting a signal handler for SIGSEGV" );
-        }
-        
-        if( sigaction( SIGBUS, &sa1, &sa2 ) != 0 )
-        {
-            XSFatalError( "Error setting a signal handler for SIGBUS" );
-        }
-    }
-    
-    #endif
     
     #endif
 }

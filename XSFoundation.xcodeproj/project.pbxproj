@@ -865,6 +865,10 @@
 		05293EFA190904EE00DC0950 /* __XSDebugger_UpdateMemoryRecord.c in Sources */ = {isa = PBXBuildFile; fileRef = 05293ECC190904EE00DC0950 /* __XSDebugger_UpdateMemoryRecord.c */; };
 		05293EFB190904EE00DC0950 /* __XSDebugger_UpdateMemoryRecord.c in Sources */ = {isa = PBXBuildFile; fileRef = 05293ECC190904EE00DC0950 /* __XSDebugger_UpdateMemoryRecord.c */; };
 		05293EFC190904EE00DC0950 /* __XSDebugger_UpdateMemoryRecord.c in Sources */ = {isa = PBXBuildFile; fileRef = 05293ECC190904EE00DC0950 /* __XSDebugger_UpdateMemoryRecord.c */; };
+		05293FCB190D701D00DC0950 /* __XSDebugger_SignalHandler.c in Sources */ = {isa = PBXBuildFile; fileRef = 05293FCA190D701D00DC0950 /* __XSDebugger_SignalHandler.c */; };
+		05293FCC190D701D00DC0950 /* __XSDebugger_SignalHandler.c in Sources */ = {isa = PBXBuildFile; fileRef = 05293FCA190D701D00DC0950 /* __XSDebugger_SignalHandler.c */; };
+		05293FCD190D701D00DC0950 /* __XSDebugger_SignalHandler.c in Sources */ = {isa = PBXBuildFile; fileRef = 05293FCA190D701D00DC0950 /* __XSDebugger_SignalHandler.c */; };
+		05293FCE190D701D00DC0950 /* __XSDebugger_SignalHandler.c in Sources */ = {isa = PBXBuildFile; fileRef = 05293FCA190D701D00DC0950 /* __XSDebugger_SignalHandler.c */; };
 		0530420B18E8C3D90001F9D0 /* XSMacros-X.h in Headers */ = {isa = PBXBuildFile; fileRef = 0530420A18E8C3530001F9D0 /* XSMacros-X.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0530420C18E8C3DD0001F9D0 /* XSMacros-X.h in Headers */ = {isa = PBXBuildFile; fileRef = 0530420A18E8C3530001F9D0 /* XSMacros-X.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0530420D18E8C3E40001F9D0 /* XSMacros-X.h in Headers */ = {isa = PBXBuildFile; fileRef = 0530420A18E8C3530001F9D0 /* XSMacros-X.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -2667,6 +2671,7 @@
 		05293ECA190904EE00DC0950 /* __XSDebugger_PrintMemoryRecord.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSDebugger_PrintMemoryRecord.c; sourceTree = "<group>"; };
 		05293ECB190904EE00DC0950 /* __XSDebugger_ReleaseMemoryRecord.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSDebugger_ReleaseMemoryRecord.c; sourceTree = "<group>"; };
 		05293ECC190904EE00DC0950 /* __XSDebugger_UpdateMemoryRecord.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSDebugger_UpdateMemoryRecord.c; sourceTree = "<group>"; };
+		05293FCA190D701D00DC0950 /* __XSDebugger_SignalHandler.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSDebugger_SignalHandler.c; sourceTree = "<group>"; };
 		0530420A18E8C3530001F9D0 /* XSMacros-X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XSMacros-X.h"; sourceTree = "<group>"; };
 		0530421118E8D97F0001F9D0 /* XS-STD */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "XS-STD"; sourceTree = "<group>"; };
 		0530421218E8D97F0001F9D0 /* XS-STD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XS-STD.h"; sourceTree = "<group>"; };
@@ -3417,6 +3422,7 @@
 				05293ECA190904EE00DC0950 /* __XSDebugger_PrintMemoryRecord.c */,
 				05293ECB190904EE00DC0950 /* __XSDebugger_ReleaseMemoryRecord.c */,
 				05293ECC190904EE00DC0950 /* __XSDebugger_UpdateMemoryRecord.c */,
+				05293FCA190D701D00DC0950 /* __XSDebugger_SignalHandler.c */,
 			);
 			path = XSDebugger;
 			sourceTree = "<group>";
@@ -4533,6 +4539,7 @@
 				055D196918E1F47D00894C7B /* __XSValue_Constructor.c in Sources */,
 				052306D418EB4B1F00C29627 /* XSThreading_TLSKeyDelete.c in Sources */,
 				05A153C718F5C0D800365881 /* XSOrderedSet_OrderedSet.c in Sources */,
+				05293FCB190D701D00DC0950 /* __XSDebugger_SignalHandler.c in Sources */,
 				05A153BB18F5C0D800365881 /* XSOrderedSet_GetLastObject.c in Sources */,
 				05632F7D18ECB74E00EB76D2 /* __XSLog_Resume.c in Sources */,
 				055D174A18E1D42800894C7B /* __XSFile_ToString.c in Sources */,
@@ -5128,6 +5135,7 @@
 				055D196A18E1F47D00894C7B /* __XSValue_Constructor.c in Sources */,
 				052306D518EB4B1F00C29627 /* XSThreading_TLSKeyDelete.c in Sources */,
 				05A153C818F5C0D800365881 /* XSOrderedSet_OrderedSet.c in Sources */,
+				05293FCC190D701D00DC0950 /* __XSDebugger_SignalHandler.c in Sources */,
 				05A153BC18F5C0D800365881 /* XSOrderedSet_GetLastObject.c in Sources */,
 				05632F7E18ECB74E00EB76D2 /* __XSLog_Resume.c in Sources */,
 				055D174B18E1D42800894C7B /* __XSFile_ToString.c in Sources */,
@@ -5723,6 +5731,7 @@
 				055D196B18E1F47D00894C7B /* __XSValue_Constructor.c in Sources */,
 				052306D618EB4B1F00C29627 /* XSThreading_TLSKeyDelete.c in Sources */,
 				05A153C918F5C0D800365881 /* XSOrderedSet_OrderedSet.c in Sources */,
+				05293FCD190D701D00DC0950 /* __XSDebugger_SignalHandler.c in Sources */,
 				05A153BD18F5C0D800365881 /* XSOrderedSet_GetLastObject.c in Sources */,
 				05632F7F18ECB74E00EB76D2 /* __XSLog_Resume.c in Sources */,
 				055D174C18E1D42800894C7B /* __XSFile_ToString.c in Sources */,
@@ -6318,6 +6327,7 @@
 				055D196C18E1F47D00894C7B /* __XSValue_Constructor.c in Sources */,
 				052306D718EB4B1F00C29627 /* XSThreading_TLSKeyDelete.c in Sources */,
 				05A153CA18F5C0D800365881 /* XSOrderedSet_OrderedSet.c in Sources */,
+				05293FCE190D701D00DC0950 /* __XSDebugger_SignalHandler.c in Sources */,
 				05A153BE18F5C0D800365881 /* XSOrderedSet_GetLastObject.c in Sources */,
 				05632F8018ECB74E00EB76D2 /* __XSLog_Resume.c in Sources */,
 				055D174D18E1D42800894C7B /* __XSFile_ToString.c in Sources */,

@@ -187,6 +187,13 @@ __XSDebugger_MemoryRecord * __XSDebugger_GetMemoryRecord( __XSMemoryObject * obj
 void __XSDebugger_CheckObjectIntegrity( __XSMemoryObject * object );
 
 /*!
+ * @function    __XSDebugger_SignalHandler
+ * @abstract    Signal handler
+ * @param       sig         The signal number
+ */
+void __XSDebugger_SignalHandler( int sig );
+
+/*!
  * @function    __XSDebugger_Breakpoint
  * @abstract    Issues a debugger breakpoint
  * @param       message     The warning message
