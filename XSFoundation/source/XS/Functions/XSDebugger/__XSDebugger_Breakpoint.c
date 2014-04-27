@@ -62,17 +62,17 @@
 /* $Id$ */
 
 /*!
- * @file        __XSMemoryDebug_Breakpoint.c
+ * @file        __XSDebugger_Breakpoint.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSMemoryDebug_Breakpoint
+ * @abstract    Definition for __XSDebugger_Breakpoint
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSMemoryDebug.h>
+#include <XS/__private/Functions/XSDebugger.h>
 #include <XS/__private/Functions/XSLog.h>
 
-void __XSMemoryDebug_Breakpoint( const char * message, __XSMemoryDebug_Record * record )
+void __XSDebugger_Breakpoint( const char * message, __XSDebugger_MemoryRecord * record )
 {
     int c;
     
@@ -171,7 +171,7 @@ void __XSMemoryDebug_Breakpoint( const char * message, __XSMemoryDebug_Record * 
             
         case 'b':
             
-            __XSMemoryDebug_PrintBacktrace();
+            __XSDebugger_PrintBacktrace();
             break;
             
         case 'p':
@@ -185,7 +185,7 @@ void __XSMemoryDebug_Breakpoint( const char * message, __XSMemoryDebug_Record * 
             
             if( record != NULL )
             {
-                __XSMemoryDebug_PrintRecord( record );
+                __XSDebugger_PrintMemoryRecord( record );
             }
             
             break;
@@ -206,7 +206,7 @@ void __XSMemoryDebug_Breakpoint( const char * message, __XSMemoryDebug_Record * 
                 break;
             }
             
-            __XSMemoryDebug_DumpRecord( record );
+            __XSDebugger_DumpMemoryRecord( record );
             
             break;
             

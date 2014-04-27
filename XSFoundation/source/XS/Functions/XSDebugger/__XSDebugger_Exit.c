@@ -62,18 +62,18 @@
 /* $Id$ */
 
 /*!
- * @file        __XSMemoryDebug_Exit.c
+ * @file        __XSDebugger_Exit.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSMemoryDebug_Exit
+ * @abstract    Definition for __XSDebugger_Exit
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSMemoryDebug.h>
+#include <XS/__private/Functions/XSDebugger.h>
 
-void __XSMemoryDebug_Exit( void )
+void __XSDebugger_Exit( void )
 {
-    __XSMemoryDebug_Record * rec;
+    __XSDebugger_MemoryRecord * rec;
     
     #ifndef DEBUG
     
@@ -83,7 +83,7 @@ void __XSMemoryDebug_Exit( void )
     
     #else
     
-    rec = __XSMemoryDebug_Records;
+    rec = __XSDebugger_MemoryRecords;
     
     while( rec != NULL )
     {
@@ -94,7 +94,7 @@ void __XSMemoryDebug_Exit( void )
         
         if( rec->freed == false )
         {
-            __XSMemoryDebug_Breakpoint( "Unfreed memory record at application exit point", rec );
+            __XSDebugger_Breakpoint( "Unfreed memory record at application exit point", rec );
         }
         
         rec = rec->next;

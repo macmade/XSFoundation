@@ -62,16 +62,16 @@
 /* $Id$ */
 
 /*!
- * @file        __XSMemoryDebug_Initialize.c
+ * @file        __XSDebugger_Initialize.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSMemoryDebug_Initialize
+ * @abstract    Definition for __XSDebugger_Initialize
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSMemoryDebug.h>
+#include <XS/__private/Functions/XSDebugger.h>
 
-void __XSMemoryDebug_Initialize( void )
+void __XSDebugger_Initialize( void )
 {
     #ifndef DEBUG
     
@@ -79,7 +79,7 @@ void __XSMemoryDebug_Initialize( void )
     
     #else
     
-    XSRuntime_RegisterFinalizer( __XSMemoryDebug_Exit );
+    XSRuntime_RegisterFinalizer( __XSDebugger_Exit );
     
     #endif
 }

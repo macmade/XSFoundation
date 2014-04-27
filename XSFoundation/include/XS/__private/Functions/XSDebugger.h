@@ -62,18 +62,18 @@
 /* $Id$ */
 
 /*!
- * @header      XSMemoryDebug.h
+ * @header      XSDebugger.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSMemoryDebug.h
+ * @abstract    Private definitions for XSDebugger.h
  */
 
 #ifndef __XS_H__
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS___PRIVATE_FUNCTIONS_XS_MEMORY_DEBUG_H__
-#define __XS___PRIVATE_FUNCTIONS_XS_MEMORY_DEBUG_H__
+#ifndef __XS___PRIVATE_FUNCTIONS_XS_DEBUGGER_H__
+#define __XS___PRIVATE_FUNCTIONS_XS_DEBUGGER_H__
 
 #include <XS/XSTypes.h>
 #include <XS/__private/Functions/XSMemory.h>
@@ -83,74 +83,74 @@
 #include <execinfo.h>
 
 /*!
- * @def     __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+ * @def     __XS_DEBUGGER_HAVE_EXECINFO_H
  * @brief   execinfo.h header file is available
  */
-#define __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+#define __XS_DEBUGGER_HAVE_EXECINFO_H
 
 #elif defined( __GLIBC__ ) && defined( HAVE_EXECINFO_H )
 
 #include <execinfo.h>
 
 /*!
- * @def     __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+ * @def     __XS_DEBUGGER_HAVE_EXECINFO_H
  * @brief   execinfo.h header file is available
  */
-#define __XS_MEMORY_DEBUG_HAVE_EXECINFO_H
+#define __XS_DEBUGGER_HAVE_EXECINFO_H
 
 #endif
 
 /*!
- * @typedef     __XSMemoryDebug_Record
+ * @typedef     __XSDebugger_MemoryRecord
  * @abstract    Memory record for the memory debugger
  */
-typedef struct __XSMemoryDebug_Record_Struct
+typedef struct __XSDebugger_MemoryRecord_struct
 {
-    struct __XSMemoryDebug_Record_Struct * next;            /*! The next record, if any */
-    struct __XSMemoryDebug_Record_Struct * archived;        /*! Archived records which had the same address, if any */
-    __XSMemoryObject                     * object;          /*! The memory object */
-    void                                 * data;            /*! The user data pointer */
-    XSUInteger                             size;            /*! The allocated data size */
-    XSInteger                              allocID;         /*! The allocation ID */
-    XSClassID                              classID;         /*! The class ID (only for allocated instances) */
-    XSUInteger                             allocThreadID;   /*! The ID of the thread in which the object was allocated */
-    XSUInteger                             freeThreadID;    /*! The ID of the thread in which the object was freed */
-    const char                           * allocFile;       /*! The file in which the object was allocated */
-    const char                           * freeFile;        /*! The file in which the object was freed */
-    const char                           * allocFunc;       /*! The function in which the object was allocated */
-    const char                           * freeFunc;        /*! The function in which the object was freed */
-    int                                    allocLine;       /*! The line of the file in which the object was allocated */
-    int                                    freeLine;        /*! The line of the file in which the object was freed */
-    bool                                   freed;           /*! Whether the object has been freed */
-    char                                   __pad_0[ 7 ];    /*! Padding */
+    struct __XSDebugger_MemoryRecord_struct * next;            /*! The next record, if any */
+    struct __XSDebugger_MemoryRecord_struct * archived;        /*! Archived records which had the same address, if any */
+    __XSMemoryObject                        * object;          /*! The memory object */
+    void                                    * data;            /*! The user data pointer */
+    XSUInteger                                size;            /*! The allocated data size */
+    XSInteger                                 allocID;         /*! The allocation ID */
+    XSClassID                                 classID;         /*! The class ID (only for allocated instances) */
+    XSUInteger                                allocThreadID;   /*! The ID of the thread in which the object was allocated */
+    XSUInteger                                freeThreadID;    /*! The ID of the thread in which the object was freed */
+    const char                              * allocFile;       /*! The file in which the object was allocated */
+    const char                              * freeFile;        /*! The file in which the object was freed */
+    const char                              * allocFunc;       /*! The function in which the object was allocated */
+    const char                              * freeFunc;        /*! The function in which the object was freed */
+    int                                       allocLine;       /*! The line of the file in which the object was allocated */
+    int                                       freeLine;        /*! The line of the file in which the object was freed */
+    bool                                      freed;           /*! Whether the object has been freed */
+    char                                      __pad_0[ 7 ];    /*! Padding */
     
 }
-__XSMemoryDebug_Record;
+__XSDebugger_MemoryRecord;
 
 /*!
- * @var         __XSMemoryDebug_Records
+ * @var         __XSDebugger_MemoryRecords
  * @abstract    The list of the memory records
  */
-XS_EXTERN __XSMemoryDebug_Record * volatile __XSMemoryDebug_Records;
+XS_EXTERN __XSDebugger_MemoryRecord * volatile __XSDebugger_MemoryRecords;
 
 /*!
- * @function    __XSMemoryDebug_Initialize
- * @abstract    Initialize the memory debug system
+ * @function    __XSDebugger_Initialize
+ * @abstract    Initialize the debug system
  */
-void __XSMemoryDebug_Initialize( void );
+void __XSDebugger_Initialize( void );
 
 /*!
- * @function    __XSMemoryDebug_NewRecord
+ * @function    __XSDebugger_NewMemoryRecord
  * @abstract    Creates a new memory record
  * @param       object  The memory object for which to create a record
  * @param       file    The file in which the allocation occured
  * @param       line    The line of the file in which the allocation occured
  * @param       func    The function in which the allocation occured
  */
-void __XSMemoryDebug_NewRecord( __XSMemoryObject * object, const char * file, int line, const char * func );
+void __XSDebugger_NewMemoryRecord( __XSMemoryObject * object, const char * file, int line, const char * func );
 
 /*!
- * @function    __XSMemoryDebug_UpdateRecord
+ * @function    __XSDebugger_UpdateMemoryRecord
  * @abstract    Updates a memory record (eg. after a reallocation)
  * @param       oldObject   The address of the old memory object
  * @param       newObject   The new memory object
@@ -158,10 +158,10 @@ void __XSMemoryDebug_NewRecord( __XSMemoryObject * object, const char * file, in
  * @param       line        The line of the file in which the reallocation occured
  * @param       func        The function in which the reallocation occured
  */
-void __XSMemoryDebug_UpdateRecord( void * oldObject, __XSMemoryObject * newObject, const char * file, int line, const char * func );
+void __XSDebugger_UpdateMemoryRecord( void * oldObject, __XSMemoryObject * newObject, const char * file, int line, const char * func );
 
 /*!
- * @function    __XSMemoryDebug_ReleaseRecord
+ * @function    __XSDebugger_ReleaseMemoryRecord
  * @abstract    Informs the debugger that an memory object has been released
  * @param       object      The memory object that has been released
  * @param       markAsFreed Whether the memory object has been freed
@@ -169,57 +169,57 @@ void __XSMemoryDebug_UpdateRecord( void * oldObject, __XSMemoryObject * newObjec
  * @param       line        The line of the file in which the release occured
  * @param       func        The function in which the release occured
  */
-void __XSMemoryDebug_ReleaseRecord( __XSMemoryObject * object, bool markAsFreed, const char * file, int line, const char * func );
+void __XSDebugger_ReleaseMemoryRecord( __XSMemoryObject * object, bool markAsFreed, const char * file, int line, const char * func );
 
 /*!
- * @function    __XSMemoryDebug_GetRecord
+ * @function    __XSDebugger_GetMemoryRecord
  * @abstract    Gets the memory record associated to a memory object
  * @param       object      The memory object
  * @return      The memory record
  */
-__XSMemoryDebug_Record * __XSMemoryDebug_GetRecord( __XSMemoryObject * object );
+__XSDebugger_MemoryRecord * __XSDebugger_GetMemoryRecord( __XSMemoryObject * object );
 
 /*!
- * @function    __XSMemoryDebug_CheckObjectIntegrity
+ * @function    __XSDebugger_CheckObjectIntegrity
  * @abstract    Checks for buffer overflows/underflows
  * @param       object      The memory object to check
  */
-void __XSMemoryDebug_CheckObjectIntegrity( __XSMemoryObject * object );
+void __XSDebugger_CheckObjectIntegrity( __XSMemoryObject * object );
 
 /*!
- * @function    __XSMemoryDebug_Breakpoint
- * @abstract    Issues a memory warning
+ * @function    __XSDebugger_Breakpoint
+ * @abstract    Issues a debugger breakpoint
  * @param       message     The warning message
  * @param       record      The memory record involved, if any
- * @discussion  In debug mode, this will show the memory debug console.
- *              In release mode, the program will be aborted after the warning.
+ * @discussion  In debug mode, this will show the debug console.
+ *              In release mode, the program will just continue normal execution.
  */
-void __XSMemoryDebug_Breakpoint( const char * message, __XSMemoryDebug_Record * record );
+void __XSDebugger_Breakpoint( const char * message, __XSDebugger_MemoryRecord * record );
 
 /*!
- * @function    __XSMemoryDebug_PrintRecord
+ * @function    __XSDebugger_PrintMemoryRecord
  * @abstract    Prints a memory record
  * @param       record      The memory record to print
  */
-void __XSMemoryDebug_PrintRecord( __XSMemoryDebug_Record * record );
+void __XSDebugger_PrintMemoryRecord( __XSDebugger_MemoryRecord * record );
 
 /*!
- * @function    __XSMemoryDebug_DumpRecord
+ * @function    __XSDebugger_DumpMemoryRecord
  * @abstract    Dumps a memory record
  * @param       record      The memory record to dump
  */
-void __XSMemoryDebug_DumpRecord( __XSMemoryDebug_Record * record );
+void __XSDebugger_DumpMemoryRecord( __XSDebugger_MemoryRecord * record );
 
 /*!
- * @function    __XSMemoryDebug_PrintBacktrace
+ * @function    __XSDebugger_PrintBacktrace
  * @abstract    Prints the current backtrace
  */
-void __XSMemoryDebug_PrintBacktrace( void );
+void __XSDebugger_PrintBacktrace( void );
 
 /*!
- * @function    __XSMemoryDebug_Exit
- * @abstract    XSMemoryDebug finalizer function
+ * @function    __XSDebugger_Exit
+ * @abstract    XSDebugger finalizer function
  */
-void __XSMemoryDebug_Exit( void );
+void __XSDebugger_Exit( void );
 
-#endif /* __XS___PRIVATE_FUNCTIONS_XS_MEMORY_DEBUG_H__ */
+#endif /* __XS___PRIVATE_FUNCTIONS_XS_DEBUGGER_H__ */

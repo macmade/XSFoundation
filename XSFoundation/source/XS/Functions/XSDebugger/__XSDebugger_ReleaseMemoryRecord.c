@@ -62,41 +62,49 @@
 /* $Id$ */
 
 /*!
- * @file        __XSMemoryDebug_GetRecord.c
+ * @file        __XSDebugger_ReleaseMemoryRecord.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSMemoryDebug_GetRecord
+ * @abstract    Definition for __XSDebugger_ReleaseMemoryRecord
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSMemoryDebug.h>
+#include <XS/__private/Functions/XSDebugger.h>
 
-__XSMemoryDebug_Record * __XSMemoryDebug_GetRecord( __XSMemoryObject * object )
+void __XSDebugger_ReleaseMemoryRecord( __XSMemoryObject * object, bool markAsFreed, const char * file, int line, const char * func )
 {
-    __XSMemoryDebug_Record * rec;
+    __XSDebugger_MemoryRecord * rec;
     
     #ifndef DEBUG
     
     ( void )object;
+    ( void )markAsFreed;
+    ( void )file;
+    ( void )line;
+    ( void )func;
     ( void )rec;
     
-    return NULL;
+    return;
     
     #else
     
-    rec = __XSMemoryDebug_Records;
+    __XSDebugger_CheckObjectIntegrity( object );
     
-    while( rec != NULL )
+    rec = __XSDebugger_GetMemoryRecord( object );
+    
+    if( rec == NULL )
     {
-        if( rec->object == object )
-        {
-            return rec;
-        }
-        
-        rec = rec->next;
+        return;
     }
     
-    return NULL;
+    if( markAsFreed )
+    {
+        rec->freeFile       = file;
+        rec->freeLine       = line;
+        rec->freeFunc       = func;
+        rec->freed          = true;
+        rec->freeThreadID   = XSThreading_GetCurrentThreadID();
+    }
     
     #endif
 }

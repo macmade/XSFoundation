@@ -62,13 +62,119 @@
 /* $Id$ */
 
 /*!
- * @file        __XSMemoryDebug.c
+ * @file        __XSDebugger_PrintBacktrace.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definitions for memory debug functions
+ * @abstract    Definition for __XSDebugger_PrintBacktrace
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSMemoryDebug.h>
+#include <XS/__private/Functions/XSDebugger.h>
 
-__XSMemoryDebug_Record * volatile __XSMemoryDebug_Records = NULL;
+void __XSDebugger_PrintBacktrace( void )
+{
+    void ** bt;
+    
+    #ifndef DEBUG
+    
+    ( void )bt;
+    
+    return;
+    
+    #else
+    
+    fprintf
+    (
+        stderr,
+        "\n"
+        "#-------------------------------------------------------------------------------\n"
+    );
+    
+    bt = calloc( sizeof( void * ), 100 );
+    
+    if( bt == NULL )
+    {
+        goto error;
+    }
+    
+    #if defined( _WIN32 )
+    
+    {
+        SYMBOL_INFO * symbol;
+        HANDLE        process;
+        int           n;
+        
+        process = GetCurrentProcess();
+        
+        SymInitialize( process, NULL, TRUE );
+
+        n      = CaptureStackBackTrace( 0, 100, bt, NULL );
+        symbol = ( SYMBOL_INFO * )calloc( sizeof( SYMBOL_INFO ) + 256, 1 );
+        
+        if( symbol == NULL )
+        {
+            goto error;
+        }
+        
+        symbol->MaxNameLen = 255;
+        symbol->SizeOfStruct = sizeof( SYMBOL_INFO );
+
+        for( i = 1; i < n; i++ )
+        {
+            SymFromAddr( process, ( DWORD64 )( bt[ i ] ), 0, symbol );
+            printf( "#   %02u: 0x%016x %s\n", i, ( unsigned int )symbol->Address, symbol->Name );
+        }
+
+        free( symbol );
+    }
+    
+    #elif defined( __XS_MEMORY_DEBUG_HAVE_EXECINFO_H )
+    
+    {
+        char ** syms;
+        int     i;
+        int     n;
+        
+        n    = backtrace( bt, 100 );
+        syms = backtrace_symbols( bt, n );
+        
+        if( syms == NULL )
+        {
+            goto error;
+        }
+        
+        for( i = 1; i < n; i++ )
+        {
+            printf( "# %s\n", syms[ i ] );
+        }
+        
+        free( syms );
+    }
+    
+    goto end;
+    
+    #else
+    
+    goto error;
+    
+    #endif
+    
+    error:
+        
+        fprintf( stderr, "# Error: backtrace is not available\n" );
+    
+    goto end;
+    
+    end:
+    
+    free( bt );
+    
+    fprintf
+    (
+        stderr,
+        "#-------------------------------------------------------------------------------\n"
+        "\n"
+    );
+    
+    #endif
+}

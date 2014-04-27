@@ -62,45 +62,38 @@
 /* $Id$ */
 
 /*!
- * @file        __XSMemoryDebug_UpdateRecord.c
+ * @file        __XSDebugger_CheckObjectIntegrity.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSMemoryDebug_UpdateRecord
+ * @abstract    Definition for __XSDebugger_CheckObjectIntegrity
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSMemoryDebug.h>
+#include <XS/__private/Functions/XSDebugger.h>
 
-void __XSMemoryDebug_UpdateRecord( void * oldObject, __XSMemoryObject * newObject, const char * file, int line, const char * func )
+void __XSDebugger_CheckObjectIntegrity( __XSMemoryObject * object )
 {
-    __XSMemoryDebug_Record * rec;
-    
     #ifndef DEBUG
     
-    ( void )oldObject;
-    ( void )newObject;
-    ( void )file;
-    ( void )line;
-    ( void )func;
-    ( void )rec;
+    ( void )object;
     
     return;
     
     #else
     
-    rec = __XSMemoryDebug_GetRecord( oldObject );
-    
-    if( rec == NULL )
+    if( object == NULL )
     {
         return;
     }
     
-    rec->object    = newObject;
-    rec->data      = ( char * )newObject + sizeof( __XSMemoryObject );
-    rec->size      = newObject->size;
-    rec->allocFile = file;
-    rec->allocLine = line;
-    rec->allocFunc = func;
+    if
+    (
+           memcmp( object->fence, __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE ) != 0
+        || memcmp( ( char * )object + sizeof( __XSMemoryObject ) + object->size, __XSMemory_FenceData, __XS_MEMORY_FENCE_SIZE ) != 0
+    )
+    {
+        
+    }
     
     #endif
 }

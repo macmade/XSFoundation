@@ -62,119 +62,41 @@
 /* $Id$ */
 
 /*!
- * @file        __XSMemoryDebug_PrintBacktrace.c
+ * @file        __XSDebugger_GetMemoryRecord.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSMemoryDebug_PrintBacktrace
+ * @abstract    Definition for __XSDebugger_GetMemoryRecord
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSMemoryDebug.h>
+#include <XS/__private/Functions/XSDebugger.h>
 
-void __XSMemoryDebug_PrintBacktrace( void )
+__XSDebugger_MemoryRecord * __XSDebugger_GetMemoryRecord( __XSMemoryObject * object )
 {
-    void ** bt;
+    __XSDebugger_MemoryRecord * rec;
     
     #ifndef DEBUG
     
-    ( void )bt;
+    ( void )object;
+    ( void )rec;
     
-    return;
-    
-    #else
-    
-    fprintf
-    (
-        stderr,
-        "\n"
-        "#-------------------------------------------------------------------------------\n"
-    );
-    
-    bt = calloc( sizeof( void * ), 100 );
-    
-    if( bt == NULL )
-    {
-        goto error;
-    }
-    
-    #if defined( _WIN32 )
-    
-    {
-        SYMBOL_INFO * symbol;
-        HANDLE        process;
-        int           n;
-        
-        process = GetCurrentProcess();
-        
-        SymInitialize( process, NULL, TRUE );
-
-        n      = CaptureStackBackTrace( 0, 100, bt, NULL );
-        symbol = ( SYMBOL_INFO * )calloc( sizeof( SYMBOL_INFO ) + 256, 1 );
-        
-        if( symbol == NULL )
-        {
-            goto error;
-        }
-        
-        symbol->MaxNameLen = 255;
-        symbol->SizeOfStruct = sizeof( SYMBOL_INFO );
-
-        for( i = 1; i < n; i++ )
-        {
-            SymFromAddr( process, ( DWORD64 )( bt[ i ] ), 0, symbol );
-            printf( "#   %02u: 0x%016x %s\n", i, ( unsigned int )symbol->Address, symbol->Name );
-        }
-
-        free( symbol );
-    }
-    
-    #elif defined( __XS_MEMORY_DEBUG_HAVE_EXECINFO_H )
-    
-    {
-        char ** syms;
-        int     i;
-        int     n;
-        
-        n    = backtrace( bt, 100 );
-        syms = backtrace_symbols( bt, n );
-        
-        if( syms == NULL )
-        {
-            goto error;
-        }
-        
-        for( i = 1; i < n; i++ )
-        {
-            printf( "# %s\n", syms[ i ] );
-        }
-        
-        free( syms );
-    }
-    
-    goto end;
+    return NULL;
     
     #else
     
-    goto error;
+    rec = __XSDebugger_MemoryRecords;
     
-    #endif
-    
-    error:
+    while( rec != NULL )
+    {
+        if( rec->object == object )
+        {
+            return rec;
+        }
         
-        fprintf( stderr, "# Error: backtrace is not available\n" );
+        rec = rec->next;
+    }
     
-    goto end;
-    
-    end:
-    
-    free( bt );
-    
-    fprintf
-    (
-        stderr,
-        "#-------------------------------------------------------------------------------\n"
-        "\n"
-    );
+    return NULL;
     
     #endif
 }

@@ -62,105 +62,137 @@
 /* $Id$ */
 
 /*!
- * @file        __XSMemoryDebug_NewRecord.c
+ * @file        __XSDebugger_PrintMemoryRecord.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSMemoryDebug_NewRecord
+ * @abstract    Definition for __XSDebugger_PrintMemoryRecord
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSMemoryDebug.h>
+#include <XS/__private/Functions/XSDebugger.h>
 
-void __XSMemoryDebug_NewRecord( __XSMemoryObject * object, const char * file, int line, const char * func )
+void __XSDebugger_PrintMemoryRecord( __XSDebugger_MemoryRecord * record )
 {
-    __XSMemoryDebug_Record *          rec;
-    __XSMemoryDebug_Record *          previous;
-    __XSMemoryDebug_Record * volatile list;
+    const char * allocFile;
+    const char * allocFunc;
+    const char * freeFile;
+    const char * freeFunc;
+    const char * pos1;
+    const char * pos2;
+    const char * classname;
     
     #ifndef DEBUG
     
-    ( void )object;
-    ( void )file;
-    ( void )line;
-    ( void )func;
-    ( void )rec;
-    ( void )previous;
-    ( void )list;
+    ( void )record;
+    ( void )allocFile;
+    ( void )allocFunc;
+    ( void )freeFile;
+    ( void )freeFunc;
+    ( void )pos1;
+    ( void )pos2;
+    ( void )classname;
     
     return;
     
     #else
     
-    if( object == NULL )
+    if( record == NULL || record->object == NULL )
     {
         return;
     }
     
-    rec = calloc( sizeof( __XSMemoryDebug_Record ), 1 );
+    allocFile = record->allocFile;
+    allocFunc = record->allocFunc;
+    freeFile  = record->freeFile;
+    freeFunc  = record->freeFunc;
+    classname = XSRuntime_GetClassName( record->classID );
     
-    if( rec == NULL )
+    #ifdef _WIN32
+    pos1 = ( allocFile != NULL ) ? strrchr( allocFile, '\\' ) : NULL;
+    pos2 = ( freeFile  != NULL ) ? strrchr( freeFile,  '\\' ) : NULL;
+    #else
+    pos1 = ( allocFile != NULL ) ? strrchr( allocFile, '/' ) : NULL;
+    pos2 = ( freeFile  != NULL ) ? strrchr( freeFile, '/' )  : NULL;
+    #endif
+    
+    if( pos1 != NULL ) { allocFile = pos1 + 1; }
+    if( pos2 != NULL ) { freeFile  = pos2 + 1; }
+    
+    fprintf
+    (
+        stderr,
+        "\n"
+        "#-------------------------------------------------------------------------------\n"
+        "# Memory object ID:      %lu\n"
+        "# Class ID:              %lu - %s\n"
+        "# Allocation size:       %lu bytes\n"
+        "# Data pointer:          %p\n",
+        ( unsigned long )( record->allocID ),
+        ( unsigned long )( record->classID ),
+        ( classname == NULL ) ? "N/A" : classname,
+        ( unsigned long )( record->size ),
+        record->data
+    );
+    
+    if( allocFile != NULL )
     {
-        XSFatalError( "Cannot allocate memory for a memory record" );
-    }
-    
-    previous = __XSMemoryDebug_GetRecord( object );
-    
-    if( previous != NULL )
-    {
-        memcpy( rec, previous, sizeof( __XSMemoryDebug_Record ) );
-        
-        rec->next                = NULL;
-        previous->archived       = rec;
-        
-        previous->freed          = false;
-        previous->freeFile       = NULL;
-        previous->freeLine       = 0;
-        previous->freeFunc       = NULL;
-        previous->freeThreadID   = 0;
-        
-        previous->object         = object;
-        previous->data           = object + sizeof( __XSMemoryObject );
-        previous->size           = object->size;
-        previous->allocID        = object->allocID;
-        previous->classID        = object->classID;
-        previous->allocFile      = file;
-        previous->allocLine      = line;
-        previous->allocFunc      = func;
-        previous->allocThreadID  = XSThreading_GetCurrentThreadID();
+        fprintf
+        (
+            stderr,
+            "# Allocated in file:     %s:%i\n",
+            allocFile,
+            record->allocLine
+        );
     }
     else
     {
-        rec->object         = object;
-        rec->data           = object + sizeof( __XSMemoryObject );
-        rec->size           = object->size;
-        rec->allocID        = object->allocID;
-        rec->classID        = object->classID;
-        rec->allocFile      = file;
-        rec->allocLine      = line;
-        rec->allocFunc      = func;
-        rec->allocThreadID  = XSThreading_GetCurrentThreadID();
-        
-        if( XSAtomic_CompareAndSwapPointer( NULL, rec, ( void * volatile * )&__XSMemoryDebug_Records ) )
-        {
-            return;
-        }
-        
-        add:
-        
-        list = __XSMemoryDebug_Records;
-        
-        while( list != NULL )
-        {
-            if( XSAtomic_CompareAndSwapPointer( NULL, rec, ( void * volatile * )&( list->next ) ) )
-            {
-                return;
-            }
-            
-            list = list->next;
-        }
-        
-        goto add;
+        fprintf
+        (
+            stderr,
+            "# Allocated in file:     N/A\n"
+        );
     }
+    
+    fprintf
+    (
+        stderr,
+        "# Allocated in function: %s\n"
+        "# Allocated in thread:   %lX\n",
+        ( allocFunc == NULL ) ? "N/A" : allocFunc,
+        ( unsigned long )( record->allocThreadID )
+    );
+    
+    if( record->freed )
+    {
+        fprintf
+        (
+            stderr,
+            "# Freed in file:         %s:%i\n"
+            "# Freed in function:     %s\n"
+            "# Freed in thread:       %lX\n",
+            freeFile,
+            record->freeLine,
+            freeFunc,
+            ( unsigned long )( record->freeThreadID )
+        );
+    }
+    else
+    {
+        fprintf
+        (
+            stderr,
+            "# Freed in file:         N/A\n"
+            "# Freed in function:     N/A\n"
+            "# Freed in thread:       N/A\n"
+        );
+    }
+    
+    fprintf
+    (
+        stderr,
+        "#-------------------------------------------------------------------------------\n"
+        "\n"
+    );
     
     #endif
 }

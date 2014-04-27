@@ -62,48 +62,104 @@
 /* $Id$ */
 
 /*!
- * @file        __XSMemoryDebug_ReleaseRecord.c
+ * @file        __XSDebugger_NewMemoryRecord.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSMemoryDebug_ReleaseRecord
+ * @abstract    Definition for __XSDebugger_NewMemoryRecord
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSMemoryDebug.h>
+#include <XS/__private/Functions/XSDebugger.h>
 
-void __XSMemoryDebug_ReleaseRecord( __XSMemoryObject * object, bool markAsFreed, const char * file, int line, const char * func )
+void __XSDebugger_NewMemoryRecord( __XSMemoryObject * object, const char * file, int line, const char * func )
 {
-    __XSMemoryDebug_Record * rec;
+    __XSDebugger_MemoryRecord *          rec;
+    __XSDebugger_MemoryRecord *          previous;
+    __XSDebugger_MemoryRecord * volatile list;
     
     #ifndef DEBUG
     
     ( void )object;
-    ( void )markAsFreed;
     ( void )file;
     ( void )line;
     ( void )func;
     ( void )rec;
+    ( void )previous;
+    ( void )list;
     
     return;
     
     #else
     
-    __XSMemoryDebug_CheckObjectIntegrity( object );
-    
-    rec = __XSMemoryDebug_GetRecord( object );
-    
-    if( rec == NULL )
+    if( object == NULL )
     {
         return;
     }
     
-    if( markAsFreed )
+    rec = calloc( sizeof( __XSDebugger_MemoryRecord ), 1 );
+    
+    if( rec == NULL )
     {
-        rec->freeFile       = file;
-        rec->freeLine       = line;
-        rec->freeFunc       = func;
-        rec->freed          = true;
-        rec->freeThreadID   = XSThreading_GetCurrentThreadID();
+        XSFatalError( "Cannot allocate memory for a memory record" );
+    }
+    
+    previous = __XSDebugger_GetMemoryRecord( object );
+    
+    if( previous != NULL )
+    {
+        memcpy( rec, previous, sizeof( __XSDebugger_MemoryRecord ) );
+        
+        rec->next                = NULL;
+        previous->archived       = rec;
+        
+        previous->freed          = false;
+        previous->freeFile       = NULL;
+        previous->freeLine       = 0;
+        previous->freeFunc       = NULL;
+        previous->freeThreadID   = 0;
+        
+        previous->object         = object;
+        previous->data           = object + sizeof( __XSMemoryObject );
+        previous->size           = object->size;
+        previous->allocID        = object->allocID;
+        previous->classID        = object->classID;
+        previous->allocFile      = file;
+        previous->allocLine      = line;
+        previous->allocFunc      = func;
+        previous->allocThreadID  = XSThreading_GetCurrentThreadID();
+    }
+    else
+    {
+        rec->object         = object;
+        rec->data           = object + sizeof( __XSMemoryObject );
+        rec->size           = object->size;
+        rec->allocID        = object->allocID;
+        rec->classID        = object->classID;
+        rec->allocFile      = file;
+        rec->allocLine      = line;
+        rec->allocFunc      = func;
+        rec->allocThreadID  = XSThreading_GetCurrentThreadID();
+        
+        if( XSAtomic_CompareAndSwapPointer( NULL, rec, ( void * volatile * )&__XSDebugger_MemoryRecords ) )
+        {
+            return;
+        }
+        
+        add:
+        
+        list = __XSDebugger_MemoryRecords;
+        
+        while( list != NULL )
+        {
+            if( XSAtomic_CompareAndSwapPointer( NULL, rec, ( void * volatile * )&( list->next ) ) )
+            {
+                return;
+            }
+            
+            list = list->next;
+        }
+        
+        goto add;
     }
     
     #endif

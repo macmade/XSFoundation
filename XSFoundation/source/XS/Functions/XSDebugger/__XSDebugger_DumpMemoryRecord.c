@@ -62,16 +62,16 @@
 /* $Id$ */
 
 /*!
- * @file        __XSMemoryDebug_DumpRecord.c
+ * @file        __XSDebugger_DumpMemoryRecord.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSMemoryDebug_DumpRecord
+ * @abstract    Definition for __XSDebugger_DumpMemoryRecord
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Functions/XSMemoryDebug.h>
+#include <XS/__private/Functions/XSDebugger.h>
 
-void __XSMemoryDebug_DumpRecord( __XSMemoryDebug_Record * record )
+void __XSDebugger_DumpMemoryRecord( __XSDebugger_MemoryRecord * record )
 {
     #ifndef DEBUG
     
