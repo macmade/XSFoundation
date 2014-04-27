@@ -128,7 +128,7 @@ void __XSDebugger_PrintBacktrace( void )
         free( symbol );
     }
     
-    #elif defined( __XS_MEMORY_DEBUG_HAVE_EXECINFO_H )
+    #elif defined( __XS_DEBUGGER_HAVE_EXECINFO_H )
     
     {
         char ** syms;
