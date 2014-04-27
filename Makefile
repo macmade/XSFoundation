@@ -160,7 +160,7 @@ _FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_FUNCTIONS)XSGeometry/XSSize/)
 _FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_FUNCTIONS)XSLog/)
 _FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_FUNCTIONS)XSMath/)
 _FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_FUNCTIONS)XSMemory/)
-_FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_FUNCTIONS)XSMemoryDebug/)
+_FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_FUNCTIONS)XSDebugger/)
 _FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_FUNCTIONS)XSProcess/)
 _FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_FUNCTIONS)XSRuntime/)
 _FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_FUNCTIONS)XSThreading/)
@@ -258,6 +258,10 @@ else
     _BUILD_TYPE := os-x
 endif
 
+# Make version (version 4 allows parallel builds with output sync) 
+_MAKE_VERSION_MAJOR := $(shell echo $(MAKE_VERSION) | cut -f1 -d.)
+_MAKE_4             := $(shell [ $(_MAKE_VERSION_MAJOR) -ge 4 ] && echo true)
+
 #-------------------------------------------------------------------------------
 # Built-in targets
 #-------------------------------------------------------------------------------
@@ -319,12 +323,50 @@ _XCODE_SDK_VALUE = $(shell /usr/libexec/PlistBuddy -c "Print $(1)" /Applications
 #-------------------------------------------------------------------------------
 
 # Main Target
-all: $(_BUILD_TYPE)
+all: release
 	
 	@:
 	
+# Release build (parallel if available)
+release:
+	
+ifeq ($(_MAKE_4),true)
+	@$(MAKE) -s -j 50 --output-sync _release
+else
+	@$(MAKE) _release
+endif
+
+# Debug build (parallel if available)
+debug:
+	
+ifeq ($(_MAKE_4),true)
+	@$(MAKE) -s -j 50 --output-sync _debug DEBUG=1
+else
+	@$(MAKE) _debug DEBUG=1
+endif
+
+# Release build
+_release: $(_BUILD_TYPE)
+	
+	@:
+
+# Debug build
+_debug: $(_BUILD_TYPE)
+	
+	@:
+
+# Release test target
+test: release
+	
+	@$(MAKE) -s _test
+
+# Debug test target
+test-debug: debug
+	
+	@$(MAKE) -s _test DEBUG=1
+
 # Test target
-test: all
+_test:
 	
 	@echo $(call _PRINT,XSTest,universal,Compiling test file)
 	@$(_CC) -arch i386 -arch x86_64 XSTest/main.c $(DIR_BUILD_PRODUCTS)$(PRODUCT_LIB)$(EXT_LIB) -o $(DIR_BUILD_PRODUCTS)XSTest
@@ -333,6 +375,12 @@ test: all
 
 # Cleans all build files
 clean:
+	
+	@$(MAKE) -s _clean
+	@$(MAKE) -s _clean DEBUG=1
+	
+# Clean target
+_clean:
 	
 	@echo $(call _PRINT,Cleaning,i386,Cleaning all intermediate files)
 	@rm -rf $(DIR_BUILD_TEMP_INTEL_32_OBJ)*
