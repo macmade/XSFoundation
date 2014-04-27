@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSThreading.h>
 
-void XSThreading_TLSSetObject( XSTLSKey * key, XSObjectRef object, XSTLSObjectAssociation association )
+void XSThreading_TLSSetObject( XSTLSKey * key, XSObjectRef object, XSObjectAssociation association )
 {
     __XSThreading_TLSValue * tls;
     
@@ -92,7 +92,7 @@ void XSThreading_TLSSetObject( XSTLSKey * key, XSObjectRef object, XSTLSObjectAs
     
     if( tls != NULL )
     {
-        if( tls->association == XSTLSObjectAssociationRetain || tls->association == XSTLSObjectAssociationCopy )
+        if( tls->association == XSObjectAssociationRetain || tls->association == XSObjectAssociationCopy )
         {
             XSRelease( tls->value );
         }
@@ -116,11 +116,11 @@ void XSThreading_TLSSetObject( XSTLSKey * key, XSObjectRef object, XSTLSObjectAs
     }
     else
     {
-        if( association == XSTLSObjectAssociationRetain )
+        if( association == XSObjectAssociationRetain )
         {
             object = XSRetain( object );
         }
-        else if( association == XSTLSObjectAssociationCopy )
+        else if( association == XSObjectAssociationCopy )
         {
             object = XSCopy( object );
         }

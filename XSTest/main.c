@@ -185,11 +185,11 @@ int main( int argc, const char * argv[] )
         
         XSLog( "%p", b );
         XSThreading_TLSKeyCreate( &k );
-        XSThreading_TLSSetObject( &k, b, XSTLSObjectAssociationRetain );
+        XSThreading_TLSSetObject( &k, b, XSObjectAssociationRetain );
         XSRelease( b );
         XSLog( "%p", XSThreading_TLSGetObject( &k ) );
         XSLog( "%s", XSRuntime_GetDescription( XSThreading_TLSGetObject( &k ) ) );
-        XSThreading_TLSSetObject( &k, NULL, XSTLSObjectAssociationRetain );
+        XSThreading_TLSSetObject( &k, NULL, XSObjectAssociationRetain );
         XSLog( "%p", XSThreading_TLSGetObject( &k ) );
     }
     

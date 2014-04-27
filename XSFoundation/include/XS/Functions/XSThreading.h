@@ -143,7 +143,7 @@ XSObjectRef XSThreading_TLSGetObject( XSTLSKey * key );
  * @param       association     The object association
  * @see         XSTLSObjectAssociation
  */
-void XSThreading_TLSSetObject( XSTLSKey * key, XSObjectRef object, XSTLSObjectAssociation association );
+void XSThreading_TLSSetObject( XSTLSKey * key, XSObjectRef object, XSObjectAssociation association );
 
 /*!
  * @function    XSThreading_MutexCreate

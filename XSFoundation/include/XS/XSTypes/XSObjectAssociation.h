@@ -62,33 +62,33 @@
 /* $Id$ */
 
 /*!
- * @header      XSTLSObjectAssociation.h
+ * @header      XSObjectAssociation.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSTLSObjectAssociation type definition
+ * @abstract    XSObjectAssociation type definition
  */
 
 #ifndef __XS_H__
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_TYPES_XS_TLS_OBJECT_ASSOCIATION_H__
-#define __XS_TYPES_XS_TLS_OBJECT_ASSOCIATION_H__
+#ifndef __XS_TYPES_XS_OBJECT_ASSOCIATION_H__
+#define __XS_TYPES_XS_OBJECT_ASSOCIATION_H__
 
 XS_EXTERN_C_BEGIN
 
 /*!
- * @typedef     XSTLSObjectAssociation
- * @abstract    Association type for TLS objects
+ * @typedef     XSObjectAssociation
+ * @abstract    Association type for objects
  */
 typedef enum
 {
-    XSTLSObjectAssociationAssign    = 0x00, /*! Assign object */
-    XSTLSObjectAssociationRetain    = 0x01, /*! Retain object */
-    XSTLSObjectAssociationCopy      = 0x02  /*! Copy object */
+    XSObjectAssociationAssign    = 0x00, /*! Assign object */
+    XSObjectAssociationRetain    = 0x01, /*! Retain object */
+    XSObjectAssociationCopy      = 0x02  /*! Copy object */
 }
-XSTLSObjectAssociation;
+XSObjectAssociation;
 
 XS_EXTERN_C_END
 
-#endif /* __XS_TYPES_XS_TLS_OBJECT_ASSOCIATION_H__ */
+#endif /* __XS_TYPES_XS_OBJECT_ASSOCIATION_H__ */

@@ -83,9 +83,9 @@
  */
 typedef struct
 {
-    void                  * value;          /*! The TLS value */
-    XSTLSObjectAssociation  association;    /*! The TLS association */
-    char                    __pad_0[ 4 ];   /*! Padding */
+    void              * value;          /*! The TLS value */
+    XSObjectAssociation association;    /*! The TLS association */
+    char                __pad_0[ 4 ];   /*! Padding */
 }
 __XSThreading_TLSValue;
 

@@ -97,7 +97,7 @@ XS_EXTERN_C_BEGIN
 #include <XS/XSTypes/XSMutex.h>
 #include <XS/XSTypes/XSSemaphore.h>
 #include <XS/XSTypes/XSTLSKey.h>
-#include <XS/XSTypes/XSTLSObjectAssociation.h>
+#include <XS/XSTypes/XSObjectAssociation.h>
 
 #include <XS/XSTypes/XSPoint.h>
 #include <XS/XSTypes/XSSize.h>

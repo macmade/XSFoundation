@@ -88,7 +88,7 @@ void * __XSThread_Proxy( __XSThread_Arguments * args )
         return NULL;
     }
     
-    XSThreading_TLSSetObject( &__XSThread_TLSKey, thread, XSTLSObjectAssociationAssign );
+    XSThreading_TLSSetObject( &__XSThread_TLSKey, thread, XSObjectAssociationAssign );
     
     if( args == NULL )
     {
@@ -127,7 +127,7 @@ void * __XSThread_Proxy( __XSThread_Arguments * args )
     
     #endif
     
-    XSThreading_TLSSetObject( &__XSThread_TLSKey, NULL, XSTLSObjectAssociationAssign );
+    XSThreading_TLSSetObject( &__XSThread_TLSKey, NULL, XSObjectAssociationAssign );
     XSRelease( thread );
     XSRelease( args );
     
