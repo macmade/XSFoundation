@@ -62,41 +62,49 @@
 /* $Id$ */
 
 /*!
- * @header      XSSort.h
+ * @file        XSSort_QuickSort.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation sort functions
+ * @abstract    Definition for XSSort_QuickSort
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Functions/XSSort.h>
 
-#ifndef __XS_FUNCTIONS_XS_SORT_H__
-#define __XS_FUNCTIONS_XS_SORT_H__
-
-XS_EXTERN_C_BEGIN
-
-#include <XS/XSTypes.h>
-
-/*!
- * @function    XSSort_QuickSort
- * @abstract    Sorts values using the quick sort algorithm
- * @param       values      The values to sort
- * @param       count       The number of values
- * @param       type        The data-type of the values
- */
-void XSSort_QuickSort( void * values, XSUInteger count, XSDataType type );
-
-/*!
- * @function    XSSort_ShellSort
- * @abstract    Sorts values using the shell sort algorithm
- * @param       values      The values to sort
- * @param       count       The number of values
- * @param       type        The data-type of the values
- */
-void XSSort_ShellSort( void * values, XSUInteger count, XSDataType type );
-
-XS_EXTERN_C_END
-
-#endif /* __XS_FUNCTIONS_XS_SORT_H__ */
+void XSSort_QuickSort( void * values, XSUInteger count, XSDataType type )
+{
+    if( values == NULL || count < 2 )
+    {
+        return;
+    }
+    
+    switch( type )
+    {
+        case XSDataTypeUnknown:         return;
+        case XSDataTypeBool:            __XSSort_QuickSortBool( values, count );
+        case XSDataTypeChar:            __XSSort_QuickSortChar( values, count );
+        case XSDataTypeUnsignedChar:    __XSSort_QuickSortUnsignedChar( values, count );
+        case XSDataTypeShort:           __XSSort_QuickSortShort( values, count );
+        case XSDataTypeUnsignedShort:   __XSSort_QuickSortUnsignedShort( values, count );
+        case XSDataTypeInt:             __XSSort_QuickSortInt( values, count );
+        case XSDataTypeUnsignedInt:     __XSSort_QuickSortUnsignedInt( values, count );
+        case XSDataTypeLong:            __XSSort_QuickSortLong( values, count );
+        case XSDataTypeUnsignedLong:    __XSSort_QuickSortUnsignedLong( values, count );
+        case XSDataTypeXSInt8:          __XSSort_QuickSortXSInt8( values, count );
+        case XSDataTypeXSUInt8:         __XSSort_QuickSortXSUInt8( values, count );
+        case XSDataTypeXSInt16:         __XSSort_QuickSortXSInt16( values, count );
+        case XSDataTypeXSUInt16:        __XSSort_QuickSortXSUInt16( values, count );
+        case XSDataTypeXSInt32:         __XSSort_QuickSortXSInt32( values, count );
+        case XSDataTypeXSUInt32:        __XSSort_QuickSortXSUInt32( values, count );
+        case XSDataTypeXSInt64:         __XSSort_QuickSortXSInt64( values, count );
+        case XSDataTypeXSUInt64:        __XSSort_QuickSortXSUInt64( values, count );
+        case XSDataTypeXSInteger:       __XSSort_QuickSortXSInteger( values, count );
+        case XSDataTypeXSUInteger:      __XSSort_QuickSortXSUInteger( values, count );
+        case XSDataTypeFloat:           __XSSort_QuickSortFloat( values, count );
+        case XSDataTypeDouble:          __XSSort_QuickSortDouble( values, count );
+        case XSDataTypeXSFloat32:       __XSSort_QuickSortXSFloat32( values, count );
+        case XSDataTypeXSFloat64:       __XSSort_QuickSortXSFloat64( values, count );
+        case XSDataTypeXSFloat:         __XSSort_QuickSortXSFloat( values, count );
+        case XSDataTypePointer:         __XSSort_QuickSortPointer( values, count );
+    }
+}
