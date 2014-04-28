@@ -62,63 +62,65 @@
 /* $Id$ */
 
 /*!
- * @header      XSTypes.h
+ * @header      XSDataType.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    XSDataType type definition
  */
 
 #ifndef __XS_H__
 #error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-#ifndef __XS_TYPES_H__
-#define __XS_TYPES_H__
+#ifndef __XS_TYPES_XS_DATA_TYPE_H__
+#define __XS_TYPES_XS_DATA_TYPE_H__
 
 XS_EXTERN_C_BEGIN
 
-#include <XS/XSTypes/XSUInt8.h>
-#include <XS/XSTypes/XSUInt16.h>
-#include <XS/XSTypes/XSUInt32.h>
-#include <XS/XSTypes/XSUInt64.h>
-#include <XS/XSTypes/XSInt8.h>
-#include <XS/XSTypes/XSInt16.h>
-#include <XS/XSTypes/XSInt32.h>
-#include <XS/XSTypes/XSInt64.h>
-#include <XS/XSTypes/XSFloat32.h>
-#include <XS/XSTypes/XSFloat64.h>
-#include <XS/XSTypes/XSUInteger.h>
 #include <XS/XSTypes/XSInteger.h>
-#include <XS/XSTypes/XSFloat.h>
-#include <XS/XSTypes/XSDataType.h>
 
-#include <XS/XSTypes/XSMutex.h>
-#include <XS/XSTypes/XSSemaphore.h>
-#include <XS/XSTypes/XSTLSKey.h>
-#include <XS/XSTypes/XSObjectAssociation.h>
-
-#include <XS/XSTypes/XSPoint.h>
-#include <XS/XSTypes/XSSize.h>
-#include <XS/XSTypes/XSRect.h>
-#include <XS/XSTypes/XSRectEdge.h>
-#include <XS/XSTypes/XSEdgeInsets.h>
-
-#include <XS/XSTypes/XSInitStatus.h>
-#include <XS/XSTypes/XSLogLevel.h>
-
-#include <XS/XSTypes/XSRange.h>
-#include <XS/XSTypes/XSComparisonResult.h>
-
-#include <XS/XSTypes/XSClassID.h>
-#include <XS/XSTypes/XSClassType.h>
-#include <XS/XSTypes/XSObjectRef.h>
-#include <XS/XSTypes/XSClassCallbackConstructor.h>
-#include <XS/XSTypes/XSClassCallbackDestructor.h>
-#include <XS/XSTypes/XSClassCallbackCopy.h>
-#include <XS/XSTypes/XSClassCallbackEquals.h>
-#include <XS/XSTypes/XSClassCallbackToString.h>
-#include <XS/XSTypes/XSClassInfo.h>
+/*!
+ * @typedef     XSDataType
+ * @abstract    Data-types
+ */
+typedef enum XSDataType
+{
+    XSDataTypeUnknown       = 0x00,     /*! Unknow data-type */
+    
+    XSDataTypeBool          = 0x01,     /*! Boolean data-type */
+    XSDataTypeChar          = 0x02,     /*! Char data-type */
+    XSDataTypeUnsignedChar  = 0x03,     /*! Unsigned char data-type */
+    XSDataTypeShort         = 0x04,     /*! Short data-type */
+    XSDataTypeUnsignedShort = 0x05,     /*! Unsigned short data-type */
+    XSDataTypeInt           = 0x06,     /*! Int data-type */
+    XSDataTypeUnsignedInt   = 0x07,     /*! Unsigned int data-type */
+    XSDataTypeLong          = 0x08,     /*! Long data-type */
+    XSDataTypeUnsignedLong  = 0x09,     /*! Unsigned long data-type */
+    
+    XSDataTypeXSInt8        = 0x0A,     /*! XSInt8 data-type */
+    XSDataTypeXSUInt8       = 0x0B,     /*! XSUInt8 data-type */
+    XSDataTypeXSInt16       = 0x0C,     /*! XSInt16 data-type */
+    XSDataTypeXSUInt16      = 0x0D,     /*! XSUInt16 data-type */
+    XSDataTypeXSInt32       = 0x0E,     /*! XSInt32 data-type */
+    XSDataTypeXSUInt32      = 0x0F,     /*! XSUInt32 data-type */
+    XSDataTypeXSInt64       = 0x10,     /*! XSInt64 data-type */
+    XSDataTypeXSUInt64      = 0x11,     /*! XSUInt64 data-type */
+    XSDataTypeXSInteger     = 0x12,     /*! XSInteger data-type */
+    XSDataTypeUInteger      = 0x13,     /*! XSUInteger data-type */
+    
+    XSDataTypeFloat         = 0x14,     /*! Float data-type */
+    XSDataTypeDouble        = 0x15,     /*! Double data-type */
+    
+    XSDataTypeXSFloat32     = 0x16,     /*! XSFloat32 data-type */
+    XSDataTypeXSFloat64     = 0x17,     /*! XSFloat64 data-type */
+    XSDataTypeXSFloat       = 0x18,     /*! XSFloat data-type */
+    
+    XSDataTypePointer       = 0x19,     /*! Pointer data-type */
+    
+    XSDataTypeXSObject      = 0x1A      /*! XSObject data-type */
+}
+XSDataType;
 
 XS_EXTERN_C_END
 
-#endif /* __XS_RUNTIME_H__ */
+#endif /* __XS_TYPES_XS_DATA_TYPE_H__ */
