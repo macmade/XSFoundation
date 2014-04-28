@@ -106,7 +106,7 @@ typedef enum XSDataType
     XSDataTypeXSInt64       = 0x10,     /*! XSInt64 data-type */
     XSDataTypeXSUInt64      = 0x11,     /*! XSUInt64 data-type */
     XSDataTypeXSInteger     = 0x12,     /*! XSInteger data-type */
-    XSDataTypeUInteger      = 0x13,     /*! XSUInteger data-type */
+    XSDataTypeXSUInteger    = 0x13,     /*! XSUInteger data-type */
     
     XSDataTypeFloat         = 0x14,     /*! Float data-type */
     XSDataTypeDouble        = 0x15,     /*! Double data-type */
@@ -116,8 +116,6 @@ typedef enum XSDataType
     XSDataTypeXSFloat       = 0x18,     /*! XSFloat data-type */
     
     XSDataTypePointer       = 0x19,     /*! Pointer data-type */
-    
-    XSDataTypeXSObject      = 0x1A      /*! XSObject data-type */
 }
 XSDataType;
 
