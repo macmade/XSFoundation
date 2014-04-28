@@ -80,21 +80,16 @@ XS_EXTERN_C_BEGIN
 #include <XS/XSTypes/XSInteger.h>
 
 /*!
- * @enum        XSComparisonResultOrder
+ * @typedef     XSComparisonResult
  * @abstract    Enumeration for the XSComparisonResult type 
  */
-enum XSComparisonResultOrder
+typedef enum
 {
    XSComparisonResultOrderAscending  = -1,  /*! Order is ascending */
    XSComparisonResultOrderSame       =  0,  /*! Order is same */
    XSComparisonResultOrderDescending =  1   /*! Order is descending */
-};
-
-/*!
- * @typedef     XSComparisonResult
- * @abstract    Comaprison result data-type
- */
-typedef XSInteger   XSComparisonResult;
+}
+XSComparisonResult;
 
 XS_EXTERN_C_END
 
