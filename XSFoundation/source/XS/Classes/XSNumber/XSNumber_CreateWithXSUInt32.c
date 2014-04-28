@@ -86,6 +86,7 @@ XSStatic XSNumberRef XSNumber_CreateWithXSUInt32( XSUInt32 value )
     
     object->integerValue = ( XSUInt64 )value;
     object->isFloat      = false;
+    object->isUnsigned   = true;
     
     return object;
 }

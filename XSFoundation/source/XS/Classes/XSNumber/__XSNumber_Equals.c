@@ -73,5 +73,5 @@
 
 bool __XSNumber_Equals( XSNumberRef object1, XSNumberRef object2 )
 {
-    return object1 == object2;
+    return XSNumber_CompareWithNumber( object1, object2 ) == XSComparisonResultOrderSame;
 }

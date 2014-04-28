@@ -87,7 +87,8 @@ struct __XSNumber
     XSUInt64  integerValue;
     XSFloat64 floatValue;
     bool      isFloat;
-    char      __pad_0[ 7 ];
+    bool      isUnsigned;
+    char      __pad_0[ 6 ];
 };
 
 /*!

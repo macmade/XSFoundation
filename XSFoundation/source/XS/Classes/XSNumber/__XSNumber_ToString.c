@@ -73,7 +73,20 @@
 
 const char * __XSNumber_ToString( XSNumberRef object )
 {
-    ( void )object;
+    XSStringRef description;
     
-    return NULL;
+    if( object->isFloat )
+    {
+        description = XSString_StringWithFormat( "%f", object->floatValue );
+    }
+    else if( object->isUnsigned )
+    {
+        description = XSString_StringWithFormat( "%lu", ( unsigned long )( object->integerValue ) );
+    }
+    else
+    {
+        description = XSString_StringWithFormat( "%lu", ( long )( object->integerValue ) );
+    }
+    
+    return XSString_GetCString( description );
 }
