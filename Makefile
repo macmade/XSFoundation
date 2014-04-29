@@ -190,7 +190,6 @@ _FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_CLASSES)XSSet/)
 _FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_CLASSES)XSStack/)
 _FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_CLASSES)XSString/)
 _FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_CLASSES)XSThread/)
-_FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_CLASSES)XSTimer/)
 _FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_CLASSES)XSURL/)
 _FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_CLASSES)XSValue/)
 

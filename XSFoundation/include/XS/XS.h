@@ -124,7 +124,6 @@
 #include <XS/Classes/XSStack.h>
 #include <XS/Classes/XSString.h>
 #include <XS/Classes/XSThread.h>
-#include <XS/Classes/XSTimer.h>
 #include <XS/Classes/XSURL.h>
 #include <XS/Classes/XSValue.h>
 
