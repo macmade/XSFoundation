@@ -73,6 +73,11 @@
 
 bool __XSError_Equals( XSErrorRef object1, XSErrorRef object2 )
 {
+    if( object1 == object2 )
+    {
+        return true;
+    }
+    
     if( object1->code != object2->code )
     {
         return false;

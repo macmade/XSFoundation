@@ -73,5 +73,10 @@
 
 bool __XSThread_Equals( XSThreadRef object1, XSThreadRef object2 )
 {
+    if( object1 == object2 )
+    {
+        return true;
+    }
+    
     return object1->threadID == object2->threadID;
 }

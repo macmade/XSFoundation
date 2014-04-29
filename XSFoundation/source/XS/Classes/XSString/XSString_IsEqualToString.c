@@ -78,5 +78,10 @@ bool XSString_IsEqualToString( XSStringRef object, XSStringRef s )
         return false;
     }
     
+    if( object == s )
+    {
+        return true;
+    }
+    
     return ( strcmp( XSString_GetCString( object ), XSString_GetCString( s ) ) == 0 ) ? true : false;
 }

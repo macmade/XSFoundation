@@ -73,5 +73,10 @@
 
 bool __XSBoolean_Equals( XSBooleanRef object1, XSBooleanRef object2 )
 {
+    if( object1 == object2 )
+    {
+        return true;
+    }
+    
     return ( object1->value == object2->value ) ? true : false;
 }

@@ -73,5 +73,10 @@
 
 bool __XSString_Equals( XSStringRef object1, XSStringRef object2 )
 {
+    if( object1 == object2 )
+    {
+        return true;
+    }
+    
     return XSString_IsEqualToString( object1, object2 );
 }
