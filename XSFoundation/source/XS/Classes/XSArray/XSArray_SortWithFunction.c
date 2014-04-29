@@ -73,6 +73,57 @@
 
 void XSArray_SortWithFunction( XSArrayRef array, XSArray_SortFunction function )
 {
-    ( void )array;
-    ( void )function;
+    XSUInteger        i;
+    XSObjectRef     * objects;
+    __XSArray_Value * value;
+    bool              stop;
+    
+    if( array == NULL || function == NULL )
+    {
+        return;
+    }
+    
+    XSRecursiveLock_Lock( array->lock );
+    
+    if( array->count < 2 )
+    {
+        XSRecursiveLock_Unlock( array->lock );
+        
+        return;
+    }
+    
+    objects = XSAlloc( array->count * sizeof( XSObjectRef * ) );
+    
+    if( objects == NULL )
+    {
+        XSLogWarning( "Error allocating memory for XSArray values" );
+        XSRecursiveLock_Unlock( array->lock );
+        
+        return;
+    }
+    
+    value = array->first;
+    i     = 0;
+    
+    while( value != NULL )
+    {
+        objects[ i++ ] = value->object;
+        value          = value->next;
+    }
+    
+    stop = false;
+    
+    __XSArray_SortValuesWithFunction( objects, array->count, function, &stop );
+    
+    value = array->first;
+    i     = 0;
+    
+    while( value != NULL )
+    {
+        value->object = objects[ i++ ];
+        value         = value->next;
+    }
+    
+    XSRelease( objects );
+    XSRecursiveLock_Unlock( array->lock );
 }

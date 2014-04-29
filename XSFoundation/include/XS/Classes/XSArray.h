@@ -384,7 +384,7 @@ XS_EXPORT void XSArray_SortWithFunction( XSArrayRef array, XSArray_SortFunction 
  * @param       object      The object on which to call the method
  * @param       method      The method used to sort the array
  * @discussion  The method will be called with each object contained in the array
- * @see         XSArray_SortFunction
+ * @see         XSArray_SortMethod
  */
 XS_EXPORT void XSArray_SortWithMethod( XSArrayRef array, XSObjectRef object, XSArray_SortMethod method );
 

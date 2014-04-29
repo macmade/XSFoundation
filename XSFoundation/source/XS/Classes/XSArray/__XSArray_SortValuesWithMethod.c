@@ -62,68 +62,70 @@
 /* $Id$ */
 
 /*!
- * @file        XSArray_SortWithMethod.c
+ * @file        __XSArray_CreateWithFirstObjectAndArgs.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSArray_SortWithMethod
+ * @abstract    Definition for __XSArray_CreateWithFirstObjectAndArgs
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSArray.h>
 
-void XSArray_SortWithMethod( XSArrayRef array, XSObjectRef object, XSArray_SortMethod method )
+void __XSArray_SortValuesWithMethod( XSObjectRef * values, XSUInteger count, XSObjectRef object, XSArray_SortMethod method, bool * stop )
 {
-    XSUInteger        i;
-    XSObjectRef     * objects;
-    __XSArray_Value * value;
-    bool              stop;
+    XSObjectRef   value;
+    XSObjectRef   temp;
+    XSObjectRef * left;
+    XSObjectRef * right;
     
-    if( array == NULL || method == NULL )
+    if( count < 2 )
     {
         return;
     }
-    
-    XSRecursiveLock_Lock( array->lock );
-    
-    if( array->count < 2 )
-    {
-        XSRecursiveLock_Unlock( array->lock );
         
+    if( stop != NULL && *( stop ) == true )
+    {
         return;
     }
     
-    objects = XSAlloc( array->count * sizeof( XSObjectRef * ) );
+    value = values[ count / 2 ];
+    left  = values;
+    right = values + ( count - 1 );
     
-    if( objects == NULL )
+    while( left <= right )
     {
-        XSLogWarning( "Error allocating memory for XSArray values" );
-        XSRecursiveLock_Unlock( array->lock );
+        if( method( object, *( left ), value, stop ) == XSComparisonResultOrderAscending )
+        {
+            left++;
+            
+            continue;
+        }
         
-        return;
+        if( stop != NULL && *( stop ) == true )
+        {
+            return;
+        }
+        
+        if( method( object, *( right ), value, stop ) == XSComparisonResultOrderDescending )
+        {
+            right--;
+            
+            continue;
+        }
+        
+        if( stop != NULL && *( stop ) == true )
+        {
+            return;
+        }
+        
+        temp       = *( left );
+        *( left )  = *( right );
+        *( right ) = temp;
+        
+        left++;
+        right--;
     }
     
-    value = array->first;
-    i     = 0;
-    
-    while( value != NULL )
-    {
-        objects[ i++ ] = value->object;
-        value          = value->next;
-    }
-    
-    stop = false;
-    
-    __XSArray_SortValuesWithMethod( objects, array->count, object, method, &stop );
-    
-    value = array->first;
-    i     = 0;
-    
-    while( value != NULL )
-    {
-        value->object = objects[ i++ ];
-        value         = value->next;
-    }
-    
-    XSRelease( objects );
-    XSRecursiveLock_Unlock( array->lock );
+    __XSArray_SortValuesWithMethod( values, ( XSUInteger )( ( right  - values ) + 1 ),    object, method, stop );
+    __XSArray_SortValuesWithMethod( left,   ( XSUInteger )( ( values + count  ) - left ), object, method, stop );
 }

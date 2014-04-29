@@ -170,4 +170,27 @@ const char * __XSArray_ToString( XSArrayRef object );
  */
 XSStatic XSArrayRef __XSArray_CreateWithFirstObjectAndArgs( XSObjectRef firstObject, va_list args );
 
+/*!
+ * @function    __XSArray_SortValuesWithFunction
+ * @abstract    Sorts array values using a function
+ * @param       values      The array values
+ * @param       count       The number of values
+ * @param       function    The function used to sort the array
+ * @param       stop        If true, stops the iteration
+ * @see         XSArray_SortFunction
+ */
+void __XSArray_SortValuesWithFunction( XSObjectRef * values, XSUInteger count, XSArray_SortFunction function, bool * stop );
+
+/*!
+ * @function    __XSArray_SortValuesWithMethod
+ * @abstract    Sorts array values using a method
+ * @param       values      The array values
+ * @param       count       The number of values
+ * @param       object      The object on which to call the method
+ * @param       method      The method used to sort the array
+ * @param       stop        If true, stops the iteration
+ * @see         XSArray_SortMethod
+ */
+void __XSArray_SortValuesWithMethod( XSObjectRef * values, XSUInteger count, XSObjectRef object, XSArray_SortMethod method, bool * stop );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_ARRAY_H__ */
