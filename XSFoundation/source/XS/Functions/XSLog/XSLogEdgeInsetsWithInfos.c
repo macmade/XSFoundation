@@ -79,10 +79,7 @@ void XSLogEdgeInsetsWithInfos( XSEdgeInsets e, const char * file, int line, cons
         file,
         line,
         func,
-        "<XSEdgeInsets> { T: %.02f, L: %.02f, B: %.02f, R: %.02f }",
-        e.top,
-        e.left,
-        e.bottom,
-        e.right
+        "%s",
+        XSString_GetCString( XSString_StringFromXSEdgeInsets( e ) )
     );
 }

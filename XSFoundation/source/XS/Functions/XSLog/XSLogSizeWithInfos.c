@@ -79,8 +79,7 @@ void XSLogSizeWithInfos( XSSize s, const char * file, int line, const char * fun
         file,
         line,
         func,
-        "<XSSize> { W: %.02f, H: %.02f }",
-        s.width,
-        s.height
+        "%s",
+        XSString_GetCString( XSString_StringFromXSSize( s ) )
     );
 }

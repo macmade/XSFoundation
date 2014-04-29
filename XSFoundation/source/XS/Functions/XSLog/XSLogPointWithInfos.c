@@ -79,8 +79,7 @@ void XSLogPointWithInfos( XSPoint p, const char * file, int line, const char * f
         file,
         line,
         func,
-        "<XSPoint> { X: %.02f, Y: %.02f }",
-        p.x,
-        p.y
+        "%s",
+        XSString_GetCString( XSString_StringFromXSPoint( p ) )
     );
 }

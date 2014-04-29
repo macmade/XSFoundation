@@ -79,8 +79,7 @@ void XSLogRangeWithInfos( XSRange r, const char * file, int line, const char * f
         file,
         line,
         func,
-        "<XSRange> { I: %lu, L: %lu }",
-        ( unsigned long )( r.location ),
-        ( unsigned long )( r.length )
+        "%s",
+        XSString_GetCString( XSString_StringFromXSRange( r ) )
     );
 }

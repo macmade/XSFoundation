@@ -79,10 +79,7 @@ void XSLogRectWithInfos( XSRect r, const char * file, int line, const char * fun
         file,
         line,
         func,
-        "<XSRect> { { X: %.02f, Y: %.02f }, { W: %.02f, H: %.02f } }",
-        r.origin.x,
-        r.origin.y,
-        r.size.width,
-        r.size.height
+        "%s",
+        XSString_GetCString( XSString_StringFromXSRect( r ) )
     );
 }
