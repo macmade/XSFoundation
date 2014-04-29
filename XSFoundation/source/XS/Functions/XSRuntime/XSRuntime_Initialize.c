@@ -75,8 +75,6 @@
 void __XSDebugger_Initialize( void );
 
 /* Private class initializers */
-XSStatic void __XSApplication_Initialize( void );
-XSStatic void __XSApplicationArgument_Initialize( void );
 XSStatic void __XSArray_Initialize( void );
 XSStatic void __XSAutoreleasePool_Initialize( void );
 XSStatic void __XSBag_Initialize( void );
@@ -132,9 +130,7 @@ void XSRuntime_Initialize( void )
     while( XSAtomic_CompareAndSwapInteger( XSInitStatusInitializing, XSInitStatusInited, &__XSRuntime_InitStatus ) == false );
     
     __XSDebugger_Initialize();
-
-    __XSApplication_Initialize();
-    __XSApplicationArgument_Initialize();
+    
     __XSArray_Initialize();
     __XSAutoreleasePool_Initialize();
     __XSBag_Initialize();

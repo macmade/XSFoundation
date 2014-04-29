@@ -99,8 +99,6 @@
 #include <XS/Functions/XSSort.h>
 
 /* Classes */
-#include <XS/Classes/XSApplication.h>
-#include <XS/Classes/XSApplicationArgument.h>
 #include <XS/Classes/XSArray.h>
 #include <XS/Classes/XSAutoreleasePool.h>
 #include <XS/Classes/XSBag.h>
