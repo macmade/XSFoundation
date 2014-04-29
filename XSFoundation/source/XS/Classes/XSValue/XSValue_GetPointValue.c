@@ -62,24 +62,21 @@
 /* $Id$ */
 
 /*!
- * @file        __XSValue_Destructor.c
+ * @file        XSValue_GetPointValue.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSValue_Destructor
+ * @abstract    Definition for XSValue_GetPointValue
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSValue.h>
 
-void __XSValue_Destructor( XSValueRef object )
+XSPoint XSValue_GetPointValue( XSValueRef object )
 {
-    if( object->type != XSValue_ValueTypePointer )
+    if( object == NULL )
     {
-        return;
+        return XSPoint_Zero();
     }
     
-    if( object->association == XSObjectAssociationRetain || object->association == XSObjectAssociationCopy )
-    {
-        XSRelease( object->pointer );
-    }
+    return object->point;
 }

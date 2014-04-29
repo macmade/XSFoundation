@@ -62,24 +62,16 @@
 /* $Id$ */
 
 /*!
- * @file        __XSValue_Destructor.c
+ * @file        XSValue_ValueWithRect.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSValue_Destructor
+ * @abstract    Definition for XSValue_ValueWithRect
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSValue.h>
 
-void __XSValue_Destructor( XSValueRef object )
+XSStatic XSAutoreleased XSValueRef XSValue_ValueWithRect( XSRect rect )
 {
-    if( object->type != XSValue_ValueTypePointer )
-    {
-        return;
-    }
-    
-    if( object->association == XSObjectAssociationRetain || object->association == XSObjectAssociationCopy )
-    {
-        XSRelease( object->pointer );
-    }
+    return XSAutorelease( XSValue_CreateWithRect( rect ) );
 }

@@ -73,7 +73,36 @@
 
 const char * __XSValue_ToString( XSValueRef object )
 {
-    ( void )object;
+    XSStringRef description;
     
-    return NULL;
+    if( object->type == XSValue_ValueTypePointer )
+    {
+        description = XSString_StringWithFormat( "Pointer value: %p", object->pointer );
+    }
+    else if( object->type == XSValue_ValueTypePoint )
+    {
+        description = XSString_StringWithFormat( "XSPoint value: %s", XSString_GetCString( XSString_StringFromXSPoint( object->point ) ) );
+    }
+    else if( object->type == XSValue_ValueTypeSize )
+    {
+        description = XSString_StringWithFormat( "XSSize value: %s", XSString_GetCString( XSString_StringFromXSSize( object->size ) ) );
+    }
+    else if( object->type == XSValue_ValueTypeRect )
+    {
+        description = XSString_StringWithFormat( "XSRect value: %s", XSString_GetCString( XSString_StringFromXSRect( object->rect ) ) );
+    }
+    else if( object->type == XSValue_ValueTypeEdgeInsets )
+    {
+        description = XSString_StringWithFormat( "XSEdgeInsets value: %s", XSString_GetCString( XSString_StringFromXSEdgeInsets( object->insets ) ) );
+    }
+    else if( object->type == XSValue_ValueTypeRange )
+    {
+        description = XSString_StringWithFormat( "XSRange value: %s", XSString_GetCString( XSString_StringFromXSRange( object->range ) ) );
+    }
+    else
+    {
+        return "Unknown value type";
+    }
+    
+    return XSString_GetCString( description );
 }

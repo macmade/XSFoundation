@@ -62,24 +62,40 @@
 /* $Id$ */
 
 /*!
- * @file        __XSValue_Destructor.c
+ * @file        XSValue_CreateWithPointer.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSValue_Destructor
+ * @abstract    Definition for XSValue_CreateWithPointer
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSValue.h>
 
-void __XSValue_Destructor( XSValueRef object )
+XSStatic XSValueRef XSValue_CreateWithPointer( void * pointer, XSObjectAssociation association )
 {
-    if( object->type != XSValue_ValueTypePointer )
+    XSValueRef object;
+    
+    object = XSRuntime_CreateInstance( XSValue_GetClassID() );
+    
+    if( object == NULL )
     {
-        return;
+        XSLogWarning( "Error creating an XSValue object" );
+        
+        return NULL;
     }
     
-    if( object->association == XSObjectAssociationRetain || object->association == XSObjectAssociationCopy )
+    if( association == XSObjectAssociationRetain )
     {
-        XSRelease( object->pointer );
+        XSRetain( pointer );
     }
+    else if( association == XSObjectAssociationCopy )
+    {
+        pointer = XSCopy( pointer );
+    }
+    
+    object->pointer     = pointer;
+    object->type        = XSValue_ValueTypePointer;
+    object->association = association;
+    
+    return object;
 }

@@ -62,24 +62,30 @@
 /* $Id$ */
 
 /*!
- * @file        __XSValue_Destructor.c
+ * @file        XSValue_CreateWithEdgeInsets.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSValue_Destructor
+ * @abstract    Definition for XSValue_CreateWithEdgeInsets
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSValue.h>
 
-void __XSValue_Destructor( XSValueRef object )
+XSStatic XSValueRef XSValue_CreateWithEdgeInsets( XSEdgeInsets insets )
 {
-    if( object->type != XSValue_ValueTypePointer )
+    XSValueRef object;
+    
+    object = XSRuntime_CreateInstance( XSValue_GetClassID() );
+    
+    if( object == NULL )
     {
-        return;
+        XSLogWarning( "Error creating an XSValue object" );
+        
+        return NULL;
     }
     
-    if( object->association == XSObjectAssociationRetain || object->association == XSObjectAssociationCopy )
-    {
-        XSRelease( object->pointer );
-    }
+    object->insets  = insets;
+    object->type    = XSValue_ValueTypeEdgeInsets;
+    
+    return object;
 }

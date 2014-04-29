@@ -84,7 +84,14 @@
  */
 struct __XSValue
 {
-    void * temp; /*! Not yet implemented... */
+    void              * pointer;        /*! Pointer value */
+    XSPoint             point;          /*! XSPoint value */
+    XSSize              size;           /*! XSSize value */
+    XSRect              rect;           /*! XSRect value */
+    XSEdgeInsets        insets;         /*! XSEdgeInsets value */
+    XSRange             range;          /*! XSRange value */
+    XSValue_ValueType   type;           /*! Value type */
+    XSObjectAssociation association;    /*! Association for pointer values */
 };
 
 /*!

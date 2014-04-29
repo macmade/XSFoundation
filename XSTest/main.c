@@ -63,6 +63,14 @@
 
 #include <XS/XS.h>
 
+XSComparisonResult __ArraySort( XSObjectRef value1, XSObjectRef value2, bool * stop );
+XSComparisonResult __ArraySort( XSObjectRef value1, XSObjectRef value2, bool * stop )
+{
+    ( void )stop;
+    
+    return XSNumber_CompareWithNumber( value1, value2 );
+}
+
 void __threadedFunc( XSBooleanRef boolean );
 void __threadedFunc( XSBooleanRef boolean )
 {
@@ -100,7 +108,6 @@ int main( int argc, const char * argv[] )
     ap2 = XSAutoreleasePool_Create();
     
     XSArray_Array();
-    XSString_CreateWithCString( "hello, world" );
     
     XSRelease( ap2 );
     XSRelease( ap1 );
@@ -204,7 +211,6 @@ int main( int argc, const char * argv[] )
         
         s       = XSRealloc( s, 3 );
         s[ 1 ]  = 'b';
-        s[ 10 ] = 'b';
         
         XSLog( "%s", s );
         XSRelease( s );
@@ -338,6 +344,48 @@ int main( int argc, const char * argv[] )
         XSShow( XSNull_Null() );
         XSShow( XSNull_Null() );
         XSRelease( XSNull_Null() );
+    }
+    
+    {
+        XSArrayRef array;
+        
+        array = XSArray_ArrayWithObjects
+        (
+            XSNumber_NumberWithInt( 6 ),
+            XSNumber_NumberWithInt( 0 ),
+            XSNumber_NumberWithInt( 3 ),
+            XSNumber_NumberWithInt( 2 ),
+            XSNumber_NumberWithInt( 1 ),
+            XSNumber_NumberWithInt( 4 ),
+            XSNumber_NumberWithInt( 8 ),
+            XSNumber_NumberWithInt( 5 ),
+            XSNumber_NumberWithInt( 9 ),
+            XSNumber_NumberWithInt( 7 ),
+            NULL
+        );
+        
+        XSShow( array );
+        XSArray_SortWithFunction( array, &__ArraySort );
+        XSShow( array );
+    }
+    
+    {
+        XSValueRef v1;
+        XSValueRef v2;
+        XSValueRef v3;
+        XSRect     r;
+        XSSize     s;
+        
+        r = XSRect_Make( 0, 0, 42, 42 );
+        s = XSSize_Make( 21, 21 );
+        
+        v1 = XSValue_ValueWithRect( r );
+        v2 = XSValue_ValueWithSize( s );
+        v3 = XSValue_ValueWithPointer( v1, XSObjectAssociationAssign );
+        
+        XSShow( v1 );
+        XSShow( v2 );
+        XSShow( v3 );
     }
     
     {

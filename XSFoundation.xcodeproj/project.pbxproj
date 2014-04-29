@@ -878,6 +878,30 @@
 		0530421618E8D9A10001F9D0 /* XS-STD.h in Headers */ = {isa = PBXBuildFile; fileRef = 0530421218E8D97F0001F9D0 /* XS-STD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0530421718E8D9A40001F9D0 /* XS-STD in Headers */ = {isa = PBXBuildFile; fileRef = 0530421118E8D97F0001F9D0 /* XS-STD */; settings = {ATTRIBUTES = (Public, ); }; };
 		0530421818E8D9A70001F9D0 /* XS-STD.h in Headers */ = {isa = PBXBuildFile; fileRef = 0530421218E8D97F0001F9D0 /* XS-STD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		053F9FB719101CB50088A9FD /* XSValue_GetValueType.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FB619101CB50088A9FD /* XSValue_GetValueType.c */; };
+		053F9FB819101CB50088A9FD /* XSValue_GetValueType.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FB619101CB50088A9FD /* XSValue_GetValueType.c */; };
+		053F9FB919101CB50088A9FD /* XSValue_GetValueType.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FB619101CB50088A9FD /* XSValue_GetValueType.c */; };
+		053F9FBA19101CB50088A9FD /* XSValue_GetValueType.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FB619101CB50088A9FD /* XSValue_GetValueType.c */; };
+		053F9FC019102C2A0088A9FD /* XSString_StringFromXSEdgeInsets.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBB19102C2A0088A9FD /* XSString_StringFromXSEdgeInsets.c */; };
+		053F9FC119102C2A0088A9FD /* XSString_StringFromXSEdgeInsets.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBB19102C2A0088A9FD /* XSString_StringFromXSEdgeInsets.c */; };
+		053F9FC219102C2A0088A9FD /* XSString_StringFromXSEdgeInsets.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBB19102C2A0088A9FD /* XSString_StringFromXSEdgeInsets.c */; };
+		053F9FC319102C2A0088A9FD /* XSString_StringFromXSEdgeInsets.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBB19102C2A0088A9FD /* XSString_StringFromXSEdgeInsets.c */; };
+		053F9FC419102C2A0088A9FD /* XSString_StringFromXSPoint.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBC19102C2A0088A9FD /* XSString_StringFromXSPoint.c */; };
+		053F9FC519102C2A0088A9FD /* XSString_StringFromXSPoint.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBC19102C2A0088A9FD /* XSString_StringFromXSPoint.c */; };
+		053F9FC619102C2A0088A9FD /* XSString_StringFromXSPoint.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBC19102C2A0088A9FD /* XSString_StringFromXSPoint.c */; };
+		053F9FC719102C2A0088A9FD /* XSString_StringFromXSPoint.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBC19102C2A0088A9FD /* XSString_StringFromXSPoint.c */; };
+		053F9FC819102C2A0088A9FD /* XSString_StringFromXSRange.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBD19102C2A0088A9FD /* XSString_StringFromXSRange.c */; };
+		053F9FC919102C2A0088A9FD /* XSString_StringFromXSRange.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBD19102C2A0088A9FD /* XSString_StringFromXSRange.c */; };
+		053F9FCA19102C2A0088A9FD /* XSString_StringFromXSRange.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBD19102C2A0088A9FD /* XSString_StringFromXSRange.c */; };
+		053F9FCB19102C2A0088A9FD /* XSString_StringFromXSRange.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBD19102C2A0088A9FD /* XSString_StringFromXSRange.c */; };
+		053F9FCC19102C2A0088A9FD /* XSString_StringFromXSRect.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBE19102C2A0088A9FD /* XSString_StringFromXSRect.c */; };
+		053F9FCD19102C2A0088A9FD /* XSString_StringFromXSRect.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBE19102C2A0088A9FD /* XSString_StringFromXSRect.c */; };
+		053F9FCE19102C2A0088A9FD /* XSString_StringFromXSRect.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBE19102C2A0088A9FD /* XSString_StringFromXSRect.c */; };
+		053F9FCF19102C2A0088A9FD /* XSString_StringFromXSRect.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBE19102C2A0088A9FD /* XSString_StringFromXSRect.c */; };
+		053F9FD019102C2A0088A9FD /* XSString_StringFromXSSize.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBF19102C2A0088A9FD /* XSString_StringFromXSSize.c */; };
+		053F9FD119102C2A0088A9FD /* XSString_StringFromXSSize.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBF19102C2A0088A9FD /* XSString_StringFromXSSize.c */; };
+		053F9FD219102C2A0088A9FD /* XSString_StringFromXSSize.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBF19102C2A0088A9FD /* XSString_StringFromXSSize.c */; };
+		053F9FD319102C2A0088A9FD /* XSString_StringFromXSSize.c in Sources */ = {isa = PBXBuildFile; fileRef = 053F9FBF19102C2A0088A9FD /* XSString_StringFromXSSize.c */; };
 		055151C818FC67E5002EBDB1 /* __XSAutoreleasePool_Register.c in Sources */ = {isa = PBXBuildFile; fileRef = 055151C618FC67E5002EBDB1 /* __XSAutoreleasePool_Register.c */; };
 		055151C918FC67E5002EBDB1 /* __XSAutoreleasePool_Register.c in Sources */ = {isa = PBXBuildFile; fileRef = 055151C618FC67E5002EBDB1 /* __XSAutoreleasePool_Register.c */; };
 		055151CA18FC67E5002EBDB1 /* __XSAutoreleasePool_Register.c in Sources */ = {isa = PBXBuildFile; fileRef = 055151C618FC67E5002EBDB1 /* __XSAutoreleasePool_Register.c */; };
@@ -1956,6 +1980,78 @@
 		05944E70190F079800A016AE /* __XSArray_SortValuesWithMethod.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E6A190F079800A016AE /* __XSArray_SortValuesWithMethod.c */; };
 		05944E71190F079800A016AE /* __XSArray_SortValuesWithMethod.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E6A190F079800A016AE /* __XSArray_SortValuesWithMethod.c */; };
 		05944E72190F079800A016AE /* __XSArray_SortValuesWithMethod.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E6A190F079800A016AE /* __XSArray_SortValuesWithMethod.c */; };
+		05944E85190F9A1A00A016AE /* XSValue_CreateWithEdgeInsets.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E73190F9A1A00A016AE /* XSValue_CreateWithEdgeInsets.c */; };
+		05944E86190F9A1A00A016AE /* XSValue_CreateWithEdgeInsets.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E73190F9A1A00A016AE /* XSValue_CreateWithEdgeInsets.c */; };
+		05944E87190F9A1A00A016AE /* XSValue_CreateWithEdgeInsets.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E73190F9A1A00A016AE /* XSValue_CreateWithEdgeInsets.c */; };
+		05944E88190F9A1A00A016AE /* XSValue_CreateWithEdgeInsets.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E73190F9A1A00A016AE /* XSValue_CreateWithEdgeInsets.c */; };
+		05944E89190F9A1A00A016AE /* XSValue_CreateWithPoint.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E74190F9A1A00A016AE /* XSValue_CreateWithPoint.c */; };
+		05944E8A190F9A1A00A016AE /* XSValue_CreateWithPoint.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E74190F9A1A00A016AE /* XSValue_CreateWithPoint.c */; };
+		05944E8B190F9A1A00A016AE /* XSValue_CreateWithPoint.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E74190F9A1A00A016AE /* XSValue_CreateWithPoint.c */; };
+		05944E8C190F9A1A00A016AE /* XSValue_CreateWithPoint.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E74190F9A1A00A016AE /* XSValue_CreateWithPoint.c */; };
+		05944E8D190F9A1A00A016AE /* XSValue_CreateWithPointer.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E75190F9A1A00A016AE /* XSValue_CreateWithPointer.c */; };
+		05944E8E190F9A1A00A016AE /* XSValue_CreateWithPointer.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E75190F9A1A00A016AE /* XSValue_CreateWithPointer.c */; };
+		05944E8F190F9A1A00A016AE /* XSValue_CreateWithPointer.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E75190F9A1A00A016AE /* XSValue_CreateWithPointer.c */; };
+		05944E90190F9A1A00A016AE /* XSValue_CreateWithPointer.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E75190F9A1A00A016AE /* XSValue_CreateWithPointer.c */; };
+		05944E91190F9A1A00A016AE /* XSValue_CreateWithRange.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E76190F9A1A00A016AE /* XSValue_CreateWithRange.c */; };
+		05944E92190F9A1A00A016AE /* XSValue_CreateWithRange.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E76190F9A1A00A016AE /* XSValue_CreateWithRange.c */; };
+		05944E93190F9A1A00A016AE /* XSValue_CreateWithRange.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E76190F9A1A00A016AE /* XSValue_CreateWithRange.c */; };
+		05944E94190F9A1A00A016AE /* XSValue_CreateWithRange.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E76190F9A1A00A016AE /* XSValue_CreateWithRange.c */; };
+		05944E95190F9A1A00A016AE /* XSValue_CreateWithRect.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E77190F9A1A00A016AE /* XSValue_CreateWithRect.c */; };
+		05944E96190F9A1A00A016AE /* XSValue_CreateWithRect.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E77190F9A1A00A016AE /* XSValue_CreateWithRect.c */; };
+		05944E97190F9A1A00A016AE /* XSValue_CreateWithRect.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E77190F9A1A00A016AE /* XSValue_CreateWithRect.c */; };
+		05944E98190F9A1A00A016AE /* XSValue_CreateWithRect.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E77190F9A1A00A016AE /* XSValue_CreateWithRect.c */; };
+		05944E99190F9A1A00A016AE /* XSValue_CreateWithSize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E78190F9A1A00A016AE /* XSValue_CreateWithSize.c */; };
+		05944E9A190F9A1A00A016AE /* XSValue_CreateWithSize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E78190F9A1A00A016AE /* XSValue_CreateWithSize.c */; };
+		05944E9B190F9A1A00A016AE /* XSValue_CreateWithSize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E78190F9A1A00A016AE /* XSValue_CreateWithSize.c */; };
+		05944E9C190F9A1A00A016AE /* XSValue_CreateWithSize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E78190F9A1A00A016AE /* XSValue_CreateWithSize.c */; };
+		05944E9D190F9A1A00A016AE /* XSValue_GetEdgeInsetsValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E79190F9A1A00A016AE /* XSValue_GetEdgeInsetsValue.c */; };
+		05944E9E190F9A1A00A016AE /* XSValue_GetEdgeInsetsValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E79190F9A1A00A016AE /* XSValue_GetEdgeInsetsValue.c */; };
+		05944E9F190F9A1A00A016AE /* XSValue_GetEdgeInsetsValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E79190F9A1A00A016AE /* XSValue_GetEdgeInsetsValue.c */; };
+		05944EA0190F9A1A00A016AE /* XSValue_GetEdgeInsetsValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E79190F9A1A00A016AE /* XSValue_GetEdgeInsetsValue.c */; };
+		05944EA1190F9A1A00A016AE /* XSValue_GetPointerValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7A190F9A1A00A016AE /* XSValue_GetPointerValue.c */; };
+		05944EA2190F9A1A00A016AE /* XSValue_GetPointerValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7A190F9A1A00A016AE /* XSValue_GetPointerValue.c */; };
+		05944EA3190F9A1A00A016AE /* XSValue_GetPointerValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7A190F9A1A00A016AE /* XSValue_GetPointerValue.c */; };
+		05944EA4190F9A1A00A016AE /* XSValue_GetPointerValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7A190F9A1A00A016AE /* XSValue_GetPointerValue.c */; };
+		05944EA5190F9A1A00A016AE /* XSValue_GetPointValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7B190F9A1A00A016AE /* XSValue_GetPointValue.c */; };
+		05944EA6190F9A1A00A016AE /* XSValue_GetPointValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7B190F9A1A00A016AE /* XSValue_GetPointValue.c */; };
+		05944EA7190F9A1A00A016AE /* XSValue_GetPointValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7B190F9A1A00A016AE /* XSValue_GetPointValue.c */; };
+		05944EA8190F9A1A00A016AE /* XSValue_GetPointValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7B190F9A1A00A016AE /* XSValue_GetPointValue.c */; };
+		05944EA9190F9A1A00A016AE /* XSValue_GetRangeValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7C190F9A1A00A016AE /* XSValue_GetRangeValue.c */; };
+		05944EAA190F9A1A00A016AE /* XSValue_GetRangeValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7C190F9A1A00A016AE /* XSValue_GetRangeValue.c */; };
+		05944EAB190F9A1A00A016AE /* XSValue_GetRangeValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7C190F9A1A00A016AE /* XSValue_GetRangeValue.c */; };
+		05944EAC190F9A1A00A016AE /* XSValue_GetRangeValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7C190F9A1A00A016AE /* XSValue_GetRangeValue.c */; };
+		05944EAD190F9A1A00A016AE /* XSValue_GetRectValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7D190F9A1A00A016AE /* XSValue_GetRectValue.c */; };
+		05944EAE190F9A1A00A016AE /* XSValue_GetRectValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7D190F9A1A00A016AE /* XSValue_GetRectValue.c */; };
+		05944EAF190F9A1A00A016AE /* XSValue_GetRectValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7D190F9A1A00A016AE /* XSValue_GetRectValue.c */; };
+		05944EB0190F9A1A00A016AE /* XSValue_GetRectValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7D190F9A1A00A016AE /* XSValue_GetRectValue.c */; };
+		05944EB1190F9A1A00A016AE /* XSValue_GetSizeValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7E190F9A1A00A016AE /* XSValue_GetSizeValue.c */; };
+		05944EB2190F9A1A00A016AE /* XSValue_GetSizeValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7E190F9A1A00A016AE /* XSValue_GetSizeValue.c */; };
+		05944EB3190F9A1A00A016AE /* XSValue_GetSizeValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7E190F9A1A00A016AE /* XSValue_GetSizeValue.c */; };
+		05944EB4190F9A1A00A016AE /* XSValue_GetSizeValue.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7E190F9A1A00A016AE /* XSValue_GetSizeValue.c */; };
+		05944EB5190F9A1A00A016AE /* XSValue_ValueWithEdgeInsets.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7F190F9A1A00A016AE /* XSValue_ValueWithEdgeInsets.c */; };
+		05944EB6190F9A1A00A016AE /* XSValue_ValueWithEdgeInsets.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7F190F9A1A00A016AE /* XSValue_ValueWithEdgeInsets.c */; };
+		05944EB7190F9A1A00A016AE /* XSValue_ValueWithEdgeInsets.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7F190F9A1A00A016AE /* XSValue_ValueWithEdgeInsets.c */; };
+		05944EB8190F9A1A00A016AE /* XSValue_ValueWithEdgeInsets.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E7F190F9A1A00A016AE /* XSValue_ValueWithEdgeInsets.c */; };
+		05944EB9190F9A1A00A016AE /* XSValue_ValueWithPoint.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E80190F9A1A00A016AE /* XSValue_ValueWithPoint.c */; };
+		05944EBA190F9A1A00A016AE /* XSValue_ValueWithPoint.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E80190F9A1A00A016AE /* XSValue_ValueWithPoint.c */; };
+		05944EBB190F9A1A00A016AE /* XSValue_ValueWithPoint.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E80190F9A1A00A016AE /* XSValue_ValueWithPoint.c */; };
+		05944EBC190F9A1A00A016AE /* XSValue_ValueWithPoint.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E80190F9A1A00A016AE /* XSValue_ValueWithPoint.c */; };
+		05944EBD190F9A1A00A016AE /* XSValue_ValueWithPointer.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E81190F9A1A00A016AE /* XSValue_ValueWithPointer.c */; };
+		05944EBE190F9A1A00A016AE /* XSValue_ValueWithPointer.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E81190F9A1A00A016AE /* XSValue_ValueWithPointer.c */; };
+		05944EBF190F9A1A00A016AE /* XSValue_ValueWithPointer.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E81190F9A1A00A016AE /* XSValue_ValueWithPointer.c */; };
+		05944EC0190F9A1A00A016AE /* XSValue_ValueWithPointer.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E81190F9A1A00A016AE /* XSValue_ValueWithPointer.c */; };
+		05944EC1190F9A1A00A016AE /* XSValue_ValueWithRange.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E82190F9A1A00A016AE /* XSValue_ValueWithRange.c */; };
+		05944EC2190F9A1A00A016AE /* XSValue_ValueWithRange.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E82190F9A1A00A016AE /* XSValue_ValueWithRange.c */; };
+		05944EC3190F9A1A00A016AE /* XSValue_ValueWithRange.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E82190F9A1A00A016AE /* XSValue_ValueWithRange.c */; };
+		05944EC4190F9A1A00A016AE /* XSValue_ValueWithRange.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E82190F9A1A00A016AE /* XSValue_ValueWithRange.c */; };
+		05944EC5190F9A1A00A016AE /* XSValue_ValueWithRect.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E83190F9A1A00A016AE /* XSValue_ValueWithRect.c */; };
+		05944EC6190F9A1A00A016AE /* XSValue_ValueWithRect.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E83190F9A1A00A016AE /* XSValue_ValueWithRect.c */; };
+		05944EC7190F9A1A00A016AE /* XSValue_ValueWithRect.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E83190F9A1A00A016AE /* XSValue_ValueWithRect.c */; };
+		05944EC8190F9A1A00A016AE /* XSValue_ValueWithRect.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E83190F9A1A00A016AE /* XSValue_ValueWithRect.c */; };
+		05944EC9190F9A1A00A016AE /* XSValue_ValueWithSize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E84190F9A1A00A016AE /* XSValue_ValueWithSize.c */; };
+		05944ECA190F9A1A00A016AE /* XSValue_ValueWithSize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E84190F9A1A00A016AE /* XSValue_ValueWithSize.c */; };
+		05944ECB190F9A1A00A016AE /* XSValue_ValueWithSize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E84190F9A1A00A016AE /* XSValue_ValueWithSize.c */; };
+		05944ECC190F9A1A00A016AE /* XSValue_ValueWithSize.c in Sources */ = {isa = PBXBuildFile; fileRef = 05944E84190F9A1A00A016AE /* XSValue_ValueWithSize.c */; };
 		05A1531318F48AF700365881 /* XSError_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A1530D18F48AF700365881 /* XSError_Create.c */; };
 		05A1531418F48AF700365881 /* XSError_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A1530D18F48AF700365881 /* XSError_Create.c */; };
 		05A1531518F48AF700365881 /* XSError_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 05A1530D18F48AF700365881 /* XSError_Create.c */; };
@@ -2699,6 +2795,12 @@
 		0530420A18E8C3530001F9D0 /* XSMacros-X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XSMacros-X.h"; sourceTree = "<group>"; };
 		0530421118E8D97F0001F9D0 /* XS-STD */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "XS-STD"; sourceTree = "<group>"; };
 		0530421218E8D97F0001F9D0 /* XS-STD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XS-STD.h"; sourceTree = "<group>"; };
+		053F9FB619101CB50088A9FD /* XSValue_GetValueType.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_GetValueType.c; sourceTree = "<group>"; };
+		053F9FBB19102C2A0088A9FD /* XSString_StringFromXSEdgeInsets.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSString_StringFromXSEdgeInsets.c; sourceTree = "<group>"; };
+		053F9FBC19102C2A0088A9FD /* XSString_StringFromXSPoint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSString_StringFromXSPoint.c; sourceTree = "<group>"; };
+		053F9FBD19102C2A0088A9FD /* XSString_StringFromXSRange.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSString_StringFromXSRange.c; sourceTree = "<group>"; };
+		053F9FBE19102C2A0088A9FD /* XSString_StringFromXSRect.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSString_StringFromXSRect.c; sourceTree = "<group>"; };
+		053F9FBF19102C2A0088A9FD /* XSString_StringFromXSSize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSString_StringFromXSSize.c; sourceTree = "<group>"; };
 		055151C618FC67E5002EBDB1 /* __XSAutoreleasePool_Register.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSAutoreleasePool_Register.c; sourceTree = "<group>"; };
 		055151C718FC67E5002EBDB1 /* __XSAutoreleasePool_Unregister.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSAutoreleasePool_Unregister.c; sourceTree = "<group>"; };
 		055151D018FC7C4F002EBDB1 /* __XSAutoreleasePool_GetCurrent.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSAutoreleasePool_GetCurrent.c; sourceTree = "<group>"; };
@@ -2972,6 +3074,24 @@
 		05944E4E190ED51700A016AE /* XSSort_ShellSort.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSSort_ShellSort.c; sourceTree = "<group>"; };
 		05944E69190F079800A016AE /* __XSArray_SortValuesWithFunction.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSArray_SortValuesWithFunction.c; sourceTree = "<group>"; };
 		05944E6A190F079800A016AE /* __XSArray_SortValuesWithMethod.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSArray_SortValuesWithMethod.c; sourceTree = "<group>"; };
+		05944E73190F9A1A00A016AE /* XSValue_CreateWithEdgeInsets.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_CreateWithEdgeInsets.c; sourceTree = "<group>"; };
+		05944E74190F9A1A00A016AE /* XSValue_CreateWithPoint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_CreateWithPoint.c; sourceTree = "<group>"; };
+		05944E75190F9A1A00A016AE /* XSValue_CreateWithPointer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_CreateWithPointer.c; sourceTree = "<group>"; };
+		05944E76190F9A1A00A016AE /* XSValue_CreateWithRange.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_CreateWithRange.c; sourceTree = "<group>"; };
+		05944E77190F9A1A00A016AE /* XSValue_CreateWithRect.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_CreateWithRect.c; sourceTree = "<group>"; };
+		05944E78190F9A1A00A016AE /* XSValue_CreateWithSize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_CreateWithSize.c; sourceTree = "<group>"; };
+		05944E79190F9A1A00A016AE /* XSValue_GetEdgeInsetsValue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_GetEdgeInsetsValue.c; sourceTree = "<group>"; };
+		05944E7A190F9A1A00A016AE /* XSValue_GetPointerValue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_GetPointerValue.c; sourceTree = "<group>"; };
+		05944E7B190F9A1A00A016AE /* XSValue_GetPointValue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_GetPointValue.c; sourceTree = "<group>"; };
+		05944E7C190F9A1A00A016AE /* XSValue_GetRangeValue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_GetRangeValue.c; sourceTree = "<group>"; };
+		05944E7D190F9A1A00A016AE /* XSValue_GetRectValue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_GetRectValue.c; sourceTree = "<group>"; };
+		05944E7E190F9A1A00A016AE /* XSValue_GetSizeValue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_GetSizeValue.c; sourceTree = "<group>"; };
+		05944E7F190F9A1A00A016AE /* XSValue_ValueWithEdgeInsets.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_ValueWithEdgeInsets.c; sourceTree = "<group>"; };
+		05944E80190F9A1A00A016AE /* XSValue_ValueWithPoint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_ValueWithPoint.c; sourceTree = "<group>"; };
+		05944E81190F9A1A00A016AE /* XSValue_ValueWithPointer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_ValueWithPointer.c; sourceTree = "<group>"; };
+		05944E82190F9A1A00A016AE /* XSValue_ValueWithRange.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_ValueWithRange.c; sourceTree = "<group>"; };
+		05944E83190F9A1A00A016AE /* XSValue_ValueWithRect.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_ValueWithRect.c; sourceTree = "<group>"; };
+		05944E84190F9A1A00A016AE /* XSValue_ValueWithSize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSValue_ValueWithSize.c; sourceTree = "<group>"; };
 		05A1530D18F48AF700365881 /* XSError_Create.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSError_Create.c; sourceTree = "<group>"; };
 		05A1530E18F48AF700365881 /* XSError_Error.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSError_Error.c; sourceTree = "<group>"; };
 		05A1530F18F48AF700365881 /* XSError_GetCode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSError_GetCode.c; sourceTree = "<group>"; };
@@ -3910,6 +4030,11 @@
 				05632F0D18EC513F00EB76D2 /* XSString_UppercaseString.c */,
 				05632F5E18EC88F600EB76D2 /* XSString_ContainsCString.c */,
 				05632F5F18EC88F600EB76D2 /* XSString_ContainsString.c */,
+				053F9FBB19102C2A0088A9FD /* XSString_StringFromXSEdgeInsets.c */,
+				053F9FBC19102C2A0088A9FD /* XSString_StringFromXSPoint.c */,
+				053F9FBD19102C2A0088A9FD /* XSString_StringFromXSRange.c */,
+				053F9FBE19102C2A0088A9FD /* XSString_StringFromXSRect.c */,
+				053F9FBF19102C2A0088A9FD /* XSString_StringFromXSSize.c */,
 			);
 			path = XSString;
 			sourceTree = "<group>";
@@ -3997,6 +4122,25 @@
 				055D194218E1F47D00894C7B /* __XSValue_Initialize.c */,
 				055D194318E1F47D00894C7B /* __XSValue_ToString.c */,
 				055D194418E1F47D00894C7B /* XSValue_GetClassID.c */,
+				05944E73190F9A1A00A016AE /* XSValue_CreateWithEdgeInsets.c */,
+				05944E74190F9A1A00A016AE /* XSValue_CreateWithPoint.c */,
+				05944E75190F9A1A00A016AE /* XSValue_CreateWithPointer.c */,
+				05944E76190F9A1A00A016AE /* XSValue_CreateWithRange.c */,
+				05944E77190F9A1A00A016AE /* XSValue_CreateWithRect.c */,
+				05944E78190F9A1A00A016AE /* XSValue_CreateWithSize.c */,
+				05944E79190F9A1A00A016AE /* XSValue_GetEdgeInsetsValue.c */,
+				05944E7A190F9A1A00A016AE /* XSValue_GetPointerValue.c */,
+				05944E7B190F9A1A00A016AE /* XSValue_GetPointValue.c */,
+				05944E7C190F9A1A00A016AE /* XSValue_GetRangeValue.c */,
+				05944E7D190F9A1A00A016AE /* XSValue_GetRectValue.c */,
+				05944E7E190F9A1A00A016AE /* XSValue_GetSizeValue.c */,
+				053F9FB619101CB50088A9FD /* XSValue_GetValueType.c */,
+				05944E7F190F9A1A00A016AE /* XSValue_ValueWithEdgeInsets.c */,
+				05944E80190F9A1A00A016AE /* XSValue_ValueWithPoint.c */,
+				05944E81190F9A1A00A016AE /* XSValue_ValueWithPointer.c */,
+				05944E82190F9A1A00A016AE /* XSValue_ValueWithRange.c */,
+				05944E83190F9A1A00A016AE /* XSValue_ValueWithRect.c */,
+				05944E84190F9A1A00A016AE /* XSValue_ValueWithSize.c */,
 			);
 			path = XSValue;
 			sourceTree = "<group>";
@@ -4443,6 +4587,7 @@
 				0523058C18EB4B1F00C29627 /* XSRect_Intersection.c in Sources */,
 				055D177A18E1D42800894C7B /* __XSNode_Copy.c in Sources */,
 				0528E5F51900C82400CCFD28 /* XSNumber_CreateWithUnsignedLong.c in Sources */,
+				053F9FC819102C2A0088A9FD /* XSString_StringFromXSRange.c in Sources */,
 				055D175E18E1D42800894C7B /* __XSLock_Destructor.c in Sources */,
 				0528E6C91900C82400CCFD28 /* XSNumber_NumberWithXSFloat64.c in Sources */,
 				05F3576718F1CB7E0070111A /* __XSThread_Detach.c in Sources */,
@@ -4454,6 +4599,7 @@
 				055D179E18E1D42800894C7B /* __XSNotification_Destructor.c in Sources */,
 				0523052418EB4B1F00C29627 /* XSAtomic_ReadInteger.c in Sources */,
 				052306A018EB4B1F00C29627 /* XSThreading_MutexDelete.c in Sources */,
+				05944EA1190F9A1A00A016AE /* XSValue_GetPointerValue.c in Sources */,
 				05F3575818F1C1690070111A /* XSThread_GetCurrentThreadID.c in Sources */,
 				055D15A218E1D42800894C7B /* XSApplication_GetClassID.c in Sources */,
 				0528E6A11900C82400CCFD28 /* XSNumber_NumberWithFloat.c in Sources */,
@@ -4506,6 +4652,7 @@
 				055D18C218E1D42800894C7B /* __XSTimer_Equals.c in Sources */,
 				055D177E18E1D42800894C7B /* __XSNode_Destructor.c in Sources */,
 				055D180A18E1D42800894C7B /* __XSNumber_ToString.c in Sources */,
+				05944EA9190F9A1A00A016AE /* XSValue_GetRangeValue.c in Sources */,
 				055D160218E1D42800894C7B /* XSAutoreleasePool_GetClassID.c in Sources */,
 				0528E6251900C82400CCFD28 /* XSNumber_CreateWithXSUInt32.c in Sources */,
 				0528E6E91900C82400CCFD28 /* XSNumber_NumberWithXSUInt32.c in Sources */,
@@ -4524,6 +4671,7 @@
 				052306B018EB4B1F00C29627 /* XSThreading_SemaphoreCreate.c in Sources */,
 				055D183E18E1D42800894C7B /* __XSSemaphore_Destructor.c in Sources */,
 				0523064018EB4B1F00C29627 /* XSProcess_GetProcessID.c in Sources */,
+				05944E91190F9A1A00A016AE /* XSValue_CreateWithRange.c in Sources */,
 				0523057818EB4B1F00C29627 /* XSRect_GetMinX.c in Sources */,
 				052306C018EB4B1F00C29627 /* XSThreading_SemaphoreWait.c in Sources */,
 				0523053018EB4B1F00C29627 /* XSEdgeInsets_Make.c in Sources */,
@@ -4570,6 +4718,7 @@
 				055D17F618E1D42800894C7B /* __XSNumber_Constructor.c in Sources */,
 				055D166218E1D42800894C7B /* XSBoolean_Create.c in Sources */,
 				055D18A218E1D42800894C7B /* __XSThread_Equals.c in Sources */,
+				05944EB1190F9A1A00A016AE /* XSValue_GetSizeValue.c in Sources */,
 				05A153AF18F5C0D800365881 /* XSOrderedSet_GetAllValues.c in Sources */,
 				05293EF9190904EE00DC0950 /* __XSDebugger_UpdateMemoryRecord.c in Sources */,
 				052305A818EB4B1F00C29627 /* XSRect_Offset.c in Sources */,
@@ -4614,8 +4763,10 @@
 				0523061C18EB4B1F00C29627 /* __XSMemory_GetMemoryObject.c in Sources */,
 				055D184618E1D42800894C7B /* __XSSemaphore_Initialize.c in Sources */,
 				055D16F618E1D42800894C7B /* __XSError_Constructor.c in Sources */,
+				053F9FC419102C2A0088A9FD /* XSString_StringFromXSPoint.c in Sources */,
 				055D173A18E1D42800894C7B /* __XSFile_Copy.c in Sources */,
 				052306E718EB570400C29627 /* __XSLog_EndLog.c in Sources */,
+				05944E8D190F9A1A00A016AE /* XSValue_CreateWithPointer.c in Sources */,
 				0528E6991900C82400CCFD28 /* XSNumber_NumberWithChar.c in Sources */,
 				0528E6D51900C82400CCFD28 /* XSNumber_NumberWithXSInt32.c in Sources */,
 				05A1532318F48AF700365881 /* XSError_GetReason.c in Sources */,
@@ -4645,6 +4796,7 @@
 				052306C818EB4B1F00C29627 /* XSThreading_TLSGetObject.c in Sources */,
 				05F3584718F20EF10070111A /* __XSArray_Initialize.c in Sources */,
 				0523069818EB4B1F00C29627 /* XSThreading_GetCurrentThreadID.c in Sources */,
+				05944EBD190F9A1A00A016AE /* XSValue_ValueWithPointer.c in Sources */,
 				05632F3A18EC513F00EB76D2 /* XSString_SubstringFromIndex.c in Sources */,
 				055D181218E1D42800894C7B /* __XSRecursiveLock.c in Sources */,
 				055D16DE18E1D42800894C7B /* __XSDictionary_Destructor.c in Sources */,
@@ -4659,6 +4811,7 @@
 				055D17B618E1D42800894C7B /* __XSNotificationCenter_Constructor.c in Sources */,
 				055D17E618E1D42800894C7B /* __XSNull_Initialize.c in Sources */,
 				055D160E18E1D42800894C7B /* __XSBag_Copy.c in Sources */,
+				053F9FCC19102C2A0088A9FD /* XSString_StringFromXSRect.c in Sources */,
 				0523059818EB4B1F00C29627 /* XSRect_IsEqualToToRect.c in Sources */,
 				0528E5F91900C82400CCFD28 /* XSNumber_CreateWithUnsignedShort.c in Sources */,
 				05F3586218F20EF10070111A /* XSArray_ReplaceObjectAtIndex.c in Sources */,
@@ -4723,11 +4876,13 @@
 				055D180218E1D42800894C7B /* __XSNumber_Equals.c in Sources */,
 				0563300318EEF5F900EB76D2 /* __XSStack_Destructor.c in Sources */,
 				0528E6A91900C82400CCFD28 /* XSNumber_NumberWithLong.c in Sources */,
+				05944EB9190F9A1A00A016AE /* XSValue_ValueWithPoint.c in Sources */,
 				0523055018EB4B1F00C29627 /* XSRange_Max.c in Sources */,
 				05F3586018F20EF10070111A /* XSArray_RemoveObjectsInArray.c in Sources */,
 				0528E6291900C82400CCFD28 /* XSNumber_CreateWithXSUInt64.c in Sources */,
 				05F356A118F093BF0070111A /* XSRecursiveLock_Create.c in Sources */,
 				052305AC18EB4B1F00C29627 /* XSRect_Standardize.c in Sources */,
+				05944EB5190F9A1A00A016AE /* XSValue_ValueWithEdgeInsets.c in Sources */,
 				055D18A618E1D42800894C7B /* __XSThread_Initialize.c in Sources */,
 				0528E6711900C82400CCFD28 /* XSNumber_GetXSInt32Value.c in Sources */,
 				0528E6491900C82400CCFD28 /* XSNumber_GetShortValue.c in Sources */,
@@ -4748,6 +4903,7 @@
 				055D15A618E1D42800894C7B /* __XSApplicationArgument.c in Sources */,
 				0523052018EB4B1F00C29627 /* XSAtomic_Read64.c in Sources */,
 				055D180E18E1D42800894C7B /* XSNumber_GetClassID.c in Sources */,
+				05944EC1190F9A1A00A016AE /* XSValue_ValueWithRange.c in Sources */,
 				05632F1218EC513F00EB76D2 /* XSString_GetCString.c in Sources */,
 				055D162E18E1D42800894C7B /* __XSBinaryTree_Copy.c in Sources */,
 				052306DC18EB4B1F00C29627 /* XSThreading_TLSSetValue.c in Sources */,
@@ -4759,6 +4915,7 @@
 				058136DB18F743360046C91B /* XSAutoreleasePool_Drain.c in Sources */,
 				0528E6911900C82400CCFD28 /* XSNumber_IsFloatType.c in Sources */,
 				052306B818EB4B1F00C29627 /* XSThreading_SemaphoreSignal.c in Sources */,
+				05944EC9190F9A1A00A016AE /* XSValue_ValueWithSize.c in Sources */,
 				05F3585018F20EF10070111A /* XSArray_Create.c in Sources */,
 				05A153EF18F5C0D800365881 /* XSOrderedSet_SortWithFunction.c in Sources */,
 				052305CC18EB4B1F00C29627 /* XSGetLogLevel.c in Sources */,
@@ -4773,6 +4930,7 @@
 				0523062C18EB4B1F00C29627 /* XSCopyWithInfos.c in Sources */,
 				055D176E18E1D42800894C7B /* XSLock_GetClassID.c in Sources */,
 				05F3584C18F20EF10070111A /* XSArray_ApplyMethod.c in Sources */,
+				05944EC5190F9A1A00A016AE /* XSValue_ValueWithRect.c in Sources */,
 				055D17BA18E1D42800894C7B /* __XSNotificationCenter_Copy.c in Sources */,
 				0523063418EB4B1F00C29627 /* XSReleaseWithInfos.c in Sources */,
 				055D15BE18E1D42800894C7B /* __XSApplicationArgument_ToString.c in Sources */,
@@ -4787,6 +4945,7 @@
 				052305B818EB4B1F00C29627 /* XSSize_IsEqualToSize.c in Sources */,
 				055D176618E1D42800894C7B /* __XSLock_Initialize.c in Sources */,
 				055D175A18E1D42800894C7B /* __XSLock_Copy.c in Sources */,
+				05944EA5190F9A1A00A016AE /* XSValue_GetPointValue.c in Sources */,
 				055D194918E1F47D00894C7B /* __XSPrimitiveArray_Constructor.c in Sources */,
 				05944E4F190ED51700A016AE /* __XSSort_QuickSort.c in Sources */,
 				055D164A18E1D42800894C7B /* __XSBoolean_Constructor.c in Sources */,
@@ -4809,6 +4968,7 @@
 				05A1538318F5C0D800365881 /* __XSOrderedSet_CreateWithFirstObjectAndArgs.c in Sources */,
 				05632F7318ECB0CE00EB76D2 /* __XSLog_Exit.c in Sources */,
 				05F356BD18F095D20070111A /* XSLock_TryLock.c in Sources */,
+				053F9FB719101CB50088A9FD /* XSValue_GetValueType.c in Sources */,
 				05A1533D18F53F2D00365881 /* __XSOrderedSet.c in Sources */,
 				05632FF718EEF5F900EB76D2 /* __XSStack.c in Sources */,
 				0528E6691900C82400CCFD28 /* XSNumber_GetXSInt8Value.c in Sources */,
@@ -4827,6 +4987,7 @@
 				055D186E18E1D42800894C7B /* XSSet_GetClassID.c in Sources */,
 				05A1539318F5C0D800365881 /* XSOrderedSet_ApplyMethod.c in Sources */,
 				0528E6051900C82400CCFD28 /* XSNumber_CreateWithXSFloat64.c in Sources */,
+				05944E99190F9A1A00A016AE /* XSValue_CreateWithSize.c in Sources */,
 				055D18E218E1D42900894C7B /* __XSURL_Equals.c in Sources */,
 				055D168618E1D42800894C7B /* __XSColor_Initialize.c in Sources */,
 				055D170A18E1D42800894C7B /* __XSError_ToString.c in Sources */,
@@ -4838,12 +4999,15 @@
 				0528E6B91900C82400CCFD28 /* XSNumber_NumberWithUnsignedLong.c in Sources */,
 				05A1534118F53F2D00365881 /* __XSOrderedSet_Constructor.c in Sources */,
 				0523053C18EB4B1F00C29627 /* XSPoint_Zero.c in Sources */,
+				053F9FC019102C2A0088A9FD /* XSString_StringFromXSEdgeInsets.c in Sources */,
 				05A153DF18F5C0D800365881 /* XSOrderedSet_RemoveObjectAtIndex.c in Sources */,
 				0528E60D1900C82400CCFD28 /* XSNumber_CreateWithXSInt16.c in Sources */,
+				05944E95190F9A1A00A016AE /* XSValue_CreateWithRect.c in Sources */,
 				055D18B218E1D42800894C7B /* __XSTimer.c in Sources */,
 				055D18B618E1D42800894C7B /* __XSTimer_Constructor.c in Sources */,
 				0528E5E91900C82400CCFD28 /* XSNumber_CreateWithShort.c in Sources */,
 				05F3577418F1FB380070111A /* XSThread_GetMainThread.c in Sources */,
+				05944EAD190F9A1A00A016AE /* XSValue_GetRectValue.c in Sources */,
 				0523061818EB4B1F00C29627 /* __XSMemory.c in Sources */,
 				05632F4618EC513F00EB76D2 /* XSString_UppercaseString.c in Sources */,
 				05A1535118F53F2D00365881 /* __XSOrderedSet_Initialize.c in Sources */,
@@ -4947,11 +5111,13 @@
 				05A153FD18F5DCB500365881 /* XSRuntime_GetClassType.c in Sources */,
 				0523067418EB4B1F00C29627 /* XSRuntime_GetClassID.c in Sources */,
 				055D162A18E1D42800894C7B /* __XSBinaryTree_Constructor.c in Sources */,
+				053F9FD019102C2A0088A9FD /* XSString_StringFromXSSize.c in Sources */,
 				055D195918E1F47D00894C7B /* __XSPrimitiveArray_Initialize.c in Sources */,
 				05293EF5190904EE00DC0950 /* __XSDebugger_ReleaseMemoryRecord.c in Sources */,
 				05632F6018EC88F600EB76D2 /* XSString_ContainsCString.c in Sources */,
 				05A153D718F5C0D800365881 /* XSOrderedSet_RemoveLastObject.c in Sources */,
 				0528E67D1900C82400CCFD28 /* XSNumber_GetXSUInt8Value.c in Sources */,
+				05944E9D190F9A1A00A016AE /* XSValue_GetEdgeInsetsValue.c in Sources */,
 				058136D218F70CD30046C91B /* __XSAllocWithInfos.c in Sources */,
 				055D17EE18E1D42800894C7B /* XSNull_GetClassID.c in Sources */,
 				055D159A18E1D42800894C7B /* __XSApplication_Initialize.c in Sources */,
@@ -4970,6 +5136,7 @@
 				055D188A18E1D42800894C7B /* __XSString_ToString.c in Sources */,
 				05632F1A18EC513F00EB76D2 /* XSString_IsEqualToString.c in Sources */,
 				05F3569418EEF8410070111A /* XSStack_Push.c in Sources */,
+				05944E89190F9A1A00A016AE /* XSValue_CreateWithPoint.c in Sources */,
 				055D181A18E1D42800894C7B /* __XSRecursiveLock_Copy.c in Sources */,
 				0528E5D91900C82400CCFD28 /* XSNumber_CreateWithDouble.c in Sources */,
 				052305F818EB4B1F00C29627 /* XSFloat_Ceil.c in Sources */,
@@ -5009,6 +5176,7 @@
 				055D187618E1D42800894C7B /* __XSString_Constructor.c in Sources */,
 				055D16DA18E1D42800894C7B /* __XSDictionary_Copy.c in Sources */,
 				0528E6311900C82400CCFD28 /* XSNumber_GetBoolValue.c in Sources */,
+				05944E85190F9A1A00A016AE /* XSValue_CreateWithEdgeInsets.c in Sources */,
 				055D185618E1D42800894C7B /* __XSSet_Constructor.c in Sources */,
 				05A153B318F5C0D800365881 /* XSOrderedSet_GetCount.c in Sources */,
 				05632FFF18EEF5F900EB76D2 /* __XSStack_Copy.c in Sources */,
@@ -5045,6 +5213,7 @@
 				0523058D18EB4B1F00C29627 /* XSRect_Intersection.c in Sources */,
 				055D177B18E1D42800894C7B /* __XSNode_Copy.c in Sources */,
 				0528E5F61900C82400CCFD28 /* XSNumber_CreateWithUnsignedLong.c in Sources */,
+				053F9FC919102C2A0088A9FD /* XSString_StringFromXSRange.c in Sources */,
 				055D175F18E1D42800894C7B /* __XSLock_Destructor.c in Sources */,
 				0528E6CA1900C82400CCFD28 /* XSNumber_NumberWithXSFloat64.c in Sources */,
 				05F3576818F1CB7E0070111A /* __XSThread_Detach.c in Sources */,
@@ -5056,6 +5225,7 @@
 				055D179F18E1D42800894C7B /* __XSNotification_Destructor.c in Sources */,
 				0523052518EB4B1F00C29627 /* XSAtomic_ReadInteger.c in Sources */,
 				052306A118EB4B1F00C29627 /* XSThreading_MutexDelete.c in Sources */,
+				05944EA2190F9A1A00A016AE /* XSValue_GetPointerValue.c in Sources */,
 				05F3575918F1C1690070111A /* XSThread_GetCurrentThreadID.c in Sources */,
 				055D15A318E1D42800894C7B /* XSApplication_GetClassID.c in Sources */,
 				0528E6A21900C82400CCFD28 /* XSNumber_NumberWithFloat.c in Sources */,
@@ -5108,6 +5278,7 @@
 				055D18C318E1D42800894C7B /* __XSTimer_Equals.c in Sources */,
 				055D177F18E1D42800894C7B /* __XSNode_Destructor.c in Sources */,
 				055D180B18E1D42800894C7B /* __XSNumber_ToString.c in Sources */,
+				05944EAA190F9A1A00A016AE /* XSValue_GetRangeValue.c in Sources */,
 				055D160318E1D42800894C7B /* XSAutoreleasePool_GetClassID.c in Sources */,
 				0528E6261900C82400CCFD28 /* XSNumber_CreateWithXSUInt32.c in Sources */,
 				0528E6EA1900C82400CCFD28 /* XSNumber_NumberWithXSUInt32.c in Sources */,
@@ -5126,6 +5297,7 @@
 				052306B118EB4B1F00C29627 /* XSThreading_SemaphoreCreate.c in Sources */,
 				055D183F18E1D42800894C7B /* __XSSemaphore_Destructor.c in Sources */,
 				0523064118EB4B1F00C29627 /* XSProcess_GetProcessID.c in Sources */,
+				05944E92190F9A1A00A016AE /* XSValue_CreateWithRange.c in Sources */,
 				0523057918EB4B1F00C29627 /* XSRect_GetMinX.c in Sources */,
 				052306C118EB4B1F00C29627 /* XSThreading_SemaphoreWait.c in Sources */,
 				0523053118EB4B1F00C29627 /* XSEdgeInsets_Make.c in Sources */,
@@ -5172,6 +5344,7 @@
 				055D17F718E1D42800894C7B /* __XSNumber_Constructor.c in Sources */,
 				055D166318E1D42800894C7B /* XSBoolean_Create.c in Sources */,
 				055D18A318E1D42800894C7B /* __XSThread_Equals.c in Sources */,
+				05944EB2190F9A1A00A016AE /* XSValue_GetSizeValue.c in Sources */,
 				05A153B018F5C0D800365881 /* XSOrderedSet_GetAllValues.c in Sources */,
 				05293EFA190904EE00DC0950 /* __XSDebugger_UpdateMemoryRecord.c in Sources */,
 				052305A918EB4B1F00C29627 /* XSRect_Offset.c in Sources */,
@@ -5216,8 +5389,10 @@
 				05A58C7418F21153006961E7 /* XSArray_ArrayWithObjects.c in Sources */,
 				055D184718E1D42800894C7B /* __XSSemaphore_Initialize.c in Sources */,
 				055D16F718E1D42800894C7B /* __XSError_Constructor.c in Sources */,
+				053F9FC519102C2A0088A9FD /* XSString_StringFromXSPoint.c in Sources */,
 				055D173B18E1D42800894C7B /* __XSFile_Copy.c in Sources */,
 				052306E818EB570400C29627 /* __XSLog_EndLog.c in Sources */,
+				05944E8E190F9A1A00A016AE /* XSValue_CreateWithPointer.c in Sources */,
 				0528E69A1900C82400CCFD28 /* XSNumber_NumberWithChar.c in Sources */,
 				0528E6D61900C82400CCFD28 /* XSNumber_NumberWithXSInt32.c in Sources */,
 				05A1532418F48AF700365881 /* XSError_GetReason.c in Sources */,
@@ -5247,6 +5422,7 @@
 				052306C918EB4B1F00C29627 /* XSThreading_TLSGetObject.c in Sources */,
 				0523069918EB4B1F00C29627 /* XSThreading_GetCurrentThreadID.c in Sources */,
 				05A58C6D18F21153006961E7 /* __XSArray_Initialize.c in Sources */,
+				05944EBE190F9A1A00A016AE /* XSValue_ValueWithPointer.c in Sources */,
 				05A58C6818F21153006961E7 /* __XSArray.c in Sources */,
 				05632F3B18EC513F00EB76D2 /* XSString_SubstringFromIndex.c in Sources */,
 				055D181318E1D42800894C7B /* __XSRecursiveLock.c in Sources */,
@@ -5261,6 +5437,7 @@
 				052305D118EB4B1F00C29627 /* XSLogEdgeInsetsWithInfos.c in Sources */,
 				055D17B718E1D42800894C7B /* __XSNotificationCenter_Constructor.c in Sources */,
 				055D17E718E1D42800894C7B /* __XSNull_Initialize.c in Sources */,
+				053F9FCD19102C2A0088A9FD /* XSString_StringFromXSRect.c in Sources */,
 				055D160F18E1D42800894C7B /* __XSBag_Copy.c in Sources */,
 				0528E5FA1900C82400CCFD28 /* XSNumber_CreateWithUnsignedShort.c in Sources */,
 				0523059918EB4B1F00C29627 /* XSRect_IsEqualToToRect.c in Sources */,
@@ -5325,11 +5502,13 @@
 				055D197E18E1F47D00894C7B /* __XSValue_ToString.c in Sources */,
 				055D180318E1D42800894C7B /* __XSNumber_Equals.c in Sources */,
 				0528E6AA1900C82400CCFD28 /* XSNumber_NumberWithLong.c in Sources */,
+				05944EBA190F9A1A00A016AE /* XSValue_ValueWithPoint.c in Sources */,
 				0563300418EEF5F900EB76D2 /* __XSStack_Destructor.c in Sources */,
 				0523055118EB4B1F00C29627 /* XSRange_Max.c in Sources */,
 				0528E62A1900C82400CCFD28 /* XSNumber_CreateWithXSUInt64.c in Sources */,
 				05A58C8618F21153006961E7 /* XSArray_RemoveObjectsInArray.c in Sources */,
 				05F356A218F093BF0070111A /* XSRecursiveLock_Create.c in Sources */,
+				05944EB6190F9A1A00A016AE /* XSValue_ValueWithEdgeInsets.c in Sources */,
 				052305AD18EB4B1F00C29627 /* XSRect_Standardize.c in Sources */,
 				0528E6721900C82400CCFD28 /* XSNumber_GetXSInt32Value.c in Sources */,
 				0528E64A1900C82400CCFD28 /* XSNumber_GetShortValue.c in Sources */,
@@ -5350,6 +5529,7 @@
 				052305A118EB4B1F00C29627 /* XSRect_Make.c in Sources */,
 				055D15A718E1D42800894C7B /* __XSApplicationArgument.c in Sources */,
 				0523052118EB4B1F00C29627 /* XSAtomic_Read64.c in Sources */,
+				05944EC2190F9A1A00A016AE /* XSValue_ValueWithRange.c in Sources */,
 				055D180F18E1D42800894C7B /* XSNumber_GetClassID.c in Sources */,
 				05632F1318EC513F00EB76D2 /* XSString_GetCString.c in Sources */,
 				055D162F18E1D42800894C7B /* __XSBinaryTree_Copy.c in Sources */,
@@ -5361,6 +5541,7 @@
 				058136DC18F743360046C91B /* XSAutoreleasePool_Drain.c in Sources */,
 				0528E6921900C82400CCFD28 /* XSNumber_IsFloatType.c in Sources */,
 				0523050918EB4B1F00C29627 /* XSAtomic_Decrement64.c in Sources */,
+				05944ECA190F9A1A00A016AE /* XSValue_ValueWithSize.c in Sources */,
 				052306B918EB4B1F00C29627 /* XSThreading_SemaphoreSignal.c in Sources */,
 				05A153F018F5C0D800365881 /* XSOrderedSet_SortWithFunction.c in Sources */,
 				05A58C7618F21153006961E7 /* XSArray_Create.c in Sources */,
@@ -5375,6 +5556,7 @@
 				055D187B18E1D42800894C7B /* __XSString_Copy.c in Sources */,
 				0523062D18EB4B1F00C29627 /* XSCopyWithInfos.c in Sources */,
 				055D176F18E1D42800894C7B /* XSLock_GetClassID.c in Sources */,
+				05944EC6190F9A1A00A016AE /* XSValue_ValueWithRect.c in Sources */,
 				05A58C7218F21153006961E7 /* XSArray_ApplyMethod.c in Sources */,
 				055D17BB18E1D42800894C7B /* __XSNotificationCenter_Copy.c in Sources */,
 				0523063518EB4B1F00C29627 /* XSReleaseWithInfos.c in Sources */,
@@ -5389,6 +5571,7 @@
 				055D169B18E1D42800894C7B /* __XSData_Copy.c in Sources */,
 				052305B918EB4B1F00C29627 /* XSSize_IsEqualToSize.c in Sources */,
 				055D176718E1D42800894C7B /* __XSLock_Initialize.c in Sources */,
+				05944EA6190F9A1A00A016AE /* XSValue_GetPointValue.c in Sources */,
 				055D175B18E1D42800894C7B /* __XSLock_Copy.c in Sources */,
 				05944E50190ED51700A016AE /* __XSSort_QuickSort.c in Sources */,
 				055D194A18E1F47D00894C7B /* __XSPrimitiveArray_Constructor.c in Sources */,
@@ -5411,6 +5594,7 @@
 				05A1538418F5C0D800365881 /* __XSOrderedSet_CreateWithFirstObjectAndArgs.c in Sources */,
 				055D178B18E1D42800894C7B /* __XSNode_ToString.c in Sources */,
 				05632F7418ECB0CE00EB76D2 /* __XSLog_Exit.c in Sources */,
+				053F9FB819101CB50088A9FD /* XSValue_GetValueType.c in Sources */,
 				05A1533E18F53F2D00365881 /* __XSOrderedSet.c in Sources */,
 				05F356BE18F095D20070111A /* XSLock_TryLock.c in Sources */,
 				0528E66A1900C82400CCFD28 /* XSNumber_GetXSInt8Value.c in Sources */,
@@ -5429,6 +5613,7 @@
 				0523063918EB4B1F00C29627 /* XSRetain.c in Sources */,
 				05A1539418F5C0D800365881 /* XSOrderedSet_ApplyMethod.c in Sources */,
 				0528E6061900C82400CCFD28 /* XSNumber_CreateWithXSFloat64.c in Sources */,
+				05944E9A190F9A1A00A016AE /* XSValue_CreateWithSize.c in Sources */,
 				055D169318E1D42800894C7B /* __XSData.c in Sources */,
 				055D186F18E1D42800894C7B /* XSSet_GetClassID.c in Sources */,
 				055D18E318E1D42900894C7B /* __XSURL_Equals.c in Sources */,
@@ -5440,12 +5625,15 @@
 				0528E6BA1900C82400CCFD28 /* XSNumber_NumberWithUnsignedLong.c in Sources */,
 				05A1534218F53F2D00365881 /* __XSOrderedSet_Constructor.c in Sources */,
 				0563300818EEF5F900EB76D2 /* __XSStack_Equals.c in Sources */,
+				053F9FC119102C2A0088A9FD /* XSString_StringFromXSEdgeInsets.c in Sources */,
 				05A153E018F5C0D800365881 /* XSOrderedSet_RemoveObjectAtIndex.c in Sources */,
 				0528E60E1900C82400CCFD28 /* XSNumber_CreateWithXSInt16.c in Sources */,
+				05944E96190F9A1A00A016AE /* XSValue_CreateWithRect.c in Sources */,
 				0523051D18EB4B1F00C29627 /* XSAtomic_Read32.c in Sources */,
 				0523053D18EB4B1F00C29627 /* XSPoint_Zero.c in Sources */,
 				0528E5EA1900C82400CCFD28 /* XSNumber_CreateWithShort.c in Sources */,
 				055D18B318E1D42800894C7B /* __XSTimer.c in Sources */,
+				05944EAE190F9A1A00A016AE /* XSValue_GetRectValue.c in Sources */,
 				055D18B718E1D42800894C7B /* __XSTimer_Constructor.c in Sources */,
 				05F3577518F1FB380070111A /* XSThread_GetMainThread.c in Sources */,
 				05A1535218F53F2D00365881 /* __XSOrderedSet_Initialize.c in Sources */,
@@ -5549,11 +5737,13 @@
 				05A153FE18F5DCB500365881 /* XSRuntime_GetClassType.c in Sources */,
 				055D161B18E1D42800894C7B /* __XSBag_Initialize.c in Sources */,
 				0523067518EB4B1F00C29627 /* XSRuntime_GetClassID.c in Sources */,
+				053F9FD119102C2A0088A9FD /* XSString_StringFromXSSize.c in Sources */,
 				055D162B18E1D42800894C7B /* __XSBinaryTree_Constructor.c in Sources */,
 				05293EF6190904EE00DC0950 /* __XSDebugger_ReleaseMemoryRecord.c in Sources */,
 				055D195A18E1F47D00894C7B /* __XSPrimitiveArray_Initialize.c in Sources */,
 				05A153D818F5C0D800365881 /* XSOrderedSet_RemoveLastObject.c in Sources */,
 				0528E67E1900C82400CCFD28 /* XSNumber_GetXSUInt8Value.c in Sources */,
+				05944E9E190F9A1A00A016AE /* XSValue_GetEdgeInsetsValue.c in Sources */,
 				058136D318F70CD30046C91B /* __XSAllocWithInfos.c in Sources */,
 				05632F6118EC88F600EB76D2 /* XSString_ContainsCString.c in Sources */,
 				055D17EF18E1D42800894C7B /* XSNull_GetClassID.c in Sources */,
@@ -5572,6 +5762,7 @@
 				05F3575018F1C1180070111A /* XSThread_DetachMethodWithArgument.c in Sources */,
 				055D188B18E1D42800894C7B /* __XSString_ToString.c in Sources */,
 				05632F1B18EC513F00EB76D2 /* XSString_IsEqualToString.c in Sources */,
+				05944E8A190F9A1A00A016AE /* XSValue_CreateWithPoint.c in Sources */,
 				05F3569518EEF8410070111A /* XSStack_Push.c in Sources */,
 				0528E5DA1900C82400CCFD28 /* XSNumber_CreateWithDouble.c in Sources */,
 				055D181B18E1D42800894C7B /* __XSRecursiveLock_Copy.c in Sources */,
@@ -5611,6 +5802,7 @@
 				055D187718E1D42800894C7B /* __XSString_Constructor.c in Sources */,
 				055D16DB18E1D42800894C7B /* __XSDictionary_Copy.c in Sources */,
 				0528E6321900C82400CCFD28 /* XSNumber_GetBoolValue.c in Sources */,
+				05944E86190F9A1A00A016AE /* XSValue_CreateWithEdgeInsets.c in Sources */,
 				055D185718E1D42800894C7B /* __XSSet_Constructor.c in Sources */,
 				05A153B418F5C0D800365881 /* XSOrderedSet_GetCount.c in Sources */,
 				0563300018EEF5F900EB76D2 /* __XSStack_Copy.c in Sources */,
@@ -5647,6 +5839,7 @@
 				0523058E18EB4B1F00C29627 /* XSRect_Intersection.c in Sources */,
 				055D177C18E1D42800894C7B /* __XSNode_Copy.c in Sources */,
 				0528E5F71900C82400CCFD28 /* XSNumber_CreateWithUnsignedLong.c in Sources */,
+				053F9FCA19102C2A0088A9FD /* XSString_StringFromXSRange.c in Sources */,
 				055D176018E1D42800894C7B /* __XSLock_Destructor.c in Sources */,
 				0528E6CB1900C82400CCFD28 /* XSNumber_NumberWithXSFloat64.c in Sources */,
 				05F3576918F1CB7E0070111A /* __XSThread_Detach.c in Sources */,
@@ -5658,6 +5851,7 @@
 				055D17A018E1D42800894C7B /* __XSNotification_Destructor.c in Sources */,
 				0523052618EB4B1F00C29627 /* XSAtomic_ReadInteger.c in Sources */,
 				052306A218EB4B1F00C29627 /* XSThreading_MutexDelete.c in Sources */,
+				05944EA3190F9A1A00A016AE /* XSValue_GetPointerValue.c in Sources */,
 				05F3575A18F1C1690070111A /* XSThread_GetCurrentThreadID.c in Sources */,
 				055D15A418E1D42800894C7B /* XSApplication_GetClassID.c in Sources */,
 				0528E6A31900C82400CCFD28 /* XSNumber_NumberWithFloat.c in Sources */,
@@ -5710,6 +5904,7 @@
 				055D18C418E1D42800894C7B /* __XSTimer_Equals.c in Sources */,
 				055D178018E1D42800894C7B /* __XSNode_Destructor.c in Sources */,
 				055D180C18E1D42800894C7B /* __XSNumber_ToString.c in Sources */,
+				05944EAB190F9A1A00A016AE /* XSValue_GetRangeValue.c in Sources */,
 				055D160418E1D42800894C7B /* XSAutoreleasePool_GetClassID.c in Sources */,
 				0528E6271900C82400CCFD28 /* XSNumber_CreateWithXSUInt32.c in Sources */,
 				0528E6EB1900C82400CCFD28 /* XSNumber_NumberWithXSUInt32.c in Sources */,
@@ -5728,6 +5923,7 @@
 				052306B218EB4B1F00C29627 /* XSThreading_SemaphoreCreate.c in Sources */,
 				055D184018E1D42800894C7B /* __XSSemaphore_Destructor.c in Sources */,
 				0523064218EB4B1F00C29627 /* XSProcess_GetProcessID.c in Sources */,
+				05944E93190F9A1A00A016AE /* XSValue_CreateWithRange.c in Sources */,
 				0523057A18EB4B1F00C29627 /* XSRect_GetMinX.c in Sources */,
 				052306C218EB4B1F00C29627 /* XSThreading_SemaphoreWait.c in Sources */,
 				0523053218EB4B1F00C29627 /* XSEdgeInsets_Make.c in Sources */,
@@ -5774,6 +5970,7 @@
 				055D17F818E1D42800894C7B /* __XSNumber_Constructor.c in Sources */,
 				055D166418E1D42800894C7B /* XSBoolean_Create.c in Sources */,
 				055D18A418E1D42800894C7B /* __XSThread_Equals.c in Sources */,
+				05944EB3190F9A1A00A016AE /* XSValue_GetSizeValue.c in Sources */,
 				05A153B118F5C0D800365881 /* XSOrderedSet_GetAllValues.c in Sources */,
 				05293EFB190904EE00DC0950 /* __XSDebugger_UpdateMemoryRecord.c in Sources */,
 				052305AA18EB4B1F00C29627 /* XSRect_Offset.c in Sources */,
@@ -5818,8 +6015,10 @@
 				05A58C5118F21152006961E7 /* XSArray_ArrayWithObjects.c in Sources */,
 				055D184818E1D42800894C7B /* __XSSemaphore_Initialize.c in Sources */,
 				055D16F818E1D42800894C7B /* __XSError_Constructor.c in Sources */,
+				053F9FC619102C2A0088A9FD /* XSString_StringFromXSPoint.c in Sources */,
 				055D173C18E1D42800894C7B /* __XSFile_Copy.c in Sources */,
 				052306E918EB570400C29627 /* __XSLog_EndLog.c in Sources */,
+				05944E8F190F9A1A00A016AE /* XSValue_CreateWithPointer.c in Sources */,
 				0528E69B1900C82400CCFD28 /* XSNumber_NumberWithChar.c in Sources */,
 				0528E6D71900C82400CCFD28 /* XSNumber_NumberWithXSInt32.c in Sources */,
 				05A1532518F48AF700365881 /* XSError_GetReason.c in Sources */,
@@ -5849,6 +6048,7 @@
 				052306CA18EB4B1F00C29627 /* XSThreading_TLSGetObject.c in Sources */,
 				0523069A18EB4B1F00C29627 /* XSThreading_GetCurrentThreadID.c in Sources */,
 				05A58C4A18F21152006961E7 /* __XSArray_Initialize.c in Sources */,
+				05944EBF190F9A1A00A016AE /* XSValue_ValueWithPointer.c in Sources */,
 				05A58C4518F21152006961E7 /* __XSArray.c in Sources */,
 				05632F3C18EC513F00EB76D2 /* XSString_SubstringFromIndex.c in Sources */,
 				055D181418E1D42800894C7B /* __XSRecursiveLock.c in Sources */,
@@ -5863,6 +6063,7 @@
 				052305D218EB4B1F00C29627 /* XSLogEdgeInsetsWithInfos.c in Sources */,
 				055D17B818E1D42800894C7B /* __XSNotificationCenter_Constructor.c in Sources */,
 				055D17E818E1D42800894C7B /* __XSNull_Initialize.c in Sources */,
+				053F9FCE19102C2A0088A9FD /* XSString_StringFromXSRect.c in Sources */,
 				055D161018E1D42800894C7B /* __XSBag_Copy.c in Sources */,
 				0528E5FB1900C82400CCFD28 /* XSNumber_CreateWithUnsignedShort.c in Sources */,
 				0523059A18EB4B1F00C29627 /* XSRect_IsEqualToToRect.c in Sources */,
@@ -5927,11 +6128,13 @@
 				055D197F18E1F47D00894C7B /* __XSValue_ToString.c in Sources */,
 				055D180418E1D42800894C7B /* __XSNumber_Equals.c in Sources */,
 				0528E6AB1900C82400CCFD28 /* XSNumber_NumberWithLong.c in Sources */,
+				05944EBB190F9A1A00A016AE /* XSValue_ValueWithPoint.c in Sources */,
 				0563300518EEF5F900EB76D2 /* __XSStack_Destructor.c in Sources */,
 				0523055218EB4B1F00C29627 /* XSRange_Max.c in Sources */,
 				0528E62B1900C82400CCFD28 /* XSNumber_CreateWithXSUInt64.c in Sources */,
 				05A58C6318F21152006961E7 /* XSArray_RemoveObjectsInArray.c in Sources */,
 				05F356A318F093BF0070111A /* XSRecursiveLock_Create.c in Sources */,
+				05944EB7190F9A1A00A016AE /* XSValue_ValueWithEdgeInsets.c in Sources */,
 				052305AE18EB4B1F00C29627 /* XSRect_Standardize.c in Sources */,
 				0528E6731900C82400CCFD28 /* XSNumber_GetXSInt32Value.c in Sources */,
 				0528E64B1900C82400CCFD28 /* XSNumber_GetShortValue.c in Sources */,
@@ -5952,6 +6155,7 @@
 				052305A218EB4B1F00C29627 /* XSRect_Make.c in Sources */,
 				055D15A818E1D42800894C7B /* __XSApplicationArgument.c in Sources */,
 				0523052218EB4B1F00C29627 /* XSAtomic_Read64.c in Sources */,
+				05944EC3190F9A1A00A016AE /* XSValue_ValueWithRange.c in Sources */,
 				055D181018E1D42800894C7B /* XSNumber_GetClassID.c in Sources */,
 				05632F1418EC513F00EB76D2 /* XSString_GetCString.c in Sources */,
 				055D163018E1D42800894C7B /* __XSBinaryTree_Copy.c in Sources */,
@@ -5963,6 +6167,7 @@
 				058136DD18F743360046C91B /* XSAutoreleasePool_Drain.c in Sources */,
 				0528E6931900C82400CCFD28 /* XSNumber_IsFloatType.c in Sources */,
 				0523050A18EB4B1F00C29627 /* XSAtomic_Decrement64.c in Sources */,
+				05944ECB190F9A1A00A016AE /* XSValue_ValueWithSize.c in Sources */,
 				052306BA18EB4B1F00C29627 /* XSThreading_SemaphoreSignal.c in Sources */,
 				05A153F118F5C0D800365881 /* XSOrderedSet_SortWithFunction.c in Sources */,
 				05A58C5318F21152006961E7 /* XSArray_Create.c in Sources */,
@@ -5977,6 +6182,7 @@
 				055D187C18E1D42800894C7B /* __XSString_Copy.c in Sources */,
 				0523062E18EB4B1F00C29627 /* XSCopyWithInfos.c in Sources */,
 				055D177018E1D42800894C7B /* XSLock_GetClassID.c in Sources */,
+				05944EC7190F9A1A00A016AE /* XSValue_ValueWithRect.c in Sources */,
 				05A58C4F18F21152006961E7 /* XSArray_ApplyMethod.c in Sources */,
 				055D17BC18E1D42800894C7B /* __XSNotificationCenter_Copy.c in Sources */,
 				0523063618EB4B1F00C29627 /* XSReleaseWithInfos.c in Sources */,
@@ -5991,6 +6197,7 @@
 				055D169C18E1D42800894C7B /* __XSData_Copy.c in Sources */,
 				052305BA18EB4B1F00C29627 /* XSSize_IsEqualToSize.c in Sources */,
 				055D176818E1D42800894C7B /* __XSLock_Initialize.c in Sources */,
+				05944EA7190F9A1A00A016AE /* XSValue_GetPointValue.c in Sources */,
 				055D175C18E1D42800894C7B /* __XSLock_Copy.c in Sources */,
 				05944E51190ED51700A016AE /* __XSSort_QuickSort.c in Sources */,
 				055D194B18E1F47D00894C7B /* __XSPrimitiveArray_Constructor.c in Sources */,
@@ -6013,6 +6220,7 @@
 				05A1538518F5C0D800365881 /* __XSOrderedSet_CreateWithFirstObjectAndArgs.c in Sources */,
 				055D178C18E1D42800894C7B /* __XSNode_ToString.c in Sources */,
 				05632F7518ECB0CE00EB76D2 /* __XSLog_Exit.c in Sources */,
+				053F9FB919101CB50088A9FD /* XSValue_GetValueType.c in Sources */,
 				05A1533F18F53F2D00365881 /* __XSOrderedSet.c in Sources */,
 				05F356BF18F095D20070111A /* XSLock_TryLock.c in Sources */,
 				0528E66B1900C82400CCFD28 /* XSNumber_GetXSInt8Value.c in Sources */,
@@ -6031,6 +6239,7 @@
 				0523063A18EB4B1F00C29627 /* XSRetain.c in Sources */,
 				05A1539518F5C0D800365881 /* XSOrderedSet_ApplyMethod.c in Sources */,
 				0528E6071900C82400CCFD28 /* XSNumber_CreateWithXSFloat64.c in Sources */,
+				05944E9B190F9A1A00A016AE /* XSValue_CreateWithSize.c in Sources */,
 				055D169418E1D42800894C7B /* __XSData.c in Sources */,
 				055D187018E1D42800894C7B /* XSSet_GetClassID.c in Sources */,
 				055D18E418E1D42900894C7B /* __XSURL_Equals.c in Sources */,
@@ -6042,12 +6251,15 @@
 				0528E6BB1900C82400CCFD28 /* XSNumber_NumberWithUnsignedLong.c in Sources */,
 				05A1534318F53F2D00365881 /* __XSOrderedSet_Constructor.c in Sources */,
 				0563300918EEF5F900EB76D2 /* __XSStack_Equals.c in Sources */,
+				053F9FC219102C2A0088A9FD /* XSString_StringFromXSEdgeInsets.c in Sources */,
 				05A153E118F5C0D800365881 /* XSOrderedSet_RemoveObjectAtIndex.c in Sources */,
 				0528E60F1900C82400CCFD28 /* XSNumber_CreateWithXSInt16.c in Sources */,
+				05944E97190F9A1A00A016AE /* XSValue_CreateWithRect.c in Sources */,
 				0523051E18EB4B1F00C29627 /* XSAtomic_Read32.c in Sources */,
 				0523053E18EB4B1F00C29627 /* XSPoint_Zero.c in Sources */,
 				0528E5EB1900C82400CCFD28 /* XSNumber_CreateWithShort.c in Sources */,
 				055D18B418E1D42800894C7B /* __XSTimer.c in Sources */,
+				05944EAF190F9A1A00A016AE /* XSValue_GetRectValue.c in Sources */,
 				055D18B818E1D42800894C7B /* __XSTimer_Constructor.c in Sources */,
 				05F3577618F1FB380070111A /* XSThread_GetMainThread.c in Sources */,
 				05A1535318F53F2D00365881 /* __XSOrderedSet_Initialize.c in Sources */,
@@ -6151,11 +6363,13 @@
 				05A153FF18F5DCB500365881 /* XSRuntime_GetClassType.c in Sources */,
 				055D161C18E1D42800894C7B /* __XSBag_Initialize.c in Sources */,
 				0523067618EB4B1F00C29627 /* XSRuntime_GetClassID.c in Sources */,
+				053F9FD219102C2A0088A9FD /* XSString_StringFromXSSize.c in Sources */,
 				055D162C18E1D42800894C7B /* __XSBinaryTree_Constructor.c in Sources */,
 				05293EF7190904EE00DC0950 /* __XSDebugger_ReleaseMemoryRecord.c in Sources */,
 				055D195B18E1F47D00894C7B /* __XSPrimitiveArray_Initialize.c in Sources */,
 				05A153D918F5C0D800365881 /* XSOrderedSet_RemoveLastObject.c in Sources */,
 				0528E67F1900C82400CCFD28 /* XSNumber_GetXSUInt8Value.c in Sources */,
+				05944E9F190F9A1A00A016AE /* XSValue_GetEdgeInsetsValue.c in Sources */,
 				058136D418F70CD30046C91B /* __XSAllocWithInfos.c in Sources */,
 				05632F6218EC88F600EB76D2 /* XSString_ContainsCString.c in Sources */,
 				055D17F018E1D42800894C7B /* XSNull_GetClassID.c in Sources */,
@@ -6174,6 +6388,7 @@
 				05F3575118F1C1180070111A /* XSThread_DetachMethodWithArgument.c in Sources */,
 				055D188C18E1D42800894C7B /* __XSString_ToString.c in Sources */,
 				05632F1C18EC513F00EB76D2 /* XSString_IsEqualToString.c in Sources */,
+				05944E8B190F9A1A00A016AE /* XSValue_CreateWithPoint.c in Sources */,
 				05F3569618EEF8410070111A /* XSStack_Push.c in Sources */,
 				0528E5DB1900C82400CCFD28 /* XSNumber_CreateWithDouble.c in Sources */,
 				055D181C18E1D42800894C7B /* __XSRecursiveLock_Copy.c in Sources */,
@@ -6213,6 +6428,7 @@
 				055D187818E1D42800894C7B /* __XSString_Constructor.c in Sources */,
 				055D16DC18E1D42800894C7B /* __XSDictionary_Copy.c in Sources */,
 				0528E6331900C82400CCFD28 /* XSNumber_GetBoolValue.c in Sources */,
+				05944E87190F9A1A00A016AE /* XSValue_CreateWithEdgeInsets.c in Sources */,
 				055D185818E1D42800894C7B /* __XSSet_Constructor.c in Sources */,
 				05A153B518F5C0D800365881 /* XSOrderedSet_GetCount.c in Sources */,
 				0563300118EEF5F900EB76D2 /* __XSStack_Copy.c in Sources */,
@@ -6249,6 +6465,7 @@
 				0523058F18EB4B1F00C29627 /* XSRect_Intersection.c in Sources */,
 				055D177D18E1D42800894C7B /* __XSNode_Copy.c in Sources */,
 				0528E5F81900C82400CCFD28 /* XSNumber_CreateWithUnsignedLong.c in Sources */,
+				053F9FCB19102C2A0088A9FD /* XSString_StringFromXSRange.c in Sources */,
 				055D176118E1D42800894C7B /* __XSLock_Destructor.c in Sources */,
 				0528E6CC1900C82400CCFD28 /* XSNumber_NumberWithXSFloat64.c in Sources */,
 				05F3576A18F1CB7E0070111A /* __XSThread_Detach.c in Sources */,
@@ -6260,6 +6477,7 @@
 				055D17A118E1D42800894C7B /* __XSNotification_Destructor.c in Sources */,
 				0523052718EB4B1F00C29627 /* XSAtomic_ReadInteger.c in Sources */,
 				052306A318EB4B1F00C29627 /* XSThreading_MutexDelete.c in Sources */,
+				05944EA4190F9A1A00A016AE /* XSValue_GetPointerValue.c in Sources */,
 				05F3575B18F1C1690070111A /* XSThread_GetCurrentThreadID.c in Sources */,
 				055D15A518E1D42800894C7B /* XSApplication_GetClassID.c in Sources */,
 				0528E6A41900C82400CCFD28 /* XSNumber_NumberWithFloat.c in Sources */,
@@ -6312,6 +6530,7 @@
 				055D18C518E1D42800894C7B /* __XSTimer_Equals.c in Sources */,
 				055D178118E1D42800894C7B /* __XSNode_Destructor.c in Sources */,
 				055D180D18E1D42800894C7B /* __XSNumber_ToString.c in Sources */,
+				05944EAC190F9A1A00A016AE /* XSValue_GetRangeValue.c in Sources */,
 				055D160518E1D42800894C7B /* XSAutoreleasePool_GetClassID.c in Sources */,
 				0528E6281900C82400CCFD28 /* XSNumber_CreateWithXSUInt32.c in Sources */,
 				0528E6EC1900C82400CCFD28 /* XSNumber_NumberWithXSUInt32.c in Sources */,
@@ -6330,6 +6549,7 @@
 				052306B318EB4B1F00C29627 /* XSThreading_SemaphoreCreate.c in Sources */,
 				055D184118E1D42800894C7B /* __XSSemaphore_Destructor.c in Sources */,
 				0523064318EB4B1F00C29627 /* XSProcess_GetProcessID.c in Sources */,
+				05944E94190F9A1A00A016AE /* XSValue_CreateWithRange.c in Sources */,
 				0523057B18EB4B1F00C29627 /* XSRect_GetMinX.c in Sources */,
 				052306C318EB4B1F00C29627 /* XSThreading_SemaphoreWait.c in Sources */,
 				0523053318EB4B1F00C29627 /* XSEdgeInsets_Make.c in Sources */,
@@ -6376,6 +6596,7 @@
 				055D17F918E1D42800894C7B /* __XSNumber_Constructor.c in Sources */,
 				055D166518E1D42800894C7B /* XSBoolean_Create.c in Sources */,
 				055D18A518E1D42800894C7B /* __XSThread_Equals.c in Sources */,
+				05944EB4190F9A1A00A016AE /* XSValue_GetSizeValue.c in Sources */,
 				05A153B218F5C0D800365881 /* XSOrderedSet_GetAllValues.c in Sources */,
 				05293EFC190904EE00DC0950 /* __XSDebugger_UpdateMemoryRecord.c in Sources */,
 				052305AB18EB4B1F00C29627 /* XSRect_Offset.c in Sources */,
@@ -6420,8 +6641,10 @@
 				05A58C2E18F21152006961E7 /* XSArray_ArrayWithObjects.c in Sources */,
 				055D184918E1D42800894C7B /* __XSSemaphore_Initialize.c in Sources */,
 				055D16F918E1D42800894C7B /* __XSError_Constructor.c in Sources */,
+				053F9FC719102C2A0088A9FD /* XSString_StringFromXSPoint.c in Sources */,
 				055D173D18E1D42800894C7B /* __XSFile_Copy.c in Sources */,
 				052306EA18EB570400C29627 /* __XSLog_EndLog.c in Sources */,
+				05944E90190F9A1A00A016AE /* XSValue_CreateWithPointer.c in Sources */,
 				0528E69C1900C82400CCFD28 /* XSNumber_NumberWithChar.c in Sources */,
 				0528E6D81900C82400CCFD28 /* XSNumber_NumberWithXSInt32.c in Sources */,
 				05A1532618F48AF700365881 /* XSError_GetReason.c in Sources */,
@@ -6451,6 +6674,7 @@
 				052306CB18EB4B1F00C29627 /* XSThreading_TLSGetObject.c in Sources */,
 				0523069B18EB4B1F00C29627 /* XSThreading_GetCurrentThreadID.c in Sources */,
 				05A58C2718F21152006961E7 /* __XSArray_Initialize.c in Sources */,
+				05944EC0190F9A1A00A016AE /* XSValue_ValueWithPointer.c in Sources */,
 				05A58C2218F21152006961E7 /* __XSArray.c in Sources */,
 				05632F3D18EC513F00EB76D2 /* XSString_SubstringFromIndex.c in Sources */,
 				055D181518E1D42800894C7B /* __XSRecursiveLock.c in Sources */,
@@ -6465,6 +6689,7 @@
 				052305D318EB4B1F00C29627 /* XSLogEdgeInsetsWithInfos.c in Sources */,
 				055D17B918E1D42800894C7B /* __XSNotificationCenter_Constructor.c in Sources */,
 				055D17E918E1D42800894C7B /* __XSNull_Initialize.c in Sources */,
+				053F9FCF19102C2A0088A9FD /* XSString_StringFromXSRect.c in Sources */,
 				055D161118E1D42800894C7B /* __XSBag_Copy.c in Sources */,
 				0528E5FC1900C82400CCFD28 /* XSNumber_CreateWithUnsignedShort.c in Sources */,
 				0523059B18EB4B1F00C29627 /* XSRect_IsEqualToToRect.c in Sources */,
@@ -6529,11 +6754,13 @@
 				055D198018E1F47D00894C7B /* __XSValue_ToString.c in Sources */,
 				055D180518E1D42800894C7B /* __XSNumber_Equals.c in Sources */,
 				0528E6AC1900C82400CCFD28 /* XSNumber_NumberWithLong.c in Sources */,
+				05944EBC190F9A1A00A016AE /* XSValue_ValueWithPoint.c in Sources */,
 				0563300618EEF5F900EB76D2 /* __XSStack_Destructor.c in Sources */,
 				0523055318EB4B1F00C29627 /* XSRange_Max.c in Sources */,
 				0528E62C1900C82400CCFD28 /* XSNumber_CreateWithXSUInt64.c in Sources */,
 				05A58C4018F21152006961E7 /* XSArray_RemoveObjectsInArray.c in Sources */,
 				05F356A418F093BF0070111A /* XSRecursiveLock_Create.c in Sources */,
+				05944EB8190F9A1A00A016AE /* XSValue_ValueWithEdgeInsets.c in Sources */,
 				052305AF18EB4B1F00C29627 /* XSRect_Standardize.c in Sources */,
 				0528E6741900C82400CCFD28 /* XSNumber_GetXSInt32Value.c in Sources */,
 				0528E64C1900C82400CCFD28 /* XSNumber_GetShortValue.c in Sources */,
@@ -6554,6 +6781,7 @@
 				052305A318EB4B1F00C29627 /* XSRect_Make.c in Sources */,
 				055D15A918E1D42800894C7B /* __XSApplicationArgument.c in Sources */,
 				0523052318EB4B1F00C29627 /* XSAtomic_Read64.c in Sources */,
+				05944EC4190F9A1A00A016AE /* XSValue_ValueWithRange.c in Sources */,
 				055D181118E1D42800894C7B /* XSNumber_GetClassID.c in Sources */,
 				05632F1518EC513F00EB76D2 /* XSString_GetCString.c in Sources */,
 				055D163118E1D42800894C7B /* __XSBinaryTree_Copy.c in Sources */,
@@ -6565,6 +6793,7 @@
 				058136DE18F743360046C91B /* XSAutoreleasePool_Drain.c in Sources */,
 				0528E6941900C82400CCFD28 /* XSNumber_IsFloatType.c in Sources */,
 				0523050B18EB4B1F00C29627 /* XSAtomic_Decrement64.c in Sources */,
+				05944ECC190F9A1A00A016AE /* XSValue_ValueWithSize.c in Sources */,
 				052306BB18EB4B1F00C29627 /* XSThreading_SemaphoreSignal.c in Sources */,
 				05A153F218F5C0D800365881 /* XSOrderedSet_SortWithFunction.c in Sources */,
 				05A58C3018F21152006961E7 /* XSArray_Create.c in Sources */,
@@ -6579,6 +6808,7 @@
 				055D187D18E1D42800894C7B /* __XSString_Copy.c in Sources */,
 				0523062F18EB4B1F00C29627 /* XSCopyWithInfos.c in Sources */,
 				055D177118E1D42800894C7B /* XSLock_GetClassID.c in Sources */,
+				05944EC8190F9A1A00A016AE /* XSValue_ValueWithRect.c in Sources */,
 				05A58C2C18F21152006961E7 /* XSArray_ApplyMethod.c in Sources */,
 				055D17BD18E1D42800894C7B /* __XSNotificationCenter_Copy.c in Sources */,
 				0523063718EB4B1F00C29627 /* XSReleaseWithInfos.c in Sources */,
@@ -6593,6 +6823,7 @@
 				055D169D18E1D42800894C7B /* __XSData_Copy.c in Sources */,
 				052305BB18EB4B1F00C29627 /* XSSize_IsEqualToSize.c in Sources */,
 				055D176918E1D42800894C7B /* __XSLock_Initialize.c in Sources */,
+				05944EA8190F9A1A00A016AE /* XSValue_GetPointValue.c in Sources */,
 				055D175D18E1D42800894C7B /* __XSLock_Copy.c in Sources */,
 				05944E52190ED51700A016AE /* __XSSort_QuickSort.c in Sources */,
 				055D194C18E1F47D00894C7B /* __XSPrimitiveArray_Constructor.c in Sources */,
@@ -6615,6 +6846,7 @@
 				05A1538618F5C0D800365881 /* __XSOrderedSet_CreateWithFirstObjectAndArgs.c in Sources */,
 				055D178D18E1D42800894C7B /* __XSNode_ToString.c in Sources */,
 				05632F7618ECB0CE00EB76D2 /* __XSLog_Exit.c in Sources */,
+				053F9FBA19101CB50088A9FD /* XSValue_GetValueType.c in Sources */,
 				05A1534018F53F2D00365881 /* __XSOrderedSet.c in Sources */,
 				05F356C018F095D20070111A /* XSLock_TryLock.c in Sources */,
 				0528E66C1900C82400CCFD28 /* XSNumber_GetXSInt8Value.c in Sources */,
@@ -6633,6 +6865,7 @@
 				0523063B18EB4B1F00C29627 /* XSRetain.c in Sources */,
 				05A1539618F5C0D800365881 /* XSOrderedSet_ApplyMethod.c in Sources */,
 				0528E6081900C82400CCFD28 /* XSNumber_CreateWithXSFloat64.c in Sources */,
+				05944E9C190F9A1A00A016AE /* XSValue_CreateWithSize.c in Sources */,
 				055D169518E1D42800894C7B /* __XSData.c in Sources */,
 				055D187118E1D42800894C7B /* XSSet_GetClassID.c in Sources */,
 				055D18E518E1D42900894C7B /* __XSURL_Equals.c in Sources */,
@@ -6644,12 +6877,15 @@
 				0528E6BC1900C82400CCFD28 /* XSNumber_NumberWithUnsignedLong.c in Sources */,
 				05A1534418F53F2D00365881 /* __XSOrderedSet_Constructor.c in Sources */,
 				0563300A18EEF5F900EB76D2 /* __XSStack_Equals.c in Sources */,
+				053F9FC319102C2A0088A9FD /* XSString_StringFromXSEdgeInsets.c in Sources */,
 				05A153E218F5C0D800365881 /* XSOrderedSet_RemoveObjectAtIndex.c in Sources */,
 				0528E6101900C82400CCFD28 /* XSNumber_CreateWithXSInt16.c in Sources */,
+				05944E98190F9A1A00A016AE /* XSValue_CreateWithRect.c in Sources */,
 				0523051F18EB4B1F00C29627 /* XSAtomic_Read32.c in Sources */,
 				0523053F18EB4B1F00C29627 /* XSPoint_Zero.c in Sources */,
 				0528E5EC1900C82400CCFD28 /* XSNumber_CreateWithShort.c in Sources */,
 				055D18B518E1D42800894C7B /* __XSTimer.c in Sources */,
+				05944EB0190F9A1A00A016AE /* XSValue_GetRectValue.c in Sources */,
 				055D18B918E1D42800894C7B /* __XSTimer_Constructor.c in Sources */,
 				05F3577718F1FB380070111A /* XSThread_GetMainThread.c in Sources */,
 				05A1535418F53F2D00365881 /* __XSOrderedSet_Initialize.c in Sources */,
@@ -6753,11 +6989,13 @@
 				05A1540018F5DCB500365881 /* XSRuntime_GetClassType.c in Sources */,
 				055D161D18E1D42800894C7B /* __XSBag_Initialize.c in Sources */,
 				0523067718EB4B1F00C29627 /* XSRuntime_GetClassID.c in Sources */,
+				053F9FD319102C2A0088A9FD /* XSString_StringFromXSSize.c in Sources */,
 				055D162D18E1D42800894C7B /* __XSBinaryTree_Constructor.c in Sources */,
 				05293EF8190904EE00DC0950 /* __XSDebugger_ReleaseMemoryRecord.c in Sources */,
 				055D195C18E1F47D00894C7B /* __XSPrimitiveArray_Initialize.c in Sources */,
 				05A153DA18F5C0D800365881 /* XSOrderedSet_RemoveLastObject.c in Sources */,
 				0528E6801900C82400CCFD28 /* XSNumber_GetXSUInt8Value.c in Sources */,
+				05944EA0190F9A1A00A016AE /* XSValue_GetEdgeInsetsValue.c in Sources */,
 				058136D518F70CD30046C91B /* __XSAllocWithInfos.c in Sources */,
 				05632F6318EC88F600EB76D2 /* XSString_ContainsCString.c in Sources */,
 				055D17F118E1D42800894C7B /* XSNull_GetClassID.c in Sources */,
@@ -6776,6 +7014,7 @@
 				05F3575218F1C1180070111A /* XSThread_DetachMethodWithArgument.c in Sources */,
 				055D188D18E1D42800894C7B /* __XSString_ToString.c in Sources */,
 				05632F1D18EC513F00EB76D2 /* XSString_IsEqualToString.c in Sources */,
+				05944E8C190F9A1A00A016AE /* XSValue_CreateWithPoint.c in Sources */,
 				05F3569718EEF8410070111A /* XSStack_Push.c in Sources */,
 				0528E5DC1900C82400CCFD28 /* XSNumber_CreateWithDouble.c in Sources */,
 				055D181D18E1D42800894C7B /* __XSRecursiveLock_Copy.c in Sources */,
@@ -6815,6 +7054,7 @@
 				055D187918E1D42800894C7B /* __XSString_Constructor.c in Sources */,
 				055D16DD18E1D42800894C7B /* __XSDictionary_Copy.c in Sources */,
 				0528E6341900C82400CCFD28 /* XSNumber_GetBoolValue.c in Sources */,
+				05944E88190F9A1A00A016AE /* XSValue_CreateWithEdgeInsets.c in Sources */,
 				055D185918E1D42800894C7B /* __XSSet_Constructor.c in Sources */,
 				05A153B618F5C0D800365881 /* XSOrderedSet_GetCount.c in Sources */,
 				0563300218EEF5F900EB76D2 /* __XSStack_Copy.c in Sources */,

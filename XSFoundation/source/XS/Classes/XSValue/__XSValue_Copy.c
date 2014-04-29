@@ -73,7 +73,45 @@
 
 XSValueRef __XSValue_Copy( XSValueRef source, XSValueRef destination )
 {
-    ( void )source;
+    destination->type = source->type;
+    
+    if( source->type == XSValue_ValueTypePointer )
+    {
+        destination->association = source->association;
+        
+        if( source->association == XSObjectAssociationRetain )
+        {
+            destination->pointer = XSRetain( destination->pointer );
+        }
+        else if( source->association == XSObjectAssociationCopy )
+        {
+            destination->pointer = XSCopy( source->pointer );
+        }
+        else
+        {
+            destination->pointer = source->pointer;
+        }
+    }
+    else if( source->type == XSValue_ValueTypePoint )
+    {
+        destination->point = source->point;
+    }
+    else if( source->type == XSValue_ValueTypeSize )
+    {
+        destination->size = source->size;
+    }
+    else if( source->type == XSValue_ValueTypeRect )
+    {
+        destination->rect = source->rect;
+    }
+    else if( source->type == XSValue_ValueTypeEdgeInsets )
+    {
+        destination->insets = source->insets;
+    }
+    else if( source->type == XSValue_ValueTypeRange )
+    {
+        destination->range = source->range;
+    }
     
     return destination;
 }

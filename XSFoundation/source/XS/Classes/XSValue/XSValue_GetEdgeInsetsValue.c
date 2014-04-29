@@ -62,24 +62,21 @@
 /* $Id$ */
 
 /*!
- * @file        __XSValue_Destructor.c
+ * @file        XSValue_GetEdgeInsetsValue.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSValue_Destructor
+ * @abstract    Definition for XSValue_GetEdgeInsetsValue
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSValue.h>
 
-void __XSValue_Destructor( XSValueRef object )
+XSEdgeInsets XSValue_GetEdgeInsetsValue( XSValueRef object )
 {
-    if( object->type != XSValue_ValueTypePointer )
+    if( object == NULL )
     {
-        return;
+        return XSEdgeInsets_Make( ( XSFloat )0, ( XSFloat )0, ( XSFloat )0, ( XSFloat )0 );
     }
     
-    if( object->association == XSObjectAssociationRetain || object->association == XSObjectAssociationCopy )
-    {
-        XSRelease( object->pointer );
-    }
+    return object->insets;
 }
