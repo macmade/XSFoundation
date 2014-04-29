@@ -73,7 +73,23 @@
 
 const char * __XSNotification_ToString( XSNotificationRef object )
 {
-    ( void )object;
+    XSStringRef description;
     
-    return NULL;
+    description = XSString_StringWithFormat
+    (
+        "Name: %s",
+        XSString_GetCString( object->name )
+    );
+    
+    if( object->object != NULL )
+    {
+        description = XSString_StringByAppendingFormat
+        (
+            description,
+            " Sender: %s",
+            XSRuntime_GetDescription( object->object )
+        );
+    }
+    
+    return XSString_GetCString( description );
 }

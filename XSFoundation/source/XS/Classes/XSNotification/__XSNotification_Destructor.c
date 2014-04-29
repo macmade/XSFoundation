@@ -73,5 +73,7 @@
 
 void __XSNotification_Destructor( XSNotificationRef object )
 {
-    ( void )object;
+    XSRelease( object->name );
+    XSRelease( object->object );
+    XSRelease( object->userInfo );
 }

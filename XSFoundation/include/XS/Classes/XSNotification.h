@@ -91,4 +91,48 @@ typedef struct __XSNotification * XSNotificationRef;
  */
 XS_EXPORT XSStatic XSClassID XSNotification_GetClassID( void );
 
+/*!
+ * @function    XSNotification_Notification
+ * @abstract    Gets an XSNotification object
+ * @param       name        The notification's name
+ * @param       object      The notification's object (sender) - Optional, may be NULL
+ * @param       userInfo    The notification's user info - Optional, may be NULL
+ * @return      The XSNotification object (autoreleased)
+ */
+XS_EXPORT XSStatic XSAutoreleased XSNotificationRef XSNotification_Notification( XSStringRef name, XSObjectRef object, XSDictionaryRef userInfo );
+
+/*!
+ * @function    XSNotification_Create
+ * @abstract    Creates an XSNotification object
+ * @param       name        The notification's name
+ * @param       object      The notification's object (sender) - Optional, may be NULL
+ * @param       userInfo    The notification's user info - Optional, may be NULL
+ * @return      The XSNotification object
+ */
+XS_EXPORT XSStatic XSNotificationRef XSNotification_Create( XSStringRef name, XSObjectRef object, XSDictionaryRef userInfo );
+
+/*!
+ * @function    XSNotification_GetName
+ * @abstract    Gets the name of an XSNotification object
+ * @param       object      The XSNotification object
+ * @return      The notification's name
+ */
+XS_EXPORT XSStringRef XSNotification_GetName( XSNotificationRef object );
+
+/*!
+ * @function    XSNotification_GetObject
+ * @abstract    Gets the object (sender) of an XSNotification object
+ * @param       object      The XSNotification object
+ * @return      The notification's object (sender)
+ */
+XS_EXPORT XSStringRef XSNotification_GetObject( XSNotificationRef object );
+
+/*!
+ * @function    XSNotification_GetUserInfo
+ * @abstract    Gets the user info of an XSNotification object
+ * @param       object      The XSNotification object
+ * @return      The notification's user info
+ */
+XS_EXPORT XSDictionaryRef XSNotification_GetUserInfo( XSNotificationRef object );
+
 #endif /* __XS_CLASSES_XS_NOTIFICATION_H__ */

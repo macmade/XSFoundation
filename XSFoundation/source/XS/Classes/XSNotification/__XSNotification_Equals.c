@@ -73,5 +73,20 @@
 
 bool __XSNotification_Equals( XSNotificationRef object1, XSNotificationRef object2 )
 {
-    return object1 == object2;
+    if( object1 == object2 )
+    {
+        return true;
+    }
+    
+    if
+    (
+           object1->object == object2->object
+        && XSEquals( object1->name, object2->name )
+        && XSEquals( object1->userInfo, object2->userInfo )
+    )
+    {
+        return true;
+    }
+    
+    return false;
 }
