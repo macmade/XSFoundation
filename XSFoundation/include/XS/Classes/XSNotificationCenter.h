@@ -79,6 +79,14 @@
 #include <XS/XSMacros.h>
 
 /*!
+ * @typedef     XSNotificationCenter_NotificationCallback
+ * @abstract    Notification callback
+ * @param       object          The receiver object
+ * @param       notification    The notification
+ */
+typedef void ( * XSNotificationCenter_NotificationCallback )( XSObjectRef object, XSNotificationRef notification );
+
+/*!
  * @typedef     XSNotificationCenterRef
  * @abstract    Opaque type for XSNotificationCenter
  */
@@ -90,5 +98,58 @@ typedef struct __XSNotificationCenter * XSNotificationCenterRef;
  * @return      The class ID for XSNotificationCenter
  */
 XS_EXPORT XSStatic XSClassID XSNotificationCenter_GetClassID( void );
+
+/*!
+ * @function    XSNotificationCenter_DefaultCenter
+ * @abstract    Gets the default notification center
+ * @return      The default notification center
+ */
+XS_EXPORT XSStatic XSNotificationCenterRef XSNotificationCenter_DefaultCenter( void );
+
+/*!
+ * @function    XSNotificationCenter_Create
+ * @abstract    Creates a notification center
+ * @return      The notification center
+ */
+XS_EXPORT XSStatic XSNotificationCenterRef XSNotificationCenter_Create( void );
+
+/*!
+ * @function    XSNotificationCenter_AddObserver
+ * @abstract    Adds an observer to a notification center
+ * @param       center      The notification center (if NULL, the default notification center will be used)
+ * @param       observer    The observer object
+ * @param       callback    The notification callback
+ * @param       name        The name of the notification to observe
+ * @param       sender      The sender object (if NULL, the observer will receive the observed notification for all senders)
+ */
+XS_EXPORT void XSNotificationCenter_AddObserver( XSNotificationCenterRef center, XSObjectRef observer, XSNotificationCenter_NotificationCallback callback, XSStringRef name, XSObjectRef sender );
+
+/*!
+ * @function    XSNotificationCenter_RemoveObserver
+ * @abstract    Removes an observer from a notification center
+ * @param       center      The notification center (if NULL, the default notification center will be used)
+ * @param       observer    The observer object
+ * @param       name        The notification name (if NULL, the observer will be removed for all notifications)
+ * @param       sender      The sender object (may be NULL)
+ */
+XS_EXPORT void XSNotificationCenter_RemoveObserver( XSNotificationCenterRef center, XSObjectRef observer, XSStringRef name, XSObjectRef sender );
+
+/*!
+ * @function    XSNotificationCenter_PostNotification
+ * @abstract    Posts a notification to a notification center
+ * @param       center          The notification center (if NULL, the default notification center will be used)
+ * @param       notification    The notification to post
+ */
+XS_EXPORT void XSNotificationCenter_PostNotification( XSNotificationCenterRef center, XSNotificationRef notification );
+
+/*!
+ * @function    XSNotificationCenter_PostNotificationName
+ * @abstract    Posts a notification to a notification center
+ * @param       center      The notification center (if NULL, the default notification center will be used)
+ * @param       name        The name of the notification to post
+ * @param       sender      The sender object (may be NULL)
+ * @param       userInfo    The notification's user info (may be NULL)
+ */
+XS_EXPORT void XSNotificationCenter_PostNotificationName( XSNotificationCenterRef center, XSStringRef name, XSObjectRef sender, XSDictionaryRef userInfo );
 
 #endif /* __XS_CLASSES_XS_NOTIFICATION_CENTER_H__ */

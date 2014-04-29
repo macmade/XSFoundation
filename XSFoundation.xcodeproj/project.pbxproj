@@ -934,6 +934,30 @@
 		0555101E191055CC002B3C05 /* XSNotification_Notification.c in Sources */ = {isa = PBXBuildFile; fileRef = 0555100C191055CC002B3C05 /* XSNotification_Notification.c */; };
 		0555101F191055CC002B3C05 /* XSNotification_Notification.c in Sources */ = {isa = PBXBuildFile; fileRef = 0555100C191055CC002B3C05 /* XSNotification_Notification.c */; };
 		05551020191055CC002B3C05 /* XSNotification_Notification.c in Sources */ = {isa = PBXBuildFile; fileRef = 0555100C191055CC002B3C05 /* XSNotification_Notification.c */; };
+		055510271910687C002B3C05 /* XSNotificationCenter_AddObserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510211910687C002B3C05 /* XSNotificationCenter_AddObserver.c */; };
+		055510281910687C002B3C05 /* XSNotificationCenter_AddObserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510211910687C002B3C05 /* XSNotificationCenter_AddObserver.c */; };
+		055510291910687C002B3C05 /* XSNotificationCenter_AddObserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510211910687C002B3C05 /* XSNotificationCenter_AddObserver.c */; };
+		0555102A1910687C002B3C05 /* XSNotificationCenter_AddObserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510211910687C002B3C05 /* XSNotificationCenter_AddObserver.c */; };
+		0555102B1910687C002B3C05 /* XSNotificationCenter_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510221910687C002B3C05 /* XSNotificationCenter_Create.c */; };
+		0555102C1910687C002B3C05 /* XSNotificationCenter_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510221910687C002B3C05 /* XSNotificationCenter_Create.c */; };
+		0555102D1910687C002B3C05 /* XSNotificationCenter_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510221910687C002B3C05 /* XSNotificationCenter_Create.c */; };
+		0555102E1910687C002B3C05 /* XSNotificationCenter_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510221910687C002B3C05 /* XSNotificationCenter_Create.c */; };
+		0555102F1910687C002B3C05 /* XSNotificationCenter_DefaultCenter.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510231910687C002B3C05 /* XSNotificationCenter_DefaultCenter.c */; };
+		055510301910687C002B3C05 /* XSNotificationCenter_DefaultCenter.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510231910687C002B3C05 /* XSNotificationCenter_DefaultCenter.c */; };
+		055510311910687C002B3C05 /* XSNotificationCenter_DefaultCenter.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510231910687C002B3C05 /* XSNotificationCenter_DefaultCenter.c */; };
+		055510321910687C002B3C05 /* XSNotificationCenter_DefaultCenter.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510231910687C002B3C05 /* XSNotificationCenter_DefaultCenter.c */; };
+		055510331910687C002B3C05 /* XSNotificationCenter_PostNotification.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510241910687C002B3C05 /* XSNotificationCenter_PostNotification.c */; };
+		055510341910687C002B3C05 /* XSNotificationCenter_PostNotification.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510241910687C002B3C05 /* XSNotificationCenter_PostNotification.c */; };
+		055510351910687C002B3C05 /* XSNotificationCenter_PostNotification.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510241910687C002B3C05 /* XSNotificationCenter_PostNotification.c */; };
+		055510361910687C002B3C05 /* XSNotificationCenter_PostNotification.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510241910687C002B3C05 /* XSNotificationCenter_PostNotification.c */; };
+		055510371910687C002B3C05 /* XSNotificationCenter_PostNotificationName.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510251910687C002B3C05 /* XSNotificationCenter_PostNotificationName.c */; };
+		055510381910687C002B3C05 /* XSNotificationCenter_PostNotificationName.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510251910687C002B3C05 /* XSNotificationCenter_PostNotificationName.c */; };
+		055510391910687C002B3C05 /* XSNotificationCenter_PostNotificationName.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510251910687C002B3C05 /* XSNotificationCenter_PostNotificationName.c */; };
+		0555103A1910687C002B3C05 /* XSNotificationCenter_PostNotificationName.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510251910687C002B3C05 /* XSNotificationCenter_PostNotificationName.c */; };
+		0555103B1910687C002B3C05 /* XSNotificationCenter_RemoveObserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510261910687C002B3C05 /* XSNotificationCenter_RemoveObserver.c */; };
+		0555103C1910687C002B3C05 /* XSNotificationCenter_RemoveObserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510261910687C002B3C05 /* XSNotificationCenter_RemoveObserver.c */; };
+		0555103D1910687C002B3C05 /* XSNotificationCenter_RemoveObserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510261910687C002B3C05 /* XSNotificationCenter_RemoveObserver.c */; };
+		0555103E1910687C002B3C05 /* XSNotificationCenter_RemoveObserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 055510261910687C002B3C05 /* XSNotificationCenter_RemoveObserver.c */; };
 		055D15E618E1D42800894C7B /* __XSAutoreleasePool.c in Sources */ = {isa = PBXBuildFile; fileRef = 055D14AC18E1D42800894C7B /* __XSAutoreleasePool.c */; };
 		055D15E718E1D42800894C7B /* __XSAutoreleasePool.c in Sources */ = {isa = PBXBuildFile; fileRef = 055D14AC18E1D42800894C7B /* __XSAutoreleasePool.c */; };
 		055D15E818E1D42800894C7B /* __XSAutoreleasePool.c in Sources */ = {isa = PBXBuildFile; fileRef = 055D14AC18E1D42800894C7B /* __XSAutoreleasePool.c */; };
@@ -2733,6 +2757,12 @@
 		0555100A191055CC002B3C05 /* XSNotification_GetObject.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNotification_GetObject.c; sourceTree = "<group>"; };
 		0555100B191055CC002B3C05 /* XSNotification_GetUserInfo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNotification_GetUserInfo.c; sourceTree = "<group>"; };
 		0555100C191055CC002B3C05 /* XSNotification_Notification.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNotification_Notification.c; sourceTree = "<group>"; };
+		055510211910687C002B3C05 /* XSNotificationCenter_AddObserver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNotificationCenter_AddObserver.c; sourceTree = "<group>"; };
+		055510221910687C002B3C05 /* XSNotificationCenter_Create.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNotificationCenter_Create.c; sourceTree = "<group>"; };
+		055510231910687C002B3C05 /* XSNotificationCenter_DefaultCenter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNotificationCenter_DefaultCenter.c; sourceTree = "<group>"; };
+		055510241910687C002B3C05 /* XSNotificationCenter_PostNotification.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNotificationCenter_PostNotification.c; sourceTree = "<group>"; };
+		055510251910687C002B3C05 /* XSNotificationCenter_PostNotificationName.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNotificationCenter_PostNotificationName.c; sourceTree = "<group>"; };
+		055510261910687C002B3C05 /* XSNotificationCenter_RemoveObserver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNotificationCenter_RemoveObserver.c; sourceTree = "<group>"; };
 		055D14AC18E1D42800894C7B /* __XSAutoreleasePool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSAutoreleasePool.c; sourceTree = "<group>"; };
 		055D14AD18E1D42800894C7B /* __XSAutoreleasePool_Constructor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSAutoreleasePool_Constructor.c; sourceTree = "<group>"; };
 		055D14AE18E1D42800894C7B /* __XSAutoreleasePool_Copy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSAutoreleasePool_Copy.c; sourceTree = "<group>"; };
@@ -3713,6 +3743,12 @@
 				055D153218E1D42800894C7B /* __XSNotificationCenter_Initialize.c */,
 				055D153318E1D42800894C7B /* __XSNotificationCenter_ToString.c */,
 				055D153418E1D42800894C7B /* XSNotificationCenter_GetClassID.c */,
+				055510211910687C002B3C05 /* XSNotificationCenter_AddObserver.c */,
+				055510221910687C002B3C05 /* XSNotificationCenter_Create.c */,
+				055510231910687C002B3C05 /* XSNotificationCenter_DefaultCenter.c */,
+				055510241910687C002B3C05 /* XSNotificationCenter_PostNotification.c */,
+				055510251910687C002B3C05 /* XSNotificationCenter_PostNotificationName.c */,
+				055510261910687C002B3C05 /* XSNotificationCenter_RemoveObserver.c */,
 			);
 			path = XSNotificationCenter;
 			sourceTree = "<group>";
@@ -4472,6 +4508,7 @@
 				05F3586318F20EF10070111A /* XSArray_SortWithFunction.c in Sources */,
 				0523051818EB4B1F00C29627 /* XSAtomic_IncrementInteger.c in Sources */,
 				0528E5DD1900C82400CCFD28 /* XSNumber_CreateWithFloat.c in Sources */,
+				0555102F1910687C002B3C05 /* XSNotificationCenter_DefaultCenter.c in Sources */,
 				0528E6C51900C82400CCFD28 /* XSNumber_NumberWithXSFloat32.c in Sources */,
 				055D16D218E1D42800894C7B /* __XSDictionary.c in Sources */,
 				0523055418EB4B1F00C29627 /* XSRange_Union.c in Sources */,
@@ -4495,6 +4532,7 @@
 				055D15E618E1D42800894C7B /* __XSAutoreleasePool.c in Sources */,
 				0528E62D1900C82400CCFD28 /* XSNumber_CreateWithXSUInteger.c in Sources */,
 				055D179218E1D42800894C7B /* __XSNotification.c in Sources */,
+				0555103B1910687C002B3C05 /* XSNotificationCenter_RemoveObserver.c in Sources */,
 				0523064818EB4B1F00C29627 /* __XSRuntime.c in Sources */,
 				0523059C18EB4B1F00C29627 /* XSRect_IsNull.c in Sources */,
 				055D197518E1F47D00894C7B /* __XSValue_Equals.c in Sources */,
@@ -4763,6 +4801,7 @@
 				0523067818EB4B1F00C29627 /* XSRuntime_GetClassIDOfClassNamed.c in Sources */,
 				0523050818EB4B1F00C29627 /* XSAtomic_Decrement64.c in Sources */,
 				058136DB18F743360046C91B /* XSAutoreleasePool_Drain.c in Sources */,
+				055510271910687C002B3C05 /* XSNotificationCenter_AddObserver.c in Sources */,
 				0528E6911900C82400CCFD28 /* XSNumber_IsFloatType.c in Sources */,
 				052306B818EB4B1F00C29627 /* XSThreading_SemaphoreSignal.c in Sources */,
 				05944EC9190F9A1A00A016AE /* XSValue_ValueWithSize.c in Sources */,
@@ -4821,6 +4860,7 @@
 				05632FF718EEF5F900EB76D2 /* __XSStack.c in Sources */,
 				0528E6691900C82400CCFD28 /* XSNumber_GetXSInt8Value.c in Sources */,
 				0563301318EEF5F900EB76D2 /* XSStack_GetClassID.c in Sources */,
+				0555102B1910687C002B3C05 /* XSNotificationCenter_Create.c in Sources */,
 				055D186218E1D42800894C7B /* __XSSet_Equals.c in Sources */,
 				055D180618E1D42800894C7B /* __XSNumber_Initialize.c in Sources */,
 				0523064C18EB4B1F00C29627 /* __XSRuntime_Finalize.c in Sources */,
@@ -4890,6 +4930,7 @@
 				05F3573618F195D60070111A /* XSSemaphore_GetName.c in Sources */,
 				055D17C218E1D42800894C7B /* __XSNotificationCenter_Equals.c in Sources */,
 				058136E018F746940046C91B /* __XSAutoreleasePool_Exit.c in Sources */,
+				055510371910687C002B3C05 /* XSNotificationCenter_PostNotificationName.c in Sources */,
 				0528E6891900C82400CCFD28 /* XSNumber_GetXSUInt64Value.c in Sources */,
 				0555100D191055CC002B3C05 /* XSNotification_Create.c in Sources */,
 				05F3572718F190660070111A /* XSSemaphore_TryWait.c in Sources */,
@@ -4998,6 +5039,7 @@
 				055D166A18E1D42800894C7B /* XSBoolean_GetValue.c in Sources */,
 				05F3584F18F20EF10070111A /* XSArray_ContainsObject.c in Sources */,
 				05944E5B190ED51700A016AE /* XSSort_ShellSort.c in Sources */,
+				055510331910687C002B3C05 /* XSNotificationCenter_PostNotification.c in Sources */,
 				0528E6F11900C82400CCFD28 /* XSNumber_NumberWithXSUInteger.c in Sources */,
 				0523057418EB4B1F00C29627 /* XSRect_GetMidY.c in Sources */,
 				055D16B618E1D42800894C7B /* __XSDate_Constructor.c in Sources */,
@@ -5079,6 +5121,7 @@
 				05A58C8918F21153006961E7 /* XSArray_SortWithFunction.c in Sources */,
 				0523051918EB4B1F00C29627 /* XSAtomic_IncrementInteger.c in Sources */,
 				0528E5DE1900C82400CCFD28 /* XSNumber_CreateWithFloat.c in Sources */,
+				055510301910687C002B3C05 /* XSNotificationCenter_DefaultCenter.c in Sources */,
 				0528E6C61900C82400CCFD28 /* XSNumber_NumberWithXSFloat32.c in Sources */,
 				055D16D318E1D42800894C7B /* __XSDictionary.c in Sources */,
 				0523055518EB4B1F00C29627 /* XSRange_Union.c in Sources */,
@@ -5102,6 +5145,7 @@
 				055D15E718E1D42800894C7B /* __XSAutoreleasePool.c in Sources */,
 				0528E62E1900C82400CCFD28 /* XSNumber_CreateWithXSUInteger.c in Sources */,
 				055D179318E1D42800894C7B /* __XSNotification.c in Sources */,
+				0555103C1910687C002B3C05 /* XSNotificationCenter_RemoveObserver.c in Sources */,
 				0523064918EB4B1F00C29627 /* __XSRuntime.c in Sources */,
 				0523059D18EB4B1F00C29627 /* XSRect_IsNull.c in Sources */,
 				055D197618E1F47D00894C7B /* __XSValue_Equals.c in Sources */,
@@ -5370,6 +5414,7 @@
 				052306DD18EB4B1F00C29627 /* XSThreading_TLSSetValue.c in Sources */,
 				0523067918EB4B1F00C29627 /* XSRuntime_GetClassIDOfClassNamed.c in Sources */,
 				058136DC18F743360046C91B /* XSAutoreleasePool_Drain.c in Sources */,
+				055510281910687C002B3C05 /* XSNotificationCenter_AddObserver.c in Sources */,
 				0528E6921900C82400CCFD28 /* XSNumber_IsFloatType.c in Sources */,
 				0523050918EB4B1F00C29627 /* XSAtomic_Decrement64.c in Sources */,
 				05944ECA190F9A1A00A016AE /* XSValue_ValueWithSize.c in Sources */,
@@ -5428,6 +5473,7 @@
 				05F356BE18F095D20070111A /* XSLock_TryLock.c in Sources */,
 				0528E66A1900C82400CCFD28 /* XSNumber_GetXSInt8Value.c in Sources */,
 				05632FF818EEF5F900EB76D2 /* __XSStack.c in Sources */,
+				0555102C1910687C002B3C05 /* XSNotificationCenter_Create.c in Sources */,
 				05A58C6918F21153006961E7 /* __XSArray_Constructor.c in Sources */,
 				0563301418EEF5F900EB76D2 /* XSStack_GetClassID.c in Sources */,
 				055D186318E1D42800894C7B /* __XSSet_Equals.c in Sources */,
@@ -5497,6 +5543,7 @@
 				0523051518EB4B1F00C29627 /* XSAtomic_Increment64.c in Sources */,
 				052304ED18EB4B1F00C29627 /* XSAtomic_Add64.c in Sources */,
 				058136E118F746940046C91B /* __XSAutoreleasePool_Exit.c in Sources */,
+				055510381910687C002B3C05 /* XSNotificationCenter_PostNotificationName.c in Sources */,
 				05F3573718F195D60070111A /* XSSemaphore_GetName.c in Sources */,
 				0555100E191055CC002B3C05 /* XSNotification_Create.c in Sources */,
 				0528E68A1900C82400CCFD28 /* XSNumber_GetXSUInt64Value.c in Sources */,
@@ -5605,6 +5652,7 @@
 				055D166B18E1D42800894C7B /* XSBoolean_GetValue.c in Sources */,
 				05A58C7518F21153006961E7 /* XSArray_ContainsObject.c in Sources */,
 				05944E5C190ED51700A016AE /* XSSort_ShellSort.c in Sources */,
+				055510341910687C002B3C05 /* XSNotificationCenter_PostNotification.c in Sources */,
 				0528E6F21900C82400CCFD28 /* XSNumber_NumberWithXSUInteger.c in Sources */,
 				0523057518EB4B1F00C29627 /* XSRect_GetMidY.c in Sources */,
 				055D16B718E1D42800894C7B /* __XSDate_Constructor.c in Sources */,
@@ -5686,6 +5734,7 @@
 				05A58C6618F21152006961E7 /* XSArray_SortWithFunction.c in Sources */,
 				0523051A18EB4B1F00C29627 /* XSAtomic_IncrementInteger.c in Sources */,
 				0528E5DF1900C82400CCFD28 /* XSNumber_CreateWithFloat.c in Sources */,
+				055510311910687C002B3C05 /* XSNotificationCenter_DefaultCenter.c in Sources */,
 				0528E6C71900C82400CCFD28 /* XSNumber_NumberWithXSFloat32.c in Sources */,
 				055D16D418E1D42800894C7B /* __XSDictionary.c in Sources */,
 				0523055618EB4B1F00C29627 /* XSRange_Union.c in Sources */,
@@ -5709,6 +5758,7 @@
 				055D15E818E1D42800894C7B /* __XSAutoreleasePool.c in Sources */,
 				0528E62F1900C82400CCFD28 /* XSNumber_CreateWithXSUInteger.c in Sources */,
 				055D179418E1D42800894C7B /* __XSNotification.c in Sources */,
+				0555103D1910687C002B3C05 /* XSNotificationCenter_RemoveObserver.c in Sources */,
 				0523064A18EB4B1F00C29627 /* __XSRuntime.c in Sources */,
 				0523059E18EB4B1F00C29627 /* XSRect_IsNull.c in Sources */,
 				055D197718E1F47D00894C7B /* __XSValue_Equals.c in Sources */,
@@ -5977,6 +6027,7 @@
 				052306DE18EB4B1F00C29627 /* XSThreading_TLSSetValue.c in Sources */,
 				0523067A18EB4B1F00C29627 /* XSRuntime_GetClassIDOfClassNamed.c in Sources */,
 				058136DD18F743360046C91B /* XSAutoreleasePool_Drain.c in Sources */,
+				055510291910687C002B3C05 /* XSNotificationCenter_AddObserver.c in Sources */,
 				0528E6931900C82400CCFD28 /* XSNumber_IsFloatType.c in Sources */,
 				0523050A18EB4B1F00C29627 /* XSAtomic_Decrement64.c in Sources */,
 				05944ECB190F9A1A00A016AE /* XSValue_ValueWithSize.c in Sources */,
@@ -6035,6 +6086,7 @@
 				05F356BF18F095D20070111A /* XSLock_TryLock.c in Sources */,
 				0528E66B1900C82400CCFD28 /* XSNumber_GetXSInt8Value.c in Sources */,
 				05632FF918EEF5F900EB76D2 /* __XSStack.c in Sources */,
+				0555102D1910687C002B3C05 /* XSNotificationCenter_Create.c in Sources */,
 				05A58C4618F21152006961E7 /* __XSArray_Constructor.c in Sources */,
 				0563301518EEF5F900EB76D2 /* XSStack_GetClassID.c in Sources */,
 				055D186418E1D42800894C7B /* __XSSet_Equals.c in Sources */,
@@ -6104,6 +6156,7 @@
 				0523051618EB4B1F00C29627 /* XSAtomic_Increment64.c in Sources */,
 				052304EE18EB4B1F00C29627 /* XSAtomic_Add64.c in Sources */,
 				058136E218F746940046C91B /* __XSAutoreleasePool_Exit.c in Sources */,
+				055510391910687C002B3C05 /* XSNotificationCenter_PostNotificationName.c in Sources */,
 				05F3573818F195D60070111A /* XSSemaphore_GetName.c in Sources */,
 				0555100F191055CC002B3C05 /* XSNotification_Create.c in Sources */,
 				0528E68B1900C82400CCFD28 /* XSNumber_GetXSUInt64Value.c in Sources */,
@@ -6212,6 +6265,7 @@
 				055D166C18E1D42800894C7B /* XSBoolean_GetValue.c in Sources */,
 				05A58C5218F21152006961E7 /* XSArray_ContainsObject.c in Sources */,
 				05944E5D190ED51700A016AE /* XSSort_ShellSort.c in Sources */,
+				055510351910687C002B3C05 /* XSNotificationCenter_PostNotification.c in Sources */,
 				0528E6F31900C82400CCFD28 /* XSNumber_NumberWithXSUInteger.c in Sources */,
 				0523057618EB4B1F00C29627 /* XSRect_GetMidY.c in Sources */,
 				055D16B818E1D42800894C7B /* __XSDate_Constructor.c in Sources */,
@@ -6293,6 +6347,7 @@
 				05A58C4318F21152006961E7 /* XSArray_SortWithFunction.c in Sources */,
 				0523051B18EB4B1F00C29627 /* XSAtomic_IncrementInteger.c in Sources */,
 				0528E5E01900C82400CCFD28 /* XSNumber_CreateWithFloat.c in Sources */,
+				055510321910687C002B3C05 /* XSNotificationCenter_DefaultCenter.c in Sources */,
 				0528E6C81900C82400CCFD28 /* XSNumber_NumberWithXSFloat32.c in Sources */,
 				055D16D518E1D42800894C7B /* __XSDictionary.c in Sources */,
 				0523055718EB4B1F00C29627 /* XSRange_Union.c in Sources */,
@@ -6316,6 +6371,7 @@
 				055D15E918E1D42800894C7B /* __XSAutoreleasePool.c in Sources */,
 				0528E6301900C82400CCFD28 /* XSNumber_CreateWithXSUInteger.c in Sources */,
 				055D179518E1D42800894C7B /* __XSNotification.c in Sources */,
+				0555103E1910687C002B3C05 /* XSNotificationCenter_RemoveObserver.c in Sources */,
 				0523064B18EB4B1F00C29627 /* __XSRuntime.c in Sources */,
 				0523059F18EB4B1F00C29627 /* XSRect_IsNull.c in Sources */,
 				055D197818E1F47D00894C7B /* __XSValue_Equals.c in Sources */,
@@ -6584,6 +6640,7 @@
 				052306DF18EB4B1F00C29627 /* XSThreading_TLSSetValue.c in Sources */,
 				0523067B18EB4B1F00C29627 /* XSRuntime_GetClassIDOfClassNamed.c in Sources */,
 				058136DE18F743360046C91B /* XSAutoreleasePool_Drain.c in Sources */,
+				0555102A1910687C002B3C05 /* XSNotificationCenter_AddObserver.c in Sources */,
 				0528E6941900C82400CCFD28 /* XSNumber_IsFloatType.c in Sources */,
 				0523050B18EB4B1F00C29627 /* XSAtomic_Decrement64.c in Sources */,
 				05944ECC190F9A1A00A016AE /* XSValue_ValueWithSize.c in Sources */,
@@ -6642,6 +6699,7 @@
 				05F356C018F095D20070111A /* XSLock_TryLock.c in Sources */,
 				0528E66C1900C82400CCFD28 /* XSNumber_GetXSInt8Value.c in Sources */,
 				05632FFA18EEF5F900EB76D2 /* __XSStack.c in Sources */,
+				0555102E1910687C002B3C05 /* XSNotificationCenter_Create.c in Sources */,
 				05A58C2318F21152006961E7 /* __XSArray_Constructor.c in Sources */,
 				0563301618EEF5F900EB76D2 /* XSStack_GetClassID.c in Sources */,
 				055D186518E1D42800894C7B /* __XSSet_Equals.c in Sources */,
@@ -6711,6 +6769,7 @@
 				0523051718EB4B1F00C29627 /* XSAtomic_Increment64.c in Sources */,
 				052304EF18EB4B1F00C29627 /* XSAtomic_Add64.c in Sources */,
 				058136E318F746940046C91B /* __XSAutoreleasePool_Exit.c in Sources */,
+				0555103A1910687C002B3C05 /* XSNotificationCenter_PostNotificationName.c in Sources */,
 				05F3573918F195D60070111A /* XSSemaphore_GetName.c in Sources */,
 				05551010191055CC002B3C05 /* XSNotification_Create.c in Sources */,
 				0528E68C1900C82400CCFD28 /* XSNumber_GetXSUInt64Value.c in Sources */,
@@ -6819,6 +6878,7 @@
 				055D166D18E1D42800894C7B /* XSBoolean_GetValue.c in Sources */,
 				05A58C2F18F21152006961E7 /* XSArray_ContainsObject.c in Sources */,
 				05944E5E190ED51700A016AE /* XSSort_ShellSort.c in Sources */,
+				055510361910687C002B3C05 /* XSNotificationCenter_PostNotification.c in Sources */,
 				0528E6F41900C82400CCFD28 /* XSNumber_NumberWithXSUInteger.c in Sources */,
 				0523057718EB4B1F00C29627 /* XSRect_GetMidY.c in Sources */,
 				055D16B918E1D42800894C7B /* __XSDate_Constructor.c in Sources */,
