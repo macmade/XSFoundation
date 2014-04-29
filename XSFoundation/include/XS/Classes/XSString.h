@@ -288,4 +288,44 @@ XS_EXPORT bool XSString_ContainsCString( XSStringRef object, const char * s );
  */
 XS_EXPORT bool XSString_ContainsString( XSStringRef object, XSStringRef s );
 
+/*!
+ * @function    XSString_StringFromXSPoint
+ * @abstract    Gets an XSString object from an XSPoint value
+ * @param       point   The XSPoint value
+ * @return      An XSString object (autoreleased)
+ */
+XS_EXPORT XSStatic XSAutoreleased XSStringRef XSString_StringFromXSPoint( XSPoint point );
+
+/*!
+ * @function    XSString_StringFromXSSize
+ * @abstract    Gets an XSString object from an XSSize value
+ * @param       size    The XSSize value
+ * @return      An XSString object (autoreleased)
+ */
+XS_EXPORT XSStatic XSAutoreleased XSStringRef XSString_StringFromXSSize( XSSize size );
+
+/*!
+ * @function    XSString_StringFromXSRect
+ * @abstract    Gets an XSString object from an XSRect value
+ * @param       rect    The XSRect value
+ * @return      An XSString object (autoreleased)
+ */
+XS_EXPORT XSStatic XSAutoreleased XSStringRef XSString_StringFromXSRect( XSRect rect );
+
+/*!
+ * @function    XSString_StringFromXSEdgeInsets
+ * @abstract    Gets an XSString object from an XSEdgeInsets value
+ * @param       insets  The XSEdgeInsets value
+ * @return      An XSString object (autoreleased)
+ */
+XS_EXPORT XSStatic XSAutoreleased XSStringRef XSString_StringFromXSEdgeInsets( XSEdgeInsets insets );
+
+/*!
+ * @function    XSString_StringFromXSRange
+ * @abstract    Gets an XSString object from an XSRange value
+ * @param       range   The XSRange value
+ * @return      An XSString object (autoreleased)
+ */
+XS_EXPORT XSStatic XSAutoreleased XSStringRef XSString_StringFromXSRange( XSRange range );
+
 #endif /* __XS_CLASSES_XS_STRING_H__ */
