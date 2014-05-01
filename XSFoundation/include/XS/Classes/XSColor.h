@@ -91,4 +91,66 @@ typedef struct __XSColor * XSColorRef;
  */
 XS_EXPORT XSStatic XSClassID XSColor_GetClassID( void );
 
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_BlackColor( void );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_BlueColor( void );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_BrownColor( void );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_ClearColor( void );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_CyanColor( void );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_DarkGrayColor( void );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_GrayColor( void );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_GreenColor( void );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_LightGrayColor( void );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_MagentaColor( void );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_OrangeColor( void );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_PurpleColor( void );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_RedColor( void );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_WhiteColor( void );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_YellowColor( void );
+
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_ColorWithRGB( XSFloat r, XSFloat g, XSFloat b );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_ColorWithHSL( XSFloat h, XSFloat s, XSFloat l );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_ColorWithHSV( XSFloat h, XSFloat s, XSFloat v );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_ColorWithRGBA( XSFloat r, XSFloat g, XSFloat b, XSFloat a );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_ColorWithHSLA( XSFloat h, XSFloat s, XSFloat l, XSFloat a );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_ColorWithHSVA( XSFloat h, XSFloat s, XSFloat v, XSFloat a );
+
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_CreateWithRGB( XSFloat r, XSFloat g, XSFloat b );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_CreateWithHSL( XSFloat h, XSFloat s, XSFloat l );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_CreateWithHSV( XSFloat h, XSFloat s, XSFloat v );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_CreateWithRGBA( XSFloat r, XSFloat g, XSFloat b, XSFloat a );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_CreateWithHSLA( XSFloat h, XSFloat s, XSFloat l, XSFloat a );
+XS_EXPORT XSStatic XSAutoreleased XSColorRef XSColor_CreateWithHSVA( XSFloat h, XSFloat s, XSFloat v, XSFloat a );
+
+XS_EXPORT XSFloat XSColor_GetRed( XSColorRef object );
+XS_EXPORT XSFloat XSColor_GetGreen( XSColorRef object );
+XS_EXPORT XSFloat XSColor_GetBlue( XSColorRef object );
+XS_EXPORT XSFloat XSColor_GetHue( XSColorRef object );
+XS_EXPORT XSFloat XSColor_GetSaturation( XSColorRef object );
+XS_EXPORT XSFloat XSColor_GetLuminance( XSColorRef object );
+XS_EXPORT XSFloat XSColor_GetValue( XSColorRef object );
+XS_EXPORT XSFloat XSColor_GetAlpha( XSColorRef object );
+
+XS_EXPORT void XSColor_SetRed( XSColorRef object, XSFloat r );
+XS_EXPORT void XSColor_SetGreen( XSColorRef object, XSFloat g );
+XS_EXPORT void XSColor_SetBlue( XSColorRef object, XSFloat b );
+XS_EXPORT void XSColor_SetHue( XSColorRef object, XSFloat h );
+XS_EXPORT void XSColor_SetSaturation( XSColorRef object, XSFloat s );
+XS_EXPORT void XSColor_SetLuminance( XSColorRef object, XSFloat l );
+XS_EXPORT void XSColor_SetValue( XSColorRef object, XSFloat v );
+XS_EXPORT void XSColor_SetAlpha( XSColorRef object, XSFloat a );
+
+XS_EXPORT void XSColor_GetRGB( XSColorRef object, XSFloat * r, XSFloat * g, XSFloat * b );
+XS_EXPORT void XSColor_GetHSL( XSColorRef object, XSFloat * h, XSFloat * s, XSFloat * l );
+XS_EXPORT void XSColor_GetHSV( XSColorRef object, XSFloat * h, XSFloat * s, XSFloat * v );
+XS_EXPORT void XSColor_GetRGBA( XSColorRef object, XSFloat * r, XSFloat * g, XSFloat * b, XSFloat * a );
+XS_EXPORT void XSColor_GetHSLA( XSColorRef object, XSFloat * h, XSFloat * s, XSFloat * l, XSFloat * a );
+XS_EXPORT void XSColor_GetHSVA( XSColorRef object, XSFloat * h, XSFloat * s, XSFloat * v, XSFloat * a );
+
+XS_EXPORT void XSColor_SetRGB( XSColorRef object, XSFloat r, XSFloat g, XSFloat b );
+XS_EXPORT void XSColor_SetHSL( XSColorRef object, XSFloat h, XSFloat s, XSFloat l );
+XS_EXPORT void XSColor_SetHSV( XSColorRef object, XSFloat h, XSFloat s, XSFloat v );
+XS_EXPORT void XSColor_SetRGBA( XSColorRef object, XSFloat r, XSFloat g, XSFloat b, XSFloat a );
+XS_EXPORT void XSColor_SetHSLA( XSColorRef object, XSFloat h, XSFloat s, XSFloat l, XSFloat a );
+XS_EXPORT void XSColor_SetHSVA( XSColorRef object, XSFloat h, XSFloat s, XSFloat v, XSFloat a );
+
 #endif /* __XS_CLASSES_XS_COLOR_H__ */

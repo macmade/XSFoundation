@@ -73,7 +73,22 @@
 
 XSColorRef __XSColor_Copy( XSColorRef source, XSColorRef destination )
 {
-    ( void )source;
+    XSFloat r;
+    XSFloat g;
+    XSFloat b;
+    XSFloat a;
+    
+    destination->lock = XSRecursiveLock_Create();
+    
+    if( destination->lock == NULL )
+    {
+        XSLogWarning( "Error creating a lock for XSColor" );
+        
+        return NULL;
+    }
+    
+    XSColor_GetRGBA( source, &r, &g, &b, &a );
+    XSColor_SetRGBA( destination, r, g, b, a );
     
     return destination;
 }

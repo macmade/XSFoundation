@@ -73,5 +73,31 @@
 
 bool __XSColor_Equals( XSColorRef object1, XSColorRef object2 )
 {
-    return object1 == object2;
+    bool equals;
+    
+    if( object1 == object2 )
+    {
+        return true;
+    }
+    
+    equals = false;
+    
+    XSRecursiveLock_Lock( object1->lock );
+    XSRecursiveLock_Lock( object2->lock );
+    
+    if
+    (
+           XSFloat_IsEqualToFloat( object1->r, object2->r )
+        && XSFloat_IsEqualToFloat( object1->g, object2->g )
+        && XSFloat_IsEqualToFloat( object1->b, object2->b )
+        && XSFloat_IsEqualToFloat( object1->a, object2->a )
+    )
+    {
+        equals = true;
+    }
+    
+    XSRecursiveLock_Unlock( object1->lock );
+    XSRecursiveLock_Unlock( object2->lock );
+    
+    return equals;
 }

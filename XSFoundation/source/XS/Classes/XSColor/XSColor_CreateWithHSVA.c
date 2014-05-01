@@ -62,96 +62,32 @@
 /* $Id$ */
 
 /*!
- * @header      XSColor.h
+ * @file        XSColor_CreateWithHSVA.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSColor.h
+ * @abstract    Definition for XSColor_CreateWithHSVA
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Classes/XSColor.h>
 
-#ifndef __XS___PRIVATE_CLASSES_XS_COLOR_H__
-#define __XS___PRIVATE_CLASSES_XS_COLOR_H__
-
-#include <XS/XSTypes.h>
-#include <XS/XSMacros.h>
-
-/*!
- * @struct      __XSColor
- * @abstract    Structure for XSColor
- */
-struct __XSColor
+XSStatic XSAutoreleased XSColorRef XSColor_CreateWithHSVA( XSFloat h, XSFloat s, XSFloat v, XSFloat a )
 {
-    XSFloat             r;      /*! The red component */
-    XSFloat             g;      /*! The green component */
-    XSFloat             b;      /*! The blue component */
-    XSFloat             h;      /*! The hue component */
-    XSFloat             s;      /*! The saturation component */
-    XSFloat             l;      /*! The luminance component */
-    XSFloat             v;      /*! The value component */
-    XSFloat             a;      /*! The alpha component */
-    XSRecursiveLockRef  lock;   /*! The lock for thread-safety */
-};
-
-/*!
- * @var         __XSColor_ClassID
- * @abstract    Class ID
- */
-XS_EXTERN XSClassID __XSColor_ClassID;
-
-/*!
- * @var         __XSColor_Class
- * @abstract    Class info
- */
-XS_EXTERN XSClassInfo __XSColor_Class;
-
-/*!
- * @function    __XSColor_Initialize
- * @abstract    Class initializer
- */
-XSStatic void __XSColor_Initialize( void );
-
-/*!
- * @function    __XSColor_Constructor
- * @abstract    Class constructor callback
- * @param       object      The object beeing construct
- * @return      The new object
- */
-XSColorRef __XSColor_Constructor( XSColorRef object );
-
-/*!
- * @function    __XSColor_Destructor
- * @abstract    Class destructor callback
- * @param       object      The object beeing destruct
- */
-void __XSColor_Destructor( XSColorRef object );
-
-/*!
- * @function    __XSColor_Copy
- * @abstract    Class copy callback
- * @param       source      The object to copy
- * @param       destination The object beeing copied
- * @result      The copied object
- */
-XSColorRef __XSColor_Copy( XSColorRef source, XSColorRef destination );
-
-/*!
- * @function    __XSColor_Equals
- * @abstract    Class equals callback
- * @param       object1     The first object to compare
- * @param       object2     The second object to compare
- * @return      True if both objects are equals, otherwise false
- */
-bool __XSColor_Equals( XSColorRef object1, XSColorRef object2 );
-
-/*!
- * @function    __XSColor_ToString
- * @abstract    Class to-string callback
- * @param       object      The object for which to get a description
- * @return      The object's description
- */
-const char * __XSColor_ToString( XSColorRef object );
-
-#endif /* __XS___PRIVATE_CLASSES_XS_COLOR_H__ */
+    XSColorRef object;
+    
+    object = XSRuntime_CreateInstance( XSColor_GetClassID() );
+    
+    if( object == NULL )
+    {
+        XSLogWarning( "Error creating an XSColor object" );
+        
+        return NULL;
+    }
+    
+    object->h = h;
+    object->s = s;
+    object->v = v;
+    object->a = a;
+    
+    return object;
+}

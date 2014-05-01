@@ -73,7 +73,15 @@
 
 const char * __XSColor_ToString( XSColorRef object )
 {
-    ( void )object;
+    XSFloat     r;
+    XSFloat     g;
+    XSFloat     b;
+    XSFloat     a;
+    XSStringRef description;
     
-    return NULL;
+    XSColor_GetRGBA( object, &r, &g, &b, &a );
+    
+    description = XSString_StringWithFormat( "R: %f G: %f B: %f A: %f", r, g, b, a );
+    
+    return XSString_GetCString( description );
 }

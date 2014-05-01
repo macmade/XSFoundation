@@ -73,5 +73,5 @@
 
 void __XSColor_Destructor( XSColorRef object )
 {
-    ( void )object;
+    XSRelease( object->lock );
 }
