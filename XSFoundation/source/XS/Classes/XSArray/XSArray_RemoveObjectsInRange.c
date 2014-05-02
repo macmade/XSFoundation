@@ -84,6 +84,11 @@ void XSArray_RemoveObjectsInRange( XSArrayRef array, XSRange range )
     
     XSRecursiveLock_Lock( array->lock );
     
+    if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
+    {
+        XSFatalError( "Cannot remove objects from an immutable array" );
+    }
+    
     if( range.location >= array->count )
     {
         XSRecursiveLock_Unlock( array->lock );

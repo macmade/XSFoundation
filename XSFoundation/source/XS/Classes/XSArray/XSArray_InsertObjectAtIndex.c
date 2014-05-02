@@ -89,6 +89,11 @@ void XSArray_InsertObjectAtIndex( XSArrayRef array, XSUInteger index, XSObjectRe
     
     XSRecursiveLock_Lock( array->lock );
     
+    if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
+    {
+        XSFatalError( "Cannot insert an object in an immutable array" );
+    }
+    
     if( index > array->count )
     {
         XSFatalError( "Cannot insert object in an XSArray - Index %lu out of bounds", ( unsigned long )index );

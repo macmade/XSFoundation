@@ -85,6 +85,11 @@ void XSArray_SortWithFunction( XSArrayRef array, XSArray_SortFunction function )
     
     XSRecursiveLock_Lock( array->lock );
     
+    if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
+    {
+        XSFatalError( "Cannot sort an immutable array" );
+    }
+    
     if( array->count < 2 )
     {
         XSRecursiveLock_Unlock( array->lock );

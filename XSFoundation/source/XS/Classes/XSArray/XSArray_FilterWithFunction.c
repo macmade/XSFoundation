@@ -85,6 +85,11 @@ void XSArray_FilterWithFunction( XSArrayRef array, XSArray_FilterFunction functi
     
     XSRecursiveLock_Lock( array->lock );
     
+    if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
+    {
+        XSFatalError( "Cannot filter an immutable array" );
+    }
+    
     value = array->first;
     i     = 0;
     stop  = false;

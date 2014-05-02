@@ -88,6 +88,11 @@ void XSArray_ReplaceObjectAtIndex( XSArrayRef array, XSUInteger index, XSObjectR
     
     XSRecursiveLock_Lock( array->lock );
     
+    if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
+    {
+        XSFatalError( "Cannot replace an object from an immutable array" );
+    }
+    
     if( index >= array->count )
     {
         XSRecursiveLock_Unlock( array->lock );

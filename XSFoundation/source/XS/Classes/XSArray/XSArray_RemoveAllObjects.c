@@ -83,6 +83,11 @@ void XSArray_RemoveAllObjects( XSArrayRef array )
     
     XSRecursiveLock_Lock( array->lock );
     
+    if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
+    {
+        XSFatalError( "Cannot remove objects from an immutable array" );
+    }
+    
     value = array->first;
     
     while( value != NULL )

@@ -85,6 +85,11 @@ XS_EXPORT void XSArray_FilterWithMethod( XSArrayRef array, XSObjectRef object, X
     
     XSRecursiveLock_Lock( array->lock );
     
+    if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
+    {
+        XSFatalError( "Cannot filter an immutable array" );
+    }
+    
     value = array->first;
     i     = 0;
     stop  = false;

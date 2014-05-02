@@ -84,6 +84,11 @@ void XSArray_AppendArray( XSArrayRef array, XSArrayRef objects )
     XSRecursiveLock_Lock( array->lock );
     XSRecursiveLock_Lock( objects->lock );
     
+    if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
+    {
+        XSFatalError( "Cannot append values to an immutable array" );
+    }
+    
     if( objects->count == 0 )
     {
         XSRecursiveLock_Unlock( objects->lock );
