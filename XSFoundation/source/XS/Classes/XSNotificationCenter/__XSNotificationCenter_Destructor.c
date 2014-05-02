@@ -73,5 +73,32 @@
 
 void __XSNotificationCenter_Destructor( XSNotificationCenterRef object )
 {
-    ( void )object;
+    __XSNotificationCenter_NotificationList * notification;
+    __XSNotificationCenter_NotificationList * nextNotification;
+    __XSNotificationCenter_ObserverList     * observer;
+    __XSNotificationCenter_ObserverList     * nextObserver;
+    
+    notification = object->notifications;
+    
+    while( notification != NULL )
+    {
+        XSRelease( notification->name );
+        
+        observer = notification->observers;
+        
+        while( observer != NULL )
+        {
+            nextObserver = observer->next;
+            
+            XSRelease( observer );
+            
+            observer = nextObserver;
+        }
+        
+        nextNotification = notification->next;
+        
+        XSRelease( notification );
+        
+        notification = nextNotification;
+    }
 }

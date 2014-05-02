@@ -73,11 +73,8 @@
 
 void XSNotificationCenter_RemoveObserver( XSNotificationCenterRef center, XSObjectRef observer, XSStringRef name, XSObjectRef sender )
 {
-    if( center == NULL || observer == NULL )
-    {
-        return;
-    }
-    
+    ( void )center;
+    ( void )observer;
     ( void )name;
     ( void )sender;
 }

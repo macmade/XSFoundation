@@ -83,4 +83,3 @@ XSClassInfo __XSNotificationCenter_Class   =
     ( XSClassCallbackEquals      )__XSNotificationCenter_Equals,
     ( XSClassCallbackToString    )__XSNotificationCenter_ToString
 };
-

@@ -78,13 +78,39 @@
 #include <XS/XSTypes.h>
 #include <XS/XSMacros.h>
 
+
+/*!
+ * @typedef     __XSNotificationCenter_NotificationList
+ * @abstract    Observer list item
+ */
+typedef struct __XSNotificationCenter_ObserverListStruct
+{
+    XSObjectRef                                        observer;    /*! The observer object */
+    XSNotificationCenter_NotificationCallback          callback;    /*! The notification callback */
+    XSObjectRef                                        sender;      /*! The observed object (sender) */
+    struct __XSNotificationCenter_ObserverListStruct * next;        /*! The next observer list item */
+}
+__XSNotificationCenter_ObserverList;
+
+/*!
+ * @typedef     __XSNotificationCenter_NotificationList
+ * @abstract    Notification list item
+ */
+typedef struct __XSNotificationCenter_NotificationListStruct
+{
+    XSStringRef                                             name;       /*! The notification name */
+    __XSNotificationCenter_ObserverList                   * observers;  /*! The observers for the notification */
+    struct __XSNotificationCenter_NotificationListStruct  * next;       /*! The next notification list item */
+}
+__XSNotificationCenter_NotificationList;
+
 /*!
  * @struct      __XSNotificationCenter
  * @abstract    Structure for XSNotificationCenter
  */
 struct __XSNotificationCenter
 {
-    void * temp; /*! Not yet implemented... */
+    __XSNotificationCenter_NotificationList * notifications;    /*! The notifications */
 };
 
 /*!

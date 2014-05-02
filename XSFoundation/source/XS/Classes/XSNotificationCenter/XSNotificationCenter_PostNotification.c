@@ -73,8 +73,6 @@
 
 void XSNotificationCenter_PostNotification( XSNotificationCenterRef center, XSNotificationRef notification )
 {
-    if( center == NULL || notification == NULL )
-    {
-        return;
-    }
+    ( void )center;
+    ( void )notification;
 }
