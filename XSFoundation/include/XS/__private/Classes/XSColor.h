@@ -154,4 +154,53 @@ bool __XSColor_Equals( XSColorRef object1, XSColorRef object2 );
  */
 const char * __XSColor_ToString( XSColorRef object );
 
+/*!
+ * @function    __XSColor_ConvertFromRGB
+ * @abstract    Converts all values of a color object from RGB values
+ * @param       object      The color object
+ */
+void __XSColor_ConvertFromRGB( XSColorRef object );
+
+/*!
+ * @function    __XSColor_ConvertFromHSL
+ * @abstract    Converts all values of a color object from HSL values
+ * @param       object      The color object
+ */
+void __XSColor_ConvertFromHSL( XSColorRef object );
+
+/*!
+ * @function    __XSColor_ConvertFromHSV
+ * @abstract    Converts all values of a color object from HSV values
+ * @param       object      The color object
+ */
+void __XSColor_ConvertFromHSV( XSColorRef object );
+
+/*!
+ * @function    __XSColor_RGBToHSL
+ * @abstract    Converts RGB values of a color object to HSL values
+ * @param       object      The color object
+ */
+void __XSColor_RGBToHSL( XSColorRef object );
+
+/*!
+ * @function    __XSColor_RGBToHSV
+ * @abstract    Converts RGB values of a color object to HSV values
+ * @param       object      The color object
+ */
+void __XSColor_RGBToHSV( XSColorRef object );
+
+/*!
+ * @function    __XSColor_HSLToRGB
+ * @abstract    Converts HSL values of a color object to RGB values
+ * @param       object      The color object
+ */
+void __XSColor_HSLToRGB( XSColorRef object );
+
+/*!
+ * @function    __XSColor_HSVToRGB
+ * @abstract    Converts HSV values of a color object to RGB values
+ * @param       object      The color object
+ */
+void __XSColor_HSVToRGB( XSColorRef object );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_COLOR_H__ */

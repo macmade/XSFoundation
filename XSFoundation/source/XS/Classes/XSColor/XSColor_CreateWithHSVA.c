@@ -84,10 +84,7 @@ XSStatic XSAutoreleased XSColorRef XSColor_CreateWithHSVA( XSFloat h, XSFloat s,
         return NULL;
     }
     
-    object->h = h;
-    object->s = s;
-    object->v = v;
-    object->a = a;
+    XSColor_SetHSVA( object, h, s, v, a );
     
     return object;
 }

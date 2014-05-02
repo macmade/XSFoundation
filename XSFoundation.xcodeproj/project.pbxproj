@@ -2108,6 +2108,34 @@
 		058089F519117E0E00118D3D /* XSColor_YellowColor.c in Sources */ = {isa = PBXBuildFile; fileRef = 0580891B19117E0E00118D3D /* XSColor_YellowColor.c */; };
 		058089F619117E0E00118D3D /* XSColor_YellowColor.c in Sources */ = {isa = PBXBuildFile; fileRef = 0580891B19117E0E00118D3D /* XSColor_YellowColor.c */; };
 		058089F719117E0E00118D3D /* XSColor_YellowColor.c in Sources */ = {isa = PBXBuildFile; fileRef = 0580891B19117E0E00118D3D /* XSColor_YellowColor.c */; };
+		05808A1B1912A2F000118D3D /* __XSColor_ConvertFromHSL.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A121912A2F000118D3D /* __XSColor_ConvertFromHSL.c */; };
+		05808A1C1912A2F000118D3D /* __XSColor_ConvertFromHSL.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A121912A2F000118D3D /* __XSColor_ConvertFromHSL.c */; };
+		05808A1D1912A2F000118D3D /* __XSColor_ConvertFromHSL.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A121912A2F000118D3D /* __XSColor_ConvertFromHSL.c */; };
+		05808A1E1912A2F000118D3D /* __XSColor_ConvertFromHSL.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A121912A2F000118D3D /* __XSColor_ConvertFromHSL.c */; };
+		05808A1F1912A2F000118D3D /* __XSColor_ConvertFromHSV.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A131912A2F000118D3D /* __XSColor_ConvertFromHSV.c */; };
+		05808A201912A2F000118D3D /* __XSColor_ConvertFromHSV.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A131912A2F000118D3D /* __XSColor_ConvertFromHSV.c */; };
+		05808A211912A2F000118D3D /* __XSColor_ConvertFromHSV.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A131912A2F000118D3D /* __XSColor_ConvertFromHSV.c */; };
+		05808A221912A2F000118D3D /* __XSColor_ConvertFromHSV.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A131912A2F000118D3D /* __XSColor_ConvertFromHSV.c */; };
+		05808A231912A2F000118D3D /* __XSColor_ConvertFromRGB.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A141912A2F000118D3D /* __XSColor_ConvertFromRGB.c */; };
+		05808A241912A2F000118D3D /* __XSColor_ConvertFromRGB.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A141912A2F000118D3D /* __XSColor_ConvertFromRGB.c */; };
+		05808A251912A2F000118D3D /* __XSColor_ConvertFromRGB.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A141912A2F000118D3D /* __XSColor_ConvertFromRGB.c */; };
+		05808A261912A2F000118D3D /* __XSColor_ConvertFromRGB.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A141912A2F000118D3D /* __XSColor_ConvertFromRGB.c */; };
+		05808A2B1912A2F000118D3D /* __XSColor_HSLToRGB.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A161912A2F000118D3D /* __XSColor_HSLToRGB.c */; };
+		05808A2C1912A2F000118D3D /* __XSColor_HSLToRGB.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A161912A2F000118D3D /* __XSColor_HSLToRGB.c */; };
+		05808A2D1912A2F000118D3D /* __XSColor_HSLToRGB.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A161912A2F000118D3D /* __XSColor_HSLToRGB.c */; };
+		05808A2E1912A2F000118D3D /* __XSColor_HSLToRGB.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A161912A2F000118D3D /* __XSColor_HSLToRGB.c */; };
+		05808A331912A2F000118D3D /* __XSColor_HSVToRGB.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A181912A2F000118D3D /* __XSColor_HSVToRGB.c */; };
+		05808A341912A2F000118D3D /* __XSColor_HSVToRGB.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A181912A2F000118D3D /* __XSColor_HSVToRGB.c */; };
+		05808A351912A2F000118D3D /* __XSColor_HSVToRGB.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A181912A2F000118D3D /* __XSColor_HSVToRGB.c */; };
+		05808A361912A2F000118D3D /* __XSColor_HSVToRGB.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A181912A2F000118D3D /* __XSColor_HSVToRGB.c */; };
+		05808A371912A2F000118D3D /* __XSColor_RGBToHSL.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A191912A2F000118D3D /* __XSColor_RGBToHSL.c */; };
+		05808A381912A2F000118D3D /* __XSColor_RGBToHSL.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A191912A2F000118D3D /* __XSColor_RGBToHSL.c */; };
+		05808A391912A2F000118D3D /* __XSColor_RGBToHSL.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A191912A2F000118D3D /* __XSColor_RGBToHSL.c */; };
+		05808A3A1912A2F000118D3D /* __XSColor_RGBToHSL.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A191912A2F000118D3D /* __XSColor_RGBToHSL.c */; };
+		05808A3B1912A2F000118D3D /* __XSColor_RGBToHSV.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A1A1912A2F000118D3D /* __XSColor_RGBToHSV.c */; };
+		05808A3C1912A2F000118D3D /* __XSColor_RGBToHSV.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A1A1912A2F000118D3D /* __XSColor_RGBToHSV.c */; };
+		05808A3D1912A2F000118D3D /* __XSColor_RGBToHSV.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A1A1912A2F000118D3D /* __XSColor_RGBToHSV.c */; };
+		05808A3E1912A2F000118D3D /* __XSColor_RGBToHSV.c in Sources */ = {isa = PBXBuildFile; fileRef = 05808A1A1912A2F000118D3D /* __XSColor_RGBToHSV.c */; };
 		058136D218F70CD30046C91B /* __XSAllocWithInfos.c in Sources */ = {isa = PBXBuildFile; fileRef = 058136D018F70CD30046C91B /* __XSAllocWithInfos.c */; };
 		058136D318F70CD30046C91B /* __XSAllocWithInfos.c in Sources */ = {isa = PBXBuildFile; fileRef = 058136D018F70CD30046C91B /* __XSAllocWithInfos.c */; };
 		058136D418F70CD30046C91B /* __XSAllocWithInfos.c in Sources */ = {isa = PBXBuildFile; fileRef = 058136D018F70CD30046C91B /* __XSAllocWithInfos.c */; };
@@ -3274,6 +3302,13 @@
 		0580891919117E0E00118D3D /* XSColor_SetValue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSColor_SetValue.c; sourceTree = "<group>"; };
 		0580891A19117E0E00118D3D /* XSColor_WhiteColor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSColor_WhiteColor.c; sourceTree = "<group>"; };
 		0580891B19117E0E00118D3D /* XSColor_YellowColor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSColor_YellowColor.c; sourceTree = "<group>"; };
+		05808A121912A2F000118D3D /* __XSColor_ConvertFromHSL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSColor_ConvertFromHSL.c; sourceTree = "<group>"; };
+		05808A131912A2F000118D3D /* __XSColor_ConvertFromHSV.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSColor_ConvertFromHSV.c; sourceTree = "<group>"; };
+		05808A141912A2F000118D3D /* __XSColor_ConvertFromRGB.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSColor_ConvertFromRGB.c; sourceTree = "<group>"; };
+		05808A161912A2F000118D3D /* __XSColor_HSLToRGB.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSColor_HSLToRGB.c; sourceTree = "<group>"; };
+		05808A181912A2F000118D3D /* __XSColor_HSVToRGB.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSColor_HSVToRGB.c; sourceTree = "<group>"; };
+		05808A191912A2F000118D3D /* __XSColor_RGBToHSL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSColor_RGBToHSL.c; sourceTree = "<group>"; };
+		05808A1A1912A2F000118D3D /* __XSColor_RGBToHSV.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSColor_RGBToHSV.c; sourceTree = "<group>"; };
 		058136D018F70CD30046C91B /* __XSAllocWithInfos.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSAllocWithInfos.c; sourceTree = "<group>"; };
 		058136D118F70CD30046C91B /* __XSReleaseWithInfos.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSReleaseWithInfos.c; sourceTree = "<group>"; };
 		058136DA18F743360046C91B /* XSAutoreleasePool_Drain.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSAutoreleasePool_Drain.c; sourceTree = "<group>"; };
@@ -3867,6 +3902,13 @@
 				055D14D718E1D42800894C7B /* __XSColor_Equals.c */,
 				055D14D818E1D42800894C7B /* __XSColor_Initialize.c */,
 				055D14D918E1D42800894C7B /* __XSColor_ToString.c */,
+				05808A121912A2F000118D3D /* __XSColor_ConvertFromHSL.c */,
+				05808A131912A2F000118D3D /* __XSColor_ConvertFromHSV.c */,
+				05808A141912A2F000118D3D /* __XSColor_ConvertFromRGB.c */,
+				05808A161912A2F000118D3D /* __XSColor_HSLToRGB.c */,
+				05808A181912A2F000118D3D /* __XSColor_HSVToRGB.c */,
+				05808A191912A2F000118D3D /* __XSColor_RGBToHSL.c */,
+				05808A1A1912A2F000118D3D /* __XSColor_RGBToHSV.c */,
 				055D14DA18E1D42800894C7B /* XSColor_GetClassID.c */,
 				058088E519117E0E00118D3D /* XSColor_BlackColor.c */,
 				058088E619117E0E00118D3D /* XSColor_BlueColor.c */,
@@ -4924,6 +4966,7 @@
 				058089B019117E0E00118D3D /* XSColor_PurpleColor.c in Sources */,
 				05F3571F18F190660070111A /* XSSemaphore_CreateWithName.c in Sources */,
 				055D177218E1D42800894C7B /* __XSNode.c in Sources */,
+				05808A2B1912A2F000118D3D /* __XSColor_HSLToRGB.c in Sources */,
 				055D16A618E1D42800894C7B /* __XSData_Initialize.c in Sources */,
 				05293ED5190904EE00DC0950 /* __XSDebugger_CheckObjectIntegrity.c in Sources */,
 				0580892C19117E0E00118D3D /* XSColor_ColorWithHSL.c in Sources */,
@@ -4960,6 +5003,7 @@
 				05293EF9190904EE00DC0950 /* __XSDebugger_UpdateMemoryRecord.c in Sources */,
 				052305A818EB4B1F00C29627 /* XSRect_Offset.c in Sources */,
 				0523067C18EB4B1F00C29627 /* XSRuntime_GetClassName.c in Sources */,
+				05808A371912A2F000118D3D /* __XSColor_RGBToHSL.c in Sources */,
 				05632F2A18EC513F00EB76D2 /* XSString_StringByAppendingCString.c in Sources */,
 				055D163E18E1D42800894C7B /* __XSBinaryTree_ToString.c in Sources */,
 				05632F3E18EC513F00EB76D2 /* XSString_SubstringToIndex.c in Sources */,
@@ -4995,6 +5039,7 @@
 				055D15FE18E1D42800894C7B /* __XSAutoreleasePool_ToString.c in Sources */,
 				0523056818EB4B1F00C29627 /* XSRect_GetMaxX.c in Sources */,
 				0528E6551900C82400CCFD28 /* XSNumber_GetUnsignedLongValue.c in Sources */,
+				05808A3B1912A2F000118D3D /* __XSColor_RGBToHSV.c in Sources */,
 				05F3584E18F20EF10070111A /* XSArray_ArrayWithObjects.c in Sources */,
 				0528E5E51900C82400CCFD28 /* XSNumber_CreateWithLong.c in Sources */,
 				0523061C18EB4B1F00C29627 /* __XSMemory_GetMemoryObject.c in Sources */,
@@ -5090,10 +5135,12 @@
 				055D17D218E1D42800894C7B /* __XSNull.c in Sources */,
 				055D16C618E1D42800894C7B /* __XSDate_Initialize.c in Sources */,
 				05293ED9190904EE00DC0950 /* __XSDebugger_DumpMemoryRecord.c in Sources */,
+				05808A231912A2F000118D3D /* __XSColor_ConvertFromRGB.c in Sources */,
 				0528E65D1900C82400CCFD28 /* XSNumber_GetXSFloat32Value.c in Sources */,
 				055D185A18E1D42800894C7B /* __XSSet_Copy.c in Sources */,
 				0580897819117E0E00118D3D /* XSColor_GetHSV.c in Sources */,
 				058089E819117E0E00118D3D /* XSColor_SetSaturation.c in Sources */,
+				05808A1F1912A2F000118D3D /* __XSColor_ConvertFromHSV.c in Sources */,
 				055D17C618E1D42800894C7B /* __XSNotificationCenter_Initialize.c in Sources */,
 				055D17AA18E1D42800894C7B /* __XSNotification_ToString.c in Sources */,
 				055D182E18E1D42800894C7B /* XSRecursiveLock_GetClassID.c in Sources */,
@@ -5154,6 +5201,7 @@
 				055D162E18E1D42800894C7B /* __XSBinaryTree_Copy.c in Sources */,
 				052306DC18EB4B1F00C29627 /* XSThreading_TLSSetValue.c in Sources */,
 				055151D118FC7C4F002EBDB1 /* __XSAutoreleasePool_GetCurrent.c in Sources */,
+				05808A331912A2F000118D3D /* __XSColor_HSVToRGB.c in Sources */,
 				05A153F318F5C0D800365881 /* XSOrderedSet_SortWithMethod.c in Sources */,
 				05A1538B18F5C0D800365881 /* XSOrderedSet_AppendArray.c in Sources */,
 				0523067818EB4B1F00C29627 /* XSRuntime_GetClassIDOfClassNamed.c in Sources */,
@@ -5426,6 +5474,7 @@
 				0528E6F11900C82400CCFD28 /* XSNumber_NumberWithXSUInteger.c in Sources */,
 				0523057418EB4B1F00C29627 /* XSRect_GetMidY.c in Sources */,
 				055D16B618E1D42800894C7B /* __XSDate_Constructor.c in Sources */,
+				05808A1B1912A2F000118D3D /* __XSColor_ConvertFromHSL.c in Sources */,
 				05F356AD18F093BF0070111A /* XSRecursiveLock_Unlock.c in Sources */,
 				0523053818EB4B1F00C29627 /* XSPoint_Make.c in Sources */,
 				0580894019117E0E00118D3D /* XSColor_ColorWithRGBA.c in Sources */,
@@ -5592,6 +5641,7 @@
 				058089B119117E0E00118D3D /* XSColor_PurpleColor.c in Sources */,
 				05F3572018F190660070111A /* XSSemaphore_CreateWithName.c in Sources */,
 				055D177318E1D42800894C7B /* __XSNode.c in Sources */,
+				05808A2C1912A2F000118D3D /* __XSColor_HSLToRGB.c in Sources */,
 				055D16A718E1D42800894C7B /* __XSData_Initialize.c in Sources */,
 				05293ED6190904EE00DC0950 /* __XSDebugger_CheckObjectIntegrity.c in Sources */,
 				0580892D19117E0E00118D3D /* XSColor_ColorWithHSL.c in Sources */,
@@ -5628,6 +5678,7 @@
 				05293EFA190904EE00DC0950 /* __XSDebugger_UpdateMemoryRecord.c in Sources */,
 				052305A918EB4B1F00C29627 /* XSRect_Offset.c in Sources */,
 				0523067D18EB4B1F00C29627 /* XSRuntime_GetClassName.c in Sources */,
+				05808A381912A2F000118D3D /* __XSColor_RGBToHSL.c in Sources */,
 				05632F2B18EC513F00EB76D2 /* XSString_StringByAppendingCString.c in Sources */,
 				055D163F18E1D42800894C7B /* __XSBinaryTree_ToString.c in Sources */,
 				05632F3F18EC513F00EB76D2 /* XSString_SubstringToIndex.c in Sources */,
@@ -5663,6 +5714,7 @@
 				055D15FF18E1D42800894C7B /* __XSAutoreleasePool_ToString.c in Sources */,
 				0523056918EB4B1F00C29627 /* XSRect_GetMaxX.c in Sources */,
 				0528E6561900C82400CCFD28 /* XSNumber_GetUnsignedLongValue.c in Sources */,
+				05808A3C1912A2F000118D3D /* __XSColor_RGBToHSV.c in Sources */,
 				0523061D18EB4B1F00C29627 /* __XSMemory_GetMemoryObject.c in Sources */,
 				0528E5E61900C82400CCFD28 /* XSNumber_CreateWithLong.c in Sources */,
 				05A58C7418F21153006961E7 /* XSArray_ArrayWithObjects.c in Sources */,
@@ -5758,10 +5810,12 @@
 				05A58C6C18F21153006961E7 /* __XSArray_Equals.c in Sources */,
 				055D17D318E1D42800894C7B /* __XSNull.c in Sources */,
 				05293EDA190904EE00DC0950 /* __XSDebugger_DumpMemoryRecord.c in Sources */,
+				05808A241912A2F000118D3D /* __XSColor_ConvertFromRGB.c in Sources */,
 				0528E65E1900C82400CCFD28 /* XSNumber_GetXSFloat32Value.c in Sources */,
 				055D16C718E1D42800894C7B /* __XSDate_Initialize.c in Sources */,
 				0580897919117E0E00118D3D /* XSColor_GetHSV.c in Sources */,
 				058089E919117E0E00118D3D /* XSColor_SetSaturation.c in Sources */,
+				05808A201912A2F000118D3D /* __XSColor_ConvertFromHSV.c in Sources */,
 				055D185B18E1D42800894C7B /* __XSSet_Copy.c in Sources */,
 				055D17C718E1D42800894C7B /* __XSNotificationCenter_Initialize.c in Sources */,
 				055D17AB18E1D42800894C7B /* __XSNotification_ToString.c in Sources */,
@@ -5822,6 +5876,7 @@
 				05632F1318EC513F00EB76D2 /* XSString_GetCString.c in Sources */,
 				055D162F18E1D42800894C7B /* __XSBinaryTree_Copy.c in Sources */,
 				055151D218FC7C4F002EBDB1 /* __XSAutoreleasePool_GetCurrent.c in Sources */,
+				05808A341912A2F000118D3D /* __XSColor_HSVToRGB.c in Sources */,
 				05A153F418F5C0D800365881 /* XSOrderedSet_SortWithMethod.c in Sources */,
 				05A1538C18F5C0D800365881 /* XSOrderedSet_AppendArray.c in Sources */,
 				052306DD18EB4B1F00C29627 /* XSThreading_TLSSetValue.c in Sources */,
@@ -6094,6 +6149,7 @@
 				0528E6F21900C82400CCFD28 /* XSNumber_NumberWithXSUInteger.c in Sources */,
 				0523057518EB4B1F00C29627 /* XSRect_GetMidY.c in Sources */,
 				055D16B718E1D42800894C7B /* __XSDate_Constructor.c in Sources */,
+				05808A1C1912A2F000118D3D /* __XSColor_ConvertFromHSL.c in Sources */,
 				05F356AE18F093BF0070111A /* XSRecursiveLock_Unlock.c in Sources */,
 				0523053918EB4B1F00C29627 /* XSPoint_Make.c in Sources */,
 				0580894119117E0E00118D3D /* XSColor_ColorWithRGBA.c in Sources */,
@@ -6260,6 +6316,7 @@
 				058089B219117E0E00118D3D /* XSColor_PurpleColor.c in Sources */,
 				05F3572118F190660070111A /* XSSemaphore_CreateWithName.c in Sources */,
 				055D177418E1D42800894C7B /* __XSNode.c in Sources */,
+				05808A2D1912A2F000118D3D /* __XSColor_HSLToRGB.c in Sources */,
 				055D16A818E1D42800894C7B /* __XSData_Initialize.c in Sources */,
 				05293ED7190904EE00DC0950 /* __XSDebugger_CheckObjectIntegrity.c in Sources */,
 				0580892E19117E0E00118D3D /* XSColor_ColorWithHSL.c in Sources */,
@@ -6296,6 +6353,7 @@
 				05293EFB190904EE00DC0950 /* __XSDebugger_UpdateMemoryRecord.c in Sources */,
 				052305AA18EB4B1F00C29627 /* XSRect_Offset.c in Sources */,
 				0523067E18EB4B1F00C29627 /* XSRuntime_GetClassName.c in Sources */,
+				05808A391912A2F000118D3D /* __XSColor_RGBToHSL.c in Sources */,
 				05632F2C18EC513F00EB76D2 /* XSString_StringByAppendingCString.c in Sources */,
 				055D164018E1D42800894C7B /* __XSBinaryTree_ToString.c in Sources */,
 				05632F4018EC513F00EB76D2 /* XSString_SubstringToIndex.c in Sources */,
@@ -6331,6 +6389,7 @@
 				055D160018E1D42800894C7B /* __XSAutoreleasePool_ToString.c in Sources */,
 				0523056A18EB4B1F00C29627 /* XSRect_GetMaxX.c in Sources */,
 				0528E6571900C82400CCFD28 /* XSNumber_GetUnsignedLongValue.c in Sources */,
+				05808A3D1912A2F000118D3D /* __XSColor_RGBToHSV.c in Sources */,
 				0523061E18EB4B1F00C29627 /* __XSMemory_GetMemoryObject.c in Sources */,
 				0528E5E71900C82400CCFD28 /* XSNumber_CreateWithLong.c in Sources */,
 				05A58C5118F21152006961E7 /* XSArray_ArrayWithObjects.c in Sources */,
@@ -6426,10 +6485,12 @@
 				05A58C4918F21152006961E7 /* __XSArray_Equals.c in Sources */,
 				055D17D418E1D42800894C7B /* __XSNull.c in Sources */,
 				05293EDB190904EE00DC0950 /* __XSDebugger_DumpMemoryRecord.c in Sources */,
+				05808A251912A2F000118D3D /* __XSColor_ConvertFromRGB.c in Sources */,
 				0528E65F1900C82400CCFD28 /* XSNumber_GetXSFloat32Value.c in Sources */,
 				055D16C818E1D42800894C7B /* __XSDate_Initialize.c in Sources */,
 				0580897A19117E0E00118D3D /* XSColor_GetHSV.c in Sources */,
 				058089EA19117E0E00118D3D /* XSColor_SetSaturation.c in Sources */,
+				05808A211912A2F000118D3D /* __XSColor_ConvertFromHSV.c in Sources */,
 				055D185C18E1D42800894C7B /* __XSSet_Copy.c in Sources */,
 				055D17C818E1D42800894C7B /* __XSNotificationCenter_Initialize.c in Sources */,
 				055D17AC18E1D42800894C7B /* __XSNotification_ToString.c in Sources */,
@@ -6490,6 +6551,7 @@
 				05632F1418EC513F00EB76D2 /* XSString_GetCString.c in Sources */,
 				055D163018E1D42800894C7B /* __XSBinaryTree_Copy.c in Sources */,
 				055151D318FC7C4F002EBDB1 /* __XSAutoreleasePool_GetCurrent.c in Sources */,
+				05808A351912A2F000118D3D /* __XSColor_HSVToRGB.c in Sources */,
 				05A153F518F5C0D800365881 /* XSOrderedSet_SortWithMethod.c in Sources */,
 				05A1538D18F5C0D800365881 /* XSOrderedSet_AppendArray.c in Sources */,
 				052306DE18EB4B1F00C29627 /* XSThreading_TLSSetValue.c in Sources */,
@@ -6762,6 +6824,7 @@
 				0528E6F31900C82400CCFD28 /* XSNumber_NumberWithXSUInteger.c in Sources */,
 				0523057618EB4B1F00C29627 /* XSRect_GetMidY.c in Sources */,
 				055D16B818E1D42800894C7B /* __XSDate_Constructor.c in Sources */,
+				05808A1D1912A2F000118D3D /* __XSColor_ConvertFromHSL.c in Sources */,
 				05F356AF18F093BF0070111A /* XSRecursiveLock_Unlock.c in Sources */,
 				0523053A18EB4B1F00C29627 /* XSPoint_Make.c in Sources */,
 				0580894219117E0E00118D3D /* XSColor_ColorWithRGBA.c in Sources */,
@@ -6928,6 +6991,7 @@
 				058089B319117E0E00118D3D /* XSColor_PurpleColor.c in Sources */,
 				05F3572218F190660070111A /* XSSemaphore_CreateWithName.c in Sources */,
 				055D177518E1D42800894C7B /* __XSNode.c in Sources */,
+				05808A2E1912A2F000118D3D /* __XSColor_HSLToRGB.c in Sources */,
 				055D16A918E1D42800894C7B /* __XSData_Initialize.c in Sources */,
 				05293ED8190904EE00DC0950 /* __XSDebugger_CheckObjectIntegrity.c in Sources */,
 				0580892F19117E0E00118D3D /* XSColor_ColorWithHSL.c in Sources */,
@@ -6964,6 +7028,7 @@
 				05293EFC190904EE00DC0950 /* __XSDebugger_UpdateMemoryRecord.c in Sources */,
 				052305AB18EB4B1F00C29627 /* XSRect_Offset.c in Sources */,
 				0523067F18EB4B1F00C29627 /* XSRuntime_GetClassName.c in Sources */,
+				05808A3A1912A2F000118D3D /* __XSColor_RGBToHSL.c in Sources */,
 				05632F2D18EC513F00EB76D2 /* XSString_StringByAppendingCString.c in Sources */,
 				055D164118E1D42800894C7B /* __XSBinaryTree_ToString.c in Sources */,
 				05632F4118EC513F00EB76D2 /* XSString_SubstringToIndex.c in Sources */,
@@ -6999,6 +7064,7 @@
 				055D160118E1D42800894C7B /* __XSAutoreleasePool_ToString.c in Sources */,
 				0523056B18EB4B1F00C29627 /* XSRect_GetMaxX.c in Sources */,
 				0528E6581900C82400CCFD28 /* XSNumber_GetUnsignedLongValue.c in Sources */,
+				05808A3E1912A2F000118D3D /* __XSColor_RGBToHSV.c in Sources */,
 				0523061F18EB4B1F00C29627 /* __XSMemory_GetMemoryObject.c in Sources */,
 				0528E5E81900C82400CCFD28 /* XSNumber_CreateWithLong.c in Sources */,
 				05A58C2E18F21152006961E7 /* XSArray_ArrayWithObjects.c in Sources */,
@@ -7094,10 +7160,12 @@
 				05A58C2618F21152006961E7 /* __XSArray_Equals.c in Sources */,
 				055D17D518E1D42800894C7B /* __XSNull.c in Sources */,
 				05293EDC190904EE00DC0950 /* __XSDebugger_DumpMemoryRecord.c in Sources */,
+				05808A261912A2F000118D3D /* __XSColor_ConvertFromRGB.c in Sources */,
 				0528E6601900C82400CCFD28 /* XSNumber_GetXSFloat32Value.c in Sources */,
 				055D16C918E1D42800894C7B /* __XSDate_Initialize.c in Sources */,
 				0580897B19117E0E00118D3D /* XSColor_GetHSV.c in Sources */,
 				058089EB19117E0E00118D3D /* XSColor_SetSaturation.c in Sources */,
+				05808A221912A2F000118D3D /* __XSColor_ConvertFromHSV.c in Sources */,
 				055D185D18E1D42800894C7B /* __XSSet_Copy.c in Sources */,
 				055D17C918E1D42800894C7B /* __XSNotificationCenter_Initialize.c in Sources */,
 				055D17AD18E1D42800894C7B /* __XSNotification_ToString.c in Sources */,
@@ -7158,6 +7226,7 @@
 				05632F1518EC513F00EB76D2 /* XSString_GetCString.c in Sources */,
 				055D163118E1D42800894C7B /* __XSBinaryTree_Copy.c in Sources */,
 				055151D418FC7C4F002EBDB1 /* __XSAutoreleasePool_GetCurrent.c in Sources */,
+				05808A361912A2F000118D3D /* __XSColor_HSVToRGB.c in Sources */,
 				05A153F618F5C0D800365881 /* XSOrderedSet_SortWithMethod.c in Sources */,
 				05A1538E18F5C0D800365881 /* XSOrderedSet_AppendArray.c in Sources */,
 				052306DF18EB4B1F00C29627 /* XSThreading_TLSSetValue.c in Sources */,
@@ -7430,6 +7499,7 @@
 				0528E6F41900C82400CCFD28 /* XSNumber_NumberWithXSUInteger.c in Sources */,
 				0523057718EB4B1F00C29627 /* XSRect_GetMidY.c in Sources */,
 				055D16B918E1D42800894C7B /* __XSDate_Constructor.c in Sources */,
+				05808A1E1912A2F000118D3D /* __XSColor_ConvertFromHSL.c in Sources */,
 				05F356B018F093BF0070111A /* XSRecursiveLock_Unlock.c in Sources */,
 				0523053B18EB4B1F00C29627 /* XSPoint_Make.c in Sources */,
 				0580894319117E0E00118D3D /* XSColor_ColorWithRGBA.c in Sources */,

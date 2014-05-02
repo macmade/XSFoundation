@@ -79,8 +79,6 @@ void XSColor_SetSaturation( XSColorRef object, XSFloat s )
     }
     
     XSRecursiveLock_Lock( object->lock );
-    
-    object->s = s;
-    
+    XSColor_SetHSLA( object, object->h, s, object->l, object->a );
     XSRecursiveLock_Unlock( object->lock );
 }

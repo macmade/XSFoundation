@@ -84,10 +84,7 @@ XSStatic XSAutoreleased XSColorRef XSColor_CreateWithHSLA( XSFloat h, XSFloat s,
         return NULL;
     }
     
-    object->h = h;
-    object->s = s;
-    object->l = l;
-    object->a = a;
+    XSColor_SetHSLA( object, h, s, l, a );
     
     return object;
 }

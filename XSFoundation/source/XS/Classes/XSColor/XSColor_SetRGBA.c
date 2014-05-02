@@ -80,10 +80,12 @@ void XSColor_SetRGBA( XSColorRef object, XSFloat r, XSFloat g, XSFloat b, XSFloa
     
     XSRecursiveLock_Lock( object->lock );
     
-    object->r = r;
-    object->g = g;
-    object->b = b;
-    object->a = a;
+    object->r = XS_MAX( XS_MIN( r, ( XSFloat )1 ), ( XSFloat )0 );
+    object->g = XS_MAX( XS_MIN( g, ( XSFloat )1 ), ( XSFloat )0 );
+    object->b = XS_MAX( XS_MIN( b, ( XSFloat )1 ), ( XSFloat )0 );
+    object->a = XS_MAX( XS_MIN( a, ( XSFloat )1 ), ( XSFloat )0 );
+    
+    __XSColor_ConvertFromRGB( object );
     
     XSRecursiveLock_Unlock( object->lock );
 }

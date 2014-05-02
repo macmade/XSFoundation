@@ -73,5 +73,5 @@
 
 XSStatic XSAutoreleased XSColorRef XSColor_ClearColor( void )
 {
-    return XSColor_ColorWithRGB( ( XSFloat )0, ( XSFloat )0, ( XSFloat )0 );
+    return XSColor_ColorWithRGBA( ( XSFloat )0, ( XSFloat )0, ( XSFloat )0, ( XSFloat )0 );
 }

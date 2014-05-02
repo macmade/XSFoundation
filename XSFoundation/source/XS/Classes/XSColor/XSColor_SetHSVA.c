@@ -80,10 +80,12 @@ void XSColor_SetHSVA( XSColorRef object, XSFloat h, XSFloat s, XSFloat v, XSFloa
     
     XSRecursiveLock_Lock( object->lock );
     
-    object->h = h;
-    object->s = s;
-    object->v = v;
-    object->a = a;
+    object->h = XS_MAX( XS_MIN( h, ( XSFloat )1 ), ( XSFloat )0 );
+    object->s = XS_MAX( XS_MIN( s, ( XSFloat )1 ), ( XSFloat )0 );
+    object->v = XS_MAX( XS_MIN( v, ( XSFloat )1 ), ( XSFloat )0 );
+    object->a = XS_MAX( XS_MIN( a, ( XSFloat )1 ), ( XSFloat )0 );
+    
+    __XSColor_ConvertFromHSV( object );
     
     XSRecursiveLock_Unlock( object->lock );
 }

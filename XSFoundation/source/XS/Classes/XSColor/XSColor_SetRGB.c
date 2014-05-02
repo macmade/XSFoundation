@@ -79,10 +79,6 @@ void XSColor_SetRGB( XSColorRef object, XSFloat r, XSFloat g, XSFloat b )
     }
     
     XSRecursiveLock_Lock( object->lock );
-    
-    object->r = r;
-    object->g = g;
-    object->b = b;
-    
+    XSColor_SetRGBA( object, r, g, b, object->a );
     XSRecursiveLock_Unlock( object->lock );
 }

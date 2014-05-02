@@ -79,10 +79,6 @@ void XSColor_SetHSV( XSColorRef object, XSFloat h, XSFloat s, XSFloat v )
     }
     
     XSRecursiveLock_Lock( object->lock );
-    
-    object->h = h;
-    object->s = s;
-    object->v = v;
-    
+    XSColor_SetHSVA( object, h, s, v, object->a );
     XSRecursiveLock_Unlock( object->lock );
 }

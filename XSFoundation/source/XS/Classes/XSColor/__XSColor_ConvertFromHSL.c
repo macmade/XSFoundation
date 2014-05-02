@@ -62,16 +62,17 @@
 /* $Id$ */
 
 /*!
- * @file        XSColor_RedColor.c
+ * @file        __XSColor_ConvertFromHSL.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSColor_RedColor
+ * @abstract    Definition for __XSColor_ConvertFromHSL
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSColor.h>
 
-XSStatic XSAutoreleased XSColorRef XSColor_RedColor( void )
+void __XSColor_ConvertFromHSL( XSColorRef object )
 {
-    return XSColor_ColorWithRGBA( ( XSFloat )1, ( XSFloat )0, ( XSFloat )0, ( XSFloat )1 );
+    __XSColor_HSLToRGB( object );
+    __XSColor_RGBToHSV( object );
 }

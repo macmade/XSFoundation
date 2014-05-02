@@ -84,10 +84,7 @@ XSStatic XSAutoreleased XSColorRef XSColor_CreateWithRGBA( XSFloat r, XSFloat g,
         return NULL;
     }
     
-    object->r = r;
-    object->g = g;
-    object->b = b;
-    object->a = a;
+    XSColor_SetRGBA( object, r, g, b, a );
     
     return object;
 }

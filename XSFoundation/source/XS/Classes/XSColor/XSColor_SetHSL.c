@@ -79,10 +79,6 @@ void XSColor_SetHSL( XSColorRef object, XSFloat h, XSFloat s, XSFloat l )
     }
     
     XSRecursiveLock_Lock( object->lock );
-    
-    object->h = h;
-    object->s = s;
-    object->l = l;
-    
+    XSColor_SetHSLA( object, h, s, l, object->a );
     XSRecursiveLock_Unlock( object->lock );
 }
