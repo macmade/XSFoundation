@@ -81,9 +81,7 @@ XSStackRef __XSStack_Copy( XSStackRef source, XSStackRef destination )
     
     if( destination->lock == NULL )
     {
-        XSLogWarning( "Error creating a lock for XSStack" );
-        
-        return NULL;
+        XSFatalError( "Error creating a lock for XSStack" );
     }
     
     XSRecursiveLock_Lock( source->lock );
@@ -97,10 +95,7 @@ XSStackRef __XSStack_Copy( XSStackRef source, XSStackRef destination )
         
         if( newValue == NULL )
         {
-            XSLogWarning( "Error allocating memory for an XSStack value" );
-            XSRecursiveLock_Unlock( source->lock );
-            
-            return NULL;
+            XSFatalError( "Error allocating memory for an XSStack value" );
         }
         
         newValue->object = XSRetain( value->object );

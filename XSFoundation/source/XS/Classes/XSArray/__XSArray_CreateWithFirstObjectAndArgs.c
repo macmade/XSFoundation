@@ -86,19 +86,14 @@ XSStatic XSArrayRef __XSArray_CreateWithFirstObjectAndArgs( XSObjectRef firstObj
     
     if( array == NULL )
     {
-        XSLogWarning( "Error creating an XSArray object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSArray object" );
     }
     
     value = XSAlloc( sizeof( __XSArray_Value ) );
     
     if( value == NULL )
     {
-        XSLogWarning( "Error allocating memory for an XSArray value" );
-        XSRelease( array );
-        
-        return NULL;
+        XSFatalError( "Error allocating memory for an XSArray value" );
     }
     
     value->object = XSRetain( firstObject );
@@ -112,10 +107,7 @@ XSStatic XSArrayRef __XSArray_CreateWithFirstObjectAndArgs( XSObjectRef firstObj
         
         if( value->next == NULL )
         {
-            XSLogWarning( "Error allocating memory for an XSArray value" );
-            XSRelease( array );
-            
-            return NULL;
+            XSFatalError( "Error allocating memory for an XSArray value" );
         }
         
         value->next->previous = value;

@@ -95,9 +95,7 @@ void XSAutoreleasePool_AddObject( XSAutoreleasePoolRef ap, XSObjectRef object )
     
     if( value == NULL )
     {
-        XSLogWarning( "Error allocating memory for an XSAutoreleasePool value" );
-        
-        return;
+        XSFatalError( "Error allocating memory for an XSAutoreleasePool value" );
     }
     
     value->object = object;

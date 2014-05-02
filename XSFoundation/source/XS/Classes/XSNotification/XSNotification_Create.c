@@ -79,9 +79,7 @@ XSStatic XSNotificationRef XSNotification_Create( XSStringRef name, XSObjectRef 
     
     if( notification == NULL )
     {
-        XSLogWarning( "Error creating an XSNotification object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSNotification object" );
     }
     
     notification->name     = XSRetain( name );

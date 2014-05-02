@@ -79,9 +79,7 @@ XSStatic XSNumberRef XSNumber_CreateWithXSFloat32( XSFloat32 value )
     
     if( object == NULL )
     {
-        XSLogWarning( "Error creating an XSNumber object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSNumber object" );
     }
     
     object->floatValue   = ( XSFloat64 )value;

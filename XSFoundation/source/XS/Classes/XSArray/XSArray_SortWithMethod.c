@@ -96,10 +96,7 @@ void XSArray_SortWithMethod( XSArrayRef array, XSObjectRef object, XSArray_SortM
     
     if( objects == NULL )
     {
-        XSLogWarning( "Error allocating memory for XSArray values" );
-        XSRecursiveLock_Unlock( array->lock );
-        
-        return;
+        XSFatalError( "Error allocating memory for XSArray values" );
     }
     
     value = array->first;

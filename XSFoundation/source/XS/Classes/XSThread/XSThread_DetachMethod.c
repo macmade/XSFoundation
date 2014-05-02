@@ -79,9 +79,7 @@ XSStatic void XSThread_DetachMethod( XSObjectRef object, XSThread_Method method 
     
     if( args == NULL )
     {
-        XSLogWarning( "Error allocating memory for XSThread arguments" );
-        
-        return;
+        XSFatalError( "Error allocating memory for XSThread arguments" );
     }
     
     args->type      = __XSThread_TypeMethod;

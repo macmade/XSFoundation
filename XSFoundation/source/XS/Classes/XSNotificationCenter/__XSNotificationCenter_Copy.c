@@ -76,7 +76,5 @@ XSNotificationCenterRef __XSNotificationCenter_Copy( XSNotificationCenterRef sou
     ( void )source;
     ( void )destination;
     
-    XSLogWarning( "Cannot copy an XSNotificationCenter object - returning NULL" );
-    
-    return NULL;
+    XSFatalError( "Cannot copy an XSNotificationCenter object" );
 }

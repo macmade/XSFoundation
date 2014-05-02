@@ -79,9 +79,7 @@ XSStatic void XSThread_DetachFunctionWithArgument( XSThread_FunctionWithArgument
     
     if( args == NULL )
     {
-        XSLogWarning( "Error allocating memory for XSThread arguments" );
-        
-        return;
+        XSFatalError( "Error allocating memory for XSThread arguments" );
     }
     
     args->type                  = __XSThread_TypeFunctionWithArgument;

@@ -100,11 +100,7 @@ void XSArray_AppendArray( XSArrayRef array, XSArrayRef objects )
         
         if( value == NULL )
         {
-            XSLogWarning( "Error allocating memory for an XSArray value" );
-            XSRecursiveLock_Unlock( objects->lock );
-            XSRecursiveLock_Unlock( array->lock );
-            
-            return;
+            XSFatalError( "Error allocating memory for an XSArray value" );
         }
         
         value->object = XSRetain( objects->first->object );
@@ -127,11 +123,7 @@ void XSArray_AppendArray( XSArrayRef array, XSArrayRef objects )
         
         if( value == NULL )
         {
-            XSLogWarning( "Error allocating memory for an XSArray value" );
-            XSRecursiveLock_Unlock( objects->lock );
-            XSRecursiveLock_Unlock( array->lock );
-            
-            return;
+            XSFatalError( "Error allocating memory for an XSArray value" );
         }
         
         value->next->object = XSRetain( newValue->object );

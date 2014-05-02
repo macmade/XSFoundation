@@ -77,19 +77,14 @@ XSNotificationCenterRef __XSNotificationCenter_Constructor( XSNotificationCenter
     
     if( object->notifications == NULL )
     {
-        XSLogWarning( "Error allocating memory for an XSNotificationCenter notification value" );
-        
-        return NULL;
+        XSFatalError( "Error allocating memory for an XSNotificationCenter notification value" );
     }
     
     object->notifications->observers = XSAlloc( sizeof( __XSNotificationCenter_ObserverList ) );
     
     if( object->notifications->observers == NULL )
     {
-        XSLogWarning( "Error allocating memory for an XSNotificationCenter observer value" );
-        XSRelease( object->notifications );
-        
-        return NULL;
+        XSFatalError( "Error allocating memory for an XSNotificationCenter observer value" );
     }
     
     return object;

@@ -79,9 +79,7 @@ XSStatic XSStackRef XSStack_Create( void )
     
     if( object == NULL )
     {
-        XSLogWarning( "Error creating an XSStack object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSStack object" );
     }
     
     return object;

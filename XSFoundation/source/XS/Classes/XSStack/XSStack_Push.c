@@ -84,9 +84,7 @@ void XSStack_Push( XSStackRef stack, XSObjectRef object )
     
     if( value == NULL )
     {
-        XSLogWarning( "Error allocating memory for an XSStack value" );
-        
-        return;
+        XSFatalError( "Error allocating memory for an XSStack value" );
     }
     
     value->object = XSRetain( object );

@@ -79,9 +79,7 @@ XSStatic XSAutoreleased XSColorRef XSColor_CreateWithHSLA( XSFloat h, XSFloat s,
     
     if( object == NULL )
     {
-        XSLogWarning( "Error creating an XSColor object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSColor object" );
     }
     
     XSColor_SetHSLA( object, h, s, l, a );

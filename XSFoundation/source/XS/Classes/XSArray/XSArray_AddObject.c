@@ -91,10 +91,7 @@ void XSArray_AddObject( XSArrayRef array, XSObjectRef object )
     
     if( value == NULL )
     {
-        XSLogWarning( "Error allocating memory for an XSArray value" );
-        XSRecursiveLock_Unlock( array->lock );
-        
-        return;
+        XSFatalError( "Error allocating memory for an XSArray value" );
     }
     
     value->object = XSRetain( object );

@@ -79,9 +79,7 @@ XSStatic XSRecursiveLockRef XSRecursiveLock_Create( void )
     
     if( object == NULL )
     {
-        XSLogWarning( "Error creating an XSRecursiveLock object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSRecursiveLock object" );
     }
     
     return object;

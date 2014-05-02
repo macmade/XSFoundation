@@ -79,9 +79,7 @@ XSStatic XSLockRef XSLock_Create( void )
     
     if( object == NULL )
     {
-        XSLogWarning( "Error creating an XSLock object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSLock object" );
     }
     
     return object;

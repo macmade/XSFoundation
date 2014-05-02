@@ -79,9 +79,7 @@ XSStatic XSValueRef XSValue_CreateWithRange( XSRange range )
     
     if( object == NULL )
     {
-        XSLogWarning( "Error creating an XSValue object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSValue object" );
     }
     
     object->range   = range;

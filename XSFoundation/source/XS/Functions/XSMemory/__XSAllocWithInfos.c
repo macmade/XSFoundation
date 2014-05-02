@@ -83,9 +83,7 @@ void * __XSAllocWithInfos( XSUInteger bytes, XSClassID classID, const char * fil
     
     if( object == NULL )
     {
-        XSLogWarning( "Cannot allocate memory (%lu bytes)", ( unsigned long )bytes );
-        
-        return NULL;
+        XSFatalError( "Cannot allocate memory (%lu bytes)", ( unsigned long )bytes );
     }
     
     object->retainCount = 1;

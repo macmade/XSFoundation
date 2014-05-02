@@ -79,9 +79,7 @@ XSStatic XSArrayRef XSArray_Create( void )
     
     if( object == NULL )
     {
-        XSLogWarning( "Error creating an XSArray object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSArray object" );
     }
     
     return object;

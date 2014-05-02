@@ -91,7 +91,6 @@ void XSArray_InsertObjectAtIndex( XSArrayRef array, XSUInteger index, XSObjectRe
     
     if( index > array->count )
     {
-        XSRecursiveLock_Unlock( array->lock );
         XSFatalError( "Cannot insert object in an XSArray - Index %lu out of bounds", ( unsigned long )index );
     }
     else if( index == array->count )
@@ -109,10 +108,7 @@ void XSArray_InsertObjectAtIndex( XSArrayRef array, XSUInteger index, XSObjectRe
     
     if( newValue == NULL )
     {
-        XSLogWarning( "Error allocating memory for an XSArray value" );
-        XSRecursiveLock_Unlock( array->lock );
-        
-        return;
+        XSFatalError( "Error allocating memory for an XSArray value" );
     }
     
     newValue->object = XSRetain( object );

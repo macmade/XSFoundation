@@ -79,9 +79,7 @@ XSStatic XSErrorRef XSError_Create( XSStringRef domain, XSInteger code, XSString
     
     if( error == NULL )
     {
-        XSLogWarning( "Error creating an XSError object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSError object" );
     }
     
     error->code     = code;

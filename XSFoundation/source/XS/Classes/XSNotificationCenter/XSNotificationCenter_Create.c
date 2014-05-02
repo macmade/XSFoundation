@@ -79,9 +79,7 @@ XSStatic XSNotificationCenterRef XSNotificationCenter_Create( void )
     
     if( center == NULL )
     {
-        XSLogWarning( "Error creating an XSNotificationCenter object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSNotificationCenter object" );
     }
     
     return center;

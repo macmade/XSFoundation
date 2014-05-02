@@ -79,9 +79,7 @@ XSStatic XSAutoreleasePoolRef XSAutoreleasePool_Create( void )
     
     if( object == NULL )
     {
-        XSLogWarning( "Error creating an XSAutoreleasePool object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSAutoreleasePool object" );
     }
     
     return object;

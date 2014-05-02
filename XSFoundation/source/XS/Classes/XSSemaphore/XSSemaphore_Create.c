@@ -79,19 +79,14 @@ XSStatic XSSemaphoreRef XSSemaphore_Create( XSUInteger count )
     
     if( sem == NULL )
     {
-        XSLogWarning( "Error creating an XSemaphore object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSemaphore object" );
     }
     
     sem->count = count;
     
     if( XSThreading_SemaphoreCreate( &( sem->sem ), NULL, count ) == false )
     {
-        XSLogWarning( "Error creating a semaphore for XSSemaphore" );
-        XSRelease( sem );
-        
-        return NULL;
+        XSFatalError( "Error creating a semaphore for XSSemaphore" );
     }
     
     return sem;

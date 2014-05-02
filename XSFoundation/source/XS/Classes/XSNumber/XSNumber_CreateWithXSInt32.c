@@ -79,9 +79,7 @@ XSStatic XSNumberRef XSNumber_CreateWithXSInt32( XSInt32 value )
     
     if( object == NULL )
     {
-        XSLogWarning( "Error creating an XSNumber object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSNumber object" );
     }
     
     object->integerValue = ( XSUInt64 )value;

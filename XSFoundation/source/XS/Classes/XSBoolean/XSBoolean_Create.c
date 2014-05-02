@@ -79,9 +79,7 @@ XSBooleanRef XSBoolean_Create( bool value )
     
     if( object == NULL )
     {
-        XSLogWarning( "Error creating an XSBoolean object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSBoolean object" );
     }
     
     object->value = value;

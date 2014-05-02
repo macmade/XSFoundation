@@ -83,19 +83,14 @@ void * __XSThread_Proxy( __XSThread_Arguments * args )
     
     if( thread == NULL )
     {
-        XSLogWarning( "Error creating an XSThread object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSThread object" );
     }
     
     XSThreading_TLSSetObject( &__XSThread_TLSKey, thread, XSObjectAssociationAssign );
     
     if( args == NULL )
     {
-        XSLogWarning( "No arguments passed to the XSThread proxy" );
-        XSRelease( args );
-        
-        return NULL;
+        XSFatalError( "No arguments passed to the XSThread proxy" );
     }
     
     if( args->type == __XSThread_TypeMethod )
@@ -118,7 +113,7 @@ void * __XSThread_Proxy( __XSThread_Arguments * args )
     }
     else
     {
-        XSLogWarning( "Unknown thread type" );
+        XSFatalError( "Unknown thread type" );
     }
     
     #ifdef _WIN32

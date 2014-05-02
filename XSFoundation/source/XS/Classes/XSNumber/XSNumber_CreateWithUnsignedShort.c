@@ -79,9 +79,7 @@ XSStatic XSNumberRef XSNumber_CreateWithUnsignedShort( unsigned short value )
     
     if( object == NULL )
     {
-        XSLogWarning( "Error creating an XSNumber object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSNumber object" );
     }
     
     object->integerValue = ( XSUInt64 )value;

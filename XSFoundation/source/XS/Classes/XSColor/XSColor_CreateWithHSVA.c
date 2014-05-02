@@ -79,9 +79,7 @@ XSStatic XSAutoreleased XSColorRef XSColor_CreateWithHSVA( XSFloat h, XSFloat s,
     
     if( object == NULL )
     {
-        XSLogWarning( "Error creating an XSColor object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSColor object" );
     }
     
     XSColor_SetHSVA( object, h, s, v, a );

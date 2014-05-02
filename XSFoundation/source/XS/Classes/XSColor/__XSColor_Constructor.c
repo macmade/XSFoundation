@@ -77,9 +77,7 @@ XSColorRef __XSColor_Constructor( XSColorRef object )
     
     if( object->lock == NULL )
     {
-        XSLogWarning( "Error creating a lock for XSColor" );
-        
-        return NULL;
+        XSFatalError( "Error creating a lock for XSColor" );
     }
     
     return object;

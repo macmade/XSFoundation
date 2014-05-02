@@ -75,10 +75,7 @@ void __XSThread_Detach( __XSThread_Arguments * args )
 {
     if( args == NULL )
     {
-        XSLogWarning( "No arguments passed to the XSThread proxy" );
-        XSRelease( args );
-        
-        return;
+        XSFatalError( "No arguments passed to the XSThread proxy" );
     }
     
     #ifdef _WIN32

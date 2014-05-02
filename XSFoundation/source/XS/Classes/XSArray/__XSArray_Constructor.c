@@ -77,9 +77,7 @@ XSArrayRef __XSArray_Constructor( XSArrayRef object )
     
     if( object->lock == NULL )
     {
-        XSLogWarning( "Error creating a lock for XSArray" );
-        
-        return NULL;
+        XSFatalError( "Error creating a lock for XSArray" );
     }
     
     return object;

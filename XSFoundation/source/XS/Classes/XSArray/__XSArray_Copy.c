@@ -81,9 +81,7 @@ XSArrayRef __XSArray_Copy( XSArrayRef source, XSArrayRef destination )
     
     if( destination->lock == NULL )
     {
-        XSLogWarning( "Error creating a lock for XSArray" );
-        
-        return NULL;
+        XSFatalError( "Error creating a lock for XSArray" );
     }
     
     XSRecursiveLock_Lock( source->lock );
@@ -97,10 +95,7 @@ XSArrayRef __XSArray_Copy( XSArrayRef source, XSArrayRef destination )
         
         if( newValue == NULL )
         {
-            XSLogWarning( "Error allocating memory for an XSArray value" );
-            XSRecursiveLock_Unlock( source->lock );
-            
-            return NULL;
+            XSFatalError( "Error allocating memory for an XSArray value" );
         }
         
         newValue->object = XSRetain( value->object );

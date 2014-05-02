@@ -79,9 +79,7 @@ XSStatic XSValueRef XSValue_CreateWithRect( XSRect rect )
     
     if( object == NULL )
     {
-        XSLogWarning( "Error creating an XSValue object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSValue object" );
     }
     
     object->rect    = rect;

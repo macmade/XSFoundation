@@ -86,9 +86,7 @@ XSStatic XSStringRef XSString_CreateWithCString( const char * s )
     
     if( object == NULL )
     {
-        XSLogWarning( "Error creating an XSString object" );
-        
-        return NULL;
+        XSFatalError( "Error creating an XSString object" );
     }
     
     object->length = strlen( s );
@@ -99,10 +97,7 @@ XSStatic XSStringRef XSString_CreateWithCString( const char * s )
         
         if( object->cString == NULL )
         {
-            XSLogWarning( "Error allocating memory for XSString C string" );
-            XSRelease( object );
-            
-            return NULL;
+            XSFatalError( "Error allocating memory for XSString C string" );
         }
         
         memcpy( object->cString, s, object->length );

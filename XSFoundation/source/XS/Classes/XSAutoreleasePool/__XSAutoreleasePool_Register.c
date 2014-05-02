@@ -84,9 +84,7 @@ void __XSAutoreleasePool_Register( XSAutoreleasePoolRef ap )
     
     if( item == NULL )
     {
-        XSLogWarning( "Error allocating memory for an XSAutoreleasePool list item" );
-        
-        return;
+        XSFatalError( "Error allocating memory for an XSAutoreleasePool list item" );
     }
     
     item->ap = ap;

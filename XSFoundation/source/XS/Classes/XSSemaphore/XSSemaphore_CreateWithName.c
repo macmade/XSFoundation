@@ -78,9 +78,9 @@ XSStatic XSSemaphoreRef XSSemaphore_CreateWithName( const char * name, XSUIntege
     
     length = strlen( name );
     
-    if( name == 0 )
+    if( length == 0 )
     {
-        XSLogWarning( "Error creating an XSemaphore object" );
+        XSLogWarning( "Error creating an XSemaphore object - No name specified" );
         
         return NULL;
     }
@@ -89,7 +89,7 @@ XSStatic XSSemaphoreRef XSSemaphore_CreateWithName( const char * name, XSUIntege
     
     if( sem == NULL )
     {
-        return NULL;
+        XSFatalError( "Error creating an XSemaphore object" );
     }
     
     sem->count = count;
@@ -97,20 +97,14 @@ XSStatic XSSemaphoreRef XSSemaphore_CreateWithName( const char * name, XSUIntege
     
     if( sem->name == NULL )
     {
-        XSLogWarning( "Error creating an XSemaphore object - No name specified" );
-        XSRelease( sem );
-        
-        return NULL;
+        XSFatalError( "Error allocating memory for an XSemaphore name" );
     }
     
     memcpy( &( sem->name ), name, length );
     
     if( XSThreading_SemaphoreCreate( &( sem->sem ), sem->name, count ) == false )
     {
-        XSLogWarning( "Error creating a semaphore for XSSemaphore" );
-        XSRelease( sem );
-        
-        return NULL;
+        XSFatalError( "Error creating a semaphore for XSSemaphore" );
     }
     
     return sem;

@@ -82,9 +82,7 @@ XSColorRef __XSColor_Copy( XSColorRef source, XSColorRef destination )
     
     if( destination->lock == NULL )
     {
-        XSLogWarning( "Error creating a lock for XSColor" );
-        
-        return NULL;
+        XSFatalError( "Error creating a lock for XSColor" );
     }
     
     XSColor_GetRGBA( source, &r, &g, &b, &a );
