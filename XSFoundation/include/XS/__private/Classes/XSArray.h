@@ -79,6 +79,16 @@
 #include <XS/XSMacros.h>
 
 /*!
+ * @typedef     __XSArray_Properties
+ * @abstract    Array properties
+ */
+typedef enum
+{
+    __XSArray_PropertiesMutable = 0x01  /*! Array is mutable */
+}
+__XSArray_Properties;
+
+/*!
  * @struct      __XSArray_Value
  * @abstract    XSArray value holder
  */
@@ -96,10 +106,12 @@ __XSArray_Value;
  */
 struct __XSArray
 {
-    XSUInteger         count; /*! The number of elements in the array */
-    XSRecursiveLockRef lock;  /*! The lock for thread-safety */
-    __XSArray_Value  * first; /*! First object in the array */
-    __XSArray_Value  * last;  /*! Last object in the array */
+    XSUInteger           count;         /*! The number of elements in the array */
+    XSRecursiveLockRef   lock;          /*! The lock for thread-safety */
+    __XSArray_Value    * first;         /*! First object in the array */
+    __XSArray_Value    * last;          /*! Last object in the array */
+    __XSArray_Properties properties;    /*! The array properties */
+    char                 _pad_0[ 4 ];   /*! Padding */
 };
 
 /*!

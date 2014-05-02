@@ -62,69 +62,18 @@
 /* $Id$ */
 
 /*!
- * @file        __XSArray_Copy.c
+ * @file        XSArray_ArrayWithArray.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSArray_Copy
+ * @abstract    Definition for XSArray_ArrayWithArray
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSArray.h>
 
-XSArrayRef __XSArray_Copy( XSArrayRef source, XSArrayRef destination )
+XSStatic XSArrayRef XSArray_ArrayWithArray( XSArrayRef array )
 {
-    __XSArray_Value * value;
-    __XSArray_Value * newValue;
-    __XSArray_Value * previousValue;
+    ( void )array;
     
-    destination->lock = XSRecursiveLock_Create();
-    
-    if( destination->lock == NULL )
-    {
-        XSLogWarning( "Error creating a lock for XSArray" );
-        
-        return NULL;
-    }
-    
-    XSRecursiveLock_Lock( source->lock );
-    
-    value           = source->first;
-    previousValue   = NULL;
-    
-    while( value != NULL )
-    {
-        newValue = XSAlloc( sizeof( __XSArray_Value ) );
-        
-        if( newValue == NULL )
-        {
-            XSLogWarning( "Error allocating memory for an XSArray value" );
-            XSRecursiveLock_Unlock( source->lock );
-            
-            return NULL;
-        }
-        
-        newValue->object = XSRetain( value->object );
-        
-        if( previousValue == NULL )
-        {
-            destination->first = newValue;
-        }
-        else
-        {
-            previousValue->next = newValue;
-            newValue->previous  = previousValue;
-        }
-        
-        destination->last   = newValue;
-        previousValue       = newValue;
-        value               = value->next;
-        
-        destination->count++;
-    }
-    
-    destination->properties = source->properties;
-    
-    XSRecursiveLock_Unlock( source->lock );
-    
-    return destination;
+    return NULL;
 }
