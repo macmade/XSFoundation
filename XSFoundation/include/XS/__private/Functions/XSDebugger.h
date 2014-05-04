@@ -102,7 +102,7 @@
 
 /*!
  * @typedef     __XSDebugger_MemoryRecord
- * @abstract    Memory record for the memory debugger
+ * @abstract    Memory record for the debugger
  */
 typedef struct __XSDebugger_MemoryRecord_struct
 {

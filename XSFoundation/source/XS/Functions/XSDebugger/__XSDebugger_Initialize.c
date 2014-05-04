@@ -92,6 +92,11 @@ void __XSDebugger_Initialize( void )
     {
         XSFatalError( "Error setting a signal handler for SIGBUS" );
     }
+    
+    if( signal( SIGABRT,  __XSDebugger_SignalHandler ) ) == SIG_ERR )
+    {
+        XSFatalError( "Error setting a signal handler for SIGABRT" );
+    }
 
     #else
     
@@ -112,6 +117,11 @@ void __XSDebugger_Initialize( void )
         if( sigaction( SIGBUS, &sa1, &sa2 ) != 0 )
         {
             XSFatalError( "Error setting a signal handler for SIGBUS" );
+        }
+        
+        if( sigaction( SIGABRT, &sa1, &sa2 ) != 0 )
+        {
+            XSFatalError( "Error setting a signal handler for SIGABRT" );
         }
     }
     

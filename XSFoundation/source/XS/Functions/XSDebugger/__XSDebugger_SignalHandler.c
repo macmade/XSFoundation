@@ -83,11 +83,15 @@ void __XSDebugger_SignalHandler( int sig )
     
     if( sig == SIGSEGV )
     {
-        __XSDebugger_Breakpoint( "Segmentation fault (SIGSEGV) detected", NULL );
+        __XSDebugger_Breakpoint( "Segmentation fault detected - SIGSEGV", NULL );
     }
     else if( sig == SIGBUS )
     {
-        __XSDebugger_Breakpoint( "Bus error (SIGBUS) detected", NULL );
+        __XSDebugger_Breakpoint( "Bus error detected - SIGBUS", NULL );
+    }
+    else if( sig == SIGABRT )
+    {
+        __XSDebugger_Breakpoint( "Crash detected - SIGABRT", NULL );
     }
     
     #endif
