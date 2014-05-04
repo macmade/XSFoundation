@@ -85,13 +85,7 @@ XSStatic XSSemaphoreRef XSSemaphore_CreateWithName( const char * name, XSUIntege
         return NULL;
     }
     
-    sem = XSRuntime_CreateInstance( XSSemaphore_GetClassID() );
-    
-    if( sem == NULL )
-    {
-        XSFatalError( "Error creating an XSemaphore object" );
-    }
-    
+    sem        = __XSSemaphore_Create();
     sem->count = count;
     sem->name  = XSAlloc( length + 1 );
     

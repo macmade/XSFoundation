@@ -73,14 +73,5 @@
 
 XSStatic XSRecursiveLockRef XSRecursiveLock_Create( void )
 {
-    XSRecursiveLockRef object;
-    
-    object = XSRuntime_CreateInstance( XSRecursiveLock_GetClassID() );
-    
-    if( object == NULL )
-    {
-        XSFatalError( "Error creating an XSRecursiveLock object" );
-    }
-    
-    return object;
+    return __XSRecursiveLock_Create();
 }

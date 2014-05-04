@@ -146,4 +146,11 @@ bool __XSData_Equals( XSDataRef object1, XSDataRef object2 );
  */
 const char * __XSData_ToString( XSDataRef object );
 
+/*!
+ * @function    __XSData_Create
+ * @abstract    Creates an XSData object
+ * @return      The XSData object
+ */
+XSStatic XSDataRef __XSData_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_DATA_H__ */

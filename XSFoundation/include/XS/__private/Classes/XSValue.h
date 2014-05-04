@@ -153,4 +153,11 @@ bool __XSValue_Equals( XSValueRef object1, XSValueRef object2 );
  */
 const char * __XSValue_ToString( XSValueRef object );
 
+/*!
+ * @function    __XSValue_Create
+ * @abstract    Creates an XSValue object
+ * @return      The XSValue object
+ */
+XSStatic XSValueRef __XSValue_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_VALUE_H__ */

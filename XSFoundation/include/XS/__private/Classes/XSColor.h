@@ -203,4 +203,11 @@ void __XSColor_HSLToRGB( XSColorRef object );
  */
 void __XSColor_HSVToRGB( XSColorRef object );
 
+/*!
+ * @function    __XSColor_Create
+ * @abstract    Creates an XSColor object
+ * @return      The XSColor object
+ */
+XSStatic XSColorRef __XSColor_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_COLOR_H__ */

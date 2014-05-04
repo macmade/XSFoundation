@@ -75,12 +75,7 @@ XSStatic XSAutoreleased XSColorRef XSColor_CreateWithRGBA( XSFloat r, XSFloat g,
 {
     XSColorRef object;
     
-    object = XSRuntime_CreateInstance( XSColor_GetClassID() );
-    
-    if( object == NULL )
-    {
-        XSFatalError( "Error creating an XSColor object" );
-    }
+    object = __XSColor_Create();
     
     XSColor_SetRGBA( object, r, g, b, a );
     

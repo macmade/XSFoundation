@@ -94,15 +94,7 @@ XSAutoreleased XSStringRef XSString_LowercaseString( XSStringRef object )
         s[ i ] = ( char )tolower( s[ i ] );
     }
     
-    str = XSRuntime_CreateInstance( XSString_GetClassID() );
-    
-    if( str == NULL )
-    {
-        XSRelease( s );
-        
-        return NULL;
-    }
-    
+    str          = __XSString_Create();
     str->cString = s;
     str->length  = object->length;
     

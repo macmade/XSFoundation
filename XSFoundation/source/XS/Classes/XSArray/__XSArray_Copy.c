@@ -79,11 +79,6 @@ XSArrayRef __XSArray_Copy( XSArrayRef source, XSArrayRef destination )
     
     destination->lock = XSRecursiveLock_Create();
     
-    if( destination->lock == NULL )
-    {
-        XSFatalError( "Error creating a lock for XSArray" );
-    }
-    
     XSRecursiveLock_Lock( source->lock );
     
     value           = source->first;

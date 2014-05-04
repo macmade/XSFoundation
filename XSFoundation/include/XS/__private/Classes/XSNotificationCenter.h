@@ -172,4 +172,11 @@ bool __XSNotificationCenter_Equals( XSNotificationCenterRef object1, XSNotificat
  */
 const char * __XSNotificationCenter_ToString( XSNotificationCenterRef object );
 
+/*!
+ * @function    __XSNotificationCenter_Create
+ * @abstract    Creates an XSNotificationCenter object
+ * @return      The XSNotificationCenter object
+ */
+XSStatic XSNotificationCenterRef __XSNotificationCenter_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_NOTIFICATION_CENTER_H__ */

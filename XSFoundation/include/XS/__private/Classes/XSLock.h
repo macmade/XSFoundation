@@ -147,4 +147,11 @@ bool __XSLock_Equals( XSLockRef object1, XSLockRef object2 );
  */
 const char * __XSLock_ToString( XSLockRef object );
 
+/*!
+ * @function    __XSLock_Create
+ * @abstract    Creates an XSLock object
+ * @return      The XSLock object
+ */
+XSStatic XSLockRef __XSLock_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_LOCK_H__ */

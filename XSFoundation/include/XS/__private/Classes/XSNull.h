@@ -152,4 +152,11 @@ bool __XSNull_Equals( XSNullRef object1, XSNullRef object2 );
  */
 const char * __XSNull_ToString( XSNullRef object );
 
+/*!
+ * @function    __XSNull_Create
+ * @abstract    Creates an XSNull object
+ * @return      The XSNull object
+ */
+XSStatic XSNullRef __XSNull_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_NULL_H__ */

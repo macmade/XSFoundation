@@ -75,10 +75,5 @@ XSColorRef __XSColor_Constructor( XSColorRef object )
 {
     object->lock = XSRecursiveLock_Create();
     
-    if( object->lock == NULL )
-    {
-        XSFatalError( "Error creating a lock for XSColor" );
-    }
-    
     return object;
 }

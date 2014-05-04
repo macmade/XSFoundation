@@ -146,4 +146,11 @@ bool __XSDate_Equals( XSDateRef object1, XSDateRef object2 );
  */
 const char * __XSDate_ToString( XSDateRef object );
 
+/*!
+ * @function    __XSDate_Create
+ * @abstract    Creates an XSDate object
+ * @return      The XSDate object
+ */
+XSStatic XSDateRef __XSDate_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_DATE_H__ */

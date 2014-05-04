@@ -146,4 +146,11 @@ bool __XSBag_Equals( XSBagRef object1, XSBagRef object2 );
  */
 const char * __XSBag_ToString( XSBagRef object );
 
+/*!
+ * @function    __XSAutoreleasePool_Create
+ * @abstract    Creates an XSBag object
+ * @return      The XSBag object
+ */
+XSStatic XSBagRef __XSBag_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_BAG_H__ */

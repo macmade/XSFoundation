@@ -146,4 +146,11 @@ bool __XSFile_Equals( XSFileRef object1, XSFileRef object2 );
  */
 const char * __XSFile_ToString( XSFileRef object );
 
+/*!
+ * @function    __XSFile_Create
+ * @abstract    Creates an XSFile object
+ * @return      The XSFile object
+ */
+XSStatic XSFileRef __XSFile_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_FILE_H__ */

@@ -199,6 +199,13 @@ bool __XSThread_Equals( XSThreadRef object1, XSThreadRef object2 );
 const char * __XSThread_ToString( XSThreadRef object );
 
 /*!
+ * @function    __XSThread_Create
+ * @abstract    Creates an XSThread object
+ * @return      The XSThread object
+ */
+XSStatic XSThreadRef __XSThread_Create( void );
+
+/*!
  * @function    __XSThread_Proxy
  * @abstract    Thread proxy
  * @param       args        The thread arguments

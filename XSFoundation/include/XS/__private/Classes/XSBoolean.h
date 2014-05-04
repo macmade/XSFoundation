@@ -146,4 +146,11 @@ bool __XSBoolean_Equals( XSBooleanRef object1, XSBooleanRef object2 );
  */
 const char * __XSBoolean_ToString( XSBooleanRef object );
 
+/*!
+ * @function    __XSBoolean_Create
+ * @abstract    Creates an XSBoolean object
+ * @return      The XSBoolean object
+ */
+XSStatic XSBooleanRef __XSBoolean_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_BOOLEAN_H__ */

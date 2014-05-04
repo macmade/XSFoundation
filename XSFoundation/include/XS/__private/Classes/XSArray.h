@@ -174,6 +174,13 @@ bool __XSArray_Equals( XSArrayRef object1, XSArrayRef object2 );
 const char * __XSArray_ToString( XSArrayRef object );
 
 /*!
+ * @function    __XSArray_Create
+ * @abstract    Creates an XSArray object
+ * @return      The XSArray object
+ */
+XSStatic XSArrayRef __XSArray_Create( void );
+
+/*!
  * @function    __XSArray_CreateWithFirstObjectAndArgs
  * @abstract    Creates an array object with objects from a va_list
  * @param       firstObject The first object

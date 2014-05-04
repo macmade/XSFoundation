@@ -80,11 +80,6 @@ XSColorRef __XSColor_Copy( XSColorRef source, XSColorRef destination )
     
     destination->lock = XSRecursiveLock_Create();
     
-    if( destination->lock == NULL )
-    {
-        XSFatalError( "Error creating a lock for XSColor" );
-    }
-    
     XSColor_GetRGBA( source, &r, &g, &b, &a );
     XSColor_SetRGBA( destination, r, g, b, a );
     

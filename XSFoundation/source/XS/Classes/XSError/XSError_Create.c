@@ -73,19 +73,14 @@
 
 XSStatic XSErrorRef XSError_Create( XSStringRef domain, XSInteger code, XSStringRef reason, XSDictionaryRef userInfo )
 {
-    XSErrorRef error;
+    XSErrorRef object;
     
-    error = XSRuntime_CreateInstance( XSError_GetClassID() );
+    object = __XSError_Create();
     
-    if( error == NULL )
-    {
-        XSFatalError( "Error creating an XSError object" );
-    }
+    object->code     = code;
+    object->domain   = XSRetain( domain );
+    object->reason   = XSRetain( reason );
+    object->userInfo = XSRetain( userInfo );
     
-    error->code     = code;
-    error->domain   = XSRetain( domain );
-    error->reason   = XSRetain( reason );
-    error->userInfo = XSRetain( userInfo );
-    
-    return error;
+    return object;
 }

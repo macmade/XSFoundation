@@ -75,13 +75,7 @@ XSStatic XSValueRef XSValue_CreateWithRange( XSRange range )
 {
     XSValueRef object;
     
-    object = XSRuntime_CreateInstance( XSValue_GetClassID() );
-    
-    if( object == NULL )
-    {
-        XSFatalError( "Error creating an XSValue object" );
-    }
-    
+    object          = __XSValue_Create();
     object->range   = range;
     object->type    = XSValue_ValueTypeRange;
     

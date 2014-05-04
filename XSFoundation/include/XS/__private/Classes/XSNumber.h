@@ -150,4 +150,11 @@ bool __XSNumber_Equals( XSNumberRef object1, XSNumberRef object2 );
  */
 const char * __XSNumber_ToString( XSNumberRef object );
 
+/*!
+ * @function    __XSNumber_Create
+ * @abstract    Creates an XSNumber object
+ * @return      The XSNumber object
+ */
+XSStatic XSNumberRef __XSNumber_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_NUMBER_H__ */

@@ -82,13 +82,7 @@ XSStatic XSStringRef XSString_CreateWithCString( const char * s )
         return NULL;
     }
     
-    object = XSRuntime_CreateInstance( XSString_GetClassID() );
-    
-    if( object == NULL )
-    {
-        XSFatalError( "Error creating an XSString object" );
-    }
-    
+    object         = __XSString_Create();
     object->length = strlen( s );
     
     if( object->length > 0 )

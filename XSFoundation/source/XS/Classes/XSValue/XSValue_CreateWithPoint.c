@@ -75,13 +75,7 @@ XSStatic XSValueRef XSValue_CreateWithPoint( XSPoint point )
 {
     XSValueRef object;
     
-    object = XSRuntime_CreateInstance( XSValue_GetClassID() );
-    
-    if( object == NULL )
-    {
-        XSFatalError( "Error creating an XSValue object" );
-    }
-    
+    object          = __XSValue_Create();
     object->point   = point;
     object->type    = XSValue_ValueTypePoint;
     

@@ -73,14 +73,5 @@
 
 XSStatic XSNotificationCenterRef XSNotificationCenter_Create( void )
 {
-    XSNotificationCenterRef center;
-    
-    center = XSRuntime_CreateInstance( XSNotificationCenter_GetClassID() );
-    
-    if( center == NULL )
-    {
-        XSFatalError( "Error creating an XSNotificationCenter object" );
-    }
-    
-    return center;
+    return __XSNotificationCenter_Create();
 }

@@ -93,6 +93,8 @@ XSStatic XSStringRef XSString_CreateWithFormatAndArgs( const char * format, va_l
     {
         va_end( ap );
         XSLogWarning( "Error creating an XSString object - Invalid format" );
+        
+        return NULL;
     }
     
     s = XSAlloc( ( XSUInteger )length + 1 );
@@ -102,13 +104,7 @@ XSStatic XSStringRef XSString_CreateWithFormatAndArgs( const char * format, va_l
         XSFatalError( "Error allocating memory for XSString C format string" );
     }
     
-    str = XSRuntime_CreateInstance( XSString_GetClassID() );
-    
-    if( str == NULL )
-    {
-        va_end( ap );
-        XSFatalError( "Error creating an XSString object" );
-    }
+    str = __XSString_Create();
     
     vsnprintf( s, length + 1, format, ap );
     va_end( ap );

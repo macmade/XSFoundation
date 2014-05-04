@@ -75,13 +75,7 @@ XSStatic XSValueRef XSValue_CreateWithRect( XSRect rect )
 {
     XSValueRef object;
     
-    object = XSRuntime_CreateInstance( XSValue_GetClassID() );
-    
-    if( object == NULL )
-    {
-        XSFatalError( "Error creating an XSValue object" );
-    }
-    
+    object          = __XSValue_Create();
     object->rect    = rect;
     object->type    = XSValue_ValueTypeRect;
     

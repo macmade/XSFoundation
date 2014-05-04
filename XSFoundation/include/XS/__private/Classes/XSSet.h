@@ -146,4 +146,11 @@ bool __XSSet_Equals( XSSetRef object1, XSSetRef object2 );
  */
 const char * __XSSet_ToString( XSSetRef object );
 
+/*!
+ * @function    __XSSet_Create
+ * @abstract    Creates an XSSet object
+ * @return      The XSSet object
+ */
+XSStatic XSSetRef __XSSet_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_SET_H__ */

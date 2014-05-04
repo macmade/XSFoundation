@@ -75,13 +75,7 @@ XSStatic XSNotificationRef XSNotification_Create( XSStringRef name, XSObjectRef 
 {
     XSNotificationRef notification;
     
-    notification = XSRuntime_CreateInstance( XSNotification_GetClassID() );
-    
-    if( notification == NULL )
-    {
-        XSFatalError( "Error creating an XSNotification object" );
-    }
-    
+    notification           = __XSNotification_Create();
     notification->name     = XSRetain( name );
     notification->object   = XSRetain( object );
     notification->userInfo = XSRetain( userInfo );

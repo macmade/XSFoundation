@@ -75,13 +75,7 @@ XSStatic XSSemaphoreRef XSSemaphore_Create( XSUInteger count )
 {
     XSSemaphoreRef sem;
     
-    sem = XSRuntime_CreateInstance( XSSemaphore_GetClassID() );
-    
-    if( sem == NULL )
-    {
-        XSFatalError( "Error creating an XSemaphore object" );
-    }
-    
+    sem        = __XSSemaphore_Create();
     sem->count = count;
     
     if( XSThreading_SemaphoreCreate( &( sem->sem ), NULL, count ) == false )

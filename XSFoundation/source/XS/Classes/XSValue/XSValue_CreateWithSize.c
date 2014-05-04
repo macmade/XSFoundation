@@ -75,13 +75,7 @@ XSStatic XSValueRef XSValue_CreateWithSize( XSSize size )
 {
     XSValueRef object;
     
-    object = XSRuntime_CreateInstance( XSValue_GetClassID() );
-    
-    if( object == NULL )
-    {
-        XSFatalError( "Error creating an XSValue object" );
-    }
-    
+    object          = __XSValue_Create();
     object->size    = size;
     object->type    = XSValue_ValueTypeSize;
     

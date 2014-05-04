@@ -102,15 +102,7 @@ XSAutoreleased XSStringRef XSString_StringByAppendingCString( XSStringRef object
         return NULL;
     }
     
-    str = XSRuntime_CreateInstance( XSString_GetClassID() );
-    
-    if( str == NULL )
-    {
-        XSRelease( s2 );
-        
-        return NULL;
-    }
-    
+    str          = __XSString_Create();
     str->cString = s2;
     str->length  = length1 + length2;
     

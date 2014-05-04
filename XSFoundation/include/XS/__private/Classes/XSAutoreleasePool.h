@@ -176,6 +176,13 @@ bool __XSAutoreleasePool_Equals( XSAutoreleasePoolRef object1, XSAutoreleasePool
 const char * __XSAutoreleasePool_ToString( XSAutoreleasePoolRef object );
 
 /*!
+ * @function    __XSAutoreleasePool_Create
+ * @abstract    Creates an XSAutoreleasePool object
+ * @return      The XSAutoreleasePool object
+ */
+XSStatic XSAutoreleasePoolRef __XSAutoreleasePool_Create( void );
+
+/*!
  * @function    __XSAutoreleasePool_Exit
  * @abstract    Class finalizer
  */

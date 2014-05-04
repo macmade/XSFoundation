@@ -75,13 +75,7 @@ XSStatic XSValueRef XSValue_CreateWithEdgeInsets( XSEdgeInsets insets )
 {
     XSValueRef object;
     
-    object = XSRuntime_CreateInstance( XSValue_GetClassID() );
-    
-    if( object == NULL )
-    {
-        XSFatalError( "Error creating an XSValue object" );
-    }
-    
+    object          = __XSValue_Create();
     object->insets  = insets;
     object->type    = XSValue_ValueTypeEdgeInsets;
     

@@ -149,4 +149,11 @@ bool __XSError_Equals( XSErrorRef object1, XSErrorRef object2 );
  */
 const char * __XSError_ToString( XSErrorRef object );
 
+/*!
+ * @function    __XSError_Create
+ * @abstract    Creates an XSError object
+ * @return      The XSError object
+ */
+XSStatic XSErrorRef __XSError_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_ERROR_H__ */

@@ -148,4 +148,11 @@ bool __XSSemaphore_Equals( XSSemaphoreRef object1, XSSemaphoreRef object2 );
  */
 const char * __XSSemaphore_ToString( XSSemaphoreRef object );
 
+/*!
+ * @function    __XSSemaphore_Create
+ * @abstract    Creates an XSSemaphore object
+ * @return      The XSSemaphore object
+ */
+XSStatic XSSemaphoreRef __XSSemaphore_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_SEMAPHORE_H__ */

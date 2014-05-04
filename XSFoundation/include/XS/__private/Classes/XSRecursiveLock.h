@@ -146,4 +146,11 @@ bool __XSRecursiveLock_Equals( XSRecursiveLockRef object1, XSRecursiveLockRef ob
  */
 const char * __XSRecursiveLock_ToString( XSRecursiveLockRef object );
 
+/*!
+ * @function    __XSRecursiveLock_Create
+ * @abstract    Creates an XSRecursiveLock object
+ * @return      The XSRecursiveLock object
+ */
+XSStatic XSRecursiveLockRef __XSRecursiveLock_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_RECURSIVE_LOCK_H__ */

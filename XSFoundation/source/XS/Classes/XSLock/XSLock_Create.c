@@ -73,14 +73,5 @@
 
 XSStatic XSLockRef XSLock_Create( void )
 {
-    XSLockRef object;
-    
-    object = XSRuntime_CreateInstance( XSLock_GetClassID() );
-    
-    if( object == NULL )
-    {
-        XSFatalError( "Error creating an XSLock object" );
-    }
-    
-    return object;
+    return __XSLock_Create();
 }

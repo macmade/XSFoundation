@@ -79,12 +79,7 @@ void * __XSThread_Proxy( __XSThread_Arguments * args )
 {
     XSThreadRef thread;
     
-    thread = XSRuntime_CreateInstance( XSThread_GetClassID() );
-    
-    if( thread == NULL )
-    {
-        XSFatalError( "Error creating an XSThread object" );
-    }
+    thread = __XSThread_Create();
     
     XSThreading_TLSSetObject( &__XSThread_TLSKey, thread, XSObjectAssociationAssign );
     

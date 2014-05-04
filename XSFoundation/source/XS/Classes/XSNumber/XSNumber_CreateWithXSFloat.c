@@ -75,13 +75,7 @@ XSStatic XSNumberRef XSNumber_CreateWithXSFloat( XSFloat value )
 {
     XSNumberRef object;
     
-    object = XSRuntime_CreateInstance( XSNumber_GetClassID() );
-    
-    if( object == NULL )
-    {
-        XSFatalError( "Error creating an XSNumber object" );
-    }
-    
+    object               = __XSNumber_Create();
     object->floatValue   = ( XSFloat64 )value;
     object->isFloat      = true;
     

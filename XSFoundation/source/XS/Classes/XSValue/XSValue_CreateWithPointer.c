@@ -75,12 +75,7 @@ XSStatic XSValueRef XSValue_CreateWithPointer( void * pointer, XSObjectAssociati
 {
     XSValueRef object;
     
-    object = XSRuntime_CreateInstance( XSValue_GetClassID() );
-    
-    if( object == NULL )
-    {
-        XSFatalError( "Error creating an XSValue object" );
-    }
+    object = __XSValue_Create();
     
     if( association == XSObjectAssociationRetain )
     {

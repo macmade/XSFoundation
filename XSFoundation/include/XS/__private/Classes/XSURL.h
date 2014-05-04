@@ -146,4 +146,11 @@ bool __XSURL_Equals( XSURLRef object1, XSURLRef object2 );
  */
 const char * __XSURL_ToString( XSURLRef object );
 
+/*!
+ * @function    __XSURL_Create
+ * @abstract    Creates an XSURL object
+ * @return      The XSURL object
+ */
+XSStatic XSURLRef __XSURL_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_URL_H__ */

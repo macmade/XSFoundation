@@ -147,4 +147,11 @@ bool __XSString_Equals( XSStringRef object1, XSStringRef object2 );
  */
 const char * __XSString_ToString( XSStringRef object );
 
+/*!
+ * @function    __XSString_Create
+ * @abstract    Creates an XSString object
+ * @return      The XSString object
+ */
+XSStatic XSStringRef __XSString_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_STRING_H__ */

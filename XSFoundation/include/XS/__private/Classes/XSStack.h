@@ -159,4 +159,11 @@ bool __XSStack_Equals( XSStackRef object1, XSStackRef object2 );
  */
 const char * __XSStack_ToString( XSStackRef object );
 
+/*!
+ * @function    __XSStack_Create
+ * @abstract    Creates an XSStack object
+ * @return      The XSStack object
+ */
+XSStatic XSStackRef __XSStack_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_STACK_H__ */

@@ -162,6 +162,13 @@ bool __XSOrderedSet_Equals( XSOrderedSetRef object1, XSOrderedSetRef object2 );
 const char * __XSOrderedSet_ToString( XSOrderedSetRef object );
 
 /*!
+ * @function    __XSOrderedSet_Create
+ * @abstract    Creates an XSOrderedSet object
+ * @return      The XSOrderedSet object
+ */
+XSStatic XSOrderedSetRef __XSOrderedSet_Create( void );
+
+/*!
  * @function    __XSOrderedSet_CreateWithFirstObjectAndArgs
  * @abstract    Creates an ordered set object with objects from a va_list
  * @param       firstObject The first object

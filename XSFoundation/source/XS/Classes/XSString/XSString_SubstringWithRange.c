@@ -97,15 +97,7 @@ XSAutoreleased XSStringRef XSString_SubstringWithRange( XSStringRef object, XSRa
         return NULL;
     }
     
-    str = XSRuntime_CreateInstance( XSString_GetClassID() );
-    
-    if( str == NULL )
-    {
-        XSRelease( s );
-        
-        return NULL;
-    }
-    
+    str          = __XSString_Create();
     str->cString = s;
     str->length  = range.length;
     

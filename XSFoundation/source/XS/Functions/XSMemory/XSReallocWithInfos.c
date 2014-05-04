@@ -125,7 +125,9 @@ XS_EXPORT void * XSReallocWithInfos( void * memory, XSUInteger bytes, XSClassID 
     
     if( newObject == NULL )
     {
-        XSFatalError( "Cannot reallocate memory (%lu bytes)", ( unsigned long )bytes );
+        XSLogWarning( "Cannot reallocate memory (%lu bytes)", ( unsigned long )bytes );
+        
+        return NULL;
     }
     
     newObject->size = bytes;

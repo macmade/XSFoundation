@@ -73,14 +73,5 @@
 
 XSStatic XSArrayRef XSArray_Create( void )
 {
-    XSArrayRef object;
-    
-    object = XSRuntime_CreateInstance( XSArray_GetClassID() );
-    
-    if( object == NULL )
-    {
-        XSFatalError( "Error creating an XSArray object" );
-    }
-    
-    return object;
+    return __XSArray_Create();
 }

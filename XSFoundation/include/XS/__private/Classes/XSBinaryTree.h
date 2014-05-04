@@ -146,4 +146,11 @@ bool __XSBinaryTree_Equals( XSBinaryTreeRef object1, XSBinaryTreeRef object2 );
  */
 const char * __XSBinaryTree_ToString( XSBinaryTreeRef object );
 
+/*!
+ * @function    __XSBinaryTree_Create
+ * @abstract    Creates an XSBinaryTree object
+ * @return      The XSBinaryTree object
+ */
+XSStatic XSBinaryTreeRef __XSBinaryTree_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_BINARY_TREE_H__ */

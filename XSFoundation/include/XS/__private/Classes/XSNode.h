@@ -146,4 +146,11 @@ bool __XSNode_Equals( XSNodeRef object1, XSNodeRef object2 );
  */
 const char * __XSNode_ToString( XSNodeRef object );
 
+/*!
+ * @function    __XSNode_Create
+ * @abstract    Creates an XSNode object
+ * @return      The XSNode object
+ */
+XSStatic XSNodeRef __XSNode_Create( void );
+
 #endif /* __XS___PRIVATE_CLASSES_XS_NODE_H__ */

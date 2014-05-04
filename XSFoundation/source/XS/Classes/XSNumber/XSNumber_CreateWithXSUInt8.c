@@ -75,13 +75,7 @@ XSStatic XSNumberRef XSNumber_CreateWithXSUInt8( XSUInt8 value )
 {
     XSNumberRef object;
     
-    object = XSRuntime_CreateInstance( XSNumber_GetClassID() );
-    
-    if( object == NULL )
-    {
-        XSFatalError( "Error creating an XSNumber object" );
-    }
-    
+    object               = __XSNumber_Create();
     object->integerValue = ( XSUInt64 )value;
     object->isFloat      = false;
     object->isUnsigned   = true;

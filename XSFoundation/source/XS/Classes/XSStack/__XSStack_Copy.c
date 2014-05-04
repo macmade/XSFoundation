@@ -79,11 +79,6 @@ XSStackRef __XSStack_Copy( XSStackRef source, XSStackRef destination )
     
     destination->lock = XSRecursiveLock_Create();
     
-    if( destination->lock == NULL )
-    {
-        XSFatalError( "Error creating a lock for XSStack" );
-    }
-    
     XSRecursiveLock_Lock( source->lock );
     
     value         = source->top;

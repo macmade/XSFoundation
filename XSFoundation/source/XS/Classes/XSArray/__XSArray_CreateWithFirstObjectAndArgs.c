@@ -82,13 +82,7 @@ XSStatic XSArrayRef __XSArray_CreateWithFirstObjectAndArgs( XSObjectRef firstObj
         XSFatalError( "Cannot insert NULL in an XSArray" );
     }
     
-    array = XSRuntime_CreateInstance( XSArray_GetClassID() );
-    
-    if( array == NULL )
-    {
-        XSFatalError( "Error creating an XSArray object" );
-    }
-    
+    array = __XSArray_Create();
     value = XSAlloc( sizeof( __XSArray_Value ) );
     
     if( value == NULL )
