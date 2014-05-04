@@ -163,7 +163,7 @@ XS_EXPORT XSStatic XSAutoreleased XSArrayRef XSArray_Array( void );
 /*!
  * @function    XSArray_MutableArray
  * @abstract    Gets an empty mutable array
- * @return      An empty array
+ * @return      An empty mutable array
  */
 XS_EXPORT XSStatic XSAutoreleased XSArrayRef XSArray_MutableArray( void );
 
@@ -171,9 +171,9 @@ XS_EXPORT XSStatic XSAutoreleased XSArrayRef XSArray_MutableArray( void );
  * @function    XSArray_ArrayWithArray
  * @abstract    Gets an array from another array
  * @param       array       The array
- * @return      An empty array
+ * @return      An immutable array based on the given array
  */
-XS_EXPORT XSStatic XSArrayRef XSArray_ArrayWithArray( XSArrayRef array );
+XS_EXPORT XSStatic XSAutoreleased XSArrayRef XSArray_ArrayWithArray( XSArrayRef array );
 
 /*!
  * @function    XSArray_ArrayWithObjects
@@ -194,7 +194,7 @@ XS_EXPORT XSStatic XSArrayRef XSArray_Create( void );
 /*!
  * @function    XSArray_CreateMutable
  * @abstract    Creates an empty mutable array
- * @return      An empty array
+ * @return      An empty mutable array
  */
 XS_EXPORT XSStatic XSArrayRef XSArray_CreateMutable( void );
 
@@ -202,7 +202,7 @@ XS_EXPORT XSStatic XSArrayRef XSArray_CreateMutable( void );
  * @function    XSArray_CreateWithArray
  * @abstract    Creates an array from another array
  * @param       array       The array
- * @return      An empty array
+ * @return      An immutable array based on the given array
  */
 XS_EXPORT XSStatic XSArrayRef XSArray_CreateWithArray( XSArrayRef array );
 

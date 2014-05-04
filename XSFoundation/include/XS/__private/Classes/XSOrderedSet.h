@@ -79,6 +79,16 @@
 #include <XS/XSMacros.h>
 
 /*!
+ * @typedef     __XSOrderedSet_Properties
+ * @abstract    Ordered set properties
+ */
+typedef enum
+{
+    __XSOrderedSet_PropertiesMutable = 0x01  /*! Ordered set is mutable */
+}
+__XSOrderedSet_Properties;
+
+/*!
  * @struct      __XSOrderedSet_Value
  * @abstract    XSOrderedSet value holder
  */
@@ -96,10 +106,12 @@ __XSOrderedSet_Value;
  */
 struct __XSOrderedSet
 {
-    XSUInteger              count;  /*! The number of elements in the ordered set */
-    XSRecursiveLockRef      lock;   /*! The lock for thread-safety */
-    __XSOrderedSet_Value  * first;  /*! First object in the ordered set */
-    __XSOrderedSet_Value  * last;   /*! Last object in the ordered set */
+    XSUInteger              count;          /*! The number of elements in the ordered set */
+    XSRecursiveLockRef      lock;           /*! The lock for thread-safety */
+    __XSOrderedSet_Value  * first;          /*! First object in the ordered set */
+    __XSOrderedSet_Value  * last;           /*! Last object in the ordered set */
+    int                     properties;     /*! The ordered set properties */
+    char                    _pad_0[ 4 ];    /*! Padding */
 };
 
 /*!

@@ -160,6 +160,21 @@ XS_EXPORT XSStatic XSClassID XSOrderedSet_GetClassID( void );
 XS_EXPORT XSStatic XSAutoreleased XSOrderedSetRef XSOrderedSet_OrderedSet( void );
 
 /*!
+ * @function    XSOrderedSet_MutableOrderedSet
+ * @abstract    Gets an empty mutable ordered set
+ * @return      An empty mutable ordered set
+ */
+XS_EXPORT XSStatic XSAutoreleased XSOrderedSetRef XSOrderedSet_MutableOrderedSet( void );
+
+/*!
+ * @function    XSOrderedSet_OrderedSetWithOrderedSet
+ * @abstract    Gets an ordered set from another ordered set
+ * @param       set         The ordered set
+ * @return      An immutable ordered set based on the given ordered set
+ */
+XS_EXPORT XSStatic XSAutoreleased XSOrderedSetRef XSOrderedSet_OrderedSetWithOrderedSet( XSOrderedSetRef set );
+
+/*!
  * @function    XSOrderedSet_ArrayWithObjects
  * @abstract    Gets an ordered set filled with objects
  * @param       firstObject The first object to add
@@ -184,6 +199,21 @@ XS_EXPORT XSStatic XSAutoreleased XSOrderedSetRef XSOrderedSet_OrderedSetWithArr
 XS_EXPORT XSStatic XSOrderedSetRef XSOrderedSet_Create( void );
 
 /*!
+ * @function    XSOrderedSet_CreateMutable
+ * @abstract    Creates an empty mutable ordered set
+ * @return      An empty mutable ordered set
+ */
+XS_EXPORT XSStatic XSOrderedSetRef XSOrderedSet_CreateMutable( void );
+
+/*!
+ * @function    XSOrderedSet_CreateWithOrderedSet
+ * @abstract    Creates an ordered set from another ordered set
+ * @param       set         The ordered set
+ * @return      An immutable ordered set based on the given ordered set
+ */
+XS_EXPORT XSStatic XSAutoreleased XSOrderedSetRef XSOrderedSet_CreateWithOrderedSet( XSOrderedSetRef set );
+
+/*!
  * @function    XSOrderedSet_CreateWithObjects
  * @abstract    Creates an ordered set filled with objects
  * @param       firstObject The first object to add
@@ -199,6 +229,22 @@ XS_EXPORT XSStatic XSOrderedSetRef XSOrderedSet_CreateWithObjects( XSObjectRef f
  * @return      An ordered set containing the objects contained in the array
  */
 XS_EXPORT XSStatic XSOrderedSetRef XSOrderedSet_CreateWithArray( XSArrayRef array );
+
+/*!
+ * @function    XSOrderedSet_CreateMutableCopy
+ * @abstract    Creates a mutable copy of an ordered set
+ * @param       set         The ordered set
+ * @return      The mutable copy of the ordered set
+ */
+XS_EXPORT XSOrderedSetRef XSOrderedSet_CreateMutableCopy( XSOrderedSetRef set );
+
+/*!
+ * @function    XSOrderedSet_IsMutable
+ * @abstract    Checks if an ordered set is mutable
+ * @param       set         The ordered set
+ * @return      True if the ordered set is mutable, otherwise false
+ */
+XS_EXPORT bool XSOrderedSet_IsMutable( XSOrderedSetRef set );
 
 /*!
  * @function    XSOrderedSet_GetCount
