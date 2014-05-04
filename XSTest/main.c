@@ -301,7 +301,7 @@ int main( int argc, const char * argv[] )
         XSArrayRef a2;
         
         a1 = XSArray_ArrayWithObjects( XSSTR( "str1" ), XSSTR( "str2" ), XSSTR( "str3" ), XSSTR( "str4" ), XSSTR( "str5" ), NULL );
-        a2 = XSCopy( a1 );
+        a2 = XSArray_CreateMutableCopy( a1 );
         
         XSArray_AddObject( a2 , XSSTR( "str6" ) );
         XSArray_AddObject( a2 , a1 );
@@ -331,7 +331,7 @@ int main( int argc, const char * argv[] )
         
         XSRelease( a2 );
         
-        a1 = XSArray_Array();
+        a1 = XSArray_MutableArray();
         a2 = XSArray_ArrayWithObjects( XSSTR( "1" ), XSSTR( "2" ), XSSTR( "3" ), NULL );
         
         XSArray_AppendArray( a1, a2 );
@@ -364,9 +364,12 @@ int main( int argc, const char * argv[] )
             NULL
         );
         
+        array = XSArray_CreateMutableCopy( array );
+        
         XSShow( array );
         XSArray_SortWithFunction( array, &__ArraySort );
         XSShow( array );
+        XSRelease( array );
     }
     
     {

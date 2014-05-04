@@ -73,5 +73,10 @@
 
 XSStatic XSAutoreleased XSArrayRef XSArray_MutableArray( void )
 {
-    return NULL;
+    XSArrayRef object;
+    
+    object              = __XSArray_Create();
+    object->properties |= __XSArray_PropertiesMutable;
+    
+    return object;
 }

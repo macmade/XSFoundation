@@ -73,7 +73,14 @@
 
 XSArrayRef XSArray_CreateMutableCopy( XSArrayRef array )
 {
-    ( void )array;
+    XSArrayRef copy;
     
-    return NULL;
+    copy = XSCopy( array );
+    
+    if( copy != NULL )
+    {
+        copy->properties |= __XSArray_PropertiesMutable;
+    }
+    
+    return copy;
 }

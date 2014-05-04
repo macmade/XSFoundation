@@ -110,7 +110,7 @@ struct __XSArray
     XSRecursiveLockRef   lock;          /*! The lock for thread-safety */
     __XSArray_Value    * first;         /*! First object in the array */
     __XSArray_Value    * last;          /*! Last object in the array */
-    __XSArray_Properties properties;    /*! The array properties */
+    int                  properties;    /*! The array properties */
     char                 _pad_0[ 4 ];   /*! Padding */
 };
 

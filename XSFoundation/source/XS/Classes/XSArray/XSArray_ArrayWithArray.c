@@ -73,7 +73,5 @@
 
 XSStatic XSArrayRef XSArray_ArrayWithArray( XSArrayRef array )
 {
-    ( void )array;
-    
-    return NULL;
+    return XSAutorelease( XSArray_CreateWithArray( array ) );
 }

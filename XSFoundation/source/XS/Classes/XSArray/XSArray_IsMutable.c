@@ -73,7 +73,10 @@
 
 bool XSArray_IsMutable( XSArrayRef array )
 {
-    ( void )array;
+    if( array == NULL )
+    {
+        return false;
+    }
     
-    return false;
+    return ( ( array->properties & __XSArray_PropertiesMutable ) != 0 ) ? true : false;
 }

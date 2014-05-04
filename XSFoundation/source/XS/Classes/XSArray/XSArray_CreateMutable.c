@@ -73,5 +73,10 @@
 
 XSStatic XSArrayRef XSArray_CreateMutable( void )
 {
-    return NULL;
+    XSArrayRef array;
+    
+    array              = __XSArray_Create();
+    array->properties |= __XSArray_PropertiesMutable;
+    
+    return array;
 }
