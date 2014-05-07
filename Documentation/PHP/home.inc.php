@@ -4,7 +4,7 @@
     The XEOS C Foundation library provides the base for object-oriented C style coding, reference counting memory management with auto-release capabilities, reflection, runtime environment, polymorphism, and basic objects.
 </p>
 <p>
-    Its purpose is to be integrated in the <a href="http://www.xs-labs.com/en/projects/xeos/" title="XEOS" />XEOS Operating System</a>, once its C standard library will be complete.<br />
+    Its purpose is to be integrated in the <a href="http://www.xs-labs.com/en/projects/xeos/" title="XEOS">XEOS Operating System</a>, once its C standard library will be complete.<br />
     For now, it's just a standalone project, that should compile on every OS with a decent C compiler.
 </p>
 <h4>Supported OS</h4>
