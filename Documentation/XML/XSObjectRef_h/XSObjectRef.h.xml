@@ -7,7 +7,8 @@
 </attributes>
 <includes>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <typedefs><typedef id="//xs_ref/c/tdef/XSObjectRef" lang="c" type="simple"><name>XSObjectRef</name>
 <abstract><p>Polymorphism support - Generic type for all XSFoundation objects
 </p></abstract>

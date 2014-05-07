@@ -8,7 +8,8 @@
 <includes>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSInteger.h">&lt;XS/XSTypes/XSInteger.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <typedefs><typedef id="//xs_ref/c/tdef/XSDataType" lang="c" type="simple"><name>XSDataType</name>
 <abstract><p>Data-types
 </p></abstract>

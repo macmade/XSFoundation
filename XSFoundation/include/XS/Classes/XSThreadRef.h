@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSThread class
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -130,7 +131,7 @@ XS_EXPORT XSStatic XSThreadRef XSThread_GetMainThread( void );
 XS_EXPORT XSStatic XSThreadRef XSThread_GetCurrentThread( void );
 
 /*!
- * @function    XSThread_CurrentThread
+ * @function    XSThread_GetCurrentThreadID
  * @abstract    Gets the instance of the current thread
  * @return      The instance of the current thread
  */
@@ -145,7 +146,7 @@ XS_EXPORT XSStatic XSUInteger XSThread_GetCurrentThreadID( void );
 XS_EXPORT XSStatic void XSThread_DetachMethod( XSObjectRef object, XSThread_Method method );
 
 /*!
- * @function    XSThread_DetachMethod
+ * @function    XSThread_DetachMethodWithArgument
  * @abstract    Creates a thread with an object's method as entry point and with an argument
  * @param       object      The receiver object
  * @param       method      The receiver object's method to detach
@@ -154,14 +155,14 @@ XS_EXPORT XSStatic void XSThread_DetachMethod( XSObjectRef object, XSThread_Meth
 XS_EXPORT XSStatic void XSThread_DetachMethodWithArgument( XSObjectRef object, XSThread_MethodWithArgument method, void * arg );
 
 /*!
- * @function    XSThread_DetachMethod
+ * @function    XSThread_DetachFunction
  * @abstract    Creates a thread with an object's method as entry point
  * @param       func        The function to detach
  */
 XS_EXPORT XSStatic void XSThread_DetachFunction( XSThread_Function func );
 
 /*!
- * @function    XSThread_DetachMethod
+ * @function    XSThread_DetachFunctionWithArgument
  * @abstract    Creates a thread with an object's method as entry point and with an argument
  * @param       func        The function to detach
  * @param       arg         The argument to pass to the threaded function

@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSFoundation macros
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -75,78 +76,70 @@
 #ifndef __XS_MACROS_H__
 #define __XS_MACROS_H__
 
+/*!
+ * @define      XS_EXTERN_C_BEGIN
+ * @abstract    Substitution for 'extern "C" {' start, when compiling with C++
+ */
 #ifdef __cplusplus
-
-/*!
- * @def         XS_EXTERN_C_BEGIN
- * @abstract    Substitution for 'extern "C" {' start, when compiling with C++
- */
-#define XS_EXTERN_C_BEGIN           extern "C" {
-
-/*!
- * @def         XS_EXTERN_C_BEGIN
- * @abstract    Substitution for 'extern "C" {' end, when compiling with C++
- */
-#define XS_EXTERN_C_END             }
-
+    #define XS_EXTERN_C_BEGIN           extern "C" {
 #else
+    #define XS_EXTERN_C_BEGIN           
+#endif
 
 /*!
- * @def         XS_EXTERN_C_BEGIN
- * @abstract    Substitution for 'extern "C" {' start, when compiling with C++
- */
-#define XS_EXTERN_C_BEGIN           
-
-/*!
- * @def         XS_EXTERN_C_BEGIN
+ * @define      XS_EXTERN_C_END
  * @abstract    Substitution for 'extern "C" {' end, when compiling with C++
- */       
-#define XS_EXTERN_C_END             
+ */
+#ifdef __cplusplus
+    #define XS_EXTERN_C_END             }
+#else   
+    #define XS_EXTERN_C_END             
+#endif
 
 /*!
- * @def         XSStatic
+ * @define      XSStatic
  * @abstract    Marker for static class methods
  */
 #define XSStatic                    
 
 /*!
- * @def         XSAutoreleased
+ * @define      XSAutoreleased
  * @abstract    Marker for methods that return auto-released objects
  */
 #define XSAutoreleased              
 
 /*!
- * @def             __XS_VERSION_STR__
+ * @define          __XS_VERSION_STR__
  * @abstract        XSFoundation version number string
  */
 #define __XS_VERSION_STR__          "2.0.0-0"
 
 /*!
- * @def             __XS_VERSION_MAJ__
+ * @define          __XS_VERSION_MAJ__
  * @abstract        XSFoundation major version number
  */
 #define __XS_VERSION_MAJ__          2
 
 /*!
- * @def             __XS_VERSION_MIN__
+ * @define          __XS_VERSION_MIN__
  * @abstract        XSFoundation minor version number
  */
 #define __XS_VERSION_MIN__          0
 
 /*!
- * @def             __XS_VERSION_BUGFIX__
+ * @define          __XS_VERSION_BUGFIX__
  * @abstract        XSFoundation bugfix version number
  */
 #define __XS_VERSION_BUGFIX__       0
 
 /*!
- * @def             __XS_VERSION_PATCH__
+ * @define          __XS_VERSION_PATCH__
  * @abstract        XSFoundation patch level version number
  */
 #define __XS_VERSION_PATCH__        0
 
 /*!
- * @def             __XS_VERSION__
+ * @define          __XS_VERSION__
  * @abstract        XSFoundation version number
  */
 #define __XS_VERSION__              ( __XS_VERS_MAJ__ * 1000000 \
@@ -154,66 +147,46 @@
                                     + __XS_VERS_BUG__ * 100     \
                                     + __XS_VERS_PATCH__ )
 
+/*!
+ * @define          XS_MIN
+ * @abstract        Gets the minimum value of two values
+ * @param           _a_     The first value
+ * @param           _b_     The second value
+ * @return          The minimum value of the two values
+ */
 #if !defined( __STRICT_ANSI__ ) && ( defined( __GNUC__ ) || defined( __clang__ ) )
-    
-    /*!
-     * @def             XS_MIN
-     * @abstract        Gets the minimum value of two values
-     * @param           _a_     The first value
-     * @param           _b_     The second value
-     * @return          The minimum value of the two values
-     */
     #define XS_MIN( _a_, _b_ )      ( { __typeof__( _a_ ) __a; __typeof__( _b_ ) __b; __a = ( _a_ ); __b = ( _b_ ); ( __a < __b ) ? __a : __b; } )
-    
-    /*!
-     * @def             XS_MAX
-     * @abstract        Gets the maximum value of two values
-     * @param           _a_     The first value
-     * @param           _b_     The second value
-     * @return          The maximum value of the two values
-     */
-    #define XS_MAX( _a_, _b_ )      ( { __typeof__( _a_ ) __a; __typeof__( _b_ ) __b; __a = ( _a_ ); __b = ( _b_ ); ( __a < __b ) ? __b : __a; } )
-    
-    /*!
-     * @def             XS_ABS
-     * @abstract        Gets an absolute value of a value
-     * @param           _a_     The value
-     * @return          The absolute value of the value
-     */
-    #define XS_ABS( _a_ )           ( { __typeof__( _a_ ) __a = ( _a_ ); ( __a < 0 ) ? -__a : __a; } )
-    
 #else
-    
-    /*!
-     * @def             XS_MIN
-     * @abstract        Gets the minimum value of two values
-     * @param           _a_     The first value
-     * @param           _b_     The second value
-     * @return          The minimum value of the two values
-     */
     #define XS_MIN( _a_, _b_ )      ( ( ( _a_ ) < ( _b_ ) ) ? ( _a_ ) : ( _b_ ) )
-    
-    /*!
-     * @def             XS_MAX
-     * @abstract        Gets the maximum value of two values
-     * @param           _a_     The first value
-     * @param           _b_     The second value
-     * @return          The maximum value of the two values
-     */
-    #define XS_MAX( _a_, _b_ )      ( ( ( _a_ ) > ( _b_ ) ) ? ( _a_ ) : ( _b_ ) )
-    
-    /*!
-     * @def             XS_ABS
-     * @abstract        Gets an absolute value of a value
-     * @param           _a_     The value
-     * @return          The absolute value of the value
-     */
-    #define XS_ABS( _a_ )           ( ( ( _a_ ) < 0 ) ? ( -( _a_ ) ) : ( _a_ ) )
-    
 #endif
 
 /*!
- * @def         XS_PATH_MAX
+ * @define          XS_MAX
+ * @abstract        Gets the maximum value of two values
+ * @param           _a_     The first value
+ * @param           _b_     The second value
+ * @return          The maximum value of the two values
+ */
+#if !defined( __STRICT_ANSI__ ) && ( defined( __GNUC__ ) || defined( __clang__ ) )
+    #define XS_MAX( _a_, _b_ )      ( { __typeof__( _a_ ) __a; __typeof__( _b_ ) __b; __a = ( _a_ ); __b = ( _b_ ); ( __a < __b ) ? __b : __a; } )
+#else
+    #define XS_MAX( _a_, _b_ )      ( ( ( _a_ ) > ( _b_ ) ) ? ( _a_ ) : ( _b_ ) )
+#endif
+
+/*!
+ * @define          XS_ABS
+ * @abstract        Gets an absolute value of a value
+ * @param           _a_     The value
+ * @return          The absolute value of the value
+ */
+#if !defined( __STRICT_ANSI__ ) && ( defined( __GNUC__ ) || defined( __clang__ ) )
+    #define XS_ABS( _a_ )           ( { __typeof__( _a_ ) __a = ( _a_ ); ( __a < 0 ) ? -__a : __a; } )
+#else
+    #define XS_ABS( _a_ )           ( ( ( _a_ ) < 0 ) ? ( -( _a_ ) ) : ( _a_ ) )
+#endif
+
+/*!
+ * @define      XS_PATH_MAX
  * @abstract    Maximum length for a path
  */
 #if defined( _WIN32 )
@@ -223,7 +196,7 @@
 #endif
 
 /*!
- * @def         XSEndian16_Swap
+ * @define      XSEndian16_Swap
  * @abstract    Swap endiannes of a 16 bits value
  * @param       _value_     The value to swap
  */
@@ -234,7 +207,7 @@
     )
 
 /*!
- * @def         XSEndian32_Swap
+ * @define      XSEndian32_Swap
  * @abstract    Swap endiannes of a 32 bits value
  * @param       _value_     The value to swap
  */
@@ -247,7 +220,7 @@
     )
 
 /*!
- * @def         XSEndian64_Swap
+ * @define      XSEndian64_Swap
  * @abstract    Swap endiannes of a 64 bits value
  * @param       _value_     The value to swap
  */
@@ -264,7 +237,7 @@
     )
 
 /*!
- * @def         XS_EXTERN
+ * @define      XS_EXTERN
  * @abstract    Standardization of the extern keyword
  */
 #if defined( __cplusplus )
@@ -274,7 +247,7 @@
 #endif
 
 /*!
- * @def         XS_EXPORT
+ * @define      XS_EXPORT
  * @abstract    Standardization of the extern keyword for exported symbols
  */
 #if defined( __WIN32__ )
@@ -284,13 +257,13 @@
 #endif
 
 /*!
- * @def         XS_IMPORT
+ * @define      XS_IMPORT
  * @abstract    Standardization of the extern keyword for imported symbols
  */
 #define XS_IMPORT                   XS_EXTERN
 
 /*!
- * @def         XS_WEAK_ATTRIBUTE
+ * @define      XS_WEAK_ATTRIBUTE
  * @abstract    Standardization of the weak compiler attribute
  * @discussion  Not all compiler support this attribute, so it may be defined
  *              to nothing.
@@ -302,21 +275,23 @@
 #endif
 
 /*!
- * @def         XS_WEAK_IMPORT_ATTRIBUTE
+ * @define      XS_WEAK_IMPORT_ATTRIBUTE
  * @abstract    Standardization of the weak import compiler attribute
  * @discussion  Not all compiler support this attribute, so it may be defined
  *              to nothing.
  */
 #if defined( __GNUC__ ) && ( ( __GNUC__ >= 4 ) || ( ( __GNUC__ == 3 ) && ( __GNUC_MINOR__ >= 1 ) ) )
     #define XS_WEAK_IMPORT_ATTRIBUTE        __attribute__( ( weak_import ) )
-#elif defined(__MWERKS__) && ( __MWERKS__ >= 0x3205 )
-    #define XS_WEAK_IMPORT_ATTRIBUTE        __attribute__( ( weak_import ) )
 #else
-    #define XS_WEAK_IMPORT_ATTRIBUTE        
+    #if defined(__MWERKS__) && ( __MWERKS__ >= 0x3205 )
+        #define XS_WEAK_IMPORT_ATTRIBUTE        __attribute__( ( weak_import ) )
+    #else
+        #define XS_WEAK_IMPORT_ATTRIBUTE        
+    #endif
 #endif
 
 /*!
- * @def         XS_DEPRECATED_ATTRIBUTE
+ * @define      XS_DEPRECATED_ATTRIBUTE
  * @abstract    Standardization of the deprecated compiler attribute
  * @discussion  Not all compiler support this attribute, so it may be defined
  *              to nothing.
@@ -328,7 +303,7 @@
 #endif
 
 /*!
- * @def         XS_UNAVAILABLE_ATTRIBUTE
+ * @define      XS_UNAVAILABLE_ATTRIBUTE
  * @abstract    Standardization of the unavailable compiler attribute
  * @discussion  Not all compiler support this attribute, so it may be defined
  *              to nothing.
@@ -340,7 +315,7 @@
 #endif
 
 /*!
- * @def         XS_FORMAT_ATTRIBUTE
+ * @define      XS_FORMAT_ATTRIBUTE
  * @abstract    Standardization of the format compiler attribute
  * @discussion  Not all compiler support this attribute, so it may be defined
  *              to nothing.
@@ -352,7 +327,7 @@
 #endif
 
 /*!
- * @def         XS_CONST_ATTRIBUTE
+ * @define      XS_CONST_ATTRIBUTE
  * @abstract    Standardization of the const compiler attribute
  * @discussion  Not all compiler support this attribute, so it may be defined
  *              to nothing.
@@ -364,7 +339,7 @@
 #endif
 
 /*!
- * @def         XS_NORETURN_ATTRIBUTE
+ * @define      XS_NORETURN_ATTRIBUTE
  * @abstract    Standardization of the noreturn compiler attribute
  * @discussion  Not all compiler support this attribute, so it may be defined
  *              to nothing.
@@ -376,47 +351,59 @@
 #endif
 
 /*!
- * @def         XS_INLINE
+ * @define      XS_INLINE
  * @abstract    Standardization of the inline compiler keyword
  */
 #if defined( __GNUC__ ) && ( __GNUC__ == 4 ) && !defined( DEBUG )
     #define XS_INLINE                       static __inline__ __attribute__( ( always_inline ) )
-#elif defined( __GNUC__ )
-    #define XS_INLINE                       static __inline__
-#elif defined( __MWERKS__ ) || defined( __cplusplus )
-    #define XS_INLINE                       static inline
-#elif defined(_MSC_VER)
-    #define XS_INLINE                       static __inline
 #else
-    #define XS_INLINE                       
+    #if defined( __GNUC__ )
+        #define XS_INLINE                   static __inline__
+    #else
+        #if defined( __MWERKS__ ) || defined( __cplusplus )
+            #define XS_INLINE               static inline
+        #else
+            #if defined(_MSC_VER)
+                #define XS_INLINE           static __inline
+            #else
+                #define XS_INLINE                       
+            #endif
+        #endif
+    #endif
 #endif
 
 /*!
- * @def         __func__
+ * @define      __func__
  * @abstract    Function name
  */
 #ifndef __func__
     #ifdef _WIN32
         #if defined( __FUNCTION__ )
             #define __func__                __FUNCTION__
-        #elif defined( __FUNCSIG__ )
-            #define __func__                __FUNCSIG__
-        #elif defined( __FUNCDNAME__ )
-            #define __func__                __FUNCDNAME__
+        #else
+            #if defined( __FUNCSIG__ )
+                #define __func__            __FUNCSIG__
+            #else
+                #if defined( __FUNCDNAME__ )
+                    #define __func__        __FUNCDNAME__
+                #else
+                    #define __func__        "<unknown function>"
+                #endif
+            #endif
         #endif
-    #elif __STDC_VERSION__ < 199901L
-        #ifdef __GNUC__
-            #if __GNUC__ >= 2
-                #define __func__            __FUNCTION__
+    #else
+        #if __STDC_VERSION__ < 199901L
+            #ifdef __GNUC__
+                #if __GNUC__ >= 2
+                    #define __func__        __FUNCTION__
+                #else
+                    #define __func__        "<unknown function>"
+                #endif
             #else
                 #define __func__            "<unknown function>"
             #endif
-        #else
-            #define __func__                "<unknown function>"
         #endif
     #endif
 #endif
-
-#endif /* extern "C" { */
 
 #endif /* __XS_MACROS_H__ */

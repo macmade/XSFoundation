@@ -24,6 +24,8 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+/* $Id$ */
+
 class XS_Docset_Function
 {
     protected $_xml = NULL;
@@ -73,6 +75,8 @@ class XS_Docset_Function
         }
         
         $this->_declaration = strip_tags( $this->_xml->declaration->asXML() );
+        $this->_declaration = preg_replace( '!/\*.*?\*/!s', '', $this->_declaration );
+        $this->_declaration = preg_replace( '/\n\s*\n/', chr( 10 ), $this->_declaration );
         
         return $this->_declaration;
     }

@@ -9,7 +9,8 @@
 <include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <functions><function id="//xs_ref/c/func/XSOrderedSet_AddObject" lang="c"><name>XSOrderedSet_AddObject</name>
 <abstract><p>Adds an object in an ordered set
 </p></abstract>
@@ -87,33 +88,6 @@
     <declaration_type>XSOrderedSet_ApplierMethod</declaration_type> <declaration_param>method</declaration_param> );  </declaration>
 <desc><p>The method will be called with each object contained in the ordered set
 </p></desc>
-</function><function id="//xs_ref/doc/title:func/XSOrderedSet_Array" lang="c"><name>XSOrderedSet_Array</name>
-<abstract><p>Gets an empty ordered set
-</p></abstract>
-<returntype> XS_EXPORT XSStatic XSAutoreleased XSOrderedSetRef</returntype>
-<result><p>An empty ordered set
-</p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSOrderedSetRef</declaration_type> <declaration_function>XSOrderedSet_OrderedSet</declaration_function>(
-    <declaration_param>void</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xs_ref/doc/title:func/XSOrderedSet_ArrayWithObjects" lang="c"><name>XSOrderedSet_ArrayWithObjects</name>
-<abstract><p>Gets an ordered set filled with objects
-</p></abstract>
-<parameterlist>
-<parameter><name>firstObject</name><desc><p>The first object to add</p></desc></parameter>
-<parameter><name>...</name><desc><p>Additional objects to add, terminated by NULL</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type>XSObjectRef</type><name>firstObject</name></parsedparameter>
-<parsedparameter><type> ...</type><name>...</name></parsedparameter>
-</parsedparameterlist>
-<returntype> XS_EXPORT XSStatic XSAutoreleased XSOrderedSetRef</returntype>
-<result><p>An ordered set containing the specified objects
-</p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSOrderedSetRef</declaration_type> <declaration_function>XSOrderedSet_OrderedSetWithObjects</declaration_function>(
-    <declaration_type>XSObjectRef</declaration_type> <declaration_param>firstObject</declaration_param>,
-    ... );  </declaration>
-<desc><p/></desc>
 </function><function id="//xs_ref/c/func/XSOrderedSet_ContainsObject" lang="c"><name>XSOrderedSet_ContainsObject</name>
 <abstract><p>Checks if a specific object is present in an ordered set
 </p></abstract>

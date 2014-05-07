@@ -7,7 +7,8 @@
 </attributes>
 <includes>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <typedefs><typedef id="//xs_ref/c/tdef/XSInitStatus" lang="c" type="simple"><name>XSInitStatus</name>
 <abstract><p>Initialization status
 </p></abstract>

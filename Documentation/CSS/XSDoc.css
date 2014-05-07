@@ -22,6 +22,8 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+/* $Id$ */
+
 body {
     margin:                 0px;
     color:                  #000000;
@@ -34,7 +36,12 @@ body {
     background-color:       #FFFFFF;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color:                  #000000;
     font-style:             normal;
     font-weight:            normal;
@@ -124,11 +131,12 @@ code {
     font-size:              12px;
     text-decoration:        none;
     font-family:            Consolas, Monaco, Courier, sans-serif;
+    white-space:            pre;
 }
 
 .xsdoc-code-block {
     padding:                10px;
-    background-color:       #F5F5F5;
+    background-color:       #FCFCFC;
     border:                 solid 1px #D6E0E5;
     border-radius:          10px;
 }
@@ -153,6 +161,10 @@ code {
     color:                  #FFFFFF;
     font-size:              14px;
     text-align:             center;
+}
+
+.xsdoc-header a {
+    color:                  #FFFFFF;
 }
 
 .xsdoc-subheader {
@@ -215,18 +227,20 @@ code {
     font-weight:            bold;
 }
 
-.xsdoc-file {
+.xsdoc-file,
+.xsdoc-home {
     float:                  left;
     overflow:               hidden;
     height:                 100%;
     width:                  80%;
+    margin-bottom:          20px;
 }
 
 .xsdoc-file-toc {
     float:                  left;
     margin:                 10px;
     padding:                10px;
-    background-color:       #F5F5F5;
+    background-color:       #FCFCFC;
     border:                 solid 1px #D6E0E5;
     border-radius:          10px;
     font-size:              10px;
@@ -262,17 +276,16 @@ code {
     padding:                0px;
 }
 
-.xsdoc-file-content {
+.xsdoc-file-content,
+.xsdoc-home-content {
     float:                  left;
     width:                  70%;
-}
-
-.xsdoc-file-content {
     margin-top:             15px;
     margin-left:            20px;
 }
 
-.xsdoc-file-content h3 {
+.xsdoc-file-content h3,
+.xsdoc-home-content h3 {
     color:                  #3C4C6C;
     border-bottom:          solid 1px #D6E0E5;
     margin-bottom:          20px;
@@ -281,7 +294,10 @@ code {
 
 .xsdoc-file-details {
     border-top:             solid 1px #D6E0E5;
-    margin:                 30px;
+    margin-left:            40px;
+    margin-top:             20px;
+    margin-right:           40px;
+    margin-bottom:          20px;
     width:                  100%;
 }
 
@@ -289,7 +305,10 @@ code {
     border-bottom:          solid 1px #D6E0E5;
     overflow:               hidden;
     height:                 100%;
-    padding:                10px;
+    padding-left:           10px;
+    padding-top:            10px;
+    padding-right:          10px;
+    padding-bottom:         10px;
 }
 
 .xsdoc-file-detail-name {
@@ -314,6 +333,8 @@ code {
     padding:                0px;
 }
 
-.xsdoc-file-task {
+.xsdoc-file-task,
+.xsdoc-file-type,
+.xsdoc-file-macro {
     margin-bottom:          20px;
 }

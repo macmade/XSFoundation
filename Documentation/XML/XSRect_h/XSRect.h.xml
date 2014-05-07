@@ -9,7 +9,8 @@
 <include><hd_link logicalPath="//xs_ref/doc/header/XSPoint.h">&lt;XS/XSTypes/XSPoint.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSSize.h">&lt;XS/XSTypes/XSSize.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <typedefs><typedef id="//xs_ref/c/tdef/XSRect" lang="c" type="simple"><name>XSRect</name>
 <abstract><p>Rectangle type (structure)
 </p></abstract>

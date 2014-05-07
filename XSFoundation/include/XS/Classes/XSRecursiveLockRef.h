@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSRecursiveLock class
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -117,7 +118,7 @@ XS_EXPORT void XSRecursiveLock_Lock( XSRecursiveLockRef lock );
 XS_EXPORT bool XSRecursiveLock_TryLock( XSRecursiveLockRef lock );
 
 /*!
- * @function    XSRecursiveLock_Lock
+ * @function    XSRecursiveLock_Unlock
  * @abstract    Unlocks a recursive lock object
  * @param       lock    The recursive lock object
  */

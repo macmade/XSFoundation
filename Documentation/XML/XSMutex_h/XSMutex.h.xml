@@ -7,80 +7,27 @@
 </attributes>
 <includes>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <typedefs><typedef id="//xs_ref/c/tdef/XSMutex" lang="c" type="simple"><name>XSMutex</name>
 <abstract><p>Mutex type
 </p></abstract>
-<attributelists><listattribute><name>See Also</name><list>
-<item><name>XSMutex</name><value><hd_link logicalPath="//xs_ref/c/macro/XSMutex" isseealso="yes">XSMutex</hd_link></value></item><item><name>XS_MUTEX_INITIALIZER</name><value><hd_link logicalPath="//xs_ref/c/macro/XS_MUTEX_INITIALIZER" isseealso="yes">XS_MUTEX_INITIALIZER</hd_link></value></item><item><name>XSMutex</name><value><hd_link logicalPath="//xs_ref/c/macro/XSMutex_DONTLINK_0" isseealso="yes">XSMutex</hd_link></value></item><item><name>XS_MUTEX_INITIALIZER</name><value><hd_link logicalPath="//xs_ref/c/macro/XS_MUTEX_INITIALIZER_DONTLINK_0" isseealso="yes">XS_MUTEX_INITIALIZER</hd_link></value></item></list></listattribute>
-</attributelists>
 <declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>_WIN32</declaration_preprocessor> 
- <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MUTEX_INITIALIZER</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor> 
 <declaration_keyword>typedef</declaration_keyword> <declaration_type>HANDLE</declaration_type> <declaration_var>XSMutex</declaration_var>;  
 <declaration_preprocessor>#else</declaration_preprocessor> 
- <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MUTEX_INITIALIZER</declaration_preprocessor> <declaration_preprocessor>PTHREAD_MUTEX_INITIALIZER</declaration_preprocessor> 
 <declaration_keyword>typedef</declaration_keyword> <declaration_type>pthread_mutex_t</declaration_type> <declaration_var>XSMutex</declaration_var>;  
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
 <desc><p/></desc>
-<autorelated>
-<relateduid>//xs_ref/c/macro/XSMutex</relateduid>
-<relateduid>//xs_ref/c/macro/XS_MUTEX_INITIALIZER</relateduid>
-<relateduid>//xs_ref/c/macro/XSMutex_DONTLINK_0</relateduid>
-<relateduid>//xs_ref/c/macro/XS_MUTEX_INITIALIZER_DONTLINK_0</relateduid>
-</autorelated>
-</typedef></typedefs><defines><pdefine id="//xs_ref/c/macro/XS_MUTEX_INITIALIZER" definetype="value" lang="c"><name>XS_MUTEX_INITIALIZER</name>
-<abstract><p>Mutex type
+</typedef></typedefs><defines><pdefine id="//xs_ref/c/macro/XS_MUTEX_INITIALIZER" definetype="block" lang="c"><name>XS_MUTEX_INITIALIZER</name>
+<abstract><p>Default initializer for mutex types
 </p></abstract>
-<attributelists><listattribute><name>See Also</name><list>
-<item><name>XSMutex</name><value><hd_link logicalPath="//xs_ref/c/macro/XSMutex" isseealso="yes">XSMutex</hd_link></value></item><item><name>XSMutex</name><value><hd_link logicalPath="//xs_ref/c/tdef/XSMutex" isseealso="yes">XSMutex</hd_link></value></item><item><name>XSMutex</name><value><hd_link logicalPath="//xs_ref/c/macro/XSMutex_DONTLINK_0" isseealso="yes">XSMutex</hd_link></value></item><item><name>XS_MUTEX_INITIALIZER</name><value><hd_link logicalPath="//xs_ref/c/macro/XS_MUTEX_INITIALIZER_DONTLINK_0" isseealso="yes">XS_MUTEX_INITIALIZER</hd_link></value></item></list></listattribute>
-</attributelists>
-<declaration> <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MUTEX_INITIALIZER</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor> </declaration>
-<autorelated>
-<relateduid>//xs_ref/c/macro/XSMutex</relateduid>
-<relateduid>//xs_ref/c/tdef/XSMutex</relateduid>
-<relateduid>//xs_ref/c/macro/XSMutex_DONTLINK_0</relateduid>
-<relateduid>//xs_ref/c/macro/XS_MUTEX_INITIALIZER_DONTLINK_0</relateduid>
-</autorelated>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_MUTEX_INITIALIZER_DONTLINK_1" definetype="value" lang="c"><name>XS_MUTEX_INITIALIZER</name>
-<abstract><p>Mutex type
-</p></abstract>
-<attributelists><listattribute><name>See Also</name><list>
-<item><name>XSMutex</name><value><hd_link logicalPath="//xs_ref/c/macro/XSMutex" isseealso="yes">XSMutex</hd_link></value></item><item><name>XS_MUTEX_INITIALIZER</name><value><hd_link logicalPath="//xs_ref/c/macro/XS_MUTEX_INITIALIZER" isseealso="yes">XS_MUTEX_INITIALIZER</hd_link></value></item><item><name>XSMutex</name><value><hd_link logicalPath="//xs_ref/c/tdef/XSMutex" isseealso="yes">XSMutex</hd_link></value></item><item><name>XSMutex</name><value><hd_link logicalPath="//xs_ref/c/macro/XSMutex_DONTLINK_0" isseealso="yes">XSMutex</hd_link></value></item></list></listattribute>
-</attributelists>
-<declaration> <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MUTEX_INITIALIZER</declaration_preprocessor> <declaration_preprocessor>PTHREAD_MUTEX_INITIALIZER</declaration_preprocessor> </declaration>
-<autorelated>
-<relateduid>//xs_ref/c/macro/XSMutex</relateduid>
-<relateduid>//xs_ref/c/macro/XS_MUTEX_INITIALIZER</relateduid>
-<relateduid>//xs_ref/c/tdef/XSMutex</relateduid>
-<relateduid>//xs_ref/c/macro/XSMutex_DONTLINK_0</relateduid>
-</autorelated>
-</pdefine><pdefine id="//xs_ref/c/macro/XSMutex" definetype="value" lang="c"><name>XSMutex</name>
-<abstract><p>Mutex type
-</p></abstract>
-<attributelists><listattribute><name>See Also</name><list>
-<item><name>XS_MUTEX_INITIALIZER</name><value><hd_link logicalPath="//xs_ref/c/macro/XS_MUTEX_INITIALIZER" isseealso="yes">XS_MUTEX_INITIALIZER</hd_link></value></item><item><name>XSMutex</name><value><hd_link logicalPath="//xs_ref/c/tdef/XSMutex" isseealso="yes">XSMutex</hd_link></value></item><item><name>XSMutex</name><value><hd_link logicalPath="//xs_ref/c/macro/XSMutex_DONTLINK_0" isseealso="yes">XSMutex</hd_link></value></item><item><name>XS_MUTEX_INITIALIZER</name><value><hd_link logicalPath="//xs_ref/c/macro/XS_MUTEX_INITIALIZER_DONTLINK_0" isseealso="yes">XS_MUTEX_INITIALIZER</hd_link></value></item></list></listattribute>
-</attributelists>
-<declaration> <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MUTEX_INITIALIZER</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor> </declaration>
-<autorelated>
-<relateduid>//xs_ref/c/macro/XS_MUTEX_INITIALIZER</relateduid>
-<relateduid>//xs_ref/c/tdef/XSMutex</relateduid>
-<relateduid>//xs_ref/c/macro/XSMutex_DONTLINK_0</relateduid>
-<relateduid>//xs_ref/c/macro/XS_MUTEX_INITIALIZER_DONTLINK_0</relateduid>
-</autorelated>
-</pdefine><pdefine id="//xs_ref/c/macro/XSMutex_DONTLINK_1" definetype="value" lang="c"><name>XSMutex</name>
-<abstract><p>Mutex type
-</p></abstract>
-<attributelists><listattribute><name>See Also</name><list>
-<item><name>XSMutex</name><value><hd_link logicalPath="//xs_ref/c/macro/XSMutex" isseealso="yes">XSMutex</hd_link></value></item><item><name>XS_MUTEX_INITIALIZER</name><value><hd_link logicalPath="//xs_ref/c/macro/XS_MUTEX_INITIALIZER" isseealso="yes">XS_MUTEX_INITIALIZER</hd_link></value></item><item><name>XSMutex</name><value><hd_link logicalPath="//xs_ref/c/tdef/XSMutex" isseealso="yes">XSMutex</hd_link></value></item><item><name>XS_MUTEX_INITIALIZER</name><value><hd_link logicalPath="//xs_ref/c/macro/XS_MUTEX_INITIALIZER_DONTLINK_0" isseealso="yes">XS_MUTEX_INITIALIZER</hd_link></value></item></list></listattribute>
-</attributelists>
-<declaration> <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MUTEX_INITIALIZER</declaration_preprocessor> <declaration_preprocessor>PTHREAD_MUTEX_INITIALIZER</declaration_preprocessor> </declaration>
-<autorelated>
-<relateduid>//xs_ref/c/macro/XSMutex</relateduid>
-<relateduid>//xs_ref/c/macro/XS_MUTEX_INITIALIZER</relateduid>
-<relateduid>//xs_ref/c/tdef/XSMutex</relateduid>
-<relateduid>//xs_ref/c/macro/XS_MUTEX_INITIALIZER_DONTLINK_0</relateduid>
-</autorelated>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>_WIN32</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MUTEX_INITIALIZER</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MUTEX_INITIALIZER</declaration_preprocessor> <declaration_preprocessor>PTHREAD_MUTEX_INITIALIZER</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
 </pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
 <timestamp>Wednesday, May 07, 2014</timestamp>

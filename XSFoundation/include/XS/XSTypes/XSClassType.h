@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSClassType type definition
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -77,6 +78,10 @@
 
 XS_EXTERN_C_BEGIN
 
+/*!
+ * @typedef     XSClassType
+ * @abstract    Types for XSFoundation classes
+ */
 typedef enum
 {
     XSClassTypeNormal           = 0x00, /*! Normal, instanciable class */

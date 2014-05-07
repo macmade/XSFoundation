@@ -7,7 +7,8 @@
 </attributes>
 <includes>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <defines><pdefine id="//xs_ref/c/macro/__func__" definetype="block" lang="c"><name>__func__</name>
 <abstract><p>Function name
 </p></abstract>
@@ -15,9 +16,19 @@
 <declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>_WIN32</declaration_preprocessor> 
 <declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__FUNCTION__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>__FUNCTION__</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__FUNCSIG__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>__FUNCSIG__</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__FUNCDNAME__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>__FUNCDNAME__</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>"</declaration_preprocessor><declaration_preprocessor>&lt;</declaration_preprocessor><declaration_preprocessor>unknown</declaration_preprocessor> <declaration_preprocessor>function</declaration_preprocessor><declaration_preprocessor>&gt;</declaration_preprocessor><declaration_preprocessor>"</declaration_preprocessor> 
 <declaration_preprocessor>#endif</declaration_preprocessor>  
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>__STDC_VERSION__</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor> <declaration_preprocessor>199901L</declaration_preprocessor> 
 <declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> 
 <declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>&gt;=</declaration_preprocessor> <declaration_preprocessor>2</declaration_preprocessor> 
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>__FUNCTION__</declaration_preprocessor> 
@@ -29,9 +40,8 @@
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 <declaration_preprocessor>#endif</declaration_preprocessor>  
+<declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
-<desc><p>@def         __func__
-</p></desc>
 </pdefine><pdefine id="//xs_ref/c/macro/__XS_VERSION__" definetype="value" lang="c"><name>__XS_VERSION__</name>
 <abstract><p>XSFoundation version number
 </p></abstract>
@@ -39,66 +49,40 @@
     <declaration_preprocessor>+</declaration_preprocessor> <declaration_preprocessor>__XS_VERS_MIN__</declaration_preprocessor> <declaration_preprocessor>*</declaration_preprocessor> <declaration_preprocessor>10000</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>+</declaration_preprocessor> <declaration_preprocessor>__XS_VERS_BUG__</declaration_preprocessor> <declaration_preprocessor>*</declaration_preprocessor> <declaration_preprocessor>100</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>+</declaration_preprocessor> <declaration_preprocessor>__XS_VERS_PATCH__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-<desc><p>@def             __XS_VERSION__
-</p></desc>
 </pdefine><pdefine id="//xs_ref/c/macro/__XS_VERSION_BUGFIX__" definetype="value" lang="c"><name>__XS_VERSION_BUGFIX__</name>
 <abstract><p>XSFoundation bugfix version number
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_VERSION_BUGFIX__</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor> </declaration>
-<desc><p>@def             __XS_VERSION_BUGFIX__
-</p></desc>
 </pdefine><pdefine id="//xs_ref/c/macro/__XS_VERSION_MAJ__" definetype="value" lang="c"><name>__XS_VERSION_MAJ__</name>
 <abstract><p>XSFoundation major version number
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_VERSION_MAJ__</declaration_preprocessor> <declaration_preprocessor>2</declaration_preprocessor> </declaration>
-<desc><p>@def             __XS_VERSION_MAJ__
-</p></desc>
 </pdefine><pdefine id="//xs_ref/c/macro/__XS_VERSION_MIN__" definetype="value" lang="c"><name>__XS_VERSION_MIN__</name>
 <abstract><p>XSFoundation minor version number
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_VERSION_MIN__</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor> </declaration>
-<desc><p>@def             __XS_VERSION_MIN__
-</p></desc>
 </pdefine><pdefine id="//xs_ref/c/macro/__XS_VERSION_PATCH__" definetype="value" lang="c"><name>__XS_VERSION_PATCH__</name>
 <abstract><p>XSFoundation patch level version number
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_VERSION_PATCH__</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor> </declaration>
-<desc><p>@def             __XS_VERSION_PATCH__
-</p></desc>
 </pdefine><pdefine id="//xs_ref/c/macro/__XS_VERSION_STR__" definetype="value" lang="c"><name>__XS_VERSION_STR__</name>
 <abstract><p>XSFoundation version number string
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_VERSION_STR__</declaration_preprocessor> <declaration_preprocessor>"</declaration_preprocessor><declaration_preprocessor>2</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>-</declaration_preprocessor><declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>"</declaration_preprocessor> </declaration>
-<desc><p>@def             __XS_VERSION_STR__
-</p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_ABS" definetype="function" lang="c"><name>XS_ABS</name>
+</pdefine><pdefine id="//xs_ref/c/macro/XS_ABS" definetype="block" lang="c"><name>XS_ABS</name>
 <abstract><p>Gets an absolute value of a value
 </p></abstract>
 <parameterlist>
 <parameter><name>_a_</name><desc><p>The value</p></desc></parameter>
 </parameterlist>
-<parsedparameterlist>
-<parsedparameter><type></type><name>_a_</name></parsedparameter>
-</parsedparameterlist>
 <result><p>The absolute value of the value
 </p></result>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_ABS</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>{</declaration_preprocessor> <declaration_preprocessor>__typeof__</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor> <declaration_preprocessor>=</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>?</declaration_preprocessor> <declaration_preprocessor>-</declaration_preprocessor><declaration_preprocessor>__a</declaration_preprocessor> <declaration_preprocessor>:</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>}</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-<desc><p>@def             XS_ABS
-</p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_ABS_DONTLINK_1" definetype="function" lang="c"><name>XS_ABS</name>
-<abstract><p>Gets an absolute value of a value
-</p></abstract>
-<parameterlist>
-<parameter><name>_a_</name><desc><p>The value</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type></type><name>_a_</name></parsedparameter>
-</parsedparameterlist>
-<result><p>The absolute value of the value
-</p></result>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_ABS</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>?</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>-</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>:</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-<desc><p>@def             XS_ABS
-</p></desc>
+<declaration><declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>!</declaration_preprocessor><declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__STRICT_ANSI__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>|</declaration_preprocessor><declaration_preprocessor>|</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__clang__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_ABS</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>{</declaration_preprocessor> <declaration_preprocessor>__typeof__</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor> <declaration_preprocessor>=</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>?</declaration_preprocessor> <declaration_preprocessor>-</declaration_preprocessor><declaration_preprocessor>__a</declaration_preprocessor> <declaration_preprocessor>:</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>}</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_ABS</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>?</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>-</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>:</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
 </pdefine><pdefine id="//xs_ref/c/macro/XS_CONST_ATTRIBUTE" definetype="block" lang="c"><name>XS_CONST_ATTRIBUTE</name>
 <abstract><p>Standardization of the const compiler attribute
 </p></abstract>
@@ -132,8 +116,6 @@ to nothing.
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_EXPORT</declaration_preprocessor> <declaration_preprocessor>XS_EXTERN</declaration_preprocessor> 
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
-<desc><p>@def         XS_EXPORT
-</p></desc>
 </pdefine><pdefine id="//xs_ref/c/macro/XS_EXTERN" definetype="block" lang="c"><name>XS_EXTERN</name>
 <abstract><p>Standardization of the extern keyword
 </p></abstract>
@@ -143,32 +125,24 @@ to nothing.
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_EXTERN</declaration_preprocessor> <declaration_preprocessor>extern</declaration_preprocessor> 
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
-<desc><p>@def         XS_EXTERN
-</p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_EXTERN_C_BEGIN" definetype="value" lang="c"><name>XS_EXTERN_C_BEGIN</name>
+</pdefine><pdefine id="//xs_ref/c/macro/XS_EXTERN_C_BEGIN" definetype="block" lang="c"><name>XS_EXTERN_C_BEGIN</name>
 <abstract><p>Substitution for 'extern "C" {' start, when compiling with C++
 </p></abstract>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_EXTERN_C_BEGIN</declaration_preprocessor> <declaration_preprocessor>extern</declaration_preprocessor> <declaration_preprocessor>"</declaration_preprocessor><declaration_preprocessor>C</declaration_preprocessor><declaration_preprocessor>"</declaration_preprocessor> <declaration_preprocessor>{</declaration_preprocessor> </declaration>
-<desc><p>@def         XS_EXTERN_C_BEGIN
-</p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_EXTERN_C_BEGIN_DONTLINK_1" definetype="value" lang="c"><name>XS_EXTERN_C_BEGIN</name>
-<abstract><p>Substitution for 'extern "C" {' start, when compiling with C++
-</p></abstract>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_EXTERN_C_BEGIN</declaration_preprocessor> </declaration>
-<desc><p>@def         XS_EXTERN_C_BEGIN
-</p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_EXTERN_C_END" definetype="value" lang="c"><name>XS_EXTERN_C_END</name>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>__cplusplus</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_EXTERN_C_BEGIN</declaration_preprocessor> <declaration_preprocessor>extern</declaration_preprocessor> <declaration_preprocessor>"</declaration_preprocessor><declaration_preprocessor>C</declaration_preprocessor><declaration_preprocessor>"</declaration_preprocessor> <declaration_preprocessor>{</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_EXTERN_C_BEGIN</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xs_ref/c/macro/XS_EXTERN_C_END" definetype="block" lang="c"><name>XS_EXTERN_C_END</name>
 <abstract><p>Substitution for 'extern "C" {' end, when compiling with C++
 </p></abstract>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_EXTERN_C_END</declaration_preprocessor> <declaration_preprocessor>}</declaration_preprocessor> </declaration>
-<desc><p>@def         XS_EXTERN_C_BEGIN
-</p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_EXTERN_C_END_DONTLINK_1" definetype="value" lang="c"><name>XS_EXTERN_C_END</name>
-<abstract><p>Substitution for 'extern "C" {' end, when compiling with C++
-</p></abstract>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_EXTERN_C_END</declaration_preprocessor> </declaration>
-<desc><p>@def         XS_EXTERN_C_BEGIN
-</p></desc>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>__cplusplus</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_EXTERN_C_END</declaration_preprocessor> <declaration_preprocessor>}</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_EXTERN_C_END</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
 </pdefine><pdefine id="//xs_ref/c/macro/XS_FORMAT_ATTRIBUTE" definetype="block" lang="c"><name>XS_FORMAT_ATTRIBUTE</name>
 <abstract><p>Standardization of the format compiler attribute
 </p></abstract>
@@ -185,86 +159,57 @@ to nothing.
 <abstract><p>Standardization of the extern keyword for imported symbols
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_IMPORT</declaration_preprocessor> <declaration_preprocessor>XS_EXTERN</declaration_preprocessor> </declaration>
-<desc><p>@def         XS_IMPORT
-</p></desc>
 </pdefine><pdefine id="//xs_ref/c/macro/XS_INLINE" definetype="block" lang="c"><name>XS_INLINE</name>
 <abstract><p>Standardization of the inline compiler keyword
 </p></abstract>
 <declaration><declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>==</declaration_preprocessor> <declaration_preprocessor>4</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>!</declaration_preprocessor><declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_INLINE</declaration_preprocessor> <declaration_preprocessor>static</declaration_preprocessor> <declaration_preprocessor>__inline__</declaration_preprocessor> <declaration_preprocessor>__attribute__</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>always_inline</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_INLINE</declaration_preprocessor> <declaration_preprocessor>static</declaration_preprocessor> <declaration_preprocessor>__inline__</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__MWERKS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>|</declaration_preprocessor><declaration_preprocessor>|</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__cplusplus</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_INLINE</declaration_preprocessor> <declaration_preprocessor>static</declaration_preprocessor> <declaration_preprocessor>inline</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor><declaration_preprocessor>_MSC_VER</declaration_preprocessor><declaration_preprocessor>)</declaration_preprocessor> 
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_INLINE</declaration_preprocessor> <declaration_preprocessor>static</declaration_preprocessor> <declaration_preprocessor>__inline</declaration_preprocessor> 
 <declaration_preprocessor>#else</declaration_preprocessor> 
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_INLINE</declaration_preprocessor> 
 <declaration_preprocessor>#endif</declaration_preprocessor>  
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+<declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
-<desc><p>@def         XS_INLINE
-</p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_MAX" definetype="function" lang="c"><name>XS_MAX</name>
+</pdefine><pdefine id="//xs_ref/c/macro/XS_MAX" definetype="block" lang="c"><name>XS_MAX</name>
 <abstract><p>Gets the maximum value of two values
 </p></abstract>
 <parameterlist>
 <parameter><name>_a_</name><desc><p>The first value</p></desc></parameter>
 <parameter><name>_b_</name><desc><p>The second value</p></desc></parameter>
 </parameterlist>
-<parsedparameterlist>
-<parsedparameter><type></type><name>_a_</name></parsedparameter>
-<parsedparameter><type></type><name>_b_</name></parsedparameter>
-</parsedparameterlist>
 <result><p>The maximum value of the two values
 </p></result>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MAX</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>{</declaration_preprocessor> <declaration_preprocessor>__typeof__</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>__typeof__</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>__b</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor> <declaration_preprocessor>=</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>__b</declaration_preprocessor> <declaration_preprocessor>=</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor> <declaration_preprocessor>__b</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>?</declaration_preprocessor> <declaration_preprocessor>__b</declaration_preprocessor> <declaration_preprocessor>:</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>}</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-<desc><p>@def             XS_MAX
-</p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_MAX_DONTLINK_1" definetype="function" lang="c"><name>XS_MAX</name>
-<abstract><p>Gets the maximum value of two values
-</p></abstract>
-<parameterlist>
-<parameter><name>_a_</name><desc><p>The first value</p></desc></parameter>
-<parameter><name>_b_</name><desc><p>The second value</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type></type><name>_a_</name></parsedparameter>
-<parsedparameter><type></type><name>_b_</name></parsedparameter>
-</parsedparameterlist>
-<result><p>The maximum value of the two values
-</p></result>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MAX</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&gt;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>?</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>:</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-<desc><p>@def             XS_MAX
-</p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_MIN" definetype="function" lang="c"><name>XS_MIN</name>
+<declaration><declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>!</declaration_preprocessor><declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__STRICT_ANSI__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>|</declaration_preprocessor><declaration_preprocessor>|</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__clang__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MAX</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>{</declaration_preprocessor> <declaration_preprocessor>__typeof__</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>__typeof__</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>__b</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor> <declaration_preprocessor>=</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>__b</declaration_preprocessor> <declaration_preprocessor>=</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor> <declaration_preprocessor>__b</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>?</declaration_preprocessor> <declaration_preprocessor>__b</declaration_preprocessor> <declaration_preprocessor>:</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>}</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MAX</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&gt;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>?</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>:</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xs_ref/c/macro/XS_MIN" definetype="block" lang="c"><name>XS_MIN</name>
 <abstract><p>Gets the minimum value of two values
 </p></abstract>
 <parameterlist>
 <parameter><name>_a_</name><desc><p>The first value</p></desc></parameter>
 <parameter><name>_b_</name><desc><p>The second value</p></desc></parameter>
 </parameterlist>
-<parsedparameterlist>
-<parsedparameter><type></type><name>_a_</name></parsedparameter>
-<parsedparameter><type></type><name>_b_</name></parsedparameter>
-</parsedparameterlist>
 <result><p>The minimum value of the two values
 </p></result>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MIN</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>{</declaration_preprocessor> <declaration_preprocessor>__typeof__</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>__typeof__</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>__b</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor> <declaration_preprocessor>=</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>__b</declaration_preprocessor> <declaration_preprocessor>=</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor> <declaration_preprocessor>__b</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>?</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor> <declaration_preprocessor>:</declaration_preprocessor> <declaration_preprocessor>__b</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>}</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-<desc><p>@def             XS_MIN
-</p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_MIN_DONTLINK_1" definetype="function" lang="c"><name>XS_MIN</name>
-<abstract><p>Gets the minimum value of two values
-</p></abstract>
-<parameterlist>
-<parameter><name>_a_</name><desc><p>The first value</p></desc></parameter>
-<parameter><name>_b_</name><desc><p>The second value</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type></type><name>_a_</name></parsedparameter>
-<parsedparameter><type></type><name>_b_</name></parsedparameter>
-</parsedparameterlist>
-<result><p>The minimum value of the two values
-</p></result>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MIN</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>?</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>:</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-<desc><p>@def             XS_MIN
-</p></desc>
+<declaration><declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>!</declaration_preprocessor><declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__STRICT_ANSI__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>|</declaration_preprocessor><declaration_preprocessor>|</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__clang__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MIN</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>{</declaration_preprocessor> <declaration_preprocessor>__typeof__</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>__typeof__</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>__b</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor> <declaration_preprocessor>=</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>__b</declaration_preprocessor> <declaration_preprocessor>=</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor> <declaration_preprocessor>__b</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>?</declaration_preprocessor> <declaration_preprocessor>__a</declaration_preprocessor> <declaration_preprocessor>:</declaration_preprocessor> <declaration_preprocessor>__b</declaration_preprocessor><declaration_preprocessor>;</declaration_preprocessor> <declaration_preprocessor>}</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MIN</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>?</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>:</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
 </pdefine><pdefine id="//xs_ref/c/macro/XS_NORETURN_ATTRIBUTE" definetype="block" lang="c"><name>XS_NORETURN_ATTRIBUTE</name>
 <abstract><p>Standardization of the noreturn compiler attribute
 </p></abstract>
@@ -286,8 +231,6 @@ to nothing.
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_PATH_MAX</declaration_preprocessor> <declaration_preprocessor>PATH_MAX</declaration_preprocessor> 
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
-<desc><p>@def         XS_PATH_MAX
-</p></desc>
 </pdefine><pdefine id="//xs_ref/c/macro/XS_UNAVAILABLE_ATTRIBUTE" definetype="block" lang="c"><name>XS_UNAVAILABLE_ATTRIBUTE</name>
 <abstract><p>Standardization of the unavailable compiler attribute
 </p></abstract>
@@ -317,9 +260,12 @@ to nothing.
 </p></abstract>
 <declaration><declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>&gt;=</declaration_preprocessor> <declaration_preprocessor>4</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>|</declaration_preprocessor><declaration_preprocessor>|</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>==</declaration_preprocessor> <declaration_preprocessor>3</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC_MINOR__</declaration_preprocessor> <declaration_preprocessor>&gt;=</declaration_preprocessor> <declaration_preprocessor>1</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_WEAK_IMPORT_ATTRIBUTE</declaration_preprocessor> <declaration_preprocessor>__attribute__</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>weak_import</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor><declaration_preprocessor>__MWERKS__</declaration_preprocessor><declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__MWERKS__</declaration_preprocessor> <declaration_preprocessor>&gt;=</declaration_preprocessor> <declaration_preprocessor>0x3205</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_WEAK_IMPORT_ATTRIBUTE</declaration_preprocessor> <declaration_preprocessor>__attribute__</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>weak_import</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
 <declaration_preprocessor>#else</declaration_preprocessor> 
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_WEAK_IMPORT_ATTRIBUTE</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
 <desc><p>Not all compiler support this attribute, so it may be defined
@@ -329,8 +275,6 @@ to nothing.
 <abstract><p>Marker for methods that return auto-released objects
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSAutoreleased</declaration_preprocessor> </declaration>
-<desc><p>@def         XSAutoreleased
-</p></desc>
 </pdefine><pdefine id="//xs_ref/c/macro/XSEndian16_Swap" definetype="function" lang="c"><name>XSEndian16_Swap</name>
 <abstract><p>Swap endiannes of a 16 bits value
 </p></abstract>
@@ -345,8 +289,6 @@ to nothing.
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSUInt16</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_value_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>0x00FF</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&lt;&lt;</declaration_preprocessor> <declaration_preprocessor>8</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>|</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSUInt16</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_value_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>0xFF00</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&gt;&gt;</declaration_preprocessor> <declaration_preprocessor>8</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-<desc><p>@def         XSEndian16_Swap
-</p></desc>
 </pdefine><pdefine id="//xs_ref/c/macro/XSEndian32_Swap" definetype="function" lang="c"><name>XSEndian32_Swap</name>
 <abstract><p>Swap endiannes of a 32 bits value
 </p></abstract>
@@ -363,8 +305,6 @@ to nothing.
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSUInt32</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_value_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>0x00FF0000</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&gt;&gt;</declaration_preprocessor> <declaration_preprocessor>8</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>|</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSUInt32</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_value_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>0xFF000000</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&gt;&gt;</declaration_preprocessor> <declaration_preprocessor>24</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-<desc><p>@def         XSEndian32_Swap
-</p></desc>
 </pdefine><pdefine id="//xs_ref/c/macro/XSEndian64_Swap" definetype="function" lang="c"><name>XSEndian64_Swap</name>
 <abstract><p>Swap endiannes of a 64 bits value
 </p></abstract>
@@ -385,14 +325,10 @@ to nothing.
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSUInt64</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>_value_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&gt;&gt;</declaration_preprocessor> <declaration_preprocessor>40</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>0x000000000000FF00ULL</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>|</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSUInt64</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>_value_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&gt;&gt;</declaration_preprocessor> <declaration_preprocessor>56</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>0x00000000000000FFULL</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-<desc><p>@def         XSEndian64_Swap
-</p></desc>
 </pdefine><pdefine id="//xs_ref/c/macro/XSStatic" definetype="value" lang="c"><name>XSStatic</name>
 <abstract><p>Marker for static class methods
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSStatic</declaration_preprocessor> </declaration>
-<desc><p>@def         XSStatic
-</p></desc>
 </pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
 <timestamp>Wednesday, May 07, 2014</timestamp>

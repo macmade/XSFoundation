@@ -11,7 +11,8 @@
 <include><hd_link logicalPath="//xs_ref/doc/header/XSStringRef.h">&lt;XS/Classes/XSStringRef.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSDictionaryRef.h">&lt;XS/Classes/XSDictionaryRef.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <functions><function id="//xs_ref/c/func/XSError_Create" lang="c"><name>XSError_Create</name>
 <abstract><p>Creates an error object
 </p></abstract>

@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSUInt32 type definition
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -77,28 +78,22 @@
 
 XS_EXTERN_C_BEGIN
 
-#ifdef _WIN32
-
-/*!
- * @typedef     XSUInt32
- * @abstract    Fixed 32 bits unsigned integer
- */
-typedef unsigned __int32    XSUInt32;
-
-#else
-
+#ifndef _WIN32
 #include <stdint.h>
-
-/*!
- * @typedef     XSUInt32
- * @abstract    Fixed 32 bits unsigned integer
- */
-typedef uint32_t            XSUInt32;
-
 #endif
 
 /*!
- * @def         XSUInt32Max
+ * @typedef     XSUInt32
+ * @abstract    Fixed 32 bits unsigned integer
+ */
+#ifdef _WIN32
+typedef unsigned __int32    XSUInt32;
+#else
+typedef uint32_t            XSUInt32;
+#endif
+
+/*!
+ * @define      XSUInt32Max
  * @abstract    Maximum value for XSUInt32
  */
 #define XSUInt32Max         0xFFFFFFFFU

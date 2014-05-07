@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSUInt8 type definition
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -77,28 +78,22 @@
 
 XS_EXTERN_C_BEGIN
 
-#ifdef _WIN32
-
-/*!
- * @typedef     XSUInt8
- * @abstract    Fixed 8 bits unsigned integer
- */
-typedef unsigned __int8     XSUInt8;
-
-#else
-
+#ifndef _WIN32
 #include <stdint.h>
-
-/*!
- * @typedef     XSUInt8
- * @abstract    Fixed 8 bits unsigned integer
- */
-typedef uint8_t             XSUInt8;
-
 #endif
 
 /*!
- * @def         XSUInt8Max
+ * @typedef     XSUInt8
+ * @abstract    Fixed 8 bits unsigned integer
+ */
+#ifdef _WIN32
+typedef unsigned __int8     XSUInt8;
+#else
+typedef uint8_t             XSUInt8;
+#endif
+
+/*!
+ * @define      XSUInt8Max
  * @abstract    Maximum value for XSUInt8
  */
 #define XSUInt8Max          0xFF

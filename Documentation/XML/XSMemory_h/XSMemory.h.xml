@@ -8,7 +8,8 @@
 <includes>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <functions><function id="//xs_ref/c/func/XSAllocWithInfos" lang="c"><name>XSAllocWithInfos</name>
 <abstract><p>Allocates memory
 </p></abstract>
@@ -226,21 +227,6 @@ instead.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSRetain</declaration_function>(
     <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/doc/title:func/XSRetainWithInfos" lang="c"><name>XSRetainWithInfos</name>
-<abstract><p>Retains memory data
-</p></abstract>
-<parameterlist>
-<parameter><name>memory</name><desc><p>The memory data to retain</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type>void *</type><name>memory</name></parsedparameter>
-</parsedparameterlist>
-<returntype> XS_EXPORT void *</returntype>
-<result><p>The memory data
-</p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSRetain</declaration_function>(
-    <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param> );  </declaration>
-<desc><p/></desc>
 </function></functions>
 <defines><pdefine id="//xs_ref/c/macro/XSAlloc" definetype="function" lang="c"><name>XSAlloc</name>
 <abstract><p>Allocates memory
@@ -285,8 +271,6 @@ The allocated memory will be zero-filled
 <result><p>The copy of the object
 </p></result>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSCopy</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSCopyWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-<desc><p>@def         XSCopy
-</p></desc>
 </pdefine><pdefine id="//xs_ref/c/macro/XSRealloc" definetype="function" lang="c"><name>XSRealloc</name>
 <abstract><p>Reallocates memory
 </p></abstract>

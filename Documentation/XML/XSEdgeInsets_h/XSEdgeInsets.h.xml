@@ -8,7 +8,8 @@
 <includes>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSFloat.h">&lt;XS/XSTypes/XSFloat.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <typedefs><typedef id="//xs_ref/c/tdef/XSEdgeInsets" lang="c" type="simple"><name>XSEdgeInsets</name>
 <abstract><p>Edge insets type (structure)
 </p></abstract>

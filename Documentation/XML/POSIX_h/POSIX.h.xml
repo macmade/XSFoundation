@@ -26,7 +26,8 @@
 <include><hd_link logicalPath="//xs_ref/doc/header/unistd.h">&lt;unistd.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xs_ref/doc/header/utime.h">&lt;utime.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
 <timestamp>Wednesday, May 07, 2014</timestamp>

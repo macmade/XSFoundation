@@ -8,7 +8,8 @@
 <includes>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <functions><function id="//xs_ref/c/func/XSRange_Intersection" lang="c"><name>XSRange_Intersection</name>
 <abstract><p>Returns the intersection of the specified ranges
 </p></abstract>

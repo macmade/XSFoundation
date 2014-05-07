@@ -8,7 +8,8 @@
 <includes>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSObjectRef.h">&lt;XS/XSTypes/XSObjectRef.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <typedefs><typedef id="//xs_ref/c/tdef/XSClassCallbackEquals" lang="c" type="funcPtr"><name>XSClassCallbackEquals</name>
 <abstract><p>Class equals callback
 </p></abstract>

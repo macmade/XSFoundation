@@ -9,7 +9,8 @@
 <include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <functions><function id="//xs_ref/c/func/XSArray_AddObject" lang="c"><name>XSArray_AddObject</name>
 <abstract><p>Adds an object in an array
 </p></abstract>

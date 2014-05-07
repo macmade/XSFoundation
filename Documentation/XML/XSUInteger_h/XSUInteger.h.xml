@@ -7,29 +7,27 @@
 </attributes>
 <includes>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <typedefs><typedef id="//xs_ref/c/tdef/XSUInteger" lang="c" type="simple"><name>XSUInteger</name>
 <abstract><p>Unsigned integer type
 </p></abstract>
-<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>unsigned</declaration_keyword> <declaration_type>long</declaration_type> <declaration_var>XSUInteger</declaration_var>;  </declaration>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>__LP64__</declaration_preprocessor> 
+<declaration_keyword>typedef</declaration_keyword> <declaration_keyword>unsigned</declaration_keyword> <declaration_type>long</declaration_type> <declaration_var>XSUInteger</declaration_var>;  
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_keyword>typedef</declaration_keyword> <declaration_keyword>unsigned</declaration_keyword> <declaration_type>int</declaration_type> <declaration_var>XSUInteger</declaration_var>;  
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
 <desc><p/></desc>
-</typedef><typedef id="//xs_ref/c/tdef/XSUInteger_DONTLINK_1" lang="c" type="simple"><name>XSUInteger</name>
-<abstract><p>Unsigned integer type
-</p></abstract>
-<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>unsigned</declaration_keyword> <declaration_type>int</declaration_type> <declaration_var>XSUInteger</declaration_var>;  </declaration>
-<desc><p/></desc>
-</typedef></typedefs><defines><pdefine id="//xs_ref/c/macro/XSUIntegerMax" definetype="value" lang="c"><name>XSUIntegerMax</name>
+</typedef></typedefs><defines><pdefine id="//xs_ref/c/macro/XSUIntegerMax" definetype="block" lang="c"><name>XSUIntegerMax</name>
 <abstract><p>Maximum value for XSUInteger
 </p></abstract>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSUIntegerMax</declaration_preprocessor> <declaration_preprocessor>0xFFFFFFFFFFFFFFFFULL</declaration_preprocessor> </declaration>
-<desc><p>@def         XSUIntegerMax
-</p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XSUIntegerMax_DONTLINK_1" definetype="value" lang="c"><name>XSUIntegerMax</name>
-<abstract><p>Maximum value for XSUInteger
-</p></abstract>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSUIntegerMax</declaration_preprocessor> <declaration_preprocessor>0xFFFFFFFFU</declaration_preprocessor> </declaration>
-<desc><p>@def         XSUIntegerMax
-</p></desc>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>__LP64__</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSUIntegerMax</declaration_preprocessor> <declaration_preprocessor>0xFFFFFFFFFFFFFFFFULL</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSUIntegerMax</declaration_preprocessor> <declaration_preprocessor>0xFFFFFFFFU</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
 </pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
 <timestamp>Wednesday, May 07, 2014</timestamp>

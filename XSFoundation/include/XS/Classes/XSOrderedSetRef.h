@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSOrderedSet class
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -153,7 +154,7 @@ typedef XSComparisonResult ( * XSOrderedSet_SortMethod )( XSObjectRef object, XS
 XS_EXPORT XSStatic XSClassID XSOrderedSet_GetClassID( void );
 
 /*!
- * @function    XSOrderedSet_Array
+ * @function    XSOrderedSet_OrderedSet
  * @abstract    Gets an empty ordered set
  * @return      An empty ordered set
  */
@@ -175,7 +176,7 @@ XS_EXPORT XSStatic XSAutoreleased XSOrderedSetRef XSOrderedSet_MutableOrderedSet
 XS_EXPORT XSStatic XSAutoreleased XSOrderedSetRef XSOrderedSet_OrderedSetWithOrderedSet( XSOrderedSetRef set );
 
 /*!
- * @function    XSOrderedSet_ArrayWithObjects
+ * @function    XSOrderedSet_OrderedSetWithObjects
  * @abstract    Gets an ordered set filled with objects
  * @param       firstObject The first object to add
  * @param       ...         Additional objects to add, terminated by NULL

@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSInteger type definition
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -77,46 +78,34 @@
 
 XS_EXTERN_C_BEGIN
 
+/*!
+ * @typedef     XSInteger
+ * @abstract    Signed integer type
+ */
 #ifdef __LP64__
-
-/*!
- * @typedef     XSInteger
- * @abstract    Signed integer type
- */
 typedef long            XSInteger;
-
-/*!
- * @def         XSIntegerMax
- * @abstract    Maximum value for XSInteger
- */
-#define XSIntegerMax    0x7FFFFFFFFFFFFFFFLL
-
-/*!
- * @def         XSIntegerMin
- * @abstract    Minimum value for XSInteger
- */
-#define XSIntegerMin    ( -XSIntegerMax - 1 )
-
 #else
-
-/*!
- * @typedef     XSInteger
- * @abstract    Signed integer type
- */
 typedef int             XSInteger;
+#endif
 
 /*!
- * @def         XSIntegerMax
+ * @define      XSIntegerMax
  * @abstract    Maximum value for XSInteger
  */
+#ifdef __LP64__
+#define XSIntegerMax    0x7FFFFFFFFFFFFFFFLL
+#else
 #define XSIntegerMax    0x7FFFFFFF
+#endif
 
 /*!
- * @def         XSIntegerMin
+ * @define      XSIntegerMin
  * @abstract    Minimum value for XSInteger
  */
+#ifdef __LP64__
 #define XSIntegerMin    ( -XSIntegerMax - 1 )
-
+#else
+#define XSIntegerMin    ( -XSIntegerMax - 1 )
 #endif
 
 XS_EXTERN_C_END

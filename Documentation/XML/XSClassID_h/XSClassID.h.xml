@@ -8,7 +8,8 @@
 <includes>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSUInteger.h">&lt;XS/XSTypes/XSUInteger.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <typedefs><typedef id="//xs_ref/c/tdef/XSClassID" lang="c" type="simple"><name>XSClassID</name>
 <abstract><p>XSFoundation class ID type
 </p></abstract>

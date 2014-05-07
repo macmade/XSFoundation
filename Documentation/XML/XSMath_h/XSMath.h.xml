@@ -8,7 +8,8 @@
 <includes>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <functions><function id="//xs_ref/c/func/XSFloat_AbsoluteValue" lang="c"><name>XSFloat_AbsoluteValue</name>
 <abstract><p>Gets the absolute value of a float value
 </p></abstract>

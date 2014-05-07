@@ -24,11 +24,17 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+/* $Id$ */
+
 class XS_Docset_Macro
 {
     protected $_xml = NULL;
     
-    protected $_name = NULL;
+    protected $_name        = NULL;
+    protected $_abstract    = NULL;
+    protected $_discussion  = NULL;
+    protected $_declaration = NULL;
+    protected $_parameters  = NULL;
     
     public function __construct( SimpleXMLElement $xml )
     {
@@ -45,5 +51,69 @@ class XS_Docset_Macro
         $this->_name = ( string )( $this->_xml->name );
         
         return $this->_name;
+    }
+    
+    public function getAbstract()
+    {
+        if( $this->_abstract !== NULL )
+        {
+            return $this->_abstract;
+        }
+        
+        if( isset( $this->_xml->abstract->p ) )
+        {
+            $this->_abstract = ( string )( $this->_xml->abstract->p );
+        }
+        
+        return $this->_abstract;
+    }
+    
+    public function getDiscussion()
+    {
+        if( $this->_discussion !== NULL )
+        {
+            return $this->_discussion;
+        }
+        
+        if( isset( $this->_xml->desc->p ) )
+        {
+            $this->_discussion = ( string )( $this->_xml->desc->p );
+        }
+        
+        return $this->_discussion;
+    }
+    
+    public function getDeclaration()
+    {
+        if( $this->_declaration !== NULL )
+        {
+            return $this->_declaration;
+        }
+        
+        $this->_declaration = strip_tags( $this->_xml->declaration->asXML() );
+        $this->_declaration = preg_replace( '!/\*.*?\*/!s', '', $this->_declaration );
+        $this->_declaration = preg_replace( '/\n\s*\n/', chr( 10 ), $this->_declaration );
+        
+        return $this->_declaration;
+    }
+    
+    public function getParameters()
+    {
+        if( $this->_parameters !== NULL )
+        {
+            return $this->_parameters;
+        }
+        
+        $this->_parameters = array();
+        
+        if( isset( $this->_xml->parameterlist ) )
+        {
+            foreach( $this->_xml->parameterlist->children() as $param )
+            {
+                $this->_parameters[ ( string )( $param->name ) ] = ( string )( $param->desc->p );
+            }
+        }
+        
+        return $this->_parameters;
     }
 }

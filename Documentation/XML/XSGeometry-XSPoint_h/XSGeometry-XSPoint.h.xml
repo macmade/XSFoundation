@@ -8,7 +8,8 @@
 <includes>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <functions><function id="//xs_ref/c/func/XSPoint_IsEqualToPoint" lang="c"><name>XSPoint_IsEqualToPoint</name>
 <abstract><p>Checks if two points are equal
 </p></abstract>

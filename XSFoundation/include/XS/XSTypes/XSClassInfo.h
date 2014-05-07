@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSClassInfo type definition
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -86,7 +87,7 @@ XS_EXTERN_C_BEGIN
 #include <XS/XSTypes/XSClassCallbackToString.h>
 
 /*!
- * @struct      XSClassInfos_Struct
+ * @typedef     XSClassInfo
  * @abstract    XSFoundation runtime class structure
  */
 typedef struct

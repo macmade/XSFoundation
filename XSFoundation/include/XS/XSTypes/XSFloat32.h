@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSFloat32 type definition
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -84,13 +85,13 @@ XS_EXTERN_C_BEGIN
 typedef float           XSFloat32;
 
 /*!
- * @def         XSFloat32Max
+ * @define      XSFloat32Max
  * @abstract    Maximum value for XSFloat32
  */
 #define XSFloat32Max    3.40282347e+38F
 
 /*!
- * @def         XSFloat32Min
+ * @define      XSFloat32Min
  * @abstract    Minimum value for XSFloat32
  */
 #define XSFloat32Min    1.17549435e-38F

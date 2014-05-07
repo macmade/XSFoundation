@@ -7,42 +7,53 @@
 </attributes>
 <includes>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <typedefs><typedef id="//xs_ref/c/tdef/XSSemaphore" lang="c" type="simple"><name>XSSemaphore</name>
 <abstract><p>Semaphore type
 </p></abstract>
 <fieldlist>
-<field><name>)</name><desc><p>The semaphore
+<field><name>sem</name><desc><p>The semaphore
 </p>
-<p>The semaphore, for OS X unnamed semaphores</p></desc></field>
-<field><name>#</name><desc><p>The semaphore pointer, for POSIX named semaphores</p></desc></field>
-<field><name>sem</name><desc><p>The semaphore, for POSIX unnamed semaphores</p></desc></field>
+<p>The semaphore, for POSIX unnamed semaphores
+</p>
+<p>The semaphore, for POSIX unnamed semaphores</p></desc></field>
+<field><name>semp</name><desc><p>The semaphore pointer, for POSIX named semaphores
+</p>
+<p>The semaphore pointer, for POSIX named semaphores</p></desc></field>
+<field><name>semaphore</name><desc><p>The semaphore, for OS X unnamed semaphores</p></desc></field>
 </fieldlist>
-<parsedparameterlist>
-<parsedparameter><type>HANDLE</type><name>sem</name></parsedparameter>
-<parsedparameter><type>sem_t *</type><name>semp</name></parsedparameter>
-<parsedparameter><type>sem_t</type><name>sem</name></parsedparameter>
-<parsedparameter><type>semaphore_t</type><name>semaphore</name></parsedparameter>
-<parsedparameter><type>bool</type><name>named</name></parsedparameter>
-<parsedparameter><type>char</type><name>__pad_0</name></parsedparameter>
-</parsedparameterlist>
-<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> { 
-    <declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_WIN32</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>_WIN32</declaration_preprocessor> 
+ <declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> { 
     <declaration_type>HANDLE</declaration_type> <declaration_var>sem</declaration_var>;
     <declaration_comment>/*! The semaphore */</declaration_comment>
-    <declaration_preprocessor>#else</declaration_preprocessor> 
+    <declaration_type>bool</declaration_type> <declaration_var>named</declaration_var>; <declaration_comment>/* Whether the semaphore is named or not */</declaration_comment>
+    <declaration_type>char</declaration_type> <declaration_type>__pad_0</declaration_type>[ <declaration_number>7</declaration_number> ]; <declaration_comment>/* Padding */</declaration_comment>
+} <declaration_var>XSSemaphore</declaration_var>;  
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>__APPLE__</declaration_preprocessor> 
+ <declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> { 
     <declaration_type>sem_t</declaration_type> <declaration_type>*</declaration_type><declaration_var>semp</declaration_var>;
     <declaration_comment>/*! The semaphore pointer, for POSIX named semaphores */</declaration_comment>
     <declaration_type>sem_t</declaration_type> <declaration_var>sem</declaration_var>;
     <declaration_comment>/*! The semaphore, for POSIX unnamed semaphores */</declaration_comment>
-    <declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__APPLE__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
     <declaration_type>semaphore_t</declaration_type> <declaration_var>semaphore</declaration_var>;
     <declaration_comment>/*! The semaphore, for OS X unnamed semaphores */</declaration_comment>
-    <declaration_preprocessor>#endif</declaration_preprocessor>  
-    <declaration_preprocessor>#endif</declaration_preprocessor>  
     <declaration_type>bool</declaration_type> <declaration_var>named</declaration_var>; <declaration_comment>/* Whether the semaphore is named or not */</declaration_comment>
     <declaration_type>char</declaration_type> <declaration_type>__pad_0</declaration_type>[ <declaration_number>7</declaration_number> ]; <declaration_comment>/* Padding */</declaration_comment>
-} <declaration_var>XSSemaphore</declaration_var>;  </declaration>
+} <declaration_var>XSSemaphore</declaration_var>;  
+<declaration_preprocessor>#else</declaration_preprocessor> 
+ <declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> { 
+    <declaration_type>sem_t</declaration_type> <declaration_type>*</declaration_type><declaration_var>semp</declaration_var>;
+    <declaration_comment>/*! The semaphore pointer, for POSIX named semaphores */</declaration_comment>
+    <declaration_type>sem_t</declaration_type> <declaration_var>sem</declaration_var>;
+    <declaration_comment>/*! The semaphore, for POSIX unnamed semaphores */</declaration_comment>
+    <declaration_type>bool</declaration_type> <declaration_var>named</declaration_var>; <declaration_comment>/* Whether the semaphore is named or not */</declaration_comment>
+    <declaration_type>char</declaration_type> <declaration_type>__pad_0</declaration_type>[ <declaration_number>7</declaration_number> ]; <declaration_comment>/* Padding */</declaration_comment>
+} <declaration_var>XSSemaphore</declaration_var>;  
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
 <desc><p/></desc>
 </typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>

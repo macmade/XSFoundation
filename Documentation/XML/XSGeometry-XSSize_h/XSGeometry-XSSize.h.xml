@@ -8,7 +8,8 @@
 <includes>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <functions><function id="//xs_ref/c/func/XSSize_IsEqualToSize" lang="c"><name>XSSize_IsEqualToSize</name>
 <abstract><p>Checks if two sizes are equal
 </p></abstract>

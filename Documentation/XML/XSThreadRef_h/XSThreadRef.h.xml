@@ -9,17 +9,9 @@
 <include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
-<functions><function id="//xs_ref/doc/title:func/XSThread_CurrentThread" lang="c"><name>XSThread_CurrentThread</name>
-<abstract><p>Gets the instance of the current thread
-</p></abstract>
-<returntype> XS_EXPORT XSStatic XSUInteger</returntype>
-<result><p>The instance of the current thread
-</p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSUInteger</declaration_type> <declaration_function>XSThread_GetCurrentThreadID</declaration_function>(
-    <declaration_param>void</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSThread_DetachFunction" lang="c"><name>XSThread_DetachFunction</name>
+<desc><p>...
+</p></desc>
+<functions><function id="//xs_ref/c/func/XSThread_DetachFunction" lang="c"><name>XSThread_DetachFunction</name>
 <abstract><p>Creates a thread with an object's method as entry point
 </p></abstract>
 <parameterlist>
@@ -48,7 +40,7 @@
     <declaration_type>XSThread_FunctionWithArgument</declaration_type> <declaration_param>func</declaration_param>,
     <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>arg</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSThread_DetachMethod" lang="c"><name>XSThread_DetachMethod(XSObjectRef, XSThread_Method)</name>
+</function><function id="//xs_ref/c/func/XSThread_DetachMethod" lang="c"><name>XSThread_DetachMethod</name>
 <abstract><p>Creates a thread with an object's method as entry point
 </p></abstract>
 <parameterlist>
@@ -63,54 +55,6 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSThread_DetachMethod</declaration_function>(
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSThread_Method</declaration_type> <declaration_param>method</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xs_ref/doc/title:func/XSThread_DetachMethod" lang="c"><name>XSThread_DetachMethod(XSObjectRef, XSThread_MethodWithArgument, void *)</name>
-<abstract><p>Creates a thread with an object's method as entry point and with an argument
-</p></abstract>
-<parameterlist>
-<parameter><name>object</name><desc><p>The receiver object</p></desc></parameter>
-<parameter><name>method</name><desc><p>The receiver object's method to detach</p></desc></parameter>
-<parameter><name>arg</name><desc><p>The argument to pass to the threaded method</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type>XSObjectRef</type><name>object</name></parsedparameter>
-<parsedparameter><type>XSThread_MethodWithArgument</type><name>method</name></parsedparameter>
-<parsedparameter><type>void *</type><name>arg</name></parsedparameter>
-</parsedparameterlist>
-<returntype> XS_EXPORT XSStatic void</returntype>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSThread_DetachMethodWithArgument</declaration_function>(
-    <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param>,
-    <declaration_type>XSThread_MethodWithArgument</declaration_type> <declaration_param>method</declaration_param>,
-    <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>arg</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xs_ref/doc/title:func/XSThread_DetachMethod_DONTLINK_6" lang="c"><name>XSThread_DetachMethod(XSThread_Function)</name>
-<abstract><p>Creates a thread with an object's method as entry point
-</p></abstract>
-<parameterlist>
-<parameter><name>func</name><desc><p>The function to detach</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type>XSThread_Function</type><name>func</name></parsedparameter>
-</parsedparameterlist>
-<returntype> XS_EXPORT XSStatic void</returntype>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSThread_DetachFunction</declaration_function>(
-    <declaration_type>XSThread_Function</declaration_type> <declaration_param>func</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xs_ref/doc/title:func/XSThread_DetachMethod_DONTLINK_7" lang="c"><name>XSThread_DetachMethod(XSThread_FunctionWithArgument, void *)</name>
-<abstract><p>Creates a thread with an object's method as entry point and with an argument
-</p></abstract>
-<parameterlist>
-<parameter><name>func</name><desc><p>The function to detach</p></desc></parameter>
-<parameter><name>arg</name><desc><p>The argument to pass to the threaded function</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type>XSThread_FunctionWithArgument</type><name>func</name></parsedparameter>
-<parsedparameter><type>void *</type><name>arg</name></parsedparameter>
-</parsedparameterlist>
-<returntype> XS_EXPORT XSStatic void</returntype>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSThread_DetachFunctionWithArgument</declaration_function>(
-    <declaration_type>XSThread_FunctionWithArgument</declaration_type> <declaration_param>func</declaration_param>,
-    <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>arg</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xs_ref/c/func/XSThread_DetachMethodWithArgument" lang="c"><name>XSThread_DetachMethodWithArgument</name>
 <abstract><p>Creates a thread with an object's method as entry point and with an argument

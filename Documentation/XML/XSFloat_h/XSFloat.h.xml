@@ -7,53 +7,45 @@
 </attributes>
 <includes>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <typedefs><typedef id="//xs_ref/c/tdef/XSFloat" lang="c" type="simple"><name>XSFloat</name>
 <abstract><p>Floating-point number type
 </p></abstract>
-<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_type>double</declaration_type> <declaration_var>XSFloat</declaration_var>;  </declaration>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>__LP64__</declaration_preprocessor> 
+<declaration_keyword>typedef</declaration_keyword> <declaration_type>double</declaration_type> <declaration_var>XSFloat</declaration_var>;  
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_keyword>typedef</declaration_keyword> <declaration_type>float</declaration_type> <declaration_var>XSFloat</declaration_var>;  
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
 <desc><p/></desc>
-</typedef><typedef id="//xs_ref/c/tdef/XSFloat_DONTLINK_1" lang="c" type="simple"><name>XSFloat</name>
-<abstract><p>Floating-point number type
-</p></abstract>
-<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_type>float</declaration_type> <declaration_var>XSFloat</declaration_var>;  </declaration>
-<desc><p/></desc>
-</typedef></typedefs><defines><pdefine id="//xs_ref/c/macro/XSFloatInfinity" definetype="value" lang="c"><name>XSFloatInfinity</name>
+</typedef></typedefs><defines><pdefine id="//xs_ref/c/macro/XSFloatInfinity" definetype="block" lang="c"><name>XSFloatInfinity</name>
 <abstract><p>Infinity value for XSFloat
 </p></abstract>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSFloatInfinity</declaration_preprocessor> <declaration_preprocessor>HUGE_VAL</declaration_preprocessor> </declaration>
-<desc><p>@def         XSFloatInfinity
-</p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XSFloatInfinity_DONTLINK_1" definetype="value" lang="c"><name>XSFloatInfinity</name>
-<abstract><p>Infinity value for XSFloat
-</p></abstract>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSFloatInfinity</declaration_preprocessor> <declaration_preprocessor>HUGE_VALF</declaration_preprocessor> </declaration>
-<desc><p>@def         XSFloatInfinity
-</p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XSFloatMax" definetype="value" lang="c"><name>XSFloatMax</name>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>__LP64__</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSFloatInfinity</declaration_preprocessor> <declaration_preprocessor>HUGE_VAL</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSFloatInfinity</declaration_preprocessor> <declaration_preprocessor>HUGE_VALF</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xs_ref/c/macro/XSFloatMax" definetype="block" lang="c"><name>XSFloatMax</name>
 <abstract><p>Maximum value for XSFloat
 </p></abstract>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSFloatMax</declaration_preprocessor> <declaration_preprocessor>1</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>7976931348623157e</declaration_preprocessor><declaration_preprocessor>+</declaration_preprocessor><declaration_preprocessor>308</declaration_preprocessor> </declaration>
-<desc><p>@def         XSFloatMax
-</p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XSFloatMax_DONTLINK_1" definetype="value" lang="c"><name>XSFloatMax</name>
-<abstract><p>Maximum value for XSFloat
-</p></abstract>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSFloatMax</declaration_preprocessor> <declaration_preprocessor>3</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>40282347e</declaration_preprocessor><declaration_preprocessor>+</declaration_preprocessor><declaration_preprocessor>38F</declaration_preprocessor> </declaration>
-<desc><p>@def         XSFloatMax
-</p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XSFloatMin" definetype="value" lang="c"><name>XSFloatMin</name>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>__LP64__</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSFloatMax</declaration_preprocessor> <declaration_preprocessor>1</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>7976931348623157e</declaration_preprocessor><declaration_preprocessor>+</declaration_preprocessor><declaration_preprocessor>308</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSFloatMax</declaration_preprocessor> <declaration_preprocessor>3</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>40282347e</declaration_preprocessor><declaration_preprocessor>+</declaration_preprocessor><declaration_preprocessor>38F</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xs_ref/c/macro/XSFloatMin" definetype="block" lang="c"><name>XSFloatMin</name>
 <abstract><p>Minimum value for XSFloat
 </p></abstract>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSFloatMin</declaration_preprocessor> <declaration_preprocessor>2</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>2250738585072014e</declaration_preprocessor><declaration_preprocessor>-</declaration_preprocessor><declaration_preprocessor>308</declaration_preprocessor> </declaration>
-<desc><p>@def         XSFloatMin
-</p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XSFloatMin_DONTLINK_1" definetype="value" lang="c"><name>XSFloatMin</name>
-<abstract><p>Minimum value for XSFloat
-</p></abstract>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSFloatMin</declaration_preprocessor> <declaration_preprocessor>1</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>17549435e</declaration_preprocessor><declaration_preprocessor>-</declaration_preprocessor><declaration_preprocessor>38F</declaration_preprocessor> </declaration>
-<desc><p>@def         XSFloatMin
-</p></desc>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>__LP64__</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSFloatMin</declaration_preprocessor> <declaration_preprocessor>2</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>2250738585072014e</declaration_preprocessor><declaration_preprocessor>-</declaration_preprocessor><declaration_preprocessor>308</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSFloatMin</declaration_preprocessor> <declaration_preprocessor>1</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>17549435e</declaration_preprocessor><declaration_preprocessor>-</declaration_preprocessor><declaration_preprocessor>38F</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
 </pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
 <timestamp>Wednesday, May 07, 2014</timestamp>

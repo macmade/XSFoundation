@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    Private definitions for XSRuntime.h
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -90,19 +91,19 @@ typedef struct __XSRuntime_ClassInfoList_Struct
 __XSRuntime_ClassInfoList;
 
 /*!
- * @def         __XS_RUNTIME_IS_INITED
+ * @define      __XS_RUNTIME_IS_INITED
  * @abstract    Checks whether the XSFoundation runtime is inited
  */
 #define __XS_RUNTIME_IS_INITED      XSAtomic_CompareAndSwapInteger( XSInitStatusInited, XSInitStatusInited, &__XSRuntime_InitStatus )
 
 /*!
- * @def         __XS_RUNTIME_IS_FINALIZING
+ * @define      __XS_RUNTIME_IS_FINALIZING
  * @abstract    Checks whether the XSFoundation runtime is finalizing
  */
 #define __XS_RUNTIME_IS_FINALIZING  XSAtomic_CompareAndSwapInteger( XSInitStatusFinalizing, XSInitStatusFinalizing, &__XSRuntime_InitStatus )
 
 /*!
- * @def         __XS_RUNTIME_IS_FINALIZED
+ * @define      __XS_RUNTIME_IS_FINALIZED
  * @abstract    Checks whether the XSFoundation runtime is finalized
  */
 #define __XS_RUNTIME_IS_FINALIZED   XSAtomic_CompareAndSwapInteger( XSInitStatusFinalized, XSInitStatusFinalized, &__XSRuntime_InitStatus )

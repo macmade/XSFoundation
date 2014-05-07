@@ -8,29 +8,26 @@
 <includes>
 <include><hd_link logicalPath="//xs_ref/doc/header/stdint.h">&lt;stdint.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <typedefs><typedef id="//xs_ref/c/tdef/XSInt64" lang="c" type="simple"><name>XSInt64</name>
 <abstract><p>Fixed 64 bits signed integer
 </p></abstract>
-<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_type>__int64</declaration_type> <declaration_var>XSInt64</declaration_var>;  </declaration>
-<desc><p/></desc>
-</typedef><typedef id="//xs_ref/c/tdef/XSInt64_DONTLINK_1" lang="c" type="simple"><name>XSInt64</name>
-<abstract><p>Fixed 64 bits signed integer
-</p></abstract>
-<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_type>int64_t</declaration_type> <declaration_var>XSInt64</declaration_var>;  </declaration>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>_WIN32</declaration_preprocessor> 
+<declaration_keyword>typedef</declaration_keyword> <declaration_type>__int64</declaration_type> <declaration_var>XSInt64</declaration_var>;  
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_keyword>typedef</declaration_keyword> <declaration_type>int64_t</declaration_type> <declaration_var>XSInt64</declaration_var>;  
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
 <desc><p/></desc>
 </typedef></typedefs><defines><pdefine id="//xs_ref/c/macro/XSInt64Max" definetype="value" lang="c"><name>XSInt64Max</name>
 <abstract><p>Maximum value for XSInt64
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSInt64Max</declaration_preprocessor> <declaration_preprocessor>0x7FFFFFFFFFFFFFFFLL</declaration_preprocessor> </declaration>
-<desc><p>@def         XSInt64Max
-</p></desc>
 </pdefine><pdefine id="//xs_ref/c/macro/XSInt64Min" definetype="value" lang="c"><name>XSInt64Min</name>
 <abstract><p>Minimum value for XSInt64
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSInt64Min</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>-</declaration_preprocessor><declaration_preprocessor>XSInt64Max</declaration_preprocessor> <declaration_preprocessor>-</declaration_preprocessor> <declaration_preprocessor>1</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-<desc><p>@def         XSInt64Min
-</p></desc>
 </pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
 <timestamp>Wednesday, May 07, 2014</timestamp>

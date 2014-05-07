@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSFloat type definition
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -77,58 +78,44 @@
 
 XS_EXTERN_C_BEGIN
 
-#ifdef __LP64__
-
 /*!
  * @typedef     XSFloat
  * @abstract    Floating-point number type
  */
-typedef double      XSFloat;
-
-/*!
- * @def         XSFloatMax
- * @abstract    Maximum value for XSFloat
- */
-#define XSFloatMax          1.7976931348623157e+308
-
-/*!
- * @def         XSFloatMin
- * @abstract    Minimum value for XSFloat
- */
-#define XSFloatMin          2.2250738585072014e-308
-
-/*!
- * @def         XSFloatInfinity
- * @abstract    Infinity value for XSFloat
- */
-#define XSFloatInfinity     HUGE_VAL
-
+#ifdef __LP64__
+typedef double              XSFloat;
 #else
-
-/*!
- * @typedef         XSFloat
- * @abstract        Floating-point number type
- */
 typedef float               XSFloat;
+#endif
 
 /*!
- * @def         XSFloatMax
+ * @define      XSFloatMax
  * @abstract    Maximum value for XSFloat
  */
+#ifdef __LP64__
+#define XSFloatMax          1.7976931348623157e+308
+#else
 #define XSFloatMax          3.40282347e+38F
+#endif
 
 /*!
- * @def         XSFloatMin
+ * @define      XSFloatMin
  * @abstract    Minimum value for XSFloat
  */
+#ifdef __LP64__
+#define XSFloatMin          2.2250738585072014e-308
+#else
 #define XSFloatMin          1.17549435e-38F
+#endif
 
 /*!
- * @def         XSFloatInfinity
+ * @define      XSFloatInfinity
  * @abstract    Infinity value for XSFloat
  */
+#ifdef __LP64__
+#define XSFloatInfinity     HUGE_VAL
+#else
 #define XSFloatInfinity     HUGE_VALF
-
 #endif
 
 XS_EXTERN_C_END

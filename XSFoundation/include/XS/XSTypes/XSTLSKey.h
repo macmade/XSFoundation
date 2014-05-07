@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSTLSKey type definition
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -79,7 +80,7 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @typedef     XSTLSKey
- * @abstract    Mutex type
+ * @abstract    Thread local storage (TLS) key type
  */
 #ifdef _WIN32
 typedef DWORD XSTLSKey;

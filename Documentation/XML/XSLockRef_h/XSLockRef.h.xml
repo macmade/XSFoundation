@@ -9,7 +9,8 @@
 <include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <functions><function id="//xs_ref/c/func/XSLock_Create" lang="c"><name>XSLock_Create</name>
 <abstract><p>Creates a lock object
 </p></abstract>
@@ -28,7 +29,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSClassID</declaration_type> <declaration_function>XSLock_GetClassID</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSLock_Lock" lang="c"><name>XSLock_Lock(XSLockRef)</name>
+</function><function id="//xs_ref/c/func/XSLock_Lock" lang="c"><name>XSLock_Lock</name>
 <abstract><p>Locks a lock object
 </p></abstract>
 <parameterlist>
@@ -39,19 +40,6 @@
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSLock_Lock</declaration_function>(
-    <declaration_type>XSLockRef</declaration_type> <declaration_param>lock</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xs_ref/doc/title:func/XSLock_Lock" lang="c"><name>XSLock_Lock(XSLockRef)</name>
-<abstract><p>Unlocks a lock object
-</p></abstract>
-<parameterlist>
-<parameter><name>lock</name><desc><p>The lock object</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type>XSLockRef</type><name>lock</name></parsedparameter>
-</parsedparameterlist>
-<returntype> XS_EXPORT void</returntype>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSLock_Unlock</declaration_function>(
     <declaration_type>XSLockRef</declaration_type> <declaration_param>lock</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xs_ref/c/func/XSLock_TryLock" lang="c"><name>XSLock_TryLock</name>

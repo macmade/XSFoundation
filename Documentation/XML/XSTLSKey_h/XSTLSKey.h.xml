@@ -7,9 +7,10 @@
 </attributes>
 <includes>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <typedefs><typedef id="//xs_ref/c/tdef/XSTLSKey" lang="c" type="simple"><name>XSTLSKey</name>
-<abstract><p>Mutex type
+<abstract><p>Thread local storage (TLS) key type
 </p></abstract>
 <declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>_WIN32</declaration_preprocessor> 
 <declaration_keyword>typedef</declaration_keyword> <declaration_type>DWORD</declaration_type> <declaration_var>XSTLSKey</declaration_var>;  

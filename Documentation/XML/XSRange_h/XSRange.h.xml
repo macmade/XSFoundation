@@ -8,7 +8,8 @@
 <includes>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSUInteger.h">&lt;XS/XSTypes/XSUInteger.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <typedefs><typedef id="//xs_ref/c/tdef/XSRange" lang="c" type="simple"><name>XSRange</name>
 <abstract><p>Range type (structure)
 </p></abstract>
@@ -31,8 +32,6 @@
 <abstract><p>Not found constant for XSRange
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSNotFound</declaration_preprocessor> <declaration_preprocessor>XSUIntegerMax</declaration_preprocessor> </declaration>
-<desc><p>@def         XSNotFound
-</p></desc>
 </pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
 <timestamp>Wednesday, May 07, 2014</timestamp>

@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSSemaphore type definition
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -81,21 +82,42 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSSemaphore
  * @abstract    Semaphore type
  */
+#ifdef _WIN32
+
 typedef struct
 {
-    #if defined( _WIN32 )
     HANDLE sem;                 /*! The semaphore */
-    #else
-    sem_t * semp;               /*! The semaphore pointer, for POSIX named semaphores */
-    sem_t   sem;                /*! The semaphore, for POSIX unnamed semaphores */
-    #if defined( __APPLE__ )
-    semaphore_t semaphore;      /*! The semaphore, for OS X unnamed semaphores */
-    #endif
-    #endif
     bool named;                 /* Whether the semaphore is named or not */
     char __pad_0[ 7 ];          /* Padding */
 }
 XSSemaphore;
+
+#else
+#ifdef __APPLE__
+
+typedef struct
+{
+    sem_t * semp;               /*! The semaphore pointer, for POSIX named semaphores */
+    sem_t   sem;                /*! The semaphore, for POSIX unnamed semaphores */
+    semaphore_t semaphore;      /*! The semaphore, for OS X unnamed semaphores */
+    bool named;                 /* Whether the semaphore is named or not */
+    char __pad_0[ 7 ];          /* Padding */
+}
+XSSemaphore;
+
+#else
+
+typedef struct
+{
+    sem_t * semp;               /*! The semaphore pointer, for POSIX named semaphores */
+    sem_t   sem;                /*! The semaphore, for POSIX unnamed semaphores */
+    bool named;                 /* Whether the semaphore is named or not */
+    char __pad_0[ 7 ];          /* Padding */
+}
+XSSemaphore;
+
+#endif
+#endif
 
 XS_EXTERN_C_END
 

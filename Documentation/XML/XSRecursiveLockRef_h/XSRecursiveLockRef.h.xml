@@ -9,7 +9,8 @@
 <include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <functions><function id="//xs_ref/c/func/XSRecursiveLock_Create" lang="c"><name>XSRecursiveLock_Create</name>
 <abstract><p>Creates a recursive lock object
 </p></abstract>
@@ -28,7 +29,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSClassID</declaration_type> <declaration_function>XSRecursiveLock_GetClassID</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRecursiveLock_Lock" lang="c"><name>XSRecursiveLock_Lock(XSRecursiveLockRef)</name>
+</function><function id="//xs_ref/c/func/XSRecursiveLock_Lock" lang="c"><name>XSRecursiveLock_Lock</name>
 <abstract><p>Locks a recursive lock object
 </p></abstract>
 <parameterlist>
@@ -39,19 +40,6 @@
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSRecursiveLock_Lock</declaration_function>(
-    <declaration_type>XSRecursiveLockRef</declaration_type> <declaration_param>lock</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xs_ref/doc/title:func/XSRecursiveLock_Lock" lang="c"><name>XSRecursiveLock_Lock(XSRecursiveLockRef)</name>
-<abstract><p>Unlocks a recursive lock object
-</p></abstract>
-<parameterlist>
-<parameter><name>lock</name><desc><p>The recursive lock object</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type>XSRecursiveLockRef</type><name>lock</name></parsedparameter>
-</parsedparameterlist>
-<returntype> XS_EXPORT void</returntype>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSRecursiveLock_Unlock</declaration_function>(
     <declaration_type>XSRecursiveLockRef</declaration_type> <declaration_param>lock</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xs_ref/c/func/XSRecursiveLock_TryLock" lang="c"><name>XSRecursiveLock_TryLock</name>

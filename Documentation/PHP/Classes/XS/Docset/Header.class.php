@@ -24,6 +24,8 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+/* $Id$ */
+
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Function.class.php';
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Type.class.php';
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Macro.class.php';
@@ -37,7 +39,10 @@ class XS_Docset_Header
     protected $_path                = NULL;
     protected $_name                = NULL;
     protected $_id                  = NULL;
+    protected $_copyright           = NULL;
+    protected $_date                = NULL;
     protected $_abstract            = NULL;
+    protected $_discussion          = NULL;
     protected $_includeFiles        = NULL;
     protected $_attributes          = NULL;
     protected $_functions           = NULL;
@@ -96,6 +101,36 @@ class XS_Docset_Header
         return $this->_id;
     }
     
+    public function getCopyright()
+    {
+        if( $this->_copyright !== NULL )
+        {
+            return $this->_copyright;
+        }
+        
+        if( isset( $this->_xml->copyrightinfo ) )
+        {
+            $this->_copyright = ( string )( $this->_xml->copyrightinfo );
+        }
+                
+        return $this->_copyright;
+    }
+    
+    public function getDate()
+    {
+        if( $this->_date !== NULL )
+        {
+            return $this->_date;
+        }
+        
+        if( isset( $this->_xml->timestamp ) )
+        {
+            $this->_date = ( string )( $this->_xml->timestamp );
+        }
+                
+        return $this->_date;
+    }
+    
     public function getAbstract()
     {
         if( $this->_abstract !== NULL )
@@ -103,9 +138,27 @@ class XS_Docset_Header
             return $this->_abstract;
         }
         
-        $this->_abstract = ( string )( $this->_xml->abstract->p );
+        if( isset( $this->_xml->abstract->p ) )
+        {
+            $this->_abstract = ( string )( $this->_xml->abstract->p );
+        }
         
         return $this->_abstract;
+    }
+    
+    public function getDiscussion()
+    {
+        if( $this->_discussion !== NULL )
+        {
+            return $this->_discussion;
+        }
+        
+        if( isset( $this->_xml->desc->p ) )
+        {
+            $this->_discussion = ( string )( $this->_xml->desc->p );
+        }
+        
+        return $this->_discussion;
     }
     
     public function getIncludeFiles()

@@ -328,8 +328,16 @@ all: release debug doc
 # Documentation
 doc:
 	
+	@echo $(call _PRINT,XSDoc,universal,Generating the documentation)
 	@rm -rf Documentation/XML/*
-	@headerdoc2html -X -H -e headerDoc2HTML-Exclude.txt -o Documentation/XML/ XSFoundation/include
+	@headerdoc2html -u -X -H -e headerDoc2HTML-Exclude.txt -o Documentation/XML/ XSFoundation/include > /dev/null 2>&1
+	
+# Documentation (verbose mode)
+doc-verbose:
+	
+	@echo $(call _PRINT,XSDoc,universal,Generating the documentation)
+	@rm -rf Documentation/XML/*
+	@headerdoc2html -u -X -H -e headerDoc2HTML-Exclude.txt -o Documentation/XML/ XSFoundation/include
 	
 # Release build (parallel if available)
 release:

@@ -4,7 +4,7 @@ XSFoundation
 About
 -----
 
-The XEOS C Foundation library provides the base for object-oriented C style coding, reference counting memory management with auto-release capabilities, reflection, runtime environment, polymorphism, exceptions, and basic objects.
+The XEOS C Foundation library provides the base for object-oriented C style coding, reference counting memory management with auto-release capabilities, reflection, runtime environment, polymorphism, and basic objects.
 
 Its purpose is to be integrated in the [XEOS Operating System](http://www.xs-labs.com/en/projects/xeos/), once its C standard library will be complete.
 For now, it's just a standalone project, that should compile on every OS with a decent C compiler.
@@ -16,7 +16,7 @@ XSFoundation can be used on POSIX compliant systems (Mac OS X, Unix, Linux) as w
 Documentation
 -------------
 
-Documentation can be found at: http://www.xs-labs.com/en/projects/xsfoundation/documentation/
+Documentation and API reference can be found at: http://doc.xs-labs.com/XSFoundation/
 
 Project home
 ------------
@@ -26,7 +26,7 @@ Project home can be found at: http://www.xs-labs.com/en/projects/xsfoundation/
 License
 -------
 
-XSFoundation is released under the terms of the Boost Software License - Version 1.0.
+XSFoundation is released under the terms of the XEOS Software License - Version 1.0.
 
 Repository Infos
 ----------------

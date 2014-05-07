@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSInt32 type definition
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -77,34 +78,28 @@
 
 XS_EXTERN_C_BEGIN
 
-#ifdef _WIN32
-
-/*!
- * @typedef     XSInt32
- * @abstract    Fixed 32 bits signed integer
- */
-typedef __int32     XSInt32;
-
-#else
-
+#ifndef _WIN32
 #include <stdint.h>
-
-/*!
- * @typedef     XSInt32
- * @abstract    Fixed 32 bits signed integer
- */
-typedef int32_t     XSInt32;
-
 #endif
 
 /*!
- * @def         XSInt32Max
+ * @typedef     XSInt32
+ * @abstract    Fixed 32 bits signed integer
+ */
+#ifdef _WIN32
+typedef __int32     XSInt32;
+#else
+typedef int32_t     XSInt32;
+#endif
+
+/*!
+ * @define      XSInt32Max
  * @abstract    Maximum value for XSInt32
  */
 #define XSInt32Max  0x7FFFFFFF
 
 /*!
- * @def         XSInt32Min
+ * @define      XSInt32Min
  * @abstract    Minimum value for XSInt32
  */
 #define XSInt32Min  ( -XSInt32Max - 1 )

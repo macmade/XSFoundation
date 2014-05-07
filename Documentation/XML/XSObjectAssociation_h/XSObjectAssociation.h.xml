@@ -7,7 +7,8 @@
 </attributes>
 <includes>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <typedefs><typedef id="//xs_ref/c/tdef/XSObjectAssociation" lang="c" type="simple"><name>XSObjectAssociation</name>
 <abstract><p>Association type for objects
 </p></abstract>

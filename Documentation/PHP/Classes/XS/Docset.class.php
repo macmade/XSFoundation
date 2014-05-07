@@ -24,6 +24,8 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+/* $Id$ */
+
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Docset' . DIRECTORY_SEPARATOR . 'Header.class.php';
 
 class XS_Docset
@@ -37,6 +39,8 @@ class XS_Docset
     protected $_classesPrefix       = '';
     protected $_functionsPrefix     = '';
     protected $_typesPrefix         = '';
+    protected $_homeFile            = '';
+    protected $_displayFile         = false;
     
     protected $_classes             = array();
     protected $_functions           = array();
@@ -86,6 +90,11 @@ class XS_Docset
     public function setTypesPrefix( $value )
     {
         $this->_typesPrefix = ( string )$value;
+    }
+    
+    public function setHomeFile( $value )
+    {
+        $this->_homeFile = ( string )$value;
     }
     
     protected function _parse()
@@ -181,7 +190,9 @@ class XS_Docset
         $html[] = '<div class="xsdoc-project">';
         $html[] = '<div class="xsdoc-header">';
         $html[] = '<h1>';
+        $html[] = '<a href="' . strtok( $_SERVER[ 'REQUEST_URI' ], '?' ) . '">';
         $html[] = $this->_projectName . ': API Reference';
+        $html[] = '</a>';
         $html[] = '</h1>';
         $html[] = '</div>';
         
@@ -249,6 +260,8 @@ class XS_Docset
             
             if( isset( $this->_headers[ $key ] ) )
             {
+                $this->_displayFile = true;
+                
                 $header = $this->_headers[ $key ];
                 $html[] = '<div class="xsdoc-file">';
                 
@@ -337,7 +350,6 @@ class XS_Docset
                 $html[] = '</div>';
                 
                 /* Attributes */
-                
                 if( count( $header->getAttributes() ) )
                 {
                     foreach( $header->getAttributes() as $key => $value )
@@ -347,6 +359,28 @@ class XS_Docset
                         $html[] = '<div class="xsdoc-file-detail-content">' . $value . '</div>';
                         $html[] = '</div>';
                     }
+                }
+                
+                /* Copyright */
+                if( strlen( $header->getCopyright() ) )
+                {
+                    $html[] = '<div class="xsdoc-file-detail">';
+                    $html[] = '<div class="xsdoc-file-detail-name">Copyright</div>';
+                    $html[] = '<div class="xsdoc-file-detail-content">';
+                    $html[] = $header->getCopyright();
+                    $html[] = '</div>';
+                    $html[] = '</div>';
+                }
+                
+                /* Date */
+                if( strlen( $header->getDate() ) )
+                {
+                    $html[] = '<div class="xsdoc-file-detail">';
+                    $html[] = '<div class="xsdoc-file-detail-name">Date</div>';
+                    $html[] = '<div class="xsdoc-file-detail-content">';
+                    $html[] = $header->getDate();
+                    $html[] = '</div>';
+                    $html[] = '</div>';
                 }
                 
                 /* Includes */
@@ -388,7 +422,12 @@ class XS_Docset
                 
                 /* Overview */
                 $html[] = '<h3>Overview</h3>';
-                $html[] = '<p>' . $header->getAbstract() . '</p>';
+                $html[] = '<p><strong>' . $header->getAbstract() . '</strong></p>';
+                
+                if( strlen( $header->getDiscussion() ) )
+                {
+                    $html[] = '<p>' . $header->getDiscussion() . '</p>';
+                }
                 
                 /* Tasks */
                 if( count( $header->getFunctions() ) )
@@ -405,9 +444,7 @@ class XS_Docset
                         $html[] = '<p>' . $function->getAbstract() . '</p>';
                         
                         /* Declaration */
-                        $html[] = '<p class="xsdoc-code-block"><code>';
-                        $html[] = $function->getDeclaration();
-                        $html[] = '</code></p>';
+                        $html[] = '<p class="xsdoc-code-block"><code>' .  $function->getDeclaration() . '</code></p>';
                         
                         /* Discussion */
                         if( strlen( $function->getDiscussion() ) )
@@ -465,6 +502,62 @@ class XS_Docset
                         $html[] = '<div class="xsdoc-file-type">';
                         $html[] = '<a name="' . $type->getName() . '"></a>';
                         $html[] = '<h4>' . $type->getName() . '</h4>';
+                        
+                        /* Abstract */
+                        $html[] = '<p>' . $type->getAbstract() . '</p>';
+                        
+                        /* Declaration */
+                        $html[] = '<p class="xsdoc-code-block"><code>' . $type->getDeclaration() . '</code></p>';
+                        
+                        /* Discussion */
+                        if( strlen( $type->getDiscussion() ) )
+                        {
+                            $html[] = '<h5>Discussion</h5>';
+                            $html[] = '<p>' . $type->getDiscussion() . '</p>';
+                        }
+                        
+                        /* Fields */
+                        if( count( $type->getFields() ) )
+                        {
+                            $html[] = '<h5>Fields</h5>';
+                            $html[] = '<ul>';
+                            
+                            foreach( $type->getFields() as $key => $value )
+                            {
+                                $html[] = '<li><span class="xsdoc-code">' . $key . '</span><br />' . $value . '</li>';
+                            }
+                            
+                            $html[] = '</ul>';
+                        }
+                        
+                        /* Constants */
+                        if( count( $type->getConstants() ) )
+                        {
+                            $html[] = '<h5>Constants</h5>';
+                            $html[] = '<ul>';
+                            
+                            foreach( $type->getConstants() as $key => $value )
+                            {
+                                $html[] = '<li><span class="xsdoc-code">' . $key . '</span><br />' . $value . '</li>';
+                            }
+                            
+                            $html[] = '</ul>';
+                        }
+                        
+                        /* Parameters */
+                        if( count( $type->getParameters() ) )
+                        {
+                            $html[] = '<h5>Parameters</h5>';
+                            $html[] = '<ul>';
+                            
+                            foreach( $type->getParameters() as $key => $value )
+                            {
+                                $html[] = '<li><span class="xsdoc-code">' . $key . '</span><br />' . $value . '</li>';
+                            }
+                            
+                            $html[] = '</ul>';
+                        }
+                        
                         $html[] = '</div>';
                     }
                 }
@@ -479,6 +572,34 @@ class XS_Docset
                         $html[] = '<div class="xsdoc-file-macro">';
                         $html[] = '<a name="' . $macro->getName() . '"></a>';
                         $html[] = '<h4>' . $macro->getName() . '</h4>';
+                        
+                        /* Abstract */
+                        $html[] = '<p>' . $macro->getAbstract() . '</p>';
+                        
+                        /* Declaration */
+                        $html[] = '<p class="xsdoc-code-block"><code>' . $macro->getDeclaration() . '</code></p>';
+                        
+                        /* Parameters */
+                        if( count( $macro->getParameters() ) )
+                        {
+                            $html[] = '<h5>Parameters</h5>';
+                            $html[] = '<ul>';
+                            
+                            foreach( $macro->getParameters() as $key => $value )
+                            {
+                                $html[] = '<li><span class="xsdoc-code">' . $key . '</span><br />' . $value . '</li>';
+                            }
+                            
+                            $html[] = '</ul>';
+                        }
+                        
+                        /* Discussion */
+                        if( strlen( $macro->getDiscussion() ) )
+                        {
+                            $html[] = '<h5>Discussion</h5>';
+                            $html[] = '<p>' . $macro->getDiscussion() . '</p>';
+                        }
+                        
                         $html[] = '</div>';
                     }
                 }
@@ -486,6 +607,15 @@ class XS_Docset
                 $html[] = '</div>';
                 $html[] = '</div>';
             }
+        }
+        
+        if( $this->_displayFile === false && strlen( $this->_homeFile ) )
+        {
+            $html[] = '<div class="xsdoc-home">';
+            $html[] = '<div class="xsdoc-home-content">';
+            $html[] = file_get_contents( $this->_homeFile );
+            $html[] = '</div>';
+            $html[] = '</div>';
         }
         
         /* Footer */

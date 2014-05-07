@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSRange type definition
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -91,7 +92,7 @@ typedef struct
 XSRange;
 
 /*!
- * @def         XSNotFound
+ * @define      XSNotFound
  * @abstract    Not found constant for XSRange
  */
 #define XSNotFound  XSUIntegerMax

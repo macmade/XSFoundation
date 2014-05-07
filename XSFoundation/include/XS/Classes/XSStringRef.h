@@ -62,10 +62,12 @@
 /* $Id$ */
 
 /*!
- * @header      XSStringRef.h
- * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSString class
+ * @header          XSStringRef.h
+ * @copyright       (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+ * @author          Jean-David Gadina - www.xs-labs.com
+ * @abstract        XSString class
+ * @discussion      ...
+ * @ignorefuncmacro XS_FORMAT_ATTRIBUTE
  */
 
 #ifndef __XS_H__
@@ -79,7 +81,7 @@
 #include <XS/XSMacros.h>
 
 /*!
- * @def         XSSTR
+ * @define      XSSTR
  * @abstract    Gets an XSString object from a C string
  * @param       _s_     The C string (const char *)
  * @return      An XSString object (autoreleased)
@@ -117,7 +119,7 @@ XS_EXPORT XSStatic XSAutoreleased XSStringRef XSString_StringWithCString( const 
 XS_EXPORT XSStatic XSAutoreleased XSStringRef XSString_StringWithFormat( const char * format, ... ) XS_FORMAT_ATTRIBUTE( printf, 1, 2 );
 
 /*!
- * @function    XSString_StringWithFormat
+ * @function    XSString_StringWithFormatAndArgs
  * @abstract    Gets an XSString object from a format string with arguments
  * @param       format  The format string
  * @param       args     The format arguments
@@ -143,7 +145,7 @@ XS_EXPORT XSStatic XSStringRef XSString_CreateWithCString( const char * s );
 XS_EXPORT XSStatic XSStringRef XSString_CreateWithFormat( const char * format, ... ) XS_FORMAT_ATTRIBUTE( printf, 1, 2 );
 
 /*!
- * @function    XSString_CreateWithFormat
+ * @function    XSString_CreateWithFormatAndArgs
  * @abstract    Creates an XSString object from a format string with arguments
  * @param       format  The format string
  * @param       args    The format arguments
@@ -178,7 +180,7 @@ XS_EXPORT const char * XSString_GetCString( XSStringRef object );
 XS_EXPORT XSAutoreleased XSStringRef XSString_SubstringFromIndex( XSStringRef object, XSUInteger i );
 
 /*!
- * @function    XSString_SubstringFromIndex
+ * @function    XSString_SubstringToIndex
  * @abstract    Gets a substring from the start of the string to a specific index
  * @param       object  The string object
  * @param       i       The index
@@ -204,7 +206,7 @@ XS_EXPORT XSAutoreleased XSStringRef XSString_SubstringWithRange( XSStringRef ob
 XS_EXPORT XSAutoreleased XSStringRef XSString_LowercaseString( XSStringRef object );
 
 /*!
- * @function    XSString_LowercaseString
+ * @function    XSString_UppercaseString
  * @abstract    Gets an uppercase version of a string
  * @param       object  The string object
  * @return      The uppercase string (autoreleased)
@@ -230,7 +232,7 @@ XS_EXPORT XSAutoreleased XSStringRef XSString_StringByAppendingString( XSStringR
 XS_EXPORT XSAutoreleased XSStringRef XSString_StringByAppendingCString( XSStringRef object, const char * s );
 
 /*!
- * @function    XSString_StringByAppendingCString
+ * @function    XSString_StringByAppendingFormat
  * @abstract    Gets a string by appending a format string with arguments to a string
  * @param       object  The string object
  * @param       format  The format string

@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSSemaphore class
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -100,7 +101,7 @@ XS_EXPORT XSStatic XSClassID XSSemaphore_GetClassID( void );
 XS_EXPORT XSStatic XSSemaphoreRef XSSemaphore_Create( XSUInteger count );
 
 /*!
- * @function    XSSemaphore_GetClassID
+ * @function    XSSemaphore_CreateWithName
  * @abstract    Creates a named semaphore
  * @param       name    The semaphore name
  * @param       count   The maximum count for the semaphore
@@ -133,7 +134,7 @@ XS_EXPORT bool XSSemaphore_TryWait( XSSemaphoreRef semaphore );
 XS_EXPORT void XSSemaphore_Signal( XSSemaphoreRef semaphore );
 
 /*!
- * @function    XSSemaphore_Signal
+ * @function    XSSemaphore_IsNamed
  * @abstract    Checks whether a semaphore is named or not
  * @param       semaphore   The semaphore object
  * @result      True if the semaphore is named, otherwise false

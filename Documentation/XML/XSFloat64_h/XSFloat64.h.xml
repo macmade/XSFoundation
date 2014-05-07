@@ -7,7 +7,8 @@
 </attributes>
 <includes>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <typedefs><typedef id="//xs_ref/c/tdef/XSFloat64" lang="c" type="simple"><name>XSFloat64</name>
 <abstract><p>64 bits floating-point number
 </p></abstract>
@@ -17,14 +18,10 @@
 <abstract><p>Maximum value for XSFloat64
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSFloat64Max</declaration_preprocessor> <declaration_preprocessor>1</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>7976931348623157e</declaration_preprocessor><declaration_preprocessor>+</declaration_preprocessor><declaration_preprocessor>308</declaration_preprocessor> </declaration>
-<desc><p>@def         XSFloat64Max
-</p></desc>
 </pdefine><pdefine id="//xs_ref/c/macro/XSFloat64Min" definetype="value" lang="c"><name>XSFloat64Min</name>
 <abstract><p>Minimum value for XSFloat64
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSFloat64Min</declaration_preprocessor> <declaration_preprocessor>2</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>2250738585072014e</declaration_preprocessor><declaration_preprocessor>-</declaration_preprocessor><declaration_preprocessor>308</declaration_preprocessor> </declaration>
-<desc><p>@def         XSFloat64Min
-</p></desc>
 </pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
 <timestamp>Wednesday, May 07, 2014</timestamp>

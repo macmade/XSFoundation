@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSFloat64 type definition
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -84,13 +85,13 @@ XS_EXTERN_C_BEGIN
 typedef double          XSFloat64;
 
 /*!
- * @def         XSFloat64Max
+ * @define      XSFloat64Max
  * @abstract    Maximum value for XSFloat64
  */
 #define XSFloat64Max    1.7976931348623157e+308
 
 /*!
- * @def         XSFloat64Min
+ * @define      XSFloat64Min
  * @abstract    Minimum value for XSFloat64
  */
 #define XSFloat64Min    2.2250738585072014e-308

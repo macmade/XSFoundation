@@ -8,7 +8,8 @@
 <includes>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <functions><function id="//xs_ref/c/func/XSRuntime_CreateInstance" lang="c"><name>XSRuntime_CreateInstance</name>
 <abstract><p>Initializes a new instance of a registered class
 </p></abstract>

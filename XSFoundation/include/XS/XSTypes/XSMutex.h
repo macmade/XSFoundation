@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSMutex type definition
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -82,17 +83,19 @@ XS_EXTERN_C_BEGIN
  * @abstract    Mutex type
  */
 #ifdef _WIN32
-
-#define XS_MUTEX_INITIALIZER    NULL
-
 typedef HANDLE XSMutex;
-
 #else
-
-#define XS_MUTEX_INITIALIZER    PTHREAD_MUTEX_INITIALIZER
-
 typedef pthread_mutex_t XSMutex;
+#endif
 
+/*!
+ * @define      XS_MUTEX_INITIALIZER
+ * @abstract    Default initializer for mutex types
+ */
+#ifdef _WIN32
+#define XS_MUTEX_INITIALIZER    NULL
+#else
+#define XS_MUTEX_INITIALIZER    PTHREAD_MUTEX_INITIALIZER
 #endif
 
 XS_EXTERN_C_END

@@ -22,6 +22,7 @@ $DOC->setSourceRootPrefix( '/XSFoundation/include/' );
 $DOC->setClassesPrefix( 'XSFoundation/include/XS/Classes/' );
 $DOC->setFunctionsPrefix( 'XSFoundation/include/XS/Functions/' );
 $DOC->setTypesPrefix( 'XSFoundation/include/XS/XSTypes/' );
+$DOC->setHomeFile( 'home.inc.php' );
 
 print $DOC;
 

@@ -8,7 +8,8 @@
 <includes>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <functions><function id="//xs_ref/c/func/XSAtomic_Add32" lang="c"><name>XSAtomic_Add32</name>
 <abstract><p>Atomically adds to a 32 bits value
 </p></abstract>

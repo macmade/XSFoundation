@@ -9,7 +9,8 @@
 <include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <functions><function id="//xs_ref/c/func/XSSemaphore_Create" lang="c"><name>XSSemaphore_Create</name>
 <abstract><p>Creates an unnamed semaphore
 </p></abstract>
@@ -43,7 +44,7 @@
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>name</declaration_param>,
     <declaration_type>XSUInteger</declaration_type> <declaration_param>count</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSSemaphore_GetClassID" lang="c"><name>XSSemaphore_GetClassID()</name>
+</function><function id="//xs_ref/c/func/XSSemaphore_GetClassID" lang="c"><name>XSSemaphore_GetClassID</name>
 <abstract><p>Gets the class ID for XSSemaphore
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSClassID</returntype>
@@ -51,24 +52,6 @@
 </p></result>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSClassID</declaration_type> <declaration_function>XSSemaphore_GetClassID</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xs_ref/doc/title:func/XSSemaphore_GetClassID" lang="c"><name>XSSemaphore_GetClassID(const char *, XSUInteger)</name>
-<abstract><p>Creates a named semaphore
-</p></abstract>
-<parameterlist>
-<parameter><name>name</name><desc><p>The semaphore name</p></desc></parameter>
-<parameter><name>count</name><desc><p>The maximum count for the semaphore</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type>const char *</type><name>name</name></parsedparameter>
-<parsedparameter><type>XSUInteger</type><name>count</name></parsedparameter>
-</parsedparameterlist>
-<returntype> XS_EXPORT XSStatic XSSemaphoreRef</returntype>
-<result><p>The semaphore object
-</p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSSemaphoreRef</declaration_type> <declaration_function>XSSemaphore_CreateWithName</declaration_function>(
-    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>name</declaration_param>,
-    <declaration_type>XSUInteger</declaration_type> <declaration_param>count</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xs_ref/c/func/XSSemaphore_GetName" lang="c"><name>XSSemaphore_GetName</name>
 <abstract><p>Gets the name of a semaphore
@@ -100,7 +83,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSSemaphore_IsNamed</declaration_function>(
     <declaration_type>XSSemaphoreRef</declaration_type> <declaration_param>semaphore</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSSemaphore_Signal" lang="c"><name>XSSemaphore_Signal(XSSemaphoreRef)</name>
+</function><function id="//xs_ref/c/func/XSSemaphore_Signal" lang="c"><name>XSSemaphore_Signal</name>
 <abstract><p>Unlocks a semaphore
 </p></abstract>
 <parameterlist>
@@ -111,21 +94,6 @@
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSSemaphore_Signal</declaration_function>(
-    <declaration_type>XSSemaphoreRef</declaration_type> <declaration_param>semaphore</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xs_ref/doc/title:func/XSSemaphore_Signal" lang="c"><name>XSSemaphore_Signal(XSSemaphoreRef)</name>
-<abstract><p>Checks whether a semaphore is named or not
-</p></abstract>
-<parameterlist>
-<parameter><name>semaphore</name><desc><p>The semaphore object</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type>XSSemaphoreRef</type><name>semaphore</name></parsedparameter>
-</parsedparameterlist>
-<returntype> XS_EXPORT bool</returntype>
-<result><p>True if the semaphore is named, otherwise false
-</p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSSemaphore_IsNamed</declaration_function>(
     <declaration_type>XSSemaphoreRef</declaration_type> <declaration_param>semaphore</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xs_ref/c/func/XSSemaphore_TryWait" lang="c"><name>XSSemaphore_TryWait</name>

@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSUInteger type definition
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -77,34 +78,24 @@
 
 XS_EXTERN_C_BEGIN
 
+/*!
+ * @typedef     XSUInteger
+ * @abstract    Unsigned integer type
+ */
 #ifdef __LP64__
-
-/*!
- * @typedef     XSUInteger
- * @abstract    Unsigned integer type
- */
 typedef unsigned long   XSUInteger;
-
-/*!
- * @def         XSUIntegerMax
- * @abstract    Maximum value for XSUInteger
- */
-#define XSUIntegerMax   0xFFFFFFFFFFFFFFFFULL
-
 #else
-
-/*!
- * @typedef     XSUInteger
- * @abstract    Unsigned integer type
- */
 typedef unsigned int    XSUInteger;
+#endif
 
 /*!
- * @def         XSUIntegerMax
+ * @define      XSUIntegerMax
  * @abstract    Maximum value for XSUInteger
  */
+#ifdef __LP64__
+#define XSUIntegerMax   0xFFFFFFFFFFFFFFFFULL
+#else
 #define XSUIntegerMax   0xFFFFFFFFU
-
 #endif
 
 XS_EXTERN_C_END

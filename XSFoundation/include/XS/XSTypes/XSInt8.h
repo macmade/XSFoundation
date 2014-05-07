@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSInt8 type definition
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -77,34 +78,28 @@
 
 XS_EXTERN_C_BEGIN
 
-#ifdef _WIN32
-
-/*!
- * @typedef     XSInt8
- * @abstract    Fixed 8 bits signed integer
- */
-typedef __int8      XSInt8;
-
-#else
-
+#ifndef _WIN32
 #include <stdint.h>
-
-/*!
- * @typedef     XSInt8
- * @abstract    Fixed 8 bits signed integer
- */
-typedef int8_t      XSInt8;
-
 #endif
 
 /*!
- * @def         XSInt8Max
+ * @typedef     XSInt8
+ * @abstract    Fixed 8 bits signed integer
+ */
+#ifdef _WIN32
+typedef __int8      XSInt8;
+#else
+typedef int8_t      XSInt8;
+#endif
+
+/*!
+ * @define      XSInt8Max
  * @abstract    Maximum value for XSInt8
  */
 #define XSInt8Max   0x7F
 
 /*!
- * @def         XSInt8Min
+ * @define      XSInt8Min
  * @abstract    Minimum value for XSInt8
  */
 #define XSInt8Min   -0x80

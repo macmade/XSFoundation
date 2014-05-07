@@ -74,7 +74,7 @@
 #ifdef _WIN32
 
 /*!
- * @def         __MS_VC_EXCEPTION
+ * @define      __MS_VC_EXCEPTION
  * @abstract    Exception number to set the thread name
  */
 #define __MS_VC_EXCEPTION   0x406D1388

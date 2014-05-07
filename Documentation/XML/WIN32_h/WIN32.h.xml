@@ -10,7 +10,8 @@
 <include><hd_link logicalPath="//xs_ref/doc/header/Ws2tcpip.h">&lt;Ws2tcpip.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xs_ref/doc/header/windows.h">&lt;windows.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
 <timestamp>Wednesday, May 07, 2014</timestamp>

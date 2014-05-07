@@ -8,7 +8,8 @@
 <includes>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSInteger.h">&lt;XS/XSTypes/XSInteger.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <typedefs><typedef id="//xs_ref/c/tdef/XSComparisonResult" lang="c" type="simple"><name>XSComparisonResult</name>
 <abstract><p>Enumeration for the XSComparisonResult type 
 </p></abstract>

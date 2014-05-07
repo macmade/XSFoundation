@@ -11,7 +11,8 @@
 <include><hd_link logicalPath="//xs_ref/doc/header/POSIX.h">&lt;XS/XS-STD/POSIX.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xs_ref/doc/header/Apple.h">&lt;XS/XS-STD/Apple.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
 <timestamp>Wednesday, May 07, 2014</timestamp>

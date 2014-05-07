@@ -9,7 +9,8 @@
 <include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <functions><function id="//xs_ref/c/func/XSString_ContainsCString" lang="c"><name>XSString_ContainsCString</name>
 <abstract><p>Checks whether a string contains a C string
 </p></abstract>
@@ -61,28 +62,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_CreateWithCString</declaration_function>(
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>s</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/doc/title:func/XSString_CreateWithFormat" lang="c"><name>XSString_CreateWithFormat(printf,  1,  0)</name>
-<abstract><p>Creates an XSString object from a format string with arguments
-</p></abstract>
-<parameterlist>
-<parameter><name>format</name><desc><p>The format string</p></desc></parameter>
-<parameter><name>args</name><desc><p>The format arguments</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type> printf</type><name></name></parsedparameter>
-<parsedparameter><type> 1</type><name></name></parsedparameter>
-<parsedparameter><type> 0</type><name></name></parsedparameter>
-</parsedparameterlist>
-<returntype> XS_EXPORT XSStatic XSStringRef</returntype>
-<result><p>An XSString object
-</p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_CreateWithFormatAndArgs</declaration_function>(
-    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>format</declaration_param>,
-    <declaration_type>va_list</declaration_type> <declaration_param>args</declaration_param> ) <declaration_function>XS_FORMAT_ATTRIBUTE</declaration_function>(
-    <declaration_param>printf</declaration_param>,
-    <declaration_number>1</declaration_number>, <declaration_number>0</declaration_number> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_CreateWithFormat" lang="c"><name>XSString_CreateWithFormat(printf,  1,  2)</name>
+</function><function id="//xs_ref/c/func/XSString_CreateWithFormat" lang="c"><name>XSString_CreateWithFormat</name>
 <abstract><p>Creates an XSString object from a format string with arguments
 </p></abstract>
 <parameterlist>
@@ -90,19 +70,15 @@
 <parameter><name>...</name><desc><p>The format arguments</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type> printf</type><name></name></parsedparameter>
-<parsedparameter><type> 1</type><name></name></parsedparameter>
-<parsedparameter><type> 2</type><name></name></parsedparameter>
+<parsedparameter><type>const char *</type><name>format</name></parsedparameter>
+<parsedparameter><type> ...</type><name>...</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT XSStatic XSStringRef</returntype>
 <result><p>An XSString object
 </p></result>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_CreateWithFormat</declaration_function>(
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>format</declaration_param>,
-    ... ) <declaration_function>XS_FORMAT_ATTRIBUTE</declaration_function>(
-    <declaration_param>printf</declaration_param>,
-    <declaration_number>1</declaration_number>,
-    <declaration_number>2</declaration_number> );  </declaration>
+    ... );  </declaration>
 <desc><p/></desc>
 </function><function id="//xs_ref/c/func/XSString_CreateWithFormatAndArgs" lang="c"><name>XSString_CreateWithFormatAndArgs</name>
 <abstract><p>Creates an XSString object from a format string with arguments
@@ -112,18 +88,15 @@
 <parameter><name>args</name><desc><p>The format arguments</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type> printf</type><name></name></parsedparameter>
-<parsedparameter><type> 1</type><name></name></parsedparameter>
-<parsedparameter><type> 0</type><name></name></parsedparameter>
+<parsedparameter><type>const char *</type><name>format</name></parsedparameter>
+<parsedparameter><type>va_list</type><name>args</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT XSStatic XSStringRef</returntype>
 <result><p>An XSString object
 </p></result>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_CreateWithFormatAndArgs</declaration_function>(
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>format</declaration_param>,
-    <declaration_type>va_list</declaration_type> <declaration_param>args</declaration_param> ) <declaration_function>XS_FORMAT_ATTRIBUTE</declaration_function>(
-    <declaration_param>printf</declaration_param>,
-    <declaration_number>1</declaration_number>, <declaration_number>0</declaration_number> );  </declaration>
+    <declaration_type>va_list</declaration_type> <declaration_param>args</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xs_ref/c/func/XSString_GetClassID" lang="c"><name>XSString_GetClassID</name>
 <abstract><p>Gets the class ID for XSString
@@ -183,7 +156,7 @@
     <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSStringRef</declaration_type> <declaration_param>s</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_LowercaseString" lang="c"><name>XSString_LowercaseString(XSStringRef)</name>
+</function><function id="//xs_ref/c/func/XSString_LowercaseString" lang="c"><name>XSString_LowercaseString</name>
 <abstract><p>Gets a lowercase version of a string
 </p></abstract>
 <parameterlist>
@@ -196,21 +169,6 @@
 <result><p>The lowercase string (autoreleased)
 </p></result>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_LowercaseString</declaration_function>(
-    <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xs_ref/doc/title:func/XSString_LowercaseString" lang="c"><name>XSString_LowercaseString(XSStringRef)</name>
-<abstract><p>Gets an uppercase version of a string
-</p></abstract>
-<parameterlist>
-<parameter><name>object</name><desc><p>The string object</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type>XSStringRef</type><name>object</name></parsedparameter>
-</parsedparameterlist>
-<returntype> XS_EXPORT XSAutoreleased XSStringRef</returntype>
-<result><p>The uppercase string (autoreleased)
-</p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_UppercaseString</declaration_function>(
     <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xs_ref/c/func/XSString_RangeOfCString" lang="c"><name>XSString_RangeOfCString</name>
@@ -253,31 +211,7 @@ range's location will be equal to XSNotFound.
 <desc><p>If the 's' string is not found in the receiver string, the
 range's location will be equal to XSNotFound.
 </p></desc>
-</function><function id="//xs_ref/doc/title:func/XSString_StringByAppendingCString" lang="c"><name>XSString_StringByAppendingCString(printf,  2,  3)</name>
-<abstract><p>Gets a string by appending a format string with arguments to a string
-</p></abstract>
-<parameterlist>
-<parameter><name>object</name><desc><p>The string object</p></desc></parameter>
-<parameter><name>format</name><desc><p>The format string</p></desc></parameter>
-<parameter><name>...</name><desc><p>The format arguments</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type> printf</type><name></name></parsedparameter>
-<parsedparameter><type> 2</type><name></name></parsedparameter>
-<parsedparameter><type> 3</type><name></name></parsedparameter>
-</parsedparameterlist>
-<returntype> XS_EXPORT XSAutoreleased XSStringRef</returntype>
-<result><p>The resulting string (autoreleased)
-</p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_StringByAppendingFormat</declaration_function>(
-    <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param>,
-    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>format</declaration_param>,
-    ... ) <declaration_function>XS_FORMAT_ATTRIBUTE</declaration_function>(
-    <declaration_param>printf</declaration_param>,
-    <declaration_number>2</declaration_number>,
-    <declaration_number>3</declaration_number> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_StringByAppendingCString" lang="c"><name>XSString_StringByAppendingCString(XSStringRef, const char *)</name>
+</function><function id="//xs_ref/c/func/XSString_StringByAppendingCString" lang="c"><name>XSString_StringByAppendingCString</name>
 <abstract><p>Gets a string by appending a C string to a string
 </p></abstract>
 <parameterlist>
@@ -304,9 +238,9 @@ range's location will be equal to XSNotFound.
 <parameter><name>...</name><desc><p>The format arguments</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type> printf</type><name></name></parsedparameter>
-<parsedparameter><type> 2</type><name></name></parsedparameter>
-<parsedparameter><type> 3</type><name></name></parsedparameter>
+<parsedparameter><type>XSStringRef</type><name>object</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>format</name></parsedparameter>
+<parsedparameter><type> ...</type><name>...</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT XSAutoreleased XSStringRef</returntype>
 <result><p>The resulting string (autoreleased)
@@ -314,10 +248,7 @@ range's location will be equal to XSNotFound.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_StringByAppendingFormat</declaration_function>(
     <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>format</declaration_param>,
-    ... ) <declaration_function>XS_FORMAT_ATTRIBUTE</declaration_function>(
-    <declaration_param>printf</declaration_param>,
-    <declaration_number>2</declaration_number>,
-    <declaration_number>3</declaration_number> );  </declaration>
+    ... );  </declaration>
 <desc><p/></desc>
 </function><function id="//xs_ref/c/func/XSString_StringByAppendingString" lang="c"><name>XSString_StringByAppendingString</name>
 <abstract><p>Gets a string by appending a string to another
@@ -427,28 +358,7 @@ range's location will be equal to XSNotFound.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_StringWithCString</declaration_function>(
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>s</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/doc/title:func/XSString_StringWithFormat" lang="c"><name>XSString_StringWithFormat(printf,  1,  0)</name>
-<abstract><p>Gets an XSString object from a format string with arguments
-</p></abstract>
-<parameterlist>
-<parameter><name>format</name><desc><p>The format string</p></desc></parameter>
-<parameter><name>args</name><desc><p>The format arguments</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type> printf</type><name></name></parsedparameter>
-<parsedparameter><type> 1</type><name></name></parsedparameter>
-<parsedparameter><type> 0</type><name></name></parsedparameter>
-</parsedparameterlist>
-<returntype> XS_EXPORT XSStatic XSAutoreleased XSStringRef</returntype>
-<result><p>An XSString object (autoreleased)
-</p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_StringWithFormatAndArgs</declaration_function>(
-    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>format</declaration_param>,
-    <declaration_type>va_list</declaration_type> <declaration_param>args</declaration_param> ) <declaration_function>XS_FORMAT_ATTRIBUTE</declaration_function>(
-    <declaration_param>printf</declaration_param>,
-    <declaration_number>1</declaration_number>, <declaration_number>0</declaration_number> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_StringWithFormat" lang="c"><name>XSString_StringWithFormat(printf,  1,  2)</name>
+</function><function id="//xs_ref/c/func/XSString_StringWithFormat" lang="c"><name>XSString_StringWithFormat</name>
 <abstract><p>Gets an XSString object from a format string with arguments
 </p></abstract>
 <parameterlist>
@@ -456,19 +366,15 @@ range's location will be equal to XSNotFound.
 <parameter><name>...</name><desc><p>The format arguments</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type> printf</type><name></name></parsedparameter>
-<parsedparameter><type> 1</type><name></name></parsedparameter>
-<parsedparameter><type> 2</type><name></name></parsedparameter>
+<parsedparameter><type>const char *</type><name>format</name></parsedparameter>
+<parsedparameter><type> ...</type><name>...</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSStringRef</returntype>
 <result><p>An XSString object (autoreleased)
 </p></result>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_StringWithFormat</declaration_function>(
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>format</declaration_param>,
-    ... ) <declaration_function>XS_FORMAT_ATTRIBUTE</declaration_function>(
-    <declaration_param>printf</declaration_param>,
-    <declaration_number>1</declaration_number>,
-    <declaration_number>2</declaration_number> );  </declaration>
+    ... );  </declaration>
 <desc><p/></desc>
 </function><function id="//xs_ref/c/func/XSString_StringWithFormatAndArgs" lang="c"><name>XSString_StringWithFormatAndArgs</name>
 <abstract><p>Gets an XSString object from a format string with arguments
@@ -478,20 +384,17 @@ range's location will be equal to XSNotFound.
 <parameter><name>args</name><desc><p>The format arguments</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type> printf</type><name></name></parsedparameter>
-<parsedparameter><type> 1</type><name></name></parsedparameter>
-<parsedparameter><type> 0</type><name></name></parsedparameter>
+<parsedparameter><type>const char *</type><name>format</name></parsedparameter>
+<parsedparameter><type>va_list</type><name>args</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSStringRef</returntype>
 <result><p>An XSString object (autoreleased)
 </p></result>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_StringWithFormatAndArgs</declaration_function>(
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>format</declaration_param>,
-    <declaration_type>va_list</declaration_type> <declaration_param>args</declaration_param> ) <declaration_function>XS_FORMAT_ATTRIBUTE</declaration_function>(
-    <declaration_param>printf</declaration_param>,
-    <declaration_number>1</declaration_number>, <declaration_number>0</declaration_number> );  </declaration>
+    <declaration_type>va_list</declaration_type> <declaration_param>args</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_SubstringFromIndex" lang="c"><name>XSString_SubstringFromIndex(XSStringRef, XSUInteger)</name>
+</function><function id="//xs_ref/c/func/XSString_SubstringFromIndex" lang="c"><name>XSString_SubstringFromIndex</name>
 <abstract><p>Gets a substring from a specific index to the end of the string
 </p></abstract>
 <parameterlist>
@@ -506,24 +409,6 @@ range's location will be equal to XSNotFound.
 <result><p>The substring (autoreleased)
 </p></result>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_SubstringFromIndex</declaration_function>(
-    <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param>,
-    <declaration_type>XSUInteger</declaration_type> <declaration_param>i</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xs_ref/doc/title:func/XSString_SubstringFromIndex" lang="c"><name>XSString_SubstringFromIndex(XSStringRef, XSUInteger)</name>
-<abstract><p>Gets a substring from the start of the string to a specific index
-</p></abstract>
-<parameterlist>
-<parameter><name>object</name><desc><p>The string object</p></desc></parameter>
-<parameter><name>i</name><desc><p>The index</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type>XSStringRef</type><name>object</name></parsedparameter>
-<parsedparameter><type>XSUInteger</type><name>i</name></parsedparameter>
-</parsedparameterlist>
-<returntype> XS_EXPORT XSAutoreleased XSStringRef</returntype>
-<result><p>The substring (autoreleased)
-</p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_SubstringToIndex</declaration_function>(
     <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSUInteger</declaration_type> <declaration_param>i</declaration_param> );  </declaration>
 <desc><p/></desc>
@@ -596,8 +481,6 @@ range's location will be equal to XSNotFound.
 <result><p>An XSString object (autoreleased)
 </p></result>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSSTR</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_s_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSString_StringWithCString</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_s_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-<desc><p>@def         XSSTR
-</p></desc>
 </pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
 <timestamp>Wednesday, May 07, 2014</timestamp>

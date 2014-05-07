@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSLock class
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -117,7 +118,7 @@ XS_EXPORT void XSLock_Lock( XSLockRef lock );
 XS_EXPORT bool XSLock_TryLock( XSLockRef lock );
 
 /*!
- * @function    XSLock_Lock
+ * @function    XSLock_Unlock
  * @abstract    Unlocks a lock object
  * @param       lock    The lock object
  */

@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSFoundation process functions
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -87,7 +88,7 @@ XS_EXTERN_C_BEGIN
 XSUInteger XSProcess_GetProcessID( void );
 
 /*!
- * @function    XSProcess_GetProcessID
+ * @function    XSProcess_GetProcessName
  * @abstract    Gets the name of the current process
  * @return      The name of the current process
  */

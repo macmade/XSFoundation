@@ -66,6 +66,7 @@
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSFoundation memory allocation functions
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
@@ -80,7 +81,7 @@ XS_EXTERN_C_BEGIN
 #include <XS/XSTypes.h>
 
 /*!
- * @def         XSAlloc
+ * @define      XSAlloc
  * @abstract    Allocates memory
  * @param       _bytes_     The number of bytes to allocate
  * @discussion  The allocated memory will be zero-filled
@@ -89,7 +90,7 @@ XS_EXTERN_C_BEGIN
 #define XSAlloc( _bytes_ )              XSAllocWithInfos( _bytes_, 0, __FILE__, __LINE__, __func__ )
 
 /*!
- * @def         XSRealloc
+ * @define      XSRealloc
  * @abstract    Reallocates memory
  * @param       _memory_    The memory data to reallocate
  * @param       _bytes_     The number of bytes to reallocate
@@ -100,7 +101,7 @@ XS_EXTERN_C_BEGIN
 #define XSRealloc( _memory_, _bytes_ )  XSReallocWithInfos( _memory_, _bytes_, 0, __FILE__, __LINE__, __func__ )
 
 /*!
- * @def         XSAutoAlloc
+ * @define      XSAutoAlloc
  * @abstract    Allocates memory which will be automatically released
  * @param       _bytes_     The number of bytes to allocate
  * @discussion  The memory data will be placed in the instance of the current
@@ -112,7 +113,7 @@ XS_EXTERN_C_BEGIN
 #define XSAutoAlloc( _bytes_ )          XSAutoAllocWithInfos( _bytes_, 0, __FILE__, __LINE__, __func__ )
 
 /*!
- * @def         XSRelease
+ * @define      XSRelease
  * @abstract    Releases memory data
  * @param       _memory_    The memory data to release
  * @discussion  Memory may be freed if the retain count for the memory
@@ -121,7 +122,7 @@ XS_EXTERN_C_BEGIN
 #define XSRelease( _memory_ )           XSReleaseWithInfos( _memory_, __FILE__, __LINE__, __func__ )
 
 /*!
- * @def         XSCopy
+ * @define      XSCopy
  * @abstract    Copies an object
  * @param       _memory_    The object to copy 
  * @return      The copy of the object
@@ -172,7 +173,7 @@ XS_EXPORT void * XSAutoAllocWithInfos( XSUInteger bytes, XSClassID classID, cons
 XS_EXPORT void * XSReallocWithInfos( void * memory, XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func );
 
 /*!
- * @function    XSRetainWithInfos
+ * @function    XSRetain
  * @abstract    Retains memory data
  * @param       memory      The memory data to retain
  * @return      The memory data

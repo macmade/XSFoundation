@@ -8,7 +8,8 @@
 <includes>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <functions><function id="//xs_ref/c/func/XSRect_ContainsPoint" lang="c"><name>XSRect_ContainsPoint</name>
 <abstract><p>Checks whether a rectangle contains a specified point
 </p></abstract>

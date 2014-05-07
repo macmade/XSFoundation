@@ -8,7 +8,8 @@
 <includes>
 <include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
+<desc><p>...
+</p></desc>
 <functions><function id="//xs_ref/c/func/XSSort_QuickSort" lang="c"><name>XSSort_QuickSort</name>
 <abstract><p>Sorts values using the quick sort algorithm
 </p></abstract>
