@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSString.h>
+#include <XS/__private/Classes/XSStringRef.h>
 
 XSClassID   __XSString_ClassID = 0;
 XSClassInfo __XSString_Class   =

@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSURL.h>
+#include <XS/__private/Classes/XSURLRef.h>
 
 XSClassID   __XSURL_ClassID = 0;
 XSClassInfo __XSURL_Class   =

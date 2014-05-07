@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSDictionary.h>
+#include <XS/__private/Classes/XSDictionaryRef.h>
 
 XSClassID   __XSDictionary_ClassID = 0;
 XSClassInfo __XSDictionary_Class   =

@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSOrderedSet.h>
+#include <XS/__private/Classes/XSOrderedSetRef.h>
 
 XSOrderedSetRef XSOrderedSet_CreateMutableCopy( XSOrderedSetRef set )
 {

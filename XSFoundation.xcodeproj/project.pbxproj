@@ -3545,6 +3545,8 @@
 		05A1538218F5C0D800365881 /* XSOrderedSet_SortWithMethod.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSOrderedSet_SortWithMethod.c; sourceTree = "<group>"; };
 		05A153F718F5D83500365881 /* XSNull_Null.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNull_Null.c; sourceTree = "<group>"; };
 		05A153FC18F5DCB500365881 /* XSRuntime_GetClassType.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSRuntime_GetClassType.c; sourceTree = "<group>"; };
+		05AFB675191836950046D881 /* headerDoc2HTML-Exclude.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "headerDoc2HTML-Exclude.txt"; sourceTree = "<group>"; };
+		05AFB676191836950046D881 /* headerDoc2HTML.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = headerDoc2HTML.config; sourceTree = "<group>"; };
 		05D1054A1916864700392D36 /* __XSArray_Create.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSArray_Create.c; sourceTree = "<group>"; };
 		05D1054F1916870000392D36 /* __XSAutoreleasePool_Create.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSAutoreleasePool_Create.c; sourceTree = "<group>"; };
 		05D1055419168A3600392D36 /* __XSBag_Create.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSBag_Create.c; sourceTree = "<group>"; };
@@ -3693,6 +3695,8 @@
 			isa = PBXGroup;
 			children = (
 				0523039818E9D2BD00C29627 /* Makefile */,
+				05AFB675191836950046D881 /* headerDoc2HTML-Exclude.txt */,
+				05AFB676191836950046D881 /* headerDoc2HTML.config */,
 				05632FAC18EDBEF600EB76D2 /* Scripts */,
 				0523039918E9D2BD00C29627 /* README.md */,
 				051B663118DCA7350079238C /* XSFoundation */,

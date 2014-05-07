@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSValue.h>
+#include <XS/__private/Classes/XSValueRef.h>
 
 XSStatic XSAutoreleased XSValueRef XSValue_ValueWithRect( XSRect rect )
 {

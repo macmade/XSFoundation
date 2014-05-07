@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSFile.h>
+#include <XS/__private/Classes/XSFileRef.h>
 
 void __XSFile_Initialize( void )
 {

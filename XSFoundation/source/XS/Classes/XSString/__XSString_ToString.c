@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSString.h>
+#include <XS/__private/Classes/XSStringRef.h>
 
 const char * __XSString_ToString( XSStringRef object )
 {

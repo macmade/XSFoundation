@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSStack.h>
+#include <XS/__private/Classes/XSStackRef.h>
 
 void __XSStack_Initialize( void )
 {

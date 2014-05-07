@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSThread.h>
+#include <XS/__private/Classes/XSThreadRef.h>
 
 bool XSThread_IsMainThread( XSThreadRef thread )
 {

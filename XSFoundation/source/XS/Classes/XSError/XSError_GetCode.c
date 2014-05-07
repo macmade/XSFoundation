@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSError.h>
+#include <XS/__private/Classes/XSErrorRef.h>
 
 XSInteger XSError_GetCode( XSErrorRef error )
 {

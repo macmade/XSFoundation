@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSNotification.h>
+#include <XS/__private/Classes/XSNotificationRef.h>
 
 const char * __XSNotification_ToString( XSNotificationRef object )
 {

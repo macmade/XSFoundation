@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSNull.h>
+#include <XS/__private/Classes/XSNullRef.h>
 
 void __XSNull_Initialize( void )
 {

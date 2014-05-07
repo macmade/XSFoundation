@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSBoolean.h>
+#include <XS/__private/Classes/XSBooleanRef.h>
 
 void __XSBoolean_Destructor( XSBooleanRef object )
 {

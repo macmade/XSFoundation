@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSPrimitiveArray.h>
+#include <XS/__private/Classes/XSPrimitiveArrayRef.h>
 
 XSStatic XSPrimitiveArrayRef __XSPrimitiveArray_Create( void )
 {

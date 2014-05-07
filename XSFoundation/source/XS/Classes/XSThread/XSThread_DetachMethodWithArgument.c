@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSThread.h>
+#include <XS/__private/Classes/XSThreadRef.h>
 
 XSStatic void XSThread_DetachMethodWithArgument( XSObjectRef object, XSThread_MethodWithArgument method, void * arg )
 {

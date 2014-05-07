@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
+<header id="//xs_ref/doc/header/XSClassCallbackEquals.h" lang="c" filename="XSClassCallbackEquals.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSTypes/XSClassCallbackEquals.h"><name>XSClassCallbackEquals.h</name>
+<abstract><p>XSClassCallbackEquals type definition
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+<include><hd_link logicalPath="//xs_ref/doc/header/XSObjectRef.h">&lt;XS/XSTypes/XSObjectRef.h&gt;</hd_link></include>
+</includes>
+<desc><p/></desc>
+<typedefs><typedef id="//xs_ref/c/tdef/XSClassCallbackEquals" lang="c" type="funcPtr"><name>XSClassCallbackEquals</name>
+<abstract><p>Class equals callback
+</p></abstract>
+<parameterlist>
+<parameter><name>object1</name><desc><p>The first object to compare</p></desc></parameter>
+<parameter><name>object2</name><desc><p>The second object to compare</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSObjectRef</type><name>object1</name></parsedparameter>
+<parsedparameter><type>XSObjectRef</type><name>object2</name></parsedparameter>
+</parsedparameterlist>
+<result><p>True if both objects are equals, otherwise false
+</p></result>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_type>bool</declaration_type> ( <declaration_type>*</declaration_type><declaration_function>XSClassCallbackEquals</declaration_function> )(
+    <declaration_type>XSObjectRef</declaration_type> <declaration_param>object1</declaration_param>,
+    <declaration_type>XSObjectRef</declaration_type> <declaration_param>object2</declaration_param> );  </declaration>
+<desc><p/></desc>
+</typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Wednesday, May 07, 2014</timestamp>
+</header>

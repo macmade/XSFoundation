@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSBoolean.h>
+#include <XS/__private/Classes/XSBooleanRef.h>
 
 void XSBoolean_SetValue( XSBooleanRef object, bool value )
 {

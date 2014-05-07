@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSLock.h>
+#include <XS/__private/Classes/XSLockRef.h>
 
 XSClassID   __XSLock_ClassID = 0;
 XSClassInfo __XSLock_Class   =

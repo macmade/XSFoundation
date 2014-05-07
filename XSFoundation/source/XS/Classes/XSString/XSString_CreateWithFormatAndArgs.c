@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSString.h>
+#include <XS/__private/Classes/XSStringRef.h>
 
 XSStatic XSStringRef XSString_CreateWithFormatAndArgs( const char * format, va_list args )
 {

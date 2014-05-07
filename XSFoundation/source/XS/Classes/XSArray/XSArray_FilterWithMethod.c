@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSArray.h>
+#include <XS/__private/Classes/XSArrayRef.h>
 
 XS_EXPORT void XSArray_FilterWithMethod( XSArrayRef array, XSObjectRef object, XSArray_FilterMethod method )
 {

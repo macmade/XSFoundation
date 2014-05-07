@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSNotification.h>
+#include <XS/__private/Classes/XSNotificationRef.h>
 
 bool __XSNotification_Equals( XSNotificationRef object1, XSNotificationRef object2 )
 {

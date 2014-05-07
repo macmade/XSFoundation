@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSBag.h>
+#include <XS/__private/Classes/XSBagRef.h>
 
 XSBagRef __XSBag_Copy( XSBagRef source, XSBagRef destination )
 {

@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSOrderedSet.h>
+#include <XS/__private/Classes/XSOrderedSetRef.h>
 
 XSClassID XSOrderedSet_GetClassID( void )
 {

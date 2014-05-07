@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSValue.h>
+#include <XS/__private/Classes/XSValueRef.h>
 
 XSClassID   __XSValue_ClassID = 0;
 XSClassInfo __XSValue_Class   =

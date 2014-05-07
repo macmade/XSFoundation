@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSAutoreleasePool.h>
+#include <XS/__private/Classes/XSAutoreleasePoolRef.h>
 
 bool __XSAutoreleasePool_Equals( XSAutoreleasePoolRef object1, XSAutoreleasePoolRef object2 )
 {

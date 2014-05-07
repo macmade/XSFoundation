@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSValue.h>
+#include <XS/__private/Classes/XSValueRef.h>
 
 XSValue_ValueType XSValue_GetValueType( XSValueRef object )
 {

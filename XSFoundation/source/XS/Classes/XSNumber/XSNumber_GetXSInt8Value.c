@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSNumber.h>
+#include <XS/__private/Classes/XSNumberRef.h>
 
 XSInt8 XSNumber_GetXSInt8Value( XSNumberRef number )
 {

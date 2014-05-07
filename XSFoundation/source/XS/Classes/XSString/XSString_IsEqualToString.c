@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSString.h>
+#include <XS/__private/Classes/XSStringRef.h>
 
 bool XSString_IsEqualToString( XSStringRef object, XSStringRef s )
 {

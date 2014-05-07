@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSData.h>
+#include <XS/__private/Classes/XSDataRef.h>
 
 XSClassID   __XSData_ClassID = 0;
 XSClassInfo __XSData_Class   =

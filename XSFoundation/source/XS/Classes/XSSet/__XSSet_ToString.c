@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSSet.h>
+#include <XS/__private/Classes/XSSetRef.h>
 
 const char * __XSSet_ToString( XSSetRef object )
 {

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
+<header id="//xs_ref/doc/header/XSClassType.h" lang="c" filename="XSClassType.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSTypes/XSClassType.h"><name>XSClassType.h</name>
+<abstract><p>XSClassType type definition
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+</includes>
+<desc><p/></desc>
+<copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Wednesday, May 07, 2014</timestamp>
+</header>

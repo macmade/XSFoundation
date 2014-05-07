@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSNode.h>
+#include <XS/__private/Classes/XSNodeRef.h>
 
 XSNodeRef __XSNode_Constructor( XSNodeRef object )
 {

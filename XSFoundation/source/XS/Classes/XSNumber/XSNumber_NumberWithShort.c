@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSNumber.h>
+#include <XS/__private/Classes/XSNumberRef.h>
 
 XSStatic XSAutoreleased XSNumberRef XSNumber_NumberWithShort( short value )
 {

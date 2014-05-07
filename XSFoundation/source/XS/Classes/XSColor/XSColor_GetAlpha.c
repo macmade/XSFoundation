@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSColor.h>
+#include <XS/__private/Classes/XSColorRef.h>
 
 XSFloat XSColor_GetAlpha( XSColorRef object )
 {

@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSNode.h>
+#include <XS/__private/Classes/XSNodeRef.h>
 
 const char * __XSNode_ToString( XSNodeRef object )
 {

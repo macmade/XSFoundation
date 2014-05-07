@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSValue.h>
+#include <XS/__private/Classes/XSValueRef.h>
 
 XSSize XSValue_GetSizeValue( XSValueRef object )
 {

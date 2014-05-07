@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSNotification.h>
+#include <XS/__private/Classes/XSNotificationRef.h>
 
 XSStatic XSNotificationRef __XSNotification_Create( void )
 {

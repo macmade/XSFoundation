@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSArray.h>
+#include <XS/__private/Classes/XSArrayRef.h>
 
 XSStatic XSArrayRef __XSArray_CreateWithFirstObjectAndArgs( XSObjectRef firstObject, va_list args )
 {

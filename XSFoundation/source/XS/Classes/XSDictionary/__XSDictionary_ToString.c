@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSDictionary.h>
+#include <XS/__private/Classes/XSDictionaryRef.h>
 
 const char * __XSDictionary_ToString( XSDictionaryRef object )
 {

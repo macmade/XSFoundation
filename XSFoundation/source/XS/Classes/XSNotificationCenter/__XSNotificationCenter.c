@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSNotificationCenter.h>
+#include <XS/__private/Classes/XSNotificationCenterRef.h>
 
 XSClassID   __XSNotificationCenter_ClassID = 0;
 XSClassInfo __XSNotificationCenter_Class   =

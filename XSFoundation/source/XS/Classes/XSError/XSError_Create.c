@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSError.h>
+#include <XS/__private/Classes/XSErrorRef.h>
 
 XSStatic XSErrorRef XSError_Create( XSStringRef domain, XSInteger code, XSStringRef reason, XSDictionaryRef userInfo )
 {

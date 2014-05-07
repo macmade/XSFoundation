@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSOrderedSet.h>
+#include <XS/__private/Classes/XSOrderedSetRef.h>
 
 void XSOrderedSet_SortWithFunction( XSOrderedSetRef set, XSOrderedSet_SortFunction function )
 {

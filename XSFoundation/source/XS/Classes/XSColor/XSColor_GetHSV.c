@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSColor.h>
+#include <XS/__private/Classes/XSColorRef.h>
 
 void XSColor_GetHSV( XSColorRef object, XSFloat * h, XSFloat * s, XSFloat * v )
 {

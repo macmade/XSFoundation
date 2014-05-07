@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSOrderedSet.h>
+#include <XS/__private/Classes/XSOrderedSetRef.h>
 
 bool XSOrderedSet_ContainsObject( XSOrderedSetRef set, XSObjectRef object )
 {

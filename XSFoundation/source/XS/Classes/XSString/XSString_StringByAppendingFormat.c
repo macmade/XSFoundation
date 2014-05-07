@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSString.h>
+#include <XS/__private/Classes/XSStringRef.h>
 
 XSAutoreleased XSStringRef XSString_StringByAppendingFormat( XSStringRef object, const char * format, ... )
 {

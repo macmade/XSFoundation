@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSDictionary.h>
+#include <XS/__private/Classes/XSDictionaryRef.h>
 
 bool __XSDictionary_Equals( XSDictionaryRef object1, XSDictionaryRef object2 )
 {

@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSStack.h>
+#include <XS/__private/Classes/XSStackRef.h>
 
 XSStackRef __XSStack_Copy( XSStackRef source, XSStackRef destination )
 {

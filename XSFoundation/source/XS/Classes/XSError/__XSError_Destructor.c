@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSError.h>
+#include <XS/__private/Classes/XSErrorRef.h>
 
 void __XSError_Destructor( XSErrorRef object )
 {

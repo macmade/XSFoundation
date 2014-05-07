@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSArray.h>
+#include <XS/__private/Classes/XSArrayRef.h>
 
 bool __XSArray_Equals( XSArrayRef object1, XSArrayRef object2 )
 {

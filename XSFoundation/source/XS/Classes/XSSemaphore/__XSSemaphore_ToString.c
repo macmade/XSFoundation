@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSSemaphore.h>
+#include <XS/__private/Classes/XSSemaphoreRef.h>
 
 const char * __XSSemaphore_ToString( XSSemaphoreRef object )
 {

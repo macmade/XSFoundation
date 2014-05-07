@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSSet.h>
+#include <XS/__private/Classes/XSSetRef.h>
 
 XSStatic XSSetRef __XSSet_Create( void )
 {

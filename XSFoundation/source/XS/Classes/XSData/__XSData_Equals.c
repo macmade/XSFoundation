@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSData.h>
+#include <XS/__private/Classes/XSDataRef.h>
 
 bool __XSData_Equals( XSDataRef object1, XSDataRef object2 )
 {

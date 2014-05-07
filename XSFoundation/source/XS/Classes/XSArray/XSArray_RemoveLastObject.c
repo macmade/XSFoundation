@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSArray.h>
+#include <XS/__private/Classes/XSArrayRef.h>
 
 void XSArray_RemoveLastObject( XSArrayRef array )
 {

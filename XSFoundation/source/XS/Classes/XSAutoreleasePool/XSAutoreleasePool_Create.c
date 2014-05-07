@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSAutoreleasePool.h>
+#include <XS/__private/Classes/XSAutoreleasePoolRef.h>
 
 XSStatic XSAutoreleasePoolRef XSAutoreleasePool_Create( void )
 {

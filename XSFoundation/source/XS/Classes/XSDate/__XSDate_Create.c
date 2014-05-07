@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSDate.h>
+#include <XS/__private/Classes/XSDateRef.h>
 
 XSStatic XSDateRef __XSDate_Create( void )
 {

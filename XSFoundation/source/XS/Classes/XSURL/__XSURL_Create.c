@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSURL.h>
+#include <XS/__private/Classes/XSURLRef.h>
 
 XSStatic XSURLRef __XSURL_Create( void )
 {

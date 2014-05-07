@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSDate.h>
+#include <XS/__private/Classes/XSDateRef.h>
 
 XSClassID   __XSDate_ClassID = 0;
 XSClassInfo __XSDate_Class   =

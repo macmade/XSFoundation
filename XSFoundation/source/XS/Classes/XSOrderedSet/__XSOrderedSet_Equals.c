@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSOrderedSet.h>
+#include <XS/__private/Classes/XSOrderedSetRef.h>
 
 bool __XSOrderedSet_Equals( XSOrderedSetRef object1, XSOrderedSetRef object2 )
 {

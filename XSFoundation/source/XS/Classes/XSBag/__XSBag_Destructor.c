@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSBag.h>
+#include <XS/__private/Classes/XSBagRef.h>
 
 void __XSBag_Destructor( XSBagRef object )
 {

@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSColor.h>
+#include <XS/__private/Classes/XSColorRef.h>
 
 XSStatic XSAutoreleased XSColorRef XSColor_CreateWithRGBA( XSFloat r, XSFloat g, XSFloat b, XSFloat a )
 {

@@ -75,10 +75,10 @@
 #ifndef __XS_FUNCTIONS_XS_GEOMETRY_H__
 #define __XS_FUNCTIONS_XS_GEOMETRY_H__
 
-#include <XS/Functions/XSGeometry/XSPoint.h>
-#include <XS/Functions/XSGeometry/XSSize.h>
-#include <XS/Functions/XSGeometry/XSRect.h>
-#include <XS/Functions/XSGeometry/XSEdgeInsets.h>
-#include <XS/Functions/XSGeometry/XSRange.h>
+#include <XS/Functions/XSGeometry-XSPoint.h>
+#include <XS/Functions/XSGeometry-XSSize.h>
+#include <XS/Functions/XSGeometry-XSRect.h>
+#include <XS/Functions/XSGeometry-XSEdgeInsets.h>
+#include <XS/Functions/XSGeometry-XSRange.h>
 
 #endif /* __XS_FUNCTIONS_XS_GEOMETRY_H__ */

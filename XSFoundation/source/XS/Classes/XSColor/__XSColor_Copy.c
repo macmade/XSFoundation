@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSColor.h>
+#include <XS/__private/Classes/XSColorRef.h>
 
 XSColorRef __XSColor_Copy( XSColorRef source, XSColorRef destination )
 {

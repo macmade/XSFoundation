@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
+<header id="//xs_ref/doc/header/XSClassCallbackConstructor.h" lang="c" filename="XSClassCallbackConstructor.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSTypes/XSClassCallbackConstructor.h"><name>XSClassCallbackConstructor.h</name>
+<abstract><p>XSClassCallbackConstructor type definition
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+<include><hd_link logicalPath="//xs_ref/doc/header/XSObjectRef.h">&lt;XS/XSTypes/XSObjectRef.h&gt;</hd_link></include>
+</includes>
+<desc><p/></desc>
+<typedefs><typedef id="//xs_ref/c/tdef/XSClassCallbackConstructor" lang="c" type="funcPtr"><name>XSClassCallbackConstructor</name>
+<abstract><p>Class constructor callback
+</p></abstract>
+<parameterlist>
+<parameter><name>object</name><desc><p>The object beeing construct</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSObjectRef</type><name>object</name></parsedparameter>
+</parsedparameterlist>
+<result><p>The new object
+</p></result>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_type>XSObjectRef</declaration_type> ( <declaration_type>*</declaration_type><declaration_function>XSClassCallbackConstructor</declaration_function> )(
+    <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
+<desc><p>The return value is usually 'object', but can be another
+object.
+If NULL is returned, the 'object' will be deallocated by the
+caller automatically.
+</p></desc>
+</typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Wednesday, May 07, 2014</timestamp>
+</header>

@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSBinaryTree.h>
+#include <XS/__private/Classes/XSBinaryTreeRef.h>
 
 bool __XSBinaryTree_Equals( XSBinaryTreeRef object1, XSBinaryTreeRef object2 )
 {

@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSNotificationCenter.h>
+#include <XS/__private/Classes/XSNotificationCenterRef.h>
 
 void XSNotificationCenter_AddObserver( XSNotificationCenterRef center, XSObjectRef observer, XSNotificationCenter_NotificationCallback callback, XSStringRef name, XSObjectRef sender )
 {

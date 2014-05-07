@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSAutoreleasePool.h>
+#include <XS/__private/Classes/XSAutoreleasePoolRef.h>
 
 XSClassID   __XSAutoreleasePool_ClassID = 0;
 XSTLSKey    __XSAutoreleasePool_TLSKey  = 0;

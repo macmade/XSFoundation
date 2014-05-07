@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSBag.h>
+#include <XS/__private/Classes/XSBagRef.h>
 
 const char * __XSBag_ToString( XSBagRef object )
 {

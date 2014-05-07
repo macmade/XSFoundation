@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSFile.h>
+#include <XS/__private/Classes/XSFileRef.h>
 
 XSFileRef __XSFile_Copy( XSFileRef source, XSFileRef destination )
 {

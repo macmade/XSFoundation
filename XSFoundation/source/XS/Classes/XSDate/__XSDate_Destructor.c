@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSDate.h>
+#include <XS/__private/Classes/XSDateRef.h>
 
 void __XSDate_Destructor( XSDateRef object )
 {

@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSSemaphore.h>
+#include <XS/__private/Classes/XSSemaphoreRef.h>
 
 XSClassID   __XSSemaphore_ClassID = 0;
 XSClassInfo __XSSemaphore_Class   =

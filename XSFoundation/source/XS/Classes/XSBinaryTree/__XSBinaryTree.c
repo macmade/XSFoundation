@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSBinaryTree.h>
+#include <XS/__private/Classes/XSBinaryTreeRef.h>
 
 XSClassID   __XSBinaryTree_ClassID = 0;
 XSClassInfo __XSBinaryTree_Class   =

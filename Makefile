@@ -321,9 +321,15 @@ _XCODE_SDK_VALUE = $(shell /usr/libexec/PlistBuddy -c "Print $(1)" /Applications
 #-------------------------------------------------------------------------------
 
 # Main Target
-all: release
+all: release debug doc
 	
 	@:
+	
+# Documentation
+doc:
+	
+	@rm -rf Documentation/XML/*
+	@headerdoc2html -X -H -e headerDoc2HTML-Exclude.txt -o Documentation/XML/ XSFoundation/include
 	
 # Release build (parallel if available)
 release:

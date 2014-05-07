@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSStack.h>
+#include <XS/__private/Classes/XSStackRef.h>
 
 XSClassID   __XSStack_ClassID = 0;
 XSClassInfo __XSStack_Class   =

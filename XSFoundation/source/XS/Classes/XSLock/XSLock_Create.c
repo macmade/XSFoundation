@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSLock.h>
+#include <XS/__private/Classes/XSLockRef.h>
 
 XSStatic XSLockRef XSLock_Create( void )
 {

@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSData.h>
+#include <XS/__private/Classes/XSDataRef.h>
 
 XSStatic XSDataRef __XSData_Create( void )
 {

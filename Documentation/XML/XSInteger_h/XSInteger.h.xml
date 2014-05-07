@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
+<header id="//xs_ref/doc/header/XSInteger.h" lang="c" filename="XSInteger.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSTypes/XSInteger.h"><name>XSInteger.h</name>
+<abstract><p>XSInteger type definition
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+</includes>
+<desc><p/></desc>
+<typedefs><typedef id="//xs_ref/c/tdef/XSInteger" lang="c" type="simple"><name>XSInteger</name>
+<abstract><p>Signed integer type
+</p></abstract>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_type>long</declaration_type> <declaration_var>XSInteger</declaration_var>;  </declaration>
+<desc><p/></desc>
+</typedef><typedef id="//xs_ref/c/tdef/XSInteger_DONTLINK_1" lang="c" type="simple"><name>XSInteger</name>
+<abstract><p>Signed integer type
+</p></abstract>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_type>int</declaration_type> <declaration_var>XSInteger</declaration_var>;  </declaration>
+<desc><p/></desc>
+</typedef></typedefs><defines><pdefine id="//xs_ref/c/macro/XSIntegerMax" definetype="value" lang="c"><name>XSIntegerMax</name>
+<abstract><p>Maximum value for XSInteger
+</p></abstract>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSIntegerMax</declaration_preprocessor> <declaration_preprocessor>0x7FFFFFFFFFFFFFFFLL</declaration_preprocessor> </declaration>
+<desc><p>@def         XSIntegerMax
+</p></desc>
+</pdefine><pdefine id="//xs_ref/c/macro/XSIntegerMax_DONTLINK_1" definetype="value" lang="c"><name>XSIntegerMax</name>
+<abstract><p>Maximum value for XSInteger
+</p></abstract>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSIntegerMax</declaration_preprocessor> <declaration_preprocessor>0x7FFFFFFF</declaration_preprocessor> </declaration>
+<desc><p>@def         XSIntegerMax
+</p></desc>
+</pdefine><pdefine id="//xs_ref/c/macro/XSIntegerMin" definetype="value" lang="c"><name>XSIntegerMin</name>
+<abstract><p>Minimum value for XSInteger
+</p></abstract>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSIntegerMin</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>-</declaration_preprocessor><declaration_preprocessor>XSIntegerMax</declaration_preprocessor> <declaration_preprocessor>-</declaration_preprocessor> <declaration_preprocessor>1</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
+<desc><p>@def         XSIntegerMin
+</p></desc>
+</pdefine><pdefine id="//xs_ref/c/macro/XSIntegerMin_DONTLINK_1" definetype="value" lang="c"><name>XSIntegerMin</name>
+<abstract><p>Minimum value for XSInteger
+</p></abstract>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSIntegerMin</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>-</declaration_preprocessor><declaration_preprocessor>XSIntegerMax</declaration_preprocessor> <declaration_preprocessor>-</declaration_preprocessor> <declaration_preprocessor>1</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
+<desc><p>@def         XSIntegerMin
+</p></desc>
+</pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Wednesday, May 07, 2014</timestamp>
+</header>

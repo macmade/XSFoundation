@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSSet.h>
+#include <XS/__private/Classes/XSSetRef.h>
 
 bool __XSSet_Equals( XSSetRef object1, XSSetRef object2 )
 {

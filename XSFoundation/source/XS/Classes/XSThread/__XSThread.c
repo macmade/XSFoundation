@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSThread.h>
+#include <XS/__private/Classes/XSThreadRef.h>
 
 XSTLSKey    __XSThread_TLSKey       = 0;
 XSClassID   __XSThread_ClassID      = 0;

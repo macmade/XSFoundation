@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSNotification.h>
+#include <XS/__private/Classes/XSNotificationRef.h>
 
 XSStatic XSAutoreleased XSNotificationRef XSNotification_Notification( XSStringRef name, XSObjectRef object, XSDictionaryRef userInfo )
 {

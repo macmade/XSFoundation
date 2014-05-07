@@ -69,7 +69,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/__private/Classes/XSData.h>
+#include <XS/__private/Classes/XSDataRef.h>
 
 XSDataRef __XSData_Copy( XSDataRef source, XSDataRef destination )
 {
