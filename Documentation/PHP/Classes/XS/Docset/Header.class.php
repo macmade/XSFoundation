@@ -26,15 +26,18 @@
 
 /* $Id$ */
 
+require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Member.class.php';
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Function.class.php';
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Type.class.php';
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Macro.class.php';
+require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'Docset.class.php';
 
-class XS_Docset_Header
+class XS_Docset_Header extends XS_Docset_Member
 {
     protected $_file                = '';
     protected $_sourceRootPrefix    = '';
     protected $_xml                 = NULL;
+    protected $_docset              = NULL;
     
     protected $_path                = NULL;
     protected $_name                = NULL;
@@ -49,8 +52,9 @@ class XS_Docset_Header
     protected $_types               = NULL;
     protected $_macros              = NULL;
     
-    public function __construct( $file, $sourceRootPrefix = '' )
+    public function __construct( XS_Docset $docset, SplFileInfo $file, $sourceRootPrefix = '' )
     {
+        $this->_docset              = $docset;
         $this->_file                = ( string )$file;
         $this->_sourceRootPrefix    = ( string )$sourceRootPrefix;
         $this->_xml                 = simplexml_load_file( $file );
@@ -270,8 +274,193 @@ class XS_Docset_Header
         return false;
     }
     
+    public function getFunctionsListHTML()
+    {
+        $html   = array();
+        $html[] = '<ul>';
+    
+        foreach( $this->getFunctions() as $function )
+        {                        
+            $html[] = '<li>';   
+            $html[] = '<a href="#' . $function->getName() . '" title="' . $function->getName() . '">';
+            $html[] = $function->getName();   
+            $html[] = '</a>';
+            $html[] = '</li>';
+        }
+    
+        $html[] = '</ul>';
+        
+        return implode( chr( 10 ), $html );
+    }
+    
+    public function getTypesListHTML()
+    {
+        $html   = array();
+        $html[] = '<ul>';
+    
+        foreach( $this->getTypes() as $type )
+        {                        
+            $html[] = '<li>';   
+            $html[] = '<a href="#' . $type->getName() . '" title="' . $type->getName() . '">';
+            $html[] = $type->getName();   
+            $html[] = '</a>';
+            $html[] = '</li>';
+        }
+    
+        $html[] = '</ul>';
+        
+        return implode( chr( 10 ), $html );
+    }
+    
+    public function getMacrosListHTML()
+    {
+        $html   = array();
+        $html[] = '<ul>';
+    
+        foreach( $this->getMacros() as $macro )
+        {                        
+            $html[] = '<li>';   
+            $html[] = '<a href="#' . $macro->getName() . '" title="' . $macro->getName() . '">';
+            $html[] = $macro->getName();   
+            $html[] = '</a>';
+            $html[] = '</li>';
+        }
+    
+        $html[] = '</ul>';
+        
+        return implode( chr( 10 ), $html );
+    }
+    
+    protected function _getFileDetailsHTML()
+    {
+        $html = array();
+        
+        $html[] = '<div class="xsdoc-file-details">';
+        $html[] = '<div class="xsdoc-file-detail">';
+        $html[] = '<div class="xsdoc-file-detail-name">File</div>';
+        $html[] = '<div class="xsdoc-file-detail-content">';
+        $html[] = $this->getPath();
+        $html[] = '</div>';
+        $html[] = '</div>';
+        
+        if( count( $this->getAttributes() ) )
+        {
+            foreach( $this->getAttributes() as $key => $value )
+            {
+                $html[] = '<div class="xsdoc-file-detail">';
+                $html[] = '<div class="xsdoc-file-detail-name">' . $key . '</div>';
+                $html[] = '<div class="xsdoc-file-detail-content">' . $value . '</div>';
+                $html[] = '</div>';
+            }
+        }
+        
+        if( strlen( $this->getCopyright() ) )
+        {
+            $html[] = '<div class="xsdoc-file-detail">';
+            $html[] = '<div class="xsdoc-file-detail-name">Copyright</div>';
+            $html[] = '<div class="xsdoc-file-detail-content">';
+            $html[] = $this->getCopyright();
+            $html[] = '</div>';
+            $html[] = '</div>';
+        }
+        
+        if( strlen( $this->getDate() ) )
+        {
+            $html[] = '<div class="xsdoc-file-detail">';
+            $html[] = '<div class="xsdoc-file-detail-name">Date</div>';
+            $html[] = '<div class="xsdoc-file-detail-content">';
+            $html[] = $this->getDate();
+            $html[] = '</div>';
+            $html[] = '</div>';
+        }
+        
+        $html[] = '<div class="xsdoc-file-detail">';
+        $html[] = '<div class="xsdoc-file-detail-name">Includes</div>';
+        $html[] = '<div class="xsdoc-file-detail-content">';
+        
+        if( count( $this->getIncludeFiles() ) )
+        {
+            $html[]  = '<ul>';
+            $headers = $this->_docset->getHeaders();
+            
+            foreach( $this->getIncludeFiles() as $key => $value )
+            {
+                if( isset( $headers[ $key ] ) )
+                {
+                    $html[] = '<li>';
+                    $html[] = '<a href="' . $this->_docset->getHeaderURL( $headers[ $key ] ) . '" title="' . $value . '">';
+                    $html[] = $value;
+                    $html[] = '</a>';
+                    $html[] = '</li>';
+                }
+                else
+                {
+                    $html[] = '<li>' . $value . '</li>';
+                }
+            }
+            
+            $html[] = '</ul>';
+        }
+        else
+        {
+            $html[] = 'None';
+        }
+        
+        $html[] = '</div>';
+        $html[] = '</div>';
+        $html[] = '</div>';
+        
+        return implode( chr( 10 ), $html );
+    }
+    
     public function __toString()
     {
-        return $this->_file;
+        $html = array();
+        
+        $html[] = '<div class="xsdoc-file-content">';
+        $html[] = '<h2>' . $this->getName() . ' Reference</h2>';
+        $html[] = $this->_getFileDetailsHTML();
+        $html[] = '<h3>Overview</h3>';
+        $html[] = '<p><strong>' . $this->getAbstract() . '</strong></p>';
+        
+        if( strlen( $this->getDiscussion() ) )
+        {
+            $html[] = '<p>' . $this->getDiscussion() . '</p>';
+        }
+        
+        if( count( $this->getFunctions() ) )
+        {
+            $html[] = '<h3>Tasks</h3>';
+            
+            foreach( $this->getFunctions() as $function )
+            {
+                $html[] = ( string )$function;
+            }
+        }
+        
+        if( count( $this->getTypes() ) )
+        {
+            $html[] = '<h3>Types</h3>';
+            
+            foreach( $this->getTypes() as $type )
+            {
+                $html[] = ( string )$type;
+            }
+        }
+        
+        if( count( $this->getMacros() ) )
+        {
+            $html[] = '<h3>Macros</h3>';
+            
+            foreach( $this->getMacros() as $macro )
+            {
+                $html[] = ( string )$macro;
+            }
+        }
+        
+        $html[] = '</div>';
+        $html[] = '</div>';
+        
+        return implode( chr( 10 ), $html );
     }
 }

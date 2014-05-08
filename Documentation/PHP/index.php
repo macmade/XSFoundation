@@ -6,6 +6,8 @@ $DOC = new XS_Docset( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . '..' . DIRECTO
 
 $DOC->setProjectName( 'XSFoundation' );
 $DOC->setProjectVersion( '2.0.0-0' );
+$DOC->setCompanyName( 'XS-Labs' );
+$DOC->setCompanyURL( 'http://www.xs-labs.com/' );
 $DOC->setCopyright( 'XS-Labs &copy; %Y - All Rights Reserved' );
 $DOC->setTimezone( 'Europe/Zurich' );
 $DOC->setSourceRootPrefix( '/XSFoundation/include/' );

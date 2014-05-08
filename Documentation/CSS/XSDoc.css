@@ -161,19 +161,47 @@ code {
     color:                  #FFFFFF;
     font-size:              14px;
     text-align:             center;
+    float:                  left;
+    margin-left:            15px;
+    background-image:       url( 'Resources/package.png' );
+    background-repeat:      no-repeat;
+    padding-left:           40px;
+    background-position:    0px 7px;
+    overflow:               hidden;
+    height:                 100%;
+}
+
+.xsdoc-header span {
+    float:                  left;
+    margin-right:           20px;
+}
+
+.xsdoc-header .xsdoc-header-company a {
+    color:                  #9BA2AA;
 }
 
 .xsdoc-header a {
     color:                  #FFFFFF;
 }
 
+.xsdoc-header-buttons {
+    float:                  right;
+    overflow:               hidden;
+    height:                 100%;
+}
+
+.xsdoc-header-button {
+    float:                  left;
+    margin-right:           15px;
+    margin-top:             7px;
+}
+
 .xsdoc-subheader {
     height:                 20px;
     overflow:               hidden;
     background-image:       url( 'Resources/footer-bg.png' );
-    text-align:             center;
     font-size:              10px;
-    text-align:             center;
+    padding-left:           55px;
     border-bottom:          solid 1px #ACACAC;
 }
 
@@ -228,6 +256,7 @@ code {
 }
 
 .xsdoc-file,
+.xsdoc-search,
 .xsdoc-home {
     float:                  left;
     overflow:               hidden;
@@ -277,6 +306,7 @@ code {
 }
 
 .xsdoc-file-content,
+.xsdoc-search-content,
 .xsdoc-home-content {
     float:                  left;
     width:                  70%;
@@ -285,6 +315,7 @@ code {
 }
 
 .xsdoc-file-content h3,
+.xsdoc-search-content h3,
 .xsdoc-home-content h3 {
     color:                  #3C4C6C;
     border-bottom:          solid 1px #D6E0E5;
@@ -333,8 +364,81 @@ code {
     padding:                0px;
 }
 
-.xsdoc-file-task,
-.xsdoc-file-type,
-.xsdoc-file-macro {
+.xsdoc-file-member {
     margin-bottom:          20px;
+}
+
+.xsdoc-file-member h4 .xsdoc-top {
+    float:                  right;
+    font-size:              10px;
+    margin-top:             10px;
+}
+
+.xsdoc-search .xsdoc-search-form {
+    overflow:               hidden;
+    height:                 100%;
+    margin-top:             20px;
+    margin-bottom:          20px;
+    padding:                20px;
+    background-color:       #FCFCFC;
+    border:                 solid 1px #D6E0E5;
+    border-radius:          10px;
+}
+
+.xsdoc-search .xsdoc-search-term {
+    float:                  left;
+    margin-right:           10px;
+}
+
+.xsdoc-search .xsdoc-search-submit {
+    float:                  left;
+}
+
+.xsdoc-search .xsdoc-search-term input {
+    color:                  #3C4C6C;
+    background-color:       #FFFFFF;
+    padding:                5px;
+    margin:                 0px;
+    border:                 solid 1px #D6E0E5;
+}
+
+.xsdoc-search .xsdoc-search-submit input {
+    color:                  #FFFFFF;
+    background-color:       #3C4C6C;
+    padding-left:           15px;
+    padding-top:            5px;
+    padding-right:          15px;
+    padding-bottom:         5px;
+    margin:                 0px;
+    border:                 solid 1px #3C4C6C;
+    font-weight:            bold;
+    border-radius:          5px;
+    min-width:              100px;
+}
+
+.xsdoc-search-result h4 {
+    font-size:              15px;
+    padding-bottom:         0px;
+}
+
+.xsdoc-search-result h5 {
+    font-size:              10px;
+    padding-top:            5px;
+    padding-bottom:         5px;
+    color:                  #8F8F8F;
+}
+
+.xsdoc-search-result h5 a {
+    color:                  #8F8F8F;
+}
+
+.xsdoc-search-result p {
+    font-size:              12px;
+    line-height:            15px;
+    padding-top:            5px;
+    padding-bottom:         5px;
+}
+
+.xsdoc-search-result p a {
+    color:                  #000000;
 }

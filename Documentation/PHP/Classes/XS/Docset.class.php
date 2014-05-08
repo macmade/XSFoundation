@@ -25,13 +25,15 @@
  ******************************************************************************/
 
 /* $Id$ */
-
+require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Docset' . DIRECTORY_SEPARATOR . 'Base.class.php';
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Docset' . DIRECTORY_SEPARATOR . 'Header.class.php';
 
-class XS_Docset
+class XS_Docset extends XS_Docset_Base
 {
     protected $_projectName         = '';
     protected $_projectVersion      = '';
+    protected $_companyName         = '';
+    protected $_companyURL          = '';
     protected $_copyright           = '';
     protected $_timezone            = '';
     protected $_xmlDir              = '';
@@ -41,7 +43,7 @@ class XS_Docset
     protected $_typesPrefix         = '';
     protected $_homeFile            = '';
     protected $_parsed              = false;
-    protected $_currentFile         = NULL;
+    protected $_currentHeader       = NULL;
     
     protected $_classes             = array();
     protected $_functions           = array();
@@ -61,6 +63,16 @@ class XS_Docset
     public function setProjectVersion( $value )
     {
         $this->_projectVersion = ( string )$value;
+    }
+    
+    public function setCompanyName( $value )
+    {
+        $this->_companyName = ( string )$value;
+    }
+    
+    public function setCompanyURL( $value )
+    {
+        $this->_companyURL = ( string )$value;
     }
     
     public function setCopyright( $value )
@@ -98,20 +110,65 @@ class XS_Docset
         $this->_homeFile = ( string )$value;
     }
     
+    public function getHeaders()
+    {
+        $this->_parse();
+        
+        return $this->_headers;
+    }
+    
     public function getTitle()
     {
         $title = '';
         
         $this->_parse();
         
-        if( $this->_currentFile !== NULL )
+        if( $this->_currentHeader !== NULL )
         {
-            $title = $this->_currentFile->getName() . ' - ';
+            $title = $this->_currentHeader->getName() . ' - ';
         }
         
         $title .= $this->_projectName . ' API Reference';
         
         return $title;
+    }
+    
+    public function getHomeURL()
+    {
+        return strtok( $_SERVER[ 'REQUEST_URI' ], '?' );
+    }
+    
+    public function getHeaderURL( XS_Docset_Header $header )
+    {
+        $url = $this->getHomeURL();
+        
+        if( $header !== NULL )
+        {
+            $url .= '?xsdoc-header=' . urlencode( $header->getID() );
+        }
+        
+        return $url;
+    }
+    
+    public function getSearchURL()
+    {
+        return $this->getHomeURL() . '?xsdoc-search=1';
+    }
+    
+    public function getPrintURL()
+    {
+        if( isset( $_GET[ 'xsdoc-search' ] ) )
+        {
+            return $this->getSearchURL();
+        }
+        else if( $this->_currentHeader === NULL )
+        {
+            return $this->getHomeURL() . '?xsdoc-print=1';
+        }
+        else
+        {
+            return $this->getHeaderURL( $this->_currentHeader ) . '&xsdoc-print=1';
+        }
     }
     
     protected function _parse()
@@ -142,7 +199,7 @@ class XS_Docset
                 
                 try
                 {
-                    $header = new XS_Docset_Header( $info, $this->_sourceRootPrefix );
+                    $header = new XS_Docset_Header( $this, $info, $this->_sourceRootPrefix );
                     $path   = $header->getPath();
                     
                     if( strpos( $path, $this->_classesPrefix ) === 0 )
@@ -174,13 +231,13 @@ class XS_Docset
                 {}
             }
             
-            if( isset( $_GET[ 'xsdoc-file' ] ) )
+            if( isset( $_GET[ 'xsdoc-header' ] ) )
             {
-                $key = urldecode( $_GET[ 'xsdoc-file' ] );
+                $key = urldecode( $_GET[ 'xsdoc-header' ] );
             
                 if( isset( $this->_headers[ $key ] ) )
                 {
-                    $this->_currentFile = $this->_headers[ $key ];
+                    $this->_currentHeader = $this->_headers[ $key ];
                 }
             }
         }
@@ -188,14 +245,14 @@ class XS_Docset
         {}
     }
     
-    protected function _headerList( $headers )
+    protected function _getHeaderListHTML( $headers )
     {
         $html = array();
         
         foreach( $headers as $header )
         {
             $html[] = '<li>';
-            $html[] = '<a href="?xsdoc-file=' . urlencode( $header->getID() ) . '" title="' . $header->getName() . '">';
+            $html[] = '<a href="' . $this->getHeaderURL( $header ) . '" title="' . $header->getName() . '">';
             $html[] = $header->getName();
             $html[] = '</a>';
             $html[] = '</li>';
@@ -204,9 +261,118 @@ class XS_Docset
         return implode( chr( 10 ), $html );
     }
     
-    public function __toString()
+    protected function _getSearchResults( $q )
+    {
+        $res     = array();
+        $temp    = array();
+        $headers = array_values( $this->_headers );
+        
+        $this->_parse();
+        
+        if( strlen( $q ) == 0 )
+        {
+            return array();
+        }
+        
+        foreach( $this->_headers as $header )
+        {
+            $doc = strtolower( preg_replace( '/<[^>]+>/', ' ', ( string )$header ) );
+            $i   = substr_count( $doc, strtolower( $q ) );
+            
+            if( $i === 0 )
+            {
+                continue;
+            }
+            
+            if( !isset( $temp[ $i ] ) )
+            {
+                $temp[ $i ] = array();
+            }
+            
+            $temp[ $i ][] = $header;
+        }
+        
+        krsort( $temp );
+        
+        foreach( $temp as $t )
+        {
+            foreach( $t as $header )
+            {
+                $res[] = $header;
+            }
+        }
+        
+        return $res;
+    }
+    
+    public function _getSearchHTML()
     {
         $html = array();
+        $q    = ( isset( $_POST[ 'xsdoc-q' ] ) ) ? $_POST[ 'xsdoc-q' ] : '';
+        
+        $html[] = '<div class="xsdoc-search">';
+        $html[] = '<div class="xsdoc-search-content">';
+        $html[] = '<h2>Search ' . $this->_projectName . '</h2>';
+        $html[] = '<form action="' . $this->getSearchURL() . '" method="post">';
+        $html[] = '<div class="xsdoc-search-form">';
+        $html[] = '<div class="xsdoc-search-term">';
+        $html[] = '<input type="text" size="50" name="xsdoc-q" value="' . $q . '" />';
+        $html[] = '</div>';
+        $html[] = '<div class="xsdoc-search-submit">';
+        $html[] = '<input type="submit" value="Search" />';
+        $html[] = '</div>';
+        $html[] = '</div>';
+        $html[] = '</form>';
+        
+        if( strlen( $q ) )
+        {            
+            $html[] = '<div class="xsdoc-search-results">';
+            $html[] = '<h3>Search results</h3>';
+            
+            $res = $this->_getSearchResults( $q );
+            
+            if( count( $res ) === 0 )
+            {
+                $html[] = '<p class="xsdoc-search-results-none">The specified term was not found.</p>';
+            }
+            else
+            {
+                foreach( $res as $header )
+                {
+                    $abstract    = $header->getAbstract();
+                    $discussion  = $header->getDiscussion();
+                    
+                    if( strlen( $discussion ) > 200 )
+                    {
+                        $discussion = substr( $discussion, 0, 200 ) . ' [...]';
+                    }
+                
+                    $description = $abstract . '<br />' . $discussion;
+                
+                    if( strlen( $discussion ) )
+                
+                    $html[] = '<div class="xsdoc-search-result">';
+                    $html[] = '<h4><a href="' . $this->getHeaderURL( $header ) . '">' . $header->getName() . '</a></h4>';
+                    $html[] = '<h5><a href="' . $this->getHeaderURL( $header ) . '">' . $header->getPath() . '</a></h5>';
+                    $html[] = '<p><a href="' . $this->getHeaderURL( $header ) . '">' . $description . '</a></p>';
+                    $html[] = '</div>';
+                }
+            }
+            
+            $html[] = '</div>';
+        }
+        
+        $html[] = '</div>';
+        $html[] = '</div>';
+        
+        return implode( chr( 10 ), $html );
+    }
+    
+    public function __toString()
+    {
+        $html   = array();
+        $search = ( isset( $_GET[ 'xsdoc-search' ] ) ) ? true : false;
+        $print  = ( isset( $_GET[ 'xsdoc-print'  ] ) ) ? true : false;
         
         $this->_parse();
         
@@ -219,420 +385,148 @@ class XS_Docset
             date_default_timezone_set( 'UTC' );
         }
         
-        /* Header */
-        $html[] = '<div class="xsdoc-project">';
-        $html[] = '<div class="xsdoc-header">';
-        $html[] = '<h1>';
-        $html[] = '<a href="' . strtok( $_SERVER[ 'REQUEST_URI' ], '?' ) . '">';
-        $html[] = $this->_projectName . ': API Reference';
-        $html[] = '</a>';
-        $html[] = '</h1>';
-        $html[] = '</div>';
+        $html[] = '<a name="xsdoc-top"></a>';
         
-        /* Sub-header */
-        $html[] = '<div class="xsdoc-subheader">';
-        $html[] = 'Version ' . $this->_projectVersion;
-        $html[] = '</div>';
-        
-        /* Main */
-        $html[] = '<div class="xsdoc-main">';
-        
-        /* Table of contents */
-        $html[] = '<div class="xsdoc-toc">';
-        
-        /* Classes */
-        if( count( $this->_classes ) )
+        if( $print === false )
         {
-            $html[] = '<div class="xsdoc-toc-classes">';
-            $html[] = '<h2>Classes</h2>';
-            $html[] = '<ul>';
-            $html[] = $this->_headerList( $this->_classes );
-            $html[] = '</ul>';
+            $html[] = '<div class="xsdoc-project">';
+            $html[] = '<div class="xsdoc-header">';
+            $html[] = '<h1>';
+            $html[] = '<span class="xsdoc-header-project">';
+            $html[] = '<a href="' . $this->getHomeURL() . '">';
+            $html[] = $this->_projectName . ': API Reference';
+            $html[] = '</a>';
+            $html[] = '</span>';
+        
+            if( strlen( $this->_companyName ) )
+            {
+                $html[] = '<span class="xsdoc-header-company">';
+                $html[] = '<a href="' . $this->_companyURL . '">';
+                $html[] = '[ ' . $this->_companyName . ' ]';
+                $html[] = '</a>';
+                $html[] = '</span>';;
+            }
+        
+            $html[] = '</h1>';
+            $html[] = '<div class="xsdoc-header-buttons">';
+            $html[] = '<div class="xsdoc-header-button">';
+            $html[] = '<a href="' . $this->getPrintURL() . '" title="Print">';
+            $html[] = '<img src="../CSS/Resources/print.png" alt="" width="20" height="20" />';
+            $html[] = '</a>';
+            $html[] = '</div>';
+            $html[] = '<div class="xsdoc-header-button">';
+            $html[] = '<a href="' . $this->getSearchURL() . '" title="Print">';
+            $html[] = '<img src="../CSS/Resources/search.png" alt="" width="20" height="20" />';
+            $html[] = '</a>';
+            $html[] = '</div>';
+            $html[] = '</div>';
+            $html[] = '</div>';
+            $html[] = '<div class="xsdoc-subheader">';
+            $html[] = 'Version ' . $this->_projectVersion;
+            $html[] = '</div>';
+            $html[] = '<div class="xsdoc-main">';
+            $html[] = '<div class="xsdoc-toc">';
+        
+            if( count( $this->_classes ) )
+            {
+                $html[] = '<div class="xsdoc-toc-classes">';
+                $html[] = '<h2>Classes</h2>';
+                $html[] = '<ul>';
+                $html[] = $this->_getHeaderListHTML( $this->_classes );
+                $html[] = '</ul>';
+                $html[] = '</div>';
+            }
+        
+            if( count( $this->_functions ) )
+            {
+                $html[] = '<div class="xsdoc-toc-classes">';
+                $html[] = '<h2>Functions</h2>';
+                $html[] = '<ul>';
+                $html[] = $this->_getHeaderListHTML( $this->_functions );
+                $html[] = '</ul>';
+                $html[] = '</div>';
+            }
+        
+            if( count( $this->_types ) )
+            {
+                $html[] = '<div class="xsdoc-toc-classes">';
+                $html[] = '<h2>Types</h2>';
+                $html[] = '<ul>';
+                $html[] = $this->_getHeaderListHTML( $this->_types );
+                $html[] = '</ul>';
+                $html[] = '</div>';
+            }
+        
+            if( count( $this->_headers ) )
+            {
+                $html[] = '<div class="xsdoc-toc-classes">';
+                
+                
+                if
+                (
+                       count( $this->_classes )
+                    || count( $this->_functions )
+                    || count( $this->_types )
+                )
+                {
+                    $html[] = '<h2>Other headers</h2>';
+                }
+                else
+                {
+                    $html[] = '<h2>Headers</h2>';
+                }
+                
+                $html[] = '<ul>';
+                $html[] = $this->_getHeaderListHTML( $this->_others );
+                $html[] = '</ul>';
+                $html[] = '</div>';
+            }
+        
             $html[] = '</div>';
         }
         
-        /* Functions */
-        if( count( $this->_functions ) )
+        if( $search === true )
         {
-            $html[] = '<div class="xsdoc-toc-classes">';
-            $html[] = '<h2>Functions</h2>';
-            $html[] = '<ul>';
-            $html[] = $this->_headerList( $this->_functions );
-            $html[] = '</ul>';
-            $html[] = '</div>';
+            $html[] = $this->_getSearchHTML();
         }
-        
-        /* Types */
-        if( count( $this->_types ) )
+        else if( $this->_currentHeader !== NULL )
         {
-            $html[] = '<div class="xsdoc-toc-classes">';
-            $html[] = '<h2>Types</h2>';
-            $html[] = '<ul>';
-            $html[] = $this->_headerList( $this->_types );
-            $html[] = '</ul>';
-            $html[] = '</div>';
-        }
-        
-        /* Other */
-        if( count( $this->_headers ) )
-        {
-            $html[] = '<div class="xsdoc-toc-classes">';
-            $html[] = '<h2>Other headers</h2>';
-            $html[] = '<ul>';
-            $html[] = $this->_headerList( $this->_others );
-            $html[] = '</ul>';
-            $html[] = '</div>';
-        }
-        
-        $html[] = '</div>';
-        
-        /* File content */
-        if( $this->_currentFile !== NULL )
-        {
-            $header = $this->_currentFile;
+            $header = $this->_currentHeader;
             $html[] = '<div class="xsdoc-file">';
             
-            if( $header->hasPublicMembers() )
+            if( $header->hasPublicMembers() && $print === false )
             {
-                /* Header members */
                 $html[] = '<div class="xsdoc-file-toc">';
                 $html[] = '<h2>Public members</h2>';
-            
-                /* Tasks */
+                
                 if( count( $header->getFunctions() ) )
                 {
                     $html[] = '<div class="xsdoc-file-toc-functions">';
                     $html[] = '<h3>Tasks</h3>';
-                    $html[] = '<ul>';
-                
-                    foreach( $header->getFunctions() as $function )
-                    {                        
-                        $html[] = '<li>';   
-                        $html[] = '<a href="#' . $function->getName() . '" title="' . $function->getName() . '">';
-                        $html[] = $function->getName();   
-                        $html[] = '</a>';
-                        $html[] = '</li>';
-                    }
-                
-                    $html[] = '</ul>';
+                    $html[] = $header->getFunctionsListHTML();
                     $html[] = '</div>';
                 }
-            
-                /* Types */
+                
                 if( count( $header->getTypes() ) )
                 {
                     $html[] = '<div class="xsdoc-file-toc-types">';
                     $html[] = '<h3>Types</h3>';
-                    $html[] = '<ul>';
-                
-                    foreach( $header->getTypes() as $type )
-                    {                        
-                        $html[] = '<li>';   
-                        $html[] = '<a href="#' . $type->getName() . '" title="' . $type->getName() . '">';
-                        $html[] = $type->getName();   
-                        $html[] = '</a>';
-                        $html[] = '</li>';
-                    }
-                
-                    $html[] = '</ul>';
+                    $html[] = $header->getTypesListHTML();
                     $html[] = '</div>';
                 }
-            
-                /* Macros */
+                
                 if( count( $header->getMacros() ) )
                 {
                     $html[] = '<div class="xsdoc-file-toc-macros">';
                     $html[] = '<h3>Macros</h3>';
-                    $html[] = '<ul>';
-                
-                    foreach( $header->getMacros() as $macro )
-                    {                        
-                        $html[] = '<li>';   
-                        $html[] = '<a href="#' . $macro->getName() . '" title="' . $macro->getName() . '">';
-                        $html[] = $macro->getName();   
-                        $html[] = '</a>';
-                        $html[] = '</li>';
-                    }
-                
-                    $html[] = '</ul>';
+                    $html[] = $header->getMacrosListHTML();
                     $html[] = '</div>';
                 }
             
                 $html[] = '</div>';
             }
             
-            /* Header content */
-            $html[] = '<div class="xsdoc-file-content">';
-            $html[] = '<h2>' . $header->getName() . ' Reference</h2>';
-            
-            /* File details */
-            $html[] = '<div class="xsdoc-file-details">';
-            
-            /* Path */
-            $html[] = '<div class="xsdoc-file-detail">';
-            $html[] = '<div class="xsdoc-file-detail-name">File</div>';
-            $html[] = '<div class="xsdoc-file-detail-content">';
-            $html[] = $header->getPath();
-            $html[] = '</div>';
-            $html[] = '</div>';
-            
-            /* Attributes */
-            if( count( $header->getAttributes() ) )
-            {
-                foreach( $header->getAttributes() as $key => $value )
-                {
-                    $html[] = '<div class="xsdoc-file-detail">';
-                    $html[] = '<div class="xsdoc-file-detail-name">' . $key . '</div>';
-                    $html[] = '<div class="xsdoc-file-detail-content">' . $value . '</div>';
-                    $html[] = '</div>';
-                }
-            }
-            
-            /* Copyright */
-            if( strlen( $header->getCopyright() ) )
-            {
-                $html[] = '<div class="xsdoc-file-detail">';
-                $html[] = '<div class="xsdoc-file-detail-name">Copyright</div>';
-                $html[] = '<div class="xsdoc-file-detail-content">';
-                $html[] = $header->getCopyright();
-                $html[] = '</div>';
-                $html[] = '</div>';
-            }
-            
-            /* Date */
-            if( strlen( $header->getDate() ) )
-            {
-                $html[] = '<div class="xsdoc-file-detail">';
-                $html[] = '<div class="xsdoc-file-detail-name">Date</div>';
-                $html[] = '<div class="xsdoc-file-detail-content">';
-                $html[] = $header->getDate();
-                $html[] = '</div>';
-                $html[] = '</div>';
-            }
-            
-            /* Includes */
-            $html[] = '<div class="xsdoc-file-detail">';
-            $html[] = '<div class="xsdoc-file-detail-name">Includes</div>';
-            $html[] = '<div class="xsdoc-file-detail-content">';
-            
-            if( count( $header->getIncludeFiles() ) )
-            {
-                $html[] = '<ul>';
-                
-                foreach( $header->getIncludeFiles() as $key => $value )
-                {
-                    if( isset( $this->_headers[ $key ] ) )
-                    {
-                        $html[] = '<li>';
-                        $html[] = '<a href="?xsdoc-file=' . urlencode( $key ) . '" title="' . $value . '">';
-                        $html[] = $value;
-                        $html[] = '</a>';
-                        $html[] = '</li>';
-                    }
-                    else
-                    {
-                        $html[] = '<li>' . $value . '</li>';
-                    }
-                }
-                
-                $html[] = '</ul>';
-            }
-            else
-            {
-                $html[] = 'None';
-            }
-            
-            $html[] = '</div>';
-            $html[] = '</div>';
-            
-            $html[] = '</div>';
-            
-            /* Overview */
-            $html[] = '<h3>Overview</h3>';
-            $html[] = '<p><strong>' . $header->getAbstract() . '</strong></p>';
-            
-            if( strlen( $header->getDiscussion() ) )
-            {
-                $html[] = '<p>' . $header->getDiscussion() . '</p>';
-            }
-            
-            /* Tasks */
-            if( count( $header->getFunctions() ) )
-            {
-                $html[] = '<h3>Tasks</h3>';
-                
-                foreach( $header->getFunctions() as $function )
-                {                        
-                    $html[] = '<div class="xsdoc-file-task">';
-                    $html[] = '<a name="' . $function->getName() . '"></a>';
-                    $html[] = '<h4>' . $function->getName() . '</h4>';
-                    
-                    /* Abstract */
-                    $html[] = '<p>' . $function->getAbstract() . '</p>';
-                    
-                    /* Declaration */
-                    $html[] = '<p class="xsdoc-code-block"><code>' .  $function->getDeclaration() . '</code></p>';
-                    
-                    /* Discussion */
-                    if( strlen( $function->getDiscussion() ) )
-                    {
-                        $html[] = '<h5>Discussion</h5>';
-                        $html[] = '<p>' . $function->getDiscussion() . '</p>';
-                    }
-                    
-                    /* Parameters */
-                    if( count( $function->getParameters() ) )
-                    {
-                        $html[] = '<h5>Parameters</h5>';
-                        $html[] = '<ul>';
-                        
-                        foreach( $function->getParameters() as $key => $value )
-                        {
-                            $html[] = '<li><span class="xsdoc-code">' . $key . '</span><br />' . $value . '</li>';
-                        }
-                        
-                        $html[] = '</ul>';
-                    }
-                    
-                    /* Return value */
-                    if( strlen( $function->getReturnValue() ) )
-                    {
-                        $html[] = '<h5>Return value</h5>';
-                        $html[] = '<p>' . $function->getReturnValue() . '</p>';
-                    }
-                    
-                    /* See also */
-                    if( count( $function->getSeeAlso() ) )
-                    {
-                        $html[] = '<h5>See also</h5>';
-                        $html[] = '<ul>';
-                        
-                        foreach( $function->getSeeAlso() as $key => $value )
-                        {
-                            $html[] = '<li><a href="#' . $key . '" title="' . $value . '">' . $value . '</a></li>';
-                        }
-                        
-                        $html[] = '</ul>';
-                    }
-                    
-                    $html[] = '</div>';
-                }
-            }
-            
-            /* Types */
-            if( count( $header->getTypes() ) )
-            {
-                $html[] = '<h3>Types</h3>';
-                
-                foreach( $header->getTypes() as $type )
-                {                        
-                    $html[] = '<div class="xsdoc-file-type">';
-                    $html[] = '<a name="' . $type->getName() . '"></a>';
-                    $html[] = '<h4>' . $type->getName() . '</h4>';
-                    
-                    /* Abstract */
-                    $html[] = '<p>' . $type->getAbstract() . '</p>';
-                    
-                    /* Declaration */
-                    $html[] = '<p class="xsdoc-code-block"><code>' . $type->getDeclaration() . '</code></p>';
-                    
-                    /* Discussion */
-                    if( strlen( $type->getDiscussion() ) )
-                    {
-                        $html[] = '<h5>Discussion</h5>';
-                        $html[] = '<p>' . $type->getDiscussion() . '</p>';
-                    }
-                    
-                    /* Fields */
-                    if( count( $type->getFields() ) )
-                    {
-                        $html[] = '<h5>Fields</h5>';
-                        $html[] = '<ul>';
-                        
-                        foreach( $type->getFields() as $key => $value )
-                        {
-                            $html[] = '<li><span class="xsdoc-code">' . $key . '</span><br />' . $value . '</li>';
-                        }
-                        
-                        $html[] = '</ul>';
-                    }
-                    
-                    /* Constants */
-                    if( count( $type->getConstants() ) )
-                    {
-                        $html[] = '<h5>Constants</h5>';
-                        $html[] = '<ul>';
-                        
-                        foreach( $type->getConstants() as $key => $value )
-                        {
-                            $html[] = '<li><span class="xsdoc-code">' . $key . '</span><br />' . $value . '</li>';
-                        }
-                        
-                        $html[] = '</ul>';
-                    }
-                    
-                    /* Parameters */
-                    if( count( $type->getParameters() ) )
-                    {
-                        $html[] = '<h5>Parameters</h5>';
-                        $html[] = '<ul>';
-                        
-                        foreach( $type->getParameters() as $key => $value )
-                        {
-                            $html[] = '<li><span class="xsdoc-code">' . $key . '</span><br />' . $value . '</li>';
-                        }
-                        
-                        $html[] = '</ul>';
-                    }
-                    
-                    $html[] = '</div>';
-                }
-            }
-            
-            /* Macros */
-            if( count( $header->getMacros() ) )
-            {
-                $html[] = '<h3>Macros</h3>';
-                
-                foreach( $header->getMacros() as $macro )
-                {                        
-                    $html[] = '<div class="xsdoc-file-macro">';
-                    $html[] = '<a name="' . $macro->getName() . '"></a>';
-                    $html[] = '<h4>' . $macro->getName() . '</h4>';
-                    
-                    /* Abstract */
-                    $html[] = '<p>' . $macro->getAbstract() . '</p>';
-                    
-                    /* Declaration */
-                    $html[] = '<p class="xsdoc-code-block"><code>' . $macro->getDeclaration() . '</code></p>';
-                    
-                    /* Parameters */
-                    if( count( $macro->getParameters() ) )
-                    {
-                        $html[] = '<h5>Parameters</h5>';
-                        $html[] = '<ul>';
-                        
-                        foreach( $macro->getParameters() as $key => $value )
-                        {
-                            $html[] = '<li><span class="xsdoc-code">' . $key . '</span><br />' . $value . '</li>';
-                        }
-                        
-                        $html[] = '</ul>';
-                    }
-                    
-                    /* Discussion */
-                    if( strlen( $macro->getDiscussion() ) )
-                    {
-                        $html[] = '<h5>Discussion</h5>';
-                        $html[] = '<p>' . $macro->getDiscussion() . '</p>';
-                    }
-                    
-                    $html[] = '</div>';
-                }
-            }
-            
-            $html[] = '</div>';
-            $html[] = '</div>';
+            $html[] = ( string )$header;
         }
         else if( strlen( $this->_homeFile ) )
         {
@@ -643,12 +537,14 @@ class XS_Docset
             $html[] = '</div>';
         }
         
-        /* Footer */
-        $html[] = '</div>';
-        $html[] = '<div class="xsdoc-footer">';
-        $html[] = strftime( $this->_copyright, time() );
-        $html[] = '</div>';
-        $html[] = '</div>';
+        if( $print === false )
+        {
+            $html[] = '</div>';
+            $html[] = '<div class="xsdoc-footer">';
+            $html[] = strftime( $this->_copyright, time() );
+            $html[] = '</div>';
+            $html[] = '</div>';
+        }
         
         return implode( chr( 10 ), $html );
     }
