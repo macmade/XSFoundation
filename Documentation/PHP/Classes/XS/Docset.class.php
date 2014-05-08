@@ -49,6 +49,7 @@ class XS_Docset extends XS_Docset_Base
     protected $_functions           = array();
     protected $_types               = array();
     protected $_headers             = array();
+    protected $_pages               = array();
     
     public function __construct( $xmlDir )
     {
@@ -110,6 +111,11 @@ class XS_Docset extends XS_Docset_Base
         $this->_homeFile = ( string )$value;
     }
     
+    public function addPage( $page, $title )
+    {
+        $this->_pages[ $title ] = $page;
+    }
+    
     public function getHeaders()
     {
         $this->_parse();
@@ -126,6 +132,10 @@ class XS_Docset extends XS_Docset_Base
         if( $this->_currentHeader !== NULL )
         {
             $title = $this->_currentHeader->getName() . ' - ';
+        }
+        else if( isset( $_GET[ 'xsdoc-page' ] ) && isset( $this->_pages[ urldecode( $_GET[ 'xsdoc-page' ] ) ] ) )
+        {
+            $title = urldecode( $_GET[ 'xsdoc-page' ] ) . ' - ';
         }
         
         $title .= $this->_projectName . ' API Reference';
@@ -161,14 +171,30 @@ class XS_Docset extends XS_Docset_Base
         {
             return $this->getSearchURL();
         }
-        else if( $this->_currentHeader === NULL )
+        else if( isset( $_GET[ 'xsdoc-page' ] ) && isset( $this->_pages[ urldecode( $_GET[ 'xsdoc-page' ] ) ] ) )
         {
-            return $this->getHomeURL() . '?xsdoc-print=1';
+            return $this->getHomeURL() . '?xsdoc-page=' . $_GET[ 'xsdoc-page' ] . '&xsdoc-print=1';
         }
-        else
+        else if( $this->_currentHeader !== NULL )
         {
             return $this->getHeaderURL( $this->_currentHeader ) . '&xsdoc-print=1';
         }
+        else
+        {
+            return $this->getHomeURL() . '?xsdoc-print=1';
+        }
+    }
+    
+    public function getPageURL( $page )
+    {
+        $url = $this->getHomeURL();
+        
+        if( isset( $this->_pages[ $page ] ) )
+        {
+            $url .= '?xsdoc-page=' . urlencode( $page );
+        }
+        
+        return $url;
     }
     
     protected function _parse()
@@ -261,6 +287,27 @@ class XS_Docset extends XS_Docset_Base
         return implode( chr( 10 ), $html );
     }
     
+    protected function _getPagesListHTML()
+    {
+        $html = array();
+        
+        if( strlen( $this->_homeFile ) )
+        {
+            $html[] = '<li>';
+            $html[] = '<a href="' . $this->getHomeURL() . '" title="Start page">Start page</a>';
+            $html[] = '</li>';
+        }
+        
+        foreach( $this->_pages as $key => $value )
+        {
+            $html[] = '<li>';
+            $html[] = '<a href="' . $this->getPageURL( $key ) . '" title="' . $key . '">' . $key . '</a>';
+            $html[] = '</li>';
+        }
+        
+        return implode( chr( 10 ), $html );
+    }
+    
     protected function _getSearchResults( $q )
     {
         $res     = array();
@@ -272,6 +319,38 @@ class XS_Docset extends XS_Docset_Base
         if( strlen( $q ) == 0 )
         {
             return array();
+        }
+        
+        if( strlen( $this->_homeFile ) )
+        {
+            $doc = strtolower( preg_replace( '/<[^>]+>/', ' ', file_get_contents( $this->_homeFile ) ) );
+            $i   = substr_count( $doc, strtolower( $q ) );
+            
+            if( $i > 0 )
+            {
+                if( !isset( $temp[ $i ] ) )
+                {
+                    $temp[ $i ] = array();
+                }
+                
+                $temp[ $i ][] = '';
+            }
+        }
+        
+        foreach( $this->_pages as $key => $value )
+        {
+            $doc = strtolower( preg_replace( '/<[^>]+>/', ' ', file_get_contents( $value ) ) );
+            $i   = substr_count( $doc, strtolower( $q ) );
+            
+            if( $i > 0 )
+            {
+                if( !isset( $temp[ $i ] ) )
+                {
+                    $temp[ $i ] = array();
+                }
+                
+                $temp[ $i ][] = $key;
+            }
         }
         
         foreach( $this->_headers as $header )
@@ -337,25 +416,44 @@ class XS_Docset extends XS_Docset_Base
             }
             else
             {
-                foreach( $res as $header )
+                foreach( $res as $value )
                 {
-                    $abstract    = $header->getAbstract();
-                    $discussion  = $header->getDiscussion();
-                    
-                    if( strlen( $discussion ) > 200 )
+                    if( $value instanceof XS_Docset_Header )
                     {
-                        $discussion = substr( $discussion, 0, 200 ) . ' [...]';
+                        $header      = $value;
+                        $abstract    = $header->getAbstract();
+                        $discussion  = $header->getDiscussion();
+                    
+                        if( strlen( $discussion ) > 200 )
+                        {
+                            $discussion = substr( $discussion, 0, 200 ) . ' [...]';
+                        }
+                        
+                        $description = $abstract . '<br />' . $discussion;
+                        
+                        $html[] = '<div class="xsdoc-search-result">';
+                        $html[] = '<h4><a href="' . $this->getHeaderURL( $header ) . '">' . $header->getName() . '</a></h4>';
+                        $html[] = '<h5><a href="' . $this->getHeaderURL( $header ) . '">' . $header->getPath() . '</a></h5>';
+                        $html[] = '<p><a href="' . $this->getHeaderURL( $header ) . '">' . $description . '</a></p>';
+                        $html[] = '</div>';
                     }
-                
-                    $description = $abstract . '<br />' . $discussion;
-                
-                    if( strlen( $discussion ) )
-                
-                    $html[] = '<div class="xsdoc-search-result">';
-                    $html[] = '<h4><a href="' . $this->getHeaderURL( $header ) . '">' . $header->getName() . '</a></h4>';
-                    $html[] = '<h5><a href="' . $this->getHeaderURL( $header ) . '">' . $header->getPath() . '</a></h5>';
-                    $html[] = '<p><a href="' . $this->getHeaderURL( $header ) . '">' . $description . '</a></p>';
-                    $html[] = '</div>';
+                    else
+                    {
+                        $html[] = '<div class="xsdoc-search-result">';
+                        
+                        if( strlen( $value ) )
+                        {
+                            $html[] = '<h4><a href="' . $this->getPageURL( $value ) . '">' . $value . '</a></h4>';
+                        }
+                        else
+                        {
+                            $html[] = '<h4><a href="' . $this->getHomeURL() . '">Start page</a></h4>';
+                        }
+                        
+                        $html[] = '<h5></h5>';
+                        $html[] = '<p></p>';
+                        $html[] = '</div>';
+                    }
                 }
             }
             
@@ -426,6 +524,16 @@ class XS_Docset extends XS_Docset_Base
             $html[] = '</div>';
             $html[] = '<div class="xsdoc-main">';
             $html[] = '<div class="xsdoc-toc">';
+        
+            if( strlen( $this->_homeFile ) || count( $this->_pages ) )
+            {
+                $html[] = '<div class="xsdoc-toc-general">';
+                $html[] = '<h2>General</h2>';
+                $html[] = '<ul>';
+                $html[] = $this->_getPagesListHTML();
+                $html[] = '</ul>';
+                $html[] = '</div>';
+            }
         
             if( count( $this->_classes ) )
             {
@@ -528,13 +636,52 @@ class XS_Docset extends XS_Docset_Base
             
             $html[] = ( string )$header;
         }
-        else if( strlen( $this->_homeFile ) )
+        else
         {
-            $html[] = '<div class="xsdoc-home">';
-            $html[] = '<div class="xsdoc-home-content">';
-            $html[] = file_get_contents( $this->_homeFile );
-            $html[] = '</div>';
-            $html[] = '</div>';
+            $page = '';
+            
+            if( isset( $_GET[ 'xsdoc-page' ] ) )
+            {
+                $pageTitle = urldecode( $_GET[ 'xsdoc-page' ] );
+                
+                if( isset( $this->_pages[ $pageTitle ] ) )
+                {
+                    $page = $this->_pages[ $pageTitle ];
+                }
+            }
+            
+            if( strlen( $page ) )
+            {
+                $html[] = '<div class="xsdoc-page">';
+                $html[] = '<div class="xsdoc-page-content">';
+                
+                ob_start();
+                
+                include( $page );
+                
+                $html[] = ob_get_contents();
+                
+                ob_end_clean();
+                
+                $html[] = '</div>';
+                $html[] = '</div>';
+            }
+            else if( strlen( $this->_homeFile ) )
+            {
+                $html[] = '<div class="xsdoc-home">';
+                $html[] = '<div class="xsdoc-home-content">';
+                
+                ob_start();
+                
+                include( $this->_homeFile );
+                
+                $html[] = ob_get_contents();
+                
+                ob_end_clean();
+                
+                $html[] = '</div>';
+                $html[] = '</div>';
+            }
         }
         
         if( $print === false )

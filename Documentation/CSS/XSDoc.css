@@ -203,6 +203,7 @@ code {
     font-size:              10px;
     padding-left:           55px;
     border-bottom:          solid 1px #ACACAC;
+    color:                  #4F4F4F;
 }
 
 .xsdoc-footer {
@@ -213,6 +214,7 @@ code {
     font-size:              10px;
     text-align:             center;
     border-top:             solid 1px #ACACAC;
+    color:                  #4F4F4F;
 }
 
 .xsdoc-main {
@@ -256,8 +258,7 @@ code {
 }
 
 .xsdoc-file,
-.xsdoc-search,
-.xsdoc-home {
+.xsdoc-search {
     float:                  left;
     overflow:               hidden;
     height:                 100%;
@@ -306,8 +307,7 @@ code {
 }
 
 .xsdoc-file-content,
-.xsdoc-search-content,
-.xsdoc-home-content {
+.xsdoc-search-content {
     float:                  left;
     width:                  70%;
     margin-top:             15px;
@@ -316,7 +316,8 @@ code {
 
 .xsdoc-file-content h3,
 .xsdoc-search-content h3,
-.xsdoc-home-content h3 {
+.xsdoc-home-content h3,
+.xsdoc-page-content h3 {
     color:                  #3C4C6C;
     border-bottom:          solid 1px #D6E0E5;
     margin-bottom:          20px;

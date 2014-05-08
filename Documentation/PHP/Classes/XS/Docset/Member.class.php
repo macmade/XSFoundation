@@ -38,7 +38,12 @@ abstract class XS_Docset_Member extends XS_Docset_Base
         $html[] = '<a name="' . $this->getName() . '"></a>';
         $html[] = '<h4>';
         $html[] = $this->getName();
-        $html[] = '<span class="xsdoc-top"><a href="#xsdoc-top" title="Top">Top</a></span>';
+        
+        if( !isset( $_GET[ 'xsdoc-print' ] ) )
+        {
+            $html[] = '<span class="xsdoc-top"><a href="#xsdoc-top" title="Top">Top</a></span>';
+        }
+        
         $html[] = '</h4>';
         $html[] = '<p>' . $this->getAbstract() . '</p>';
         $html[] = '<p class="xsdoc-code-block"><code>' .  $this->getDeclaration() . '</code></p>';
