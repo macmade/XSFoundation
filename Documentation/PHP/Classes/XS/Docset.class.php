@@ -556,7 +556,7 @@ class XS_Docset extends XS_Docset_Base
         
             if( count( $this->_functions ) )
             {
-                $html[] = '<div class="xsdoc-toc-classes">';
+                $html[] = '<div class="xsdoc-toc-functions">';
                 $html[] = '<h2>Functions</h2>';
                 $html[] = '<ul>';
                 $html[] = $this->_getHeaderListHTML( $this->_functions );
@@ -566,7 +566,7 @@ class XS_Docset extends XS_Docset_Base
         
             if( count( $this->_types ) )
             {
-                $html[] = '<div class="xsdoc-toc-classes">';
+                $html[] = '<div class="xsdoc-toc-types">';
                 $html[] = '<h2>Types</h2>';
                 $html[] = '<ul>';
                 $html[] = $this->_getHeaderListHTML( $this->_types );
@@ -574,10 +574,9 @@ class XS_Docset extends XS_Docset_Base
                 $html[] = '</div>';
             }
         
-            if( count( $this->_headers ) )
+            if( count( $this->_others ) )
             {
-                $html[] = '<div class="xsdoc-toc-classes">';
-                
+                $html[] = '<div class="xsdoc-toc-others">';
                 
                 if
                 (

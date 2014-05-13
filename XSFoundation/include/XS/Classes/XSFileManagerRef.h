@@ -62,70 +62,34 @@
 /* $Id$ */
 
 /*!
- * @header      XS.h
+ * @header      XSFileManagerRef.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    XSFileManager class
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
-#define __XS_H__
-
-/* Internal build only - Adds extra warning flags */
-#ifdef __XS_BUILD__
-#include <XS/__private/XSWarnings.h>
+#error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-/* Standard includes */
-#include <XS/XS-STD.h>
+#ifndef __XS_CLASSES_XS_FILE_MANAGER_H__
+#define __XS_CLASSES_XS_FILE_MANAGER_H__
 
-/* Core */
-#include <XS/XSMacros.h>
-#include <XS/XSMacros-X.h>
 #include <XS/XSTypes.h>
+#include <XS/XSMacros.h>
 
-/* Functions */
-#include <XS/Functions/XSAtomic.h>
-#include <XS/Functions/XSMemory.h>
-#include <XS/Functions/XSRuntime.h>
-#include <XS/Functions/XSProcess.h>
-#include <XS/Functions/XSThreading.h>
-#include <XS/Functions/XSLog.h>
-#include <XS/Functions/XSMath.h>
-#include <XS/Functions/XSGeometry.h>
-#include <XS/Functions/XSSort.h>
+/*!
+ * @typedef     XSFileManagerRef
+ * @abstract    Opaque type for XSFileManager
+ */
+typedef struct __XSFileManager * XSFileManagerRef;
 
-/* Classes */
-#include <XS/Classes/XSArrayRef.h>
-#include <XS/Classes/XSAutoreleasePoolRef.h>
-#include <XS/Classes/XSBagRef.h>
-#include <XS/Classes/XSBinaryTreeRef.h>
-#include <XS/Classes/XSBooleanRef.h>
-#include <XS/Classes/XSColorRef.h>
-#include <XS/Classes/XSDataRef.h>
-#include <XS/Classes/XSDateRef.h>
-#include <XS/Classes/XSDictionaryRef.h>
-#include <XS/Classes/XSErrorRef.h>
-#include <XS/Classes/XSFileRef.h>
-#include <XS/Classes/XSFileManagerRef.h>
-#include <XS/Classes/XSLockRef.h>
-#include <XS/Classes/XSNodeRef.h>
-#include <XS/Classes/XSNotificationRef.h>
-#include <XS/Classes/XSNotificationCenterRef.h>
-#include <XS/Classes/XSNullRef.h>
-#include <XS/Classes/XSNumberRef.h>
-#include <XS/Classes/XSOrderedSetRef.h>
-#include <XS/Classes/XSPrimitiveArrayRef.h>
-#include <XS/Classes/XSRecursiveLockRef.h>
-#include <XS/Classes/XSSemaphoreRef.h>
-#include <XS/Classes/XSSetRef.h>
-#include <XS/Classes/XSStackRef.h>
-#include <XS/Classes/XSStringRef.h>
-#include <XS/Classes/XSThreadRef.h>
-#include <XS/Classes/XSURLRef.h>
-#include <XS/Classes/XSValueRef.h>
+/*!
+ * @function    XSFileManager_GetClassID
+ * @abstract    Gets the class ID for XSFileManager
+ * @return      The class ID for XSFileManager
+ */
+XS_EXPORT XSStatic XSClassID XSFileManager_GetClassID( void );
 
-#endif /* __XS_H__ */
+#endif /* __XS_CLASSES_XS_FILE_MANAGER_H__ */

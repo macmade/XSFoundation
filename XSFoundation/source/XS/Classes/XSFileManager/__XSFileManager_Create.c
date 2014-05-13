@@ -62,70 +62,25 @@
 /* $Id$ */
 
 /*!
- * @header      XS.h
+ * @file        __XSFileManager_Create.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Definition for __XSFileManager_Create
  */
 
-#ifndef __XS_H__
-#define __XS_H__
+#include <XS/XS.h>
+#include <XS/__private/Classes/XSFileManagerRef.h>
 
-/* Internal build only - Adds extra warning flags */
-#ifdef __XS_BUILD__
-#include <XS/__private/XSWarnings.h>
-#endif
-
-/* Standard includes */
-#include <XS/XS-STD.h>
-
-/* Core */
-#include <XS/XSMacros.h>
-#include <XS/XSMacros-X.h>
-#include <XS/XSTypes.h>
-
-/* Functions */
-#include <XS/Functions/XSAtomic.h>
-#include <XS/Functions/XSMemory.h>
-#include <XS/Functions/XSRuntime.h>
-#include <XS/Functions/XSProcess.h>
-#include <XS/Functions/XSThreading.h>
-#include <XS/Functions/XSLog.h>
-#include <XS/Functions/XSMath.h>
-#include <XS/Functions/XSGeometry.h>
-#include <XS/Functions/XSSort.h>
-
-/* Classes */
-#include <XS/Classes/XSArrayRef.h>
-#include <XS/Classes/XSAutoreleasePoolRef.h>
-#include <XS/Classes/XSBagRef.h>
-#include <XS/Classes/XSBinaryTreeRef.h>
-#include <XS/Classes/XSBooleanRef.h>
-#include <XS/Classes/XSColorRef.h>
-#include <XS/Classes/XSDataRef.h>
-#include <XS/Classes/XSDateRef.h>
-#include <XS/Classes/XSDictionaryRef.h>
-#include <XS/Classes/XSErrorRef.h>
-#include <XS/Classes/XSFileRef.h>
-#include <XS/Classes/XSFileManagerRef.h>
-#include <XS/Classes/XSLockRef.h>
-#include <XS/Classes/XSNodeRef.h>
-#include <XS/Classes/XSNotificationRef.h>
-#include <XS/Classes/XSNotificationCenterRef.h>
-#include <XS/Classes/XSNullRef.h>
-#include <XS/Classes/XSNumberRef.h>
-#include <XS/Classes/XSOrderedSetRef.h>
-#include <XS/Classes/XSPrimitiveArrayRef.h>
-#include <XS/Classes/XSRecursiveLockRef.h>
-#include <XS/Classes/XSSemaphoreRef.h>
-#include <XS/Classes/XSSetRef.h>
-#include <XS/Classes/XSStackRef.h>
-#include <XS/Classes/XSStringRef.h>
-#include <XS/Classes/XSThreadRef.h>
-#include <XS/Classes/XSURLRef.h>
-#include <XS/Classes/XSValueRef.h>
-
-#endif /* __XS_H__ */
+XSStatic XSFileManagerRef __XSFileManager_Create( void )
+{
+    XSFileManagerRef object;
+    
+    object = XSRuntime_CreateInstance( XSFileManager_GetClassID() );
+    
+    if( object == NULL )
+    {
+        XSFatalError( "Error creating an XSFileManager object" );
+    }
+    
+    return object;
+}

@@ -86,6 +86,7 @@ XSStatic void __XSDate_Initialize( void );
 XSStatic void __XSDictionary_Initialize( void );
 XSStatic void __XSError_Initialize( void );
 XSStatic void __XSFile_Initialize( void );
+XSStatic void __XSFileManager_Initialize( void );
 XSStatic void __XSLock_Initialize( void );
 XSStatic void __XSNode_Initialize( void );
 XSStatic void __XSNotification_Initialize( void );
@@ -141,6 +142,7 @@ void XSRuntime_Initialize( void )
     __XSDictionary_Initialize();
     __XSError_Initialize();
     __XSFile_Initialize();
+    __XSFileManager_Initialize();
     __XSLock_Initialize();
     __XSNode_Initialize();
     __XSNotification_Initialize();

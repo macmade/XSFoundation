@@ -27,6 +27,7 @@
 <include><hd_link logicalPath="//apple_ref/doc/header/XSDictionaryRef.h">&lt;XS/Classes/XSDictionaryRef.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//apple_ref/doc/header/XSErrorRef.h">&lt;XS/Classes/XSErrorRef.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//apple_ref/doc/header/XSFileRef.h">&lt;XS/Classes/XSFileRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSFileManagerRef.h">&lt;XS/Classes/XSFileManagerRef.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//apple_ref/doc/header/XSLockRef.h">&lt;XS/Classes/XSLockRef.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//apple_ref/doc/header/XSNodeRef.h">&lt;XS/Classes/XSNodeRef.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//apple_ref/doc/header/XSNotificationRef.h">&lt;XS/Classes/XSNotificationRef.h&gt;</hd_link></include>

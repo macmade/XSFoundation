@@ -62,70 +62,96 @@
 /* $Id$ */
 
 /*!
- * @header      XS.h
+ * @header      XSFileManagerRef.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Private definitions for XSFileManagerRef.h
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
-#define __XS_H__
-
-/* Internal build only - Adds extra warning flags */
-#ifdef __XS_BUILD__
-#include <XS/__private/XSWarnings.h>
+#error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-/* Standard includes */
-#include <XS/XS-STD.h>
+#ifndef __XS___PRIVATE_CLASSES_XS_FILE_MANAGER_H__
+#define __XS___PRIVATE_CLASSES_XS_FILE_MANAGER_H__
 
-/* Core */
-#include <XS/XSMacros.h>
-#include <XS/XSMacros-X.h>
 #include <XS/XSTypes.h>
+#include <XS/XSMacros.h>
 
-/* Functions */
-#include <XS/Functions/XSAtomic.h>
-#include <XS/Functions/XSMemory.h>
-#include <XS/Functions/XSRuntime.h>
-#include <XS/Functions/XSProcess.h>
-#include <XS/Functions/XSThreading.h>
-#include <XS/Functions/XSLog.h>
-#include <XS/Functions/XSMath.h>
-#include <XS/Functions/XSGeometry.h>
-#include <XS/Functions/XSSort.h>
+/*!
+ * @struct      __XSFileManager
+ * @abstract    Structure for XSFileManager
+ */
+struct __XSFileManager
+{
+    void * temp; /*! Not yet implemented... */
+};
 
-/* Classes */
-#include <XS/Classes/XSArrayRef.h>
-#include <XS/Classes/XSAutoreleasePoolRef.h>
-#include <XS/Classes/XSBagRef.h>
-#include <XS/Classes/XSBinaryTreeRef.h>
-#include <XS/Classes/XSBooleanRef.h>
-#include <XS/Classes/XSColorRef.h>
-#include <XS/Classes/XSDataRef.h>
-#include <XS/Classes/XSDateRef.h>
-#include <XS/Classes/XSDictionaryRef.h>
-#include <XS/Classes/XSErrorRef.h>
-#include <XS/Classes/XSFileRef.h>
-#include <XS/Classes/XSFileManagerRef.h>
-#include <XS/Classes/XSLockRef.h>
-#include <XS/Classes/XSNodeRef.h>
-#include <XS/Classes/XSNotificationRef.h>
-#include <XS/Classes/XSNotificationCenterRef.h>
-#include <XS/Classes/XSNullRef.h>
-#include <XS/Classes/XSNumberRef.h>
-#include <XS/Classes/XSOrderedSetRef.h>
-#include <XS/Classes/XSPrimitiveArrayRef.h>
-#include <XS/Classes/XSRecursiveLockRef.h>
-#include <XS/Classes/XSSemaphoreRef.h>
-#include <XS/Classes/XSSetRef.h>
-#include <XS/Classes/XSStackRef.h>
-#include <XS/Classes/XSStringRef.h>
-#include <XS/Classes/XSThreadRef.h>
-#include <XS/Classes/XSURLRef.h>
-#include <XS/Classes/XSValueRef.h>
+/*!
+ * @var         __XSFileManager_ClassID
+ * @abstract    Class ID
+ */
+XS_EXTERN XSClassID __XSFileManager_ClassID;
 
-#endif /* __XS_H__ */
+/*!
+ * @var         __XSFileManager_Class
+ * @abstract    Class info
+ */
+XS_EXTERN XSClassInfo __XSFileManager_Class;
+
+/*!
+ * @function    __XSFileManager_Initialize
+ * @abstract    Class initializer
+ */
+XSStatic void __XSFileManager_Initialize( void );
+
+/*!
+ * @function    __XSFileManager_Constructor
+ * @abstract    Class constructor callback
+ * @param       object      The object beeing construct
+ * @return      The new object
+ */
+XSFileManagerRef __XSFileManager_Constructor( XSFileManagerRef object );
+
+/*!
+ * @function    __XSFileManager_Destructor
+ * @abstract    Class destructor callback
+ * @param       object      The object beeing destruct
+ */
+void __XSFileManager_Destructor( XSFileManagerRef object );
+
+/*!
+ * @function    __XSFileManager_Copy
+ * @abstract    Class copy callback
+ * @param       source      The object to copy
+ * @param       destination The object beeing copied
+ * @result      The copied object
+ */
+XSFileManagerRef __XSFileManager_Copy( XSFileManagerRef source, XSFileManagerRef destination );
+
+/*!
+ * @function    __XSFileManager_Equals
+ * @abstract    Class equals callback
+ * @param       object1     The first object to compare
+ * @param       object2     The second object to compare
+ * @return      True if both objects are equals, otherwise false
+ */
+bool __XSFileManager_Equals( XSFileManagerRef object1, XSFileManagerRef object2 );
+
+/*!
+ * @function    __XSFileManager_ToString
+ * @abstract    Class to-string callback
+ * @param       object      The object for which to get a description
+ * @return      The object's description
+ */
+const char * __XSFileManager_ToString( XSFileManagerRef object );
+
+/*!
+ * @function    __XSFileManager_Create
+ * @abstract    Creates an XSFileManager object
+ * @return      The XSFileManager object
+ */
+XSStatic XSFileManagerRef __XSFileManager_Create( void );
+
+#endif /* __XS___PRIVATE_CLASSES_XS_FILE_MANAGER_H__ */
