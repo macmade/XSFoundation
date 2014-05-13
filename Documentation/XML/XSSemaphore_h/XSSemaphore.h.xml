@@ -1,38 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
 <header id="//apple_ref/doc/header/XSSemaphore.h" lang="c" filename="XSSemaphore.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSTypes/XSSemaphore.h"><name>XSSemaphore.h</name>
-<abstract><p>XSSemaphore type definition
-</p></abstract>
-<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
-</attributes>
 <includes>
 </includes>
-<desc><p>...
-</p></desc>
+<desc><p/></desc>
 <typedefs><typedef id="//apple_ref/c/tdef/XSSemaphore" lang="c" type="simple"><name>XSSemaphore</name>
 <abstract><p>Semaphore type
 </p></abstract>
 <fieldlist>
-<field><name>sem</name><desc><p>The semaphore
-</p>
-<p>The semaphore, for POSIX unnamed semaphores
-</p>
-<p>The semaphore, for POSIX unnamed semaphores</p></desc></field>
-<field><name>semp</name><desc><p>The semaphore pointer, for POSIX named semaphores
-</p>
-<p>The semaphore pointer, for POSIX named semaphores</p></desc></field>
-<field><name>semaphore</name><desc><p>The semaphore, for OS X unnamed semaphores</p></desc></field>
+<field><name>sem</name><desc><p>The semaphore</p></desc></field>
 </fieldlist>
-<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>_WIN32</declaration_preprocessor> 
- <declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> { 
+<parsedparameterlist>
+<parsedparameter><type>HANDLE</type><name>sem</name></parsedparameter>
+<parsedparameter><type>bool</type><name>named</name></parsedparameter>
+<parsedparameter><type>char</type><name>__pad_0</name></parsedparameter>
+</parsedparameterlist>
+<declaration><declaration_type>XS_EXTERN_C_BEGIN</declaration_type>  <declaration_comment>/*!</declaration_comment>
+    <declaration_comment>*/</declaration_comment>
+<declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>_WIN32</declaration_preprocessor>  
+<declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> { 
     <declaration_type>HANDLE</declaration_type> <declaration_var>sem</declaration_var>;
     <declaration_comment>/*! The semaphore */</declaration_comment>
     <declaration_type>bool</declaration_type> <declaration_var>named</declaration_var>; <declaration_comment>/* Whether the semaphore is named or not */</declaration_comment>
     <declaration_type>char</declaration_type> <declaration_type>__pad_0</declaration_type>[ <declaration_number>7</declaration_number> ]; <declaration_comment>/* Padding */</declaration_comment>
-} <declaration_var>XSSemaphore</declaration_var>;  
-<declaration_preprocessor>#else</declaration_preprocessor> 
-<declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>__APPLE__</declaration_preprocessor> 
- <declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> { 
+} <declaration_var>XSSemaphore</declaration_var>;  </declaration>
+<desc><p/></desc>
+</typedef><typedef id="//apple_ref/c/tdef/XSSemaphore_DONTLINK_2" lang="c" type="simple"><name>XSSemaphore</name>
+<fieldlist>
+<field><name>semp</name><desc><p>The semaphore pointer, for POSIX named semaphores</p></desc></field>
+<field><name>sem</name><desc><p>The semaphore, for POSIX unnamed semaphores</p></desc></field>
+<field><name>semaphore</name><desc><p>The semaphore, for OS X unnamed semaphores</p></desc></field>
+</fieldlist>
+<parsedparameterlist>
+<parsedparameter><type>sem_t *</type><name>semp</name></parsedparameter>
+<parsedparameter><type>sem_t</type><name>sem</name></parsedparameter>
+<parsedparameter><type>semaphore_t</type><name>semaphore</name></parsedparameter>
+<parsedparameter><type>bool</type><name>named</name></parsedparameter>
+<parsedparameter><type>char</type><name>__pad_0</name></parsedparameter>
+</parsedparameterlist>
+<declaration> <declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> { 
     <declaration_type>sem_t</declaration_type> <declaration_type>*</declaration_type><declaration_var>semp</declaration_var>;
     <declaration_comment>/*! The semaphore pointer, for POSIX named semaphores */</declaration_comment>
     <declaration_type>sem_t</declaration_type> <declaration_var>sem</declaration_var>;
@@ -41,21 +47,29 @@
     <declaration_comment>/*! The semaphore, for OS X unnamed semaphores */</declaration_comment>
     <declaration_type>bool</declaration_type> <declaration_var>named</declaration_var>; <declaration_comment>/* Whether the semaphore is named or not */</declaration_comment>
     <declaration_type>char</declaration_type> <declaration_type>__pad_0</declaration_type>[ <declaration_number>7</declaration_number> ]; <declaration_comment>/* Padding */</declaration_comment>
-} <declaration_var>XSSemaphore</declaration_var>;  
-<declaration_preprocessor>#else</declaration_preprocessor> 
- <declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> { 
+} <declaration_var>XSSemaphore</declaration_var>;  </declaration>
+<desc><p/></desc>
+</typedef><typedef id="//apple_ref/c/tdef/XSSemaphore_DONTLINK_3" lang="c" type="simple"><name>XSSemaphore</name>
+<fieldlist>
+<field><name>semp</name><desc><p>The semaphore pointer, for POSIX named semaphores</p></desc></field>
+<field><name>sem</name><desc><p>The semaphore, for POSIX unnamed semaphores</p></desc></field>
+</fieldlist>
+<parsedparameterlist>
+<parsedparameter><type>sem_t *</type><name>semp</name></parsedparameter>
+<parsedparameter><type>sem_t</type><name>sem</name></parsedparameter>
+<parsedparameter><type>bool</type><name>named</name></parsedparameter>
+<parsedparameter><type>char</type><name>__pad_0</name></parsedparameter>
+</parsedparameterlist>
+<declaration> <declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> { 
     <declaration_type>sem_t</declaration_type> <declaration_type>*</declaration_type><declaration_var>semp</declaration_var>;
     <declaration_comment>/*! The semaphore pointer, for POSIX named semaphores */</declaration_comment>
     <declaration_type>sem_t</declaration_type> <declaration_var>sem</declaration_var>;
     <declaration_comment>/*! The semaphore, for POSIX unnamed semaphores */</declaration_comment>
     <declaration_type>bool</declaration_type> <declaration_var>named</declaration_var>; <declaration_comment>/* Whether the semaphore is named or not */</declaration_comment>
     <declaration_type>char</declaration_type> <declaration_type>__pad_0</declaration_type>[ <declaration_number>7</declaration_number> ]; <declaration_comment>/* Padding */</declaration_comment>
-} <declaration_var>XSSemaphore</declaration_var>;  
-<declaration_preprocessor>#endif</declaration_preprocessor>  
-<declaration_preprocessor>#endif</declaration_preprocessor>  
-</declaration>
+} <declaration_var>XSSemaphore</declaration_var>;  </declaration>
 <desc><p/></desc>
-</typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
-</copyrightinfo>
-<timestamp>Tuesday, May 13, 2014</timestamp>
+</typedef></typedefs><defines><pdefine id="//apple_ref/c/macro/__XS_TYPES_XS_SEMAPHORE_H__" definetype="value" lang="c"><name>__XS_TYPES_XS_SEMAPHORE_H__</name>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_TYPES_XS_SEMAPHORE_H__</declaration_preprocessor> </declaration>
+</pdefine></defines><timestamp>Wednesday, May 14, 2014</timestamp>
 </header>

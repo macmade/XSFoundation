@@ -35,6 +35,7 @@ abstract class XS_Docset_Member extends XS_Docset_Base
         $html = array();
         
         $html[] = '<div class="xsdoc-file-member">';
+        $html[] = '<a name="' . $this->getID() . '"></a>';
         $html[] = '<a name="' . $this->getName() . '"></a>';
         $html[] = '<h4>';
         $html[] = $this->getName();

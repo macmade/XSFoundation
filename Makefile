@@ -335,6 +335,7 @@ ifeq ($(_HAS_XSDOCGEN),true)
 	@echo $(call _PRINT,XSDoc,universal,Generating the documentation)
 	@/usr/local/bin/XSDocgen \
 	@    --clear \
+	@    --undocumented \
 	@    --source XSFoundation/include \
 	@    --output Documentation \
 	@    --exclude-file HeaderDoc-Exclude.txt \
@@ -363,6 +364,7 @@ ifeq ($(_HAS_XSDOCGEN),true)
 	@echo $(call _PRINT,XSDoc,universal,Generating the documentation)
 	@/usr/local/bin/XSDocgen \
 	@    --clear \
+	@    --undocumented \
 	@    --source XSFoundation/include \
 	@    --output Documentation \
 	@    --exclude-file HeaderDoc-Exclude.txt \

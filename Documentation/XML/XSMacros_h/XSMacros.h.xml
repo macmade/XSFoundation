@@ -1,47 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
 <header id="//apple_ref/doc/header/XSMacros.h" lang="c" filename="XSMacros.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSMacros.h"><name>XSMacros.h</name>
-<abstract><p>XSFoundation macros
-</p></abstract>
-<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
-</attributes>
 <includes>
 </includes>
-<desc><p>...
-</p></desc>
-<defines><pdefine id="//apple_ref/c/macro/__func__" definetype="block" lang="c"><name>__func__</name>
-<abstract><p>Function name
-</p></abstract>
-<declaration><declaration_preprocessor>#ifndef</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> 
-<declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>_WIN32</declaration_preprocessor> 
-<declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__FUNCTION__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
-<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>__FUNCTION__</declaration_preprocessor> 
-<declaration_preprocessor>#else</declaration_preprocessor> 
-<declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__FUNCSIG__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
-<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>__FUNCSIG__</declaration_preprocessor> 
-<declaration_preprocessor>#else</declaration_preprocessor> 
-<declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__FUNCDNAME__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
-<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>__FUNCDNAME__</declaration_preprocessor> 
-<declaration_preprocessor>#else</declaration_preprocessor> 
-<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>"</declaration_preprocessor><declaration_preprocessor>&lt;</declaration_preprocessor><declaration_preprocessor>unknown</declaration_preprocessor> <declaration_preprocessor>function</declaration_preprocessor><declaration_preprocessor>&gt;</declaration_preprocessor><declaration_preprocessor>"</declaration_preprocessor> 
-<declaration_preprocessor>#endif</declaration_preprocessor>  
-<declaration_preprocessor>#endif</declaration_preprocessor>  
-<declaration_preprocessor>#endif</declaration_preprocessor>  
-<declaration_preprocessor>#else</declaration_preprocessor> 
-<declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>__STDC_VERSION__</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor> <declaration_preprocessor>199901L</declaration_preprocessor> 
-<declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> 
-<declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>&gt;=</declaration_preprocessor> <declaration_preprocessor>2</declaration_preprocessor> 
-<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>__FUNCTION__</declaration_preprocessor> 
-<declaration_preprocessor>#else</declaration_preprocessor> 
-<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>"</declaration_preprocessor><declaration_preprocessor>&lt;</declaration_preprocessor><declaration_preprocessor>unknown</declaration_preprocessor> <declaration_preprocessor>function</declaration_preprocessor><declaration_preprocessor>&gt;</declaration_preprocessor><declaration_preprocessor>"</declaration_preprocessor> 
-<declaration_preprocessor>#endif</declaration_preprocessor>  
-<declaration_preprocessor>#else</declaration_preprocessor> 
-<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>"</declaration_preprocessor><declaration_preprocessor>&lt;</declaration_preprocessor><declaration_preprocessor>unknown</declaration_preprocessor> <declaration_preprocessor>function</declaration_preprocessor><declaration_preprocessor>&gt;</declaration_preprocessor><declaration_preprocessor>"</declaration_preprocessor> 
-<declaration_preprocessor>#endif</declaration_preprocessor>  
-<declaration_preprocessor>#endif</declaration_preprocessor>  
-<declaration_preprocessor>#endif</declaration_preprocessor>  
-<declaration_preprocessor>#endif</declaration_preprocessor>  
-</declaration>
+<desc><p/></desc>
+<defines><pdefine id="//apple_ref/c/macro/__func__" definetype="value" lang="c"><name>__func__</name>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>__FUNCTION__</declaration_preprocessor> </declaration>
+</pdefine><pdefine id="//apple_ref/c/macro/__func___DONTLINK_6" definetype="value" lang="c"><name>__func__</name>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>__FUNCSIG__</declaration_preprocessor> </declaration>
+</pdefine><pdefine id="//apple_ref/c/macro/__func___DONTLINK_7" definetype="value" lang="c"><name>__func__</name>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>__FUNCDNAME__</declaration_preprocessor> </declaration>
+</pdefine><pdefine id="//apple_ref/c/macro/__func___DONTLINK_8" definetype="value" lang="c"><name>__func__</name>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>"</declaration_preprocessor><declaration_preprocessor>&lt;</declaration_preprocessor><declaration_preprocessor>unknown</declaration_preprocessor> <declaration_preprocessor>function</declaration_preprocessor><declaration_preprocessor>&gt;</declaration_preprocessor><declaration_preprocessor>"</declaration_preprocessor> </declaration>
+</pdefine><pdefine id="//apple_ref/c/macro/__func___DONTLINK_9" definetype="value" lang="c"><name>__func__</name>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>__FUNCTION__</declaration_preprocessor> </declaration>
+</pdefine><pdefine id="//apple_ref/c/macro/__func___DONTLINK_10" definetype="value" lang="c"><name>__func__</name>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>"</declaration_preprocessor><declaration_preprocessor>&lt;</declaration_preprocessor><declaration_preprocessor>unknown</declaration_preprocessor> <declaration_preprocessor>function</declaration_preprocessor><declaration_preprocessor>&gt;</declaration_preprocessor><declaration_preprocessor>"</declaration_preprocessor> </declaration>
+</pdefine><pdefine id="//apple_ref/c/macro/__func___DONTLINK_11" definetype="value" lang="c"><name>__func__</name>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>"</declaration_preprocessor><declaration_preprocessor>&lt;</declaration_preprocessor><declaration_preprocessor>unknown</declaration_preprocessor> <declaration_preprocessor>function</declaration_preprocessor><declaration_preprocessor>&gt;</declaration_preprocessor><declaration_preprocessor>"</declaration_preprocessor> </declaration>
+</pdefine><pdefine id="//apple_ref/c/macro/__XS_MACROS_H__" definetype="value" lang="c"><name>__XS_MACROS_H__</name>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_MACROS_H__</declaration_preprocessor> </declaration>
 </pdefine><pdefine id="//apple_ref/c/macro/__XS_VERSION__" definetype="value" lang="c"><name>__XS_VERSION__</name>
 <abstract><p>XSFoundation version number
 </p></abstract>
@@ -329,7 +307,5 @@ to nothing.
 <abstract><p>Marker for static class methods
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSStatic</declaration_preprocessor> </declaration>
-</pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
-</copyrightinfo>
-<timestamp>Tuesday, May 13, 2014</timestamp>
+</pdefine></defines><timestamp>Wednesday, May 14, 2014</timestamp>
 </header>

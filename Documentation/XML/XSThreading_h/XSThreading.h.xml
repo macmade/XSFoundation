@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
 <header id="//apple_ref/doc/header/XSThreading.h" lang="c" filename="XSThreading.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Functions/XSThreading.h"><name>XSThreading.h</name>
-<abstract><p>XSFoundation threading functions
-</p></abstract>
-<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
-</attributes>
 <includes>
 <include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 </includes>
-<desc><p>Whenever possible, prefer using the XSFoundation class types
-like XSThreadRef, XSLockRef, XSSemaphoreRef, etc. over this set
-of functions.
-</p></desc>
+<desc><p/></desc>
 <functions><function id="//apple_ref/c/func/XSThreading_GetCurrentThreadID" lang="c"><name>XSThreading_GetCurrentThreadID</name>
 <abstract><p>Gets the ID of the current thread
 </p></abstract>
-<returntype> XSUInteger</returntype>
+<returntype> XS_EXTERN_C_BEGIN # &lt; XS / XSTypes . h &gt; XSUInteger</returntype>
 <result><p>The ID of the current thread
 </p></result>
-<declaration><declaration_type>XSUInteger</declaration_type> <declaration_function>XSThreading_GetCurrentThreadID</declaration_function>(
+<declaration><declaration_type>XS_EXTERN_C_BEGIN</declaration_type>   <declaration_preprocessor>#include</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor><declaration_preprocessor>XS</declaration_preprocessor><declaration_preprocessor>/</declaration_preprocessor><declaration_preprocessor>XSTypes</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>h</declaration_preprocessor><declaration_preprocessor>&gt;</declaration_preprocessor>  
+<declaration_comment>/*!</declaration_comment>
+    <declaration_comment>*/</declaration_comment>
+<declaration_type>XSUInteger</declaration_type> <declaration_function>XSThreading_GetCurrentThreadID</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//apple_ref/c/func/XSThreading_MutexCreate" lang="c"><name>XSThreading_MutexCreate</name>
@@ -280,7 +276,7 @@ immediately, rather than waiting.
     <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>data</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function></functions>
-<copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
-</copyrightinfo>
-<timestamp>Tuesday, May 13, 2014</timestamp>
+<defines><pdefine id="//apple_ref/c/macro/__XS_FUNCTIONS_XS_THREADING_H__" definetype="value" lang="c"><name>__XS_FUNCTIONS_XS_THREADING_H__</name>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_FUNCTIONS_XS_THREADING_H__</declaration_preprocessor> </declaration>
+</pdefine></defines><timestamp>Wednesday, May 14, 2014</timestamp>
 </header>

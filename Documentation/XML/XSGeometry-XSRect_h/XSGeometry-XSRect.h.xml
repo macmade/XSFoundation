@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
 <header id="//apple_ref/doc/header/XSGeometry-XSRect.h" lang="c" filename="XSGeometry-XSRect.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Functions/XSGeometry-XSRect.h"><name>XSGeometry-XSRect.h</name>
-<abstract><p>XSRect functions
-</p></abstract>
-<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
-</attributes>
 <includes>
 <include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 </includes>
-<desc><p>...
-</p></desc>
+<desc><p/></desc>
 <functions><function id="//apple_ref/c/func/XSRect_ContainsPoint" lang="c"><name>XSRect_ContainsPoint</name>
 <abstract><p>Checks whether a rectangle contains a specified point
 </p></abstract>
@@ -332,10 +327,13 @@ intersection.
 <parsedparameter><type>XSFloat</type><name>width</name></parsedparameter>
 <parsedparameter><type>XSFloat</type><name>height</name></parsedparameter>
 </parsedparameterlist>
-<returntype> XS_EXPORT XSRect</returntype>
+<returntype> XS_EXTERN_C_BEGIN # &lt; XS / XSTypes . h &gt; XS_EXPORT XSRect</returntype>
 <result><p>The rectangle
 </p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSRect</declaration_type> <declaration_function>XSRect_Make</declaration_function>(
+<declaration><declaration_type>XS_EXTERN_C_BEGIN</declaration_type>   <declaration_preprocessor>#include</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor><declaration_preprocessor>XS</declaration_preprocessor><declaration_preprocessor>/</declaration_preprocessor><declaration_preprocessor>XSTypes</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>h</declaration_preprocessor><declaration_preprocessor>&gt;</declaration_preprocessor>  
+<declaration_comment>/*!</declaration_comment>
+    <declaration_comment>*/</declaration_comment>
+<declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSRect</declaration_type> <declaration_function>XSRect_Make</declaration_function>(
     <declaration_type>XSFloat</declaration_type> <declaration_param>x</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>y</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>width</declaration_param>,
@@ -423,7 +421,7 @@ rectangles is returned.
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function></functions>
-<copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
-</copyrightinfo>
-<timestamp>Tuesday, May 13, 2014</timestamp>
+<defines><pdefine id="//apple_ref/c/macro/__XS_FUNCTIONS_XS_GEOMETRY_XS_RECT_H__" definetype="value" lang="c"><name>__XS_FUNCTIONS_XS_GEOMETRY_XS_RECT_H__</name>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_FUNCTIONS_XS_GEOMETRY_XS_RECT_H__</declaration_preprocessor> </declaration>
+</pdefine></defines><timestamp>Wednesday, May 14, 2014</timestamp>
 </header>

@@ -38,6 +38,7 @@ abstract class XS_Docset_Base
     protected $_fields      = NULL;
     protected $_constants   = NULL;
     protected $_seeAlso     = NULL;
+    protected $_id          = NULL;
     
     public abstract function __toString();
     
@@ -201,5 +202,20 @@ abstract class XS_Docset_Base
         }
         
         return $this->_constants;
+    }
+    
+    public function getID()
+    {
+        if( $this->_id !== NULL )
+        {
+            return $this->_id;
+        }
+        
+        if( isset( $this->_xml[ 'id' ] ) )
+        {
+            $this->_id = ( string )( $this->_xml[ 'id' ] );
+        }
+        
+        return $this->_id;
     }
 }

@@ -455,3 +455,7 @@ ul.xsdoc-list-square {
     margin-left:            10px;
     list-style:             square;
 }
+
+.xsdoc-class-members {
+    margin-bottom:          20px;
+}

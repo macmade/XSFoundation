@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
 <header id="//apple_ref/doc/header/XSGeometry-XSRange.h" lang="c" filename="XSGeometry-XSRange.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Functions/XSGeometry-XSRange.h"><name>XSGeometry-XSRange.h</name>
-<abstract><p>XSRange functions
-</p></abstract>
-<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
-</attributes>
 <includes>
 <include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 </includes>
-<desc><p>...
-</p></desc>
+<desc><p/></desc>
 <functions><function id="//apple_ref/c/func/XSRange_Intersection" lang="c"><name>XSRange_Intersection</name>
 <abstract><p>Returns the intersection of the specified ranges
 </p></abstract>
@@ -75,10 +70,13 @@
 <parsedparameter><type>XSUInteger</type><name>location</name></parsedparameter>
 <parsedparameter><type>XSUInteger</type><name>length</name></parsedparameter>
 </parsedparameterlist>
-<returntype> XS_EXPORT XSRange</returntype>
+<returntype> XS_EXTERN_C_BEGIN # &lt; XS / XSTypes . h &gt; XS_EXPORT XSRange</returntype>
 <result><p>The range
 </p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSRange</declaration_type> <declaration_function>XSRange_Make</declaration_function>(
+<declaration><declaration_type>XS_EXTERN_C_BEGIN</declaration_type>   <declaration_preprocessor>#include</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor><declaration_preprocessor>XS</declaration_preprocessor><declaration_preprocessor>/</declaration_preprocessor><declaration_preprocessor>XSTypes</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>h</declaration_preprocessor><declaration_preprocessor>&gt;</declaration_preprocessor>  
+<declaration_comment>/*!</declaration_comment>
+    <declaration_comment>*/</declaration_comment>
+<declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSRange</declaration_type> <declaration_function>XSRange_Make</declaration_function>(
     <declaration_type>XSUInteger</declaration_type> <declaration_param>location</declaration_param>,
     <declaration_type>XSUInteger</declaration_type> <declaration_param>length</declaration_param> );  </declaration>
 <desc><p/></desc>
@@ -127,7 +125,7 @@ range is equal to the larger range.
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function></functions>
-<copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
-</copyrightinfo>
-<timestamp>Tuesday, May 13, 2014</timestamp>
+<defines><pdefine id="//apple_ref/c/macro/__XS_FUNCTIONS_XS_GEOMETRY_XS_RANGE_H__" definetype="value" lang="c"><name>__XS_FUNCTIONS_XS_GEOMETRY_XS_RANGE_H__</name>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_FUNCTIONS_XS_GEOMETRY_XS_RANGE_H__</declaration_preprocessor> </declaration>
+</pdefine></defines><timestamp>Wednesday, May 14, 2014</timestamp>
 </header>

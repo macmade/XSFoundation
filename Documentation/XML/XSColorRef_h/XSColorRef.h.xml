@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
 <header id="//apple_ref/doc/header/XSColorRef.h" lang="c" filename="XSColorRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSColorRef.h"><name>XSColorRef.h</name>
-<abstract><p>XSColor class
-</p></abstract>
-<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
-</attributes>
 <includes>
 <include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//apple_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
-<desc><p>...
-</p></desc>
+<desc><p/></desc>
 <functions><function id="//apple_ref/c/func/XSColor_BlackColor" lang="c"><name>XSColor_BlackColor</name>
 <abstract><p>Gets the predefined black color object
 </p></abstract>
@@ -961,7 +956,9 @@
 </p></abstract>
 <declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSColor</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSColorRef</declaration_var>;  </declaration>
 <desc><p/></desc>
-</typedef></typedefs><defines><pdefine id="//apple_ref/c/macro/XS_COLOR_HEX" definetype="function" lang="c"><name>XS_COLOR_HEX</name>
+</typedef></typedefs><defines><pdefine id="//apple_ref/c/macro/__XS_CLASSES_XS_COLOR_H__" definetype="value" lang="c"><name>__XS_CLASSES_XS_COLOR_H__</name>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_CLASSES_XS_COLOR_H__</declaration_preprocessor> </declaration>
+</pdefine><pdefine id="//apple_ref/c/macro/XS_COLOR_HEX" definetype="function" lang="c"><name>XS_COLOR_HEX</name>
 <abstract><p>Creates a color object from an hexadecimal color value
 </p></abstract>
 <parameterlist>
@@ -972,14 +969,14 @@
 <parsedparameter><type></type><name>_c_</name></parsedparameter>
 <parsedparameter><type></type><name>_a_</name></parsedparameter>
 </parsedparameterlist>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_COLOR_HEX</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_c_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSColor_ColorWithRGBA</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
+<declaration> <declaration_comment>/*!</declaration_comment>
+    <declaration_comment>*/</declaration_comment>
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_COLOR_HEX</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_c_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSColor_ColorWithRGBA</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSFloat</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_c_</declaration_preprocessor> <declaration_preprocessor>&gt;&gt;</declaration_preprocessor> <declaration_preprocessor>16</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>0x0000FF</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>/</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSFloat</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>255</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSFloat</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_c_</declaration_preprocessor> <declaration_preprocessor>&gt;&gt;</declaration_preprocessor> <declaration_preprocessor>8</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>0x0000FF</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>/</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSFloat</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>255</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSFloat</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_c_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>0x0000FF</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>/</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSFloat</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>255</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSFloat</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-</pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
-</copyrightinfo>
-<timestamp>Tuesday, May 13, 2014</timestamp>
+</pdefine></defines><timestamp>Wednesday, May 14, 2014</timestamp>
 </header>

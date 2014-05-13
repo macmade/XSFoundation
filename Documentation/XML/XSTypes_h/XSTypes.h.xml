@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
 <header id="//apple_ref/doc/header/XSTypes.h" lang="c" filename="XSTypes.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSTypes.h"><name>XSTypes.h</name>
-<abstract><p>XSFoundation types
-</p></abstract>
-<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
-</attributes>
 <includes>
 <include><hd_link logicalPath="//apple_ref/doc/header/XSUInt8.h">&lt;XS/XSTypes/XSUInt8.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//apple_ref/doc/header/XSUInt16.h">&lt;XS/XSTypes/XSUInt16.h&gt;</hd_link></include>
@@ -43,9 +39,8 @@
 <include><hd_link logicalPath="//apple_ref/doc/header/XSClassCallbackToString.h">&lt;XS/XSTypes/XSClassCallbackToString.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//apple_ref/doc/header/XSClassInfo.h">&lt;XS/XSTypes/XSClassInfo.h&gt;</hd_link></include>
 </includes>
-<desc><p>...
-</p></desc>
-<copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
-</copyrightinfo>
-<timestamp>Tuesday, May 13, 2014</timestamp>
+<desc><p/></desc>
+<defines><pdefine id="//apple_ref/c/macro/__XS_TYPES_H__" definetype="value" lang="c"><name>__XS_TYPES_H__</name>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_TYPES_H__</declaration_preprocessor> </declaration>
+</pdefine></defines><timestamp>Wednesday, May 14, 2014</timestamp>
 </header>

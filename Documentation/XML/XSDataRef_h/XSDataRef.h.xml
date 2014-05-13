@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
 <header id="//apple_ref/doc/header/XSDataRef.h" lang="c" filename="XSDataRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSDataRef.h"><name>XSDataRef.h</name>
-<abstract><p>XSData class
-</p></abstract>
-<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
-</attributes>
 <includes>
 <include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//apple_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
-<desc><p>...
-</p></desc>
+<desc><p/></desc>
 <functions><function id="//apple_ref/c/func/XSData_GetClassID" lang="c"><name>XSData_GetClassID</name>
 <abstract><p>Gets the class ID for XSData
 </p></abstract>
@@ -24,9 +19,11 @@
 <typedefs><typedef id="//apple_ref/c/tdef/XSDataRef" lang="c" type="simple"><name>XSDataRef</name>
 <abstract><p>Opaque type for XSData
 </p></abstract>
-<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSData</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSDataRef</declaration_var>;  </declaration>
+<declaration> <declaration_comment>/*!</declaration_comment>
+    <declaration_comment>*/</declaration_comment>
+<declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSData</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSDataRef</declaration_var>;  </declaration>
 <desc><p/></desc>
-</typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
-</copyrightinfo>
-<timestamp>Tuesday, May 13, 2014</timestamp>
+</typedef></typedefs><defines><pdefine id="//apple_ref/c/macro/__XS_CLASSES_XS_DATA_H__" definetype="value" lang="c"><name>__XS_CLASSES_XS_DATA_H__</name>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_CLASSES_XS_DATA_H__</declaration_preprocessor> </declaration>
+</pdefine></defines><timestamp>Wednesday, May 14, 2014</timestamp>
 </header>

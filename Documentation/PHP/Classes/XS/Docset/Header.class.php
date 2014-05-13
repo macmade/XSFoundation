@@ -319,7 +319,8 @@ class XS_Docset_Header extends XS_Docset_Member
     {
         if
         (
-               count( $this->getFunctions() )
+               count( $this->getClasses() )
+            || count( $this->getFunctions() )
             || count( $this->getTypes() )
             || count( $this->getMacros() )
             || count( $this->getConstants() )
@@ -339,7 +340,7 @@ class XS_Docset_Header extends XS_Docset_Member
         foreach( $this->getFunctions() as $function )
         {                        
             $html[] = '<li>';   
-            $html[] = '<a href="#' . $function->getName() . '" title="' . $function->getName() . '">';
+            $html[] = '<a href="#' . $function->getID() . '" title="' . $function->getName() . '">';
             $html[] = $function->getName();   
             $html[] = '</a>';
             $html[] = '</li>';
@@ -358,7 +359,7 @@ class XS_Docset_Header extends XS_Docset_Member
         foreach( $this->getTypes() as $type )
         {                        
             $html[] = '<li>';   
-            $html[] = '<a href="#' . $type->getName() . '" title="' . $type->getName() . '">';
+            $html[] = '<a href="#' . $type->getID() . '" title="' . $type->getName() . '">';
             $html[] = $type->getName();   
             $html[] = '</a>';
             $html[] = '</li>';
@@ -377,7 +378,7 @@ class XS_Docset_Header extends XS_Docset_Member
         foreach( $this->getMacros() as $macro )
         {                        
             $html[] = '<li>';   
-            $html[] = '<a href="#' . $macro->getName() . '" title="' . $macro->getName() . '">';
+            $html[] = '<a href="#' . $macro->getID() . '" title="' . $macro->getName() . '">';
             $html[] = $macro->getName();   
             $html[] = '</a>';
             $html[] = '</li>';
@@ -396,7 +397,7 @@ class XS_Docset_Header extends XS_Docset_Member
         foreach( $this->getConstants() as $constant )
         {                        
             $html[] = '<li>';   
-            $html[] = '<a href="#' . $constant->getName() . '" title="' . $constant->getName() . '">';
+            $html[] = '<a href="#' . $constant->getID() . '" title="' . $constant->getName() . '">';
             $html[] = $constant->getName();   
             $html[] = '</a>';
             $html[] = '</li>';
@@ -415,7 +416,7 @@ class XS_Docset_Header extends XS_Docset_Member
         foreach( $this->getClasses() as $class )
         {                        
             $html[] = '<li>';   
-            $html[] = '<a href="#' . $class->getName() . '" title="' . $class->getName() . '">';
+            $html[] = '<a href="#' . $class->getID() . '" title="' . $class->getName() . '">';
             $html[] = $class->getName();   
             $html[] = '</a>';
             $html[] = '</li>';
@@ -525,8 +526,6 @@ class XS_Docset_Header extends XS_Docset_Member
         
         if( count( $this->getClasses() ) )
         {
-            $html[] = '<h3>Classes</h3>';
-            
             foreach( $this->getClasses() as $class )
             {
                 $html[] = ( string )$class;

@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
 <header id="//apple_ref/doc/header/XSRect.h" lang="c" filename="XSRect.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSTypes/XSRect.h"><name>XSRect.h</name>
-<abstract><p>XSRect type definition
-</p></abstract>
-<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
-</attributes>
 <includes>
 <include><hd_link logicalPath="//apple_ref/doc/header/XSPoint.h">&lt;XS/XSTypes/XSPoint.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//apple_ref/doc/header/XSSize.h">&lt;XS/XSTypes/XSSize.h&gt;</hd_link></include>
 </includes>
-<desc><p>...
-</p></desc>
+<desc><p/></desc>
 <typedefs><typedef id="//apple_ref/c/tdef/XSRect" lang="c" type="simple"><name>XSRect</name>
 <abstract><p>Rectangle type (structure)
 </p></abstract>
@@ -22,14 +17,18 @@
 <parsedparameter><type>XSPoint</type><name>origin</name></parsedparameter>
 <parsedparameter><type>XSSize</type><name>size</name></parsedparameter>
 </parsedparameterlist>
-<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> { 
+<declaration><declaration_type>XS_EXTERN_C_BEGIN</declaration_type>   <declaration_preprocessor>#include</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor><declaration_preprocessor>XS</declaration_preprocessor><declaration_preprocessor>/</declaration_preprocessor><declaration_preprocessor>XSTypes</declaration_preprocessor><declaration_preprocessor>/</declaration_preprocessor><declaration_preprocessor>XSPoint</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>h</declaration_preprocessor><declaration_preprocessor>&gt;</declaration_preprocessor> 
+<declaration_preprocessor>#include</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor><declaration_preprocessor>XS</declaration_preprocessor><declaration_preprocessor>/</declaration_preprocessor><declaration_preprocessor>XSTypes</declaration_preprocessor><declaration_preprocessor>/</declaration_preprocessor><declaration_preprocessor>XSSize</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>h</declaration_preprocessor><declaration_preprocessor>&gt;</declaration_preprocessor>  
+<declaration_comment>/*!</declaration_comment>
+    <declaration_comment>*/</declaration_comment>
+<declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> { 
     <declaration_type>XSPoint</declaration_type> <declaration_var>origin</declaration_var>;
     <declaration_comment>/*! The rectangle's origin */</declaration_comment>
     <declaration_type>XSSize</declaration_type> <declaration_var>size</declaration_var>;
     <declaration_comment>/*! The rectangle's size */</declaration_comment>
 } <declaration_var>XSRect</declaration_var>;  </declaration>
 <desc><p/></desc>
-</typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
-</copyrightinfo>
-<timestamp>Tuesday, May 13, 2014</timestamp>
+</typedef></typedefs><defines><pdefine id="//apple_ref/c/macro/__XS_TYPES_XS_RECT_H__" definetype="value" lang="c"><name>__XS_TYPES_XS_RECT_H__</name>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_TYPES_XS_RECT_H__</declaration_preprocessor> </declaration>
+</pdefine></defines><timestamp>Wednesday, May 14, 2014</timestamp>
 </header>
