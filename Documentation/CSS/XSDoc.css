@@ -224,14 +224,16 @@ code {
 }
 
 .xsdoc-toc {
-    float:                  left;
-    background-color:       #EBEEF1;
-    border-right:           solid 1px #ACACAC;
-    border-bottom:          solid 1px #ACACAC;
-    font-size:              10px;
-    padding:                10px;
-    width:                  15%;
-    overflow:               hidden;
+    float:                      left;
+    background-color:           #EBEEF1;
+    border-right:               solid 1px #ACACAC;
+    border-bottom:              solid 1px #ACACAC;
+    font-size:                  10px;
+    padding:                    10px;
+    width:                      15%;
+    overflow:                   hidden;
+    margin-bottom:              20px;
+    border-bottom-right-radius: 10px;
 }
 
 .xsdoc-toc h2 {
