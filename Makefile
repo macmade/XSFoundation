@@ -361,6 +361,26 @@ doc-verbose:
 	
 ifeq ($(_HAS_XSDOCGEN),true)
 	@echo $(call _PRINT,XSDoc,universal,Generating the documentation)
+	@/usr/local/bin/XSDocgen \
+	@    --clear \
+	@    --source XSFoundation/include \
+	@    --output Documentation \
+	@    --exclude-file HeaderDoc-Exclude.txt \
+	@    --project-name "XSFoundation" \
+	@    --project-copyright "XS-Labs &copy; %Y - All Rights Reserved" \
+	@    --project-version "2.0.0-0" \
+	@    --project-timezone "Europe/Zurich" \
+	@    --company-name "XS-Labs" \
+	@    --company-url "http://www.xs-labs.com/" \
+	@    --page-home "Pages/Home.inc.php" \
+	@    --source-root-prefix "/XSFoundation/include/" \
+	@    --classes-prefix "XSFoundation/include/XS/Classes/" \
+	@    --functions-prefix "XSFoundation/include/XS/Functions/" \
+	@    --types-prefix "XSFoundation/include/XS/XSTypes/" \
+	@    --page-add "Building XSFoundation" "Pages/Build.inc.php" \
+	@    --page-add "Memory management" "Pages/Memory.inc.php" \
+	@    --page-add "Class definition" "Pages/Classes.inc.php" \
+	@    --verbose
 else
 	@echo $(call _PRINT,XSDoc,universal,Skipping documentation generation - XSDocgen is not installed)
 endif
