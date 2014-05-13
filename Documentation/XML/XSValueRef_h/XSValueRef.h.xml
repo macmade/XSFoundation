@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xs_ref/doc/header/XSValueRef.h" lang="c" filename="XSValueRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSValueRef.h"><name>XSValueRef.h</name>
+<header id="//apple_ref/doc/header/XSValueRef.h" lang="c" filename="XSValueRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSValueRef.h"><name>XSValueRef.h</name>
 <abstract><p>XSValue class
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
 </attributes>
 <includes>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
 <desc><p>...
 </p></desc>
-<functions><function id="//xs_ref/c/func/XSValue_CreateWithEdgeInsets" lang="c"><name>XSValue_CreateWithEdgeInsets</name>
+<functions><function id="//apple_ref/c/func/XSValue_CreateWithEdgeInsets" lang="c"><name>XSValue_CreateWithEdgeInsets</name>
 <abstract><p>Creates an XSValue object from an XSEdgeInsets value
 </p></abstract>
 <parameterlist>
@@ -26,7 +26,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSValueRef</declaration_type> <declaration_function>XSValue_CreateWithEdgeInsets</declaration_function>(
     <declaration_type>XSEdgeInsets</declaration_type> <declaration_param>insets</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSValue_CreateWithPoint" lang="c"><name>XSValue_CreateWithPoint</name>
+</function><function id="//apple_ref/c/func/XSValue_CreateWithPoint" lang="c"><name>XSValue_CreateWithPoint</name>
 <abstract><p>Creates an XSValue object from an XSPoint value
 </p></abstract>
 <parameterlist>
@@ -41,7 +41,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSValueRef</declaration_type> <declaration_function>XSValue_CreateWithPoint</declaration_function>(
     <declaration_type>XSPoint</declaration_type> <declaration_param>point</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSValue_CreateWithPointer" lang="c"><name>XSValue_CreateWithPointer</name>
+</function><function id="//apple_ref/c/func/XSValue_CreateWithPointer" lang="c"><name>XSValue_CreateWithPointer</name>
 <abstract><p>Creates an XSValue object from a pointer
 </p></abstract>
 <parameterlist>
@@ -59,7 +59,7 @@
     <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>pointer</declaration_param>,
     <declaration_type>XSObjectAssociation</declaration_type> <declaration_param>association</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSValue_CreateWithRange" lang="c"><name>XSValue_CreateWithRange</name>
+</function><function id="//apple_ref/c/func/XSValue_CreateWithRange" lang="c"><name>XSValue_CreateWithRange</name>
 <abstract><p>Creates an XSValue object from an XSRange value
 </p></abstract>
 <parameterlist>
@@ -74,7 +74,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSValueRef</declaration_type> <declaration_function>XSValue_CreateWithRange</declaration_function>(
     <declaration_type>XSRange</declaration_type> <declaration_param>range</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSValue_CreateWithRect" lang="c"><name>XSValue_CreateWithRect</name>
+</function><function id="//apple_ref/c/func/XSValue_CreateWithRect" lang="c"><name>XSValue_CreateWithRect</name>
 <abstract><p>Creates an XSValue object from an XSRect value
 </p></abstract>
 <parameterlist>
@@ -89,7 +89,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSValueRef</declaration_type> <declaration_function>XSValue_CreateWithRect</declaration_function>(
     <declaration_type>XSRect</declaration_type> <declaration_param>rect</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSValue_CreateWithSize" lang="c"><name>XSValue_CreateWithSize</name>
+</function><function id="//apple_ref/c/func/XSValue_CreateWithSize" lang="c"><name>XSValue_CreateWithSize</name>
 <abstract><p>Creates an XSValue object from an XSSize value
 </p></abstract>
 <parameterlist>
@@ -104,7 +104,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSValueRef</declaration_type> <declaration_function>XSValue_CreateWithSize</declaration_function>(
     <declaration_type>XSSize</declaration_type> <declaration_param>size</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSValue_GetClassID" lang="c"><name>XSValue_GetClassID</name>
+</function><function id="//apple_ref/c/func/XSValue_GetClassID" lang="c"><name>XSValue_GetClassID</name>
 <abstract><p>Gets the class ID for XSValue
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSClassID</returntype>
@@ -113,7 +113,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSClassID</declaration_type> <declaration_function>XSValue_GetClassID</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSValue_GetEdgeInsetsValue" lang="c"><name>XSValue_GetEdgeInsetsValue</name>
+</function><function id="//apple_ref/c/func/XSValue_GetEdgeInsetsValue" lang="c"><name>XSValue_GetEdgeInsetsValue</name>
 <abstract><p>Gets the XSEdgeInsets value of an XSValue object
 </p></abstract>
 <parameterlist>
@@ -128,7 +128,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSEdgeInsets</declaration_type> <declaration_function>XSValue_GetEdgeInsetsValue</declaration_function>(
     <declaration_type>XSValueRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSValue_GetPointerValue" lang="c"><name>XSValue_GetPointerValue</name>
+</function><function id="//apple_ref/c/func/XSValue_GetPointerValue" lang="c"><name>XSValue_GetPointerValue</name>
 <abstract><p>Gets the pointer value of an XSValue object
 </p></abstract>
 <parameterlist>
@@ -143,7 +143,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSValue_GetPointerValue</declaration_function>(
     <declaration_type>XSValueRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSValue_GetPointValue" lang="c"><name>XSValue_GetPointValue</name>
+</function><function id="//apple_ref/c/func/XSValue_GetPointValue" lang="c"><name>XSValue_GetPointValue</name>
 <abstract><p>Gets the XSPoint value of an XSValue object
 </p></abstract>
 <parameterlist>
@@ -158,7 +158,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSPoint</declaration_type> <declaration_function>XSValue_GetPointValue</declaration_function>(
     <declaration_type>XSValueRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSValue_GetRangeValue" lang="c"><name>XSValue_GetRangeValue</name>
+</function><function id="//apple_ref/c/func/XSValue_GetRangeValue" lang="c"><name>XSValue_GetRangeValue</name>
 <abstract><p>Gets the XSRange value of an XSValue object
 </p></abstract>
 <parameterlist>
@@ -173,7 +173,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSRange</declaration_type> <declaration_function>XSValue_GetRangeValue</declaration_function>(
     <declaration_type>XSValueRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSValue_GetRectValue" lang="c"><name>XSValue_GetRectValue</name>
+</function><function id="//apple_ref/c/func/XSValue_GetRectValue" lang="c"><name>XSValue_GetRectValue</name>
 <abstract><p>Gets the XSRect value of an XSValue object
 </p></abstract>
 <parameterlist>
@@ -188,7 +188,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSRect</declaration_type> <declaration_function>XSValue_GetRectValue</declaration_function>(
     <declaration_type>XSValueRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSValue_GetSizeValue" lang="c"><name>XSValue_GetSizeValue</name>
+</function><function id="//apple_ref/c/func/XSValue_GetSizeValue" lang="c"><name>XSValue_GetSizeValue</name>
 <abstract><p>Gets the XSSize value of an XSValue object
 </p></abstract>
 <parameterlist>
@@ -203,7 +203,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSSize</declaration_type> <declaration_function>XSValue_GetSizeValue</declaration_function>(
     <declaration_type>XSValueRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSValue_GetValueType" lang="c"><name>XSValue_GetValueType</name>
+</function><function id="//apple_ref/c/func/XSValue_GetValueType" lang="c"><name>XSValue_GetValueType</name>
 <abstract><p>Gets the value type of an XSValue object
 </p></abstract>
 <parameterlist>
@@ -218,7 +218,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSValue_ValueType</declaration_type> <declaration_function>XSValue_GetValueType</declaration_function>(
     <declaration_type>XSValueRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSValue_ValueWithEdgeInsets" lang="c"><name>XSValue_ValueWithEdgeInsets</name>
+</function><function id="//apple_ref/c/func/XSValue_ValueWithEdgeInsets" lang="c"><name>XSValue_ValueWithEdgeInsets</name>
 <abstract><p>Gets an XSValue object from an XSEdgeInsets value
 </p></abstract>
 <parameterlist>
@@ -233,7 +233,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSValueRef</declaration_type> <declaration_function>XSValue_ValueWithEdgeInsets</declaration_function>(
     <declaration_type>XSEdgeInsets</declaration_type> <declaration_param>insets</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSValue_ValueWithPoint" lang="c"><name>XSValue_ValueWithPoint</name>
+</function><function id="//apple_ref/c/func/XSValue_ValueWithPoint" lang="c"><name>XSValue_ValueWithPoint</name>
 <abstract><p>Gets an XSValue object from an XSPoint value
 </p></abstract>
 <parameterlist>
@@ -248,7 +248,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSValueRef</declaration_type> <declaration_function>XSValue_ValueWithPoint</declaration_function>(
     <declaration_type>XSPoint</declaration_type> <declaration_param>point</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSValue_ValueWithPointer" lang="c"><name>XSValue_ValueWithPointer</name>
+</function><function id="//apple_ref/c/func/XSValue_ValueWithPointer" lang="c"><name>XSValue_ValueWithPointer</name>
 <abstract><p>Gets an XSValue object from a pointer
 </p></abstract>
 <parameterlist>
@@ -266,7 +266,7 @@
     <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>pointer</declaration_param>,
     <declaration_type>XSObjectAssociation</declaration_type> <declaration_param>association</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSValue_ValueWithRange" lang="c"><name>XSValue_ValueWithRange</name>
+</function><function id="//apple_ref/c/func/XSValue_ValueWithRange" lang="c"><name>XSValue_ValueWithRange</name>
 <abstract><p>Gets an XSValue object from an XSRange value
 </p></abstract>
 <parameterlist>
@@ -281,7 +281,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSValueRef</declaration_type> <declaration_function>XSValue_ValueWithRange</declaration_function>(
     <declaration_type>XSRange</declaration_type> <declaration_param>range</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSValue_ValueWithRect" lang="c"><name>XSValue_ValueWithRect</name>
+</function><function id="//apple_ref/c/func/XSValue_ValueWithRect" lang="c"><name>XSValue_ValueWithRect</name>
 <abstract><p>Gets an XSValue object from an XSRect value
 </p></abstract>
 <parameterlist>
@@ -296,7 +296,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSValueRef</declaration_type> <declaration_function>XSValue_ValueWithRect</declaration_function>(
     <declaration_type>XSRect</declaration_type> <declaration_param>rect</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSValue_ValueWithSize" lang="c"><name>XSValue_ValueWithSize</name>
+</function><function id="//apple_ref/c/func/XSValue_ValueWithSize" lang="c"><name>XSValue_ValueWithSize</name>
 <abstract><p>Gets an XSValue object from an XSSize value
 </p></abstract>
 <parameterlist>
@@ -312,7 +312,7 @@
     <declaration_type>XSSize</declaration_type> <declaration_param>size</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function></functions>
-<typedefs><typedef id="//xs_ref/c/tdef/XSValue_ValueType" lang="c" type="simple"><name>XSValue_ValueType</name>
+<typedefs><typedef id="//apple_ref/c/tdef/XSValue_ValueType" lang="c" type="simple"><name>XSValue_ValueType</name>
 <abstract><p>Value type for XSValue objects
 </p></abstract>
 <constantlist>
@@ -349,12 +349,12 @@
     <declaration_var>XSValue_ValueTypeRange</declaration_var> = <declaration_number>0x06</declaration_number> <declaration_comment>/*! XSRange value */</declaration_comment>
 } <declaration_var>XSValue_ValueType</declaration_var>;  </declaration>
 <desc><p/></desc>
-</typedef><typedef id="//xs_ref/c/tdef/XSValueRef" lang="c" type="simple"><name>XSValueRef</name>
+</typedef><typedef id="//apple_ref/c/tdef/XSValueRef" lang="c" type="simple"><name>XSValueRef</name>
 <abstract><p>Opaque type for XSValue
 </p></abstract>
 <declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSValue</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSValueRef</declaration_var>;  </declaration>
 <desc><p/></desc>
 </typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, May 07, 2014</timestamp>
+<timestamp>Tuesday, May 13, 2014</timestamp>
 </header>

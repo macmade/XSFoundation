@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xs_ref/doc/header/XSClassType.h" lang="c" filename="XSClassType.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSTypes/XSClassType.h"><name>XSClassType.h</name>
+<header id="//apple_ref/doc/header/XSClassType.h" lang="c" filename="XSClassType.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSTypes/XSClassType.h"><name>XSClassType.h</name>
 <abstract><p>XSClassType type definition
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
@@ -9,7 +9,7 @@
 </includes>
 <desc><p>...
 </p></desc>
-<typedefs><typedef id="//xs_ref/c/tdef/XSClassType" lang="c" type="simple"><name>XSClassType</name>
+<typedefs><typedef id="//apple_ref/c/tdef/XSClassType" lang="c" type="simple"><name>XSClassType</name>
 <abstract><p>Types for XSFoundation classes
 </p></abstract>
 <constantlist>
@@ -35,5 +35,5 @@
 <desc><p/></desc>
 </typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, May 07, 2014</timestamp>
+<timestamp>Tuesday, May 13, 2014</timestamp>
 </header>

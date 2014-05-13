@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xs_ref/doc/header/XSGeometry-XSRange.h" lang="c" filename="XSGeometry-XSRange.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Functions/XSGeometry-XSRange.h"><name>XSGeometry-XSRange.h</name>
+<header id="//apple_ref/doc/header/XSGeometry-XSRange.h" lang="c" filename="XSGeometry-XSRange.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Functions/XSGeometry-XSRange.h"><name>XSGeometry-XSRange.h</name>
 <abstract><p>XSRange functions
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
 </attributes>
 <includes>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 </includes>
 <desc><p>...
 </p></desc>
-<functions><function id="//xs_ref/c/func/XSRange_Intersection" lang="c"><name>XSRange_Intersection</name>
+<functions><function id="//apple_ref/c/func/XSRange_Intersection" lang="c"><name>XSRange_Intersection</name>
 <abstract><p>Returns the intersection of the specified ranges
 </p></abstract>
 <parameterlist>
@@ -28,7 +28,7 @@
     <declaration_type>XSRange</declaration_type> <declaration_param>r1</declaration_param>,
     <declaration_type>XSRange</declaration_type> <declaration_param>r2</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRange_IsEqualToRange" lang="c"><name>XSRange_IsEqualToRange</name>
+</function><function id="//apple_ref/c/func/XSRange_IsEqualToRange" lang="c"><name>XSRange_IsEqualToRange</name>
 <abstract><p>Checks if two ranges are equal
 </p></abstract>
 <parameterlist>
@@ -46,7 +46,7 @@
     <declaration_type>XSRange</declaration_type> <declaration_param>r1</declaration_param>,
     <declaration_type>XSRange</declaration_type> <declaration_param>r2</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRange_LocationInRange" lang="c"><name>XSRange_LocationInRange</name>
+</function><function id="//apple_ref/c/func/XSRange_LocationInRange" lang="c"><name>XSRange_LocationInRange</name>
 <abstract><p>Checks whether a specified position is in a given range
 </p></abstract>
 <parameterlist>
@@ -64,7 +64,7 @@
     <declaration_type>XSUInteger</declaration_type> <declaration_param>location</declaration_param>,
     <declaration_type>XSRange</declaration_type> <declaration_param>range</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRange_Make" lang="c"><name>XSRange_Make</name>
+</function><function id="//apple_ref/c/func/XSRange_Make" lang="c"><name>XSRange_Make</name>
 <abstract><p>Creates an range with the specified location and length
 </p></abstract>
 <parameterlist>
@@ -82,7 +82,7 @@
     <declaration_type>XSUInteger</declaration_type> <declaration_param>location</declaration_param>,
     <declaration_type>XSUInteger</declaration_type> <declaration_param>length</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRange_Max" lang="c"><name>XSRange_Max</name>
+</function><function id="//apple_ref/c/func/XSRange_Max" lang="c"><name>XSRange_Max</name>
 <abstract><p>Returns the sum of the location and length of the range
 </p></abstract>
 <parameterlist>
@@ -97,7 +97,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSUInteger</declaration_type> <declaration_function>XSRange_Max</declaration_function>(
     <declaration_type>XSRange</declaration_type> <declaration_param>range</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRange_Union" lang="c"><name>XSRange_Union</name>
+</function><function id="//apple_ref/c/func/XSRange_Union" lang="c"><name>XSRange_Union</name>
 <abstract><p>Returns the union of the specified ranges
 </p></abstract>
 <parameterlist>
@@ -117,7 +117,7 @@
 <desc><p>If one range is completely contained in the other, the returned
 range is equal to the larger range.
 </p></desc>
-</function><function id="//xs_ref/c/func/XSRange_Zero" lang="c"><name>XSRange_Zero</name>
+</function><function id="//apple_ref/c/func/XSRange_Zero" lang="c"><name>XSRange_Zero</name>
 <abstract><p>Creates a range with zero location and length
 </p></abstract>
 <returntype> XS_EXPORT XSRange</returntype>
@@ -129,5 +129,5 @@ range is equal to the larger range.
 </function></functions>
 <copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, May 07, 2014</timestamp>
+<timestamp>Tuesday, May 13, 2014</timestamp>
 </header>

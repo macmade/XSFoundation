@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xs_ref/doc/header/XSInteger.h" lang="c" filename="XSInteger.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSTypes/XSInteger.h"><name>XSInteger.h</name>
+<header id="//apple_ref/doc/header/XSInteger.h" lang="c" filename="XSInteger.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSTypes/XSInteger.h"><name>XSInteger.h</name>
 <abstract><p>XSInteger type definition
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
@@ -9,7 +9,7 @@
 </includes>
 <desc><p>...
 </p></desc>
-<typedefs><typedef id="//xs_ref/c/tdef/XSInteger" lang="c" type="simple"><name>XSInteger</name>
+<typedefs><typedef id="//apple_ref/c/tdef/XSInteger" lang="c" type="simple"><name>XSInteger</name>
 <abstract><p>Signed integer type
 </p></abstract>
 <declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>__LP64__</declaration_preprocessor> 
@@ -19,7 +19,7 @@
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
 <desc><p/></desc>
-</typedef></typedefs><defines><pdefine id="//xs_ref/c/macro/XSIntegerMax" definetype="block" lang="c"><name>XSIntegerMax</name>
+</typedef></typedefs><defines><pdefine id="//apple_ref/c/macro/XSIntegerMax" definetype="block" lang="c"><name>XSIntegerMax</name>
 <abstract><p>Maximum value for XSInteger
 </p></abstract>
 <declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>__LP64__</declaration_preprocessor> 
@@ -28,7 +28,7 @@
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSIntegerMax</declaration_preprocessor> <declaration_preprocessor>0x7FFFFFFF</declaration_preprocessor> 
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/XSIntegerMin" definetype="block" lang="c"><name>XSIntegerMin</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XSIntegerMin" definetype="block" lang="c"><name>XSIntegerMin</name>
 <abstract><p>Minimum value for XSInteger
 </p></abstract>
 <declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>__LP64__</declaration_preprocessor> 
@@ -39,5 +39,5 @@
 </declaration>
 </pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, May 07, 2014</timestamp>
+<timestamp>Tuesday, May 13, 2014</timestamp>
 </header>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xs_ref/doc/header/XSStackRef.h" lang="c" filename="XSStackRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSStackRef.h"><name>XSStackRef.h</name>
+<header id="//apple_ref/doc/header/XSStackRef.h" lang="c" filename="XSStackRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSStackRef.h"><name>XSStackRef.h</name>
 <abstract><p>XSStack class
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
 </attributes>
 <includes>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
 <desc><p>...
 </p></desc>
-<functions><function id="//xs_ref/c/func/XSStack_Create" lang="c"><name>XSStack_Create</name>
+<functions><function id="//apple_ref/c/func/XSStack_Create" lang="c"><name>XSStack_Create</name>
 <abstract><p>Creates a stack object
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSStackRef</returntype>
@@ -20,7 +20,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSStackRef</declaration_type> <declaration_function>XSStack_Create</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSStack_GetClassID" lang="c"><name>XSStack_GetClassID</name>
+</function><function id="//apple_ref/c/func/XSStack_GetClassID" lang="c"><name>XSStack_GetClassID</name>
 <abstract><p>Gets the class ID for XSStack
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSClassID</returntype>
@@ -29,7 +29,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSClassID</declaration_type> <declaration_function>XSStack_GetClassID</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSStack_GetCount" lang="c"><name>XSStack_GetCount</name>
+</function><function id="//apple_ref/c/func/XSStack_GetCount" lang="c"><name>XSStack_GetCount</name>
 <abstract><p>Gets the number of object in a XSStackRef object
 </p></abstract>
 <parameterlist>
@@ -44,7 +44,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSUInteger</declaration_type> <declaration_function>XSStack_GetCount</declaration_function>(
     <declaration_type>XSStackRef</declaration_type> <declaration_param>stack</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSStack_Pop" lang="c"><name>XSStack_Pop</name>
+</function><function id="//apple_ref/c/func/XSStack_Pop" lang="c"><name>XSStack_Pop</name>
 <abstract><p>Pops an object from a XSStackRef object
 </p></abstract>
 <parameterlist>
@@ -59,7 +59,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSObjectRef</declaration_type> <declaration_function>XSStack_Pop</declaration_function>(
     <declaration_type>XSStackRef</declaration_type> <declaration_param>stack</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSStack_Push" lang="c"><name>XSStack_Push</name>
+</function><function id="//apple_ref/c/func/XSStack_Push" lang="c"><name>XSStack_Push</name>
 <abstract><p>Pushes an object in a XSStackRef object
 </p></abstract>
 <parameterlist>
@@ -76,7 +76,7 @@
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function></functions>
-<typedefs><typedef id="//xs_ref/c/tdef/XSStackRef" lang="c" type="simple"><name>XSStackRef</name>
+<typedefs><typedef id="//apple_ref/c/tdef/XSStackRef" lang="c" type="simple"><name>XSStackRef</name>
 <abstract><p>Opaque type for XSStack
 </p></abstract>
 <declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSStack</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSStackRef</declaration_var>;  </declaration>
@@ -84,5 +84,5 @@
 </p></desc>
 </typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, May 07, 2014</timestamp>
+<timestamp>Tuesday, May 13, 2014</timestamp>
 </header>

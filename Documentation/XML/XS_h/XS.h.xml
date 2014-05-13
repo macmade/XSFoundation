@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xs_ref/doc/header/XS.h" lang="c" filename="XS.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XS.h"><name>XS.h</name>
+<header id="//apple_ref/doc/header/XS.h" lang="c" filename="XS.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XS.h"><name>XS.h</name>
 <abstract><p>XSFoundation main include file
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
 </attributes>
 <includes>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSWarnings.h">&lt;XS/__private/XSWarnings.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XS-STD.h">&lt;XS/XS-STD.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSMacros-X.h">&lt;XS/XSMacros-X.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSAtomic.h">&lt;XS/Functions/XSAtomic.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSMemory.h">&lt;XS/Functions/XSMemory.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSRuntime.h">&lt;XS/Functions/XSRuntime.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSProcess.h">&lt;XS/Functions/XSProcess.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSThreading.h">&lt;XS/Functions/XSThreading.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSLog.h">&lt;XS/Functions/XSLog.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSMath.h">&lt;XS/Functions/XSMath.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSGeometry.h">&lt;XS/Functions/XSGeometry.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSSort.h">&lt;XS/Functions/XSSort.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSArrayRef.h">&lt;XS/Classes/XSArrayRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSAutoreleasePoolRef.h">&lt;XS/Classes/XSAutoreleasePoolRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSBagRef.h">&lt;XS/Classes/XSBagRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSBinaryTreeRef.h">&lt;XS/Classes/XSBinaryTreeRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSBooleanRef.h">&lt;XS/Classes/XSBooleanRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSColorRef.h">&lt;XS/Classes/XSColorRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSDataRef.h">&lt;XS/Classes/XSDataRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSDateRef.h">&lt;XS/Classes/XSDateRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSDictionaryRef.h">&lt;XS/Classes/XSDictionaryRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSErrorRef.h">&lt;XS/Classes/XSErrorRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSFileRef.h">&lt;XS/Classes/XSFileRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSLockRef.h">&lt;XS/Classes/XSLockRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSNodeRef.h">&lt;XS/Classes/XSNodeRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSNotificationRef.h">&lt;XS/Classes/XSNotificationRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSNotificationCenterRef.h">&lt;XS/Classes/XSNotificationCenterRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSNullRef.h">&lt;XS/Classes/XSNullRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSNumberRef.h">&lt;XS/Classes/XSNumberRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSOrderedSetRef.h">&lt;XS/Classes/XSOrderedSetRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSPrimitiveArrayRef.h">&lt;XS/Classes/XSPrimitiveArrayRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSRecursiveLockRef.h">&lt;XS/Classes/XSRecursiveLockRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSSemaphoreRef.h">&lt;XS/Classes/XSSemaphoreRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSSetRef.h">&lt;XS/Classes/XSSetRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSStackRef.h">&lt;XS/Classes/XSStackRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSStringRef.h">&lt;XS/Classes/XSStringRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSThreadRef.h">&lt;XS/Classes/XSThreadRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSURLRef.h">&lt;XS/Classes/XSURLRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSValueRef.h">&lt;XS/Classes/XSValueRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSWarnings.h">&lt;XS/__private/XSWarnings.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XS-STD.h">&lt;XS/XS-STD.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSMacros-X.h">&lt;XS/XSMacros-X.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSAtomic.h">&lt;XS/Functions/XSAtomic.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSMemory.h">&lt;XS/Functions/XSMemory.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSRuntime.h">&lt;XS/Functions/XSRuntime.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSProcess.h">&lt;XS/Functions/XSProcess.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSThreading.h">&lt;XS/Functions/XSThreading.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSLog.h">&lt;XS/Functions/XSLog.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSMath.h">&lt;XS/Functions/XSMath.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSGeometry.h">&lt;XS/Functions/XSGeometry.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSSort.h">&lt;XS/Functions/XSSort.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSArrayRef.h">&lt;XS/Classes/XSArrayRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSAutoreleasePoolRef.h">&lt;XS/Classes/XSAutoreleasePoolRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSBagRef.h">&lt;XS/Classes/XSBagRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSBinaryTreeRef.h">&lt;XS/Classes/XSBinaryTreeRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSBooleanRef.h">&lt;XS/Classes/XSBooleanRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSColorRef.h">&lt;XS/Classes/XSColorRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSDataRef.h">&lt;XS/Classes/XSDataRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSDateRef.h">&lt;XS/Classes/XSDateRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSDictionaryRef.h">&lt;XS/Classes/XSDictionaryRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSErrorRef.h">&lt;XS/Classes/XSErrorRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSFileRef.h">&lt;XS/Classes/XSFileRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSLockRef.h">&lt;XS/Classes/XSLockRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSNodeRef.h">&lt;XS/Classes/XSNodeRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSNotificationRef.h">&lt;XS/Classes/XSNotificationRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSNotificationCenterRef.h">&lt;XS/Classes/XSNotificationCenterRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSNullRef.h">&lt;XS/Classes/XSNullRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSNumberRef.h">&lt;XS/Classes/XSNumberRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSOrderedSetRef.h">&lt;XS/Classes/XSOrderedSetRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSPrimitiveArrayRef.h">&lt;XS/Classes/XSPrimitiveArrayRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSRecursiveLockRef.h">&lt;XS/Classes/XSRecursiveLockRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSSemaphoreRef.h">&lt;XS/Classes/XSSemaphoreRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSSetRef.h">&lt;XS/Classes/XSSetRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSStackRef.h">&lt;XS/Classes/XSStackRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSStringRef.h">&lt;XS/Classes/XSStringRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSThreadRef.h">&lt;XS/Classes/XSThreadRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSURLRef.h">&lt;XS/Classes/XSURLRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSValueRef.h">&lt;XS/Classes/XSValueRef.h&gt;</hd_link></include>
 </includes>
 <desc><p>This file should be included on projects using the XEOS C
 Foundation Library. Other header files should never be included
@@ -54,5 +54,5 @@ directly.
 </p></desc>
 <copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, May 07, 2014</timestamp>
+<timestamp>Tuesday, May 13, 2014</timestamp>
 </header>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xs_ref/doc/header/XSThreadRef.h" lang="c" filename="XSThreadRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSThreadRef.h"><name>XSThreadRef.h</name>
+<header id="//apple_ref/doc/header/XSThreadRef.h" lang="c" filename="XSThreadRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSThreadRef.h"><name>XSThreadRef.h</name>
 <abstract><p>XSThread class
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
 </attributes>
 <includes>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
 <desc><p>...
 </p></desc>
-<functions><function id="//xs_ref/c/func/XSThread_DetachFunction" lang="c"><name>XSThread_DetachFunction</name>
+<functions><function id="//apple_ref/c/func/XSThread_DetachFunction" lang="c"><name>XSThread_DetachFunction</name>
 <abstract><p>Creates a thread with an object's method as entry point
 </p></abstract>
 <parameterlist>
@@ -24,7 +24,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSThread_DetachFunction</declaration_function>(
     <declaration_type>XSThread_Function</declaration_type> <declaration_param>func</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSThread_DetachFunctionWithArgument" lang="c"><name>XSThread_DetachFunctionWithArgument</name>
+</function><function id="//apple_ref/c/func/XSThread_DetachFunctionWithArgument" lang="c"><name>XSThread_DetachFunctionWithArgument</name>
 <abstract><p>Creates a thread with an object's method as entry point and with an argument
 </p></abstract>
 <parameterlist>
@@ -40,7 +40,7 @@
     <declaration_type>XSThread_FunctionWithArgument</declaration_type> <declaration_param>func</declaration_param>,
     <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>arg</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSThread_DetachMethod" lang="c"><name>XSThread_DetachMethod</name>
+</function><function id="//apple_ref/c/func/XSThread_DetachMethod" lang="c"><name>XSThread_DetachMethod</name>
 <abstract><p>Creates a thread with an object's method as entry point
 </p></abstract>
 <parameterlist>
@@ -56,7 +56,7 @@
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSThread_Method</declaration_type> <declaration_param>method</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSThread_DetachMethodWithArgument" lang="c"><name>XSThread_DetachMethodWithArgument</name>
+</function><function id="//apple_ref/c/func/XSThread_DetachMethodWithArgument" lang="c"><name>XSThread_DetachMethodWithArgument</name>
 <abstract><p>Creates a thread with an object's method as entry point and with an argument
 </p></abstract>
 <parameterlist>
@@ -75,7 +75,7 @@
     <declaration_type>XSThread_MethodWithArgument</declaration_type> <declaration_param>method</declaration_param>,
     <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>arg</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSThread_GetClassID" lang="c"><name>XSThread_GetClassID</name>
+</function><function id="//apple_ref/c/func/XSThread_GetClassID" lang="c"><name>XSThread_GetClassID</name>
 <abstract><p>Gets the class ID for XSThread
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSClassID</returntype>
@@ -84,7 +84,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSClassID</declaration_type> <declaration_function>XSThread_GetClassID</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSThread_GetCurrentThread" lang="c"><name>XSThread_GetCurrentThread</name>
+</function><function id="//apple_ref/c/func/XSThread_GetCurrentThread" lang="c"><name>XSThread_GetCurrentThread</name>
 <abstract><p>Gets the instance of the current thread
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSThreadRef</returntype>
@@ -93,7 +93,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSThreadRef</declaration_type> <declaration_function>XSThread_GetCurrentThread</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSThread_GetCurrentThreadID" lang="c"><name>XSThread_GetCurrentThreadID</name>
+</function><function id="//apple_ref/c/func/XSThread_GetCurrentThreadID" lang="c"><name>XSThread_GetCurrentThreadID</name>
 <abstract><p>Gets the instance of the current thread
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSUInteger</returntype>
@@ -102,7 +102,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSUInteger</declaration_type> <declaration_function>XSThread_GetCurrentThreadID</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSThread_GetID" lang="c"><name>XSThread_GetID</name>
+</function><function id="//apple_ref/c/func/XSThread_GetID" lang="c"><name>XSThread_GetID</name>
 <abstract><p>Gets the ID of a thread
 </p></abstract>
 <parameterlist>
@@ -117,7 +117,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSUInteger</declaration_type> <declaration_function>XSThread_GetID</declaration_function>(
     <declaration_type>XSThreadRef</declaration_type> <declaration_param>thread</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSThread_GetMainThread" lang="c"><name>XSThread_GetMainThread</name>
+</function><function id="//apple_ref/c/func/XSThread_GetMainThread" lang="c"><name>XSThread_GetMainThread</name>
 <abstract><p>Gets the instance of the main thread
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSThreadRef</returntype>
@@ -126,7 +126,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSThreadRef</declaration_type> <declaration_function>XSThread_GetMainThread</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSThread_IsMainThread" lang="c"><name>XSThread_IsMainThread</name>
+</function><function id="//apple_ref/c/func/XSThread_IsMainThread" lang="c"><name>XSThread_IsMainThread</name>
 <abstract><p>Checks if a thread is the main thread
 </p></abstract>
 <parameterlist>
@@ -142,13 +142,13 @@
     <declaration_type>XSThreadRef</declaration_type> <declaration_param>thread</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function></functions>
-<typedefs><typedef id="//xs_ref/c/tdef/XSThread_Function" lang="c" type="funcPtr"><name>XSThread_Function</name>
+<typedefs><typedef id="//apple_ref/c/tdef/XSThread_Function" lang="c" type="funcPtr"><name>XSThread_Function</name>
 <abstract><p>Threaded function
 </p></abstract>
 <declaration><declaration_keyword>typedef</declaration_keyword> <declaration_type>void</declaration_type> ( <declaration_type>*</declaration_type><declaration_function>XSThread_Function</declaration_function> )(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</typedef><typedef id="//xs_ref/c/tdef/XSThread_FunctionWithArgument" lang="c" type="funcPtr"><name>XSThread_FunctionWithArgument</name>
+</typedef><typedef id="//apple_ref/c/tdef/XSThread_FunctionWithArgument" lang="c" type="funcPtr"><name>XSThread_FunctionWithArgument</name>
 <abstract><p>Threaded function with an argument
 </p></abstract>
 <parsedparameterlist>
@@ -157,7 +157,7 @@
 <declaration><declaration_keyword>typedef</declaration_keyword> <declaration_type>void</declaration_type> ( <declaration_type>*</declaration_type><declaration_function>XSThread_FunctionWithArgument</declaration_function> )(
     <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>arg</declaration_param> );  </declaration>
 <desc><p/></desc>
-</typedef><typedef id="//xs_ref/c/tdef/XSThread_Method" lang="c" type="funcPtr"><name>XSThread_Method</name>
+</typedef><typedef id="//apple_ref/c/tdef/XSThread_Method" lang="c" type="funcPtr"><name>XSThread_Method</name>
 <abstract><p>Threaded method
 </p></abstract>
 <parsedparameterlist>
@@ -166,7 +166,7 @@
 <declaration><declaration_keyword>typedef</declaration_keyword> <declaration_type>void</declaration_type> ( <declaration_type>*</declaration_type><declaration_function>XSThread_Method</declaration_function> )(
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</typedef><typedef id="//xs_ref/c/tdef/XSThread_MethodWithArgument" lang="c" type="funcPtr"><name>XSThread_MethodWithArgument</name>
+</typedef><typedef id="//apple_ref/c/tdef/XSThread_MethodWithArgument" lang="c" type="funcPtr"><name>XSThread_MethodWithArgument</name>
 <abstract><p>Threaded method with an argument
 </p></abstract>
 <parsedparameterlist>
@@ -177,12 +177,12 @@
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>arg</declaration_param> );  </declaration>
 <desc><p/></desc>
-</typedef><typedef id="//xs_ref/c/tdef/XSThreadRef" lang="c" type="simple"><name>XSThreadRef</name>
+</typedef><typedef id="//apple_ref/c/tdef/XSThreadRef" lang="c" type="simple"><name>XSThreadRef</name>
 <abstract><p>Opaque type for XSThread
 </p></abstract>
 <declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSThread</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSThreadRef</declaration_var>;  </declaration>
 <desc><p/></desc>
 </typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, May 07, 2014</timestamp>
+<timestamp>Tuesday, May 13, 2014</timestamp>
 </header>

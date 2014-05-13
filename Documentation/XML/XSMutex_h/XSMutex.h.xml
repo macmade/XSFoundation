@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xs_ref/doc/header/XSMutex.h" lang="c" filename="XSMutex.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSTypes/XSMutex.h"><name>XSMutex.h</name>
+<header id="//apple_ref/doc/header/XSMutex.h" lang="c" filename="XSMutex.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSTypes/XSMutex.h"><name>XSMutex.h</name>
 <abstract><p>XSMutex type definition
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
@@ -9,7 +9,7 @@
 </includes>
 <desc><p>...
 </p></desc>
-<typedefs><typedef id="//xs_ref/c/tdef/XSMutex" lang="c" type="simple"><name>XSMutex</name>
+<typedefs><typedef id="//apple_ref/c/tdef/XSMutex" lang="c" type="simple"><name>XSMutex</name>
 <abstract><p>Mutex type
 </p></abstract>
 <declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>_WIN32</declaration_preprocessor> 
@@ -19,7 +19,7 @@
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
 <desc><p/></desc>
-</typedef></typedefs><defines><pdefine id="//xs_ref/c/macro/XS_MUTEX_INITIALIZER" definetype="block" lang="c"><name>XS_MUTEX_INITIALIZER</name>
+</typedef></typedefs><defines><pdefine id="//apple_ref/c/macro/XS_MUTEX_INITIALIZER" definetype="block" lang="c"><name>XS_MUTEX_INITIALIZER</name>
 <abstract><p>Default initializer for mutex types
 </p></abstract>
 <declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>_WIN32</declaration_preprocessor> 
@@ -30,5 +30,5 @@
 </declaration>
 </pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, May 07, 2014</timestamp>
+<timestamp>Tuesday, May 13, 2014</timestamp>
 </header>

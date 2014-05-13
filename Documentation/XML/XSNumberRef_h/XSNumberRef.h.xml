@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xs_ref/doc/header/XSNumberRef.h" lang="c" filename="XSNumberRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSNumberRef.h"><name>XSNumberRef.h</name>
+<header id="//apple_ref/doc/header/XSNumberRef.h" lang="c" filename="XSNumberRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSNumberRef.h"><name>XSNumberRef.h</name>
 <abstract><p>XSNumber class
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
 </attributes>
 <includes>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
 <desc><p>...
 </p></desc>
-<functions><function id="//xs_ref/c/func/XSNumber_CompareWithNumber" lang="c"><name>XSNumber_CompareWithNumber</name>
+<functions><function id="//apple_ref/c/func/XSNumber_CompareWithNumber" lang="c"><name>XSNumber_CompareWithNumber</name>
 <abstract><p>Compares a number object with another number object
 </p></abstract>
 <parameterlist>
@@ -29,7 +29,7 @@
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param>,
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>otherNumber</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithBool" lang="c"><name>XSNumber_CreateWithBool</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithBool" lang="c"><name>XSNumber_CreateWithBool</name>
 <abstract><p>Creates a number object from a bool value
 </p></abstract>
 <parameterlist>
@@ -44,7 +44,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithBool</declaration_function>(
     <declaration_type>bool</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithChar" lang="c"><name>XSNumber_CreateWithChar</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithChar" lang="c"><name>XSNumber_CreateWithChar</name>
 <abstract><p>Creates a number object from a char value
 </p></abstract>
 <parameterlist>
@@ -59,7 +59,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithChar</declaration_function>(
     <declaration_type>char</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithDouble" lang="c"><name>XSNumber_CreateWithDouble</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithDouble" lang="c"><name>XSNumber_CreateWithDouble</name>
 <abstract><p>Creates a number object from a double value
 </p></abstract>
 <parameterlist>
@@ -74,7 +74,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithDouble</declaration_function>(
     <declaration_type>double</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithFloat" lang="c"><name>XSNumber_CreateWithFloat</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithFloat" lang="c"><name>XSNumber_CreateWithFloat</name>
 <abstract><p>Creates a number object from a float value
 </p></abstract>
 <parameterlist>
@@ -89,7 +89,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithFloat</declaration_function>(
     <declaration_type>float</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithInt" lang="c"><name>XSNumber_CreateWithInt</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithInt" lang="c"><name>XSNumber_CreateWithInt</name>
 <abstract><p>Creates a number object from a int value
 </p></abstract>
 <parameterlist>
@@ -104,7 +104,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithInt</declaration_function>(
     <declaration_type>int</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithLong" lang="c"><name>XSNumber_CreateWithLong</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithLong" lang="c"><name>XSNumber_CreateWithLong</name>
 <abstract><p>Creates a number object from a long value
 </p></abstract>
 <parameterlist>
@@ -119,7 +119,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithLong</declaration_function>(
     <declaration_type>long</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithShort" lang="c"><name>XSNumber_CreateWithShort</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithShort" lang="c"><name>XSNumber_CreateWithShort</name>
 <abstract><p>Creates a number object from a short value
 </p></abstract>
 <parameterlist>
@@ -134,7 +134,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithShort</declaration_function>(
     <declaration_type>short</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithUnsignedChar" lang="c"><name>XSNumber_CreateWithUnsignedChar</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithUnsignedChar" lang="c"><name>XSNumber_CreateWithUnsignedChar</name>
 <abstract><p>Creates a number object from an unsigned char value
 </p></abstract>
 <parameterlist>
@@ -149,7 +149,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithUnsignedChar</declaration_function>(
     <declaration_keyword>unsigned</declaration_keyword> <declaration_type>char</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithUnsignedInt" lang="c"><name>XSNumber_CreateWithUnsignedInt</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithUnsignedInt" lang="c"><name>XSNumber_CreateWithUnsignedInt</name>
 <abstract><p>Creates a number object from an unsigned int value
 </p></abstract>
 <parameterlist>
@@ -164,7 +164,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithUnsignedInt</declaration_function>(
     <declaration_keyword>unsigned</declaration_keyword> <declaration_type>int</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithUnsignedLong" lang="c"><name>XSNumber_CreateWithUnsignedLong</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithUnsignedLong" lang="c"><name>XSNumber_CreateWithUnsignedLong</name>
 <abstract><p>Creates a number object from an unsigned long value
 </p></abstract>
 <parameterlist>
@@ -179,7 +179,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithUnsignedLong</declaration_function>(
     <declaration_keyword>unsigned</declaration_keyword> <declaration_type>long</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithUnsignedShort" lang="c"><name>XSNumber_CreateWithUnsignedShort</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithUnsignedShort" lang="c"><name>XSNumber_CreateWithUnsignedShort</name>
 <abstract><p>Creates a number object from an unsigned short value
 </p></abstract>
 <parameterlist>
@@ -194,7 +194,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithUnsignedShort</declaration_function>(
     <declaration_keyword>unsigned</declaration_keyword> <declaration_type>short</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithXSFloat" lang="c"><name>XSNumber_CreateWithXSFloat</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithXSFloat" lang="c"><name>XSNumber_CreateWithXSFloat</name>
 <abstract><p>Creates a number object from an XSFloat value
 </p></abstract>
 <parameterlist>
@@ -209,7 +209,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithXSFloat</declaration_function>(
     <declaration_type>XSFloat</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithXSFloat32" lang="c"><name>XSNumber_CreateWithXSFloat32</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithXSFloat32" lang="c"><name>XSNumber_CreateWithXSFloat32</name>
 <abstract><p>Creates a number object from an XSFloat32 value
 </p></abstract>
 <parameterlist>
@@ -224,7 +224,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithXSFloat32</declaration_function>(
     <declaration_type>XSFloat32</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithXSFloat64" lang="c"><name>XSNumber_CreateWithXSFloat64</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithXSFloat64" lang="c"><name>XSNumber_CreateWithXSFloat64</name>
 <abstract><p>Creates a number object from an XSFloat64 value
 </p></abstract>
 <parameterlist>
@@ -239,7 +239,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithXSFloat64</declaration_function>(
     <declaration_type>XSFloat64</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithXSInt16" lang="c"><name>XSNumber_CreateWithXSInt16</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithXSInt16" lang="c"><name>XSNumber_CreateWithXSInt16</name>
 <abstract><p>Creates a number object from an XSInt16 value
 </p></abstract>
 <parameterlist>
@@ -254,7 +254,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithXSInt16</declaration_function>(
     <declaration_type>XSInt16</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithXSInt32" lang="c"><name>XSNumber_CreateWithXSInt32</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithXSInt32" lang="c"><name>XSNumber_CreateWithXSInt32</name>
 <abstract><p>Creates a number object from an XSInt32 value
 </p></abstract>
 <parameterlist>
@@ -269,7 +269,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithXSInt32</declaration_function>(
     <declaration_type>XSInt32</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithXSInt64" lang="c"><name>XSNumber_CreateWithXSInt64</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithXSInt64" lang="c"><name>XSNumber_CreateWithXSInt64</name>
 <abstract><p>Creates a number object from an XSInt64 value
 </p></abstract>
 <parameterlist>
@@ -284,7 +284,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithXSInt64</declaration_function>(
     <declaration_type>XSInt64</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithXSInt8" lang="c"><name>XSNumber_CreateWithXSInt8</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithXSInt8" lang="c"><name>XSNumber_CreateWithXSInt8</name>
 <abstract><p>Creates a number object from an XSInt8 value
 </p></abstract>
 <parameterlist>
@@ -299,7 +299,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithXSInt8</declaration_function>(
     <declaration_type>XSInt8</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithXSInteger" lang="c"><name>XSNumber_CreateWithXSInteger</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithXSInteger" lang="c"><name>XSNumber_CreateWithXSInteger</name>
 <abstract><p>Creates a number object from an XSInteger value
 </p></abstract>
 <parameterlist>
@@ -314,7 +314,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithXSInteger</declaration_function>(
     <declaration_type>XSInteger</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithXSUInt16" lang="c"><name>XSNumber_CreateWithXSUInt16</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithXSUInt16" lang="c"><name>XSNumber_CreateWithXSUInt16</name>
 <abstract><p>Creates a number object from an XSUInt16 value
 </p></abstract>
 <parameterlist>
@@ -329,7 +329,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithXSUInt16</declaration_function>(
     <declaration_type>XSUInt16</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithXSUInt32" lang="c"><name>XSNumber_CreateWithXSUInt32</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithXSUInt32" lang="c"><name>XSNumber_CreateWithXSUInt32</name>
 <abstract><p>Creates a number object from an XSUInt32 value
 </p></abstract>
 <parameterlist>
@@ -344,7 +344,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithXSUInt32</declaration_function>(
     <declaration_type>XSUInt32</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithXSUInt64" lang="c"><name>XSNumber_CreateWithXSUInt64</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithXSUInt64" lang="c"><name>XSNumber_CreateWithXSUInt64</name>
 <abstract><p>Creates a number object from an XSUInt64 value
 </p></abstract>
 <parameterlist>
@@ -359,7 +359,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithXSUInt64</declaration_function>(
     <declaration_type>XSUInt64</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithXSUInt8" lang="c"><name>XSNumber_CreateWithXSUInt8</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithXSUInt8" lang="c"><name>XSNumber_CreateWithXSUInt8</name>
 <abstract><p>Creates a number object from an XSUInt8 value
 </p></abstract>
 <parameterlist>
@@ -374,7 +374,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithXSUInt8</declaration_function>(
     <declaration_type>XSUInt8</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_CreateWithXSUInteger" lang="c"><name>XSNumber_CreateWithXSUInteger</name>
+</function><function id="//apple_ref/c/func/XSNumber_CreateWithXSUInteger" lang="c"><name>XSNumber_CreateWithXSUInteger</name>
 <abstract><p>Creates a number object from an XSUInteger value
 </p></abstract>
 <parameterlist>
@@ -389,7 +389,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_CreateWithXSUInteger</declaration_function>(
     <declaration_type>XSUInteger</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetBoolValue" lang="c"><name>XSNumber_GetBoolValue</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetBoolValue" lang="c"><name>XSNumber_GetBoolValue</name>
 <abstract><p>Gets the bool value of a number
 </p></abstract>
 <parameterlist>
@@ -404,7 +404,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSNumber_GetBoolValue</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetCharValue" lang="c"><name>XSNumber_GetCharValue</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetCharValue" lang="c"><name>XSNumber_GetCharValue</name>
 <abstract><p>Gets the char value of a number
 </p></abstract>
 <parameterlist>
@@ -419,7 +419,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>char</declaration_type> <declaration_function>XSNumber_GetCharValue</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetClassID" lang="c"><name>XSNumber_GetClassID</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetClassID" lang="c"><name>XSNumber_GetClassID</name>
 <abstract><p>Gets the class ID for XSNumber
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSClassID</returntype>
@@ -428,7 +428,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSClassID</declaration_type> <declaration_function>XSNumber_GetClassID</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetDoubleValue" lang="c"><name>XSNumber_GetDoubleValue</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetDoubleValue" lang="c"><name>XSNumber_GetDoubleValue</name>
 <abstract><p>Gets the double value of a number
 </p></abstract>
 <parameterlist>
@@ -443,7 +443,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>double</declaration_type> <declaration_function>XSNumber_GetDoubleValue</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetFloatValue" lang="c"><name>XSNumber_GetFloatValue</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetFloatValue" lang="c"><name>XSNumber_GetFloatValue</name>
 <abstract><p>Gets the float value of a number
 </p></abstract>
 <parameterlist>
@@ -458,7 +458,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>float</declaration_type> <declaration_function>XSNumber_GetFloatValue</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetIntValue" lang="c"><name>XSNumber_GetIntValue</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetIntValue" lang="c"><name>XSNumber_GetIntValue</name>
 <abstract><p>Gets the int value of a number
 </p></abstract>
 <parameterlist>
@@ -473,7 +473,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>int</declaration_type> <declaration_function>XSNumber_GetIntValue</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetLongValue" lang="c"><name>XSNumber_GetLongValue</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetLongValue" lang="c"><name>XSNumber_GetLongValue</name>
 <abstract><p>Gets the long value of a number
 </p></abstract>
 <parameterlist>
@@ -488,7 +488,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>long</declaration_type> <declaration_function>XSNumber_GetLongValue</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetShortValue" lang="c"><name>XSNumber_GetShortValue</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetShortValue" lang="c"><name>XSNumber_GetShortValue</name>
 <abstract><p>Gets the short value of a number
 </p></abstract>
 <parameterlist>
@@ -503,7 +503,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>short</declaration_type> <declaration_function>XSNumber_GetShortValue</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetUnsignedCharValue" lang="c"><name>XSNumber_GetUnsignedCharValue</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetUnsignedCharValue" lang="c"><name>XSNumber_GetUnsignedCharValue</name>
 <abstract><p>Gets the unsigned char value of a number
 </p></abstract>
 <parameterlist>
@@ -518,7 +518,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_keyword>unsigned</declaration_keyword> <declaration_type>char</declaration_type> <declaration_function>XSNumber_GetUnsignedCharValue</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetUnsignedIntValue" lang="c"><name>XSNumber_GetUnsignedIntValue</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetUnsignedIntValue" lang="c"><name>XSNumber_GetUnsignedIntValue</name>
 <abstract><p>Gets the unsigned int value of a number
 </p></abstract>
 <parameterlist>
@@ -533,7 +533,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_keyword>unsigned</declaration_keyword> <declaration_type>int</declaration_type> <declaration_function>XSNumber_GetUnsignedIntValue</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetUnsignedLongValue" lang="c"><name>XSNumber_GetUnsignedLongValue</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetUnsignedLongValue" lang="c"><name>XSNumber_GetUnsignedLongValue</name>
 <abstract><p>Gets the unsigned long value of a number
 </p></abstract>
 <parameterlist>
@@ -548,7 +548,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_keyword>unsigned</declaration_keyword> <declaration_type>long</declaration_type> <declaration_function>XSNumber_GetUnsignedLongValue</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetUnsignedShortValue" lang="c"><name>XSNumber_GetUnsignedShortValue</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetUnsignedShortValue" lang="c"><name>XSNumber_GetUnsignedShortValue</name>
 <abstract><p>Gets the unsigned short value of a number
 </p></abstract>
 <parameterlist>
@@ -563,7 +563,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_keyword>unsigned</declaration_keyword> <declaration_type>short</declaration_type> <declaration_function>XSNumber_GetUnsignedShortValue</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetXSFloat32Value" lang="c"><name>XSNumber_GetXSFloat32Value</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetXSFloat32Value" lang="c"><name>XSNumber_GetXSFloat32Value</name>
 <abstract><p>Gets the XSFloat32 value of a number
 </p></abstract>
 <parameterlist>
@@ -578,7 +578,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSFloat32</declaration_type> <declaration_function>XSNumber_GetXSFloat32Value</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetXSFloat64Value" lang="c"><name>XSNumber_GetXSFloat64Value</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetXSFloat64Value" lang="c"><name>XSNumber_GetXSFloat64Value</name>
 <abstract><p>Gets the XSFloat64 value of a number
 </p></abstract>
 <parameterlist>
@@ -593,7 +593,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSFloat64</declaration_type> <declaration_function>XSNumber_GetXSFloat64Value</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetXSFloatValue" lang="c"><name>XSNumber_GetXSFloatValue</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetXSFloatValue" lang="c"><name>XSNumber_GetXSFloatValue</name>
 <abstract><p>Gets the XSFloat value of a number
 </p></abstract>
 <parameterlist>
@@ -608,7 +608,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSFloat</declaration_type> <declaration_function>XSNumber_GetXSFloatValue</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetXSInt16Value" lang="c"><name>XSNumber_GetXSInt16Value</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetXSInt16Value" lang="c"><name>XSNumber_GetXSInt16Value</name>
 <abstract><p>Gets the XSInt16 value of a number
 </p></abstract>
 <parameterlist>
@@ -623,7 +623,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSInt16</declaration_type> <declaration_function>XSNumber_GetXSInt16Value</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetXSInt32Value" lang="c"><name>XSNumber_GetXSInt32Value</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetXSInt32Value" lang="c"><name>XSNumber_GetXSInt32Value</name>
 <abstract><p>Gets the XSInt32 value of a number
 </p></abstract>
 <parameterlist>
@@ -638,7 +638,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSInt32</declaration_type> <declaration_function>XSNumber_GetXSInt32Value</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetXSInt64Value" lang="c"><name>XSNumber_GetXSInt64Value</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetXSInt64Value" lang="c"><name>XSNumber_GetXSInt64Value</name>
 <abstract><p>Gets the XSInt64 value of a number
 </p></abstract>
 <parameterlist>
@@ -653,7 +653,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSInt64</declaration_type> <declaration_function>XSNumber_GetXSInt64Value</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetXSInt8Value" lang="c"><name>XSNumber_GetXSInt8Value</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetXSInt8Value" lang="c"><name>XSNumber_GetXSInt8Value</name>
 <abstract><p>Gets the XSInt8 value of a number
 </p></abstract>
 <parameterlist>
@@ -668,7 +668,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSInt8</declaration_type> <declaration_function>XSNumber_GetXSInt8Value</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetXSIntegerValue" lang="c"><name>XSNumber_GetXSIntegerValue</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetXSIntegerValue" lang="c"><name>XSNumber_GetXSIntegerValue</name>
 <abstract><p>Gets the XSInteger value of a number
 </p></abstract>
 <parameterlist>
@@ -683,7 +683,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSInteger</declaration_type> <declaration_function>XSNumber_GetXSIntegerValue</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetXSUInt16Value" lang="c"><name>XSNumber_GetXSUInt16Value</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetXSUInt16Value" lang="c"><name>XSNumber_GetXSUInt16Value</name>
 <abstract><p>Gets the XSUInt16 value of a number
 </p></abstract>
 <parameterlist>
@@ -698,7 +698,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSUInt16</declaration_type> <declaration_function>XSNumber_GetXSUInt16Value</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetXSUInt32Value" lang="c"><name>XSNumber_GetXSUInt32Value</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetXSUInt32Value" lang="c"><name>XSNumber_GetXSUInt32Value</name>
 <abstract><p>Gets the XSUInt32 value of a number
 </p></abstract>
 <parameterlist>
@@ -713,7 +713,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSUInt32</declaration_type> <declaration_function>XSNumber_GetXSUInt32Value</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetXSUInt64Value" lang="c"><name>XSNumber_GetXSUInt64Value</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetXSUInt64Value" lang="c"><name>XSNumber_GetXSUInt64Value</name>
 <abstract><p>Gets the XSUInt64 value of a number
 </p></abstract>
 <parameterlist>
@@ -728,7 +728,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSUInt64</declaration_type> <declaration_function>XSNumber_GetXSUInt64Value</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetXSUInt8Value" lang="c"><name>XSNumber_GetXSUInt8Value</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetXSUInt8Value" lang="c"><name>XSNumber_GetXSUInt8Value</name>
 <abstract><p>Gets the XSUInt8 value of a number
 </p></abstract>
 <parameterlist>
@@ -743,7 +743,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSUInt8</declaration_type> <declaration_function>XSNumber_GetXSUInt8Value</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_GetXSUIntegerValue" lang="c"><name>XSNumber_GetXSUIntegerValue</name>
+</function><function id="//apple_ref/c/func/XSNumber_GetXSUIntegerValue" lang="c"><name>XSNumber_GetXSUIntegerValue</name>
 <abstract><p>Gets the XSUInteger value of a number
 </p></abstract>
 <parameterlist>
@@ -758,7 +758,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSUInteger</declaration_type> <declaration_function>XSNumber_GetXSUIntegerValue</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_IsFloatType" lang="c"><name>XSNumber_IsFloatType</name>
+</function><function id="//apple_ref/c/func/XSNumber_IsFloatType" lang="c"><name>XSNumber_IsFloatType</name>
 <abstract><p>Checks whether a number object is floating-point type
 </p></abstract>
 <parameterlist>
@@ -773,7 +773,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSNumber_IsFloatType</declaration_function>(
     <declaration_type>XSNumberRef</declaration_type> <declaration_param>number</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithBool" lang="c"><name>XSNumber_NumberWithBool</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithBool" lang="c"><name>XSNumber_NumberWithBool</name>
 <abstract><p>Gets a number object from a boolean value
 </p></abstract>
 <parameterlist>
@@ -788,7 +788,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithBool</declaration_function>(
     <declaration_type>bool</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithChar" lang="c"><name>XSNumber_NumberWithChar</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithChar" lang="c"><name>XSNumber_NumberWithChar</name>
 <abstract><p>Gets a number object from a char value
 </p></abstract>
 <parameterlist>
@@ -803,7 +803,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithChar</declaration_function>(
     <declaration_type>char</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithDouble" lang="c"><name>XSNumber_NumberWithDouble</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithDouble" lang="c"><name>XSNumber_NumberWithDouble</name>
 <abstract><p>Gets a number object from a double value
 </p></abstract>
 <parameterlist>
@@ -818,7 +818,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithDouble</declaration_function>(
     <declaration_type>double</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithFloat" lang="c"><name>XSNumber_NumberWithFloat</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithFloat" lang="c"><name>XSNumber_NumberWithFloat</name>
 <abstract><p>Gets a number object from a float value
 </p></abstract>
 <parameterlist>
@@ -833,7 +833,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithFloat</declaration_function>(
     <declaration_type>float</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithInt" lang="c"><name>XSNumber_NumberWithInt</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithInt" lang="c"><name>XSNumber_NumberWithInt</name>
 <abstract><p>Gets a number object from an int value
 </p></abstract>
 <parameterlist>
@@ -848,7 +848,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithInt</declaration_function>(
     <declaration_type>int</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithLong" lang="c"><name>XSNumber_NumberWithLong</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithLong" lang="c"><name>XSNumber_NumberWithLong</name>
 <abstract><p>Gets a number object from a long value
 </p></abstract>
 <parameterlist>
@@ -863,7 +863,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithLong</declaration_function>(
     <declaration_type>long</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithShort" lang="c"><name>XSNumber_NumberWithShort</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithShort" lang="c"><name>XSNumber_NumberWithShort</name>
 <abstract><p>Gets a number object from a short value
 </p></abstract>
 <parameterlist>
@@ -878,7 +878,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithShort</declaration_function>(
     <declaration_type>short</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithUnsignedChar" lang="c"><name>XSNumber_NumberWithUnsignedChar</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithUnsignedChar" lang="c"><name>XSNumber_NumberWithUnsignedChar</name>
 <abstract><p>Gets a number object from an unsigned char value
 </p></abstract>
 <parameterlist>
@@ -893,7 +893,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithUnsignedChar</declaration_function>(
     <declaration_keyword>unsigned</declaration_keyword> <declaration_type>char</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithUnsignedInt" lang="c"><name>XSNumber_NumberWithUnsignedInt</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithUnsignedInt" lang="c"><name>XSNumber_NumberWithUnsignedInt</name>
 <abstract><p>Gets a number object from an unsigned int value
 </p></abstract>
 <parameterlist>
@@ -908,7 +908,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithUnsignedInt</declaration_function>(
     <declaration_keyword>unsigned</declaration_keyword> <declaration_type>int</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithUnsignedLong" lang="c"><name>XSNumber_NumberWithUnsignedLong</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithUnsignedLong" lang="c"><name>XSNumber_NumberWithUnsignedLong</name>
 <abstract><p>Gets a number object from an unsigned long value
 </p></abstract>
 <parameterlist>
@@ -923,7 +923,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithUnsignedLong</declaration_function>(
     <declaration_keyword>unsigned</declaration_keyword> <declaration_type>long</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithUnsignedShort" lang="c"><name>XSNumber_NumberWithUnsignedShort</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithUnsignedShort" lang="c"><name>XSNumber_NumberWithUnsignedShort</name>
 <abstract><p>Gets a number object from an unsigned short value
 </p></abstract>
 <parameterlist>
@@ -938,7 +938,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithUnsignedShort</declaration_function>(
     <declaration_keyword>unsigned</declaration_keyword> <declaration_type>short</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithXSFloat" lang="c"><name>XSNumber_NumberWithXSFloat</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithXSFloat" lang="c"><name>XSNumber_NumberWithXSFloat</name>
 <abstract><p>Gets a number object from an XSFloat value
 </p></abstract>
 <parameterlist>
@@ -953,7 +953,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithXSFloat</declaration_function>(
     <declaration_type>XSFloat</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithXSFloat32" lang="c"><name>XSNumber_NumberWithXSFloat32</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithXSFloat32" lang="c"><name>XSNumber_NumberWithXSFloat32</name>
 <abstract><p>Gets a number object from an XSFloat32 value
 </p></abstract>
 <parameterlist>
@@ -968,7 +968,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithXSFloat32</declaration_function>(
     <declaration_type>XSFloat32</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithXSFloat64" lang="c"><name>XSNumber_NumberWithXSFloat64</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithXSFloat64" lang="c"><name>XSNumber_NumberWithXSFloat64</name>
 <abstract><p>Gets a number object from an XSFloat64 value
 </p></abstract>
 <parameterlist>
@@ -983,7 +983,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithXSFloat64</declaration_function>(
     <declaration_type>XSFloat64</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithXSInt16" lang="c"><name>XSNumber_NumberWithXSInt16</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithXSInt16" lang="c"><name>XSNumber_NumberWithXSInt16</name>
 <abstract><p>Gets a number object from an XSInt16 value
 </p></abstract>
 <parameterlist>
@@ -998,7 +998,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithXSInt16</declaration_function>(
     <declaration_type>XSInt16</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithXSInt32" lang="c"><name>XSNumber_NumberWithXSInt32</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithXSInt32" lang="c"><name>XSNumber_NumberWithXSInt32</name>
 <abstract><p>Gets a number object from an XSInt32 value
 </p></abstract>
 <parameterlist>
@@ -1013,7 +1013,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithXSInt32</declaration_function>(
     <declaration_type>XSInt32</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithXSInt64" lang="c"><name>XSNumber_NumberWithXSInt64</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithXSInt64" lang="c"><name>XSNumber_NumberWithXSInt64</name>
 <abstract><p>Gets a number object from an XSInt64 value
 </p></abstract>
 <parameterlist>
@@ -1028,7 +1028,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithXSInt64</declaration_function>(
     <declaration_type>XSInt64</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithXSInt8" lang="c"><name>XSNumber_NumberWithXSInt8</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithXSInt8" lang="c"><name>XSNumber_NumberWithXSInt8</name>
 <abstract><p>Gets a number object from an XSInt8 value
 </p></abstract>
 <parameterlist>
@@ -1043,7 +1043,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithXSInt8</declaration_function>(
     <declaration_type>XSInt8</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithXSInteger" lang="c"><name>XSNumber_NumberWithXSInteger</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithXSInteger" lang="c"><name>XSNumber_NumberWithXSInteger</name>
 <abstract><p>Gets a number object from an XSInteger value
 </p></abstract>
 <parameterlist>
@@ -1058,7 +1058,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithXSInteger</declaration_function>(
     <declaration_type>XSInteger</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithXSUInt16" lang="c"><name>XSNumber_NumberWithXSUInt16</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithXSUInt16" lang="c"><name>XSNumber_NumberWithXSUInt16</name>
 <abstract><p>Gets a number object from an XSUInt16 value
 </p></abstract>
 <parameterlist>
@@ -1073,7 +1073,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithXSUInt16</declaration_function>(
     <declaration_type>XSUInt16</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithXSUInt32" lang="c"><name>XSNumber_NumberWithXSUInt32</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithXSUInt32" lang="c"><name>XSNumber_NumberWithXSUInt32</name>
 <abstract><p>Gets a number object from an XSUInt32 value
 </p></abstract>
 <parameterlist>
@@ -1088,7 +1088,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithXSUInt32</declaration_function>(
     <declaration_type>XSUInt32</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithXSUInt64" lang="c"><name>XSNumber_NumberWithXSUInt64</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithXSUInt64" lang="c"><name>XSNumber_NumberWithXSUInt64</name>
 <abstract><p>Gets a number object from an XSUInt64 value
 </p></abstract>
 <parameterlist>
@@ -1103,7 +1103,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithXSUInt64</declaration_function>(
     <declaration_type>XSUInt64</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithXSUInt8" lang="c"><name>XSNumber_NumberWithXSUInt8</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithXSUInt8" lang="c"><name>XSNumber_NumberWithXSUInt8</name>
 <abstract><p>Gets a number object from an XSUInt8 value
 </p></abstract>
 <parameterlist>
@@ -1118,7 +1118,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSNumberRef</declaration_type> <declaration_function>XSNumber_NumberWithXSUInt8</declaration_function>(
     <declaration_type>XSUInt8</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSNumber_NumberWithXSUInteger" lang="c"><name>XSNumber_NumberWithXSUInteger</name>
+</function><function id="//apple_ref/c/func/XSNumber_NumberWithXSUInteger" lang="c"><name>XSNumber_NumberWithXSUInteger</name>
 <abstract><p>Gets a number object from an XSUInteger value
 </p></abstract>
 <parameterlist>
@@ -1134,12 +1134,12 @@
     <declaration_type>XSUInteger</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function></functions>
-<typedefs><typedef id="//xs_ref/c/tdef/XSNumberRef" lang="c" type="simple"><name>XSNumberRef</name>
+<typedefs><typedef id="//apple_ref/c/tdef/XSNumberRef" lang="c" type="simple"><name>XSNumberRef</name>
 <abstract><p>Opaque type for XSNumber
 </p></abstract>
 <declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSNumber</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSNumberRef</declaration_var>;  </declaration>
 <desc><p/></desc>
 </typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, May 07, 2014</timestamp>
+<timestamp>Tuesday, May 13, 2014</timestamp>
 </header>

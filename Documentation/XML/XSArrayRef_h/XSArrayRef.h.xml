@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xs_ref/doc/header/XSArrayRef.h" lang="c" filename="XSArrayRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSArrayRef.h"><name>XSArrayRef.h</name>
+<header id="//apple_ref/doc/header/XSArrayRef.h" lang="c" filename="XSArrayRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSArrayRef.h"><name>XSArrayRef.h</name>
 <abstract><p>XSArray class
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
 </attributes>
 <includes>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
 <desc><p>...
 </p></desc>
-<functions><function id="//xs_ref/c/func/XSArray_AddObject" lang="c"><name>XSArray_AddObject</name>
+<functions><function id="//apple_ref/c/func/XSArray_AddObject" lang="c"><name>XSArray_AddObject</name>
 <abstract><p>Adds an object in an array
 </p></abstract>
 <parameterlist>
@@ -28,7 +28,7 @@
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
 </p></desc>
-</function><function id="//xs_ref/c/func/XSArray_AppendArray" lang="c"><name>XSArray_AppendArray</name>
+</function><function id="//apple_ref/c/func/XSArray_AppendArray" lang="c"><name>XSArray_AppendArray</name>
 <abstract><p>Appends values from an array to an array
 </p></abstract>
 <parameterlist>
@@ -45,7 +45,7 @@
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>objects</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
 </p></desc>
-</function><function id="//xs_ref/c/func/XSArray_ApplyFunction" lang="c"><name>XSArray_ApplyFunction</name>
+</function><function id="//apple_ref/c/func/XSArray_ApplyFunction" lang="c"><name>XSArray_ApplyFunction</name>
 <abstract><p>Applies a function for each element of an array
 </p></abstract>
 <parameterlist>
@@ -65,7 +65,7 @@
     <declaration_type>XSArray_ApplierFunction</declaration_type> <declaration_param>function</declaration_param> );  </declaration>
 <desc><p>The function will be called with each object contained in the array
 </p></desc>
-</function><function id="//xs_ref/c/func/XSArray_ApplyMethod" lang="c"><name>XSArray_ApplyMethod</name>
+</function><function id="//apple_ref/c/func/XSArray_ApplyMethod" lang="c"><name>XSArray_ApplyMethod</name>
 <abstract><p>Applies a method for each element of an array
 </p></abstract>
 <parameterlist>
@@ -88,7 +88,7 @@
     <declaration_type>XSArray_ApplierMethod</declaration_type> <declaration_param>method</declaration_param> );  </declaration>
 <desc><p>The method will be called with each object contained in the array
 </p></desc>
-</function><function id="//xs_ref/c/func/XSArray_Array" lang="c"><name>XSArray_Array</name>
+</function><function id="//apple_ref/c/func/XSArray_Array" lang="c"><name>XSArray_Array</name>
 <abstract><p>Gets an empty array
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSArrayRef</returntype>
@@ -97,7 +97,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSArrayRef</declaration_type> <declaration_function>XSArray_Array</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSArray_ArrayWithArray" lang="c"><name>XSArray_ArrayWithArray</name>
+</function><function id="//apple_ref/c/func/XSArray_ArrayWithArray" lang="c"><name>XSArray_ArrayWithArray</name>
 <abstract><p>Gets an array from another array
 </p></abstract>
 <parameterlist>
@@ -112,7 +112,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSArrayRef</declaration_type> <declaration_function>XSArray_ArrayWithArray</declaration_function>(
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSArray_ArrayWithObjects" lang="c"><name>XSArray_ArrayWithObjects</name>
+</function><function id="//apple_ref/c/func/XSArray_ArrayWithObjects" lang="c"><name>XSArray_ArrayWithObjects</name>
 <abstract><p>Gets an array filled with objects
 </p></abstract>
 <parameterlist>
@@ -130,7 +130,7 @@
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>firstObject</declaration_param>,
     ... );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSArray_ContainsObject" lang="c"><name>XSArray_ContainsObject</name>
+</function><function id="//apple_ref/c/func/XSArray_ContainsObject" lang="c"><name>XSArray_ContainsObject</name>
 <abstract><p>Checks if a specific object is present in an array
 </p></abstract>
 <parameterlist>
@@ -147,7 +147,7 @@
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSArray_Create" lang="c"><name>XSArray_Create</name>
+</function><function id="//apple_ref/c/func/XSArray_Create" lang="c"><name>XSArray_Create</name>
 <abstract><p>Creates an empty array
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSArrayRef</returntype>
@@ -156,7 +156,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSArrayRef</declaration_type> <declaration_function>XSArray_Create</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSArray_CreateMutable" lang="c"><name>XSArray_CreateMutable</name>
+</function><function id="//apple_ref/c/func/XSArray_CreateMutable" lang="c"><name>XSArray_CreateMutable</name>
 <abstract><p>Creates an empty mutable array
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSArrayRef</returntype>
@@ -165,7 +165,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSArrayRef</declaration_type> <declaration_function>XSArray_CreateMutable</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSArray_CreateMutableCopy" lang="c"><name>XSArray_CreateMutableCopy</name>
+</function><function id="//apple_ref/c/func/XSArray_CreateMutableCopy" lang="c"><name>XSArray_CreateMutableCopy</name>
 <abstract><p>Creates a mutable copy of an array
 </p></abstract>
 <parameterlist>
@@ -180,7 +180,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSArrayRef</declaration_type> <declaration_function>XSArray_CreateMutableCopy</declaration_function>(
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSArray_CreateWithArray" lang="c"><name>XSArray_CreateWithArray</name>
+</function><function id="//apple_ref/c/func/XSArray_CreateWithArray" lang="c"><name>XSArray_CreateWithArray</name>
 <abstract><p>Creates an array from another array
 </p></abstract>
 <parameterlist>
@@ -195,7 +195,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSArrayRef</declaration_type> <declaration_function>XSArray_CreateWithArray</declaration_function>(
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSArray_CreateWithObjects" lang="c"><name>XSArray_CreateWithObjects</name>
+</function><function id="//apple_ref/c/func/XSArray_CreateWithObjects" lang="c"><name>XSArray_CreateWithObjects</name>
 <abstract><p>Creates an array filled with objects
 </p></abstract>
 <parameterlist>
@@ -213,7 +213,7 @@
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>firstObject</declaration_param>,
     ... );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSArray_FilterWithFunction" lang="c"><name>XSArray_FilterWithFunction</name>
+</function><function id="//apple_ref/c/func/XSArray_FilterWithFunction" lang="c"><name>XSArray_FilterWithFunction</name>
 <abstract><p>Filters an array using a function
 </p></abstract>
 <parameterlist>
@@ -234,7 +234,7 @@
 <desc><p>The function will be called with each object contained in the array.
 An error will be produced if the array is not mutable.
 </p></desc>
-</function><function id="//xs_ref/c/func/XSArray_FilterWithMethod" lang="c"><name>XSArray_FilterWithMethod</name>
+</function><function id="//apple_ref/c/func/XSArray_FilterWithMethod" lang="c"><name>XSArray_FilterWithMethod</name>
 <abstract><p>Filters an array using a method
 </p></abstract>
 <parameterlist>
@@ -258,7 +258,7 @@ An error will be produced if the array is not mutable.
 <desc><p>The method will be called with each object contained in the array.
 An error will be produced if the array is not mutable.
 </p></desc>
-</function><function id="//xs_ref/c/func/XSArray_GetClassID" lang="c"><name>XSArray_GetClassID</name>
+</function><function id="//apple_ref/c/func/XSArray_GetClassID" lang="c"><name>XSArray_GetClassID</name>
 <abstract><p>Gets the class ID for XSArray
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSClassID</returntype>
@@ -267,7 +267,7 @@ An error will be produced if the array is not mutable.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSClassID</declaration_type> <declaration_function>XSArray_GetClassID</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSArray_GetCount" lang="c"><name>XSArray_GetCount</name>
+</function><function id="//apple_ref/c/func/XSArray_GetCount" lang="c"><name>XSArray_GetCount</name>
 <abstract><p>Gets the number of values in an array
 </p></abstract>
 <parameterlist>
@@ -282,7 +282,7 @@ An error will be produced if the array is not mutable.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSUInteger</declaration_type> <declaration_function>XSArray_GetCount</declaration_function>(
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSArray_GetCountOfObject" lang="c"><name>XSArray_GetCountOfObject</name>
+</function><function id="//apple_ref/c/func/XSArray_GetCountOfObject" lang="c"><name>XSArray_GetCountOfObject</name>
 <abstract><p>Gets the number of time a specific object is present in an array
 </p></abstract>
 <parameterlist>
@@ -300,7 +300,7 @@ An error will be produced if the array is not mutable.
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSArray_GetFirstIndexOfObject" lang="c"><name>XSArray_GetFirstIndexOfObject</name>
+</function><function id="//apple_ref/c/func/XSArray_GetFirstIndexOfObject" lang="c"><name>XSArray_GetFirstIndexOfObject</name>
 <abstract><p>Gets the first index of an object in an array
 </p></abstract>
 <parameterlist>
@@ -318,7 +318,7 @@ An error will be produced if the array is not mutable.
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSArray_GetLastIndexOfObject" lang="c"><name>XSArray_GetLastIndexOfObject</name>
+</function><function id="//apple_ref/c/func/XSArray_GetLastIndexOfObject" lang="c"><name>XSArray_GetLastIndexOfObject</name>
 <abstract><p>Gets the last index of an object in an array
 </p></abstract>
 <parameterlist>
@@ -336,7 +336,7 @@ An error will be produced if the array is not mutable.
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSArray_GetLastObject" lang="c"><name>XSArray_GetLastObject</name>
+</function><function id="//apple_ref/c/func/XSArray_GetLastObject" lang="c"><name>XSArray_GetLastObject</name>
 <abstract><p>Gets the last object in the array
 </p></abstract>
 <parameterlist>
@@ -351,7 +351,7 @@ An error will be produced if the array is not mutable.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSObjectRef</declaration_type> <declaration_function>XSArray_GetLastObject</declaration_function>(
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSArray_GetObjectAtIndex" lang="c"><name>XSArray_GetObjectAtIndex</name>
+</function><function id="//apple_ref/c/func/XSArray_GetObjectAtIndex" lang="c"><name>XSArray_GetObjectAtIndex</name>
 <abstract><p>Gets an object from an array at a specific index
 </p></abstract>
 <parameterlist>
@@ -369,7 +369,7 @@ An error will be produced if the array is not mutable.
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param>,
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSArray_InsertObjectAtIndex" lang="c"><name>XSArray_InsertObjectAtIndex</name>
+</function><function id="//apple_ref/c/func/XSArray_InsertObjectAtIndex" lang="c"><name>XSArray_InsertObjectAtIndex</name>
 <abstract><p>Inserts an object at a specific index in an array
 </p></abstract>
 <parameterlist>
@@ -389,7 +389,7 @@ An error will be produced if the array is not mutable.
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
 </p></desc>
-</function><function id="//xs_ref/c/func/XSArray_IsMutable" lang="c"><name>XSArray_IsMutable</name>
+</function><function id="//apple_ref/c/func/XSArray_IsMutable" lang="c"><name>XSArray_IsMutable</name>
 <abstract><p>Checks if an array is mutable
 </p></abstract>
 <parameterlist>
@@ -404,7 +404,7 @@ An error will be produced if the array is not mutable.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSArray_IsMutable</declaration_function>(
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSArray_MutableArray" lang="c"><name>XSArray_MutableArray</name>
+</function><function id="//apple_ref/c/func/XSArray_MutableArray" lang="c"><name>XSArray_MutableArray</name>
 <abstract><p>Gets an empty mutable array
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSArrayRef</returntype>
@@ -413,7 +413,7 @@ An error will be produced if the array is not mutable.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSArrayRef</declaration_type> <declaration_function>XSArray_MutableArray</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSArray_RemoveAllObjects" lang="c"><name>XSArray_RemoveAllObjects</name>
+</function><function id="//apple_ref/c/func/XSArray_RemoveAllObjects" lang="c"><name>XSArray_RemoveAllObjects</name>
 <abstract><p>Removes all objects from an array
 </p></abstract>
 <parameterlist>
@@ -427,7 +427,7 @@ An error will be produced if the array is not mutable.
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
 </p></desc>
-</function><function id="//xs_ref/c/func/XSArray_RemoveLastObject" lang="c"><name>XSArray_RemoveLastObject</name>
+</function><function id="//apple_ref/c/func/XSArray_RemoveLastObject" lang="c"><name>XSArray_RemoveLastObject</name>
 <abstract><p>Removes the last object in an array
 </p></abstract>
 <parameterlist>
@@ -441,7 +441,7 @@ An error will be produced if the array is not mutable.
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
 </p></desc>
-</function><function id="//xs_ref/c/func/XSArray_RemoveObject" lang="c"><name>XSArray_RemoveObject</name>
+</function><function id="//apple_ref/c/func/XSArray_RemoveObject" lang="c"><name>XSArray_RemoveObject</name>
 <abstract><p>Removes all occurences of a specific object in an array
 </p></abstract>
 <parameterlist>
@@ -458,7 +458,7 @@ An error will be produced if the array is not mutable.
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
 </p></desc>
-</function><function id="//xs_ref/c/func/XSArray_RemoveObjectAtIndex" lang="c"><name>XSArray_RemoveObjectAtIndex</name>
+</function><function id="//apple_ref/c/func/XSArray_RemoveObjectAtIndex" lang="c"><name>XSArray_RemoveObjectAtIndex</name>
 <abstract><p>Removes the object at a specific index in an array
 </p></abstract>
 <parameterlist>
@@ -475,7 +475,7 @@ An error will be produced if the array is not mutable.
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
 </p></desc>
-</function><function id="//xs_ref/c/func/XSArray_RemoveObjectsInArray" lang="c"><name>XSArray_RemoveObjectsInArray</name>
+</function><function id="//apple_ref/c/func/XSArray_RemoveObjectsInArray" lang="c"><name>XSArray_RemoveObjectsInArray</name>
 <abstract><p>Removes all occurences of the objects contained in an array from an array
 </p></abstract>
 <parameterlist>
@@ -492,7 +492,7 @@ An error will be produced if the array is not mutable.
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>objects</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
 </p></desc>
-</function><function id="//xs_ref/c/func/XSArray_RemoveObjectsInRange" lang="c"><name>XSArray_RemoveObjectsInRange</name>
+</function><function id="//apple_ref/c/func/XSArray_RemoveObjectsInRange" lang="c"><name>XSArray_RemoveObjectsInRange</name>
 <abstract><p>Removes objects at a specific range from an array
 </p></abstract>
 <parameterlist>
@@ -509,7 +509,7 @@ An error will be produced if the array is not mutable.
     <declaration_type>XSRange</declaration_type> <declaration_param>range</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
 </p></desc>
-</function><function id="//xs_ref/c/func/XSArray_ReplaceObjectAtIndex" lang="c"><name>XSArray_ReplaceObjectAtIndex</name>
+</function><function id="//apple_ref/c/func/XSArray_ReplaceObjectAtIndex" lang="c"><name>XSArray_ReplaceObjectAtIndex</name>
 <abstract><p>Replaces an object at a specific index in the array
 </p></abstract>
 <parameterlist>
@@ -529,7 +529,7 @@ An error will be produced if the array is not mutable.
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>newObject</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
 </p></desc>
-</function><function id="//xs_ref/c/func/XSArray_SortWithFunction" lang="c"><name>XSArray_SortWithFunction</name>
+</function><function id="//apple_ref/c/func/XSArray_SortWithFunction" lang="c"><name>XSArray_SortWithFunction</name>
 <abstract><p>Sorts an array using a function
 </p></abstract>
 <parameterlist>
@@ -550,7 +550,7 @@ An error will be produced if the array is not mutable.
 <desc><p>The function will be called with each object contained in the array.
 An error will be produced if the array is not mutable.
 </p></desc>
-</function><function id="//xs_ref/c/func/XSArray_SortWithMethod" lang="c"><name>XSArray_SortWithMethod</name>
+</function><function id="//apple_ref/c/func/XSArray_SortWithMethod" lang="c"><name>XSArray_SortWithMethod</name>
 <abstract><p>Sorts an array using a method
 </p></abstract>
 <parameterlist>
@@ -575,7 +575,7 @@ An error will be produced if the array is not mutable.
 An error will be produced if the array is not mutable.
 </p></desc>
 </function></functions>
-<typedefs><typedef id="//xs_ref/c/tdef/XSArray_ApplierFunction" lang="c" type="funcPtr"><name>XSArray_ApplierFunction</name>
+<typedefs><typedef id="//apple_ref/c/tdef/XSArray_ApplierFunction" lang="c" type="funcPtr"><name>XSArray_ApplierFunction</name>
 <abstract><p>A function used to iterate objects in an array
 </p></abstract>
 <parameterlist>
@@ -593,7 +593,7 @@ An error will be produced if the array is not mutable.
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param>,
     <declaration_type>bool</declaration_type> <declaration_type>*</declaration_type><declaration_param>stop</declaration_param> );  </declaration>
 <desc><p/></desc>
-</typedef><typedef id="//xs_ref/c/tdef/XSArray_ApplierMethod" lang="c" type="funcPtr"><name>XSArray_ApplierMethod</name>
+</typedef><typedef id="//apple_ref/c/tdef/XSArray_ApplierMethod" lang="c" type="funcPtr"><name>XSArray_ApplierMethod</name>
 <abstract><p>A method used to iterate objects in an array
 </p></abstract>
 <parameterlist>
@@ -614,7 +614,7 @@ An error will be produced if the array is not mutable.
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param>,
     <declaration_type>bool</declaration_type> <declaration_type>*</declaration_type><declaration_param>stop</declaration_param> );  </declaration>
 <desc><p/></desc>
-</typedef><typedef id="//xs_ref/c/tdef/XSArray_FilterFunction" lang="c" type="funcPtr"><name>XSArray_FilterFunction</name>
+</typedef><typedef id="//apple_ref/c/tdef/XSArray_FilterFunction" lang="c" type="funcPtr"><name>XSArray_FilterFunction</name>
 <abstract><p>A function used to filter objects in an array
 </p></abstract>
 <parameterlist>
@@ -634,7 +634,7 @@ An error will be produced if the array is not mutable.
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param>,
     <declaration_type>bool</declaration_type> <declaration_type>*</declaration_type><declaration_param>stop</declaration_param> );  </declaration>
 <desc><p/></desc>
-</typedef><typedef id="//xs_ref/c/tdef/XSArray_FilterMethod" lang="c" type="funcPtr"><name>XSArray_FilterMethod</name>
+</typedef><typedef id="//apple_ref/c/tdef/XSArray_FilterMethod" lang="c" type="funcPtr"><name>XSArray_FilterMethod</name>
 <abstract><p>A method used to filter objects in an array
 </p></abstract>
 <parameterlist>
@@ -657,7 +657,7 @@ An error will be produced if the array is not mutable.
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param>,
     <declaration_type>bool</declaration_type> <declaration_type>*</declaration_type><declaration_param>stop</declaration_param> );  </declaration>
 <desc><p/></desc>
-</typedef><typedef id="//xs_ref/c/tdef/XSArray_SortFunction" lang="c" type="funcPtr"><name>XSArray_SortFunction</name>
+</typedef><typedef id="//apple_ref/c/tdef/XSArray_SortFunction" lang="c" type="funcPtr"><name>XSArray_SortFunction</name>
 <abstract><p>A function used to sort objects in an array
 </p></abstract>
 <parameterlist>
@@ -677,7 +677,7 @@ An error will be produced if the array is not mutable.
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>value2</declaration_param>,
     <declaration_type>bool</declaration_type> <declaration_type>*</declaration_type><declaration_param>stop</declaration_param> );  </declaration>
 <desc><p/></desc>
-</typedef><typedef id="//xs_ref/c/tdef/XSArray_SortMethod" lang="c" type="funcPtr"><name>XSArray_SortMethod</name>
+</typedef><typedef id="//apple_ref/c/tdef/XSArray_SortMethod" lang="c" type="funcPtr"><name>XSArray_SortMethod</name>
 <abstract><p>A method used to sort objects in an array
 </p></abstract>
 <parameterlist>
@@ -700,7 +700,7 @@ An error will be produced if the array is not mutable.
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>value2</declaration_param>,
     <declaration_type>bool</declaration_type> <declaration_type>*</declaration_type><declaration_param>stop</declaration_param> );  </declaration>
 <desc><p/></desc>
-</typedef><typedef id="//xs_ref/c/tdef/XSArrayRef" lang="c" type="simple"><name>XSArrayRef</name>
+</typedef><typedef id="//apple_ref/c/tdef/XSArrayRef" lang="c" type="simple"><name>XSArrayRef</name>
 <abstract><p>Opaque type for XSArray
 </p></abstract>
 <declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSArray</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSArrayRef</declaration_var>;  </declaration>
@@ -708,5 +708,5 @@ An error will be produced if the array is not mutable.
 </p></desc>
 </typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, May 07, 2014</timestamp>
+<timestamp>Tuesday, May 13, 2014</timestamp>
 </header>

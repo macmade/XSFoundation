@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xs_ref/doc/header/XSGeometry-XSRect.h" lang="c" filename="XSGeometry-XSRect.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Functions/XSGeometry-XSRect.h"><name>XSGeometry-XSRect.h</name>
+<header id="//apple_ref/doc/header/XSGeometry-XSRect.h" lang="c" filename="XSGeometry-XSRect.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Functions/XSGeometry-XSRect.h"><name>XSGeometry-XSRect.h</name>
 <abstract><p>XSRect functions
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
 </attributes>
 <includes>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 </includes>
 <desc><p>...
 </p></desc>
-<functions><function id="//xs_ref/c/func/XSRect_ContainsPoint" lang="c"><name>XSRect_ContainsPoint</name>
+<functions><function id="//apple_ref/c/func/XSRect_ContainsPoint" lang="c"><name>XSRect_ContainsPoint</name>
 <abstract><p>Checks whether a rectangle contains a specified point
 </p></abstract>
 <parameterlist>
@@ -28,7 +28,7 @@
     <declaration_type>XSRect</declaration_type> <declaration_param>rect</declaration_param>,
     <declaration_type>XSPoint</declaration_type> <declaration_param>point</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRect_ContainsRect" lang="c"><name>XSRect_ContainsRect</name>
+</function><function id="//apple_ref/c/func/XSRect_ContainsRect" lang="c"><name>XSRect_ContainsRect</name>
 <abstract><p>Checks whether a rectangle contains a second rectangle
 </p></abstract>
 <parameterlist>
@@ -46,7 +46,7 @@
     <declaration_type>XSRect</declaration_type> <declaration_param>rect1</declaration_param>,
     <declaration_type>XSRect</declaration_type> <declaration_param>rect2</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRect_GetHeight" lang="c"><name>XSRect_GetHeight</name>
+</function><function id="//apple_ref/c/func/XSRect_GetHeight" lang="c"><name>XSRect_GetHeight</name>
 <abstract><p>Gets the height of a rectangle
 </p></abstract>
 <parameterlist>
@@ -68,7 +68,7 @@ number, this function returns the height as if the rectangle
 were standardized.
 That is, the result is never a negative number.
 </p></desc>
-</function><function id="//xs_ref/c/func/XSRect_GetMaxX" lang="c"><name>XSRect_GetMaxX</name>
+</function><function id="//apple_ref/c/func/XSRect_GetMaxX" lang="c"><name>XSRect_GetMaxX</name>
 <abstract><p>Gets the largest value for the X coordinate of the rectangle
 </p></abstract>
 <parameterlist>
@@ -83,7 +83,7 @@ That is, the result is never a negative number.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSFloat</declaration_type> <declaration_function>XSRect_GetMaxX</declaration_function>(
     <declaration_type>XSRect</declaration_type> <declaration_param>rect</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRect_GetMaxY" lang="c"><name>XSRect_GetMaxY</name>
+</function><function id="//apple_ref/c/func/XSRect_GetMaxY" lang="c"><name>XSRect_GetMaxY</name>
 <abstract><p>Gets the largest value for the Y coordinate of the rectangle
 </p></abstract>
 <parameterlist>
@@ -98,7 +98,7 @@ That is, the result is never a negative number.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSFloat</declaration_type> <declaration_function>XSRect_GetMaxY</declaration_function>(
     <declaration_type>XSRect</declaration_type> <declaration_param>rect</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRect_GetMidX" lang="c"><name>XSRect_GetMidX</name>
+</function><function id="//apple_ref/c/func/XSRect_GetMidX" lang="c"><name>XSRect_GetMidX</name>
 <abstract><p>Gets the X coordinate that establishes the center of the rectangle
 </p></abstract>
 <parameterlist>
@@ -113,7 +113,7 @@ That is, the result is never a negative number.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSFloat</declaration_type> <declaration_function>XSRect_GetMidX</declaration_function>(
     <declaration_type>XSRect</declaration_type> <declaration_param>rect</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRect_GetMidY" lang="c"><name>XSRect_GetMidY</name>
+</function><function id="//apple_ref/c/func/XSRect_GetMidY" lang="c"><name>XSRect_GetMidY</name>
 <abstract><p>Gets the Y coordinate that establishes the center of the rectangle
 </p></abstract>
 <parameterlist>
@@ -128,7 +128,7 @@ That is, the result is never a negative number.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSFloat</declaration_type> <declaration_function>XSRect_GetMidY</declaration_function>(
     <declaration_type>XSRect</declaration_type> <declaration_param>rect</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRect_GetMinX" lang="c"><name>XSRect_GetMinX</name>
+</function><function id="//apple_ref/c/func/XSRect_GetMinX" lang="c"><name>XSRect_GetMinX</name>
 <abstract><p>Gets the smallest value for the X coordinate of the rectangle
 </p></abstract>
 <parameterlist>
@@ -143,7 +143,7 @@ That is, the result is never a negative number.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSFloat</declaration_type> <declaration_function>XSRect_GetMinX</declaration_function>(
     <declaration_type>XSRect</declaration_type> <declaration_param>rect</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRect_GetMinY" lang="c"><name>XSRect_GetMinY</name>
+</function><function id="//apple_ref/c/func/XSRect_GetMinY" lang="c"><name>XSRect_GetMinY</name>
 <abstract><p>Gets the smallest value for the Y coordinate of the rectangle
 </p></abstract>
 <parameterlist>
@@ -158,7 +158,7 @@ That is, the result is never a negative number.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSFloat</declaration_type> <declaration_function>XSRect_GetMinY</declaration_function>(
     <declaration_type>XSRect</declaration_type> <declaration_param>rect</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRect_GetWidth" lang="c"><name>XSRect_GetWidth</name>
+</function><function id="//apple_ref/c/func/XSRect_GetWidth" lang="c"><name>XSRect_GetWidth</name>
 <abstract><p>Gets the width of a rectangle
 </p></abstract>
 <parameterlist>
@@ -180,7 +180,7 @@ number, this function returns the width as if the rectangle
 were standardized.
 That is, the result is never a negative number.
 </p></desc>
-</function><function id="//xs_ref/c/func/XSRect_Inset" lang="c"><name>XSRect_Inset</name>
+</function><function id="//apple_ref/c/func/XSRect_Inset" lang="c"><name>XSRect_Inset</name>
 <abstract><p>Creates a rectangle that is smaller or larger than the source rectangle, with the same center point.
 </p></abstract>
 <parameterlist>
@@ -209,7 +209,7 @@ decreased.
 If dx and dy are negative values, the rectangle's size is
 increased.
 </p></desc>
-</function><function id="//xs_ref/c/func/XSRect_Integral" lang="c"><name>XSRect_Integral</name>
+</function><function id="//apple_ref/c/func/XSRect_Integral" lang="c"><name>XSRect_Integral</name>
 <abstract><p>Creates the smallest rectangle that results from converting the source rectangle values to integers
 </p></abstract>
 <parameterlist>
@@ -228,7 +228,7 @@ this function rounds the rectangle's origin downward and its
 size upward to the nearest whole integers, such that the result
 contains the original rectangle.
 </p></desc>
-</function><function id="//xs_ref/c/func/XSRect_Intersection" lang="c"><name>XSRect_Intersection</name>
+</function><function id="//apple_ref/c/func/XSRect_Intersection" lang="c"><name>XSRect_Intersection</name>
 <abstract><p>Returns the intersection of two rectangles
 </p></abstract>
 <parameterlist>
@@ -251,7 +251,7 @@ contains the original rectangle.
 <desc><p>Both rectangles are standardized prior to calculating the
 intersection.
 </p></desc>
-</function><function id="//xs_ref/c/func/XSRect_IntersectsRect" lang="c"><name>XSRect_IntersectsRect</name>
+</function><function id="//apple_ref/c/func/XSRect_IntersectsRect" lang="c"><name>XSRect_IntersectsRect</name>
 <abstract><p>Checks whether two rectangles intersect
 </p></abstract>
 <parameterlist>
@@ -269,7 +269,7 @@ intersection.
     <declaration_type>XSRect</declaration_type> <declaration_param>rect1</declaration_param>,
     <declaration_type>XSRect</declaration_type> <declaration_param>rect2</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRect_IsEmpty" lang="c"><name>XSRect_IsEmpty</name>
+</function><function id="//apple_ref/c/func/XSRect_IsEmpty" lang="c"><name>XSRect_IsEmpty</name>
 <abstract><p>Checks whether a rectangle has zero width or height
 </p></abstract>
 <parameterlist>
@@ -284,7 +284,7 @@ intersection.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSRect_IsEmpty</declaration_function>(
     <declaration_type>XSRect</declaration_type> <declaration_param>rect</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRect_IsEqualToToRect" lang="c"><name>XSRect_IsEqualToToRect</name>
+</function><function id="//apple_ref/c/func/XSRect_IsEqualToToRect" lang="c"><name>XSRect_IsEqualToToRect</name>
 <abstract><p>Checks if two rectangles are equal
 </p></abstract>
 <parameterlist>
@@ -302,7 +302,7 @@ intersection.
     <declaration_type>XSRect</declaration_type> <declaration_param>r1</declaration_param>,
     <declaration_type>XSRect</declaration_type> <declaration_param>r2</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRect_IsNull" lang="c"><name>XSRect_IsNull</name>
+</function><function id="//apple_ref/c/func/XSRect_IsNull" lang="c"><name>XSRect_IsNull</name>
 <abstract><p>Checks whether a rectangle is a null rectangle
 </p></abstract>
 <parameterlist>
@@ -317,7 +317,7 @@ intersection.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSRect_IsNull</declaration_function>(
     <declaration_type>XSRect</declaration_type> <declaration_param>rect</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRect_Make" lang="c"><name>XSRect_Make</name>
+</function><function id="//apple_ref/c/func/XSRect_Make" lang="c"><name>XSRect_Make</name>
 <abstract><p>Creates a rectangle with the specified coordinates, width and height
 </p></abstract>
 <parameterlist>
@@ -341,7 +341,7 @@ intersection.
     <declaration_type>XSFloat</declaration_type> <declaration_param>width</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>height</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRect_Null" lang="c"><name>XSRect_Null</name>
+</function><function id="//apple_ref/c/func/XSRect_Null" lang="c"><name>XSRect_Null</name>
 <abstract><p>Creates a null rectangle
 </p></abstract>
 <returntype> XS_EXPORT XSRect</returntype>
@@ -350,7 +350,7 @@ intersection.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSRect</declaration_type> <declaration_function>XSRect_Null</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRect_Offset" lang="c"><name>XSRect_Offset</name>
+</function><function id="//apple_ref/c/func/XSRect_Offset" lang="c"><name>XSRect_Offset</name>
 <abstract><p>Creates a rectangle with an origin that is offset from that of the source rectangle
 </p></abstract>
 <parameterlist>
@@ -371,7 +371,7 @@ intersection.
     <declaration_type>XSFloat</declaration_type> <declaration_param>dx</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>dy</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRect_Standardize" lang="c"><name>XSRect_Standardize</name>
+</function><function id="//apple_ref/c/func/XSRect_Standardize" lang="c"><name>XSRect_Standardize</name>
 <abstract><p>Creates a rectangle with a positive width and height
 </p></abstract>
 <parameterlist>
@@ -386,7 +386,7 @@ intersection.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSRect</declaration_type> <declaration_function>XSRect_Standardize</declaration_function>(
     <declaration_type>XSRect</declaration_type> <declaration_param>rect</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSRect_Union" lang="c"><name>XSRect_Union</name>
+</function><function id="//apple_ref/c/func/XSRect_Union" lang="c"><name>XSRect_Union</name>
 <abstract><p>Creates the smallest rectangle that contains the two source rectangles
 </p></abstract>
 <parameterlist>
@@ -413,7 +413,7 @@ both rectangles are null).
 Otherwise a rectangle that completely contains the source
 rectangles is returned.
 </p></desc>
-</function><function id="//xs_ref/c/func/XSRect_Zero" lang="c"><name>XSRect_Zero</name>
+</function><function id="//apple_ref/c/func/XSRect_Zero" lang="c"><name>XSRect_Zero</name>
 <abstract><p>Creates a rectangle with zero coordinates, width and height
 </p></abstract>
 <returntype> XS_EXPORT XSRect</returntype>
@@ -425,5 +425,5 @@ rectangles is returned.
 </function></functions>
 <copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, May 07, 2014</timestamp>
+<timestamp>Tuesday, May 13, 2014</timestamp>
 </header>

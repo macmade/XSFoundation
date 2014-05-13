@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xs_ref/doc/header/XSMemory.h" lang="c" filename="XSMemory.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Functions/XSMemory.h"><name>XSMemory.h</name>
+<header id="//apple_ref/doc/header/XSMemory.h" lang="c" filename="XSMemory.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Functions/XSMemory.h"><name>XSMemory.h</name>
 <abstract><p>XSFoundation memory allocation functions
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
 </attributes>
 <includes>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 </includes>
 <desc><p>...
 </p></desc>
-<functions><function id="//xs_ref/c/func/XSAllocWithInfos" lang="c"><name>XSAllocWithInfos</name>
+<functions><function id="//apple_ref/c/func/XSAllocWithInfos" lang="c"><name>XSAllocWithInfos</name>
 <abstract><p>Allocates memory
 </p></abstract>
 <parameterlist>
@@ -39,7 +39,7 @@
 <desc><p>Do not use this function directly. Use the XSAlloc macro
 instead.
 </p></desc>
-</function><function id="//xs_ref/c/func/XSAutoAllocWithInfos" lang="c"><name>XSAutoAllocWithInfos</name>
+</function><function id="//apple_ref/c/func/XSAutoAllocWithInfos" lang="c"><name>XSAutoAllocWithInfos</name>
 <abstract><p>Allocates memory which will be automatically released
 </p></abstract>
 <parameterlist>
@@ -68,7 +68,7 @@ instead.
 <desc><p>Do not use this function directly. Use the XSAutoAlloc macro
 instead.
 </p></desc>
-</function><function id="//xs_ref/c/func/XSAutorelease" lang="c"><name>XSAutorelease</name>
+</function><function id="//apple_ref/c/func/XSAutorelease" lang="c"><name>XSAutorelease</name>
 <abstract><p>Auto-releases memory data
 </p></abstract>
 <parameterlist>
@@ -86,7 +86,7 @@ instead.
 auto-release pool, and will be released the next time
 the auto-release pool is drained.
 </p></desc>
-</function><function id="//xs_ref/doc/title:func/XSCopy" lang="c"><name>XSCopy</name>
+</function><function id="//apple_ref/doc/title:func/XSCopy" lang="c"><name>XSCopy</name>
 <abstract><p>Copies an object
 </p></abstract>
 <parameterlist>
@@ -112,7 +112,7 @@ the auto-release pool is drained.
 <desc><p>Do not use this function directly. Use the XSCopy macro
 instead.
 </p></desc>
-</function><function id="//xs_ref/c/func/XSCopyWithInfos" lang="c"><name>XSCopyWithInfos</name>
+</function><function id="//apple_ref/c/func/XSCopyWithInfos" lang="c"><name>XSCopyWithInfos</name>
 <abstract><p>Copies an object
 </p></abstract>
 <parameterlist>
@@ -138,7 +138,7 @@ instead.
 <desc><p>Do not use this function directly. Use the XSCopy macro
 instead.
 </p></desc>
-</function><function id="//xs_ref/c/func/XSEquals" lang="c"><name>XSEquals</name>
+</function><function id="//apple_ref/c/func/XSEquals" lang="c"><name>XSEquals</name>
 <abstract><p>Checks whether two objects are equals
 </p></abstract>
 <parameterlist>
@@ -156,7 +156,7 @@ instead.
     <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory1</declaration_param>,
     <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory2</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSReallocWithInfos" lang="c"><name>XSReallocWithInfos</name>
+</function><function id="//apple_ref/c/func/XSReallocWithInfos" lang="c"><name>XSReallocWithInfos</name>
 <abstract><p>Reallocates memory
 </p></abstract>
 <parameterlist>
@@ -188,7 +188,7 @@ instead.
 <desc><p>Do not use this function directly. Use the XSRealloc macro
 instead.
 </p></desc>
-</function><function id="//xs_ref/c/func/XSReleaseWithInfos" lang="c"><name>XSReleaseWithInfos</name>
+</function><function id="//apple_ref/c/func/XSReleaseWithInfos" lang="c"><name>XSReleaseWithInfos</name>
 <abstract><p>Releases memory data
 </p></abstract>
 <parameterlist>
@@ -212,7 +212,7 @@ instead.
 <desc><p>Do not use this function directly. Use the XSRelease macro
 instead.
 </p></desc>
-</function><function id="//xs_ref/c/func/XSRetain" lang="c"><name>XSRetain</name>
+</function><function id="//apple_ref/c/func/XSRetain" lang="c"><name>XSRetain</name>
 <abstract><p>Retains memory data
 </p></abstract>
 <parameterlist>
@@ -228,7 +228,7 @@ instead.
     <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function></functions>
-<defines><pdefine id="//xs_ref/c/macro/XSAlloc" definetype="function" lang="c"><name>XSAlloc</name>
+<defines><pdefine id="//apple_ref/c/macro/XSAlloc" definetype="function" lang="c"><name>XSAlloc</name>
 <abstract><p>Allocates memory
 </p></abstract>
 <parameterlist>
@@ -242,7 +242,7 @@ instead.
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSAlloc</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_bytes_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSAllocWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_bytes_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
 <desc><p>The allocated memory will be zero-filled
 </p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XSAutoAlloc" definetype="function" lang="c"><name>XSAutoAlloc</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XSAutoAlloc" definetype="function" lang="c"><name>XSAutoAlloc</name>
 <abstract><p>Allocates memory which will be automatically released
 </p></abstract>
 <parameterlist>
@@ -259,7 +259,7 @@ auto-release pool, and will be released the next time
 the auto-release pool is drained.
 The allocated memory will be zero-filled
 </p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XSCopy" definetype="function" lang="c"><name>XSCopy</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XSCopy" definetype="function" lang="c"><name>XSCopy</name>
 <abstract><p>Copies an object
 </p></abstract>
 <parameterlist>
@@ -271,7 +271,7 @@ The allocated memory will be zero-filled
 <result><p>The copy of the object
 </p></result>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSCopy</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSCopyWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/XSRealloc" definetype="function" lang="c"><name>XSRealloc</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XSRealloc" definetype="function" lang="c"><name>XSRealloc</name>
 <abstract><p>Reallocates memory
 </p></abstract>
 <parameterlist>
@@ -288,7 +288,7 @@ The allocated memory will be zero-filled
 <desc><p>If the requested bytes are larger than the previous allocation
 size, additional data will be zero-filled.
 </p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XSRelease" definetype="function" lang="c"><name>XSRelease</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XSRelease" definetype="function" lang="c"><name>XSRelease</name>
 <abstract><p>Releases memory data
 </p></abstract>
 <parameterlist>
@@ -303,5 +303,5 @@ data reaches 0.
 </p></desc>
 </pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, May 07, 2014</timestamp>
+<timestamp>Tuesday, May 13, 2014</timestamp>
 </header>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xs_ref/doc/header/XSProcess.h" lang="c" filename="XSProcess.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Functions/XSProcess.h"><name>XSProcess.h</name>
+<header id="//apple_ref/doc/header/XSProcess.h" lang="c" filename="XSProcess.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Functions/XSProcess.h"><name>XSProcess.h</name>
 <abstract><p>XSFoundation process functions
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
 </attributes>
 <includes>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 </includes>
 <desc><p>...
 </p></desc>
-<functions><function id="//xs_ref/c/func/XSProcess_GetProcessID" lang="c"><name>XSProcess_GetProcessID</name>
+<functions><function id="//apple_ref/c/func/XSProcess_GetProcessID" lang="c"><name>XSProcess_GetProcessID</name>
 <abstract><p>Gets the ID of the current process
 </p></abstract>
 <returntype> XSUInteger</returntype>
@@ -19,7 +19,7 @@
 <declaration><declaration_type>XSUInteger</declaration_type> <declaration_function>XSProcess_GetProcessID</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSProcess_GetProcessName" lang="c"><name>XSProcess_GetProcessName</name>
+</function><function id="//apple_ref/c/func/XSProcess_GetProcessName" lang="c"><name>XSProcess_GetProcessName</name>
 <abstract><p>Gets the name of the current process
 </p></abstract>
 <returntype> const char *</returntype>
@@ -31,5 +31,5 @@
 </function></functions>
 <copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, May 07, 2014</timestamp>
+<timestamp>Tuesday, May 13, 2014</timestamp>
 </header>

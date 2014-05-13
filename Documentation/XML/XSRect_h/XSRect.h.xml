@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xs_ref/doc/header/XSRect.h" lang="c" filename="XSRect.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSTypes/XSRect.h"><name>XSRect.h</name>
+<header id="//apple_ref/doc/header/XSRect.h" lang="c" filename="XSRect.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSTypes/XSRect.h"><name>XSRect.h</name>
 <abstract><p>XSRect type definition
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
 </attributes>
 <includes>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSPoint.h">&lt;XS/XSTypes/XSPoint.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSSize.h">&lt;XS/XSTypes/XSSize.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSPoint.h">&lt;XS/XSTypes/XSPoint.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSSize.h">&lt;XS/XSTypes/XSSize.h&gt;</hd_link></include>
 </includes>
 <desc><p>...
 </p></desc>
-<typedefs><typedef id="//xs_ref/c/tdef/XSRect" lang="c" type="simple"><name>XSRect</name>
+<typedefs><typedef id="//apple_ref/c/tdef/XSRect" lang="c" type="simple"><name>XSRect</name>
 <abstract><p>Rectangle type (structure)
 </p></abstract>
 <fieldlist>
@@ -31,5 +31,5 @@
 <desc><p/></desc>
 </typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, May 07, 2014</timestamp>
+<timestamp>Tuesday, May 13, 2014</timestamp>
 </header>

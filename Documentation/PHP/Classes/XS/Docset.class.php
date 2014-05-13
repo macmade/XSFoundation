@@ -228,15 +228,19 @@ class XS_Docset extends XS_Docset_Base
                     $header = new XS_Docset_Header( $this, $info, $this->_sourceRootPrefix );
                     $path   = $header->getPath();
                     
-                    if( strpos( $path, $this->_classesPrefix ) === 0 )
+                    if( $this->_classesPrefix !== NULL && strlen( $this->_classesPrefix ) > 0 && strpos( $path, $this->_classesPrefix ) === 0 )
                     {
                         $this->_classes[ $header->getName() ] = $header;
                     }
-                    else if( strpos( $path, $this->_functionsPrefix ) === 0 )
+                    else if( $header->hasClass() )
+                    {
+                        $this->_classes[ $header->getName() ] = $header;
+                    }
+                    else if( $this->_functionsPrefix !== NULL && strlen( $this->_functionsPrefix ) > 0 && strpos( $path, $this->_functionsPrefix ) === 0 )
                     {
                         $this->_functions[ $header->getName() ] = $header;
                     }
-                    else if( strpos( $path, $this->_typesPrefix ) === 0 )
+                    else if( $this->_typesPrefix !== NULL && strlen( $this->_typesPrefix ) > 0 && strpos( $path, $this->_typesPrefix ) === 0 )
                     {
                         $this->_types[ $header->getName() ] = $header;
                     }
@@ -321,7 +325,7 @@ class XS_Docset extends XS_Docset_Base
             return array();
         }
         
-        if( strlen( $this->_homeFile ) )
+        if( strlen( $this->_homeFile ) && file_exists( $this->_homeFile ) )
         {
             $doc = strtolower( preg_replace( '/<[^>]+>/', ' ', file_get_contents( $this->_homeFile ) ) );
             $i   = substr_count( $doc, strtolower( $q ) );
@@ -339,6 +343,11 @@ class XS_Docset extends XS_Docset_Base
         
         foreach( $this->_pages as $key => $value )
         {
+            if( file_exists( $value ) === false )
+            {
+                continue;
+            }
+            
             $doc = strtolower( preg_replace( '/<[^>]+>/', ' ', file_get_contents( $value ) ) );
             $i   = substr_count( $doc, strtolower( $q ) );
             
@@ -607,6 +616,14 @@ class XS_Docset extends XS_Docset_Base
                 $html[] = '<div class="xsdoc-file-toc">';
                 $html[] = '<h2>Public members</h2>';
                 
+                if( count( $header->getClasses() ) )
+                {
+                    $html[] = '<div class="xsdoc-file-toc-classes">';
+                    $html[] = '<h3>Classes</h3>';
+                    $html[] = $header->getClassesListHTML();
+                    $html[] = '</div>';
+                }
+                
                 if( count( $header->getFunctions() ) )
                 {
                     $html[] = '<div class="xsdoc-file-toc-functions">';
@@ -628,6 +645,14 @@ class XS_Docset extends XS_Docset_Base
                     $html[] = '<div class="xsdoc-file-toc-macros">';
                     $html[] = '<h3>Macros</h3>';
                     $html[] = $header->getMacrosListHTML();
+                    $html[] = '</div>';
+                }
+                
+                if( count( $header->getConstants() ) )
+                {
+                    $html[] = '<div class="xsdoc-file-toc-constants">';
+                    $html[] = '<h3>Constants</h3>';
+                    $html[] = $header->getConstantsListHTML();
                     $html[] = '</div>';
                 }
             
@@ -655,13 +680,25 @@ class XS_Docset extends XS_Docset_Base
                 $html[] = '<div class="xsdoc-page">';
                 $html[] = '<div class="xsdoc-page-content">';
                 
-                ob_start();
+                if( file_exists( $page ) )
+                {
+                    ob_start();
                 
-                include( $page );
+                    include( $page );
                 
-                $html[] = ob_get_contents();
+                    $html[] = ob_get_contents();
                 
-                ob_end_clean();
+                    ob_end_clean();
+                }
+                else
+                {
+                    $html[] = '<div class="xsdoc-file">';
+                    $html[] = '<div class="xsdoc-file-content">';
+                    $html[] = '<h2>' . $pageTitle . '</h2>';
+                    $html[] = '<p>Sorry, the requested page was not found.</p>';
+                    $html[] = '</div>';
+                    $html[] = '</div>';
+                }
                 
                 $html[] = '</div>';
                 $html[] = '</div>';
@@ -671,14 +708,38 @@ class XS_Docset extends XS_Docset_Base
                 $html[] = '<div class="xsdoc-home">';
                 $html[] = '<div class="xsdoc-home-content">';
                 
-                ob_start();
+                if( file_exists( $this->_homeFile ) )
+                {
+                    ob_start();
                 
-                include( $this->_homeFile );
+                    include( $this->_homeFile );
                 
-                $html[] = ob_get_contents();
+                    $html[] = ob_get_contents();
                 
-                ob_end_clean();
+                    ob_end_clean();
+                }
+                else
+                {
+                    $html[] = '<div class="xsdoc-file">';
+                    $html[] = '<div class="xsdoc-file-content">';
+                    $html[] = '<h2>Start page</h2>';
+                    $html[] = '<p>Sorry, the requested page was not found.</p>';
+                    $html[] = '</div>';
+                    $html[] = '</div>';
+                }
                 
+                $html[] = '</div>';
+                $html[] = '</div>';
+            }
+            else
+            {
+                $html[] = '<div class="xsdoc-home">';
+                $html[] = '<div class="xsdoc-home-content">';
+                $html[] = '<div class="xsdoc-file">';
+                $html[] = '<div class="xsdoc-file-content">';
+                $html[] = '<h2>' . $this->_projectName . ' API Reference</h2>';
+                $html[] = '</div>';
+                $html[] = '</div>';
                 $html[] = '</div>';
                 $html[] = '</div>';
             }

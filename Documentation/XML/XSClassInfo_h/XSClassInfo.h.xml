@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xs_ref/doc/header/XSClassInfo.h" lang="c" filename="XSClassInfo.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSTypes/XSClassInfo.h"><name>XSClassInfo.h</name>
+<header id="//apple_ref/doc/header/XSClassInfo.h" lang="c" filename="XSClassInfo.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSTypes/XSClassInfo.h"><name>XSClassInfo.h</name>
 <abstract><p>XSClassInfo type definition
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
 </attributes>
 <includes>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSObjectRef.h">&lt;XS/XSTypes/XSObjectRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSClassType.h">&lt;XS/XSTypes/XSClassType.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSClassCallbackConstructor.h">&lt;XS/XSTypes/XSClassCallbackConstructor.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSClassCallbackDestructor.h">&lt;XS/XSTypes/XSClassCallbackDestructor.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSClassCallbackCopy.h">&lt;XS/XSTypes/XSClassCallbackCopy.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSClassCallbackEquals.h">&lt;XS/XSTypes/XSClassCallbackEquals.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSClassCallbackToString.h">&lt;XS/XSTypes/XSClassCallbackToString.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSObjectRef.h">&lt;XS/XSTypes/XSObjectRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSClassType.h">&lt;XS/XSTypes/XSClassType.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSClassCallbackConstructor.h">&lt;XS/XSTypes/XSClassCallbackConstructor.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSClassCallbackDestructor.h">&lt;XS/XSTypes/XSClassCallbackDestructor.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSClassCallbackCopy.h">&lt;XS/XSTypes/XSClassCallbackCopy.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSClassCallbackEquals.h">&lt;XS/XSTypes/XSClassCallbackEquals.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSClassCallbackToString.h">&lt;XS/XSTypes/XSClassCallbackToString.h&gt;</hd_link></include>
 </includes>
 <desc><p>...
 </p></desc>
-<typedefs><typedef id="//xs_ref/c/tdef/XSClassInfo" lang="c" type="simple"><name>XSClassInfo</name>
+<typedefs><typedef id="//apple_ref/c/tdef/XSClassInfo" lang="c" type="simple"><name>XSClassInfo</name>
 <abstract><p>XSFoundation runtime class structure
 </p></abstract>
 <fieldlist>
@@ -60,5 +60,5 @@
 <desc><p/></desc>
 </typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, May 07, 2014</timestamp>
+<timestamp>Tuesday, May 13, 2014</timestamp>
 </header>

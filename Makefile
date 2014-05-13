@@ -251,14 +251,17 @@ endif
 
 # Checks if we're on OS-X to determine the build type
 ifeq ($(findstring Darwin, $(shell uname)),)
-    _BUILD_TYPE := unix-like
+    _BUILD_TYPE     := unix-like
 else
-    _BUILD_TYPE := os-x
+    _BUILD_TYPE     := os-x
 endif
 
 # Make version (version 4 allows parallel builds with output sync) 
 _MAKE_VERSION_MAJOR := $(shell echo $(MAKE_VERSION) | cut -f1 -d.)
 _MAKE_4             := $(shell [ $(_MAKE_VERSION_MAJOR) -ge 4 ] && echo true)
+
+# Check for the XSDocgen utility
+_HAS_XSDOCGEN       := $(shell if [ -f "/usr/local/bin/XSDocgen" ]; then echo true; else echo false; fi )
 
 #-------------------------------------------------------------------------------
 # Built-in targets
@@ -328,16 +331,39 @@ all: release debug doc
 # Documentation
 doc:
 	
+ifeq ($(_HAS_XSDOCGEN),true)
 	@echo $(call _PRINT,XSDoc,universal,Generating the documentation)
-	@rm -rf Documentation/XML/*
-	@headerdoc2html -u -X -H -e headerDoc2HTML-Exclude.txt -o Documentation/XML/ XSFoundation/include > /dev/null 2>&1
+	@/usr/local/bin/XSDocgen \
+	@    --clear \
+	@    --source XSFoundation/include \
+	@    --output Documentation \
+	@    --exclude-file HeaderDoc-Exclude.txt \
+	@    --project-name "XSFoundation" \
+	@    --project-copyright "XS-Labs &copy; %Y - All Rights Reserved" \
+	@    --project-version "2.0.0-0" \
+	@    --project-timezone "Europe/Zurich" \
+	@    --company-name "XS-Labs" \
+	@    --company-url "http://www.xs-labs.com/" \
+	@    --page-home "Pages/Home.inc.php" \
+	@    --source-root-prefix "/XSFoundation/include/" \
+	@    --classes-prefix "XSFoundation/include/XS/Classes/" \
+	@    --functions-prefix "XSFoundation/include/XS/Functions/" \
+	@    --types-prefix "XSFoundation/include/XS/XSTypes/" \
+	@    --page-add "Building XSFoundation" "Pages/Build.inc.php" \
+	@    --page-add "Memory management" "Pages/Memory.inc.php" \
+	@    --page-add "Class definition" "Pages/Classes.inc.php"
+else
+	@echo $(call _PRINT,XSDoc,universal,Skipping documentation generation - XSDocgen is not installed)
+endif
 	
 # Documentation (verbose mode)
 doc-verbose:
 	
+ifeq ($(_HAS_XSDOCGEN),true)
 	@echo $(call _PRINT,XSDoc,universal,Generating the documentation)
-	@rm -rf Documentation/XML/*
-	@headerdoc2html -u -X -H -e headerDoc2HTML-Exclude.txt -o Documentation/XML/ XSFoundation/include
+else
+	@echo $(call _PRINT,XSDoc,universal,Skipping documentation generation - XSDocgen is not installed)
+endif
 	
 # Release build (parallel if available)
 release:

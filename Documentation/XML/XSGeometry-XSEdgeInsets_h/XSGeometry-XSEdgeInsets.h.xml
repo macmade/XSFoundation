@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xs_ref/doc/header/XSGeometry-XSEdgeInsets.h" lang="c" filename="XSGeometry-XSEdgeInsets.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Functions/XSGeometry-XSEdgeInsets.h"><name>XSGeometry-XSEdgeInsets.h</name>
+<header id="//apple_ref/doc/header/XSGeometry-XSEdgeInsets.h" lang="c" filename="XSGeometry-XSEdgeInsets.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Functions/XSGeometry-XSEdgeInsets.h"><name>XSGeometry-XSEdgeInsets.h</name>
 <abstract><p>XSEdgeInsets functions
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
 </attributes>
 <includes>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 </includes>
 <desc><p>...
 </p></desc>
-<functions><function id="//xs_ref/c/func/XSEdgeInsets_InsetRect" lang="c"><name>XSEdgeInsets_InsetRect</name>
+<functions><function id="//apple_ref/c/func/XSEdgeInsets_InsetRect" lang="c"><name>XSEdgeInsets_InsetRect</name>
 <abstract><p>Adjusts a rectangle by the given edge insets
 </p></abstract>
 <parameterlist>
@@ -28,7 +28,7 @@
     <declaration_type>XSRect</declaration_type> <declaration_param>rect</declaration_param>,
     <declaration_type>XSEdgeInsets</declaration_type> <declaration_param>insets</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSEdgeInsets_IsEqualToEdgeInsets" lang="c"><name>XSEdgeInsets_IsEqualToEdgeInsets</name>
+</function><function id="//apple_ref/c/func/XSEdgeInsets_IsEqualToEdgeInsets" lang="c"><name>XSEdgeInsets_IsEqualToEdgeInsets</name>
 <abstract><p>Checks if two edge insets are equal
 </p></abstract>
 <parameterlist>
@@ -46,7 +46,7 @@
     <declaration_type>XSEdgeInsets</declaration_type> <declaration_param>e1</declaration_param>,
     <declaration_type>XSEdgeInsets</declaration_type> <declaration_param>e2</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSEdgeInsets_Make" lang="c"><name>XSEdgeInsets_Make</name>
+</function><function id="//apple_ref/c/func/XSEdgeInsets_Make" lang="c"><name>XSEdgeInsets_Make</name>
 <abstract><p>Creates an edge insets with the specified inset values
 </p></abstract>
 <parameterlist>
@@ -73,5 +73,5 @@
 </function></functions>
 <copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, May 07, 2014</timestamp>
+<timestamp>Tuesday, May 13, 2014</timestamp>
 </header>

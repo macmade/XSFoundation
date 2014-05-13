@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xs_ref/doc/header/XSDateRef.h" lang="c" filename="XSDateRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSDateRef.h"><name>XSDateRef.h</name>
+<header id="//apple_ref/doc/header/XSDateRef.h" lang="c" filename="XSDateRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSDateRef.h"><name>XSDateRef.h</name>
 <abstract><p>XSDate class
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
 </attributes>
 <includes>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
 <desc><p>...
 </p></desc>
-<functions><function id="//xs_ref/c/func/XSDate_GetClassID" lang="c"><name>XSDate_GetClassID</name>
+<functions><function id="//apple_ref/c/func/XSDate_GetClassID" lang="c"><name>XSDate_GetClassID</name>
 <abstract><p>Gets the class ID for XSDate
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSClassID</returntype>
@@ -21,12 +21,12 @@
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function></functions>
-<typedefs><typedef id="//xs_ref/c/tdef/XSDateRef" lang="c" type="simple"><name>XSDateRef</name>
+<typedefs><typedef id="//apple_ref/c/tdef/XSDateRef" lang="c" type="simple"><name>XSDateRef</name>
 <abstract><p>Opaque type for XSDate
 </p></abstract>
 <declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSDate</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSDateRef</declaration_var>;  </declaration>
 <desc><p/></desc>
 </typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, May 07, 2014</timestamp>
+<timestamp>Tuesday, May 13, 2014</timestamp>
 </header>

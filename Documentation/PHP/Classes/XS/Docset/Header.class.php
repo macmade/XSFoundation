@@ -30,6 +30,8 @@ require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Member.class.php';
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Function.class.php';
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Type.class.php';
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Macro.class.php';
+require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Constant.class.php';
+require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Class.class.php';
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'Docset.class.php';
 
 class XS_Docset_Header extends XS_Docset_Member
@@ -51,6 +53,8 @@ class XS_Docset_Header extends XS_Docset_Member
     protected $_functions           = NULL;
     protected $_types               = NULL;
     protected $_macros              = NULL;
+    protected $_constants           = NULL;
+    protected $_classes             = NULL;
     
     public function __construct( XS_Docset $docset, SplFileInfo $file, $sourceRootPrefix = '' )
     {
@@ -58,6 +62,11 @@ class XS_Docset_Header extends XS_Docset_Member
         $this->_file                = ( string )$file;
         $this->_sourceRootPrefix    = ( string )$sourceRootPrefix;
         $this->_xml                 = simplexml_load_file( $file );
+    }
+    
+    public function hasClass()
+    {
+        return isset( $this->_xml->classes );
     }
     
     public function getPath()
@@ -68,11 +77,15 @@ class XS_Docset_Header extends XS_Docset_Member
         }
         
         $path = $this->_xml[ 'headerpath' ];
-        $pos  = strpos( $path, $this->_sourceRootPrefix );
         
-        if( $pos !== false )
+        if( $this->_sourceRootPrefix !== NULL && strlen( $this->_sourceRootPrefix ) > 0 )
         {
-            $path = substr( $path, $pos + 1 );
+            $pos  = strpos( $path, $this->_sourceRootPrefix );
+        
+            if( $pos !== false )
+            {
+                $path = substr( $path, $pos + 1 );
+            }
         }
         
         $this->_path = $path;
@@ -191,9 +204,12 @@ class XS_Docset_Header extends XS_Docset_Member
         
         $this->_attributes = array();
         
-        foreach( $this->_xml->attributes->children() as $attribute )
+        if( isset( $this->_xml->attributes ) )
         {
-            $this->_attributes[ ( string )( $attribute->name ) ] = $attribute->value;
+            foreach( $this->_xml->attributes->children() as $attribute )
+            {
+                $this->_attributes[ ( string )( $attribute->name ) ] = $attribute->value;
+            }
         }
         
         return $this->_attributes;
@@ -259,6 +275,46 @@ class XS_Docset_Header extends XS_Docset_Member
         return $this->_macros;
     }
     
+    public function getConstants()
+    {
+        if( $this->_constants !== NULL )
+        {
+            return $this->_constants;
+        }
+        
+        $this->_constants = array();
+        
+        if( isset( $this->_xml->constants ) )
+        {
+            foreach( $this->_xml->constants->children() as $constant )
+            {
+                $this->_constants[] = new XS_Docset_Constant( $constant );
+            }
+        }
+        
+        return $this->_constants;
+    }
+    
+    public function getClasses()
+    {
+        if( $this->_classes !== NULL )
+        {
+            return $this->_classes;
+        }
+        
+        $this->_classes = array();
+        
+        if( isset( $this->_xml->classes ) )
+        {
+            foreach( $this->_xml->classes->children() as $class )
+            {
+                $this->_classes[] = new XS_Docset_Class( $class );
+            }
+        }
+        
+        return $this->_classes;
+    }
+    
     public function hasPublicMembers()
     {
         if
@@ -266,6 +322,7 @@ class XS_Docset_Header extends XS_Docset_Member
                count( $this->getFunctions() )
             || count( $this->getTypes() )
             || count( $this->getMacros() )
+            || count( $this->getConstants() )
         )
         {
             return true;
@@ -322,6 +379,44 @@ class XS_Docset_Header extends XS_Docset_Member
             $html[] = '<li>';   
             $html[] = '<a href="#' . $macro->getName() . '" title="' . $macro->getName() . '">';
             $html[] = $macro->getName();   
+            $html[] = '</a>';
+            $html[] = '</li>';
+        }
+    
+        $html[] = '</ul>';
+        
+        return implode( chr( 10 ), $html );
+    }
+    
+    public function getConstantsListHTML()
+    {
+        $html   = array();
+        $html[] = '<ul>';
+    
+        foreach( $this->getConstants() as $constant )
+        {                        
+            $html[] = '<li>';   
+            $html[] = '<a href="#' . $constant->getName() . '" title="' . $constant->getName() . '">';
+            $html[] = $constant->getName();   
+            $html[] = '</a>';
+            $html[] = '</li>';
+        }
+    
+        $html[] = '</ul>';
+        
+        return implode( chr( 10 ), $html );
+    }
+    
+    public function getClassesListHTML()
+    {
+        $html   = array();
+        $html[] = '<ul>';
+    
+        foreach( $this->getClasses() as $class )
+        {                        
+            $html[] = '<li>';   
+            $html[] = '<a href="#' . $class->getName() . '" title="' . $class->getName() . '">';
+            $html[] = $class->getName();   
             $html[] = '</a>';
             $html[] = '</li>';
         }
@@ -428,6 +523,16 @@ class XS_Docset_Header extends XS_Docset_Member
             $html[] = '<p>' . $this->getDiscussion() . '</p>';
         }
         
+        if( count( $this->getClasses() ) )
+        {
+            $html[] = '<h3>Classes</h3>';
+            
+            foreach( $this->getClasses() as $class )
+            {
+                $html[] = ( string )$class;
+            }
+        }
+        
         if( count( $this->getFunctions() ) )
         {
             $html[] = '<h3>Tasks</h3>';
@@ -455,6 +560,16 @@ class XS_Docset_Header extends XS_Docset_Member
             foreach( $this->getMacros() as $macro )
             {
                 $html[] = ( string )$macro;
+            }
+        }
+        
+        if( count( $this->getConstants() ) )
+        {
+            $html[] = '<h3>Constants</h3>';
+            
+            foreach( $this->getConstants() as $constant )
+            {
+                $html[] = ( string )$constant;
             }
         }
         

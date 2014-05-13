@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xs_ref/doc/header/XSMacros.h" lang="c" filename="XSMacros.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSMacros.h"><name>XSMacros.h</name>
+<header id="//apple_ref/doc/header/XSMacros.h" lang="c" filename="XSMacros.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSMacros.h"><name>XSMacros.h</name>
 <abstract><p>XSFoundation macros
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
@@ -9,7 +9,7 @@
 </includes>
 <desc><p>...
 </p></desc>
-<defines><pdefine id="//xs_ref/c/macro/__func__" definetype="block" lang="c"><name>__func__</name>
+<defines><pdefine id="//apple_ref/c/macro/__func__" definetype="block" lang="c"><name>__func__</name>
 <abstract><p>Function name
 </p></abstract>
 <declaration><declaration_preprocessor>#ifndef</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> 
@@ -42,34 +42,34 @@
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/__XS_VERSION__" definetype="value" lang="c"><name>__XS_VERSION__</name>
+</pdefine><pdefine id="//apple_ref/c/macro/__XS_VERSION__" definetype="value" lang="c"><name>__XS_VERSION__</name>
 <abstract><p>XSFoundation version number
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_VERSION__</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__XS_VERS_MAJ__</declaration_preprocessor> <declaration_preprocessor>*</declaration_preprocessor> <declaration_preprocessor>1000000</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>+</declaration_preprocessor> <declaration_preprocessor>__XS_VERS_MIN__</declaration_preprocessor> <declaration_preprocessor>*</declaration_preprocessor> <declaration_preprocessor>10000</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>+</declaration_preprocessor> <declaration_preprocessor>__XS_VERS_BUG__</declaration_preprocessor> <declaration_preprocessor>*</declaration_preprocessor> <declaration_preprocessor>100</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>+</declaration_preprocessor> <declaration_preprocessor>__XS_VERS_PATCH__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/__XS_VERSION_BUGFIX__" definetype="value" lang="c"><name>__XS_VERSION_BUGFIX__</name>
+</pdefine><pdefine id="//apple_ref/c/macro/__XS_VERSION_BUGFIX__" definetype="value" lang="c"><name>__XS_VERSION_BUGFIX__</name>
 <abstract><p>XSFoundation bugfix version number
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_VERSION_BUGFIX__</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor> </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/__XS_VERSION_MAJ__" definetype="value" lang="c"><name>__XS_VERSION_MAJ__</name>
+</pdefine><pdefine id="//apple_ref/c/macro/__XS_VERSION_MAJ__" definetype="value" lang="c"><name>__XS_VERSION_MAJ__</name>
 <abstract><p>XSFoundation major version number
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_VERSION_MAJ__</declaration_preprocessor> <declaration_preprocessor>2</declaration_preprocessor> </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/__XS_VERSION_MIN__" definetype="value" lang="c"><name>__XS_VERSION_MIN__</name>
+</pdefine><pdefine id="//apple_ref/c/macro/__XS_VERSION_MIN__" definetype="value" lang="c"><name>__XS_VERSION_MIN__</name>
 <abstract><p>XSFoundation minor version number
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_VERSION_MIN__</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor> </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/__XS_VERSION_PATCH__" definetype="value" lang="c"><name>__XS_VERSION_PATCH__</name>
+</pdefine><pdefine id="//apple_ref/c/macro/__XS_VERSION_PATCH__" definetype="value" lang="c"><name>__XS_VERSION_PATCH__</name>
 <abstract><p>XSFoundation patch level version number
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_VERSION_PATCH__</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor> </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/__XS_VERSION_STR__" definetype="value" lang="c"><name>__XS_VERSION_STR__</name>
+</pdefine><pdefine id="//apple_ref/c/macro/__XS_VERSION_STR__" definetype="value" lang="c"><name>__XS_VERSION_STR__</name>
 <abstract><p>XSFoundation version number string
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_VERSION_STR__</declaration_preprocessor> <declaration_preprocessor>"</declaration_preprocessor><declaration_preprocessor>2</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>-</declaration_preprocessor><declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>"</declaration_preprocessor> </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_ABS" definetype="block" lang="c"><name>XS_ABS</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XS_ABS" definetype="block" lang="c"><name>XS_ABS</name>
 <abstract><p>Gets an absolute value of a value
 </p></abstract>
 <parameterlist>
@@ -83,7 +83,7 @@
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_ABS</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>?</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>-</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>:</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_CONST_ATTRIBUTE" definetype="block" lang="c"><name>XS_CONST_ATTRIBUTE</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XS_CONST_ATTRIBUTE" definetype="block" lang="c"><name>XS_CONST_ATTRIBUTE</name>
 <abstract><p>Standardization of the const compiler attribute
 </p></abstract>
 <declaration><declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>&gt;=</declaration_preprocessor> <declaration_preprocessor>4</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>|</declaration_preprocessor><declaration_preprocessor>|</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>==</declaration_preprocessor> <declaration_preprocessor>3</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC_MINOR__</declaration_preprocessor> <declaration_preprocessor>&gt;=</declaration_preprocessor> <declaration_preprocessor>1</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
@@ -95,7 +95,7 @@
 <desc><p>Not all compiler support this attribute, so it may be defined
 to nothing.
 </p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_DEPRECATED_ATTRIBUTE" definetype="block" lang="c"><name>XS_DEPRECATED_ATTRIBUTE</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XS_DEPRECATED_ATTRIBUTE" definetype="block" lang="c"><name>XS_DEPRECATED_ATTRIBUTE</name>
 <abstract><p>Standardization of the deprecated compiler attribute
 </p></abstract>
 <declaration><declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>&gt;=</declaration_preprocessor> <declaration_preprocessor>4</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>|</declaration_preprocessor><declaration_preprocessor>|</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>==</declaration_preprocessor> <declaration_preprocessor>3</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC_MINOR__</declaration_preprocessor> <declaration_preprocessor>&gt;=</declaration_preprocessor> <declaration_preprocessor>1</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
@@ -107,7 +107,7 @@ to nothing.
 <desc><p>Not all compiler support this attribute, so it may be defined
 to nothing.
 </p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_EXPORT" definetype="block" lang="c"><name>XS_EXPORT</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XS_EXPORT" definetype="block" lang="c"><name>XS_EXPORT</name>
 <abstract><p>Standardization of the extern keyword for exported symbols
 </p></abstract>
 <declaration><declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__WIN32__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
@@ -116,7 +116,7 @@ to nothing.
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_EXPORT</declaration_preprocessor> <declaration_preprocessor>XS_EXTERN</declaration_preprocessor> 
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_EXTERN" definetype="block" lang="c"><name>XS_EXTERN</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XS_EXTERN" definetype="block" lang="c"><name>XS_EXTERN</name>
 <abstract><p>Standardization of the extern keyword
 </p></abstract>
 <declaration><declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__cplusplus</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
@@ -125,7 +125,7 @@ to nothing.
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_EXTERN</declaration_preprocessor> <declaration_preprocessor>extern</declaration_preprocessor> 
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_EXTERN_C_BEGIN" definetype="block" lang="c"><name>XS_EXTERN_C_BEGIN</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XS_EXTERN_C_BEGIN" definetype="block" lang="c"><name>XS_EXTERN_C_BEGIN</name>
 <abstract><p>Substitution for 'extern "C" {' start, when compiling with C++
 </p></abstract>
 <declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>__cplusplus</declaration_preprocessor> 
@@ -134,7 +134,7 @@ to nothing.
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_EXTERN_C_BEGIN</declaration_preprocessor> 
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_EXTERN_C_END" definetype="block" lang="c"><name>XS_EXTERN_C_END</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XS_EXTERN_C_END" definetype="block" lang="c"><name>XS_EXTERN_C_END</name>
 <abstract><p>Substitution for 'extern "C" {' end, when compiling with C++
 </p></abstract>
 <declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>__cplusplus</declaration_preprocessor> 
@@ -143,7 +143,7 @@ to nothing.
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_EXTERN_C_END</declaration_preprocessor> 
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_FORMAT_ATTRIBUTE" definetype="block" lang="c"><name>XS_FORMAT_ATTRIBUTE</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XS_FORMAT_ATTRIBUTE" definetype="block" lang="c"><name>XS_FORMAT_ATTRIBUTE</name>
 <abstract><p>Standardization of the format compiler attribute
 </p></abstract>
 <declaration><declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>&gt;=</declaration_preprocessor> <declaration_preprocessor>4</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>|</declaration_preprocessor><declaration_preprocessor>|</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>==</declaration_preprocessor> <declaration_preprocessor>3</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC_MINOR__</declaration_preprocessor> <declaration_preprocessor>&gt;=</declaration_preprocessor> <declaration_preprocessor>1</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
@@ -155,11 +155,11 @@ to nothing.
 <desc><p>Not all compiler support this attribute, so it may be defined
 to nothing.
 </p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_IMPORT" definetype="value" lang="c"><name>XS_IMPORT</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XS_IMPORT" definetype="value" lang="c"><name>XS_IMPORT</name>
 <abstract><p>Standardization of the extern keyword for imported symbols
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_IMPORT</declaration_preprocessor> <declaration_preprocessor>XS_EXTERN</declaration_preprocessor> </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_INLINE" definetype="block" lang="c"><name>XS_INLINE</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XS_INLINE" definetype="block" lang="c"><name>XS_INLINE</name>
 <abstract><p>Standardization of the inline compiler keyword
 </p></abstract>
 <declaration><declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>==</declaration_preprocessor> <declaration_preprocessor>4</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>!</declaration_preprocessor><declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
@@ -180,7 +180,7 @@ to nothing.
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_MAX" definetype="block" lang="c"><name>XS_MAX</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XS_MAX" definetype="block" lang="c"><name>XS_MAX</name>
 <abstract><p>Gets the maximum value of two values
 </p></abstract>
 <parameterlist>
@@ -195,7 +195,7 @@ to nothing.
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MAX</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&gt;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>?</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>:</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_MIN" definetype="block" lang="c"><name>XS_MIN</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XS_MIN" definetype="block" lang="c"><name>XS_MIN</name>
 <abstract><p>Gets the minimum value of two values
 </p></abstract>
 <parameterlist>
@@ -210,7 +210,7 @@ to nothing.
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MIN</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>?</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>:</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_b_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_NORETURN_ATTRIBUTE" definetype="block" lang="c"><name>XS_NORETURN_ATTRIBUTE</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XS_NORETURN_ATTRIBUTE" definetype="block" lang="c"><name>XS_NORETURN_ATTRIBUTE</name>
 <abstract><p>Standardization of the noreturn compiler attribute
 </p></abstract>
 <declaration><declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>&gt;=</declaration_preprocessor> <declaration_preprocessor>4</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>|</declaration_preprocessor><declaration_preprocessor>|</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>==</declaration_preprocessor> <declaration_preprocessor>3</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC_MINOR__</declaration_preprocessor> <declaration_preprocessor>&gt;=</declaration_preprocessor> <declaration_preprocessor>1</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
@@ -222,7 +222,7 @@ to nothing.
 <desc><p>Not all compiler support this attribute, so it may be defined
 to nothing.
 </p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_PATH_MAX" definetype="block" lang="c"><name>XS_PATH_MAX</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XS_PATH_MAX" definetype="block" lang="c"><name>XS_PATH_MAX</name>
 <abstract><p>Maximum length for a path
 </p></abstract>
 <declaration><declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_WIN32</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
@@ -231,7 +231,7 @@ to nothing.
 <declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_PATH_MAX</declaration_preprocessor> <declaration_preprocessor>PATH_MAX</declaration_preprocessor> 
 <declaration_preprocessor>#endif</declaration_preprocessor>  
 </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_UNAVAILABLE_ATTRIBUTE" definetype="block" lang="c"><name>XS_UNAVAILABLE_ATTRIBUTE</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XS_UNAVAILABLE_ATTRIBUTE" definetype="block" lang="c"><name>XS_UNAVAILABLE_ATTRIBUTE</name>
 <abstract><p>Standardization of the unavailable compiler attribute
 </p></abstract>
 <declaration><declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>&gt;=</declaration_preprocessor> <declaration_preprocessor>4</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>|</declaration_preprocessor><declaration_preprocessor>|</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>==</declaration_preprocessor> <declaration_preprocessor>3</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC_MINOR__</declaration_preprocessor> <declaration_preprocessor>&gt;=</declaration_preprocessor> <declaration_preprocessor>1</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
@@ -243,7 +243,7 @@ to nothing.
 <desc><p>Not all compiler support this attribute, so it may be defined
 to nothing.
 </p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_WEAK_ATTRIBUTE" definetype="block" lang="c"><name>XS_WEAK_ATTRIBUTE</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XS_WEAK_ATTRIBUTE" definetype="block" lang="c"><name>XS_WEAK_ATTRIBUTE</name>
 <abstract><p>Standardization of the weak compiler attribute
 </p></abstract>
 <declaration><declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>&gt;=</declaration_preprocessor> <declaration_preprocessor>4</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>|</declaration_preprocessor><declaration_preprocessor>|</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>==</declaration_preprocessor> <declaration_preprocessor>3</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC_MINOR__</declaration_preprocessor> <declaration_preprocessor>&gt;=</declaration_preprocessor> <declaration_preprocessor>1</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
@@ -255,7 +255,7 @@ to nothing.
 <desc><p>Not all compiler support this attribute, so it may be defined
 to nothing.
 </p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XS_WEAK_IMPORT_ATTRIBUTE" definetype="block" lang="c"><name>XS_WEAK_IMPORT_ATTRIBUTE</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XS_WEAK_IMPORT_ATTRIBUTE" definetype="block" lang="c"><name>XS_WEAK_IMPORT_ATTRIBUTE</name>
 <abstract><p>Standardization of the weak import compiler attribute
 </p></abstract>
 <declaration><declaration_preprocessor>#if</declaration_preprocessor> <declaration_preprocessor>defined</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>&gt;=</declaration_preprocessor> <declaration_preprocessor>4</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>|</declaration_preprocessor><declaration_preprocessor>|</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC__</declaration_preprocessor> <declaration_preprocessor>==</declaration_preprocessor> <declaration_preprocessor>3</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__GNUC_MINOR__</declaration_preprocessor> <declaration_preprocessor>&gt;=</declaration_preprocessor> <declaration_preprocessor>1</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
@@ -271,11 +271,11 @@ to nothing.
 <desc><p>Not all compiler support this attribute, so it may be defined
 to nothing.
 </p></desc>
-</pdefine><pdefine id="//xs_ref/c/macro/XSAutoreleased" definetype="value" lang="c"><name>XSAutoreleased</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XSAutoreleased" definetype="value" lang="c"><name>XSAutoreleased</name>
 <abstract><p>Marker for methods that return auto-released objects
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSAutoreleased</declaration_preprocessor> </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/XSEndian16_Swap" definetype="function" lang="c"><name>XSEndian16_Swap</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XSEndian16_Swap" definetype="function" lang="c"><name>XSEndian16_Swap</name>
 <abstract><p>Swap endiannes of a 16 bits value
 </p></abstract>
 <parameterlist>
@@ -289,7 +289,7 @@ to nothing.
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSUInt16</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_value_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>0x00FF</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&lt;&lt;</declaration_preprocessor> <declaration_preprocessor>8</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>|</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSUInt16</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_value_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>0xFF00</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&gt;&gt;</declaration_preprocessor> <declaration_preprocessor>8</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/XSEndian32_Swap" definetype="function" lang="c"><name>XSEndian32_Swap</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XSEndian32_Swap" definetype="function" lang="c"><name>XSEndian32_Swap</name>
 <abstract><p>Swap endiannes of a 32 bits value
 </p></abstract>
 <parameterlist>
@@ -305,7 +305,7 @@ to nothing.
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSUInt32</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_value_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>0x00FF0000</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&gt;&gt;</declaration_preprocessor> <declaration_preprocessor>8</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>|</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSUInt32</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_value_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>0xFF000000</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&gt;&gt;</declaration_preprocessor> <declaration_preprocessor>24</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/XSEndian64_Swap" definetype="function" lang="c"><name>XSEndian64_Swap</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XSEndian64_Swap" definetype="function" lang="c"><name>XSEndian64_Swap</name>
 <abstract><p>Swap endiannes of a 64 bits value
 </p></abstract>
 <parameterlist>
@@ -325,11 +325,11 @@ to nothing.
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSUInt64</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>_value_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&gt;&gt;</declaration_preprocessor> <declaration_preprocessor>40</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>0x000000000000FF00ULL</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>|</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSUInt64</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>_value_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&gt;&gt;</declaration_preprocessor> <declaration_preprocessor>56</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>0x00000000000000FFULL</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-</pdefine><pdefine id="//xs_ref/c/macro/XSStatic" definetype="value" lang="c"><name>XSStatic</name>
+</pdefine><pdefine id="//apple_ref/c/macro/XSStatic" definetype="value" lang="c"><name>XSStatic</name>
 <abstract><p>Marker for static class methods
 </p></abstract>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSStatic</declaration_preprocessor> </declaration>
 </pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, May 07, 2014</timestamp>
+<timestamp>Tuesday, May 13, 2014</timestamp>
 </header>

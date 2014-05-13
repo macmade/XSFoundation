@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xs_ref/doc/header/XSStringRef.h" lang="c" filename="XSStringRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSStringRef.h"><name>XSStringRef.h</name>
+<header id="//apple_ref/doc/header/XSStringRef.h" lang="c" filename="XSStringRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSStringRef.h"><name>XSStringRef.h</name>
 <abstract><p>XSString class
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
 </attributes>
 <includes>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xs_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//apple_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
 <desc><p>...
 </p></desc>
-<functions><function id="//xs_ref/c/func/XSString_ContainsCString" lang="c"><name>XSString_ContainsCString</name>
+<functions><function id="//apple_ref/c/func/XSString_ContainsCString" lang="c"><name>XSString_ContainsCString</name>
 <abstract><p>Checks whether a string contains a C string
 </p></abstract>
 <parameterlist>
@@ -29,7 +29,7 @@
     <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>s</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_ContainsString" lang="c"><name>XSString_ContainsString</name>
+</function><function id="//apple_ref/c/func/XSString_ContainsString" lang="c"><name>XSString_ContainsString</name>
 <abstract><p>Checks whether a string contains another string
 </p></abstract>
 <parameterlist>
@@ -47,7 +47,7 @@
     <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSStringRef</declaration_type> <declaration_param>s</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_CreateWithCString" lang="c"><name>XSString_CreateWithCString</name>
+</function><function id="//apple_ref/c/func/XSString_CreateWithCString" lang="c"><name>XSString_CreateWithCString</name>
 <abstract><p>Creates an XSString object from a C string
 </p></abstract>
 <parameterlist>
@@ -62,7 +62,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_CreateWithCString</declaration_function>(
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>s</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_CreateWithFormat" lang="c"><name>XSString_CreateWithFormat</name>
+</function><function id="//apple_ref/c/func/XSString_CreateWithFormat" lang="c"><name>XSString_CreateWithFormat</name>
 <abstract><p>Creates an XSString object from a format string with arguments
 </p></abstract>
 <parameterlist>
@@ -80,7 +80,7 @@
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>format</declaration_param>,
     ... );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_CreateWithFormatAndArgs" lang="c"><name>XSString_CreateWithFormatAndArgs</name>
+</function><function id="//apple_ref/c/func/XSString_CreateWithFormatAndArgs" lang="c"><name>XSString_CreateWithFormatAndArgs</name>
 <abstract><p>Creates an XSString object from a format string with arguments
 </p></abstract>
 <parameterlist>
@@ -98,7 +98,7 @@
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>format</declaration_param>,
     <declaration_type>va_list</declaration_type> <declaration_param>args</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_GetClassID" lang="c"><name>XSString_GetClassID</name>
+</function><function id="//apple_ref/c/func/XSString_GetClassID" lang="c"><name>XSString_GetClassID</name>
 <abstract><p>Gets the class ID for XSString
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSClassID</returntype>
@@ -107,7 +107,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSClassID</declaration_type> <declaration_function>XSString_GetClassID</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_GetCString" lang="c"><name>XSString_GetCString</name>
+</function><function id="//apple_ref/c/func/XSString_GetCString" lang="c"><name>XSString_GetCString</name>
 <abstract><p>Gets the internal C string pointer
 </p></abstract>
 <parameterlist>
@@ -123,7 +123,7 @@
     <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p>Do not alter the content of the C string.
 </p></desc>
-</function><function id="//xs_ref/c/func/XSString_GetLength" lang="c"><name>XSString_GetLength</name>
+</function><function id="//apple_ref/c/func/XSString_GetLength" lang="c"><name>XSString_GetLength</name>
 <abstract><p>Gets the length of a string
 </p></abstract>
 <parameterlist>
@@ -138,7 +138,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSUInteger</declaration_type> <declaration_function>XSString_GetLength</declaration_function>(
     <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_IsEqualToString" lang="c"><name>XSString_IsEqualToString</name>
+</function><function id="//apple_ref/c/func/XSString_IsEqualToString" lang="c"><name>XSString_IsEqualToString</name>
 <abstract><p>Compares two string for equality
 </p></abstract>
 <parameterlist>
@@ -156,7 +156,7 @@
     <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSStringRef</declaration_type> <declaration_param>s</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_LowercaseString" lang="c"><name>XSString_LowercaseString</name>
+</function><function id="//apple_ref/c/func/XSString_LowercaseString" lang="c"><name>XSString_LowercaseString</name>
 <abstract><p>Gets a lowercase version of a string
 </p></abstract>
 <parameterlist>
@@ -171,7 +171,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_LowercaseString</declaration_function>(
     <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_RangeOfCString" lang="c"><name>XSString_RangeOfCString</name>
+</function><function id="//apple_ref/c/func/XSString_RangeOfCString" lang="c"><name>XSString_RangeOfCString</name>
 <abstract><p>Gets the range of a C string in a string
 </p></abstract>
 <parameterlist>
@@ -191,7 +191,7 @@
 <desc><p>If the C string is not found in the receiver string, the
 range's location will be equal to XSNotFound.
 </p></desc>
-</function><function id="//xs_ref/c/func/XSString_RangeOfString" lang="c"><name>XSString_RangeOfString</name>
+</function><function id="//apple_ref/c/func/XSString_RangeOfString" lang="c"><name>XSString_RangeOfString</name>
 <abstract><p>Gets the range of a string in a string
 </p></abstract>
 <parameterlist>
@@ -211,7 +211,7 @@ range's location will be equal to XSNotFound.
 <desc><p>If the 's' string is not found in the receiver string, the
 range's location will be equal to XSNotFound.
 </p></desc>
-</function><function id="//xs_ref/c/func/XSString_StringByAppendingCString" lang="c"><name>XSString_StringByAppendingCString</name>
+</function><function id="//apple_ref/c/func/XSString_StringByAppendingCString" lang="c"><name>XSString_StringByAppendingCString</name>
 <abstract><p>Gets a string by appending a C string to a string
 </p></abstract>
 <parameterlist>
@@ -229,7 +229,7 @@ range's location will be equal to XSNotFound.
     <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>s</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_StringByAppendingFormat" lang="c"><name>XSString_StringByAppendingFormat</name>
+</function><function id="//apple_ref/c/func/XSString_StringByAppendingFormat" lang="c"><name>XSString_StringByAppendingFormat</name>
 <abstract><p>Gets a string by appending a format string with arguments to a string
 </p></abstract>
 <parameterlist>
@@ -250,7 +250,7 @@ range's location will be equal to XSNotFound.
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>format</declaration_param>,
     ... );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_StringByAppendingString" lang="c"><name>XSString_StringByAppendingString</name>
+</function><function id="//apple_ref/c/func/XSString_StringByAppendingString" lang="c"><name>XSString_StringByAppendingString</name>
 <abstract><p>Gets a string by appending a string to another
 </p></abstract>
 <parameterlist>
@@ -268,7 +268,7 @@ range's location will be equal to XSNotFound.
     <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSStringRef</declaration_type> <declaration_param>s</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_StringFromXSEdgeInsets" lang="c"><name>XSString_StringFromXSEdgeInsets</name>
+</function><function id="//apple_ref/c/func/XSString_StringFromXSEdgeInsets" lang="c"><name>XSString_StringFromXSEdgeInsets</name>
 <abstract><p>Gets an XSString object from an XSEdgeInsets value
 </p></abstract>
 <parameterlist>
@@ -283,7 +283,7 @@ range's location will be equal to XSNotFound.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_StringFromXSEdgeInsets</declaration_function>(
     <declaration_type>XSEdgeInsets</declaration_type> <declaration_param>insets</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_StringFromXSPoint" lang="c"><name>XSString_StringFromXSPoint</name>
+</function><function id="//apple_ref/c/func/XSString_StringFromXSPoint" lang="c"><name>XSString_StringFromXSPoint</name>
 <abstract><p>Gets an XSString object from an XSPoint value
 </p></abstract>
 <parameterlist>
@@ -298,7 +298,7 @@ range's location will be equal to XSNotFound.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_StringFromXSPoint</declaration_function>(
     <declaration_type>XSPoint</declaration_type> <declaration_param>point</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_StringFromXSRange" lang="c"><name>XSString_StringFromXSRange</name>
+</function><function id="//apple_ref/c/func/XSString_StringFromXSRange" lang="c"><name>XSString_StringFromXSRange</name>
 <abstract><p>Gets an XSString object from an XSRange value
 </p></abstract>
 <parameterlist>
@@ -313,7 +313,7 @@ range's location will be equal to XSNotFound.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_StringFromXSRange</declaration_function>(
     <declaration_type>XSRange</declaration_type> <declaration_param>range</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_StringFromXSRect" lang="c"><name>XSString_StringFromXSRect</name>
+</function><function id="//apple_ref/c/func/XSString_StringFromXSRect" lang="c"><name>XSString_StringFromXSRect</name>
 <abstract><p>Gets an XSString object from an XSRect value
 </p></abstract>
 <parameterlist>
@@ -328,7 +328,7 @@ range's location will be equal to XSNotFound.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_StringFromXSRect</declaration_function>(
     <declaration_type>XSRect</declaration_type> <declaration_param>rect</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_StringFromXSSize" lang="c"><name>XSString_StringFromXSSize</name>
+</function><function id="//apple_ref/c/func/XSString_StringFromXSSize" lang="c"><name>XSString_StringFromXSSize</name>
 <abstract><p>Gets an XSString object from an XSSize value
 </p></abstract>
 <parameterlist>
@@ -343,7 +343,7 @@ range's location will be equal to XSNotFound.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_StringFromXSSize</declaration_function>(
     <declaration_type>XSSize</declaration_type> <declaration_param>size</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_StringWithCString" lang="c"><name>XSString_StringWithCString</name>
+</function><function id="//apple_ref/c/func/XSString_StringWithCString" lang="c"><name>XSString_StringWithCString</name>
 <abstract><p>Gets an XSString object from a C string
 </p></abstract>
 <parameterlist>
@@ -358,7 +358,7 @@ range's location will be equal to XSNotFound.
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSString_StringWithCString</declaration_function>(
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>s</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_StringWithFormat" lang="c"><name>XSString_StringWithFormat</name>
+</function><function id="//apple_ref/c/func/XSString_StringWithFormat" lang="c"><name>XSString_StringWithFormat</name>
 <abstract><p>Gets an XSString object from a format string with arguments
 </p></abstract>
 <parameterlist>
@@ -376,7 +376,7 @@ range's location will be equal to XSNotFound.
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>format</declaration_param>,
     ... );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_StringWithFormatAndArgs" lang="c"><name>XSString_StringWithFormatAndArgs</name>
+</function><function id="//apple_ref/c/func/XSString_StringWithFormatAndArgs" lang="c"><name>XSString_StringWithFormatAndArgs</name>
 <abstract><p>Gets an XSString object from a format string with arguments
 </p></abstract>
 <parameterlist>
@@ -394,7 +394,7 @@ range's location will be equal to XSNotFound.
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>format</declaration_param>,
     <declaration_type>va_list</declaration_type> <declaration_param>args</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_SubstringFromIndex" lang="c"><name>XSString_SubstringFromIndex</name>
+</function><function id="//apple_ref/c/func/XSString_SubstringFromIndex" lang="c"><name>XSString_SubstringFromIndex</name>
 <abstract><p>Gets a substring from a specific index to the end of the string
 </p></abstract>
 <parameterlist>
@@ -412,7 +412,7 @@ range's location will be equal to XSNotFound.
     <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSUInteger</declaration_type> <declaration_param>i</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_SubstringToIndex" lang="c"><name>XSString_SubstringToIndex</name>
+</function><function id="//apple_ref/c/func/XSString_SubstringToIndex" lang="c"><name>XSString_SubstringToIndex</name>
 <abstract><p>Gets a substring from the start of the string to a specific index
 </p></abstract>
 <parameterlist>
@@ -430,7 +430,7 @@ range's location will be equal to XSNotFound.
     <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSUInteger</declaration_type> <declaration_param>i</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_SubstringWithRange" lang="c"><name>XSString_SubstringWithRange</name>
+</function><function id="//apple_ref/c/func/XSString_SubstringWithRange" lang="c"><name>XSString_SubstringWithRange</name>
 <abstract><p>Gets a substring based on a specific range
 </p></abstract>
 <parameterlist>
@@ -448,7 +448,7 @@ range's location will be equal to XSNotFound.
     <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSRange</declaration_type> <declaration_param>range</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xs_ref/c/func/XSString_UppercaseString" lang="c"><name>XSString_UppercaseString</name>
+</function><function id="//apple_ref/c/func/XSString_UppercaseString" lang="c"><name>XSString_UppercaseString</name>
 <abstract><p>Gets an uppercase version of a string
 </p></abstract>
 <parameterlist>
@@ -464,12 +464,12 @@ range's location will be equal to XSNotFound.
     <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function></functions>
-<typedefs><typedef id="//xs_ref/c/tdef/XSStringRef" lang="c" type="simple"><name>XSStringRef</name>
+<typedefs><typedef id="//apple_ref/c/tdef/XSStringRef" lang="c" type="simple"><name>XSStringRef</name>
 <abstract><p>Opaque type for XSString
 </p></abstract>
 <declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSString</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSStringRef</declaration_var>;  </declaration>
 <desc><p/></desc>
-</typedef></typedefs><defines><pdefine id="//xs_ref/c/macro/XSSTR" definetype="function" lang="c"><name>XSSTR</name>
+</typedef></typedefs><defines><pdefine id="//apple_ref/c/macro/XSSTR" definetype="function" lang="c"><name>XSSTR</name>
 <abstract><p>Gets an XSString object from a C string
 </p></abstract>
 <parameterlist>
@@ -483,5 +483,5 @@ range's location will be equal to XSNotFound.
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSSTR</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_s_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSString_StringWithCString</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_s_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
 </pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, May 07, 2014</timestamp>
+<timestamp>Tuesday, May 13, 2014</timestamp>
 </header>
