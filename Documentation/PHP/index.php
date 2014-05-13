@@ -15,9 +15,9 @@ $DOC->setClassesPrefix( 'XSFoundation/include/XS/Classes/' );
 $DOC->setFunctionsPrefix( 'XSFoundation/include/XS/Functions/' );
 $DOC->setTypesPrefix( 'XSFoundation/include/XS/XSTypes/' );
 $DOC->setHomeFile( 'Pages' . DIRECTORY_SEPARATOR . 'home.inc.php' );
-//$DOC->addPage( 'Pages' . DIRECTORY_SEPARATOR . 'build.inc.php', 'Building XSFoundation' );
-//$DOC->addPage( 'Pages' . DIRECTORY_SEPARATOR . 'memory.inc.php', 'Memory management' );
-//$DOC->addPage( 'Pages' . DIRECTORY_SEPARATOR . 'class.inc.php', 'Class definition' );
+$DOC->addPage( 'Pages' . DIRECTORY_SEPARATOR . 'build.inc.php', 'Building XSFoundation' );
+$DOC->addPage( 'Pages' . DIRECTORY_SEPARATOR . 'memory.inc.php', 'Memory management' );
+$DOC->addPage( 'Pages' . DIRECTORY_SEPARATOR . 'class.inc.php', 'Custom class creation' );
 
 ?>
 <?xml version="1.0" encoding="utf-8"?>

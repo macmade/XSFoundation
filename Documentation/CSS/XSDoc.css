@@ -139,13 +139,14 @@ code {
     background-color:       #FCFCFC;
     border:                 solid 1px #D6E0E5;
     border-radius:          10px;
+    margin-bottom:          10px;
+    margin-top:             5px;
+    line-height:            12px;
 }
 
 .xsdoc-code {
     color:                  #4F4F4F;
     font-style:             normal;
-    font-weight:            normal;
-    font-size:              12px;
     text-decoration:        none;
     font-family:            Consolas, Monaco, Courier, sans-serif;
 }
@@ -287,6 +288,10 @@ code {
     border-bottom:          solid 1px #D6E0E5;
     margin-bottom:          10px;
     padding-bottom:         5px;
+}
+
+.xsdoc-file-toc h3 a {
+    font-weight:            normal;
 }
 
 .xsdoc-file-toc ul {
@@ -442,4 +447,11 @@ code {
 
 .xsdoc-search-result p a {
     color:                  #000000;
+}
+
+ul.xsdoc-list-square {
+    margin:                 0px;
+    padding-left:           10px;
+    margin-left:            10px;
+    list-style:             square;
 }

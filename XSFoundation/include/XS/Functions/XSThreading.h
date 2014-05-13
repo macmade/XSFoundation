@@ -67,7 +67,7 @@
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSFoundation threading functions
  * @discussion  Whenever possible, prefer using the XSFoundation class types
- *              like XSThreaRef, XSLockRef, XSSemaphoreRef, etc over this set
+ *              like XSThreadRef, XSLockRef, XSSemaphoreRef, etc. over this set
  *              of functions.
  */
 
