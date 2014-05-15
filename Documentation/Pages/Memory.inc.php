@@ -13,5 +13,8 @@
     ?>
     <div class="xsdoc-file-content">
         <h2>Memory management</h2>
+        <p>
+            Coming soon...
+        </p>
     </div>
 </div>
