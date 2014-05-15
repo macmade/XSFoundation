@@ -26,66 +26,46 @@
 
 /* $Id$ */
 
-require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'ClassMember.class.php';
+require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Member.class.php';
 
-class XS_Docset_Method extends XS_Docset_ClassMember
+class XS_Docset_ClassMember extends XS_Docset_Member
 {
+    protected $_class = NULL;
+    
     public function __construct( XS_Docset_Class $class, SimpleXMLElement $xml )
     {
-        parent::__construct( $class, $xml );
-    }
-    
-    public function getName()
-    {
-        $name = parent::getName();
+        parent::__construct( $xml );
         
-        if( $this->isStatic() )
-        {
-            return "+&nbsp;" . $name; 
-        }
-        else
-        {
-            return "-&nbsp;" . $name;
-        }
-    }
-    
-    public function isStatic()
-    {
-        if( !isset( $this->_xml[ 'type' ] ) )
-        {
-            return false;
-        }
-        
-        if( $this->_xml[ 'type' ] == "clm" )
-        {
-            return true;
-        }
-        
-        return false;
-    }
-    
-    public function isOptional()
-    {
-        return isset( $this->_xml[ 'optionalOrRequired' ] ) && ( string )( $this->_xml[ 'optionalOrRequired' ] ) === '@optional';
-    }
-    
-    public function getNotes()
-    {
-        if( $this->isOptional() )
-        {
-            return 'This method is optional.';
-        }
-        
-        return parent::getNotes();
+        $this->_class = $class;
     }
     
     public function getAccessControl()
     {
-        if( isset( $this->_xml[ 'lang' ] ) && ( ( string )( $this->_xml[ 'lang' ] ) === 'c' || ( string )( $this->_xml[ 'lang' ] ) === 'occ' ) )
+        if( isset( $this->_xml[ 'accessControl' ] ) && ( string )( $this->_xml[ 'accessControl' ] ) === 'protected' )
         {
-            return 'public';
+            return 'protected';
         }
         
-        return parent::getAccessControl();
+        if( isset( $this->_xml[ 'accessControl' ] ) && ( string )( $this->_xml[ 'accessControl' ] ) === 'private' )
+        {
+            return 'private';
+        }
+        
+        return 'public';
+    }
+    
+    public function getNotes()
+    {
+        if( $this->getAccessControl() === 'protected' )
+        {
+            return 'This member is protected.';
+        }
+        
+        if( $this->getAccessControl() === 'private' )
+        {
+            return 'This member is private.';
+        }
+        
+        return parent::getNotes();
     }
 }

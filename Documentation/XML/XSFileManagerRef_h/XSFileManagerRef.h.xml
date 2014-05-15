@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//apple_ref/doc/header/XSFileManagerRef.h" lang="c" filename="XSFileManagerRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSFileManagerRef.h"><name>XSFileManagerRef.h</name>
+<header id="//xsdoc_ref/doc/header/XSFileManagerRef.h" lang="c" filename="XSFileManagerRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSFileManagerRef.h"><name>XSFileManagerRef.h</name>
+<abstract><p>XSFileManager class
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
 <includes>
-<include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//apple_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
-<functions><function id="//apple_ref/c/func/XSFileManager_GetClassID" lang="c"><name>XSFileManager_GetClassID</name>
+<desc><p>...
+</p></desc>
+<functions><function id="//xsdoc_ref/c/func/XSFileManager_GetClassID" lang="c"><name>XSFileManager_GetClassID</name>
 <abstract><p>Gets the class ID for XSFileManager
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSClassID</returntype>
@@ -16,14 +21,12 @@
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function></functions>
-<typedefs><typedef id="//apple_ref/c/tdef/XSFileManagerRef" lang="c" type="simple"><name>XSFileManagerRef</name>
+<typedefs><typedef id="//xsdoc_ref/c/tdef/XSFileManagerRef" lang="c" type="simple"><name>XSFileManagerRef</name>
 <abstract><p>Opaque type for XSFileManager
 </p></abstract>
-<declaration> <declaration_comment>/*!</declaration_comment>
-    <declaration_comment>*/</declaration_comment>
-<declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSFileManager</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSFileManagerRef</declaration_var>;  </declaration>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSFileManager</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSFileManagerRef</declaration_var>;  </declaration>
 <desc><p/></desc>
-</typedef></typedefs><defines><pdefine id="//apple_ref/c/macro/__XS_CLASSES_XS_FILE_MANAGER_H__" definetype="value" lang="c"><name>__XS_CLASSES_XS_FILE_MANAGER_H__</name>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_CLASSES_XS_FILE_MANAGER_H__</declaration_preprocessor> </declaration>
-</pdefine></defines><timestamp>Wednesday, May 14, 2014</timestamp>
+</typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Thursday, May 15, 2014</timestamp>
 </header>

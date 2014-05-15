@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//apple_ref/doc/header/XSOrderedSetRef.h" lang="c" filename="XSOrderedSetRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSOrderedSetRef.h"><name>XSOrderedSetRef.h</name>
+<header id="//xsdoc_ref/doc/header/XSOrderedSetRef.h" lang="c" filename="XSOrderedSetRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSOrderedSetRef.h"><name>XSOrderedSetRef.h</name>
+<abstract><p>XSOrderedSet class
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
 <includes>
-<include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//apple_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
-<functions><function id="//apple_ref/c/func/XSOrderedSet_AddObject" lang="c"><name>XSOrderedSet_AddObject</name>
+<desc><p>...
+</p></desc>
+<functions><function id="//xsdoc_ref/c/func/XSOrderedSet_AddObject" lang="c"><name>XSOrderedSet_AddObject</name>
 <abstract><p>Adds an object in an ordered set
 </p></abstract>
 <parameterlist>
@@ -24,7 +29,7 @@
     <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_AppendArray" lang="c"><name>XSOrderedSet_AppendArray</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_AppendArray" lang="c"><name>XSOrderedSet_AppendArray</name>
 <abstract><p>Appends values from an array to an ordered set
 </p></abstract>
 <parameterlist>
@@ -40,7 +45,7 @@
     <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>objects</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_ApplyFunction" lang="c"><name>XSOrderedSet_ApplyFunction</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_ApplyFunction" lang="c"><name>XSOrderedSet_ApplyFunction</name>
 <abstract><p>Applies a function for each element of an ordered set
 </p></abstract>
 <parameterlist>
@@ -60,7 +65,7 @@
     <declaration_type>XSOrderedSet_ApplierFunction</declaration_type> <declaration_param>function</declaration_param> );  </declaration>
 <desc><p>The function will be called with each object contained in the ordered set
 </p></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_ApplyMethod" lang="c"><name>XSOrderedSet_ApplyMethod</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_ApplyMethod" lang="c"><name>XSOrderedSet_ApplyMethod</name>
 <abstract><p>Applies a method for each element of an ordered set
 </p></abstract>
 <parameterlist>
@@ -83,7 +88,7 @@
     <declaration_type>XSOrderedSet_ApplierMethod</declaration_type> <declaration_param>method</declaration_param> );  </declaration>
 <desc><p>The method will be called with each object contained in the ordered set
 </p></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_ContainsObject" lang="c"><name>XSOrderedSet_ContainsObject</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_ContainsObject" lang="c"><name>XSOrderedSet_ContainsObject</name>
 <abstract><p>Checks if a specific object is present in an ordered set
 </p></abstract>
 <parameterlist>
@@ -100,7 +105,7 @@
     <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_Create" lang="c"><name>XSOrderedSet_Create</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_Create" lang="c"><name>XSOrderedSet_Create</name>
 <abstract><p>Creates an empty ordered set
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSOrderedSetRef</returntype>
@@ -109,7 +114,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSOrderedSetRef</declaration_type> <declaration_function>XSOrderedSet_Create</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_CreateMutable" lang="c"><name>XSOrderedSet_CreateMutable</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_CreateMutable" lang="c"><name>XSOrderedSet_CreateMutable</name>
 <abstract><p>Creates an empty mutable ordered set
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSOrderedSetRef</returntype>
@@ -118,7 +123,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSOrderedSetRef</declaration_type> <declaration_function>XSOrderedSet_CreateMutable</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_CreateMutableCopy" lang="c"><name>XSOrderedSet_CreateMutableCopy</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_CreateMutableCopy" lang="c"><name>XSOrderedSet_CreateMutableCopy</name>
 <abstract><p>Creates a mutable copy of an ordered set
 </p></abstract>
 <parameterlist>
@@ -133,7 +138,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSOrderedSetRef</declaration_type> <declaration_function>XSOrderedSet_CreateMutableCopy</declaration_function>(
     <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_CreateWithArray" lang="c"><name>XSOrderedSet_CreateWithArray</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_CreateWithArray" lang="c"><name>XSOrderedSet_CreateWithArray</name>
 <abstract><p>Creates an ordered set filled with objects contained in an array
 </p></abstract>
 <parameterlist>
@@ -148,7 +153,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSOrderedSetRef</declaration_type> <declaration_function>XSOrderedSet_CreateWithArray</declaration_function>(
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_CreateWithObjects" lang="c"><name>XSOrderedSet_CreateWithObjects</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_CreateWithObjects" lang="c"><name>XSOrderedSet_CreateWithObjects</name>
 <abstract><p>Creates an ordered set filled with objects
 </p></abstract>
 <parameterlist>
@@ -166,7 +171,7 @@
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>firstObject</declaration_param>,
     ... );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_CreateWithOrderedSet" lang="c"><name>XSOrderedSet_CreateWithOrderedSet</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_CreateWithOrderedSet" lang="c"><name>XSOrderedSet_CreateWithOrderedSet</name>
 <abstract><p>Creates an ordered set from another ordered set
 </p></abstract>
 <parameterlist>
@@ -181,7 +186,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSOrderedSetRef</declaration_type> <declaration_function>XSOrderedSet_CreateWithOrderedSet</declaration_function>(
     <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_FilterWithFunction" lang="c"><name>XSOrderedSet_FilterWithFunction</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_FilterWithFunction" lang="c"><name>XSOrderedSet_FilterWithFunction</name>
 <abstract><p>Filters an ordered set using a function
 </p></abstract>
 <parameterlist>
@@ -201,7 +206,7 @@
     <declaration_type>XSOrderedSet_FilterFunction</declaration_type> <declaration_param>function</declaration_param> );  </declaration>
 <desc><p>The function will be called with each object contained in the ordered set
 </p></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_FilterWithMethod" lang="c"><name>XSOrderedSet_FilterWithMethod</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_FilterWithMethod" lang="c"><name>XSOrderedSet_FilterWithMethod</name>
 <abstract><p>Filters an ordered set using a method
 </p></abstract>
 <parameterlist>
@@ -224,7 +229,7 @@
     <declaration_type>XSOrderedSet_FilterMethod</declaration_type> <declaration_param>method</declaration_param> );  </declaration>
 <desc><p>The method will be called with each object contained in the ordered set
 </p></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_GetAllValues" lang="c"><name>XSOrderedSet_GetAllValues</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_GetAllValues" lang="c"><name>XSOrderedSet_GetAllValues</name>
 <abstract><p>Gets all values from an ordered set
 </p></abstract>
 <parameterlist>
@@ -239,7 +244,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSArrayRef</declaration_type> <declaration_function>XSOrderedSet_GetAllValues</declaration_function>(
     <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_GetClassID" lang="c"><name>XSOrderedSet_GetClassID</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_GetClassID" lang="c"><name>XSOrderedSet_GetClassID</name>
 <abstract><p>Gets the class ID for XSOrderedSet
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSClassID</returntype>
@@ -248,7 +253,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSClassID</declaration_type> <declaration_function>XSOrderedSet_GetClassID</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_GetCount" lang="c"><name>XSOrderedSet_GetCount</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_GetCount" lang="c"><name>XSOrderedSet_GetCount</name>
 <abstract><p>Gets the number of values in an ordered set
 </p></abstract>
 <parameterlist>
@@ -263,7 +268,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSUInteger</declaration_type> <declaration_function>XSOrderedSet_GetCount</declaration_function>(
     <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_GetIndexOfObject" lang="c"><name>XSOrderedSet_GetIndexOfObject</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_GetIndexOfObject" lang="c"><name>XSOrderedSet_GetIndexOfObject</name>
 <abstract><p>Gets the index of an object in an ordered set
 </p></abstract>
 <parameterlist>
@@ -281,7 +286,7 @@
     <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_GetLastObject" lang="c"><name>XSOrderedSet_GetLastObject</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_GetLastObject" lang="c"><name>XSOrderedSet_GetLastObject</name>
 <abstract><p>Gets the last object in the ordered set
 </p></abstract>
 <parameterlist>
@@ -296,7 +301,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSObjectRef</declaration_type> <declaration_function>XSOrderedSet_GetLastObject</declaration_function>(
     <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_GetObjectAtIndex" lang="c"><name>XSOrderedSet_GetObjectAtIndex</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_GetObjectAtIndex" lang="c"><name>XSOrderedSet_GetObjectAtIndex</name>
 <abstract><p>Gets an object from an ordered set at a specific index
 </p></abstract>
 <parameterlist>
@@ -314,7 +319,7 @@
     <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_InsertObjectAtIndex" lang="c"><name>XSOrderedSet_InsertObjectAtIndex</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_InsertObjectAtIndex" lang="c"><name>XSOrderedSet_InsertObjectAtIndex</name>
 <abstract><p>Inserts an object at a specific index in an ordered set
 </p></abstract>
 <parameterlist>
@@ -335,7 +340,7 @@
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_IsMutable" lang="c"><name>XSOrderedSet_IsMutable</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_IsMutable" lang="c"><name>XSOrderedSet_IsMutable</name>
 <abstract><p>Checks if an ordered set is mutable
 </p></abstract>
 <parameterlist>
@@ -350,7 +355,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSOrderedSet_IsMutable</declaration_function>(
     <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_MutableOrderedSet" lang="c"><name>XSOrderedSet_MutableOrderedSet</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_MutableOrderedSet" lang="c"><name>XSOrderedSet_MutableOrderedSet</name>
 <abstract><p>Gets an empty mutable ordered set
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSOrderedSetRef</returntype>
@@ -359,7 +364,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSOrderedSetRef</declaration_type> <declaration_function>XSOrderedSet_MutableOrderedSet</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_OrderedSet" lang="c"><name>XSOrderedSet_OrderedSet</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_OrderedSet" lang="c"><name>XSOrderedSet_OrderedSet</name>
 <abstract><p>Gets an empty ordered set
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSOrderedSetRef</returntype>
@@ -368,7 +373,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSOrderedSetRef</declaration_type> <declaration_function>XSOrderedSet_OrderedSet</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_OrderedSetWithArray" lang="c"><name>XSOrderedSet_OrderedSetWithArray</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_OrderedSetWithArray" lang="c"><name>XSOrderedSet_OrderedSetWithArray</name>
 <abstract><p>Gets an ordered set filled with objects contained in an array
 </p></abstract>
 <parameterlist>
@@ -383,7 +388,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSOrderedSetRef</declaration_type> <declaration_function>XSOrderedSet_OrderedSetWithArray</declaration_function>(
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_OrderedSetWithObjects" lang="c"><name>XSOrderedSet_OrderedSetWithObjects</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_OrderedSetWithObjects" lang="c"><name>XSOrderedSet_OrderedSetWithObjects</name>
 <abstract><p>Gets an ordered set filled with objects
 </p></abstract>
 <parameterlist>
@@ -401,7 +406,7 @@
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>firstObject</declaration_param>,
     ... );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_OrderedSetWithOrderedSet" lang="c"><name>XSOrderedSet_OrderedSetWithOrderedSet</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_OrderedSetWithOrderedSet" lang="c"><name>XSOrderedSet_OrderedSetWithOrderedSet</name>
 <abstract><p>Gets an ordered set from another ordered set
 </p></abstract>
 <parameterlist>
@@ -416,7 +421,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSOrderedSetRef</declaration_type> <declaration_function>XSOrderedSet_OrderedSetWithOrderedSet</declaration_function>(
     <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_RemoveAllObjects" lang="c"><name>XSOrderedSet_RemoveAllObjects</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_RemoveAllObjects" lang="c"><name>XSOrderedSet_RemoveAllObjects</name>
 <abstract><p>Removes all objects from an ordered set
 </p></abstract>
 <parameterlist>
@@ -429,7 +434,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSOrderedSet_RemoveAllObjects</declaration_function>(
     <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_RemoveLastObject" lang="c"><name>XSOrderedSet_RemoveLastObject</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_RemoveLastObject" lang="c"><name>XSOrderedSet_RemoveLastObject</name>
 <abstract><p>Removes the last object in an ordered set
 </p></abstract>
 <parameterlist>
@@ -442,7 +447,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSOrderedSet_RemoveLastObject</declaration_function>(
     <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_RemoveObject" lang="c"><name>XSOrderedSet_RemoveObject</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_RemoveObject" lang="c"><name>XSOrderedSet_RemoveObject</name>
 <abstract><p>Removes a specific object in an ordered set
 </p></abstract>
 <parameterlist>
@@ -458,7 +463,7 @@
     <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_RemoveObjectAtIndex" lang="c"><name>XSOrderedSet_RemoveObjectAtIndex</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_RemoveObjectAtIndex" lang="c"><name>XSOrderedSet_RemoveObjectAtIndex</name>
 <abstract><p>Removes the object at a specific index in an ordered set
 </p></abstract>
 <parameterlist>
@@ -474,7 +479,7 @@
     <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_RemoveObjectsInArray" lang="c"><name>XSOrderedSet_RemoveObjectsInArray</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_RemoveObjectsInArray" lang="c"><name>XSOrderedSet_RemoveObjectsInArray</name>
 <abstract><p>Removes all occurences of the objects contained in an array from an ordered set
 </p></abstract>
 <parameterlist>
@@ -490,7 +495,7 @@
     <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>objects</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_RemoveObjectsInRange" lang="c"><name>XSOrderedSet_RemoveObjectsInRange</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_RemoveObjectsInRange" lang="c"><name>XSOrderedSet_RemoveObjectsInRange</name>
 <abstract><p>Removes objects at a specific range from an ordered set
 </p></abstract>
 <parameterlist>
@@ -506,7 +511,7 @@
     <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSRange</declaration_type> <declaration_param>range</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_ReplaceObjectAtIndex" lang="c"><name>XSOrderedSet_ReplaceObjectAtIndex</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_ReplaceObjectAtIndex" lang="c"><name>XSOrderedSet_ReplaceObjectAtIndex</name>
 <abstract><p>Replaces an object at a specific index in the ordered set
 </p></abstract>
 <parameterlist>
@@ -527,7 +532,7 @@
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>newObject</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_SortWithFunction" lang="c"><name>XSOrderedSet_SortWithFunction</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_SortWithFunction" lang="c"><name>XSOrderedSet_SortWithFunction</name>
 <abstract><p>Sorts an ordered set using a function
 </p></abstract>
 <parameterlist>
@@ -547,7 +552,7 @@
     <declaration_type>XSOrderedSet_SortFunction</declaration_type> <declaration_param>function</declaration_param> );  </declaration>
 <desc><p>The function will be called with each object contained in the ordered set
 </p></desc>
-</function><function id="//apple_ref/c/func/XSOrderedSet_SortWithMethod" lang="c"><name>XSOrderedSet_SortWithMethod</name>
+</function><function id="//xsdoc_ref/c/func/XSOrderedSet_SortWithMethod" lang="c"><name>XSOrderedSet_SortWithMethod</name>
 <abstract><p>Sorts an ordered set using a method
 </p></abstract>
 <parameterlist>
@@ -571,7 +576,7 @@
 <desc><p>The method will be called with each object contained in the ordered set
 </p></desc>
 </function></functions>
-<typedefs><typedef id="//apple_ref/c/tdef/XSOrderedSet_ApplierFunction" lang="c" type="funcPtr"><name>XSOrderedSet_ApplierFunction</name>
+<typedefs><typedef id="//xsdoc_ref/c/tdef/XSOrderedSet_ApplierFunction" lang="c" type="funcPtr"><name>XSOrderedSet_ApplierFunction</name>
 <abstract><p>A function used to iterate objects in an ordered set
 </p></abstract>
 <parameterlist>
@@ -589,7 +594,7 @@
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param>,
     <declaration_type>bool</declaration_type> <declaration_type>*</declaration_type><declaration_param>stop</declaration_param> );  </declaration>
 <desc><p/></desc>
-</typedef><typedef id="//apple_ref/c/tdef/XSOrderedSet_ApplierMethod" lang="c" type="funcPtr"><name>XSOrderedSet_ApplierMethod</name>
+</typedef><typedef id="//xsdoc_ref/c/tdef/XSOrderedSet_ApplierMethod" lang="c" type="funcPtr"><name>XSOrderedSet_ApplierMethod</name>
 <abstract><p>A method used to iterate objects in an ordered set
 </p></abstract>
 <parameterlist>
@@ -610,7 +615,7 @@
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param>,
     <declaration_type>bool</declaration_type> <declaration_type>*</declaration_type><declaration_param>stop</declaration_param> );  </declaration>
 <desc><p/></desc>
-</typedef><typedef id="//apple_ref/c/tdef/XSOrderedSet_FilterFunction" lang="c" type="funcPtr"><name>XSOrderedSet_FilterFunction</name>
+</typedef><typedef id="//xsdoc_ref/c/tdef/XSOrderedSet_FilterFunction" lang="c" type="funcPtr"><name>XSOrderedSet_FilterFunction</name>
 <abstract><p>A function used to filter objects in an ordered set
 </p></abstract>
 <parameterlist>
@@ -630,7 +635,7 @@
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param>,
     <declaration_type>bool</declaration_type> <declaration_type>*</declaration_type><declaration_param>stop</declaration_param> );  </declaration>
 <desc><p/></desc>
-</typedef><typedef id="//apple_ref/c/tdef/XSOrderedSet_FilterMethod" lang="c" type="funcPtr"><name>XSOrderedSet_FilterMethod</name>
+</typedef><typedef id="//xsdoc_ref/c/tdef/XSOrderedSet_FilterMethod" lang="c" type="funcPtr"><name>XSOrderedSet_FilterMethod</name>
 <abstract><p>A method used to filter objects in an ordered set
 </p></abstract>
 <parameterlist>
@@ -653,7 +658,7 @@
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param>,
     <declaration_type>bool</declaration_type> <declaration_type>*</declaration_type><declaration_param>stop</declaration_param> );  </declaration>
 <desc><p/></desc>
-</typedef><typedef id="//apple_ref/c/tdef/XSOrderedSet_SortFunction" lang="c" type="funcPtr"><name>XSOrderedSet_SortFunction</name>
+</typedef><typedef id="//xsdoc_ref/c/tdef/XSOrderedSet_SortFunction" lang="c" type="funcPtr"><name>XSOrderedSet_SortFunction</name>
 <abstract><p>A function used to sort objects in an ordered set
 </p></abstract>
 <parameterlist>
@@ -673,7 +678,7 @@
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>value2</declaration_param>,
     <declaration_type>bool</declaration_type> <declaration_type>*</declaration_type><declaration_param>stop</declaration_param> );  </declaration>
 <desc><p/></desc>
-</typedef><typedef id="//apple_ref/c/tdef/XSOrderedSet_SortMethod" lang="c" type="funcPtr"><name>XSOrderedSet_SortMethod</name>
+</typedef><typedef id="//xsdoc_ref/c/tdef/XSOrderedSet_SortMethod" lang="c" type="funcPtr"><name>XSOrderedSet_SortMethod</name>
 <abstract><p>A method used to sort objects in an ordered set
 </p></abstract>
 <parameterlist>
@@ -696,14 +701,12 @@
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>value2</declaration_param>,
     <declaration_type>bool</declaration_type> <declaration_type>*</declaration_type><declaration_param>stop</declaration_param> );  </declaration>
 <desc><p/></desc>
-</typedef><typedef id="//apple_ref/c/tdef/XSOrderedSetRef" lang="c" type="simple"><name>XSOrderedSetRef</name>
+</typedef><typedef id="//xsdoc_ref/c/tdef/XSOrderedSetRef" lang="c" type="simple"><name>XSOrderedSetRef</name>
 <abstract><p>Opaque type for XSOrderedSet
 </p></abstract>
-<declaration> <declaration_comment>/*!</declaration_comment>
-    <declaration_comment>*/</declaration_comment>
-<declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSOrderedSet</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSOrderedSetRef</declaration_var>;  </declaration>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSOrderedSet</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSOrderedSetRef</declaration_var>;  </declaration>
 <desc><p/></desc>
-</typedef></typedefs><defines><pdefine id="//apple_ref/c/macro/__XS_CLASSES_XS_ORDERED_SET_H__" definetype="value" lang="c"><name>__XS_CLASSES_XS_ORDERED_SET_H__</name>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_CLASSES_XS_ORDERED_SET_H__</declaration_preprocessor> </declaration>
-</pdefine></defines><timestamp>Wednesday, May 14, 2014</timestamp>
+</typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Thursday, May 15, 2014</timestamp>
 </header>

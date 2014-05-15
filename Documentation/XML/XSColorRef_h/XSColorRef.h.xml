@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//apple_ref/doc/header/XSColorRef.h" lang="c" filename="XSColorRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSColorRef.h"><name>XSColorRef.h</name>
+<header id="//xsdoc_ref/doc/header/XSColorRef.h" lang="c" filename="XSColorRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSColorRef.h"><name>XSColorRef.h</name>
+<abstract><p>XSColor class
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
 <includes>
-<include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//apple_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
-<functions><function id="//apple_ref/c/func/XSColor_BlackColor" lang="c"><name>XSColor_BlackColor</name>
+<desc><p>...
+</p></desc>
+<functions><function id="//xsdoc_ref/c/func/XSColor_BlackColor" lang="c"><name>XSColor_BlackColor</name>
 <abstract><p>Gets the predefined black color object
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSColorRef</returntype>
@@ -15,7 +20,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSColorRef</declaration_type> <declaration_function>XSColor_BlackColor</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_BlueColor" lang="c"><name>XSColor_BlueColor</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_BlueColor" lang="c"><name>XSColor_BlueColor</name>
 <abstract><p>Gets the predefined blue color object
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSColorRef</returntype>
@@ -24,7 +29,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSColorRef</declaration_type> <declaration_function>XSColor_BlueColor</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_BrownColor" lang="c"><name>XSColor_BrownColor</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_BrownColor" lang="c"><name>XSColor_BrownColor</name>
 <abstract><p>Gets the predefined brown color object
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSColorRef</returntype>
@@ -33,7 +38,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSColorRef</declaration_type> <declaration_function>XSColor_BrownColor</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_ClearColor" lang="c"><name>XSColor_ClearColor</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_ClearColor" lang="c"><name>XSColor_ClearColor</name>
 <abstract><p>Gets the predefined clear color object
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSColorRef</returntype>
@@ -42,7 +47,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSColorRef</declaration_type> <declaration_function>XSColor_ClearColor</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_ColorWithHSL" lang="c"><name>XSColor_ColorWithHSL</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_ColorWithHSL" lang="c"><name>XSColor_ColorWithHSL</name>
 <abstract><p>Gets a color object from HSL values
 </p></abstract>
 <parameterlist>
@@ -63,7 +68,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_param>s</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>l</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_ColorWithHSLA" lang="c"><name>XSColor_ColorWithHSLA</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_ColorWithHSLA" lang="c"><name>XSColor_ColorWithHSLA</name>
 <abstract><p>Gets a color object from HSLA values
 </p></abstract>
 <parameterlist>
@@ -87,7 +92,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_param>l</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>a</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_ColorWithHSV" lang="c"><name>XSColor_ColorWithHSV</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_ColorWithHSV" lang="c"><name>XSColor_ColorWithHSV</name>
 <abstract><p>Gets a color object from HSV values
 </p></abstract>
 <parameterlist>
@@ -108,7 +113,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_param>s</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>v</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_ColorWithHSVA" lang="c"><name>XSColor_ColorWithHSVA</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_ColorWithHSVA" lang="c"><name>XSColor_ColorWithHSVA</name>
 <abstract><p>Gets a color object from HSVA values
 </p></abstract>
 <parameterlist>
@@ -132,7 +137,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_param>v</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>a</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_ColorWithRGB" lang="c"><name>XSColor_ColorWithRGB</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_ColorWithRGB" lang="c"><name>XSColor_ColorWithRGB</name>
 <abstract><p>Gets a color object from RGB values
 </p></abstract>
 <parameterlist>
@@ -153,7 +158,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_param>g</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>b</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_ColorWithRGBA" lang="c"><name>XSColor_ColorWithRGBA</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_ColorWithRGBA" lang="c"><name>XSColor_ColorWithRGBA</name>
 <abstract><p>Gets a color object from RGBA values
 </p></abstract>
 <parameterlist>
@@ -177,7 +182,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_param>b</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>a</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_CreateWithHSL" lang="c"><name>XSColor_CreateWithHSL</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_CreateWithHSL" lang="c"><name>XSColor_CreateWithHSL</name>
 <abstract><p>Creates a color object from HSL values
 </p></abstract>
 <parameterlist>
@@ -198,7 +203,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_param>s</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>l</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_CreateWithHSLA" lang="c"><name>XSColor_CreateWithHSLA</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_CreateWithHSLA" lang="c"><name>XSColor_CreateWithHSLA</name>
 <abstract><p>Creates a color object from HSLA values
 </p></abstract>
 <parameterlist>
@@ -222,7 +227,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_param>l</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>a</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_CreateWithHSV" lang="c"><name>XSColor_CreateWithHSV</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_CreateWithHSV" lang="c"><name>XSColor_CreateWithHSV</name>
 <abstract><p>Creates a color object from HSV values
 </p></abstract>
 <parameterlist>
@@ -243,7 +248,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_param>s</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>v</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_CreateWithHSVA" lang="c"><name>XSColor_CreateWithHSVA</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_CreateWithHSVA" lang="c"><name>XSColor_CreateWithHSVA</name>
 <abstract><p>Creates a color object from HSVA values
 </p></abstract>
 <parameterlist>
@@ -267,7 +272,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_param>v</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>a</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_CreateWithRGB" lang="c"><name>XSColor_CreateWithRGB</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_CreateWithRGB" lang="c"><name>XSColor_CreateWithRGB</name>
 <abstract><p>Creates a color object from RGB values
 </p></abstract>
 <parameterlist>
@@ -288,7 +293,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_param>g</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>b</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_CreateWithRGBA" lang="c"><name>XSColor_CreateWithRGBA</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_CreateWithRGBA" lang="c"><name>XSColor_CreateWithRGBA</name>
 <abstract><p>Creates a color object from RGBA values
 </p></abstract>
 <parameterlist>
@@ -312,7 +317,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_param>b</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>a</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_CyanColor" lang="c"><name>XSColor_CyanColor</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_CyanColor" lang="c"><name>XSColor_CyanColor</name>
 <abstract><p>Gets the predefined cyan color object
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSColorRef</returntype>
@@ -321,7 +326,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSColorRef</declaration_type> <declaration_function>XSColor_CyanColor</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_DarkGrayColor" lang="c"><name>XSColor_DarkGrayColor</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_DarkGrayColor" lang="c"><name>XSColor_DarkGrayColor</name>
 <abstract><p>Gets the predefined dark gray color object
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSColorRef</returntype>
@@ -330,7 +335,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSColorRef</declaration_type> <declaration_function>XSColor_DarkGrayColor</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_GetAlpha" lang="c"><name>XSColor_GetAlpha</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_GetAlpha" lang="c"><name>XSColor_GetAlpha</name>
 <abstract><p>Gets the alpha component value of a color object
 </p></abstract>
 <parameterlist>
@@ -345,7 +350,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSFloat</declaration_type> <declaration_function>XSColor_GetAlpha</declaration_function>(
     <declaration_type>XSColorRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_GetBlue" lang="c"><name>XSColor_GetBlue</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_GetBlue" lang="c"><name>XSColor_GetBlue</name>
 <abstract><p>Gets the blue component value of a color object
 </p></abstract>
 <parameterlist>
@@ -360,7 +365,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSFloat</declaration_type> <declaration_function>XSColor_GetBlue</declaration_function>(
     <declaration_type>XSColorRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_GetClassID" lang="c"><name>XSColor_GetClassID</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_GetClassID" lang="c"><name>XSColor_GetClassID</name>
 <abstract><p>Gets the class ID for XSColor
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSClassID</returntype>
@@ -369,7 +374,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSClassID</declaration_type> <declaration_function>XSColor_GetClassID</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_GetGreen" lang="c"><name>XSColor_GetGreen</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_GetGreen" lang="c"><name>XSColor_GetGreen</name>
 <abstract><p>Gets the green component value of a color object
 </p></abstract>
 <parameterlist>
@@ -384,7 +389,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSFloat</declaration_type> <declaration_function>XSColor_GetGreen</declaration_function>(
     <declaration_type>XSColorRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_GetHSL" lang="c"><name>XSColor_GetHSL</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_GetHSL" lang="c"><name>XSColor_GetHSL</name>
 <abstract><p>Gets the HSL component values of a color object
 </p></abstract>
 <parameterlist>
@@ -406,7 +411,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_type>*</declaration_type><declaration_param>s</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_type>*</declaration_type><declaration_param>l</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_GetHSLA" lang="c"><name>XSColor_GetHSLA</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_GetHSLA" lang="c"><name>XSColor_GetHSLA</name>
 <abstract><p>Gets the HSLA component values of a color object
 </p></abstract>
 <parameterlist>
@@ -431,7 +436,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_type>*</declaration_type><declaration_param>l</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_type>*</declaration_type><declaration_param>a</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_GetHSV" lang="c"><name>XSColor_GetHSV</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_GetHSV" lang="c"><name>XSColor_GetHSV</name>
 <abstract><p>Gets the HSV component values of a color object
 </p></abstract>
 <parameterlist>
@@ -453,7 +458,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_type>*</declaration_type><declaration_param>s</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_type>*</declaration_type><declaration_param>v</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_GetHSVA" lang="c"><name>XSColor_GetHSVA</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_GetHSVA" lang="c"><name>XSColor_GetHSVA</name>
 <abstract><p>Gets the HSVA component values of a color object
 </p></abstract>
 <parameterlist>
@@ -478,7 +483,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_type>*</declaration_type><declaration_param>v</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_type>*</declaration_type><declaration_param>a</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_GetHue" lang="c"><name>XSColor_GetHue</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_GetHue" lang="c"><name>XSColor_GetHue</name>
 <abstract><p>Gets the hue component value of a color object
 </p></abstract>
 <parameterlist>
@@ -493,7 +498,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSFloat</declaration_type> <declaration_function>XSColor_GetHue</declaration_function>(
     <declaration_type>XSColorRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_GetLuminance" lang="c"><name>XSColor_GetLuminance</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_GetLuminance" lang="c"><name>XSColor_GetLuminance</name>
 <abstract><p>Gets the luminance component value of a color object
 </p></abstract>
 <parameterlist>
@@ -508,7 +513,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSFloat</declaration_type> <declaration_function>XSColor_GetLuminance</declaration_function>(
     <declaration_type>XSColorRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_GetRed" lang="c"><name>XSColor_GetRed</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_GetRed" lang="c"><name>XSColor_GetRed</name>
 <abstract><p>Gets the red component value of a color object
 </p></abstract>
 <parameterlist>
@@ -523,7 +528,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSFloat</declaration_type> <declaration_function>XSColor_GetRed</declaration_function>(
     <declaration_type>XSColorRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_GetRGB" lang="c"><name>XSColor_GetRGB</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_GetRGB" lang="c"><name>XSColor_GetRGB</name>
 <abstract><p>Gets the RGB component values of a color object
 </p></abstract>
 <parameterlist>
@@ -545,7 +550,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_type>*</declaration_type><declaration_param>g</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_type>*</declaration_type><declaration_param>b</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_GetRGBA" lang="c"><name>XSColor_GetRGBA</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_GetRGBA" lang="c"><name>XSColor_GetRGBA</name>
 <abstract><p>Gets the RGBA component values of a color object
 </p></abstract>
 <parameterlist>
@@ -570,7 +575,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_type>*</declaration_type><declaration_param>b</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_type>*</declaration_type><declaration_param>a</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_GetSaturation" lang="c"><name>XSColor_GetSaturation</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_GetSaturation" lang="c"><name>XSColor_GetSaturation</name>
 <abstract><p>Gets the saturation component value of a color object
 </p></abstract>
 <parameterlist>
@@ -585,7 +590,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSFloat</declaration_type> <declaration_function>XSColor_GetSaturation</declaration_function>(
     <declaration_type>XSColorRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_GetValue" lang="c"><name>XSColor_GetValue</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_GetValue" lang="c"><name>XSColor_GetValue</name>
 <abstract><p>Gets the value component value of a color object
 </p></abstract>
 <parameterlist>
@@ -600,7 +605,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSFloat</declaration_type> <declaration_function>XSColor_GetValue</declaration_function>(
     <declaration_type>XSColorRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_GrayColor" lang="c"><name>XSColor_GrayColor</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_GrayColor" lang="c"><name>XSColor_GrayColor</name>
 <abstract><p>Gets the predefined gray color object
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSColorRef</returntype>
@@ -609,7 +614,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSColorRef</declaration_type> <declaration_function>XSColor_GrayColor</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_GreenColor" lang="c"><name>XSColor_GreenColor</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_GreenColor" lang="c"><name>XSColor_GreenColor</name>
 <abstract><p>Gets the predefined green color object
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSColorRef</returntype>
@@ -618,7 +623,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSColorRef</declaration_type> <declaration_function>XSColor_GreenColor</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_LightGrayColor" lang="c"><name>XSColor_LightGrayColor</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_LightGrayColor" lang="c"><name>XSColor_LightGrayColor</name>
 <abstract><p>Gets the predefined light gray color object
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSColorRef</returntype>
@@ -627,7 +632,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSColorRef</declaration_type> <declaration_function>XSColor_LightGrayColor</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_MagentaColor" lang="c"><name>XSColor_MagentaColor</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_MagentaColor" lang="c"><name>XSColor_MagentaColor</name>
 <abstract><p>Gets the predefined magenta color object
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSColorRef</returntype>
@@ -636,7 +641,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSColorRef</declaration_type> <declaration_function>XSColor_MagentaColor</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_OrangeColor" lang="c"><name>XSColor_OrangeColor</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_OrangeColor" lang="c"><name>XSColor_OrangeColor</name>
 <abstract><p>Gets the predefined orange color object
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSColorRef</returntype>
@@ -645,7 +650,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSColorRef</declaration_type> <declaration_function>XSColor_OrangeColor</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_PurpleColor" lang="c"><name>XSColor_PurpleColor</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_PurpleColor" lang="c"><name>XSColor_PurpleColor</name>
 <abstract><p>Gets the predefined purple color object
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSColorRef</returntype>
@@ -654,7 +659,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSColorRef</declaration_type> <declaration_function>XSColor_PurpleColor</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_RedColor" lang="c"><name>XSColor_RedColor</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_RedColor" lang="c"><name>XSColor_RedColor</name>
 <abstract><p>Gets the predefined red color object
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSColorRef</returntype>
@@ -663,7 +668,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSColorRef</declaration_type> <declaration_function>XSColor_RedColor</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_SetAlpha" lang="c"><name>XSColor_SetAlpha</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_SetAlpha" lang="c"><name>XSColor_SetAlpha</name>
 <abstract><p>Sets the alpha component value of a color object
 </p></abstract>
 <parameterlist>
@@ -679,7 +684,7 @@
     <declaration_type>XSColorRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>a</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_SetBlue" lang="c"><name>XSColor_SetBlue</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_SetBlue" lang="c"><name>XSColor_SetBlue</name>
 <abstract><p>Sets the blue component value of a color object
 </p></abstract>
 <parameterlist>
@@ -695,7 +700,7 @@
     <declaration_type>XSColorRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>b</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_SetGreen" lang="c"><name>XSColor_SetGreen</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_SetGreen" lang="c"><name>XSColor_SetGreen</name>
 <abstract><p>Sets the green component value of a color object
 </p></abstract>
 <parameterlist>
@@ -711,7 +716,7 @@
     <declaration_type>XSColorRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>g</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_SetHSL" lang="c"><name>XSColor_SetHSL</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_SetHSL" lang="c"><name>XSColor_SetHSL</name>
 <abstract><p>Sets the HSL component values of a color object
 </p></abstract>
 <parameterlist>
@@ -733,7 +738,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_param>s</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>l</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_SetHSLA" lang="c"><name>XSColor_SetHSLA</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_SetHSLA" lang="c"><name>XSColor_SetHSLA</name>
 <abstract><p>Sets the HSLA component values of a color object
 </p></abstract>
 <parameterlist>
@@ -758,7 +763,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_param>l</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>a</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_SetHSV" lang="c"><name>XSColor_SetHSV</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_SetHSV" lang="c"><name>XSColor_SetHSV</name>
 <abstract><p>Sets the HSV component values of a color object
 </p></abstract>
 <parameterlist>
@@ -780,7 +785,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_param>s</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>v</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_SetHSVA" lang="c"><name>XSColor_SetHSVA</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_SetHSVA" lang="c"><name>XSColor_SetHSVA</name>
 <abstract><p>Sets the HSVA component values of a color object
 </p></abstract>
 <parameterlist>
@@ -805,7 +810,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_param>v</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>a</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_SetHue" lang="c"><name>XSColor_SetHue</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_SetHue" lang="c"><name>XSColor_SetHue</name>
 <abstract><p>Sets the hue component value of a color object
 </p></abstract>
 <parameterlist>
@@ -821,7 +826,7 @@
     <declaration_type>XSColorRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>h</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_SetLuminance" lang="c"><name>XSColor_SetLuminance</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_SetLuminance" lang="c"><name>XSColor_SetLuminance</name>
 <abstract><p>Sets the luminance component value of a color object
 </p></abstract>
 <parameterlist>
@@ -837,7 +842,7 @@
     <declaration_type>XSColorRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>l</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_SetRed" lang="c"><name>XSColor_SetRed</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_SetRed" lang="c"><name>XSColor_SetRed</name>
 <abstract><p>Sets the red component value of a color object
 </p></abstract>
 <parameterlist>
@@ -853,7 +858,7 @@
     <declaration_type>XSColorRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>r</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_SetRGB" lang="c"><name>XSColor_SetRGB</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_SetRGB" lang="c"><name>XSColor_SetRGB</name>
 <abstract><p>Sets the RGB component values of a color object
 </p></abstract>
 <parameterlist>
@@ -875,7 +880,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_param>g</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>b</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_SetRGBA" lang="c"><name>XSColor_SetRGBA</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_SetRGBA" lang="c"><name>XSColor_SetRGBA</name>
 <abstract><p>Sets the RGBA component values of a color object
 </p></abstract>
 <parameterlist>
@@ -900,7 +905,7 @@
     <declaration_type>XSFloat</declaration_type> <declaration_param>b</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>a</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_SetSaturation" lang="c"><name>XSColor_SetSaturation</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_SetSaturation" lang="c"><name>XSColor_SetSaturation</name>
 <abstract><p>Sets the saturation component value of a color object
 </p></abstract>
 <parameterlist>
@@ -916,7 +921,7 @@
     <declaration_type>XSColorRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>s</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_SetValue" lang="c"><name>XSColor_SetValue</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_SetValue" lang="c"><name>XSColor_SetValue</name>
 <abstract><p>Sets the value component value of a color object
 </p></abstract>
 <parameterlist>
@@ -932,7 +937,7 @@
     <declaration_type>XSColorRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSFloat</declaration_type> <declaration_param>v</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_WhiteColor" lang="c"><name>XSColor_WhiteColor</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_WhiteColor" lang="c"><name>XSColor_WhiteColor</name>
 <abstract><p>Gets the predefined white color object
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSColorRef</returntype>
@@ -941,7 +946,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSColorRef</declaration_type> <declaration_function>XSColor_WhiteColor</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSColor_YellowColor" lang="c"><name>XSColor_YellowColor</name>
+</function><function id="//xsdoc_ref/c/func/XSColor_YellowColor" lang="c"><name>XSColor_YellowColor</name>
 <abstract><p>Gets the predefined yellow color object
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSColorRef</returntype>
@@ -951,14 +956,12 @@
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function></functions>
-<typedefs><typedef id="//apple_ref/c/tdef/XSColorRef" lang="c" type="simple"><name>XSColorRef</name>
+<typedefs><typedef id="//xsdoc_ref/c/tdef/XSColorRef" lang="c" type="simple"><name>XSColorRef</name>
 <abstract><p>Opaque type for XSColor
 </p></abstract>
 <declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSColor</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSColorRef</declaration_var>;  </declaration>
 <desc><p/></desc>
-</typedef></typedefs><defines><pdefine id="//apple_ref/c/macro/__XS_CLASSES_XS_COLOR_H__" definetype="value" lang="c"><name>__XS_CLASSES_XS_COLOR_H__</name>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_CLASSES_XS_COLOR_H__</declaration_preprocessor> </declaration>
-</pdefine><pdefine id="//apple_ref/c/macro/XS_COLOR_HEX" definetype="function" lang="c"><name>XS_COLOR_HEX</name>
+</typedef></typedefs><defines><pdefine id="//xsdoc_ref/c/macro/XS_COLOR_HEX" definetype="function" lang="c"><name>XS_COLOR_HEX</name>
 <abstract><p>Creates a color object from an hexadecimal color value
 </p></abstract>
 <parameterlist>
@@ -969,14 +972,14 @@
 <parsedparameter><type></type><name>_c_</name></parsedparameter>
 <parsedparameter><type></type><name>_a_</name></parsedparameter>
 </parsedparameterlist>
-<declaration> <declaration_comment>/*!</declaration_comment>
-    <declaration_comment>*/</declaration_comment>
-<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_COLOR_HEX</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_c_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSColor_ColorWithRGBA</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_COLOR_HEX</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_c_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSColor_ColorWithRGBA</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSFloat</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_c_</declaration_preprocessor> <declaration_preprocessor>&gt;&gt;</declaration_preprocessor> <declaration_preprocessor>16</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>0x0000FF</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>/</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSFloat</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>255</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSFloat</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_c_</declaration_preprocessor> <declaration_preprocessor>&gt;&gt;</declaration_preprocessor> <declaration_preprocessor>8</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>0x0000FF</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>/</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSFloat</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>255</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSFloat</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_c_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor> <declaration_preprocessor>0x0000FF</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>/</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSFloat</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>255</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSFloat</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor><declaration_preprocessor>_a_</declaration_preprocessor> <declaration_preprocessor>\</declaration_preprocessor> 
     <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-</pdefine></defines><timestamp>Wednesday, May 14, 2014</timestamp>
+</pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Thursday, May 15, 2014</timestamp>
 </header>

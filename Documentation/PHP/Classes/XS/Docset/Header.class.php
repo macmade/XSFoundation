@@ -31,6 +31,7 @@ require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Function.class.php';
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Type.class.php';
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Macro.class.php';
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Constant.class.php';
+require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Global.class.php';
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Class.class.php';
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'Docset.class.php';
 
@@ -54,7 +55,9 @@ class XS_Docset_Header extends XS_Docset_Member
     protected $_types               = NULL;
     protected $_macros              = NULL;
     protected $_constants           = NULL;
+    protected $_globals             = NULL;
     protected $_classes             = NULL;
+    protected $_protocols           = NULL;
     
     public function __construct( XS_Docset $docset, SplFileInfo $file, $sourceRootPrefix = '' )
     {
@@ -80,7 +83,7 @@ class XS_Docset_Header extends XS_Docset_Member
         
         if( $this->_sourceRootPrefix !== NULL && strlen( $this->_sourceRootPrefix ) > 0 )
         {
-            $pos  = strpos( $path, $this->_sourceRootPrefix );
+            $pos  = strrpos( $path, $this->_sourceRootPrefix );
         
             if( $pos !== false )
             {
@@ -295,6 +298,26 @@ class XS_Docset_Header extends XS_Docset_Member
         return $this->_constants;
     }
     
+    public function getGlobals()
+    {
+        if( $this->_globals !== NULL )
+        {
+            return $this->_globals;
+        }
+        
+        $this->_globals = array();
+        
+        if( isset( $this->_xml->globals ) )
+        {
+            foreach( $this->_xml->globals->children() as $global )
+            {
+                $this->_globals[] = new XS_Docset_Global( $global );
+            }
+        }
+        
+        return $this->_globals;
+    }
+    
     public function getClasses()
     {
         if( $this->_classes !== NULL )
@@ -308,11 +331,71 @@ class XS_Docset_Header extends XS_Docset_Member
         {
             foreach( $this->_xml->classes->children() as $class )
             {
-                $this->_classes[] = new XS_Docset_Class( $class );
+                if( isset( $class->classes ) )
+                {
+                    foreach( $class->classes->children() as $class )
+                    {
+                        if( $class->getName() !== 'class' )
+                        {
+                            continue;
+                        }
+                        
+                        $this->_classes[] = new XS_Docset_Class( $class );
+                    }
+                }
+                else
+                {
+                    if( $class->getName() !== 'class' )
+                    {
+                        continue;
+                    }
+                    
+                    $this->_classes[] = new XS_Docset_Class( $class );
+                }
             }
         }
         
         return $this->_classes;
+    }
+    
+    public function getProtocols()
+    {
+        if( $this->_protocols !== NULL )
+        {
+            return $this->_protocols;
+        }
+        
+        $this->_protocols = array();
+        
+        if( isset( $this->_xml->classes ) )
+        {
+            foreach( $this->_xml->classes->children() as $class )
+            {
+                if( isset( $class->classes ) )
+                {
+                    foreach( $class->classes->children() as $class )
+                    {
+                        if( $class->getName() !== 'protocol' )
+                        {
+                            continue;
+                        }
+                        
+                        $this->_protocols[] = new XS_Docset_Class( $class );
+                    }
+                }
+                else
+                {
+                    if( $class->getName() !== 'protocol' )
+                    {
+                        continue;
+                    }
+                    
+                    $this->_protocols[] = new XS_Docset_Class( $class );
+                }
+            }
+        }
+        
+        return $this->_protocols;
     }
     
     public function hasPublicMembers()
@@ -320,10 +403,12 @@ class XS_Docset_Header extends XS_Docset_Member
         if
         (
                count( $this->getClasses() )
+            || count( $this->getProtocols() )
             || count( $this->getFunctions() )
             || count( $this->getTypes() )
             || count( $this->getMacros() )
             || count( $this->getConstants() )
+            || count( $this->getGlobals() )
         )
         {
             return true;
@@ -408,16 +493,91 @@ class XS_Docset_Header extends XS_Docset_Member
         return implode( chr( 10 ), $html );
     }
     
+    public function getGlobalsListHTML()
+    {
+        $html   = array();
+        $html[] = '<ul>';
+    
+        foreach( $this->getGlobals() as $global )
+        {                        
+            $html[] = '<li>';   
+            $html[] = '<a href="#' . $global->getID() . '" title="' . $global->getName() . '">';
+            $html[] = $global->getName();   
+            $html[] = '</a>';
+            $html[] = '</li>';
+        }
+    
+        $html[] = '</ul>';
+        
+        return implode( chr( 10 ), $html );
+    }
+    
     public function getClassesListHTML()
     {
         $html   = array();
         $html[] = '<ul>';
     
         foreach( $this->getClasses() as $class )
-        {                        
-            $html[] = '<li>';   
+        {
+            $html[] = '<li>';
+            $html[] = '<div>';
             $html[] = '<a href="#' . $class->getID() . '" title="' . $class->getName() . '">';
             $html[] = $class->getName();   
+            $html[] = '</a>';
+            $html[] = '</div>';
+            
+            if( count( $class->getMethods() ) )
+            {
+                $html[] = '<h4>Tasks</h4>';
+                $html[] = '<ul>';
+                
+                foreach( $class->getMethods() as $method )
+                {
+                    $html[] = '<li>';
+                    $html[] = '<a href="#' . $method->getID() . '" title="' . $method->getName() . '">';
+                    $html[] = $method->getName();   
+                    $html[] = '</a>';
+                    $html[] = '</li>';
+                }
+                
+                $html[] = '</ul>';
+            }
+            
+            if( count( $class->getProperties() ) )
+            {
+                $html[] = '<h4>Properties</h4>';
+                $html[] = '<ul>';
+                
+                foreach( $class->getProperties() as $property )
+                {
+                    $html[] = '<li>';
+                    $html[] = '<a href="#' . $property->getID() . '" title="' . $property->getName() . '">';
+                    $html[] = $property->getName();   
+                    $html[] = '</a>';
+                    $html[] = '</li>';
+                }
+                
+                $html[] = '</ul>';
+            }
+            
+            $html[] = '</li>';
+        }
+    
+        $html[] = '</ul>';
+        
+        return implode( chr( 10 ), $html );
+    }
+    
+    public function getProtocolsListHTML()
+    {
+        $html   = array();
+        $html[] = '<ul>';
+    
+        foreach( $this->getProtocols() as $protocol )
+        {                        
+            $html[] = '<li>';   
+            $html[] = '<a href="#' . $protocol->getID() . '" title="' . $protocol->getName() . '">';
+            $html[] = $protocol->getName();   
             $html[] = '</a>';
             $html[] = '</li>';
         }
@@ -516,12 +676,16 @@ class XS_Docset_Header extends XS_Docset_Member
         $html[] = '<div class="xsdoc-file-content">';
         $html[] = '<h2>' . $this->getName() . ' Reference</h2>';
         $html[] = $this->_getFileDetailsHTML();
-        $html[] = '<h3>Overview</h3>';
-        $html[] = '<p><strong>' . $this->getAbstract() . '</strong></p>';
         
-        if( strlen( $this->getDiscussion() ) )
+        if( strlen( $this->getDiscussion() ) || strlen( $this->getAbstract() ) )
         {
-            $html[] = '<p>' . $this->getDiscussion() . '</p>';
+            $html[] = '<h3>Overview</h3>';
+            $html[] = '<p><strong>' . $this->getAbstract() . '</strong></p>';
+            
+            if( strlen( $this->getDiscussion() ) )
+            {
+                $html[] = '<p>' . $this->getDiscussion() . '</p>';
+            }
         }
         
         if( count( $this->getClasses() ) )
@@ -529,6 +693,14 @@ class XS_Docset_Header extends XS_Docset_Member
             foreach( $this->getClasses() as $class )
             {
                 $html[] = ( string )$class;
+            }
+        }
+        
+        if( count( $this->getProtocols() ) )
+        {
+            foreach( $this->getProtocols() as $protocol )
+            {
+                $html[] = ( string )$protocol;
             }
         }
         
@@ -569,6 +741,16 @@ class XS_Docset_Header extends XS_Docset_Member
             foreach( $this->getConstants() as $constant )
             {
                 $html[] = ( string )$constant;
+            }
+        }
+        
+        if( count( $this->getGlobals() ) )
+        {
+            $html[] = '<h3>Globals</h3>';
+            
+            foreach( $this->getGlobals() as $global )
+            {
+                $html[] = ( string )$global;
             }
         }
         

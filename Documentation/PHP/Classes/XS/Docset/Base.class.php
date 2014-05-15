@@ -218,4 +218,9 @@ abstract class XS_Docset_Base
         
         return $this->_id;
     }
+    
+    public function getNotes()
+    {
+        return NULL;
+    }
 }

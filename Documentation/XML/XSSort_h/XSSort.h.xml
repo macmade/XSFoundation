@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//apple_ref/doc/header/XSSort.h" lang="c" filename="XSSort.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Functions/XSSort.h"><name>XSSort.h</name>
+<header id="//xsdoc_ref/doc/header/XSSort.h" lang="c" filename="XSSort.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Functions/XSSort.h"><name>XSSort.h</name>
+<abstract><p>XSFoundation sort functions
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
 <includes>
-<include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
-<functions><function id="//apple_ref/c/func/XSSort_QuickSort" lang="c"><name>XSSort_QuickSort</name>
+<desc><p>...
+</p></desc>
+<functions><function id="//xsdoc_ref/c/func/XSSort_QuickSort" lang="c"><name>XSSort_QuickSort</name>
 <abstract><p>Sorts values using the quick sort algorithm
 </p></abstract>
 <parameterlist>
@@ -18,16 +23,13 @@
 <parsedparameter><type>XSUInteger</type><name>count</name></parsedparameter>
 <parsedparameter><type>XSDataType</type><name>type</name></parsedparameter>
 </parsedparameterlist>
-<returntype> XS_EXTERN_C_BEGIN # &lt; XS / XSTypes . h &gt; void</returntype>
-<declaration><declaration_type>XS_EXTERN_C_BEGIN</declaration_type>   <declaration_preprocessor>#include</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor><declaration_preprocessor>XS</declaration_preprocessor><declaration_preprocessor>/</declaration_preprocessor><declaration_preprocessor>XSTypes</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>h</declaration_preprocessor><declaration_preprocessor>&gt;</declaration_preprocessor>  
-<declaration_comment>/*!</declaration_comment>
-    <declaration_comment>*/</declaration_comment>
-<declaration_type>void</declaration_type> <declaration_function>XSSort_QuickSort</declaration_function>(
+<returntype> void</returntype>
+<declaration><declaration_type>void</declaration_type> <declaration_function>XSSort_QuickSort</declaration_function>(
     <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>values</declaration_param>,
     <declaration_type>XSUInteger</declaration_type> <declaration_param>count</declaration_param>,
     <declaration_type>XSDataType</declaration_type> <declaration_param>type</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSSort_ShellSort" lang="c"><name>XSSort_ShellSort</name>
+</function><function id="//xsdoc_ref/c/func/XSSort_ShellSort" lang="c"><name>XSSort_ShellSort</name>
 <abstract><p>Sorts values using the shell sort algorithm
 </p></abstract>
 <parameterlist>
@@ -47,7 +49,7 @@
     <declaration_type>XSDataType</declaration_type> <declaration_param>type</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function></functions>
-<defines><pdefine id="//apple_ref/c/macro/__XS_FUNCTIONS_XS_SORT_H__" definetype="value" lang="c"><name>__XS_FUNCTIONS_XS_SORT_H__</name>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_FUNCTIONS_XS_SORT_H__</declaration_preprocessor> </declaration>
-</pdefine></defines><timestamp>Wednesday, May 14, 2014</timestamp>
+<copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Thursday, May 15, 2014</timestamp>
 </header>

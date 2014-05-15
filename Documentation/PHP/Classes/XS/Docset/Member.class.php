@@ -113,6 +113,13 @@ abstract class XS_Docset_Member extends XS_Docset_Base
             $html[] = '</ul>';
         }
         
+        if( $this->getNotes() !== NULL )
+        {
+            $html[] = '<div class="xsdoc-notes-block">';
+            $html[] = '<strong>Notes:</strong> ' . $this->getNotes();
+            $html[] = '</div>';
+        }
+        
         $html[] = '</div>';
         
         return implode( chr( 10 ), $html );

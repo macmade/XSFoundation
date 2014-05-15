@@ -151,6 +151,17 @@ code {
     font-family:            Consolas, Monaco, Courier, sans-serif;
 }
 
+.xsdoc-notes-block {
+    padding-left:           10px;
+    padding-top :           5px;
+    padding-right:          10px;
+    padding-bottom:         5px;
+    margin-top:             10px;
+    margin-bottom:          10px;
+    border:                 solid 1px #D6E0E5;
+    font-size:              10px;
+}
+
 .xsdoc-header {
     height:                 35px;
     overflow:               hidden;
@@ -296,11 +307,23 @@ code {
     font-weight:            normal;
 }
 
+.xsdoc-file-toc h4 {
+    font-size:              12px;
+    margin-left:            20px;
+    border-bottom:          solid 1px #D6E0E5;
+    padding-bottom:         2px;
+    margin-bottom:          5px;
+}
+
 .xsdoc-file-toc ul {
     margin:                 0px;
     padding-left:           0px;
     list-style:             none;
     line-height:            16px;
+}
+
+.xsdoc-file-toc ul ul {
+    margin-left:            20px;
 }
 
 .xsdoc-file-toc a {
@@ -380,6 +403,7 @@ code {
     float:                  right;
     font-size:              10px;
     margin-top:             10px;
+    margin-left:            10px;
 }
 
 .xsdoc-search .xsdoc-search-form {
@@ -460,4 +484,33 @@ ul.xsdoc-list-square {
 
 .xsdoc-class-members {
     margin-bottom:          20px;
+}
+
+.xsdoc-class-attributes {
+    border-top:             solid 1px #D6E0E5;
+    margin-top:             20px;
+    margin-right:           40px;
+    margin-bottom:          20px;
+    width:                  100%;
+}
+
+.xsdoc-class-attribute {
+    border-bottom:          solid 1px #D6E0E5;
+    overflow:               hidden;
+    height:                 100%;
+    padding-left:           10px;
+    padding-top:            10px;
+    padding-right:          10px;
+    padding-bottom:         10px;
+}
+
+.xsdoc-class-attribute-name {
+    float:                  left;
+    font-weight:            bold;
+    width:                  150px;
+}
+
+.xsdoc-class-attribute-value {
+    float:                  left;
+    width:                  70%;
 }

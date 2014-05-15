@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//apple_ref/doc/header/XSNotificationCenterRef.h" lang="c" filename="XSNotificationCenterRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSNotificationCenterRef.h"><name>XSNotificationCenterRef.h</name>
+<header id="//xsdoc_ref/doc/header/XSNotificationCenterRef.h" lang="c" filename="XSNotificationCenterRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSNotificationCenterRef.h"><name>XSNotificationCenterRef.h</name>
+<abstract><p>XSNotificationCenter class
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
 <includes>
-<include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//apple_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSMacros.h">&lt;XS/XSMacros.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
-<functions><function id="//apple_ref/c/func/XSNotificationCenter_AddObserver" lang="c"><name>XSNotificationCenter_AddObserver</name>
+<desc><p>...
+</p></desc>
+<functions><function id="//xsdoc_ref/c/func/XSNotificationCenter_AddObserver" lang="c"><name>XSNotificationCenter_AddObserver</name>
 <abstract><p>Adds an observer to a notification center
 </p></abstract>
 <parameterlist>
@@ -31,7 +36,7 @@
     <declaration_type>XSStringRef</declaration_type> <declaration_param>name</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>sender</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSNotificationCenter_Create" lang="c"><name>XSNotificationCenter_Create</name>
+</function><function id="//xsdoc_ref/c/func/XSNotificationCenter_Create" lang="c"><name>XSNotificationCenter_Create</name>
 <abstract><p>Creates a notification center
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSNotificationCenterRef</returntype>
@@ -40,7 +45,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNotificationCenterRef</declaration_type> <declaration_function>XSNotificationCenter_Create</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSNotificationCenter_DefaultCenter" lang="c"><name>XSNotificationCenter_DefaultCenter</name>
+</function><function id="//xsdoc_ref/c/func/XSNotificationCenter_DefaultCenter" lang="c"><name>XSNotificationCenter_DefaultCenter</name>
 <abstract><p>Gets the default notification center
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSNotificationCenterRef</returntype>
@@ -49,7 +54,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSNotificationCenterRef</declaration_type> <declaration_function>XSNotificationCenter_DefaultCenter</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSNotificationCenter_GetClassID" lang="c"><name>XSNotificationCenter_GetClassID</name>
+</function><function id="//xsdoc_ref/c/func/XSNotificationCenter_GetClassID" lang="c"><name>XSNotificationCenter_GetClassID</name>
 <abstract><p>Gets the class ID for XSNotificationCenter
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSClassID</returntype>
@@ -58,7 +63,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSClassID</declaration_type> <declaration_function>XSNotificationCenter_GetClassID</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSNotificationCenter_PostNotification" lang="c"><name>XSNotificationCenter_PostNotification</name>
+</function><function id="//xsdoc_ref/c/func/XSNotificationCenter_PostNotification" lang="c"><name>XSNotificationCenter_PostNotification</name>
 <abstract><p>Posts a notification to a notification center
 </p></abstract>
 <parameterlist>
@@ -74,7 +79,7 @@
     <declaration_type>XSNotificationCenterRef</declaration_type> <declaration_param>center</declaration_param>,
     <declaration_type>XSNotificationRef</declaration_type> <declaration_param>notification</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSNotificationCenter_PostNotificationName" lang="c"><name>XSNotificationCenter_PostNotificationName</name>
+</function><function id="//xsdoc_ref/c/func/XSNotificationCenter_PostNotificationName" lang="c"><name>XSNotificationCenter_PostNotificationName</name>
 <abstract><p>Posts a notification to a notification center
 </p></abstract>
 <parameterlist>
@@ -96,7 +101,7 @@
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>sender</declaration_param>,
     <declaration_type>XSDictionaryRef</declaration_type> <declaration_param>userInfo</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSNotificationCenter_RemoveObserver" lang="c"><name>XSNotificationCenter_RemoveObserver</name>
+</function><function id="//xsdoc_ref/c/func/XSNotificationCenter_RemoveObserver" lang="c"><name>XSNotificationCenter_RemoveObserver</name>
 <abstract><p>Removes an observer from a notification center
 </p></abstract>
 <parameterlist>
@@ -119,7 +124,7 @@
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>sender</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function></functions>
-<typedefs><typedef id="//apple_ref/c/tdef/XSNotificationCenter_NotificationCallback" lang="c" type="funcPtr"><name>XSNotificationCenter_NotificationCallback</name>
+<typedefs><typedef id="//xsdoc_ref/c/tdef/XSNotificationCenter_NotificationCallback" lang="c" type="funcPtr"><name>XSNotificationCenter_NotificationCallback</name>
 <abstract><p>Notification callback
 </p></abstract>
 <parameterlist>
@@ -130,18 +135,16 @@
 <parsedparameter><type>XSObjectRef</type><name>object</name></parsedparameter>
 <parsedparameter><type>XSNotificationRef</type><name>notification</name></parsedparameter>
 </parsedparameterlist>
-<declaration> <declaration_comment>/*!</declaration_comment>
-    <declaration_comment>*/</declaration_comment>
-<declaration_keyword>typedef</declaration_keyword> <declaration_type>void</declaration_type> ( <declaration_type>*</declaration_type><declaration_function>XSNotificationCenter_NotificationCallback</declaration_function> )(
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_type>void</declaration_type> ( <declaration_type>*</declaration_type><declaration_function>XSNotificationCenter_NotificationCallback</declaration_function> )(
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSNotificationRef</declaration_type> <declaration_param>notification</declaration_param> );  </declaration>
 <desc><p/></desc>
-</typedef><typedef id="//apple_ref/c/tdef/XSNotificationCenterRef" lang="c" type="simple"><name>XSNotificationCenterRef</name>
+</typedef><typedef id="//xsdoc_ref/c/tdef/XSNotificationCenterRef" lang="c" type="simple"><name>XSNotificationCenterRef</name>
 <abstract><p>Opaque type for XSNotificationCenter
 </p></abstract>
 <declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSNotificationCenter</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSNotificationCenterRef</declaration_var>;  </declaration>
 <desc><p/></desc>
-</typedef></typedefs><defines><pdefine id="//apple_ref/c/macro/__XS_CLASSES_XS_NOTIFICATION_CENTER_H__" definetype="value" lang="c"><name>__XS_CLASSES_XS_NOTIFICATION_CENTER_H__</name>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_CLASSES_XS_NOTIFICATION_CENTER_H__</declaration_preprocessor> </declaration>
-</pdefine></defines><timestamp>Wednesday, May 14, 2014</timestamp>
+</typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Thursday, May 15, 2014</timestamp>
 </header>

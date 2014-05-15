@@ -26,12 +26,12 @@
 
 /* $Id$ */
 
-require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'ClassMember.class.php';
+require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Member.class.php';
 
-class XS_Docset_InstanceVariable extends XS_Docset_ClassMember
+class XS_Docset_Global extends XS_Docset_Member
 {
-    public function __construct( XS_Docset_Class $class, SimpleXMLElement $xml )
+    public function __construct( SimpleXMLElement $xml )
     {
-        parent::__construct( $class, $xml );
+        parent::__construct( $xml );
     }
 }

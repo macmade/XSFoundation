@@ -59,6 +59,14 @@ class XS_Docset_Class extends XS_Docset_Member
             }
         }
         
+        if( isset( $this->_xml->functions ) )
+        {
+            foreach( $this->_xml->functions->children() as $method )
+            {
+                $this->_methods[] = new XS_Docset_Method( $this, $method );
+            }
+        }
+        
         return $this->_methods;
     }
     
@@ -102,30 +110,128 @@ class XS_Docset_Class extends XS_Docset_Member
         return $this->_instanceVariables;
     }
     
+    public function isProtocol()
+    {
+        return $this->_xml->getName() === 'protocol';
+    }
+    
     public function __toString()
     {
         $html = array();
         
         $html[] = '<a name="' . $this->getID() . '"></a>';
         $html[] = '<a name="' . $this->getName() . '"></a>';
-        $html[] = '<h3>Class ' . $this->getName() . '</h3>';
-        $html[] = '<div class="xsdoc-class-members">';
         
-        if( count( $this->getMethods() ) )
+        if( $this->isProtocol() )
         {
-            $html[] = '<h4>Tasks</h4>';
-            $html[] = '<ul>';
+            $html[] = '<h3>Protocol ' . $this->getName() . '</h3>';
+        }
+        else
+        {
+            $html[] = '<h3>Class ' . $this->getName() . '</h3>';
+        }
+        
+        if( isset( $this->_xml->attributes ) )
+        {
+            $html[] = '<h4>Attributes</h4>';
+            $html[] = '<div class="xsdoc-class-attributes">';
             
-            foreach( $this->getMethods() as $method )
+            foreach( $this->_xml->attributes->children() as $attribute )
             {
-                $html[] = '<li>';
-                $html[] = '<a href="#' . $method->getID() . '">';
-                $html[] = $method->getName();
-                $html[] = '</a>';
-                $html[] = '</li>';
+                $html[] = '<div class="xsdoc-class-attribute">';
+                $html[] = '<div class="xsdoc-class-attribute-name">';
+                $html[] = ( string )( $attribute->name );
+                $html[] = '</div>';
+                $html[] = '<div class="xsdoc-class-attribute-value">';
+                
+                foreach( $attribute->value->children() as $value )
+                {
+                    $html[] = '<div>';
+                    $html[] = ( string )$value;
+                    $html[] = '</div>';
+                }
+                
+                $html[] = '</div>';
+                $html[] = '</div>';
             }
             
-            $html[] = '</ul>';
+            $html[] = '</div>';
+        }
+        
+        $html[] = '<div class="xsdoc-class-members">';
+        
+        if( $this->isProtocol() )
+        {
+            if( count( $this->getMethods() ) )
+            {
+                $required = array();
+                $optional = array();
+                
+                foreach( $this->getMethods() as $method )
+                {
+                    if( $method->isOptional() )
+                    {
+                        $optional[] = $method;
+                    }
+                    else
+                    {
+                        $required[] = $method;
+                    }
+                }
+                
+                if( count( $required ) )
+                {
+                    $html[] = '<h4>Required Tasks</h4>';
+                    $html[] = '<ul>';
+                    
+                    foreach( $required as $method )
+                    {
+                        $html[] = '<li>';
+                        $html[] = '<a href="#' . $method->getID() . '">';
+                        $html[] = $method->getName();
+                        $html[] = '</a>';
+                        $html[] = '</li>';
+                    }
+                    
+                    $html[] = '</ul>';
+                }
+                
+                if( count( $optional ) )
+                {
+                    $html[] = '<h4>Optional Tasks</h4>';
+                    $html[] = '<ul>';
+                    
+                    foreach( $optional as $method )
+                    {
+                        $html[] = '<li>';
+                        $html[] = '<a href="#' . $method->getID() . '">';
+                        $html[] = $method->getName();
+                        $html[] = '</a>';
+                        $html[] = '</li>';
+                    }
+                    
+                    $html[] = '</ul>';
+                }
+            }
+        }
+        else
+        {
+            if( count( $this->getMethods() ) )
+            {
+                $html[] = '<h4>Tasks</h4>';
+                $html[] = '<ul>';
+                
+                foreach( $this->getMethods() as $method )
+                {
+                    $html[] = '<li>';
+                    $html[] = '<a href="#' . $method->getID() . '">';
+                    $html[] = $method->getName();
+                    $html[] = '</a>';
+                    $html[] = '</li>';
+                }
+                
+                $html[] = '</ul>';
+            }
         }
         
         if( count( $this->getProperties() ) )

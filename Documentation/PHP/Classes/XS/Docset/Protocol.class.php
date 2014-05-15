@@ -26,12 +26,17 @@
 
 /* $Id$ */
 
-require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'ClassMember.class.php';
+require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'Class.class.php';
 
-class XS_Docset_InstanceVariable extends XS_Docset_ClassMember
+class XS_Docset_Protocol extends XS_Docset_Class
 {
-    public function __construct( XS_Docset_Class $class, SimpleXMLElement $xml )
+    public function __construct( SimpleXMLElement $xml )
     {
-        parent::__construct( $class, $xml );
+        parent::__construct( $xml );
+    }
+    
+    public function getTitle()
+    {
+        return 'Protocol ' . $this->getName();
     }
 }

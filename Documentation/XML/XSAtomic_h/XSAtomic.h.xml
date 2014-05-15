@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//apple_ref/doc/header/XSAtomic.h" lang="c" filename="XSAtomic.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Functions/XSAtomic.h"><name>XSAtomic.h</name>
+<header id="//xsdoc_ref/doc/header/XSAtomic.h" lang="c" filename="XSAtomic.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Functions/XSAtomic.h"><name>XSAtomic.h</name>
+<abstract><p>XSFoundation atomic functions
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
 <includes>
-<include><hd_link logicalPath="//apple_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSTypes.h">&lt;XS/XSTypes.h&gt;</hd_link></include>
 </includes>
-<desc><p/></desc>
-<functions><function id="//apple_ref/c/func/XSAtomic_Add32" lang="c"><name>XSAtomic_Add32</name>
+<desc><p>...
+</p></desc>
+<functions><function id="//xsdoc_ref/c/func/XSAtomic_Add32" lang="c"><name>XSAtomic_Add32</name>
 <abstract><p>Atomically adds to a 32 bits value
 </p></abstract>
 <parameterlist>
@@ -23,7 +28,7 @@
     <declaration_type>XSInt32</declaration_type> <declaration_param>amount</declaration_param>,
     <declaration_keyword>volatile</declaration_keyword> <declaration_type>XSInt32</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSAtomic_Add64" lang="c"><name>XSAtomic_Add64</name>
+</function><function id="//xsdoc_ref/c/func/XSAtomic_Add64" lang="c"><name>XSAtomic_Add64</name>
 <abstract><p>Atomically adds to a 64 bits value
 </p></abstract>
 <parameterlist>
@@ -41,7 +46,7 @@
     <declaration_type>XSInt64</declaration_type> <declaration_param>amount</declaration_param>,
     <declaration_keyword>volatile</declaration_keyword> <declaration_type>XSInt64</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSAtomic_AddInteger" lang="c"><name>XSAtomic_AddInteger</name>
+</function><function id="//xsdoc_ref/c/func/XSAtomic_AddInteger" lang="c"><name>XSAtomic_AddInteger</name>
 <abstract><p>Atomically adds to an integer value
 </p></abstract>
 <parameterlist>
@@ -59,7 +64,7 @@
     <declaration_type>XSInteger</declaration_type> <declaration_param>amount</declaration_param>,
     <declaration_keyword>volatile</declaration_keyword> <declaration_type>XSInteger</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSAtomic_CompareAndSwap32" lang="c"><name>XSAtomic_CompareAndSwap32</name>
+</function><function id="//xsdoc_ref/c/func/XSAtomic_CompareAndSwap32" lang="c"><name>XSAtomic_CompareAndSwap32</name>
 <abstract><p>Atomically compares and swaps a 32 bits value
 </p></abstract>
 <parameterlist>
@@ -80,7 +85,7 @@
     <declaration_type>XSInt32</declaration_type> <declaration_param>newValue</declaration_param>,
     <declaration_keyword>volatile</declaration_keyword> <declaration_type>XSInt32</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSAtomic_CompareAndSwap64" lang="c"><name>XSAtomic_CompareAndSwap64</name>
+</function><function id="//xsdoc_ref/c/func/XSAtomic_CompareAndSwap64" lang="c"><name>XSAtomic_CompareAndSwap64</name>
 <abstract><p>Atomically compares and swaps a 64 bits value
 </p></abstract>
 <parameterlist>
@@ -101,7 +106,7 @@
     <declaration_type>XSInt64</declaration_type> <declaration_param>newValue</declaration_param>,
     <declaration_keyword>volatile</declaration_keyword> <declaration_type>XSInt64</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSAtomic_CompareAndSwapInteger" lang="c"><name>XSAtomic_CompareAndSwapInteger</name>
+</function><function id="//xsdoc_ref/c/func/XSAtomic_CompareAndSwapInteger" lang="c"><name>XSAtomic_CompareAndSwapInteger</name>
 <abstract><p>Atomically compares and swaps an integer value
 </p></abstract>
 <parameterlist>
@@ -122,7 +127,7 @@
     <declaration_type>XSInteger</declaration_type> <declaration_param>newValue</declaration_param>,
     <declaration_keyword>volatile</declaration_keyword> <declaration_type>XSInteger</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSAtomic_CompareAndSwapPointer" lang="c"><name>XSAtomic_CompareAndSwapPointer</name>
+</function><function id="//xsdoc_ref/c/func/XSAtomic_CompareAndSwapPointer" lang="c"><name>XSAtomic_CompareAndSwapPointer</name>
 <abstract><p>Atomically compares and swaps a pointer value
 </p></abstract>
 <parameterlist>
@@ -143,7 +148,7 @@
     <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>newValue</declaration_param>,
     <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_keyword>volatile</declaration_keyword> <declaration_type>*</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSAtomic_Decrement32" lang="c"><name>XSAtomic_Decrement32</name>
+</function><function id="//xsdoc_ref/c/func/XSAtomic_Decrement32" lang="c"><name>XSAtomic_Decrement32</name>
 <abstract><p>Atomically decrements a 32 bits value
 </p></abstract>
 <parameterlist>
@@ -158,7 +163,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSInt32</declaration_type> <declaration_function>XSAtomic_Decrement32</declaration_function>(
     <declaration_keyword>volatile</declaration_keyword> <declaration_type>XSInt32</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSAtomic_Decrement64" lang="c"><name>XSAtomic_Decrement64</name>
+</function><function id="//xsdoc_ref/c/func/XSAtomic_Decrement64" lang="c"><name>XSAtomic_Decrement64</name>
 <abstract><p>Atomically decrements a 64 bits value
 </p></abstract>
 <parameterlist>
@@ -173,7 +178,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSInt64</declaration_type> <declaration_function>XSAtomic_Decrement64</declaration_function>(
     <declaration_keyword>volatile</declaration_keyword> <declaration_type>XSInt64</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSAtomic_DecrementInteger" lang="c"><name>XSAtomic_DecrementInteger</name>
+</function><function id="//xsdoc_ref/c/func/XSAtomic_DecrementInteger" lang="c"><name>XSAtomic_DecrementInteger</name>
 <abstract><p>Atomically decrements an integer value
 </p></abstract>
 <parameterlist>
@@ -188,7 +193,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSInteger</declaration_type> <declaration_function>XSAtomic_DecrementInteger</declaration_function>(
     <declaration_keyword>volatile</declaration_keyword> <declaration_type>XSInteger</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSAtomic_Increment32" lang="c"><name>XSAtomic_Increment32</name>
+</function><function id="//xsdoc_ref/c/func/XSAtomic_Increment32" lang="c"><name>XSAtomic_Increment32</name>
 <abstract><p>Atomically increments a 32 bits value
 </p></abstract>
 <parameterlist>
@@ -197,16 +202,13 @@
 <parsedparameterlist>
 <parsedparameter><type>volatile XSInt32 *</type><name>value</name></parsedparameter>
 </parsedparameterlist>
-<returntype> XS_EXTERN_C_BEGIN # &lt; XS / XSTypes . h &gt; XS_EXPORT XSInt32</returntype>
+<returntype> XS_EXPORT XSInt32</returntype>
 <result><p>The new value
 </p></result>
-<declaration><declaration_type>XS_EXTERN_C_BEGIN</declaration_type>   <declaration_preprocessor>#include</declaration_preprocessor> <declaration_preprocessor>&lt;</declaration_preprocessor><declaration_preprocessor>XS</declaration_preprocessor><declaration_preprocessor>/</declaration_preprocessor><declaration_preprocessor>XSTypes</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>h</declaration_preprocessor><declaration_preprocessor>&gt;</declaration_preprocessor>  
-<declaration_comment>/*!</declaration_comment>
-    <declaration_comment>*/</declaration_comment>
-<declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSInt32</declaration_type> <declaration_function>XSAtomic_Increment32</declaration_function>(
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSInt32</declaration_type> <declaration_function>XSAtomic_Increment32</declaration_function>(
     <declaration_keyword>volatile</declaration_keyword> <declaration_type>XSInt32</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSAtomic_Increment64" lang="c"><name>XSAtomic_Increment64</name>
+</function><function id="//xsdoc_ref/c/func/XSAtomic_Increment64" lang="c"><name>XSAtomic_Increment64</name>
 <abstract><p>Atomically increments a 64 bits value
 </p></abstract>
 <parameterlist>
@@ -221,7 +223,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSInt64</declaration_type> <declaration_function>XSAtomic_Increment64</declaration_function>(
     <declaration_keyword>volatile</declaration_keyword> <declaration_type>XSInt64</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSAtomic_IncrementInteger" lang="c"><name>XSAtomic_IncrementInteger</name>
+</function><function id="//xsdoc_ref/c/func/XSAtomic_IncrementInteger" lang="c"><name>XSAtomic_IncrementInteger</name>
 <abstract><p>Atomically increments an integer value
 </p></abstract>
 <parameterlist>
@@ -236,7 +238,7 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSInteger</declaration_type> <declaration_function>XSAtomic_IncrementInteger</declaration_function>(
     <declaration_keyword>volatile</declaration_keyword> <declaration_type>XSInteger</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSAtomic_Read32" lang="c"><name>XSAtomic_Read32</name>
+</function><function id="//xsdoc_ref/c/func/XSAtomic_Read32" lang="c"><name>XSAtomic_Read32</name>
 <abstract><p>Atomically reads a 32 bits value
 </p></abstract>
 <parameterlist>
@@ -251,7 +253,7 @@
 <declaration><declaration_type>XSInt32</declaration_type> <declaration_function>XSAtomic_Read32</declaration_function>(
     <declaration_keyword>volatile</declaration_keyword> <declaration_type>XSInt32</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSAtomic_Read64" lang="c"><name>XSAtomic_Read64</name>
+</function><function id="//xsdoc_ref/c/func/XSAtomic_Read64" lang="c"><name>XSAtomic_Read64</name>
 <abstract><p>Atomically reads a 64 bits value
 </p></abstract>
 <parameterlist>
@@ -266,7 +268,7 @@
 <declaration><declaration_type>XSInt64</declaration_type> <declaration_function>XSAtomic_Read64</declaration_function>(
     <declaration_keyword>volatile</declaration_keyword> <declaration_type>XSInt64</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//apple_ref/c/func/XSAtomic_ReadInteger" lang="c"><name>XSAtomic_ReadInteger</name>
+</function><function id="//xsdoc_ref/c/func/XSAtomic_ReadInteger" lang="c"><name>XSAtomic_ReadInteger</name>
 <abstract><p>Atomically reads an integer value
 </p></abstract>
 <parameterlist>
@@ -282,7 +284,7 @@
     <declaration_keyword>volatile</declaration_keyword> <declaration_type>XSInteger</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function></functions>
-<defines><pdefine id="//apple_ref/c/macro/__XS_FUNCTIONS_XS_ATOMIC_H__" definetype="value" lang="c"><name>__XS_FUNCTIONS_XS_ATOMIC_H__</name>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>__XS_FUNCTIONS_XS_ATOMIC_H__</declaration_preprocessor> </declaration>
-</pdefine></defines><timestamp>Wednesday, May 14, 2014</timestamp>
+<copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Thursday, May 15, 2014</timestamp>
 </header>

@@ -24,6 +24,16 @@ $DOC->addPage( 'Pages/Classes.inc.php', 'Class definition' );
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//ENhttp://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
+    <!--
+    
+    ##################################################
+    #                                                #
+    #       Generated with XSDocgen by XS-Labs       #
+    #                 www.xs-labs.com                #
+    #                                                #
+    ##################################################
+    
+    -->
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title><?php print $DOC->getTitle(); ?></title>
     <link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements" />
@@ -33,6 +43,39 @@ $DOC->addPage( 'Pages/Classes.inc.php', 'Class definition' );
     <meta name="rating" content="General" />
     <meta name="robots" content="all" />
     <meta name="generator" content="XSDocgen" />
+    <script type="text/javascript">
+        // <![CDATA[
+        
+        (
+            function( i, s, o, g, r, a, m )
+            {
+                i[ 'GoogleAnalyticsObject' ] = r;
+                i[ r ]                       = i[ r ] || function()
+                {
+                    ( i[ r ].q = i[ r ].q || [] ).push( arguments )
+                },
+                i[ r ].l = 1 * new Date();
+                a        = s.createElement( o ),
+                m        = s.getElementsByTagName( o )[ 0 ];
+                a.async  = 1;
+                a.src    = g;
+            
+                m.parentNode.insertBefore( a, m )
+            }
+        )
+        (
+            window,
+            document,
+            'script',
+            '//www.google-analytics.com/analytics.js',
+            'ga'
+        );
+        
+        ga( 'create', 'UA-51035898-4', 'xs-labs.com' );
+        ga( 'send', 'pageview' );
+        
+        // ]]>
+    </script>
 </head>
 <body>
 <?php
