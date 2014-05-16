@@ -353,7 +353,8 @@ ifeq ($(_HAS_XSDOCGEN),true)
 	@    --page-add "Building XSFoundation" "Pages/Build.inc.php" \
 	@    --page-add "Memory management" "Pages/Memory.inc.php" \
 	@    --page-add "Class definition" "Pages/Classes.inc.php" \
-	@    --google-analytics "UA-51035898-4" "xs-labs.com"
+	@    --google-analytics "UA-51035898-4" "xs-labs.com" \
+	@    --google-analytics-display-features
 else
 	@echo $(call _PRINT,XSDoc,universal,Skipping documentation generation - XSDocgen is not installed)
 endif
@@ -383,6 +384,7 @@ ifeq ($(_HAS_XSDOCGEN),true)
 	@    --page-add "Memory management" "Pages/Memory.inc.php" \
 	@    --page-add "Class definition" "Pages/Classes.inc.php" \
 	@    --google-analytics "UA-51035898-4" "xs-labs.com" \
+	@    --google-analytics-display-features
 	@    --verbose
 else
 	@echo $(call _PRINT,XSDoc,universal,Skipping documentation generation - XSDocgen is not installed)

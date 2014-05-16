@@ -72,6 +72,7 @@ $DOC->addPage( 'Pages/Classes.inc.php', 'Class definition' );
         );
         
         ga( 'create', 'UA-51035898-4', 'xs-labs.com' );
+        ga( 'require', 'displayfeatures' );
         ga( 'send', 'pageview' );
         
         // ]]>

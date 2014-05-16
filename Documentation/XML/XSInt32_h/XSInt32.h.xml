@@ -30,5 +30,5 @@
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSInt32Min</declaration_preprocessor> <declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>-</declaration_preprocessor><declaration_preprocessor>XSInt32Max</declaration_preprocessor> <declaration_preprocessor>-</declaration_preprocessor> <declaration_preprocessor>1</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
 </pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Thursday, May 15, 2014</timestamp>
+<timestamp>Friday, May 16, 2014</timestamp>
 </header>
