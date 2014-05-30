@@ -82,29 +82,16 @@ void __XSDebugger_Initialize( void )
     XSRuntime_RegisterFinalizer( __XSDebugger_Exit );
     
     #ifdef _WIN32
-
-    if( signal( SIGSEGV, __XSDebugger_SignalHandler ) == SIG_ERR )
-    {
-        XSFatalError( "Error setting a signal handler for SIGSEGV" );
-    }
     
-    if( signal( SIGBUS,  __XSDebugger_SignalHandler ) ) == SIG_ERR )
-    {
-        XSFatalError( "Error setting a signal handler for SIGBUS" );
-    }
+    __XSDebugger_SEH = AddVectoredExceptionHandler( 0, __XSDebugger_ErrorHandler );
     
-    if( signal( SIGABRT,  __XSDebugger_SignalHandler ) ) == SIG_ERR )
-    {
-        XSFatalError( "Error setting a signal handler for SIGABRT" );
-    }
-
     #else
     
     {
         struct sigaction sa1;
         struct sigaction sa2;
         
-        sa1.sa_handler = __XSDebugger_SignalHandler;
+        sa1.sa_handler = __XSDebugger_ErrorHandler;
         sa1.sa_flags   = 0;
         
         sigemptyset( &sa1.sa_mask );

@@ -100,5 +100,16 @@ void __XSDebugger_Exit( void )
         rec = rec->next;
     }
     
+    #ifdef _WIN32
+    
+    if( __XSDebugger_SEH != NULL )
+    {
+        RemoveVectoredExceptionHandler( __XSDebugger_SEH );
+        
+        __XSDebugger_SEH = NULL;
+    }
+    
+    #endif
+    
     #endif
 }

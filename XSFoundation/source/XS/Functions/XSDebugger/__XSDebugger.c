@@ -72,3 +72,9 @@
 #include <XS/__private/Functions/XSDebugger.h>
 
 __XSDebugger_MemoryRecord * volatile __XSDebugger_MemoryRecords = NULL;
+
+#ifdef _WIN32
+
+PVOID __XSDebugger_SEH = NULL;
+
+#endif

@@ -134,6 +134,16 @@ __XSDebugger_MemoryRecord;
  */
 XS_EXTERN __XSDebugger_MemoryRecord * volatile __XSDebugger_MemoryRecords;
 
+#ifdef _WIN32
+
+/*!
+ * @var         __XSDebugger_SEH
+ * @abstract    Vectored exception handler
+ */
+XS_EXTERN PVOID __XSDebugger_SEH;
+
+#endif
+
 /*!
  * @function    __XSDebugger_Initialize
  * @abstract    Initialize the debug system
@@ -187,12 +197,25 @@ __XSDebugger_MemoryRecord * __XSDebugger_GetMemoryRecord( __XSMemoryObject * obj
  */
 void __XSDebugger_CheckObjectIntegrity( __XSMemoryObject * object );
 
+#ifdef _WIN32
+
 /*!
- * @function    __XSDebugger_SignalHandler
+ * @function    __XSDebugger_ErrorHandler
+ * @abstract    Vectored exception handler
+ * @param       exceptionInfo   The vectored exception info pointer
+ */
+LONG CALLBACK __XSDebugger_ErrorHandler( _In_ PEXCEPTION_POINTERS exceptionInfo );
+
+#else
+
+/*!
+ * @function    __XSDebugger_ErrorHandler
  * @abstract    Signal handler
  * @param       sig         The signal number
  */
-void __XSDebugger_SignalHandler( int sig );
+void __XSDebugger_ErrorHandler( int sig );
+
+#endif
 
 /*!
  * @function    __XSDebugger_Breakpoint

@@ -62,16 +62,35 @@
 /* $Id$ */
 
 /*!
- * @file        __XSDebugger_SignalHandler.c
+ * @file        __XSDebugger_ErrorHandler.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSDebugger_SignalHandler
+ * @abstract    Definition for __XSDebugger_ErrorHandler
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSDebugger.h>
 
-void __XSDebugger_SignalHandler( int sig )
+#ifdef _WIN32
+
+LONG CALLBACK __XSDebugger_ErrorHandler( _In_ PEXCEPTION_POINTERS exceptionInfo )
+{
+    #ifndef DEBUG
+    
+    ( void )exceptionInfo;
+    
+    return;
+    
+    #else
+    
+    ( void )exceptionInfo;
+    
+    #endif
+}
+
+#else
+
+void __XSDebugger_ErrorHandler( int sig )
 {
     #ifndef DEBUG
     
@@ -96,3 +115,5 @@ void __XSDebugger_SignalHandler( int sig )
     
     #endif
 }
+
+#endif

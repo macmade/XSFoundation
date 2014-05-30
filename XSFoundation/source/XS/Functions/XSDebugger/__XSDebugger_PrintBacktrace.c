@@ -71,6 +71,10 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSDebugger.h>
 
+#ifdef _WIN32
+#include <DbgHelp.h>
+#endif
+
 void __XSDebugger_PrintBacktrace( void )
 {
     void ** bt;
@@ -103,6 +107,7 @@ void __XSDebugger_PrintBacktrace( void )
         SYMBOL_INFO * symbol;
         HANDLE        process;
         int           n;
+        int           i;
         
         process = GetCurrentProcess();
         
