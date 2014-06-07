@@ -1,6 +1,8 @@
 XSFoundation
 ============
 
+[![Build Status](https://travis-ci.org/macmade/XSFoundation.svg?branch=master)](https://travis-ci.org/macmade/XSFoundation)
+
 About
 -----
 
