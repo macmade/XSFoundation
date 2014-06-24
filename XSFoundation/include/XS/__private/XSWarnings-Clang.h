@@ -325,7 +325,6 @@
 #pragma clang diagnostic fatal "-Wobjc-forward-class-redefinition"
 #pragma clang diagnostic fatal "-Wobjc-interface-ivars"
 #pragma clang diagnostic fatal "-Wobjc-literal-compare"
-#pragma clang diagnostic fatal "-Wobjc-literal-missing-atsign"
 #pragma clang diagnostic fatal "-Wobjc-method-access"
 #pragma clang diagnostic fatal "-Wobjc-missing-property-synthesis"
 #pragma clang diagnostic fatal "-Wobjc-missing-super-calls"
