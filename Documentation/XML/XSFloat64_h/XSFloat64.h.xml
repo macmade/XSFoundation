@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xsdoc_ref/doc/header/XSFloat64.h" lang="c" filename="XSFloat64.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSTypes/XSFloat64.h"><name>XSFloat64.h</name>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/XSFloat64.h" lang="c" filename="XSFloat64.h" headerpath="/Users/macmade/Documents/Macmade/Development/GitHub/XSFoundation/XSFoundation/include/XS/XSTypes/XSFloat64.h"><name>XSFloat64.h</name>
 <abstract><p>XSFloat64 type definition
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
@@ -24,5 +24,5 @@
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSFloat64Min</declaration_preprocessor> <declaration_preprocessor>2</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>2250738585072014e</declaration_preprocessor><declaration_preprocessor>-</declaration_preprocessor><declaration_preprocessor>308</declaration_preprocessor> </declaration>
 </pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Friday, May 16, 2014</timestamp>
+<timestamp>Wednesday, June 11, 2014</timestamp>
 </header>

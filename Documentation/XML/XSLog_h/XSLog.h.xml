@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xsdoc_ref/doc/header/XSLog.h" lang="c" filename="XSLog.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Functions/XSLog.h"><name>XSLog.h</name>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/XSLog.h" lang="c" filename="XSLog.h" headerpath="/Users/macmade/Documents/Macmade/Development/GitHub/XSFoundation/XSFoundation/include/XS/Functions/XSLog.h"><name>XSLog.h</name>
 <abstract><p>XSFoundation log functions
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
@@ -672,5 +672,5 @@ instead.
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSVLogWarning</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelWarning</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
 </pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Friday, May 16, 2014</timestamp>
+<timestamp>Wednesday, June 11, 2014</timestamp>
 </header>

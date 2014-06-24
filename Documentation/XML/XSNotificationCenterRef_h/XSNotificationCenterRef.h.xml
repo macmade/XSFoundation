@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xsdoc_ref/doc/header/XSNotificationCenterRef.h" lang="c" filename="XSNotificationCenterRef.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSNotificationCenterRef.h"><name>XSNotificationCenterRef.h</name>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/XSNotificationCenterRef.h" lang="c" filename="XSNotificationCenterRef.h" headerpath="/Users/macmade/Documents/Macmade/Development/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSNotificationCenterRef.h"><name>XSNotificationCenterRef.h</name>
 <abstract><p>XSNotificationCenter class
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
@@ -146,5 +146,5 @@
 <desc><p/></desc>
 </typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Friday, May 16, 2014</timestamp>
+<timestamp>Wednesday, June 11, 2014</timestamp>
 </header>

@@ -26,14 +26,14 @@
 
 body {
     margin:                 0px;
-    color:                  rgba( 65, 65, 65, 1 );
+    color:                  #000000;
     font-style:             normal;
     font-weight:            normal;
     font-size:              12px;
     line-height:            20px;
     text-decoration:        none;
-    font-family:            Helvetica, Arial, sans-serif;
-    background-color:       rgba( 242, 242, 242, 1 );
+    font-family:            'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
+    background-color:       #FFFFFF;
 }
 
 h1,
@@ -42,24 +42,15 @@ h3,
 h4,
 h5,
 h6 {
-    color:                  rgba( 0, 0, 0, 1 );
+    color:                  #000000;
     font-style:             normal;
-    font-weight:            100;
+    font-weight:            normal;
     line-height:            normal;
     margin-top:             0px;
     margin-bottom:          0px;
     padding-top:            10px;
     padding-bottom:         10px;
     text-align:             left;
-}
-
-h1 *,
-h2 *,
-h3 *,
-h4 *,
-h5 *,
-h6 * {
-    font-weight:            100;
 }
 
 h1 {
@@ -80,11 +71,13 @@ h4 {
 
 h5 {
     font-size:              12px;
+    font-weight:            bold;
     padding-bottom:         0px;
 }
 
 h6 {
     font-size:              12px;
+    font-weight:            bold;
     padding-bottom:         0px;
 }
 
@@ -96,13 +89,13 @@ p {
 
 a {
     text-decoration:        none;
-    color:                  rgba( 0, 136, 204, 1 );
+    color:                  #3366CC;
 }
 
 a:link {
     font-weight:            normal;
     text-decoration:        none;
-    color:                  rgba( 0, 136, 204, 1 );
+    color:                  #3366CC;
 }
 
 a:visited {
@@ -112,12 +105,12 @@ a:visited {
 
 a:hover {
     font-weight:            normal;
-    text-decoration:        none;
+    text-decoration:        underline;
 }
 
 a:active {
     font-weight:            normal;
-    text-decoration:        none;
+    text-decoration:        underline;
 }
 
 img {
@@ -127,38 +120,35 @@ img {
 hr {
     height:                 1px;
     border:                 none;
-    border-top:             rgba( 233, 233, 233, 1 );
+    border-top:             solid 1px #ACACAC;
 }
 
 code {
     margin:                 0px;
-    color:                  #808080;
+    color:                  #4F4F4F;
     font-style:             normal;
     font-weight:            normal;
     font-size:              12px;
     text-decoration:        none;
-    font-family:            Menlo, Consolas, Monaco, Courier, sans-serif;
+    font-family:            Consolas, Monaco, Courier, sans-serif;
     white-space:            pre;
 }
 
 .xsdoc-code-block {
     padding:                10px;
-    background-color:       #F9F9F9;
-    border-left:            solid 5px #808080;
+    background-color:       #FCFCFC;
+    border:                 solid 1px #D6E0E5;
+    border-radius:          10px;
     margin-bottom:          10px;
     margin-top:             5px;
-    line-height:            15px;
+    line-height:            12px;
 }
 
 .xsdoc-code {
-    color:                  #808080;
+    color:                  #4F4F4F;
     font-style:             normal;
     text-decoration:        none;
-    font-family:            Menlo, Consolas, Monaco, Courier, sans-serif;
-}
-
-.xsdoc-code-block code {
-    font-size:              10px;
+    font-family:            Consolas, Monaco, Courier, sans-serif;
 }
 
 .xsdoc-notes-block {
@@ -168,54 +158,42 @@ code {
     padding-bottom:         5px;
     margin-top:             10px;
     margin-bottom:          10px;
-    border:                 solid 1px rgba( 233, 233, 233, 1 );
+    border:                 solid 1px #D6E0E5;
     font-size:              10px;
 }
 
 .xsdoc-header {
-    height:                 25px;
+    height:                 35px;
     overflow:               hidden;
-    background-color:       rgba( 65, 65, 65, 1 );
+    background-image:       url( 'Resources/header-bg.png' );
     text-align:             center;
-}
-
-.xsdoc-header-container {
-    width:                  1200px;
-    margin-left:            auto;
-    margin-right:           auto;
 }
 
 .xsdoc-header h1 {
     color:                  #FFFFFF;
-    font-size:              11px;
+    font-size:              14px;
     text-align:             center;
     float:                  left;
     margin-left:            15px;
-    padding-top:            7px;
     background-position:    0px 7px;
     overflow:               hidden;
     height:                 100%;
 }
 
-.xsdoc-header img {
-    width:                  16px;
-    height:                 16px;
+.xsdoc-header h1 img {
+    float:                  left;
+    margin-right:           20px;
     position:               relative;
     top:                    -2px;
 }
 
-.xsdoc-header h1 img {
-    float:                  left;
-    margin-right:           10px;
-}
-
 .xsdoc-header span {
     float:                  left;
-    margin-right:           10px;
+    margin-right:           20px;
 }
 
 .xsdoc-header .xsdoc-header-company a {
-    color:                  #808080;
+    color:                  #9BA2AA;
 }
 
 .xsdoc-header a {
@@ -235,95 +213,66 @@ code {
 }
 
 .xsdoc-subheader {
+    height:                 20px;
+    overflow:               hidden;
+    background-image:       url( 'Resources/footer-bg.png' );
     font-size:              10px;
-    padding-left:           40px;
-    width:                  1160px;
-    margin-left:            auto;
-    margin-right:           auto;
+    padding-left:           55px;
+    border-bottom:          solid 1px #ACACAC;
+    color:                  #4F4F4F;
 }
 
 .xsdoc-footer {
-    margin-top:             20px;
-    margin-bottom:          10px;
+    height:                 20px;
     overflow:               hidden;
+    background-image:       url( 'Resources/footer-bg.png' );
     text-align:             center;
     font-size:              10px;
     text-align:             center;
-    color:                  #808080;
+    border-top:             solid 1px #ACACAC;
+    color:                  #4F4F4F;
 }
 
 .xsdoc-main {
     overflow:               hidden;
     height:                 100%;
-    width:                  1200px;
-    margin-left:            auto;
-    margin-right:           auto;
 }
 
-.xsdoc-toc,
-.xsdoc-file-toc {
-    float:                  left;
-    background-color:       #FFFFFF;
-    border-left:            solid 1px #E9E9E9;
-    border-bottom:          solid 1px #E9E9E9;
-    border-right:           solid 1px #E9E9E9;
-    font-size:              12px;
-    padding:                0px;
-    width:                  230px;
-    overflow:               hidden;
+.xsdoc-toc {
+    float:                      left;
+    background-color:           #EBEEF1;
+    border-right:               solid 1px #ACACAC;
+    border-bottom:              solid 1px #ACACAC;
+    font-size:                  10px;
+    padding:                    10px;
+    width:                      15%;
+    overflow:                   hidden;
+    margin-bottom:              20px;
+    border-bottom-right-radius: 10px;
 }
 
-.xsdoc-toc h2,
-.xsdoc-file-toc h2,
-.xsdoc-toc h3,
-.xsdoc-file-toc h3,
-.xsdoc-toc h4,
-.xsdoc-file-toc h4 {
-    font-size:              16px;
-    padding:                15px;
+.xsdoc-toc h2 {
+    font-size:              14px;
+    border-bottom:          solid 1px #D6E0E5;
+    margin-bottom:          10px;
+    padding-bottom:         5px;
+}
+
+.xsdoc-toc ul {
     margin:                 0px;
-    border-top:             solid 1px #E9E9E9;
-}
-
-.xsdoc-toc h4,
-.xsdoc-file-toc h4 {
-    margin-left:            -25px;
-    margin-top:             10px;
-}
-
-.xsdoc-toc h2 a,
-.xsdoc-file-toc h2 a,
-.xsdoc-toc h3 a,
-.xsdoc-file-toc h3 a {
-    color:                  #000000;
-    font-weight:            100;
-}
-
-.xsdoc-toc ul,
-.xsdoc-file-toc ul {
-    margin-left:            0px;
-    margin-top:             0px;
-    margin-right:           0px;
-    margin-bottom:          15px;
-    padding-left:           25px;
+    padding-left:           20px;
     list-style:             none;
-    line-height:            22px;
+    line-height:            16px;
 }
 
-.xsdoc-file-toc ul ul {
+.xsdoc-toc li {
     margin:                 0px;
     padding:                0px;
 }
 
-.xsdoc-toc li,
-.xsdoc-file-toc li {
-    margin:                 0px;
-    padding:                0px;
-}
-
-.xsdoc-toc a,
-.xsdoc-file-toc a {
-    color:                  #808080;
+.xsdoc-toc a {
+    color:                  #4F4F4F;
+    font-weight:            bold;
 }
 
 .xsdoc-file,
@@ -331,43 +280,87 @@ code {
     float:                  left;
     overflow:               hidden;
     height:                 100%;
+    width:                  80%;
+    margin-bottom:          20px;
 }
 
 .xsdoc-file-toc {
-    margin-left:            15px;
-    float:                  right;
-    background-color:       #F9F9F9;
+    float:                  left;
+    margin:                 10px;
+    padding:                10px;
+    background-color:       #FCFCFC;
+    border:                 solid 1px #D6E0E5;
+    border-radius:          10px;
+    font-size:              10px;
+    width:                  20%;
+    overflow:               hidden;
+}
+
+.xsdoc-file-toc h2 {
+    font-size:              14px;
+}
+
+.xsdoc-file-toc h3 {
+    font-size:              14px;
+    border-bottom:          solid 1px #D6E0E5;
+    margin-bottom:          10px;
+    padding-bottom:         5px;
+}
+
+.xsdoc-file-toc h3 a {
+    font-weight:            normal;
+}
+
+.xsdoc-file-toc h4 {
+    font-size:              12px;
+    margin-left:            20px;
+    border-bottom:          solid 1px #D6E0E5;
+    padding-bottom:         2px;
+    margin-bottom:          5px;
+}
+
+.xsdoc-file-toc ul {
+    margin:                 0px;
+    padding-left:           0px;
+    list-style:             none;
+    line-height:            16px;
+}
+
+.xsdoc-file-toc ul ul {
+    margin-left:            20px;
+}
+
+.xsdoc-file-toc a {
+    color:                  #4F4F4F;
+    font-weight:            bold;
 }
 
 .xsdoc-file-toc li {
-    font-size:              10px;
-    line-height:            18px;
+    margin:                 0px;
+    padding:                0px;
 }
 
 .xsdoc-file-content,
 .xsdoc-search-content {
     float:                  left;
-    width:                  660px;
-    border:                 solid 1px #E9E9E9;
-    margin-left:            15px;
-    background-color:       #FFFFFF;
-    padding-left:           25px;
-    padding-top:            15px;
-    padding-right:          15px;
-    padding-bottom:         15px;
+    width:                  70%;
+    margin-top:             15px;
+    margin-left:            20px;
 }
 
 .xsdoc-file-content h3,
 .xsdoc-search-content h3,
-.xsdoc-home-content h3 {
-    border-bottom:          solid 1px rgba( 233, 233, 233, 1 );
+.xsdoc-home-content h3,
+.xsdoc-page-content h3 {
+    color:                  #3C4C6C;
+    border-bottom:          solid 1px #D6E0E5;
     margin-bottom:          20px;
     padding-bottom:         5px;
 }
 
 .xsdoc-file-details {
-    border-top:             solid 1px rgba( 233, 233, 233, 1 );
-    margin-left:            0px;
+    border-top:             solid 1px #D6E0E5;
+    margin-left:            40px;
     margin-top:             20px;
     margin-right:           40px;
     margin-bottom:          20px;
@@ -375,7 +368,7 @@ code {
 }
 
 .xsdoc-file-detail {
-    border-bottom:          solid 1px rgba( 233, 233, 233, 1 );
+    border-bottom:          solid 1px #D6E0E5;
     overflow:               hidden;
     height:                 100%;
     padding-left:           10px;
@@ -401,14 +394,6 @@ code {
     list-style:             none;
 }
 
-.xsdoc-file-content h4 {
-    color:                  #808080;
-}
-
-.xsdoc-file-content h5 {
-    font-weight:            bold;
-}
-
 .xsdoc-file-content li {
     margin:                 0px;
     padding:                0px;
@@ -431,8 +416,9 @@ code {
     margin-top:             20px;
     margin-bottom:          20px;
     padding:                20px;
-    background-color:       #F9F9F9;
-    border:                 solid 1px #E9E9E9;
+    background-color:       #FCFCFC;
+    border:                 solid 1px #D6E0E5;
+    border-radius:          10px;
 }
 
 .xsdoc-search .xsdoc-search-term {
@@ -445,22 +431,23 @@ code {
 }
 
 .xsdoc-search .xsdoc-search-term input {
-    color:                   rgba( 65, 65, 65, 1 );
+    color:                  #3C4C6C;
     background-color:       #FFFFFF;
     padding:                5px;
     margin:                 0px;
-    border:                 solid 1px #E9E9E9;
+    border:                 solid 1px #D6E0E5;
 }
 
 .xsdoc-search .xsdoc-search-submit input {
     color:                  #FFFFFF;
-    background-color:       rgba( 65, 65, 65, 1 );
+    background-color:       #3C4C6C;
     padding-left:           15px;
     padding-top:            5px;
     padding-right:          15px;
     padding-bottom:         5px;
     margin:                 0px;
-    border:                 none;
+    border:                 solid 1px #3C4C6C;
+    font-weight:            bold;
     border-radius:          5px;
     min-width:              100px;
 }
@@ -474,11 +461,11 @@ code {
     font-size:              10px;
     padding-top:            5px;
     padding-bottom:         5px;
-    color:                  #808080;
+    color:                  #8F8F8F;
 }
 
 .xsdoc-search-result h5 a {
-    color:                  #808080;
+    color:                  #8F8F8F;
 }
 
 .xsdoc-search-result p {
@@ -489,7 +476,7 @@ code {
 }
 
 .xsdoc-search-result p a {
-    color:                  rgba( 65, 65, 65, 1 );
+    color:                  #000000;
 }
 
 ul.xsdoc-list-square {
@@ -504,7 +491,7 @@ ul.xsdoc-list-square {
 }
 
 .xsdoc-class-attributes {
-    border-top:             solid 1px rgba( 233, 233, 233, 1 );
+    border-top:             solid 1px #D6E0E5;
     margin-top:             20px;
     margin-right:           40px;
     margin-bottom:          20px;
@@ -512,7 +499,7 @@ ul.xsdoc-list-square {
 }
 
 .xsdoc-class-attribute {
-    border-bottom:          solid 1px rgba( 233, 233, 233, 1 );
+    border-bottom:          solid 1px #D6E0E5;
     overflow:               hidden;
     height:                 100%;
     padding-left:           10px;
@@ -523,6 +510,7 @@ ul.xsdoc-list-square {
 
 .xsdoc-class-attribute-name {
     float:                  left;
+    font-weight:            bold;
     width:                  150px;
 }
 

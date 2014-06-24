@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.2//EN" "/System/Library/DTDs/HeaderDoc-1.2.dtd">
-<header id="//xsdoc_ref/doc/header/Apple.h" lang="c" filename="Apple.h" headerpath="/Volumes/Brain/Documents/Development/GitHub/XSFoundation/XSFoundation/include/XS/XS-STD/Apple.h"><name>STD-WIN32.h</name>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/Apple.h" lang="c" filename="Apple.h" headerpath="/Users/macmade/Documents/Macmade/Development/GitHub/XSFoundation/XSFoundation/include/XS/XS-STD/Apple.h"><name>STD-WIN32.h</name>
 <abstract><p>Apple include files
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
@@ -12,5 +12,5 @@
 </p></desc>
 <copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Friday, May 16, 2014</timestamp>
+<timestamp>Wednesday, June 11, 2014</timestamp>
 </header>

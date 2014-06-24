@@ -498,9 +498,11 @@ class XS_Docset extends XS_Docset_Base
         {
             $html[] = '<div class="xsdoc-project">';
             $html[] = '<div class="xsdoc-header">';
+            $html[] = '<div class="xsdoc-header-container">';
             $html[] = '<h1>';
             $html[] = '<span class="xsdoc-header-project">';
             $html[] = '<a href="' . $this->getHomeURL() . '">';
+            $html[] = '<img src="CSS/Resources/package.png" alt="" />';
             $html[] = $this->_projectName . ': API Reference';
             $html[] = '</a>';
             $html[] = '</span>';
@@ -518,13 +520,14 @@ class XS_Docset extends XS_Docset_Base
             $html[] = '<div class="xsdoc-header-buttons">';
             $html[] = '<div class="xsdoc-header-button">';
             $html[] = '<a href="' . $this->getPrintURL() . '" title="Print">';
-            $html[] = '<img src="CSS/Resources/print.png" alt="" width="20" height="20" />';
+            $html[] = '<img src="CSS/Resources/print.png" alt="" />';
             $html[] = '</a>';
             $html[] = '</div>';
             $html[] = '<div class="xsdoc-header-button">';
             $html[] = '<a href="' . $this->getSearchURL() . '" title="Print">';
-            $html[] = '<img src="CSS/Resources/search.png" alt="" width="20" height="20" />';
+            $html[] = '<img src="CSS/Resources/search.png" alt="" />';
             $html[] = '</a>';
+            $html[] = '</div>';
             $html[] = '</div>';
             $html[] = '</div>';
             $html[] = '</div>';
