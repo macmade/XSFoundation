@@ -64,8 +64,8 @@
 #-------------------------------------------------------------------------------
 
 CC          := clang
-MAC_TARGET  := 10.9
-IOS_SDK     := 7.1
+MAC_TARGET  := 10.10
+IOS_SDK     := 8.0
 OPTIM       := Os
 
 #-------------------------------------------------------------------------------
@@ -318,7 +318,7 @@ _MAKE_DYLIB_BIN = $(CC)                             \
     -o $(3)$(EXT_DYLIB)                             \
     $(4)
 
-_XCODE_SDK_VALUE = $(shell /usr/libexec/PlistBuddy -c "Print $(1)" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist) $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
+_XCODE_SDK_VALUE = "$(shell /usr/libexec/PlistBuddy -c "Print $(1)" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist)" $(DIR_BUILD_PRODUCTS)$(PRODUCT_MAC_FRAMEWORK)$(EXT_FRAMEWORK)/Versions/A/Resources/Info.plist
 
 #-------------------------------------------------------------------------------
 # Phony targets
