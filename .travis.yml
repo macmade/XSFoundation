@@ -3,4 +3,4 @@ compiler: clang
 script: make && make test
 before_install:
   - git clone git://github.com/macmade/XSDocgen
-  - cd XSDocgen && make && sudo make install
+  - cd XSDocgen && make && sudo make install && cd ..
