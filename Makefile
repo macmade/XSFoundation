@@ -64,8 +64,8 @@
 #-------------------------------------------------------------------------------
 
 CC          := clang
-MAC_TARGET  := 10.8
-IOS_SDK     := 7.1
+MAC_TARGET  := $(shell xcodebuild -showsdks | grep macosx | tail -1 | perl -pe 's/[^-]+-sdk [^0-9]+(.*)/\1/g')
+IOS_SDK     := $(shell xcodebuild -showsdks | grep iphoneos | tail -1 | perl -pe 's/[^-]+-sdk [^0-9]+(.*)/\1/g')
 OPTIM       := Os
 
 #-------------------------------------------------------------------------------
