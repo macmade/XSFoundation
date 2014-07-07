@@ -157,7 +157,7 @@ XS_EXPORT XSStatic XSClassID XSArray_GetClassID( void );
 /*!
  * @function    XSArray_Array
  * @abstract    Gets an empty array
- * @return      An empty array
+ * @return      An empty immutable array
  */
 XS_EXPORT XSStatic XSAutoreleased XSArrayRef XSArray_Array( void );
 
@@ -181,14 +181,14 @@ XS_EXPORT XSStatic XSAutoreleased XSArrayRef XSArray_ArrayWithArray( XSArrayRef 
  * @abstract    Gets an array filled with objects
  * @param       firstObject The first object to add
  * @param       ...         Additional objects to add, terminated by NULL
- * @return      An array containing the specified objects
+ * @return      An immutable array containing the specified objects
  */
 XS_EXPORT XSStatic XSAutoreleased XSArrayRef XSArray_ArrayWithObjects( XSObjectRef firstObject, ... );
 
 /*!
  * @function    XSArray_Create
  * @abstract    Creates an empty array
- * @return      An empty array
+ * @return      An empty immutable array
  */
 XS_EXPORT XSStatic XSArrayRef XSArray_Create( void );
 
@@ -212,7 +212,7 @@ XS_EXPORT XSStatic XSArrayRef XSArray_CreateWithArray( XSArrayRef array );
  * @abstract    Creates an array filled with objects
  * @param       firstObject The first object to add
  * @param       ...         Additional objects to add, terminated by NULL
- * @return      An array containing the specified objects
+ * @return      An immutable array containing the specified objects
  */
 XS_EXPORT XSStatic XSArrayRef XSArray_CreateWithObjects( XSObjectRef firstObject, ... );
 
