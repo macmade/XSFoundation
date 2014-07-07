@@ -193,6 +193,7 @@ _FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_CLASSES)XSString/)
 _FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_CLASSES)XSThread/)
 _FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_CLASSES)XSURL/)
 _FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_CLASSES)XSValue/)
+_FILES_C       += $(call _GET_C_FILES, $(DIR_SRC_CLASSES)XSXMLParser/)
 
 # Gets only the file name of the C files
 _FILES_C_REL    = $(subst $(DIR_SRC),,$(_FILES_C))

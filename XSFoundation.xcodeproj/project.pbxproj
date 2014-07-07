@@ -3591,6 +3591,15 @@
 		05A1538218F5C0D800365881 /* XSOrderedSet_SortWithMethod.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSOrderedSet_SortWithMethod.c; sourceTree = "<group>"; };
 		05A153F718F5D83500365881 /* XSNull_Null.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNull_Null.c; sourceTree = "<group>"; };
 		05A153FC18F5DCB500365881 /* XSRuntime_GetClassType.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSRuntime_GetClassType.c; sourceTree = "<group>"; };
+		05C7C23B196B14B1003D0050 /* __XSXMLParser.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = __XSXMLParser.c; sourceTree = "<group>"; };
+		05C7C23C196B14B1003D0050 /* __XSXMLParser_Constructor.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = __XSXMLParser_Constructor.c; sourceTree = "<group>"; };
+		05C7C23D196B14B1003D0050 /* __XSXMLParser_Copy.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = __XSXMLParser_Copy.c; sourceTree = "<group>"; };
+		05C7C23E196B14B1003D0050 /* __XSXMLParser_Create.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = __XSXMLParser_Create.c; sourceTree = "<group>"; };
+		05C7C23F196B14B1003D0050 /* __XSXMLParser_Destructor.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = __XSXMLParser_Destructor.c; sourceTree = "<group>"; };
+		05C7C240196B14B1003D0050 /* __XSXMLParser_Equals.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = __XSXMLParser_Equals.c; sourceTree = "<group>"; };
+		05C7C241196B14B1003D0050 /* __XSXMLParser_Initialize.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = __XSXMLParser_Initialize.c; sourceTree = "<group>"; };
+		05C7C242196B14B1003D0050 /* __XSXMLParser_ToString.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = __XSXMLParser_ToString.c; sourceTree = "<group>"; };
+		05C7C243196B14B1003D0050 /* XSXMLParser_GetClassID.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = XSXMLParser_GetClassID.c; sourceTree = "<group>"; };
 		05D1054A1916864700392D36 /* __XSArray_Create.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSArray_Create.c; sourceTree = "<group>"; };
 		05D1054F1916870000392D36 /* __XSAutoreleasePool_Create.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSAutoreleasePool_Create.c; sourceTree = "<group>"; };
 		05D1055419168A3600392D36 /* __XSBag_Create.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSBag_Create.c; sourceTree = "<group>"; };
@@ -4838,6 +4847,7 @@
 				055D156B18E1D42800894C7B /* XSThread */,
 				055D157D18E1D42800894C7B /* XSURL */,
 				055D193C18E1F47D00894C7B /* XSValue */,
+				05C7C23A196B14B1003D0050 /* XSXMLParser */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -4857,6 +4867,22 @@
 				052304D518EB4B1F00C29627 /* XSThreading */,
 			);
 			path = Functions;
+			sourceTree = "<group>";
+		};
+		05C7C23A196B14B1003D0050 /* XSXMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				05C7C23B196B14B1003D0050 /* __XSXMLParser.c */,
+				05C7C23C196B14B1003D0050 /* __XSXMLParser_Constructor.c */,
+				05C7C23D196B14B1003D0050 /* __XSXMLParser_Copy.c */,
+				05C7C23E196B14B1003D0050 /* __XSXMLParser_Create.c */,
+				05C7C23F196B14B1003D0050 /* __XSXMLParser_Destructor.c */,
+				05C7C240196B14B1003D0050 /* __XSXMLParser_Equals.c */,
+				05C7C241196B14B1003D0050 /* __XSXMLParser_Initialize.c */,
+				05C7C242196B14B1003D0050 /* __XSXMLParser_ToString.c */,
+				05C7C243196B14B1003D0050 /* XSXMLParser_GetClassID.c */,
+			);
+			path = XSXMLParser;
 			sourceTree = "<group>";
 		};
 		05F3581C18F20EF10070111A /* XSArray */ = {

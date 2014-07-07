@@ -62,102 +62,96 @@
 /* $Id$ */
 
 /*!
- * @file        XSRuntime_Initialize.c
+ * @header      XSXMLParserRef.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntime_Initialize
+ * @abstract    Private definitions for XSXMLParserRef.h
+ * @discussion  ...
  */
 
-#include <XS/XS.h>
-#include <XS/__private/Functions/XSRuntime.h>
+#ifndef __XS_H__
+#error "Please include '<XS/XS.h>' instead of this file!"
+#endif
 
-/* Private initializers */
-void __XSDebugger_Initialize( void );
+#ifndef __XS___PRIVATE_CLASSES_XS_XML_PARSER_H__
+#define __XS___PRIVATE_CLASSES_XS_XML_PARSER_H__
 
-/* Private class initializers */
-XSStatic void __XSArray_Initialize( void );
-XSStatic void __XSAutoreleasePool_Initialize( void );
-XSStatic void __XSBag_Initialize( void );
-XSStatic void __XSBinaryTree_Initialize( void );
-XSStatic void __XSBoolean_Initialize( void );
-XSStatic void __XSColor_Initialize( void );
-XSStatic void __XSData_Initialize( void );
-XSStatic void __XSDate_Initialize( void );
-XSStatic void __XSDictionary_Initialize( void );
-XSStatic void __XSError_Initialize( void );
-XSStatic void __XSFile_Initialize( void );
-XSStatic void __XSFileManager_Initialize( void );
-XSStatic void __XSLock_Initialize( void );
-XSStatic void __XSNode_Initialize( void );
-XSStatic void __XSNotification_Initialize( void );
-XSStatic void __XSNotificationCenter_Initialize( void );
-XSStatic void __XSNull_Initialize( void );
-XSStatic void __XSNumber_Initialize( void );
-XSStatic void __XSPrimitiveArray_Initialize( void );
-XSStatic void __XSRecursiveLock_Initialize( void );
-XSStatic void __XSSemaphore_Initialize( void );
-XSStatic void __XSSet_Initialize( void );
-XSStatic void __XSStack_Initialize( void );
-XSStatic void __XSString_Initialize( void );
-XSStatic void __XSThread_Initialize( void );
-XSStatic void __XSURL_Initialize( void );
-XSStatic void __XSValue_Initialize( void );
+#include <XS/XSTypes.h>
+#include <XS/XSMacros.h>
+
+/*!
+ * @struct      __XSXMLParser
+ * @abstract    Structure for XSXMLParser
+ */
+struct __XSXMLParser
+{
+    void * dummy;  /*! Dummy... */
+};
+
+/*!
+ * @var         __XSXMLParser_ClassID
+ * @abstract    Class ID
+ */
+XS_EXTERN XSClassID __XSXMLParser_ClassID;
+
+/*!
+ * @var         __XSXMLParser_Class
+ * @abstract    Class info
+ */
+XS_EXTERN XSClassInfo __XSXMLParser_Class;
+
+/*!
+ * @function    __XSXMLParser_Initialize
+ * @abstract    Class initializer
+ */
 XSStatic void __XSXMLParser_Initialize( void );
 
-void XSRuntime_Initialize( void )
-{
-    __XSRuntime_ClassInfoList * classes;
-    
-    if( XSAtomic_CompareAndSwapInteger( XSInitStatusNotInited, XSInitStatusInitializing, &__XSRuntime_InitStatus ) == false )
-    {
-        return;
-    }
-    
-    classes = ( __XSRuntime_ClassInfoList * )calloc( sizeof( __XSRuntime_ClassInfoList ), 1 );
-    
-    if( classes == NULL )
-    {
-        XSFatalError( "Cannot allocate memory for the runtime class informations" );
-    }
-    
-    if( atexit( __XSRuntime_Finalize ) != 0 )
-    {
-        XSFatalError( "Cannot register the XSFoundation finalizier function" );
-    }
-    
-    __XSRuntime_Classes     = classes;
-    __XSRuntime_ClassCount  = 0;
-    
-    while( XSAtomic_CompareAndSwapInteger( XSInitStatusInitializing, XSInitStatusInited, &__XSRuntime_InitStatus ) == false );
-    
-    __XSDebugger_Initialize();
-    
-    __XSArray_Initialize();
-    __XSAutoreleasePool_Initialize();
-    __XSBag_Initialize();
-    __XSBinaryTree_Initialize();
-    __XSBoolean_Initialize();
-    __XSColor_Initialize();
-    __XSData_Initialize();
-    __XSDate_Initialize();
-    __XSDictionary_Initialize();
-    __XSError_Initialize();
-    __XSFile_Initialize();
-    __XSFileManager_Initialize();
-    __XSLock_Initialize();
-    __XSNode_Initialize();
-    __XSNotification_Initialize();
-    __XSNotificationCenter_Initialize();
-    __XSNull_Initialize();
-    __XSNumber_Initialize();
-    __XSPrimitiveArray_Initialize();
-    __XSRecursiveLock_Initialize();
-    __XSSemaphore_Initialize();
-    __XSSet_Initialize();
-    __XSStack_Initialize();
-    __XSString_Initialize();
-    __XSThread_Initialize();
-    __XSURL_Initialize();
-    __XSValue_Initialize();
-    __XSXMLParser_Initialize();
-}
+/*!
+ * @function    __XSXMLParser_Constructor
+ * @abstract    Class constructor callback
+ * @param       object      The object beeing construct
+ * @return      The new object
+ */
+XSXMLParserRef __XSXMLParser_Constructor( XSXMLParserRef object );
+
+/*!
+ * @function    __XSXMLParser_Destructor
+ * @abstract    Class destructor callback
+ * @param       object      The object beeing destruct
+ */
+void __XSXMLParser_Destructor( XSXMLParserRef object );
+
+/*!
+ * @function    __XSXMLParser_Copy
+ * @abstract    Class copy callback
+ * @param       source      The object to copy
+ * @param       destination The object beeing copied
+ * @result      The copied object
+ */
+XSXMLParserRef __XSXMLParser_Copy( XSXMLParserRef source, XSXMLParserRef destination );
+
+/*!
+ * @function    __XSXMLParser_Equals
+ * @abstract    Class equals callback
+ * @param       object1     The first object to compare
+ * @param       object2     The second object to compare
+ * @return      True if both objects are equals, otherwise false
+ */
+bool __XSXMLParser_Equals( XSXMLParserRef object1, XSXMLParserRef object2 );
+
+/*!
+ * @function    __XSXMLParser_ToString
+ * @abstract    Class to-string callback
+ * @param       object      The object for which to get a description
+ * @return      The object's description
+ */
+const char * __XSXMLParser_ToString( XSXMLParserRef object );
+
+/*!
+ * @function    __XSXMLParser_Create
+ * @abstract    Creates an XSXMLParser object
+ * @return      The XSXMLParser object
+ */
+XSStatic XSXMLParserRef __XSXMLParser_Create( void );
+
+#endif /* __XS___PRIVATE_CLASSES_XS_XML_PARSER_H__ */
