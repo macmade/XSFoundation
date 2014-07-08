@@ -92,7 +92,7 @@
 <abstract><p>Gets an empty array
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSArrayRef</returntype>
-<result><p>An empty array
+<result><p>An empty immutable array
 </p></result>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSArrayRef</declaration_type> <declaration_function>XSArray_Array</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
@@ -124,7 +124,7 @@
 <parsedparameter><type> ...</type><name>...</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT XSStatic XSAutoreleased XSArrayRef</returntype>
-<result><p>An array containing the specified objects
+<result><p>An immutable array containing the specified objects
 </p></result>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSArrayRef</declaration_type> <declaration_function>XSArray_ArrayWithObjects</declaration_function>(
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>firstObject</declaration_param>,
@@ -151,7 +151,7 @@
 <abstract><p>Creates an empty array
 </p></abstract>
 <returntype> XS_EXPORT XSStatic XSArrayRef</returntype>
-<result><p>An empty array
+<result><p>An empty immutable array
 </p></result>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSArrayRef</declaration_type> <declaration_function>XSArray_Create</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
@@ -207,7 +207,7 @@
 <parsedparameter><type> ...</type><name>...</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT XSStatic XSArrayRef</returntype>
-<result><p>An array containing the specified objects
+<result><p>An immutable array containing the specified objects
 </p></result>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSArrayRef</declaration_type> <declaration_function>XSArray_CreateWithObjects</declaration_function>(
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>firstObject</declaration_param>,
@@ -708,5 +708,5 @@ An error will be produced if the array is not mutable.
 </p></desc>
 </typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Wednesday, June 25, 2014</timestamp>
+<timestamp>Tuesday, July 08, 2014</timestamp>
 </header>
