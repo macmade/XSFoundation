@@ -116,7 +116,7 @@ typedef enum XSDataType
     XSDataTypeXSFloat64     = 0x17,     /*! XSFloat64 data-type */
     XSDataTypeXSFloat       = 0x18,     /*! XSFloat data-type */
     
-    XSDataTypePointer       = 0x19,     /*! Pointer data-type */
+    XSDataTypePointer       = 0x19      /*! Pointer data-type */
 }
 XSDataType;
 
