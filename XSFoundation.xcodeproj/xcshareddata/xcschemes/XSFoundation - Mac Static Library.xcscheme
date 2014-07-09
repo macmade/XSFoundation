@@ -28,7 +28,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "05E6A52D196D32CB002B8315"
+               BuildableName = "XSFoundation - Tests.xctest"
+               BlueprintName = "XSFoundation - Tests"
+               ReferencedContainer = "container:XSFoundation.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "051B662918DCA7160079238C"
+            BuildableName = "libxs.a"
+            BlueprintName = "XSFoundation - Mac Static Library"
+            ReferencedContainer = "container:XSFoundation.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -39,6 +58,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "051B662918DCA7160079238C"
+            BuildableName = "libxs.a"
+            BlueprintName = "XSFoundation - Mac Static Library"
+            ReferencedContainer = "container:XSFoundation.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -48,6 +76,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "051B662918DCA7160079238C"
+            BuildableName = "libxs.a"
+            BlueprintName = "XSFoundation - Mac Static Library"
+            ReferencedContainer = "container:XSFoundation.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

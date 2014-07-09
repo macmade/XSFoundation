@@ -28,6 +28,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "05E6A52D196D32CB002B8315"
+               BuildableName = "XSFoundation - Tests.xctest"
+               BlueprintName = "XSFoundation - Tests"
+               ReferencedContainer = "container:XSFoundation.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
