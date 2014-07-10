@@ -71,14 +71,7 @@
 #ifndef __XS_TESTS_PREFIX_H__
 #define __XS_TESTS_PREFIX_H__
 
-#import <XS/XS.h>
-
-#ifdef __clang__
-#pragma clang diagnostic ignored "-Wpedantic"
-#pragma clang diagnostic ignored "-Wvariadic-macros"
-#pragma clang diagnostic ignored "-Wgnu-statement-expression"
-#endif
-
 #import <XCTest/XCTest.h>
+#import <XS/XS.h>
 
 #endif /* __XS_TESTS_PREFIX_H__ */

@@ -265,6 +265,9 @@ _MAKE_4             := $(shell [ $(_MAKE_VERSION_MAJOR) -ge 4 ] && echo true)
 # Check for the XSDocgen utility
 _HAS_XSDOCGEN       := $(shell if [ -f "/usr/local/bin/XSDocgen" ]; then echo true; else echo false; fi )
 
+# Check for the xcodebuild utility
+_HAS_XCBUILD        := $(shell if [ -f "/usr/bin/xcodebuild" ]; then echo true; else echo false; fi )
+
 #-------------------------------------------------------------------------------
 # Built-in targets
 #-------------------------------------------------------------------------------
@@ -429,12 +432,18 @@ test-debug: debug
 	
 	@$(MAKE) -s _test DEBUG=1
 
-# Test target
+# Test target ( xcodebuild -scheme "XSFoundation - Mac Static Library" test )
 _test:
 	
-	@echo $(call _PRINT,XSTest,universal,Compiling test file)
-	@$(_CC) -arch i386 -arch x86_64 XSTest/main.c $(DIR_BUILD_PRODUCTS)$(PRODUCT_LIB)$(EXT_LIB) -o $(DIR_BUILD_PRODUCTS)XSTest
-	@echo $(call _PRINT,XSTest,universal,Running test file)
+ifeq ($(_HAS_XCBUILD),true)
+	@echo $(call _PRINT,XSDoc,universal,Building and running unit tests)
+	@/usr/bin/xcodebuild -scheme "XSFoundation - Mac Static Library" test
+else
+	@echo $(call _PRINT,XSDoc,universal,Skipping unit tests - xcodebuild is not installed)
+endif
+	@echo $(call _PRINT,XSTest,universal,Compiling example file)
+	@$(_CC) -arch i386 -arch x86_64 Example/main.c $(DIR_BUILD_PRODUCTS)$(PRODUCT_LIB)$(EXT_LIB) -o $(DIR_BUILD_PRODUCTS)XSTest
+	@echo $(call _PRINT,XSTest,universal,Running example file)
 	@$(DIR_BUILD_PRODUCTS)XSTest
 
 # Cleans all build files

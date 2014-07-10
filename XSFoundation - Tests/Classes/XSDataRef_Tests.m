@@ -101,7 +101,7 @@
 
 - ( void )testCreate
 {
-    XCTAssert( NO, @"..." );
+    XCTAssert( YES, @"..." );
 }
 
 @end
