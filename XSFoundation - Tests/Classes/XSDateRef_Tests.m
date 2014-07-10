@@ -1,3 +1,4 @@
+
 /*******************************************************************************
  * XSFoundation - XEOS C Foundation Library
  * 
@@ -62,13 +63,13 @@
 /* $Id$ */
 
 /*!
- * @file        XSDataRef_Tests.m
+ * @file        XSDateRef_Tests.m
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Tests for XSDataRef
+ * @abstract    Tests for XSDateRef
  */
 
-@interface XSDataRef_Tests: XCTestCase
+@interface XSDateRef_Tests: XCTestCase
 {
 @protected
     
@@ -77,7 +78,7 @@
 
 @end
 
-@implementation XSDataRef_Tests
+@implementation XSDateRef_Tests
 
 - ( void )setUp
 {

@@ -62,13 +62,13 @@
 /* $Id$ */
 
 /*!
- * @file        XSDataRef_Tests.m
+ * @file        XSNotificationRef_Tests.m
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Tests for XSDataRef
+ * @abstract    Tests for XSNotificationRef
  */
 
-@interface XSDataRef_Tests: XCTestCase
+@interface XSNotificationRef_Tests: XCTestCase
 {
 @protected
     
@@ -77,7 +77,7 @@
 
 @end
 
-@implementation XSDataRef_Tests
+@implementation XSNotificationRef_Tests
 
 - ( void )setUp
 {

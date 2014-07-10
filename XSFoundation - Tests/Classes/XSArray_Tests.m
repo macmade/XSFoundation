@@ -72,7 +72,9 @@
 {
 @protected
     
-    
+    char * _buf1;
+    char * _buf2;
+    char * _buf3;
 }
 
 @end
@@ -81,12 +83,25 @@
 
 - ( void )setUp
 {
+    _buf1 = calloc( 1, 256 );
+    _buf2 = calloc( 1, 256 );
+    _buf3 = calloc( 1, 1024 );
+    
     [ super setUp ];
 }
 
 - ( void )tearDown
 {
+    free( _buf1 );
+    free( _buf2 );
+    free( _buf3 );
+    
     [ super tearDown ];
+}
+
+- ( void )testCreate
+{
+    XCTAssert( YES, @"..." );
 }
 
 @end

@@ -2127,7 +2127,6 @@
 		0573874C18E4A1A700A8BF4A /* XSMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 0573873518E4A0A800A8BF4A /* XSMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0573874D18E4A1A700A8BF4A /* XSTypes in Headers */ = {isa = PBXBuildFile; fileRef = 0573873618E4A0A800A8BF4A /* XSTypes */; settings = {ATTRIBUTES = (Public, ); }; };
 		0573874E18E4A1A700A8BF4A /* XSTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 0573873718E4A0A800A8BF4A /* XSTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		057FC5BD196DB4EA00E6C70F /* XSDataRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 057FC5BC196DB4EA00E6C70F /* XSDataRef_Tests.m */; };
 		0580891C19117E0E00118D3D /* XSColor_BlackColor.c in Sources */ = {isa = PBXBuildFile; fileRef = 058088E519117E0E00118D3D /* XSColor_BlackColor.c */; };
 		0580891D19117E0E00118D3D /* XSColor_BlackColor.c in Sources */ = {isa = PBXBuildFile; fileRef = 058088E519117E0E00118D3D /* XSColor_BlackColor.c */; };
 		0580891E19117E0E00118D3D /* XSColor_BlackColor.c in Sources */ = {isa = PBXBuildFile; fileRef = 058088E519117E0E00118D3D /* XSColor_BlackColor.c */; };
@@ -2801,6 +2800,35 @@
 		05A58C8818F21153006961E7 /* XSArray_ReplaceObjectAtIndex.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3583E18F20EF10070111A /* XSArray_ReplaceObjectAtIndex.c */; };
 		05A58C8918F21153006961E7 /* XSArray_SortWithFunction.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3583F18F20EF10070111A /* XSArray_SortWithFunction.c */; };
 		05A58C8A18F21153006961E7 /* XSArray_SortWithMethod.c in Sources */ = {isa = PBXBuildFile; fileRef = 05F3584018F20EF10070111A /* XSArray_SortWithMethod.c */; };
+		05AF4504196F408400F28764 /* XSArrayRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44E7196F408400F28764 /* XSArrayRef_Tests.m */; };
+		05AF4505196F408400F28764 /* XSAutoreleasePoolRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44E8196F408400F28764 /* XSAutoreleasePoolRef_Tests.m */; };
+		05AF4506196F408400F28764 /* XSBagRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44E9196F408400F28764 /* XSBagRef_Tests.m */; };
+		05AF4507196F408400F28764 /* XSBinaryTreeRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44EA196F408400F28764 /* XSBinaryTreeRef_Tests.m */; };
+		05AF4508196F408400F28764 /* XSBooleanRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44EB196F408400F28764 /* XSBooleanRef_Tests.m */; };
+		05AF4509196F408400F28764 /* XSColorRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44EC196F408400F28764 /* XSColorRef_Tests.m */; };
+		05AF450A196F408400F28764 /* XSDataRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44ED196F408400F28764 /* XSDataRef_Tests.m */; };
+		05AF450B196F408400F28764 /* XSDateRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44EE196F408400F28764 /* XSDateRef_Tests.m */; };
+		05AF450C196F408400F28764 /* XSDictionaryRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44EF196F408400F28764 /* XSDictionaryRef_Tests.m */; };
+		05AF450D196F408400F28764 /* XSErrorRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44F0196F408400F28764 /* XSErrorRef_Tests.m */; };
+		05AF450E196F408400F28764 /* XSFileManagerRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44F1196F408400F28764 /* XSFileManagerRef_Tests.m */; };
+		05AF450F196F408400F28764 /* XSFileRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44F2196F408400F28764 /* XSFileRef_Tests.m */; };
+		05AF4510196F408400F28764 /* XSLockRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44F3196F408400F28764 /* XSLockRef_Tests.m */; };
+		05AF4511196F408400F28764 /* XSNodeRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44F4196F408400F28764 /* XSNodeRef_Tests.m */; };
+		05AF4512196F408400F28764 /* XSNotificationCenterRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44F5196F408400F28764 /* XSNotificationCenterRef_Tests.m */; };
+		05AF4513196F408400F28764 /* XSNotificationRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44F6196F408400F28764 /* XSNotificationRef_Tests.m */; };
+		05AF4514196F408400F28764 /* XSNullRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44F7196F408400F28764 /* XSNullRef_Tests.m */; };
+		05AF4515196F408400F28764 /* XSNumberRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44F8196F408400F28764 /* XSNumberRef_Tests.m */; };
+		05AF4516196F408400F28764 /* XSOrderedSetRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44F9196F408400F28764 /* XSOrderedSetRef_Tests.m */; };
+		05AF4517196F408400F28764 /* XSPrimitiveArrayRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44FA196F408400F28764 /* XSPrimitiveArrayRef_Tests.m */; };
+		05AF4518196F408400F28764 /* XSRecursiveLockRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44FB196F408400F28764 /* XSRecursiveLockRef_Tests.m */; };
+		05AF4519196F408400F28764 /* XSSemaphoreRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44FC196F408400F28764 /* XSSemaphoreRef_Tests.m */; };
+		05AF451A196F408400F28764 /* XSSetRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44FD196F408400F28764 /* XSSetRef_Tests.m */; };
+		05AF451B196F408400F28764 /* XSStackRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44FE196F408400F28764 /* XSStackRef_Tests.m */; };
+		05AF451C196F408400F28764 /* XSStringRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF44FF196F408400F28764 /* XSStringRef_Tests.m */; };
+		05AF451D196F408400F28764 /* XSThreadRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF4500196F408400F28764 /* XSThreadRef_Tests.m */; };
+		05AF451E196F408400F28764 /* XSURLRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF4501196F408400F28764 /* XSURLRef_Tests.m */; };
+		05AF451F196F408400F28764 /* XSValueRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF4502196F408400F28764 /* XSValueRef_Tests.m */; };
+		05AF4520196F408400F28764 /* XSXMLParserRef_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AF4503196F408400F28764 /* XSXMLParserRef_Tests.m */; };
 		05D1054B1916864700392D36 /* __XSArray_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 05D1054A1916864700392D36 /* __XSArray_Create.c */; };
 		05D1054C1916864700392D36 /* __XSArray_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 05D1054A1916864700392D36 /* __XSArray_Create.c */; };
 		05D1054D1916864700392D36 /* __XSArray_Create.c in Sources */ = {isa = PBXBuildFile; fileRef = 05D1054A1916864700392D36 /* __XSArray_Create.c */; };
@@ -3703,7 +3731,6 @@
 		0573873618E4A0A800A8BF4A /* XSTypes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = XSTypes; sourceTree = "<group>"; };
 		0573873718E4A0A800A8BF4A /* XSTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSTypes.h; sourceTree = "<group>"; };
 		0573876918E4D38800A8BF4A /* __private */ = {isa = PBXFileReference; lastKnownFileType = folder; path = __private; sourceTree = "<group>"; };
-		057FC5BC196DB4EA00E6C70F /* XSDataRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSDataRef_Tests.m; sourceTree = "<group>"; };
 		058088E519117E0E00118D3D /* XSColor_BlackColor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSColor_BlackColor.c; sourceTree = "<group>"; };
 		058088E619117E0E00118D3D /* XSColor_BlueColor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSColor_BlueColor.c; sourceTree = "<group>"; };
 		058088E719117E0E00118D3D /* XSColor_BrownColor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSColor_BrownColor.c; sourceTree = "<group>"; };
@@ -3846,6 +3873,35 @@
 		05A1538218F5C0D800365881 /* XSOrderedSet_SortWithMethod.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSOrderedSet_SortWithMethod.c; sourceTree = "<group>"; };
 		05A153F718F5D83500365881 /* XSNull_Null.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSNull_Null.c; sourceTree = "<group>"; };
 		05A153FC18F5DCB500365881 /* XSRuntime_GetClassType.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSRuntime_GetClassType.c; sourceTree = "<group>"; };
+		05AF44E7196F408400F28764 /* XSArrayRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSArrayRef_Tests.m; sourceTree = "<group>"; };
+		05AF44E8196F408400F28764 /* XSAutoreleasePoolRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSAutoreleasePoolRef_Tests.m; sourceTree = "<group>"; };
+		05AF44E9196F408400F28764 /* XSBagRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBagRef_Tests.m; sourceTree = "<group>"; };
+		05AF44EA196F408400F28764 /* XSBinaryTreeRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBinaryTreeRef_Tests.m; sourceTree = "<group>"; };
+		05AF44EB196F408400F28764 /* XSBooleanRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSBooleanRef_Tests.m; sourceTree = "<group>"; };
+		05AF44EC196F408400F28764 /* XSColorRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSColorRef_Tests.m; sourceTree = "<group>"; };
+		05AF44ED196F408400F28764 /* XSDataRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSDataRef_Tests.m; sourceTree = "<group>"; };
+		05AF44EE196F408400F28764 /* XSDateRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSDateRef_Tests.m; sourceTree = "<group>"; };
+		05AF44EF196F408400F28764 /* XSDictionaryRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSDictionaryRef_Tests.m; sourceTree = "<group>"; };
+		05AF44F0196F408400F28764 /* XSErrorRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSErrorRef_Tests.m; sourceTree = "<group>"; };
+		05AF44F1196F408400F28764 /* XSFileManagerRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSFileManagerRef_Tests.m; sourceTree = "<group>"; };
+		05AF44F2196F408400F28764 /* XSFileRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSFileRef_Tests.m; sourceTree = "<group>"; };
+		05AF44F3196F408400F28764 /* XSLockRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSLockRef_Tests.m; sourceTree = "<group>"; };
+		05AF44F4196F408400F28764 /* XSNodeRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSNodeRef_Tests.m; sourceTree = "<group>"; };
+		05AF44F5196F408400F28764 /* XSNotificationCenterRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSNotificationCenterRef_Tests.m; sourceTree = "<group>"; };
+		05AF44F6196F408400F28764 /* XSNotificationRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSNotificationRef_Tests.m; sourceTree = "<group>"; };
+		05AF44F7196F408400F28764 /* XSNullRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSNullRef_Tests.m; sourceTree = "<group>"; };
+		05AF44F8196F408400F28764 /* XSNumberRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSNumberRef_Tests.m; sourceTree = "<group>"; };
+		05AF44F9196F408400F28764 /* XSOrderedSetRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSOrderedSetRef_Tests.m; sourceTree = "<group>"; };
+		05AF44FA196F408400F28764 /* XSPrimitiveArrayRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSPrimitiveArrayRef_Tests.m; sourceTree = "<group>"; };
+		05AF44FB196F408400F28764 /* XSRecursiveLockRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSRecursiveLockRef_Tests.m; sourceTree = "<group>"; };
+		05AF44FC196F408400F28764 /* XSSemaphoreRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSSemaphoreRef_Tests.m; sourceTree = "<group>"; };
+		05AF44FD196F408400F28764 /* XSSetRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSSetRef_Tests.m; sourceTree = "<group>"; };
+		05AF44FE196F408400F28764 /* XSStackRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSStackRef_Tests.m; sourceTree = "<group>"; };
+		05AF44FF196F408400F28764 /* XSStringRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSStringRef_Tests.m; sourceTree = "<group>"; };
+		05AF4500196F408400F28764 /* XSThreadRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSThreadRef_Tests.m; sourceTree = "<group>"; };
+		05AF4501196F408400F28764 /* XSURLRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSURLRef_Tests.m; sourceTree = "<group>"; };
+		05AF4502196F408400F28764 /* XSValueRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSValueRef_Tests.m; sourceTree = "<group>"; };
+		05AF4503196F408400F28764 /* XSXMLParserRef_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSXMLParserRef_Tests.m; sourceTree = "<group>"; };
 		05C7C23B196B14B1003D0050 /* __XSXMLParser.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = __XSXMLParser.c; sourceTree = "<group>"; };
 		05C7C23C196B14B1003D0050 /* __XSXMLParser_Constructor.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = __XSXMLParser_Constructor.c; sourceTree = "<group>"; };
 		05C7C23D196B14B1003D0050 /* __XSXMLParser_Copy.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = __XSXMLParser_Copy.c; sourceTree = "<group>"; };
@@ -5218,7 +5274,35 @@
 		05E6A53A196D3315002B8315 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				057FC5BC196DB4EA00E6C70F /* XSDataRef_Tests.m */,
+				05AF44E7196F408400F28764 /* XSArrayRef_Tests.m */,
+				05AF44E8196F408400F28764 /* XSAutoreleasePoolRef_Tests.m */,
+				05AF44E9196F408400F28764 /* XSBagRef_Tests.m */,
+				05AF44EA196F408400F28764 /* XSBinaryTreeRef_Tests.m */,
+				05AF44EB196F408400F28764 /* XSBooleanRef_Tests.m */,
+				05AF44EC196F408400F28764 /* XSColorRef_Tests.m */,
+				05AF44ED196F408400F28764 /* XSDataRef_Tests.m */,
+				05AF44EE196F408400F28764 /* XSDateRef_Tests.m */,
+				05AF44EF196F408400F28764 /* XSDictionaryRef_Tests.m */,
+				05AF44F0196F408400F28764 /* XSErrorRef_Tests.m */,
+				05AF44F1196F408400F28764 /* XSFileManagerRef_Tests.m */,
+				05AF44F2196F408400F28764 /* XSFileRef_Tests.m */,
+				05AF44F3196F408400F28764 /* XSLockRef_Tests.m */,
+				05AF44F4196F408400F28764 /* XSNodeRef_Tests.m */,
+				05AF44F5196F408400F28764 /* XSNotificationCenterRef_Tests.m */,
+				05AF44F6196F408400F28764 /* XSNotificationRef_Tests.m */,
+				05AF44F7196F408400F28764 /* XSNullRef_Tests.m */,
+				05AF44F8196F408400F28764 /* XSNumberRef_Tests.m */,
+				05AF44F9196F408400F28764 /* XSOrderedSetRef_Tests.m */,
+				05AF44FA196F408400F28764 /* XSPrimitiveArrayRef_Tests.m */,
+				05AF44FB196F408400F28764 /* XSRecursiveLockRef_Tests.m */,
+				05AF44FC196F408400F28764 /* XSSemaphoreRef_Tests.m */,
+				05AF44FD196F408400F28764 /* XSSetRef_Tests.m */,
+				05AF44FE196F408400F28764 /* XSStackRef_Tests.m */,
+				05AF44FF196F408400F28764 /* XSStringRef_Tests.m */,
+				05AF4500196F408400F28764 /* XSThreadRef_Tests.m */,
+				05AF4501196F408400F28764 /* XSURLRef_Tests.m */,
+				05AF4502196F408400F28764 /* XSValueRef_Tests.m */,
+				05AF4503196F408400F28764 /* XSXMLParserRef_Tests.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -8639,7 +8723,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				057FC5BD196DB4EA00E6C70F /* XSDataRef_Tests.m in Sources */,
+				05AF4517196F408400F28764 /* XSPrimitiveArrayRef_Tests.m in Sources */,
+				05AF4511196F408400F28764 /* XSNodeRef_Tests.m in Sources */,
+				05AF451A196F408400F28764 /* XSSetRef_Tests.m in Sources */,
+				05AF4508196F408400F28764 /* XSBooleanRef_Tests.m in Sources */,
+				05AF4506196F408400F28764 /* XSBagRef_Tests.m in Sources */,
+				05AF4518196F408400F28764 /* XSRecursiveLockRef_Tests.m in Sources */,
+				05AF450F196F408400F28764 /* XSFileRef_Tests.m in Sources */,
+				05AF451E196F408400F28764 /* XSURLRef_Tests.m in Sources */,
+				05AF4520196F408400F28764 /* XSXMLParserRef_Tests.m in Sources */,
+				05AF450E196F408400F28764 /* XSFileManagerRef_Tests.m in Sources */,
+				05AF4513196F408400F28764 /* XSNotificationRef_Tests.m in Sources */,
+				05AF4507196F408400F28764 /* XSBinaryTreeRef_Tests.m in Sources */,
+				05AF4510196F408400F28764 /* XSLockRef_Tests.m in Sources */,
+				05AF451F196F408400F28764 /* XSValueRef_Tests.m in Sources */,
+				05AF450D196F408400F28764 /* XSErrorRef_Tests.m in Sources */,
+				05AF4504196F408400F28764 /* XSArrayRef_Tests.m in Sources */,
+				05AF451B196F408400F28764 /* XSStackRef_Tests.m in Sources */,
+				05AF450B196F408400F28764 /* XSDateRef_Tests.m in Sources */,
+				05AF4514196F408400F28764 /* XSNullRef_Tests.m in Sources */,
+				05AF451C196F408400F28764 /* XSStringRef_Tests.m in Sources */,
+				05AF4509196F408400F28764 /* XSColorRef_Tests.m in Sources */,
+				05AF451D196F408400F28764 /* XSThreadRef_Tests.m in Sources */,
+				05AF4515196F408400F28764 /* XSNumberRef_Tests.m in Sources */,
+				05AF450C196F408400F28764 /* XSDictionaryRef_Tests.m in Sources */,
+				05AF4505196F408400F28764 /* XSAutoreleasePoolRef_Tests.m in Sources */,
+				05AF4516196F408400F28764 /* XSOrderedSetRef_Tests.m in Sources */,
+				05AF4519196F408400F28764 /* XSSemaphoreRef_Tests.m in Sources */,
+				05AF4512196F408400F28764 /* XSNotificationCenterRef_Tests.m in Sources */,
+				05AF450A196F408400F28764 /* XSDataRef_Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

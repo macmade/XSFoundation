@@ -62,13 +62,13 @@
 /* $Id$ */
 
 /*!
- * @file        XSDataRef_Tests.m
+ * @file        XSURLRef_Tests.m
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Tests for XSDataRef
+ * @abstract    Tests for XSURLRef
  */
 
-@interface XSDataRef_Tests: XCTestCase
+@interface XSURLRef_Tests: XCTestCase
 {
 @protected
     
@@ -77,7 +77,7 @@
 
 @end
 
-@implementation XSDataRef_Tests
+@implementation XSURLRef_Tests
 
 - ( void )setUp
 {
