@@ -62,13 +62,13 @@
 /* $Id$ */
 
 /*!
- * @file        XSGeometry_XSRect_Tests.m
+ * @file        XSGeometry_XSSize_Tests.m
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    Tests for geometry functions - XSSize
  */
 
-@interface XSGeometry_XSRect_Tests: XCTestCase
+@interface XSGeometry_XSSize_Tests: XCTestCase
 {
 @protected
     
@@ -77,7 +77,7 @@
 
 @end
 
-@implementation XSGeometry_XSRect_Tests
+@implementation XSGeometry_XSSize_Tests
 
 - ( void )setUp
 {
