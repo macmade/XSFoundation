@@ -483,5 +483,5 @@ range's location will be equal to XSNotFound.
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSSTR</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_s_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSString_StringWithCString</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_s_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
 </pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Tuesday, July 08, 2014</timestamp>
+<timestamp>Tuesday, July 15, 2014</timestamp>
 </header>

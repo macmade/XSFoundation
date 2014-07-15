@@ -483,8 +483,9 @@ its contents.
 <abstract><p>Opaque type for XSData
 </p></abstract>
 <declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSData</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSDataRef</declaration_var>;  </declaration>
-<desc><p/></desc>
+<desc><p>XSDataRef objects are thread-safe
+</p></desc>
 </typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Tuesday, July 08, 2014</timestamp>
+<timestamp>Tuesday, July 15, 2014</timestamp>
 </header>

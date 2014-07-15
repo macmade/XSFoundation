@@ -120,11 +120,10 @@
     <declaration_comment>/*! XSFloat64 data-type */</declaration_comment>
     <declaration_var>XSDataTypeXSFloat</declaration_var> = <declaration_number>0x18</declaration_number>,
     <declaration_comment>/*! XSFloat data-type */</declaration_comment>
-    <declaration_var>XSDataTypePointer</declaration_var> = <declaration_number>0x19</declaration_number>,
-    <declaration_comment>/*! Pointer data-type */</declaration_comment>
+    <declaration_var>XSDataTypePointer</declaration_var> = <declaration_number>0x19</declaration_number> <declaration_comment>/*! Pointer data-type */</declaration_comment>
 } <declaration_var>XSDataType</declaration_var>;  </declaration>
 <desc><p/></desc>
 </typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Tuesday, July 08, 2014</timestamp>
+<timestamp>Tuesday, July 15, 2014</timestamp>
 </header>
