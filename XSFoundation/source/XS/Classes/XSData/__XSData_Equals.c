@@ -74,4 +74,44 @@
 bool __XSData_Equals( XSDataRef object1, XSDataRef object2 )
 {
     return object1 == object2;
+    
+    /*
+    bool equals;
+    
+    if( object1 == object2 )
+    {
+        return true;
+    }
+    
+    equals = false;
+    
+    XSRecursiveLock_Lock( object1->lock );
+    XSRecursiveLock_Lock( object2->lock );
+    
+    if( object1->length != object2->length )
+    {
+        goto end;
+    }
+    
+    if( object1->buffer == object2->buffer )
+    {
+        equals = true;
+        
+        goto end;
+    }
+    
+    if( memcmp( object1->buffer, object2->buffer, object1->length ) == 0 )
+    {
+        equals = true;
+        
+        goto end;
+    }
+    
+    end:
+    
+    XSRecursiveLock_Unlock( object1->lock );
+    XSRecursiveLock_Unlock( object2->lock );
+    
+    return equals;
+    */
 }

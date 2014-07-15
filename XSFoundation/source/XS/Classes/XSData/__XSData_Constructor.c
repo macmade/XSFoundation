@@ -74,4 +74,10 @@
 XSDataRef __XSData_Constructor( XSDataRef object )
 {
     return object;
+    
+    /*
+    object->lock = XSRecursiveLock_Create();
+    
+    return object;
+    */
 }

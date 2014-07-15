@@ -80,12 +80,26 @@
 #include <XS/XSMacros.h>
 
 /*!
+ * @typedef     __XSData_Properties
+ * @abstract    Data object properties
+ */
+typedef enum
+{
+    __XSData_PropertiesMutable = 0x01   /*! Data object is mutable */
+}
+__XSData_Properties;
+
+/*!
  * @struct      __XSData
  * @abstract    Structure for XSData
  */
 struct __XSData
 {
-    void * temp; /*! Not yet implemented... */
+    XSUInt8                   * buffer;         /*! The byte buffer */
+    XSRecursiveLockRef          lock;           /*! The lock for thread-safety */
+    XSUInteger                  length;         /*! The length of the byte buffer */
+    XSData_BufferReleaseType    releaseType;    /*! The release type for the byte buffer */
+    int                         properties;     /*! The data object properties */
 };
 
 /*!

@@ -82,6 +82,7 @@
 /*!
  * @typedef     XSDataRef
  * @abstract    Opaque type for XSData
+ * @discussion  XSDataRef objects are thread-safe
  */
 typedef struct __XSData * XSDataRef;
 

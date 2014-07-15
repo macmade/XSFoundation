@@ -76,4 +76,31 @@ const char * __XSData_ToString( XSDataRef object )
     ( void )object;
     
     return NULL;
+    
+    /*
+    XSStringRef     description;
+    const XSUInt8 * bytes;
+    XSUInteger      length;
+    
+    XSRecursiveLock_Lock( object->lock );
+    
+    length = object->length;
+    bytes  = object->buffer;
+    
+    description = XSString_StringWithCString( "<" );
+    
+    if( length > 0 )
+    {
+        while( length-- )
+        {
+            description = XSString_StringByAppendingFormat( description, "%x", *( bytes++ ) );
+        }
+    }
+    
+    description = XSString_StringByAppendingCString( description, ">" );
+    
+    XSRecursiveLock_Unlock( object->lock );
+    
+    return XSString_GetCString( description );
+    */
 }
