@@ -62,72 +62,49 @@
 /* $Id$ */
 
 /*!
- * @header      XS.h
+ * @header      XSFileSystem.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Private definitions for XSFileSystem.h
+ * @discussion  ...
  */
 
 #ifndef __XS_H__
-#define __XS_H__
-
-/* Internal build only - Adds extra warning flags */
-#ifdef __XS_BUILD__
-#include <XS/__private/XSWarnings.h>
+#error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-/* Standard includes */
-#include <XS/XS-STD.h>
+#ifndef __XS___PRIVATE_FUNCTIONS_XS_FILE_SYSTEM_H__
+#define __XS___PRIVATE_FUNCTIONS_XS_FILE_SYSTEM_H__
 
-/* Core */
-#include <XS/XSMacros.h>
-#include <XS/XSMacros-X.h>
 #include <XS/XSTypes.h>
 
-/* Functions */
-#include <XS/Functions/XSAtomic.h>
-#include <XS/Functions/XSMemory.h>
-#include <XS/Functions/XSRuntime.h>
-#include <XS/Functions/XSProcess.h>
-#include <XS/Functions/XSThreading.h>
-#include <XS/Functions/XSLog.h>
-#include <XS/Functions/XSMath.h>
-#include <XS/Functions/XSGeometry.h>
-#include <XS/Functions/XSSort.h>
-#include <XS/Functions/XSFileSystem.h>
+/*!
+ * @typedef     __XSMimeType_Info
+ * @abstract    Mime type information
+ */
+typedef struct __XSFileSystem_MimeTypeInfo_Struct
+{
+    const char * type;              /*! The mime type */
+    const char * extensions[ 15 ];  /*! The possible file extensions for the mime type (no leading '.') */
+}
+__XSFileSystem_MimeTypeInfo;
 
-/* Classes */
-#include <XS/Classes/XSArrayRef.h>
-#include <XS/Classes/XSAutoreleasePoolRef.h>
-#include <XS/Classes/XSBagRef.h>
-#include <XS/Classes/XSBinaryTreeRef.h>
-#include <XS/Classes/XSBooleanRef.h>
-#include <XS/Classes/XSColorRef.h>
-#include <XS/Classes/XSDataRef.h>
-#include <XS/Classes/XSDateRef.h>
-#include <XS/Classes/XSDictionaryRef.h>
-#include <XS/Classes/XSErrorRef.h>
-#include <XS/Classes/XSFileRef.h>
-#include <XS/Classes/XSFileManagerRef.h>
-#include <XS/Classes/XSLockRef.h>
-#include <XS/Classes/XSNodeRef.h>
-#include <XS/Classes/XSNotificationRef.h>
-#include <XS/Classes/XSNotificationCenterRef.h>
-#include <XS/Classes/XSNullRef.h>
-#include <XS/Classes/XSNumberRef.h>
-#include <XS/Classes/XSOrderedSetRef.h>
-#include <XS/Classes/XSPrimitiveArrayRef.h>
-#include <XS/Classes/XSRecursiveLockRef.h>
-#include <XS/Classes/XSSemaphoreRef.h>
-#include <XS/Classes/XSSetRef.h>
-#include <XS/Classes/XSStackRef.h>
-#include <XS/Classes/XSStringRef.h>
-#include <XS/Classes/XSThreadRef.h>
-#include <XS/Classes/XSURLRef.h>
-#include <XS/Classes/XSValueRef.h>
-#include <XS/Classes/XSXMLParserRef.h>
+/*!
+ * @var         __XSMimeType_Types
+ * @abstract    The available (recognized) mime types
+ */
+XS_EXTERN __XSFileSystem_MimeTypeInfo __XSFileSystem_MimeTypes[];
 
-#endif /* __XS_H__ */
+/*!
+ * @var         __XSFileSystem_MimeTypeCount
+ * @abstract    The number of registered mime types
+ */
+XS_EXTERN XSUInteger const __XSFileSystem_MimeTypeCount;
+
+/*!
+ * @var         __XSFileSystem_DefaultMimeType
+ * @abstract    The default mime type for unrecognized types
+ */
+XS_EXTERN const char * const __XSFileSystem_DefaultMimeType;
+
+#endif /* __XS___PRIVATE_FUNCTIONS_XS_FILE_SYSTEM_H__ */

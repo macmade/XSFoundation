@@ -62,72 +62,44 @@
 /* $Id$ */
 
 /*!
- * @header      XS.h
- * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
- * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @header          XSFileSytsem.h
+ * @copyright       (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+ * @author          Jean-David Gadina - www.xs-labs.com
+ * @abstract        XSFoundation filesystem functions
+ * @discussion      ...
  */
 
 #ifndef __XS_H__
-#define __XS_H__
-
-/* Internal build only - Adds extra warning flags */
-#ifdef __XS_BUILD__
-#include <XS/__private/XSWarnings.h>
+#error "Please include '<XS/XS.h>' instead of this file!"
 #endif
 
-/* Standard includes */
-#include <XS/XS-STD.h>
+#ifndef __XS_FUNCTIONS_XS_FILE_SYSTEM_H__
+#define __XS_FUNCTIONS_XS_FILE_SYSTEM_H__
 
-/* Core */
-#include <XS/XSMacros.h>
-#include <XS/XSMacros-X.h>
+XS_EXTERN_C_BEGIN
+
 #include <XS/XSTypes.h>
 
-/* Functions */
-#include <XS/Functions/XSAtomic.h>
-#include <XS/Functions/XSMemory.h>
-#include <XS/Functions/XSRuntime.h>
-#include <XS/Functions/XSProcess.h>
-#include <XS/Functions/XSThreading.h>
-#include <XS/Functions/XSLog.h>
-#include <XS/Functions/XSMath.h>
-#include <XS/Functions/XSGeometry.h>
-#include <XS/Functions/XSSort.h>
-#include <XS/Functions/XSFileSystem.h>
+/*!
+ * @function    XSFileSystem_GetMimeTypeForFile
+ * @abstract    Gets a mime type for a file
+ * @param       file        The file
+ * @return      The mime type for the specified file
+ * @discussion  The 'file' parameter may be a file name or a file path.
+ *              Note that the file doesn't need to exist on the local
+ *              filesystem.
+ */
+const char * XSFileSystem_GetMimeTypeForFile( const char * file );
 
-/* Classes */
-#include <XS/Classes/XSArrayRef.h>
-#include <XS/Classes/XSAutoreleasePoolRef.h>
-#include <XS/Classes/XSBagRef.h>
-#include <XS/Classes/XSBinaryTreeRef.h>
-#include <XS/Classes/XSBooleanRef.h>
-#include <XS/Classes/XSColorRef.h>
-#include <XS/Classes/XSDataRef.h>
-#include <XS/Classes/XSDateRef.h>
-#include <XS/Classes/XSDictionaryRef.h>
-#include <XS/Classes/XSErrorRef.h>
-#include <XS/Classes/XSFileRef.h>
-#include <XS/Classes/XSFileManagerRef.h>
-#include <XS/Classes/XSLockRef.h>
-#include <XS/Classes/XSNodeRef.h>
-#include <XS/Classes/XSNotificationRef.h>
-#include <XS/Classes/XSNotificationCenterRef.h>
-#include <XS/Classes/XSNullRef.h>
-#include <XS/Classes/XSNumberRef.h>
-#include <XS/Classes/XSOrderedSetRef.h>
-#include <XS/Classes/XSPrimitiveArrayRef.h>
-#include <XS/Classes/XSRecursiveLockRef.h>
-#include <XS/Classes/XSSemaphoreRef.h>
-#include <XS/Classes/XSSetRef.h>
-#include <XS/Classes/XSStackRef.h>
-#include <XS/Classes/XSStringRef.h>
-#include <XS/Classes/XSThreadRef.h>
-#include <XS/Classes/XSURLRef.h>
-#include <XS/Classes/XSValueRef.h>
-#include <XS/Classes/XSXMLParserRef.h>
+/*!
+ * @function    XSFileSystem_GetMimeTypeForExtension
+ * @abstract    Gets a mime type for a file extension
+ * @param       extension   The file extension
+ * @return      The mime type for the specified file extension
+ * @discussion  The extension may have a leading '.'.m 
+ */
+const char * XSFileSystem_GetMimeTypeForExtension( const char * extension );
 
-#endif /* __XS_H__ */
+XS_EXTERN_C_END
+
+#endif /* __XS_FUNCTIONS_XS_FILE_SYSTEM_H__ */
