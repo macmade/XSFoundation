@@ -20,6 +20,7 @@
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/XSMath.h">&lt;XS/Functions/XSMath.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/XSGeometry.h">&lt;XS/Functions/XSGeometry.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/XSSort.h">&lt;XS/Functions/XSSort.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSFileSystem.h">&lt;XS/Functions/XSFileSystem.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/XSArrayRef.h">&lt;XS/Classes/XSArrayRef.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/XSAutoreleasePoolRef.h">&lt;XS/Classes/XSAutoreleasePoolRef.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/XSBagRef.h">&lt;XS/Classes/XSBagRef.h&gt;</hd_link></include>
@@ -56,5 +57,5 @@ directly.
 </p></desc>
 <copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Tuesday, July 15, 2014</timestamp>
+<timestamp>Monday, August 25, 2014</timestamp>
 </header>
