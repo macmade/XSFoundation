@@ -1,4 +1,4 @@
-language: c
+language: objective-c
 compiler: clang
 script: make && make test && xcodebuild -scheme "XSFoundation - Mac Static Library" test > /dev/null
 before_install:
