@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "052303CE18E9DAF000C29627"
-               BuildableName = "Makefile Build - Release"
-               BlueprintName = "Makefile Build - Release"
+               BlueprintIdentifier = "05D12BEC19AD474B00E84E29"
+               BuildableName = "Makefile Build"
+               BlueprintName = "Makefile Build"
                ReferencedContainer = "container:XSFoundation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,16 +42,16 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "052303CE18E9DAF000C29627"
-            BuildableName = "Makefile Build - Release"
-            BlueprintName = "Makefile Build - Release"
+            BlueprintIdentifier = "05D12BEC19AD474B00E84E29"
+            BuildableName = "Makefile Build"
+            BlueprintName = "Makefile Build"
             ReferencedContainer = "container:XSFoundation.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
    <LaunchAction
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug"
@@ -61,9 +61,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "052303CE18E9DAF000C29627"
-            BuildableName = "Makefile Build - Release"
-            BlueprintName = "Makefile Build - Release"
+            BlueprintIdentifier = "05D12BEC19AD474B00E84E29"
+            BuildableName = "Makefile Build"
+            BlueprintName = "Makefile Build"
             ReferencedContainer = "container:XSFoundation.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -79,9 +79,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "052303CE18E9DAF000C29627"
-            BuildableName = "Makefile Build - Release"
-            BlueprintName = "Makefile Build - Release"
+            BlueprintIdentifier = "05D12BEC19AD474B00E84E29"
+            BuildableName = "Makefile Build"
+            BlueprintName = "Makefile Build"
             ReferencedContainer = "container:XSFoundation.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

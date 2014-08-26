@@ -5515,6 +5515,19 @@
 			passBuildSettingsInEnvironment = 1;
 			productName = "Makefile Build";
 		};
+		05D12BEC19AD474B00E84E29 /* Makefile Build */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 05D12BEF19AD474B00E84E29 /* Build configuration list for PBXLegacyTarget "Makefile Build" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			dependencies = (
+			);
+			name = "Makefile Build";
+			passBuildSettingsInEnvironment = 1;
+			productName = "Makefile Build";
+		};
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
@@ -5635,6 +5648,9 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "XS-Labs";
 				TargetAttributes = {
+					05D12BEC19AD474B00E84E29 = {
+						CreatedOnToolsVersion = 6.0;
+					};
 					05E6A52D196D32CB002B8315 = {
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = 051B662918DCA7160079238C;
@@ -5658,6 +5674,7 @@
 				051B665818DCA96B0079238C /* XSFoundation - Mac Framework */,
 				051B668B18DCAA5E0079238C /* XSFoundation - iOS Static Library */,
 				051B66B518DCAAC20079238C /* XSFoundation - Test */,
+				05D12BEC19AD474B00E84E29 /* Makefile Build */,
 				052303AA18E9D2EF00C29627 /* Makefile Build - Debug */,
 				052303CE18E9DAF000C29627 /* Makefile Build - Release */,
 				05E6A52D196D32CB002B8315 /* XSFoundation - Tests */,
@@ -9274,6 +9291,39 @@
 			};
 			name = Release;
 		};
+		05D12BED19AD474B00E84E29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				DEBUGGING_SYMBOLS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		05D12BEE19AD474B00E84E29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		05E6A538196D32CB002B8315 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -9382,6 +9432,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		05D12BEF19AD474B00E84E29 /* Build configuration list for PBXLegacyTarget "Makefile Build" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05D12BED19AD474B00E84E29 /* Debug */,
+				05D12BEE19AD474B00E84E29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		05E6A537196D32CB002B8315 /* Build configuration list for PBXNativeTarget "XSFoundation - Tests" */ = {
 			isa = XCConfigurationList;
