@@ -1,8 +1,6 @@
 language: objective-c
 compiler: clang
 script: make && make test
-xcode_project: XSFoundation.xcodeproj
-xcode_scheme: XSFoundation - Mac Static Library
 before_install:
   - git clone git://github.com/macmade/XSDocgen
   - cd XSDocgen && make && sudo make install && cd ..
