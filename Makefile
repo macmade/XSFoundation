@@ -438,7 +438,7 @@ _test:
 	
 ifeq ($(_HAS_XCBUILD),true)
 	@echo $(call _PRINT,XSDoc,universal,Building and running unit tests)
-	@/usr/bin/xcodebuild -scheme "XSFoundation - Mac Static Library" test
+	@/usr/bin/xcodebuild -scheme "XSFoundation - Mac Static Library" test | egrep "^[^ ][^\r]+"
 else
 	@echo $(call _PRINT,XSDoc,universal,Skipping unit tests - xcodebuild is not installed)
 endif
