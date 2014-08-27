@@ -1,7 +1,6 @@
 language: objective-c
 compiler: clang
-xcode_project: XSFoundation.xcodeproj
-xcode_scheme: Makefile Build
+script: make && make test
 before_install:
   - git clone git://github.com/macmade/XSDocgen
   - cd XSDocgen && make && sudo make install && cd ..
