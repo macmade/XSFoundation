@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSNotificationRef.h>
 
-XSStringRef XSNotification_GetObject( XSNotificationRef object )
+XSObjectRef XSNotification_GetObject( XSNotificationRef object )
 {
     if( object == NULL )
     {

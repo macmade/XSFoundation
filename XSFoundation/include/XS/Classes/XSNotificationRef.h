@@ -126,7 +126,7 @@ XS_EXPORT XSStringRef XSNotification_GetName( XSNotificationRef object );
  * @param       object      The XSNotification object
  * @return      The notification's object (sender)
  */
-XS_EXPORT XSStringRef XSNotification_GetObject( XSNotificationRef object );
+XS_EXPORT XSObjectRef XSNotification_GetObject( XSNotificationRef object );
 
 /*!
  * @function    XSNotification_GetUserInfo
