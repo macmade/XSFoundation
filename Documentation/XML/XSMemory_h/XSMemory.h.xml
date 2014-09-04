@@ -75,37 +75,37 @@ instead.
 <parameter><name>memory</name><desc><p>The memory data to release</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>void *</type><name>memory</name></parsedparameter>
+<parsedparameter><type>const void *</type><name>memory</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void *</returntype>
 <result><p>The memory data
 </p></result>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSAutorelease</declaration_function>(
-    <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param> );  </declaration>
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param> );  </declaration>
 <desc><p>The memory data will be placed in the instance of the current
 auto-release pool, and will be released the next time
 the auto-release pool is drained.
 </p></desc>
 </function><function id="//xsdoc_ref/doc/title:func/XSCopy" lang="c"><name>XSCopy</name>
-<abstract><p>Copies an object
+<abstract><p>Copies a memory data object
 </p></abstract>
 <parameterlist>
-<parameter><name>memory</name><desc><p>The object to copy</p></desc></parameter>
+<parameter><name>memory</name><desc><p>The memory data object to copy</p></desc></parameter>
 <parameter><name>file</name><desc><p>The file in which the copy occurs</p></desc></parameter>
 <parameter><name>line</name><desc><p>The line number of the file in which the copy occurs</p></desc></parameter>
 <parameter><name>func</name><desc><p>The function in which the copy occurs</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>void *</type><name>memory</name></parsedparameter>
+<parsedparameter><type>const void *</type><name>memory</name></parsedparameter>
 <parsedparameter><type>const char *</type><name>file</name></parsedparameter>
 <parsedparameter><type>int</type><name>line</name></parsedparameter>
 <parsedparameter><type>const char *</type><name>func</name></parsedparameter>
 </parsedparameterlist>
-<returntype> XS_EXPORT XSObjectRef</returntype>
-<result><p>The copy of the object
+<returntype> XS_EXPORT void *</returntype>
+<result><p>The copy of the memory data object
 </p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSObjectRef</declaration_type> <declaration_function>XSCopyWithInfos</declaration_function>(
-    <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param>,
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSCopyWithInfos</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param>,
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>file</declaration_param>,
     <declaration_type>int</declaration_type> <declaration_param>line</declaration_param>,
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>func</declaration_param> );  </declaration>
@@ -113,25 +113,25 @@ the auto-release pool is drained.
 instead.
 </p></desc>
 </function><function id="//xsdoc_ref/c/func/XSCopyWithInfos" lang="c"><name>XSCopyWithInfos</name>
-<abstract><p>Copies an object
+<abstract><p>Copies a memory data object
 </p></abstract>
 <parameterlist>
-<parameter><name>memory</name><desc><p>The object to copy</p></desc></parameter>
+<parameter><name>memory</name><desc><p>The memory data object to copy</p></desc></parameter>
 <parameter><name>file</name><desc><p>The file in which the copy occurs</p></desc></parameter>
 <parameter><name>line</name><desc><p>The line number of the file in which the copy occurs</p></desc></parameter>
 <parameter><name>func</name><desc><p>The function in which the copy occurs</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>void *</type><name>memory</name></parsedparameter>
+<parsedparameter><type>const void *</type><name>memory</name></parsedparameter>
 <parsedparameter><type>const char *</type><name>file</name></parsedparameter>
 <parsedparameter><type>int</type><name>line</name></parsedparameter>
 <parsedparameter><type>const char *</type><name>func</name></parsedparameter>
 </parsedparameterlist>
-<returntype> XS_EXPORT XSObjectRef</returntype>
-<result><p>The copy of the object
+<returntype> XS_EXPORT void *</returntype>
+<result><p>The copy of the memory data object
 </p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSObjectRef</declaration_type> <declaration_function>XSCopyWithInfos</declaration_function>(
-    <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param>,
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSCopyWithInfos</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param>,
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>file</declaration_param>,
     <declaration_type>int</declaration_type> <declaration_param>line</declaration_param>,
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>func</declaration_param> );  </declaration>
@@ -139,22 +139,22 @@ instead.
 instead.
 </p></desc>
 </function><function id="//xsdoc_ref/c/func/XSEquals" lang="c"><name>XSEquals</name>
-<abstract><p>Checks whether two objects are equals
+<abstract><p>Checks whether two memory data objects are equals
 </p></abstract>
 <parameterlist>
-<parameter><name>memory1</name><desc><p>The first object to compare</p></desc></parameter>
-<parameter><name>memory2</name><desc><p>The second object to compare</p></desc></parameter>
+<parameter><name>memory1</name><desc><p>The first memory data object to compare</p></desc></parameter>
+<parameter><name>memory2</name><desc><p>The second memory data object to compare</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>void *</type><name>memory1</name></parsedparameter>
-<parsedparameter><type>void *</type><name>memory2</name></parsedparameter>
+<parsedparameter><type>const void *</type><name>memory1</name></parsedparameter>
+<parsedparameter><type>const void *</type><name>memory2</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT bool</returntype>
-<result><p>True if both objects are equals, otherwise false
+<result><p>True if both memory data objects are equals, otherwise false
 </p></result>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSEquals</declaration_function>(
-    <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory1</declaration_param>,
-    <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory2</declaration_param> );  </declaration>
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory1</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory2</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSReallocWithInfos" lang="c"><name>XSReallocWithInfos</name>
 <abstract><p>Reallocates memory
@@ -168,7 +168,7 @@ instead.
 <parameter><name>func</name><desc><p>The function in which the reallocation occurs</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>void *</type><name>memory</name></parsedparameter>
+<parsedparameter><type>const void *</type><name>memory</name></parsedparameter>
 <parsedparameter><type>XSUInteger</type><name>bytes</name></parsedparameter>
 <parsedparameter><type>XSClassID</type><name>classID</name></parsedparameter>
 <parsedparameter><type>const char *</type><name>file</name></parsedparameter>
@@ -179,7 +179,7 @@ instead.
 <result><p>The reallocated memory, or NULL
 </p></result>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSReallocWithInfos</declaration_function>(
-    <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param>,
     <declaration_type>XSUInteger</declaration_type> <declaration_param>bytes</declaration_param>,
     <declaration_type>XSClassID</declaration_type> <declaration_param>classID</declaration_param>,
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>file</declaration_param>,
@@ -198,14 +198,14 @@ instead.
 <parameter><name>func</name><desc><p>The function in which the release occurs</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>void *</type><name>memory</name></parsedparameter>
+<parsedparameter><type>const void *</type><name>memory</name></parsedparameter>
 <parsedparameter><type>const char *</type><name>file</name></parsedparameter>
 <parsedparameter><type>int</type><name>line</name></parsedparameter>
 <parsedparameter><type>const char *</type><name>func</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSReleaseWithInfos</declaration_function>(
-    <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param>,
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>file</declaration_param>,
     <declaration_type>int</declaration_type> <declaration_param>line</declaration_param>,
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>func</declaration_param> );  </declaration>
@@ -219,13 +219,13 @@ instead.
 <parameter><name>memory</name><desc><p>The memory data to retain</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>void *</type><name>memory</name></parsedparameter>
+<parsedparameter><type>const void *</type><name>memory</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void *</returntype>
 <result><p>The memory data
 </p></result>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSRetain</declaration_function>(
-    <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param> );  </declaration>
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function></functions>
 <defines><pdefine id="//xsdoc_ref/c/macro/XSAlloc" definetype="function" lang="c"><name>XSAlloc</name>
@@ -260,15 +260,15 @@ the auto-release pool is drained.
 The allocated memory will be zero-filled
 </p></desc>
 </pdefine><pdefine id="//xsdoc_ref/c/macro/XSCopy" definetype="function" lang="c"><name>XSCopy</name>
-<abstract><p>Copies an object
+<abstract><p>Copies a memory data object
 </p></abstract>
 <parameterlist>
-<parameter><name>_memory_</name><desc><p>The object to copy</p></desc></parameter>
+<parameter><name>_memory_</name><desc><p>The memory data object to copy</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
 <parsedparameter><type></type><name>_memory_</name></parsedparameter>
 </parsedparameterlist>
-<result><p>The copy of the object
+<result><p>The copy of the memory data object
 </p></result>
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSCopy</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSCopyWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
 </pdefine><pdefine id="//xsdoc_ref/c/macro/XSRealloc" definetype="function" lang="c"><name>XSRealloc</name>
@@ -303,5 +303,5 @@ data reaches 0.
 </p></desc>
 </pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Monday, August 25, 2014</timestamp>
+<timestamp>Thursday, September 04, 2014</timestamp>
 </header>

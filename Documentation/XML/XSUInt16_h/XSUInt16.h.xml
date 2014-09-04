@@ -26,5 +26,5 @@
 <declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSUInt16Max</declaration_preprocessor> <declaration_preprocessor>0xFFFF</declaration_preprocessor> </declaration>
 </pdefine></defines><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Monday, August 25, 2014</timestamp>
+<timestamp>Thursday, September 04, 2014</timestamp>
 </header>

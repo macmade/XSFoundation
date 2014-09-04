@@ -19,12 +19,12 @@
 <parameter><name>object</name><desc><p>The object (cannot be NULL)</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSArrayRef</type><name>array</name></parsedparameter>
+<parsedparameter><type>XSMutableArrayRef</type><name>array</name></parsedparameter>
 <parsedparameter><type>XSObjectRef</type><name>object</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSArray_AddObject</declaration_function>(
-    <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param>,
+    <declaration_type>XSMutableArrayRef</declaration_type> <declaration_param>array</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
 </p></desc>
@@ -36,12 +36,12 @@
 <parameter><name>objects</name><desc><p>The array with the objects to append</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSArrayRef</type><name>array</name></parsedparameter>
+<parsedparameter><type>XSMutableArrayRef</type><name>array</name></parsedparameter>
 <parsedparameter><type>XSArrayRef</type><name>objects</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSArray_AppendArray</declaration_function>(
-    <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param>,
+    <declaration_type>XSMutableArrayRef</declaration_type> <declaration_param>array</declaration_param>,
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>objects</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
 </p></desc>
@@ -159,10 +159,10 @@
 </function><function id="//xsdoc_ref/c/func/XSArray_CreateMutable" lang="c"><name>XSArray_CreateMutable</name>
 <abstract><p>Creates an empty mutable array
 </p></abstract>
-<returntype> XS_EXPORT XSStatic XSArrayRef</returntype>
+<returntype> XS_EXPORT XSStatic XSMutableArrayRef</returntype>
 <result><p>An empty mutable array
 </p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSArrayRef</declaration_type> <declaration_function>XSArray_CreateMutable</declaration_function>(
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSMutableArrayRef</declaration_type> <declaration_function>XSArray_CreateMutable</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSArray_CreateMutableCopy" lang="c"><name>XSArray_CreateMutableCopy</name>
@@ -174,10 +174,10 @@
 <parsedparameterlist>
 <parsedparameter><type>XSArrayRef</type><name>array</name></parsedparameter>
 </parsedparameterlist>
-<returntype> XS_EXPORT XSArrayRef</returntype>
+<returntype> XS_EXPORT XSMutableArrayRef</returntype>
 <result><p>The mutable copy of the array
 </p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSArrayRef</declaration_type> <declaration_function>XSArray_CreateMutableCopy</declaration_function>(
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSMutableArrayRef</declaration_type> <declaration_function>XSArray_CreateMutableCopy</declaration_function>(
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSArray_CreateWithArray" lang="c"><name>XSArray_CreateWithArray</name>
@@ -221,7 +221,7 @@
 <parameter><name>function</name><desc><p>The function used to filter the array</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSArrayRef</type><name>array</name></parsedparameter>
+<parsedparameter><type>XSMutableArrayRef</type><name>array</name></parsedparameter>
 <parsedparameter><type>XSArray_FilterFunction</type><name>function</name></parsedparameter>
 </parsedparameterlist>
 <attributelists><listattribute><name>See</name><list>
@@ -229,7 +229,7 @@
 </attributelists>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSArray_FilterWithFunction</declaration_function>(
-    <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param>,
+    <declaration_type>XSMutableArrayRef</declaration_type> <declaration_param>array</declaration_param>,
     <declaration_type>XSArray_FilterFunction</declaration_type> <declaration_param>function</declaration_param> );  </declaration>
 <desc><p>The function will be called with each object contained in the array.
 An error will be produced if the array is not mutable.
@@ -243,7 +243,7 @@ An error will be produced if the array is not mutable.
 <parameter><name>method</name><desc><p>The function used to filter the array</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSArrayRef</type><name>array</name></parsedparameter>
+<parsedparameter><type>XSMutableArrayRef</type><name>array</name></parsedparameter>
 <parsedparameter><type>XSObjectRef</type><name>object</name></parsedparameter>
 <parsedparameter><type>XSArray_FilterMethod</type><name>method</name></parsedparameter>
 </parsedparameterlist>
@@ -252,7 +252,7 @@ An error will be produced if the array is not mutable.
 </attributelists>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSArray_FilterWithMethod</declaration_function>(
-    <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param>,
+    <declaration_type>XSMutableArrayRef</declaration_type> <declaration_param>array</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSArray_FilterMethod</declaration_type> <declaration_param>method</declaration_param> );  </declaration>
 <desc><p>The method will be called with each object contained in the array.
@@ -378,13 +378,13 @@ An error will be produced if the array is not mutable.
 <parameter><name>object</name><desc><p>The object (cannot be NULL)</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSArrayRef</type><name>array</name></parsedparameter>
+<parsedparameter><type>XSMutableArrayRef</type><name>array</name></parsedparameter>
 <parsedparameter><type>XSUInteger</type><name>index</name></parsedparameter>
 <parsedparameter><type>XSObjectRef</type><name>object</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSArray_InsertObjectAtIndex</declaration_function>(
-    <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param>,
+    <declaration_type>XSMutableArrayRef</declaration_type> <declaration_param>array</declaration_param>,
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
@@ -407,10 +407,10 @@ An error will be produced if the array is not mutable.
 </function><function id="//xsdoc_ref/c/func/XSArray_MutableArray" lang="c"><name>XSArray_MutableArray</name>
 <abstract><p>Gets an empty mutable array
 </p></abstract>
-<returntype> XS_EXPORT XSStatic XSAutoreleased XSArrayRef</returntype>
+<returntype> XS_EXPORT XSStatic XSAutoreleased XSMutableArrayRef</returntype>
 <result><p>An empty mutable array
 </p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSArrayRef</declaration_type> <declaration_function>XSArray_MutableArray</declaration_function>(
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSMutableArrayRef</declaration_type> <declaration_function>XSArray_MutableArray</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSArray_RemoveAllObjects" lang="c"><name>XSArray_RemoveAllObjects</name>
@@ -420,11 +420,11 @@ An error will be produced if the array is not mutable.
 <parameter><name>array</name><desc><p>The array</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSArrayRef</type><name>array</name></parsedparameter>
+<parsedparameter><type>XSMutableArrayRef</type><name>array</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSArray_RemoveAllObjects</declaration_function>(
-    <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param> );  </declaration>
+    <declaration_type>XSMutableArrayRef</declaration_type> <declaration_param>array</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
 </p></desc>
 </function><function id="//xsdoc_ref/c/func/XSArray_RemoveLastObject" lang="c"><name>XSArray_RemoveLastObject</name>
@@ -434,11 +434,11 @@ An error will be produced if the array is not mutable.
 <parameter><name>array</name><desc><p>The array</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSArrayRef</type><name>array</name></parsedparameter>
+<parsedparameter><type>XSMutableArrayRef</type><name>array</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSArray_RemoveLastObject</declaration_function>(
-    <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param> );  </declaration>
+    <declaration_type>XSMutableArrayRef</declaration_type> <declaration_param>array</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
 </p></desc>
 </function><function id="//xsdoc_ref/c/func/XSArray_RemoveObject" lang="c"><name>XSArray_RemoveObject</name>
@@ -449,12 +449,12 @@ An error will be produced if the array is not mutable.
 <parameter><name>object</name><desc><p>The object to remove</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSArrayRef</type><name>array</name></parsedparameter>
+<parsedparameter><type>XSMutableArrayRef</type><name>array</name></parsedparameter>
 <parsedparameter><type>XSObjectRef</type><name>object</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSArray_RemoveObject</declaration_function>(
-    <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param>,
+    <declaration_type>XSMutableArrayRef</declaration_type> <declaration_param>array</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
 </p></desc>
@@ -466,12 +466,12 @@ An error will be produced if the array is not mutable.
 <parameter><name>index</name><desc><p>The index</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSArrayRef</type><name>array</name></parsedparameter>
+<parsedparameter><type>XSMutableArrayRef</type><name>array</name></parsedparameter>
 <parsedparameter><type>XSUInteger</type><name>index</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSArray_RemoveObjectAtIndex</declaration_function>(
-    <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param>,
+    <declaration_type>XSMutableArrayRef</declaration_type> <declaration_param>array</declaration_param>,
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
 </p></desc>
@@ -483,12 +483,12 @@ An error will be produced if the array is not mutable.
 <parameter><name>objects</name><desc><p>The array with the objects to remove</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSArrayRef</type><name>array</name></parsedparameter>
+<parsedparameter><type>XSMutableArrayRef</type><name>array</name></parsedparameter>
 <parsedparameter><type>XSArrayRef</type><name>objects</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSArray_RemoveObjectsInArray</declaration_function>(
-    <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param>,
+    <declaration_type>XSMutableArrayRef</declaration_type> <declaration_param>array</declaration_param>,
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>objects</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
 </p></desc>
@@ -500,12 +500,12 @@ An error will be produced if the array is not mutable.
 <parameter><name>range</name><desc><p>The range</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSArrayRef</type><name>array</name></parsedparameter>
+<parsedparameter><type>XSMutableArrayRef</type><name>array</name></parsedparameter>
 <parsedparameter><type>XSRange</type><name>range</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSArray_RemoveObjectsInRange</declaration_function>(
-    <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param>,
+    <declaration_type>XSMutableArrayRef</declaration_type> <declaration_param>array</declaration_param>,
     <declaration_type>XSRange</declaration_type> <declaration_param>range</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
 </p></desc>
@@ -518,13 +518,13 @@ An error will be produced if the array is not mutable.
 <parameter><name>newObject</name><desc><p>The new object (cannot be NULL)</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSArrayRef</type><name>array</name></parsedparameter>
+<parsedparameter><type>XSMutableArrayRef</type><name>array</name></parsedparameter>
 <parsedparameter><type>XSUInteger</type><name>index</name></parsedparameter>
 <parsedparameter><type>XSObjectRef</type><name>newObject</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSArray_ReplaceObjectAtIndex</declaration_function>(
-    <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param>,
+    <declaration_type>XSMutableArrayRef</declaration_type> <declaration_param>array</declaration_param>,
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>newObject</declaration_param> );  </declaration>
 <desc><p>An error will be produced if the array is not mutable
@@ -537,7 +537,7 @@ An error will be produced if the array is not mutable.
 <parameter><name>function</name><desc><p>The function used to sort the array</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSArrayRef</type><name>array</name></parsedparameter>
+<parsedparameter><type>XSMutableArrayRef</type><name>array</name></parsedparameter>
 <parsedparameter><type>XSArray_SortFunction</type><name>function</name></parsedparameter>
 </parsedparameterlist>
 <attributelists><listattribute><name>See</name><list>
@@ -545,7 +545,7 @@ An error will be produced if the array is not mutable.
 </attributelists>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSArray_SortWithFunction</declaration_function>(
-    <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param>,
+    <declaration_type>XSMutableArrayRef</declaration_type> <declaration_param>array</declaration_param>,
     <declaration_type>XSArray_SortFunction</declaration_type> <declaration_param>function</declaration_param> );  </declaration>
 <desc><p>The function will be called with each object contained in the array.
 An error will be produced if the array is not mutable.
@@ -559,7 +559,7 @@ An error will be produced if the array is not mutable.
 <parameter><name>method</name><desc><p>The method used to sort the array</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSArrayRef</type><name>array</name></parsedparameter>
+<parsedparameter><type>XSMutableArrayRef</type><name>array</name></parsedparameter>
 <parsedparameter><type>XSObjectRef</type><name>object</name></parsedparameter>
 <parsedparameter><type>XSArray_SortMethod</type><name>method</name></parsedparameter>
 </parsedparameterlist>
@@ -568,7 +568,7 @@ An error will be produced if the array is not mutable.
 </attributelists>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSArray_SortWithMethod</declaration_function>(
-    <declaration_type>XSArrayRef</declaration_type> <declaration_param>array</declaration_param>,
+    <declaration_type>XSMutableArrayRef</declaration_type> <declaration_param>array</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSArray_SortMethod</declaration_type> <declaration_param>method</declaration_param> );  </declaration>
 <desc><p>The method will be called with each object contained in the array.
@@ -703,10 +703,16 @@ An error will be produced if the array is not mutable.
 </typedef><typedef id="//xsdoc_ref/c/tdef/XSArrayRef" lang="c" type="simple"><name>XSArrayRef</name>
 <abstract><p>Opaque type for XSArray
 </p></abstract>
-<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSArray</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSArrayRef</declaration_var>;  </declaration>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>const</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSArray</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSArrayRef</declaration_var>;  </declaration>
 <desc><p>XSArrayRef objects are thread-safe
+</p></desc>
+</typedef><typedef id="//xsdoc_ref/c/tdef/XSMutableArrayRef" lang="c" type="simple"><name>XSMutableArrayRef</name>
+<abstract><p>Opaque type for XSMutableArray
+</p></abstract>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSArray</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSMutableArrayRef</declaration_var>;  </declaration>
+<desc><p>XSMutableArrayRef objects are thread-safe
 </p></desc>
 </typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Monday, August 25, 2014</timestamp>
+<timestamp>Thursday, September 04, 2014</timestamp>
 </header>
