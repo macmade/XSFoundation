@@ -92,7 +92,7 @@
  * @typedef     XSStringRef
  * @abstract    Opaque type for XSString
  */
-typedef struct __XSString * XSStringRef;
+typedef const struct __XSString * XSStringRef;
 
 /*!
  * @function    XSString_GetClassID

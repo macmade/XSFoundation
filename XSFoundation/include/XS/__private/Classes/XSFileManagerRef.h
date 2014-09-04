@@ -152,6 +152,6 @@ const char * __XSFileManager_ToString( XSFileManagerRef object );
  * @abstract    Creates an XSFileManager object
  * @return      The XSFileManager object
  */
-XSStatic XSFileManagerRef __XSFileManager_Create( void );
+XSStatic struct __XSFileManager * __XSFileManager_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_FILE_MANAGER_H__ */

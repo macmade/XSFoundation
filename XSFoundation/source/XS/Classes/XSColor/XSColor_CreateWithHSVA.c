@@ -73,7 +73,7 @@
 
 XSStatic XSAutoreleased XSColorRef XSColor_CreateWithHSVA( XSFloat h, XSFloat s, XSFloat v, XSFloat a )
 {
-    XSColorRef object;
+    struct __XSColor * object;
     
     object = __XSColor_Create();
     

@@ -154,6 +154,6 @@ const char * __XSNotification_ToString( XSNotificationRef object );
  * @abstract    Creates an XSNotification object
  * @return      The XSNotification object
  */
-XSStatic XSNotificationRef __XSNotification_Create( void );
+XSStatic struct __XSNotification * __XSNotification_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_NOTIFICATION_H__ */

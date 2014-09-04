@@ -71,9 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSArrayRef.h>
 
-XSStatic XSArrayRef XSArray_CreateMutable( void )
+XSStatic XSMutableArrayRef XSArray_CreateMutable( void )
 {
-    XSArrayRef array;
+    struct __XSArray * array;
     
     array              = __XSArray_Create();
     array->properties |= __XSArray_PropertiesMutable;

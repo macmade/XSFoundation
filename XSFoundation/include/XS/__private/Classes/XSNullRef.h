@@ -158,6 +158,6 @@ const char * __XSNull_ToString( XSNullRef object );
  * @abstract    Creates an XSNull object
  * @return      The XSNull object
  */
-XSStatic XSNullRef __XSNull_Create( void );
+XSStatic struct __XSNull * __XSNull_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_NULL_H__ */

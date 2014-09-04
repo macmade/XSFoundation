@@ -154,6 +154,6 @@ const char * __XSSemaphore_ToString( XSSemaphoreRef object );
  * @abstract    Creates an XSSemaphore object
  * @return      The XSSemaphore object
  */
-XSStatic XSSemaphoreRef __XSSemaphore_Create( void );
+XSStatic struct __XSSemaphore * __XSSemaphore_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_SEMAPHORE_H__ */

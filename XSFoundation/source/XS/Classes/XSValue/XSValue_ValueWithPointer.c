@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSValueRef.h>
 
-XSStatic XSAutoreleased XSValueRef XSValue_ValueWithPointer( void * pointer, XSObjectAssociation association )
+XSStatic XSAutoreleased XSValueRef XSValue_ValueWithPointer( const void * pointer, XSObjectAssociation association )
 {
     return XSAutorelease( XSValue_CreateWithPointer( pointer, association ) );
 }

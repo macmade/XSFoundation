@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSLockRef.h>
 
-XSStatic XSLockRef __XSLock_Create( void )
+XSStatic struct __XSLock * __XSLock_Create( void )
 {
-    XSLockRef object;
+    struct __XSLock * object;
     
-    object = XSRuntime_CreateInstance( XSLock_GetClassID() );
+    object = ( struct __XSLock * )XSRuntime_CreateInstance( XSLock_GetClassID() );
     
     if( object == NULL )
     {

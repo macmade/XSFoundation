@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSBinaryTreeRef.h>
 
-XSStatic XSBinaryTreeRef __XSBinaryTree_Create( void )
+XSStatic struct __XSBinaryTree * __XSBinaryTree_Create( void )
 {
-    XSBinaryTreeRef object;
+    struct __XSBinaryTree * object;
     
-    object = XSRuntime_CreateInstance( XSBinaryTree_GetClassID() );
+    object = ( struct __XSBinaryTree * )XSRuntime_CreateInstance( XSBinaryTree_GetClassID() );
     
     if( object == NULL )
     {

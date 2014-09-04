@@ -83,7 +83,7 @@
  * @typedef     XSNotificationRef
  * @abstract    Opaque type for XSNotification
  */
-typedef struct __XSNotification * XSNotificationRef;
+typedef const struct __XSNotification * XSNotificationRef;
 
 /*!
  * @function    XSNotification_GetClassID

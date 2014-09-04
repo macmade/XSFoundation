@@ -73,7 +73,8 @@
 
 XSXMLParserRef __XSXMLParser_Copy( XSXMLParserRef source, XSXMLParserRef destination )
 {
-    destination->dummy = source->dummy;
+    ( void )source;
+    ( void )destination;
     
     return destination;
 }

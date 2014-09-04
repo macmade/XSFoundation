@@ -71,9 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSValueRef.h>
 
-XSStatic XSValueRef XSValue_CreateWithPointer( void * pointer, XSObjectAssociation association )
+XSStatic XSValueRef XSValue_CreateWithPointer( const void * pointer, XSObjectAssociation association )
 {
-    XSValueRef object;
+    struct __XSValue * object;
     
     object = __XSValue_Create();
     

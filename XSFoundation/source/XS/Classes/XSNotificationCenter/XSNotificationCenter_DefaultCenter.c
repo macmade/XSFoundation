@@ -73,5 +73,5 @@
 
 XSStatic XSNotificationCenterRef XSNotificationCenter_DefaultCenter( void )
 {
-    return XSRuntime_GetSharedInstance( XSNotificationCenter_GetClassID() );
+    return ( XSNotificationCenterRef )XSRuntime_GetSharedInstance( XSNotificationCenter_GetClassID() );
 }

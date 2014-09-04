@@ -155,6 +155,6 @@ const char * __XSError_ToString( XSErrorRef object );
  * @abstract    Creates an XSError object
  * @return      The XSError object
  */
-XSStatic XSErrorRef __XSError_Create( void );
+XSStatic struct __XSError * __XSError_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_ERROR_H__ */

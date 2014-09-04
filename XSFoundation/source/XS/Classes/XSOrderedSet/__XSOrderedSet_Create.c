@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSOrderedSetRef.h>
 
-XSStatic XSOrderedSetRef __XSOrderedSet_Create( void )
+XSStatic struct __XSOrderedSet * __XSOrderedSet_Create( void )
 {
-    XSOrderedSetRef object;
+    struct __XSOrderedSet * object;
     
-    object = XSRuntime_CreateInstance( XSOrderedSet_GetClassID() );
+    object = ( struct __XSOrderedSet * )XSRuntime_CreateInstance( XSOrderedSet_GetClassID() );
     
     if( object == NULL )
     {

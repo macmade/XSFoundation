@@ -73,7 +73,7 @@
 
 XSStatic XSValueRef XSValue_CreateWithEdgeInsets( XSEdgeInsets insets )
 {
-    XSValueRef object;
+    struct __XSValue * object;
     
     object          = __XSValue_Create();
     object->insets  = insets;

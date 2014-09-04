@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSDateRef.h>
 
-XSStatic XSDateRef __XSDate_Create( void )
+XSStatic struct __XSDate * __XSDate_Create( void )
 {
-    XSDateRef object;
+    struct __XSDate * object;
     
-    object = XSRuntime_CreateInstance( XSDate_GetClassID() );
+    object = ( struct __XSDate * )XSRuntime_CreateInstance( XSDate_GetClassID() );
     
     if( object == NULL )
     {

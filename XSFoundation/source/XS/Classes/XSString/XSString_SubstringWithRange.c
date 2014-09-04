@@ -73,9 +73,9 @@
 
 XSAutoreleased XSStringRef XSString_SubstringWithRange( XSStringRef object, XSRange range )
 {
-    XSUInteger  length;
-    char      * s;
-    XSStringRef str;
+    XSUInteger          length;
+    char              * s;
+    struct __XSString * str;
     
     if( object == NULL || range.length == 0 )
     {

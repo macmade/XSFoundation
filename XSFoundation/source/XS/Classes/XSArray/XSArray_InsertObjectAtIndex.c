@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSArrayRef.h>
 
-void XSArray_InsertObjectAtIndex( XSArrayRef array, XSUInteger index, XSObjectRef object )
+void XSArray_InsertObjectAtIndex( XSMutableArrayRef array, XSUInteger index, XSObjectRef object )
 {
     XSUInteger        i;
     __XSArray_Value * value;

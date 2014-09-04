@@ -85,7 +85,7 @@
  */
 struct __XSValue
 {
-    void              * pointer;        /*! Pointer value */
+    const void        * pointer;        /*! Pointer value */
     XSPoint             point;          /*! XSPoint value */
     XSSize              size;           /*! XSSize value */
     XSRect              rect;           /*! XSRect value */
@@ -159,6 +159,6 @@ const char * __XSValue_ToString( XSValueRef object );
  * @abstract    Creates an XSValue object
  * @return      The XSValue object
  */
-XSStatic XSValueRef __XSValue_Create( void );
+XSStatic struct __XSValue * __XSValue_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_VALUE_H__ */

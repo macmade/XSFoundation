@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSNullRef.h>
 
-XSStatic XSNullRef __XSNull_Create( void )
+XSStatic struct __XSNull * __XSNull_Create( void )
 {
-    XSNullRef object;
+    struct __XSNull * object;
     
-    object = XSRuntime_CreateInstance( XSNull_GetClassID() );
+    object = ( struct __XSNull * )XSRuntime_CreateInstance( XSNull_GetClassID() );
     
     if( object == NULL )
     {

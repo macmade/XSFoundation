@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSFileManagerRef.h>
 
-XSStatic XSFileManagerRef __XSFileManager_Create( void )
+XSStatic struct __XSFileManager * __XSFileManager_Create( void )
 {
-    XSFileManagerRef object;
+    struct __XSFileManager * object;
     
-    object = XSRuntime_CreateInstance( XSFileManager_GetClassID() );
+    object = ( struct __XSFileManager * )XSRuntime_CreateInstance( XSFileManager_GetClassID() );
     
     if( object == NULL )
     {

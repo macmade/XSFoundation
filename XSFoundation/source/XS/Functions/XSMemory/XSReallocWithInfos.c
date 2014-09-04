@@ -73,7 +73,7 @@
 #include <XS/__private/Functions/XSDebugger.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
-XS_EXPORT void * XSReallocWithInfos( void * memory, XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func )
+XS_EXPORT void * XSReallocWithInfos( const void * memory, XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func )
 {
     XSUInteger         size;
     XSUInteger         oldSize;
@@ -117,7 +117,7 @@ XS_EXPORT void * XSReallocWithInfos( void * memory, XSUInteger bytes, XSClassID 
     
     if( oldSize == bytes )
     {
-        return memory;
+        return ( void * )memory;
     }
     
     size        = bytes + sizeof( __XSMemoryObject ) + __XS_MEMORY_FENCE_SIZE;

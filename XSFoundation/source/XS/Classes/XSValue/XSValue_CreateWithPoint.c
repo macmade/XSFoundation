@@ -73,7 +73,7 @@
 
 XSStatic XSValueRef XSValue_CreateWithPoint( XSPoint point )
 {
-    XSValueRef object;
+    struct __XSValue * object;
     
     object          = __XSValue_Create();
     object->point   = point;

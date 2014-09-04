@@ -73,7 +73,7 @@
 
 XSStatic XSValueRef XSValue_CreateWithRange( XSRange range )
 {
-    XSValueRef object;
+    struct __XSValue * object;
     
     object          = __XSValue_Create();
     object->range   = range;

@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSThreadRef.h>
 
-XSStatic XSThreadRef __XSThread_Create( void )
+XSStatic struct __XSThread * __XSThread_Create( void )
 {
-    XSThreadRef object;
+    struct __XSThread * object;
     
-    object = XSRuntime_CreateInstance( XSThread_GetClassID() );
+    object = ( struct __XSThread * )XSRuntime_CreateInstance( XSThread_GetClassID() );
     
     if( object == NULL )
     {

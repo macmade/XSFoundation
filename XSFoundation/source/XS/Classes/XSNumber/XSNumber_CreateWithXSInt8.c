@@ -73,7 +73,7 @@
 
 XSStatic XSNumberRef XSNumber_CreateWithXSInt8( XSInt8 value )
 {
-    XSNumberRef object;
+    struct __XSNumber * object;
     
     object               = __XSNumber_Create();
     object->integerValue = ( XSUInt64 )value;

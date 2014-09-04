@@ -73,7 +73,7 @@
 
 XSStatic XSAutoreleased XSColorRef XSColor_CreateWithRGBA( XSFloat r, XSFloat g, XSFloat b, XSFloat a )
 {
-    XSColorRef object;
+    struct __XSColor * object;
     
     object = __XSColor_Create();
     

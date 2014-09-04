@@ -152,6 +152,6 @@ const char * __XSFile_ToString( XSFileRef object );
  * @abstract    Creates an XSFile object
  * @return      The XSFile object
  */
-XSStatic XSFileRef __XSFile_Create( void );
+XSStatic struct __XSFile * __XSFile_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_FILE_H__ */

@@ -73,7 +73,7 @@
 
 XSStatic XSNumberRef XSNumber_CreateWithUnsignedLong( unsigned long value )
 {
-    XSNumberRef object;
+    struct __XSNumber * object;
     
     object               = __XSNumber_Create();
     object->integerValue = ( XSUInt64 )value;

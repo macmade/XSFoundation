@@ -62,10 +62,10 @@
 /* $Id$ */
 
 /*!
- * @file        __XSArray_CreateWithFirstObjectAndArgs.c
+ * @file        __XSArray_SortValuesWithMethod.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSArray_CreateWithFirstObjectAndArgs
+ * @abstract    Definition for __XSArray_SortValuesWithMethod
  */
 
 #include <XS/XS.h>

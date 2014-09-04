@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSColorRef.h>
 
-XSStatic XSColorRef __XSColor_Create( void )
+XSStatic struct __XSColor * __XSColor_Create( void )
 {
-    XSColorRef object;
+    struct __XSColor * object;
     
-    object = XSRuntime_CreateInstance( XSColor_GetClassID() );
+    object = ( struct __XSColor * )XSRuntime_CreateInstance( XSColor_GetClassID() );
     
     if( object == NULL )
     {

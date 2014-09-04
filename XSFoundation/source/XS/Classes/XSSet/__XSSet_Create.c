@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSSetRef.h>
 
-XSStatic XSSetRef __XSSet_Create( void )
+XSStatic struct __XSSet * __XSSet_Create( void )
 {
-    XSSetRef object;
+    struct __XSSet * object;
     
-    object = XSRuntime_CreateInstance( XSSet_GetClassID() );
+    object = ( struct __XSSet * )XSRuntime_CreateInstance( XSSet_GetClassID() );
     
     if( object == NULL )
     {

@@ -152,6 +152,6 @@ const char * __XSRecursiveLock_ToString( XSRecursiveLockRef object );
  * @abstract    Creates an XSRecursiveLock object
  * @return      The XSRecursiveLock object
  */
-XSStatic XSRecursiveLockRef __XSRecursiveLock_Create( void );
+XSStatic struct __XSRecursiveLock * __XSRecursiveLock_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_RECURSIVE_LOCK_H__ */

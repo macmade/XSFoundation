@@ -152,6 +152,6 @@ const char * __XSSet_ToString( XSSetRef object );
  * @abstract    Creates an XSSet object
  * @return      The XSSet object
  */
-XSStatic XSSetRef __XSSet_Create( void );
+XSStatic struct __XSSet * __XSSet_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_SET_H__ */

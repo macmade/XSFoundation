@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSErrorRef.h>
 
-XSStatic XSErrorRef __XSError_Create( void )
+XSStatic struct __XSError * __XSError_Create( void )
 {
-    XSErrorRef object;
+    struct __XSError * object;
     
-    object = XSRuntime_CreateInstance( XSError_GetClassID() );
+    object = ( struct __XSError * )XSRuntime_CreateInstance( XSError_GetClassID() );
     
     if( object == NULL )
     {

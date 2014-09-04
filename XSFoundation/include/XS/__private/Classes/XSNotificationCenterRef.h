@@ -178,6 +178,6 @@ const char * __XSNotificationCenter_ToString( XSNotificationCenterRef object );
  * @abstract    Creates an XSNotificationCenter object
  * @return      The XSNotificationCenter object
  */
-XSStatic XSNotificationCenterRef __XSNotificationCenter_Create( void );
+XSStatic struct __XSNotificationCenter * __XSNotificationCenter_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_NOTIFICATION_CENTER_H__ */

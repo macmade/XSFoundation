@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSBagRef.h>
 
-XSStatic XSBagRef __XSBag_Create( void )
+XSStatic struct __XSBag * __XSBag_Create( void )
 {
-    XSBagRef object;
+    struct __XSBag * object;
     
-    object = XSRuntime_CreateInstance( XSBag_GetClassID() );
+    object = ( struct __XSBag * )XSRuntime_CreateInstance( XSBag_GetClassID() );
     
     if( object == NULL )
     {

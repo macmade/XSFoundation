@@ -127,7 +127,7 @@ XS_EXTERN const char __XSMemory_FenceData[ __XS_MEMORY_FENCE_SIZE ];
  * @param       ptr     The pointer for which to get the memory object
  * @return      The memory object
  */
-__XSMemoryObject * __XSMemory_GetMemoryObject( void * ptr );
+__XSMemoryObject * __XSMemory_GetMemoryObject( const void * ptr );
 
 /*!
  * @function    __XSAllocWithInfos
@@ -149,6 +149,6 @@ void * __XSAllocWithInfos( XSUInteger bytes, XSClassID classID, const char * fil
  * @param       line        The line number of the file in which the release occurs
  * @param       func        The function in which the release occurs
  */
-void __XSReleaseWithInfos( void * memory, const char * file, int line, const char * func );
+void __XSReleaseWithInfos( const void * memory, const char * file, int line, const char * func );
 
 #endif /* __XS___PRIVATE_FUNCTIONS_XS_MEMORY_H__ */

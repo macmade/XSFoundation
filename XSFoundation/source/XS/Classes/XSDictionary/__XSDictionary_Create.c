@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSDictionaryRef.h>
 
-XSStatic XSDictionaryRef __XSDictionary_Create( void )
+XSStatic struct __XSDictionary * __XSDictionary_Create( void )
 {
-    XSDictionaryRef object;
+    struct __XSDictionary * object;
     
-    object = XSRuntime_CreateInstance( XSDictionary_GetClassID() );
+    object = ( struct __XSDictionary * )XSRuntime_CreateInstance( XSDictionary_GetClassID() );
     
     if( object == NULL )
     {

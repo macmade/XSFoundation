@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSRecursiveLockRef.h>
 
-XSStatic XSRecursiveLockRef __XSRecursiveLock_Create( void )
+XSStatic struct __XSRecursiveLock * __XSRecursiveLock_Create( void )
 {
-    XSRecursiveLockRef object;
+    struct __XSRecursiveLock * object;
     
-    object = XSRuntime_CreateInstance( XSRecursiveLock_GetClassID() );
+    object = ( struct __XSRecursiveLock * )XSRuntime_CreateInstance( XSRecursiveLock_GetClassID() );
     
     if( object == NULL )
     {

@@ -72,7 +72,7 @@
 #include <XS/__private/Functions/XSMemory.h>
 #include <XS/__private/Functions/XSDebugger.h>
 
-void * XSRetain( void * memory )
+void * XSRetain( const void * memory )
 {
     __XSMemoryObject * object;
     
@@ -86,5 +86,5 @@ void * XSRetain( void * memory )
     __XSDebugger_CheckObjectIntegrity( object );
     XSAtomic_IncrementInteger( &( object->retainCount ) );
         
-    return memory;
+    return ( void * )memory;
 }

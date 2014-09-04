@@ -83,7 +83,7 @@
  * @typedef     XSFileManagerRef
  * @abstract    Opaque type for XSFileManager
  */
-typedef struct __XSFileManager * XSFileManagerRef;
+typedef const struct __XSFileManager * XSFileManagerRef;
 
 /*!
  * @function    XSFileManager_GetClassID

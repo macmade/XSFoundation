@@ -73,10 +73,10 @@
 
 XSErrorRef __XSError_Copy( XSErrorRef source, XSErrorRef destination )
 {
-    destination->code     = source->code;
-    destination->domain   = XSRetain( source->domain );
-    destination->reason   = XSRetain( source->reason );
-    destination->userInfo = XSRetain( source->userInfo );
+    ( ( struct __XSError * )destination )->code     = source->code;
+    ( ( struct __XSError * )destination )->domain   = XSRetain( source->domain );
+    ( ( struct __XSError * )destination )->reason   = XSRetain( source->reason );
+    ( ( struct __XSError * )destination )->userInfo = XSRetain( source->userInfo );
     
     return destination;
 }

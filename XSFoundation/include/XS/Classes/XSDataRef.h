@@ -84,7 +84,7 @@
  * @abstract    Opaque type for XSData
  * @discussion  XSDataRef objects are thread-safe
  */
-typedef struct __XSData * XSDataRef;
+typedef const struct __XSData * XSDataRef;
 
 /*!
  * @typedef     XSData_BufferReleaseType

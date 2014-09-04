@@ -73,7 +73,7 @@
 #include <XS/__private/Functions/XSDebugger.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
-XS_EXPORT bool XSEquals( void * memory1, void * memory2 )
+XS_EXPORT bool XSEquals( const void * memory1, const void * memory2 )
 {
     __XSMemoryObject        * object1;
     __XSMemoryObject        * object2;

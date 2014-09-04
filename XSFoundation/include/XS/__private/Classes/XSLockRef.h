@@ -153,6 +153,6 @@ const char * __XSLock_ToString( XSLockRef object );
  * @abstract    Creates an XSLock object
  * @return      The XSLock object
  */
-XSStatic XSLockRef __XSLock_Create( void );
+XSStatic struct __XSLock * __XSLock_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_LOCK_H__ */

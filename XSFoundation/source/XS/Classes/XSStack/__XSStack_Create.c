@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSStackRef.h>
 
-XSStatic XSStackRef __XSStack_Create( void )
+XSStatic struct __XSStack * __XSStack_Create( void )
 {
-    XSStackRef object;
+    struct __XSStack * object;
     
-    object = XSRuntime_CreateInstance( XSStack_GetClassID() );
+    object = ( struct __XSStack * )XSRuntime_CreateInstance( XSStack_GetClassID() );
     
     if( object == NULL )
     {

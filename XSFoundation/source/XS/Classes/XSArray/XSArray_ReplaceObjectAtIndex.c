@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSArrayRef.h>
 
-void XSArray_ReplaceObjectAtIndex( XSArrayRef array, XSUInteger index, XSObjectRef newObject )
+void XSArray_ReplaceObjectAtIndex( XSMutableArrayRef array, XSUInteger index, XSObjectRef newObject )
 {
     __XSArray_Value * value;
     XSUInteger        i;

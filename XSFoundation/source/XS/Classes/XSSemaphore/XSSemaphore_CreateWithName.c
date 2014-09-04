@@ -73,8 +73,8 @@
 
 XSStatic XSSemaphoreRef XSSemaphore_CreateWithName( const char * name, XSUInteger count )
 {
-    XSSemaphoreRef sem;
-    XSUInteger     length;
+    struct __XSSemaphore * sem;
+    XSUInteger             length;
     
     length = strlen( name );
     

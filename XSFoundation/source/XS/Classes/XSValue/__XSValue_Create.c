@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSValueRef.h>
 
-XSStatic XSValueRef __XSValue_Create( void )
+XSStatic struct __XSValue * __XSValue_Create( void )
 {
-    XSValueRef object;
+    struct __XSValue * object;
     
-    object = XSRuntime_CreateInstance( XSValue_GetClassID() );
+    object = ( struct __XSValue * )XSRuntime_CreateInstance( XSValue_GetClassID() );
     
     if( object == NULL )
     {

@@ -123,9 +123,9 @@ XS_EXTERN_C_BEGIN
 
 /*!
  * @define      XSCopy
- * @abstract    Copies an object
- * @param       _memory_    The object to copy 
- * @return      The copy of the object
+ * @abstract    Copies a memory data object
+ * @param       _memory_    The memory data object to copy
+ * @return      The copy of the memory data object
  */
 #define XSCopy( _memory_ )              XSCopyWithInfos( _memory_, __FILE__, __LINE__, __func__ )
 
@@ -170,7 +170,7 @@ XS_EXPORT void * XSAutoAllocWithInfos( XSUInteger bytes, XSClassID classID, cons
  *              instead.
  * @return      The reallocated memory, or NULL
  */
-XS_EXPORT void * XSReallocWithInfos( void * memory, XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func );
+XS_EXPORT void * XSReallocWithInfos( const void * memory, XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func );
 
 /*!
  * @function    XSRetain
@@ -178,7 +178,7 @@ XS_EXPORT void * XSReallocWithInfos( void * memory, XSUInteger bytes, XSClassID 
  * @param       memory      The memory data to retain
  * @return      The memory data
  */
-XS_EXPORT void * XSRetain( void * memory );
+XS_EXPORT void * XSRetain( const void * memory );
 
 /*!
  * @function    XSReleaseWithInfos
@@ -190,7 +190,7 @@ XS_EXPORT void * XSRetain( void * memory );
  * @discussion  Do not use this function directly. Use the XSRelease macro
  *              instead.
  */
-XS_EXPORT void XSReleaseWithInfos( void * memory, const char * file, int line, const char * func );
+XS_EXPORT void XSReleaseWithInfos( const void * memory, const char * file, int line, const char * func );
 
 /*!
  * @function    XSAutorelease
@@ -201,29 +201,29 @@ XS_EXPORT void XSReleaseWithInfos( void * memory, const char * file, int line, c
  *              the auto-release pool is drained.
  * @return      The memory data
  */
-XS_EXPORT void * XSAutorelease( void * memory );
+XS_EXPORT void * XSAutorelease( const void * memory );
 
 /*!
  * @function    XSEquals
- * @abstract    Checks whether two objects are equals
- * @param       memory1     The first object to compare
- * @param       memory2     The second object to compare
- * @return      True if both objects are equals, otherwise false
+ * @abstract    Checks whether two memory data objects are equals
+ * @param       memory1     The first memory data object to compare
+ * @param       memory2     The second memory data object to compare
+ * @return      True if both memory data objects are equals, otherwise false
  */
-XS_EXPORT bool XSEquals( void * memory1, void * memory2 );
+XS_EXPORT bool XSEquals( const void * memory1, const void * memory2 );
 
 /*!
  * @function    XSCopy
- * @abstract    Copies an object
- * @param       memory      The object to copy
+ * @abstract    Copies a memory data object
+ * @param       memory      The memory data object to copy
  * @param       file        The file in which the copy occurs
  * @param       line        The line number of the file in which the copy occurs
  * @param       func        The function in which the copy occurs
  * @discussion  Do not use this function directly. Use the XSCopy macro
  *              instead.
- * @return      The copy of the object
+ * @return      The copy of the memory data object
  */
-XS_EXPORT XSObjectRef XSCopyWithInfos( void * memory, const char * file, int line, const char * func );
+XS_EXPORT void * XSCopyWithInfos( const void * memory, const char * file, int line, const char * func );
 
 XS_EXTERN_C_END
 

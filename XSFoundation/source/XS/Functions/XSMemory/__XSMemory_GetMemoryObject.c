@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Functions/XSMemory.h>
 
-__XSMemoryObject * __XSMemory_GetMemoryObject( void * ptr )
+__XSMemoryObject * __XSMemory_GetMemoryObject( const void * ptr )
 {
     if( ptr == NULL )
     {

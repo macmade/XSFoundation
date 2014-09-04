@@ -83,7 +83,7 @@
  * @typedef     XSDateRef
  * @abstract    Opaque type for XSDate
  */
-typedef struct __XSDate * XSDateRef;
+typedef const struct __XSDate * XSDateRef;
 
 /*!
  * @function    XSDate_GetClassID

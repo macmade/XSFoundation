@@ -83,7 +83,7 @@
  * @typedef     XSXMLParserRef
  * @abstract    Opaque type for XSXMLParser
  */
-typedef struct __XSXMLParser * XSXMLParserRef;
+typedef const struct __XSXMLParser * XSXMLParserRef;
 
 /*!
  * @typedef     XSXMLParser_ErrorHandlerMethod

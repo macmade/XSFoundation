@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSNodeRef.h>
 
-XSStatic XSNodeRef __XSNode_Create( void )
+XSStatic struct __XSNode * __XSNode_Create( void )
 {
-    XSNodeRef object;
+    struct __XSNode * object;
     
-    object = XSRuntime_CreateInstance( XSNode_GetClassID() );
+    object = ( struct __XSNode * )XSRuntime_CreateInstance( XSNode_GetClassID() );
     
     if( object == NULL )
     {

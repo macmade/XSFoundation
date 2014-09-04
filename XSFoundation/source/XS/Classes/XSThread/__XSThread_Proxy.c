@@ -77,7 +77,7 @@ DWORD __XSThread_Proxy( __XSThread_Arguments * args )
 void * __XSThread_Proxy( __XSThread_Arguments * args )
 #endif
 {
-    XSThreadRef thread;
+    struct __XSThread * thread;
     
     thread = __XSThread_Create();
     

@@ -73,7 +73,7 @@
 
 XSStatic XSValueRef XSValue_CreateWithRect( XSRect rect )
 {
-    XSValueRef object;
+    struct __XSValue * object;
     
     object          = __XSValue_Create();
     object->rect    = rect;

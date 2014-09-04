@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSURLRef.h>
 
-XSStatic XSURLRef __XSURL_Create( void )
+XSStatic struct __XSURL * __XSURL_Create( void )
 {
-    XSURLRef object;
+    struct __XSURL * object;
     
-    object = XSRuntime_CreateInstance( XSURL_GetClassID() );
+    object = ( struct __XSURL * )XSRuntime_CreateInstance( XSURL_GetClassID() );
     
     if( object == NULL )
     {

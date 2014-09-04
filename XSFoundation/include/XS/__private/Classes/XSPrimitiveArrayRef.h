@@ -152,6 +152,6 @@ const char * __XSPrimitiveArray_ToString( XSPrimitiveArrayRef object );
  * @abstract    Creates an XSPrimitiveArray object
  * @return      The XSPrimitiveArray object
  */
-XSStatic XSPrimitiveArrayRef __XSPrimitiveArray_Create( void );
+XSStatic struct __XSPrimitiveArray * __XSPrimitiveArray_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_PRIMITIVE_ARRAY_H__ */

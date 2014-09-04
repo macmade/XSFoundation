@@ -73,10 +73,10 @@
 
 XSAutoreleased XSStringRef XSString_StringByAppendingCString( XSStringRef object, const char * s )
 {
-    XSUInteger  length1;
-    XSUInteger  length2;
-    char      * s2;
-    XSStringRef str;
+    XSUInteger          length1;
+    XSUInteger          length2;
+    char              * s2;
+    struct __XSString * str;
     
     if( object == NULL )
     {

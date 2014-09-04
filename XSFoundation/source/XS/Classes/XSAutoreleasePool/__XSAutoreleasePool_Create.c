@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSAutoreleasePoolRef.h>
 
-XSStatic XSAutoreleasePoolRef __XSAutoreleasePool_Create( void )
+XSStatic struct __XSAutoreleasePool * __XSAutoreleasePool_Create( void )
 {
-    XSAutoreleasePoolRef object;
+    struct __XSAutoreleasePool * object;
     
-    object = XSRuntime_CreateInstance( XSAutoreleasePool_GetClassID() );
+    object = ( struct __XSAutoreleasePool * )XSRuntime_CreateInstance( XSAutoreleasePool_GetClassID() );
     
     if( object == NULL )
     {

@@ -73,9 +73,9 @@
 
 XSNotificationRef __XSNotification_Copy( XSNotificationRef source, XSNotificationRef destination )
 {
-    destination->name       = XSRetain( source->name );
-    destination->object     = XSRetain( source->object );
-    destination->userInfo   = XSRetain( source->userInfo );
+    ( ( struct __XSNotification * )destination )->name       = XSRetain( source->name );
+    ( ( struct __XSNotification * )destination )->object     = XSRetain( source->object );
+    ( ( struct __XSNotification * )destination )->userInfo   = XSRetain( source->userInfo );
     
     return destination;
 }

@@ -73,7 +73,7 @@
 
 XSStatic XSArrayRef XSArray_CreateWithArray( XSArrayRef array )
 {
-    XSArrayRef object;
+    XSMutableArrayRef object;
     
     object = XSArray_CreateMutable();
     

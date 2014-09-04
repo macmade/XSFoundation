@@ -179,7 +179,7 @@ const char * __XSOrderedSet_ToString( XSOrderedSetRef object );
  * @abstract    Creates an XSOrderedSet object
  * @return      The XSOrderedSet object
  */
-XSStatic XSOrderedSetRef __XSOrderedSet_Create( void );
+XSStatic struct __XSOrderedSet * __XSOrderedSet_Create( void );
 
 /*!
  * @function    __XSOrderedSet_CreateWithFirstObjectAndArgs

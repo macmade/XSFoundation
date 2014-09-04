@@ -83,7 +83,7 @@
  * @typedef     XSSetRef
  * @abstract    Opaque type for XSSet
  */
-typedef struct __XSSet * XSSetRef;
+typedef const struct __XSSet * XSSetRef;
 
 /*!
  * @function    XSSet_GetClassID

@@ -73,7 +73,7 @@
 
 XSArrayRef __XSArray_Constructor( XSArrayRef object )
 {
-    object->lock = XSRecursiveLock_Create();
+    ( ( struct __XSArray * )object )->lock = XSRecursiveLock_Create();
     
     return object;
 }

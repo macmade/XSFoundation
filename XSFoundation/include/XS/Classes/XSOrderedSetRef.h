@@ -83,7 +83,7 @@
  * @typedef     XSOrderedSetRef
  * @abstract    Opaque type for XSOrderedSet
  */
-typedef struct __XSOrderedSet * XSOrderedSetRef;
+typedef const struct __XSOrderedSet * XSOrderedSetRef;
 
 /*!
  * @typedef     XSOrderedSet_ApplierFunction

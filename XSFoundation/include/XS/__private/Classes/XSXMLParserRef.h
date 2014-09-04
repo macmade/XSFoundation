@@ -152,6 +152,6 @@ const char * __XSXMLParser_ToString( XSXMLParserRef object );
  * @abstract    Creates an XSXMLParser object
  * @return      The XSXMLParser object
  */
-XSStatic XSXMLParserRef __XSXMLParser_Create( void );
+XSStatic struct __XSXMLParser * __XSXMLParser_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_XML_PARSER_H__ */

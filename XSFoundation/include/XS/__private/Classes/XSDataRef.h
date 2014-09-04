@@ -166,6 +166,6 @@ const char * __XSData_ToString( XSDataRef object );
  * @abstract    Creates an XSData object
  * @return      The XSData object
  */
-XSStatic XSDataRef __XSData_Create( void );
+XSStatic struct __XSData * __XSData_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_DATA_H__ */

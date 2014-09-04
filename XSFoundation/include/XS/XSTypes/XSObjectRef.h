@@ -82,7 +82,7 @@ XS_EXTERN_C_BEGIN
  * @typedef     XSObjectRef
  * @abstract    Polymorphism support - Generic type for all XSFoundation objects
  */
-typedef void *  XSObjectRef;
+typedef const void * XSObjectRef;
 
 XS_EXTERN_C_END
 

@@ -73,9 +73,9 @@
 
 XSAutoreleased XSStringRef XSString_UppercaseString( XSStringRef object )
 {
-    char      * s;
-    XSUInteger  i;
-    XSStringRef str;
+    char              * s;
+    XSUInteger          i;
+    struct __XSString * str;
     
     if( object == NULL || object->cString == NULL )
     {

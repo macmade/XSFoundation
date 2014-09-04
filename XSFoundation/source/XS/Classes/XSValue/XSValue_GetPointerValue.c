@@ -78,5 +78,5 @@ void * XSValue_GetPointerValue( XSValueRef object )
         return NULL;
     }
     
-    return object->pointer;
+    return ( void * )( object->pointer );
 }

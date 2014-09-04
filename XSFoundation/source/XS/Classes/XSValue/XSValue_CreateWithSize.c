@@ -73,7 +73,7 @@
 
 XSStatic XSValueRef XSValue_CreateWithSize( XSSize size )
 {
-    XSValueRef object;
+    struct __XSValue * object;
     
     object          = __XSValue_Create();
     object->size    = size;

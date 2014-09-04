@@ -73,7 +73,7 @@
 
 XSThreadRef __XSThread_Constructor( XSThreadRef object )
 {
-    object->threadID = XSThreading_GetCurrentThreadID();
+    ( ( struct __XSThread * )object )->threadID = XSThreading_GetCurrentThreadID();
     
     return object;
 }

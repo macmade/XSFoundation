@@ -152,6 +152,6 @@ const char * __XSBag_ToString( XSBagRef object );
  * @abstract    Creates an XSBag object
  * @return      The XSBag object
  */
-XSStatic XSBagRef __XSBag_Create( void );
+XSStatic struct __XSBag * __XSBag_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_BAG_H__ */

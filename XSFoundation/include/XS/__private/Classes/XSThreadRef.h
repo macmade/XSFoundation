@@ -204,7 +204,7 @@ const char * __XSThread_ToString( XSThreadRef object );
  * @abstract    Creates an XSThread object
  * @return      The XSThread object
  */
-XSStatic XSThreadRef __XSThread_Create( void );
+XSStatic struct __XSThread * __XSThread_Create( void );
 
 /*!
  * @function    __XSThread_Proxy

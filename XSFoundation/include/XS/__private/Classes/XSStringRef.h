@@ -153,6 +153,6 @@ const char * __XSString_ToString( XSStringRef object );
  * @abstract    Creates an XSString object
  * @return      The XSString object
  */
-XSStatic XSStringRef __XSString_Create( void );
+XSStatic struct __XSString * __XSString_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_STRING_H__ */

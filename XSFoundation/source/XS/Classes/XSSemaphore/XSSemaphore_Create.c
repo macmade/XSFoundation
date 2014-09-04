@@ -73,7 +73,7 @@
 
 XSStatic XSSemaphoreRef XSSemaphore_Create( XSUInteger count )
 {
-    XSSemaphoreRef sem;
+    struct __XSSemaphore * sem;
     
     sem        = __XSSemaphore_Create();
     sem->count = count;

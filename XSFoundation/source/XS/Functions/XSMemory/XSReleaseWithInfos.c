@@ -72,7 +72,7 @@
 #include <XS/__private/Functions/XSMemory.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
-void XSReleaseWithInfos( void * memory, const char * file, int line, const char * func )
+void XSReleaseWithInfos( const void * memory, const char * file, int line, const char * func )
 {
     __XSMemoryObject * object;
     

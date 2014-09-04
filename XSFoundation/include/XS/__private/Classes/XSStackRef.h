@@ -165,6 +165,6 @@ const char * __XSStack_ToString( XSStackRef object );
  * @abstract    Creates an XSStack object
  * @return      The XSStack object
  */
-XSStatic XSStackRef __XSStack_Create( void );
+XSStatic struct __XSStack * __XSStack_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_STACK_H__ */

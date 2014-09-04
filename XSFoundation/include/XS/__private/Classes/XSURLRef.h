@@ -152,6 +152,6 @@ const char * __XSURL_ToString( XSURLRef object );
  * @abstract    Creates an XSURL object
  * @return      The XSURL object
  */
-XSStatic XSURLRef __XSURL_Create( void );
+XSStatic struct __XSURL * __XSURL_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_URL_H__ */

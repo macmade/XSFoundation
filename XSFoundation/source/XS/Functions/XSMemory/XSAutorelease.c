@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSAutoreleasePoolRef.h>
 
-void * XSAutorelease( void * memory )
+void * XSAutorelease( const void * memory )
 {
     XSAutoreleasePoolRef ap;
     
@@ -89,5 +89,5 @@ void * XSAutorelease( void * memory )
     
     XSAutoreleasePool_AddObject( ap, memory );
     
-    return memory;
+    return ( void * )memory;
 }

@@ -85,7 +85,7 @@
  * @typedef     XSErrorRef
  * @abstract    Opaque type for XSError
  */
-typedef struct __XSError * XSErrorRef;
+typedef const struct __XSError * XSErrorRef;
 
 /*!
  * @function    XSError_GetClassID

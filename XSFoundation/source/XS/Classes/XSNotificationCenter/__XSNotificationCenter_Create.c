@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSNotificationCenterRef.h>
 
-XSStatic XSNotificationCenterRef __XSNotificationCenter_Create( void )
+XSStatic struct __XSNotificationCenter * __XSNotificationCenter_Create( void )
 {
-    XSNotificationCenterRef object;
+    struct __XSNotificationCenter * object;
     
-    object = XSRuntime_CreateInstance( XSNotificationCenter_GetClassID() );
+    object = ( struct __XSNotificationCenter * )XSRuntime_CreateInstance( XSNotificationCenter_GetClassID() );
     
     if( object == NULL )
     {

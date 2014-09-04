@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSPrimitiveArrayRef.h>
 
-XSStatic XSPrimitiveArrayRef __XSPrimitiveArray_Create( void )
+XSStatic struct __XSPrimitiveArray * __XSPrimitiveArray_Create( void )
 {
-    XSPrimitiveArrayRef object;
+    struct __XSPrimitiveArray * object;
     
-    object = XSRuntime_CreateInstance( XSPrimitiveArray_GetClassID() );
+    object = ( struct __XSPrimitiveArray * )XSRuntime_CreateInstance( XSPrimitiveArray_GetClassID() );
     
     if( object == NULL )
     {

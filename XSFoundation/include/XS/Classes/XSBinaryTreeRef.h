@@ -83,7 +83,7 @@
  * @typedef     XSBinaryTreeRef
  * @abstract    Opaque type for XSBinaryTree
  */
-typedef struct __XSBinaryTree * XSBinaryTreeRef;
+typedef const struct __XSBinaryTree * XSBinaryTreeRef;
 
 /*!
  * @function    XSBinaryTree_GetClassID

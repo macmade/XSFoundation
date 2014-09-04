@@ -156,6 +156,6 @@ const char * __XSNumber_ToString( XSNumberRef object );
  * @abstract    Creates an XSNumber object
  * @return      The XSNumber object
  */
-XSStatic XSNumberRef __XSNumber_Create( void );
+XSStatic struct __XSNumber * __XSNumber_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_NUMBER_H__ */

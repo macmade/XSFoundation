@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSFileRef.h>
 
-XSStatic XSFileRef __XSFile_Create( void )
+XSStatic struct __XSFile * __XSFile_Create( void )
 {
-    XSFileRef object;
+    struct __XSFile * object;
     
-    object = XSRuntime_CreateInstance( XSFile_GetClassID() );
+    object = ( struct __XSFile * )XSRuntime_CreateInstance( XSFile_GetClassID() );
     
     if( object == NULL )
     {

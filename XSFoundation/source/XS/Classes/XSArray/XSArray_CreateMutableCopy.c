@@ -71,9 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSArrayRef.h>
 
-XSArrayRef XSArray_CreateMutableCopy( XSArrayRef array )
+XSMutableArrayRef XSArray_CreateMutableCopy( XSArrayRef array )
 {
-    XSArrayRef copy;
+    XSMutableArrayRef copy;
     
     copy = XSCopy( array );
     

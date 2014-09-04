@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSXMLParserRef.h>
 
-XSStatic XSXMLParserRef __XSXMLParser_Create( void )
+XSStatic struct __XSXMLParser * __XSXMLParser_Create( void )
 {
-    XSXMLParserRef object;
+    struct __XSXMLParser * object;
     
-    object = XSRuntime_CreateInstance( XSXMLParser_GetClassID() );
+    object = ( struct __XSXMLParser * )XSRuntime_CreateInstance( XSXMLParser_GetClassID() );
     
     if( object == NULL )
     {

@@ -83,7 +83,7 @@
  * @typedef     XSThreadRef
  * @abstract    Opaque type for XSThread
  */
-typedef struct __XSThread * XSThreadRef;
+typedef const struct __XSThread * XSThreadRef;
 
 /*!
  * @typedef     XSThread_Method

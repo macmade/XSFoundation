@@ -152,6 +152,6 @@ const char * __XSBoolean_ToString( XSBooleanRef object );
  * @abstract    Creates an XSBoolean object
  * @return      The XSBoolean object
  */
-XSStatic XSBooleanRef __XSBoolean_Create( void );
+XSStatic struct __XSBoolean * __XSBoolean_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_BOOLEAN_H__ */

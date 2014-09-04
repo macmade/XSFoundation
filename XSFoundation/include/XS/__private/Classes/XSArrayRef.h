@@ -179,7 +179,7 @@ const char * __XSArray_ToString( XSArrayRef object );
  * @abstract    Creates an XSArray object
  * @return      The XSArray object
  */
-XSStatic XSArrayRef __XSArray_Create( void );
+XSStatic struct __XSArray * __XSArray_Create( void );
 
 /*!
  * @function    __XSArray_CreateWithFirstObjectAndArgs

@@ -73,7 +73,7 @@
 
 XSStatic XSNumberRef XSNumber_CreateWithDouble( double value )
 {
-    XSNumberRef object;
+    struct __XSNumber * object;
     
     object               = __XSNumber_Create();
     object->floatValue   = ( XSFloat64 )value;

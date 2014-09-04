@@ -73,7 +73,7 @@
 
 XSStatic XSErrorRef XSError_Create( XSStringRef domain, XSInteger code, XSStringRef reason, XSDictionaryRef userInfo )
 {
-    XSErrorRef object;
+    struct __XSError * object;
     
     object = __XSError_Create();
     

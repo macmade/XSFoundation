@@ -83,7 +83,7 @@
  * @typedef     XSNullRef
  * @abstract    Opaque type for XSNull
  */
-typedef struct __XSNull * XSNullRef;
+typedef const struct __XSNull * XSNullRef;
 
 /*!
  * @function    XSNull_GetClassID

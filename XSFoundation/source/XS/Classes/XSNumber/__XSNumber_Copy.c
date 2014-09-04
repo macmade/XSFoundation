@@ -73,9 +73,9 @@
 
 XSNumberRef __XSNumber_Copy( XSNumberRef source, XSNumberRef destination )
 {
-    destination->isFloat        = source->isFloat;
-    destination->integerValue   = source->integerValue;
-    destination->floatValue     = source->floatValue;
+    ( ( struct __XSNumber * )destination )->isFloat        = source->isFloat;
+    ( ( struct __XSNumber * )destination )->integerValue   = source->integerValue;
+    ( ( struct __XSNumber * )destination )->floatValue     = source->floatValue;
     
     return destination;
 }

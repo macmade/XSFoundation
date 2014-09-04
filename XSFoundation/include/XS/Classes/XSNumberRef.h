@@ -83,7 +83,7 @@
  * @typedef     XSNumberRef
  * @abstract    Opaque type for XSNumber
  */
-typedef struct __XSNumber * XSNumberRef;
+typedef const struct __XSNumber * XSNumberRef;
 
 /*!
  * @function    XSNumber_GetClassID

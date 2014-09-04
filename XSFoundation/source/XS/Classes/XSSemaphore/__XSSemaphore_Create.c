@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSSemaphoreRef.h>
 
-XSStatic XSSemaphoreRef __XSSemaphore_Create( void )
+XSStatic struct __XSSemaphore * __XSSemaphore_Create( void )
 {
-    XSSemaphoreRef object;
+    struct __XSSemaphore * object;
     
-    object = XSRuntime_CreateInstance( XSSemaphore_GetClassID() );
+    object = ( struct __XSSemaphore * )XSRuntime_CreateInstance( XSSemaphore_GetClassID() );
     
     if( object == NULL )
     {

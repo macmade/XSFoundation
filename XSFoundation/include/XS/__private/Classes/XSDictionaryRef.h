@@ -152,6 +152,6 @@ const char * __XSDictionary_ToString( XSDictionaryRef object );
  * @abstract    Creates an XSDictionary object
  * @return      The XSDictionary object
  */
-XSStatic XSDictionaryRef __XSDictionary_Create( void );
+XSStatic struct __XSDictionary * __XSDictionary_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_DICTIONARY_H__ */

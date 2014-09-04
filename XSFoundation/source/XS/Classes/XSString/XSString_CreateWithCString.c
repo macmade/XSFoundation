@@ -73,7 +73,7 @@
 
 XSStatic XSStringRef XSString_CreateWithCString( const char * s )
 {
-    XSStringRef object;
+    struct __XSString * object;
     
     if( s == NULL )
     {

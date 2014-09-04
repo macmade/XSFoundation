@@ -99,7 +99,7 @@ XSValue_ValueType;
  * @typedef     XSValueRef
  * @abstract    Opaque type for XSValue
  */
-typedef struct __XSValue * XSValueRef;
+typedef const struct __XSValue * XSValueRef;
 
 /*!
  * @function    XSValue_GetClassID
@@ -115,7 +115,7 @@ XS_EXPORT XSStatic XSClassID XSValue_GetClassID( void );
  * @param       association The association type for the pointer value
  * @return      An XSValue object (autoreleased)
  */
-XS_EXPORT XSStatic XSAutoreleased XSValueRef XSValue_ValueWithPointer( void * pointer, XSObjectAssociation association );
+XS_EXPORT XSStatic XSAutoreleased XSValueRef XSValue_ValueWithPointer( const void * pointer, XSObjectAssociation association );
 
 /*!
  * @function    XSValue_ValueWithPoint
@@ -164,7 +164,7 @@ XS_EXPORT XSStatic XSAutoreleased XSValueRef XSValue_ValueWithRange( XSRange ran
  * @param       association The association type for the pointer value
  * @return      An XSValue object
  */
-XS_EXPORT XSStatic XSValueRef XSValue_CreateWithPointer( void * pointer, XSObjectAssociation association );
+XS_EXPORT XSStatic XSValueRef XSValue_CreateWithPointer( const void * pointer, XSObjectAssociation association );
 
 /*!
  * @function    XSValue_CreateWithPoint

@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSArrayRef.h>
 
-void XSArray_SortWithMethod( XSArrayRef array, XSObjectRef object, XSArray_SortMethod method )
+void XSArray_SortWithMethod( XSMutableArrayRef array, XSObjectRef object, XSArray_SortMethod method )
 {
     XSUInteger        i;
     XSObjectRef     * objects;

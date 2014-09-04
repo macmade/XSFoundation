@@ -77,7 +77,7 @@ XSArrayRef __XSArray_Copy( XSArrayRef source, XSArrayRef destination )
     __XSArray_Value * newValue;
     __XSArray_Value * previousValue;
     
-    destination->lock = XSRecursiveLock_Create();
+    ( ( struct __XSArray * )destination )->lock = XSRecursiveLock_Create();
     
     XSRecursiveLock_Lock( source->lock );
     
@@ -97,7 +97,7 @@ XSArrayRef __XSArray_Copy( XSArrayRef source, XSArrayRef destination )
         
         if( previousValue == NULL )
         {
-            destination->first = newValue;
+            ( ( struct __XSArray * )destination )->first = newValue;
         }
         else
         {
@@ -105,14 +105,14 @@ XSArrayRef __XSArray_Copy( XSArrayRef source, XSArrayRef destination )
             newValue->previous  = previousValue;
         }
         
-        destination->last   = newValue;
-        previousValue       = newValue;
-        value               = value->next;
+        ( ( struct __XSArray * )destination )->last = newValue;
+        previousValue                               = newValue;
+        value                                       = value->next;
         
-        destination->count++;
+        ( ( struct __XSArray * )destination )->count++;
     }
     
-    destination->properties = source->properties;
+    ( ( struct __XSArray * )destination )->properties = source->properties;
     
     XSRecursiveLock_Unlock( source->lock );
     

@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSArrayRef.h>
 
-void XSArray_RemoveLastObject( XSArrayRef array )
+void XSArray_RemoveLastObject( XSMutableArrayRef array )
 {
     __XSArray_Value * value;
     

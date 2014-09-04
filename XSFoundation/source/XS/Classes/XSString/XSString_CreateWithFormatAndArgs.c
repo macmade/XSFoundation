@@ -73,10 +73,10 @@
 
 XSStatic XSStringRef XSString_CreateWithFormatAndArgs( const char * format, va_list args )
 {
-    XSInteger   length;
-    char      * s;
-    XSStringRef str;
-    va_list     ap;
+    XSInteger           length;
+    char              * s;
+    struct __XSString * str;
+    va_list             ap;
     
     if( format == NULL || strlen( format ) == 0 )
     {

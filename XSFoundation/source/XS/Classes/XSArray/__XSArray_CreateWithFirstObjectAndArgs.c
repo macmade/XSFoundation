@@ -73,9 +73,9 @@
 
 XSStatic XSArrayRef __XSArray_CreateWithFirstObjectAndArgs( XSObjectRef firstObject, va_list args )
 {
-    XSArrayRef        array;
-    XSObjectRef       object;
-    __XSArray_Value * value;
+    struct __XSArray * array;
+    XSObjectRef        object;
+    __XSArray_Value  * value;
     
     if( firstObject == NULL )
     {

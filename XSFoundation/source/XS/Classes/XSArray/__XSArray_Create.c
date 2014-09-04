@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSArrayRef.h>
 
-XSStatic XSArrayRef __XSArray_Create( void )
+XSStatic struct __XSArray * __XSArray_Create( void )
 {
-    XSArrayRef object;
+    struct __XSArray * object;
     
-    object = XSRuntime_CreateInstance( XSArray_GetClassID() );
+    object = ( struct __XSArray * )XSRuntime_CreateInstance( XSArray_GetClassID() );
     
     if( object == NULL )
     {

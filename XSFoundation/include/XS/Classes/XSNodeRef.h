@@ -83,7 +83,7 @@
  * @typedef     XSNodeRef
  * @abstract    Opaque type for XSNode
  */
-typedef struct __XSNode * XSNodeRef;
+typedef const struct __XSNode * XSNodeRef;
 
 /*!
  * @function    XSNode_GetClassID

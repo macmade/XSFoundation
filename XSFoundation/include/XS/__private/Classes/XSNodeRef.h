@@ -152,6 +152,6 @@ const char * __XSNode_ToString( XSNodeRef object );
  * @abstract    Creates an XSNode object
  * @return      The XSNode object
  */
-XSStatic XSNodeRef __XSNode_Create( void );
+XSStatic struct __XSNode * __XSNode_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_NODE_H__ */

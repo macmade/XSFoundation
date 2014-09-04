@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSBooleanRef.h>
 
-XSStatic XSBooleanRef __XSBoolean_Create( void )
+XSStatic struct __XSBoolean * __XSBoolean_Create( void )
 {
-    XSBooleanRef object;
+    struct __XSBoolean * object;
     
-    object = XSRuntime_CreateInstance( XSBoolean_GetClassID() );
+    object = ( struct __XSBoolean * )XSRuntime_CreateInstance( XSBoolean_GetClassID() );
     
     if( object == NULL )
     {

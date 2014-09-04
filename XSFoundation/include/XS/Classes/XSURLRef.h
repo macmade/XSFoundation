@@ -83,7 +83,7 @@
  * @typedef     XSURLRef
  * @abstract    Opaque type for XSURL
  */
-typedef struct __XSURL * XSURLRef;
+typedef const struct __XSURL * XSURLRef;
 
 /*!
  * @function    XSURL_GetClassID

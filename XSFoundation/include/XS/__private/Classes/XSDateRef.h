@@ -152,6 +152,6 @@ const char * __XSDate_ToString( XSDateRef object );
  * @abstract    Creates an XSDate object
  * @return      The XSDate object
  */
-XSStatic XSDateRef __XSDate_Create( void );
+XSStatic struct __XSDate * __XSDate_Create( void );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_DATE_H__ */

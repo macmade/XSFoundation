@@ -73,7 +73,7 @@
 
 XSBooleanRef XSBoolean_Create( bool value )
 {
-    XSBooleanRef object;
+    struct __XSBoolean * object;
     
     object        = __XSBoolean_Create();
     object->value = value;

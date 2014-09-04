@@ -73,5 +73,5 @@
 
 void * XSThreading_TLSGetValue( XSTLSKey * key )
 {
-    return XSThreading_TLSGetObject( key );
+    return ( void * )XSThreading_TLSGetObject( key );
 }

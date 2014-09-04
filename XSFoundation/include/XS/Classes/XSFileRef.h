@@ -83,7 +83,7 @@
  * @typedef     XSFileRef
  * @abstract    Opaque type for XSFile
  */
-typedef struct __XSFile * XSFileRef;
+typedef const struct __XSFile * XSFileRef;
 
 /*!
  * @function    XSFile_GetClassID

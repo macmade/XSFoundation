@@ -73,7 +73,7 @@
 #include <XS/__private/Functions/XSDebugger.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
-XSObjectRef XSCopyWithInfos( void * memory, const char * file, int line, const char * func )
+void * XSCopyWithInfos( const void * memory, const char * file, int line, const char * func )
 {
     __XSMemoryObject      * object;
     void                  * data;
@@ -102,7 +102,7 @@ XSObjectRef XSCopyWithInfos( void * memory, const char * file, int line, const c
     
     if( copy != NULL )
     {
-        copiedData = copy( memory, data );
+        copiedData = ( void * )copy( memory, data );
         
         if( copiedData == NULL )
         {

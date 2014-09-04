@@ -181,7 +181,7 @@ const char * __XSAutoreleasePool_ToString( XSAutoreleasePoolRef object );
  * @abstract    Creates an XSAutoreleasePool object
  * @return      The XSAutoreleasePool object
  */
-XSStatic XSAutoreleasePoolRef __XSAutoreleasePool_Create( void );
+XSStatic struct __XSAutoreleasePool * __XSAutoreleasePool_Create( void );
 
 /*!
  * @function    __XSAutoreleasePool_Exit

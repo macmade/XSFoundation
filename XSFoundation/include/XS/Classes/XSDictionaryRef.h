@@ -83,7 +83,7 @@
  * @typedef     XSDictionaryRef
  * @abstract    Opaque type for XSDictionary
  */
-typedef struct __XSDictionary * XSDictionaryRef;
+typedef const struct __XSDictionary * XSDictionaryRef;
 
 /*!
  * @function    XSDictionary_GetClassID

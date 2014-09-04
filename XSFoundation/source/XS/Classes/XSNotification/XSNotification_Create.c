@@ -73,7 +73,7 @@
 
 XSStatic XSNotificationRef XSNotification_Create( XSStringRef name, XSObjectRef object, XSDictionaryRef userInfo )
 {
-    XSNotificationRef notification;
+    struct __XSNotification * notification;
     
     notification           = __XSNotification_Create();
     notification->name     = XSRetain( name );

@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSArrayRef.h>
 
-void XSArray_FilterWithFunction( XSArrayRef array, XSArray_FilterFunction function )
+void XSArray_FilterWithFunction( XSMutableArrayRef array, XSArray_FilterFunction function )
 {
     __XSArray_Value * value;
     __XSArray_Value * removedValue;

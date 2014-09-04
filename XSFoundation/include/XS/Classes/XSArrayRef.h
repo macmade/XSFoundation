@@ -84,7 +84,14 @@
  * @abstract    Opaque type for XSArray
  * @discussion  XSArrayRef objects are thread-safe
  */
-typedef struct __XSArray * XSArrayRef;
+typedef const struct __XSArray * XSArrayRef;
+
+/*!
+ * @typedef     XSMutableArrayRef
+ * @abstract    Opaque type for XSMutableArray
+ * @discussion  XSMutableArrayRef objects are thread-safe
+ */
+typedef struct __XSArray * XSMutableArrayRef;
 
 /*!
  * @typedef     XSArray_ApplierFunction
@@ -166,7 +173,7 @@ XS_EXPORT XSStatic XSAutoreleased XSArrayRef XSArray_Array( void );
  * @abstract    Gets an empty mutable array
  * @return      An empty mutable array
  */
-XS_EXPORT XSStatic XSAutoreleased XSArrayRef XSArray_MutableArray( void );
+XS_EXPORT XSStatic XSAutoreleased XSMutableArrayRef XSArray_MutableArray( void );
 
 /*!
  * @function    XSArray_ArrayWithArray
@@ -197,7 +204,7 @@ XS_EXPORT XSStatic XSArrayRef XSArray_Create( void );
  * @abstract    Creates an empty mutable array
  * @return      An empty mutable array
  */
-XS_EXPORT XSStatic XSArrayRef XSArray_CreateMutable( void );
+XS_EXPORT XSStatic XSMutableArrayRef XSArray_CreateMutable( void );
 
 /*!
  * @function    XSArray_CreateWithArray
@@ -222,7 +229,7 @@ XS_EXPORT XSStatic XSArrayRef XSArray_CreateWithObjects( XSObjectRef firstObject
  * @param       array       The array
  * @return      The mutable copy of the array
  */
-XS_EXPORT XSArrayRef XSArray_CreateMutableCopy( XSArrayRef array );
+XS_EXPORT XSMutableArrayRef XSArray_CreateMutableCopy( XSArrayRef array );
 
 /*!
  * @function    XSArray_IsMutable
@@ -299,7 +306,7 @@ XS_EXPORT XSUInteger XSArray_GetLastIndexOfObject( XSArrayRef array, XSObjectRef
  * @param       object      The object (cannot be NULL)
  * @discussion  An error will be produced if the array is not mutable
  */
-XS_EXPORT void XSArray_AddObject( XSArrayRef array, XSObjectRef object );
+XS_EXPORT void XSArray_AddObject( XSMutableArrayRef array, XSObjectRef object );
 
 /*!
  * @function    XSArray_InsertObjectAtIndex
@@ -309,7 +316,7 @@ XS_EXPORT void XSArray_AddObject( XSArrayRef array, XSObjectRef object );
  * @param       object      The object (cannot be NULL)
  * @discussion  An error will be produced if the array is not mutable
  */
-XS_EXPORT void XSArray_InsertObjectAtIndex( XSArrayRef array, XSUInteger index, XSObjectRef object );
+XS_EXPORT void XSArray_InsertObjectAtIndex( XSMutableArrayRef array, XSUInteger index, XSObjectRef object );
 
 /*!
  * @function    XSArray_ReplaceObjectAtIndex
@@ -319,7 +326,7 @@ XS_EXPORT void XSArray_InsertObjectAtIndex( XSArrayRef array, XSUInteger index, 
  * @param       newObject   The new object (cannot be NULL)
  * @discussion  An error will be produced if the array is not mutable
  */
-XS_EXPORT void XSArray_ReplaceObjectAtIndex( XSArrayRef array, XSUInteger index, XSObjectRef newObject );
+XS_EXPORT void XSArray_ReplaceObjectAtIndex( XSMutableArrayRef array, XSUInteger index, XSObjectRef newObject );
 
 /*!
  * @function    XSArray_AppendArray
@@ -328,7 +335,7 @@ XS_EXPORT void XSArray_ReplaceObjectAtIndex( XSArrayRef array, XSUInteger index,
  * @param       objects     The array with the objects to append
  * @discussion  An error will be produced if the array is not mutable
  */
-XS_EXPORT void XSArray_AppendArray( XSArrayRef array, XSArrayRef objects );
+XS_EXPORT void XSArray_AppendArray( XSMutableArrayRef array, XSArrayRef objects );
 
 /*!
  * @function    XSArray_RemoveAllObjects
@@ -336,7 +343,7 @@ XS_EXPORT void XSArray_AppendArray( XSArrayRef array, XSArrayRef objects );
  * @param       array       The array
  * @discussion  An error will be produced if the array is not mutable
  */
-XS_EXPORT void XSArray_RemoveAllObjects( XSArrayRef array );
+XS_EXPORT void XSArray_RemoveAllObjects( XSMutableArrayRef array );
 
 /*!
  * @function    XSArray_RemoveLastObject
@@ -344,7 +351,7 @@ XS_EXPORT void XSArray_RemoveAllObjects( XSArrayRef array );
  * @param       array       The array
  * @discussion  An error will be produced if the array is not mutable
  */
-XS_EXPORT void XSArray_RemoveLastObject( XSArrayRef array );
+XS_EXPORT void XSArray_RemoveLastObject( XSMutableArrayRef array );
 
 /*!
  * @function    XSArray_RemoveObject
@@ -353,7 +360,7 @@ XS_EXPORT void XSArray_RemoveLastObject( XSArrayRef array );
  * @param       object      The object to remove
  * @discussion  An error will be produced if the array is not mutable
  */
-XS_EXPORT void XSArray_RemoveObject( XSArrayRef array, XSObjectRef object );
+XS_EXPORT void XSArray_RemoveObject( XSMutableArrayRef array, XSObjectRef object );
 
 /*!
  * @function    XSArray_RemoveObjectAtIndex
@@ -362,7 +369,7 @@ XS_EXPORT void XSArray_RemoveObject( XSArrayRef array, XSObjectRef object );
  * @param       index       The index
  * @discussion  An error will be produced if the array is not mutable
  */
-XS_EXPORT void XSArray_RemoveObjectAtIndex( XSArrayRef array, XSUInteger index );
+XS_EXPORT void XSArray_RemoveObjectAtIndex( XSMutableArrayRef array, XSUInteger index );
 
 /*!
  * @function    XSArray_RemoveObjectsInArray
@@ -371,7 +378,7 @@ XS_EXPORT void XSArray_RemoveObjectAtIndex( XSArrayRef array, XSUInteger index )
  * @param       objects     The array with the objects to remove
  * @discussion  An error will be produced if the array is not mutable
  */
-XS_EXPORT void XSArray_RemoveObjectsInArray( XSArrayRef array, XSArrayRef objects );
+XS_EXPORT void XSArray_RemoveObjectsInArray( XSMutableArrayRef array, XSArrayRef objects );
 
 /*!
  * @function    XSArray_RemoveObjectsInRange
@@ -380,7 +387,7 @@ XS_EXPORT void XSArray_RemoveObjectsInArray( XSArrayRef array, XSArrayRef object
  * @param       range       The range
  * @discussion  An error will be produced if the array is not mutable
  */
-XS_EXPORT void XSArray_RemoveObjectsInRange( XSArrayRef array, XSRange range );
+XS_EXPORT void XSArray_RemoveObjectsInRange( XSMutableArrayRef array, XSRange range );
 
 /*!
  * @function    XSArray_ApplyFunction
@@ -412,7 +419,7 @@ XS_EXPORT void XSArray_ApplyMethod( XSArrayRef array, XSObjectRef object, XSArra
  *              An error will be produced if the array is not mutable.
  * @see         XSArray_FilterFunction
  */
-XS_EXPORT void XSArray_FilterWithFunction( XSArrayRef array, XSArray_FilterFunction function );
+XS_EXPORT void XSArray_FilterWithFunction( XSMutableArrayRef array, XSArray_FilterFunction function );
 
 /*!
  * @function    XSArray_FilterWithMethod
@@ -424,7 +431,7 @@ XS_EXPORT void XSArray_FilterWithFunction( XSArrayRef array, XSArray_FilterFunct
  *              An error will be produced if the array is not mutable.
  * @see         XSArray_FilterMethod
  */
-XS_EXPORT void XSArray_FilterWithMethod( XSArrayRef array, XSObjectRef object, XSArray_FilterMethod method );
+XS_EXPORT void XSArray_FilterWithMethod( XSMutableArrayRef array, XSObjectRef object, XSArray_FilterMethod method );
 
 /*!
  * @function    XSArray_SortWithFunction
@@ -435,7 +442,7 @@ XS_EXPORT void XSArray_FilterWithMethod( XSArrayRef array, XSObjectRef object, X
  *              An error will be produced if the array is not mutable.
  * @see         XSArray_SortFunction
  */
-XS_EXPORT void XSArray_SortWithFunction( XSArrayRef array, XSArray_SortFunction function );
+XS_EXPORT void XSArray_SortWithFunction( XSMutableArrayRef array, XSArray_SortFunction function );
 
 /*!
  * @function    XSArray_SortWithMethod
@@ -447,6 +454,6 @@ XS_EXPORT void XSArray_SortWithFunction( XSArrayRef array, XSArray_SortFunction 
  *              An error will be produced if the array is not mutable.
  * @see         XSArray_SortMethod
  */
-XS_EXPORT void XSArray_SortWithMethod( XSArrayRef array, XSObjectRef object, XSArray_SortMethod method );
+XS_EXPORT void XSArray_SortWithMethod( XSMutableArrayRef array, XSObjectRef object, XSArray_SortMethod method );
 
 #endif /* __XS_CLASSES_XS_ARRAY_H__ */

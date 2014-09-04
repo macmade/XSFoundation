@@ -71,11 +71,11 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSStringRef.h>
 
-XSStatic XSStringRef __XSString_Create( void )
+XSStatic struct __XSString * __XSString_Create( void )
 {
-    XSStringRef object;
+    struct __XSString * object;
     
-    object = XSRuntime_CreateInstance( XSString_GetClassID() );
+    object = ( struct __XSString * )XSRuntime_CreateInstance( XSString_GetClassID() );
     
     if( object == NULL )
     {
