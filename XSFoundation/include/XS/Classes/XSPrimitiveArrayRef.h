@@ -86,6 +86,12 @@
 typedef const struct __XSPrimitiveArray * XSPrimitiveArrayRef;
 
 /*!
+ * @typedef     XSMutablePrimitiveArrayRef
+ * @abstract    Opaque type for XSMutablePrimitiveArray
+ */
+typedef struct __XSPrimitiveArray * XSMutablePrimitiveArrayRef;
+
+/*!
  * @function    XSPrimitiveArray_GetClassID
  * @abstract    Gets the class ID for XSPrimitiveArray
  * @return      The class ID for XSPrimitiveArray

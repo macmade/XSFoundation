@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSDataRef.h>
 
-XSStatic XSAutoreleased XSDataRef XSData_MutableData( void )
+XSStatic XSAutoreleased XSMutableDataRef XSData_MutableData( void )
 {
     return XSAutorelease( XSData_CreateMutable() );
 }

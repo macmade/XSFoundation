@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSOrderedSetRef.h>
 
-void XSOrderedSet_FilterWithMethod( XSOrderedSetRef set, XSObjectRef object, XSOrderedSet_FilterMethod method )
+void XSOrderedSet_FilterWithMethod( XSMutableOrderedSetRef set, XSObjectRef object, XSOrderedSet_FilterMethod method )
 {
     ( void )set;
     ( void )object;

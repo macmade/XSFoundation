@@ -21,7 +21,12 @@
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function></functions>
-<typedefs><typedef id="//xsdoc_ref/c/tdef/XSPrimitiveArrayRef" lang="c" type="simple"><name>XSPrimitiveArrayRef</name>
+<typedefs><typedef id="//xsdoc_ref/c/tdef/XSMutablePrimitiveArrayRef" lang="c" type="simple"><name>XSMutablePrimitiveArrayRef</name>
+<abstract><p>Opaque type for XSMutablePrimitiveArray
+</p></abstract>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSPrimitiveArray</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSMutablePrimitiveArrayRef</declaration_var>;  </declaration>
+<desc><p/></desc>
+</typedef><typedef id="//xsdoc_ref/c/tdef/XSPrimitiveArrayRef" lang="c" type="simple"><name>XSPrimitiveArrayRef</name>
 <abstract><p>Opaque type for XSPrimitiveArray
 </p></abstract>
 <declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>const</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSPrimitiveArray</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSPrimitiveArrayRef</declaration_var>;  </declaration>

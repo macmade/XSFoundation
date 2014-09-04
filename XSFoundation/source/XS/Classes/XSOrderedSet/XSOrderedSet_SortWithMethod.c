@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSOrderedSetRef.h>
 
-void XSOrderedSet_SortWithMethod( XSOrderedSetRef set, XSObjectRef object, XSOrderedSet_SortMethod method )
+void XSOrderedSet_SortWithMethod( XSMutableOrderedSetRef set, XSObjectRef object, XSOrderedSet_SortMethod method )
 {
     ( void )set;
     ( void )object;

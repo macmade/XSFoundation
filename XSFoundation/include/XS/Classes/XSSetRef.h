@@ -86,6 +86,12 @@
 typedef const struct __XSSet * XSSetRef;
 
 /*!
+ * @typedef     XSMutableSetRef
+ * @abstract    Opaque type for XSMutableSet
+ */
+typedef struct __XSSet * XSMutableSetRef;
+
+/*!
  * @function    XSSet_GetClassID
  * @abstract    Gets the class ID for XSSet
  * @return      The class ID for XSSet

@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSOrderedSetRef.h>
 
-void XSOrderedSet_RemoveObjectAtIndex( XSOrderedSetRef set, XSUInteger index )
+void XSOrderedSet_RemoveObjectAtIndex( XSMutableOrderedSetRef set, XSUInteger index )
 {
     ( void )set;
     ( void )index;

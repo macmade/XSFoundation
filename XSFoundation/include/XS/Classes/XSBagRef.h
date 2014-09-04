@@ -86,6 +86,12 @@
 typedef const struct __XSBag * XSBagRef;
 
 /*!
+ * @typedef     XSMutableBagRef
+ * @abstract    Opaque type for XSMutableBag
+ */
+typedef struct __XSBag * XSMutableBagRef;
+
+/*!
  * @function    XSBag_GetClassID
  * @abstract    Gets the class ID for XSBag
  * @return      The class ID for XSBag

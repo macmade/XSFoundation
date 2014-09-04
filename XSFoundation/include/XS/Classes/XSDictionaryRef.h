@@ -86,6 +86,12 @@
 typedef const struct __XSDictionary * XSDictionaryRef;
 
 /*!
+ * @typedef     XSMutableDictionaryRef
+ * @abstract    Opaque type for XSMutableDictionary
+ */
+typedef struct __XSDictionary * XSMutableDictionaryRef;
+
+/*!
  * @function    XSDictionary_GetClassID
  * @abstract    Gets the class ID for XSDictionary
  * @return      The class ID for XSDictionary

@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSDataRef.h>
 
-void XSData_ReplaceBytesInRangeWithBytes( XSDataRef data, XSRange range, XSUInt8 * newBytes )
+void XSData_ReplaceBytesInRangeWithBytes( XSMutableDataRef data, XSRange range, XSUInt8 * newBytes )
 {
     ( void )data;
     ( void )range;

@@ -95,6 +95,12 @@
 typedef const struct __XSString * XSStringRef;
 
 /*!
+ * @typedef     XSMutableStringRef
+ * @abstract    Opaque type for XSMutableString
+ */
+typedef struct __XSString * XSMutableStringRef;
+
+/*!
  * @function    XSString_GetClassID
  * @abstract    Gets the class ID for XSString
  * @return      The class ID for XSString

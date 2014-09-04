@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSDataRef.h>
 
-void XSData_AppendBytes( XSDataRef data, XSUInt8 * bytes, XSUInteger length )
+void XSData_AppendBytes( XSMutableDataRef data, XSUInt8 * bytes, XSUInteger length )
 {
     ( void )data;
     ( void )bytes;

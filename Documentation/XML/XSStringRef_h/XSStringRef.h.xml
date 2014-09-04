@@ -464,7 +464,12 @@ range's location will be equal to XSNotFound.
     <declaration_type>XSStringRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function></functions>
-<typedefs><typedef id="//xsdoc_ref/c/tdef/XSStringRef" lang="c" type="simple"><name>XSStringRef</name>
+<typedefs><typedef id="//xsdoc_ref/c/tdef/XSMutableStringRef" lang="c" type="simple"><name>XSMutableStringRef</name>
+<abstract><p>Opaque type for XSMutableString
+</p></abstract>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSString</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSMutableStringRef</declaration_var>;  </declaration>
+<desc><p/></desc>
+</typedef><typedef id="//xsdoc_ref/c/tdef/XSStringRef" lang="c" type="simple"><name>XSStringRef</name>
 <abstract><p>Opaque type for XSString
 </p></abstract>
 <declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>const</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSString</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSStringRef</declaration_var>;  </declaration>

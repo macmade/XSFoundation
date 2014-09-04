@@ -19,14 +19,14 @@
 <parameter><name>object</name><desc><p>The object (cannot be NULL)</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSOrderedSetRef</type><name>set</name></parsedparameter>
+<parsedparameter><type>XSMutableOrderedSetRef</type><name>set</name></parsedparameter>
 <parsedparameter><type>XSObjectRef</type><name>object</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT bool</returntype>
 <result><p>True if the object was added, otherwise false
 </p></result>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSOrderedSet_AddObject</declaration_function>(
-    <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
+    <declaration_type>XSMutableOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSOrderedSet_AppendArray" lang="c"><name>XSOrderedSet_AppendArray</name>
@@ -37,12 +37,12 @@
 <parameter><name>objects</name><desc><p>The ordered set with the objects to append</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSOrderedSetRef</type><name>set</name></parsedparameter>
+<parsedparameter><type>XSMutableOrderedSetRef</type><name>set</name></parsedparameter>
 <parsedparameter><type>XSArrayRef</type><name>objects</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSOrderedSet_AppendArray</declaration_function>(
-    <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
+    <declaration_type>XSMutableOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>objects</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSOrderedSet_ApplyFunction" lang="c"><name>XSOrderedSet_ApplyFunction</name>
@@ -117,10 +117,10 @@
 </function><function id="//xsdoc_ref/c/func/XSOrderedSet_CreateMutable" lang="c"><name>XSOrderedSet_CreateMutable</name>
 <abstract><p>Creates an empty mutable ordered set
 </p></abstract>
-<returntype> XS_EXPORT XSStatic XSOrderedSetRef</returntype>
+<returntype> XS_EXPORT XSStatic XSMutableOrderedSetRef</returntype>
 <result><p>An empty mutable ordered set
 </p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSOrderedSetRef</declaration_type> <declaration_function>XSOrderedSet_CreateMutable</declaration_function>(
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSMutableOrderedSetRef</declaration_type> <declaration_function>XSOrderedSet_CreateMutable</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSOrderedSet_CreateMutableCopy" lang="c"><name>XSOrderedSet_CreateMutableCopy</name>
@@ -132,10 +132,10 @@
 <parsedparameterlist>
 <parsedparameter><type>XSOrderedSetRef</type><name>set</name></parsedparameter>
 </parsedparameterlist>
-<returntype> XS_EXPORT XSOrderedSetRef</returntype>
+<returntype> XS_EXPORT XSMutableOrderedSetRef</returntype>
 <result><p>The mutable copy of the ordered set
 </p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSOrderedSetRef</declaration_type> <declaration_function>XSOrderedSet_CreateMutableCopy</declaration_function>(
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSMutableOrderedSetRef</declaration_type> <declaration_function>XSOrderedSet_CreateMutableCopy</declaration_function>(
     <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSOrderedSet_CreateWithArray" lang="c"><name>XSOrderedSet_CreateWithArray</name>
@@ -194,7 +194,7 @@
 <parameter><name>function</name><desc><p>The function used to filter the ordered set</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSOrderedSetRef</type><name>set</name></parsedparameter>
+<parsedparameter><type>XSMutableOrderedSetRef</type><name>set</name></parsedparameter>
 <parsedparameter><type>XSOrderedSet_FilterFunction</type><name>function</name></parsedparameter>
 </parsedparameterlist>
 <attributelists><listattribute><name>See</name><list>
@@ -202,7 +202,7 @@
 </attributelists>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSOrderedSet_FilterWithFunction</declaration_function>(
-    <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
+    <declaration_type>XSMutableOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSOrderedSet_FilterFunction</declaration_type> <declaration_param>function</declaration_param> );  </declaration>
 <desc><p>The function will be called with each object contained in the ordered set
 </p></desc>
@@ -215,7 +215,7 @@
 <parameter><name>method</name><desc><p>The function used to filter the ordered set</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSOrderedSetRef</type><name>set</name></parsedparameter>
+<parsedparameter><type>XSMutableOrderedSetRef</type><name>set</name></parsedparameter>
 <parsedparameter><type>XSObjectRef</type><name>object</name></parsedparameter>
 <parsedparameter><type>XSOrderedSet_FilterMethod</type><name>method</name></parsedparameter>
 </parsedparameterlist>
@@ -224,7 +224,7 @@
 </attributelists>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSOrderedSet_FilterWithMethod</declaration_function>(
-    <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
+    <declaration_type>XSMutableOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSOrderedSet_FilterMethod</declaration_type> <declaration_param>method</declaration_param> );  </declaration>
 <desc><p>The method will be called with each object contained in the ordered set
@@ -328,7 +328,7 @@
 <parameter><name>object</name><desc><p>The object (cannot be NULL)</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSOrderedSetRef</type><name>set</name></parsedparameter>
+<parsedparameter><type>XSMutableOrderedSetRef</type><name>set</name></parsedparameter>
 <parsedparameter><type>XSUInteger</type><name>index</name></parsedparameter>
 <parsedparameter><type>XSObjectRef</type><name>object</name></parsedparameter>
 </parsedparameterlist>
@@ -336,7 +336,7 @@
 <result><p>True if the object was inserted, otherwise false
 </p></result>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSOrderedSet_InsertObjectAtIndex</declaration_function>(
-    <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
+    <declaration_type>XSMutableOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
@@ -358,10 +358,10 @@
 </function><function id="//xsdoc_ref/c/func/XSOrderedSet_MutableOrderedSet" lang="c"><name>XSOrderedSet_MutableOrderedSet</name>
 <abstract><p>Gets an empty mutable ordered set
 </p></abstract>
-<returntype> XS_EXPORT XSStatic XSAutoreleased XSOrderedSetRef</returntype>
+<returntype> XS_EXPORT XSStatic XSAutoreleased XSMutableOrderedSetRef</returntype>
 <result><p>An empty mutable ordered set
 </p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSOrderedSetRef</declaration_type> <declaration_function>XSOrderedSet_MutableOrderedSet</declaration_function>(
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSMutableOrderedSetRef</declaration_type> <declaration_function>XSOrderedSet_MutableOrderedSet</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSOrderedSet_OrderedSet" lang="c"><name>XSOrderedSet_OrderedSet</name>
@@ -428,11 +428,11 @@
 <parameter><name>set</name><desc><p>The ordered set</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSOrderedSetRef</type><name>set</name></parsedparameter>
+<parsedparameter><type>XSMutableOrderedSetRef</type><name>set</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSOrderedSet_RemoveAllObjects</declaration_function>(
-    <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param> );  </declaration>
+    <declaration_type>XSMutableOrderedSetRef</declaration_type> <declaration_param>set</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSOrderedSet_RemoveLastObject" lang="c"><name>XSOrderedSet_RemoveLastObject</name>
 <abstract><p>Removes the last object in an ordered set
@@ -441,11 +441,11 @@
 <parameter><name>set</name><desc><p>The ordered set</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSOrderedSetRef</type><name>set</name></parsedparameter>
+<parsedparameter><type>XSMutableOrderedSetRef</type><name>set</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSOrderedSet_RemoveLastObject</declaration_function>(
-    <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param> );  </declaration>
+    <declaration_type>XSMutableOrderedSetRef</declaration_type> <declaration_param>set</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSOrderedSet_RemoveObject" lang="c"><name>XSOrderedSet_RemoveObject</name>
 <abstract><p>Removes a specific object in an ordered set
@@ -455,12 +455,12 @@
 <parameter><name>object</name><desc><p>The object to remove</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSOrderedSetRef</type><name>set</name></parsedparameter>
+<parsedparameter><type>XSMutableOrderedSetRef</type><name>set</name></parsedparameter>
 <parsedparameter><type>XSObjectRef</type><name>object</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSOrderedSet_RemoveObject</declaration_function>(
-    <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
+    <declaration_type>XSMutableOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSOrderedSet_RemoveObjectAtIndex" lang="c"><name>XSOrderedSet_RemoveObjectAtIndex</name>
@@ -471,12 +471,12 @@
 <parameter><name>index</name><desc><p>The index</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSOrderedSetRef</type><name>set</name></parsedparameter>
+<parsedparameter><type>XSMutableOrderedSetRef</type><name>set</name></parsedparameter>
 <parsedparameter><type>XSUInteger</type><name>index</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSOrderedSet_RemoveObjectAtIndex</declaration_function>(
-    <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
+    <declaration_type>XSMutableOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSOrderedSet_RemoveObjectsInArray" lang="c"><name>XSOrderedSet_RemoveObjectsInArray</name>
@@ -487,12 +487,12 @@
 <parameter><name>objects</name><desc><p>The ordered set with the objects to remove</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSOrderedSetRef</type><name>set</name></parsedparameter>
+<parsedparameter><type>XSMutableOrderedSetRef</type><name>set</name></parsedparameter>
 <parsedparameter><type>XSArrayRef</type><name>objects</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSOrderedSet_RemoveObjectsInArray</declaration_function>(
-    <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
+    <declaration_type>XSMutableOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSArrayRef</declaration_type> <declaration_param>objects</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSOrderedSet_RemoveObjectsInRange" lang="c"><name>XSOrderedSet_RemoveObjectsInRange</name>
@@ -503,12 +503,12 @@
 <parameter><name>range</name><desc><p>The range</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSOrderedSetRef</type><name>set</name></parsedparameter>
+<parsedparameter><type>XSMutableOrderedSetRef</type><name>set</name></parsedparameter>
 <parsedparameter><type>XSRange</type><name>range</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSOrderedSet_RemoveObjectsInRange</declaration_function>(
-    <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
+    <declaration_type>XSMutableOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSRange</declaration_type> <declaration_param>range</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSOrderedSet_ReplaceObjectAtIndex" lang="c"><name>XSOrderedSet_ReplaceObjectAtIndex</name>
@@ -520,7 +520,7 @@
 <parameter><name>newObject</name><desc><p>The new object (cannot be NULL)</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSOrderedSetRef</type><name>set</name></parsedparameter>
+<parsedparameter><type>XSMutableOrderedSetRef</type><name>set</name></parsedparameter>
 <parsedparameter><type>XSUInteger</type><name>index</name></parsedparameter>
 <parsedparameter><type>XSObjectRef</type><name>newObject</name></parsedparameter>
 </parsedparameterlist>
@@ -528,7 +528,7 @@
 <result><p>True if the object was replaced, otherwise false
 </p></result>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSOrderedSet_ReplaceObjectAtIndex</declaration_function>(
-    <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
+    <declaration_type>XSMutableOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSUInteger</declaration_type> <declaration_param>index</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>newObject</declaration_param> );  </declaration>
 <desc><p/></desc>
@@ -540,7 +540,7 @@
 <parameter><name>function</name><desc><p>The function used to sort the ordered set</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSOrderedSetRef</type><name>set</name></parsedparameter>
+<parsedparameter><type>XSMutableOrderedSetRef</type><name>set</name></parsedparameter>
 <parsedparameter><type>XSOrderedSet_SortFunction</type><name>function</name></parsedparameter>
 </parsedparameterlist>
 <attributelists><listattribute><name>See</name><list>
@@ -548,7 +548,7 @@
 </attributelists>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSOrderedSet_SortWithFunction</declaration_function>(
-    <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
+    <declaration_type>XSMutableOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSOrderedSet_SortFunction</declaration_type> <declaration_param>function</declaration_param> );  </declaration>
 <desc><p>The function will be called with each object contained in the ordered set
 </p></desc>
@@ -561,7 +561,7 @@
 <parameter><name>method</name><desc><p>The method used to sort the ordered set</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSOrderedSetRef</type><name>set</name></parsedparameter>
+<parsedparameter><type>XSMutableOrderedSetRef</type><name>set</name></parsedparameter>
 <parsedparameter><type>XSObjectRef</type><name>object</name></parsedparameter>
 <parsedparameter><type>XSOrderedSet_SortMethod</type><name>method</name></parsedparameter>
 </parsedparameterlist>
@@ -570,13 +570,18 @@
 </attributelists>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSOrderedSet_SortWithMethod</declaration_function>(
-    <declaration_type>XSOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
+    <declaration_type>XSMutableOrderedSetRef</declaration_type> <declaration_param>set</declaration_param>,
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param>,
     <declaration_type>XSOrderedSet_SortMethod</declaration_type> <declaration_param>method</declaration_param> );  </declaration>
 <desc><p>The method will be called with each object contained in the ordered set
 </p></desc>
 </function></functions>
-<typedefs><typedef id="//xsdoc_ref/c/tdef/XSOrderedSet_ApplierFunction" lang="c" type="funcPtr"><name>XSOrderedSet_ApplierFunction</name>
+<typedefs><typedef id="//xsdoc_ref/c/tdef/XSMutableOrderedSetRef" lang="c" type="simple"><name>XSMutableOrderedSetRef</name>
+<abstract><p>Opaque type for XSMutableOrderedSet
+</p></abstract>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSOrderedSet</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSMutableOrderedSetRef</declaration_var>;  </declaration>
+<desc><p/></desc>
+</typedef><typedef id="//xsdoc_ref/c/tdef/XSOrderedSet_ApplierFunction" lang="c" type="funcPtr"><name>XSOrderedSet_ApplierFunction</name>
 <abstract><p>A function used to iterate objects in an ordered set
 </p></abstract>
 <parameterlist>

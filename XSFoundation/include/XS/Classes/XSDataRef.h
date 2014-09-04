@@ -87,6 +87,13 @@
 typedef const struct __XSData * XSDataRef;
 
 /*!
+ * @typedef     XSMutableDataRef
+ * @abstract    Opaque type for XSMutableData
+ * @discussion  XSMutableDataRef objects are thread-safe
+ */
+typedef struct __XSData * XSMutableDataRef;
+
+/*!
  * @typedef     XSData_BufferReleaseType
  * @abstract    Release type for XSData internal buffer
  */
@@ -158,7 +165,7 @@ XS_EXPORT XSStatic XSAutoreleased XSDataRef XSData_DataWithData( XSDataRef data 
  * @abstract    Gets an empty mutable data object
  * @return      An empty mutable data object
  */
-XS_EXPORT XSStatic XSAutoreleased XSDataRef XSData_MutableData( void );
+XS_EXPORT XSStatic XSAutoreleased XSMutableDataRef XSData_MutableData( void );
 
 /*!
  * @function    XSData_MutableDataWithInitialCapacity
@@ -166,7 +173,7 @@ XS_EXPORT XSStatic XSAutoreleased XSDataRef XSData_MutableData( void );
  * @param       capacity    The initial capacity of the internal byte buffer
  * @return      An empty mutable data object
  */
-XS_EXPORT XSStatic XSAutoreleased XSDataRef XSData_MutableDataWithInitialCapacity( XSUInteger capacity );
+XS_EXPORT XSStatic XSAutoreleased XSMutableDataRef XSData_MutableDataWithInitialCapacity( XSUInteger capacity );
 
 /*!
  * @function    XSData_Create
@@ -221,7 +228,7 @@ XS_EXPORT XSStatic XSDataRef XSData_CreateWithData( XSDataRef data );
  * @abstract    Creates an empty mutable data object
  * @return      An empty mutable data object
  */
-XS_EXPORT XSStatic XSDataRef XSData_CreateMutable( void );
+XS_EXPORT XSStatic XSMutableDataRef XSData_CreateMutable( void );
 
 /*!
  * @function    XSData_CreateMutableWithInitialCapacity
@@ -229,7 +236,7 @@ XS_EXPORT XSStatic XSDataRef XSData_CreateMutable( void );
  * @param       capacity    The initial capacity of the internal byte buffer
  * @return      An empty mutable data object
  */
-XS_EXPORT XSStatic XSDataRef XSData_CreateMutableWithInitialCapacity( XSUInteger capacity );
+XS_EXPORT XSStatic XSMutableDataRef XSData_CreateMutableWithInitialCapacity( XSUInteger capacity );
 
 /*!
  * @function    XSData_CreateMutableCopy
@@ -237,7 +244,7 @@ XS_EXPORT XSStatic XSDataRef XSData_CreateMutableWithInitialCapacity( XSUInteger
  * @param       data    The data object
  * @return      The mutable copy of the data object
  */
-XS_EXPORT XSDataRef XSData_CreateMutableCopy( XSDataRef data );
+XS_EXPORT XSMutableDataRef XSData_CreateMutableCopy( XSDataRef data );
 
 /*!
  * @function    XSData_IsMutable
@@ -305,7 +312,7 @@ XS_EXPORT XSRange XSData_RangeOfData( XSDataRef data, XSDataRef search, XSRange 
  * @param       bytes   The buffer containing the bytes to append
  * @param       length  The length of the byte buffer
  */
-XS_EXPORT void XSData_AppendBytes( XSDataRef data, XSUInt8 * bytes, XSUInteger length );
+XS_EXPORT void XSData_AppendBytes( XSMutableDataRef data, XSUInt8 * bytes, XSUInteger length );
 
 /*!
  * @function    XSData_AppendByte
@@ -313,7 +320,7 @@ XS_EXPORT void XSData_AppendBytes( XSDataRef data, XSUInt8 * bytes, XSUInteger l
  * @param       data    The data object
  * @param       byte    The byte to append
  */
-XS_EXPORT void XSData_AppendByte( XSDataRef data, XSUInt8 byte );
+XS_EXPORT void XSData_AppendByte( XSMutableDataRef data, XSUInt8 byte );
 
 /*!
  * @function    XSData_AppendData
@@ -321,7 +328,7 @@ XS_EXPORT void XSData_AppendByte( XSDataRef data, XSUInt8 byte );
  * @param       data            The data object
  * @param       dataToAppend    The data object to append
  */
-XS_EXPORT void XSData_AppendData( XSDataRef data, XSDataRef dataToAppend );
+XS_EXPORT void XSData_AppendData( XSMutableDataRef data, XSDataRef dataToAppend );
 
 /*!
  * @function    XSData_ResetBytesInRange
@@ -330,7 +337,7 @@ XS_EXPORT void XSData_AppendData( XSDataRef data, XSDataRef dataToAppend );
  * @param       range   The range of the bytes to reset. Pass XSRangeZero to reset the whole data object
  * @discussion  Bytes in the specific range will be set to zero.
  */
-XS_EXPORT void XSData_ResetBytesInRange( XSDataRef data, XSRange range );
+XS_EXPORT void XSData_ResetBytesInRange( XSMutableDataRef data, XSRange range );
 
 /*!
  * @function    XSData_ReplaceBytesInRangeWithBytes
@@ -339,6 +346,6 @@ XS_EXPORT void XSData_ResetBytesInRange( XSDataRef data, XSRange range );
  * @param       range       The range of the bytes to replace. Pass XSRangeZero to replace bytes in the whole data object
  * @param       newBytes    The bytes
  */
-XS_EXPORT void XSData_ReplaceBytesInRangeWithBytes( XSDataRef data, XSRange range, XSUInt8 * newBytes );
+XS_EXPORT void XSData_ReplaceBytesInRangeWithBytes( XSMutableDataRef data, XSRange range, XSUInt8 * newBytes );
 
 #endif /* __XS_CLASSES_XS_DATA_H__ */

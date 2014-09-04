@@ -19,12 +19,12 @@
 <parameter><name>byte</name><desc><p>The byte to append</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSDataRef</type><name>data</name></parsedparameter>
+<parsedparameter><type>XSMutableDataRef</type><name>data</name></parsedparameter>
 <parsedparameter><type>XSUInt8</type><name>byte</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSData_AppendByte</declaration_function>(
-    <declaration_type>XSDataRef</declaration_type> <declaration_param>data</declaration_param>,
+    <declaration_type>XSMutableDataRef</declaration_type> <declaration_param>data</declaration_param>,
     <declaration_type>XSUInt8</declaration_type> <declaration_param>byte</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSData_AppendBytes" lang="c"><name>XSData_AppendBytes</name>
@@ -36,13 +36,13 @@
 <parameter><name>length</name><desc><p>The length of the byte buffer</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSDataRef</type><name>data</name></parsedparameter>
+<parsedparameter><type>XSMutableDataRef</type><name>data</name></parsedparameter>
 <parsedparameter><type>XSUInt8 *</type><name>bytes</name></parsedparameter>
 <parsedparameter><type>XSUInteger</type><name>length</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSData_AppendBytes</declaration_function>(
-    <declaration_type>XSDataRef</declaration_type> <declaration_param>data</declaration_param>,
+    <declaration_type>XSMutableDataRef</declaration_type> <declaration_param>data</declaration_param>,
     <declaration_type>XSUInt8</declaration_type> <declaration_type>*</declaration_type><declaration_param>bytes</declaration_param>,
     <declaration_type>XSUInteger</declaration_type> <declaration_param>length</declaration_param> );  </declaration>
 <desc><p/></desc>
@@ -54,12 +54,12 @@
 <parameter><name>dataToAppend</name><desc><p>The data object to append</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSDataRef</type><name>data</name></parsedparameter>
+<parsedparameter><type>XSMutableDataRef</type><name>data</name></parsedparameter>
 <parsedparameter><type>XSDataRef</type><name>dataToAppend</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSData_AppendData</declaration_function>(
-    <declaration_type>XSDataRef</declaration_type> <declaration_param>data</declaration_param>,
+    <declaration_type>XSMutableDataRef</declaration_type> <declaration_param>data</declaration_param>,
     <declaration_type>XSDataRef</declaration_type> <declaration_param>dataToAppend</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSData_Create" lang="c"><name>XSData_Create</name>
@@ -74,10 +74,10 @@
 </function><function id="//xsdoc_ref/c/func/XSData_CreateMutable" lang="c"><name>XSData_CreateMutable</name>
 <abstract><p>Creates an empty mutable data object
 </p></abstract>
-<returntype> XS_EXPORT XSStatic XSDataRef</returntype>
+<returntype> XS_EXPORT XSStatic XSMutableDataRef</returntype>
 <result><p>An empty mutable data object
 </p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSDataRef</declaration_type> <declaration_function>XSData_CreateMutable</declaration_function>(
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSMutableDataRef</declaration_type> <declaration_function>XSData_CreateMutable</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSData_CreateMutableCopy" lang="c"><name>XSData_CreateMutableCopy</name>
@@ -89,10 +89,10 @@
 <parsedparameterlist>
 <parsedparameter><type>XSDataRef</type><name>data</name></parsedparameter>
 </parsedparameterlist>
-<returntype> XS_EXPORT XSDataRef</returntype>
+<returntype> XS_EXPORT XSMutableDataRef</returntype>
 <result><p>The mutable copy of the data object
 </p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSDataRef</declaration_type> <declaration_function>XSData_CreateMutableCopy</declaration_function>(
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSMutableDataRef</declaration_type> <declaration_function>XSData_CreateMutableCopy</declaration_function>(
     <declaration_type>XSDataRef</declaration_type> <declaration_param>data</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSData_CreateMutableWithInitialCapacity" lang="c"><name>XSData_CreateMutableWithInitialCapacity</name>
@@ -104,10 +104,10 @@
 <parsedparameterlist>
 <parsedparameter><type>XSUInteger</type><name>capacity</name></parsedparameter>
 </parsedparameterlist>
-<returntype> XS_EXPORT XSStatic XSDataRef</returntype>
+<returntype> XS_EXPORT XSStatic XSMutableDataRef</returntype>
 <result><p>An empty mutable data object
 </p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSDataRef</declaration_type> <declaration_function>XSData_CreateMutableWithInitialCapacity</declaration_function>(
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSMutableDataRef</declaration_type> <declaration_function>XSData_CreateMutableWithInitialCapacity</declaration_function>(
     <declaration_type>XSUInteger</declaration_type> <declaration_param>capacity</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSData_CreateWithBytes" lang="c"><name>XSData_CreateWithBytes</name>
@@ -359,10 +359,10 @@ its contents.
 </function><function id="//xsdoc_ref/c/func/XSData_MutableData" lang="c"><name>XSData_MutableData</name>
 <abstract><p>Gets an empty mutable data object
 </p></abstract>
-<returntype> XS_EXPORT XSStatic XSAutoreleased XSDataRef</returntype>
+<returntype> XS_EXPORT XSStatic XSAutoreleased XSMutableDataRef</returntype>
 <result><p>An empty mutable data object
 </p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSDataRef</declaration_type> <declaration_function>XSData_MutableData</declaration_function>(
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSMutableDataRef</declaration_type> <declaration_function>XSData_MutableData</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSData_MutableDataWithInitialCapacity" lang="c"><name>XSData_MutableDataWithInitialCapacity</name>
@@ -374,10 +374,10 @@ its contents.
 <parsedparameterlist>
 <parsedparameter><type>XSUInteger</type><name>capacity</name></parsedparameter>
 </parsedparameterlist>
-<returntype> XS_EXPORT XSStatic XSAutoreleased XSDataRef</returntype>
+<returntype> XS_EXPORT XSStatic XSAutoreleased XSMutableDataRef</returntype>
 <result><p>An empty mutable data object
 </p></result>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSDataRef</declaration_type> <declaration_function>XSData_MutableDataWithInitialCapacity</declaration_function>(
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStatic</declaration_type> <declaration_type>XSAutoreleased</declaration_type> <declaration_type>XSMutableDataRef</declaration_type> <declaration_function>XSData_MutableDataWithInitialCapacity</declaration_function>(
     <declaration_type>XSUInteger</declaration_type> <declaration_param>capacity</declaration_param> );  </declaration>
 <desc><p/></desc>
 </function><function id="//xsdoc_ref/c/func/XSData_RangeOfData" lang="c"><name>XSData_RangeOfData</name>
@@ -411,13 +411,13 @@ its contents.
 <parameter><name>newBytes</name><desc><p>The bytes</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSDataRef</type><name>data</name></parsedparameter>
+<parsedparameter><type>XSMutableDataRef</type><name>data</name></parsedparameter>
 <parsedparameter><type>XSRange</type><name>range</name></parsedparameter>
 <parsedparameter><type>XSUInt8 *</type><name>newBytes</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSData_ReplaceBytesInRangeWithBytes</declaration_function>(
-    <declaration_type>XSDataRef</declaration_type> <declaration_param>data</declaration_param>,
+    <declaration_type>XSMutableDataRef</declaration_type> <declaration_param>data</declaration_param>,
     <declaration_type>XSRange</declaration_type> <declaration_param>range</declaration_param>,
     <declaration_type>XSUInt8</declaration_type> <declaration_type>*</declaration_type><declaration_param>newBytes</declaration_param> );  </declaration>
 <desc><p/></desc>
@@ -429,12 +429,12 @@ its contents.
 <parameter><name>range</name><desc><p>The range of the bytes to reset. Pass XSRangeZero to reset the whole data object</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSDataRef</type><name>data</name></parsedparameter>
+<parsedparameter><type>XSMutableDataRef</type><name>data</name></parsedparameter>
 <parsedparameter><type>XSRange</type><name>range</name></parsedparameter>
 </parsedparameterlist>
 <returntype> XS_EXPORT void</returntype>
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSData_ResetBytesInRange</declaration_function>(
-    <declaration_type>XSDataRef</declaration_type> <declaration_param>data</declaration_param>,
+    <declaration_type>XSMutableDataRef</declaration_type> <declaration_param>data</declaration_param>,
     <declaration_type>XSRange</declaration_type> <declaration_param>range</declaration_param> );  </declaration>
 <desc><p>Bytes in the specific range will be set to zero.
 </p></desc>
@@ -484,6 +484,12 @@ its contents.
 </p></abstract>
 <declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>const</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSData</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSDataRef</declaration_var>;  </declaration>
 <desc><p>XSDataRef objects are thread-safe
+</p></desc>
+</typedef><typedef id="//xsdoc_ref/c/tdef/XSMutableDataRef" lang="c" type="simple"><name>XSMutableDataRef</name>
+<abstract><p>Opaque type for XSMutableData
+</p></abstract>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>__XSData</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSMutableDataRef</declaration_var>;  </declaration>
+<desc><p>XSMutableDataRef objects are thread-safe
 </p></desc>
 </typedef></typedefs><copyrightinfo>&#169; (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>

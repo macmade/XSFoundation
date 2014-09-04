@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSDataRef.h>
 
-XSDataRef XSData_CreateMutableCopy( XSDataRef data )
+XSMutableDataRef XSData_CreateMutableCopy( XSDataRef data )
 {
     ( void )data;
     

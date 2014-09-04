@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSDataRef.h>
 
-void XSData_ResetBytesInRange( XSDataRef data, XSRange range )
+void XSData_ResetBytesInRange( XSMutableDataRef data, XSRange range )
 {
     ( void )data;
     ( void )range;

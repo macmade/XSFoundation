@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSDataRef.h>
 
-XSStatic XSDataRef XSData_CreateMutableWithInitialCapacity( XSUInteger capacity )
+XSStatic XSMutableDataRef XSData_CreateMutableWithInitialCapacity( XSUInteger capacity )
 {
     ( void )capacity;
     

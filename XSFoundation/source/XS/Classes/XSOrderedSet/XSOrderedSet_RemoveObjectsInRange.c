@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSOrderedSetRef.h>
 
-void XSOrderedSet_RemoveObjectsInRange( XSOrderedSetRef set, XSRange range )
+void XSOrderedSet_RemoveObjectsInRange( XSMutableOrderedSetRef set, XSRange range )
 {
     ( void )set;
     ( void )range;

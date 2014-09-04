@@ -86,6 +86,12 @@
 typedef const struct __XSOrderedSet * XSOrderedSetRef;
 
 /*!
+ * @typedef     XSMutableOrderedSetRef
+ * @abstract    Opaque type for XSMutableOrderedSet
+ */
+typedef struct __XSOrderedSet * XSMutableOrderedSetRef;
+
+/*!
  * @typedef     XSOrderedSet_ApplierFunction
  * @abstract    A function used to iterate objects in an ordered set
  * @param       value       The ordered set's value
@@ -165,7 +171,7 @@ XS_EXPORT XSStatic XSAutoreleased XSOrderedSetRef XSOrderedSet_OrderedSet( void 
  * @abstract    Gets an empty mutable ordered set
  * @return      An empty mutable ordered set
  */
-XS_EXPORT XSStatic XSAutoreleased XSOrderedSetRef XSOrderedSet_MutableOrderedSet( void );
+XS_EXPORT XSStatic XSAutoreleased XSMutableOrderedSetRef XSOrderedSet_MutableOrderedSet( void );
 
 /*!
  * @function    XSOrderedSet_OrderedSetWithOrderedSet
@@ -204,7 +210,7 @@ XS_EXPORT XSStatic XSOrderedSetRef XSOrderedSet_Create( void );
  * @abstract    Creates an empty mutable ordered set
  * @return      An empty mutable ordered set
  */
-XS_EXPORT XSStatic XSOrderedSetRef XSOrderedSet_CreateMutable( void );
+XS_EXPORT XSStatic XSMutableOrderedSetRef XSOrderedSet_CreateMutable( void );
 
 /*!
  * @function    XSOrderedSet_CreateWithOrderedSet
@@ -237,7 +243,7 @@ XS_EXPORT XSStatic XSOrderedSetRef XSOrderedSet_CreateWithArray( XSArrayRef arra
  * @param       set         The ordered set
  * @return      The mutable copy of the ordered set
  */
-XS_EXPORT XSOrderedSetRef XSOrderedSet_CreateMutableCopy( XSOrderedSetRef set );
+XS_EXPORT XSMutableOrderedSetRef XSOrderedSet_CreateMutableCopy( XSOrderedSetRef set );
 
 /*!
  * @function    XSOrderedSet_IsMutable
@@ -304,7 +310,7 @@ XS_EXPORT XSUInteger XSOrderedSet_GetIndexOfObject( XSOrderedSetRef set, XSObjec
  * @param       object      The object (cannot be NULL)
  * @return      True if the object was added, otherwise false
  */
-XS_EXPORT bool XSOrderedSet_AddObject( XSOrderedSetRef set, XSObjectRef object );
+XS_EXPORT bool XSOrderedSet_AddObject( XSMutableOrderedSetRef set, XSObjectRef object );
 
 /*!
  * @function    XSOrderedSet_InsertObjectAtIndex
@@ -314,7 +320,7 @@ XS_EXPORT bool XSOrderedSet_AddObject( XSOrderedSetRef set, XSObjectRef object )
  * @param       object      The object (cannot be NULL)
  * @return      True if the object was inserted, otherwise false
  */
-XS_EXPORT bool XSOrderedSet_InsertObjectAtIndex( XSOrderedSetRef set, XSUInteger index, XSObjectRef object );
+XS_EXPORT bool XSOrderedSet_InsertObjectAtIndex( XSMutableOrderedSetRef set, XSUInteger index, XSObjectRef object );
 
 /*!
  * @function    XSOrderedSet_ReplaceObjectAtIndex
@@ -324,7 +330,7 @@ XS_EXPORT bool XSOrderedSet_InsertObjectAtIndex( XSOrderedSetRef set, XSUInteger
  * @param       newObject   The new object (cannot be NULL)
  * @return      True if the object was replaced, otherwise false
  */
-XS_EXPORT bool XSOrderedSet_ReplaceObjectAtIndex( XSOrderedSetRef set, XSUInteger index, XSObjectRef newObject );
+XS_EXPORT bool XSOrderedSet_ReplaceObjectAtIndex( XSMutableOrderedSetRef set, XSUInteger index, XSObjectRef newObject );
 
 /*!
  * @function    XSOrderedSet_AppendArray
@@ -332,21 +338,21 @@ XS_EXPORT bool XSOrderedSet_ReplaceObjectAtIndex( XSOrderedSetRef set, XSUIntege
  * @param       set         The ordered set
  * @param       objects     The ordered set with the objects to append
  */
-XS_EXPORT void XSOrderedSet_AppendArray( XSOrderedSetRef set, XSArrayRef objects );
+XS_EXPORT void XSOrderedSet_AppendArray( XSMutableOrderedSetRef set, XSArrayRef objects );
 
 /*!
  * @function    XSOrderedSet_RemoveAllObjects
  * @abstract    Removes all objects from an ordered set
  * @param       set         The ordered set
  */
-XS_EXPORT void XSOrderedSet_RemoveAllObjects( XSOrderedSetRef set );
+XS_EXPORT void XSOrderedSet_RemoveAllObjects( XSMutableOrderedSetRef set );
 
 /*!
  * @function    XSOrderedSet_RemoveLastObject
  * @abstract    Removes the last object in an ordered set
  * @param       set         The ordered set
  */
-XS_EXPORT void XSOrderedSet_RemoveLastObject( XSOrderedSetRef set );
+XS_EXPORT void XSOrderedSet_RemoveLastObject( XSMutableOrderedSetRef set );
 
 /*!
  * @function    XSOrderedSet_RemoveObject
@@ -354,7 +360,7 @@ XS_EXPORT void XSOrderedSet_RemoveLastObject( XSOrderedSetRef set );
  * @param       set         The ordered set
  * @param       object      The object to remove
  */
-XS_EXPORT void XSOrderedSet_RemoveObject( XSOrderedSetRef set, XSObjectRef object );
+XS_EXPORT void XSOrderedSet_RemoveObject( XSMutableOrderedSetRef set, XSObjectRef object );
 
 /*!
  * @function    XSOrderedSet_RemoveObjectAtIndex
@@ -362,7 +368,7 @@ XS_EXPORT void XSOrderedSet_RemoveObject( XSOrderedSetRef set, XSObjectRef objec
  * @param       set         The ordered set
  * @param       index       The index
  */
-XS_EXPORT void XSOrderedSet_RemoveObjectAtIndex( XSOrderedSetRef set, XSUInteger index );
+XS_EXPORT void XSOrderedSet_RemoveObjectAtIndex( XSMutableOrderedSetRef set, XSUInteger index );
 
 /*!
  * @function    XSOrderedSet_RemoveObjectsInArray
@@ -370,7 +376,7 @@ XS_EXPORT void XSOrderedSet_RemoveObjectAtIndex( XSOrderedSetRef set, XSUInteger
  * @param       set         The ordered set
  * @param       objects     The ordered set with the objects to remove
  */
-XS_EXPORT void XSOrderedSet_RemoveObjectsInArray( XSOrderedSetRef set, XSArrayRef objects );
+XS_EXPORT void XSOrderedSet_RemoveObjectsInArray( XSMutableOrderedSetRef set, XSArrayRef objects );
 
 /*!
  * @function    XSOrderedSet_RemoveObjectsInRange
@@ -378,7 +384,7 @@ XS_EXPORT void XSOrderedSet_RemoveObjectsInArray( XSOrderedSetRef set, XSArrayRe
  * @param       set         The ordered set
  * @param       range       The range
  */
-XS_EXPORT void XSOrderedSet_RemoveObjectsInRange( XSOrderedSetRef set, XSRange range );
+XS_EXPORT void XSOrderedSet_RemoveObjectsInRange( XSMutableOrderedSetRef set, XSRange range );
 
 /*!
  * @function    XSOrderedSet_ApplyFunction
@@ -409,7 +415,7 @@ XS_EXPORT void XSOrderedSet_ApplyMethod( XSOrderedSetRef set, XSObjectRef object
  * @discussion  The function will be called with each object contained in the ordered set
  * @see         XSOrderedSet_FilterFunction
  */
-XS_EXPORT void XSOrderedSet_FilterWithFunction( XSOrderedSetRef set, XSOrderedSet_FilterFunction function );
+XS_EXPORT void XSOrderedSet_FilterWithFunction( XSMutableOrderedSetRef set, XSOrderedSet_FilterFunction function );
 
 /*!
  * @function    XSOrderedSet_FilterWithMethod
@@ -420,7 +426,7 @@ XS_EXPORT void XSOrderedSet_FilterWithFunction( XSOrderedSetRef set, XSOrderedSe
  * @discussion  The method will be called with each object contained in the ordered set
  * @see         XSOrderedSet_FilterMethod
  */
-XS_EXPORT void XSOrderedSet_FilterWithMethod( XSOrderedSetRef set, XSObjectRef object, XSOrderedSet_FilterMethod method );
+XS_EXPORT void XSOrderedSet_FilterWithMethod( XSMutableOrderedSetRef set, XSObjectRef object, XSOrderedSet_FilterMethod method );
 
 /*!
  * @function    XSOrderedSet_SortWithFunction
@@ -430,7 +436,7 @@ XS_EXPORT void XSOrderedSet_FilterWithMethod( XSOrderedSetRef set, XSObjectRef o
  * @discussion  The function will be called with each object contained in the ordered set
  * @see         XSOrderedSet_SortFunction
  */
-XS_EXPORT void XSOrderedSet_SortWithFunction( XSOrderedSetRef set, XSOrderedSet_SortFunction function );
+XS_EXPORT void XSOrderedSet_SortWithFunction( XSMutableOrderedSetRef set, XSOrderedSet_SortFunction function );
 
 /*!
  * @function    XSOrderedSet_SortWithMethod
@@ -441,6 +447,6 @@ XS_EXPORT void XSOrderedSet_SortWithFunction( XSOrderedSetRef set, XSOrderedSet_
  * @discussion  The method will be called with each object contained in the ordered set
  * @see         XSOrderedSet_SortFunction
  */
-XS_EXPORT void XSOrderedSet_SortWithMethod( XSOrderedSetRef set, XSObjectRef object, XSOrderedSet_SortMethod method );
+XS_EXPORT void XSOrderedSet_SortWithMethod( XSMutableOrderedSetRef set, XSObjectRef object, XSOrderedSet_SortMethod method );
 
 #endif /* __XS_CLASSES_XS_ORDERED_SET_H__ */

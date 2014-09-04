@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSOrderedSetRef.h>
 
-bool XSOrderedSet_InsertObjectAtIndex( XSOrderedSetRef set, XSUInteger index, XSObjectRef object )
+bool XSOrderedSet_InsertObjectAtIndex( XSMutableOrderedSetRef set, XSUInteger index, XSObjectRef object )
 {
     ( void )set;
     ( void )index;

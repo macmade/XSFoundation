@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSOrderedSetRef.h>
 
-void XSOrderedSet_AppendArray( XSOrderedSetRef set, XSArrayRef objects )
+void XSOrderedSet_AppendArray( XSMutableOrderedSetRef set, XSArrayRef objects )
 {
     ( void )set;
     ( void )objects;

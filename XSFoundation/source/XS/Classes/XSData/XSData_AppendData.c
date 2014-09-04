@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSDataRef.h>
 
-void XSData_AppendData( XSDataRef data, XSDataRef dataToAppend )
+void XSData_AppendData( XSMutableDataRef data, XSDataRef dataToAppend )
 {
     ( void )data;
     ( void )dataToAppend;

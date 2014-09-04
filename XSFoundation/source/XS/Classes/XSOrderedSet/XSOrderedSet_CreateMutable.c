@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSOrderedSetRef.h>
 
-XSStatic XSOrderedSetRef XSOrderedSet_CreateMutable( void )
+XSStatic XSMutableOrderedSetRef XSOrderedSet_CreateMutable( void )
 {
     return NULL;
 }
