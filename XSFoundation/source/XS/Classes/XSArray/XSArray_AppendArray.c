@@ -81,8 +81,8 @@ void XSArray_AppendArray( XSMutableArrayRef array, XSArrayRef objects )
         return;
     }
     
-    XSRecursiveLock_Lock( array->lock );
-    XSRecursiveLock_Lock( objects->lock );
+    __XSArray_Lock( array );
+    __XSArray_Lock( objects );
     
     if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
     {
@@ -91,8 +91,8 @@ void XSArray_AppendArray( XSMutableArrayRef array, XSArrayRef objects )
     
     if( objects->count == 0 )
     {
-        XSRecursiveLock_Unlock( objects->lock );
-        XSRecursiveLock_Unlock( array->lock );
+        __XSArray_Unlock( objects );
+        __XSArray_Unlock( array );
         
         return;
     }
@@ -140,6 +140,6 @@ void XSArray_AppendArray( XSMutableArrayRef array, XSArrayRef objects )
         newValue = newValue->next;
     }
     
-    XSRecursiveLock_Unlock( objects->lock );
-    XSRecursiveLock_Unlock( array->lock );
+    __XSArray_Unlock( objects );
+    __XSArray_Unlock( array );
 }

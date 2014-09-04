@@ -80,11 +80,11 @@ XSUInteger XSArray_GetCount( XSArrayRef array )
         return 0;
     }
     
-    XSRecursiveLock_Lock( array->lock );
+    __XSArray_Lock( array );
     
     c = array->count;
     
-    XSRecursiveLock_Unlock( array->lock );
+    __XSArray_Unlock( array );
     
     return c;
 }

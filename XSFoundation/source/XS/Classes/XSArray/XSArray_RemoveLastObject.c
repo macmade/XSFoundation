@@ -80,7 +80,7 @@ void XSArray_RemoveLastObject( XSMutableArrayRef array )
         return;
     }
     
-    XSRecursiveLock_Lock( array->lock );
+    __XSArray_Lock( array );
     
     if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
     {
@@ -108,5 +108,5 @@ void XSArray_RemoveLastObject( XSMutableArrayRef array )
         array->count--;
     }
     
-    XSRecursiveLock_Unlock( array->lock );
+    __XSArray_Unlock( array );
 }

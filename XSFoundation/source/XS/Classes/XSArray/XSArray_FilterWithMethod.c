@@ -83,7 +83,7 @@ XS_EXPORT void XSArray_FilterWithMethod( XSMutableArrayRef array, XSObjectRef ob
         return;
     }
     
-    XSRecursiveLock_Lock( array->lock );
+    __XSArray_Lock( array );
     
     if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
     {
@@ -137,5 +137,5 @@ XS_EXPORT void XSArray_FilterWithMethod( XSMutableArrayRef array, XSObjectRef ob
         i++;
     }
     
-    XSRecursiveLock_Unlock( array->lock );
+    __XSArray_Unlock( array );
 }

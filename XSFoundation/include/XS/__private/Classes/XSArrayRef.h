@@ -191,6 +191,26 @@ XSStatic struct __XSArray * __XSArray_Create( void );
 XSStatic XSArrayRef __XSArray_CreateWithFirstObjectAndArgs( XSObjectRef firstObject, va_list args );
 
 /*!
+ * @function    __XSArray_Lock
+ * @abstract    Locks the internal array lock if necessary
+ * @param       array       The array
+ * @discussion  Locking will only occure if the array is mutable, as immutable
+ *              arrays are de-facto thread-safe. This allows the same code
+ *              for both array types, with a performance gain on immutable ones.
+ */
+void __XSArray_Lock( XSArrayRef array );
+
+/*!
+ * @function    __XSArray_Unlock
+ * @abstract    Unlocks the internal array lock if necessary
+ * @param       array       The array
+ * @discussion  Unlocking will only occure if the array is mutable, as immutable
+ *              arrays are de-facto thread-safe. This allows the same code
+ *              for both array types, with a performance gain on immutable ones.
+ */
+void __XSArray_Unlock( XSArrayRef array );
+
+/*!
  * @function    __XSArray_SortValuesWithFunction
  * @abstract    Sorts array values using a function
  * @param       values      The array values

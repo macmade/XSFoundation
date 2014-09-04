@@ -80,7 +80,7 @@ XSObjectRef XSArray_GetLastObject( XSArrayRef array )
         return NULL;
     }
     
-    XSRecursiveLock_Lock( array->lock );
+    __XSArray_Lock( array );
     
     if( array->last != NULL )
     {
@@ -91,7 +91,7 @@ XSObjectRef XSArray_GetLastObject( XSArrayRef array )
         object = NULL;
     }
     
-    XSRecursiveLock_Unlock( array->lock );
+    __XSArray_Unlock( array );
     
     return object;
 }

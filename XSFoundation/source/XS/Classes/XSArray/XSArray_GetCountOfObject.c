@@ -81,7 +81,7 @@ XSUInteger XSArray_GetCountOfObject( XSArrayRef array, XSObjectRef object )
         return 0;
     }
     
-    XSRecursiveLock_Lock( array->lock );
+    __XSArray_Lock( array );
     
     value = array->first;
     i     = 0;
@@ -96,7 +96,7 @@ XSUInteger XSArray_GetCountOfObject( XSArrayRef array, XSObjectRef object )
         value = value->next;
     }
     
-    XSRecursiveLock_Unlock( array->lock );
+    __XSArray_Unlock( array );
     
     return i;
 }

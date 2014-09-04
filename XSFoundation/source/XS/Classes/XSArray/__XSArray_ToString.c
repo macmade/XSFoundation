@@ -76,7 +76,7 @@ const char * __XSArray_ToString( XSArrayRef object )
     XSStringRef       description;
     __XSArray_Value * value;
     
-    XSRecursiveLock_Lock( object->lock );
+    __XSArray_Lock( object );
     
     description = XSString_StringWithFormat( "%lu items\n{", ( unsigned long )( object->count ) );
     
@@ -90,7 +90,7 @@ const char * __XSArray_ToString( XSArrayRef object )
     
     description = XSString_StringByAppendingCString( description, "\n}" );
     
-    XSRecursiveLock_Unlock( object->lock );
+    __XSArray_Unlock( object );
     
     return XSString_GetCString( description );
 }

@@ -82,7 +82,7 @@ XSObjectRef XSArray_GetObjectAtIndex( XSArrayRef array, XSUInteger index )
         return NULL;
     }
     
-    XSRecursiveLock_Lock( array->lock );
+    __XSArray_Lock( array );
     
     object = NULL;
     i      = 0;
@@ -106,7 +106,7 @@ XSObjectRef XSArray_GetObjectAtIndex( XSArrayRef array, XSUInteger index )
         }
     }
     
-    XSRecursiveLock_Unlock( array->lock );
+    __XSArray_Unlock( array );
     
     return object;
 }

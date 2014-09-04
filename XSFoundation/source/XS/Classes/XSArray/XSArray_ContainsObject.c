@@ -80,7 +80,7 @@ bool XSArray_ContainsObject( XSArrayRef array, XSObjectRef object )
         return false;
     }
     
-    XSRecursiveLock_Lock( array->lock );
+    __XSArray_Lock( array );
     
     value = array->first;
     
@@ -88,7 +88,7 @@ bool XSArray_ContainsObject( XSArrayRef array, XSObjectRef object )
     {
         if( XSEquals( value->object, object ) )
         {
-            XSRecursiveLock_Unlock( array->lock );
+            __XSArray_Unlock( array );
             
             return true;
         }
@@ -96,7 +96,7 @@ bool XSArray_ContainsObject( XSArrayRef array, XSObjectRef object )
         value = value->next;
     }
     
-    XSRecursiveLock_Unlock( array->lock );
+    __XSArray_Unlock( array );
     
     return false;
 }

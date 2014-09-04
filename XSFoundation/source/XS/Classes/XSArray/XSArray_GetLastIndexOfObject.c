@@ -81,11 +81,11 @@ XSUInteger XSArray_GetLastIndexOfObject( XSArrayRef array, XSObjectRef object )
         return XSNotFound;
     }
     
-    XSRecursiveLock_Lock( array->lock );
+    __XSArray_Lock( array );
     
     if( array->count == 0 )
     {
-        XSRecursiveLock_Unlock( array->lock );
+        __XSArray_Unlock( array );
         
         return XSNotFound;
     }
@@ -97,7 +97,7 @@ XSUInteger XSArray_GetLastIndexOfObject( XSArrayRef array, XSObjectRef object )
     {
         if( XSEquals( value->object, object ) )
         {
-            XSRecursiveLock_Unlock( array->lock );
+            __XSArray_Unlock( array );
             
             return i;
         }
@@ -107,7 +107,7 @@ XSUInteger XSArray_GetLastIndexOfObject( XSArrayRef array, XSObjectRef object )
         i--;
     }
     
-    XSRecursiveLock_Unlock( array->lock );
+    __XSArray_Unlock( array );
     
     return XSNotFound;
 }

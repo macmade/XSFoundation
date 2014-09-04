@@ -81,8 +81,8 @@ void XSArray_RemoveObjectsInArray( XSMutableArrayRef array, XSArrayRef objects )
         return;
     }
     
-    XSRecursiveLock_Lock( array->lock );
-    XSRecursiveLock_Lock( objects->lock );
+    __XSArray_Lock( array );
+    __XSArray_Lock( objects );
     
     if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
     {
@@ -127,6 +127,6 @@ void XSArray_RemoveObjectsInArray( XSMutableArrayRef array, XSArrayRef objects )
         }
     }
     
-    XSRecursiveLock_Unlock( objects->lock );
-    XSRecursiveLock_Unlock( array->lock );
+    __XSArray_Unlock( objects );
+    __XSArray_Unlock( array );
 }

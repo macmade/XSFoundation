@@ -81,7 +81,7 @@ void XSArray_RemoveAllObjects( XSMutableArrayRef array )
         return;
     }
     
-    XSRecursiveLock_Lock( array->lock );
+    __XSArray_Lock( array );
     
     if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
     {
@@ -103,5 +103,5 @@ void XSArray_RemoveAllObjects( XSMutableArrayRef array )
     array->last  = NULL;
     array->count = 0;
     
-    XSRecursiveLock_Unlock( array->lock );
+    __XSArray_Unlock( array );
 }

@@ -87,7 +87,7 @@ void XSArray_InsertObjectAtIndex( XSMutableArrayRef array, XSUInteger index, XSO
         XSFatalError( "Cannot insert NULL in an XSArray" );
     }
     
-    XSRecursiveLock_Lock( array->lock );
+    __XSArray_Lock( array );
     
     if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
     {
@@ -101,7 +101,7 @@ void XSArray_InsertObjectAtIndex( XSMutableArrayRef array, XSUInteger index, XSO
     else if( index == array->count )
     {
         XSArray_AddObject( array, object );
-        XSRecursiveLock_Unlock( array->lock );
+        __XSArray_Unlock( array );
         
         return;
     }
@@ -146,5 +146,5 @@ void XSArray_InsertObjectAtIndex( XSMutableArrayRef array, XSUInteger index, XSO
         i++;
     }
     
-    XSRecursiveLock_Unlock( array->lock );
+    __XSArray_Unlock( array );
 }

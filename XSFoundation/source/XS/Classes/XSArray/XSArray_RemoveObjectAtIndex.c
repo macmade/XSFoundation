@@ -81,7 +81,7 @@ void XSArray_RemoveObjectAtIndex( XSMutableArrayRef array, XSUInteger index )
         return;
     }
     
-    XSRecursiveLock_Lock( array->lock );
+    __XSArray_Lock( array );
     
     if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
     {
@@ -90,7 +90,7 @@ void XSArray_RemoveObjectAtIndex( XSMutableArrayRef array, XSUInteger index )
     
     if( index >= array->count )
     {
-        XSRecursiveLock_Unlock( array->lock );
+        __XSArray_Unlock( array );
         
         return;
     }
@@ -133,5 +133,5 @@ void XSArray_RemoveObjectAtIndex( XSMutableArrayRef array, XSUInteger index )
         i++;
     }
     
-    XSRecursiveLock_Unlock( array->lock );
+    __XSArray_Unlock( array );
 }

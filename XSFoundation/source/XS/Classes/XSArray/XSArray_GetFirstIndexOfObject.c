@@ -81,7 +81,7 @@ XSUInteger XSArray_GetFirstIndexOfObject( XSArrayRef array, XSObjectRef object )
         return XSNotFound;
     }
     
-    XSRecursiveLock_Lock( array->lock );
+    __XSArray_Lock( array );
     
     value = array->first;
     i     = 0;
@@ -90,7 +90,7 @@ XSUInteger XSArray_GetFirstIndexOfObject( XSArrayRef array, XSObjectRef object )
     {
         if( XSEquals( value->object, object ) )
         {
-            XSRecursiveLock_Unlock( array->lock );
+            __XSArray_Unlock( array );
             
             return i;
         }
@@ -100,7 +100,7 @@ XSUInteger XSArray_GetFirstIndexOfObject( XSArrayRef array, XSObjectRef object )
         i++;
     }
     
-    XSRecursiveLock_Unlock( array->lock );
+    __XSArray_Unlock( array );
     
     return XSNotFound;
 }

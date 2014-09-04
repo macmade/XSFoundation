@@ -62,61 +62,19 @@
 /* $Id$ */
 
 /*!
- * @file        XSArray_ReplaceObjectAtIndex.c
+ * @file        __XSArray_Lock.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSArray_ReplaceObjectAtIndex
+ * @abstract    Definition for __XSArray_Lock
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSArrayRef.h>
 
-void XSArray_ReplaceObjectAtIndex( XSMutableArrayRef array, XSUInteger index, XSObjectRef newObject )
+void __XSArray_Lock( XSArrayRef array )
 {
-    __XSArray_Value * value;
-    XSUInteger        i;
-    
-    if( array == NULL )
+    if( XSArray_IsMutable( array ) )
     {
-        return;
+        XSRecursiveLock_Lock( array->lock );
     }
-    
-    if( newObject == NULL )
-    {
-        XSFatalError( "Cannot insert NULL in an XSArray" );
-    }
-    
-    __XSArray_Lock( array );
-    
-    if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
-    {
-        XSFatalError( "Cannot replace an object from an immutable array" );
-    }
-    
-    if( index >= array->count )
-    {
-        __XSArray_Unlock( array );
-        XSFatalError( "Cannot insert object in an XSArray - Index %lu out of bounds", ( unsigned long )index );
-    }
-    
-    i     = 0;
-    value = array->first;
-    
-    while( value != NULL )
-    {
-        if( i == index )
-        {
-            XSRelease( value->object );
-            
-            value->object = XSRetain( newObject );
-            
-            break;
-        }
-        
-        value = value->next;
-        
-        i++;
-    }
-    
-    __XSArray_Unlock( array );
 }

@@ -83,7 +83,7 @@ void XSArray_SortWithFunction( XSMutableArrayRef array, XSArray_SortFunction fun
         return;
     }
     
-    XSRecursiveLock_Lock( array->lock );
+    __XSArray_Lock( array );
     
     if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
     {
@@ -92,7 +92,7 @@ void XSArray_SortWithFunction( XSMutableArrayRef array, XSArray_SortFunction fun
     
     if( array->count < 2 )
     {
-        XSRecursiveLock_Unlock( array->lock );
+        __XSArray_Unlock( array );
         
         return;
     }
@@ -127,5 +127,5 @@ void XSArray_SortWithFunction( XSMutableArrayRef array, XSArray_SortFunction fun
     }
     
     XSRelease( objects );
-    XSRecursiveLock_Unlock( array->lock );
+    __XSArray_Unlock( array );
 }

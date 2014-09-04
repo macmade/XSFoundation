@@ -84,8 +84,8 @@ bool __XSArray_Equals( XSArrayRef object1, XSArrayRef object2 )
     
     equals = false;
     
-    XSRecursiveLock_Lock( object1->lock );
-    XSRecursiveLock_Lock( object2->lock );
+    __XSArray_Lock( object1 );
+    __XSArray_Lock( object2 );
     
     if( object1->count != object2->count )
     {
@@ -110,8 +110,8 @@ bool __XSArray_Equals( XSArrayRef object1, XSArrayRef object2 )
     
     end:
     
-    XSRecursiveLock_Unlock( object1->lock );
-    XSRecursiveLock_Unlock( object2->lock );
+    __XSArray_Unlock( object1 );
+    __XSArray_Unlock( object2 );
     
     return equals;
 }

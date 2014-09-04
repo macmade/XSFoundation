@@ -82,7 +82,7 @@ void XSArray_ApplyFunction( XSArrayRef array, XSArray_ApplierFunction function )
         return;
     }
     
-    XSRecursiveLock_Lock( array->lock );
+    __XSArray_Lock( array );
     
     value = array->first;
     stop  = false;
@@ -102,5 +102,5 @@ void XSArray_ApplyFunction( XSArrayRef array, XSArray_ApplierFunction function )
         index++;
     }
     
-    XSRecursiveLock_Unlock( array->lock );
+    __XSArray_Unlock( array );
 }

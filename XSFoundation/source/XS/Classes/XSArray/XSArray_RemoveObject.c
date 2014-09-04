@@ -81,7 +81,7 @@ void XSArray_RemoveObject( XSMutableArrayRef array, XSObjectRef object )
         return;
     }
     
-    XSRecursiveLock_Lock( array->lock );
+    __XSArray_Lock( array );
     
     if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
     {
@@ -126,5 +126,5 @@ void XSArray_RemoveObject( XSMutableArrayRef array, XSObjectRef object )
         }
     }
     
-    XSRecursiveLock_Unlock( array->lock );
+    __XSArray_Unlock( array );
 }

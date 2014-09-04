@@ -79,7 +79,7 @@ XSArrayRef __XSArray_Copy( XSArrayRef source, XSArrayRef destination )
     
     ( ( struct __XSArray * )destination )->lock = XSRecursiveLock_Create();
     
-    XSRecursiveLock_Lock( source->lock );
+    __XSArray_Lock( source );
     
     value           = source->first;
     previousValue   = NULL;
@@ -114,7 +114,7 @@ XSArrayRef __XSArray_Copy( XSArrayRef source, XSArrayRef destination )
     
     ( ( struct __XSArray * )destination )->properties = source->properties;
     
-    XSRecursiveLock_Unlock( source->lock );
+    __XSArray_Unlock( source );
     
     return destination;
 }
