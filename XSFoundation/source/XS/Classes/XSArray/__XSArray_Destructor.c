@@ -76,8 +76,6 @@ void __XSArray_Destructor( XSArrayRef object )
     __XSArray_Value * value;
     __XSArray_Value * removedValue;
     
-    __XSArray_Lock( object );
-    
     value = object->first;
     
     while( value != NULL )
@@ -89,6 +87,5 @@ void __XSArray_Destructor( XSArrayRef object )
         XSRelease( removedValue );
     }
     
-    __XSArray_Unlock( object );
     XSRelease( object->lock );
 }

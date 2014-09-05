@@ -73,10 +73,7 @@
 
 void __XSStack_Destructor( XSStackRef object )
 {
-    XSRecursiveLock_Lock( object->lock );
-    
     while( XSStack_Pop( object ) != NULL );
     
     XSRecursiveLock_Unlock( object->lock );
-    XSRelease( object->lock );
 }
