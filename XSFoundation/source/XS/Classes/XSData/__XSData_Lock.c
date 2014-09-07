@@ -71,10 +71,10 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSDataRef.h>
 
-void __XSData_Lock( XSDataRef Data )
+void __XSData_Lock( XSDataRef data )
 {
-    if( XSData_IsMutable( Data ) )
+    if( ( data->properties & __XSData_PropertiesMutable ) != 0 )
     {
-        XSRecursiveLock_Lock( Data->lock );
+        XSRecursiveLock_Lock( data->lock );
     }
 }
