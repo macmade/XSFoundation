@@ -98,6 +98,7 @@ struct __XSData
     XSUInt8                   * buffer;         /*! The byte buffer */
     XSRecursiveLockRef          lock;           /*! The lock for thread-safety */
     XSUInteger                  length;         /*! The length of the byte buffer */
+    XSUInteger                  capacity;       /*! The capacity of the byte buffer */
     XSData_BufferReleaseType    releaseType;    /*! The release type for the byte buffer */
     int                         properties;     /*! The data object properties */
 };
@@ -167,5 +168,25 @@ const char * __XSData_ToString( XSDataRef object );
  * @return      The XSData object
  */
 XSStatic struct __XSData * __XSData_Create( void );
+
+/*!
+ * @function    __XSData_Lock
+ * @abstract    Locks the internal data lock if necessary
+ * @param       data        The data
+ * @discussion  Locking will only occure if the data is mutable, as immutable
+ *              datas are de-facto thread-safe. This allows the same code
+ *              for both data types, with a performance gain on immutable ones.
+ */
+void __XSData_Lock( XSDataRef data );
+
+/*!
+ * @function    __XSData_Lock
+ * @abstract    Unlocks the internal array lock if necessary
+ * @param       data        The data
+ * @discussion  Unlocking will only occure if the data is mutable, as immutable
+ *              datas are de-facto thread-safe. This allows the same code
+ *              for both data types, with a performance gain on immutable ones.
+ */
+void __XSData_Unlock( XSDataRef data );
 
 #endif /* __XS___PRIVATE_CLASSES_XS_DATA_H__ */
