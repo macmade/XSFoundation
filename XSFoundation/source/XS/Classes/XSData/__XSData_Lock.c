@@ -62,18 +62,19 @@
 /* $Id$ */
 
 /*!
- * @file        __XSData_Constructor.c
+ * @file        __XSData_Lock.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for __XSData_Constructor
+ * @abstract    Definition for __XSData_Lock
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSDataRef.h>
 
-XSDataRef __XSData_Constructor( XSDataRef object )
+void __XSData_Lock( XSDataRef Data )
 {
-    ( ( struct __XSData * )object )->lock = XSRecursiveLock_Create();
-    
-    return object;
+    if( XSData_IsMutable( Data ) )
+    {
+        XSRecursiveLock_Lock( Data->lock );
+    }
 }

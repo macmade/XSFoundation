@@ -73,7 +73,35 @@
 
 XSDataRef __XSData_Copy( XSDataRef source, XSDataRef destination )
 {
-    ( void )source;
+    ( ( struct __XSData * )destination )->lock          = XSRecursiveLock_Create();
+    ( ( struct __XSData * )destination )->properties    = source->properties;
+    ( ( struct __XSData * )destination )->length        = source->length;
+    ( ( struct __XSData * )destination )->capacity      = source->capacity;
+    ( ( struct __XSData * )destination )->releaseType   = source->releaseType;
+    
+    __XSData_Lock( source );
+    
+    if( source->buffer != NULL )
+    {
+        if( source->releaseType == XSData_BufferReleaseTypeRelease && ( source->properties & __XSData_PropertiesMutable ) == 0 )
+        {
+            ( ( struct __XSData * )destination )->buffer        = XSRetain( source->buffer );
+        }
+        else
+        {
+            ( ( struct __XSData * )destination )->releaseType   = XSData_BufferReleaseTypeRelease;
+            ( ( struct __XSData * )destination )->buffer        = XSAlloc( source->capacity );
+            
+            if( destination->buffer == NULL )
+            {
+                XSFatalError( "Error allocating memory for the XSData buffer" );
+            }
+            
+            memcpy( ( ( struct __XSData * )destination )->buffer, source->buffer, source->length );
+        }
+    }
+    
+    __XSData_Unlock( source );
     
     return destination;
 }

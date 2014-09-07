@@ -73,9 +73,6 @@
 
 bool __XSData_Equals( XSDataRef object1, XSDataRef object2 )
 {
-    return object1 == object2;
-    
-    /*
     bool equals;
     
     if( object1 == object2 )
@@ -85,8 +82,8 @@ bool __XSData_Equals( XSDataRef object1, XSDataRef object2 )
     
     equals = false;
     
-    XSRecursiveLock_Lock( object1->lock );
-    XSRecursiveLock_Lock( object2->lock );
+    __XSData_Lock( object1 );
+    __XSData_Lock( object2 );
     
     if( object1->length != object2->length )
     {
@@ -109,9 +106,8 @@ bool __XSData_Equals( XSDataRef object1, XSDataRef object2 )
     
     end:
     
-    XSRecursiveLock_Unlock( object1->lock );
-    XSRecursiveLock_Unlock( object2->lock );
+    __XSData_Unlock( object1 );
+    __XSData_Unlock( object2 );
     
     return equals;
-    */
 }

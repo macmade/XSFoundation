@@ -73,11 +73,6 @@
 
 void __XSData_Destructor( XSDataRef object )
 {
-    ( void )object;
-    
-    /*
-    XSRecursiveLock_Lock( object->lock );
-    
     switch( object->releaseType )
     {
         case XSData_BufferReleaseTypeRelease:
@@ -95,7 +90,5 @@ void __XSData_Destructor( XSDataRef object )
             break;
     }
     
-    XSRecursiveLock_Unlock( object->lock );
     XSRelease( object->lock );
-    */
 }
