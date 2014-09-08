@@ -91,12 +91,14 @@
 /*!
  * @typedef     XSStringRef
  * @abstract    Opaque type for XSString
+ * @discussion  XSStringRef objects are thread-safe
  */
 typedef const struct __XSString * XSStringRef;
 
 /*!
  * @typedef     XSMutableStringRef
  * @abstract    Opaque type for XSMutableString
+ * @discussion  XSMutableStringRef objects are thread-safe
  */
 typedef struct __XSString * XSMutableStringRef;
 
@@ -106,6 +108,28 @@ typedef struct __XSString * XSMutableStringRef;
  * @return      The class ID for XSString
  */
 XS_EXPORT XSStatic XSClassID XSString_GetClassID( void );
+
+/*!
+ * @function    XSString_String
+ * @abstract    Gets an empty string
+ * @return      An empty immutable string
+ */
+XS_EXPORT XSStatic XSAutoreleased XSStringRef XSString_String( void );
+
+/*!
+ * @function    XSString_MutableString
+ * @abstract    Gets an empty mutable string
+ * @return      An empty mutable string
+ */
+XS_EXPORT XSStatic XSAutoreleased XSMutableStringRef XSString_MutableString( void );
+
+/*!
+ * @function    XSString_MutableStringWithCapacity
+ * @abstract    Hets an empty mutable string with an initial capacity
+ * @param       capacity    The initial string capacity
+ * @return      An empty mutable string
+ */
+XS_EXPORT XSStatic XSAutoreleased XSMutableStringRef XSString_MutableStringWithCapacity( XSUInteger capacity );
 
 /*!
  * @function    XSString_StringWithCString
@@ -134,6 +158,28 @@ XS_EXPORT XSStatic XSAutoreleased XSStringRef XSString_StringWithFormat( const c
 XS_EXPORT XSStatic XSAutoreleased XSStringRef XSString_StringWithFormatAndArgs( const char * format, va_list args ) XS_FORMAT_ATTRIBUTE( printf, 1, 0 );
 
 /*!
+ * @function    XSString_Create
+ * @abstract    Creates an empty string
+ * @return      An empty immutable string
+ */
+XS_EXPORT XSStatic XSStringRef XSString_Create( void );
+
+/*!
+ * @function    XSString_CreateMutable
+ * @abstract    Creates an empty mutable string
+ * @return      An empty mutable string
+ */
+XS_EXPORT XSStatic XSMutableStringRef XSString_CreateMutable( void );
+
+/*!
+ * @function    XSString_CreateMutableWithCapacity
+ * @abstract    Creates an empty mutable string with an initial capacity
+ * @param       capacity    The initial string capacity
+ * @return      An empty mutable string
+ */
+XS_EXPORT XSStatic XSMutableStringRef XSString_CreateMutableWithCapacity( XSUInteger capacity );
+
+/*!
  * @function    XSString_CreateWithCString
  * @abstract    Creates an XSString object from a C string
  * @param       s       The C string (const char *)
@@ -158,6 +204,22 @@ XS_EXPORT XSStatic XSStringRef XSString_CreateWithFormat( const char * format, .
  * @return      An XSString object
  */
 XS_EXPORT XSStatic XSStringRef XSString_CreateWithFormatAndArgs( const char * format, va_list args ) XS_FORMAT_ATTRIBUTE( printf, 1, 0 );
+
+/*!
+ * @function    XSString_CreateMutableCopy
+ * @abstract    Creates a mutable copy of a string
+ * @param       object      The string object
+ * @return      The mutable copy of the string
+ */
+XS_EXPORT XSMutableStringRef XSString_CreateMutableCopy( XSStringRef object );
+
+/*!
+ * @function    XSString_IsMutable
+ * @abstract    Checks if a string is mutable
+ * @param       object      The string object
+ * @return      True if the string is mutable, otherwise false
+ */
+XS_EXPORT bool XSString_IsMutable( XSStringRef object );
 
 /*!
  * @function    XSString_GetLength
@@ -295,6 +357,36 @@ XS_EXPORT bool XSString_ContainsCString( XSStringRef object, const char * s );
  * @return      True if the receiver string contains the 's' string, otherwise false
  */
 XS_EXPORT bool XSString_ContainsString( XSStringRef object, XSStringRef s );
+
+
+
+
+
+
+
+
+XS_EXPORT void XSString_AppendString( XSMutableStringRef object, XSStringRef s );
+XS_EXPORT void XSString_AppendCString( XSMutableStringRef object, const char * s );
+XS_EXPORT void XSString_AppendCharacters( XSMutableStringRef object, const char * s, XSUInteger length );
+XS_EXPORT void XSString_AppendCharacter( XSMutableStringRef object, const char c );
+XS_EXPORT void XSString_AppendFormat( XSMutableStringRef object, const char * format, ... ) XS_FORMAT_ATTRIBUTE( printf, 2, 3 );
+XS_EXPORT void XSString_AppendFormatAndArgs( XSMutableStringRef object, const char * format, va_list args ) XS_FORMAT_ATTRIBUTE( printf, 2, 0 );
+
+
+
+
+
+
+
+
+/*!
+ * @function    XSString_StringWithFormatAndArgs
+ * @abstract    Gets an XSString object from a format string with arguments
+ * @param       format  The format string
+ * @param       args     The format arguments
+ * @return      An XSString object (autoreleased)
+ */
+XS_EXPORT XSStatic XSAutoreleased XSStringRef XSString_StringWithFormatAndArgs( const char * format, va_list args ) XS_FORMAT_ATTRIBUTE( printf, 1, 0 );
 
 /*!
  * @function    XSString_StringFromXSPoint
