@@ -62,104 +62,96 @@
 /* $Id$ */
 
 /*!
- * @file        XSRuntime_Initialize.c
+ * @header      XSAllocatorRef.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntime_Initialize
+ * @abstract    Private definitions for XSAllocatorRef.h
+ * @discussion  ...
  */
 
-#include <XS/XS.h>
-#include <XS/__private/Functions/XSRuntime.h>
+#ifndef __XS_H__
+#error "Please include '<XS/XS.h>' instead of this file!"
+#endif
 
-/* Private initializers */
-void __XSDebugger_Initialize( void );
+#ifndef __XS___PRIVATE_CLASSES_XS_ALLOCATOR_H__
+#define __XS___PRIVATE_CLASSES_XS_ALLOCATOR_H__
 
-/* Private class initializers */
-XSStatic void __XSAllocator_Initialize( void );
-XSStatic void __XSArray_Initialize( void );
-XSStatic void __XSAutoreleasePool_Initialize( void );
-XSStatic void __XSBag_Initialize( void );
-XSStatic void __XSBinaryTree_Initialize( void );
-XSStatic void __XSBoolean_Initialize( void );
-XSStatic void __XSColor_Initialize( void );
-XSStatic void __XSData_Initialize( void );
-XSStatic void __XSDate_Initialize( void );
-XSStatic void __XSDictionary_Initialize( void );
-XSStatic void __XSError_Initialize( void );
-XSStatic void __XSFile_Initialize( void );
-XSStatic void __XSFileManager_Initialize( void );
-XSStatic void __XSLock_Initialize( void );
-XSStatic void __XSNode_Initialize( void );
-XSStatic void __XSNotification_Initialize( void );
-XSStatic void __XSNotificationCenter_Initialize( void );
-XSStatic void __XSNull_Initialize( void );
-XSStatic void __XSNumber_Initialize( void );
-XSStatic void __XSPrimitiveArray_Initialize( void );
-XSStatic void __XSRecursiveLock_Initialize( void );
-XSStatic void __XSSemaphore_Initialize( void );
-XSStatic void __XSSet_Initialize( void );
-XSStatic void __XSStack_Initialize( void );
-XSStatic void __XSString_Initialize( void );
-XSStatic void __XSThread_Initialize( void );
-XSStatic void __XSURL_Initialize( void );
-XSStatic void __XSValue_Initialize( void );
-XSStatic void __XSXMLParser_Initialize( void );
+#include <XS/XSTypes.h>
+#include <XS/XSMacros.h>
 
-void XSRuntime_Initialize( void )
+/*!
+ * @struct      __XSAllocator
+ * @abstract    Structure for XSAllocator
+ */
+struct __XSAllocator
 {
-    __XSRuntime_ClassInfoList * classes;
-    
-    if( XSAtomic_CompareAndSwapInteger( XSInitStatusNotInited, XSInitStatusInitializing, &__XSRuntime_InitStatus ) == false )
-    {
-        return;
-    }
-    
-    classes = ( __XSRuntime_ClassInfoList * )calloc( sizeof( __XSRuntime_ClassInfoList ), 1 );
-    
-    if( classes == NULL )
-    {
-        XSFatalError( "Cannot allocate memory for the runtime class informations" );
-    }
-    
-    if( atexit( __XSRuntime_Finalize ) != 0 )
-    {
-        XSFatalError( "Cannot register the XSFoundation finalizier function" );
-    }
-    
-    __XSRuntime_Classes     = classes;
-    __XSRuntime_ClassCount  = 0;
-    
-    while( XSAtomic_CompareAndSwapInteger( XSInitStatusInitializing, XSInitStatusInited, &__XSRuntime_InitStatus ) == false );
-    
-    __XSDebugger_Initialize();
-    
-    __XSAllocator_Initialize();
-    __XSArray_Initialize();
-    __XSAutoreleasePool_Initialize();
-    __XSBag_Initialize();
-    __XSBinaryTree_Initialize();
-    __XSBoolean_Initialize();
-    __XSColor_Initialize();
-    __XSData_Initialize();
-    __XSDate_Initialize();
-    __XSDictionary_Initialize();
-    __XSError_Initialize();
-    __XSFile_Initialize();
-    __XSFileManager_Initialize();
-    __XSLock_Initialize();
-    __XSNode_Initialize();
-    __XSNotification_Initialize();
-    __XSNotificationCenter_Initialize();
-    __XSNull_Initialize();
-    __XSNumber_Initialize();
-    __XSPrimitiveArray_Initialize();
-    __XSRecursiveLock_Initialize();
-    __XSSemaphore_Initialize();
-    __XSSet_Initialize();
-    __XSStack_Initialize();
-    __XSString_Initialize();
-    __XSThread_Initialize();
-    __XSURL_Initialize();
-    __XSValue_Initialize();
-    __XSXMLParser_Initialize();
-}
+    void * temp; /*! Not yet implemented... */
+};
+
+/*!
+ * @var         __XSAllocator_ClassID
+ * @abstract    Class ID
+ */
+XS_EXTERN XSClassID __XSAllocator_ClassID;
+
+/*!
+ * @var         __XSAllocator_Class
+ * @abstract    Class info
+ */
+XS_EXTERN XSClassInfo __XSAllocator_Class;
+
+/*!
+ * @function    __XSAllocator_Initialize
+ * @abstract    Class initializer
+ */
+XSStatic void __XSAllocator_Initialize( void );
+
+/*!
+ * @function    __XSAllocator_Constructor
+ * @abstract    Class constructor callback
+ * @param       object      The object beeing construct
+ * @return      The new object
+ */
+XSAllocatorRef __XSAllocator_Constructor( XSAllocatorRef object );
+
+/*!
+ * @function    __XSAllocator_Destructor
+ * @abstract    Class destructor callback
+ * @param       object      The object beeing destruct
+ */
+void __XSAllocator_Destructor( XSAllocatorRef object );
+
+/*!
+ * @function    __XSAllocator_Copy
+ * @abstract    Class copy callback
+ * @param       source      The object to copy
+ * @param       destination The object beeing copied
+ * @result      The copied object
+ */
+XSAllocatorRef __XSAllocator_Copy( XSAllocatorRef source, XSAllocatorRef destination );
+
+/*!
+ * @function    __XSAllocator_Equals
+ * @abstract    Class equals callback
+ * @param       object1     The first object to compare
+ * @param       object2     The second object to compare
+ * @return      True if both objects are equals, otherwise false
+ */
+bool __XSAllocator_Equals( XSAllocatorRef object1, XSAllocatorRef object2 );
+
+/*!
+ * @function    __XSAllocator_ToString
+ * @abstract    Class to-string callback
+ * @param       object      The object for which to get a description
+ * @return      The object's description
+ */
+const char * __XSAllocator_ToString( XSAllocatorRef object );
+
+/*!
+ * @function    __XSAllocator_Create
+ * @abstract    Creates an XSAllocator object
+ * @return      The XSAllocator object
+ */
+XSStatic struct __XSAllocator * __XSAllocator_Create( void );
+
+#endif /* __XS___PRIVATE_CLASSES_XS_ALLOCATOR_H__ */

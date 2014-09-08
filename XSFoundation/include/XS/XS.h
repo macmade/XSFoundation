@@ -100,6 +100,7 @@
 #include <XS/Functions/XSFileSystem.h>
 
 /* Classes */
+#include <XS/Classes/XSAllocatorRef.h>
 #include <XS/Classes/XSArrayRef.h>
 #include <XS/Classes/XSAutoreleasePoolRef.h>
 #include <XS/Classes/XSBagRef.h>
