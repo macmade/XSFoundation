@@ -78,3 +78,5 @@ __XSDebugger_MemoryRecord * volatile __XSDebugger_MemoryRecords = NULL;
 PVOID __XSDebugger_SEH = NULL;
 
 #endif
+
+bool __XSDebugger_ExitRequested = false;

@@ -134,6 +134,12 @@ __XSDebugger_MemoryRecord;
  */
 XS_EXTERN __XSDebugger_MemoryRecord * volatile __XSDebugger_MemoryRecords;
 
+/*!
+ * @var         __XSDebugger_ExitRequested
+ * @abstract    Whether exit was requested through the debugger
+ */
+XS_EXTERN bool __XSDebugger_ExitRequested;
+
 #ifdef _WIN32
 
 /*!

@@ -76,6 +76,11 @@ void __XSDebugger_Breakpoint( const char * message, __XSDebugger_MemoryRecord * 
 {
     int c;
     
+    if( __XSDebugger_ExitRequested )
+    {
+        return;
+    }
+    
     #ifndef DEBUG
     
     ( void )message;
@@ -164,6 +169,8 @@ void __XSDebugger_Breakpoint( const char * message, __XSDebugger_MemoryRecord * 
             goto end;
             
         case 'q':
+            
+            __XSDebugger_ExitRequested = true;
             
             exit( EXIT_SUCCESS );
             
