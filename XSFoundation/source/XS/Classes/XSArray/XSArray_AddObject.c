@@ -87,7 +87,7 @@ void XSArray_AddObject( XSMutableArrayRef array, XSObjectRef object )
     
     __XSArray_Lock( array );
     
-    if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
+    if( XSArray_IsMutable( array ) )
     {
         XSFatalError( "Cannot add an object to an immutable array" );
     }

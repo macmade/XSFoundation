@@ -73,7 +73,7 @@
 
 void __XSArray_Unlock( XSArrayRef array )
 {
-    if( ( array->properties & __XSArray_PropertiesMutable ) != 0 )
+    if( XSArray_IsMutable( array ) )
     {
         XSRecursiveLock_Unlock( array->lock );
     }

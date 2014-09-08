@@ -84,7 +84,7 @@ void XSArray_AppendArray( XSMutableArrayRef array, XSArrayRef objects )
     __XSArray_Lock( array );
     __XSArray_Lock( objects );
     
-    if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
+    if( XSArray_IsMutable( array ) )
     {
         XSFatalError( "Cannot append values to an immutable array" );
     }

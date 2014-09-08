@@ -85,7 +85,7 @@ void XSArray_FilterWithFunction( XSMutableArrayRef array, XSArray_FilterFunction
     
     __XSArray_Lock( array );
     
-    if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
+    if( XSArray_IsMutable( array ) )
     {
         XSFatalError( "Cannot filter an immutable array" );
     }

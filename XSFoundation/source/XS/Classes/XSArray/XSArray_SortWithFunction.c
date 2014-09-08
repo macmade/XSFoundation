@@ -85,7 +85,7 @@ void XSArray_SortWithFunction( XSMutableArrayRef array, XSArray_SortFunction fun
     
     __XSArray_Lock( array );
     
-    if( ( array->properties & __XSArray_PropertiesMutable ) == 0 )
+    if( XSArray_IsMutable( array ) )
     {
         XSFatalError( "Cannot sort an immutable array" );
     }

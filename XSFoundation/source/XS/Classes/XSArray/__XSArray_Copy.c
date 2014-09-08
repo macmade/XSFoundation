@@ -112,7 +112,8 @@ XSArrayRef __XSArray_Copy( XSArrayRef source, XSArrayRef destination )
         ( ( struct __XSArray * )destination )->count++;
     }
     
-    ( ( struct __XSArray * )destination )->properties = source->properties;
+    ( ( struct __XSArray * )destination )->properties  = source->properties;
+    ( ( struct __XSArray * )destination )->properties &= ~__XSArray_PropertiesMutable;
     
     __XSArray_Unlock( source );
     

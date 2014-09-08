@@ -73,13 +73,5 @@
 
 XSStatic XSArrayRef XSArray_CreateWithArray( XSArrayRef array )
 {
-    XSMutableArrayRef object;
-    
-    object = XSArray_CreateMutable();
-    
-    XSArray_AppendArray( object, array );
-    
-    object->properties &= ~__XSArray_PropertiesMutable;
-    
-    return object;
+    return XSCopy( array );
 }
