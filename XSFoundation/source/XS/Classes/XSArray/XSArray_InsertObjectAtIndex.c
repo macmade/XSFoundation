@@ -89,7 +89,7 @@ void XSArray_InsertObjectAtIndex( XSMutableArrayRef array, XSUInteger index, XSO
     
     __XSArray_Lock( array );
     
-    if( XSArray_IsMutable( array ) )
+    if( XSArray_IsMutable( array ) == false )
     {
         XSFatalError( "Cannot insert an object in an immutable array" );
     }

@@ -85,7 +85,7 @@ XS_EXPORT void XSArray_FilterWithMethod( XSMutableArrayRef array, XSObjectRef ob
     
     __XSArray_Lock( array );
     
-    if( XSArray_IsMutable( array ) )
+    if( XSArray_IsMutable( array ) == false )
     {
         XSFatalError( "Cannot filter an immutable array" );
     }

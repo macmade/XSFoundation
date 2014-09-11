@@ -82,7 +82,7 @@ void XSArray_RemoveLastObject( XSMutableArrayRef array )
     
     __XSArray_Lock( array );
     
-    if( XSArray_IsMutable( array ) )
+    if( XSArray_IsMutable( array ) == false )
     {
         XSFatalError( "Cannot remove an object from an immutable array" );
     }

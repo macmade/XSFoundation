@@ -83,7 +83,7 @@ void XSArray_RemoveObjectAtIndex( XSMutableArrayRef array, XSUInteger index )
     
     __XSArray_Lock( array );
     
-    if( XSArray_IsMutable( array ) )
+    if( XSArray_IsMutable( array ) == false )
     {
         XSFatalError( "Cannot remove objects from an immutable array" );
     }

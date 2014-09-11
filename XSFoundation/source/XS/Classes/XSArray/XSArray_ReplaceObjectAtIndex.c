@@ -88,7 +88,7 @@ void XSArray_ReplaceObjectAtIndex( XSMutableArrayRef array, XSUInteger index, XS
     
     __XSArray_Lock( array );
     
-    if( XSArray_IsMutable( array ) )
+    if( XSArray_IsMutable( array ) == false )
     {
         XSFatalError( "Cannot replace an object from an immutable array" );
     }
