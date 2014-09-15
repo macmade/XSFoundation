@@ -73,7 +73,7 @@
 #include <XS/__private/Functions/XSDebugger.h>
 #include <XS/__private/Functions/XSRuntime.h>
 
-XS_EXPORT void * XSReallocWithInfos( const void * memory, XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func )
+XS_EXPORT void * XSReallocWithInfos( const void * memory, XSUInteger bytes, const char * file, int line, const char * func )
 {
     XSUInteger         size;
     XSUInteger         oldSize;
@@ -98,19 +98,9 @@ XS_EXPORT void * XSReallocWithInfos( const void * memory, XSUInteger bytes, XSCl
     
     __XSDebugger_CheckObjectIntegrity( object );
     
-    if( XSRuntime_IsRegisteredClass( classID ) )
-    {
-        XSFatalError( "Trying to reallocate an instance of class %s", XSRuntime_GetClassName( classID ) );
-    }
-    
     if( XSRuntime_IsRegisteredClass( object->classID ) )
     {
         XSFatalError( "Trying to reallocate an instance of class %s", XSRuntime_GetClassName( object->classID ) );
-    }
-    
-    if( object->classID != classID )
-    {
-        XSFatalError( "Trying to reallocate memory with different types (%lu - %lu)", ( unsigned long )classID, ( unsigned long )( object->classID ) );
     }
     
     oldSize = object->size;

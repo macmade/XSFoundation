@@ -98,7 +98,7 @@ XS_EXTERN_C_BEGIN
  *              size, additional data will be zero-filled.
  * @return      The reallocated memory, or NULL
  */
-#define XSRealloc( _memory_, _bytes_ )  XSReallocWithInfos( _memory_, _bytes_, 0, __FILE__, __LINE__, __func__ )
+#define XSRealloc( _memory_, _bytes_ )  XSReallocWithInfos( _memory_, _bytes_, __FILE__, __LINE__, __func__ )
 
 /*!
  * @define      XSAutoAlloc
@@ -162,7 +162,6 @@ XS_EXPORT void * XSAutoAllocWithInfos( XSUInteger bytes, XSClassID classID, cons
  * @abstract    Reallocates memory
  * @param       memory      The memory data to reallocate
  * @param       bytes       The number of bytes to reallocate
- * @param       classID     The class ID, if any
  * @param       file        The file in which the reallocation occurs
  * @param       line        The line number of the file in which the reallocation occurs
  * @param       func        The function in which the reallocation occurs
@@ -170,7 +169,7 @@ XS_EXPORT void * XSAutoAllocWithInfos( XSUInteger bytes, XSClassID classID, cons
  *              instead.
  * @return      The reallocated memory, or NULL
  */
-XS_EXPORT void * XSReallocWithInfos( const void * memory, XSUInteger bytes, XSClassID classID, const char * file, int line, const char * func );
+XS_EXPORT void * XSReallocWithInfos( const void * memory, XSUInteger bytes, const char * file, int line, const char * func );
 
 /*!
  * @function    XSRetain
