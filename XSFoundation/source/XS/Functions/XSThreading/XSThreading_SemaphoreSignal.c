@@ -86,7 +86,7 @@ void XSThreading_SemaphoreSignal( XSSemaphore * sem )
     
     #if defined( _WIN32 )
     
-    ReleaseSemaphore( sem->sem );
+    ReleaseSemaphore( sem->sem, 1, NULL );
     
     #else
     
