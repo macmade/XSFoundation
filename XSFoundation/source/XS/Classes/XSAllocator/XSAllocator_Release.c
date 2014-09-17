@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSAllocatorRef.h>
 
-void XSAllocator_Release( const void * memory, XSCompilerContext * context )
+void XSAllocator_Release( XSAllocatorRef allocator, const void * memory, XSCompilerContext * context )
 {
+    ( void )allocator;
     ( void )memory;
     ( void )context;
 }

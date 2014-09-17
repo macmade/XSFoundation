@@ -71,7 +71,7 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSAllocatorRef.h>
 
-void XSAllocator_SetDefault( XSAllocatorRef allocator )
+XSStatic void XSAllocator_SetDefault( XSAllocatorRef allocator )
 {
     ( void )allocator;
 }

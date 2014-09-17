@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSAllocatorRef.h>
 
-XSUInteger XSAllocator_GetPreferredSizeForSize( XSUInteger size )
+XSUInteger XSAllocator_GetPreferredSizeForSize( XSAllocatorRef allocator, XSUInteger size )
 {
+    ( void )allocator;
     ( void )size;
     
     return 0;

@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSAllocatorRef.h>
 
-void * XSAllocator_Allocate( XSUInteger size, XSClassID classID, XSCompilerContext * context )
+void * XSAllocator_Allocate( XSAllocatorRef allocator, XSUInteger size, XSClassID classID, XSCompilerContext * context )
 {
+    ( void )allocator;
     ( void )size;
     ( void )classID;
     ( void )context;

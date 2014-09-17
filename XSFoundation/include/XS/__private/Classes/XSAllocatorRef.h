@@ -85,7 +85,7 @@
  */
 struct __XSAllocator
 {
-    void * temp; /*! Not yet implemented... */
+    XSAllocator_Callbacks callbacks;
 };
 
 /*!
