@@ -62,62 +62,18 @@
 /* $Id$ */
 
 /*!
- * @header      XSAllocatorRef.h
+ * @file        XSAllocator_Create.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSAllocator class
- * @discussion  ...
+ * @abstract    Definition for XSAllocator_Create
  */
 
-#ifndef __XS_H__
-#error "Please include '<XS/XS.h>' instead of this file!"
-#endif
+#include <XS/XS.h>
+#include <XS/__private/Classes/XSAllocatorRef.h>
 
-#ifndef __XS_CLASSES_XS_ALLOCATOR_H__
-#define __XS_CLASSES_XS_ALLOCATOR_H__
-
-#include <XS/XSTypes.h>
-#include <XS/XSMacros.h>
-
-/*!
- * @typedef     XSAllocatorRef
- * @abstract    Opaque type for XSAllocator
- */
-typedef const struct __XSAllocator * XSAllocatorRef;
-
-/*!
- * @function    XSAllocator_GetClassID
- * @abstract    Gets the class ID for XSAllocator
- * @return      The class ID for XSAllocator
- */
-XS_EXPORT XSStatic XSClassID XSAllocator_GetClassID( void );
-
-typedef void * ( * XSAllocator_AllocateCallback )( XSUInteger size, XSClassID classID, XSCompilerContext * context );
-typedef void * ( * XSAllocator_ReallocateCallback )( const void * memory, XSUInteger size, XSCompilerContext * context );
-typedef void ( * XSAllocator_DeallocateCallback )( const void * memory, XSCompilerContext * context );
-typedef void * ( * XSAllocator_RetainCallback )( const void * memory, XSCompilerContext * context );
-typedef void ( * XSAllocator_ReleaseCallback )( const void * memory, XSCompilerContext * context );
-typedef XSUInteger ( * XSAllocator_PreferredSizeCallback )( XSUInteger size );
-
-typedef struct
+XSStatic XSAllocatorRef XSAllocator_Create( XSAllocator_Callbacks * callbacks )
 {
-    XSAllocator_AllocateCallback        alloc;
-    XSAllocator_ReallocateCallback      realloc;
-    XSAllocator_DeallocateCallback      dealloc;
-    XSAllocator_RetainCallback          retain;
-    XSAllocator_ReleaseCallback         release;
-    XSAllocator_PreferredSizeCallback   size;
+    ( void )callbacks;
+    
+    return NULL;
 }
-XSAllocator_Callbacks;
-
-XS_EXPORT XSStatic XSAllocatorRef XSAllocator_Create( XSAllocator_Callbacks * callbacks );
-XS_EXPORT void * XSAllocator_Allocate( XSUInteger size, XSClassID classID, XSCompilerContext * context );
-XS_EXPORT void * XSAllocator_Reallocate( const void * memory, XSCompilerContext * context );
-XS_EXPORT void XSAllocator_Deallocate( const void * memory, XSCompilerContext * context );
-XS_EXPORT void * XSAllocator_Retain( const void * memory, XSCompilerContext * context );
-XS_EXPORT void XSAllocator_Release( const void * memory, XSCompilerContext * context );
-XS_EXPORT XSUInteger XSAllocator_GetPreferredSizeForSize( XSUInteger size );
-XS_EXPORT XSAllocatorRef XSAllocator_GetDefault( void );
-XS_EXPORT void XSAllocator_SetDefault( XSAllocatorRef allocator );
-
-#endif /* __XS_CLASSES_XS_ALLOCATOR_H__ */

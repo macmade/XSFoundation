@@ -154,4 +154,10 @@ const char * __XSAllocator_ToString( XSAllocatorRef object );
  */
 XSStatic struct __XSAllocator * __XSAllocator_Create( void );
 
+/*!
+ * @var         __XSAllocator_DefaultAllocator
+ * @abstract    The default XSFoundation allocator
+ */
+XS_EXTERN XSAllocatorRef __XSAllocator_DefaultAllocator;
+
 #endif /* __XS___PRIVATE_CLASSES_XS_ALLOCATOR_H__ */

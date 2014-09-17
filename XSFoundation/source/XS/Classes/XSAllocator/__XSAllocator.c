@@ -71,8 +71,9 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSAllocatorRef.h>
 
-XSClassID   __XSAllocator_ClassID = 0;
-XSClassInfo __XSAllocator_Class   =
+XSAllocatorRef __XSAllocator_DefaultAllocator = NULL;
+XSClassID      __XSAllocator_ClassID          = 0;
+XSClassInfo    __XSAllocator_Class            =
 {
     "XSAllocator",
     XSClassTypeNormal,
