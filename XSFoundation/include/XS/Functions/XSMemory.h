@@ -113,6 +113,14 @@ XS_EXTERN_C_BEGIN
 #define XSAutoAlloc( _bytes_ )          XSAutoAllocWithInfos( _bytes_, 0, __FILE__, __LINE__, __func__ )
 
 /*!
+ * @define      XSRetain
+ * @abstract    Retains memory data
+ * @param       _memory_    The memory data to retain
+ * @return      The memory data
+ */
+#define XSRetain( _memory_ )            XSRetainWithInfos( _memory_, __FILE__, __LINE__, __func__ )
+
+/*!
  * @define      XSRelease
  * @abstract    Releases memory data
  * @param       _memory_    The memory data to release
@@ -175,9 +183,14 @@ XS_EXPORT void * XSReallocWithInfos( const void * memory, XSUInteger bytes, cons
  * @function    XSRetain
  * @abstract    Retains memory data
  * @param       memory      The memory data to retain
+ * @param       file        The file in which the retain occurs
+ * @param       line        The line number of the file in which the retain occurs
+ * @param       func        The function in which the retain occurs
  * @return      The memory data
+ * @discussion  Do not use this function directly. Use the XSRelease macro
+ *              instead.
  */
-XS_EXPORT void * XSRetain( const void * memory );
+XS_EXPORT void * XSRetainWithInfos( const void * memory, const char * file, int line, const char * func );
 
 /*!
  * @function    XSReleaseWithInfos

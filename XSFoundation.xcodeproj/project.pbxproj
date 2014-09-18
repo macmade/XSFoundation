@@ -384,10 +384,10 @@
 		0523063518EB4B1F00C29627 /* XSReleaseWithInfos.c in Sources */ = {isa = PBXBuildFile; fileRef = 052304B918EB4B1F00C29627 /* XSReleaseWithInfos.c */; };
 		0523063618EB4B1F00C29627 /* XSReleaseWithInfos.c in Sources */ = {isa = PBXBuildFile; fileRef = 052304B918EB4B1F00C29627 /* XSReleaseWithInfos.c */; };
 		0523063718EB4B1F00C29627 /* XSReleaseWithInfos.c in Sources */ = {isa = PBXBuildFile; fileRef = 052304B918EB4B1F00C29627 /* XSReleaseWithInfos.c */; };
-		0523063818EB4B1F00C29627 /* XSRetain.c in Sources */ = {isa = PBXBuildFile; fileRef = 052304BA18EB4B1F00C29627 /* XSRetain.c */; };
-		0523063918EB4B1F00C29627 /* XSRetain.c in Sources */ = {isa = PBXBuildFile; fileRef = 052304BA18EB4B1F00C29627 /* XSRetain.c */; };
-		0523063A18EB4B1F00C29627 /* XSRetain.c in Sources */ = {isa = PBXBuildFile; fileRef = 052304BA18EB4B1F00C29627 /* XSRetain.c */; };
-		0523063B18EB4B1F00C29627 /* XSRetain.c in Sources */ = {isa = PBXBuildFile; fileRef = 052304BA18EB4B1F00C29627 /* XSRetain.c */; };
+		0523063818EB4B1F00C29627 /* XSRetainWithInfos.c in Sources */ = {isa = PBXBuildFile; fileRef = 052304BA18EB4B1F00C29627 /* XSRetainWithInfos.c */; };
+		0523063918EB4B1F00C29627 /* XSRetainWithInfos.c in Sources */ = {isa = PBXBuildFile; fileRef = 052304BA18EB4B1F00C29627 /* XSRetainWithInfos.c */; };
+		0523063A18EB4B1F00C29627 /* XSRetainWithInfos.c in Sources */ = {isa = PBXBuildFile; fileRef = 052304BA18EB4B1F00C29627 /* XSRetainWithInfos.c */; };
+		0523063B18EB4B1F00C29627 /* XSRetainWithInfos.c in Sources */ = {isa = PBXBuildFile; fileRef = 052304BA18EB4B1F00C29627 /* XSRetainWithInfos.c */; };
 		0523063C18EB4B1F00C29627 /* __XSProcess.c in Sources */ = {isa = PBXBuildFile; fileRef = 052304BD18EB4B1F00C29627 /* __XSProcess.c */; };
 		0523063D18EB4B1F00C29627 /* __XSProcess.c in Sources */ = {isa = PBXBuildFile; fileRef = 052304BD18EB4B1F00C29627 /* __XSProcess.c */; };
 		0523063E18EB4B1F00C29627 /* __XSProcess.c in Sources */ = {isa = PBXBuildFile; fileRef = 052304BD18EB4B1F00C29627 /* __XSProcess.c */; };
@@ -3482,7 +3482,7 @@
 		052304B718EB4B1F00C29627 /* XSCopyWithInfos.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSCopyWithInfos.c; sourceTree = "<group>"; };
 		052304B818EB4B1F00C29627 /* XSEquals.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSEquals.c; sourceTree = "<group>"; };
 		052304B918EB4B1F00C29627 /* XSReleaseWithInfos.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSReleaseWithInfos.c; sourceTree = "<group>"; };
-		052304BA18EB4B1F00C29627 /* XSRetain.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSRetain.c; sourceTree = "<group>"; };
+		052304BA18EB4B1F00C29627 /* XSRetainWithInfos.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSRetainWithInfos.c; sourceTree = "<group>"; };
 		052304BD18EB4B1F00C29627 /* __XSProcess.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSProcess.c; sourceTree = "<group>"; };
 		052304BE18EB4B1F00C29627 /* XSProcess_GetProcessID.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSProcess_GetProcessID.c; sourceTree = "<group>"; };
 		052304BF18EB4B1F00C29627 /* XSProcess_GetProcessName.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSProcess_GetProcessName.c; sourceTree = "<group>"; };
@@ -4557,7 +4557,7 @@
 				052304B818EB4B1F00C29627 /* XSEquals.c */,
 				052306E018EB4C7B00C29627 /* XSReallocWithInfos.c */,
 				052304B918EB4B1F00C29627 /* XSReleaseWithInfos.c */,
-				052304BA18EB4B1F00C29627 /* XSRetain.c */,
+				052304BA18EB4B1F00C29627 /* XSRetainWithInfos.c */,
 			);
 			path = XSMemory;
 			sourceTree = "<group>";
@@ -6499,7 +6499,7 @@
 				05F3585918F20EF10070111A /* XSArray_GetLastObject.c in Sources */,
 				0580895019117E0E00118D3D /* XSColor_CreateWithHSVA.c in Sources */,
 				0523057C18EB4B1F00C29627 /* XSRect_GetMinY.c in Sources */,
-				0523063818EB4B1F00C29627 /* XSRetain.c in Sources */,
+				0523063818EB4B1F00C29627 /* XSRetainWithInfos.c in Sources */,
 				058089A419117E0E00118D3D /* XSColor_LightGrayColor.c in Sources */,
 				055D169218E1D42800894C7B /* __XSData.c in Sources */,
 				055D186E18E1D42800894C7B /* XSSet_GetClassID.c in Sources */,
@@ -7318,7 +7318,7 @@
 				052305B118EB4B1F00C29627 /* XSRect_Union.c in Sources */,
 				058089A519117E0E00118D3D /* XSColor_LightGrayColor.c in Sources */,
 				0523057D18EB4B1F00C29627 /* XSRect_GetMinY.c in Sources */,
-				0523063918EB4B1F00C29627 /* XSRetain.c in Sources */,
+				0523063918EB4B1F00C29627 /* XSRetainWithInfos.c in Sources */,
 				05518189196BE09E0053304E /* XSXMLParser_GetCurrentColumnNumber.c in Sources */,
 				05A1539418F5C0D800365881 /* XSOrderedSet_ApplyMethod.c in Sources */,
 				0528E6061900C82400CCFD28 /* XSNumber_CreateWithXSFloat64.c in Sources */,
@@ -8134,7 +8134,7 @@
 				052305B218EB4B1F00C29627 /* XSRect_Union.c in Sources */,
 				058089A619117E0E00118D3D /* XSColor_LightGrayColor.c in Sources */,
 				0523057E18EB4B1F00C29627 /* XSRect_GetMinY.c in Sources */,
-				0523063A18EB4B1F00C29627 /* XSRetain.c in Sources */,
+				0523063A18EB4B1F00C29627 /* XSRetainWithInfos.c in Sources */,
 				0551816E196BE09E0053304E /* XSXMLParser_GetCurrentColumnNumber.c in Sources */,
 				05A1539518F5C0D800365881 /* XSOrderedSet_ApplyMethod.c in Sources */,
 				0528E6071900C82400CCFD28 /* XSNumber_CreateWithXSFloat64.c in Sources */,
@@ -8950,7 +8950,7 @@
 				052305B318EB4B1F00C29627 /* XSRect_Union.c in Sources */,
 				058089A719117E0E00118D3D /* XSColor_LightGrayColor.c in Sources */,
 				0523057F18EB4B1F00C29627 /* XSRect_GetMinY.c in Sources */,
-				0523063B18EB4B1F00C29627 /* XSRetain.c in Sources */,
+				0523063B18EB4B1F00C29627 /* XSRetainWithInfos.c in Sources */,
 				05518153196BE09D0053304E /* XSXMLParser_GetCurrentColumnNumber.c in Sources */,
 				05A1539618F5C0D800365881 /* XSOrderedSet_ApplyMethod.c in Sources */,
 				0528E6081900C82400CCFD28 /* XSNumber_CreateWithXSFloat64.c in Sources */,
