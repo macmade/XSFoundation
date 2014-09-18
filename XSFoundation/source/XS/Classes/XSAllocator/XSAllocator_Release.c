@@ -73,7 +73,10 @@
 
 void XSAllocator_Release( XSAllocatorRef allocator, const void * memory, XSCompilerContext * context )
 {
-    ( void )allocator;
-    ( void )memory;
-    ( void )context;
+    if( allocator == NULL || allocator->callbacks.release == NULL || memory == NULL )
+    {
+        return;
+    }
+    
+    allocator->callbacks.release( memory, context );
 }

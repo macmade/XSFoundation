@@ -78,6 +78,7 @@
 
 #include <XS/XSTypes.h>
 #include <XS/XSMacros.h>
+#include <XS/Classes/XSStringRef.h>
 
 /*!
  * @typedef     XSAllocatorRef
@@ -110,15 +111,16 @@ typedef struct
 }
 XSAllocator_Callbacks;
 
-XS_EXPORT XSStatic XSAllocatorRef XSAllocator_Create( XSAllocator_Callbacks * callbacks );
+XS_EXPORT XSStatic XSAllocatorRef XSAllocator_Create( XSStringRef name, XSAllocator_Callbacks * callbacks );
 XS_EXPORT XSStatic XSAllocatorRef XSAllocator_GetDefault( void );
 XS_EXPORT XSStatic void XSAllocator_SetDefault( XSAllocatorRef allocator );
 
 XS_EXPORT void * XSAllocator_Allocate( XSAllocatorRef allocator, XSUInteger size, XSClassID classID, XSCompilerContext * context );
-XS_EXPORT void * XSAllocator_Reallocate( XSAllocatorRef allocator, const void * memory, XSCompilerContext * context );
+XS_EXPORT void * XSAllocator_Reallocate( XSAllocatorRef allocator, const void * memory, XSUInteger size, XSCompilerContext * context );
 XS_EXPORT void XSAllocator_Deallocate( XSAllocatorRef allocator, const void * memory, XSCompilerContext * context );
 XS_EXPORT void * XSAllocator_Retain( XSAllocatorRef allocator, const void * memory, XSCompilerContext * context );
 XS_EXPORT void XSAllocator_Release( XSAllocatorRef allocator, const void * memory, XSCompilerContext * context );
 XS_EXPORT XSUInteger XSAllocator_GetPreferredSizeForSize( XSAllocatorRef allocator, XSUInteger size );
+XS_EXPORT XSStringRef XSAllocator_GetName( XSAllocatorRef allocator );
 
 #endif /* __XS_CLASSES_XS_ALLOCATOR_H__ */

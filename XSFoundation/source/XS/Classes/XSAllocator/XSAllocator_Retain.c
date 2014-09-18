@@ -73,9 +73,10 @@
 
 void * XSAllocator_Retain( XSAllocatorRef allocator, const void * memory, XSCompilerContext * context )
 {
-    ( void )allocator;
-    ( void )memory;
-    ( void )context;
+    if( allocator == NULL || allocator->callbacks.retain == NULL || memory == NULL )
+    {
+        return NULL;
+    }
     
-    return NULL;
+    return allocator->callbacks.retain( memory, context );
 }

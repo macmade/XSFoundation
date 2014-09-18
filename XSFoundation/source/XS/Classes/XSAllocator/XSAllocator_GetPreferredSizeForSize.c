@@ -73,8 +73,15 @@
 
 XSUInteger XSAllocator_GetPreferredSizeForSize( XSAllocatorRef allocator, XSUInteger size )
 {
-    ( void )allocator;
-    ( void )size;
+    if( allocator == NULL )
+    {
+        return 0;
+    }
     
-    return 0;
+    if( allocator->callbacks.size != NULL )
+    {
+        return allocator->callbacks.size( size );
+    }
+    
+    return size;
 }

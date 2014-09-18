@@ -71,9 +71,24 @@
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSAllocatorRef.h>
 
-XSStatic XSAllocatorRef XSAllocator_Create( XSAllocator_Callbacks * callbacks )
+XSStatic XSAllocatorRef XSAllocator_Create( XSStringRef name, XSAllocator_Callbacks * callbacks )
 {
-    ( void )callbacks;
+    struct __XSAllocator * object;
     
-    return NULL;
+    if( callbacks == NULL )
+    {
+        XSFatalError( "Cannot create an instance of XSAllocator without callbacks" );
+    }
+    
+    object = __XSAllocator_Create();
+    
+    object->name                = XSRetain( name );
+    object->callbacks.alloc     = callbacks->alloc;
+    object->callbacks.dealloc   = callbacks->dealloc;
+    object->callbacks.realloc   = callbacks->realloc;
+    object->callbacks.retain    = callbacks->retain;
+    object->callbacks.release   = callbacks->release;
+    object->callbacks.size      = callbacks->size;
+    
+    return object;
 }

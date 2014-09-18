@@ -74,6 +74,9 @@
 XSAllocatorRef __XSAllocator_Copy( XSAllocatorRef source, XSAllocatorRef destination )
 {
     ( void )source;
+    ( void )destination;
     
-    return destination;
+    XSLogNotice( "Copying an XSAllocator object is not allowed" );
+    
+    return NULL;
 }

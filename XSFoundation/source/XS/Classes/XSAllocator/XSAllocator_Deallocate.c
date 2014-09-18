@@ -73,7 +73,10 @@
 
 void XSAllocator_Deallocate( XSAllocatorRef allocator, const void * memory, XSCompilerContext * context )
 {
-    ( void )allocator;
-    ( void )memory;
-    ( void )context;
+    if( allocator == NULL || allocator->callbacks.dealloc == NULL || memory == NULL )
+    {
+        return;
+    }
+    
+    allocator->callbacks.dealloc( memory, context );
 }

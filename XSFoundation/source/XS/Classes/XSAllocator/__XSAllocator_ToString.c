@@ -73,7 +73,5 @@
 
 const char * __XSAllocator_ToString( XSAllocatorRef object )
 {
-    ( void )object;
-    
-    return NULL;
+    return XSString_GetCString( object->name );
 }

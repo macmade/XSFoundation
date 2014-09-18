@@ -73,5 +73,5 @@
 
 void __XSAllocator_Destructor( XSAllocatorRef object )
 {
-    ( void )object;
+    XSRelease( object->name );
 }

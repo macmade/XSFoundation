@@ -73,10 +73,15 @@
 
 void * XSAllocator_Allocate( XSAllocatorRef allocator, XSUInteger size, XSClassID classID, XSCompilerContext * context )
 {
-    ( void )allocator;
-    ( void )size;
-    ( void )classID;
-    ( void )context;
+    if( allocator == NULL || size == 0 )
+    {
+        return NULL;
+    }
     
-    return NULL;
+    if( allocator->callbacks.alloc == NULL )
+    {
+        XSFatalError( "Missing allocate callback in XSAllocator" );
+    }
+    
+    return allocator->callbacks.alloc( size, classID, context );
 }

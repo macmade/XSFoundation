@@ -82,10 +82,12 @@
 /*!
  * @struct      __XSAllocator
  * @abstract    Structure for XSAllocator
+ * @see         XSAllocator_Callbacks
  */
 struct __XSAllocator
 {
-    XSAllocator_Callbacks callbacks;
+    XSStringRef             name;       /*! The allocator name */
+    XSAllocator_Callbacks   callbacks;  /*! The allocator callbacks */
 };
 
 /*!

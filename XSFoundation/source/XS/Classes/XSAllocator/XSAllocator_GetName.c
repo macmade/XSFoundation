@@ -62,21 +62,21 @@
 /* $Id$ */
 
 /*!
- * @file        XSAllocator_Reallocate.c
+ * @file        XSAllocator_GetName.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSAllocator_Reallocate
+ * @abstract    Definition for XSAllocator_GetName
  */
 
 #include <XS/XS.h>
 #include <XS/__private/Classes/XSAllocatorRef.h>
 
-void * XSAllocator_Reallocate( XSAllocatorRef allocator, const void * memory, XSUInteger size, XSCompilerContext * context )
+XSStringRef XSAllocator_GetName( XSAllocatorRef allocator )
 {
-    if( allocator == NULL || allocator->callbacks.realloc == NULL || memory == NULL || size == 0 )
+    if( allocator == NULL )
     {
         return NULL;
     }
     
-    return allocator->callbacks.realloc( memory, size, context );
+    return allocator->name;
 }

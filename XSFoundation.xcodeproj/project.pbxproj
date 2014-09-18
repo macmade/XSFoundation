@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0502FBCD19CB6799005CD51B /* XSAllocator_GetName.c in Sources */ = {isa = PBXBuildFile; fileRef = 0502FBCC19CB6799005CD51B /* XSAllocator_GetName.c */; };
+		0502FBCE19CB6799005CD51B /* XSAllocator_GetName.c in Sources */ = {isa = PBXBuildFile; fileRef = 0502FBCC19CB6799005CD51B /* XSAllocator_GetName.c */; };
+		0502FBCF19CB6799005CD51B /* XSAllocator_GetName.c in Sources */ = {isa = PBXBuildFile; fileRef = 0502FBCC19CB6799005CD51B /* XSAllocator_GetName.c */; };
+		0502FBD019CB6799005CD51B /* XSAllocator_GetName.c in Sources */ = {isa = PBXBuildFile; fileRef = 0502FBCC19CB6799005CD51B /* XSAllocator_GetName.c */; };
 		0504B3F51922CF600074A488 /* __XSFileManager.c in Sources */ = {isa = PBXBuildFile; fileRef = 0504B3EC1922CF600074A488 /* __XSFileManager.c */; };
 		0504B3F61922CF600074A488 /* __XSFileManager_Constructor.c in Sources */ = {isa = PBXBuildFile; fileRef = 0504B3ED1922CF600074A488 /* __XSFileManager_Constructor.c */; };
 		0504B3F71922CF600074A488 /* __XSFileManager_Copy.c in Sources */ = {isa = PBXBuildFile; fileRef = 0504B3EE1922CF600074A488 /* __XSFileManager_Copy.c */; };
@@ -3374,6 +3378,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0502FBCC19CB6799005CD51B /* XSAllocator_GetName.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XSAllocator_GetName.c; sourceTree = "<group>"; };
 		0504B3CC19225A2A0074A488 /* HeaderDoc-Exclude.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "HeaderDoc-Exclude.txt"; sourceTree = "<group>"; };
 		0504B3EC1922CF600074A488 /* __XSFileManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSFileManager.c; sourceTree = "<group>"; };
 		0504B3ED1922CF600074A488 /* __XSFileManager_Constructor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __XSFileManager_Constructor.c; sourceTree = "<group>"; };
@@ -4657,6 +4662,7 @@
 				05F036EE19CA144B00134157 /* XSAllocator_Create.c */,
 				05F036EF19CA144B00134157 /* XSAllocator_Deallocate.c */,
 				05F036F019CA144B00134157 /* XSAllocator_GetDefault.c */,
+				0502FBCC19CB6799005CD51B /* XSAllocator_GetName.c */,
 				05F036F119CA144B00134157 /* XSAllocator_GetPreferredSizeForSize.c */,
 				05F036F219CA144B00134157 /* XSAllocator_Reallocate.c */,
 				05F036F319CA144B00134157 /* XSAllocator_Release.c */,
@@ -6393,6 +6399,7 @@
 				058089BC19117E0E00118D3D /* XSColor_SetBlue.c in Sources */,
 				0523052018EB4B1F00C29627 /* XSAtomic_Read64.c in Sources */,
 				055D180E18E1D42800894C7B /* XSNumber_GetClassID.c in Sources */,
+				0502FBCD19CB6799005CD51B /* XSAllocator_GetName.c in Sources */,
 				05944EC1190F9A1A00A016AE /* XSValue_ValueWithRange.c in Sources */,
 				05632F1218EC513F00EB76D2 /* XSString_GetCString.c in Sources */,
 				055D162E18E1D42800894C7B /* __XSBinaryTree_Copy.c in Sources */,
@@ -7208,6 +7215,7 @@
 				058089BD19117E0E00118D3D /* XSColor_SetBlue.c in Sources */,
 				052305A118EB4B1F00C29627 /* XSRect_Make.c in Sources */,
 				0523052118EB4B1F00C29627 /* XSAtomic_Read64.c in Sources */,
+				0502FBCE19CB6799005CD51B /* XSAllocator_GetName.c in Sources */,
 				05944EC2190F9A1A00A016AE /* XSValue_ValueWithRange.c in Sources */,
 				055D180F18E1D42800894C7B /* XSNumber_GetClassID.c in Sources */,
 				05632F1318EC513F00EB76D2 /* XSString_GetCString.c in Sources */,
@@ -8023,6 +8031,7 @@
 				058089BE19117E0E00118D3D /* XSColor_SetBlue.c in Sources */,
 				052305A218EB4B1F00C29627 /* XSRect_Make.c in Sources */,
 				0523052218EB4B1F00C29627 /* XSAtomic_Read64.c in Sources */,
+				0502FBCF19CB6799005CD51B /* XSAllocator_GetName.c in Sources */,
 				05944EC3190F9A1A00A016AE /* XSValue_ValueWithRange.c in Sources */,
 				055D181018E1D42800894C7B /* XSNumber_GetClassID.c in Sources */,
 				05632F1418EC513F00EB76D2 /* XSString_GetCString.c in Sources */,
@@ -8838,6 +8847,7 @@
 				058089BF19117E0E00118D3D /* XSColor_SetBlue.c in Sources */,
 				052305A318EB4B1F00C29627 /* XSRect_Make.c in Sources */,
 				0523052318EB4B1F00C29627 /* XSAtomic_Read64.c in Sources */,
+				0502FBD019CB6799005CD51B /* XSAllocator_GetName.c in Sources */,
 				05944EC4190F9A1A00A016AE /* XSValue_ValueWithRange.c in Sources */,
 				055D181118E1D42800894C7B /* XSNumber_GetClassID.c in Sources */,
 				05632F1518EC513F00EB76D2 /* XSString_GetCString.c in Sources */,
