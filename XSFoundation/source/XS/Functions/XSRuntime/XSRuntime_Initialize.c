@@ -114,7 +114,7 @@ void XSRuntime_Initialize( void )
         return;
     }
     
-    classes = ( __XSRuntime_ClassInfoList * )calloc( sizeof( __XSRuntime_ClassInfoList ), 1 );
+    classes = calloc( sizeof( __XSRuntime_ClassInfoList ), 1 );
     
     if( classes == NULL )
     {

@@ -114,7 +114,7 @@ void __XSDebugger_PrintBacktrace( void )
         SymInitialize( process, NULL, TRUE );
 
         n      = CaptureStackBackTrace( 0, 100, bt, NULL );
-        symbol = ( SYMBOL_INFO * )calloc( sizeof( SYMBOL_INFO ) + 256, 1 );
+        symbol = calloc( sizeof( SYMBOL_INFO ) + 256, 1 );
         
         if( symbol == NULL )
         {

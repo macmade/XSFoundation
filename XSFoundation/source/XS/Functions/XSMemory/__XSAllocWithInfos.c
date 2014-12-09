@@ -79,7 +79,7 @@ void * __XSAllocWithInfos( XSUInteger bytes, XSClassID classID, const char * fil
     __XSMemoryObject * object;
     
     size    = bytes + sizeof( __XSMemoryObject ) + __XS_MEMORY_FENCE_SIZE;
-    object  = ( __XSMemoryObject * )calloc( size, 1 );
+    object  = calloc( size, 1 );
     
     if( object == NULL )
     {

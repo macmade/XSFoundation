@@ -114,7 +114,7 @@ XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls )
         list = list->next;
     }
     
-    new = ( __XSRuntime_ClassInfoList * )calloc( sizeof( __XSRuntime_ClassInfoList ), 1 );
+    new = calloc( sizeof( __XSRuntime_ClassInfoList ), 1 );
     
     new->cls  = cls;
     
