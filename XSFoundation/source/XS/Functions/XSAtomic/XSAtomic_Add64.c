@@ -88,7 +88,7 @@ XSInt64 XSAtomic_Add64( XSInt64 amount, volatile XSInt64 * value )
 /* Windows */
 XSInt64 XSAtomic_Add64( XSInt64 amount, volatile XSInt64 * value )
 {
-    return ( XSInt64 )InterlockedExchangeAdd( ( LONGLONG volatile * )value, ( LONGLONG )amount ) + amount;
+    return ( XSInt64 )InterlockedExchangeAdd64( ( LONGLONG volatile * )value, ( LONGLONG )amount ) + amount;
 }
 
 #else
