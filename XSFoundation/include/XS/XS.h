@@ -70,12 +70,8 @@
 #include <XS/Classes/XSLockRef.h>
 #include <XS/Classes/XSNullRef.h>
 #include <XS/Classes/XSNumberRef.h>
-#include <XS/Classes/XSOrderedSetRef.h>
-#include <XS/Classes/XSPrimitiveArrayRef.h>
 #include <XS/Classes/XSRecursiveLockRef.h>
 #include <XS/Classes/XSSemaphoreRef.h>
-#include <XS/Classes/XSSetRef.h>
-#include <XS/Classes/XSStackRef.h>
 #include <XS/Classes/XSStringRef.h>
 #include <XS/Classes/XSThreadRef.h>
 #include <XS/Classes/XSValueRef.h>

@@ -217,45 +217,6 @@ int main( int argc, const char * argv[] )
     }
 
     {
-        XSStackRef   s1;
-        XSStackRef   s2;
-        XSBooleanRef b1;
-        XSBooleanRef b2;
-        XSBooleanRef b3;
-
-        s1 = XSStack_Create();
-        b1 = XSBoolean_Create( true );
-        b2 = XSBoolean_Create( true );
-        b3 = XSBoolean_Create( true );
-
-        XSStack_Push( s1, b1 );
-        XSStack_Push( s1, b2 );
-        XSStack_Push( s1, b3 );
-
-        s2 = XSCopy( s1 );
-
-        XSShow( s2 );
-
-        XSLog( "B1: %p", ( void * )b1 );
-        XSLog( "B2: %p", ( void * )b2 );
-        XSLog( "B3: %p", ( void * )b3 );
-        XSLog( "Stack pop: %p", XSStack_Pop( s1 ) );
-        XSLog( "Stack pop: %p", XSStack_Pop( s1 ) );
-        XSLog( "Stack pop: %p", XSStack_Pop( s1 ) );
-        XSLog( "Stack pop: %p", XSStack_Pop( s1 ) );
-        XSLog( "Stack pop: %p", XSStack_Pop( s2 ) );
-        XSLog( "Stack pop: %p", XSStack_Pop( s2 ) );
-        XSLog( "Stack pop: %p", XSStack_Pop( s2 ) );
-        XSLog( "Stack pop: %p", XSStack_Pop( s2 ) );
-
-        XSRelease( b1 );
-        XSRelease( b2 );
-        XSRelease( b3 );
-        XSRelease( s1 );
-        XSRelease( s2 );
-    }
-
-    {
         XSArrayRef        a1;
         XSMutableArrayRef a2;
 
