@@ -4,7 +4,7 @@ XSFoundation
 [![Build Status](https://img.shields.io/travis/macmade/XSFoundation.svg?branch=master&style=flat)](https://travis-ci.org/macmade/XSFoundation)
 [![Issues](http://img.shields.io/github/issues/macmade/XSFoundation.svg?style=flat)](https://github.com/macmade/XSFoundation/issues)
 ![Status](https://img.shields.io/badge/status-active-brightgreen.svg?style=flat)
-![License](https://img.shields.io/badge/license-xeos-brightgreen.svg?style=flat)
+![License](https://img.shields.io/badge/license-mit-brightgreen.svg?style=flat)
 [![Contact](https://img.shields.io/badge/contact-@macmade-blue.svg?style=flat)](https://twitter.com/macmade)  
 [![Donate-Patreon](https://img.shields.io/badge/donate-patreon-yellow.svg?style=flat)](https://patreon.com/macmade)
 [![Donate-Gratipay](https://img.shields.io/badge/donate-gratipay-yellow.svg?style=flat)](https://www.gratipay.com/macmade)
@@ -35,7 +35,7 @@ Project home can be found at: http://www.xs-labs.com/en/projects/xsfoundation/
 License
 -------
 
-XSFoundation is released under the terms of the XEOS Software License - Version 1.0.
+XSFoundation is released under the terms of the MIT License.
 
 Repository Infos
 ----------------
