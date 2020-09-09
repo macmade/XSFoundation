@@ -35,11 +35,6 @@
 #ifndef __XS_H__
 #define __XS_H__
 
-/* Internal build only - Adds extra warning flags */
-#ifdef __XS_BUILD__
-#include <XS/__private/XSWarnings.h>
-#endif
-
 /* Standard includes */
 #include <XS/XS-STD.h>
 
