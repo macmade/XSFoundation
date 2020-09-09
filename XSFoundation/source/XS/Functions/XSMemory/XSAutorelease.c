@@ -22,8 +22,6 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-/* $Id$ */
-
 /*!
  * @file        XSAutorelease.c
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com

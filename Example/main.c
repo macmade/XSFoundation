@@ -22,8 +22,6 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <XS/XS.h>
 
 XSComparisonResult __ArraySort( XSObjectRef value1, XSObjectRef value2, bool * stop );

@@ -22,8 +22,6 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-/* $Id$ */
-
 /*!
  * @header      XSNumberRef.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
