@@ -58,7 +58,6 @@
 #include <XS/Functions/XSMath.h>
 #include <XS/Functions/XSGeometry.h>
 #include <XS/Functions/XSSort.h>
-#include <XS/Functions/XSFileSystem.h>
 
 /* Classes */
 #include <XS/Classes/XSArrayRef.h>
@@ -68,8 +67,6 @@
 #include <XS/Classes/XSDateRef.h>
 #include <XS/Classes/XSDictionaryRef.h>
 #include <XS/Classes/XSErrorRef.h>
-#include <XS/Classes/XSFileRef.h>
-#include <XS/Classes/XSFileManagerRef.h>
 #include <XS/Classes/XSLockRef.h>
 #include <XS/Classes/XSNodeRef.h>
 #include <XS/Classes/XSNotificationRef.h>

@@ -42,7 +42,6 @@ STDC          := c99
 # Gets every C file in the source directories
 FILES_C += $(call GET_C_FILES, $(DIR_SRC_FUNCTIONS)XSAtomic/)
 FILES_C += $(call GET_C_FILES, $(DIR_SRC_FUNCTIONS)XSDebugger/)
-FILES_C += $(call GET_C_FILES, $(DIR_SRC_FUNCTIONS)XSFileSystem/)
 FILES_C += $(call GET_C_FILES, $(DIR_SRC_FUNCTIONS)XSGeometry/XSEdgeInsets/)
 FILES_C += $(call GET_C_FILES, $(DIR_SRC_FUNCTIONS)XSGeometry/XSPoint/)
 FILES_C += $(call GET_C_FILES, $(DIR_SRC_FUNCTIONS)XSGeometry/XSRange/)
