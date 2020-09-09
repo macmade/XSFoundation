@@ -22,14 +22,11 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-/* $Id$ */
-
 /*!
  * @header      XSAllocatorRef.h
  * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    Private definitions for XSAllocatorRef.h
- * @discussion  ...
  */
 
 #ifndef __XS_H__
