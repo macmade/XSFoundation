@@ -68,7 +68,6 @@
 #include <XS/Classes/XSDictionaryRef.h>
 #include <XS/Classes/XSErrorRef.h>
 #include <XS/Classes/XSLockRef.h>
-#include <XS/Classes/XSNodeRef.h>
 #include <XS/Classes/XSNullRef.h>
 #include <XS/Classes/XSNumberRef.h>
 #include <XS/Classes/XSOrderedSetRef.h>
