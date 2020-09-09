@@ -145,7 +145,7 @@
 #pragma clang diagnostic fatal "-Wc99-extensions"
 #pragma clang diagnostic fatal "-Wcast-align"
 #pragma clang diagnostic fatal "-Wcast-of-sel-type"
-#pragma clang diagnostic fatal "-Wcast-qual"
+/* #pragma clang diagnostic fatal "-Wcast-qual" */
 #pragma clang diagnostic fatal "-WCFString-literal"
 #pragma clang diagnostic fatal "-Wchar-align"
 #pragma clang diagnostic fatal "-Wchar-subscripts"

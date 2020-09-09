@@ -86,7 +86,7 @@ void XSRuntime_RegisterFinalizer( void ( * func )( void ) )
     
     if( finalizer == NULL )
     {
-        XSFatalError( "Cannot allocate memory for finalizer function %p", func );
+        XSFatalError( "Cannot allocate memory for finalizer function %p", ( void * )func );
     }
     
     if( XSAtomic_CompareAndSwapPointer( NULL, finalizer, ( void * volatile * )&__XSRuntime_Finalizers ) )
