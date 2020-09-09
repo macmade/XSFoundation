@@ -89,6 +89,5 @@
 #include <XS/Classes/XSThreadRef.h>
 #include <XS/Classes/XSURLRef.h>
 #include <XS/Classes/XSValueRef.h>
-#include <XS/Classes/XSXMLParserRef.h>
 
 #endif /* __XS_H__ */

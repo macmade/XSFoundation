@@ -63,7 +63,6 @@ XSStatic void __XSString_Initialize( void );
 XSStatic void __XSThread_Initialize( void );
 XSStatic void __XSURL_Initialize( void );
 XSStatic void __XSValue_Initialize( void );
-XSStatic void __XSXMLParser_Initialize( void );
 
 void XSRuntime_Initialize( void )
 {
@@ -120,5 +119,4 @@ void XSRuntime_Initialize( void )
     __XSThread_Initialize();
     __XSURL_Initialize();
     __XSValue_Initialize();
-    __XSXMLParser_Initialize();
 }
