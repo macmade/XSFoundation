@@ -63,7 +63,6 @@
 /* Classes */
 #include <XS/Classes/XSArrayRef.h>
 #include <XS/Classes/XSAutoreleasePoolRef.h>
-#include <XS/Classes/XSBinaryTreeRef.h>
 #include <XS/Classes/XSBooleanRef.h>
 #include <XS/Classes/XSColorRef.h>
 #include <XS/Classes/XSDataRef.h>
