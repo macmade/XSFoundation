@@ -95,9 +95,9 @@ int main( int argc, const char * argv[] )
         bool2 = XSCopy( bool1 );
         bool3 = XSBoolean_Create( false );
 
-        XSLog( "bool1: %p", bool1 );
-        XSLog( "bool2: %p", bool2 );
-        XSLog( "bool3: %p", bool3 );
+        XSLog( "bool1: %p", ( void * )bool1 );
+        XSLog( "bool2: %p", ( void * )bool2 );
+        XSLog( "bool3: %p", ( void * )bool3 );
 
         XSLog( "bool1: %s", XSRuntime_GetDescription( bool1 ) );
         XSLog( "bool2: %s", XSRuntime_GetDescription( bool2 ) );
@@ -151,7 +151,7 @@ int main( int argc, const char * argv[] )
         XSShow( b );
         XSShow( NULL );
 
-        XSLog( "%p", b );
+        XSLog( "%p", ( void * )b );
         XSThreading_TLSKeyCreate( &k );
         XSThreading_TLSSetObject( &k, b, XSObjectAssociationRetain );
         XSRelease( b );
@@ -210,7 +210,7 @@ int main( int argc, const char * argv[] )
             XSString_ContainsString( XSSTR( "abc" ), XSSTR( "bc" ) ),
             XSString_ContainsString( XSSTR( "abc" ), XSSTR( "def" ) ) );
 
-        XSShow( XSString_StringWithFormat( "%s %i %p %f", "ok", 42, str1, ( XSFloat )42 ) );
+        XSShow( XSString_StringWithFormat( "%s %i %p %f", "ok", 42, ( void * )str1, ( XSFloat )42 ) );
         XSShow( XSString_StringByAppendingFormat( XSSTR( "test" ), " %i", 42 ) );
 
         XSRelease( str2 );
@@ -236,9 +236,9 @@ int main( int argc, const char * argv[] )
 
         XSShow( s2 );
 
-        XSLog( "B1: %p", b1 );
-        XSLog( "B2: %p", b2 );
-        XSLog( "B3: %p", b3 );
+        XSLog( "B1: %p", ( void * )b1 );
+        XSLog( "B2: %p", ( void * )b2 );
+        XSLog( "B3: %p", ( void * )b3 );
         XSLog( "Stack pop: %p", XSStack_Pop( s1 ) );
         XSLog( "Stack pop: %p", XSStack_Pop( s1 ) );
         XSLog( "Stack pop: %p", XSStack_Pop( s1 ) );

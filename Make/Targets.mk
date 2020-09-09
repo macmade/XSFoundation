@@ -30,7 +30,7 @@
 .DEFAULT_GOAL := all
 
 # Declaration for phony targets, to avoid problems with local files
-.PHONY: all clean clean_temp clean_products doc debug release lib
+.PHONY: all clean clean_temp clean_products doc debug release lib example
 
 # Declaration for precious targets, to avoid cleaning of intermediate files
 .PRECIOUS: $(DIR_BUILD_TEMP)%$(EXT_O)
@@ -111,6 +111,12 @@ ifeq ($(_MAKE_4),true)
 else
 	@$(MAKE) lib
 endif
+	
+# Example executable
+example: debug release
+
+	@$(_CC) -lxs -L$(DIR_BUILD_PRODUCTS) -o $(DIR_BUILD_PRODUCTS)example example/main.c
+	@$(DIR_BUILD_PRODUCTS)example
 
 #-------------------------------------------------------------------------------
 # Targets with second expansion
