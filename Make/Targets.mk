@@ -115,7 +115,10 @@ endif
 # Example executable
 example: debug release
 
+	$(call PRINT_ARCH,$(_HOST_ARCH),"Compiling and linking example")
 	@$(_CC) -lxs -L$(DIR_BUILD_PRODUCTS) -o $(DIR_BUILD_PRODUCTS)example example/main.c
+
+	$(call PRINT_ARCH,$(_HOST_ARCH),"Running example")
 	@$(DIR_BUILD_PRODUCTS)example
 
 #-------------------------------------------------------------------------------
