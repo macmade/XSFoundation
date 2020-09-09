@@ -95,6 +95,8 @@ XSInt32 XSAtomic_Add32( XSInt32 amount, volatile XSInt32 * value )
 
 #include <libkern/OSAtomic.h>
 
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 /* Mac OS X */
 XSInt32 XSAtomic_Add32( XSInt32 amount, volatile XSInt32 * value )
 {

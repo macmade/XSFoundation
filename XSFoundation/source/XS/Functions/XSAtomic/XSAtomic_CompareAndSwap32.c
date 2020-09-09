@@ -95,6 +95,8 @@ bool XSAtomic_CompareAndSwap32( XSInt32 oldValue, XSInt32 newValue, volatile XSI
 
 #include <libkern/OSAtomic.h>
 
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 /* Mac OS X */
 bool XSAtomic_CompareAndSwap32( XSInt32 oldValue, XSInt32 newValue, volatile XSInt32 * value )
 {

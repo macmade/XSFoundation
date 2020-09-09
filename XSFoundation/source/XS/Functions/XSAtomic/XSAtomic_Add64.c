@@ -95,6 +95,8 @@ XSInt64 XSAtomic_Add64( XSInt64 amount, volatile XSInt64 * value )
 
 #include <libkern/OSAtomic.h>
 
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 /* Mac OS X */
 XSInt64 XSAtomic_Add64( XSInt64 amount, volatile XSInt64 * value )
 {

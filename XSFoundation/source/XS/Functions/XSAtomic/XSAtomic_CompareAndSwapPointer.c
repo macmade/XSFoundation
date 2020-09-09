@@ -95,6 +95,8 @@ bool XSAtomic_CompareAndSwapPointer( void * oldValue, void * newValue, void * vo
 
 #include <libkern/OSAtomic.h>
 
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 /* Mac OS X */
 bool XSAtomic_CompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
 {
