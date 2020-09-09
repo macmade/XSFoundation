@@ -36,7 +36,6 @@
 void __XSDebugger_Initialize( void );
 
 /* Private class initializers */
-XSStatic void __XSAllocator_Initialize( void );
 XSStatic void __XSArray_Initialize( void );
 XSStatic void __XSAutoreleasePool_Initialize( void );
 XSStatic void __XSBag_Initialize( void );
@@ -94,7 +93,6 @@ void XSRuntime_Initialize( void )
     
     __XSDebugger_Initialize();
     
-    __XSAllocator_Initialize();
     __XSArray_Initialize();
     __XSAutoreleasePool_Initialize();
     __XSBag_Initialize();
