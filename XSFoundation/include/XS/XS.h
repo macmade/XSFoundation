@@ -78,7 +78,6 @@
 #include <XS/Classes/XSStackRef.h>
 #include <XS/Classes/XSStringRef.h>
 #include <XS/Classes/XSThreadRef.h>
-#include <XS/Classes/XSURLRef.h>
 #include <XS/Classes/XSValueRef.h>
 
 #endif /* __XS_H__ */
