@@ -38,7 +38,6 @@ void __XSDebugger_Initialize( void );
 /* Private class initializers */
 XSStatic void __XSArray_Initialize( void );
 XSStatic void __XSAutoreleasePool_Initialize( void );
-XSStatic void __XSBag_Initialize( void );
 XSStatic void __XSBinaryTree_Initialize( void );
 XSStatic void __XSBoolean_Initialize( void );
 XSStatic void __XSColor_Initialize( void );
@@ -94,7 +93,6 @@ void XSRuntime_Initialize( void )
     
     __XSArray_Initialize();
     __XSAutoreleasePool_Initialize();
-    __XSBag_Initialize();
     __XSBinaryTree_Initialize();
     __XSBoolean_Initialize();
     __XSColor_Initialize();
