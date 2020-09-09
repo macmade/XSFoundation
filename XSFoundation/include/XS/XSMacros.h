@@ -237,6 +237,15 @@
     )
 
 /*!
+ * @define      XS_UNSAFE_POINTER_CAST
+ * @abstract    Casts a pointer type to another type
+ * @discussion  This can be used to cast away qualifiers.
+ * @param       _type_  The target type
+ * @param       _var_   The variable to cast
+ */
+#define XS_UNSAFE_POINTER_CAST( _type_, _var_ ) ( ( _type_ )( uintptr_t )( const void * )( _var_ ) )
+
+/*!
  * @define      XS_EXTERN
  * @abstract    Standardization of the extern keyword
  */
