@@ -39,7 +39,6 @@ void __XSDebugger_Initialize( void );
 XSStatic void __XSArray_Initialize( void );
 XSStatic void __XSAutoreleasePool_Initialize( void );
 XSStatic void __XSBoolean_Initialize( void );
-XSStatic void __XSColor_Initialize( void );
 XSStatic void __XSData_Initialize( void );
 XSStatic void __XSDate_Initialize( void );
 XSStatic void __XSDictionary_Initialize( void );
@@ -93,7 +92,6 @@ void XSRuntime_Initialize( void )
     __XSArray_Initialize();
     __XSAutoreleasePool_Initialize();
     __XSBoolean_Initialize();
-    __XSColor_Initialize();
     __XSData_Initialize();
     __XSDate_Initialize();
     __XSDictionary_Initialize();
