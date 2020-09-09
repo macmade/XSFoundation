@@ -45,8 +45,6 @@ XSStatic void __XSDictionary_Initialize( void );
 XSStatic void __XSError_Initialize( void );
 XSStatic void __XSLock_Initialize( void );
 XSStatic void __XSNode_Initialize( void );
-XSStatic void __XSNotification_Initialize( void );
-XSStatic void __XSNotificationCenter_Initialize( void );
 XSStatic void __XSNull_Initialize( void );
 XSStatic void __XSNumber_Initialize( void );
 XSStatic void __XSPrimitiveArray_Initialize( void );
@@ -96,8 +94,6 @@ void XSRuntime_Initialize( void )
     __XSError_Initialize();
     __XSLock_Initialize();
     __XSNode_Initialize();
-    __XSNotification_Initialize();
-    __XSNotificationCenter_Initialize();
     __XSNull_Initialize();
     __XSNumber_Initialize();
     __XSPrimitiveArray_Initialize();
