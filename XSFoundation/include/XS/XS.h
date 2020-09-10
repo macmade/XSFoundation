@@ -52,7 +52,6 @@
 #include <XS/Functions/XSLog.h>
 #include <XS/Functions/XSMath.h>
 #include <XS/Functions/XSGeometry.h>
-#include <XS/Functions/XSSort.h>
 
 /* Classes */
 #include <XS/Classes/XSArrayRef.h>

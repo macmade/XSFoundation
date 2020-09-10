@@ -51,7 +51,6 @@ XS_EXTERN_C_BEGIN
 #include <XS/XSTypes/XSUInteger.h>
 #include <XS/XSTypes/XSInteger.h>
 #include <XS/XSTypes/XSFloat.h>
-#include <XS/XSTypes/XSDataType.h>
 
 #include <XS/XSTypes/XSMutex.h>
 #include <XS/XSTypes/XSSemaphore.h>
