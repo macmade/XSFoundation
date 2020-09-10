@@ -53,9 +53,9 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct XSRuntimeClassInfoListStruct
 {
-    const XSClassInfo *                   cls;            /*! The class info */
-    XSObjectRef *                         sharedInstance; /*! The shared instance, if any */
-    struct XSRuntimeClassInfoListStruct * next;           /*! The next entry, if any */
+    const XSClassInfo * volatile cls;                    /*! The class info */
+    XSObjectRef * sharedInstance;                        /*! The shared instance, if any */
+    struct XSRuntimeClassInfoListStruct * volatile next; /*! The next entry, if any */
 } XSRuntimeClassInfoList;
 
 /*!
@@ -92,7 +92,7 @@ XS_EXTERN XSRuntimeClassInfoList * volatile XSRuntimeClasses;
  * @var         XSRuntimeClassCount
  * @abstract    Number of registered XSFoundation runtime class infos
  */
-XS_EXTERN volatile size_t XSRuntimeClassCount;
+XS_EXTERN volatile int64_t XSRuntimeClassCount;
 
 /*!
  * @typedef     XSRuntimeFinalizerList

@@ -42,6 +42,11 @@
 
 XS_EXTERN_C_BEGIN
 
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wpadded"
+#endif
+
 /*!
  * @typedef     XSClassInfo
  * @abstract    XSFoundation runtime class structure
@@ -57,6 +62,10 @@ typedef struct
     XSClassCallbackEquals      equals;       /*! The object's comparison callback */
     XSClassCallbackToString    toString;     /*! The object's description callback */
 } XSClassInfo;
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
 
 XS_EXTERN_C_END
 

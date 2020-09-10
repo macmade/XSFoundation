@@ -24,7 +24,7 @@
 
 /*!
  * @file        XSRuntimeRegisterFinalizer.c
- * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+ * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    Definition for XSRuntimeRegisterFinalizer
  */

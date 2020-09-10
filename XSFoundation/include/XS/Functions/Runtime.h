@@ -58,7 +58,7 @@ XS_EXPORT void XSRuntimeInitialize( void );
  * @param       cls         The class information structure to register
  * @return      The runtime type ID for the class
  */
-XS_EXPORT XSClassID XSRuntimeRegisterClass( const XSClassInfo * const cls );
+XS_EXPORT XSClassID XSRuntimeRegisterClass( const XSClassInfo * cls );
 
 /*!
  * @function    XSRuntimeCreateInstance
