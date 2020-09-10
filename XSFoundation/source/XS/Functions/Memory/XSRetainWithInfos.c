@@ -23,23 +23,33 @@
  ******************************************************************************/
 
 /*!
- * @header      XS.h
+ * @file        XSRetain.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Definition for XSRetain
  */
 
-#ifndef XS_H
-#define XS_H
+#include <XS/XS.h>
+#include <XS/Private/Functions/XSMemory.h>
 
-/* Base */
-#include <XS/Macros.h>
+void * XSRetainWithInfos( const void * memory, const char * file, int line, const char * func )
+{
+    XSMemoryObject * object;
 
-/* Functions */
-#include <XS/Functions/Atomic.h>
-#include <XS/Functions/Memory.h>
+    ( void )file;
+    ( void )line;
+    ( void )func;
 
-#endif /* XS_H */
+    if( memory == NULL )
+    {
+        return NULL;
+    }
+
+    object = XSGetMemoryObject( memory );
+
+    // TODO
+    //__XSDebugger_CheckObjectIntegrity( object );
+    XSAtomicIncrement64( &( object->retainCount ) );
+
+    return XS_UNSAFE_POINTER_CAST( void *, memory );
+}
