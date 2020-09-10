@@ -119,7 +119,7 @@ XS_EXPORT int32_t XSAtomicAdd32( int32_t amount, volatile int32_t * value );
 XS_EXPORT int64_t XSAtomicAdd64( int64_t amount, volatile int64_t * value );
 
 /*!
- * @function    XSAtomic_Read32
+ * @function    XSAtomicRead32
  * @abstract    Atomically reads a 32 bits value
  * @param       value   The 32 bits value to read
  * @return      The 32 bits value
@@ -127,12 +127,28 @@ XS_EXPORT int64_t XSAtomicAdd64( int64_t amount, volatile int64_t * value );
 XS_EXPORT int32_t XSAtomicRead32( volatile int32_t * value );
 
 /*!
- * @function    XSAtomic_Read64
+ * @function    XSAtomicRead64
  * @abstract    Atomically reads a 64 bits value
  * @param       value   The 64 bits value to read
  * @return      The 64 bits value
  */
 XS_EXPORT int64_t XSAtomicRead64( volatile int64_t * value );
+
+/*!
+ * @function    XSAtomicWrite32
+ * @abstract    Atomically writes a 32 bits value
+ * @param       newValue    The new 32 bits value to write
+ * @param       value       The 32 bits value to modify
+ */
+XS_EXPORT void XSAtomicWrite32( int32_t newValue, volatile int32_t * value );
+
+/*!
+ * @function    XSAtomicWrite64
+ * @abstract    Atomically writes a 64 bits value
+ * @param       newValue    The new 64 bits value to write
+ * @param       value       The 64 bits value to modify
+ */
+XS_EXPORT void XSAtomicWrite64( int64_t newValue, volatile int64_t * value );
 
 XS_EXTERN_C_END
 
