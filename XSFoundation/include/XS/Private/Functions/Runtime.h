@@ -100,9 +100,9 @@ XS_EXTERN volatile size_t XSRuntimeClassCount;
  */
 typedef struct XSRuntimeFinalizerListStruct
 {
-    void ( *finalizer )( void );                    /*! The finalizer function */
-    struct XSRuntimeFinalizerListStruct * next;     /*! The next entry */
-    struct XSRuntimeFinalizerListStruct * previous; /*! The previous entry */
+    void ( *finalizer )( void );                             /*! The finalizer function */
+    struct XSRuntimeFinalizerListStruct * volatile next;     /*! The next entry */
+    struct XSRuntimeFinalizerListStruct * volatile previous; /*! The previous entry */
 } XSRuntimeFinalizerList;
 
 /*!
