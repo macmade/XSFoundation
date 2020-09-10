@@ -23,64 +23,36 @@
  ******************************************************************************/
 
 /*!
- * @file        XSCopyWithInfos.c
+ * @file        XSAutorelease.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSCopyWithInfos
+ * @abstract    Definition for XSAutorelease
  */
 
 #include <XS/XS.h>
-#include <XS/Private/Functions/Memory.h>
-#include <XS/Private/Functions/Runtime.h>
-#include <string.h>
 
-XS_EXPORT void * XSCopyWithInfos( const void * memory, const char * file, int line, const char * func )
+XS_EXPORT void * XSAutorelease( const void * memory )
 {
-    XSMemoryObject *    object;
-    void *              data;
-    void *              copiedData;
-    XSClassCallbackCopy copy;
+    return XS_UNSAFE_POINTER_CAST( void *, memory );
+
+    // TODO
+    /*
+    XSAutoreleasePoolRef ap;
 
     if( memory == NULL )
     {
         return NULL;
     }
 
-    object = XSGetMemoryObject( memory );
+    ap = __XSAutoreleasePool_GetCurrent();
 
-    // TODO
-    //__XSDebugger_CheckObjectIntegrity( object );
-
-    data = XSAllocWithInfos( object->size, object->classID, file, line, func );
-
-    if( XSRuntimeIsRegisteredClass( object->classID ) == false )
+    if( ap == NULL )
     {
-        memcpy( data, memory, object->size );
-
-        return data;
+        XSLogWarning( "Autoreleasing object of type %s while no autorelease pool in place - Leaking memory", XSRuntime_GetClassName( XSRuntime_GetClassID( memory ) ) );
     }
 
-    copy = XSRuntimeGetCopyCallback( object->classID );
+    XSAutoreleasePool_AddObject( ap, memory );
 
-    if( copy != NULL )
-    {
-        copiedData = XS_UNSAFE_POINTER_CAST( void *, copy( memory, data ) );
-
-        if( copiedData == NULL )
-        {
-            XSRelease( data );
-
-            data = NULL;
-        }
-        else
-        {
-            data = copiedData;
-        }
-    }
-    else
-    {
-        memcpy( data, memory, object->size );
-    }
-
-    return data;
+    return ( void * )memory;
+    */
 }
