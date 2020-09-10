@@ -34,7 +34,7 @@
 #include <XS/Private/Functions/Runtime.h>
 #include <string.h>
 
-XS_EXPORT void * XSCopyWithInfos( const void * memory, const char * file, int line, const char * func )
+void * XSCopyWithInfos( const void * memory, const char * file, int line, const char * func )
 {
     XSMemoryObject *    object;
     void *              data;

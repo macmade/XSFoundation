@@ -31,7 +31,7 @@
 
 #include <XS/XS.h>
 
-XS_EXPORT void * XSAutorelease( const void * memory )
+void * XSAutorelease( const void * memory )
 {
     return XS_UNSAFE_POINTER_CAST( void *, memory );
 

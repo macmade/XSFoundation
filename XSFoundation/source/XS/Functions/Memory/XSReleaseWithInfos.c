@@ -34,7 +34,7 @@
 #include <XS/Private/Functions/Runtime.h>
 #include <stdlib.h>
 
-XS_EXPORT void XSReleaseWithInfos( const void * memory, const char * file, int line, const char * func )
+void XSReleaseWithInfos( const void * memory, const char * file, int line, const char * func )
 {
     XSMemoryObject *          object;
     XSClassCallbackDestructor destructor;

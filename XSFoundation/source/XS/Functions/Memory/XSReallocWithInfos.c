@@ -35,7 +35,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-XS_EXPORT void * XSReallocWithInfos( const void * memory, size_t bytes, const char * file, int line, const char * func )
+void * XSReallocWithInfos( const void * memory, size_t bytes, const char * file, int line, const char * func )
 {
     size_t           size;
     size_t           oldSize;

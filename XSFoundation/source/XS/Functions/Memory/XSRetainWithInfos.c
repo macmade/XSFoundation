@@ -32,7 +32,7 @@
 #include <XS/XS.h>
 #include <XS/Private/Functions/Memory.h>
 
-XS_EXPORT void * XSRetainWithInfos( const void * memory, const char * file, int line, const char * func )
+void * XSRetainWithInfos( const void * memory, const char * file, int line, const char * func )
 {
     XSMemoryObject * object;
 

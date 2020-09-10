@@ -33,7 +33,7 @@
 #include <XS/Private/Functions/Memory.h>
 #include <XS/Private/Functions/Runtime.h>
 
-XS_EXPORT bool XSEquals( const void * memory1, const void * memory2 )
+bool XSEquals( const void * memory1, const void * memory2 )
 {
     XSMemoryObject *      object1;
     XSMemoryObject *      object2;
