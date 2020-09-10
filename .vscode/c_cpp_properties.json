@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "XSFoundation",
+            "includePath": [
+                "${workspaceFolder}/XSFoundation/include/"
+            ],
+            "forcedInclude": [],
+            "defines": [
+                "DEBUG=1"
+            ],
+            "macFrameworkPath": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
