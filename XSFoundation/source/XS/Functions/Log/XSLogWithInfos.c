@@ -23,17 +23,21 @@
  ******************************************************************************/
 
 /*!
- * @file        XSSetLogLevel.c
+ * @file        XSLogWithInfos.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definitions for XSSetLogLevel
+ * @abstract    Definitions for XSLogWithInfos
  */
 
 #include <XS/XS.h>
 #include <XS/Private/Functions/Log.h>
+#include <stdarg.h>
 
-void XSSetLogLevel( int64_t level )
+void XSLogWithInfos( XSLogLevel level, const char * file, int line, const char * func, const char * fmt, ... )
 {
-    while( XSAtomicCompareAndSwap64( XSLogCurrentLevel, level, &XSLogCurrentLevel ) == false )
-    {}
+    va_list ap;
+
+    va_start( ap, fmt );
+    XSVLogWithInfos( level, file, line, func, fmt, ap );
+    va_end( ap );
 }
