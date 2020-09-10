@@ -50,7 +50,7 @@ XS_EXTERN_C_BEGIN
  *              caller automatically.
  * @result      The copied object
  */
-typedef XSObjectRef ( *XSClassCallbackCopy )( XSObjectRef source, XSObjectRef destination );
+typedef void * ( *XSClassCallbackCopy )( XSObjectRef source, XSObjectRef destination );
 
 XS_EXTERN_C_END
 

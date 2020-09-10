@@ -23,64 +23,58 @@
  ******************************************************************************/
 
 /*!
- * @file        XSCopyWithInfos.c
+ * @file        XSRuntimeCreateInstance.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSCopyWithInfos
+ * @abstract    Definition for XSRuntimeCreateInstance
  */
 
 #include <XS/XS.h>
-#include <XS/Private/Functions/Memory.h>
 #include <XS/Private/Functions/Runtime.h>
-#include <string.h>
 
-void * XSCopyWithInfos( const void * memory, const char * file, int line, const char * func )
+void * XSRuntimeCreateInstance( XSClassID classID )
 {
-    XSMemoryObject *    object;
-    void *              data;
-    void *              copiedData;
-    XSClassCallbackCopy copy;
+    void *                     object;
+    void *                     newObject;
+    size_t                     instanceSize;
+    XSClassCallbackConstructor constructor;
 
-    if( memory == NULL )
+    if( XSRuntimeIsRegisteredClass( classID ) == false )
+    {
+        XSFatalError( "Cannot create an instance for an unregistered class (class ID: %li)", ( long )classID );
+    }
+
+    instanceSize = XSRuntimeGetInstanceSize( classID );
+
+    if( instanceSize == 0 )
+    {
+        XSFatalError( "Cannot create an instance for a class with zero as instance size (class ID: %li)", ( long )classID );
+    }
+
+    object = XSAllocWithInfos( instanceSize, classID, NULL, 0, NULL );
+
+    if( object == NULL )
     {
         return NULL;
     }
 
-    object = XSGetMemoryObject( memory );
+    constructor = XSRuntimeGetConstructorCallback( classID );
 
-    // TODO
-    //__XSDebugger_CheckObjectIntegrity( object );
-
-    data = XSAllocWithInfos( object->size, object->classID, file, line, func );
-
-    if( XSRuntimeIsRegisteredClass( object->classID ) == false )
+    if( constructor != NULL )
     {
-        memcpy( data, memory, object->size );
+        newObject = constructor( object );
 
-        return data;
-    }
-
-    copy = XSRuntimeGetCopyCallback( object->classID );
-
-    if( copy != NULL )
-    {
-        copiedData = copy( memory, data );
-
-        if( copiedData == NULL )
+        if( newObject == NULL )
         {
-            XSRelease( data );
+            XSRelease( object );
 
-            data = NULL;
+            object = NULL;
         }
         else
         {
-            data = copiedData;
+            object = newObject;
         }
     }
-    else
-    {
-        memcpy( data, memory, object->size );
-    }
 
-    return data;
+    return object;
 }

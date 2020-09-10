@@ -47,7 +47,7 @@ XS_EXTERN_C_BEGIN
  *              caller automatically.
  * @result      The new object
  */
-typedef XSObjectRef ( *XSClassCallbackConstructor )( XSObjectRef object );
+typedef void * ( *XSClassCallbackConstructor )( XSObjectRef object );
 
 XS_EXTERN_C_END
 
