@@ -31,20 +31,180 @@
 
 #include <XS/XS.h>
 #include <XS/Private/Functions/Log.h>
+#include <time.h>
+#include <stdio.h>
+#include <string.h>
+
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <sys/time.h>
+#endif
 
 void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char * func, const char * fmt, va_list args )
 {
+    const char * levelName;
+    const char * filename;
+    const char * process;
+    uint64_t     processID;
+    uint64_t     threadID;
+    uint64_t     milliseconds;
+    char         date[ 255 ];
+
+    if( ( XSAtomicRead64( &XSLogCurrentLevel ) & level ) == 0 )
+    {
+        return;
+    }
+
+    process   = XSGetCurrentProcessName();
+    processID = XSGetCurrentThreadID();
+    threadID  = XSGetCurrentThreadID();
+    levelName = NULL;
+
+#if defined( DEBUG )
+
+    filename = strrchr( file, '\\' );
+
+#elif defined( DEBUG )
+
+    filename = strrchr( file, '/' );
+
+#else
+
+    ( void )file;
+
+    filename = NULL;
+
+#endif
+
+#ifdef DEBUG
+
+    if( strlen( filename ) == 0 )
+    {
+        filename = "unknown";
+    }
+
+#endif
+
+    if( strlen( func ) == 0 )
+    {
+        func = "unknown";
+    }
+
+    if( level == XSLogLevelFatal )
+    {
+        levelName = "Fatal";
+    }
+    if( level == XSLogLevelError )
+    {
+        levelName = "Error";
+    }
+    if( level == XSLogLevelWarning )
+    {
+        levelName = "Warning";
+    }
+    if( level == XSLogLevelNotice )
+    {
+        levelName = "Notice";
+    }
+    if( level == XSLogLevelDebug )
+    {
+        levelName = "Debug";
+    }
+
+#ifdef _WIN32
+
+    {
+        time_t     t;
+        struct tm  now;
+        SYSTEMTIME time;
+
+        time( &t );
+        GetSystemTime( &time );
+        localtime_s( &now, &t );
+        strftime( ( char * )date, 255, "%Y-%m-%d %H:%M:%S", &now );
+
+        milliseconds = time.wMilliseconds;
+    }
+
+#else
+
+    {
+        time_t         t;
+        struct tm *    now;
+        struct timeval tv;
+
+        t   = time( NULL );
+        now = localtime( &t );
+
+        gettimeofday( &tv, NULL );
+        strftime( ( char * )date, 255, "%Y-%m-%d %H:%M:%S", now );
+
+        milliseconds = ( uint64_t )( tv.tv_usec / 1000 );
+    }
+
+#endif
+
     XSSpinLockLock( &XSLogLock );
 
     while( XSAtomicRead64( &XSLogIsPaused ) == 1 )
     {}
 
-    ( void )level;
-    ( void )file;
-    ( void )line;
-    ( void )func;
-    ( void )fmt;
-    ( void )args;
+    if( levelName != NULL && filename != NULL )
+    {
+        fprintf(
+            stderr,
+            "%s.%llu %s[%llu:%llX] <%s:%s:%i>: %s - ",
+            date,
+            milliseconds,
+            process,
+            processID,
+            threadID,
+            func,
+            filename,
+            line,
+            levelName );
+    }
+    else if( filename != NULL )
+    {
+        fprintf(
+            stderr,
+            "%s.%llu %s[%llu:%llX] <%s:%s:%i>: ",
+            date,
+            milliseconds,
+            process,
+            processID,
+            threadID,
+            func,
+            filename,
+            line );
+    }
+    else if( levelName != NULL )
+    {
+        fprintf(
+            stderr,
+            "%s.%llu %s[%llu:%llX]: %s - ",
+            date,
+            milliseconds,
+            process,
+            processID,
+            threadID,
+            levelName );
+    }
+    else
+    {
+        fprintf(
+            stderr,
+            "%s.%llu %s[%llu:%llX]: ",
+            date,
+            milliseconds,
+            process,
+            processID,
+            threadID );
+    }
+
+    vfprintf( stderr, fmt, args );
+    fprintf( stderr, "\n" );
 
     XSSpinLockUnlock( &XSLogLock );
 }

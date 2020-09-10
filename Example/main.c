@@ -26,5 +26,7 @@
 
 int main( void )
 {
+    XSLog( "hello, world" );
+
     return 0;
 }
