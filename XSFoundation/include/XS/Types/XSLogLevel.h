@@ -23,25 +23,34 @@
  ******************************************************************************/
 
 /*!
- * @header      Types.h
+ * @header      XSLogLevel.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    XSLogLevel type definition
  */
 
-#ifndef XS_TYPES_H
-#define XS_TYPES_H
+#ifndef XS_TYPES_XS_LOG_LEVEL_H
+#define XS_TYPES_XS_LOG_LEVEL_H
 
-#include <XS/Types/XSClassID.h>
-#include <XS/Types/XSClassType.h>
-#include <XS/Types/XSObjectRef.h>
-#include <XS/Types/XSClassCallbackConstructor.h>
-#include <XS/Types/XSClassCallbackDestructor.h>
-#include <XS/Types/XSClassCallbackCopy.h>
-#include <XS/Types/XSClassCallbackEquals.h>
-#include <XS/Types/XSClassCallbackToString.h>
-#include <XS/Types/XSClassInfo.h>
-#include <XS/Types/XSInitStatus.h>
-#include <XS/Types/XSLogLevel.h>
+#include <XS/Macros.h>
 
-#endif /* XS_TYPES_H */
+XS_EXTERN_C_BEGIN
+
+/*!
+ * @typedef     XSLogLevel
+ * @abstract    Log levels
+ */
+typedef enum
+{
+    XSLogLevelFatal   = 0x01, /*! Fatal error */
+    XSLogLevelError   = 0x02, /*! Error */
+    XSLogLevelWarning = 0x04, /*! Warning */
+    XSLogLevelNotice  = 0x08, /*! Notice */
+    XSLogLevelInfo    = 0x10, /*! Information */
+    XSLogLevelDebug   = 0x20, /*! Debug information */
+    XSLogLevelAll     = 0xFF  /*! All possible levels */
+} XSLogLevel;
+
+XS_EXTERN_C_END
+
+#endif /* XS_TYPES_XS_LOG_LEVEL_H */

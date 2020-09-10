@@ -43,5 +43,6 @@
 #include <XS/Functions/Atomic.h>
 #include <XS/Functions/Memory.h>
 #include <XS/Functions/Runtime.h>
+#include <XS/Functions/Log.h>
 
 #endif /* XS_H */
