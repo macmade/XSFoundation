@@ -105,7 +105,7 @@ _CC_FLAGS = $(OPTIM_RELEASE)
 endif
 
 # C compiler - Debug mode
-_CC = $(CC) -Werror -$(_CC_FLAGS) -std=$(STDC) -I$(DIR_INC) -D__XS_BUILD__
+_CC = $(CC) -Werror -Weverything -$(_CC_FLAGS) -std=$(STDC) -I$(DIR_INC) -D__XS_BUILD__
 
 #-------------------------------------------------------------------------------
 # Display
