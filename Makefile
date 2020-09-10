@@ -33,7 +33,7 @@ CC            := clang
 PRODUCT       := libxs
 OPTIM_DEBUG   := O0
 OPTIM_RELEASE := Os
-STDC          := c99
+STDC          := c11
 
 #-------------------------------------------------------------------------------
 # Files
