@@ -35,6 +35,6 @@
 #ifndef XS_H
 #define XS_H
 
-
+#include <XS/Macros.h>
 
 #endif /* XS_H */
