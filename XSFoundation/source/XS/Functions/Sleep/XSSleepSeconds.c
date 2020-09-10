@@ -23,27 +23,15 @@
  ******************************************************************************/
 
 /*!
- * @header      XS.h
+ * @file        XSSleepSeconds.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Definition for XSSleepSeconds
  */
 
-#ifndef XS_H
-#define XS_H
+#include <XS/XS.h>
 
-/* Base */
-#include <XS/Macros.h>
-#include <XS/Types.h>
-
-/* Functions */
-#include <XS/Functions/Atomic.h>
-#include <XS/Functions/Memory.h>
-#include <XS/Functions/Runtime.h>
-#include <XS/Functions/Log.h>
-#include <XS/Functions/Sleep.h>
-
-#endif /* XS_H */
+void XSSleepSeconds( unsigned int secs )
+{
+    XSSleepMicroseconds( secs * 1000 * 1000 );
+}

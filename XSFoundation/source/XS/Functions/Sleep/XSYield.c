@@ -23,27 +23,30 @@
  ******************************************************************************/
 
 /*!
- * @header      XS.h
+ * @file        XSYield.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Definition for XSYield
  */
 
-#ifndef XS_H
-#define XS_H
+#include <XS/XS.h>
 
-/* Base */
-#include <XS/Macros.h>
-#include <XS/Types.h>
+#ifdef _WIN32
 
-/* Functions */
-#include <XS/Functions/Atomic.h>
-#include <XS/Functions/Memory.h>
-#include <XS/Functions/Runtime.h>
-#include <XS/Functions/Log.h>
-#include <XS/Functions/Sleep.h>
+#include "<Windows.h>"
 
-#endif /* XS_H */
+void XSYield( void )
+{
+    Sleep( 0 );
+}
+
+#else
+
+#include <unistd.h>
+
+void XSYield( void )
+{
+    sleep( 0 );
+}
+
+#endif

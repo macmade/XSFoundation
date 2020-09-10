@@ -23,27 +23,46 @@
  ******************************************************************************/
 
 /*!
- * @header      XS.h
+ * @header      Sleep.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    XSFoundation sleep functions
  */
 
-#ifndef XS_H
-#define XS_H
+#ifndef XS_FUNCTIONS_SLEEP_H
+#define XS_FUNCTIONS_SLEEP_H
 
-/* Base */
 #include <XS/Macros.h>
-#include <XS/Types.h>
 
-/* Functions */
-#include <XS/Functions/Atomic.h>
-#include <XS/Functions/Memory.h>
-#include <XS/Functions/Runtime.h>
-#include <XS/Functions/Log.h>
-#include <XS/Functions/Sleep.h>
+XS_EXTERN_C_BEGIN
 
-#endif /* XS_H */
+/*!
+ * @function    XSYield
+ * @abstract    Asks the implementation to reschedule the execution of threads
+ */
+XS_EXPORT void XSYield( void );
+
+/*!
+ * @function    XSSleepSeconds
+ * @abstract    Requests the calling thread to be suspended for a number of seconds
+ * @param       secs    The number of seconds to sleep
+ */
+XS_EXPORT void XSSleepSeconds( unsigned int secs );
+
+/*!
+ * @function    XSSleepMilliseconds
+ * @abstract    Requests the calling thread to be suspended for a number of milliseconds
+ * @param       msecs   The number of milliseconds to sleep
+ */
+XS_EXPORT void XSSleepMilliseconds( unsigned int msecs );
+
+/*!
+ * @function    XSSleepMicroseconds
+ * @abstract    Requests the calling thread to be suspended for a number of microseconds
+ * @param       usecs   The number of microseconds to sleep
+ */
+XS_EXPORT void XSSleepMicroseconds( unsigned int usecs );
+
+XS_EXTERN_C_END
+
+#endif /* XS_FUNCTIONS_SLEEP_H */

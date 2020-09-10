@@ -43,3 +43,4 @@ STDC          := c11
 FILES_C += $(call GET_C_FILES, $(DIR_SRC_FUNCTIONS)Atomic/)
 FILES_C += $(call GET_C_FILES, $(DIR_SRC_FUNCTIONS)Memory/)
 FILES_C += $(call GET_C_FILES, $(DIR_SRC_FUNCTIONS)Runtime/)
+FILES_C += $(call GET_C_FILES, $(DIR_SRC_FUNCTIONS)Sleep/)
