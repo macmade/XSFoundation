@@ -61,7 +61,7 @@ bool XSAtomicCompareAndSwap64( int64_t oldValue, int64_t newValue, volatile int6
 /* macOS */
 bool XSAtomicCompareAndSwap64( int64_t oldValue, int64_t newValue, volatile int64_t * value )
 {
-    return OSAtomicCompareAndSwap64( oldValue, newValue, value );
+    return OSAtomicCompareAndSwap64Barrier( oldValue, newValue, value );
 }
 
 #else

@@ -61,7 +61,7 @@ bool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * vol
 /* macOS */
 bool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
 {
-    return OSAtomicCompareAndSwapPtr( oldValue, newValue, value );
+    return OSAtomicCompareAndSwapPtrBarrier( oldValue, newValue, value );
 }
 
 #else

@@ -61,7 +61,7 @@ int32_t XSAtomicIncrement32( volatile int32_t * value )
 /* macOS */
 int32_t XSAtomicIncrement32( volatile int32_t * value )
 {
-    return OSAtomicIncrement32( value );
+    return OSAtomicIncrement32Barrier( value );
 }
 
 #else

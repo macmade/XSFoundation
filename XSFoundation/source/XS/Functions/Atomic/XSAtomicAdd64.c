@@ -61,7 +61,7 @@ int64_t XSAtomicAdd64( int64_t amount, volatile int64_t * value )
 /* macOS */
 int64_t XSAtomicAdd64( int64_t amount, volatile int64_t * value )
 {
-    return OSAtomicAdd64( amount, value );
+    return OSAtomicAdd64Barrier( amount, value );
 }
 
 #else

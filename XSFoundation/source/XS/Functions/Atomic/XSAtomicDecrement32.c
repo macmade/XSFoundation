@@ -61,7 +61,7 @@ int32_t XSAtomicDecrement32( volatile int32_t * value )
 /* macOS */
 int32_t XSAtomicDecrement32( volatile int32_t * value )
 {
-    return OSAtomicDecrement32( value );
+    return OSAtomicDecrement32Barrier( value );
 }
 
 #else

@@ -61,7 +61,7 @@ int32_t XSAtomicAdd32( int32_t amount, volatile int32_t * value )
 /* macOS */
 int32_t XSAtomicAdd32( int32_t amount, volatile int32_t * value )
 {
-    return OSAtomicAdd32( amount, value );
+    return OSAtomicAdd32Barrier( amount, value );
 }
 
 #else

@@ -61,7 +61,7 @@ int64_t XSAtomicIncrement64( volatile int64_t * value )
 /* macOS */
 int64_t XSAtomicIncrement64( volatile int64_t * value )
 {
-    return OSAtomicIncrement64( value );
+    return OSAtomicIncrement64Barrier( value );
 }
 
 #else

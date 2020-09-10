@@ -61,7 +61,7 @@ bool XSAtomicCompareAndSwap32( int32_t oldValue, int32_t newValue, volatile int3
 /* macOS */
 bool XSAtomicCompareAndSwap32( int32_t oldValue, int32_t newValue, volatile int32_t * value )
 {
-    return OSAtomicCompareAndSwap32( oldValue, newValue, value );
+    return OSAtomicCompareAndSwap32Barrier( oldValue, newValue, value );
 }
 
 #else
