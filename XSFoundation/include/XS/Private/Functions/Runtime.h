@@ -23,7 +23,7 @@
  ******************************************************************************/
 
 /*!
- * @header      XSRuntime.h
+ * @header      Runtime.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    Private definitions for XSRuntime.h

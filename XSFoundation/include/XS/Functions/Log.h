@@ -23,7 +23,7 @@
  ******************************************************************************/
 
 /*!
- * @header          XSLog.h
+ * @header          Log.h
  * @copyright       (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author          Jean-David Gadina - www.xs-labs.com
  * @abstract        XSFoundation log functions
