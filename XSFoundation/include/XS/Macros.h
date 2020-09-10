@@ -146,6 +146,16 @@
 #define XS_SWAP_64( _value_ ) ( ( ( ( _value_ ) >> 56 ) & 0x00000000000000FFULL ) | ( ( ( _value_ ) >> 40 ) & 0x000000000000FF00ULL ) | ( ( ( _value_ ) >> 24 ) & 0x0000000000FF0000ULL ) | ( ( ( _value_ ) >> 8 ) & 0x00000000FF000000ULL ) | ( ( ( _value_ ) << 8 ) & 0x000000FF00000000ULL ) | ( ( ( _value_ ) << 24 ) & 0x0000FF0000000000ULL ) | ( ( ( _value_ ) << 40 ) & 0x00FF000000000000ULL ) | ( ( ( _value_ ) << 56 ) & 0xFF00000000000000ULL ) )
 
 /*!
+ * @define      XS_PATH_MAX
+ * @abstract    Maximum length for a path
+ */
+#if defined( _WIN32 )
+#define XS_PATH_MAX MAX_PATH
+#else
+#define XS_PATH_MAX PATH_MAX
+#endif
+
+/*!
  * @define      XS_AUTORELEASED
  * @abstract    Marker for methods that return auto-released objects
  */
