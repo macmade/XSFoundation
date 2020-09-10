@@ -6,7 +6,8 @@
             "label": "Make - Build All Targets",
             "command": "make",
             "args": [
-                "all"
+                "all",
+                "example"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
@@ -19,7 +20,7 @@
         {
             "type": "shell",
             "label": "Make - Rebuild All Targets",
-            "command": "make clean && make all",
+            "command": "make clean && make all && make example",
             "args": [],
             "options": {
                 "cwd": "${workspaceFolder}"
@@ -59,21 +60,5 @@
             ],
             "group": "build"
         },
-        {
-            "type": "shell",
-            "label": "Make - Example",
-            "command": "make",
-            "args": [
-                "example",
-                "DEBUG=1"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": "build"
-        }
     ]
 }

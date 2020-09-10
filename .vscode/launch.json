@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Example - Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Build/Debug/Products/example",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb"
+        },
+        {
+            "name": "Example - Release",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Build/Release/Products/example",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb"
+        }
+    ]
+}

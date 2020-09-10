@@ -30,7 +30,7 @@
 .DEFAULT_GOAL := all
 
 # Declaration for phony targets, to avoid problems with local files
-.PHONY: all clean clean_temp clean_products doc debug release lib example
+.PHONY: all clean clean_temp clean_products doc debug release lib example example_debug example_release example_exec
 
 # Declaration for precious targets, to avoid cleaning of intermediate files
 .PRECIOUS: $(DIR_BUILD_TEMP)%$(EXT_O)
@@ -41,6 +41,11 @@
 
 # Main Target
 all: debug release
+	
+	@:
+
+# Example Target
+example: example_debug example_release
 	
 	@:
 
@@ -111,15 +116,30 @@ ifeq ($(_MAKE_4),true)
 else
 	@$(MAKE) lib
 endif
+
+# Example debug build (parallel if available)
+example_debug:
+	
+ifeq ($(_MAKE_4),true)
+	@$(MAKE) -s -j 50 --output-sync example_exec DEBUG=1
+else
+	@$(MAKE) example_exec DEBUG=1
+endif
+	
+# Example release build (parallel if available)
+example_release:
+	
+ifeq ($(_MAKE_4),true)
+	@$(MAKE) -s -j 50 --output-sync example_exec
+else
+	@$(MAKE) example_exec
+endif
 	
 # Example executable
-example: debug release
+example_exec: lib
 
 	$(call PRINT_ARCH,$(_HOST_ARCH),"Compiling and linking example")
 	@$(_CC) -lxs -L$(DIR_BUILD_PRODUCTS) -o $(DIR_BUILD_PRODUCTS)example example/main.c
-
-	$(call PRINT_ARCH,$(_HOST_ARCH),"Running example")
-	@$(DIR_BUILD_PRODUCTS)example
 
 #-------------------------------------------------------------------------------
 # Targets with second expansion
