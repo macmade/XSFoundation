@@ -23,24 +23,32 @@
  ******************************************************************************/
 
 /*!
- * @header      Types.h
+ * @header      XSInitStatus.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    XSInitStatus type definition
  */
 
-#ifndef XS_TYPES_H
-#define XS_TYPES_H
+#ifndef XS_TYPES_XS_INIT_STATUS_H
+#define XS_TYPES_XS_INIT_STATUS_H
 
-#include <XS/Types/XSClassID.h>
-#include <XS/Types/XSClassType.h>
-#include <XS/Types/XSObjectRef.h>
-#include <XS/Types/XSClassCallbackConstructor.h>
-#include <XS/Types/XSClassCallbackDestructor.h>
-#include <XS/Types/XSClassCallbackCopy.h>
-#include <XS/Types/XSClassCallbackEquals.h>
-#include <XS/Types/XSClassCallbackToString.h>
-#include <XS/Types/XSClassInfo.h>
-#include <XS/Types/XSInitStatus.h>
+#include <XS/Macros.h>
 
-#endif /* XS_TYPES_H */
+XS_EXTERN_C_BEGIN
+
+/*!
+ * @typedef     XSInitStatus
+ * @abstract    Initialization status
+ */
+typedef enum
+{
+    XSInitStatusNotInited    = 0x00, /*! Not inited */
+    XSInitStatusInited       = 0x01, /*! Inited */
+    XSInitStatusInitializing = 0x02, /*! Initializing */
+    XSInitStatusFinalizing   = 0x03, /*! Finalizing */
+    XSInitStatusFinalized    = 0x04  /*! Finalized */
+} XSInitStatus;
+
+XS_EXTERN_C_END
+
+#endif /* XS_TYPES_XS_INIT_STATUS_H */
