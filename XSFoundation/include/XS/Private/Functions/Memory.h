@@ -56,7 +56,7 @@ typedef struct
 {
     volatile int64_t retainCount; /*! The object's retain count */
     size_t           size;        /*! The allocated data size */
-    size_t           allocID;     /*! The allocation ID */
+    int64_t          allocID;     /*! The allocation ID */
     XSClassID        classID;     /*! The class ID (only for allocated instances) */
 #ifdef DEBUG
     uint8_t fence[ XS_MEMORY_FENCE_SIZE ]; /*! Memory fence to prevent overflows (DEBUG builds only) */
