@@ -191,14 +191,6 @@ XS_EXTERN_C_BEGIN
 #define XSShow( _obj_ ) XSShowWithInfos( _obj_, __FILE__, __LINE__, __func__ )
 
 /*!
- * @function    XSGetLogLevel
- * @abstract    Gets the log level for XSLog functions/macros
- * @return      The actual log level
- * @see         XSLogLevel
- */
-XS_EXPORT int64_t XSGetLogLevel( void );
-
-/*!
  * @function    XSSetLogLevel
  * @abstract    Sets the log level for XSLog functions/macros
  * @param       level   The desired log level
