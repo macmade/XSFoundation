@@ -3,11 +3,24 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "Make - All Targets",
+            "label": "Make - Build All Targets",
             "command": "make",
             "args": [
                 "all"
             ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "Make - Rebuild All Targets",
+            "command": "make clean && make all",
+            "args": [],
             "options": {
                 "cwd": "${workspaceFolder}"
             },
