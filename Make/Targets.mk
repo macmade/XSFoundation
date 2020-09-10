@@ -139,7 +139,7 @@ endif
 example_exec: lib
 
 	$(call PRINT_ARCH,$(_HOST_ARCH),"Compiling and linking example")
-	$(_CC) -lxs -L$(DIR_BUILD_PRODUCTS) -o $(DIR_BUILD_PRODUCTS)example example/main.c
+	@$(_CC) -lxs -L$(DIR_BUILD_PRODUCTS) -o $(DIR_BUILD_PRODUCTS)example example/main.c
 
 #-------------------------------------------------------------------------------
 # Targets with second expansion
