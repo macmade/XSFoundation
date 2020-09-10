@@ -156,6 +156,16 @@
 #endif
 
 /*!
+ * @define      XS_PATH_SEPARATOR
+ * @abstract    The separator character used in paths
+ */
+#if defined( _WIN32 )
+#define XS_PATH_SEPARATOR '\\'
+#else
+#define XS_PATH_SEPARATOR '/'
+#endif
+
+/*!
  * @define      XS_AUTORELEASED
  * @abstract    Marker for methods that return auto-released objects
  */
