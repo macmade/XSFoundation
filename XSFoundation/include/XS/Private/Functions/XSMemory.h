@@ -36,6 +36,8 @@
 #include <XS/Types/XSClassID.h>
 #include <stddef.h>
 
+XS_EXTERN_C_BEGIN
+
 /*!
  * @typedef     XS_MEMORY_FENCE_SIZE
  * @abstract    The size of the memory fence to prevent overflows
@@ -84,5 +86,7 @@ XS_EXTERN const char XSMemory_FenceData[ XS_MEMORY_FENCE_SIZE ];
  * @return      The memory object
  */
 XSMemoryObject * XSGetMemoryObject( const void * ptr );
+
+XS_EXTERN_C_END
 
 #endif /* XS_PRIVATE_FUNCTIONS_XS_MEMORY_H */
