@@ -99,13 +99,13 @@ _FILES_C_BUILD = $(addprefix $(DIR_BUILD_TEMP),$(_FILES_C_OBJ))
 
 # Build flags
 ifeq ($(findstring 1,$(DEBUG)),)
-_CC_FLAGS = $(OPTIM_DEBUG) -DDEBUG=1 -gfull
-else
 _CC_FLAGS = $(OPTIM_RELEASE)
+else
+_CC_FLAGS = $(OPTIM_DEBUG) -DDEBUG=1 -gfull
 endif
 
 # C compiler - Debug mode
-_CC = $(CC) -Werror -Weverything -$(_CC_FLAGS) -std=$(STDC) -I$(DIR_INC) -D__XS_BUILD__
+_CC = $(CC) -Werror -Weverything -std=$(STDC) -I$(DIR_INC) -DXS_BUILD $(_CC_FLAGS)
 
 #-------------------------------------------------------------------------------
 # Display
@@ -136,9 +136,9 @@ PRINT = @echo "[ "$(COLOR_CYAN)XSFoundation$(COLOR_NONE) "]> [ "$(COLOR_PURPLE)$
 # @param    The message
 # 
 ifeq ($(findstring 1,$(DEBUG)),)
-PRINT_BUILD = $(call PRINT,Debug $1,$2)
-else
 PRINT_BUILD = $(call PRINT,Release $1,$2)
+else
+PRINT_BUILD = $(call PRINT,Debug $1,$2)
 endif
 
 # 

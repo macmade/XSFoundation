@@ -31,8 +31,8 @@ include Make/Targets.mk
 
 CC            := clang
 PRODUCT       := libxs
-OPTIM_DEBUG   := O0
-OPTIM_RELEASE := Os
+OPTIM_DEBUG   := -O0
+OPTIM_RELEASE := -Os
 STDC          := c11
 
 #-------------------------------------------------------------------------------

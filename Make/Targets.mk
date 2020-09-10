@@ -139,7 +139,7 @@ endif
 example_exec: lib
 
 	$(call PRINT_ARCH,$(_HOST_ARCH),"Compiling and linking example")
-	@$(_CC) -lxs -L$(DIR_BUILD_PRODUCTS) -o $(DIR_BUILD_PRODUCTS)example example/main.c
+	$(_CC) -lxs -L$(DIR_BUILD_PRODUCTS) -o $(DIR_BUILD_PRODUCTS)example example/main.c
 
 #-------------------------------------------------------------------------------
 # Targets with second expansion
@@ -159,7 +159,7 @@ lib: $$(_FILES_C_BUILD)
 	$(call PRINT_ARCH,$(_HOST_ARCH),"Creating static library"): $(COLOR_BLUE)$(notdir $(_LIB))$(COLOR_NONE)
 	@libtool -static -o $(_LIB) $(_OBJ)
 	
-ifneq ($(findstring 1,$(DEBUG)),)
+ifeq ($(findstring 1,$(DEBUG)),)
 	$(call PRINT_ARCH,$(_HOST_ARCH),"Stripping debug symbols"): $(COLOR_BLUE)$(notdir $(_LIB))$(COLOR_NONE)
 	@strip -S $(_LIB)
 endif
