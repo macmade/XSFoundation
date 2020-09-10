@@ -23,22 +23,49 @@
  ******************************************************************************/
 
 /*!
- * @header      XS.h
+ * @file        XSAtomicCompareAndSwap32.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Definition for XSAtomicCompareAndSwap32
  */
 
-#ifndef XS_H
-#define XS_H
+#include <XS/XS.h>
 
-/* Base */
-#include <XS/Macros.h>
+#if defined( __XEOS__ )
 
-/* Functions */
-#include <XS/Functions/Atomic.h>
+#include <system.h>
 
-#endif /* XS_H */
+/* XEOS */
+bool XSAtomicCompareAndSwap32( int32_t oldValue, int32_t newValue, volatile int32_t * value )
+{
+    return System_Atomic_CompareAndSwap32( oldValue, newValue, value );
+}
+
+#elif defined( _WIN32 )
+
+#include <Windows.h>
+#include <Winnt.h>
+
+/* Windows */
+bool XSAtomicCompareAndSwap32( int32_t oldValue, int32_t newValue, volatile int32_t * value )
+{
+    return InterlockedCompareExchange( value, newValue, oldValue ) == oldValue;
+}
+
+#elif defined( __APPLE__ )
+
+#include <libkern/OSAtomic.h>
+
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
+/* macOS */
+bool XSAtomicCompareAndSwap32( int32_t oldValue, int32_t newValue, volatile int32_t * value )
+{
+    return OSAtomicCompareAndSwap32( oldValue, newValue, value );
+}
+
+#else
+
+#error "Platform not implemented"
+
+#endif

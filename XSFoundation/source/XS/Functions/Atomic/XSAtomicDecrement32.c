@@ -23,22 +23,49 @@
  ******************************************************************************/
 
 /*!
- * @header      XS.h
+ * @file        XSAtomicDecrement32.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Definition for XSAtomicDecrement32
  */
 
-#ifndef XS_H
-#define XS_H
+#include <XS/XS.h>
 
-/* Base */
-#include <XS/Macros.h>
+#if defined( __XEOS__ )
 
-/* Functions */
-#include <XS/Functions/Atomic.h>
+#include <system.h>
 
-#endif /* XS_H */
+/* XEOS */
+int32_t XSAtomicDecrement32( volatile int32_t * value )
+{
+    return System_Atomic_Decrement32( value );
+}
+
+#elif defined( _WIN32 )
+
+#include <Windows.h>
+#include <Winnt.h>
+
+/* Windows */
+int32_t XSAtomicDecrement32( volatile int32_t * value )
+{
+    return InterlockedDecrement( value );
+}
+
+#elif defined( __APPLE__ )
+
+#include <libkern/OSAtomic.h>
+
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
+/* macOS */
+int32_t XSAtomicDecrement32( volatile int32_t * value )
+{
+    return OSAtomicDecrement32( value );
+}
+
+#else
+
+#error "Platform not implemented"
+
+#endif

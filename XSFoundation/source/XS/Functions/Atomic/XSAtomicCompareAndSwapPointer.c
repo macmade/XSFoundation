@@ -23,22 +23,49 @@
  ******************************************************************************/
 
 /*!
- * @header      XS.h
+ * @file        XSAtomicCompareAndSwapPointer.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Definition for XSAtomicCompareAndSwapPointer
  */
 
-#ifndef XS_H
-#define XS_H
+#include <XS/XS.h>
 
-/* Base */
-#include <XS/Macros.h>
+#if defined( __XEOS__ )
 
-/* Functions */
-#include <XS/Functions/Atomic.h>
+#include <system.h>
 
-#endif /* XS_H */
+/* XEOS */
+bool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
+{
+    return System_Atomic_CompareAndSwapPtr( oldValue, newValue, value );
+}
+
+#elif defined( _WIN32 )
+
+#include <Windows.h>
+#include <Winnt.h>
+
+/* Windows */
+bool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
+{
+    return InterlockedCompareExchangePointer( value, newValue, oldValue ) == oldValue;
+}
+
+#elif defined( __APPLE__ )
+
+#include <libkern/OSAtomic.h>
+
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
+/* macOS */
+bool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
+{
+    return OSAtomicCompareAndSwapPtr( oldValue, newValue, value );
+}
+
+#else
+
+#error "Platform not implemented"
+
+#endif

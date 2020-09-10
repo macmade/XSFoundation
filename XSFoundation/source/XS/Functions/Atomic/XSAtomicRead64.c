@@ -23,22 +23,15 @@
  ******************************************************************************/
 
 /*!
- * @header      XS.h
+ * @file        XSAtomicRead64.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Definition for XSAtomicRead64
  */
 
-#ifndef XS_H
-#define XS_H
+#include <XS/XS.h>
 
-/* Base */
-#include <XS/Macros.h>
-
-/* Functions */
-#include <XS/Functions/Atomic.h>
-
-#endif /* XS_H */
+int64_t XSAtomicRead64( volatile int64_t * value )
+{
+    return XSAtomicAdd64( 0, value );
+}

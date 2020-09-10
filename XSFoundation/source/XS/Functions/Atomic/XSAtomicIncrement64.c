@@ -23,22 +23,49 @@
  ******************************************************************************/
 
 /*!
- * @header      XS.h
+ * @file        XSAtomicIncrement64.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Definition for XSAtomicIncrement64
  */
 
-#ifndef XS_H
-#define XS_H
+#include <XS/XS.h>
 
-/* Base */
-#include <XS/Macros.h>
+#if defined( __XEOS__ )
 
-/* Functions */
-#include <XS/Functions/Atomic.h>
+#include <system.h>
 
-#endif /* XS_H */
+/* XEOS */
+int64_t XSAtomicIncrement64( volatile int64_t * value )
+{
+    return System_Atomic_Increment64( value );
+}
+
+#elif defined( _WIN32 )
+
+#include <Windows.h>
+#include <Winnt.h>
+
+/* Windows */
+int64_t XSAtomicIncrement64( volatile int64_t * value )
+{
+    return InterlockedIncrement64( value );
+}
+
+#elif defined( __APPLE__ )
+
+#include <libkern/OSAtomic.h>
+
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
+/* macOS */
+int64_t XSAtomicIncrement64( volatile int64_t * value )
+{
+    return OSAtomicIncrement64( value );
+}
+
+#else
+
+#error "Platform not implemented"
+
+#endif
