@@ -59,7 +59,7 @@ typedef struct
     size_t           allocID;     /*! The allocation ID */
     XSClassID        classID;     /*! The class ID (only for allocated instances) */
 #ifdef DEBUG
-    unsigned char fence[ XS_MEMORY_FENCE_SIZE ]; /*! Memory fence to prevent overflows (DEBUG builds only) */
+    uint8_t fence[ XS_MEMORY_FENCE_SIZE ]; /*! Memory fence to prevent overflows (DEBUG builds only) */
 #endif
 } XSMemoryObject;
 
@@ -75,7 +75,7 @@ XS_EXTERN volatile int64_t XSMemory_AllocID;
  * @typedef     XSMemory_FenceData
  * @abstract    The memory fence data
  */
-XS_EXTERN const char XSMemory_FenceData[ XS_MEMORY_FENCE_SIZE ];
+XS_EXTERN const uint8_t XSMemory_FenceData[ XS_MEMORY_FENCE_SIZE ];
 
 #endif
 
