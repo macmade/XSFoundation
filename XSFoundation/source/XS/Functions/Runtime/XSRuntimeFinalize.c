@@ -100,6 +100,5 @@ void XSRuntimeFinalize( void )
         free( classList );
     }
 
-    while( XSAtomicCompareAndSwap64( XSInitStatusFinalizing, XSInitStatusFinalized, &XSRuntimeInitStatus ) == false )
-    {}
+    XSAtomicWrite64( XSInitStatusFinalized, &XSRuntimeInitStatus );
 }

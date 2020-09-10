@@ -57,8 +57,7 @@ void XSRuntimeInitialize( void )
     XSRuntimeClasses    = classes;
     XSRuntimeClassCount = 0;
 
-    while( XSAtomicCompareAndSwap64( XSInitStatusInitializing, XSInitStatusInited, &XSRuntimeInitStatus ) == false )
-    {}
+    XSAtomicWrite64( XSInitStatusInited, &XSRuntimeInitStatus );
 
     // TODO: Class init
 }

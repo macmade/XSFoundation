@@ -34,6 +34,5 @@
 
 void XSSetLogLevel( int64_t level )
 {
-    while( XSAtomicCompareAndSwap64( XSLogCurrentLevel, level, &XSLogCurrentLevel ) == false )
-    {}
+    XSAtomicWrite64( level, &XSLogCurrentLevel );
 }

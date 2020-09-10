@@ -38,6 +38,5 @@ void XSSpinLockUnlock( XSSpinLock * lock )
         return;
     }
 
-    while( XSAtomicCompareAndSwap32( *( lock ), 0, lock ) == false )
-    {}
+    XSAtomicWrite32( 0, lock );
 }

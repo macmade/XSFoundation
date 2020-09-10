@@ -41,11 +41,10 @@ const char * XSGetCurrentProcessName( void )
 
         XSStoreCurrentProcessName( XSProcessName, XS_PROCESS_NAME_SIZE - 1 );
 
-        while( XSAtomicCompareAndSwap64( XSInitStatusInitializing, XSInitStatusInited, &XSProcessNameInitStatus ) == false )
-        {}
+        XSAtomicWrite64( XSInitStatusInited, &XSProcessNameInitStatus );
     }
 
-    while( XSAtomicCompareAndSwap64( XSInitStatusInited, XSInitStatusInited, &XSProcessNameInitStatus ) == false )
+    while( XSAtomicRead64( &XSProcessNameInitStatus ) != XSInitStatusInited )
     {}
 
     return XSProcessName;
