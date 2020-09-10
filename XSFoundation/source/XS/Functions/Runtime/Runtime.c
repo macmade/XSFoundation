@@ -23,27 +23,16 @@
  ******************************************************************************/
 
 /*!
- * @header      Threading.h
+ * @file        Runtime.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Threading-related functions
+ * @abstract    Private definitions for runtime functions
  */
 
-#ifndef XS_FUNCTIONS_THREADING_H
-#define XS_FUNCTIONS_THREADING_H
+#include <XS/XS.h>
+#include <XS/Private/Functions/Runtime.h>
 
-#include <XS/Macros.h>
-#include <stdint.h>
-
-XS_EXTERN_C_BEGIN
-
-/*!
- * @function    XSGetCurrentThreadID
- * @abstract    Gets the ID of the current thread
- * @return      The ID of the current thread
- */
-XS_EXPORT uint64_t XSGetCurrentThreadID( void );
-
-XS_EXTERN_C_END
-
-#endif /* XS_FUNCTIONS_THREADING_H */
+volatile int64_t XSRuntimeInitStatus                  = XSInitStatusNotInited;
+volatile int64_t XSRuntimeClassCount                  = 0;
+XSRuntimeClassInfoList * volatile XSRuntimeClasses    = NULL;
+XSRuntimeFinalizerList * volatile XSRuntimeFinalizers = NULL;

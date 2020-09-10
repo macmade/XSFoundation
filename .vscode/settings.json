@@ -1,4 +1,11 @@
 {
     "editor.formatOnSave": true,
-    "C_Cpp.clang_format_style": "file"
+    "C_Cpp.clang_format_style": "file",
+    "files.associations": {
+        "algorithm": "c",
+        "chrono": "c",
+        "limits": "c",
+        "ratio": "c",
+        "typeinfo": "c"
+    }
 }

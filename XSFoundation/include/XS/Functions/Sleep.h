@@ -26,7 +26,7 @@
  * @header      Sleep.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation sleep functions
+ * @abstract    Sleep-related functions
  */
 
 #ifndef XS_FUNCTIONS_SLEEP_H

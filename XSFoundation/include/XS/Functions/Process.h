@@ -23,36 +23,34 @@
  ******************************************************************************/
 
 /*!
- * @file        XSMemory.c
+ * @header      Process.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definitions for memory functions
+ * @abstract    Process-related functions
  */
 
-#include <XS/XS.h>
-#include <XS/Private/Functions/Memory.h>
+#ifndef XS_FUNCTIONS_PROCESS_H
+#define XS_FUNCTIONS_PROCESS_H
 
-volatile int64_t XSMemoryAllocID = 0;
+#include <XS/Macros.h>
+#include <stdint.h>
 
-#ifdef DEBUG
+XS_EXTERN_C_BEGIN
 
-const uint8_t XSMemoryFenceData[ XS_MEMORY_FENCE_SIZE ] = {
-    '_',
-    'X',
-    'S',
-    'M',
-    'e',
-    'm',
-    'o',
-    'r',
-    'y',
-    'O',
-    'b',
-    'j',
-    'e',
-    'c',
-    't',
-    '_'
-};
+/*!
+ * @function    XSGetCurrentProcessID
+ * @abstract    Gets the ID of the current process
+ * @return      The ID of the current process
+ */
+uint64_t XSGetCurrentProcessID( void );
 
-#endif
+/*!
+ * @function    XSGetCurrentProcessName
+ * @abstract    Gets the name of the current process
+ * @return      The name of the current process
+ */
+const char * XSGetCurrentProcessName( void );
+
+XS_EXTERN_C_END
+
+#endif /* XS_FUNCTIONS_PROCESS_H */

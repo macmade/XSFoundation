@@ -23,16 +23,30 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRuntime.c
+ * @file        XSGetCurrentProcessName.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definitions for runtime functions
+ * @abstract    Definition for XSGetCurrentProcessName
  */
 
 #include <XS/XS.h>
-#include <XS/Private/Functions/Runtime.h>
+#include <XS/Private/Functions/Process.h>
+#include <string.h>
 
-volatile int64_t XSRuntimeInitStatus                  = XSInitStatusNotInited;
-volatile int64_t XSRuntimeClassCount                  = 0;
-XSRuntimeClassInfoList * volatile XSRuntimeClasses    = NULL;
-XSRuntimeFinalizerList * volatile XSRuntimeFinalizers = NULL;
+const char * XSGetCurrentProcessName( void )
+{
+    if( XSAtomicCompareAndSwap64( XSInitStatusNotInited, XSInitStatusInitializing, &XSProcessNameInitStatus ) )
+    {
+        memset( XSProcessName, 0, XS_PROCESS_NAME_SIZE );
+
+        XSStoreCurrentProcessName( XSProcessName, XS_PROCESS_NAME_SIZE - 1 );
+
+        while( XSAtomicCompareAndSwap64( XSInitStatusInitializing, XSInitStatusInited, &XSProcessNameInitStatus ) == false )
+        {}
+    }
+
+    while( XSAtomicCompareAndSwap64( XSInitStatusInited, XSInitStatusInited, &XSProcessNameInitStatus ) == false )
+    {}
+
+    return XSProcessName;
+}

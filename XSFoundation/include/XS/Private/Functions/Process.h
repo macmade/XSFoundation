@@ -23,14 +23,14 @@
  ******************************************************************************/
 
 /*!
- * @header      Threading.h
+ * @header      Process.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Threading-related functions
+ * @abstract    Private declarations for process-related functions
  */
 
-#ifndef XS_FUNCTIONS_THREADING_H
-#define XS_FUNCTIONS_THREADING_H
+#ifndef XS_PRIVATE_FUNCTIONS_PROCESS_H
+#define XS_PRIVATE_FUNCTIONS_PROCESS_H
 
 #include <XS/Macros.h>
 #include <stdint.h>
@@ -38,12 +38,31 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @function    XSGetCurrentThreadID
- * @abstract    Gets the ID of the current thread
- * @return      The ID of the current thread
+ * @define      XS_PROCESS_NAME_SIZE
+ * @abstract    Size for the process name global buffer
  */
-XS_EXPORT uint64_t XSGetCurrentThreadID( void );
+#define XS_PROCESS_NAME_SIZE 256
+
+/*!
+ * @typedef     XSProcessName
+ * @abstract    Process name
+ */
+XS_EXTERN char XSProcessName[ XS_PROCESS_NAME_SIZE ];
+
+/*!
+ * @typedef     XSProcessNameInitStatus
+ * @abstract    Process name initialization status
+ */
+XS_EXTERN volatile int64_t XSProcessNameInitStatus;
+
+/*!
+ * @typedef     XSStoreCurrentProcessName
+ * @abstract    Gets and stores the current process name
+ * @param       buf     The buffer in which to store the process name
+ * @param       max     The max size of the string (not including the termination character)
+ */
+void XSStoreCurrentProcessName( char * buf, size_t max );
 
 XS_EXTERN_C_END
 
-#endif /* XS_FUNCTIONS_THREADING_H */
+#endif /* XS_PRIVATE_FUNCTIONS_PROCESS_H */

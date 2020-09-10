@@ -26,7 +26,7 @@
  * @header      SpinLock.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation atomic functions
+ * @abstract    Spin lock functions
  */
 
 #ifndef XS_FUNCTIONS_SPIN_LOCK_H

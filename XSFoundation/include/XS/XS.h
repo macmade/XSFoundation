@@ -47,5 +47,6 @@
 #include <XS/Functions/Sleep.h>
 #include <XS/Functions/SpinLock.h>
 #include <XS/Functions/Threading.h>
+#include <XS/Functions/Process.h>
 
 #endif /* XS_H */

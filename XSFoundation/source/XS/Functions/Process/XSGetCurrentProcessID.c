@@ -23,27 +23,30 @@
  ******************************************************************************/
 
 /*!
- * @header      Threading.h
+ * @file        XSGetCurrentProcessID.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Threading-related functions
+ * @abstract    Definition for XSGetCurrentProcessID
  */
 
-#ifndef XS_FUNCTIONS_THREADING_H
-#define XS_FUNCTIONS_THREADING_H
+#include <XS/XS.h>
 
-#include <XS/Macros.h>
-#include <stdint.h>
+#if defined( _WIN32 )
 
-XS_EXTERN_C_BEGIN
+#include <Windows.h>
 
-/*!
- * @function    XSGetCurrentThreadID
- * @abstract    Gets the ID of the current thread
- * @return      The ID of the current thread
- */
-XS_EXPORT uint64_t XSGetCurrentThreadID( void );
+uint64_t XSGetCurrentProcessID( void )
+{
+    return ( uint64_t )GetCurrentProcessId();
+}
 
-XS_EXTERN_C_END
+#else
 
-#endif /* XS_FUNCTIONS_THREADING_H */
+#include <unistd.h>
+
+uint64_t XSGetCurrentProcessID( void )
+{
+    return ( uint64_t )getpid();
+}
+
+#endif

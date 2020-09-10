@@ -23,27 +23,36 @@
  ******************************************************************************/
 
 /*!
- * @header      Threading.h
+ * @file        Memory.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Threading-related functions
+ * @abstract    Private definitions for memory functions
  */
 
-#ifndef XS_FUNCTIONS_THREADING_H
-#define XS_FUNCTIONS_THREADING_H
+#include <XS/XS.h>
+#include <XS/Private/Functions/Memory.h>
 
-#include <XS/Macros.h>
-#include <stdint.h>
+volatile int64_t XSMemoryAllocID = 0;
 
-XS_EXTERN_C_BEGIN
+#ifdef DEBUG
 
-/*!
- * @function    XSGetCurrentThreadID
- * @abstract    Gets the ID of the current thread
- * @return      The ID of the current thread
- */
-XS_EXPORT uint64_t XSGetCurrentThreadID( void );
+const uint8_t XSMemoryFenceData[ XS_MEMORY_FENCE_SIZE ] = {
+    '_',
+    'X',
+    'S',
+    'M',
+    'e',
+    'm',
+    'o',
+    'r',
+    'y',
+    'O',
+    'b',
+    'j',
+    'e',
+    'c',
+    't',
+    '_'
+};
 
-XS_EXTERN_C_END
-
-#endif /* XS_FUNCTIONS_THREADING_H */
+#endif

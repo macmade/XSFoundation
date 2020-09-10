@@ -23,27 +23,14 @@
  ******************************************************************************/
 
 /*!
- * @header      Threading.h
+ * @file        Process.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Threading-related functions
+ * @abstract    Private definitions for process-related functions
  */
 
-#ifndef XS_FUNCTIONS_THREADING_H
-#define XS_FUNCTIONS_THREADING_H
+#include <XS/XS.h>
+#include <XS/Private/Functions/Process.h>
 
-#include <XS/Macros.h>
-#include <stdint.h>
-
-XS_EXTERN_C_BEGIN
-
-/*!
- * @function    XSGetCurrentThreadID
- * @abstract    Gets the ID of the current thread
- * @return      The ID of the current thread
- */
-XS_EXPORT uint64_t XSGetCurrentThreadID( void );
-
-XS_EXTERN_C_END
-
-#endif /* XS_FUNCTIONS_THREADING_H */
+char             XSProcessName[ XS_PROCESS_NAME_SIZE ] = { 0 };
+volatile int64_t XSProcessNameInitStatus               = XSInitStatusNotInited;

@@ -26,7 +26,7 @@
  * @header      Atomic.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation atomic functions
+ * @abstract    Atomic functions
  */
 
 #ifndef XS_FUNCTIONS_ATOMIC_H

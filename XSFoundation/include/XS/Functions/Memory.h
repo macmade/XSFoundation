@@ -26,7 +26,7 @@
  * @header      Memory.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation memory allocation functions
+ * @abstract    Memory allocation functions
  */
 
 #ifndef XS_FUNCTIONS_MEMORY_H

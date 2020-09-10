@@ -26,7 +26,7 @@
  * @header      Runtime.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSRuntime.h
+ * @abstract    Private declarations for runtime functions
  */
 
 #ifndef XS_PRIVATE_FUNCTIONS_RUNTIME_H
