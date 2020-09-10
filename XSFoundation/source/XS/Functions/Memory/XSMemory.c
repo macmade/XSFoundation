@@ -30,13 +30,13 @@
  */
 
 #include <XS/XS.h>
-#include <XS/Private/Functions/XSMemory.h>
+#include <XS/Private/Functions/Memory.h>
 
-volatile int64_t XSMemory_AllocID = 0;
+volatile int64_t XSMemoryAllocID = 0;
 
 #ifdef DEBUG
 
-const uint8_t XSMemory_FenceData[ XS_MEMORY_FENCE_SIZE ] = {
+const uint8_t XSMemoryFenceData[ XS_MEMORY_FENCE_SIZE ] = {
     '_',
     'X',
     'S',

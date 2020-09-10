@@ -29,8 +29,8 @@
  * @abstract    Private definitions for XSRuntime.h
  */
 
-#ifndef XS_PRIVATE_FUNCTIONS_XS_RUNTIME_H
-#define XS_PRIVATE_FUNCTIONS_XS_RUNTIME_H
+#ifndef XS_PRIVATE_FUNCTIONS_RUNTIME_H
+#define XS_PRIVATE_FUNCTIONS_RUNTIME_H
 
 #include <XS/Macros.h>
 #include <XS/Types/XSClassID.h>
@@ -177,4 +177,4 @@ void XSRuntimeFinalize( void );
 
 XS_EXTERN_C_END
 
-#endif /* XS_PRIVATE_FUNCTIONS_XS_RUNTIME_H */
+#endif /* XS_PRIVATE_FUNCTIONS_RUNTIME_H */

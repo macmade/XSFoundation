@@ -30,7 +30,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/Private/Functions/XSMemory.h>
+#include <XS/Private/Functions/Memory.h>
 
 XSMemoryObject * XSGetMemoryObject( const void * ptr )
 {

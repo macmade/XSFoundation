@@ -29,8 +29,8 @@
  * @abstract    Private definitions for XSMemory.h
  */
 
-#ifndef XS_PRIVATE_FUNCTIONS_XS_MEMORY_H
-#define XS_PRIVATE_FUNCTIONS_XS_MEMORY_H
+#ifndef XS_PRIVATE_FUNCTIONS_MEMORY_H
+#define XS_PRIVATE_FUNCTIONS_MEMORY_H
 
 #include <XS/Macros.h>
 #include <XS/Types/XSClassID.h>
@@ -64,18 +64,18 @@ typedef struct
 } XSMemoryObject;
 
 /*!
- * @typedef     XSMemory_AllocID
+ * @typedef     XSMemoryAllocID
  * @abstract    The current allocation ID
  */
-XS_EXTERN volatile int64_t XSMemory_AllocID;
+XS_EXTERN volatile int64_t XSMemoryAllocID;
 
 #ifdef DEBUG
 
 /*!
- * @typedef     XSMemory_FenceData
+ * @typedef     XSMemoryFenceData
  * @abstract    The memory fence data
  */
-XS_EXTERN const uint8_t XSMemory_FenceData[ XS_MEMORY_FENCE_SIZE ];
+XS_EXTERN const uint8_t XSMemoryFenceData[ XS_MEMORY_FENCE_SIZE ];
 
 #endif
 
@@ -89,4 +89,4 @@ XSMemoryObject * XSGetMemoryObject( const void * ptr );
 
 XS_EXTERN_C_END
 
-#endif /* XS_PRIVATE_FUNCTIONS_XS_MEMORY_H */
+#endif /* XS_PRIVATE_FUNCTIONS_MEMORY_H */

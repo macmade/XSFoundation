@@ -30,7 +30,7 @@
  */
 
 #include <XS/XS.h>
-#include <XS/Private/Functions/XSMemory.h>
+#include <XS/Private/Functions/Memory.h>
 
 void * XSRetainWithInfos( const void * memory, const char * file, int line, const char * func )
 {
