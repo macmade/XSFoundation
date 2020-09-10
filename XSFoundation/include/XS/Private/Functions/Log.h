@@ -33,6 +33,7 @@
 #define XS_PRIVATE_FUNCTIONS_LOG_H
 
 #include <XS/Macros.h>
+#include <XS/Types/XSSpinLock.h>
 #include <stdint.h>
 
 XS_EXTERN_C_BEGIN
@@ -42,6 +43,30 @@ XS_EXTERN_C_BEGIN
  * @abstract    The current log level
  */
 XS_EXTERN volatile int64_t XSLogCurrentLevel;
+
+/*!
+ * @var         XSLogIsPaused
+ * @abstract    1 if any log call should be hold, otherwise 0
+ */
+XS_EXTERN volatile int64_t XSLogIsPaused;
+
+/*!
+ * @var         XSLogLock
+ * @abstract    Spin lock for log calls
+ */
+XS_EXTERN XSSpinLock XSLogLock;
+
+/*!
+ * @function    XSLogPause
+ * @abstract    Holds any log request
+ */
+void XSLogPause( void );
+
+/*!
+ * @function    XSLogResume
+ * @abstract    Resumes all log requests
+ */
+void XSLogResume( void );
 
 XS_EXTERN_C_END
 

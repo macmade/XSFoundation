@@ -23,20 +23,32 @@
  ******************************************************************************/
 
 /*!
- * @file        Log.c
- * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
+ * @file        XSVLogWithInfos.c
+ * @copyright   (c) 202o - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for logging functions
+ * @abstract    Definitions for XSVLogWithInfos
  */
 
 #include <XS/XS.h>
 #include <XS/Private/Functions/Log.h>
 
-#ifdef DEBUG
-volatile int64_t XSLogCurrentLevel = XSLogLevelAll;
-#else
-volatile int64_t XSLogCurrentLevel = XSLogLevelAll & ~XSLogLevelDebug;
-#endif
+void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char * func, const char * fmt, va_list args )
+{
+    ( void )level;
+    ( void )file;
+    ( void )line;
+    ( void )func;
+    ( void )fmt;
+    ( void )args;
 
-volatile int64_t XSLogIsPaused = 0;
-XSSpinLock       XSLogLock     = 0;
+    /*
+    while( XSAtomic_CompareAndSwapInteger( 0, 0, &__XSLog_IsPaused ) == false )
+        ;
+
+    if( ( XSGetLogLevel() & level ) != 0 )
+    {
+        __XSLog_StartLog( level, file, line, func );
+        vfprintf( stderr, fmt, args );
+        __XSLog_EndLog();
+    }*/
+}
