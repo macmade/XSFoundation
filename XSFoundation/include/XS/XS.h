@@ -24,7 +24,7 @@
 
 /*!
  * @header      XS.h
- * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
+ * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  * @abstract    XSFoundation main include file
  * @discussion  This file should be included on projects using the XEOS C
@@ -32,42 +32,9 @@
  *              directly.
  */
 
-#ifndef __XS_H__
-#define __XS_H__
+#ifndef XS_H
+#define XS_H
 
-/* Standard includes */
-#include <XS/XS-STD.h>
 
-/* Core */
-#include <XS/XSMacros.h>
-#include <XS/XSMacros-X.h>
-#include <XS/XSTypes.h>
 
-/* Functions */
-#include <XS/Functions/XSAtomic.h>
-#include <XS/Functions/XSMemory.h>
-#include <XS/Functions/XSRuntime.h>
-#include <XS/Functions/XSProcess.h>
-#include <XS/Functions/XSThreading.h>
-#include <XS/Functions/XSLog.h>
-#include <XS/Functions/XSMath.h>
-#include <XS/Functions/XSGeometry.h>
-
-/* Classes */
-#include <XS/Classes/XSArrayRef.h>
-#include <XS/Classes/XSAutoreleasePoolRef.h>
-#include <XS/Classes/XSBooleanRef.h>
-#include <XS/Classes/XSDataRef.h>
-#include <XS/Classes/XSDateRef.h>
-#include <XS/Classes/XSDictionaryRef.h>
-#include <XS/Classes/XSErrorRef.h>
-#include <XS/Classes/XSLockRef.h>
-#include <XS/Classes/XSNullRef.h>
-#include <XS/Classes/XSNumberRef.h>
-#include <XS/Classes/XSRecursiveLockRef.h>
-#include <XS/Classes/XSSemaphoreRef.h>
-#include <XS/Classes/XSStringRef.h>
-#include <XS/Classes/XSThreadRef.h>
-#include <XS/Classes/XSValueRef.h>
-
-#endif /* __XS_H__ */
+#endif /* XS_H */
