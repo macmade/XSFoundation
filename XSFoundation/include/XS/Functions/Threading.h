@@ -23,29 +23,27 @@
  ******************************************************************************/
 
 /*!
- * @header      XS.h
+ * @header      Threading.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    XSFoundation atomic functions
  */
 
-#ifndef XS_H
-#define XS_H
+#ifndef XS_FUNCTIONS_THREADING_H
+#define XS_FUNCTIONS_THREADING_H
 
-/* Base */
 #include <XS/Macros.h>
-#include <XS/Types.h>
+#include <stdint.h>
 
-/* Functions */
-#include <XS/Functions/Atomic.h>
-#include <XS/Functions/Memory.h>
-#include <XS/Functions/Runtime.h>
-#include <XS/Functions/Log.h>
-#include <XS/Functions/Sleep.h>
-#include <XS/Functions/SpinLock.h>
-#include <XS/Functions/Threading.h>
+XS_EXTERN_C_BEGIN
 
-#endif /* XS_H */
+/*!
+ * @function    XSGetCurrentThreadID
+ * @abstract    Gets the ID of the current thread
+ * @return      The ID of the current thread
+ */
+XS_EXPORT uint64_t XSGetCurrentThreadID( void );
+
+XS_EXTERN_C_END
+
+#endif /* XS_FUNCTIONS_THREADING_H */

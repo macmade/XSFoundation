@@ -23,29 +23,60 @@
  ******************************************************************************/
 
 /*!
- * @header      XS.h
+ * @file        XSGetCurrentThreadID.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Definition for XSGetCurrentThreadID
  */
 
-#ifndef XS_H
-#define XS_H
+#include <XS/XS.h>
 
-/* Base */
-#include <XS/Macros.h>
-#include <XS/Types.h>
+#if defined( __XEOS__ )
 
-/* Functions */
-#include <XS/Functions/Atomic.h>
-#include <XS/Functions/Memory.h>
-#include <XS/Functions/Runtime.h>
-#include <XS/Functions/Log.h>
-#include <XS/Functions/Sleep.h>
-#include <XS/Functions/SpinLock.h>
-#include <XS/Functions/Threading.h>
+uint64_t XSGetCurrentThreadID( void )
+{
+    return 0;
+}
 
-#endif /* XS_H */
+#elif defined( _WIN32 )
+
+#include <Windows.h>
+
+uint64_t XSGetCurrentThreadID( void )
+{
+    return ( uint64_t )GetCurrentThreadId();
+}
+
+#elif defined( __APPLE__ )
+
+#include <pthread.h>
+
+uint64_t XSGetCurrentThreadID( void )
+{
+    return ( uint64_t )pthread_mach_thread_np( pthread_self() );
+}
+
+#elif defined( __linux )
+
+#include <unistd.h>
+#include <sys/types.h>
+
+uint64_t XSGetCurrentThreadID( void )
+{
+    return ( uint64_t )gettid();
+}
+
+#elif defined( __unix__ )
+
+#include <thread.h>
+
+uint64_t XSGetCurrentThreadID( void )
+{
+    return ( uint64_t )thr_self();
+}
+
+#else
+
+#error "Platform not implemented"
+
+#endif
