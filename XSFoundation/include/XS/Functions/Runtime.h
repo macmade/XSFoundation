@@ -98,7 +98,7 @@ XS_EXPORT const char * XSRuntimeGetDescription( XSObjectRef object );
  * @param       ptr         The pointer to check
  * @return      True if the pointer represents an instance, otherwise false
  */
-XS_EXPORT bool XSRuntimeIsInstance( void * ptr );
+XS_EXPORT bool XSRuntimeIsInstance( const void * ptr );
 
 /*!
  * @function    XSRuntimeIsRegisteredClass

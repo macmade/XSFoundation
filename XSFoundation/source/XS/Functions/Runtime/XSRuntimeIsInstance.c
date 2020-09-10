@@ -23,31 +23,16 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRuntimeIsRegisteredClass.c
- * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
+ * @file        XSRuntimeIsInstance.c
+ * @copyright   (c) 2020- Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntimeIsRegisteredClass
+ * @abstract    Definition for XSRuntimeIsInstance
  */
 
 #include <XS/XS.h>
 #include <XS/Private/Functions/Runtime.h>
 
-bool XSRuntimeIsRegisteredClass( XSClassID classID )
+bool XSRuntimeIsInstance( const void * ptr )
 {
-    if( XS_RUNTIME_IS_FINALIZING || XS_RUNTIME_IS_FINALIZED )
-    {
-        return false;
-    }
-
-    if( XS_RUNTIME_IS_INITED == false )
-    {
-        XSFatalError( "XSFoundation runtime has not been inited. Please call XSRuntimeInitialize()" );
-    }
-
-    if( classID == 0 )
-    {
-        return false;
-    }
-
-    return ( classID <= XSRuntimeClassCount ) ? true : false;
+    return XSRuntimeIsRegisteredClass( XSRuntimeGetClassID( ptr ) );
 }
