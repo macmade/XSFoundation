@@ -23,62 +23,25 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRuntimeGetDescription.c
+ * @file        XSRuntimeGetClassType.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntimeGetDescription
+ * @abstract    Definition for XSRuntimeGetClassType
  */
 
 #include <XS/XS.h>
 #include <XS/Private/Functions/Runtime.h>
 
-const char * XSRuntimeGetDescription( XSObjectRef object )
+XSClassType XSRuntimeGetClassType( XSClassID classID )
 {
-    ( void )object;
+    const XSRuntimeClassInfoList * info;
 
-    return "<object>";
+    info = XSRuntimeGetClassInfo( classID );
 
-    // TODO
-    /*
-    XSClassID               classID;
-    XSClassCallbackToString toString;
-    XSStringRef             description;
-    const char *            className;
-    const char *            objectDescription;
-
-    if( object == NULL )
+    if( info == NULL )
     {
-        return "(null)";
-    }
-    else
-    {
-        classID           = XSRuntime_GetClassID( object );
-        className         = XSRuntime_GetClassName( classID );
-        toString          = __XSRuntime_GetToStringCallback( classID );
-        objectDescription = NULL;
-
-        if( className == NULL )
-        {
-            description = XSString_StringWithFormat( "<%p>", object );
-        }
-        else
-        {
-            if( toString != NULL )
-            {
-                objectDescription = toString( object );
-            }
-
-            if( objectDescription != NULL )
-            {
-                description = XSString_StringWithFormat( "<%s %p> %s", className, object, objectDescription );
-            }
-            else
-            {
-                description = XSString_StringWithFormat( "<%s %p>", className, object );
-            }
-        }
+        return XSClassTypeNone;
     }
 
-    return XSString_GetCString( description );
-    */
+    return info->cls->type;
 }
