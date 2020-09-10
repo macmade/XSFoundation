@@ -23,46 +23,17 @@
  ******************************************************************************/
 
 /*!
- * @header      Process.h
- * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
+ * @file        XSSetLogLevel.c
+ * @copyright   (c) 2010-2014 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private declarations for process-related functions
+ * @abstract    Definitions for XSSetLogLevel
  */
 
-#ifndef XS_PRIVATE_FUNCTIONS_PROCESS_H
-#define XS_PRIVATE_FUNCTIONS_PROCESS_H
+#include <XS/XS.h>
+#include <XS/Private/Functions/Log.h>
 
-#include <XS/Macros.h>
-#include <stdint.h>
-
-XS_EXTERN_C_BEGIN
-
-/*!
- * @define      XS_PROCESS_NAME_SIZE
- * @abstract    Size for the process name global buffer
- */
-#define XS_PROCESS_NAME_SIZE 256
-
-/*!
- * @var         XSProcessName
- * @abstract    Process name
- */
-XS_EXTERN char XSProcessName[ XS_PROCESS_NAME_SIZE ];
-
-/*!
- * @var         XSProcessNameInitStatus
- * @abstract    Process name initialization status
- */
-XS_EXTERN volatile int64_t XSProcessNameInitStatus;
-
-/*!
- * @function    XSStoreCurrentProcessName
- * @abstract    Gets and stores the current process name
- * @param       buf     The buffer in which to store the process name
- * @param       max     The max size of the string (not including the termination character)
- */
-void XSStoreCurrentProcessName( char * buf, size_t max );
-
-XS_EXTERN_C_END
-
-#endif /* XS_PRIVATE_FUNCTIONS_PROCESS_H */
+void XSSetLogLevel( int64_t level )
+{
+    while( XSAtomicCompareAndSwap64( XSLogCurrentLevel, level, &XSLogCurrentLevel ) == false )
+    {}
+}

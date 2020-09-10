@@ -23,70 +23,26 @@
  ******************************************************************************/
 
 /*!
- * @header      Memory.h
+ * @header      Log.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private declarations for memory functions
+ * @abstract    Private declarations for logging functions
  */
 
-#ifndef XS_PRIVATE_FUNCTIONS_MEMORY_H
-#define XS_PRIVATE_FUNCTIONS_MEMORY_H
+#ifndef XS_PRIVATE_FUNCTIONS_LOG_H
+#define XS_PRIVATE_FUNCTIONS_LOG_H
 
 #include <XS/Macros.h>
-#include <XS/Types/XSClassID.h>
-#include <stddef.h>
+#include <stdint.h>
 
 XS_EXTERN_C_BEGIN
 
 /*!
- * @typedef     XS_MEMORY_FENCE_SIZE
- * @abstract    The size of the memory fence to prevent overflows
+ * @var         XSLogCurrentLevel
+ * @abstract    The current log level
  */
-#ifdef DEBUG
-#define XS_MEMORY_FENCE_SIZE 16
-#else
-#define XS_MEMORY_FENCE_SIZE 0
-#endif
-
-/*!
- * @typedef     XSMemoryObject
- * @abstract    Memory object type
- */
-typedef struct
-{
-    volatile int64_t retainCount; /*! The object's retain count */
-    size_t           size;        /*! The allocated data size */
-    int64_t          allocID;     /*! The allocation ID */
-    XSClassID        classID;     /*! The class ID (only for allocated instances) */
-#ifdef DEBUG
-    uint8_t fence[ XS_MEMORY_FENCE_SIZE ]; /*! Memory fence to prevent overflows (DEBUG builds only) */
-#endif
-} XSMemoryObject;
-
-/*!
- * @var         XSMemoryAllocID
- * @abstract    The current allocation ID
- */
-XS_EXTERN volatile int64_t XSMemoryAllocID;
-
-#ifdef DEBUG
-
-/*!
- * @var         XSMemoryFenceData
- * @abstract    The memory fence data
- */
-XS_EXTERN const uint8_t XSMemoryFenceData[ XS_MEMORY_FENCE_SIZE ];
-
-#endif
-
-/*!
- * @function    XSGetMemoryObject
- * @abstract    Gets the memory object for a pointer
- * @param       ptr     The pointer for which to get the memory object
- * @return      The memory object
- */
-XSMemoryObject * XSGetMemoryObject( const void * ptr );
+XS_EXTERN volatile int64_t XSLogCurrentLevel;
 
 XS_EXTERN_C_END
 
-#endif /* XS_PRIVATE_FUNCTIONS_MEMORY_H */
+#endif /* XS_PRIVATE_FUNCTIONS_LOG_H */
