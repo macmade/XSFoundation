@@ -23,23 +23,30 @@
  ******************************************************************************/
 
 /*!
- * @header      Types.h
+ * @header      XSClassCallbackEquals.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    XSClassCallbackEquals type definition
  */
 
-#ifndef XS_TYPES_H
-#define XS_TYPES_H
+#ifndef XS_TYPES_XS_CLASS_CALLBACK_EQUALS_H
+#define XS_TYPES_XS_CLASS_CALLBACK_EQUALS_H
 
-#include <XS/Types/XSClassID.h>
-#include <XS/Types/XSClassType.h>
+#include <XS/Macros.h>
 #include <XS/Types/XSObjectRef.h>
-#include <XS/Types/XSClassCallbackConstructor.h>
-#include <XS/Types/XSClassCallbackDestructor.h>
-#include <XS/Types/XSClassCallbackCopy.h>
-#include <XS/Types/XSClassCallbackEquals.h>
-#include <XS/Types/XSClassCallbackToString.h>
-#include <XS/Types/XSClassInfo.h>
+#include <stdbool.h>
 
-#endif /* XS_TYPES_H */
+XS_EXTERN_C_BEGIN
+
+/*!
+ * @typedef     XSClassCallbackEquals
+ * @abstract    Class equals callback
+ * @param       object1     The first object to compare
+ * @param       object2     The second object to compare
+ * @return      True if both objects are equals, otherwise false
+ */
+typedef bool ( *XSClassCallbackEquals )( XSObjectRef object1, XSObjectRef object2 );
+
+XS_EXTERN_C_END
+
+#endif /* XS_TYPES_XS_CLASS_CALLBACK_EQUALS_H */

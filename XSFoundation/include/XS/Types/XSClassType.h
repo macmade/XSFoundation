@@ -23,23 +23,31 @@
  ******************************************************************************/
 
 /*!
- * @header      Types.h
- * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
+ * @header      XSClassType.h
+ * @copyright   (c) 2020- Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    XSClassType type definition
  */
 
-#ifndef XS_TYPES_H
-#define XS_TYPES_H
+#ifndef XS_TYPES_XS_CLASS_TYPE_H
+#define XS_TYPES_XS_CLASS_TYPE_H
 
-#include <XS/Types/XSClassID.h>
-#include <XS/Types/XSClassType.h>
-#include <XS/Types/XSObjectRef.h>
-#include <XS/Types/XSClassCallbackConstructor.h>
-#include <XS/Types/XSClassCallbackDestructor.h>
-#include <XS/Types/XSClassCallbackCopy.h>
-#include <XS/Types/XSClassCallbackEquals.h>
-#include <XS/Types/XSClassCallbackToString.h>
-#include <XS/Types/XSClassInfo.h>
+#include <XS/Macros.h>
 
-#endif /* XS_TYPES_H */
+XS_EXTERN_C_BEGIN
+
+/*!
+ * @typedef     XSClassType
+ * @abstract    Types for XSFoundation classes
+ */
+typedef enum
+{
+    XSClassTypeNone           = -1, /*! Not a class */
+    XSClassTypeNormal         = 0,  /*! Normal, instanciable class */
+    XSClassTypeSingleton      = 1,  /*! Singelton class (unique instance, not instanciable) */
+    XSClassTypeSharedInstance = 2   /*! Instanciable class, with a shared instance */
+} XSClassType;
+
+XS_EXTERN_C_END
+
+#endif /* XS_TYPES_XS_CLASS_TYPE_H */

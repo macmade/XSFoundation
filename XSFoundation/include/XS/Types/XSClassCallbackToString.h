@@ -23,23 +23,28 @@
  ******************************************************************************/
 
 /*!
- * @header      Types.h
+ * @header      XSClassCallbackToString.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    XSClassCallbackToString type definition
  */
 
-#ifndef XS_TYPES_H
-#define XS_TYPES_H
+#ifndef XS_TYPES_XS_CLASS_CALLBACK_TO_STRING_H
+#define XS_TYPES_XS_CLASS_CALLBACK_TO_STRING_H
 
-#include <XS/Types/XSClassID.h>
-#include <XS/Types/XSClassType.h>
+#include <XS/Macros.h>
 #include <XS/Types/XSObjectRef.h>
-#include <XS/Types/XSClassCallbackConstructor.h>
-#include <XS/Types/XSClassCallbackDestructor.h>
-#include <XS/Types/XSClassCallbackCopy.h>
-#include <XS/Types/XSClassCallbackEquals.h>
-#include <XS/Types/XSClassCallbackToString.h>
-#include <XS/Types/XSClassInfo.h>
 
-#endif /* XS_TYPES_H */
+XS_EXTERN_C_BEGIN
+
+/*!
+ * @typedef     XSClassCallbackToString
+ * @abstract    Class to-string callback
+ * @param       object      The object for which to get a description
+ * @return      The object's description
+ */
+typedef const char * ( *XSClassCallbackToString )( XSObjectRef object );
+
+XS_EXTERN_C_END
+
+#endif /* XS_TYPES_XS_CLASS_CALLBACK_TO_STRING_H */

@@ -37,9 +37,11 @@
 
 /* Base */
 #include <XS/Macros.h>
+#include <XS/Types.h>
 
 /* Functions */
 #include <XS/Functions/Atomic.h>
 #include <XS/Functions/Memory.h>
+#include <XS/Functions/Runtime.h>
 
 #endif /* XS_H */

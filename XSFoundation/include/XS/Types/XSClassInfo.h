@@ -23,23 +23,41 @@
  ******************************************************************************/
 
 /*!
- * @header      Types.h
+ * @header      XSClassInfo.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    XSClassInfo type definition
  */
 
-#ifndef XS_TYPES_H
-#define XS_TYPES_H
+#ifndef XS_TYPES_XS_CLASS_INFO_H
+#define XS_TYPES_XS_CLASS_INFO_H
 
-#include <XS/Types/XSClassID.h>
-#include <XS/Types/XSClassType.h>
-#include <XS/Types/XSObjectRef.h>
+#include <XS/Macros.h>
 #include <XS/Types/XSClassCallbackConstructor.h>
 #include <XS/Types/XSClassCallbackDestructor.h>
 #include <XS/Types/XSClassCallbackCopy.h>
 #include <XS/Types/XSClassCallbackEquals.h>
 #include <XS/Types/XSClassCallbackToString.h>
-#include <XS/Types/XSClassInfo.h>
+#include <stddef.h>
 
-#endif /* XS_TYPES_H */
+XS_EXTERN_C_BEGIN
+
+/*!
+ * @typedef     XSClassInfo
+ * @abstract    XSFoundation runtime class structure
+ */
+typedef struct
+{
+    const char *               className;    /*! The name of the class */
+    XSClassType                type;         /*! The class type */
+    size_t                     instanceSize; /*! The size of the class instances */
+    XSClassCallbackConstructor constructor;  /*! The class constructor */
+    XSClassCallbackDestructor  destructor;   /*! The class destructor */
+    XSClassCallbackCopy        copy;         /*! The object's copy callback */
+    XSClassCallbackEquals      equals;       /*! The object's comparison callback */
+    XSClassCallbackToString    toString;     /*! The object's description callback */
+} XSClassInfo;
+
+XS_EXTERN_C_END
+
+#endif /* XS_TYPES_XS_CLASS_INFO_H */

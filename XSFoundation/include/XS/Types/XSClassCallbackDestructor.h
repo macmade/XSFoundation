@@ -23,23 +23,27 @@
  ******************************************************************************/
 
 /*!
- * @header      Types.h
+ * @header      XSClassCallbackDestructor.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    XSClassCallbackDestructor type definition
  */
 
-#ifndef XS_TYPES_H
-#define XS_TYPES_H
+#ifndef XS_TYPES_XS_CLASS_CALLBACK_DESTRUCTOR_H
+#define XS_TYPES_XS_CLASS_CALLBACK_DESTRUCTOR_H
 
-#include <XS/Types/XSClassID.h>
-#include <XS/Types/XSClassType.h>
+#include <XS/Macros.h>
 #include <XS/Types/XSObjectRef.h>
-#include <XS/Types/XSClassCallbackConstructor.h>
-#include <XS/Types/XSClassCallbackDestructor.h>
-#include <XS/Types/XSClassCallbackCopy.h>
-#include <XS/Types/XSClassCallbackEquals.h>
-#include <XS/Types/XSClassCallbackToString.h>
-#include <XS/Types/XSClassInfo.h>
 
-#endif /* XS_TYPES_H */
+XS_EXTERN_C_BEGIN
+
+/*!
+ * @typedef     XSClassCallbackDestructor
+ * @abstract    Class destructor callback
+ * @param       object      The object beeing destruct
+ */
+typedef void ( *XSClassCallbackDestructor )( XSObjectRef object );
+
+XS_EXTERN_C_END
+
+#endif /* XS_TYPES_XS_CLASS_CALLBACK_DESTRUCTOR_H */

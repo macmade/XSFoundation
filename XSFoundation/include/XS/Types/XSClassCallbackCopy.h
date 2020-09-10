@@ -23,23 +23,35 @@
  ******************************************************************************/
 
 /*!
- * @header      Types.h
+ * @header      XSClassCallbackCopy.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    XSClassCallbackCopy type definition
  */
 
-#ifndef XS_TYPES_H
-#define XS_TYPES_H
+#ifndef XS_TYPES_XS_CLASS_CALLBACK_COPY_H
+#define XS_TYPES_XS_CLASS_CALLBACK_COPY_H
 
-#include <XS/Types/XSClassID.h>
-#include <XS/Types/XSClassType.h>
+#include <XS/Macros.h>
 #include <XS/Types/XSObjectRef.h>
-#include <XS/Types/XSClassCallbackConstructor.h>
-#include <XS/Types/XSClassCallbackDestructor.h>
-#include <XS/Types/XSClassCallbackCopy.h>
-#include <XS/Types/XSClassCallbackEquals.h>
-#include <XS/Types/XSClassCallbackToString.h>
-#include <XS/Types/XSClassInfo.h>
 
-#endif /* XS_TYPES_H */
+XS_EXTERN_C_BEGIN
+
+/*!
+ * @typedef     XSClassCallbackCopy
+ * @abstract    Class copy callback
+ * @param       source      The object to copy
+ * @param       destination The object beeing copied
+ * @discussion  The 'destination' parameter is an allocated object, without a
+ *              constructor call.
+ *              The return value is usually 'destination', but can be another
+ *              object.
+ *              If NULL is returned, 'destination' will be deallocated by the
+ *              caller automatically.
+ * @result      The copied object
+ */
+typedef XSObjectRef ( *XSClassCallbackCopy )( XSObjectRef source, XSObjectRef destination );
+
+XS_EXTERN_C_END
+
+#endif /* XS_TYPES_XS_CLASS_CALLBACK_COPY_H */

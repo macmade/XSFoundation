@@ -23,23 +23,25 @@
  ******************************************************************************/
 
 /*!
- * @header      Types.h
+ * @header      XSObjectRef.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    XSObjectRef type definition
  */
 
-#ifndef XS_TYPES_H
-#define XS_TYPES_H
+#ifndef XS_TYPES_XS_OBJECT_REF_H
+#define XS_TYPES_XS_OBJECT_REF_H
 
-#include <XS/Types/XSClassID.h>
-#include <XS/Types/XSClassType.h>
-#include <XS/Types/XSObjectRef.h>
-#include <XS/Types/XSClassCallbackConstructor.h>
-#include <XS/Types/XSClassCallbackDestructor.h>
-#include <XS/Types/XSClassCallbackCopy.h>
-#include <XS/Types/XSClassCallbackEquals.h>
-#include <XS/Types/XSClassCallbackToString.h>
-#include <XS/Types/XSClassInfo.h>
+#include <XS/Macros.h>
 
-#endif /* XS_TYPES_H */
+XS_EXTERN_C_BEGIN
+
+/*!
+ * @typedef     XSObjectRef
+ * @abstract    Polymorphism support - Generic type for all XSFoundation objects
+ */
+typedef const void * XSObjectRef;
+
+XS_EXTERN_C_END
+
+#endif /* XS_TYPES_XS_OBJECT_REF_H */
