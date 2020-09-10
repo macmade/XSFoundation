@@ -32,4 +32,8 @@
 #include <XS/XS.h>
 #include <XS/Private/Functions/Log.h>
 
+#ifdef DEBUG
 volatile int64_t XSLogCurrentLevel = XSLogLevelAll;
+#else
+volatile int64_t XSLogCurrentLevel = XSLogLevelAll & ~XSLogLevelDebug;
+#endif
