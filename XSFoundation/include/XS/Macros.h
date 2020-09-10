@@ -146,15 +146,6 @@
 #define XS_SWAP_64( _value_ ) ( ( ( ( _value_ ) >> 56 ) & 0x00000000000000FFULL ) | ( ( ( _value_ ) >> 40 ) & 0x000000000000FF00ULL ) | ( ( ( _value_ ) >> 24 ) & 0x0000000000FF0000ULL ) | ( ( ( _value_ ) >> 8 ) & 0x00000000FF000000ULL ) | ( ( ( _value_ ) << 8 ) & 0x000000FF00000000ULL ) | ( ( ( _value_ ) << 24 ) & 0x0000FF0000000000ULL ) | ( ( ( _value_ ) << 40 ) & 0x00FF000000000000ULL ) | ( ( ( _value_ ) << 56 ) & 0xFF00000000000000ULL ) )
 
 /*!
- * @define      XS_UNSAFE_POINTER_CAST
- * @abstract    Casts a pointer type to another type
- * @discussion  This can be used to cast away qualifiers.
- * @param       _type_  The target type
- * @param       _var_   The variable to cast
- */
-#define XS_UNSAFE_POINTER_CAST( _type_, _var_ ) ( ( _type_ )( uintptr_t )( const void * )( _var_ ) )
-
-/*!
  * @define      XS_AUTORELEASED
  * @abstract    Marker for methods that return auto-released objects
  */

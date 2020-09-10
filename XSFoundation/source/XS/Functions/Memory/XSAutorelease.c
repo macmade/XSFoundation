@@ -33,7 +33,7 @@
 
 void * XSAutorelease( const void * memory )
 {
-    return XS_UNSAFE_POINTER_CAST( void *, memory );
+    return ( void * )( ( uintptr_t )memory );
 
     // TODO
     /*

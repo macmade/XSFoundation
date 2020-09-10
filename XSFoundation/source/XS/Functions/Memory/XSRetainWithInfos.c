@@ -51,5 +51,5 @@ void * XSRetainWithInfos( const void * memory, const char * file, int line, cons
     //__XSDebugger_CheckObjectIntegrity( object );
     XSAtomicIncrement64( &( object->retainCount ) );
 
-    return XS_UNSAFE_POINTER_CAST( void *, memory );
+    return ( void * )( ( uintptr_t )memory );
 }

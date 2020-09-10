@@ -64,7 +64,7 @@ void * XSCopyWithInfos( const void * memory, const char * file, int line, const 
 
     if( copy != NULL )
     {
-        copiedData = XS_UNSAFE_POINTER_CAST( void *, copy( memory, data ) );
+        copiedData = ( void * )( ( uintptr_t )( ( const void * )copy( memory, data ) ) );
 
         if( copiedData == NULL )
         {

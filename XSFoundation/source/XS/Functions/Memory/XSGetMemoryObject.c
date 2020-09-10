@@ -39,5 +39,5 @@ XSMemoryObject * XSGetMemoryObject( const void * ptr )
         return NULL;
     }
 
-    return ( void * )( XS_UNSAFE_POINTER_CAST( char *, ptr ) - sizeof( XSMemoryObject ) );
+    return ( void * )( ( char * )( ( uintptr_t )ptr ) - sizeof( XSMemoryObject ) );
 }

@@ -73,7 +73,7 @@ void * XSReallocWithInfos( const void * memory, size_t bytes, const char * file,
 
     if( oldSize == bytes )
     {
-        return XS_UNSAFE_POINTER_CAST( void *, memory );
+        return ( void * )( ( uintptr_t )memory );
     }
 
     size      = bytes + sizeof( XSMemoryObject ) + XS_MEMORY_FENCE_SIZE;
