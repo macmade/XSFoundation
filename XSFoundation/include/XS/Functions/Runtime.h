@@ -41,15 +41,15 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @function    XSRuntime_Initialize
+ * @function    XSRuntimeInitialize
  * @abstract    Initializes the XSFoundation runtime
  * @discussion  This function must be called before using any XSFoundation
  *              function.
  */
-XS_EXPORT void XSRuntime_Initialize( void );
+XS_EXPORT void XSRuntimeInitialize( void );
 
 /*!
- * @function    XSRuntime_RegisterClass
+ * @function    XSRuntimeRegisterClass
  * @abstract    Registers a class for the runtime
  * @discussion  All runtime classes needs to be registered before the runtime
  *              can use them and create instances.
@@ -58,96 +58,96 @@ XS_EXPORT void XSRuntime_Initialize( void );
  * @param       cls         The class information structure to register
  * @return      The runtime type ID for the class
  */
-XS_EXPORT XSClassID XSRuntime_RegisterClass( const XSClassInfo * const cls );
+XS_EXPORT XSClassID XSRuntimeRegisterClass( const XSClassInfo * const cls );
 
 /*!
- * @function    XSRuntime_CreateInstance
+ * @function    XSRuntimeCreateInstance
  * @abstract    Initializes a new instance of a registered class
  * @param       classID     The class type ID
  * @return      The allocated instance
  */
-XS_EXPORT void * XSRuntime_CreateInstance( XSClassID classID );
+XS_EXPORT void * XSRuntimeCreateInstance( XSClassID classID );
 
 /*!
- * @function    XSRuntime_CreateInstanceOfClassNamed
+ * @function    XSRuntimeCreateInstanceOfClassNamed
  * @abstract    Initializes a new instance of a class with a specific name
  * @param       name        The name of the class
  * @return      The allocated instance
  */
-XS_EXPORT void * XSRuntime_CreateInstanceOfClassNamed( const char * name );
+XS_EXPORT void * XSRuntimeCreateInstanceOfClassNamed( const char * name );
 
 /*!
- * @function    XSRuntime_GetSharedInstance
+ * @function    XSRuntimeGetSharedInstance
  * @abstract    Gets the shared instance of a registered class
  * @param       classID     The class type ID
  * @return      The shared instance if it exists, otherwise NULL
  */
-XS_EXPORT XSObjectRef XSRuntime_GetSharedInstance( XSClassID classID );
+XS_EXPORT XSObjectRef XSRuntimeGetSharedInstance( XSClassID classID );
 
 /*!
- * @function    XSRuntime_GetDescription
+ * @function    XSRuntimeGetDescription
  * @abstract    Gets an object's description
  * @param       object      The pointer to the object
  * @return      The object's description
  */
-XS_EXPORT const char * XSRuntime_GetDescription( XSObjectRef object );
+XS_EXPORT const char * XSRuntimeGetDescription( XSObjectRef object );
 
 /*!
- * @function    XSRuntime_IsInstance
+ * @function    XSRuntimeIsInstance
  * @abstract    Checks whether a pointer is an object instance
  * @param       ptr         The pointer to check
  * @return      True if the pointer represents an instance, otherwise false
  */
-XS_EXPORT bool XSRuntime_IsInstance( void * ptr );
+XS_EXPORT bool XSRuntimeIsInstance( void * ptr );
 
 /*!
- * @function    XSRuntime_IsRegisteredClass
+ * @function    XSRuntimeIsRegisteredClass
  * @abstract    Checks whether a class type ID corresponds to a registered class
  * @param       classID     The class type ID
  * @return      True if the class ID represents an valid class, otherwise false
  */
-XS_EXPORT bool XSRuntime_IsRegisteredClass( XSClassID classID );
+XS_EXPORT bool XSRuntimeIsRegisteredClass( XSClassID classID );
 
 /*!
- * @function    XSRuntime_GetClassID
+ * @function    XSRuntimeGetClassID
  * @abstract    Gets the class type ID for an object
  * @param       object      The object
  * @return      The class type ID for the object
  */
-XS_EXPORT XSClassID XSRuntime_GetClassID( XSObjectRef object );
+XS_EXPORT XSClassID XSRuntimeGetClassID( XSObjectRef object );
 
 /*!
- * @function    XSRuntime_GetClassIDOfClassNamed
+ * @function    XSRuntimeGetClassIDOfClassNamed
  * @abstract    Gets the class type ID for a class with a specific name
  * @param       className   The name of the class
  * @return      The class type ID
  */
-XS_EXPORT XSClassID XSRuntime_GetClassIDOfClassNamed( const char * className );
+XS_EXPORT XSClassID XSRuntimeGetClassIDOfClassNamed( const char * className );
 
 /*!
- * @function    XSRuntime_GetClassType
+ * @function    XSRuntimeGetClassType
  * @abstract    Gets the class type for an class type ID
  * @param       classID     The class type ID
  * @return      The type of the class
  */
-XS_EXPORT XSClassType XSRuntime_GetClassType( XSClassID classID );
+XS_EXPORT XSClassType XSRuntimeGetClassType( XSClassID classID );
 
 /*!
- * @function    XSRuntime_GetClassName
+ * @function    XSRuntimeGetClassName
  * @abstract    Gets the class name for an class type ID
  * @param       classID     The class type ID
  * @return      The name of the class
  */
-XS_EXPORT const char * XSRuntime_GetClassName( XSClassID classID );
+XS_EXPORT const char * XSRuntimeGetClassName( XSClassID classID );
 
 /*!
- * @function    XSRuntime_RegisterFinalizer
+ * @function    XSRuntimeRegisterFinalizer
  * @abstract    Registers a finalizer function, to be called when the program exits
  * @param       func        The finalizer function
  * @discussion  Based on its address, a finalizer function will only be
  *              registered once.
  */
-void XSRuntime_RegisterFinalizer( void ( *func )( void ) );
+void XSRuntimeRegisterFinalizer( void ( *func )( void ) );
 
 XS_EXTERN_C_END
 
