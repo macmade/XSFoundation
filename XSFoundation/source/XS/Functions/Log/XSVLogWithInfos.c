@@ -31,176 +31,84 @@
 
 #include <XS/XS.h>
 #include <XS/Private/Functions/Log.h>
-#include <time.h>
 #include <stdio.h>
+#include <stdbool.h>
 #include <string.h>
-
-#ifdef _WIN32
-#include <Windows.h>
-#else
-#include <sys/time.h>
-#endif
 
 void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char * func, const char * fmt, va_list args )
 {
-    const char * levelName;
-    const char * filename;
-    const char * process;
-    uint64_t     processID;
-    uint64_t     threadID;
-    uint64_t     milliseconds;
-    char         date[ 255 ];
+    XSLogInfo info;
+    bool      hasLevel;
+    bool      hasFile;
+    bool      hasFunc;
 
     if( ( XSAtomicRead64( &XSLogCurrentLevel ) & level ) == 0 )
     {
         return;
     }
 
-    process   = XSGetCurrentProcessName();
-    processID = XSGetCurrentThreadID();
-    threadID  = XSGetCurrentThreadID();
-    levelName = NULL;
-
-#if defined( DEBUG )
-
-    filename = strrchr( file, '\\' );
-
-#elif defined( DEBUG )
-
-    filename = strrchr( file, '/' );
-
-#else
-
-    ( void )file;
-
-    filename = NULL;
-
-#endif
-
-#ifdef DEBUG
-
-    if( strlen( filename ) == 0 )
-    {
-        filename = "unknown";
-    }
-
-#endif
-
-    if( strlen( func ) == 0 )
-    {
-        func = "unknown";
-    }
-
-    if( level == XSLogLevelFatal )
-    {
-        levelName = "Fatal";
-    }
-    if( level == XSLogLevelError )
-    {
-        levelName = "Error";
-    }
-    if( level == XSLogLevelWarning )
-    {
-        levelName = "Warning";
-    }
-    if( level == XSLogLevelNotice )
-    {
-        levelName = "Notice";
-    }
-    if( level == XSLogLevelDebug )
-    {
-        levelName = "Debug";
-    }
-
-#ifdef _WIN32
-
-    {
-        time_t     t;
-        struct tm  now;
-        SYSTEMTIME time;
-
-        time( &t );
-        GetSystemTime( &time );
-        localtime_s( &now, &t );
-        strftime( ( char * )date, 255, "%Y-%m-%d %H:%M:%S", &now );
-
-        milliseconds = time.wMilliseconds;
-    }
-
-#else
-
-    {
-        time_t         t;
-        struct tm *    now;
-        struct timeval tv;
-
-        t   = time( NULL );
-        now = localtime( &t );
-
-        gettimeofday( &tv, NULL );
-        strftime( ( char * )date, 255, "%Y-%m-%d %H:%M:%S", now );
-
-        milliseconds = ( uint64_t )( tv.tv_usec / 1000 );
-    }
-
-#endif
+    info = XSLogGetInfo( level, file, line, func );
 
     XSSpinLockLock( &XSLogLock );
 
     while( XSAtomicRead64( &XSLogIsPaused ) == 1 )
     {}
 
-    if( levelName != NULL && filename != NULL )
+    hasLevel = info.level != NULL;
+    hasFile  = strlen( info.file ) > 0;
+    hasFunc  = strlen( info.func ) > 0;
+
+    if( hasLevel && hasFile && hasFunc )
     {
         fprintf(
             stderr,
             "%s.%llu %s[%llu:%llX] <%s:%s:%i>: %s - ",
-            date,
-            milliseconds,
-            process,
-            processID,
-            threadID,
-            func,
-            filename,
-            line,
-            levelName );
+            info.date,
+            info.milliseconds,
+            info.process,
+            info.processID,
+            info.threadID,
+            info.func,
+            info.file,
+            info.line,
+            info.level );
     }
-    else if( filename != NULL )
+    else if( hasFile && hasFunc )
     {
         fprintf(
             stderr,
             "%s.%llu %s[%llu:%llX] <%s:%s:%i>: ",
-            date,
-            milliseconds,
-            process,
-            processID,
-            threadID,
-            func,
-            filename,
-            line );
+            info.date,
+            info.milliseconds,
+            info.process,
+            info.processID,
+            info.threadID,
+            info.func,
+            info.file,
+            info.line );
     }
-    else if( levelName != NULL )
+    else if( hasLevel )
     {
         fprintf(
             stderr,
             "%s.%llu %s[%llu:%llX]: %s - ",
-            date,
-            milliseconds,
-            process,
-            processID,
-            threadID,
-            levelName );
+            info.date,
+            info.milliseconds,
+            info.process,
+            info.processID,
+            info.threadID,
+            info.level );
     }
     else
     {
         fprintf(
             stderr,
             "%s.%llu %s[%llu:%llX]: ",
-            date,
-            milliseconds,
-            process,
-            processID,
-            threadID );
+            info.date,
+            info.milliseconds,
+            info.process,
+            info.processID,
+            info.threadID );
     }
 
     vfprintf( stderr, fmt, args );

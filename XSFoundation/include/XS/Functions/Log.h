@@ -209,6 +209,7 @@ XS_EXPORT void XSSetLogLevel( int64_t level );
 /*!
  * @function    XSLogWithInfos
  * @abstract    Logs a message to the standard error output
+ * @param       level   The level of the log message
  * @param       file    The file in which the log occurs
  * @param       line    The line number of the file in which the log occurs
  * @param       func    The function in which the log occurs
@@ -222,6 +223,7 @@ XS_EXPORT void XSLogWithInfos( XSLogLevel level, const char * file, int line, co
 /*!
  * @function    XSVLogWithInfos
  * @abstract    Logs a message to the standard error output
+ * @param       level   The level of the log message
  * @param       file    The file in which the log occurs
  * @param       line    The line number of the file in which the log occurs
  * @param       func    The function in which the log occurs

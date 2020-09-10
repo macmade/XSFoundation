@@ -38,6 +38,28 @@
 
 XS_EXTERN_C_BEGIN
 
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wpadded"
+#endif
+
+typedef struct
+{
+    const char * level;
+    const char * process;
+    uint64_t     processID;
+    uint64_t     threadID;
+    uint64_t     milliseconds;
+    unsigned int line;
+    char         date[ 128 ];
+    char         file[ 128 ];
+    char         func[ 128 ];
+} XSLogInfo;
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+
 /*!
  * @var         XSLogCurrentLevel
  * @abstract    The current log level
@@ -67,6 +89,26 @@ void XSLogPause( void );
  * @abstract    Resumes all log requests
  */
 void XSLogResume( void );
+
+/*!
+ * @function    XSLogGetInfo
+ * @abstract    Gets the necessary info to print a log message
+ * @param       level   The level of the log message
+ * @param       file    The file in which the log occurs
+ * @param       line    The line number of the file in which the log occurs
+ * @param       func    The function in which the log occurs
+ * @return      A structure with all the necessary info filled
+ */
+XSLogInfo XSLogGetInfo( XSLogLevel level, const char * file, int line, const char * func );
+
+/*!
+ * @function    XSLogGetCurrentTime
+ * @abstract    Gets the current date time string
+ * @param       buf             The buffer in which to place the result string
+ * @param       size            The buffer size
+ * @param       milliseconds    On return, contains the number of milliseconds
+ */
+void XSLogGetCurrentDateTime( char * buf, size_t size, uint64_t * milliseconds );
 
 XS_EXTERN_C_END
 
