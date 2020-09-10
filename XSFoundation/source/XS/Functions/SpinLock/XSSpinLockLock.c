@@ -23,26 +23,23 @@
  ******************************************************************************/
 
 /*!
- * @header      Types.h
+ * @file        XSSpinLockLock.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    Definition for XSSpinLockLock
  */
 
-#ifndef XS_TYPES_H
-#define XS_TYPES_H
+#include <XS/XS.h>
 
-#include <XS/Types/XSClassID.h>
-#include <XS/Types/XSClassType.h>
-#include <XS/Types/XSObjectRef.h>
-#include <XS/Types/XSClassCallbackConstructor.h>
-#include <XS/Types/XSClassCallbackDestructor.h>
-#include <XS/Types/XSClassCallbackCopy.h>
-#include <XS/Types/XSClassCallbackEquals.h>
-#include <XS/Types/XSClassCallbackToString.h>
-#include <XS/Types/XSClassInfo.h>
-#include <XS/Types/XSInitStatus.h>
-#include <XS/Types/XSLogLevel.h>
-#include <XS/Types/XSSpinLock.h>
+void XSSpinLockLock( XSSpinLock * lock )
+{
+    if( lock == NULL )
+    {
+        return;
+    }
 
-#endif /* XS_TYPES_H */
+    while( XSAtomicCompareAndSwap32( 0, 1, lock ) == false )
+    {
+        XSYield();
+    }
+}

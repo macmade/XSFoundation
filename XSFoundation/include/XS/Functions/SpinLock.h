@@ -23,26 +23,45 @@
  ******************************************************************************/
 
 /*!
- * @header      Types.h
+ * @header      SpinLock.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    XSFoundation atomic functions
  */
 
-#ifndef XS_TYPES_H
-#define XS_TYPES_H
+#ifndef XS_FUNCTIONS_SPIN_LOCK_H
+#define XS_FUNCTIONS_SPIN_LOCK_H
 
-#include <XS/Types/XSClassID.h>
-#include <XS/Types/XSClassType.h>
-#include <XS/Types/XSObjectRef.h>
-#include <XS/Types/XSClassCallbackConstructor.h>
-#include <XS/Types/XSClassCallbackDestructor.h>
-#include <XS/Types/XSClassCallbackCopy.h>
-#include <XS/Types/XSClassCallbackEquals.h>
-#include <XS/Types/XSClassCallbackToString.h>
-#include <XS/Types/XSClassInfo.h>
-#include <XS/Types/XSInitStatus.h>
-#include <XS/Types/XSLogLevel.h>
+#include <XS/Macros.h>
 #include <XS/Types/XSSpinLock.h>
+#include <stdbool.h>
 
-#endif /* XS_TYPES_H */
+XS_EXTERN_C_BEGIN
+
+/*!
+ * @function    XSSpinLockLock
+ * @abstract    Locks a spin lock, spinning if the lock is already held
+ * @param       lock    The spin lock to lock
+ */
+XS_EXPORT void XSSpinLockLock( XSSpinLock * lock );
+
+/*!
+ * @function    XSSpinLockUnlock
+ * @abstract    Unconditionally unlocks a spin lock
+ * @param       lock    The spin lock to unlock
+ */
+XS_EXPORT void XSSpinLockUnlock( XSSpinLock * lock );
+
+/*!
+ * @function    XSSpinLockTryLock
+ * @abstract    Tries to lock a spin lock
+ * @param       lock    The spin lock to unlock
+ * @return      True if the spin lock was successfully locked, otherwise false
+ * @discussion  This function does not spin and returns immediately if the
+ *              lock is already held.
+ */
+XS_EXPORT bool XSSpinLockTryLock( XSSpinLock * lock );
+
+XS_EXTERN_C_END
+
+#endif /* XS_FUNCTIONS_SPIN_LOCK_H */
