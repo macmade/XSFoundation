@@ -23,28 +23,36 @@
  ******************************************************************************/
 
 /*!
- * @file        XSVLogWithInfos.c
- * @copyright   (c) 202o - Jean-David Gadina - www.xs-labs.com
+ * @file        XSShowWithInfos.c
+ * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definitions for XSVLogWithInfos
+ * @abstract    Definitions for XSShowWithInfos
  */
 
 #include <XS/XS.h>
 #include <XS/Private/Functions/Log.h>
 
-void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char * func, const char * fmt, va_list args )
+void XSShowWithInfos( XSObjectRef object, const char * file, int line, const char * func )
 {
-    XSSpinLockLock( &XSLogLock );
-
-    while( XSAtomicRead64( &XSLogIsPaused ) == 1 )
-    {}
-
-    ( void )level;
+    ( void )object;
     ( void )file;
     ( void )line;
     ( void )func;
-    ( void )fmt;
-    ( void )args;
 
-    XSSpinLockUnlock( &XSLogLock );
+    // TODO
+    /*
+    XSAutoreleasePoolRef ap;
+
+    ap = XSAutoreleasePool_Create();
+
+    XSLogWithInfos(
+        XSLogLevelInfo,
+        file,
+        line,
+        func,
+        "%s",
+        XSRuntime_GetDescription( object ) );
+
+    XSRelease( ap );
+    */
 }
