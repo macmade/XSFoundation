@@ -42,7 +42,7 @@ DIR_BUILD_TEMP     := $(DIR_BUILD)Intermediates/
 
 # Source directories
 DIR_INC           := $(DIR)XSFoundation/include/
-DIR_SRC           := $(DIR)XSFoundation/source/XS/
+DIR_SRC           := $(DIR)XSFoundation/source/
 DIR_SRC_FUNCTIONS := $(DIR_SRC)Functions/
 DIR_SRC_CLASSES   := $(DIR_SRC)Classes/
 
