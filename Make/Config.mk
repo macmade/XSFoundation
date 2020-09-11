@@ -46,9 +46,6 @@ DIR_SRC           := $(DIR)XSFoundation/source/
 DIR_SRC_FUNCTIONS := $(DIR_SRC)Functions/
 DIR_SRC_CLASSES   := $(DIR_SRC)Classes/
 
-# Scripts directory
-DIR_SCRIPTS := $(DIR)Scripts/
-
 #-------------------------------------------------------------------------------
 # Search paths
 #-------------------------------------------------------------------------------
