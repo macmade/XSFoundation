@@ -100,7 +100,11 @@ success:
 
     if( cls->type == XSClassTypeSingleton || cls->type == XSClassTypeSharedInstance )
     {
+        #ifdef DEBUG
         list->sharedInstance = XSAllocWithInfos( cls->instanceSize, classID, __FILE__, __LINE__, __func__ );
+        #else
+        list->sharedInstance = XSAllocWithInfos( cls->instanceSize, classID, NULL, 0, NULL );
+        #endif
     }
 
     return classID;

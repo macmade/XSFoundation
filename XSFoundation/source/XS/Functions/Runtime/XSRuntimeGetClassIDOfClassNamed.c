@@ -45,7 +45,7 @@ XSClassID XSRuntimeGetClassIDOfClassNamed( const char * className )
 
     if( XS_RUNTIME_IS_INITED == false )
     {
-        XSFatalError( "XSFoundation runtime has not been inited. Please call XSRuntime_nitialize()" );
+        XSFatalError( "XSFoundation runtime has not been inited. Please call XSRuntimeInitialize()" );
     }
 
     info    = XSRuntimeClasses;

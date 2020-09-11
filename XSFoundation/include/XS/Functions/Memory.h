@@ -45,7 +45,11 @@ XS_EXTERN_C_BEGIN
  * @discussion  The allocated memory will be zero-filled
  * @return      The allocated memory, or NULL
  */
+#ifdef DEBUG
 #define XSAlloc( _bytes_ ) XSAllocWithInfos( _bytes_, 0, __FILE__, __LINE__, __func__ )
+#else
+#define XSAlloc( _bytes_ ) XSAllocWithInfos( _bytes_, 0, NULL, 0, NULL )
+#endif
 
 /*!
  * @define      XSRealloc
@@ -56,7 +60,11 @@ XS_EXTERN_C_BEGIN
  *              size, additional data will be zero-filled.
  * @return      The reallocated memory, or NULL
  */
+#ifdef DEBUG
 #define XSRealloc( _memory_, _bytes_ ) XSReallocWithInfos( _memory_, _bytes_, __FILE__, __LINE__, __func__ )
+#else
+#define XSRealloc( _memory_, _bytes_ ) XSReallocWithInfos( _memory_, _bytes_, NULL, 0, NULL )
+#endif
 
 /*!
  * @define      XSAutoAlloc
@@ -68,7 +76,11 @@ XS_EXTERN_C_BEGIN
  *              The allocated memory will be zero-filled
  * @return      The allocated memory, or NULL
  */
+#ifdef DEBUG
 #define XSAutoAlloc( _bytes_ ) XSAutoAllocWithInfos( _bytes_, 0, __FILE__, __LINE__, __func__ )
+#else
+#define XSAutoAlloc( _bytes_ ) XSAutoAllocWithInfos( _bytes_, 0, NULL, 0, NULL )
+#endif
 
 /*!
  * @define      XSRetain
@@ -76,7 +88,11 @@ XS_EXTERN_C_BEGIN
  * @param       _memory_    The memory data to retain
  * @return      The memory data
  */
+#ifdef DEBUG
 #define XSRetain( _memory_ ) XSRetainWithInfos( _memory_, __FILE__, __LINE__, __func__ )
+#else
+#define XSRetain( _memory_ ) XSRetainWithInfos( _memory_, NULL, 0, NULL )
+#endif
 
 /*!
  * @define      XSRelease
@@ -85,7 +101,11 @@ XS_EXTERN_C_BEGIN
  * @discussion  Memory may be freed if the retain count for the memory
  *              data reaches 0.
  */
+#ifdef DEBUG
 #define XSRelease( _memory_ ) XSReleaseWithInfos( _memory_, __FILE__, __LINE__, __func__ )
+#else
+#define XSRelease( _memory_ ) XSReleaseWithInfos( _memory_, NULL, 0, NULL )
+#endif
 
 /*!
  * @define      XSCopy
@@ -93,7 +113,11 @@ XS_EXTERN_C_BEGIN
  * @param       _memory_    The memory data object to copy
  * @return      The copy of the memory data object
  */
+#ifdef DEBUG
 #define XSCopy( _memory_ ) XSCopyWithInfos( _memory_, __FILE__, __LINE__, __func__ )
+#else
+#define XSCopy( _memory_ ) XSCopyWithInfos( _memory_, NULL, 0, NULL )
+#endif
 
 /*!
  * @function    XSAllocWithInfos

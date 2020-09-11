@@ -57,7 +57,7 @@ void XSRuntimeFinalize( void )
     {
         if( classList->sharedInstance != NULL )
         {
-            XSReleaseWithInfos( classList->sharedInstance, __FILE__, __LINE__, __func__ );
+            XSRelease( classList->sharedInstance );
         }
 
         classList = classList->next;
