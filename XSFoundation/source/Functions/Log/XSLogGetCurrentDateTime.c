@@ -35,12 +35,8 @@
 #include <string.h>
 
 #ifdef _WIN32
-#include <Windows.h>
-#else
-#include <sys/time.h>
-#endif
 
-#ifdef _WIN32
+#include <Windows.h>
 
 void XSLogGetCurrentDateTime( char * buf, size_t size, uint64_t * milliseconds )
 {
@@ -66,6 +62,8 @@ void XSLogGetCurrentDateTime( char * buf, size_t size, uint64_t * milliseconds )
 }
 
 #else
+
+#include <sys/time.h>
 
 void XSLogGetCurrentDateTime( char * buf, size_t size, uint64_t * milliseconds )
 {
