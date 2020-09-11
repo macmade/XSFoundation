@@ -81,7 +81,7 @@ void * XSReallocWithInfos( const void * memory, size_t bytes, const char * file,
 
     if( newObject == NULL )
     {
-        XSLogWarning( "Cannot reallocate memory (%lu bytes)", ( unsigned long )bytes );
+        XSLogWarning( "Cannot reallocate memory (%llu bytes)", ( unsigned long long )bytes );
 
         return NULL;
     }

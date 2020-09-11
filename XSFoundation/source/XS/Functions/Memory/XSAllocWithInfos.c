@@ -40,16 +40,16 @@ void * XSAllocWithInfos( size_t bytes, XSClassID classID, const char * file, int
     if( XSRuntimeIsRegisteredClass( classID ) && XSRuntimeGetInstanceSize( classID ) != bytes )
     {
         XSFatalError(
-            "Cannot allocate memory for class ID %lu (%s): requested bytes do not match the class instance size",
-            ( unsigned long )classID,
+            "Cannot allocate memory for class ID %llu (%s): requested bytes do not match the class instance size",
+            classID,
             XSRuntimeGetClassName( classID ) );
     }
 
     if( XSRuntimeIsRegisteredClass( classID ) && XSRuntimeGetClassType( classID ) == XSClassTypeSingleton )
     {
         XSFatalError(
-            "Cannot allocate memory for class ID %lu (%s): class is declared as a singleton",
-            ( unsigned long )classID,
+            "Cannot allocate memory for class ID %llu (%s): class is declared as a singleton",
+            classID,
             XSRuntimeGetClassName( classID ) );
     }
 
@@ -62,7 +62,7 @@ void * XSAllocWithInfos( size_t bytes, XSClassID classID, const char * file, int
 
         if( object == NULL )
         {
-            XSLogWarning( "Cannot allocate memory (%lu bytes)", ( unsigned long )bytes );
+            XSLogWarning( "Cannot allocate memory (%llu bytes)", ( unsigned long long )bytes );
 
             return NULL;
         }

@@ -41,14 +41,14 @@ void * XSRuntimeCreateInstance( XSClassID classID )
 
     if( XSRuntimeIsRegisteredClass( classID ) == false )
     {
-        XSFatalError( "Cannot create an instance for an unregistered class (class ID: %li)", ( long )classID );
+        XSFatalError( "Cannot create an instance for an unregistered class (class ID: %lli)", classID );
     }
 
     instanceSize = XSRuntimeGetInstanceSize( classID );
 
     if( instanceSize == 0 )
     {
-        XSFatalError( "Cannot create an instance for a class with zero as instance size (class ID: %li)", ( long )classID );
+        XSFatalError( "Cannot create an instance for a class with zero as instance size (class ID: %lli)", classID );
     }
 
     object = XSAllocWithInfos( instanceSize, classID, NULL, 0, NULL );
