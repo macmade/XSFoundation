@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/Atomic.h" lang="c" filename="Atomic.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Functions/Atomic.h"><name>Atomic.h</name>
+<abstract><p>Atomic functions
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/stdint.h">&lt;stdint.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/stdbool.h">&lt;stdbool.h&gt;</hd_link></include>
+</includes>
+<desc><p/></desc>
+<functions><function id="//xsdoc_ref/c/func/XSAtomicAdd32" lang="c"><name>XSAtomicAdd32</name>
+<abstract><p>Atomically adds to a 32 bits value
+</p></abstract>
+<parameterlist>
+<parameter><name>amount</name><desc><p>The amount to add</p></desc></parameter>
+<parameter><name>value</name><desc><p>The 32 bits value to modify</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>int32_t</type><name>amount</name></parsedparameter>
+<parsedparameter><type>volatile int32_t *</type><name>value</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT int32_t</returntype>
+<result><p>The new value
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>int32_t</declaration_type> <declaration_function>XSAtomicAdd32</declaration_function>(
+    <declaration_type>int32_t</declaration_type> <declaration_param>amount</declaration_param>,
+    <declaration_keyword>volatile</declaration_keyword> <declaration_type>int32_t</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSAtomicAdd64" lang="c"><name>XSAtomicAdd64</name>
+<abstract><p>Atomically adds to a 64 bits value
+</p></abstract>
+<parameterlist>
+<parameter><name>amount</name><desc><p>The amount to add</p></desc></parameter>
+<parameter><name>value</name><desc><p>The 64 bits value to modify</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>int64_t</type><name>amount</name></parsedparameter>
+<parsedparameter><type>volatile int64_t *</type><name>value</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT int64_t</returntype>
+<result><p>The new value
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>int64_t</declaration_type> <declaration_function>XSAtomicAdd64</declaration_function>(
+    <declaration_type>int64_t</declaration_type> <declaration_param>amount</declaration_param>,
+    <declaration_keyword>volatile</declaration_keyword> <declaration_type>int64_t</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSAtomicCompareAndSwap32" lang="c"><name>XSAtomicCompareAndSwap32</name>
+<abstract><p>Atomically compares and swaps a 32 bits value
+</p></abstract>
+<parameterlist>
+<parameter><name>oldValue</name><desc><p>The 32 bits value to test</p></desc></parameter>
+<parameter><name>newValue</name><desc><p>The 32 bits value to swap</p></desc></parameter>
+<parameter><name>value</name><desc><p>The 32 bits value to compare and swap</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>int32_t</type><name>oldValue</name></parsedparameter>
+<parsedparameter><type>int32_t</type><name>newValue</name></parsedparameter>
+<parsedparameter><type>volatile int32_t *</type><name>value</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT bool</returntype>
+<result><p>True if the comparison was equal and the swap occured
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSAtomicCompareAndSwap32</declaration_function>(
+    <declaration_type>int32_t</declaration_type> <declaration_param>oldValue</declaration_param>,
+    <declaration_type>int32_t</declaration_type> <declaration_param>newValue</declaration_param>,
+    <declaration_keyword>volatile</declaration_keyword> <declaration_type>int32_t</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSAtomicCompareAndSwap64" lang="c"><name>XSAtomicCompareAndSwap64</name>
+<abstract><p>Atomically compares and swaps a 64 bits value
+</p></abstract>
+<parameterlist>
+<parameter><name>oldValue</name><desc><p>The 64 bits value to test</p></desc></parameter>
+<parameter><name>newValue</name><desc><p>The 64 bits value to swap</p></desc></parameter>
+<parameter><name>value</name><desc><p>The 64 bits value to compare and swap</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>int64_t</type><name>oldValue</name></parsedparameter>
+<parsedparameter><type>int64_t</type><name>newValue</name></parsedparameter>
+<parsedparameter><type>volatile int64_t *</type><name>value</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT bool</returntype>
+<result><p>True if the comparison was equal and the swap occured
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSAtomicCompareAndSwap64</declaration_function>(
+    <declaration_type>int64_t</declaration_type> <declaration_param>oldValue</declaration_param>,
+    <declaration_type>int64_t</declaration_type> <declaration_param>newValue</declaration_param>,
+    <declaration_keyword>volatile</declaration_keyword> <declaration_type>int64_t</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSAtomicCompareAndSwapPointer" lang="c"><name>XSAtomicCompareAndSwapPointer</name>
+<abstract><p>Atomically compares and swaps a pointer value
+</p></abstract>
+<parameterlist>
+<parameter><name>oldValue</name><desc><p>The pointer value to test</p></desc></parameter>
+<parameter><name>newValue</name><desc><p>The pointer value to swap</p></desc></parameter>
+<parameter><name>value</name><desc><p>The pointer value to compare and swap</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>void *</type><name>oldValue</name></parsedparameter>
+<parsedparameter><type>void *</type><name>newValue</name></parsedparameter>
+<parsedparameter><type>void * volatile *</type><name>value</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT bool</returntype>
+<result><p>True if the comparison was equal and the swap occured
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSAtomicCompareAndSwapPointer</declaration_function>(
+    <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>oldValue</declaration_param>,
+    <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>newValue</declaration_param>,
+    <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_keyword>volatile</declaration_keyword> <declaration_type>*</declaration_type> <declaration_param>value</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSAtomicDecrement32" lang="c"><name>XSAtomicDecrement32</name>
+<abstract><p>Atomically decrements a 32 bits value
+</p></abstract>
+<parameterlist>
+<parameter><name>value</name><desc><p>The 32 bits value to decrement</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>volatile int32_t *</type><name>value</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT int32_t</returntype>
+<result><p>The new value
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>int32_t</declaration_type> <declaration_function>XSAtomicDecrement32</declaration_function>(
+    <declaration_keyword>volatile</declaration_keyword> <declaration_type>int32_t</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSAtomicDecrement64" lang="c"><name>XSAtomicDecrement64</name>
+<abstract><p>Atomically decrements a 64 bits value
+</p></abstract>
+<parameterlist>
+<parameter><name>value</name><desc><p>The 64 bits value to decrement</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>volatile int64_t *</type><name>value</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT int64_t</returntype>
+<result><p>The new value
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>int64_t</declaration_type> <declaration_function>XSAtomicDecrement64</declaration_function>(
+    <declaration_keyword>volatile</declaration_keyword> <declaration_type>int64_t</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSAtomicIncrement32" lang="c"><name>XSAtomicIncrement32</name>
+<abstract><p>Atomically increments a 32 bits value
+</p></abstract>
+<parameterlist>
+<parameter><name>value</name><desc><p>The 32 bits value to increment</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>volatile int32_t *</type><name>value</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT int32_t</returntype>
+<result><p>The new value
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>int32_t</declaration_type> <declaration_function>XSAtomicIncrement32</declaration_function>(
+    <declaration_keyword>volatile</declaration_keyword> <declaration_type>int32_t</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSAtomicIncrement64" lang="c"><name>XSAtomicIncrement64</name>
+<abstract><p>Atomically increments a 64 bits value
+</p></abstract>
+<parameterlist>
+<parameter><name>value</name><desc><p>The 64 bits value to increment</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>volatile int64_t *</type><name>value</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT int64_t</returntype>
+<result><p>The new value
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>int64_t</declaration_type> <declaration_function>XSAtomicIncrement64</declaration_function>(
+    <declaration_keyword>volatile</declaration_keyword> <declaration_type>int64_t</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSAtomicRead32" lang="c"><name>XSAtomicRead32</name>
+<abstract><p>Atomically reads a 32 bits value
+</p></abstract>
+<parameterlist>
+<parameter><name>value</name><desc><p>The 32 bits value to read</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>volatile int32_t *</type><name>value</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT int32_t</returntype>
+<result><p>The 32 bits value
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>int32_t</declaration_type> <declaration_function>XSAtomicRead32</declaration_function>(
+    <declaration_keyword>volatile</declaration_keyword> <declaration_type>int32_t</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSAtomicRead64" lang="c"><name>XSAtomicRead64</name>
+<abstract><p>Atomically reads a 64 bits value
+</p></abstract>
+<parameterlist>
+<parameter><name>value</name><desc><p>The 64 bits value to read</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>volatile int64_t *</type><name>value</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT int64_t</returntype>
+<result><p>The 64 bits value
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>int64_t</declaration_type> <declaration_function>XSAtomicRead64</declaration_function>(
+    <declaration_keyword>volatile</declaration_keyword> <declaration_type>int64_t</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSAtomicWrite32" lang="c"><name>XSAtomicWrite32</name>
+<abstract><p>Atomically writes a 32 bits value
+</p></abstract>
+<parameterlist>
+<parameter><name>newValue</name><desc><p>The new 32 bits value to write</p></desc></parameter>
+<parameter><name>value</name><desc><p>The 32 bits value to modify</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>int32_t</type><name>newValue</name></parsedparameter>
+<parsedparameter><type>volatile int32_t *</type><name>value</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void</returntype>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSAtomicWrite32</declaration_function>(
+    <declaration_type>int32_t</declaration_type> <declaration_param>newValue</declaration_param>,
+    <declaration_keyword>volatile</declaration_keyword> <declaration_type>int32_t</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSAtomicWrite64" lang="c"><name>XSAtomicWrite64</name>
+<abstract><p>Atomically writes a 64 bits value
+</p></abstract>
+<parameterlist>
+<parameter><name>newValue</name><desc><p>The new 64 bits value to write</p></desc></parameter>
+<parameter><name>value</name><desc><p>The 64 bits value to modify</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>int64_t</type><name>newValue</name></parsedparameter>
+<parsedparameter><type>volatile int64_t *</type><name>value</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void</returntype>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSAtomicWrite64</declaration_function>(
+    <declaration_type>int64_t</declaration_type> <declaration_param>newValue</declaration_param>,
+    <declaration_keyword>volatile</declaration_keyword> <declaration_type>int64_t</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function></functions>
+<copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Friday, September 11, 2020</timestamp>
+</header>

@@ -1,0 +1,532 @@
+/*******************************************************************************
+ * The MIT License (MIT)
+ * 
+ * Copyright (c) 2014 Jean-David Gadina - www-xs-labs.com
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ ******************************************************************************/
+
+/* $Id$ */
+
+body {
+    margin:                 0px;
+    color:                  rgba( 65, 65, 65, 1 );
+    font-style:             normal;
+    font-weight:            normal;
+    font-size:              12px;
+    line-height:            20px;
+    text-decoration:        none;
+    font-family:            Helvetica, Arial, sans-serif;
+    background-color:       rgba( 242, 242, 242, 1 );
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color:                  rgba( 0, 0, 0, 1 );
+    font-style:             normal;
+    font-weight:            100;
+    line-height:            normal;
+    margin-top:             0px;
+    margin-bottom:          0px;
+    padding-top:            10px;
+    padding-bottom:         10px;
+    text-align:             left;
+}
+
+h1 *,
+h2 *,
+h3 *,
+h4 *,
+h5 *,
+h6 * {
+    font-weight:            100;
+}
+
+h1 {
+    font-size:              40px;
+}
+
+h2 {
+    font-size:              30px;
+}
+
+h3 {
+    font-size:              25px;
+}
+
+h4 {
+    font-size:              20px;
+}
+
+h5 {
+    font-size:              12px;
+    padding-bottom:         0px;
+}
+
+h6 {
+    font-size:              12px;
+    padding-bottom:         0px;
+}
+
+p {
+    margin:                 0px;
+    padding:                0px;
+    padding-bottom:         10px;
+}
+
+a {
+    text-decoration:        none;
+    color:                  rgba( 0, 136, 204, 1 );
+}
+
+a:link {
+    font-weight:            normal;
+    text-decoration:        none;
+    color:                  rgba( 0, 136, 204, 1 );
+}
+
+a:visited {
+    font-weight:            normal;
+    text-decoration:        none;
+}
+
+a:hover {
+    font-weight:            normal;
+    text-decoration:        none;
+}
+
+a:active {
+    font-weight:            normal;
+    text-decoration:        none;
+}
+
+img {
+    border:                 none;
+}
+
+hr {
+    height:                 1px;
+    border:                 none;
+    border-top:             rgba( 233, 233, 233, 1 );
+}
+
+code {
+    margin:                 0px;
+    color:                  #808080;
+    font-style:             normal;
+    font-weight:            normal;
+    font-size:              12px;
+    text-decoration:        none;
+    font-family:            Menlo, Consolas, Monaco, Courier, sans-serif;
+    white-space:            pre;
+}
+
+.xsdoc-code-block {
+    padding:                10px;
+    background-color:       #F9F9F9;
+    border-left:            solid 5px #808080;
+    margin-bottom:          10px;
+    margin-top:             5px;
+    line-height:            15px;
+}
+
+.xsdoc-code {
+    color:                  #808080;
+    font-style:             normal;
+    text-decoration:        none;
+    font-family:            Menlo, Consolas, Monaco, Courier, sans-serif;
+}
+
+.xsdoc-code-block code {
+    font-size:              10px;
+}
+
+.xsdoc-notes-block {
+    padding-left:           10px;
+    padding-top :           5px;
+    padding-right:          10px;
+    padding-bottom:         5px;
+    margin-top:             10px;
+    margin-bottom:          10px;
+    border:                 solid 1px rgba( 233, 233, 233, 1 );
+    font-size:              10px;
+}
+
+.xsdoc-header {
+    height:                 25px;
+    overflow:               hidden;
+    background-color:       rgba( 65, 65, 65, 1 );
+    text-align:             center;
+}
+
+.xsdoc-header-container {
+    width:                  1200px;
+    margin-left:            auto;
+    margin-right:           auto;
+}
+
+.xsdoc-header h1 {
+    color:                  #FFFFFF;
+    font-size:              11px;
+    text-align:             center;
+    float:                  left;
+    margin-left:            15px;
+    padding-top:            7px;
+    background-position:    0px 7px;
+    overflow:               hidden;
+    height:                 100%;
+}
+
+.xsdoc-header img {
+    width:                  16px;
+    height:                 16px;
+    position:               relative;
+    top:                    -2px;
+}
+
+.xsdoc-header h1 img {
+    float:                  left;
+    margin-right:           10px;
+}
+
+.xsdoc-header span {
+    float:                  left;
+    margin-right:           10px;
+}
+
+.xsdoc-header .xsdoc-header-company a {
+    color:                  #808080;
+}
+
+.xsdoc-header a {
+    color:                  #FFFFFF;
+}
+
+.xsdoc-header-buttons {
+    float:                  right;
+    overflow:               hidden;
+    height:                 100%;
+}
+
+.xsdoc-header-button {
+    float:                  left;
+    margin-right:           15px;
+    margin-top:             7px;
+}
+
+.xsdoc-subheader {
+    font-size:              10px;
+    padding-left:           40px;
+    width:                  1160px;
+    margin-left:            auto;
+    margin-right:           auto;
+}
+
+.xsdoc-footer {
+    margin-top:             20px;
+    margin-bottom:          10px;
+    overflow:               hidden;
+    text-align:             center;
+    font-size:              10px;
+    text-align:             center;
+    color:                  #808080;
+}
+
+.xsdoc-main {
+    overflow:               hidden;
+    height:                 100%;
+    width:                  1200px;
+    margin-left:            auto;
+    margin-right:           auto;
+}
+
+.xsdoc-toc,
+.xsdoc-file-toc {
+    float:                  left;
+    background-color:       #FFFFFF;
+    border-left:            solid 1px #E9E9E9;
+    border-bottom:          solid 1px #E9E9E9;
+    border-right:           solid 1px #E9E9E9;
+    font-size:              12px;
+    padding:                0px;
+    width:                  230px;
+    overflow:               hidden;
+}
+
+.xsdoc-toc h2,
+.xsdoc-file-toc h2,
+.xsdoc-toc h3,
+.xsdoc-file-toc h3,
+.xsdoc-toc h4,
+.xsdoc-file-toc h4 {
+    font-size:              16px;
+    padding:                15px;
+    margin:                 0px;
+    border-top:             solid 1px #E9E9E9;
+}
+
+.xsdoc-toc h4,
+.xsdoc-file-toc h4 {
+    margin-left:            -25px;
+    margin-top:             10px;
+}
+
+.xsdoc-toc h2 a,
+.xsdoc-file-toc h2 a,
+.xsdoc-toc h3 a,
+.xsdoc-file-toc h3 a {
+    color:                  #000000;
+    font-weight:            100;
+}
+
+.xsdoc-toc ul,
+.xsdoc-file-toc ul {
+    margin-left:            0px;
+    margin-top:             0px;
+    margin-right:           0px;
+    margin-bottom:          15px;
+    padding-left:           25px;
+    list-style:             none;
+    line-height:            22px;
+}
+
+.xsdoc-file-toc ul ul {
+    margin:                 0px;
+    padding:                0px;
+}
+
+.xsdoc-toc li,
+.xsdoc-file-toc li {
+    margin:                 0px;
+    padding:                0px;
+}
+
+.xsdoc-toc a,
+.xsdoc-file-toc a {
+    color:                  #808080;
+}
+
+.xsdoc-file,
+.xsdoc-search {
+    float:                  left;
+    overflow:               hidden;
+    height:                 100%;
+}
+
+.xsdoc-file-toc {
+    margin-left:            15px;
+    float:                  right;
+    background-color:       #F9F9F9;
+}
+
+.xsdoc-file-toc li {
+    font-size:              10px;
+    line-height:            18px;
+}
+
+.xsdoc-file-content,
+.xsdoc-search-content {
+    float:                  left;
+    width:                  660px;
+    border:                 solid 1px #E9E9E9;
+    margin-left:            15px;
+    background-color:       #FFFFFF;
+    padding-left:           25px;
+    padding-top:            15px;
+    padding-right:          15px;
+    padding-bottom:         15px;
+}
+
+.xsdoc-file-content h3,
+.xsdoc-search-content h3,
+.xsdoc-home-content h3 {
+    border-bottom:          solid 1px rgba( 233, 233, 233, 1 );
+    margin-bottom:          20px;
+    padding-bottom:         5px;
+}
+
+.xsdoc-file-details {
+    border-top:             solid 1px rgba( 233, 233, 233, 1 );
+    margin-left:            0px;
+    margin-top:             20px;
+    margin-right:           40px;
+    margin-bottom:          20px;
+    width:                  100%;
+}
+
+.xsdoc-file-detail {
+    border-bottom:          solid 1px rgba( 233, 233, 233, 1 );
+    overflow:               hidden;
+    height:                 100%;
+    padding-left:           10px;
+    padding-top:            10px;
+    padding-right:          10px;
+    padding-bottom:         10px;
+}
+
+.xsdoc-file-detail-name {
+    float:                  left;
+    font-weight:            bold;
+    width:                  100px;
+}
+
+.xsdoc-file-detail-content {
+    float:                  left;
+    width:                  70%;
+}
+
+.xsdoc-file-content ul {
+    margin:                 0px;
+    padding:                0px;
+    list-style:             none;
+}
+
+.xsdoc-file-content h4 {
+    color:                  #808080;
+}
+
+.xsdoc-file-content h5 {
+    font-weight:            bold;
+}
+
+.xsdoc-file-content li {
+    margin:                 0px;
+    padding:                0px;
+}
+
+.xsdoc-file-member {
+    margin-bottom:          20px;
+}
+
+.xsdoc-file-member h4 .xsdoc-top {
+    float:                  right;
+    font-size:              10px;
+    margin-top:             10px;
+    margin-left:            10px;
+}
+
+.xsdoc-search .xsdoc-search-form {
+    overflow:               hidden;
+    height:                 100%;
+    margin-top:             20px;
+    margin-bottom:          20px;
+    padding:                20px;
+    background-color:       #F9F9F9;
+    border:                 solid 1px #E9E9E9;
+}
+
+.xsdoc-search .xsdoc-search-term {
+    float:                  left;
+    margin-right:           10px;
+}
+
+.xsdoc-search .xsdoc-search-submit {
+    float:                  left;
+}
+
+.xsdoc-search .xsdoc-search-term input {
+    color:                   rgba( 65, 65, 65, 1 );
+    background-color:       #FFFFFF;
+    padding:                5px;
+    margin:                 0px;
+    border:                 solid 1px #E9E9E9;
+}
+
+.xsdoc-search .xsdoc-search-submit input {
+    color:                  #FFFFFF;
+    background-color:       rgba( 65, 65, 65, 1 );
+    padding-left:           15px;
+    padding-top:            5px;
+    padding-right:          15px;
+    padding-bottom:         5px;
+    margin:                 0px;
+    border:                 none;
+    border-radius:          5px;
+    min-width:              100px;
+}
+
+.xsdoc-search-result h4 {
+    font-size:              15px;
+    padding-bottom:         0px;
+}
+
+.xsdoc-search-result h5 {
+    font-size:              10px;
+    padding-top:            5px;
+    padding-bottom:         5px;
+    color:                  #808080;
+}
+
+.xsdoc-search-result h5 a {
+    color:                  #808080;
+}
+
+.xsdoc-search-result p {
+    font-size:              12px;
+    line-height:            15px;
+    padding-top:            5px;
+    padding-bottom:         5px;
+}
+
+.xsdoc-search-result p a {
+    color:                  rgba( 65, 65, 65, 1 );
+}
+
+ul.xsdoc-list-square {
+    margin:                 0px;
+    padding-left:           10px;
+    margin-left:            10px;
+    list-style:             square;
+}
+
+.xsdoc-class-members {
+    margin-bottom:          20px;
+}
+
+.xsdoc-class-attributes {
+    border-top:             solid 1px rgba( 233, 233, 233, 1 );
+    margin-top:             20px;
+    margin-right:           40px;
+    margin-bottom:          20px;
+    width:                  100%;
+}
+
+.xsdoc-class-attribute {
+    border-bottom:          solid 1px rgba( 233, 233, 233, 1 );
+    overflow:               hidden;
+    height:                 100%;
+    padding-left:           10px;
+    padding-top:            10px;
+    padding-right:          10px;
+    padding-bottom:         10px;
+}
+
+.xsdoc-class-attribute-name {
+    float:                  left;
+    width:                  150px;
+}
+
+.xsdoc-class-attribute-value {
+    float:                  left;
+    width:                  70%;
+}

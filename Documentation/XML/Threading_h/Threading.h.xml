@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/Threading.h" lang="c" filename="Threading.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Functions/Threading.h"><name>Threading.h</name>
+<abstract><p>Threading-related functions
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/stdint.h">&lt;stdint.h&gt;</hd_link></include>
+</includes>
+<desc><p/></desc>
+<functions><function id="//xsdoc_ref/c/func/XSGetCurrentThreadID" lang="c"><name>XSGetCurrentThreadID</name>
+<abstract><p>Gets the ID of the current thread
+</p></abstract>
+<returntype> XS_EXPORT uint64_t</returntype>
+<result><p>The ID of the current thread
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>uint64_t</declaration_type> <declaration_function>XSGetCurrentThreadID</declaration_function>(
+    <declaration_param>void</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function></functions>
+<copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Friday, September 11, 2020</timestamp>
+</header>

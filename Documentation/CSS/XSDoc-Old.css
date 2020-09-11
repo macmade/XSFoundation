@@ -1,0 +1,520 @@
+/*******************************************************************************
+ * The MIT License (MIT)
+ * 
+ * Copyright (c) 2014 Jean-David Gadina - www-xs-labs.com
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ ******************************************************************************/
+
+/* $Id$ */
+
+body {
+    margin:                 0px;
+    color:                  #000000;
+    font-style:             normal;
+    font-weight:            normal;
+    font-size:              12px;
+    line-height:            20px;
+    text-decoration:        none;
+    font-family:            'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
+    background-color:       #FFFFFF;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color:                  #000000;
+    font-style:             normal;
+    font-weight:            normal;
+    line-height:            normal;
+    margin-top:             0px;
+    margin-bottom:          0px;
+    padding-top:            10px;
+    padding-bottom:         10px;
+    text-align:             left;
+}
+
+h1 {
+    font-size:              40px;
+}
+
+h2 {
+    font-size:              30px;
+}
+
+h3 {
+    font-size:              25px;
+}
+
+h4 {
+    font-size:              20px;
+}
+
+h5 {
+    font-size:              12px;
+    font-weight:            bold;
+    padding-bottom:         0px;
+}
+
+h6 {
+    font-size:              12px;
+    font-weight:            bold;
+    padding-bottom:         0px;
+}
+
+p {
+    margin:                 0px;
+    padding:                0px;
+    padding-bottom:         10px;
+}
+
+a {
+    text-decoration:        none;
+    color:                  #3366CC;
+}
+
+a:link {
+    font-weight:            normal;
+    text-decoration:        none;
+    color:                  #3366CC;
+}
+
+a:visited {
+    font-weight:            normal;
+    text-decoration:        none;
+}
+
+a:hover {
+    font-weight:            normal;
+    text-decoration:        underline;
+}
+
+a:active {
+    font-weight:            normal;
+    text-decoration:        underline;
+}
+
+img {
+    border:                 none;
+}
+
+hr {
+    height:                 1px;
+    border:                 none;
+    border-top:             solid 1px #ACACAC;
+}
+
+code {
+    margin:                 0px;
+    color:                  #4F4F4F;
+    font-style:             normal;
+    font-weight:            normal;
+    font-size:              12px;
+    text-decoration:        none;
+    font-family:            Consolas, Monaco, Courier, sans-serif;
+    white-space:            pre;
+}
+
+.xsdoc-code-block {
+    padding:                10px;
+    background-color:       #FCFCFC;
+    border:                 solid 1px #D6E0E5;
+    border-radius:          10px;
+    margin-bottom:          10px;
+    margin-top:             5px;
+    line-height:            12px;
+}
+
+.xsdoc-code {
+    color:                  #4F4F4F;
+    font-style:             normal;
+    text-decoration:        none;
+    font-family:            Consolas, Monaco, Courier, sans-serif;
+}
+
+.xsdoc-notes-block {
+    padding-left:           10px;
+    padding-top :           5px;
+    padding-right:          10px;
+    padding-bottom:         5px;
+    margin-top:             10px;
+    margin-bottom:          10px;
+    border:                 solid 1px #D6E0E5;
+    font-size:              10px;
+}
+
+.xsdoc-header {
+    height:                 35px;
+    overflow:               hidden;
+    background-image:       url( 'Resources/header-bg.png' );
+    text-align:             center;
+}
+
+.xsdoc-header h1 {
+    color:                  #FFFFFF;
+    font-size:              14px;
+    text-align:             center;
+    float:                  left;
+    margin-left:            15px;
+    background-position:    0px 7px;
+    overflow:               hidden;
+    height:                 100%;
+}
+
+.xsdoc-header h1 img {
+    float:                  left;
+    margin-right:           20px;
+    position:               relative;
+    top:                    -2px;
+}
+
+.xsdoc-header span {
+    float:                  left;
+    margin-right:           20px;
+}
+
+.xsdoc-header .xsdoc-header-company a {
+    color:                  #9BA2AA;
+}
+
+.xsdoc-header a {
+    color:                  #FFFFFF;
+}
+
+.xsdoc-header-buttons {
+    float:                  right;
+    overflow:               hidden;
+    height:                 100%;
+}
+
+.xsdoc-header-button {
+    float:                  left;
+    margin-right:           15px;
+    margin-top:             7px;
+}
+
+.xsdoc-subheader {
+    height:                 20px;
+    overflow:               hidden;
+    background-image:       url( 'Resources/footer-bg.png' );
+    font-size:              10px;
+    padding-left:           55px;
+    border-bottom:          solid 1px #ACACAC;
+    color:                  #4F4F4F;
+}
+
+.xsdoc-footer {
+    height:                 20px;
+    overflow:               hidden;
+    background-image:       url( 'Resources/footer-bg.png' );
+    text-align:             center;
+    font-size:              10px;
+    text-align:             center;
+    border-top:             solid 1px #ACACAC;
+    color:                  #4F4F4F;
+}
+
+.xsdoc-main {
+    overflow:               hidden;
+    height:                 100%;
+}
+
+.xsdoc-toc {
+    float:                      left;
+    background-color:           #EBEEF1;
+    border-right:               solid 1px #ACACAC;
+    border-bottom:              solid 1px #ACACAC;
+    font-size:                  10px;
+    padding:                    10px;
+    width:                      15%;
+    overflow:                   hidden;
+    margin-bottom:              20px;
+    border-bottom-right-radius: 10px;
+}
+
+.xsdoc-toc h2 {
+    font-size:              14px;
+    border-bottom:          solid 1px #D6E0E5;
+    margin-bottom:          10px;
+    padding-bottom:         5px;
+}
+
+.xsdoc-toc ul {
+    margin:                 0px;
+    padding-left:           20px;
+    list-style:             none;
+    line-height:            16px;
+}
+
+.xsdoc-toc li {
+    margin:                 0px;
+    padding:                0px;
+}
+
+.xsdoc-toc a {
+    color:                  #4F4F4F;
+    font-weight:            bold;
+}
+
+.xsdoc-file,
+.xsdoc-search {
+    float:                  left;
+    overflow:               hidden;
+    height:                 100%;
+    width:                  80%;
+    margin-bottom:          20px;
+}
+
+.xsdoc-file-toc {
+    float:                  left;
+    margin:                 10px;
+    padding:                10px;
+    background-color:       #FCFCFC;
+    border:                 solid 1px #D6E0E5;
+    border-radius:          10px;
+    font-size:              10px;
+    width:                  20%;
+    overflow:               hidden;
+}
+
+.xsdoc-file-toc h2 {
+    font-size:              14px;
+}
+
+.xsdoc-file-toc h3 {
+    font-size:              14px;
+    border-bottom:          solid 1px #D6E0E5;
+    margin-bottom:          10px;
+    padding-bottom:         5px;
+}
+
+.xsdoc-file-toc h3 a {
+    font-weight:            normal;
+}
+
+.xsdoc-file-toc h4 {
+    font-size:              12px;
+    margin-left:            20px;
+    border-bottom:          solid 1px #D6E0E5;
+    padding-bottom:         2px;
+    margin-bottom:          5px;
+}
+
+.xsdoc-file-toc ul {
+    margin:                 0px;
+    padding-left:           0px;
+    list-style:             none;
+    line-height:            16px;
+}
+
+.xsdoc-file-toc ul ul {
+    margin-left:            20px;
+}
+
+.xsdoc-file-toc a {
+    color:                  #4F4F4F;
+    font-weight:            bold;
+}
+
+.xsdoc-file-toc li {
+    margin:                 0px;
+    padding:                0px;
+}
+
+.xsdoc-file-content,
+.xsdoc-search-content {
+    float:                  left;
+    width:                  70%;
+    margin-top:             15px;
+    margin-left:            20px;
+}
+
+.xsdoc-file-content h3,
+.xsdoc-search-content h3,
+.xsdoc-home-content h3,
+.xsdoc-page-content h3 {
+    color:                  #3C4C6C;
+    border-bottom:          solid 1px #D6E0E5;
+    margin-bottom:          20px;
+    padding-bottom:         5px;
+}
+
+.xsdoc-file-details {
+    border-top:             solid 1px #D6E0E5;
+    margin-left:            40px;
+    margin-top:             20px;
+    margin-right:           40px;
+    margin-bottom:          20px;
+    width:                  100%;
+}
+
+.xsdoc-file-detail {
+    border-bottom:          solid 1px #D6E0E5;
+    overflow:               hidden;
+    height:                 100%;
+    padding-left:           10px;
+    padding-top:            10px;
+    padding-right:          10px;
+    padding-bottom:         10px;
+}
+
+.xsdoc-file-detail-name {
+    float:                  left;
+    font-weight:            bold;
+    width:                  100px;
+}
+
+.xsdoc-file-detail-content {
+    float:                  left;
+    width:                  70%;
+}
+
+.xsdoc-file-content ul {
+    margin:                 0px;
+    padding:                0px;
+    list-style:             none;
+}
+
+.xsdoc-file-content li {
+    margin:                 0px;
+    padding:                0px;
+}
+
+.xsdoc-file-member {
+    margin-bottom:          20px;
+}
+
+.xsdoc-file-member h4 .xsdoc-top {
+    float:                  right;
+    font-size:              10px;
+    margin-top:             10px;
+    margin-left:            10px;
+}
+
+.xsdoc-search .xsdoc-search-form {
+    overflow:               hidden;
+    height:                 100%;
+    margin-top:             20px;
+    margin-bottom:          20px;
+    padding:                20px;
+    background-color:       #FCFCFC;
+    border:                 solid 1px #D6E0E5;
+    border-radius:          10px;
+}
+
+.xsdoc-search .xsdoc-search-term {
+    float:                  left;
+    margin-right:           10px;
+}
+
+.xsdoc-search .xsdoc-search-submit {
+    float:                  left;
+}
+
+.xsdoc-search .xsdoc-search-term input {
+    color:                  #3C4C6C;
+    background-color:       #FFFFFF;
+    padding:                5px;
+    margin:                 0px;
+    border:                 solid 1px #D6E0E5;
+}
+
+.xsdoc-search .xsdoc-search-submit input {
+    color:                  #FFFFFF;
+    background-color:       #3C4C6C;
+    padding-left:           15px;
+    padding-top:            5px;
+    padding-right:          15px;
+    padding-bottom:         5px;
+    margin:                 0px;
+    border:                 solid 1px #3C4C6C;
+    font-weight:            bold;
+    border-radius:          5px;
+    min-width:              100px;
+}
+
+.xsdoc-search-result h4 {
+    font-size:              15px;
+    padding-bottom:         0px;
+}
+
+.xsdoc-search-result h5 {
+    font-size:              10px;
+    padding-top:            5px;
+    padding-bottom:         5px;
+    color:                  #8F8F8F;
+}
+
+.xsdoc-search-result h5 a {
+    color:                  #8F8F8F;
+}
+
+.xsdoc-search-result p {
+    font-size:              12px;
+    line-height:            15px;
+    padding-top:            5px;
+    padding-bottom:         5px;
+}
+
+.xsdoc-search-result p a {
+    color:                  #000000;
+}
+
+ul.xsdoc-list-square {
+    margin:                 0px;
+    padding-left:           10px;
+    margin-left:            10px;
+    list-style:             square;
+}
+
+.xsdoc-class-members {
+    margin-bottom:          20px;
+}
+
+.xsdoc-class-attributes {
+    border-top:             solid 1px #D6E0E5;
+    margin-top:             20px;
+    margin-right:           40px;
+    margin-bottom:          20px;
+    width:                  100%;
+}
+
+.xsdoc-class-attribute {
+    border-bottom:          solid 1px #D6E0E5;
+    overflow:               hidden;
+    height:                 100%;
+    padding-left:           10px;
+    padding-top:            10px;
+    padding-right:          10px;
+    padding-bottom:         10px;
+}
+
+.xsdoc-class-attribute-name {
+    float:                  left;
+    font-weight:            bold;
+    width:                  150px;
+}
+
+.xsdoc-class-attribute-value {
+    float:                  left;
+    width:                  70%;
+}

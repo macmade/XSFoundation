@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/Memory.h" lang="c" filename="Memory.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Private/Functions/Memory.h"><name>Memory.h</name>
+<abstract><p>Private declarations for memory functions
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassID.h">&lt;XS/Types/XSClassID.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/stddef.h">&lt;stddef.h&gt;</hd_link></include>
+</includes>
+<desc><p/></desc>
+<functions><function id="//xsdoc_ref/c/func/XSGetMemoryObject" lang="c"><name>XSGetMemoryObject</name>
+<abstract><p>Gets the memory object for a pointer
+</p></abstract>
+<parameterlist>
+<parameter><name>ptr</name><desc><p>The pointer for which to get the memory object</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>const void *</type><name>ptr</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XSMemoryObject *</returntype>
+<result><p>The memory object
+</p></result>
+<declaration><declaration_type>XSMemoryObject</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSGetMemoryObject</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>ptr</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function></functions>
+<globals><variable id="//xsdoc_ref/c/data/XSMemoryAllocID" lang="c"><name>XSMemoryAllocID</name>
+<abstract><p>The current allocation ID
+</p></abstract>
+<returntype>XS_EXTERN volatile int64_t</returntype>
+<declaration><declaration_type>XS_EXTERN</declaration_type> <declaration_keyword>volatile</declaration_keyword> <declaration_type>int64_t</declaration_type> <declaration_var>XSMemoryAllocID</declaration_var>;  </declaration>
+<desc><p/></desc>
+</variable></globals>
+<constants><constant id="//xsdoc_ref/c/data/XSMemoryFenceData" lang="c"><name>XSMemoryFenceData</name>
+<abstract><p>The memory fence data
+</p></abstract>
+<returntype>XS_EXTERN const uint8_t</returntype>
+<declaration><declaration_type>XS_EXTERN</declaration_type> <declaration_keyword>const</declaration_keyword> <declaration_type>uint8_t</declaration_type> <declaration_type>XSMemoryFenceData</declaration_type>[ <declaration_type>XS_MEMORY_FENCE_SIZE</declaration_type> ];  </declaration>
+<desc><p/></desc>
+</constant></constants>
+<typedefs><typedef id="//xsdoc_ref/c/tdef/XSMemoryObject" lang="c" type="simple"><name>XSMemoryObject</name>
+<abstract><p>Memory object type
+</p></abstract>
+<fieldlist>
+<field><name>retainCount</name><desc><p>The object's retain count</p></desc></field>
+<field><name>size</name><desc><p>The allocated data size</p></desc></field>
+<field><name>allocID</name><desc><p>The allocation ID</p></desc></field>
+<field><name>classID</name><desc><p>The class ID (only for allocated instances)</p></desc></field>
+<field><name>DEBUG</name><desc><p>Memory fence to prevent overflows (DEBUG builds only)</p></desc></field>
+</fieldlist>
+<parsedparameterlist>
+<parsedparameter><type>volatile int64_t</type><name>retainCount</name></parsedparameter>
+<parsedparameter><type>size_t</type><name>size</name></parsedparameter>
+<parsedparameter><type>int64_t</type><name>allocID</name></parsedparameter>
+<parsedparameter><type>XSClassID</type><name>classID</name></parsedparameter>
+<parsedparameter><type>uint8_t</type><name>fence</name></parsedparameter>
+</parsedparameterlist>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> { 
+    <declaration_keyword>volatile</declaration_keyword> <declaration_type>int64_t</declaration_type> <declaration_var>retainCount</declaration_var>;
+    <declaration_comment>/*! The object's retain count */</declaration_comment>
+    <declaration_type>size_t</declaration_type> <declaration_var>size</declaration_var>;
+    <declaration_comment>/*! The allocated data size */</declaration_comment>
+    <declaration_type>int64_t</declaration_type> <declaration_var>allocID</declaration_var>;
+    <declaration_comment>/*! The allocation ID */</declaration_comment>
+    <declaration_type>XSClassID</declaration_type> <declaration_var>classID</declaration_var>;
+    <declaration_comment>/*! The class ID (only for allocated instances) */</declaration_comment>
+    <declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+    <declaration_type>uint8_t</declaration_type> <declaration_type>fence</declaration_type>[ <declaration_type>XS_MEMORY_FENCE_SIZE</declaration_type> ];
+    <declaration_comment>/*! Memory fence to prevent overflows (DEBUG builds only) */</declaration_comment>
+    <declaration_preprocessor>#endif</declaration_preprocessor>  
+} <declaration_var>XSMemoryObject</declaration_var>;  </declaration>
+<desc><p/></desc>
+</typedef></typedefs><defines><pdefine id="//xsdoc_ref/c/macro/XS_MEMORY_FENCE_SIZE" definetype="value" lang="c"><name>XS_MEMORY_FENCE_SIZE</name>
+<abstract><p>The size of the memory fence to prevent overflows
+</p></abstract>
+<attributelists><listattribute><name>See Also</name><list>
+<item><name>XS_MEMORY_FENCE_SIZE</name><value><hd_link logicalPath="//xsdoc_ref/c/macro/XS_MEMORY_FENCE_SIZE_DONTLINK_0" isseealso="yes">XS_MEMORY_FENCE_SIZE</hd_link></value></item></list></listattribute>
+</attributelists>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MEMORY_FENCE_SIZE</declaration_preprocessor> <declaration_preprocessor>16</declaration_preprocessor> </declaration>
+<autorelated>
+<relateduid>//xsdoc_ref/c/macro/XS_MEMORY_FENCE_SIZE_DONTLINK_0</relateduid>
+</autorelated>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XS_MEMORY_FENCE_SIZE_DONTLINK_1" definetype="value" lang="c"><name>XS_MEMORY_FENCE_SIZE</name>
+<abstract><p>The size of the memory fence to prevent overflows
+</p></abstract>
+<attributelists><listattribute><name>See Also</name><list>
+<item><name>XS_MEMORY_FENCE_SIZE</name><value><hd_link logicalPath="//xsdoc_ref/c/macro/XS_MEMORY_FENCE_SIZE" isseealso="yes">XS_MEMORY_FENCE_SIZE</hd_link></value></item></list></listattribute>
+</attributelists>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MEMORY_FENCE_SIZE</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor> </declaration>
+<autorelated>
+<relateduid>//xsdoc_ref/c/macro/XS_MEMORY_FENCE_SIZE</relateduid>
+</autorelated>
+</pdefine></defines><copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Friday, September 11, 2020</timestamp>
+</header>

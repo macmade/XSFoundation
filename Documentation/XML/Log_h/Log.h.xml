@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/Log.h" lang="c" filename="Log.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Private/Functions/Log.h"><name>Log.h</name>
+<abstract><p>Private declarations for logging functions
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSSpinLock.h">&lt;XS/Types/XSSpinLock.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/stdint.h">&lt;stdint.h&gt;</hd_link></include>
+</includes>
+<desc><p/></desc>
+<functions><function id="//xsdoc_ref/c/func/XSLogGetCurrentDateTime" lang="c"><name>XSLogGetCurrentDateTime</name>
+<abstract><p>Gets the current date time string
+</p></abstract>
+<parameterlist>
+<parameter><name>buf</name><desc><p>The buffer in which to place the result string</p></desc></parameter>
+<parameter><name>size</name><desc><p>The buffer size</p></desc></parameter>
+<parameter><name>milliseconds</name><desc><p>On return, contains the number of milliseconds</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>char *</type><name>buf</name></parsedparameter>
+<parsedparameter><type>size_t</type><name>size</name></parsedparameter>
+<parsedparameter><type>uint64_t *</type><name>milliseconds</name></parsedparameter>
+</parsedparameterlist>
+<returntype> void</returntype>
+<declaration><declaration_type>void</declaration_type> <declaration_function>XSLogGetCurrentDateTime</declaration_function>(
+    <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>buf</declaration_param>,
+    <declaration_type>size_t</declaration_type> <declaration_param>size</declaration_param>,
+    <declaration_type>uint64_t</declaration_type> <declaration_type>*</declaration_type><declaration_param>milliseconds</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/doc/title:func/XSLogGetCurrentTime" lang="c"><name>XSLogGetCurrentTime</name>
+<abstract><p>Gets the current date time string
+</p></abstract>
+<parameterlist>
+<parameter><name>buf</name><desc><p>The buffer in which to place the result string</p></desc></parameter>
+<parameter><name>size</name><desc><p>The buffer size</p></desc></parameter>
+<parameter><name>milliseconds</name><desc><p>On return, contains the number of milliseconds</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>char *</type><name>buf</name></parsedparameter>
+<parsedparameter><type>size_t</type><name>size</name></parsedparameter>
+<parsedparameter><type>uint64_t *</type><name>milliseconds</name></parsedparameter>
+</parsedparameterlist>
+<returntype> void</returntype>
+<declaration><declaration_type>void</declaration_type> <declaration_function>XSLogGetCurrentDateTime</declaration_function>(
+    <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>buf</declaration_param>,
+    <declaration_type>size_t</declaration_type> <declaration_param>size</declaration_param>,
+    <declaration_type>uint64_t</declaration_type> <declaration_type>*</declaration_type><declaration_param>milliseconds</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSLogGetInfo" lang="c"><name>XSLogGetInfo</name>
+<abstract><p>Gets the necessary info to print a log message
+</p></abstract>
+<parameterlist>
+<parameter><name>level</name><desc><p>The level of the log message</p></desc></parameter>
+<parameter><name>file</name><desc><p>The file in which the log occurs</p></desc></parameter>
+<parameter><name>line</name><desc><p>The line number of the file in which the log occurs</p></desc></parameter>
+<parameter><name>func</name><desc><p>The function in which the log occurs</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSLogLevel</type><name>level</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>file</name></parsedparameter>
+<parsedparameter><type>int</type><name>line</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>func</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XSLogInfo</returntype>
+<result><p>A structure with all the necessary info filled
+</p></result>
+<declaration><declaration_type>XSLogInfo</declaration_type> <declaration_function>XSLogGetInfo</declaration_function>(
+    <declaration_type>XSLogLevel</declaration_type> <declaration_param>level</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>file</declaration_param>,
+    <declaration_type>int</declaration_type> <declaration_param>line</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>func</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSLogPause" lang="c"><name>XSLogPause</name>
+<abstract><p>Holds any log request
+</p></abstract>
+<returntype> void</returntype>
+<declaration><declaration_type>void</declaration_type> <declaration_function>XSLogPause</declaration_function>(
+    <declaration_param>void</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSLogResume" lang="c"><name>XSLogResume</name>
+<abstract><p>Resumes all log requests
+</p></abstract>
+<returntype> void</returntype>
+<declaration><declaration_type>void</declaration_type> <declaration_function>XSLogResume</declaration_function>(
+    <declaration_param>void</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function></functions>
+<globals><variable id="//xsdoc_ref/c/data/XSLogCurrentLevel" lang="c"><name>XSLogCurrentLevel</name>
+<abstract><p>The current log level
+</p></abstract>
+<returntype>XS_EXTERN volatile int64_t</returntype>
+<declaration><declaration_type>XS_EXTERN</declaration_type> <declaration_keyword>volatile</declaration_keyword> <declaration_type>int64_t</declaration_type> <declaration_var>XSLogCurrentLevel</declaration_var>;  </declaration>
+<desc><p/></desc>
+</variable><variable id="//xsdoc_ref/c/data/XSLogIsPaused" lang="c"><name>XSLogIsPaused</name>
+<abstract><p>1 if any log call should be hold, otherwise 0
+</p></abstract>
+<returntype>XS_EXTERN volatile int64_t</returntype>
+<declaration><declaration_type>XS_EXTERN</declaration_type> <declaration_keyword>volatile</declaration_keyword> <declaration_type>int64_t</declaration_type> <declaration_var>XSLogIsPaused</declaration_var>;  </declaration>
+<desc><p/></desc>
+</variable><variable id="//xsdoc_ref/c/data/XSLogLock" lang="c"><name>XSLogLock</name>
+<abstract><p>Spin lock for log calls
+</p></abstract>
+<returntype>XS_EXTERN XSSpinLock</returntype>
+<declaration><declaration_type>XS_EXTERN</declaration_type> <declaration_type>XSSpinLock</declaration_type> <declaration_var>XSLogLock</declaration_var>;  </declaration>
+<desc><p/></desc>
+</variable></globals>
+<copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Friday, September 11, 2020</timestamp>
+</header>

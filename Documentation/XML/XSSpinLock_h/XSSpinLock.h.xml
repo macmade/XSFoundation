@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/XSSpinLock.h" lang="c" filename="XSSpinLock.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Types/XSSpinLock.h"><name>XSSpinLock.h</name>
+<abstract><p>XSSpinLock type definition
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/stdint.h">&lt;stdint.h&gt;</hd_link></include>
+</includes>
+<desc><p/></desc>
+<typedefs><typedef id="//xsdoc_ref/c/tdef/XSSpinLock" lang="c" type="simple"><name>XSSpinLock</name>
+<abstract><p>Spin lock type
+</p></abstract>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>volatile</declaration_keyword> <declaration_type>int32_t</declaration_type> <declaration_var>XSSpinLock</declaration_var>;  </declaration>
+<desc><p>XSSpinLock is an integral type. The convention is that unlocked
+is zero, and locked is nonzero.
+</p></desc>
+</typedef></typedefs><copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Friday, September 11, 2020</timestamp>
+</header>

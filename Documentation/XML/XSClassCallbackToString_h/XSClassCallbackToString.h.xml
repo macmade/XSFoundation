@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/XSClassCallbackToString.h" lang="c" filename="XSClassCallbackToString.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Types/XSClassCallbackToString.h"><name>XSClassCallbackToString.h</name>
+<abstract><p>XSClassCallbackToString type definition
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSObjectRef.h">&lt;XS/Types/XSObjectRef.h&gt;</hd_link></include>
+</includes>
+<desc><p/></desc>
+<typedefs><typedef id="//xsdoc_ref/c/tdef/XSClassCallbackToString" lang="c" type="funcPtr"><name>XSClassCallbackToString</name>
+<abstract><p>Class to-string callback
+</p></abstract>
+<parameterlist>
+<parameter><name>object</name><desc><p>The object for which to get a description</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSObjectRef</type><name>object</name></parsedparameter>
+</parsedparameterlist>
+<result><p>The object's description
+</p></result>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type> ( <declaration_type>*</declaration_type><declaration_function>XSClassCallbackToString</declaration_function> )(
+    <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
+<desc><p/></desc>
+</typedef></typedefs><copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Friday, September 11, 2020</timestamp>
+</header>

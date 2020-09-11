@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/XSInitStatus.h" lang="c" filename="XSInitStatus.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Types/XSInitStatus.h"><name>XSInitStatus.h</name>
+<abstract><p>XSInitStatus type definition
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
+</includes>
+<desc><p/></desc>
+<typedefs><typedef id="//xsdoc_ref/c/tdef/XSInitStatus" lang="c" type="simple"><name>XSInitStatus</name>
+<abstract><p>Initialization status
+</p></abstract>
+<constantlist>
+<constant><name>XSInitStatusNotInited</name><desc><p>Not inited</p></desc></constant>
+<constant><name>XSInitStatusInited</name><desc><p>Inited</p></desc></constant>
+<constant><name>XSInitStatusInitializing</name><desc><p>Initializing</p></desc></constant>
+<constant><name>XSInitStatusFinalizing</name><desc><p>Finalizing</p></desc></constant>
+<constant><name>XSInitStatusFinalized</name><desc><p>Finalized</p></desc></constant>
+</constantlist>
+<parsedparameterlist>
+<parsedparameter><type></type><name>XSInitStatusNotInited</name></parsedparameter>
+<parsedparameter><type></type><name>XSInitStatusInited</name></parsedparameter>
+<parsedparameter><type></type><name>XSInitStatusInitializing</name></parsedparameter>
+<parsedparameter><type></type><name>XSInitStatusFinalizing</name></parsedparameter>
+<parsedparameter><type></type><name>XSInitStatusFinalized</name></parsedparameter>
+</parsedparameterlist>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>enum</declaration_keyword> { 
+    <declaration_var>XSInitStatusNotInited</declaration_var> = <declaration_number>0x00</declaration_number>,
+    <declaration_comment>/*! Not inited */</declaration_comment>
+    <declaration_var>XSInitStatusInited</declaration_var> = <declaration_number>0x01</declaration_number>,
+    <declaration_comment>/*! Inited */</declaration_comment>
+    <declaration_var>XSInitStatusInitializing</declaration_var> = <declaration_number>0x02</declaration_number>,
+    <declaration_comment>/*! Initializing */</declaration_comment>
+    <declaration_var>XSInitStatusFinalizing</declaration_var> = <declaration_number>0x03</declaration_number>,
+    <declaration_comment>/*! Finalizing */</declaration_comment>
+    <declaration_var>XSInitStatusFinalized</declaration_var> = <declaration_number>0x04</declaration_number> <declaration_comment>/*! Finalized */</declaration_comment>
+} <declaration_var>XSInitStatus</declaration_var>;  </declaration>
+<desc><p/></desc>
+</typedef></typedefs><copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Friday, September 11, 2020</timestamp>
+</header>

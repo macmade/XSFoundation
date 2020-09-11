@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/Process.h" lang="c" filename="Process.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Private/Functions/Process.h"><name>Process.h</name>
+<abstract><p>Private declarations for process-related functions
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/stdint.h">&lt;stdint.h&gt;</hd_link></include>
+</includes>
+<desc><p/></desc>
+<functions><function id="//xsdoc_ref/c/func/XSStoreCurrentProcessName" lang="c"><name>XSStoreCurrentProcessName</name>
+<abstract><p>Gets and stores the current process name
+</p></abstract>
+<parameterlist>
+<parameter><name>buf</name><desc><p>The buffer in which to store the process name</p></desc></parameter>
+<parameter><name>max</name><desc><p>The max size of the string (not including the termination character)</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>char *</type><name>buf</name></parsedparameter>
+<parsedparameter><type>size_t</type><name>max</name></parsedparameter>
+</parsedparameterlist>
+<returntype> void</returntype>
+<declaration><declaration_type>void</declaration_type> <declaration_function>XSStoreCurrentProcessName</declaration_function>(
+    <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>buf</declaration_param>,
+    <declaration_type>size_t</declaration_type> <declaration_param>max</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function></functions>
+<globals><variable id="//xsdoc_ref/c/data/XSProcessName" lang="c"><name>XSProcessName</name>
+<abstract><p>Process name
+</p></abstract>
+<returntype>XS_EXTERN char</returntype>
+<declaration><declaration_type>XS_EXTERN</declaration_type> <declaration_type>char</declaration_type> <declaration_type>XSProcessName</declaration_type>[ <declaration_type>XS_PROCESS_NAME_SIZE</declaration_type> ];  </declaration>
+<desc><p/></desc>
+</variable><variable id="//xsdoc_ref/c/data/XSProcessNameInitStatus" lang="c"><name>XSProcessNameInitStatus</name>
+<abstract><p>Process name initialization status
+</p></abstract>
+<returntype>XS_EXTERN volatile int64_t</returntype>
+<declaration><declaration_type>XS_EXTERN</declaration_type> <declaration_keyword>volatile</declaration_keyword> <declaration_type>int64_t</declaration_type> <declaration_var>XSProcessNameInitStatus</declaration_var>;  </declaration>
+<desc><p/></desc>
+</variable></globals>
+<defines><pdefine id="//xsdoc_ref/c/macro/XS_PROCESS_NAME_SIZE" definetype="value" lang="c"><name>XS_PROCESS_NAME_SIZE</name>
+<abstract><p>Size for the process name global buffer
+</p></abstract>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_PROCESS_NAME_SIZE</declaration_preprocessor> <declaration_preprocessor>256</declaration_preprocessor> </declaration>
+</pdefine></defines><copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Friday, September 11, 2020</timestamp>
+</header>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/SpinLock.h" lang="c" filename="SpinLock.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Functions/SpinLock.h"><name>SpinLock.h</name>
+<abstract><p>Spin lock functions
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSSpinLock.h">&lt;XS/Types/XSSpinLock.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/stdbool.h">&lt;stdbool.h&gt;</hd_link></include>
+</includes>
+<desc><p/></desc>
+<functions><function id="//xsdoc_ref/c/func/XSSpinLockLock" lang="c"><name>XSSpinLockLock</name>
+<abstract><p>Locks a spin lock, spinning if the lock is already held
+</p></abstract>
+<parameterlist>
+<parameter><name>lock</name><desc><p>The spin lock to lock</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSSpinLock *</type><name>lock</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void</returntype>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSSpinLockLock</declaration_function>(
+    <declaration_type>XSSpinLock</declaration_type> <declaration_type>*</declaration_type><declaration_param>lock</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSSpinLockTryLock" lang="c"><name>XSSpinLockTryLock</name>
+<abstract><p>Tries to lock a spin lock
+</p></abstract>
+<parameterlist>
+<parameter><name>lock</name><desc><p>The spin lock to unlock</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSSpinLock *</type><name>lock</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT bool</returntype>
+<result><p>True if the spin lock was successfully locked, otherwise false
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSSpinLockTryLock</declaration_function>(
+    <declaration_type>XSSpinLock</declaration_type> <declaration_type>*</declaration_type><declaration_param>lock</declaration_param> );  </declaration>
+<desc><p>This function does not spin and returns immediately if the
+lock is already held.
+</p></desc>
+</function><function id="//xsdoc_ref/c/func/XSSpinLockUnlock" lang="c"><name>XSSpinLockUnlock</name>
+<abstract><p>Unconditionally unlocks a spin lock
+</p></abstract>
+<parameterlist>
+<parameter><name>lock</name><desc><p>The spin lock to unlock</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSSpinLock *</type><name>lock</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void</returntype>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSSpinLockUnlock</declaration_function>(
+    <declaration_type>XSSpinLock</declaration_type> <declaration_type>*</declaration_type><declaration_param>lock</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function></functions>
+<copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Friday, September 11, 2020</timestamp>
+</header>

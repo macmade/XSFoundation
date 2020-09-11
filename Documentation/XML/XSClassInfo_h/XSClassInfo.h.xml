@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/XSClassInfo.h" lang="c" filename="XSClassInfo.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Types/XSClassInfo.h"><name>XSClassInfo.h</name>
+<abstract><p>XSClassInfo type definition
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassCallbackConstructor.h">&lt;XS/Types/XSClassCallbackConstructor.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassCallbackDestructor.h">&lt;XS/Types/XSClassCallbackDestructor.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassCallbackCopy.h">&lt;XS/Types/XSClassCallbackCopy.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassCallbackEquals.h">&lt;XS/Types/XSClassCallbackEquals.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassCallbackToString.h">&lt;XS/Types/XSClassCallbackToString.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/stddef.h">&lt;stddef.h&gt;</hd_link></include>
+</includes>
+<desc><p/></desc>
+<typedefs><typedef id="//xsdoc_ref/c/tdef/XSClassInfo" lang="c" type="simple"><name>XSClassInfo</name>
+<abstract><p>XSFoundation runtime class structure
+</p></abstract>
+<fieldlist>
+<field><name>className</name><desc><p>The name of the class</p></desc></field>
+<field><name>type</name><desc><p>The class type</p></desc></field>
+<field><name>instanceSize</name><desc><p>The size of the class instances</p></desc></field>
+<field><name>constructor</name><desc><p>The class constructor</p></desc></field>
+<field><name>destructor</name><desc><p>The class destructor</p></desc></field>
+<field><name>copy</name><desc><p>The object's copy callback</p></desc></field>
+<field><name>equals</name><desc><p>The object's comparison callback</p></desc></field>
+<field><name>toString</name><desc><p>The object's description callback</p></desc></field>
+</fieldlist>
+<parsedparameterlist>
+<parsedparameter><type>const char *</type><name>className</name></parsedparameter>
+<parsedparameter><type>XSClassType</type><name>type</name></parsedparameter>
+<parsedparameter><type>size_t</type><name>instanceSize</name></parsedparameter>
+<parsedparameter><type>XSClassCallbackConstructor</type><name>constructor</name></parsedparameter>
+<parsedparameter><type>XSClassCallbackDestructor</type><name>destructor</name></parsedparameter>
+<parsedparameter><type>XSClassCallbackCopy</type><name>copy</name></parsedparameter>
+<parsedparameter><type>XSClassCallbackEquals</type><name>equals</name></parsedparameter>
+<parsedparameter><type>XSClassCallbackToString</type><name>toString</name></parsedparameter>
+</parsedparameterlist>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> { 
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_var>className</declaration_var>;
+    <declaration_comment>/*! The name of the class */</declaration_comment>
+    <declaration_type>XSClassType</declaration_type> <declaration_var>type</declaration_var>;
+    <declaration_comment>/*! The class type */</declaration_comment>
+    <declaration_type>size_t</declaration_type> <declaration_var>instanceSize</declaration_var>;
+    <declaration_comment>/*! The size of the class instances */</declaration_comment>
+    <declaration_type>XSClassCallbackConstructor</declaration_type> <declaration_var>constructor</declaration_var>;
+    <declaration_comment>/*! The class constructor */</declaration_comment>
+    <declaration_type>XSClassCallbackDestructor</declaration_type> <declaration_var>destructor</declaration_var>;
+    <declaration_comment>/*! The class destructor */</declaration_comment>
+    <declaration_type>XSClassCallbackCopy</declaration_type> <declaration_var>copy</declaration_var>;
+    <declaration_comment>/*! The object's copy callback */</declaration_comment>
+    <declaration_type>XSClassCallbackEquals</declaration_type> <declaration_var>equals</declaration_var>;
+    <declaration_comment>/*! The object's comparison callback */</declaration_comment>
+    <declaration_type>XSClassCallbackToString</declaration_type> <declaration_var>toString</declaration_var>;
+    <declaration_comment>/*! The object's description callback */</declaration_comment>
+} <declaration_var>XSClassInfo</declaration_var>;  </declaration>
+<desc><p/></desc>
+</typedef></typedefs><copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Friday, September 11, 2020</timestamp>
+</header>

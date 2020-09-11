@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/XS.h" lang="c" filename="XS.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/XS.h"><name>XS.h</name>
+<abstract><p>XSFoundation main include file
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Types.h">&lt;XS/Types.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Atomic.h">&lt;XS/Functions/Atomic.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Memory.h">&lt;XS/Functions/Memory.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Runtime.h">&lt;XS/Functions/Runtime.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Log.h">&lt;XS/Functions/Log.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Sleep.h">&lt;XS/Functions/Sleep.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/SpinLock.h">&lt;XS/Functions/SpinLock.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Threading.h">&lt;XS/Functions/Threading.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Process.h">&lt;XS/Functions/Process.h&gt;</hd_link></include>
+</includes>
+<desc><p>This file should be included on projects using the XEOS C
+Foundation Library. Other header files should never be included
+directly.
+</p></desc>
+<copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Friday, September 11, 2020</timestamp>
+</header>
