@@ -1,5 +1,8 @@
 {
     "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "files.eol": "\n",
     "C_Cpp.clang_format_style": "file",
     "files.associations": {
         "algorithm": "c",
