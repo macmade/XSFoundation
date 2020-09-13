@@ -139,7 +139,7 @@ endif
 example_exec: lib
 
 	$(call PRINT_ARCH,$(_HOST_ARCH),"Compiling and linking example")
-	@$(_CC) -lxs -L$(DIR_BUILD_PRODUCTS) -o $(DIR_BUILD_PRODUCTS)example example/main.c
+	@$(_CC) -lxs -L$(DIR_BUILD_PRODUCTS) -o $(DIR_BUILD_PRODUCTS)example $(abspath example/main.c)
 
 #-------------------------------------------------------------------------------
 # Targets with second expansion
@@ -168,4 +168,4 @@ endif
 $(DIR_BUILD_TEMP)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
 	$(call PRINT_FILE,$(_HOST_ARCH),"Compiling C file",$<)
-	@$(_CC) -o $@ -c $<
+	@$(_CC) -o $@ -c $(abspath $<)
