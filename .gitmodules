@@ -1,0 +1,3 @@
+[submodule "Submodules/XSCTest"]
+	path = Submodules/XSCTest
+	url = https://github.com/macmade/XSCTest.git
