@@ -23,7 +23,7 @@
  ******************************************************************************/
 
 /*!
- * @file        XSAtomicIncrement32.c
+ * @file        XSAtomicIncrement64.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  */
@@ -31,25 +31,25 @@
 #include <XSCTest/XSCTest.h>
 #include <XS/XS.h>
 
-Test( Atomic, XSAtomicIncrement32 )
+Test( Atomic, XSAtomicIncrement64 )
 {
-    int32_t i = 0;
+    int64_t i = 0;
 
-    for( int32_t j = 0; j < 10; j++ )
+    for( int64_t j = 0; j < 10; j++ )
     {
         AssertEqual( i, j );
-        XSAtomicIncrement32( &i );
+        XSAtomicIncrement64( &i );
         AssertEqual( i, j + 1 );
     }
 }
 
-Test( Atomic, XSAtomicIncrement32_Max )
+Test( Atomic, XSAtomicIncrement64_Max )
 {
-    int32_t i = INT32_MAX;
+    int64_t i = INT64_MAX;
 
-    for( int32_t j = 0; j < 10; j++ )
+    for( int64_t j = 0; j < 10; j++ )
     {
-        XSAtomicIncrement32( &i );
-        AssertEqual( i, INT32_MIN + j );
+        XSAtomicIncrement64( &i );
+        AssertEqual( i, INT64_MIN + j );
     }
 }
