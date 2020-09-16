@@ -199,10 +199,11 @@ ifeq ($(findstring 1,$(DEBUG)),)
 endif
 
 test_build: _EXEC = $(DIR_BUILD_PRODUCTS)XSFoundation-Test
+test_build: _LIB = $(DIR_BUILD_PRODUCTS)$(PRODUCT)$(EXT_LIB)
 test_build: lib xsctest $$(_FILES_C_BUILD_TESTS)
 	
 	$(call PRINT_ARCH,$(_HOST_ARCH),"Linking object files"): $(COLOR_BLUE)$(notdir $(_EXEC))$(COLOR_NONE)
-	@$(_CC) -L $(DIR_XSCTEST_BUILD) -lxsctest -o $(_EXEC) $(_FILES_C_BUILD_TESTS)
+	@$(_CC) -L$(DIR_BUILD_PRODUCTS) -L $(DIR_XSCTEST_BUILD) -lxs -lxsctest -o $(_EXEC) $(_FILES_C_BUILD_TESTS)
 
 # Target: Object file (XSFoundation)
 $(DIR_BUILD_TEMP_XS)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)

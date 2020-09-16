@@ -51,3 +51,4 @@ FILES_C += $(call GET_C_FILES, $(DIR_SRC_FUNCTIONS)Log/)
 
 # Gets every C file in the source directories (Unit-Tests)
 FILES_C_TESTS += $(call GET_C_FILES, $(DIR_SRC_TESTS))
+FILES_C_TESTS += $(call GET_C_FILES, $(DIR_SRC_TESTS)Atomic/)

@@ -23,14 +23,22 @@
  ******************************************************************************/
 
 /*!
- * @file        XSFoundation-Test.c
+ * @file        XSAtomicIncrement32.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  */
 
 #include <XSCTest/XSCTest.h>
+#include <XS/XS.h>
 
-int main( int argc, char * argv[] )
+Test( Atomic, XSAtomicIncrement32 )
 {
-    return XSCTestRun( stdout, argc, argv );
+    int32_t i = 0;
+
+    for( int32_t j = 0; j < 10; j++ )
+    {
+        AssertEqual( i, j );
+        XSAtomicIncrement32( &i );
+        AssertEqual( i, j + 1 );
+    }
 }
