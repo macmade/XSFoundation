@@ -61,6 +61,7 @@ clean:
 	@$(MAKE) -s clean_products DEBUG=1
 	@$(MAKE) -s clean_temp
 	@$(MAKE) -s clean_products
+	@cd $(DIR_XSCTEST) && $(MAKE) clean
 	
 # Clean temporary files
 clean_temp:
@@ -198,7 +199,7 @@ ifeq ($(findstring 1,$(DEBUG)),)
 endif
 
 test_build: _EXEC = $(DIR_BUILD_PRODUCTS)XSFoundation-Test
-test_build: lib $$(_FILES_C_BUILD_TESTS)
+test_build: lib xsctest $$(_FILES_C_BUILD_TESTS)
 	
 	$(call PRINT_ARCH,$(_HOST_ARCH),"Linking object files"): $(COLOR_BLUE)$(notdir $(_EXEC))$(COLOR_NONE)
 	@$(_CC) -L $(DIR_XSCTEST_BUILD) -lxsctest -o $(_EXEC) $(_FILES_C_BUILD_TESTS)
