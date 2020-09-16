@@ -39,7 +39,7 @@ STDC          := c11
 # Files
 #-------------------------------------------------------------------------------
 
-# Gets every C file in the source directories
+# Gets every C file in the source directories (XSFoundation)
 FILES_C += $(call GET_C_FILES, $(DIR_SRC_FUNCTIONS)Atomic/)
 FILES_C += $(call GET_C_FILES, $(DIR_SRC_FUNCTIONS)Memory/)
 FILES_C += $(call GET_C_FILES, $(DIR_SRC_FUNCTIONS)Runtime/)
@@ -48,3 +48,6 @@ FILES_C += $(call GET_C_FILES, $(DIR_SRC_FUNCTIONS)SpinLock/)
 FILES_C += $(call GET_C_FILES, $(DIR_SRC_FUNCTIONS)Threading/)
 FILES_C += $(call GET_C_FILES, $(DIR_SRC_FUNCTIONS)Process/)
 FILES_C += $(call GET_C_FILES, $(DIR_SRC_FUNCTIONS)Log/)
+
+# Gets every C file in the source directories (Unit-Tests)
+FILES_C_TESTS += $(call GET_C_FILES, $(DIR_SRC_TESTS))

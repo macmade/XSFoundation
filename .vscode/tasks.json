@@ -32,6 +32,34 @@
         },
         {
             "type": "shell",
+            "label": "Make - Build & Run Tests",
+            "command": "make",
+            "args": [
+                "test",
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "Make - Rebuild & Run Tests",
+            "command": "make clean && make test",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
             "label": "Make - Clean",
             "command": "make",
             "args": [

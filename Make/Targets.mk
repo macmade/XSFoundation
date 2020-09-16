@@ -30,7 +30,7 @@
 .DEFAULT_GOAL := all
 
 # Declaration for phony targets, to avoid problems with local files
-.PHONY: all clean clean_temp clean_products doc debug release lib example example_debug example_release example_exec
+.PHONY: all clean clean_temp clean_products doc debug release lib example example_debug example_release example_exec test test_debug test_release test_build test_run xsctest
 
 # Declaration for precious targets, to avoid cleaning of intermediate files
 .PRECIOUS: $(DIR_BUILD_TEMP)%$(EXT_O)
@@ -47,6 +47,11 @@ all: debug release
 # Example Target
 example: example_debug example_release
 	
+	@:
+	
+# Unit-Tests
+test: test_debug test_release
+
 	@:
 
 # Cleans all build files
@@ -134,12 +139,40 @@ ifeq ($(_MAKE_4),true)
 else
 	@$(MAKE) example_exec
 endif
+
+# Test debug build (parallel if available)
+test_debug:
+	
+ifeq ($(_MAKE_4),true)
+	@$(MAKE) -s -j 50 --output-sync test_build test_run DEBUG=1
+else
+	@$(MAKE) test_build test_run DEBUG=1
+endif
+	
+# Test release build (parallel if available)
+test_release:
+	
+ifeq ($(_MAKE_4),true)
+	@$(MAKE) -s -j 50 --output-sync test_build test_run
+else
+	@$(MAKE) test_build test_run
+endif
 	
 # Example executable
 example_exec: lib
 
 	$(call PRINT_ARCH,$(_HOST_ARCH),"Compiling and linking example")
 	@$(_CC) -lxs -L$(DIR_BUILD_PRODUCTS) -o $(DIR_BUILD_PRODUCTS)example $(abspath example/main.c)
+	
+# Run unit-tests
+test_run:
+
+	@$(DIR_BUILD_PRODUCTS)XSFoundation-Test
+
+# Unit Testing Library
+xsctest:
+	
+	@cd $(DIR_XSCTEST) && $(MAKE)
 
 #-------------------------------------------------------------------------------
 # Targets with second expansion
@@ -164,8 +197,22 @@ ifeq ($(findstring 1,$(DEBUG)),)
 	@strip -S $(_LIB)
 endif
 
-# Target: Object file
-$(DIR_BUILD_TEMP)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
+test_build: _EXEC = $(DIR_BUILD_PRODUCTS)XSFoundation-Test
+test_build: lib $$(_FILES_C_BUILD_TESTS)
+	
+	$(call PRINT_ARCH,$(_HOST_ARCH),"Linking object files"): $(COLOR_BLUE)$(notdir $(_EXEC))$(COLOR_NONE)
+	@$(_CC) -L $(DIR_XSCTEST_BUILD) -lxsctest -o $(_EXEC) $(_FILES_C_BUILD_TESTS)
+
+# Target: Object file (XSFoundation)
+$(DIR_BUILD_TEMP_XS)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
+	
+	$(call PRINT_FILE,$(_HOST_ARCH),"Compiling C file",$<)
+	@$(_CC) -o $@ -c $(abspath $<)
+
+
+# Target: Object file (Unit-Tests)
+$(DIR_BUILD_TEMP_TESTS)%$(EXT_O): _CC_EXTRA_FLAGS = -I $(DIR_XSCTEST_INC)
+$(DIR_BUILD_TEMP_TESTS)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
 	$(call PRINT_FILE,$(_HOST_ARCH),"Compiling C file",$<)
 	@$(_CC) -o $@ -c $(abspath $<)

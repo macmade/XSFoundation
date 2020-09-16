@@ -3,7 +3,8 @@
         {
             "name": "XSFoundation",
             "includePath": [
-                "${workspaceFolder}/XSFoundation/include/"
+                "${workspaceFolder}/XSFoundation/include/",
+                "${workspaceFolder}/Submodules/XSCTest/XSCTest/include/"
             ],
             "forcedInclude": [],
             "defines": [
