@@ -29,8 +29,11 @@
  */
 
 #include <XSCTest/XSCTest.h>
+#include <XS/XS.h>
 
 int main( int argc, char * argv[] )
 {
+    XSRuntimeInitialize();
+
     return XSCTestRun( stdout, argc, argv );
 }
