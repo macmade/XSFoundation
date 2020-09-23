@@ -3,7 +3,7 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "Make - Build All Targets",
+            "label": "Make - Build",
             "command": "make",
             "args": [
                 "all",
@@ -19,7 +19,7 @@
         },
         {
             "type": "shell",
-            "label": "Make - Rebuild All Targets",
+            "label": "Make - Rebuild",
             "command": "make clean && make all && make example",
             "args": [],
             "options": {
