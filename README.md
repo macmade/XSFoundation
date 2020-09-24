@@ -1,7 +1,8 @@
 XSFoundation
 ============
 
-[![Build Status](https://img.shields.io/travis/macmade/XSFoundation.svg?branch=master&style=flat)](https://travis-ci.org/macmade/XSFoundation)
+[![Build-Travis](https://img.shields.io/travis/macmade/XSFoundation.svg?branch=master&logo=travis&style=flat)](https://travis-ci.org/macmade/XSFoundation)
+[![Build-AppVeyor](https://ci.appveyor.com/api/projects/status/github/macmade/XSFoundation?svg=true)](https://ci.appveyor.com/project/macmade/XSFoundation)
 [![Issues](http://img.shields.io/github/issues/macmade/XSFoundation.svg?style=flat)](https://github.com/macmade/XSFoundation/issues)
 ![Status](https://img.shields.io/badge/status-active-brightgreen.svg?style=flat)
 ![License](https://img.shields.io/badge/license-mit-brightgreen.svg?style=flat)
