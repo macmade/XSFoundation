@@ -43,13 +43,16 @@ int32_t XSAtomicAdd32( int32_t amount, volatile int32_t * value )
 
 #elif defined( _WIN32 )
 
+#pragma warning( push )
+#pragma warning( disable: 5105 )
 #include <Windows.h>
 #include <Winnt.h>
+#pragma warning( pop )
 
 /* Windows */
 int32_t XSAtomicAdd32( int32_t amount, volatile int32_t * value )
 {
-    return InterlockedExchangeAdd( value, amount ) + amount;
+    return InterlockedExchangeAdd( ( volatile LONG * )value, amount ) + amount;
 }
 
 #elif defined( __APPLE__ )

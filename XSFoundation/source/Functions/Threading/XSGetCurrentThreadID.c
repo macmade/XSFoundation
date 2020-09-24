@@ -40,7 +40,10 @@ uint64_t XSGetCurrentThreadID( void )
 
 #elif defined( _WIN32 )
 
+#pragma warning( push )
+#pragma warning( disable: 5105 )
 #include <Windows.h>
+#pragma warning( pop )
 
 uint64_t XSGetCurrentThreadID( void )
 {

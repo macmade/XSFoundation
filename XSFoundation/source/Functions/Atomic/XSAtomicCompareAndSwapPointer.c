@@ -43,8 +43,11 @@ bool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * vol
 
 #elif defined( _WIN32 )
 
+#pragma warning( push )
+#pragma warning( disable: 5105 )
 #include <Windows.h>
 #include <Winnt.h>
+#pragma warning( pop )
 
 /* Windows */
 bool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )

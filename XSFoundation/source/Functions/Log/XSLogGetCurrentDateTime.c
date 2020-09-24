@@ -36,13 +36,16 @@
 
 #ifdef _WIN32
 
+#pragma warning( push )
+#pragma warning( disable: 5105 )
 #include <Windows.h>
+#pragma warning( pop )
 
 void XSLogGetCurrentDateTime( char * buf, size_t size, uint64_t * milliseconds )
 {
     time_t     t;
     struct tm  now;
-    SYSTEMTIME time;
+    SYSTEMTIME st;
 
     if( buf == NULL || size == 0 )
     {
@@ -51,13 +54,13 @@ void XSLogGetCurrentDateTime( char * buf, size_t size, uint64_t * milliseconds )
 
     memset( buf, 0, size );
     time( &t );
-    GetSystemTime( &time );
+    GetSystemTime( &st );
     localtime_s( &now, &t );
     strftime( buf, size, "%Y-%m-%d %H:%M:%S", &now );
 
     if( milliseconds != NULL )
     {
-        *( milliseconds ) = time.wMilliseconds;
+        *( milliseconds ) = st.wMilliseconds;
     }
 }
 
