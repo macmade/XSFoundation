@@ -108,56 +108,32 @@ endif
 # Debug build (parallel if available)
 debug:
 	
-ifeq ($(_MAKE_4),true)
-	@$(MAKE) -s -j 50 --output-sync lib DEBUG=1
-else
 	@$(MAKE) lib DEBUG=1
-endif
 	
 # Release build (parallel if available)
 release:
 	
-ifeq ($(_MAKE_4),true)
-	@$(MAKE) -s -j 50 --output-sync lib
-else
 	@$(MAKE) lib
-endif
 
 # Example debug build (parallel if available)
 example_debug:
 	
-ifeq ($(_MAKE_4),true)
-	@$(MAKE) -s -j 50 --output-sync example_exec example_run DEBUG=1
-else
 	@$(MAKE) example_exec example_run DEBUG=1
-endif
 	
 # Example release build (parallel if available)
 example_release:
 	
-ifeq ($(_MAKE_4),true)
-	@$(MAKE) -s -j 50 --output-sync example_exec example_run
-else
 	@$(MAKE) example_exec example_run
-endif
 
 # Test debug build (parallel if available)
 test_debug:
 	
-ifeq ($(_MAKE_4),true)
-	@$(MAKE) -s -j 50 --output-sync test_build test_run DEBUG=1
-else
 	@$(MAKE) test_build test_run DEBUG=1
-endif
 	
 # Test release build (parallel if available)
 test_release:
 	
-ifeq ($(_MAKE_4),true)
-	@$(MAKE) -s -j 50 --output-sync test_build test_run
-else
 	@$(MAKE) test_build test_run
-endif
 	
 # Example executable
 example_exec: _EXEC = $(DIR_BUILD_PRODUCTS)example

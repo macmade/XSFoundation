@@ -285,22 +285,11 @@ PRINT_ARCH = $(call PRINT_BUILD,,$(2) [ $(COLOR_RED)$(1)$(COLOR_NONE) ])
 PRINT_FILE = $(call PRINT_ARCH,$(1),$(2)): $(COLOR_YELLOW)$(subst .$(COLOR_NONE).,,$(patsubst %.,%,$(subst /,.,$(dir $(patsubst $(DIR_SRC_TESTS)%,%,$(patsubst $(DIR_SRC)%,%,$3)))))$(COLOR_NONE).)$(COLOR_GRAY)"$(notdir $(3))"$(COLOR_NONE)
 
 #-------------------------------------------------------------------------------
-# Tools
-#-------------------------------------------------------------------------------
-
-# Make version (version 4 allows parallel builds with output sync) 
-_MAKE_VERSION_MAJOR := $(shell echo $(MAKE_VERSION) | cut -f1 -d.)
-_MAKE_4             := $(shell [ $(_MAKE_VERSION_MAJOR) -ge 4 ] && echo true)
-
-# Check for the XSDocgen utility
-_HAS_XSDOCGEN := $(shell if [ -f "/usr/local/bin/XSDocgen" ]; then echo true; else echo false; fi )
-
-# Check for the xcodebuild utility
-_HAS_XCBUILD := $(shell if [ -f "/usr/bin/xcodebuild" ]; then echo true; else echo false; fi )
-
-#-------------------------------------------------------------------------------
 # Miscellaneous
 #-------------------------------------------------------------------------------
 
 # Current GIT branch
 _BRANCH := $(shell git rev-parse --abbrev-ref HEAD 2>/dev/null)
+
+# Check for the XSDocgen utility
+_HAS_XSDOCGEN := $(shell if [ -f "/usr/local/bin/XSDocgen" ]; then echo true; else echo false; fi )
