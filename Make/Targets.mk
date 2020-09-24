@@ -169,12 +169,12 @@ example_exec: lib
 # Run unit-tests
 test_run:
 
-	@$(DIR_BUILD_PRODUCTS)XSFoundation-Test
+	@$(DIR_BUILD_PRODUCTS)XSFoundation-Test$(EXT_EXE)
 
 # Run unit-tests
 example_run:
 
-	@$(DIR_BUILD_PRODUCTS)example
+	@$(DIR_BUILD_PRODUCTS)example$(EXT_EXE)
 
 # Unit Testing Library
 xsctest:

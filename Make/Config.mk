@@ -77,6 +77,12 @@ DIR_XSCTEST       := $(DIR_SUBMODULES)XSCTest/
 DIR_XSCTEST_INC   := $(DIR_XSCTEST)XSCTest/include/
 DIR_XSCTEST_BUILD := $(DIR_XSCTEST)Build/Products/
 
+ifdef _OS_CYGWIN
+
+_WIN_PATH = $(shell cygpath -w $1)
+
+endif
+
 #-------------------------------------------------------------------------------
 # Search paths
 #-------------------------------------------------------------------------------
@@ -156,7 +162,7 @@ ifdef _OS_CYGWIN
 
 # Build flags
 CC_FLAGS_WARN    := /W4 /WX
-CC_FLAGS_DEBUG   := /Od /sdl
+CC_FLAGS_DEBUG   := /Od /sdl /DDEBUG=1
 CC_FLAGS_RELEASE := /GL /Gw /O2 /sdl
 
 # C compiler
@@ -166,7 +172,7 @@ else
 
 # Build flags
 CC_FLAGS_WARN    := -Werror -Weverything -Wno-unknown-warning-option -Wno-poison-system-directories
-CC_FLAGS_DEBUG   := -O0 -gfull
+CC_FLAGS_DEBUG   := -O0 -gfull -DDEBUG=1
 CC_FLAGS_RELEASE := -Os
 
 # C compiler
