@@ -1,0 +1,24 @@
+image:
+  - Visual Studio 2019 Preview
+platform:
+  - x86
+  - x64
+configuration:
+  - Release
+install:
+  - git submodule update --init --recursive
+environment:
+    CHERE_INVOKING: 1
+for:
+  -
+    matrix:
+      only:
+        - platform: x86
+    build_script: 
+      - C:\cygwin\bin\bash.exe -lc "make && make example && make test"
+  -
+    matrix:
+      only:
+        - platform: x64
+    build_script: 
+      - C:\cygwin64\bin\bash.exe -lc "make && make example && make test"
