@@ -29,11 +29,9 @@ include Make/Targets.mk
 # Basic Configuration
 #-------------------------------------------------------------------------------
 
-CC            := clang
-PRODUCT       := libxs
-OPTIM_DEBUG   := -O0
-OPTIM_RELEASE := -Os
-STDC          := c11
+CC      := clang
+PRODUCT := XSFoundation
+STDC    := c11
 
 #-------------------------------------------------------------------------------
 # Files

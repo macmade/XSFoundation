@@ -6,8 +6,7 @@
             "label": "Make - Build",
             "command": "make",
             "args": [
-                "all",
-                "example"
+                "all"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
@@ -20,7 +19,7 @@
         {
             "type": "shell",
             "label": "Make - Rebuild",
-            "command": "make clean && make all && make example",
+            "command": "make clean && make all",
             "args": [],
             "options": {
                 "cwd": "${workspaceFolder}"
@@ -49,6 +48,34 @@
             "type": "shell",
             "label": "Make - Rebuild & Run Tests",
             "command": "make clean && make test",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "Make - Build & Run Example",
+            "command": "make",
+            "args": [
+                "example",
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "Make - Rebuild & Run Example",
+            "command": "make clean && make example",
             "args": [],
             "options": {
                 "cwd": "${workspaceFolder}"
