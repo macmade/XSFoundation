@@ -159,17 +159,18 @@ _FILES_C_BUILD_EXAMPLE = $(addprefix $(DIR_BUILD_TEMP_EXAMPLE),$(_FILES_C_OBJ_EX
 
 # Build flags
 ifeq ($(findstring 1,$(DEBUG)),)
-_CC_FLAGS = $(strip $(CC_FLAGS_WARN) $(CC_FLAGS_RELEASE) $(_CC_EXTRA_FLAGS))
+_CC_FLAGS = $(strip $(CC_FLAGS_WARN) $(CC_FLAGS_RELEASE) $(strip $(_CC_PLATFORM_FLAGS) $(_CC_EXTRA_FLAGS)))
 else
-_CC_FLAGS = $(strip $(CC_FLAGS_WARN) $(CC_FLAGS_DEBUG) $(_CC_EXTRA_FLAGS))
+_CC_FLAGS = $(strip $(CC_FLAGS_WARN) $(CC_FLAGS_DEBUG) $(strip $(_CC_PLATFORM_FLAGS) $(_CC_EXTRA_FLAGS)))
 endif
 
 ifdef _OS_CYGWIN
 
 # Build flags
-CC_FLAGS_WARN    := /W4 /WX
-CC_FLAGS_DEBUG   := /Od /sdl /DDEBUG=1
-CC_FLAGS_RELEASE := /GL /Gw /O2 /sdl
+CC_FLAGS_WARN      := /W4 /WX
+CC_FLAGS_DEBUG     := /Od /sdl /DDEBUG=1
+CC_FLAGS_RELEASE   := /GL /Gw /O2 /sdl
+_CC_PLATFORM_FLAGS := 
 
 # C compiler
 _CC = Make/cl.bat /nologo /utf-8 $(_CC_FLAGS) /std:$(STDC) /I $(call _WIN_PATH,$(abspath $(DIR_INC)))
@@ -180,6 +181,14 @@ else
 CC_FLAGS_WARN    := -Werror -Weverything -Wno-unknown-warning-option -Wno-poison-system-directories
 CC_FLAGS_DEBUG   := -O0 -gfull -DDEBUG=1
 CC_FLAGS_RELEASE := -Os
+
+ifdef _OS_LINUX
+_CC_PLATFORM_FLAGS := -D_POSIX_SOURCE -D_XOPEN_SOURCE
+endif
+
+ifdef _OS_DARWIN
+_CC_PLATFORM_FLAGS := -D_POSIX_SOURCE -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE
+endif
 
 # C compiler
 _CC = $(CC) $(_CC_FLAGS) -std=$(STDC) -I$(DIR_INC)
