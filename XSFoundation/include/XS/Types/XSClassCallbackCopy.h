@@ -48,7 +48,7 @@ XS_EXTERN_C_BEGIN
  *              object.
  *              If NULL is returned, 'destination' will be deallocated by the
  *              caller automatically.
- * @result      The copied object
+ * @return      The copied object
  */
 typedef void * ( *XSClassCallbackCopy )( XSObjectRef source, XSObjectRef destination );
 

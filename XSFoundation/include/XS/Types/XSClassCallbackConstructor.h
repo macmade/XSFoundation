@@ -45,7 +45,7 @@ XS_EXTERN_C_BEGIN
  *              object.
  *              If NULL is returned, the 'object' will be deallocated by the
  *              caller automatically.
- * @result      The new object
+ * @return      The new object
  */
 typedef void * ( *XSClassCallbackConstructor )( XSObjectRef object );
 
