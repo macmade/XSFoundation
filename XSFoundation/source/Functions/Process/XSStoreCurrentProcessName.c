@@ -101,9 +101,11 @@ void XSStoreCurrentProcessName( char * buf, size_t max )
 
 #include <stdlib.h>
 
+extern char * program_invocation_short_name;
+
 void XSStoreCurrentProcessName( char * buf, size_t max )
 {
-    XSCStringCopy( buf, max + 1, getenv( "_" ), max );
+    XSCStringCopy( buf, max + 1, program_invocation_short_name, max );
 }
 
 #elif defined( __unix__ )
