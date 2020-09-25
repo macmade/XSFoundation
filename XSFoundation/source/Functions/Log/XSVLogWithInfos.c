@@ -64,10 +64,10 @@ void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char 
             stderr,
             "%s.%llu %s[%llu:%llX] <%s:%s:%i>: %s - ",
             info.date,
-            info.milliseconds,
+            ( unsigned long long )( info.milliseconds ),
             info.process,
-            ( unsigned long long )info.processID,
-            ( unsigned long long )info.threadID,
+            ( unsigned long long )( info.processID ),
+            ( unsigned long long )( info.threadID ),
             info.func,
             info.file,
             info.line,
@@ -79,10 +79,10 @@ void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char 
             stderr,
             "%s.%llu %s[%llu:%llX] <%s:%s:%i>: ",
             info.date,
-            info.milliseconds,
+            ( unsigned long long )( info.milliseconds ),
             info.process,
-            ( unsigned long long )info.processID,
-            ( unsigned long long )info.threadID,
+            ( unsigned long long )( info.processID ),
+            ( unsigned long long )( info.threadID ),
             info.func,
             info.file,
             info.line );
@@ -93,10 +93,10 @@ void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char 
             stderr,
             "%s.%llu %s[%llu:%llX]: %s - ",
             info.date,
-            info.milliseconds,
+            ( unsigned long long )( info.milliseconds ),
             info.process,
-            ( unsigned long long )info.processID,
-            ( unsigned long long )info.threadID,
+            ( unsigned long long )( info.processID ),
+            ( unsigned long long )( info.threadID ),
             info.level );
     }
     else
@@ -105,10 +105,10 @@ void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char 
             stderr,
             "%s.%llu %s[%llu:%llX]: ",
             info.date,
-            info.milliseconds,
+            ( unsigned long long )( info.milliseconds ),
             info.process,
-            ( unsigned long long )info.processID,
-            ( unsigned long long )info.threadID );
+            ( unsigned long long )( info.processID ),
+            ( unsigned long long )( info.threadID ) );
     }
 
     vfprintf( stderr, fmt, args );
