@@ -61,7 +61,7 @@ clean:
 	@$(MAKE) -s clean_products DEBUG=1
 	@$(MAKE) -s clean_temp
 	@$(MAKE) -s clean_products
-	@cd $(DIR_XSCTEST) && $(MAKE) clean
+	@cd $(DIR_XSCTEST) && $(MAKE) -s clean
 	
 # Clean temporary files
 clean_temp:
@@ -108,32 +108,32 @@ endif
 # Debug build (parallel if available)
 debug:
 	
-	@$(MAKE) lib DEBUG=1
+	@$(MAKE) -s lib DEBUG=1
 	
 # Release build (parallel if available)
 release:
 	
-	@$(MAKE) lib
+	@$(MAKE) -s lib
 
 # Example debug build (parallel if available)
 example_debug:
 	
-	@$(MAKE) example_exec example_run DEBUG=1
+	@$(MAKE) -s example_exec example_run DEBUG=1
 	
 # Example release build (parallel if available)
 example_release:
 	
-	@$(MAKE) example_exec example_run
+	@$(MAKE) -s example_exec example_run
 
 # Test debug build (parallel if available)
 test_debug:
 	
-	@$(MAKE) test_build test_run DEBUG=1
+	@$(MAKE) -s test_build test_run DEBUG=1
 	
 # Test release build (parallel if available)
 test_release:
 	
-	@$(MAKE) test_build test_run
+	@$(MAKE) -s test_build test_run
 	
 # Example executable
 example_exec: _EXEC = $(DIR_BUILD_PRODUCTS)example
@@ -155,7 +155,7 @@ example_run:
 # Unit Testing Library
 xsctest:
 	
-	@cd $(DIR_XSCTEST) && $(MAKE)
+	@cd $(DIR_XSCTEST) && $(MAKE) -s
 
 #-------------------------------------------------------------------------------
 # Targets with second expansion
