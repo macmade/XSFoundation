@@ -66,8 +66,8 @@ void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char 
             info.date,
             info.milliseconds,
             info.process,
-            info.processID,
-            info.threadID,
+            ( unsigned long long )info.processID,
+            ( unsigned long long )info.threadID,
             info.func,
             info.file,
             info.line,
@@ -81,8 +81,8 @@ void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char 
             info.date,
             info.milliseconds,
             info.process,
-            info.processID,
-            info.threadID,
+            ( unsigned long long )info.processID,
+            ( unsigned long long )info.threadID,
             info.func,
             info.file,
             info.line );
@@ -95,8 +95,8 @@ void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char 
             info.date,
             info.milliseconds,
             info.process,
-            info.processID,
-            info.threadID,
+            ( unsigned long long )info.processID,
+            ( unsigned long long )info.threadID,
             info.level );
     }
     else
@@ -107,8 +107,8 @@ void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char 
             info.date,
             info.milliseconds,
             info.process,
-            info.processID,
-            info.threadID );
+            ( unsigned long long )info.processID,
+            ( unsigned long long )info.threadID );
     }
 
     vfprintf( stderr, fmt, args );
