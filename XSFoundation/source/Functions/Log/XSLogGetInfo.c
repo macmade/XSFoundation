@@ -63,16 +63,25 @@ XSLogInfo XSLogGetInfo( XSLogLevel level, const char * file, int line, const cha
 
     if( func != NULL )
     {
-        strncpy( info.func, func, sizeof( info.func ) - 1 );
+        XSCStringCopy( info.func, sizeof( info.func ), func, 0 );
     }
     else
     {
-        strncpy( info.func, "unknown", sizeof( info.func ) - 1 );
+        XSCStringCopy( info.func, sizeof( info.func ), "unknown", 0 );
     }
 
     if( file != NULL )
     {
         filename = strrchr( file, XS_PATH_SEPARATOR );
+
+        if( filename == NULL )
+        {
+            filename = file;
+        }
+        else if( filename != file )
+        {
+            filename++;
+        }
     }
     else
     {
@@ -81,11 +90,11 @@ XSLogInfo XSLogGetInfo( XSLogLevel level, const char * file, int line, const cha
 
     if( filename != NULL )
     {
-        strncpy( info.file, filename + 1, sizeof( info.file ) - 1 );
+        XSCStringCopy( info.file, sizeof( info.file ), filename, 0 );
     }
     else
     {
-        strncpy( info.file, "unknown", sizeof( info.file ) - 1 );
+        XSCStringCopy( info.file, sizeof( info.file ), "unknown", 0 );
     }
 
 #else

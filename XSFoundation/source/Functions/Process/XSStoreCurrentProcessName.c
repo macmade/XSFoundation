@@ -51,15 +51,15 @@ void XSStoreCurrentProcessName( char * buf, size_t max )
 
     if( strlen( name ) == 0 )
     {
-        strcpy_s( buf, max, "unknown" );
+        XSCStringCopy( buf, max + 1, "unknown", max );
     }
     else if( pos != NULL )
     {
-        strcpy_s( buf, max, pos + 1 );
+        XSCStringCopy( buf, max + 1, pos + 1, max );
     }
     else
     {
-        strcpy_s( buf, max, name );
+        XSCStringCopy( buf, max + 1, name, max );
     }
 }
 
@@ -85,15 +85,15 @@ void XSStoreCurrentProcessName( char * buf, size_t max )
 
     if( strlen( name ) == 0 )
     {
-        strncpy( buf, "unknown", max );
+        XSCStringCopy( buf, max + 1, "unknown", max );
     }
     else if( pos != NULL )
     {
-        strncpy( buf, pos + 1, max );
+        XSCStringCopy( buf, max + 1, pos + 1, max );
     }
     else
     {
-        strncpy( buf, name, max );
+        XSCStringCopy( buf, max + 1, name, max );
     }
 }
 
@@ -103,7 +103,7 @@ void XSStoreCurrentProcessName( char * buf, size_t max )
 
 void XSStoreCurrentProcessName( char * buf, size_t max )
 {
-    strcpy( buf, getenv( "_" ), max );
+    XSCStringCopy( buf, max + 1, getenv( "_" ), max );
 }
 
 #elif defined( __unix__ )
@@ -112,14 +112,14 @@ void XSStoreCurrentProcessName( char * buf, size_t max )
 
 void XSStoreCurrentProcessName( char * buf, size_t max )
 {
-    strncpy( buf, getprogname(), max );
+    XSCStringCopy( buf, max + 1, getprogname(), max );
 }
 
 #elif defined( __XEOS__ )
 
 void XSStoreCurrentProcessName( char * buf, size_t max )
 {
-    strncpy( buf, "unknown", max );
+    XSCStringCopy( buf, max + 1, "unknown", max );
 }
 
 #else
