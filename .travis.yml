@@ -1,7 +1,11 @@
-language: objective-c
+language: c
 compiler: clang
-script: make && make example && make test
-before_script: git submodule update --init --recursive
 before_install:
   - git clone git://github.com/macmade/XSDocgen
   - cd XSDocgen && make && sudo make install && cd ..
+before_script: git submodule update --init --recursive
+script:
+  - make && make example && make test
+os:
+  - osx
+  - linux
