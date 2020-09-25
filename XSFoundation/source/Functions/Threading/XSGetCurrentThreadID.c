@@ -62,11 +62,11 @@ uint64_t XSGetCurrentThreadID( void )
 #elif defined( __linux )
 
 #include <unistd.h>
-#include <sys/types.h>
+#include <sys/syscall.h>
 
 uint64_t XSGetCurrentThreadID( void )
 {
-    return ( uint64_t )gettid();
+    return ( uint64_t )syscall( SYS_gettid );
 }
 
 #elif defined( __unix__ )
