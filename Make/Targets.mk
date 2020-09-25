@@ -30,7 +30,7 @@
 .DEFAULT_GOAL := all
 
 # Declaration for phony targets, to avoid problems with local files
-.PHONY: all clean clean_temp clean_products doc debug release lib example example_debug example_release example_exec example_run test test_debug test_release test_build test_run xsctest
+.PHONY: all clean clean_temp clean_products doc debug release lib example example_debug example_release example_build example_run test test_debug test_release test_build test_run xsctest
 
 # Declaration for precious targets, to avoid cleaning of intermediate files
 .PRECIOUS: $(DIR_BUILD_TEMP)%$(EXT_O)
@@ -118,12 +118,12 @@ release:
 # Example debug build (parallel if available)
 example_debug:
 	
-	@$(MAKE) -s example_exec example_run DEBUG=1
+	@$(MAKE) -s example_build example_run DEBUG=1
 	
 # Example release build (parallel if available)
 example_release:
 	
-	@$(MAKE) -s example_exec example_run
+	@$(MAKE) -s example_build example_run
 
 # Test debug build (parallel if available)
 test_debug:
@@ -134,13 +134,6 @@ test_debug:
 test_release:
 	
 	@$(MAKE) -s test_build test_run
-	
-# Example executable
-example_exec: _EXEC = $(DIR_BUILD_PRODUCTS)example$(EXT_EXE)
-example_exec: lib
-
-	$(call PRINT_ARCH,$(_HOST_ARCH),"Compiling and linking example"): $(COLOR_BLUE)$(notdir $(_EXEC))$(COLOR_NONE)
-	$(call CREATE_EXEC,$(_EXEC),example/main.c,$(DIR_BUILD_PRODUCTS),$(PRODUCT) $(_EXTRA_LIBS))
 
 # Run unit-tests
 test_run:
@@ -176,6 +169,12 @@ test_build: lib xsctest $$(_FILES_C_BUILD_TESTS)
 	$(call PRINT_ARCH,$(_HOST_ARCH),"Linking unit-tests"): $(COLOR_BLUE)$(notdir $(_EXEC))$(COLOR_NONE)
 	$(call CREATE_EXEC,$(_EXEC),$(_FILES_C_BUILD_TESTS),$(DIR_BUILD_PRODUCTS) $(DIR_XSCTEST_BUILD),$(PRODUCT) xsctest $(_EXTRA_LIBS))
 
+example_build: _EXEC = $(DIR_BUILD_PRODUCTS)example$(EXT_EXE)
+example_build: lib $$(_FILES_C_BUILD_EXAMPLE)
+	
+	$(call PRINT_ARCH,$(_HOST_ARCH),"Linking example"): $(COLOR_BLUE)$(notdir $(_EXEC))$(COLOR_NONE)
+	$(call CREATE_EXEC,$(_EXEC),$(_FILES_C_BUILD_EXAMPLE),$(DIR_BUILD_PRODUCTS),$(PRODUCT) $(_EXTRA_LIBS))
+
 # Target: Object file (XSFoundation)
 $(DIR_BUILD_TEMP_XS)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
@@ -185,6 +184,13 @@ $(DIR_BUILD_TEMP_XS)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 # Target: Object file (Unit-Tests)
 $(DIR_BUILD_TEMP_TESTS)%$(EXT_O): _CC_EXTRA_FLAGS = -I $(DIR_XSCTEST_INC)
 $(DIR_BUILD_TEMP_TESTS)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
+	
+	$(call PRINT_FILE,$(_HOST_ARCH),"Compiling C file",$<)
+	$(call COMPILE_FILE,$<,$@)
+
+# Target: Object file (Example)
+$(DIR_BUILD_TEMP_EXAMPLE)%$(EXT_O): _CC_EXTRA_FLAGS = -I $(DIR_SRC_EXAMPLE)
+$(DIR_BUILD_TEMP_EXAMPLE)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
 	$(call PRINT_FILE,$(_HOST_ARCH),"Compiling C file",$<)
 	$(call COMPILE_FILE,$<,$@)

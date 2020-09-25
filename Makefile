@@ -54,3 +54,6 @@ FILES_C_TESTS += $(call GET_C_FILES, $(DIR_SRC_TESTS)Atomic/)
 FILES_C_TESTS += $(call GET_C_FILES, $(DIR_SRC_TESTS)Process/)
 FILES_C_TESTS += $(call GET_C_FILES, $(DIR_SRC_TESTS)SpinLock/)
 FILES_C_TESTS += $(call GET_C_FILES, $(DIR_SRC_TESTS)CString/)
+
+# Gets every C file in the source directories (Example)
+FILES_C_EXAMPLE += $(call GET_C_FILES, $(DIR_SRC_EXAMPLE))

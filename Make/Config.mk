@@ -59,10 +59,11 @@ DIR_BUILD := $(DIR)Build/Debug/
 endif
 
 # Relative build directories
-DIR_BUILD_PRODUCTS   := $(DIR_BUILD)Products/
-DIR_BUILD_TEMP       := $(DIR_BUILD)Intermediates/
-DIR_BUILD_TEMP_XS    := $(DIR_BUILD_TEMP)XSFoundation/
-DIR_BUILD_TEMP_TESTS := $(DIR_BUILD_TEMP)Unit-Tests/
+DIR_BUILD_PRODUCTS     := $(DIR_BUILD)Products/
+DIR_BUILD_TEMP         := $(DIR_BUILD)Intermediates/
+DIR_BUILD_TEMP_XS      := $(DIR_BUILD_TEMP)XSFoundation/
+DIR_BUILD_TEMP_TESTS   := $(DIR_BUILD_TEMP)Unit-Tests/
+DIR_BUILD_TEMP_EXAMPLE := $(DIR_BUILD_TEMP)Example/
 
 # Source directories
 DIR_INC           := $(DIR)XSFoundation/include/
@@ -70,6 +71,7 @@ DIR_SRC           := $(DIR)XSFoundation/source/
 DIR_SRC_FUNCTIONS := $(DIR_SRC)Functions/
 DIR_SRC_CLASSES   := $(DIR_SRC)Classes/
 DIR_SRC_TESTS     := $(DIR)Unit-Tests/
+DIR_SRC_EXAMPLE   := $(DIR)Example/
 
 # Other directories
 DIR_SUBMODULES    := $(DIR)Submodules/
@@ -94,6 +96,7 @@ vpath
 # Define the search paths for source files
 vpath %$(EXT_C) $(DIR_SRC)
 vpath %$(EXT_C) $(DIR_SRC_TESTS)
+vpath %$(EXT_C) $(DIR_SRC_EXAMPLE)
 
 #-------------------------------------------------------------------------------
 # File suffixes
@@ -136,16 +139,19 @@ endif
 GET_C_FILES = $(foreach dir,$(1), $(wildcard $(dir)*$(EXT_C)))
 
 # Gets only the file name of the C files
-_FILES_C_REL       = $(subst $(DIR_SRC),,$(FILES_C))
-_FILES_C_REL_TESTS = $(subst $(DIR_SRC_TESTS),,$(FILES_C_TESTS))
+_FILES_C_REL         = $(subst $(DIR_SRC),,$(FILES_C))
+_FILES_C_REL_TESTS   = $(subst $(DIR_SRC_TESTS),,$(FILES_C_TESTS))
+_FILES_C_REL_EXAMPLE = $(subst $(DIR_SRC_EXAMPLE),,$(FILES_C_EXAMPLE))
 
 # Replace the code extension by the object one
-_FILES_C_OBJ       = $(subst $(EXT_C),$(EXT_O),$(_FILES_C_REL))
-_FILES_C_OBJ_TESTS = $(subst $(EXT_C),$(EXT_O),$(_FILES_C_REL_TESTS))
+_FILES_C_OBJ         = $(subst $(EXT_C),$(EXT_O),$(_FILES_C_REL))
+_FILES_C_OBJ_TESTS   = $(subst $(EXT_C),$(EXT_O),$(_FILES_C_REL_TESTS))
+_FILES_C_OBJ_EXAMPLE = $(subst $(EXT_C),$(EXT_O),$(_FILES_C_REL_EXAMPLE))
 
 # Prefix all object files with the build directory
-_FILES_C_BUILD       = $(addprefix $(DIR_BUILD_TEMP_XS),$(_FILES_C_OBJ))
-_FILES_C_BUILD_TESTS = $(addprefix $(DIR_BUILD_TEMP_TESTS),$(_FILES_C_OBJ_TESTS))
+_FILES_C_BUILD         = $(addprefix $(DIR_BUILD_TEMP_XS),$(_FILES_C_OBJ))
+_FILES_C_BUILD_TESTS   = $(addprefix $(DIR_BUILD_TEMP_TESTS),$(_FILES_C_OBJ_TESTS))
+_FILES_C_BUILD_EXAMPLE = $(addprefix $(DIR_BUILD_TEMP_EXAMPLE),$(_FILES_C_OBJ_EXAMPLE))
 
 #-------------------------------------------------------------------------------
 # Commands configuration
@@ -281,8 +287,7 @@ PRINT_ARCH = $(call PRINT_BUILD,,$(2) [ $(COLOR_RED)$(1)$(COLOR_NONE) ])
 # @param    The message
 # @param    The file
 # 
-#PRINT_FILE = $(call PRINT_ARCH,$(1),$(2)): $(COLOR_YELLOW)$(patsubst %.,%,$(subst /,.,$(dir $(patsubst $(DIR_SRC)%,%,$3))))$(COLOR_NONE).$(COLOR_GRAY)"$(notdir $(3))"$(COLOR_NONE)
-PRINT_FILE = $(call PRINT_ARCH,$(1),$(2)): $(COLOR_YELLOW)$(subst .$(COLOR_NONE).,,$(patsubst %.,%,$(subst /,.,$(dir $(patsubst $(DIR_SRC_TESTS)%,%,$(patsubst $(DIR_SRC)%,%,$3)))))$(COLOR_NONE).)$(COLOR_GRAY)"$(notdir $(3))"$(COLOR_NONE)
+PRINT_FILE = $(call PRINT_ARCH,$(1),$(2)): $(COLOR_YELLOW)$(subst .$(COLOR_NONE).,,$(patsubst %.,%,$(subst /,.,$(dir $(patsubst $(DIR_SRC_TEST)%,%,$(patsubst $(DIR_SRC_EXAMPLE)%,%,$(patsubst $(DIR_SRC)%,%,$3))))))$(COLOR_NONE).)$(COLOR_GRAY)"$(notdir $(3))"$(COLOR_NONE)
 
 #-------------------------------------------------------------------------------
 # Miscellaneous
