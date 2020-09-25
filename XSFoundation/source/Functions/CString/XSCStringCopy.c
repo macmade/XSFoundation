@@ -23,31 +23,44 @@
  ******************************************************************************/
 
 /*!
- * @header      XS.h
+ * @file        XSCStringCopy.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Definition for XSCStringCopy
  */
 
-#ifndef XS_H
-#define XS_H
+#include <XS/XS.h>
+#include <string.h>
 
-/* Base */
-#include <XS/Macros.h>
-#include <XS/Types.h>
+bool XSCStringCopy( char * buf, size_t size, const char * str, size_t count )
+{
+    if( buf == NULL || size == 0 )
+    {
+        return false;
+    }
 
-/* Functions */
-#include <XS/Functions/Atomic.h>
-#include <XS/Functions/Memory.h>
-#include <XS/Functions/Runtime.h>
-#include <XS/Functions/Log.h>
-#include <XS/Functions/Sleep.h>
-#include <XS/Functions/SpinLock.h>
-#include <XS/Functions/Threading.h>
-#include <XS/Functions/Process.h>
-#include <XS/Functions/CString.h>
+    memset( buf, 0, size );
 
-#endif /* XS_H */
+    if( str == NULL )
+    {
+        return true;
+    }
+
+    if( count == 0 )
+    {
+        count = strlen( str );
+    }
+
+    if( size < count + 1 )
+    {
+        return false;
+    }
+
+#ifdef _WIN32
+    strncpy_s( buf, size, str, count );
+#else
+    strncpy( buf, str, count );
+#endif
+
+    return true;
+}

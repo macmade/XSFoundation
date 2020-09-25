@@ -23,31 +23,37 @@
  ******************************************************************************/
 
 /*!
- * @header      XS.h
+ * @header      String.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    CS string functions
  */
 
-#ifndef XS_H
-#define XS_H
+#ifndef XS_FUNCTIONS_STRING_H
+#define XS_FUNCTIONS_STRING_H
 
-/* Base */
 #include <XS/Macros.h>
-#include <XS/Types.h>
+#include <stdbool.h>
+#include <stddef.h>
 
-/* Functions */
-#include <XS/Functions/Atomic.h>
-#include <XS/Functions/Memory.h>
-#include <XS/Functions/Runtime.h>
-#include <XS/Functions/Log.h>
-#include <XS/Functions/Sleep.h>
-#include <XS/Functions/SpinLock.h>
-#include <XS/Functions/Threading.h>
-#include <XS/Functions/Process.h>
-#include <XS/Functions/CString.h>
+XS_EXTERN_C_BEGIN
 
-#endif /* XS_H */
+/*!
+ * @function    XSCStringCopy
+ * @abstract    Copies a null-terminated C string into a buffer
+ * @param       buf     The buffer in which to copy the string
+ * @param       size    The size of the buffer, in bytes
+ * @param       str     The string to copy
+ * @param       count   The number of bytes to copy, or 0 for the whole string
+ * @return      True if the string was copied, otherwise false
+ * @discussion  This function will attempt to copy `count` bytes from `str`
+ *              into `buf`, assuming there is enough room for it, including
+ *              the termination character.
+ *              The destination buffer will be zero-initialized whether or not
+ *              the string is copied.
+ */
+XS_EXPORT bool XSCStringCopy( char * buf, size_t size, const char * str, size_t count );
+
+XS_EXTERN_C_END
+
+#endif /* XS_FUNCTIONS_STRING_H */
