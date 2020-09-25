@@ -33,5 +33,9 @@
 
 Test( Process, XSGetCurrentProcessName )
 {
+#ifdef _WIN32
+    AssertStringEqual( XSGetCurrentProcessName(), "XSFoundation-Test.exe" );
+#else
     AssertStringEqual( XSGetCurrentProcessName(), "XSFoundation-Test" );
+#endif
 }
