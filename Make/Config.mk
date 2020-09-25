@@ -220,9 +220,9 @@ endif
 # @param    The libraries to link with (if any)
 # 
 ifdef _OS_CYGWIN
-CREATE_EXEC = @Make/link.bat /NOLOGO /WX /OUT:$(call _WIN_PATH,$1) $(addprefix /LIBPATH:,$(foreach _L,$3,$(call _WIN_PATH,$(abspath $(_L))))) $(foreach _F,$2,$(call _WIN_PATH,$(_F))) $(_LIB) $(addsuffix $(EXT_LIB),$4)
+CREATE_EXEC = @$(_CC) /Fe$(call _WIN_PATH,$1) $(foreach _F,$(abspath $2),$(call _WIN_PATH,$(_F))) /link $(addprefix /LIBPATH:,$(foreach _L,$3,$(call _WIN_PATH,$(abspath $(_L))))) $(_LIB) $(addsuffix $(EXT_LIB),$4)
 else
-CREATE_EXEC = @$(_CC) -o $1 $2 $(foreach _L,$3,$(addprefix -L,$(_L))) $(foreach _L,$4,$(addprefix -l,$(_L)))
+CREATE_EXEC = @$(_CC) -o $1 $(abspath $2) $(foreach _L,$3,$(addprefix -L,$(_L))) $(foreach _L,$4,$(addprefix -l,$(_L)))
 endif
 
 #-------------------------------------------------------------------------------

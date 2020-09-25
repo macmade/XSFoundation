@@ -136,7 +136,7 @@ test_release:
 	@$(MAKE) -s test_build test_run
 	
 # Example executable
-example_exec: _EXEC = $(DIR_BUILD_PRODUCTS)example
+example_exec: _EXEC = $(DIR_BUILD_PRODUCTS)example$(EXT_EXE)
 example_exec: lib
 
 	$(call PRINT_ARCH,$(_HOST_ARCH),"Compiling and linking example"): $(COLOR_BLUE)$(notdir $(_EXEC))$(COLOR_NONE)
@@ -170,7 +170,7 @@ lib: $$(_FILES_C_BUILD)
 	$(call PRINT_ARCH,$(_HOST_ARCH),"Creating static library"): $(COLOR_BLUE)$(notdir $(_LIB))$(COLOR_NONE)
 	$(call CREATE_STATIC_LIB,$(_LIB),$(_FILES_C_BUILD))
 
-test_build: _EXEC = $(DIR_BUILD_PRODUCTS)XSFoundation-Test
+test_build: _EXEC = $(DIR_BUILD_PRODUCTS)XSFoundation-Test$(EXT_EXE)
 test_build: lib xsctest $$(_FILES_C_BUILD_TESTS)
 	
 	$(call PRINT_ARCH,$(_HOST_ARCH),"Linking unit-tests"): $(COLOR_BLUE)$(notdir $(_EXEC))$(COLOR_NONE)
