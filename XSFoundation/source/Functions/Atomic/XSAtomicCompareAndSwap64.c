@@ -67,6 +67,16 @@ bool XSAtomicCompareAndSwap64( int64_t oldValue, int64_t newValue, volatile int6
     return OSAtomicCompareAndSwap64Barrier( oldValue, newValue, value );
 }
 
+#elif defined( __linux )
+
+/* Linux */
+bool XSAtomicCompareAndSwap64( int64_t oldValue, int64_t newValue, volatile int64_t * value )
+{
+    int64_t old = oldValue;
+
+    return __atomic_compare_exchange( value, &old, &newValue, false, __ATOMIC_ACQ_REL, __ATOMIC_RELEASE );
+}
+
 #else
 
 #error "Platform not implemented"

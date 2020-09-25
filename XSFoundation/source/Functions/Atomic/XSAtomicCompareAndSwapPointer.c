@@ -67,6 +67,16 @@ bool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * vol
     return OSAtomicCompareAndSwapPtrBarrier( oldValue, newValue, value );
 }
 
+#elif defined( __linux )
+
+/* Linux */
+bool XSAtomicCompareAndSwapPointer( void * oldValue, void * newValue, void * volatile * value )
+{
+    void * old = oldValue;
+
+    return __atomic_compare_exchange( value, &old, &newValue, false, __ATOMIC_ACQ_REL, __ATOMIC_RELEASE );
+}
+
 #else
 
 #error "Platform not implemented"

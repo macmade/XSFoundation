@@ -67,6 +67,14 @@ int32_t XSAtomicDecrement32( volatile int32_t * value )
     return OSAtomicDecrement32Barrier( value );
 }
 
+#elif defined( __linux )
+
+/* Linux */
+int32_t XSAtomicDecrement32( volatile int32_t * value )
+{
+    return __atomic_sub_fetch( value, 1, __ATOMIC_ACQ_REL );
+}
+
 #else
 
 #error "Platform not implemented"

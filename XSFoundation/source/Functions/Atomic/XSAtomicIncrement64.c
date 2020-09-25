@@ -67,6 +67,14 @@ int64_t XSAtomicIncrement64( volatile int64_t * value )
     return OSAtomicIncrement64Barrier( value );
 }
 
+#elif defined( __linux )
+
+/* Linux */
+int64_t XSAtomicIncrement64( volatile int64_t * value )
+{
+    return __atomic_add_fetch( value, 1, __ATOMIC_ACQ_REL );
+}
+
 #else
 
 #error "Platform not implemented"

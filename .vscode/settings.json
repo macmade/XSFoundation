@@ -28,6 +28,19 @@
         "unordered_map": "c",
         "utility": "c",
         "vector": "c",
-        "__bit_reference": "c"
+        "__bit_reference": "c",
+        "__functional_base": "c",
+        "__functional_base_03": "c",
+        "__tuple": "c",
+        "type_traits": "c",
+        "functional": "c",
+        "memory": "c",
+        "tuple": "c",
+        "__node_handle": "c",
+        "atomic": "c",
+        "__memory": "c",
+        "locale": "c",
+        "optional": "c",
+        "system_error": "c"
     }
 }

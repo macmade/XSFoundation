@@ -67,6 +67,14 @@ int32_t XSAtomicAdd32( int32_t amount, volatile int32_t * value )
     return OSAtomicAdd32Barrier( amount, value );
 }
 
+#elif defined( __linux )
+
+/* Linux */
+int32_t XSAtomicAdd32( int32_t amount, volatile int32_t * value )
+{
+    return __atomic_add_fetch( value, amount, __ATOMIC_ACQ_REL );
+}
+
 #else
 
 #error "Platform not implemented"
