@@ -56,13 +56,6 @@ XS_EXPORT void XSSleepSeconds( unsigned int secs );
  */
 XS_EXPORT void XSSleepMilliseconds( unsigned int msecs );
 
-/*!
- * @function    XSSleepMicroseconds
- * @abstract    Requests the calling thread to be suspended for a number of microseconds
- * @param       usecs   The number of microseconds to sleep
- */
-XS_EXPORT void XSSleepMicroseconds( unsigned int usecs );
-
 XS_EXTERN_C_END
 
 #endif /* XS_FUNCTIONS_SLEEP_H */

@@ -31,7 +31,25 @@
 
 #include <XS/XS.h>
 
+#ifdef _WIN32
+
+#pragma warning( push )
+#pragma warning( disable: 5105 )
+#include <Windows.h>
+#pragma warning( pop )
+
 void XSSleepMilliseconds( unsigned int msecs )
 {
-    XSSleepMicroseconds( msecs * 1000 );
+    Sleep( usecs );
 }
+
+#else
+
+#include <unistd.h>
+
+void XSSleepMilliseconds( unsigned int msecs )
+{
+    usleep( msecs * 1000 );
+}
+
+#endif

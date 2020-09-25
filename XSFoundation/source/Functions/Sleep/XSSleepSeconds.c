@@ -33,5 +33,5 @@
 
 void XSSleepSeconds( unsigned int secs )
 {
-    XSSleepMicroseconds( secs * 1000 * 1000 );
+    XSSleepMilliseconds( secs * 1000 );
 }
