@@ -40,7 +40,7 @@
 
 void XSSleepMilliseconds( unsigned int msecs )
 {
-    Sleep( usecs );
+    Sleep( msecs );
 }
 
 #else
