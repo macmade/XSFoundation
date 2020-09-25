@@ -160,37 +160,37 @@ xsctest:
 lib: _LIB = $(DIR_BUILD_PRODUCTS)$(PREFIX_LIB)$(PRODUCT)$(EXT_LIB)
 lib: $$(_FILES_C_BUILD)
 	
-	$(call PRINT_ARCH,$(_HOST_ARCH),"Creating static library"): $(COLOR_BLUE)$(notdir $(_LIB))$(COLOR_NONE)
+	$(call PRINT_ARCH,$(_HOST_ARCH),Creating static library,: $(COLOR_BLUE)$(notdir $(_LIB))$(COLOR_NONE))
 	$(call CREATE_STATIC_LIB,$(_LIB),$(_FILES_C_BUILD))
 
 test_build: _EXEC = $(DIR_BUILD_PRODUCTS)XSFoundation-Test$(EXT_EXE)
 test_build: lib xsctest $$(_FILES_C_BUILD_TESTS)
 	
-	$(call PRINT_ARCH,$(_HOST_ARCH),"Linking unit-tests"): $(COLOR_BLUE)$(notdir $(_EXEC))$(COLOR_NONE)
+	$(call PRINT_ARCH,$(_HOST_ARCH),Linking unit-tests,: $(COLOR_BLUE)$(notdir $(_EXEC))$(COLOR_NONE))
 	$(call CREATE_EXEC,$(_EXEC),$(_FILES_C_BUILD_TESTS),$(DIR_BUILD_PRODUCTS) $(DIR_XSCTEST_BUILD),$(PRODUCT) xsctest $(_EXTRA_LIBS))
 
 example_build: _EXEC = $(DIR_BUILD_PRODUCTS)example$(EXT_EXE)
 example_build: lib $$(_FILES_C_BUILD_EXAMPLE)
 	
-	$(call PRINT_ARCH,$(_HOST_ARCH),"Linking example"): $(COLOR_BLUE)$(notdir $(_EXEC))$(COLOR_NONE)
+	$(call PRINT_ARCH,$(_HOST_ARCH),Linking example,: $(COLOR_BLUE)$(notdir $(_EXEC))$(COLOR_NONE))
 	$(call CREATE_EXEC,$(_EXEC),$(_FILES_C_BUILD_EXAMPLE),$(DIR_BUILD_PRODUCTS),$(PRODUCT) $(_EXTRA_LIBS))
 
 # Target: Object file (XSFoundation)
 $(DIR_BUILD_TEMP_XS)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
-	$(call PRINT_FILE,$(_HOST_ARCH),"Compiling C file",$<)
+	$(call PRINT_FILE,$(_HOST_ARCH),Compiling C file,$<)
 	$(call COMPILE_FILE,$<,$@)
 
 # Target: Object file (Unit-Tests)
 $(DIR_BUILD_TEMP_TESTS)%$(EXT_O): _CC_EXTRA_FLAGS = -I $(DIR_XSCTEST_INC)
 $(DIR_BUILD_TEMP_TESTS)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
-	$(call PRINT_FILE,$(_HOST_ARCH),"Compiling C file",$<)
+	$(call PRINT_FILE,$(_HOST_ARCH),Compiling C file,$<)
 	$(call COMPILE_FILE,$<,$@)
 
 # Target: Object file (Example)
 $(DIR_BUILD_TEMP_EXAMPLE)%$(EXT_O): _CC_EXTRA_FLAGS = -I $(DIR_SRC_EXAMPLE)
 $(DIR_BUILD_TEMP_EXAMPLE)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
 	
-	$(call PRINT_FILE,$(_HOST_ARCH),"Compiling C file",$<)
+	$(call PRINT_FILE,$(_HOST_ARCH),Compiling C file,$<)
 	$(call COMPILE_FILE,$<,$@)

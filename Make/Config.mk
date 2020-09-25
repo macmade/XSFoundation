@@ -245,14 +245,14 @@ endif
 #-------------------------------------------------------------------------------
 
 # Terminal colors
-COLOR_NONE   := "\033[0m"
-COLOR_GRAY   := "\033[30;01m"
-COLOR_RED    := "\033[31;01m"
-COLOR_GREEN  := "\033[32;01m"
-COLOR_YELLOW := "\033[33;01m"
-COLOR_BLUE   := "\033[34;01m"
-COLOR_PURPLE := "\033[35;01m"
-COLOR_CYAN   := "\033[36;01m"
+COLOR_NONE   := \033[0m
+COLOR_GRAY   := \033[30;01m
+COLOR_RED    := \033[31;01m
+COLOR_GREEN  := \033[32;01m
+COLOR_YELLOW := \033[33;01m
+COLOR_BLUE   := \033[34;01m
+COLOR_PURPLE := \033[35;01m
+COLOR_CYAN   := \033[36;01m
 
 # Platform specific
 ifdef _OS_CYGWIN
@@ -267,7 +267,7 @@ endif
 # @param    The prompt components
 # @param    The message
 # 
-PRINT = @echo $(_ECHO_ARGS) "[ "$(COLOR_CYAN)XSFoundation$(COLOR_NONE) "]> [ "$(COLOR_PURPLE)$(MAKELEVEL)$(COLOR_NONE) "]> "$(foreach _P,$(_BRANCH) $(1),"[ "$(COLOR_GREEN)$(_P)$(COLOR_NONE)" ]>")" *** "$(2)
+PRINT = @printf "[ $(COLOR_CYAN)XSFoundation$(COLOR_NONE) ]> [ $(COLOR_PURPLE)$(MAKELEVEL)$(COLOR_NONE) ]> $(foreach _P,$(_BRANCH) $(1),[ $(COLOR_GREEN)$(_P)$(COLOR_NONE) ]>) *** $(2)\n"
 
 # 
 # Prints a message to the standard output
@@ -286,8 +286,9 @@ endif
 # 
 # @param    The architecture
 # @param    The message
+# @param    An optional message to  print after the architecture
 # 
-PRINT_ARCH = $(call PRINT_BUILD,,$(2) [ $(COLOR_RED)$(1)$(COLOR_NONE) ])
+PRINT_ARCH = $(call PRINT_BUILD,,$(2) [ $(COLOR_RED)$(1)$(COLOR_NONE) ]$3)
 
 # 
 # Prints an architecture related message about a file to the standard output
@@ -296,7 +297,7 @@ PRINT_ARCH = $(call PRINT_BUILD,,$(2) [ $(COLOR_RED)$(1)$(COLOR_NONE) ])
 # @param    The message
 # @param    The file
 # 
-PRINT_FILE = $(call PRINT_ARCH,$(1),$(2)): $(COLOR_YELLOW)$(subst .$(COLOR_NONE).,,$(patsubst %.,%,$(subst /,.,$(dir $(patsubst $(DIR_SRC_TESTS)%,%,$(patsubst $(DIR_SRC_EXAMPLE)%,%,$(patsubst $(DIR_SRC)%,%,$3))))))$(COLOR_NONE).)$(COLOR_GRAY)"$(notdir $(3))"$(COLOR_NONE)
+PRINT_FILE = $(call PRINT_ARCH,$(1),$(2),: $(COLOR_YELLOW)$(subst .$(COLOR_NONE).,,$(patsubst %.,%,$(subst /,.,$(dir $(patsubst $(DIR_SRC_TESTS)%,%,$(patsubst $(DIR_SRC_EXAMPLE)%,%,$(patsubst $(DIR_SRC)%,%,$3))))))$(COLOR_NONE).)$(COLOR_GRAY)$(notdir $(3))$(COLOR_NONE))
 
 #-------------------------------------------------------------------------------
 # Miscellaneous
