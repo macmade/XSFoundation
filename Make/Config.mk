@@ -68,8 +68,6 @@ DIR_BUILD_TEMP_EXAMPLE := $(DIR_BUILD_TEMP)Example/
 # Source directories
 DIR_INC           := $(DIR)XSFoundation/include/
 DIR_SRC           := $(DIR)XSFoundation/source/
-DIR_SRC_FUNCTIONS := $(DIR_SRC)Functions/
-DIR_SRC_CLASSES   := $(DIR_SRC)Classes/
 DIR_SRC_TESTS     := $(DIR)Unit-Tests/
 DIR_SRC_EXAMPLE   := $(DIR)Example/
 
