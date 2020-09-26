@@ -33,6 +33,7 @@
 #include <XS/Private/Functions/Memory.h>
 #include <XS/Private/Functions/Runtime.h>
 #include <string.h>
+#include <stdlib.h>
 
 void * XSCopyWithInfos( const void * memory, const char * file, int line, const char * func )
 {
@@ -53,6 +54,11 @@ void * XSCopyWithInfos( const void * memory, const char * file, int line, const 
 
     data = XSAllocWithInfos( object->size, object->classID, file, line, func );
 
+    if( data == NULL )
+    {
+        XSFatalError( "Cannot allocate memory" );
+    }
+
     if( XSRuntimeIsRegisteredClass( object->classID ) == false )
     {
         memcpy( data, memory, object->size );
@@ -68,7 +74,7 @@ void * XSCopyWithInfos( const void * memory, const char * file, int line, const 
 
         if( copiedData == NULL )
         {
-            XSRelease( data );
+            free( XSGetMemoryObject( data ) );
 
             data = NULL;
         }
