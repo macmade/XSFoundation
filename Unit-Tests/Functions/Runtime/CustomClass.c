@@ -69,7 +69,7 @@ Test( Runtime, CustomClass )
 
     AssertGreater( classID, 0 );
     AssertEqual( XSRuntimeGetClassIDOfClassNamed( "Foo" ), classID );
-    AssertEqual( XSRuntimeGetClassType( classID ), XSClassTypeNormal );
+    AssertTrue( XSRuntimeGetClassType( classID ) == XSClassTypeNormal );
     AssertStringEqual( XSRuntimeGetClassName( classID ), "Foo" );
 
     {
