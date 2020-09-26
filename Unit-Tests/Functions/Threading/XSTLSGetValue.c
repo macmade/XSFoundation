@@ -23,29 +23,54 @@
  ******************************************************************************/
 
 /*!
- * @header      Types.h
+ * @file        XSTLSGetValue.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
  */
 
-#ifndef XS_TYPES_H
-#define XS_TYPES_H
+#include <XSCTest/XSCTest.h>
+#include <XS/XS.h>
 
-#include <XS/Types/XSClassID.h>
-#include <XS/Types/XSClassType.h>
-#include <XS/Types/XSObjectRef.h>
-#include <XS/Types/XSMutableObjectRef.h>
-#include <XS/Types/XSClassCallbackConstructor.h>
-#include <XS/Types/XSClassCallbackDestructor.h>
-#include <XS/Types/XSClassCallbackCopy.h>
-#include <XS/Types/XSClassCallbackEquals.h>
-#include <XS/Types/XSClassCallbackToString.h>
-#include <XS/Types/XSClassInfo.h>
-#include <XS/Types/XSInitStatus.h>
-#include <XS/Types/XSLogLevel.h>
-#include <XS/Types/XSSpinLock.h>
-#include <XS/Types/XSObjectAssociation.h>
-#include <XS/Types/XSTLSKey.h>
+Test( Threading, XSTLSGetValue )
+{
+    XSTLSKey key1;
+    XSTLSKey key2;
+    int      x;
+    int      y;
 
-#endif /* XS_TYPES_H */
+    x = 42;
+    y = 43;
+
+    AssertTrue( XSTLSKeyCreate( &key1 ) );
+    AssertTrue( XSTLSKeyCreate( &key2 ) );
+
+    AssertTrue( XSTLSGetValue( &key1 ) == NULL );
+    AssertTrue( XSTLSGetValue( &key2 ) == NULL );
+
+    XSTLSSetValue( &key1, &x, XSObjectAssociationAssign );
+    XSTLSSetValue( &key2, &y, XSObjectAssociationAssign );
+
+    AssertTrue( XSTLSGetValue( &key1 ) != NULL );
+    AssertTrue( XSTLSGetValue( &key2 ) != NULL );
+    AssertEqual( *( ( int * )XSTLSGetValue( &key1 ) ), x );
+    AssertEqual( *( ( int * )XSTLSGetValue( &key2 ) ), y );
+
+    XSTLSSetValue( &key1, &y, XSObjectAssociationAssign );
+    XSTLSSetValue( &key2, &x, XSObjectAssociationAssign );
+
+    AssertTrue( XSTLSGetValue( &key1 ) != NULL );
+    AssertTrue( XSTLSGetValue( &key2 ) != NULL );
+    AssertEqual( *( ( int * )XSTLSGetValue( &key1 ) ), y );
+    AssertEqual( *( ( int * )XSTLSGetValue( &key2 ) ), x );
+
+    XSTLSKeyDelete( &key1 );
+    XSTLSKeyDelete( &key2 );
+
+    AssertTrue( XSTLSGetValue( &key1 ) == NULL );
+    AssertTrue( XSTLSGetValue( &key2 ) == NULL );
+}
+
+Test( Threading, XSTLSGetValue_Null )
+{
+    AssertTrue( XSTLSGetValue( NULL ) == NULL );
+}

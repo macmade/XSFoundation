@@ -58,6 +58,7 @@ FILES_C_TESTS += $(call GET_C_FILES, $(DIR_SRC_TESTS)Functions/SpinLock/)
 FILES_C_TESTS += $(call GET_C_FILES, $(DIR_SRC_TESTS)Functions/CString/)
 FILES_C_TESTS += $(call GET_C_FILES, $(DIR_SRC_TESTS)Functions/Memory/)
 FILES_C_TESTS += $(call GET_C_FILES, $(DIR_SRC_TESTS)Functions/Runtime/)
+FILES_C_TESTS += $(call GET_C_FILES, $(DIR_SRC_TESTS)Functions/Threading/)
 
 # Gets every C file in the source directories (Example)
 FILES_C_EXAMPLE += $(call GET_C_FILES, $(DIR_SRC_EXAMPLE))

@@ -23,29 +23,22 @@
  ******************************************************************************/
 
 /*!
- * @header      Types.h
+ * @file        XSTLSKeyCreate.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
  */
 
-#ifndef XS_TYPES_H
-#define XS_TYPES_H
+#include <XSCTest/XSCTest.h>
+#include <XS/XS.h>
 
-#include <XS/Types/XSClassID.h>
-#include <XS/Types/XSClassType.h>
-#include <XS/Types/XSObjectRef.h>
-#include <XS/Types/XSMutableObjectRef.h>
-#include <XS/Types/XSClassCallbackConstructor.h>
-#include <XS/Types/XSClassCallbackDestructor.h>
-#include <XS/Types/XSClassCallbackCopy.h>
-#include <XS/Types/XSClassCallbackEquals.h>
-#include <XS/Types/XSClassCallbackToString.h>
-#include <XS/Types/XSClassInfo.h>
-#include <XS/Types/XSInitStatus.h>
-#include <XS/Types/XSLogLevel.h>
-#include <XS/Types/XSSpinLock.h>
-#include <XS/Types/XSObjectAssociation.h>
-#include <XS/Types/XSTLSKey.h>
+Test( Threading, XSTLSKeyCreate )
+{
+    XSTLSKey key1;
+    XSTLSKey key2;
 
-#endif /* XS_TYPES_H */
+    AssertTrue( XSTLSKeyCreate( &key1 ) );
+    AssertTrue( XSTLSKeyCreate( &key2 ) );
+
+    XSTLSKeyDelete( &key1 );
+    XSTLSKeyDelete( &key2 );
+}

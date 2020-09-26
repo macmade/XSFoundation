@@ -44,6 +44,39 @@ XS_EXTERN_C_BEGIN
  */
 XS_EXPORT uint64_t XSGetCurrentThreadID( void );
 
+/*!
+ * @function    XSTLSKeyCreate
+ * @abstract    Creates a TLS key
+ * @param       key     A pointer to an uninitialized TLS key
+ * @return      True if the key was successfully created, otherwise false
+ */
+bool XSTLSKeyCreate( XSTLSKey * key );
+
+/*!
+ * @function    XSTLSKeyDelete
+ * @abstract    Deletes a TLS key
+ * @param       key     A pointer to the TLS key to delete
+ */
+void XSTLSKeyDelete( XSTLSKey * key );
+
+/*!
+ * @function    XSTLSGetValue
+ * @abstract    Gets the value associated with a TLS key
+ * @param       key     The TLS key
+ * @return      The associated value
+ */
+void * XSTLSGetValue( XSTLSKey * key );
+
+/*!
+ * @function    XSTLSSetValue
+ * @abstract    Sets the value associated with a TLS key
+ * @param       key             The TLS key
+ * @param       value           The value to set
+ * @param       association     The association type to use
+ * @see         XSObjectAssociation
+ */
+void XSTLSSetValue( XSTLSKey * key, void * value, XSObjectAssociation association );
+
 XS_EXTERN_C_END
 
 #endif /* XS_FUNCTIONS_THREADING_H */

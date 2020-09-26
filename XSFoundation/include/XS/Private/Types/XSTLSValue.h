@@ -23,29 +23,39 @@
  ******************************************************************************/
 
 /*!
- * @header      Types.h
+ * @header      XSTLSValue.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    XSTLSValue type definition
  */
 
-#ifndef XS_TYPES_H
-#define XS_TYPES_H
+#ifndef XS_PRIVATE_TYPES_XS_TLS_VALUE_H
+#define XS_PRIVATE_TYPES_XS_TLS_VALUE_H
 
-#include <XS/Types/XSClassID.h>
-#include <XS/Types/XSClassType.h>
-#include <XS/Types/XSObjectRef.h>
-#include <XS/Types/XSMutableObjectRef.h>
-#include <XS/Types/XSClassCallbackConstructor.h>
-#include <XS/Types/XSClassCallbackDestructor.h>
-#include <XS/Types/XSClassCallbackCopy.h>
-#include <XS/Types/XSClassCallbackEquals.h>
-#include <XS/Types/XSClassCallbackToString.h>
-#include <XS/Types/XSClassInfo.h>
-#include <XS/Types/XSInitStatus.h>
-#include <XS/Types/XSLogLevel.h>
-#include <XS/Types/XSSpinLock.h>
-#include <XS/Types/XSObjectAssociation.h>
-#include <XS/Types/XSTLSKey.h>
+#include <XS/Macros.h>
+#include <XS/Types.h>
 
-#endif /* XS_TYPES_H */
+XS_EXTERN_C_BEGIN
+
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wpadded"
+#endif
+
+/*!
+ * @struct      XSTLSValue
+ * @abstract    TLS value container
+ */
+struct XSTLSValue
+{
+    void *              value;       /*! The TLS value */
+    XSObjectAssociation association; /*! The TLS association */
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+
+XS_EXTERN_C_END
+
+#endif /* XS_PRIVATE_TYPES_XS_TLS_VALUE_H */

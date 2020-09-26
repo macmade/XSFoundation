@@ -23,29 +23,31 @@
  ******************************************************************************/
 
 /*!
- * @header      Types.h
+ * @file        XSTLSKeyDelete.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    Definition for XSTLSKeyDelete
  */
 
-#ifndef XS_TYPES_H
-#define XS_TYPES_H
+#include <XS/XS.h>
 
-#include <XS/Types/XSClassID.h>
-#include <XS/Types/XSClassType.h>
-#include <XS/Types/XSObjectRef.h>
-#include <XS/Types/XSMutableObjectRef.h>
-#include <XS/Types/XSClassCallbackConstructor.h>
-#include <XS/Types/XSClassCallbackDestructor.h>
-#include <XS/Types/XSClassCallbackCopy.h>
-#include <XS/Types/XSClassCallbackEquals.h>
-#include <XS/Types/XSClassCallbackToString.h>
-#include <XS/Types/XSClassInfo.h>
-#include <XS/Types/XSInitStatus.h>
-#include <XS/Types/XSLogLevel.h>
-#include <XS/Types/XSSpinLock.h>
-#include <XS/Types/XSObjectAssociation.h>
-#include <XS/Types/XSTLSKey.h>
+#ifdef _WIN32
+#include <XS/Private/Windows.h>
+#else
+#include <pthread.h>
 
-#endif /* XS_TYPES_H */
+#endif
+
+void XSTLSKeyDelete( XSTLSKey * key )
+{
+    if( key == NULL )
+    {
+        return;
+    }
+
+#ifdef _WIN32
+    TlsFree( *( key ) );
+#else
+    pthread_key_delete( *( key ) );
+#endif
+}

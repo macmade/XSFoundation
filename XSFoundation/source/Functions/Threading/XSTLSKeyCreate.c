@@ -23,29 +23,36 @@
  ******************************************************************************/
 
 /*!
- * @header      Types.h
+ * @file        XSTLSKeyCreate.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    Definition for XSTLSKeyCreate
  */
 
-#ifndef XS_TYPES_H
-#define XS_TYPES_H
+#include <XS/XS.h>
 
-#include <XS/Types/XSClassID.h>
-#include <XS/Types/XSClassType.h>
-#include <XS/Types/XSObjectRef.h>
-#include <XS/Types/XSMutableObjectRef.h>
-#include <XS/Types/XSClassCallbackConstructor.h>
-#include <XS/Types/XSClassCallbackDestructor.h>
-#include <XS/Types/XSClassCallbackCopy.h>
-#include <XS/Types/XSClassCallbackEquals.h>
-#include <XS/Types/XSClassCallbackToString.h>
-#include <XS/Types/XSClassInfo.h>
-#include <XS/Types/XSInitStatus.h>
-#include <XS/Types/XSLogLevel.h>
-#include <XS/Types/XSSpinLock.h>
-#include <XS/Types/XSObjectAssociation.h>
-#include <XS/Types/XSTLSKey.h>
+#ifdef _WIN32
+#include <XS/Private/Windows.h>
+#else
+#include <pthread.h>
+#endif
 
-#endif /* XS_TYPES_H */
+bool XSTLSKeyCreate( XSTLSKey * key )
+{
+    if( key == NULL )
+    {
+        return false;
+    }
+
+#ifdef _WIN32
+
+    *( key ) = TlsAlloc();
+
+    return ( *( key ) == TLS_OUT_OF_INDEXES ) ? false : true;
+
+#else
+
+    return ( pthread_key_create( key, NULL ) == 0 ) ? true : false;
+
+#endif
+}
