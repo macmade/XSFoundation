@@ -48,3 +48,8 @@ Test( Memory, XSRetain )
     XSRelease( memory );
     XSRelease( memory );
 }
+
+Test( Memory, XSRetain_Null )
+{
+    AssertTrue( XSRetain( NULL ) == NULL );
+}

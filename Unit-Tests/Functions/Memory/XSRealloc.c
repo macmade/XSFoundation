@@ -74,3 +74,8 @@ Test( Memory, XSRealloc )
     XSRelease( memory );
     XSRelease( memory );
 }
+
+Test( Memory, XSRealloc_Null )
+{
+    AssertTrue( XSRealloc( NULL, 42 ) == NULL );
+}

@@ -36,7 +36,11 @@ Test( Memory, XSGetRetainCount )
     char * memory = XSAlloc( 10 );
 
     AssertEqual( XSGetRetainCount( memory ), 1 );
-    AssertEqual( XSGetRetainCount( NULL ), 0 );
 
     XSRelease( memory );
+}
+
+Test( Memory, XSGetRetainCount_Null )
+{
+    AssertEqual( XSGetRetainCount( NULL ), 0 );
 }

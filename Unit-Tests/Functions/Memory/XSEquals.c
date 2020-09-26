@@ -51,3 +51,14 @@ Test( Memory, XSEquals )
     XSRelease( mem1 );
     XSRelease( mem2 );
 }
+
+Test( Memory, XSEquals_Null )
+{
+    char * mem1 = XSAlloc( 10 );
+
+    AssertFalse( XSEquals( mem1, NULL ) );
+    AssertFalse( XSEquals( NULL, mem1 ) );
+    AssertFalse( XSEquals( NULL, NULL ) );
+
+    XSRelease( mem1 );
+}

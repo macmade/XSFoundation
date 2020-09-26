@@ -52,3 +52,9 @@ Test( Memory, XSRelease )
 
     XSRelease( memory );
 }
+
+Test( Memory, XSRelease_Null )
+{
+    XSRelease( NULL );
+    AssertTrue( true );
+}

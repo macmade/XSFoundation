@@ -61,3 +61,8 @@ Test( Memory, XSCopy )
     XSRelease( memory );
     XSRelease( memory );
 }
+
+Test( Memory, XSCopy_Null )
+{
+    AssertTrue( XSCopy( NULL ) == NULL );
+}

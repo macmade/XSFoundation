@@ -36,3 +36,9 @@ Test( Memory, XSAutorelease )
     // TODO
     AssertTrue( true );
 }
+
+Test( Memory, XSAutorelease_Null )
+{
+    // TODO
+    AssertTrue( true );
+}
