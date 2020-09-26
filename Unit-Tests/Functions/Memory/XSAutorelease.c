@@ -23,7 +23,7 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRetain.c
+ * @file        XSAutorelease.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  */
@@ -31,20 +31,8 @@
 #include <XSCTest/XSCTest.h>
 #include <XS/XS.h>
 
-Test( Memory, XSRetain )
+Test( Memory, XSAutorelease )
 {
-    char * memory = XSAlloc( 1024 );
-
-    AssertTrue( memory != NULL );
-    AssertEqual( XSGetRetainCount( memory ), 1 );
-
-    AssertTrue( XSRetain( memory ) == memory );
-    AssertEqual( XSGetRetainCount( memory ), 2 );
-
-    AssertTrue( XSRetain( memory ) == memory );
-    AssertEqual( XSGetRetainCount( memory ), 3 );
-
-    XSRelease( memory );
-    XSRelease( memory );
-    XSRelease( memory );
+    // TODO
+    AssertTrue( true );
 }

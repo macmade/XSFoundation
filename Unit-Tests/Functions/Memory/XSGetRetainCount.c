@@ -23,7 +23,7 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRetain.c
+ * @file        XSGetRetainCount.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
  */
@@ -31,20 +31,12 @@
 #include <XSCTest/XSCTest.h>
 #include <XS/XS.h>
 
-Test( Memory, XSRetain )
+Test( Memory, XSGetRetainCount )
 {
-    char * memory = XSAlloc( 1024 );
+    char * memory = XSAlloc( 10 );
 
-    AssertTrue( memory != NULL );
     AssertEqual( XSGetRetainCount( memory ), 1 );
+    AssertEqual( XSGetRetainCount( NULL ), 0 );
 
-    AssertTrue( XSRetain( memory ) == memory );
-    AssertEqual( XSGetRetainCount( memory ), 2 );
-
-    AssertTrue( XSRetain( memory ) == memory );
-    AssertEqual( XSGetRetainCount( memory ), 3 );
-
-    XSRelease( memory );
-    XSRelease( memory );
     XSRelease( memory );
 }
