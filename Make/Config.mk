@@ -93,11 +93,6 @@ endif
 VPATH =
 vpath
 
-# Define the search paths for source files
-#vpath %$(EXT_C) $(DIR_SRC)
-#vpath %$(EXT_C) $(DIR_SRC_TESTS)
-#vpath %$(EXT_C) $(DIR_SRC_EXAMPLE)
-
 #-------------------------------------------------------------------------------
 # File suffixes
 #-------------------------------------------------------------------------------
@@ -290,7 +285,7 @@ PRINT_ARCH = $(call PRINT_BUILD,,$2 [ $(COLOR_RED)$1$(COLOR_NONE) ]$3)
 # @param    The message
 # @param    The file
 # 
-PRINT_FILE = $(call PRINT_ARCH,$1,$2,: $(COLOR_YELLOW)$(subst .$(COLOR_NONE).,,$(patsubst %.,%,$(subst /,.,$(dir $3)))$(COLOR_NONE).)$(COLOR_GRAY)$(notdir $3)$(COLOR_NONE))
+PRINT_FILE = $(call PRINT_ARCH,$1,$2,: $(COLOR_YELLOW)$(subst .$(COLOR_NONE).,,$(subst .source.,.,$(patsubst %.,%,$(subst /,.,$(dir $3))))$(COLOR_NONE).)$(COLOR_GRAY)$(notdir $3)$(COLOR_NONE))
 
 #-------------------------------------------------------------------------------
 # Miscellaneous
