@@ -43,11 +43,7 @@ bool XSAtomicCompareAndSwap32( int32_t oldValue, int32_t newValue, volatile int3
 
 #elif defined( _WIN32 )
 
-#pragma warning( push )
-#pragma warning( disable: 5105 )
-#include <Windows.h>
-#include <Winnt.h>
-#pragma warning( pop )
+#include <XS/Private/Windows.h>
 
 /* Windows */
 bool XSAtomicCompareAndSwap32( int32_t oldValue, int32_t newValue, volatile int32_t * value )

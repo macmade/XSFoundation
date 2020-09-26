@@ -43,11 +43,7 @@ int32_t XSAtomicDecrement32( volatile int32_t * value )
 
 #elif defined( _WIN32 )
 
-#pragma warning( push )
-#pragma warning( disable: 5105 )
-#include <Windows.h>
-#include <Winnt.h>
-#pragma warning( pop )
+#include <XS/Private/Windows.h>
 
 /* Windows */
 int32_t XSAtomicDecrement32( volatile int32_t * value )

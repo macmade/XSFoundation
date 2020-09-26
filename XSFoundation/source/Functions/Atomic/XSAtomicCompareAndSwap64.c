@@ -43,11 +43,7 @@ bool XSAtomicCompareAndSwap64( int64_t oldValue, int64_t newValue, volatile int6
 
 #elif defined( _WIN32 )
 
-#pragma warning( push )
-#pragma warning( disable: 5105 )
-#include <Windows.h>
-#include <Winnt.h>
-#pragma warning( pop )
+#include <XS/Private/Windows.h>
 
 /* Windows */
 bool XSAtomicCompareAndSwap64( int64_t oldValue, int64_t newValue, volatile int64_t * value )

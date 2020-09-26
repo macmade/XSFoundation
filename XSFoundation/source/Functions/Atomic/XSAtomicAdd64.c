@@ -43,11 +43,7 @@ int64_t XSAtomicAdd64( int64_t amount, volatile int64_t * value )
 
 #elif defined( _WIN32 )
 
-#pragma warning( push )
-#pragma warning( disable: 5105 )
-#include <Windows.h>
-#include <Winnt.h>
-#pragma warning( pop )
+#include <XS/Private/Windows.h>
 
 /* Windows */
 int64_t XSAtomicAdd64( int64_t amount, volatile int64_t * value )

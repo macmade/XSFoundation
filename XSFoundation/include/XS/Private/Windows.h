@@ -23,60 +23,19 @@
  ******************************************************************************/
 
 /*!
- * @file        XSGetCurrentThreadID.c
+ * @header      Windows.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSGetCurrentThreadID
  */
 
-#include <XS/XS.h>
+#ifndef XS_PRIVATE_WINDOWS_H
+#define XS_PRIVATE_WINDOWS_H
 
-#if defined( __XEOS__ )
-
-uint64_t XSGetCurrentThreadID( void )
-{
-    return 0;
-}
-
-#elif defined( _WIN32 )
-
-#include <XS/Private/Windows.h>
-
-uint64_t XSGetCurrentThreadID( void )
-{
-    return ( uint64_t )GetCurrentThreadId();
-}
-
-#elif defined( __APPLE__ )
-
-#include <pthread.h>
-
-uint64_t XSGetCurrentThreadID( void )
-{
-    return ( uint64_t )pthread_mach_thread_np( pthread_self() );
-}
-
-#elif defined( __linux )
-
-#include <unistd.h>
-#include <sys/syscall.h>
-
-uint64_t XSGetCurrentThreadID( void )
-{
-    return ( uint64_t )syscall( SYS_gettid );
-}
-
-#elif defined( __unix__ )
-
-#include <thread.h>
-
-uint64_t XSGetCurrentThreadID( void )
-{
-    return ( uint64_t )thr_self();
-}
-
-#else
-
-#error "Platform not implemented"
-
+#ifdef _WIN32
+#pragma warning( push )
+#pragma warning( disable: 5105 )
+#include <Windows.h>
+#pragma warning( pop )
 #endif
+
+#endif /* XS_PRIVATE_WINDOWS_H */

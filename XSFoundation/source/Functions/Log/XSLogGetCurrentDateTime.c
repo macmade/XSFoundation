@@ -36,10 +36,7 @@
 
 #ifdef _WIN32
 
-#pragma warning( push )
-#pragma warning( disable: 5105 )
-#include <Windows.h>
-#pragma warning( pop )
+#include <XS/Private/Windows.h>
 
 void XSLogGetCurrentDateTime( char * buf, size_t size, uint64_t * milliseconds )
 {
