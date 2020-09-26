@@ -129,21 +129,21 @@
  * @abstract    Swap endiannes of a 16 bits value
  * @param       _value_     The value to swap
  */
-#define XS_SWAP_16( _value_ ) ( ( ( ( _value_ ) >> 8 ) & 0x00FF ) | ( ( ( _value_ ) << 8 ) & 0xFF00 ) )
+#define XS_SWAP_16( _value_ ) ( ( ( ( uint16_t )( _value_ ) >> 8 ) & 0x00FF ) | ( ( ( uint16_t )( _value_ ) << 8 ) & 0xFF00 ) )
 
 /*!
  * @define      XS_SWAP_32
  * @abstract    Swap endiannes of a 32 bits value
  * @param       _value_     The value to swap
  */
-#define XS_SWAP_32( _value_ ) ( ( ( ( _value_ ) >> 24 ) & 0x000000FF ) | ( ( ( _value_ ) >> 8 ) & 0x0000FF00 ) | ( ( ( _value_ ) << 8 ) & 0x00FF0000 ) | ( ( ( _value_ ) << 24 ) & 0xFF000000 ) )
+#define XS_SWAP_32( _value_ ) ( ( ( ( uint32_t )( _value_ ) >> 24 ) & 0x000000FF ) | ( ( ( uint32_t )( _value_ ) >> 8 ) & 0x0000FF00 ) | ( ( ( uint32_t )( _value_ ) << 8 ) & 0x00FF0000 ) | ( ( ( uint32_t )( _value_ ) << 24 ) & 0xFF000000 ) )
 
 /*!
  * @define      XS_SWAP_64
  * @abstract    Swap endiannes of a 64 bits value
  * @param       _value_     The value to swap
  */
-#define XS_SWAP_64( _value_ ) ( ( ( ( _value_ ) >> 56 ) & 0x00000000000000FFULL ) | ( ( ( _value_ ) >> 40 ) & 0x000000000000FF00ULL ) | ( ( ( _value_ ) >> 24 ) & 0x0000000000FF0000ULL ) | ( ( ( _value_ ) >> 8 ) & 0x00000000FF000000ULL ) | ( ( ( _value_ ) << 8 ) & 0x000000FF00000000ULL ) | ( ( ( _value_ ) << 24 ) & 0x0000FF0000000000ULL ) | ( ( ( _value_ ) << 40 ) & 0x00FF000000000000ULL ) | ( ( ( _value_ ) << 56 ) & 0xFF00000000000000ULL ) )
+#define XS_SWAP_64( _value_ ) ( ( ( ( uint64_t )( _value_ ) >> 56 ) & 0x00000000000000FFULL ) | ( ( ( uint64_t )( _value_ ) >> 40 ) & 0x000000000000FF00ULL ) | ( ( ( uint64_t )( _value_ ) >> 24 ) & 0x0000000000FF0000ULL ) | ( ( ( uint64_t )( _value_ ) >> 8 ) & 0x00000000FF000000ULL ) | ( ( ( uint64_t )( _value_ ) << 8 ) & 0x000000FF00000000ULL ) | ( ( ( uint64_t )( _value_ ) << 24 ) & 0x0000FF0000000000ULL ) | ( ( ( uint64_t )( _value_ ) << 40 ) & 0x00FF000000000000ULL ) | ( ( ( uint64_t )( _value_ ) << 56 ) & 0xFF00000000000000ULL ) )
 
 /*!
  * @define      XS_PATH_MAX

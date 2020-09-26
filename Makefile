@@ -50,6 +50,7 @@ FILES_C += $(call GET_C_FILES, $(DIR_SRC_FUNCTIONS)CString/)
 
 # Gets every C file in the source directories (Unit-Tests)
 FILES_C_TESTS += $(call GET_C_FILES, $(DIR_SRC_TESTS))
+FILES_C_TESTS += $(call GET_C_FILES, $(DIR_SRC_TESTS)Macros/)
 FILES_C_TESTS += $(call GET_C_FILES, $(DIR_SRC_TESTS)Functions/)
 FILES_C_TESTS += $(call GET_C_FILES, $(DIR_SRC_TESTS)Functions/Atomic/)
 FILES_C_TESTS += $(call GET_C_FILES, $(DIR_SRC_TESTS)Functions/Process/)
