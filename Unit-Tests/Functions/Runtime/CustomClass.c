@@ -46,6 +46,14 @@ struct Foo
     int y;
 };
 
+typedef struct Foo * FooRef;
+
+static bool constructorCalled;
+static bool destructorCalled;
+static bool copyCalled;
+static bool equalsCalled;
+static bool toStringCalled;
+
 Test( Runtime, CustomClass )
 {
     classInfo.className    = "Foo";
@@ -60,36 +68,138 @@ Test( Runtime, CustomClass )
     classID = XSRuntimeRegisterClass( &classInfo );
 
     AssertGreater( classID, 0 );
+    AssertEqual( XSRuntimeGetClassIDOfClassNamed( "Foo" ), classID );
+    AssertEqual( XSRuntimeGetClassType( classID ), XSClassTypeNormal );
+    AssertStringEqual( XSRuntimeGetClassName( classID ), "Foo" );
+
+    {
+        constructorCalled = false;
+        FooRef foo        = XSRuntimeCreateInstance( classID );
+
+        AssertTrue( foo != NULL );
+        AssertTrue( constructorCalled );
+        AssertEqual( foo->x, 42 );
+        AssertEqual( foo->y, 43 );
+        AssertEqual( XSRuntimeGetClassID( foo ), classID );
+        AssertTrue( XSRuntimeIsInstance( foo ) );
+        AssertEqual( XSGetRetainCount( foo ), 1 );
+
+        foo->x = 1;
+        foo->y = 2;
+
+        // TODO
+        //toStringCalled = false;
+        //AssertStringEqual( XSRuntimeGetDescription( foo ), "Foo" );
+        //AssertTrue( toStringCalled );
+
+        {
+            FooRef copy;
+
+            constructorCalled = false;
+            copyCalled        = false;
+            copy              = XSCopy( foo );
+
+            AssertFalse( constructorCalled );
+            AssertTrue( copyCalled );
+            AssertEqual( foo->x, 1 );
+            AssertEqual( foo->y, 2 );
+            AssertEqual( copy->x, 1 );
+            AssertEqual( copy->y, 2 );
+
+            equalsCalled = false;
+
+            AssertTrue( XSEquals( foo, copy ) );
+            AssertTrue( equalsCalled );
+
+            copy->x = 0;
+            copy->y = 0;
+
+            equalsCalled = false;
+
+            AssertFalse( XSEquals( foo, copy ) );
+            AssertTrue( equalsCalled );
+
+            destructorCalled = false;
+
+            XSRelease( copy );
+            AssertTrue( destructorCalled );
+        }
+
+        XSRelease( foo );
+    }
+
+    {
+        FooRef instance;
+
+        constructorCalled = false;
+
+        instance = XSRuntimeCreateInstanceOfClassNamed( "Foo" );
+
+        AssertTrue( constructorCalled );
+        AssertTrue( instance != NULL );
+        AssertEqual( XSRuntimeGetClassID( instance ), classID );
+
+        destructorCalled = false;
+
+        XSRelease( instance );
+        AssertTrue( destructorCalled );
+    }
 }
 
 static XSMutableObjectRef FooConstructor( XSMutableObjectRef object )
 {
-    return object;
+    FooRef foo;
+
+    foo               = object;
+    constructorCalled = true;
+
+    foo->x = 42;
+    foo->y = 43;
+
+    return foo;
 }
 
 static void FooDestructor( XSMutableObjectRef object )
 {
     ( void )object;
+
+    destructorCalled = true;
 }
 
 static XSMutableObjectRef FooCopy( XSObjectRef object1, XSMutableObjectRef object2 )
 {
-    ( void )object1;
+    const struct Foo * foo1;
+    FooRef             foo2;
 
-    return object2;
+    foo1 = object1;
+    foo2 = object2;
+
+    foo2->x = foo1->x;
+    foo2->y = foo1->y;
+
+    copyCalled = true;
+
+    return foo2;
 }
 
 static bool FooEquals( XSObjectRef object1, XSObjectRef object2 )
 {
-    ( void )object1;
-    ( void )object2;
+    const struct Foo * foo1;
+    const struct Foo * foo2;
 
-    return false;
+    foo1 = object1;
+    foo2 = object2;
+
+    equalsCalled = true;
+
+    return foo1->x == foo2->x && foo1->y == foo2->y;
 }
 
 static const char * FooToString( XSObjectRef object )
 {
     ( void )object;
+
+    toStringCalled = true;
 
     return "Foo";
 }
