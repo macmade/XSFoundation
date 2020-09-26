@@ -176,21 +176,21 @@ example_build: lib $$(_FILES_C_BUILD_EXAMPLE)
 	$(call CREATE_EXEC,$(_EXEC),$(_FILES_C_BUILD_EXAMPLE),$(DIR_BUILD_PRODUCTS),$(PRODUCT) $(_EXTRA_LIBS))
 
 # Target: Object file (XSFoundation)
-$(DIR_BUILD_TEMP_XS)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
+$(DIR_BUILD_TEMP_XS)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) $(addprefix $(DIR_SRC),%$(EXT_C))
 	
 	$(call PRINT_FILE,$(_HOST_ARCH),Compiling C file,$<)
 	$(call COMPILE_FILE,$<,$@)
 
 # Target: Object file (Unit-Tests)
 $(DIR_BUILD_TEMP_TESTS)%$(EXT_O): _CC_EXTRA_FLAGS = -I $(DIR_XSCTEST_INC)
-$(DIR_BUILD_TEMP_TESTS)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
+$(DIR_BUILD_TEMP_TESTS)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) $(addprefix $(DIR_SRC_TESTS),%$(EXT_C))
 	
 	$(call PRINT_FILE,$(_HOST_ARCH),Compiling C file,$<)
 	$(call COMPILE_FILE,$<,$@)
 
 # Target: Object file (Example)
 $(DIR_BUILD_TEMP_EXAMPLE)%$(EXT_O): _CC_EXTRA_FLAGS = -I $(DIR_SRC_EXAMPLE)
-$(DIR_BUILD_TEMP_EXAMPLE)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) %$(EXT_C)
+$(DIR_BUILD_TEMP_EXAMPLE)%$(EXT_O): $$(shell mkdir -p $$(dir $$@)) $(addprefix $(DIR_SRC_EXAMPLE),%$(EXT_C))
 	
 	$(call PRINT_FILE,$(_HOST_ARCH),Compiling C file,$<)
 	$(call COMPILE_FILE,$<,$@)
