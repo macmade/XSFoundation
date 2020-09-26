@@ -192,7 +192,7 @@ endif
 
 # Additional libraries
 ifdef _OS_LINUX
-_EXTRA_LIBS := m
+_EXTRA_LIBS := m pthread
 else
 _EXTRA_LIBS :=
 endif
