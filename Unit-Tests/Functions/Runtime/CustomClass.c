@@ -80,7 +80,7 @@ Test( Runtime, CustomClass )
         AssertTrue( constructorCalled );
         AssertEqual( foo->x, 42 );
         AssertEqual( foo->y, 43 );
-        AssertEqual( XSRuntimeGetClassID( foo ), classID );
+        AssertTrue( XSRuntimeGetClassID( foo ) == classID );
         AssertTrue( XSRuntimeIsInstance( foo ) );
         AssertEqual( XSGetRetainCount( foo ), 1 );
 
@@ -137,7 +137,7 @@ Test( Runtime, CustomClass )
 
         AssertTrue( constructorCalled );
         AssertTrue( instance != NULL );
-        AssertEqual( XSRuntimeGetClassID( instance ), classID );
+        AssertTrue( XSRuntimeGetClassID( instance ) == classID );
 
         destructorCalled = false;
 
