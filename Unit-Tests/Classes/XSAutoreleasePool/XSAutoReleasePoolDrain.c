@@ -23,43 +23,54 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRuntimeInitialize.c
+ * @file        XSAutoReleasePoolDrain.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntimeInitialize
  */
 
+#include <XSCTest/XSCTest.h>
 #include <XS/XS.h>
-#include <XS/Private/Functions/Runtime.h>
-#include <stdlib.h>
 
-void XSAutoreleasePoolInitialize( void );
-
-void XSRuntimeInitialize( void )
+Test( XSAutoreleasePool, XSAutoReleasePoolDrain )
 {
-    XSRuntimeClassInfoList * classes;
+    XSAutoreleasePoolRef ap;
+    char *               objects[ 1024 ];
 
-    if( XSAtomicCompareAndSwap64( XSInitStatusNotInited, XSInitStatusInitializing, &XSRuntimeInitStatus ) == false )
+    ap = XSAutoreleasePoolCreate();
+
+    AssertTrue( ap != NULL );
+
+    for( size_t i = 0; i < 1024; i++ )
     {
-        return;
+        objects[ i ] = XSAlloc( 8 );
+
+        AssertTrue( objects[ i ] != NULL );
+        XSRetain( objects[ i ] );
+        AssertEqual( XSGetRetainCount( objects[ i ] ), 2 );
+
+        XSAutoreleasePoolAddObject( ap, objects[ i ] );
+        AssertEqual( XSGetRetainCount( objects[ i ] ), 2 );
     }
 
-    classes = calloc( sizeof( XSRuntimeClassInfoList ), 1 );
+    XSAutoreleasePoolDrain( ap );
 
-    if( classes == NULL )
+    for( size_t i = 0; i < 1024; i++ )
     {
-        XSBadAlloc();
+        AssertEqual( XSGetRetainCount( objects[ i ] ), 1 );
     }
 
-    if( atexit( XSRuntimeFinalize ) != 0 )
+    XSAutoreleasePoolDrain( ap );
+
+    for( size_t i = 0; i < 1024; i++ )
     {
-        XSFatalError( "Cannot register the XSFoundation finalizier function" );
+        AssertEqual( XSGetRetainCount( objects[ i ] ), 1 );
     }
 
-    XSRuntimeClasses    = classes;
-    XSRuntimeClassCount = 0;
+    XSRelease( ap );
 
-    XSAtomicWrite64( XSInitStatusInited, &XSRuntimeInitStatus );
-
-    XSAutoreleasePoolInitialize();
+    for( size_t i = 0; i < 1024; i++ )
+    {
+        AssertEqual( XSGetRetainCount( objects[ i ] ), 1 );
+        XSRelease( objects[ i ] );
+    }
 }

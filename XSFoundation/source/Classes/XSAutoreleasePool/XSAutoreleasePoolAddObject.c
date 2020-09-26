@@ -23,43 +23,51 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRuntimeInitialize.c
+ * @file        XSAutoreleasePoolAddObject.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntimeInitialize
+ * @abstract    Definition for XSAutoreleasePoolAddObject
  */
 
 #include <XS/XS.h>
-#include <XS/Private/Functions/Runtime.h>
-#include <stdlib.h>
+#include <XS/Private/Classes/XSAutoreleasePool.h>
 
-void XSAutoreleasePoolInitialize( void );
-
-void XSRuntimeInitialize( void )
+void XSAutoreleasePoolAddObject( XSAutoreleasePoolRef ap, const void * object )
 {
-    XSRuntimeClassInfoList * classes;
+    struct XSAutoreleasePoolStorage * storage;
 
-    if( XSAtomicCompareAndSwap64( XSInitStatusNotInited, XSInitStatusInitializing, &XSRuntimeInitStatus ) == false )
+    if( ap == NULL || object == NULL )
     {
         return;
     }
 
-    classes = calloc( sizeof( XSRuntimeClassInfoList ), 1 );
+    storage = ap->storage;
 
-    if( classes == NULL )
+    while( storage != NULL )
     {
-        XSBadAlloc();
+        if( storage->count < sizeof( storage->objects ) / sizeof( const void * ) )
+        {
+            storage->objects[ storage->count++ ] = object;
+
+            return;
+        }
+
+        if( storage->next == NULL )
+        {
+            storage->next = XSAlloc( sizeof( struct XSAutoreleasePoolStorage ) );
+
+            if( storage->next == NULL )
+            {
+                XSBadAlloc();
+            }
+
+            storage->next->objects[ storage->next->count++ ] = object;
+
+            return;
+        }
+        else
+        {
+            storage = storage->next;
+        }
     }
-
-    if( atexit( XSRuntimeFinalize ) != 0 )
-    {
-        XSFatalError( "Cannot register the XSFoundation finalizier function" );
-    }
-
-    XSRuntimeClasses    = classes;
-    XSRuntimeClassCount = 0;
-
-    XSAtomicWrite64( XSInitStatusInited, &XSRuntimeInitStatus );
-
-    XSAutoreleasePoolInitialize();
 }

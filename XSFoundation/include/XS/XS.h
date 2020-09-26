@@ -50,4 +50,7 @@
 #include <XS/Functions/Process.h>
 #include <XS/Functions/CString.h>
 
+/* Classes */
+#include <XS/Classes/XSAutoreleasePool.h>
+
 #endif /* XS_H */

@@ -23,43 +23,22 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRuntimeInitialize.c
+ * @file        XSAutoreleasePoolCreate.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntimeInitialize
  */
 
+#include <XSCTest/XSCTest.h>
 #include <XS/XS.h>
-#include <XS/Private/Functions/Runtime.h>
-#include <stdlib.h>
 
-void XSAutoreleasePoolInitialize( void );
-
-void XSRuntimeInitialize( void )
+Test( XSAutoreleasePool, XSAutoreleasePoolCreate )
 {
-    XSRuntimeClassInfoList * classes;
+    XSAutoreleasePoolRef ap = XSAutoreleasePoolCreate();
 
-    if( XSAtomicCompareAndSwap64( XSInitStatusNotInited, XSInitStatusInitializing, &XSRuntimeInitStatus ) == false )
-    {
-        return;
-    }
+    AssertTrue( ap != NULL );
+    AssertTrue( XSRuntimeIsInstance( ap ) );
+    AssertTrue( XSRuntimeGetClassID( ap ) == XSAutoreleasePoolGetClassID() );
+    AssertStringEqual( XSRuntimeGetClassName( XSAutoreleasePoolGetClassID() ), "XSAutoreleasePool" );
 
-    classes = calloc( sizeof( XSRuntimeClassInfoList ), 1 );
-
-    if( classes == NULL )
-    {
-        XSBadAlloc();
-    }
-
-    if( atexit( XSRuntimeFinalize ) != 0 )
-    {
-        XSFatalError( "Cannot register the XSFoundation finalizier function" );
-    }
-
-    XSRuntimeClasses    = classes;
-    XSRuntimeClassCount = 0;
-
-    XSAtomicWrite64( XSInitStatusInited, &XSRuntimeInitStatus );
-
-    XSAutoreleasePoolInitialize();
+    XSRelease( ap );
 }

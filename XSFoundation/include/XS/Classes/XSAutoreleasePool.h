@@ -23,43 +23,55 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRuntimeInitialize.c
+ * @header      XSAutoreleasePool.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntimeInitialize
+ * @abstract    XSAutoreleasePool class
  */
 
-#include <XS/XS.h>
-#include <XS/Private/Functions/Runtime.h>
-#include <stdlib.h>
+#ifndef XS_CLASSES_XS_AUTORELEASE_POOL_H
+#define XS_CLASSES_XS_AUTORELEASE_POOL_H
 
-void XSAutoreleasePoolInitialize( void );
+#include <XS/Macros.h>
+#include <XS/Types.h>
 
-void XSRuntimeInitialize( void )
-{
-    XSRuntimeClassInfoList * classes;
+XS_EXTERN_C_BEGIN
 
-    if( XSAtomicCompareAndSwap64( XSInitStatusNotInited, XSInitStatusInitializing, &XSRuntimeInitStatus ) == false )
-    {
-        return;
-    }
+/*!
+ * @typedef     XSAutoreleasePoolRef
+ * @abstract    Opaque type for XSAutoreleasePool
+ */
+typedef struct XSAutoreleasePool * XSAutoreleasePoolRef;
 
-    classes = calloc( sizeof( XSRuntimeClassInfoList ), 1 );
+/*!
+ * @function    XSAutoreleasePoolGetClassID
+ * @abstract    Gets the class ID for XSAutoreleasePool
+ * @return      The class ID for XSAutoreleasePool
+ */
+XS_EXPORT XSClassID XSAutoreleasePoolGetClassID( void );
 
-    if( classes == NULL )
-    {
-        XSBadAlloc();
-    }
+/*!
+ * @function    XSAutoreleasePoolCreate
+ * @abstract    Creates an autorelease pool
+ * @return      The autorelease pool object
+ */
+XS_EXPORT XSAutoreleasePoolRef XSAutoreleasePoolCreate( void );
 
-    if( atexit( XSRuntimeFinalize ) != 0 )
-    {
-        XSFatalError( "Cannot register the XSFoundation finalizier function" );
-    }
+/*!
+ * @function    XSAutoreleasePoolAddObject
+ * @abstract    Adds an object to an autorelease pool
+ * @param       ap      The autorelease pool object
+ * @param       object  The object to add to the autorelease pool
+ */
+XS_EXPORT void XSAutoreleasePoolAddObject( XSAutoreleasePoolRef ap, const void * object );
 
-    XSRuntimeClasses    = classes;
-    XSRuntimeClassCount = 0;
+/*!
+ * @function    XSAutoreleasePoolDrain
+ * @abstract    Drains an autorelease pool
+ * @param       ap      The autorelease pool object
+ */
+XS_EXPORT void XSAutoreleasePoolDrain( XSAutoreleasePoolRef ap );
 
-    XSAtomicWrite64( XSInitStatusInited, &XSRuntimeInitStatus );
+XS_EXTERN_C_END
 
-    XSAutoreleasePoolInitialize();
-}
+#endif /* XS_CLASSES_XS_AUTORELEASE_POOL_H */

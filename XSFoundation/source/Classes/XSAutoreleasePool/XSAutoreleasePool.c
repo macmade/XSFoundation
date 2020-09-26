@@ -23,43 +23,23 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRuntimeInitialize.c
+ * @file        XSAutoreleasePool.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntimeInitialize
+ * @abstract    Private definitions for XSAutoreleasePool
  */
 
 #include <XS/XS.h>
-#include <XS/Private/Functions/Runtime.h>
-#include <stdlib.h>
+#include <XS/Private/Classes/XSAutoreleasePool.h>
 
-void XSAutoreleasePoolInitialize( void );
-
-void XSRuntimeInitialize( void )
-{
-    XSRuntimeClassInfoList * classes;
-
-    if( XSAtomicCompareAndSwap64( XSInitStatusNotInited, XSInitStatusInitializing, &XSRuntimeInitStatus ) == false )
-    {
-        return;
-    }
-
-    classes = calloc( sizeof( XSRuntimeClassInfoList ), 1 );
-
-    if( classes == NULL )
-    {
-        XSBadAlloc();
-    }
-
-    if( atexit( XSRuntimeFinalize ) != 0 )
-    {
-        XSFatalError( "Cannot register the XSFoundation finalizier function" );
-    }
-
-    XSRuntimeClasses    = classes;
-    XSRuntimeClassCount = 0;
-
-    XSAtomicWrite64( XSInitStatusInited, &XSRuntimeInitStatus );
-
-    XSAutoreleasePoolInitialize();
-}
+XSClassID   XSAutoreleasePoolClassID = 0;
+XSClassInfo XSAutoreleasePoolClass   = {
+    "XSAutoreleasePool",
+    XSClassTypeNormal,
+    sizeof( struct XSAutoreleasePool ),
+    XSAutoreleasePoolConstructor,
+    XSAutoreleasePoolDestructor,
+    XSAutoreleasePoolCopy,
+    NULL,
+    NULL
+};

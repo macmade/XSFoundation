@@ -23,43 +23,50 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRuntimeInitialize.c
+ * @file        XSAutoreleasePoolDrain.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntimeInitialize
+ * @abstract    Definition for XSAutoreleasePoolDrain
  */
 
 #include <XS/XS.h>
-#include <XS/Private/Functions/Runtime.h>
-#include <stdlib.h>
+#include <XS/Private/Classes/XSAutoreleasePool.h>
+#include <string.h>
 
-void XSAutoreleasePoolInitialize( void );
-
-void XSRuntimeInitialize( void )
+void XSAutoreleasePoolDrain( XSAutoreleasePoolRef ap )
 {
-    XSRuntimeClassInfoList * classes;
+    struct XSAutoreleasePoolStorage * storage;
 
-    if( XSAtomicCompareAndSwap64( XSInitStatusNotInited, XSInitStatusInitializing, &XSRuntimeInitStatus ) == false )
+    if( ap == NULL )
     {
         return;
     }
 
-    classes = calloc( sizeof( XSRuntimeClassInfoList ), 1 );
-
-    if( classes == NULL )
+    if( XSGetCurrentThreadID() != ap->threadID )
     {
-        XSBadAlloc();
+        XSFatalError( "An autorelease pool object can only be used on the same thread it was created" );
     }
 
-    if( atexit( XSRuntimeFinalize ) != 0 )
+    storage = ap->storage;
+
+    while( storage != NULL )
     {
-        XSFatalError( "Cannot register the XSFoundation finalizier function" );
+        for( size_t i = 0; i < storage->count; i++ )
+        {
+            XSRelease( storage->objects[ i ] );
+        }
+
+        {
+            struct XSAutoreleasePoolStorage * temp = storage;
+
+            storage = storage->next;
+
+            if( temp != ap->storage )
+            {
+                XSRelease( temp );
+            }
+        }
     }
 
-    XSRuntimeClasses    = classes;
-    XSRuntimeClassCount = 0;
-
-    XSAtomicWrite64( XSInitStatusInited, &XSRuntimeInitStatus );
-
-    XSAutoreleasePoolInitialize();
+    memset( ap->storage, 0, sizeof( struct XSAutoreleasePoolStorage ) );
 }
