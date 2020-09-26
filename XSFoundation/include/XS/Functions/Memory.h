@@ -219,6 +219,16 @@ XS_EXPORT bool XSEquals( const void * memory1, const void * memory2 );
  */
 XS_EXPORT void * XSCopyWithInfos( const void * memory, const char * file, int line, const char * func );
 
+/*!
+ * @function    XSGetRetainCount
+ * @abstract    Get the retain count of a memory data object
+ * @param       memory      The memory data object
+ * @discussion  This functions is exposed for unit-tests and debug purposes.
+ *              Never use it or rely on it in production code.
+ * @return      The object's retain count
+ */
+XS_EXPORT int64_t XSGetRetainCount( const void * memory );
+
 XS_EXTERN_C_END
 
 #endif /* XS_FUNCTIONS_MEMORY_H */
