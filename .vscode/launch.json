@@ -2,6 +2,30 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Tests - Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Build/Debug/Products/XSFoundation-Test",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb"
+        },
+        {
+            "name": "Tests - Release",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Build/Release/Products/XSFoundation-Test",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb"
+        },
+        {
             "name": "Example - Debug",
             "type": "cppdbg",
             "request": "launch",
