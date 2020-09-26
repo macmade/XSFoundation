@@ -67,9 +67,9 @@ void XSTLSSetValue( XSTLSKey * key, void * data, XSObjectAssociation association
     {
         tls = XSAlloc( sizeof( struct XSTLSValue ) );
 
-        if( tsl == NULL )
+        if( tls == NULL )
         {
-            XSFatalError( "Cannot allocate memory" );
+            XSBadAlloc();
         }
     }
 

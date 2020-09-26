@@ -56,7 +56,7 @@ void * XSCopyWithInfos( const void * memory, const char * file, int line, const 
 
     if( data == NULL )
     {
-        XSFatalError( "Cannot allocate memory" );
+        XSBadAlloc();
     }
 
     if( XSRuntimeIsRegisteredClass( object->classID ) == false )

@@ -55,7 +55,7 @@ void * XSRuntimeCreateInstance( XSClassID classID )
 
     if( object == NULL )
     {
-        XSFatalError( "Cannot allocate memory" );
+        XSBadAlloc();
     }
 
     constructor = XSRuntimeGetConstructorCallback( classID );

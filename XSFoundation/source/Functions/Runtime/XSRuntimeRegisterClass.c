@@ -82,7 +82,7 @@ add:
 
     if( new == NULL )
     {
-        XSFatalError( "Cannot allocate memory for the runtime class informations" );
+        XSBadAlloc();
     }
     else if( XSAtomicCompareAndSwapPointer( NULL, new, ( void * volatile * )&( list->next ) ) )
     {
@@ -108,7 +108,7 @@ success:
 
         if( list->sharedInstance == NULL )
         {
-            XSFatalError( "Cannot allocate memory" );
+            XSBadAlloc();
         }
     }
 

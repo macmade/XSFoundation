@@ -46,7 +46,7 @@ void XSRuntimeInitialize( void )
 
     if( classes == NULL )
     {
-        XSFatalError( "Cannot allocate memory for the runtime class informations" );
+        XSBadAlloc();
     }
 
     if( atexit( XSRuntimeFinalize ) != 0 )

@@ -120,6 +120,12 @@ XS_EXTERN_C_BEGIN
 #endif
 
 /*!
+ * @define      XSBadAlloc
+ * @abstract    Issues a fatal error message for a bad memory allocation
+ */
+#define XSBadAlloc() XSFatalError( "Cannot allocate memory" )
+
+/*!
  * @function    XSAllocWithInfos
  * @abstract    Allocates memory
  * @param       bytes       The number of bytes to allocate

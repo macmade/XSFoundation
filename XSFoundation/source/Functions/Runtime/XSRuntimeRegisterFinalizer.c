@@ -48,7 +48,7 @@ void XSRuntimeRegisterFinalizer( void ( *func )( void ) )
 
     if( finalizer == NULL )
     {
-        XSFatalError( "Cannot allocate memory for finalizer function %p", ( void * )func );
+        XSBadAlloc();
     }
 
     if( XSAtomicCompareAndSwapPointer( NULL, finalizer, ( void * volatile * )&XSRuntimeFinalizers ) )
