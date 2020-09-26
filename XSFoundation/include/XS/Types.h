@@ -35,6 +35,7 @@
 #include <XS/Types/XSClassID.h>
 #include <XS/Types/XSClassType.h>
 #include <XS/Types/XSObjectRef.h>
+#include <XS/Types/XSMutableObjectRef.h>
 #include <XS/Types/XSClassCallbackConstructor.h>
 #include <XS/Types/XSClassCallbackDestructor.h>
 #include <XS/Types/XSClassCallbackCopy.h>

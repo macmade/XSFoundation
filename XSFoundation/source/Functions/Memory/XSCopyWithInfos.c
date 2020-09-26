@@ -38,7 +38,7 @@ void * XSCopyWithInfos( const void * memory, const char * file, int line, const 
 {
     XSMemoryObject *    object;
     void *              data;
-    void *              copiedData;
+    XSMutableObjectRef  copiedData;
     XSClassCallbackCopy copy;
 
     if( memory == NULL )

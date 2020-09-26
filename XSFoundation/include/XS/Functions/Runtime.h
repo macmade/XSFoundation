@@ -66,7 +66,7 @@ XS_EXPORT XSClassID XSRuntimeRegisterClass( const XSClassInfo * cls );
  * @param       classID     The class type ID
  * @return      The allocated instance
  */
-XS_EXPORT void * XSRuntimeCreateInstance( XSClassID classID );
+XS_EXPORT XSMutableObjectRef XSRuntimeCreateInstance( XSClassID classID );
 
 /*!
  * @function    XSRuntimeCreateInstanceOfClassNamed
@@ -74,7 +74,7 @@ XS_EXPORT void * XSRuntimeCreateInstance( XSClassID classID );
  * @param       name        The name of the class
  * @return      The allocated instance
  */
-XS_EXPORT void * XSRuntimeCreateInstanceOfClassNamed( const char * name );
+XS_EXPORT XSMutableObjectRef XSRuntimeCreateInstanceOfClassNamed( const char * name );
 
 /*!
  * @function    XSRuntimeGetSharedInstance

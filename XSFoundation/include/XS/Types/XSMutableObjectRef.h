@@ -23,27 +23,25 @@
  ******************************************************************************/
 
 /*!
- * @header      XSClassCallbackDestructor.h
+ * @header      XSMutableObjectRef.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSClassCallbackDestructor type definition
+ * @abstract    XSObjectRef type definition
  */
 
-#ifndef XS_TYPES_XS_CLASS_CALLBACK_DESTRUCTOR_H
-#define XS_TYPES_XS_CLASS_CALLBACK_DESTRUCTOR_H
+#ifndef XS_TYPES_XS_MUTABLE_OBJECT_REF_H
+#define XS_TYPES_XS_MUTABLE_OBJECT_REF_H
 
 #include <XS/Macros.h>
-#include <XS/Types/XSObjectRef.h>
 
 XS_EXTERN_C_BEGIN
 
 /*!
- * @typedef     XSClassCallbackDestructor
- * @abstract    Class destructor callback
- * @param       object      The object beeing destruct
+ * @typedef     XSMutableObjectRef
+ * @abstract    Polymorphism support - Generic type for all XSFoundation objects (mutable version)
  */
-typedef void ( *XSClassCallbackDestructor )( XSMutableObjectRef object );
+typedef void * XSMutableObjectRef;
 
 XS_EXTERN_C_END
 
-#endif /* XS_TYPES_XS_CLASS_CALLBACK_DESTRUCTOR_H */
+#endif /* XS_TYPES_XS_MUTABLE_OBJECT_REF_H */
