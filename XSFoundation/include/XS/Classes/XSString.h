@@ -54,25 +54,161 @@ typedef const struct XSString * XSStringRef;
  */
 XS_EXPORT XSClassID XSStringGetClassID( void );
 
+/*!
+ * @function    XSStringCreateWithCString
+ * @abstract    Creates a string with a C string
+ * @param       cstr    The C string
+ * @return      A string object
+ */
 XS_EXPORT XSStringRef XSStringCreateWithCString( const char * cstr );
+
+/*!
+ * @function    XSStringCreateWithBytes
+ * @abstract    Creates a string with bytes
+ * @param       bytes   The bytes
+ * @param       length  The number of bytes
+ * @return      A string object
+ */
 XS_EXPORT XSStringRef XSStringCreateWithBytes( const uint8_t * bytes, size_t length );
+
+/*!
+ * @function    XSStringCreateWithFormat
+ * @abstract    Creates a string with a format string
+ * @param       fmt     The format string
+ * @param       ...     Arguments for the format string
+ * @return      A string object
+ */
 XS_EXPORT XSStringRef XSStringCreateWithFormat( const char * fmt, ... ) XS_FORMAT_ATTRIBUTE( printf, 1, 2 );
+
+/*!
+ * @function    XSStringCreateWithFormatAndArguments
+ * @abstract    Creates a string with a format string
+ * @param       fmt     The format string
+ * @param       ap      Arguments for the format string
+ * @return      A string object
+ */
 XS_EXPORT XSStringRef XSStringCreateWithFormatAndArguments( const char * fmt, va_list ap ) XS_FORMAT_ATTRIBUTE( printf, 1, 0 );
 
+/*!
+ * @function    XSStringWithCString
+ * @abstract    Creates a string with a C string
+ * @param       cstr    The C string
+ * @return      A string object
+ * @discussion  The returned object is autoreleased.
+ */
 XS_EXPORT XS_AUTORELEASED XSStringRef XSStringWithCString( const char * cstr );
+
+/*!
+ * @function    XSStringWithBytes
+ * @abstract    Creates a string with bytes
+ * @param       bytes   The bytes
+ * @param       length  The number of bytes
+ * @return      A string object
+ * @discussion  The returned object is autoreleased.
+ */
 XS_EXPORT XS_AUTORELEASED XSStringRef XSStringWithBytes( const uint8_t * bytes, size_t length );
+
+/*!
+ * @function    XSStringWithFormat
+ * @abstract    Creates a string with a format string
+ * @param       fmt     The format string
+ * @param       ...     Arguments for the format string
+ * @return      A string object
+ * @discussion  The returned object is autoreleased.
+ */
 XS_EXPORT XS_AUTORELEASED XSStringRef XSStringWithFormat( const char * fmt, ... ) XS_FORMAT_ATTRIBUTE( printf, 1, 2 );
+
+/*!
+ * @function    XSStringWithFormatAndArguments
+ * @abstract    Creates a string with a format string
+ * @param       fmt     The format string
+ * @param       ap      Arguments for the format string
+ * @return      A string object
+ * @discussion  The returned object is autoreleased.
+ */
 XS_EXPORT XS_AUTORELEASED XSStringRef XSStringWithFormatAndArguments( const char * fmt, va_list ap ) XS_FORMAT_ATTRIBUTE( printf, 1, 0 );
 
-XS_EXPORT bool         XSStringHasPrefix( XSStringRef str, XSStringRef prefix );
-XS_EXPORT bool         XSStringHasSuffix( XSStringRef str, XSStringRef suffix );
-XS_EXPORT bool         XSStringContainsString( XSStringRef str, XSStringRef search );
-XS_EXPORT bool         XSStringHasCStringPrefix( XSStringRef str, const char * prefix );
-XS_EXPORT bool         XSStringHasCStringSuffix( XSStringRef str, const char * suffix );
-XS_EXPORT bool         XSStringContainsCString( XSStringRef str, const char * search );
-XS_EXPORT char         XSStringGetCharacterAtIndex( XSStringRef str, size_t index );
+/*!
+ * @function    XSStringHasPrefix
+ * @abstract    Checks whether a string has a prefix
+ * @param       str     The string object
+ * @param       prefix  The prefix string
+ * @return      True if the string has the prefix, otherwise false
+ */
+XS_EXPORT bool XSStringHasPrefix( XSStringRef str, XSStringRef prefix );
+
+/*!
+ * @function    XSStringHasSuffix
+ * @abstract    Checks whether a string has a suffix
+ * @param       str     The string object
+ * @param       suffix  The suffix string
+ * @return      True if the string has the suffix, otherwise false
+ */
+XS_EXPORT bool XSStringHasSuffix( XSStringRef str, XSStringRef suffix );
+
+/*!
+ * @function    XSStringContainsString
+ * @abstract    Checks whether a string contains another string
+ * @param       str     The string object
+ * @param       search  The string to search
+ * @return      True if the string contains the search string, otherwise false
+ */
+XS_EXPORT bool XSStringContainsString( XSStringRef str, XSStringRef search );
+
+/*!
+ * @function    XSStringHasCStringPrefix
+ * @abstract    Checks whether a string has a prefix
+ * @param       str     The string object
+ * @param       prefix  The prefix C string
+ * @return      True if the string has the prefix, otherwise false
+ */
+XS_EXPORT bool XSStringHasCStringPrefix( XSStringRef str, const char * prefix );
+
+/*!
+ * @function    XSStringHasCStringSuffix
+ * @abstract    Checks whether a string has a suffix
+ * @param       str     The string object
+ * @param       suffix  The suffix C string
+ * @return      True if the string has the suffix, otherwise false
+ */
+XS_EXPORT bool XSStringHasCStringSuffix( XSStringRef str, const char * suffix );
+
+/*!
+ * @function    XSStringContainsCString
+ * @abstract    Checks whether a string contains a C string
+ * @param       str     The string object
+ * @param       search  The C string to search
+ * @return      True if the string contains the C string, otherwise false
+ */
+XS_EXPORT bool XSStringContainsCString( XSStringRef str, const char * search );
+
+/*!
+ * @function    XSStringGetCharacterAtIndex
+ * @abstract    Gets the character at a specific index
+ * @param       str     The string object
+ * @param       index   The index of the character
+ * @return      The character at the specified index
+ * @discussion  Returns 0 is the string is NULL or if the index is out of bounds.
+ */
+XS_EXPORT char XSStringGetCharacterAtIndex( XSStringRef str, size_t index );
+
+/*!
+ * @function    XSStringGetCString
+ * @abstract    Gets the internal C string of a string object
+ * @param       str     The string object
+ * @return      The C string
+ * @discussion  Any modification to the returned C string results in undefined
+ *              behavior.
+ */
 XS_EXPORT const char * XSStringGetCString( XSStringRef str );
-XS_EXPORT size_t       XSStringGetLength( XSStringRef str );
+
+/*!
+ * @function    XSStringGetLength
+ * @abstract    Gets the length of a string object
+ * @param       str     The string object
+ * @return      The string's length
+ */
+XS_EXPORT size_t XSStringGetLength( XSStringRef str );
 
 XS_EXTERN_C_END
 
