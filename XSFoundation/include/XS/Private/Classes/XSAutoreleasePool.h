@@ -48,9 +48,9 @@ XS_EXTERN_C_BEGIN
  */
 struct XSAutoreleasePoolStorage
 {
-    const void *                      objects[ 256 ];
-    size_t                            count;
-    struct XSAutoreleasePoolStorage * next;
+    const void *                      objects[ 256 ]; /*! Storage for objects */
+    size_t                            count;          /*! The number of contained objects */
+    struct XSAutoreleasePoolStorage * next;           /*! Next storage */
 };
 
 /*!
@@ -59,9 +59,9 @@ struct XSAutoreleasePoolStorage
  */
 struct XSAutoreleasePool
 {
-    uint64_t                          threadID;
-    struct XSAutoreleasePoolStorage * storage;
-    struct XSAutoreleasePool *        next;
+    uint64_t                          threadID; /*! The thread ID for the autorelease pool */
+    struct XSAutoreleasePoolStorage * storage;  /*! Internal storage for contained objects */
+    struct XSAutoreleasePool *        next;     /*! Next autorelease pool in the current thread */
 };
 
 #ifdef __clang__
