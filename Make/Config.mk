@@ -168,7 +168,8 @@ CC_FLAGS_RELEASE   := /GL /Gw /O2 /sdl
 _CC_PLATFORM_FLAGS := 
 
 # C compiler
-_CC = Make/cl.bat /nologo /utf-8 $(_CC_FLAGS) /std:$(STDC) /I $(call _WIN_PATH,$(abspath $(DIR_INC)))
+_CC_ALL_FLAGS = /nologo /utf-8 $(_CC_FLAGS) /std:$(STDC) /I $(call _WIN_PATH,$(abspath $(DIR_INC)))
+_CC           = Make/cl.bat $(_CC_ALL_FLAGS)
 
 else
 
@@ -216,7 +217,7 @@ endif
 # @param    The object files to add to the library
 # 
 ifdef _OS_CYGWIN
-CREATE_STATIC_LIB = @Make/lib.bat /NOLOGO /OUT:$(call _WIN_PATH,$1) $(foreach _F,$2,$(call _WIN_PATH,$(_F)))
+CREATE_STATIC_LIB = @echo "/NOLOGO /OUT:$(call _WIN_PATH,$1) $(foreach _F,$2,$(call _WIN_PATH,$(_F)))" > $(DIR_BUILD_TEMP)$(notdir $1).rsp && Make/lib.bat "@$(call _WIN_PATH,$(DIR_BUILD_TEMP)$(notdir $1).rsp)"
 else
 CREATE_STATIC_LIB = @ar rcs $1 $2
 endif
@@ -230,7 +231,7 @@ endif
 # @param    The libraries to link with (if any)
 # 
 ifdef _OS_CYGWIN
-CREATE_EXEC = @$(_CC) /Fe$(call _WIN_PATH,$1) $(foreach _F,$(abspath $2),$(call _WIN_PATH,$(_F))) /link /OPT:NOREF $(addprefix /LIBPATH:,$(foreach _L,$3,$(call _WIN_PATH,$(abspath $(_L))))) $(_LIB) $(addsuffix $(EXT_LIB),$4)
+CREATE_EXEC = @echo "$(_CC_ALL_FLAGS) /Fe$(call _WIN_PATH,$1) $(foreach _F,$(abspath $2),$(call _WIN_PATH,$(_F))) /link /OPT:NOREF $(addprefix /LIBPATH:,$(foreach _L,$3,$(call _WIN_PATH,$(abspath $(_L))))) $(_LIB) $(addsuffix $(EXT_LIB),$4)" > $(DIR_BUILD_TEMP)$(notdir $1).rsp && Make/cl.bat "@$(call _WIN_PATH,$(DIR_BUILD_TEMP)$(notdir $1).rsp)"
 else
 CREATE_EXEC = @$(_CC) -o $1 $(abspath $2) $(foreach _L,$3,$(addprefix -L,$(_L))) $(foreach _L,$4,$(addprefix -l,$(_L)))
 endif
