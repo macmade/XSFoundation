@@ -10,11 +10,11 @@
 </includes>
 <desc><p/></desc>
 <typedefs><typedef id="//xsdoc_ref/c/tdef/XSObjectRef" lang="c" type="simple"><name>XSObjectRef</name>
-<abstract><p>Polymorphism support - Generic type for all XSFoundation objects
+<abstract><p>Polymorphism support - Generic type for all XSFoundation objects (immutable version)
 </p></abstract>
 <declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSObjectRef</declaration_var>;  </declaration>
 <desc><p/></desc>
 </typedef></typedefs><copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Friday, September 11, 2020</timestamp>
+<timestamp>Sunday, September 27, 2020</timestamp>
 </header>

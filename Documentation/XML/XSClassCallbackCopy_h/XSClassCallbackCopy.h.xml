@@ -19,13 +19,13 @@
 </parameterlist>
 <parsedparameterlist>
 <parsedparameter><type>XSObjectRef</type><name>source</name></parsedparameter>
-<parsedparameter><type>XSObjectRef</type><name>destination</name></parsedparameter>
+<parsedparameter><type>XSMutableObjectRef</type><name>destination</name></parsedparameter>
 </parsedparameterlist>
 <result><p>The copied object
 </p></result>
-<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type> ( <declaration_type>*</declaration_type><declaration_function>XSClassCallbackCopy</declaration_function> )(
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_type>XSMutableObjectRef</declaration_type> ( <declaration_type>*</declaration_type><declaration_function>XSClassCallbackCopy</declaration_function> )(
     <declaration_type>XSObjectRef</declaration_type> <declaration_param>source</declaration_param>,
-    <declaration_type>XSObjectRef</declaration_type> <declaration_param>destination</declaration_param> );  </declaration>
+    <declaration_type>XSMutableObjectRef</declaration_type> <declaration_param>destination</declaration_param> );  </declaration>
 <desc><p>The 'destination' parameter is an allocated object, without a
 constructor call.
 The return value is usually 'destination', but can be another
@@ -35,5 +35,5 @@ caller automatically.
 </p></desc>
 </typedef></typedefs><copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Friday, September 11, 2020</timestamp>
+<timestamp>Sunday, September 27, 2020</timestamp>
 </header>

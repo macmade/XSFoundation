@@ -1,113 +1,432 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
-<header id="//xsdoc_ref/doc/header/Log.h" lang="c" filename="Log.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Private/Functions/Log.h"><name>Log.h</name>
-<abstract><p>Private declarations for logging functions
+<header id="//xsdoc_ref/doc/header/Log.h" lang="c" filename="Log.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Functions/Log.h"><name>Log.h</name>
+<abstract><p>Logging functions
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
 </attributes>
 <includes>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSSpinLock.h">&lt;XS/Types/XSSpinLock.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSObjectRef.h">&lt;XS/Types/XSObjectRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSLogLevel.h">&lt;XS/Types/XSLogLevel.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/stdint.h">&lt;stdint.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/stdarg.h">&lt;stdarg.h&gt;</hd_link></include>
 </includes>
 <desc><p/></desc>
-<functions><function id="//xsdoc_ref/c/func/XSLogGetCurrentDateTime" lang="c"><name>XSLogGetCurrentDateTime</name>
-<abstract><p>Gets the current date time string
+<functions><function id="//xsdoc_ref/c/func/XSFatalErrorWithInfos" lang="c"><name>XSFatalErrorWithInfos</name>
+<abstract><p>Logs a fatal message to the standard error output and aborts the program
 </p></abstract>
 <parameterlist>
-<parameter><name>buf</name><desc><p>The buffer in which to place the result string</p></desc></parameter>
-<parameter><name>size</name><desc><p>The buffer size</p></desc></parameter>
-<parameter><name>milliseconds</name><desc><p>On return, contains the number of milliseconds</p></desc></parameter>
+<parameter><name>file</name><desc><p>The file in which the log occurs</p></desc></parameter>
+<parameter><name>line</name><desc><p>The line number of the file in which the log occurs</p></desc></parameter>
+<parameter><name>func</name><desc><p>The function in which the log occurs</p></desc></parameter>
+<parameter><name>fmt</name><desc><p>The format string (printf like)</p></desc></parameter>
+<parameter><name>...</name><desc><p>Arguments for the format</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>char *</type><name>buf</name></parsedparameter>
-<parsedparameter><type>size_t</type><name>size</name></parsedparameter>
-<parsedparameter><type>uint64_t *</type><name>milliseconds</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>file</name></parsedparameter>
+<parsedparameter><type>int</type><name>line</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>func</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>fmt</name></parsedparameter>
+<parsedparameter><type> ...</type><name>...</name></parsedparameter>
 </parsedparameterlist>
-<returntype> void</returntype>
-<declaration><declaration_type>void</declaration_type> <declaration_function>XSLogGetCurrentDateTime</declaration_function>(
-    <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>buf</declaration_param>,
-    <declaration_type>size_t</declaration_type> <declaration_param>size</declaration_param>,
-    <declaration_type>uint64_t</declaration_type> <declaration_type>*</declaration_type><declaration_param>milliseconds</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xsdoc_ref/doc/title:func/XSLogGetCurrentTime" lang="c"><name>XSLogGetCurrentTime</name>
-<abstract><p>Gets the current date time string
+<returntype> XS_EXPORT void</returntype>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSFatalErrorWithInfos</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>file</declaration_param>,
+    <declaration_type>int</declaration_type> <declaration_param>line</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>func</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>fmt</declaration_param>,
+    ... ) <declaration_var>XS_NORETURN_ATTRIBUTE</declaration_var>;  </declaration>
+<desc><p>Do not use this function directly. Use the XSFatalError macro
+instead.
+</p></desc>
+</function><function id="//xsdoc_ref/c/func/XSGetLogLevel" lang="c"><name>XSGetLogLevel</name>
+<abstract><p>Gets the log level for XSLog functions/macros
 </p></abstract>
-<parameterlist>
-<parameter><name>buf</name><desc><p>The buffer in which to place the result string</p></desc></parameter>
-<parameter><name>size</name><desc><p>The buffer size</p></desc></parameter>
-<parameter><name>milliseconds</name><desc><p>On return, contains the number of milliseconds</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type>char *</type><name>buf</name></parsedparameter>
-<parsedparameter><type>size_t</type><name>size</name></parsedparameter>
-<parsedparameter><type>uint64_t *</type><name>milliseconds</name></parsedparameter>
-</parsedparameterlist>
-<returntype> void</returntype>
-<declaration><declaration_type>void</declaration_type> <declaration_function>XSLogGetCurrentDateTime</declaration_function>(
-    <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>buf</declaration_param>,
-    <declaration_type>size_t</declaration_type> <declaration_param>size</declaration_param>,
-    <declaration_type>uint64_t</declaration_type> <declaration_type>*</declaration_type><declaration_param>milliseconds</declaration_param> );  </declaration>
+<attributelists><listattribute><name>See</name><list>
+<item><name>XSLogLevel</name><value><hd_link logicalPath="XSLogLevel" isseealso="yes">XSLogLevel</hd_link></value></item></list></listattribute>
+</attributelists>
+<returntype> XS_EXPORT int64_t</returntype>
+<result><p>The actual log level
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>int64_t</declaration_type> <declaration_function>XSGetLogLevel</declaration_function>(
+    <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xsdoc_ref/c/func/XSLogGetInfo" lang="c"><name>XSLogGetInfo</name>
-<abstract><p>Gets the necessary info to print a log message
+</function><function id="//xsdoc_ref/c/func/XSLogWithInfos" lang="c"><name>XSLogWithInfos</name>
+<abstract><p>Logs a message to the standard error output
 </p></abstract>
 <parameterlist>
 <parameter><name>level</name><desc><p>The level of the log message</p></desc></parameter>
 <parameter><name>file</name><desc><p>The file in which the log occurs</p></desc></parameter>
 <parameter><name>line</name><desc><p>The line number of the file in which the log occurs</p></desc></parameter>
 <parameter><name>func</name><desc><p>The function in which the log occurs</p></desc></parameter>
+<parameter><name>fmt</name><desc><p>The format string (printf like)</p></desc></parameter>
+<parameter><name>...</name><desc><p>Arguments for the format</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
 <parsedparameter><type>XSLogLevel</type><name>level</name></parsedparameter>
 <parsedparameter><type>const char *</type><name>file</name></parsedparameter>
 <parsedparameter><type>int</type><name>line</name></parsedparameter>
 <parsedparameter><type>const char *</type><name>func</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>fmt</name></parsedparameter>
+<parsedparameter><type> ...</type><name>...</name></parsedparameter>
 </parsedparameterlist>
-<returntype> XSLogInfo</returntype>
-<result><p>A structure with all the necessary info filled
-</p></result>
-<declaration><declaration_type>XSLogInfo</declaration_type> <declaration_function>XSLogGetInfo</declaration_function>(
+<returntype> XS_EXPORT void</returntype>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSLogWithInfos</declaration_function>(
     <declaration_type>XSLogLevel</declaration_type> <declaration_param>level</declaration_param>,
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>file</declaration_param>,
     <declaration_type>int</declaration_type> <declaration_param>line</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>func</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>fmt</declaration_param>,
+    ... );  </declaration>
+<desc><p>Do not use this function directly. Use the XSLog... macros
+instead.
+</p></desc>
+</function><function id="//xsdoc_ref/c/func/XSSetLogLevel" lang="c"><name>XSSetLogLevel</name>
+<abstract><p>Sets the log level for XSLog functions/macros
+</p></abstract>
+<parameterlist>
+<parameter><name>level</name><desc><p>The desired log level</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>int64_t</type><name>level</name></parsedparameter>
+</parsedparameterlist>
+<attributelists><listattribute><name>See</name><list>
+<item><name>XSLogLevel</name><value><hd_link logicalPath="XSLogLevel" isseealso="yes">XSLogLevel</hd_link></value></item></list></listattribute>
+</attributelists>
+<returntype> XS_EXPORT void</returntype>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSSetLogLevel</declaration_function>(
+    <declaration_type>int64_t</declaration_type> <declaration_param>level</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/doc/title:func/XSShow" lang="c"><name>XSShow</name>
+<abstract><p>Logs the description of an object to the console
+</p></abstract>
+<parameterlist>
+<parameter><name>object</name><desc><p>The object to log</p></desc></parameter>
+<parameter><name>file</name><desc><p>The file in which the log occurs</p></desc></parameter>
+<parameter><name>line</name><desc><p>The line number of the file in which the log occurs</p></desc></parameter>
+<parameter><name>func</name><desc><p>The function in which the log occurs</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSObjectRef</type><name>object</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>file</name></parsedparameter>
+<parsedparameter><type>int</type><name>line</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>func</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void</returntype>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSShowWithInfos</declaration_function>(
+    <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>file</declaration_param>,
+    <declaration_type>int</declaration_type> <declaration_param>line</declaration_param>,
     <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>func</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xsdoc_ref/c/func/XSLogPause" lang="c"><name>XSLogPause</name>
-<abstract><p>Holds any log request
+<desc><p>Do not use this function directly. Use the XSShow macro
+instead.
+</p></desc>
+</function><function id="//xsdoc_ref/c/func/XSShowWithInfos" lang="c"><name>XSShowWithInfos</name>
+<abstract><p>Logs the description of an object to the console
 </p></abstract>
-<returntype> void</returntype>
-<declaration><declaration_type>void</declaration_type> <declaration_function>XSLogPause</declaration_function>(
-    <declaration_param>void</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xsdoc_ref/c/func/XSLogResume" lang="c"><name>XSLogResume</name>
-<abstract><p>Resumes all log requests
+<parameterlist>
+<parameter><name>object</name><desc><p>The object to log</p></desc></parameter>
+<parameter><name>file</name><desc><p>The file in which the log occurs</p></desc></parameter>
+<parameter><name>line</name><desc><p>The line number of the file in which the log occurs</p></desc></parameter>
+<parameter><name>func</name><desc><p>The function in which the log occurs</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSObjectRef</type><name>object</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>file</name></parsedparameter>
+<parsedparameter><type>int</type><name>line</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>func</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void</returntype>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSShowWithInfos</declaration_function>(
+    <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>file</declaration_param>,
+    <declaration_type>int</declaration_type> <declaration_param>line</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>func</declaration_param> );  </declaration>
+<desc><p>Do not use this function directly. Use the XSShow macro
+instead.
+</p></desc>
+</function><function id="//xsdoc_ref/c/func/XSVLogWithInfos" lang="c"><name>XSVLogWithInfos</name>
+<abstract><p>Logs a message to the standard error output
 </p></abstract>
-<returntype> void</returntype>
-<declaration><declaration_type>void</declaration_type> <declaration_function>XSLogResume</declaration_function>(
-    <declaration_param>void</declaration_param> );  </declaration>
-<desc><p/></desc>
+<parameterlist>
+<parameter><name>level</name><desc><p>The level of the log message</p></desc></parameter>
+<parameter><name>file</name><desc><p>The file in which the log occurs</p></desc></parameter>
+<parameter><name>line</name><desc><p>The line number of the file in which the log occurs</p></desc></parameter>
+<parameter><name>func</name><desc><p>The function in which the log occurs</p></desc></parameter>
+<parameter><name>fmt</name><desc><p>The format string (printf like)</p></desc></parameter>
+<parameter><name>args</name><desc><p>Arguments for the format</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSLogLevel</type><name>level</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>file</name></parsedparameter>
+<parsedparameter><type>int</type><name>line</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>func</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>fmt</name></parsedparameter>
+<parsedparameter><type>va_list</type><name>args</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void</returntype>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSVLogWithInfos</declaration_function>(
+    <declaration_type>XSLogLevel</declaration_type> <declaration_param>level</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>file</declaration_param>,
+    <declaration_type>int</declaration_type> <declaration_param>line</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>func</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>fmt</declaration_param>,
+    <declaration_type>va_list</declaration_type> <declaration_param>args</declaration_param> );  </declaration>
+<desc><p>Do not use this function directly. Use the XSVLog... macros
+instead.
+</p></desc>
 </function></functions>
-<globals><variable id="//xsdoc_ref/c/data/XSLogCurrentLevel" lang="c"><name>XSLogCurrentLevel</name>
-<abstract><p>The current log level
+<defines><pdefine id="//xsdoc_ref/c/macro/XSFatalError" definetype="block" lang="c"><name>XSFatalError</name>
+<abstract><p>Issues a fatal error message and aborts the program
 </p></abstract>
-<returntype>XS_EXTERN volatile int64_t</returntype>
-<declaration><declaration_type>XS_EXTERN</declaration_type> <declaration_keyword>volatile</declaration_keyword> <declaration_type>int64_t</declaration_type> <declaration_var>XSLogCurrentLevel</declaration_var>;  </declaration>
-<desc><p/></desc>
-</variable><variable id="//xsdoc_ref/c/data/XSLogIsPaused" lang="c"><name>XSLogIsPaused</name>
-<abstract><p>1 if any log call should be hold, otherwise 0
+<parameterlist>
+<parameter><name>...</name><desc><p>The error message with optional format arguments</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSFatalError</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSFatalErrorWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSFatalError</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSFatalErrorWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSLog" definetype="block" lang="c"><name>XSLog</name>
+<abstract><p>Logs a message (info level) to the standard error output
 </p></abstract>
-<returntype>XS_EXTERN volatile int64_t</returntype>
-<declaration><declaration_type>XS_EXTERN</declaration_type> <declaration_keyword>volatile</declaration_keyword> <declaration_type>int64_t</declaration_type> <declaration_var>XSLogIsPaused</declaration_var>;  </declaration>
-<desc><p/></desc>
-</variable><variable id="//xsdoc_ref/c/data/XSLogLock" lang="c"><name>XSLogLock</name>
-<abstract><p>Spin lock for log calls
+<parameterlist>
+<parameter><name>...</name><desc><p>The format string (printf like) with optional format arguments for the format</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSLog</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelInfo</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSLog</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelInfo</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSLogAlert" definetype="block" lang="c"><name>XSLogAlert</name>
+<abstract><p>Logs a message (alert level) to the standard error output
 </p></abstract>
-<returntype>XS_EXTERN XSSpinLock</returntype>
-<declaration><declaration_type>XS_EXTERN</declaration_type> <declaration_type>XSSpinLock</declaration_type> <declaration_var>XSLogLock</declaration_var>;  </declaration>
-<desc><p/></desc>
-</variable></globals>
-<copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
+<parameterlist>
+<parameter><name>...</name><desc><p>The format string (printf like) with optional format arguments for the format</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSLogAlert</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelAlert</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSLogAlert</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelAlert</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSLogCritical" definetype="block" lang="c"><name>XSLogCritical</name>
+<abstract><p>Logs a message (critical level) to the standard error output
+</p></abstract>
+<parameterlist>
+<parameter><name>...</name><desc><p>The format string (printf like) with optional format arguments for the format</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSLogCritical</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelCritical</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSLogCritical</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelCritical</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSLogDebug" definetype="block" lang="c"><name>XSLogDebug</name>
+<abstract><p>Logs a message (debug level) to the standard error output
+</p></abstract>
+<parameterlist>
+<parameter><name>...</name><desc><p>The format string (printf like) with optional format arguments for the format</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSLogDebug</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelDebug</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSLogDebug</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelDebug</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSLogEmergency" definetype="block" lang="c"><name>XSLogEmergency</name>
+<abstract><p>Logs a message (emergency level) to the standard error output
+</p></abstract>
+<parameterlist>
+<parameter><name>...</name><desc><p>The format string (printf like) with optional format arguments for the format</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSLogEmergency</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelEmergency</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSLogEmergency</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelEmergency</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSLogError" definetype="block" lang="c"><name>XSLogError</name>
+<abstract><p>Logs a message (error level) to the standard error output
+</p></abstract>
+<parameterlist>
+<parameter><name>...</name><desc><p>The format string (printf like) with optional format arguments for the format</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSLogError</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelError</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSLogError</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelError</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSLogInfo" definetype="block" lang="c"><name>XSLogInfo</name>
+<abstract><p>Logs a message (info level) to the standard error output
+</p></abstract>
+<parameterlist>
+<parameter><name>...</name><desc><p>The format string (printf like) with optional format arguments for the format</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSLogInfo</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelInfo</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSLogInfo</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelInfo</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSLogNotice" definetype="block" lang="c"><name>XSLogNotice</name>
+<abstract><p>Logs a message (notice level) to the standard error output
+</p></abstract>
+<parameterlist>
+<parameter><name>...</name><desc><p>The format string (printf like) with optional format arguments for the format</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSLogNotice</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelNotice</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSLogNotice</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelNotice</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSLogWarning" definetype="block" lang="c"><name>XSLogWarning</name>
+<abstract><p>Logs a message (warning level) to the standard error output
+</p></abstract>
+<parameterlist>
+<parameter><name>...</name><desc><p>The format string (printf like) with optional format arguments for the format</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSLogWarning</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelWarning</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSLogWarning</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor><declaration_preprocessor>.</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelWarning</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__VA_ARGS__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSShow" definetype="block" lang="c"><name>XSShow</name>
+<abstract><p>Logs the description of an object to the console
+</p></abstract>
+<parameterlist>
+<parameter><name>_obj_</name><desc><p>The object to log</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSShow</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_obj_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSShowWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_obj_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSShow</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_obj_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSShowWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_obj_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSVLog" definetype="block" lang="c"><name>XSVLog</name>
+<abstract><p>Logs a message (info level) to the standard error output
+</p></abstract>
+<parameterlist>
+<parameter><name>_fmt_</name><desc><p>The format string (printf like)</p></desc></parameter>
+<parameter><name>_args_</name><desc><p>Arguments for the format (va_list)</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSVLog</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelInfo</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSVLog</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelInfo</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSVLogAlert" definetype="block" lang="c"><name>XSVLogAlert</name>
+<abstract><p>Logs a message (alert level) to the standard error output
+</p></abstract>
+<parameterlist>
+<parameter><name>_fmt_</name><desc><p>The format string (printf like)</p></desc></parameter>
+<parameter><name>_args_</name><desc><p>Arguments for the format (va_list)</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSVLogAlert</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelAlert</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSVLogAlert</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelAlert</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSVLogCritical" definetype="block" lang="c"><name>XSVLogCritical</name>
+<abstract><p>Logs a message (critical level) to the standard error output
+</p></abstract>
+<parameterlist>
+<parameter><name>_fmt_</name><desc><p>The format string (printf like)</p></desc></parameter>
+<parameter><name>_args_</name><desc><p>Arguments for the format (va_list)</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSVLogCritical</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelCritical</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSVLogCritical</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelCritical</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSVLogDebug" definetype="block" lang="c"><name>XSVLogDebug</name>
+<abstract><p>Logs a message (debug level) to the standard error output
+</p></abstract>
+<parameterlist>
+<parameter><name>_fmt_</name><desc><p>The format string (printf like)</p></desc></parameter>
+<parameter><name>_args_</name><desc><p>Arguments for the format (va_list)</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSVLogDebug</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelDebug</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSVLogDebug</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelDebug</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSVLogEmergency" definetype="block" lang="c"><name>XSVLogEmergency</name>
+<abstract><p>Logs a message (emergency level) to the standard error output
+</p></abstract>
+<parameterlist>
+<parameter><name>_fmt_</name><desc><p>The format string (printf like)</p></desc></parameter>
+<parameter><name>_args_</name><desc><p>Arguments for the format (va_list)</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSVLogEmergency</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelEmergency</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSVLogEmergency</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelEmergency</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSVLogError" definetype="block" lang="c"><name>XSVLogError</name>
+<abstract><p>Logs a message (error level) to the standard error output
+</p></abstract>
+<parameterlist>
+<parameter><name>_fmt_</name><desc><p>The format string (printf like)</p></desc></parameter>
+<parameter><name>_args_</name><desc><p>Arguments for the format (va_list)</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSVLogError</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelError</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSVLogError</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelError</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSVLogInfo" definetype="block" lang="c"><name>XSVLogInfo</name>
+<abstract><p>Logs a message (info level) to the standard error output
+</p></abstract>
+<parameterlist>
+<parameter><name>_fmt_</name><desc><p>The format string (printf like)</p></desc></parameter>
+<parameter><name>_args_</name><desc><p>Arguments for the format (va_list)</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSVLogInfo</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelInfo</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSVLogInfo</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelInfo</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSVLogNotice" definetype="block" lang="c"><name>XSVLogNotice</name>
+<abstract><p>Logs a message (notice level) to the standard error output
+</p></abstract>
+<parameterlist>
+<parameter><name>_fmt_</name><desc><p>The format string (printf like)</p></desc></parameter>
+<parameter><name>_args_</name><desc><p>Arguments for the format (va_list)</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSVLogNotice</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelNotice</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSVLogNotice</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelNotice</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSVLogWarning" definetype="block" lang="c"><name>XSVLogWarning</name>
+<abstract><p>Logs a message (warning level) to the standard error output
+</p></abstract>
+<parameterlist>
+<parameter><name>_fmt_</name><desc><p>The format string (printf like)</p></desc></parameter>
+<parameter><name>_args_</name><desc><p>Arguments for the format (va_list)</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSVLogWarning</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelWarning</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSVLogWarning</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSLogWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSLogLevelWarning</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_fmt_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_args_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine></defines><copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Friday, September 11, 2020</timestamp>
+<timestamp>Sunday, September 27, 2020</timestamp>
 </header>

@@ -1,1 +1,1 @@
-XSFoundation/include/XS/__private/*
+XSFoundation/include/XS/Private/*

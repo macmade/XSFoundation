@@ -9,6 +9,7 @@
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassID.h">&lt;XS/Types/XSClassID.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassType.h">&lt;XS/Types/XSClassType.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/XSObjectRef.h">&lt;XS/Types/XSObjectRef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSMutableObjectRef.h">&lt;XS/Types/XSMutableObjectRef.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassCallbackConstructor.h">&lt;XS/Types/XSClassCallbackConstructor.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassCallbackDestructor.h">&lt;XS/Types/XSClassCallbackDestructor.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassCallbackCopy.h">&lt;XS/Types/XSClassCallbackCopy.h&gt;</hd_link></include>
@@ -18,9 +19,11 @@
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/XSInitStatus.h">&lt;XS/Types/XSInitStatus.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/XSLogLevel.h">&lt;XS/Types/XSLogLevel.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/XSSpinLock.h">&lt;XS/Types/XSSpinLock.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSObjectAssociation.h">&lt;XS/Types/XSObjectAssociation.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSTLSKey.h">&lt;XS/Types/XSTLSKey.h&gt;</hd_link></include>
 </includes>
 <desc><p/></desc>
 <copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Friday, September 11, 2020</timestamp>
+<timestamp>Sunday, September 27, 2020</timestamp>
 </header>

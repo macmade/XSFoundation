@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/CString.h" lang="c" filename="CString.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Functions/CString.h"><name>String.h</name>
+<abstract><p>CS string functions
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/stdbool.h">&lt;stdbool.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/stddef.h">&lt;stddef.h&gt;</hd_link></include>
+</includes>
+<desc><p/></desc>
+<functions><function id="//xsdoc_ref/c/func/XSCStringCopy" lang="c"><name>XSCStringCopy</name>
+<abstract><p>Copies a null-terminated C string into a buffer
+</p></abstract>
+<parameterlist>
+<parameter><name>buf</name><desc><p>The buffer in which to copy the string</p></desc></parameter>
+<parameter><name>size</name><desc><p>The size of the buffer, in bytes</p></desc></parameter>
+<parameter><name>str</name><desc><p>The string to copy</p></desc></parameter>
+<parameter><name>count</name><desc><p>The number of bytes to copy, or 0 for the whole string</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>char *</type><name>buf</name></parsedparameter>
+<parsedparameter><type>size_t</type><name>size</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>str</name></parsedparameter>
+<parsedparameter><type>size_t</type><name>count</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT bool</returntype>
+<result><p>True if the string was copied, otherwise false
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSCStringCopy</declaration_function>(
+    <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>buf</declaration_param>,
+    <declaration_type>size_t</declaration_type> <declaration_param>size</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>str</declaration_param>,
+    <declaration_type>size_t</declaration_type> <declaration_param>count</declaration_param> );  </declaration>
+<desc><p>This function will attempt to copy `count` bytes from `str`
+into `buf`, assuming there is enough room for it, including
+the termination character.
+The destination buffer will be zero-initialized whether or not
+the string is copied.
+</p></desc>
+</function></functions>
+<copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Sunday, September 27, 2020</timestamp>
+</header>

@@ -95,7 +95,7 @@ ifeq ($(_HAS_XSDOCGEN),true)
 	@    --source-root-prefix "/XSFoundation/include/" \
 	@    --classes-prefix "XSFoundation/include/XS/Classes/" \
 	@    --functions-prefix "XSFoundation/include/XS/Functions/" \
-	@    --types-prefix "XSFoundation/include/XS/XSTypes/" \
+	@    --types-prefix "XSFoundation/include/XS/Types/" \
 	@    --page-add "Building XSFoundation" "Pages/Build.inc.php" \
 	@    --page-add "Memory management" "Pages/Memory.inc.php" \
 	@    --page-add "Class definition" "Pages/Classes.inc.php" \

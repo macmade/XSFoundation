@@ -1,99 +1,386 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
-<header id="//xsdoc_ref/doc/header/Memory.h" lang="c" filename="Memory.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Private/Functions/Memory.h"><name>Memory.h</name>
-<abstract><p>Private declarations for memory functions
+<header id="//xsdoc_ref/doc/header/Memory.h" lang="c" filename="Memory.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Functions/Memory.h"><name>Memory.h</name>
+<abstract><p>Memory allocation functions
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
 </attributes>
 <includes>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/stddef.h">&lt;stddef.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassID.h">&lt;XS/Types/XSClassID.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xsdoc_ref/doc/header/stddef.h">&lt;stddef.h&gt;</hd_link></include>
 </includes>
 <desc><p/></desc>
-<functions><function id="//xsdoc_ref/c/func/XSGetMemoryObject" lang="c"><name>XSGetMemoryObject</name>
-<abstract><p>Gets the memory object for a pointer
+<functions><function id="//xsdoc_ref/c/func/XSAllocWithInfos" lang="c"><name>XSAllocWithInfos</name>
+<abstract><p>Allocates memory
 </p></abstract>
 <parameterlist>
-<parameter><name>ptr</name><desc><p>The pointer for which to get the memory object</p></desc></parameter>
+<parameter><name>bytes</name><desc><p>The number of bytes to allocate</p></desc></parameter>
+<parameter><name>classID</name><desc><p>The class ID, if any</p></desc></parameter>
+<parameter><name>file</name><desc><p>The file in which the allocation occurs</p></desc></parameter>
+<parameter><name>line</name><desc><p>The line number of the file in which the allocation occurs</p></desc></parameter>
+<parameter><name>func</name><desc><p>The function in which the allocation occurs</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>const void *</type><name>ptr</name></parsedparameter>
-</parsedparameterlist>
-<returntype> XSMemoryObject *</returntype>
-<result><p>The memory object
-</p></result>
-<declaration><declaration_type>XSMemoryObject</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSGetMemoryObject</declaration_function>(
-    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>ptr</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function></functions>
-<globals><variable id="//xsdoc_ref/c/data/XSMemoryAllocID" lang="c"><name>XSMemoryAllocID</name>
-<abstract><p>The current allocation ID
-</p></abstract>
-<returntype>XS_EXTERN volatile int64_t</returntype>
-<declaration><declaration_type>XS_EXTERN</declaration_type> <declaration_keyword>volatile</declaration_keyword> <declaration_type>int64_t</declaration_type> <declaration_var>XSMemoryAllocID</declaration_var>;  </declaration>
-<desc><p/></desc>
-</variable></globals>
-<constants><constant id="//xsdoc_ref/c/data/XSMemoryFenceData" lang="c"><name>XSMemoryFenceData</name>
-<abstract><p>The memory fence data
-</p></abstract>
-<returntype>XS_EXTERN const uint8_t</returntype>
-<declaration><declaration_type>XS_EXTERN</declaration_type> <declaration_keyword>const</declaration_keyword> <declaration_type>uint8_t</declaration_type> <declaration_type>XSMemoryFenceData</declaration_type>[ <declaration_type>XS_MEMORY_FENCE_SIZE</declaration_type> ];  </declaration>
-<desc><p/></desc>
-</constant></constants>
-<typedefs><typedef id="//xsdoc_ref/c/tdef/XSMemoryObject" lang="c" type="simple"><name>XSMemoryObject</name>
-<abstract><p>Memory object type
-</p></abstract>
-<fieldlist>
-<field><name>retainCount</name><desc><p>The object's retain count</p></desc></field>
-<field><name>size</name><desc><p>The allocated data size</p></desc></field>
-<field><name>allocID</name><desc><p>The allocation ID</p></desc></field>
-<field><name>classID</name><desc><p>The class ID (only for allocated instances)</p></desc></field>
-<field><name>DEBUG</name><desc><p>Memory fence to prevent overflows (DEBUG builds only)</p></desc></field>
-</fieldlist>
-<parsedparameterlist>
-<parsedparameter><type>volatile int64_t</type><name>retainCount</name></parsedparameter>
-<parsedparameter><type>size_t</type><name>size</name></parsedparameter>
-<parsedparameter><type>int64_t</type><name>allocID</name></parsedparameter>
+<parsedparameter><type>size_t</type><name>bytes</name></parsedparameter>
 <parsedparameter><type>XSClassID</type><name>classID</name></parsedparameter>
-<parsedparameter><type>uint8_t</type><name>fence</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>file</name></parsedparameter>
+<parsedparameter><type>int</type><name>line</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>func</name></parsedparameter>
 </parsedparameterlist>
-<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> { 
-    <declaration_keyword>volatile</declaration_keyword> <declaration_type>int64_t</declaration_type> <declaration_var>retainCount</declaration_var>;
-    <declaration_comment>/*! The object's retain count */</declaration_comment>
-    <declaration_type>size_t</declaration_type> <declaration_var>size</declaration_var>;
-    <declaration_comment>/*! The allocated data size */</declaration_comment>
-    <declaration_type>int64_t</declaration_type> <declaration_var>allocID</declaration_var>;
-    <declaration_comment>/*! The allocation ID */</declaration_comment>
-    <declaration_type>XSClassID</declaration_type> <declaration_var>classID</declaration_var>;
-    <declaration_comment>/*! The class ID (only for allocated instances) */</declaration_comment>
-    <declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
-    <declaration_type>uint8_t</declaration_type> <declaration_type>fence</declaration_type>[ <declaration_type>XS_MEMORY_FENCE_SIZE</declaration_type> ];
-    <declaration_comment>/*! Memory fence to prevent overflows (DEBUG builds only) */</declaration_comment>
-    <declaration_preprocessor>#endif</declaration_preprocessor>  
-} <declaration_var>XSMemoryObject</declaration_var>;  </declaration>
+<returntype> XS_EXPORT void *</returntype>
+<result><p>The allocated memory, or NULL
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSAllocWithInfos</declaration_function>(
+    <declaration_type>size_t</declaration_type> <declaration_param>bytes</declaration_param>,
+    <declaration_type>XSClassID</declaration_type> <declaration_param>classID</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>file</declaration_param>,
+    <declaration_type>int</declaration_type> <declaration_param>line</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>func</declaration_param> );  </declaration>
+<desc><p>Do not use this function directly. Use the XSAlloc macro
+instead.
+</p></desc>
+</function><function id="//xsdoc_ref/c/func/XSAutoAllocWithInfos" lang="c"><name>XSAutoAllocWithInfos</name>
+<abstract><p>Allocates memory which will be automatically released
+</p></abstract>
+<parameterlist>
+<parameter><name>bytes</name><desc><p>The number of bytes to allocate</p></desc></parameter>
+<parameter><name>classID</name><desc><p>The class ID, if any</p></desc></parameter>
+<parameter><name>file</name><desc><p>The file in which the allocation occurs</p></desc></parameter>
+<parameter><name>line</name><desc><p>The line number of the file in which the allocation occurs</p></desc></parameter>
+<parameter><name>func</name><desc><p>The function in which the allocation occurs</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>size_t</type><name>bytes</name></parsedparameter>
+<parsedparameter><type>XSClassID</type><name>classID</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>file</name></parsedparameter>
+<parsedparameter><type>int</type><name>line</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>func</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT XS_AUTORELEASED void *</returntype>
+<result><p>The allocated memory, or NULL
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XS_AUTORELEASED</declaration_type> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSAutoAllocWithInfos</declaration_function>(
+    <declaration_type>size_t</declaration_type> <declaration_param>bytes</declaration_param>,
+    <declaration_type>XSClassID</declaration_type> <declaration_param>classID</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>file</declaration_param>,
+    <declaration_type>int</declaration_type> <declaration_param>line</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>func</declaration_param> );  </declaration>
+<desc><p>Do not use this function directly. Use the XSAutoAlloc macro
+instead.
+</p></desc>
+</function><function id="//xsdoc_ref/c/func/XSAutorelease" lang="c"><name>XSAutorelease</name>
+<abstract><p>Auto-releases memory data
+</p></abstract>
+<parameterlist>
+<parameter><name>memory</name><desc><p>The memory data to release</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>const void *</type><name>memory</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void *</returntype>
+<result><p>The memory data
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSAutorelease</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param> );  </declaration>
+<desc><p>The memory data will be placed in the instance of the current
+auto-release pool, and will be released the next time
+the auto-release pool is drained.
+</p></desc>
+</function><function id="//xsdoc_ref/doc/title:func/XSCopy" lang="c"><name>XSCopy</name>
+<abstract><p>Copies a memory data object
+</p></abstract>
+<parameterlist>
+<parameter><name>memory</name><desc><p>The memory data object to copy</p></desc></parameter>
+<parameter><name>file</name><desc><p>The file in which the copy occurs</p></desc></parameter>
+<parameter><name>line</name><desc><p>The line number of the file in which the copy occurs</p></desc></parameter>
+<parameter><name>func</name><desc><p>The function in which the copy occurs</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>const void *</type><name>memory</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>file</name></parsedparameter>
+<parsedparameter><type>int</type><name>line</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>func</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void *</returntype>
+<result><p>The copy of the memory data object
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSCopyWithInfos</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>file</declaration_param>,
+    <declaration_type>int</declaration_type> <declaration_param>line</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>func</declaration_param> );  </declaration>
+<desc><p>Do not use this function directly. Use the XSCopy macro
+instead.
+</p></desc>
+</function><function id="//xsdoc_ref/c/func/XSCopyWithInfos" lang="c"><name>XSCopyWithInfos</name>
+<abstract><p>Copies a memory data object
+</p></abstract>
+<parameterlist>
+<parameter><name>memory</name><desc><p>The memory data object to copy</p></desc></parameter>
+<parameter><name>file</name><desc><p>The file in which the copy occurs</p></desc></parameter>
+<parameter><name>line</name><desc><p>The line number of the file in which the copy occurs</p></desc></parameter>
+<parameter><name>func</name><desc><p>The function in which the copy occurs</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>const void *</type><name>memory</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>file</name></parsedparameter>
+<parsedparameter><type>int</type><name>line</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>func</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void *</returntype>
+<result><p>The copy of the memory data object
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSCopyWithInfos</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>file</declaration_param>,
+    <declaration_type>int</declaration_type> <declaration_param>line</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>func</declaration_param> );  </declaration>
+<desc><p>Do not use this function directly. Use the XSCopy macro
+instead.
+</p></desc>
+</function><function id="//xsdoc_ref/c/func/XSEquals" lang="c"><name>XSEquals</name>
+<abstract><p>Checks whether two memory data objects are equals
+</p></abstract>
+<parameterlist>
+<parameter><name>memory1</name><desc><p>The first memory data object to compare</p></desc></parameter>
+<parameter><name>memory2</name><desc><p>The second memory data object to compare</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>const void *</type><name>memory1</name></parsedparameter>
+<parsedparameter><type>const void *</type><name>memory2</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT bool</returntype>
+<result><p>True if both memory data objects are equals, otherwise false
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSEquals</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory1</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory2</declaration_param> );  </declaration>
 <desc><p/></desc>
-</typedef></typedefs><defines><pdefine id="//xsdoc_ref/c/macro/XS_MEMORY_FENCE_SIZE" definetype="value" lang="c"><name>XS_MEMORY_FENCE_SIZE</name>
-<abstract><p>The size of the memory fence to prevent overflows
+</function><function id="//xsdoc_ref/c/func/XSGetRetainCount" lang="c"><name>XSGetRetainCount</name>
+<abstract><p>Get the retain count of a memory data object
 </p></abstract>
-<attributelists><listattribute><name>See Also</name><list>
-<item><name>XS_MEMORY_FENCE_SIZE</name><value><hd_link logicalPath="//xsdoc_ref/c/macro/XS_MEMORY_FENCE_SIZE_DONTLINK_0" isseealso="yes">XS_MEMORY_FENCE_SIZE</hd_link></value></item></list></listattribute>
-</attributelists>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MEMORY_FENCE_SIZE</declaration_preprocessor> <declaration_preprocessor>16</declaration_preprocessor> </declaration>
-<autorelated>
-<relateduid>//xsdoc_ref/c/macro/XS_MEMORY_FENCE_SIZE_DONTLINK_0</relateduid>
-</autorelated>
-</pdefine><pdefine id="//xsdoc_ref/c/macro/XS_MEMORY_FENCE_SIZE_DONTLINK_1" definetype="value" lang="c"><name>XS_MEMORY_FENCE_SIZE</name>
-<abstract><p>The size of the memory fence to prevent overflows
+<parameterlist>
+<parameter><name>memory</name><desc><p>The memory data object</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>const void *</type><name>memory</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT int64_t</returntype>
+<result><p>The object's retain count
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>int64_t</declaration_type> <declaration_function>XSGetRetainCount</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param> );  </declaration>
+<desc><p>This functions is exposed for unit-tests and debug purposes.
+Never use it or rely on it in production code.
+</p></desc>
+</function><function id="//xsdoc_ref/c/func/XSReallocWithInfos" lang="c"><name>XSReallocWithInfos</name>
+<abstract><p>Reallocates memory
 </p></abstract>
-<attributelists><listattribute><name>See Also</name><list>
-<item><name>XS_MEMORY_FENCE_SIZE</name><value><hd_link logicalPath="//xsdoc_ref/c/macro/XS_MEMORY_FENCE_SIZE" isseealso="yes">XS_MEMORY_FENCE_SIZE</hd_link></value></item></list></listattribute>
-</attributelists>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_MEMORY_FENCE_SIZE</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor> </declaration>
-<autorelated>
-<relateduid>//xsdoc_ref/c/macro/XS_MEMORY_FENCE_SIZE</relateduid>
-</autorelated>
+<parameterlist>
+<parameter><name>memory</name><desc><p>The memory data to reallocate</p></desc></parameter>
+<parameter><name>bytes</name><desc><p>The number of bytes to reallocate</p></desc></parameter>
+<parameter><name>file</name><desc><p>The file in which the reallocation occurs</p></desc></parameter>
+<parameter><name>line</name><desc><p>The line number of the file in which the reallocation occurs</p></desc></parameter>
+<parameter><name>func</name><desc><p>The function in which the reallocation occurs</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>const void *</type><name>memory</name></parsedparameter>
+<parsedparameter><type>size_t</type><name>bytes</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>file</name></parsedparameter>
+<parsedparameter><type>int</type><name>line</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>func</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void *</returntype>
+<result><p>The reallocated memory, or NULL
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSReallocWithInfos</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param>,
+    <declaration_type>size_t</declaration_type> <declaration_param>bytes</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>file</declaration_param>,
+    <declaration_type>int</declaration_type> <declaration_param>line</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>func</declaration_param> );  </declaration>
+<desc><p>Do not use this function directly. Use the XSRealloc macro
+instead.
+</p></desc>
+</function><function id="//xsdoc_ref/c/func/XSReleaseWithInfos" lang="c"><name>XSReleaseWithInfos</name>
+<abstract><p>Releases memory data
+</p></abstract>
+<parameterlist>
+<parameter><name>memory</name><desc><p>The memory data to release</p></desc></parameter>
+<parameter><name>file</name><desc><p>The file in which the release occurs</p></desc></parameter>
+<parameter><name>line</name><desc><p>The line number of the file in which the release occurs</p></desc></parameter>
+<parameter><name>func</name><desc><p>The function in which the release occurs</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>const void *</type><name>memory</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>file</name></parsedparameter>
+<parsedparameter><type>int</type><name>line</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>func</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void</returntype>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSReleaseWithInfos</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>file</declaration_param>,
+    <declaration_type>int</declaration_type> <declaration_param>line</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>func</declaration_param> );  </declaration>
+<desc><p>Do not use this function directly. Use the XSRelease macro
+instead.
+</p></desc>
+</function><function id="//xsdoc_ref/doc/title:func/XSRetain" lang="c"><name>XSRetain</name>
+<abstract><p>Retains memory data
+</p></abstract>
+<parameterlist>
+<parameter><name>memory</name><desc><p>The memory data to retain</p></desc></parameter>
+<parameter><name>file</name><desc><p>The file in which the retain occurs</p></desc></parameter>
+<parameter><name>line</name><desc><p>The line number of the file in which the retain occurs</p></desc></parameter>
+<parameter><name>func</name><desc><p>The function in which the retain occurs</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>const void *</type><name>memory</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>file</name></parsedparameter>
+<parsedparameter><type>int</type><name>line</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>func</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void *</returntype>
+<result><p>The memory data
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSRetainWithInfos</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>file</declaration_param>,
+    <declaration_type>int</declaration_type> <declaration_param>line</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>func</declaration_param> );  </declaration>
+<desc><p>Do not use this function directly. Use the XSRelease macro
+instead.
+</p></desc>
+</function><function id="//xsdoc_ref/c/func/XSRetainWithInfos" lang="c"><name>XSRetainWithInfos</name>
+<abstract><p>Retains memory data
+</p></abstract>
+<parameterlist>
+<parameter><name>memory</name><desc><p>The memory data to retain</p></desc></parameter>
+<parameter><name>file</name><desc><p>The file in which the retain occurs</p></desc></parameter>
+<parameter><name>line</name><desc><p>The line number of the file in which the retain occurs</p></desc></parameter>
+<parameter><name>func</name><desc><p>The function in which the retain occurs</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>const void *</type><name>memory</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>file</name></parsedparameter>
+<parsedparameter><type>int</type><name>line</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>func</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void *</returntype>
+<result><p>The memory data
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSRetainWithInfos</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>memory</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>file</declaration_param>,
+    <declaration_type>int</declaration_type> <declaration_param>line</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>func</declaration_param> );  </declaration>
+<desc><p>Do not use this function directly. Use the XSRelease macro
+instead.
+</p></desc>
+</function></functions>
+<defines><pdefine id="//xsdoc_ref/c/macro/XSAlloc" definetype="block" lang="c"><name>XSAlloc</name>
+<abstract><p>Allocates memory
+</p></abstract>
+<parameterlist>
+<parameter><name>_bytes_</name><desc><p>The number of bytes to allocate</p></desc></parameter>
+</parameterlist>
+<result><p>The allocated memory, or NULL
+</p></result>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSAlloc</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_bytes_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSAllocWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_bytes_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSAlloc</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_bytes_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSAllocWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_bytes_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+<desc><p>The allocated memory will be zero-filled
+</p></desc>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSAutoAlloc" definetype="block" lang="c"><name>XSAutoAlloc</name>
+<abstract><p>Allocates memory which will be automatically released
+</p></abstract>
+<parameterlist>
+<parameter><name>_bytes_</name><desc><p>The number of bytes to allocate</p></desc></parameter>
+</parameterlist>
+<result><p>The allocated memory, or NULL
+</p></result>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSAutoAlloc</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_bytes_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSAutoAllocWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_bytes_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSAutoAlloc</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_bytes_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSAutoAllocWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_bytes_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+<desc><p>The memory data will be placed in the instance of the current
+auto-release pool, and will be released the next time
+the auto-release pool is drained.
+The allocated memory will be zero-filled
+</p></desc>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSBadAlloc" definetype="function" lang="c"><name>XSBadAlloc</name>
+<abstract><p>Issues a fatal error message for a bad memory allocation
+</p></abstract>
+<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSBadAlloc</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor><declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSFatalError</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>"</declaration_preprocessor><declaration_preprocessor>Cannot</declaration_preprocessor> <declaration_preprocessor>allocate</declaration_preprocessor> <declaration_preprocessor>memory</declaration_preprocessor><declaration_preprocessor>"</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSCopy" definetype="block" lang="c"><name>XSCopy</name>
+<abstract><p>Copies a memory data object
+</p></abstract>
+<parameterlist>
+<parameter><name>_memory_</name><desc><p>The memory data object to copy</p></desc></parameter>
+</parameterlist>
+<result><p>The copy of the memory data object
+</p></result>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSCopy</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSCopyWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSCopy</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSCopyWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSRealloc" definetype="block" lang="c"><name>XSRealloc</name>
+<abstract><p>Reallocates memory
+</p></abstract>
+<parameterlist>
+<parameter><name>_memory_</name><desc><p>The memory data to reallocate</p></desc></parameter>
+<parameter><name>_bytes_</name><desc><p>The number of bytes to reallocate</p></desc></parameter>
+</parameterlist>
+<result><p>The reallocated memory, or NULL
+</p></result>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSRealloc</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_bytes_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSReallocWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_bytes_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSRealloc</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_bytes_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSReallocWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>_bytes_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+<desc><p>If the requested bytes are larger than the previous allocation
+size, additional data will be zero-filled.
+</p></desc>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSRelease" definetype="block" lang="c"><name>XSRelease</name>
+<abstract><p>Releases memory data
+</p></abstract>
+<parameterlist>
+<parameter><name>_memory_</name><desc><p>The memory data to release</p></desc></parameter>
+</parameterlist>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSRelease</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSReleaseWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSRelease</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSReleaseWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
+<desc><p>Memory may be freed if the retain count for the memory
+data reaches 0.
+</p></desc>
+</pdefine><pdefine id="//xsdoc_ref/c/macro/XSRetain" definetype="block" lang="c"><name>XSRetain</name>
+<abstract><p>Retains memory data
+</p></abstract>
+<parameterlist>
+<parameter><name>_memory_</name><desc><p>The memory data to retain</p></desc></parameter>
+</parameterlist>
+<result><p>The memory data
+</p></result>
+<declaration><declaration_preprocessor>#ifdef</declaration_preprocessor> <declaration_preprocessor>DEBUG</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSRetain</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSRetainWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__FILE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__LINE__</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>__func__</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#else</declaration_preprocessor> 
+<declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XSRetain</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> <declaration_preprocessor>XSRetainWithInfos</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>_memory_</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>0</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>NULL</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> 
+<declaration_preprocessor>#endif</declaration_preprocessor>  
+</declaration>
 </pdefine></defines><copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Friday, September 11, 2020</timestamp>
+<timestamp>Sunday, September 27, 2020</timestamp>
 </header>

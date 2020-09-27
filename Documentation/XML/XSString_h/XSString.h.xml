@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/XSString.h" lang="c" filename="XSString.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSString.h"><name>XSString.h</name>
+<abstract><p>XSString class
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Types.h">&lt;XS/Types.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/stddef.h">&lt;stddef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/stdbool.h">&lt;stdbool.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/stdarg.h">&lt;stdarg.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/stdint.h">&lt;stdint.h&gt;</hd_link></include>
+</includes>
+<desc><p/></desc>
+<functions><function id="//xsdoc_ref/c/func/XSStringContainsCString" lang="c"><name>XSStringContainsCString</name>
+<abstract><p>Checks whether a string contains a C string
+</p></abstract>
+<parameterlist>
+<parameter><name>str</name><desc><p>The string object</p></desc></parameter>
+<parameter><name>search</name><desc><p>The C string to search</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSStringRef</type><name>str</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>search</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT bool</returntype>
+<result><p>True if the string contains the C string, otherwise false
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSStringContainsCString</declaration_function>(
+    <declaration_type>XSStringRef</declaration_type> <declaration_param>str</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>search</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringContainsString" lang="c"><name>XSStringContainsString</name>
+<abstract><p>Checks whether a string contains another string
+</p></abstract>
+<parameterlist>
+<parameter><name>str</name><desc><p>The string object</p></desc></parameter>
+<parameter><name>search</name><desc><p>The string to search</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSStringRef</type><name>str</name></parsedparameter>
+<parsedparameter><type>XSStringRef</type><name>search</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT bool</returntype>
+<result><p>True if the string contains the search string, otherwise false
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSStringContainsString</declaration_function>(
+    <declaration_type>XSStringRef</declaration_type> <declaration_param>str</declaration_param>,
+    <declaration_type>XSStringRef</declaration_type> <declaration_param>search</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringCreateWithBytes" lang="c"><name>XSStringCreateWithBytes</name>
+<abstract><p>Creates a string with bytes
+</p></abstract>
+<parameterlist>
+<parameter><name>bytes</name><desc><p>The bytes</p></desc></parameter>
+<parameter><name>length</name><desc><p>The number of bytes</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>const uint8_t *</type><name>bytes</name></parsedparameter>
+<parsedparameter><type>size_t</type><name>length</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT XSStringRef</returntype>
+<result><p>A string object
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSStringCreateWithBytes</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>uint8_t</declaration_type> <declaration_type>*</declaration_type><declaration_param>bytes</declaration_param>,
+    <declaration_type>size_t</declaration_type> <declaration_param>length</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringCreateWithCString" lang="c"><name>XSStringCreateWithCString</name>
+<abstract><p>Creates a string with a C string
+</p></abstract>
+<parameterlist>
+<parameter><name>cstr</name><desc><p>The C string</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>const char *</type><name>cstr</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT XSStringRef</returntype>
+<result><p>A string object
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSStringCreateWithCString</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>cstr</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringCreateWithFormat" lang="c"><name>XSStringCreateWithFormat</name>
+<abstract><p>Creates a string with a format string
+</p></abstract>
+<parameterlist>
+<parameter><name>fmt</name><desc><p>The format string</p></desc></parameter>
+<parameter><name>...</name><desc><p>Arguments for the format string</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type> printf</type><name></name></parsedparameter>
+<parsedparameter><type> 1</type><name></name></parsedparameter>
+<parsedparameter><type> 2</type><name></name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT XSStringRef</returntype>
+<result><p>A string object
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSStringCreateWithFormat</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>fmt</declaration_param>,
+    ... ) <declaration_function>XS_FORMAT_ATTRIBUTE</declaration_function>(
+    <declaration_param>printf</declaration_param>,
+    <declaration_number>1</declaration_number>,
+    <declaration_number>2</declaration_number> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringCreateWithFormatAndArguments" lang="c"><name>XSStringCreateWithFormatAndArguments</name>
+<abstract><p>Creates a string with a format string
+</p></abstract>
+<parameterlist>
+<parameter><name>fmt</name><desc><p>The format string</p></desc></parameter>
+<parameter><name>ap</name><desc><p>Arguments for the format string</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type> printf</type><name></name></parsedparameter>
+<parsedparameter><type> 1</type><name></name></parsedparameter>
+<parsedparameter><type> 0</type><name></name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT XSStringRef</returntype>
+<result><p>A string object
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSStringCreateWithFormatAndArguments</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>fmt</declaration_param>,
+    <declaration_type>va_list</declaration_type> <declaration_param>ap</declaration_param> ) <declaration_function>XS_FORMAT_ATTRIBUTE</declaration_function>(
+    <declaration_param>printf</declaration_param>,
+    <declaration_number>1</declaration_number>, <declaration_number>0</declaration_number> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringGetCharacterAtIndex" lang="c"><name>XSStringGetCharacterAtIndex</name>
+<abstract><p>Gets the character at a specific index
+</p></abstract>
+<parameterlist>
+<parameter><name>str</name><desc><p>The string object</p></desc></parameter>
+<parameter><name>index</name><desc><p>The index of the character</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSStringRef</type><name>str</name></parsedparameter>
+<parsedparameter><type>size_t</type><name>index</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT char</returntype>
+<result><p>The character at the specified index
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>char</declaration_type> <declaration_function>XSStringGetCharacterAtIndex</declaration_function>(
+    <declaration_type>XSStringRef</declaration_type> <declaration_param>str</declaration_param>,
+    <declaration_type>size_t</declaration_type> <declaration_param>index</declaration_param> );  </declaration>
+<desc><p>Returns 0 is the string is NULL or if the index is out of bounds.
+</p></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringGetClassID" lang="c"><name>XSStringGetClassID</name>
+<abstract><p>Gets the class ID for XSString
+</p></abstract>
+<returntype> XS_EXPORT XSClassID</returntype>
+<result><p>The class ID for XSString
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSClassID</declaration_type> <declaration_function>XSStringGetClassID</declaration_function>(
+    <declaration_param>void</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringGetCString" lang="c"><name>XSStringGetCString</name>
+<abstract><p>Gets the internal C string of a string object
+</p></abstract>
+<parameterlist>
+<parameter><name>str</name><desc><p>The string object</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSStringRef</type><name>str</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT const char *</returntype>
+<result><p>The C string
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSStringGetCString</declaration_function>(
+    <declaration_type>XSStringRef</declaration_type> <declaration_param>str</declaration_param> );  </declaration>
+<desc><p>Any modification to the returned C string results in undefined
+behavior.
+</p></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringGetLength" lang="c"><name>XSStringGetLength</name>
+<abstract><p>Gets the length of a string object
+</p></abstract>
+<parameterlist>
+<parameter><name>str</name><desc><p>The string object</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSStringRef</type><name>str</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT size_t</returntype>
+<result><p>The string's length
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>size_t</declaration_type> <declaration_function>XSStringGetLength</declaration_function>(
+    <declaration_type>XSStringRef</declaration_type> <declaration_param>str</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringHasCStringPrefix" lang="c"><name>XSStringHasCStringPrefix</name>
+<abstract><p>Checks whether a string has a prefix
+</p></abstract>
+<parameterlist>
+<parameter><name>str</name><desc><p>The string object</p></desc></parameter>
+<parameter><name>prefix</name><desc><p>The prefix C string</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSStringRef</type><name>str</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>prefix</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT bool</returntype>
+<result><p>True if the string has the prefix, otherwise false
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSStringHasCStringPrefix</declaration_function>(
+    <declaration_type>XSStringRef</declaration_type> <declaration_param>str</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>prefix</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringHasCStringSuffix" lang="c"><name>XSStringHasCStringSuffix</name>
+<abstract><p>Checks whether a string has a suffix
+</p></abstract>
+<parameterlist>
+<parameter><name>str</name><desc><p>The string object</p></desc></parameter>
+<parameter><name>suffix</name><desc><p>The suffix C string</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSStringRef</type><name>str</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>suffix</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT bool</returntype>
+<result><p>True if the string has the suffix, otherwise false
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSStringHasCStringSuffix</declaration_function>(
+    <declaration_type>XSStringRef</declaration_type> <declaration_param>str</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>suffix</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringHasPrefix" lang="c"><name>XSStringHasPrefix</name>
+<abstract><p>Checks whether a string has a prefix
+</p></abstract>
+<parameterlist>
+<parameter><name>str</name><desc><p>The string object</p></desc></parameter>
+<parameter><name>prefix</name><desc><p>The prefix string</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSStringRef</type><name>str</name></parsedparameter>
+<parsedparameter><type>XSStringRef</type><name>prefix</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT bool</returntype>
+<result><p>True if the string has the prefix, otherwise false
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSStringHasPrefix</declaration_function>(
+    <declaration_type>XSStringRef</declaration_type> <declaration_param>str</declaration_param>,
+    <declaration_type>XSStringRef</declaration_type> <declaration_param>prefix</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringHasSuffix" lang="c"><name>XSStringHasSuffix</name>
+<abstract><p>Checks whether a string has a suffix
+</p></abstract>
+<parameterlist>
+<parameter><name>str</name><desc><p>The string object</p></desc></parameter>
+<parameter><name>suffix</name><desc><p>The suffix string</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSStringRef</type><name>str</name></parsedparameter>
+<parsedparameter><type>XSStringRef</type><name>suffix</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT bool</returntype>
+<result><p>True if the string has the suffix, otherwise false
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSStringHasSuffix</declaration_function>(
+    <declaration_type>XSStringRef</declaration_type> <declaration_param>str</declaration_param>,
+    <declaration_type>XSStringRef</declaration_type> <declaration_param>suffix</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringWithBytes" lang="c"><name>XSStringWithBytes</name>
+<abstract><p>Creates a string with bytes
+</p></abstract>
+<parameterlist>
+<parameter><name>bytes</name><desc><p>The bytes</p></desc></parameter>
+<parameter><name>length</name><desc><p>The number of bytes</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>const uint8_t *</type><name>bytes</name></parsedparameter>
+<parsedparameter><type>size_t</type><name>length</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT XS_AUTORELEASED XSStringRef</returntype>
+<result><p>A string object
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XS_AUTORELEASED</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSStringWithBytes</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>uint8_t</declaration_type> <declaration_type>*</declaration_type><declaration_param>bytes</declaration_param>,
+    <declaration_type>size_t</declaration_type> <declaration_param>length</declaration_param> );  </declaration>
+<desc><p>The returned object is autoreleased.
+</p></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringWithCString" lang="c"><name>XSStringWithCString</name>
+<abstract><p>Creates a string with a C string
+</p></abstract>
+<parameterlist>
+<parameter><name>cstr</name><desc><p>The C string</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>const char *</type><name>cstr</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT XS_AUTORELEASED XSStringRef</returntype>
+<result><p>A string object
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XS_AUTORELEASED</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSStringWithCString</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>cstr</declaration_param> );  </declaration>
+<desc><p>The returned object is autoreleased.
+</p></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringWithFormat" lang="c"><name>XSStringWithFormat</name>
+<abstract><p>Creates a string with a format string
+</p></abstract>
+<parameterlist>
+<parameter><name>fmt</name><desc><p>The format string</p></desc></parameter>
+<parameter><name>...</name><desc><p>Arguments for the format string</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type> printf</type><name></name></parsedparameter>
+<parsedparameter><type> 1</type><name></name></parsedparameter>
+<parsedparameter><type> 2</type><name></name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT XS_AUTORELEASED XSStringRef</returntype>
+<result><p>A string object
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XS_AUTORELEASED</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSStringWithFormat</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>fmt</declaration_param>,
+    ... ) <declaration_function>XS_FORMAT_ATTRIBUTE</declaration_function>(
+    <declaration_param>printf</declaration_param>,
+    <declaration_number>1</declaration_number>,
+    <declaration_number>2</declaration_number> );  </declaration>
+<desc><p>The returned object is autoreleased.
+</p></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringWithFormatAndArguments" lang="c"><name>XSStringWithFormatAndArguments</name>
+<abstract><p>Creates a string with a format string
+</p></abstract>
+<parameterlist>
+<parameter><name>fmt</name><desc><p>The format string</p></desc></parameter>
+<parameter><name>ap</name><desc><p>Arguments for the format string</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type> printf</type><name></name></parsedparameter>
+<parsedparameter><type> 1</type><name></name></parsedparameter>
+<parsedparameter><type> 0</type><name></name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT XS_AUTORELEASED XSStringRef</returntype>
+<result><p>A string object
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XS_AUTORELEASED</declaration_type> <declaration_type>XSStringRef</declaration_type> <declaration_function>XSStringWithFormatAndArguments</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>fmt</declaration_param>,
+    <declaration_type>va_list</declaration_type> <declaration_param>ap</declaration_param> ) <declaration_function>XS_FORMAT_ATTRIBUTE</declaration_function>(
+    <declaration_param>printf</declaration_param>,
+    <declaration_number>1</declaration_number>, <declaration_number>0</declaration_number> );  </declaration>
+<desc><p>The returned object is autoreleased.
+</p></desc>
+</function></functions>
+<typedefs><typedef id="//xsdoc_ref/c/tdef/XSStringRef" lang="c" type="simple"><name>XSStringRef</name>
+<abstract><p>Opaque type for XSString (immutable)
+</p></abstract>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>const</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>XSString</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSStringRef</declaration_var>;  </declaration>
+<desc><p/></desc>
+</typedef></typedefs><copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Sunday, September 27, 2020</timestamp>
+</header>

@@ -13,7 +13,7 @@ $DOC->setCompanyURL( 'http://www.xs-labs.com/' );
 $DOC->setSourceRootPrefix( '/XSFoundation/include/' );
 $DOC->setClassesPrefix( 'XSFoundation/include/XS/Classes/' );
 $DOC->setFunctionsPrefix( 'XSFoundation/include/XS/Functions/' );
-$DOC->setTypesPrefix( 'XSFoundation/include/XS/XSTypes/' );
+$DOC->setTypesPrefix( 'XSFoundation/include/XS/Types/' );
 $DOC->setHomeFile( 'Pages/Home.inc.php' );
 $DOC->addPage( 'Pages/Build.inc.php', 'Building XSFoundation' );
 $DOC->addPage( 'Pages/Memory.inc.php', 'Memory management' );

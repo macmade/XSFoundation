@@ -9,20 +9,7 @@
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
 </includes>
 <desc><p/></desc>
-<functions><function id="//xsdoc_ref/c/func/XSSleepMicroseconds" lang="c"><name>XSSleepMicroseconds</name>
-<abstract><p>Requests the calling thread to be suspended for a number of microseconds
-</p></abstract>
-<parameterlist>
-<parameter><name>usecs</name><desc><p>The number of microseconds to sleep</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type>unsigned int</type><name>usecs</name></parsedparameter>
-</parsedparameterlist>
-<returntype> XS_EXPORT void</returntype>
-<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSSleepMicroseconds</declaration_function>(
-    <declaration_keyword>unsigned</declaration_keyword> <declaration_type>int</declaration_type> <declaration_param>usecs</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xsdoc_ref/c/func/XSSleepMilliseconds" lang="c"><name>XSSleepMilliseconds</name>
+<functions><function id="//xsdoc_ref/c/func/XSSleepMilliseconds" lang="c"><name>XSSleepMilliseconds</name>
 <abstract><p>Requests the calling thread to be suspended for a number of milliseconds
 </p></abstract>
 <parameterlist>
@@ -58,5 +45,5 @@
 </function></functions>
 <copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Friday, September 11, 2020</timestamp>
+<timestamp>Sunday, September 27, 2020</timestamp>
 </header>

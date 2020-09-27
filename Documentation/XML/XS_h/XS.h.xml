@@ -16,6 +16,10 @@
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/SpinLock.h">&lt;XS/Functions/SpinLock.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/Threading.h">&lt;XS/Functions/Threading.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/Process.h">&lt;XS/Functions/Process.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/CString.h">&lt;XS/Functions/CString.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSAutoreleasePool.h">&lt;XS/Classes/XSAutoreleasePool.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSString.h">&lt;XS/Classes/XSString.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSMutableString.h">&lt;XS/Classes/XSMutableString.h&gt;</hd_link></include>
 </includes>
 <desc><p>This file should be included on projects using the XEOS C
 Foundation Library. Other header files should never be included
@@ -23,5 +27,5 @@ directly.
 </p></desc>
 <copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Friday, September 11, 2020</timestamp>
+<timestamp>Sunday, September 27, 2020</timestamp>
 </header>

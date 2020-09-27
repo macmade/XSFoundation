@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/XSMutableString.h" lang="c" filename="XSMutableString.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSMutableString.h"><name>XSMutableString.h</name>
+<abstract><p>XSString class
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Types.h">&lt;XS/Types.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSString.h">&lt;XS/Classes/XSString.h&gt;</hd_link></include>
+</includes>
+<desc><p/></desc>
+<functions><function id="//xsdoc_ref/c/func/XSStringAppend" lang="c"><name>XSStringAppend</name>
+<abstract><p>Appends a string to a mutable string
+</p></abstract>
+<parameterlist>
+<parameter><name>str</name><desc><p>The mutable string</p></desc></parameter>
+<parameter><name>append</name><desc><p>The string to append</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSStringRef</type><name>str</name></parsedparameter>
+<parsedparameter><type>XSStringRef</type><name>append</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void</returntype>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSStringAppend</declaration_function>(
+    <declaration_type>XSStringRef</declaration_type> <declaration_param>str</declaration_param>,
+    <declaration_type>XSStringRef</declaration_type> <declaration_param>append</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringAppendBytes" lang="c"><name>XSStringAppendBytes</name>
+<abstract><p>Appends bytes to a mutable string
+</p></abstract>
+<parameterlist>
+<parameter><name>str</name><desc><p>The mutable string</p></desc></parameter>
+<parameter><name>bytes</name><desc><p>The bytes to append</p></desc></parameter>
+<parameter><name>length</name><desc><p>The number of bytes to append</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSStringRef</type><name>str</name></parsedparameter>
+<parsedparameter><type>const uint8_t *</type><name>bytes</name></parsedparameter>
+<parsedparameter><type>size_t</type><name>length</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void</returntype>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSStringAppendBytes</declaration_function>(
+    <declaration_type>XSStringRef</declaration_type> <declaration_param>str</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>uint8_t</declaration_type> <declaration_type>*</declaration_type><declaration_param>bytes</declaration_param>,
+    <declaration_type>size_t</declaration_type> <declaration_param>length</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringAppendCString" lang="c"><name>XSStringAppendCString</name>
+<abstract><p>Appends a C string to a mutable string
+</p></abstract>
+<parameterlist>
+<parameter><name>str</name><desc><p>The mutable string</p></desc></parameter>
+<parameter><name>cstr</name><desc><p>The C string to append</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSStringRef</type><name>str</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>cstr</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void</returntype>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSStringAppendCString</declaration_function>(
+    <declaration_type>XSStringRef</declaration_type> <declaration_param>str</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>cstr</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringAppendFormat" lang="c"><name>XSStringAppendFormat</name>
+<abstract><p>Appends a format string to a mutable string
+</p></abstract>
+<parameterlist>
+<parameter><name>str</name><desc><p>The mutable string</p></desc></parameter>
+<parameter><name>fmt</name><desc><p>The format string</p></desc></parameter>
+<parameter><name>...</name><desc><p>Arguments for the format string</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSStringRef</type><name>str</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>fmt</name></parsedparameter>
+<parsedparameter><type> ...</type><name>...</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void</returntype>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSStringAppendFormat</declaration_function>(
+    <declaration_type>XSStringRef</declaration_type> <declaration_param>str</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>fmt</declaration_param>,
+    ... );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringAppendFormatAndArguments" lang="c"><name>XSStringAppendFormatAndArguments</name>
+<abstract><p>Appends a format string to a mutable string
+</p></abstract>
+<parameterlist>
+<parameter><name>str</name><desc><p>The mutable string</p></desc></parameter>
+<parameter><name>fmt</name><desc><p>The format string</p></desc></parameter>
+<parameter><name>ap</name><desc><p>Arguments for the format string</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSStringRef</type><name>str</name></parsedparameter>
+<parsedparameter><type>const char *</type><name>fmt</name></parsedparameter>
+<parsedparameter><type>va_list</type><name>ap</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void</returntype>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSStringAppendFormatAndArguments</declaration_function>(
+    <declaration_type>XSStringRef</declaration_type> <declaration_param>str</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>fmt</declaration_param>,
+    <declaration_type>va_list</declaration_type> <declaration_param>ap</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringCreateMutable" lang="c"><name>XSStringCreateMutable</name>
+<abstract><p>Creates an empty mutable string
+</p></abstract>
+<returntype> XS_EXPORT XSMutableStringRef</returntype>
+<result><p>An empty mutable string
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSMutableStringRef</declaration_type> <declaration_function>XSStringCreateMutable</declaration_function>(
+    <declaration_param>void</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSStringCreateMutableCopy" lang="c"><name>XSStringCreateMutableCopy</name>
+<abstract><p>Creates a mutable copy of a string
+</p></abstract>
+<parameterlist>
+<parameter><name>str</name><desc><p>The string to copy</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSStringRef</type><name>str</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT XSMutableStringRef</returntype>
+<result><p>A mutable copy of the string
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSMutableStringRef</declaration_type> <declaration_function>XSStringCreateMutableCopy</declaration_function>(
+    <declaration_type>XSStringRef</declaration_type> <declaration_param>str</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function></functions>
+<typedefs><typedef id="//xsdoc_ref/c/tdef/XSMutableStringRef" lang="c" type="simple"><name>XSMutableStringRef</name>
+<abstract><p>Opaque type for XSString (mutable)
+</p></abstract>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>XSString</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSMutableStringRef</declaration_var>;  </declaration>
+<desc><p/></desc>
+</typedef></typedefs><copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Sunday, September 27, 2020</timestamp>
+</header>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/XSObjectAssociation.h" lang="c" filename="XSObjectAssociation.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Types/XSObjectAssociation.h"><name>XSObjectAssociation.h</name>
+<abstract><p>XSObjectAssociation type definition
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
+</includes>
+<desc><p/></desc>
+<typedefs><typedef id="//xsdoc_ref/c/tdef/XSObjectAssociation" lang="c" type="simple"><name>XSObjectAssociation</name>
+<abstract><p>Association type for objects
+</p></abstract>
+<fieldlist>
+<field><name>XSObjectAssociationAssign</name><desc><p>Assign object</p></desc></field>
+<field><name>XSObjectAssociationRetain</name><desc><p>Retain object</p></desc></field>
+<field><name>XSObjectAssociationCopy</name><desc><p>Copy object</p></desc></field>
+</fieldlist>
+<parsedparameterlist>
+<parsedparameter><type></type><name>XSObjectAssociationAssign</name></parsedparameter>
+<parsedparameter><type></type><name>XSObjectAssociationRetain</name></parsedparameter>
+<parsedparameter><type></type><name>XSObjectAssociationCopy</name></parsedparameter>
+</parsedparameterlist>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>enum</declaration_keyword> { 
+    <declaration_var>XSObjectAssociationAssign</declaration_var>,
+    <declaration_comment>/*! Assign object */</declaration_comment>
+    <declaration_var>XSObjectAssociationRetain</declaration_var>,
+    <declaration_comment>/*! Retain object */</declaration_comment>
+    <declaration_var>XSObjectAssociationCopy</declaration_var> <declaration_comment>/*! Copy object */</declaration_comment>
+} <declaration_var>XSObjectAssociation</declaration_var>;  </declaration>
+<desc><p/></desc>
+</typedef></typedefs><copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Sunday, September 27, 2020</timestamp>
+</header>

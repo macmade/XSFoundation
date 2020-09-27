@@ -19,8 +19,73 @@
 <declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>uint64_t</declaration_type> <declaration_function>XSGetCurrentThreadID</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
 <desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSTLSGetValue" lang="c"><name>XSTLSGetValue</name>
+<abstract><p>Gets the value associated with a TLS key
+</p></abstract>
+<parameterlist>
+<parameter><name>key</name><desc><p>The TLS key</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSTLSKey *</type><name>key</name></parsedparameter>
+</parsedparameterlist>
+<returntype> void *</returntype>
+<result><p>The associated value
+</p></result>
+<declaration><declaration_type>void</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSTLSGetValue</declaration_function>(
+    <declaration_type>XSTLSKey</declaration_type> <declaration_type>*</declaration_type><declaration_param>key</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSTLSKeyCreate" lang="c"><name>XSTLSKeyCreate</name>
+<abstract><p>Creates a TLS key
+</p></abstract>
+<parameterlist>
+<parameter><name>key</name><desc><p>A pointer to an uninitialized TLS key</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSTLSKey *</type><name>key</name></parsedparameter>
+</parsedparameterlist>
+<returntype> bool</returntype>
+<result><p>True if the key was successfully created, otherwise false
+</p></result>
+<declaration><declaration_type>bool</declaration_type> <declaration_function>XSTLSKeyCreate</declaration_function>(
+    <declaration_type>XSTLSKey</declaration_type> <declaration_type>*</declaration_type><declaration_param>key</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSTLSKeyDelete" lang="c"><name>XSTLSKeyDelete</name>
+<abstract><p>Deletes a TLS key
+</p></abstract>
+<parameterlist>
+<parameter><name>key</name><desc><p>A pointer to the TLS key to delete</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSTLSKey *</type><name>key</name></parsedparameter>
+</parsedparameterlist>
+<returntype> void</returntype>
+<declaration><declaration_type>void</declaration_type> <declaration_function>XSTLSKeyDelete</declaration_function>(
+    <declaration_type>XSTLSKey</declaration_type> <declaration_type>*</declaration_type><declaration_param>key</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSTLSSetValue" lang="c"><name>XSTLSSetValue</name>
+<abstract><p>Sets the value associated with a TLS key
+</p></abstract>
+<parameterlist>
+<parameter><name>key</name><desc><p>The TLS key</p></desc></parameter>
+<parameter><name>value</name><desc><p>The value to set</p></desc></parameter>
+<parameter><name>association</name><desc><p>The association type to use</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSTLSKey *</type><name>key</name></parsedparameter>
+<parsedparameter><type>void *</type><name>value</name></parsedparameter>
+<parsedparameter><type>XSObjectAssociation</type><name>association</name></parsedparameter>
+</parsedparameterlist>
+<attributelists><listattribute><name>See</name><list>
+<item><name>XSObjectAssociation</name><value><hd_link logicalPath="XSObjectAssociation" isseealso="yes">XSObjectAssociation</hd_link></value></item></list></listattribute>
+</attributelists>
+<returntype> void</returntype>
+<declaration><declaration_type>void</declaration_type> <declaration_function>XSTLSSetValue</declaration_function>(
+    <declaration_type>XSTLSKey</declaration_type> <declaration_type>*</declaration_type><declaration_param>key</declaration_param>,
+    <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>value</declaration_param>,
+    <declaration_type>XSObjectAssociation</declaration_type> <declaration_param>association</declaration_param> );  </declaration>
+<desc><p/></desc>
 </function></functions>
 <copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Friday, September 11, 2020</timestamp>
+<timestamp>Sunday, September 27, 2020</timestamp>
 </header>

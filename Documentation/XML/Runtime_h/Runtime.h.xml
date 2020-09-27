@@ -1,296 +1,214 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
-<header id="//xsdoc_ref/doc/header/Runtime.h" lang="c" filename="Runtime.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Private/Functions/Runtime.h"><name>Runtime.h</name>
-<abstract><p>Private declarations for runtime functions
+<header id="//xsdoc_ref/doc/header/Runtime.h" lang="c" filename="Runtime.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Functions/Runtime.h"><name>Runtime.h</name>
+<abstract><p>Runtime functions
 </p></abstract>
 <attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
 </attributes>
 <includes>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassID.h">&lt;XS/Types/XSClassID.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassType.h">&lt;XS/Types/XSClassType.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassInfo.h">&lt;XS/Types/XSClassInfo.h&gt;</hd_link></include>
 <include><hd_link logicalPath="//xsdoc_ref/doc/header/XSObjectRef.h">&lt;XS/Types/XSObjectRef.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSInitStatus.h">&lt;XS/Types/XSInitStatus.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassCallbackConstructor.h">&lt;XS/Types/XSClassCallbackConstructor.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassCallbackDestructor.h">&lt;XS/Types/XSClassCallbackDestructor.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassCallbackCopy.h">&lt;XS/Types/XSClassCallbackCopy.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassCallbackEquals.h">&lt;XS/Types/XSClassCallbackEquals.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xsdoc_ref/doc/header/XSClassCallbackToString.h">&lt;XS/Types/XSClassCallbackToString.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xsdoc_ref/doc/header/stdint.h">&lt;stdint.h&gt;</hd_link></include>
-<include><hd_link logicalPath="//xsdoc_ref/doc/header/stddef.h">&lt;stddef.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/stdbool.h">&lt;stdbool.h&gt;</hd_link></include>
 </includes>
 <desc><p/></desc>
-<functions><function id="//xsdoc_ref/c/func/XSRuntimeFinalize" lang="c"><name>XSRuntimeFinalize</name>
-<abstract><p>XSFoundation runtime finalizer function
+<functions><function id="//xsdoc_ref/c/func/XSRuntimeCreateInstance" lang="c"><name>XSRuntimeCreateInstance</name>
+<abstract><p>Initializes a new instance of a registered class
 </p></abstract>
-<returntype> void</returntype>
-<declaration><declaration_type>void</declaration_type> <declaration_function>XSRuntimeFinalize</declaration_function>(
+<parameterlist>
+<parameter><name>classID</name><desc><p>The class type ID</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSClassID</type><name>classID</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT XSMutableObjectRef</returntype>
+<result><p>The allocated instance
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSMutableObjectRef</declaration_type> <declaration_function>XSRuntimeCreateInstance</declaration_function>(
+    <declaration_type>XSClassID</declaration_type> <declaration_param>classID</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSRuntimeCreateInstanceOfClassNamed" lang="c"><name>XSRuntimeCreateInstanceOfClassNamed</name>
+<abstract><p>Initializes a new instance of a class with a specific name
+</p></abstract>
+<parameterlist>
+<parameter><name>name</name><desc><p>The name of the class</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>const char *</type><name>name</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT XSMutableObjectRef</returntype>
+<result><p>The allocated instance
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSMutableObjectRef</declaration_type> <declaration_function>XSRuntimeCreateInstanceOfClassNamed</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>name</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSRuntimeGetClassID" lang="c"><name>XSRuntimeGetClassID</name>
+<abstract><p>Gets the class type ID for an object
+</p></abstract>
+<parameterlist>
+<parameter><name>object</name><desc><p>The object</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSObjectRef</type><name>object</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT XSClassID</returntype>
+<result><p>The class type ID for the object
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSClassID</declaration_type> <declaration_function>XSRuntimeGetClassID</declaration_function>(
+    <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSRuntimeGetClassIDOfClassNamed" lang="c"><name>XSRuntimeGetClassIDOfClassNamed</name>
+<abstract><p>Gets the class type ID for a class with a specific name
+</p></abstract>
+<parameterlist>
+<parameter><name>className</name><desc><p>The name of the class</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>const char *</type><name>className</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT XSClassID</returntype>
+<result><p>The class type ID
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSClassID</declaration_type> <declaration_function>XSRuntimeGetClassIDOfClassNamed</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type><declaration_param>className</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSRuntimeGetClassName" lang="c"><name>XSRuntimeGetClassName</name>
+<abstract><p>Gets the class name for an class type ID
+</p></abstract>
+<parameterlist>
+<parameter><name>classID</name><desc><p>The class type ID</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSClassID</type><name>classID</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT const char *</returntype>
+<result><p>The name of the class
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSRuntimeGetClassName</declaration_function>(
+    <declaration_type>XSClassID</declaration_type> <declaration_param>classID</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSRuntimeGetClassType" lang="c"><name>XSRuntimeGetClassType</name>
+<abstract><p>Gets the class type for an class type ID
+</p></abstract>
+<parameterlist>
+<parameter><name>classID</name><desc><p>The class type ID</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSClassID</type><name>classID</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT XSClassType</returntype>
+<result><p>The type of the class
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSClassType</declaration_type> <declaration_function>XSRuntimeGetClassType</declaration_function>(
+    <declaration_type>XSClassID</declaration_type> <declaration_param>classID</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSRuntimeGetDescription" lang="c"><name>XSRuntimeGetDescription</name>
+<abstract><p>Gets an object's description
+</p></abstract>
+<parameterlist>
+<parameter><name>object</name><desc><p>The pointer to the object</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSObjectRef</type><name>object</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT const char *</returntype>
+<result><p>The object's description
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_keyword>const</declaration_keyword> <declaration_type>char</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSRuntimeGetDescription</declaration_function>(
+    <declaration_type>XSObjectRef</declaration_type> <declaration_param>object</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSRuntimeGetSharedInstance" lang="c"><name>XSRuntimeGetSharedInstance</name>
+<abstract><p>Gets the shared instance of a registered class
+</p></abstract>
+<parameterlist>
+<parameter><name>classID</name><desc><p>The class type ID</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSClassID</type><name>classID</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT XSObjectRef</returntype>
+<result><p>The shared instance if it exists, otherwise NULL
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSObjectRef</declaration_type> <declaration_function>XSRuntimeGetSharedInstance</declaration_function>(
+    <declaration_type>XSClassID</declaration_type> <declaration_param>classID</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSRuntimeInitialize" lang="c"><name>XSRuntimeInitialize</name>
+<abstract><p>Initializes the XSFoundation runtime
+</p></abstract>
+<returntype> XS_EXPORT void</returntype>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSRuntimeInitialize</declaration_function>(
     <declaration_param>void</declaration_param> );  </declaration>
-<desc><p>Never call this function directly. It will be automatically
-called when the program exits.
+<desc><p>This function must be called before using any XSFoundation
+function.
 </p></desc>
-</function><function id="//xsdoc_ref/c/func/XSRuntimeGetClassInfo" lang="c"><name>XSRuntimeGetClassInfo</name>
-<abstract><p>Gets the class info for a class ID
+</function><function id="//xsdoc_ref/c/func/XSRuntimeIsInstance" lang="c"><name>XSRuntimeIsInstance</name>
+<abstract><p>Checks whether a pointer is an object instance
 </p></abstract>
 <parameterlist>
-<parameter><name>classID</name><desc><p>The class ID</p></desc></parameter>
+<parameter><name>ptr</name><desc><p>The pointer to check</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>const void *</type><name>ptr</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT bool</returntype>
+<result><p>True if the pointer represents an instance, otherwise false
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSRuntimeIsInstance</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>ptr</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSRuntimeIsRegisteredClass" lang="c"><name>XSRuntimeIsRegisteredClass</name>
+<abstract><p>Checks whether a class type ID corresponds to a registered class
+</p></abstract>
+<parameterlist>
+<parameter><name>classID</name><desc><p>The class type ID</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
 <parsedparameter><type>XSClassID</type><name>classID</name></parsedparameter>
 </parsedparameterlist>
-<returntype> const XSRuntimeClassInfoList *</returntype>
-<result><p>The class info
+<returntype> XS_EXPORT bool</returntype>
+<result><p>True if the class ID represents an valid class, otherwise false
 </p></result>
-<declaration><declaration_keyword>const</declaration_keyword> <declaration_type>XSRuntimeClassInfoList</declaration_type> <declaration_type>*</declaration_type> <declaration_function>XSRuntimeGetClassInfo</declaration_function>(
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>bool</declaration_type> <declaration_function>XSRuntimeIsRegisteredClass</declaration_function>(
     <declaration_type>XSClassID</declaration_type> <declaration_param>classID</declaration_param> );  </declaration>
 <desc><p/></desc>
-</function><function id="//xsdoc_ref/c/func/XSRuntimeGetConstructorCallback" lang="c"><name>XSRuntimeGetConstructorCallback</name>
-<abstract><p>Gets the constructor callback for a class ID
+</function><function id="//xsdoc_ref/c/func/XSRuntimeRegisterClass" lang="c"><name>XSRuntimeRegisterClass</name>
+<abstract><p>Registers a class for the runtime
 </p></abstract>
 <parameterlist>
-<parameter><name>classID</name><desc><p>The class ID</p></desc></parameter>
+<parameter><name>cls</name><desc><p>The class information structure to register</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSClassID</type><name>classID</name></parsedparameter>
+<parsedparameter><type>const XSClassInfo *</type><name>cls</name></parsedparameter>
 </parsedparameterlist>
-<returntype> XSClassCallbackConstructor</returntype>
-<result><p>The copy callback
+<returntype> XS_EXPORT XSClassID</returntype>
+<result><p>The runtime type ID for the class
 </p></result>
-<declaration><declaration_type>XSClassCallbackConstructor</declaration_type> <declaration_function>XSRuntimeGetConstructorCallback</declaration_function>(
-    <declaration_type>XSClassID</declaration_type> <declaration_param>classID</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xsdoc_ref/c/func/XSRuntimeGetCopyCallback" lang="c"><name>XSRuntimeGetCopyCallback</name>
-<abstract><p>Gets the copy callback for a class ID
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSClassID</declaration_type> <declaration_function>XSRuntimeRegisterClass</declaration_function>(
+    <declaration_keyword>const</declaration_keyword> <declaration_type>XSClassInfo</declaration_type> <declaration_type>*</declaration_type><declaration_param>cls</declaration_param> );  </declaration>
+<desc><p>All runtime classes needs to be registered before the runtime
+can use them and create instances.
+This function needs to be called once per class,
+ie using pthread_once().
+</p></desc>
+</function><function id="//xsdoc_ref/c/func/XSRuntimeRegisterFinalizer" lang="c"><name>XSRuntimeRegisterFinalizer</name>
+<abstract><p>Registers a finalizer function, to be called when the program exits
 </p></abstract>
 <parameterlist>
-<parameter><name>classID</name><desc><p>The class ID</p></desc></parameter>
+<parameter><name>func</name><desc><p>The finalizer function</p></desc></parameter>
 </parameterlist>
 <parsedparameterlist>
-<parsedparameter><type>XSClassID</type><name>classID</name></parsedparameter>
+<parsedparameter><type>void</type><name>func</name></parsedparameter>
 </parsedparameterlist>
-<returntype> XSClassCallbackCopy</returntype>
-<result><p>The copy callback
-</p></result>
-<declaration><declaration_type>XSClassCallbackCopy</declaration_type> <declaration_function>XSRuntimeGetCopyCallback</declaration_function>(
-    <declaration_type>XSClassID</declaration_type> <declaration_param>classID</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xsdoc_ref/c/func/XSRuntimeGetDestructorCallback" lang="c"><name>XSRuntimeGetDestructorCallback</name>
-<abstract><p>Gets the destructor callback for a class ID
-</p></abstract>
-<parameterlist>
-<parameter><name>classID</name><desc><p>The class ID</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type>XSClassID</type><name>classID</name></parsedparameter>
-</parsedparameterlist>
-<returntype> XSClassCallbackDestructor</returntype>
-<result><p>The destructor callback
-</p></result>
-<declaration><declaration_type>XSClassCallbackDestructor</declaration_type> <declaration_function>XSRuntimeGetDestructorCallback</declaration_function>(
-    <declaration_type>XSClassID</declaration_type> <declaration_param>classID</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xsdoc_ref/c/func/XSRuntimeGetEqualsCallback" lang="c"><name>XSRuntimeGetEqualsCallback</name>
-<abstract><p>Gets the equals callback for a class ID
-</p></abstract>
-<parameterlist>
-<parameter><name>classID</name><desc><p>The class ID</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type>XSClassID</type><name>classID</name></parsedparameter>
-</parsedparameterlist>
-<returntype> XSClassCallbackEquals</returntype>
-<result><p>The equals callback
-</p></result>
-<declaration><declaration_type>XSClassCallbackEquals</declaration_type> <declaration_function>XSRuntimeGetEqualsCallback</declaration_function>(
-    <declaration_type>XSClassID</declaration_type> <declaration_param>classID</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xsdoc_ref/c/func/XSRuntimeGetInstanceSize" lang="c"><name>XSRuntimeGetInstanceSize</name>
-<abstract><p>Gets the instance site for a class ID
-</p></abstract>
-<parameterlist>
-<parameter><name>classID</name><desc><p>The class ID</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type>XSClassID</type><name>classID</name></parsedparameter>
-</parsedparameterlist>
-<returntype> size_t</returntype>
-<result><p>The instance size
-</p></result>
-<declaration><declaration_type>size_t</declaration_type> <declaration_function>XSRuntimeGetInstanceSize</declaration_function>(
-    <declaration_type>XSClassID</declaration_type> <declaration_param>classID</declaration_param> );  </declaration>
-<desc><p/></desc>
-</function><function id="//xsdoc_ref/c/func/XSRuntimeGetToStringCallback" lang="c"><name>XSRuntimeGetToStringCallback</name>
-<abstract><p>Gets the to-string callback for a class ID
-</p></abstract>
-<parameterlist>
-<parameter><name>classID</name><desc><p>The class ID</p></desc></parameter>
-</parameterlist>
-<parsedparameterlist>
-<parsedparameter><type>XSClassID</type><name>classID</name></parsedparameter>
-</parsedparameterlist>
-<returntype> XSClassCallbackToString</returntype>
-<result><p>The to-string callback
-</p></result>
-<declaration><declaration_type>XSClassCallbackToString</declaration_type> <declaration_function>XSRuntimeGetToStringCallback</declaration_function>(
-    <declaration_type>XSClassID</declaration_type> <declaration_param>classID</declaration_param> );  </declaration>
-<desc><p/></desc>
+<returntype> void</returntype>
+<declaration><declaration_type>void</declaration_type> <declaration_function>XSRuntimeRegisterFinalizer</declaration_function>(
+    <declaration_type>void</declaration_type> ( <declaration_type>*</declaration_type><declaration_param>func</declaration_param> )(
+        <declaration_param>void</declaration_param> ) );  </declaration>
+<desc><p>Based on its address, a finalizer function will only be
+registered once.
+</p></desc>
 </function></functions>
-<globals><variable id="//xsdoc_ref/c/data/XSRuntimeClassCount" lang="c"><name>XSRuntimeClassCount</name>
-<abstract><p>Number of registered XSFoundation runtime class infos
-</p></abstract>
-<returntype>XS_EXTERN volatile int64_t</returntype>
-<declaration><declaration_type>XS_EXTERN</declaration_type> <declaration_keyword>volatile</declaration_keyword> <declaration_type>int64_t</declaration_type> <declaration_var>XSRuntimeClassCount</declaration_var>;  </declaration>
-<desc><p/></desc>
-</variable><variable id="//xsdoc_ref/c/data/XSRuntimeClasses" lang="c"><name>XSRuntimeClasses</name>
-<abstract><p>Registered XSFoundation runtime class infos
-</p></abstract>
-<returntype>XS_EXTERN XSRuntimeClassInfoList * volatile</returntype>
-<declaration><declaration_type>XS_EXTERN</declaration_type> <declaration_type>XSRuntimeClassInfoList</declaration_type> <declaration_type>*</declaration_type> <declaration_keyword>volatile</declaration_keyword> <declaration_var>XSRuntimeClasses</declaration_var>;  </declaration>
-<desc><p/></desc>
-</variable><variable id="//xsdoc_ref/c/data/XSRuntimeFinalizers" lang="c"><name>XSRuntimeFinalizers</name>
-<abstract><p>Registered finalizer functions
-</p></abstract>
-<returntype>XS_EXTERN XSRuntimeFinalizerList * volatile</returntype>
-<declaration><declaration_type>XS_EXTERN</declaration_type> <declaration_type>XSRuntimeFinalizerList</declaration_type> <declaration_type>*</declaration_type> <declaration_keyword>volatile</declaration_keyword> <declaration_var>XSRuntimeFinalizers</declaration_var>;  </declaration>
-<desc><p/></desc>
-</variable><variable id="//xsdoc_ref/c/data/XSRuntimeInitStatus" lang="c"><name>XSRuntimeInitStatus</name>
-<abstract><p>XSFoundation runtime initialization status
-</p></abstract>
-<returntype>XS_EXTERN volatile int64_t</returntype>
-<declaration><declaration_type>XS_EXTERN</declaration_type> <declaration_keyword>volatile</declaration_keyword> <declaration_type>int64_t</declaration_type> <declaration_var>XSRuntimeInitStatus</declaration_var>;  </declaration>
-<desc><p/></desc>
-</variable></globals>
-<typedefs><typedef id="//xsdoc_ref/c/tdef/XSRuntimeClassInfoList" lang="c" type="simple"><name>XSRuntimeClassInfoList</name>
-<abstract><p>Linked list for the XSFoundation class infos
-</p></abstract>
-<fieldlist>
-<field><name>cls</name><desc><p>The class info</p></desc></field>
-<field><name>sharedInstance</name><desc><p>The shared instance, if any</p></desc></field>
-<field><name>volatile</name><desc><p>The next entry, if any</p></desc></field>
-</fieldlist>
-<parsedparameterlist>
-<parsedparameter><type>const XSClassInfo * volatile</type><name>cls</name></parsedparameter>
-<parsedparameter><type>XSObjectRef *</type><name>sharedInstance</name></parsedparameter>
-<parsedparameter><type>struct XSRuntimeClassInfoListStruct *</type><name>volatile</name></parsedparameter>
-</parsedparameterlist>
-<attributelists><listattribute><name>See Also</name><list>
-<item><name>XSRuntimeClassInfoListStruct</name><value><hd_link logicalPath="//xsdoc_ref/c/tag/XSRuntimeClassInfoListStruct" isseealso="yes">XSRuntimeClassInfoListStruct</hd_link></value></item></list></listattribute>
-</attributelists>
-<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>XSRuntimeClassInfoListStruct</declaration_type> { 
-    <declaration_keyword>const</declaration_keyword> <declaration_type>XSClassInfo</declaration_type> <declaration_type>*</declaration_type><declaration_keyword>volatile</declaration_keyword> <declaration_var>cls</declaration_var>;
-    <declaration_comment>/*! The class info */</declaration_comment>
-    <declaration_type>XSObjectRef</declaration_type> <declaration_type>*</declaration_type><declaration_var>sharedInstance</declaration_var>;
-    <declaration_comment>/*! The shared instance, if any */</declaration_comment>
-    <declaration_keyword>struct</declaration_keyword> <declaration_type>XSRuntimeClassInfoListStruct</declaration_type> <declaration_type>*</declaration_type><declaration_keyword>volatile</declaration_keyword> <declaration_var>next</declaration_var>;
-    <declaration_comment>/*! The next entry, if any */</declaration_comment>
-} <declaration_var>XSRuntimeClassInfoList</declaration_var>;  </declaration>
-<desc><p/></desc>
-<autorelated>
-<relateduid>//xsdoc_ref/c/tag/XSRuntimeClassInfoListStruct</relateduid>
-</autorelated>
-</typedef><typedef id="//xsdoc_ref/c/tdef/XSRuntimeFinalizerList" lang="c" type="simple"><name>XSRuntimeFinalizerList</name>
-<abstract><p>List of finalizer functions
-</p></abstract>
-<fieldlist>
-<field><name>volatile</name><desc><p>The next entry
-</p>
-<p>The previous entry</p></desc></field>
-</fieldlist>
-<callbacks>
-</callbacks>
-<parsedparameterlist>
-<parsedparameter><type>void</type><name>finalizer</name></parsedparameter>
-<parsedparameter><type>struct XSRuntimeFinalizerListStruct *</type><name>volatile</name></parsedparameter>
-<parsedparameter><type>struct XSRuntimeFinalizerListStruct *</type><name>volatile</name></parsedparameter>
-</parsedparameterlist>
-<attributelists><listattribute><name>See Also</name><list>
-<item><name>XSRuntimeFinalizerListStruct</name><value><hd_link logicalPath="//xsdoc_ref/c/tag/XSRuntimeFinalizerListStruct" isseealso="yes">XSRuntimeFinalizerListStruct</hd_link></value></item></list></listattribute>
-</attributelists>
-<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>XSRuntimeFinalizerListStruct</declaration_type> { 
-    <declaration_type>void</declaration_type> ( <declaration_type>*</declaration_type><declaration_function>finalizer</declaration_function> )(
-        <declaration_param>void</declaration_param> );
-    <declaration_comment>/*! The finalizer function */</declaration_comment>
-    <declaration_keyword>struct</declaration_keyword> <declaration_type>XSRuntimeFinalizerListStruct</declaration_type> <declaration_type>*</declaration_type><declaration_keyword>volatile</declaration_keyword> <declaration_var>next</declaration_var>;
-    <declaration_comment>/*! The next entry */</declaration_comment>
-    <declaration_keyword>struct</declaration_keyword> <declaration_type>XSRuntimeFinalizerListStruct</declaration_type> <declaration_type>*</declaration_type><declaration_keyword>volatile</declaration_keyword> <declaration_var>previous</declaration_var>;
-    <declaration_comment>/*! The previous entry */</declaration_comment>
-} <declaration_var>XSRuntimeFinalizerList</declaration_var>;  </declaration>
-<desc><p/></desc>
-<autorelated>
-<relateduid>//xsdoc_ref/c/tag/XSRuntimeFinalizerListStruct</relateduid>
-</autorelated>
-</typedef></typedefs><structs_and_unions><struct id="//xsdoc_ref/c/tag/XSRuntimeClassInfoListStruct" lang="c"><name>XSRuntimeClassInfoListStruct</name>
-<abstract><p>Linked list for the XSFoundation class infos
-</p></abstract>
-<fieldlist>
-<field><name>cls</name><desc><p>The class info</p></desc></field>
-<field><name>sharedInstance</name><desc><p>The shared instance, if any</p></desc></field>
-<field><name>volatile</name><desc><p>The next entry, if any</p></desc></field>
-</fieldlist>
-<parsedparameterlist>
-<parsedparameter><type>const XSClassInfo * volatile</type><name>cls</name></parsedparameter>
-<parsedparameter><type>XSObjectRef *</type><name>sharedInstance</name></parsedparameter>
-<parsedparameter><type>struct XSRuntimeClassInfoListStruct *</type><name>volatile</name></parsedparameter>
-</parsedparameterlist>
-<attributelists><listattribute><name>See Also</name><list>
-<item><name>XSRuntimeClassInfoList</name><value><hd_link logicalPath="//xsdoc_ref/c/tdef/XSRuntimeClassInfoList" isseealso="yes">XSRuntimeClassInfoList</hd_link></value></item></list></listattribute>
-</attributelists>
-<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>XSRuntimeClassInfoListStruct</declaration_type> { 
-    <declaration_keyword>const</declaration_keyword> <declaration_type>XSClassInfo</declaration_type> <declaration_type>*</declaration_type><declaration_keyword>volatile</declaration_keyword> <declaration_var>cls</declaration_var>;
-    <declaration_comment>/*! The class info */</declaration_comment>
-    <declaration_type>XSObjectRef</declaration_type> <declaration_type>*</declaration_type><declaration_var>sharedInstance</declaration_var>;
-    <declaration_comment>/*! The shared instance, if any */</declaration_comment>
-    <declaration_keyword>struct</declaration_keyword> <declaration_type>XSRuntimeClassInfoListStruct</declaration_type> <declaration_type>*</declaration_type><declaration_keyword>volatile</declaration_keyword> <declaration_var>next</declaration_var>;
-    <declaration_comment>/*! The next entry, if any */</declaration_comment>
-} <declaration_var>XSRuntimeClassInfoList</declaration_var>;  </declaration>
-<desc><p/></desc>
-<autorelated>
-<relateduid>//xsdoc_ref/c/tdef/XSRuntimeClassInfoList</relateduid>
-</autorelated>
-</struct><struct id="//xsdoc_ref/c/tag/XSRuntimeFinalizerListStruct" lang="c"><name>XSRuntimeFinalizerListStruct</name>
-<abstract><p>List of finalizer functions
-</p></abstract>
-<fieldlist>
-<field><name>volatile</name><desc><p>The next entry
-</p>
-<p>The previous entry</p></desc></field>
-</fieldlist>
-<callbacks>
-</callbacks>
-<parsedparameterlist>
-<parsedparameter><type>void</type><name>finalizer</name></parsedparameter>
-<parsedparameter><type>struct XSRuntimeFinalizerListStruct *</type><name>volatile</name></parsedparameter>
-<parsedparameter><type>struct XSRuntimeFinalizerListStruct *</type><name>volatile</name></parsedparameter>
-</parsedparameterlist>
-<attributelists><listattribute><name>See Also</name><list>
-<item><name>XSRuntimeFinalizerList</name><value><hd_link logicalPath="//xsdoc_ref/c/tdef/XSRuntimeFinalizerList" isseealso="yes">XSRuntimeFinalizerList</hd_link></value></item></list></listattribute>
-</attributelists>
-<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>XSRuntimeFinalizerListStruct</declaration_type> { 
-    <declaration_type>void</declaration_type> ( <declaration_type>*</declaration_type><declaration_function>finalizer</declaration_function> )(
-        <declaration_param>void</declaration_param> );
-    <declaration_comment>/*! The finalizer function */</declaration_comment>
-    <declaration_keyword>struct</declaration_keyword> <declaration_type>XSRuntimeFinalizerListStruct</declaration_type> <declaration_type>*</declaration_type><declaration_keyword>volatile</declaration_keyword> <declaration_var>next</declaration_var>;
-    <declaration_comment>/*! The next entry */</declaration_comment>
-    <declaration_keyword>struct</declaration_keyword> <declaration_type>XSRuntimeFinalizerListStruct</declaration_type> <declaration_type>*</declaration_type><declaration_keyword>volatile</declaration_keyword> <declaration_var>previous</declaration_var>;
-    <declaration_comment>/*! The previous entry */</declaration_comment>
-} <declaration_var>XSRuntimeFinalizerList</declaration_var>;  </declaration>
-<desc><p/></desc>
-<autorelated>
-<relateduid>//xsdoc_ref/c/tdef/XSRuntimeFinalizerList</relateduid>
-</autorelated>
-</struct></structs_and_unions><defines><pdefine id="//xsdoc_ref/c/macro/XS_RUNTIME_IS_FINALIZED" definetype="value" lang="c"><name>XS_RUNTIME_IS_FINALIZED</name>
-<abstract><p>Checks whether the XSFoundation runtime is finalized
-</p></abstract>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_RUNTIME_IS_FINALIZED</declaration_preprocessor> <declaration_preprocessor>XSAtomicCompareAndSwap64</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSInitStatusFinalized</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>XSInitStatusFinalized</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>XSRuntimeInitStatus</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-</pdefine><pdefine id="//xsdoc_ref/c/macro/XS_RUNTIME_IS_FINALIZING" definetype="value" lang="c"><name>XS_RUNTIME_IS_FINALIZING</name>
-<abstract><p>Checks whether the XSFoundation runtime is finalizing
-</p></abstract>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_RUNTIME_IS_FINALIZING</declaration_preprocessor> <declaration_preprocessor>XSAtomicCompareAndSwap64</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSInitStatusFinalizing</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>XSInitStatusFinalizing</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>XSRuntimeInitStatus</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-</pdefine><pdefine id="//xsdoc_ref/c/macro/XS_RUNTIME_IS_INITED" definetype="value" lang="c"><name>XS_RUNTIME_IS_INITED</name>
-<abstract><p>Checks whether the XSFoundation runtime is inited
-</p></abstract>
-<declaration><declaration_preprocessor>#define</declaration_preprocessor> <declaration_preprocessor>XS_RUNTIME_IS_INITED</declaration_preprocessor> <declaration_preprocessor>XSAtomicCompareAndSwap64</declaration_preprocessor><declaration_preprocessor>(</declaration_preprocessor> <declaration_preprocessor>XSInitStatusInited</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>XSInitStatusInited</declaration_preprocessor><declaration_preprocessor>,</declaration_preprocessor> <declaration_preprocessor>&amp;</declaration_preprocessor><declaration_preprocessor>XSRuntimeInitStatus</declaration_preprocessor> <declaration_preprocessor>)</declaration_preprocessor> </declaration>
-</pdefine></defines><copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
+<copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
 </copyrightinfo>
-<timestamp>Friday, September 11, 2020</timestamp>
+<timestamp>Sunday, September 27, 2020</timestamp>
 </header>

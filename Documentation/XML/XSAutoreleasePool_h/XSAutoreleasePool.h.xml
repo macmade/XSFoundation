@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE header PUBLIC "-//Apple Computer//DTD HEADERDOC 1.6//EN" "/System/Library/DTDs/HeaderDoc-1.6.dtd">
+<header id="//xsdoc_ref/doc/header/XSAutoreleasePool.h" lang="c" filename="XSAutoreleasePool.h" headerpath="/Users/macmade/Documents/Macmade/GitHub/XSFoundation/XSFoundation/include/XS/Classes/XSAutoreleasePool.h"><name>XSAutoreleasePool.h</name>
+<abstract><p>XSAutoreleasePool class
+</p></abstract>
+<attributes><attribute><name>Author</name><value>Jean-David Gadina - www.xs-labs.com</value></attribute>
+</attributes>
+<includes>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Macros.h">&lt;XS/Macros.h&gt;</hd_link></include>
+<include><hd_link logicalPath="//xsdoc_ref/doc/header/Types.h">&lt;XS/Types.h&gt;</hd_link></include>
+</includes>
+<desc><p/></desc>
+<functions><function id="//xsdoc_ref/c/func/XSAutoreleasePoolAddObject" lang="c"><name>XSAutoreleasePoolAddObject</name>
+<abstract><p>Adds an object to an autorelease pool
+</p></abstract>
+<parameterlist>
+<parameter><name>ap</name><desc><p>The autorelease pool object</p></desc></parameter>
+<parameter><name>object</name><desc><p>The object to add to the autorelease pool</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSAutoreleasePoolRef</type><name>ap</name></parsedparameter>
+<parsedparameter><type>const void *</type><name>object</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void</returntype>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSAutoreleasePoolAddObject</declaration_function>(
+    <declaration_type>XSAutoreleasePoolRef</declaration_type> <declaration_param>ap</declaration_param>,
+    <declaration_keyword>const</declaration_keyword> <declaration_type>void</declaration_type> <declaration_type>*</declaration_type><declaration_param>object</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSAutoreleasePoolCreate" lang="c"><name>XSAutoreleasePoolCreate</name>
+<abstract><p>Creates an autorelease pool
+</p></abstract>
+<returntype> XS_EXPORT XSAutoreleasePoolRef</returntype>
+<result><p>The autorelease pool object
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSAutoreleasePoolRef</declaration_type> <declaration_function>XSAutoreleasePoolCreate</declaration_function>(
+    <declaration_param>void</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSAutoreleasePoolDrain" lang="c"><name>XSAutoreleasePoolDrain</name>
+<abstract><p>Drains an autorelease pool
+</p></abstract>
+<parameterlist>
+<parameter><name>ap</name><desc><p>The autorelease pool object</p></desc></parameter>
+</parameterlist>
+<parsedparameterlist>
+<parsedparameter><type>XSAutoreleasePoolRef</type><name>ap</name></parsedparameter>
+</parsedparameterlist>
+<returntype> XS_EXPORT void</returntype>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>void</declaration_type> <declaration_function>XSAutoreleasePoolDrain</declaration_function>(
+    <declaration_type>XSAutoreleasePoolRef</declaration_type> <declaration_param>ap</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSAutoreleasePoolGetClassID" lang="c"><name>XSAutoreleasePoolGetClassID</name>
+<abstract><p>Gets the class ID for XSAutoreleasePool
+</p></abstract>
+<returntype> XS_EXPORT XSClassID</returntype>
+<result><p>The class ID for XSAutoreleasePool
+</p></result>
+<declaration><declaration_type>XS_EXPORT</declaration_type> <declaration_type>XSClassID</declaration_type> <declaration_function>XSAutoreleasePoolGetClassID</declaration_function>(
+    <declaration_param>void</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function><function id="//xsdoc_ref/c/func/XSAutoreleasePoolGetCurrent" lang="c"><name>XSAutoreleasePoolGetCurrent</name>
+<abstract><p>Gets the current autorepease pool for the current thread
+</p></abstract>
+<returntype> XSAutoreleasePoolRef</returntype>
+<result><p>The current autorelease pool, if one exists
+</p></result>
+<declaration><declaration_type>XSAutoreleasePoolRef</declaration_type> <declaration_function>XSAutoreleasePoolGetCurrent</declaration_function>(
+    <declaration_param>void</declaration_param> );  </declaration>
+<desc><p/></desc>
+</function></functions>
+<typedefs><typedef id="//xsdoc_ref/c/tdef/XSAutoreleasePoolRef" lang="c" type="simple"><name>XSAutoreleasePoolRef</name>
+<abstract><p>Opaque type for XSAutoreleasePool
+</p></abstract>
+<declaration><declaration_keyword>typedef</declaration_keyword> <declaration_keyword>struct</declaration_keyword> <declaration_type>XSAutoreleasePool</declaration_type> <declaration_type>*</declaration_type> <declaration_var>XSAutoreleasePoolRef</declaration_var>;  </declaration>
+<desc><p/></desc>
+</typedef></typedefs><copyrightinfo>&#169; (c) 2020 - Jean-David Gadina - www.xs-labs.com
+</copyrightinfo>
+<timestamp>Sunday, September 27, 2020</timestamp>
+</header>
