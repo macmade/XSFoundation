@@ -40,7 +40,7 @@ const char * XSRuntimeGetClassName( XSClassID classID )
 
     if( info == NULL )
     {
-        return NULL;
+        return "<unknown>";
     }
 
     return info->cls->className;
