@@ -23,45 +23,33 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRuntimeInitialize.c
+ * @header      XSString.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntimeInitialize
+ * @abstract    XSString class
  */
 
-#include <XS/XS.h>
-#include <XS/Private/Functions/Runtime.h>
-#include <stdlib.h>
+#ifndef XS_CLASSES_XS_STRING_H
+#define XS_CLASSES_XS_STRING_H
 
-void XSAutoreleasePoolInitialize( void );
-void XSStringInitialize( void );
+#include <XS/Macros.h>
+#include <XS/Types.h>
 
-void XSRuntimeInitialize( void )
-{
-    XSRuntimeClassInfoList * classes;
+XS_EXTERN_C_BEGIN
 
-    if( XSAtomicCompareAndSwap64( XSInitStatusNotInited, XSInitStatusInitializing, &XSRuntimeInitStatus ) == false )
-    {
-        return;
-    }
+/*!
+ * @typedef     XSStringRef
+ * @abstract    Opaque type for XSAutoreleasePool
+ */
+typedef struct XSString * XSStringRef;
 
-    classes = calloc( sizeof( XSRuntimeClassInfoList ), 1 );
+/*!
+ * @function    XSStringGetClassID
+ * @abstract    Gets the class ID for XSString
+ * @return      The class ID for XSString
+ */
+XS_EXPORT XSClassID XSStringGetClassID( void );
 
-    if( classes == NULL )
-    {
-        XSBadAlloc();
-    }
+XS_EXTERN_C_END
 
-    if( atexit( XSRuntimeFinalize ) != 0 )
-    {
-        XSFatalError( "Cannot register the XSFoundation finalizier function" );
-    }
-
-    XSRuntimeClasses    = classes;
-    XSRuntimeClassCount = 0;
-
-    XSAtomicWrite64( XSInitStatusInited, &XSRuntimeInitStatus );
-
-    XSAutoreleasePoolInitialize();
-    XSStringInitialize();
-}
+#endif /* XS_CLASSES_XS_STRING_H */

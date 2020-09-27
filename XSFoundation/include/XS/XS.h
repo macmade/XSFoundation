@@ -52,5 +52,6 @@
 
 /* Classes */
 #include <XS/Classes/XSAutoreleasePool.h>
+#include <XS/Classes/XSString.h>
 
 #endif /* XS_H */

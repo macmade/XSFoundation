@@ -23,45 +23,72 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRuntimeInitialize.c
+ * @header      XSString.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntimeInitialize
+ * @abstract    Private declarations for the XSString class
  */
 
-#include <XS/XS.h>
-#include <XS/Private/Functions/Runtime.h>
-#include <stdlib.h>
+#ifndef XS_PRIVATE_CLASSES_XS_STRING_H
+#define XS_PRIVATE_CLASSES_XS_STRING_H
 
-void XSAutoreleasePoolInitialize( void );
+#include <XS/Macros.h>
+#include <XS/Types.h>
+
+XS_EXTERN_C_BEGIN
+
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wpadded"
+#endif
+
+/*!
+ * @struct      XSString
+ * @abstract    XSString instance
+ */
+struct XSString
+{
+    char * cstr;
+    size_t length;
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+XS_EXTERN_C_END
+
+/*!
+ * @var         XSStringClassID
+ * @abstract    Class ID
+ */
+XS_EXTERN XSClassID XSStringClassID;
+
+/*!
+ * @var         XSStringClass
+ * @abstract    Class info
+ */
+XS_EXTERN XSClassInfo XSStringClass;
+
+/*!
+ * @function    XSAutoreleasePoolInitialize
+ * @abstract    Class initializer
+ */
 void XSStringInitialize( void );
 
-void XSRuntimeInitialize( void )
-{
-    XSRuntimeClassInfoList * classes;
+/*!
+ * @function    XSStringDestructor
+ * @abstract    Class destructor callback
+ * @param       object      The object beeing destruct
+ */
+void XSStringDestructor( XSMutableObjectRef object );
 
-    if( XSAtomicCompareAndSwap64( XSInitStatusNotInited, XSInitStatusInitializing, &XSRuntimeInitStatus ) == false )
-    {
-        return;
-    }
+/*!
+ * @function    XSStringCopy
+ * @abstract    Class copy callback
+ * @param       source      The object to copy
+ * @param       destination The object beeing copied
+ * @result      The copied object
+ */
+XSMutableObjectRef XSStringCopy( XSObjectRef source, XSMutableObjectRef destination );
 
-    classes = calloc( sizeof( XSRuntimeClassInfoList ), 1 );
-
-    if( classes == NULL )
-    {
-        XSBadAlloc();
-    }
-
-    if( atexit( XSRuntimeFinalize ) != 0 )
-    {
-        XSFatalError( "Cannot register the XSFoundation finalizier function" );
-    }
-
-    XSRuntimeClasses    = classes;
-    XSRuntimeClassCount = 0;
-
-    XSAtomicWrite64( XSInitStatusInited, &XSRuntimeInitStatus );
-
-    XSAutoreleasePoolInitialize();
-    XSStringInitialize();
-}
+#endif /* XS_PRIVATE_CLASSES_XS_STRING_H */
