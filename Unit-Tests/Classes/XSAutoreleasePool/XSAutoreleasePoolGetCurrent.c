@@ -47,10 +47,19 @@ Test( XSAutoreleasePool, XSAutoreleasePoolGetCurrent )
     AssertTrue( XSAutoreleasePoolGetCurrent() == ap2 );
 
     XSRelease( ap2 );
-
     AssertTrue( XSAutoreleasePoolGetCurrent() == ap1 );
 
     XSRelease( ap1 );
+    AssertTrue( XSAutoreleasePoolGetCurrent() == NULL );
 
+    ap1 = XSAutoreleasePoolCreate();
+    ap2 = XSAutoreleasePoolCreate();
+
+    AssertTrue( XSAutoreleasePoolGetCurrent() == ap2 );
+
+    XSRelease( ap1 );
+    AssertTrue( XSAutoreleasePoolGetCurrent() == ap2 );
+
+    XSRelease( ap2 );
     AssertTrue( XSAutoreleasePoolGetCurrent() == NULL );
 }
