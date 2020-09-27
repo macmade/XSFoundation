@@ -33,13 +33,64 @@
 
 Test( Memory, XSAutoAlloc )
 {
-    char * memory = XSAutoAlloc( 1024 );
+    XSAutoreleasePoolRef ap;
+    char *               memory;
+
+    ap     = XSAutoreleasePoolCreate();
+    memory = XSAutoAlloc( 1024 );
+
+    AssertTrue( memory != NULL );
 
     for( size_t i = 0; i < 1024; i++ )
     {
         AssertEqual( memory[ i ], 0 );
     }
 
-    AssertTrue( memory != NULL );
+    XSRetain( memory );
+    AssertEqual( XSGetRetainCount( memory ), 2 );
+
+    XSRelease( ap );
     AssertEqual( XSGetRetainCount( memory ), 1 );
+    XSRelease( memory );
+}
+
+Test( Memory, XSAutoAlloc_Drain )
+{
+    XSAutoreleasePoolRef ap;
+    char *               memory;
+
+    ap     = XSAutoreleasePoolCreate();
+    memory = XSAutoAlloc( 1024 );
+
+    AssertTrue( memory != NULL );
+
+    for( size_t i = 0; i < 1024; i++ )
+    {
+        AssertEqual( memory[ i ], 0 );
+    }
+
+    XSRetain( memory );
+    AssertEqual( XSGetRetainCount( memory ), 2 );
+
+    XSAutoreleasePoolDrain( ap );
+    AssertEqual( XSGetRetainCount( memory ), 1 );
+    XSRelease( memory );
+    XSRelease( ap );
+}
+
+Test( Memory, XSAutoAlloc_NoPool )
+{
+    char * memory = XSAutoAlloc( 1024 );
+
+    AssertTrue( memory != NULL );
+
+    for( size_t i = 0; i < 1024; i++ )
+    {
+        AssertEqual( memory[ i ], 0 );
+    }
+
+    AssertEqual( XSGetRetainCount( memory ), 1 );
+    XSAutoreleasePoolDrain( XSAutoreleasePoolGetCurrent() );
+    AssertEqual( XSGetRetainCount( memory ), 1 );
+    XSRelease( memory );
 }

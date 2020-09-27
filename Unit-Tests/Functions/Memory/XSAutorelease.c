@@ -33,12 +33,34 @@
 
 Test( Memory, XSAutorelease )
 {
-    // TODO
-    AssertTrue( true );
+    void * mem = XSAlloc( 128 );
+
+    XSRetain( mem );
+    XSRetain( mem );
+    AssertEqual( XSGetRetainCount( mem ), 3 );
+
+    XSAutorelease( mem );
+    XSAutoreleasePoolDrain( XSAutoreleasePoolGetCurrent() );
+
+    AssertEqual( XSGetRetainCount( mem ), 3 );
+
+    {
+        XSAutoreleasePoolRef ap = XSAutoreleasePoolCreate();
+
+        XSAutorelease( mem );
+        XSAutoreleasePoolDrain( ap );
+        AssertEqual( XSGetRetainCount( mem ), 2 );
+
+        XSAutorelease( mem );
+        XSRelease( ap );
+    }
+
+    AssertEqual( XSGetRetainCount( mem ), 1 );
+    XSRelease( mem );
 }
 
 Test( Memory, XSAutorelease_Null )
 {
-    // TODO
+    XSAutorelease( NULL );
     AssertTrue( true );
 }

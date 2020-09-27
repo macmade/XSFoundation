@@ -33,10 +33,6 @@
 
 void * XSAutorelease( const void * memory )
 {
-    return ( void * )( ( uintptr_t )memory );
-
-    // TODO
-    /*
     XSAutoreleasePoolRef ap;
 
     if( memory == NULL )
@@ -44,15 +40,16 @@ void * XSAutorelease( const void * memory )
         return NULL;
     }
 
-    ap = __XSAutoreleasePool_GetCurrent();
+    ap = XSAutoreleasePoolGetCurrent();
 
     if( ap == NULL )
     {
-        XSLogWarning( "Autoreleasing object of type %s while no autorelease pool in place - Leaking memory", XSRuntime_GetClassName( XSRuntime_GetClassID( memory ) ) );
+        XSLogWarning( "Autoreleasing object of type %s while no autorelease pool in place - Leaking memory", XSRuntimeGetClassName( XSRuntimeGetClassID( memory ) ) );
+    }
+    else
+    {
+        XSAutoreleasePoolAddObject( ap, memory );
     }
 
-    XSAutoreleasePool_AddObject( ap, memory );
-
-    return ( void * )memory;
-    */
+    return ( void * )( ( uintptr_t )memory );
 }
