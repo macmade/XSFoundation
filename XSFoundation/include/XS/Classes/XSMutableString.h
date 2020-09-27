@@ -44,13 +44,62 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct XSString * XSMutableStringRef;
 
+/*!
+ * @function    XSStringCreateMutable
+ * @abstract    Creates an empty mutable string
+ * @return      An empty mutable string
+ */
 XS_EXPORT XSMutableStringRef XSStringCreateMutable( void );
+
+/*!
+ * @function    XSStringCreateMutableCopy
+ * @abstract    Creates a mutable copy of a string
+ * @param       str     The string to copy
+ * @return      A mutable copy of the string
+ */
 XS_EXPORT XSMutableStringRef XSStringCreateMutableCopy( XSStringRef str );
 
+/*!
+ * @function    XSStringAppend
+ * @abstract    Appends a string to a mutable string
+ * @param       str     The mutable string
+ * @param       append  The string to append
+ */
 XS_EXPORT void XSStringAppend( XSStringRef str, XSStringRef append );
+
+/*!
+ * @function    XSStringAppendBytes
+ * @abstract    Appends bytes to a mutable string
+ * @param       str     The mutable string
+ * @param       bytes   The bytes to append
+ * @param       length  The number of bytes to append
+ */
 XS_EXPORT void XSStringAppendBytes( XSStringRef str, const uint8_t * bytes, size_t length );
+
+/*!
+ * @function    XSStringAppendCString
+ * @abstract    Appends a C string to a mutable string
+ * @param       str     The mutable string
+ * @param       cstr    The C string to append
+ */
 XS_EXPORT void XSStringAppendCString( XSStringRef str, const char * cstr );
+
+/*!
+ * @function    XSStringAppendFormat
+ * @abstract    Appends a format string to a mutable string
+ * @param       str     The mutable string
+ * @param       fmt     The format string
+ * @param       ...     Arguments for the format string
+ */
 XS_EXPORT void XSStringAppendFormat( XSStringRef str, const char * fmt, ... ) XS_FORMAT_ATTRIBUTE( printf, 2, 3 );
+
+/*!
+ * @function    XSStringAppendFormatAndArguments
+ * @abstract    Appends a format string to a mutable string
+ * @param       str     The mutable string
+ * @param       fmt     The format string
+ * @param       ap      Arguments for the format string
+ */
 XS_EXPORT void XSStringAppendFormatAndArguments( XSStringRef str, const char * fmt, va_list ap ) XS_FORMAT_ATTRIBUTE( printf, 2, 0 );
 
 XS_EXTERN_C_END
