@@ -44,14 +44,14 @@ XS_EXTERN_C_BEGIN
  */
 typedef struct XSString * XSMutableStringRef;
 
-XSMutableStringRef XSStringCreateMutable( void );
-XSMutableStringRef XSStringCreateMutableCopy( XSStringRef str );
+XS_EXPORT XSMutableStringRef XSStringCreateMutable( void );
+XS_EXPORT XSMutableStringRef XSStringCreateMutableCopy( XSStringRef str );
 
-void XSStringAppend( XSStringRef str, XSStringRef append );
-void XSStringAppendBytes( XSStringRef str, const uint8_t * bytes, size_t length );
-void XSStringAppendCString( XSStringRef str, const char * cstr );
-void XSStringAppendFormat( XSStringRef str, const char * fmt, ... ) XS_FORMAT_ATTRIBUTE( printf, 2, 3 );
-void XSStringAppendFormatAndArguments( XSStringRef str, const char * fmt, va_list ap ) XS_FORMAT_ATTRIBUTE( printf, 2, 0 );
+XS_EXPORT void XSStringAppend( XSStringRef str, XSStringRef append );
+XS_EXPORT void XSStringAppendBytes( XSStringRef str, const uint8_t * bytes, size_t length );
+XS_EXPORT void XSStringAppendCString( XSStringRef str, const char * cstr );
+XS_EXPORT void XSStringAppendFormat( XSStringRef str, const char * fmt, ... ) XS_FORMAT_ATTRIBUTE( printf, 2, 3 );
+XS_EXPORT void XSStringAppendFormatAndArguments( XSStringRef str, const char * fmt, va_list ap ) XS_FORMAT_ATTRIBUTE( printf, 2, 0 );
 
 XS_EXTERN_C_END
 
