@@ -32,7 +32,7 @@
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
 
-void XSStringAppendCString( XSStringRef str, const char * cstr )
+void XSStringAppendCString( XSMutableStringRef str, const char * cstr )
 {
     ( void )str;
     ( void )cstr;

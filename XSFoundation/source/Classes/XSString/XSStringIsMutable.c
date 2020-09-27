@@ -23,17 +23,18 @@
  ******************************************************************************/
 
 /*!
- * @file        XSStringAppend.c
+ * @file        XSStringIsMutable.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSStringAppend
+ * @abstract    Definition for XSStringIsMutable
  */
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
 
-void XSStringAppend( XSMutableStringRef str, XSStringRef append )
+bool XSStringIsMutable( XSStringRef str )
 {
     ( void )str;
-    ( void )append;
+
+    return false;
 }

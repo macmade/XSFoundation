@@ -210,6 +210,14 @@ XS_EXPORT const char * XSStringGetCString( XSStringRef str );
  */
 XS_EXPORT size_t XSStringGetLength( XSStringRef str );
 
+/*!
+ * @function    XSStringIsMutable
+ * @abstract    Checks if a string is mutable
+ * @param       str     The string object
+ * @return      True if the string is mutable, otherwise false
+ */
+XS_EXPORT bool XSStringIsMutable( XSStringRef str );
+
 XS_EXTERN_C_END
 
 #endif /* XS_CLASSES_XS_STRING_H */

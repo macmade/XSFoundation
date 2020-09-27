@@ -32,7 +32,7 @@
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
 
-void XSStringAppendBytes( XSStringRef str, const uint8_t * bytes, size_t length )
+void XSStringAppendBytes( XSMutableStringRef str, const uint8_t * bytes, size_t length )
 {
     ( void )str;
     ( void )bytes;

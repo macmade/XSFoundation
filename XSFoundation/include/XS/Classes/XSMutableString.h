@@ -65,7 +65,7 @@ XS_EXPORT XSMutableStringRef XSStringCreateMutableCopy( XSStringRef str );
  * @param       str     The mutable string
  * @param       append  The string to append
  */
-XS_EXPORT void XSStringAppend( XSStringRef str, XSStringRef append );
+XS_EXPORT void XSStringAppend( XSMutableStringRef str, XSStringRef append );
 
 /*!
  * @function    XSStringAppendBytes
@@ -74,7 +74,7 @@ XS_EXPORT void XSStringAppend( XSStringRef str, XSStringRef append );
  * @param       bytes   The bytes to append
  * @param       length  The number of bytes to append
  */
-XS_EXPORT void XSStringAppendBytes( XSStringRef str, const uint8_t * bytes, size_t length );
+XS_EXPORT void XSStringAppendBytes( XSMutableStringRef str, const uint8_t * bytes, size_t length );
 
 /*!
  * @function    XSStringAppendCString
@@ -82,7 +82,7 @@ XS_EXPORT void XSStringAppendBytes( XSStringRef str, const uint8_t * bytes, size
  * @param       str     The mutable string
  * @param       cstr    The C string to append
  */
-XS_EXPORT void XSStringAppendCString( XSStringRef str, const char * cstr );
+XS_EXPORT void XSStringAppendCString( XSMutableStringRef str, const char * cstr );
 
 /*!
  * @function    XSStringAppendFormat
@@ -91,7 +91,7 @@ XS_EXPORT void XSStringAppendCString( XSStringRef str, const char * cstr );
  * @param       fmt     The format string
  * @param       ...     Arguments for the format string
  */
-XS_EXPORT void XSStringAppendFormat( XSStringRef str, const char * fmt, ... ) XS_FORMAT_ATTRIBUTE( printf, 2, 3 );
+XS_EXPORT void XSStringAppendFormat( XSMutableStringRef str, const char * fmt, ... ) XS_FORMAT_ATTRIBUTE( printf, 2, 3 );
 
 /*!
  * @function    XSStringAppendFormatAndArguments
@@ -100,7 +100,7 @@ XS_EXPORT void XSStringAppendFormat( XSStringRef str, const char * fmt, ... ) XS
  * @param       fmt     The format string
  * @param       ap      Arguments for the format string
  */
-XS_EXPORT void XSStringAppendFormatAndArguments( XSStringRef str, const char * fmt, va_list ap ) XS_FORMAT_ATTRIBUTE( printf, 2, 0 );
+XS_EXPORT void XSStringAppendFormatAndArguments( XSMutableStringRef str, const char * fmt, va_list ap ) XS_FORMAT_ATTRIBUTE( printf, 2, 0 );
 
 XS_EXTERN_C_END
 

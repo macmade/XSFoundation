@@ -32,7 +32,7 @@
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
 
-void XSStringAppendFormatAndArguments( XSStringRef str, const char * fmt, va_list ap )
+void XSStringAppendFormatAndArguments( XSMutableStringRef str, const char * fmt, va_list ap )
 {
     ( void )str;
     ( void )fmt;
