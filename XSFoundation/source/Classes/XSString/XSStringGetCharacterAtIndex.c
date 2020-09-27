@@ -23,36 +23,19 @@
  ******************************************************************************/
 
 /*!
- * @header      XS.h
+ * @file        XSStringGetCharacterAtIndex.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Definition for XSStringGetCharacterAtIndex
  */
 
-#ifndef XS_H
-#define XS_H
+#include <XS/XS.h>
+#include <XS/Private/Classes/XSString.h>
 
-/* Base */
-#include <XS/Macros.h>
-#include <XS/Types.h>
+char XSStringGetCharacterAtIndex( XSStringRef str, size_t index )
+{
+    ( void )str;
+    ( void )index;
 
-/* Functions */
-#include <XS/Functions/Atomic.h>
-#include <XS/Functions/Memory.h>
-#include <XS/Functions/Runtime.h>
-#include <XS/Functions/Log.h>
-#include <XS/Functions/Sleep.h>
-#include <XS/Functions/SpinLock.h>
-#include <XS/Functions/Threading.h>
-#include <XS/Functions/Process.h>
-#include <XS/Functions/CString.h>
-
-/* Classes */
-#include <XS/Classes/XSAutoreleasePool.h>
-#include <XS/Classes/XSString.h>
-#include <XS/Classes/XSMutableString.h>
-
-#endif /* XS_H */
+    return 0;
+}

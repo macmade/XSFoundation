@@ -23,36 +23,36 @@
  ******************************************************************************/
 
 /*!
- * @header      XS.h
+ * @header      XSMutableString.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    XSString class
  */
 
-#ifndef XS_H
-#define XS_H
+#ifndef XS_CLASSES_XS_MUTABLE_STRING_H
+#define XS_CLASSES_XS_MUTABLE_STRING_H
 
-/* Base */
 #include <XS/Macros.h>
 #include <XS/Types.h>
-
-/* Functions */
-#include <XS/Functions/Atomic.h>
-#include <XS/Functions/Memory.h>
-#include <XS/Functions/Runtime.h>
-#include <XS/Functions/Log.h>
-#include <XS/Functions/Sleep.h>
-#include <XS/Functions/SpinLock.h>
-#include <XS/Functions/Threading.h>
-#include <XS/Functions/Process.h>
-#include <XS/Functions/CString.h>
-
-/* Classes */
-#include <XS/Classes/XSAutoreleasePool.h>
 #include <XS/Classes/XSString.h>
-#include <XS/Classes/XSMutableString.h>
 
-#endif /* XS_H */
+XS_EXTERN_C_BEGIN
+
+/*!
+ * @typedef     XSMutableStringRef
+ * @abstract    Opaque type for XSString (mutable)
+ */
+typedef struct XSString * XSMutableStringRef;
+
+XSMutableStringRef XSStringCreateMutable( void );
+XSMutableStringRef XSStringCreateMutableCopy( XSStringRef str );
+
+void XSStringAppend( XSStringRef str, XSStringRef append );
+void XSStringAppendBytes( XSStringRef str, const uint8_t * bytes, size_t length );
+void XSStringAppendCString( XSStringRef str, const char * cstr );
+void XSStringAppendFormat( XSStringRef str, const char * fmt, ... ) XS_FORMAT_ATTRIBUTE( printf, 2, 3 );
+void XSStringAppendFormatAndArguments( XSStringRef str, const char * fmt, va_list ap ) XS_FORMAT_ATTRIBUTE( printf, 2, 0 );
+
+XS_EXTERN_C_END
+
+#endif /* XS_CLASSES_XS_MUTABLE_STRING_H */

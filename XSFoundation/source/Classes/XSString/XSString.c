@@ -40,6 +40,6 @@ XSClassInfo XSStringClass   = {
     NULL,
     XSStringDestructor,
     XSStringCopy,
-    NULL,
-    NULL
+    XSStringEquals,
+    XSStringToString
 };

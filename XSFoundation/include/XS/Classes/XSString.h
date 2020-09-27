@@ -34,14 +34,18 @@
 
 #include <XS/Macros.h>
 #include <XS/Types.h>
+#include <stddef.h>
+#include <stdbool.h>
+#include <stdarg.h>
+#include <stdint.h>
 
 XS_EXTERN_C_BEGIN
 
 /*!
  * @typedef     XSStringRef
- * @abstract    Opaque type for XSAutoreleasePool
+ * @abstract    Opaque type for XSString (immutable)
  */
-typedef struct XSString * XSStringRef;
+typedef const struct XSString * XSStringRef;
 
 /*!
  * @function    XSStringGetClassID
@@ -49,6 +53,26 @@ typedef struct XSString * XSStringRef;
  * @return      The class ID for XSString
  */
 XS_EXPORT XSClassID XSStringGetClassID( void );
+
+XSStringRef XSStringCreateWithCString( const char * cstr );
+XSStringRef XSStringCreateWithBytes( const uint8_t * bytes, size_t length );
+XSStringRef XSStringCreateWithFormat( const char * fmt, ... ) XS_FORMAT_ATTRIBUTE( printf, 1, 2 );
+XSStringRef XSStringCreateWithFormatAndArguments( const char * fmt, va_list ap ) XS_FORMAT_ATTRIBUTE( printf, 1, 0 );
+
+XS_AUTORELEASED XSStringRef XSStringWithCString( const char * cstr );
+XS_AUTORELEASED XSStringRef XSStringWithBytes( const uint8_t * bytes, size_t length );
+XS_AUTORELEASED XSStringRef XSStringWithFormat( const char * fmt, ... ) XS_FORMAT_ATTRIBUTE( printf, 1, 2 );
+XS_AUTORELEASED XSStringRef XSStringWithFormatAndArguments( const char * fmt, va_list ap ) XS_FORMAT_ATTRIBUTE( printf, 1, 0 );
+
+bool         XSStringHasPrefix( XSStringRef str, XSStringRef prefix );
+bool         XSStringHasSuffix( XSStringRef str, XSStringRef suffix );
+bool         XSStringContainsString( XSStringRef str, XSStringRef search );
+bool         XSStringHasCStringPrefix( XSStringRef str, const char * prefix );
+bool         XSStringHasCStringSuffix( XSStringRef str, const char * suffix );
+bool         XSStringContainsCString( XSStringRef str, const char * search );
+char         XSStringGetCharacterAtIndex( XSStringRef str, size_t index );
+const char * XSStringGetCString( XSStringRef str );
+size_t       XSStringGetLength( XSStringRef str );
 
 XS_EXTERN_C_END
 

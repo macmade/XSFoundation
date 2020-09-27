@@ -34,6 +34,7 @@
 
 #include <XS/Macros.h>
 #include <XS/Types.h>
+#include <stdbool.h>
 
 XS_EXTERN_C_BEGIN
 
@@ -43,13 +44,23 @@ XS_EXTERN_C_BEGIN
 #endif
 
 /*!
+ * @enum        XSStringFlags
+ * @abstract    Flags for XSString instances
+ */
+enum XSStringFlags
+{
+    XSStringFlagsMutable = 0x01
+};
+
+/*!
  * @struct      XSString
  * @abstract    XSString instance
  */
 struct XSString
 {
-    char * cstr;
-    size_t length;
+    char *   cstr;   /*! The C string */
+    size_t   length; /*! Length of the C string */
+    uint64_t flags;  /*! String flags */
 };
 
 #ifdef __clang__
@@ -90,5 +101,22 @@ void XSStringDestructor( XSMutableObjectRef object );
  * @result      The copied object
  */
 XSMutableObjectRef XSStringCopy( XSObjectRef source, XSMutableObjectRef destination );
+
+/*!
+ * @function    XSStringEquals
+ * @abstract    Class equals callback
+ * @param       object1     The first object to compare
+ * @param       object2     The second object to compare
+ * @return      True if both objects are equals, otherwise false
+ */
+bool XSStringEquals( XSObjectRef object1, XSObjectRef object2 );
+
+/*!
+ * @typedef     XSStringToString
+ * @abstract    Class to-string callback
+ * @param       object      The object for which to get a description
+ * @return      The object's description
+ */
+const char * XSStringToString( XSObjectRef object );
 
 #endif /* XS_PRIVATE_CLASSES_XS_STRING_H */

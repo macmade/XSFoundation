@@ -41,6 +41,7 @@
         "__memory": "c",
         "locale": "c",
         "optional": "c",
-        "system_error": "c"
+        "system_error": "c",
+        "sstream": "c"
     }
 }
