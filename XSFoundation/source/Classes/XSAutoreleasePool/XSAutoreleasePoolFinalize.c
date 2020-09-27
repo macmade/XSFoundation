@@ -23,41 +23,16 @@
  ******************************************************************************/
 
 /*!
- * @file        XSAutoreleasePoolConstructor.c
+ * @file        XSAutoreleasePoolFinalize.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSAutoreleasePoolConstructor
+ * @abstract    Definitions for XSAutoreleasePoolInitialize
  */
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSAutoreleasePool.h>
 
-XSMutableObjectRef XSAutoreleasePoolConstructor( XSMutableObjectRef object )
+void XSAutoreleasePoolFinalize( void )
 {
-    struct XSAutoreleasePool * ap = object;
-
-    ap->threadID = XSGetCurrentThreadID();
-    ap->storage  = XSAlloc( sizeof( struct XSAutoreleasePoolStorage ) );
-
-    if( ap->storage == NULL )
-    {
-        XSBadAlloc();
-    }
-
-    {
-        XSAutoreleasePoolRef current;
-
-        current = XSAutoreleasePoolGetCurrent();
-
-        if( current != NULL )
-        {
-            current->next = ap;
-        }
-        else
-        {
-            XSTLSSetValue( &XSAutoreleasePoolTLSKey, ap, XSObjectAssociationAssign );
-        }
-    }
-
-    return ap;
+    XSTLSKeyDelete( &XSAutoreleasePoolTLSKey );
 }

@@ -35,4 +35,7 @@
 void XSAutoreleasePoolInitialize( void )
 {
     XSAutoreleasePoolClassID = XSRuntimeRegisterClass( &XSAutoreleasePoolClass );
+
+    XSTLSKeyCreate( &XSAutoreleasePoolTLSKey );
+    XSRuntimeRegisterFinalizer( XSAutoreleasePoolFinalize );
 }

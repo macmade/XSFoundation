@@ -38,4 +38,29 @@ void XSAutoreleasePoolDestructor( XSMutableObjectRef object )
 
     XSAutoreleasePoolDrain( object );
     XSRelease( ap->storage );
+
+    {
+        XSAutoreleasePoolRef current;
+
+        current = XSTLSGetValue( &XSAutoreleasePoolTLSKey );
+
+        if( current == ap )
+        {
+            XSTLSSetValue( &XSAutoreleasePoolTLSKey, ap->next, XSObjectAssociationAssign );
+
+            return;
+        }
+
+        while( current != NULL )
+        {
+            if( current->next == ap )
+            {
+                current->next = current->next->next;
+
+                return;
+            }
+
+            current = current->next;
+        }
+    }
 }

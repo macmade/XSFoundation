@@ -32,6 +32,7 @@
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSAutoreleasePool.h>
 
+XSTLSKey    XSAutoreleasePoolTLSKey;
 XSClassID   XSAutoreleasePoolClassID = 0;
 XSClassInfo XSAutoreleasePoolClass   = {
     "XSAutoreleasePool",

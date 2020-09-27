@@ -23,41 +23,34 @@
  ******************************************************************************/
 
 /*!
- * @file        XSAutoreleasePoolConstructor.c
+ * @file        XSAutoreleasePoolGetCurrent.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSAutoreleasePoolConstructor
  */
 
+#include <XSCTest/XSCTest.h>
 #include <XS/XS.h>
-#include <XS/Private/Classes/XSAutoreleasePool.h>
 
-XSMutableObjectRef XSAutoreleasePoolConstructor( XSMutableObjectRef object )
+Test( XSAutoreleasePool, XSAutoreleasePoolGetCurrent )
 {
-    struct XSAutoreleasePool * ap = object;
+    XSAutoreleasePoolRef ap1;
+    XSAutoreleasePoolRef ap2;
 
-    ap->threadID = XSGetCurrentThreadID();
-    ap->storage  = XSAlloc( sizeof( struct XSAutoreleasePoolStorage ) );
+    AssertTrue( XSAutoreleasePoolGetCurrent() == NULL );
 
-    if( ap->storage == NULL )
-    {
-        XSBadAlloc();
-    }
+    ap1 = XSAutoreleasePoolCreate();
 
-    {
-        XSAutoreleasePoolRef current;
+    AssertTrue( XSAutoreleasePoolGetCurrent() == ap1 );
 
-        current = XSAutoreleasePoolGetCurrent();
+    ap2 = XSAutoreleasePoolCreate();
 
-        if( current != NULL )
-        {
-            current->next = ap;
-        }
-        else
-        {
-            XSTLSSetValue( &XSAutoreleasePoolTLSKey, ap, XSObjectAssociationAssign );
-        }
-    }
+    AssertTrue( XSAutoreleasePoolGetCurrent() == ap2 );
 
-    return ap;
+    XSRelease( ap2 );
+
+    AssertTrue( XSAutoreleasePoolGetCurrent() == ap1 );
+
+    XSRelease( ap1 );
+
+    AssertTrue( XSAutoreleasePoolGetCurrent() == NULL );
 }

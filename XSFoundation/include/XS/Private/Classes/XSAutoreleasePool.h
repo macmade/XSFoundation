@@ -61,12 +61,19 @@ struct XSAutoreleasePool
 {
     uint64_t                          threadID;
     struct XSAutoreleasePoolStorage * storage;
+    struct XSAutoreleasePool *        next;
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
 XS_EXTERN_C_END
+
+/*!
+ * @var         XSAutoreleasePoolTLSKey
+ * @abstract    The TLS key for autorelease pools
+ */
+XS_EXTERN XSTLSKey XSAutoreleasePoolTLSKey;
 
 /*!
  * @var         XSAutoreleasePoolClassID
@@ -85,6 +92,12 @@ XS_EXTERN XSClassInfo XSAutoreleasePoolClass;
  * @abstract    Class initializer
  */
 void XSAutoreleasePoolInitialize( void );
+
+/*!
+ * @function    XSAutoreleasePoolFinalize
+ * @abstract    Class finalizer
+ */
+void XSAutoreleasePoolFinalize( void );
 
 /*!
  * @function    XSAutoreleasePoolConstructor

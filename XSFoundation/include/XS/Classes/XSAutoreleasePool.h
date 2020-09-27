@@ -72,6 +72,13 @@ XS_EXPORT void XSAutoreleasePoolAddObject( XSAutoreleasePoolRef ap, const void *
  */
 XS_EXPORT void XSAutoreleasePoolDrain( XSAutoreleasePoolRef ap );
 
+/*!
+ * @function    XSAutoreleasePoolGetCurrent
+ * @abstract    Gets the current autorepease pool for the current thread
+ * @return      The current autorelease pool, if one exists
+ */
+XSAutoreleasePoolRef XSAutoreleasePoolGetCurrent( void );
+
 XS_EXTERN_C_END
 
 #endif /* XS_CLASSES_XS_AUTORELEASE_POOL_H */
