@@ -64,3 +64,15 @@ FILES_C_TESTS += $(call GET_C_FILES, $(DIR_SRC_TESTS)Classes/XSAutoreleasePool/)
 
 # Gets every C file in the source directories (Example)
 FILES_C_EXAMPLE += $(call GET_C_FILES, $(DIR_SRC_EXAMPLE))
+
+#-------------------------------------------------------------------------------
+# Dependencies
+#-------------------------------------------------------------------------------
+
+ifndef _OS_CYGWIN
+
+-include $(_FILES_C_BUILD:$(EXT_O)=$(EXT_DEP))
+-include $(_FILES_C_BUILD_TESTS:$(EXT_O)=$(EXT_DEP))
+-include $(_FILES_C_BUILD_EXAMPLE:$(EXT_O)=$(EXT_DEP))
+
+endif
