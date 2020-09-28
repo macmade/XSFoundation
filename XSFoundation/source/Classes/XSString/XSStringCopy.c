@@ -31,11 +31,32 @@
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
+#include <string.h>
 
 XSMutableObjectRef XSStringCopy( XSObjectRef source, XSMutableObjectRef destination )
 {
-    ( void )source;
-    ( void )destination;
+    const struct XSString * str1 = source;
+    struct XSString *       str2 = destination;
 
-    return NULL;
+    if( str1->capacity == 0 )
+    {
+        memcpy( str2->cstr, str1->cstr, str1->length );
+    }
+    else
+    {
+        str2->cptr = XSAlloc( str1->capacity );
+
+        if( str2->cptr == NULL )
+        {
+            XSBadAlloc();
+        }
+
+        memcpy( str2->cptr, str1->cptr, str1->length );
+    }
+
+    str2->length   = str1->length;
+    str2->capacity = str1->capacity;
+    str2->flags    = str1->flags & ( uint64_t )( ~XSStringFlagsMutable );
+
+    return destination;
 }

@@ -34,6 +34,36 @@
 Test( XSString, XSStringContainsCString )
 {
     XSStringRef  str1    = XSStringCreateWithCString( "" );
+    XSStringRef  str2    = XSStringCreateWithCString( "hello, world" );
+    const char * search1 = "";
+    const char * search2 = "hello";
+    const char * search3 = "world";
+    const char * search4 = "lo, wo";
+    const char * search5 = ",";
+    const char * search6 = "universe";
+    const char * search7 = "hello, world & universe";
+
+    AssertFalse( XSStringContainsCString( NULL, NULL ) );
+    AssertFalse( XSStringContainsCString( str1, NULL ) );
+    AssertFalse( XSStringContainsCString( NULL, search1 ) );
+
+    AssertFalse( XSStringContainsCString( str1, search1 ) );
+    AssertFalse( XSStringContainsCString( str2, search1 ) );
+
+    AssertTrue( XSStringContainsCString( str2, search2 ) );
+    AssertTrue( XSStringContainsCString( str2, search3 ) );
+    AssertTrue( XSStringContainsCString( str2, search4 ) );
+    AssertTrue( XSStringContainsCString( str2, search5 ) );
+    AssertFalse( XSStringContainsCString( str2, search6 ) );
+    AssertFalse( XSStringContainsCString( str2, search7 ) );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+}
+
+Test( XSString, XSStringContainsCString_LongString )
+{
+    XSStringRef  str1    = XSStringCreateWithCString( "" );
     XSStringRef  str2    = XSStringCreateWithCString( "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
     const char * search1 = "";
     const char * search2 = "Lorem";

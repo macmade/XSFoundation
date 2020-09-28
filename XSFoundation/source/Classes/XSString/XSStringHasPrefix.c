@@ -34,8 +34,10 @@
 
 bool XSStringHasPrefix( XSStringRef str, XSStringRef prefix )
 {
-    ( void )str;
-    ( void )prefix;
+    if( str == NULL || prefix == NULL )
+    {
+        return false;
+    }
 
-    return false;
+    return XSStringHasCStringPrefix( str, XSStringGetCString( prefix ) );
 }

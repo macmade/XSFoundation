@@ -34,5 +34,12 @@
 
 void XSStringDestructor( XSMutableObjectRef object )
 {
-    ( void )object;
+    XSStringRef instance = object;
+
+    if( instance == NULL || instance->capacity == 0 )
+    {
+        return;
+    }
+
+    XSRelease( instance->cptr );
 }

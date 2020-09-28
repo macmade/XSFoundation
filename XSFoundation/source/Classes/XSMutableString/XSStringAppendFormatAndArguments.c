@@ -31,10 +31,51 @@
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
+#include <string.h>
+#include <stdio.h>
 
 void XSStringAppendFormatAndArguments( XSMutableStringRef str, const char * fmt, va_list ap )
 {
-    ( void )str;
-    ( void )fmt;
-    ( void )ap;
+    va_list ap2;
+    int     length;
+    char *  cstr;
+
+    if( str == NULL )
+    {
+        return;
+    }
+
+    if( ( str->flags & XSStringFlagsMutable ) == 0 )
+    {
+        XSFatalError( "Cannot modify an immutable XSString" );
+    }
+
+    if( fmt == NULL || strlen( fmt ) == 0 )
+    {
+        return;
+    }
+
+    va_copy( ap2, ap );
+
+    length = vsnprintf( NULL, 0, fmt, ap );
+
+    if( length < 0 )
+    {
+        va_end( ap2 );
+
+        return;
+    }
+
+    cstr = XSAlloc( ( size_t )length + 1 );
+
+    if( cstr == NULL )
+    {
+        va_end( ap2 );
+        XSBadAlloc();
+    }
+
+    vsnprintf( cstr, ( size_t )length + 1, fmt, ap2 );
+    va_end( ap2 );
+    XSStringAppendCString( str, cstr );
+    XSRelease( cstr );
 }

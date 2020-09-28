@@ -43,7 +43,7 @@ static XSStringRef CreateString( const char * fmt, ... )
 #pragma clang diagnostic ignored "-Wformat-nonliteral"
 #endif
 
-    str = XSStringCreateWithFormatAndArguments( fmt, ap );
+    str = XSStringWithFormatAndArguments( fmt, ap );
 
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -97,7 +97,7 @@ Test( XSString, XSStringWithFormatAndArguments_LongString )
     XSAutoreleasePoolRef ap   = XSAutoreleasePoolCreate();
     XSStringRef          str1 = CreateString( NULL );
     XSStringRef          str2 = CreateString( "" );
-    XSStringRef          str3 = CreateString( "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.%s %i", "hello, world", 42 );
+    XSStringRef          str3 = CreateString( "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. %s %i", "hello, world", 42 );
 
     AssertTrue( str1 != NULL );
     AssertTrue( str2 != NULL );
@@ -109,7 +109,7 @@ Test( XSString, XSStringWithFormatAndArguments_LongString )
 
     AssertStringEqual( XSStringGetCString( str1 ), "" );
     AssertStringEqual( XSStringGetCString( str2 ), "" );
-    AssertStringEqual( XSStringGetCString( str3 ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.hello, world 42" );
+    AssertStringEqual( XSStringGetCString( str3 ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. hello, world 42" );
 
     XSRetain( str1 );
     XSRetain( str2 );

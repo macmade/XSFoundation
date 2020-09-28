@@ -31,10 +31,82 @@
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
+#include <string.h>
 
 void XSStringAppendBytes( XSMutableStringRef str, const uint8_t * bytes, size_t length )
 {
-    ( void )str;
-    ( void )bytes;
-    ( void )length;
+    const uint8_t * end;
+
+    if( str == NULL )
+    {
+        return;
+    }
+
+    if( ( str->flags & XSStringFlagsMutable ) == 0 )
+    {
+        XSFatalError( "Cannot modify an immutable XSString" );
+    }
+
+    if( bytes == NULL || length == 0 )
+    {
+        return;
+    }
+
+    end = memchr( bytes, 0, length );
+
+    if( end != NULL )
+    {
+        length = ( size_t )( end - bytes );
+    }
+
+    if( str->capacity == 0 )
+    {
+        if( str->length + length < sizeof( str->cstr ) )
+        {
+            memcpy( str->cstr + str->length, bytes, length );
+        }
+        else
+        {
+            char * cptr;
+            size_t capacity;
+
+            capacity = str->length + length + 1;
+            cptr     = XSAlloc( capacity );
+
+            if( cptr == NULL )
+            {
+                XSBadAlloc();
+            }
+
+            memcpy( cptr, str->cstr, str->length );
+            memcpy( cptr + str->length, bytes, length );
+
+            str->capacity = capacity;
+            str->cptr     = cptr;
+        }
+    }
+    else if( str->length + length < str->capacity )
+    {
+        memcpy( str->cptr + str->length, bytes, length );
+    }
+    else
+    {
+        char * cptr;
+        size_t capacity;
+
+        capacity = str->length + length + 1;
+        cptr     = XSRealloc( str->cptr, capacity );
+
+        if( cptr == NULL )
+        {
+            XSBadAlloc();
+        }
+
+        memcpy( cptr + str->length, bytes, length );
+
+        str->capacity = capacity;
+        str->cptr     = cptr;
+    }
+
+    str->length += length;
 }

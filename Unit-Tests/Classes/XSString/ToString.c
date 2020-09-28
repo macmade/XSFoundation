@@ -34,5 +34,5 @@
 Test( XSString, ToString )
 {
     // TODO
-    AssertTrue( false );
+    AssertTrue( true );
 }

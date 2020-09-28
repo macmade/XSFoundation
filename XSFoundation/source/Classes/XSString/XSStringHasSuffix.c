@@ -34,8 +34,10 @@
 
 bool XSStringHasSuffix( XSStringRef str, XSStringRef suffix )
 {
-    ( void )str;
-    ( void )suffix;
+    if( str == NULL || suffix == NULL )
+    {
+        return false;
+    }
 
-    return false;
+    return XSStringHasCStringSuffix( str, XSStringGetCString( suffix ) );
 }

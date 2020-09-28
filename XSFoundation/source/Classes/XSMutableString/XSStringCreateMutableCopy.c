@@ -34,7 +34,19 @@
 
 XSMutableStringRef XSStringCreateMutableCopy( XSStringRef str )
 {
-    ( void )str;
+    XSMutableStringRef copy;
 
-    return NULL;
+    if( str == NULL )
+    {
+        return NULL;
+    }
+
+    copy = XSCopy( str );
+
+    if( copy != NULL )
+    {
+        copy->flags |= XSStringFlagsMutable;
+    }
+
+    return copy;
 }

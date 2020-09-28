@@ -34,6 +34,9 @@
 
 void XSStringAppendFormat( XSMutableStringRef str, const char * fmt, ... )
 {
-    ( void )str;
-    ( void )fmt;
+    va_list ap;
+
+    va_start( ap, fmt );
+    XSStringAppendFormatAndArguments( str, fmt, ap );
+    va_end( ap );
 }

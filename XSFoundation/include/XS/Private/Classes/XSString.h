@@ -49,7 +49,7 @@ XS_EXTERN_C_BEGIN
  */
 enum XSStringFlags
 {
-    XSStringFlagsMutable = 0x01
+    XSStringFlagsMutable = 0x01ULL
 };
 
 /*!
@@ -58,9 +58,15 @@ enum XSStringFlags
  */
 struct XSString
 {
-    char *   cstr;   /*! The C string */
-    size_t   length; /*! Length of the C string */
-    uint64_t flags;  /*! String flags */
+    union
+    {
+        char * cptr;       /*! The C string (external storage) */
+        char   cstr[ 32 ]; /*! The C string (internal storage) */
+    };
+
+    size_t   length;   /*! Length of the C string */
+    size_t   capacity; /*! Capacity of the C string storage - 0 for internal storage */
+    uint64_t flags;    /*! Instance flags */
 };
 
 #ifdef __clang__

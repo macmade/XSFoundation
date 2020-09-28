@@ -78,6 +78,10 @@ void * XSCopyWithInfos( const void * memory, const char * file, int line, const 
 
             data = NULL;
         }
+        else if( copiedData != data )
+        {
+            free( XSGetMemoryObject( data ) );
+        }
         else
         {
             data = copiedData;

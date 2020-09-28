@@ -31,9 +31,24 @@
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
+#include <string.h>
 
 void XSStringAppendCString( XSMutableStringRef str, const char * cstr )
 {
-    ( void )str;
-    ( void )cstr;
+    if( str == NULL )
+    {
+        return;
+    }
+
+    if( ( str->flags & XSStringFlagsMutable ) == 0 )
+    {
+        XSFatalError( "Cannot modify an immutable XSString" );
+    }
+
+    if( cstr == NULL )
+    {
+        return;
+    }
+
+    XSStringAppendBytes( str, ( const uint8_t * )cstr, strlen( cstr ) );
 }

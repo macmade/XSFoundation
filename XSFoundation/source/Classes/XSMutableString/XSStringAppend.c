@@ -34,6 +34,20 @@
 
 void XSStringAppend( XSMutableStringRef str, XSStringRef append )
 {
-    ( void )str;
-    ( void )append;
+    if( str == NULL )
+    {
+        return;
+    }
+
+    if( ( str->flags & XSStringFlagsMutable ) == 0 )
+    {
+        XSFatalError( "Cannot modify an immutable XSString" );
+    }
+
+    if( append == NULL )
+    {
+        return;
+    }
+
+    XSStringAppendCString( str, XSStringGetCString( append ) );
 }

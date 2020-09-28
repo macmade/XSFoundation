@@ -67,11 +67,11 @@ Test( XSString, XSStringGetCharacterAtIndex_LongString )
     AssertEqual( XSStringGetCharacterAtIndex( str1, 1 ), 0 );
     AssertEqual( XSStringGetCharacterAtIndex( str1, 42 ), 0 );
 
-    AssertEqual( XSStringGetCharacterAtIndex( str2, 0 ), 'h' );
-    AssertEqual( XSStringGetCharacterAtIndex( str2, 1 ), 'e' );
+    AssertEqual( XSStringGetCharacterAtIndex( str2, 0 ), 'L' );
+    AssertEqual( XSStringGetCharacterAtIndex( str2, 1 ), 'o' );
     AssertEqual( XSStringGetCharacterAtIndex( str2, 143 ), '.' );
-    AssertEqual( XSStringGetCharacterAtIndex( str2, 12 ), 0 );
-    AssertEqual( XSStringGetCharacterAtIndex( str2, 42 ), 0 );
+    AssertEqual( XSStringGetCharacterAtIndex( str2, 144 ), 0 );
+    AssertEqual( XSStringGetCharacterAtIndex( str2, 200 ), 0 );
 
     XSRelease( str1 );
     XSRelease( str2 );

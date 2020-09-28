@@ -88,7 +88,7 @@ Test( XSMutableString, XSStringCreateMutableCopy_LongString )
 
     AssertEqual( XSStringGetLength( copy1 ), 0 );
     AssertEqual( XSStringGetLength( copy2 ), 0 );
-    AssertEqual( XSStringGetLength( copy3 ), 12 );
+    AssertEqual( XSStringGetLength( copy3 ), 144 );
 
     AssertStringEqual( XSStringGetCString( copy1 ), "" );
     AssertStringEqual( XSStringGetCString( copy2 ), "" );

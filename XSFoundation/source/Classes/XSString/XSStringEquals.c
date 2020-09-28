@@ -31,11 +31,24 @@
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
+#include <string.h>
 
 bool XSStringEquals( XSObjectRef object1, XSObjectRef object2 )
 {
-    ( void )object1;
-    ( void )object2;
+    XSStringRef  str1;
+    XSStringRef  str2;
+    const char * cstr1;
+    const char * cstr2;
 
-    return false;
+    if( object1 == NULL || object1 == NULL )
+    {
+        return false;
+    }
+
+    str1  = object1;
+    str2  = object2;
+    cstr1 = XSStringGetCString( str1 );
+    cstr2 = XSStringGetCString( str2 );
+
+    return strcmp( cstr1, cstr2 ) == 0;
 }

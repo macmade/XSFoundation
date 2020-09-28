@@ -31,11 +31,23 @@
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
+#include <string.h>
 
 bool XSStringContainsCString( XSStringRef str, const char * search )
 {
-    ( void )str;
-    ( void )search;
+    const char * cstr;
 
-    return false;
+    if( str == NULL || search == NULL )
+    {
+        return false;
+    }
+
+    if( strlen( search ) == 0 )
+    {
+        return false;
+    }
+
+    cstr = XSStringGetCString( str );
+
+    return strstr( cstr, search ) != NULL;
 }

@@ -31,11 +31,61 @@
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
+#include <string.h>
+#include <stdio.h>
 
 XSStringRef XSStringCreateWithFormatAndArguments( const char * fmt, va_list ap )
 {
-    ( void )fmt;
-    ( void )ap;
+    va_list           ap2;
+    struct XSString * instance;
+    int               length;
 
-    return NULL;
+    if( fmt == NULL || strlen( fmt ) == 0 )
+    {
+        return XSStringCreateWithCString( "" );
+    }
+
+    va_copy( ap2, ap );
+
+    length = vsnprintf( NULL, 0, fmt, ap );
+
+    if( length < 0 )
+    {
+        va_end( ap2 );
+
+        return XSStringCreateWithCString( "" );
+    }
+
+    instance = XSRuntimeCreateInstance( XSStringClassID );
+
+    if( instance == NULL )
+    {
+        va_end( ap2 );
+        XSBadAlloc();
+    }
+
+    instance->length = ( size_t )length;
+
+    if( instance->length < sizeof( instance->cstr ) )
+    {
+        vsnprintf( instance->cstr, sizeof( instance->cstr ), fmt, ap2 );
+    }
+    else
+    {
+        instance->capacity = instance->length + 1;
+        instance->cptr     = XSAlloc( instance->capacity );
+
+        if( instance->cptr == NULL )
+        {
+            va_end( ap2 );
+            XSRelease( instance );
+            XSBadAlloc();
+        }
+
+        vsnprintf( instance->cptr, instance->capacity, fmt, ap2 );
+    }
+
+    va_end( ap2 );
+
+    return instance;
 }

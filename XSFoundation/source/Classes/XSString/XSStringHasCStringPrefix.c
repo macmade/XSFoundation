@@ -31,11 +31,23 @@
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
+#include <string.h>
 
 bool XSStringHasCStringPrefix( XSStringRef str, const char * prefix )
 {
-    ( void )str;
-    ( void )prefix;
+    const char * cstr;
 
-    return false;
+    if( str == NULL || prefix == NULL )
+    {
+        return false;
+    }
+
+    if( strlen( prefix ) == 0 )
+    {
+        return false;
+    }
+
+    cstr = XSStringGetCString( str );
+
+    return strstr( cstr, prefix ) == cstr;
 }

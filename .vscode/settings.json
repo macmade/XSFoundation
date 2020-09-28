@@ -43,6 +43,8 @@
         "optional": "c",
         "system_error": "c",
         "sstream": "c",
-        "xsstring.h": "c"
+        "xsstring.h": "c",
+        "__locale": "c",
+        "__string": "c"
     }
 }

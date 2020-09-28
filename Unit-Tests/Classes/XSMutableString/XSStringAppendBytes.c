@@ -65,7 +65,7 @@ Test( XSMutableString, XSStringAppendBytes )
 
     XSStringAppendBytes( mutable, str3, 3 );
     AssertEqual( XSStringGetLength( mutable ), 15 );
-    AssertStringEqual( XSStringGetCString( mutable ), "hello, world, wo" );
+    AssertStringEqual( XSStringGetCString( mutable ), "hello, world, w" );
 
     {
         size_t expected = XSStringGetLength( mutable );
@@ -115,7 +115,7 @@ Test( XSMutableString, XSStringAppendBytes_LongString )
     AssertStringEqual( XSStringGetCString( mutable ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
 
     XSStringAppendBytes( mutable, str3, 3 );
-    AssertEqual( XSStringGetLength( mutable ), 15 );
+    AssertEqual( XSStringGetLength( mutable ), 291 );
     AssertStringEqual( XSStringGetCString( mutable ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lor" );
 
     {

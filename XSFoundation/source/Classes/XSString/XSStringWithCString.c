@@ -34,7 +34,5 @@
 
 XS_AUTORELEASED XSStringRef XSStringWithCString( const char * cstr )
 {
-    ( void )cstr;
-
-    return NULL;
+    return XSAutorelease( XSStringCreateWithCString( cstr ) );
 }

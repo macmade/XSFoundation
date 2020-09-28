@@ -34,7 +34,10 @@
 
 bool XSStringIsMutable( XSStringRef str )
 {
-    ( void )str;
+    if( str == NULL )
+    {
+        return false;
+    }
 
-    return false;
+    return ( str->flags & XSStringFlagsMutable ) != 0;
 }

@@ -102,7 +102,7 @@ Test( XSString, XSStringWithBytes_LongString )
     AssertEqual( XSStringGetLength( str4 ), 0u );
     AssertEqual( XSStringGetLength( str5 ), 0u );
 
-    AssertStringEqual( XSStringGetCString( str2 ), "hello, world" );
+    AssertStringEqual( XSStringGetCString( str2 ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
 
     XSRetain( str1 );
     XSRetain( str2 );

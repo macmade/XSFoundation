@@ -31,11 +31,26 @@
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
+#include <string.h>
 
 bool XSStringHasCStringSuffix( XSStringRef str, const char * suffix )
 {
-    ( void )str;
-    ( void )suffix;
+    const char * cstr;
+    size_t       length;
 
-    return false;
+    if( str == NULL || suffix == NULL )
+    {
+        return false;
+    }
+
+    length = strlen( suffix );
+
+    if( length == 0 )
+    {
+        return false;
+    }
+
+    cstr = XSStringGetCString( str );
+
+    return strstr( cstr, suffix ) == ( cstr + str->length ) - length;
 }

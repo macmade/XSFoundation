@@ -31,11 +31,51 @@
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
+#include <string.h>
 
 XSStringRef XSStringCreateWithBytes( const uint8_t * bytes, size_t length )
 {
-    ( void )bytes;
-    ( void )length;
+    struct XSString * instance;
+    const uint8_t *   end;
 
-    return NULL;
+    instance = XSRuntimeCreateInstance( XSStringClassID );
+
+    if( instance == NULL )
+    {
+        XSBadAlloc();
+    }
+
+    if( bytes == NULL || length == 0 )
+    {
+        return instance;
+    }
+
+    end = memchr( bytes, 0, length );
+
+    if( end != NULL )
+    {
+        length = ( size_t )( end - bytes );
+    }
+
+    instance->length = length;
+
+    if( length < sizeof( instance->cstr ) )
+    {
+        memcpy( instance->cstr, bytes, length );
+    }
+    else
+    {
+        instance->cptr = XSAlloc( length + 1 );
+
+        if( instance->cptr == NULL )
+        {
+            XSBadAlloc();
+        }
+
+        instance->capacity = length + 1;
+
+        memcpy( instance->cptr, bytes, length );
+    }
+
+    return instance;
 }

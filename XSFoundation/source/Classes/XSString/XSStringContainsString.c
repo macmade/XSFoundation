@@ -34,8 +34,10 @@
 
 bool XSStringContainsString( XSStringRef str, XSStringRef search )
 {
-    ( void )str;
-    ( void )search;
+    if( str == NULL || search == NULL )
+    {
+        return false;
+    }
 
-    return false;
+    return XSStringContainsCString( str, XSStringGetCString( search ) );
 }

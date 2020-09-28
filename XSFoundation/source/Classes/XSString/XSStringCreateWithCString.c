@@ -31,10 +31,14 @@
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
+#include <string.h>
 
 XSStringRef XSStringCreateWithCString( const char * cstr )
 {
-    ( void )cstr;
+    if( cstr == NULL )
+    {
+        cstr = "";
+    }
 
-    return NULL;
+    return XSStringCreateWithBytes( ( const uint8_t * )cstr, strlen( cstr ) );
 }

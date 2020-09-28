@@ -34,8 +34,14 @@
 
 char XSStringGetCharacterAtIndex( XSStringRef str, size_t index )
 {
-    ( void )str;
-    ( void )index;
+    const char * cstr;
 
-    return 0;
+    if( str == NULL || index >= str->length )
+    {
+        return 0;
+    }
+
+    cstr = XSStringGetCString( str );
+
+    return cstr[ index ];
 }

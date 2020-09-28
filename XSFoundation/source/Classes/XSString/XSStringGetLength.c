@@ -34,7 +34,10 @@
 
 size_t XSStringGetLength( XSStringRef str )
 {
-    ( void )str;
+    if( str == NULL )
+    {
+        return 0;
+    }
 
-    return 0;
+    return str->length;
 }

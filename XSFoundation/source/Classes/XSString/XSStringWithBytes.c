@@ -34,8 +34,5 @@
 
 XS_AUTORELEASED XSStringRef XSStringWithBytes( const uint8_t * bytes, size_t length )
 {
-    ( void )bytes;
-    ( void )length;
-
-    return NULL;
+    return XSAutorelease( XSStringCreateWithBytes( bytes, length ) );
 }

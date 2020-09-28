@@ -34,7 +34,19 @@
 
 XSStringRef XSStringCreateWithFormat( const char * fmt, ... )
 {
-    ( void )fmt;
+    va_list     ap;
+    XSStringRef instance;
 
-    return NULL;
+    if( fmt == NULL )
+    {
+        return XSStringCreateWithCString( NULL );
+    }
+
+    va_start( ap, fmt );
+
+    instance = XSStringCreateWithFormatAndArguments( fmt, ap );
+
+    va_end( ap );
+
+    return instance;
 }

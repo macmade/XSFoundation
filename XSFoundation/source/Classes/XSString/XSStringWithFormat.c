@@ -34,7 +34,14 @@
 
 XS_AUTORELEASED XSStringRef XSStringWithFormat( const char * fmt, ... )
 {
-    ( void )fmt;
+    XSStringRef instance;
+    va_list     ap;
 
-    return NULL;
+    va_start( ap, fmt );
+
+    instance = XSStringCreateWithFormatAndArguments( fmt, ap );
+
+    va_end( ap );
+
+    return XSAutorelease( instance );
 }

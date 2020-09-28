@@ -34,7 +34,15 @@
 
 const char * XSStringGetCString( XSStringRef str )
 {
-    ( void )str;
+    if( str == NULL )
+    {
+        return NULL;
+    }
 
-    return NULL;
+    if( str->capacity == 0 )
+    {
+        return str->cstr;
+    }
+
+    return str->cptr;
 }
