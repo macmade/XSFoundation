@@ -66,3 +66,19 @@ Test( Memory, XSCopy_Null )
 {
     AssertTrue( XSCopy( NULL ) == NULL );
 }
+
+Test( Memory, XSCopy_Object )
+{
+    XSStringRef str1 = XSStringCreateWithCString( "hello, world" );
+    XSStringRef str2 = XSCopy( str1 );
+
+    AssertTrue( str2 != NULL );
+    AssertTrue( str2 != str1 );
+
+    AssertTrue( XSRuntimeIsInstance( str2 ) );
+    AssertTrue( XSRuntimeGetClassID( str1 ) == XSRuntimeGetClassID( str2 ) );
+    AssertTrue( XSEquals( str1, str2 ) );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+}

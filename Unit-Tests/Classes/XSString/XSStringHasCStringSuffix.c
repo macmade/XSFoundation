@@ -33,5 +33,22 @@
 
 Test( XSString, XSStringHasCStringSuffix )
 {
-    AssertTrue( false );
+    XSStringRef  str1  = XSStringCreateWithCString( "" );
+    XSStringRef  str2  = XSStringCreateWithCString( "hello, world" );
+    const char * pref1 = "";
+    const char * pref2 = "hello";
+    const char * pref3 = "world";
+
+    AssertFalse( XSStringHasCStringSuffix( NULL, NULL ) );
+    AssertFalse( XSStringHasCStringSuffix( str1, NULL ) );
+    AssertFalse( XSStringHasCStringSuffix( NULL, pref1 ) );
+
+    AssertFalse( XSStringHasCStringSuffix( str1, pref1 ) );
+    AssertFalse( XSStringHasCStringSuffix( str2, pref1 ) );
+
+    AssertFalse( XSStringHasCStringSuffix( str2, pref2 ) );
+    AssertTrue( XSStringHasCStringSuffix( str2, pref3 ) );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
 }

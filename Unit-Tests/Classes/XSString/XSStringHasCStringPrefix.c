@@ -32,6 +32,24 @@
 #include <XS/XS.h>
 
 Test( XSString, XSStringHasCStringPrefix )
+
 {
-    AssertTrue( false );
+    XSStringRef  str1  = XSStringCreateWithCString( "" );
+    XSStringRef  str2  = XSStringCreateWithCString( "hello, world" );
+    const char * pref1 = "";
+    const char * pref2 = "hello";
+    const char * pref3 = "world";
+
+    AssertFalse( XSStringHasCStringPrefix( NULL, NULL ) );
+    AssertFalse( XSStringHasCStringPrefix( str1, NULL ) );
+    AssertFalse( XSStringHasCStringPrefix( NULL, pref1 ) );
+
+    AssertFalse( XSStringHasCStringPrefix( str1, pref1 ) );
+    AssertFalse( XSStringHasCStringPrefix( str2, pref1 ) );
+
+    AssertTrue( XSStringHasCStringPrefix( str2, pref2 ) );
+    AssertFalse( XSStringHasCStringPrefix( str2, pref3 ) );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
 }

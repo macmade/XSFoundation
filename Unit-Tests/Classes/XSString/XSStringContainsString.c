@@ -33,5 +33,38 @@
 
 Test( XSString, XSStringContainsString )
 {
-    AssertTrue( false );
+    XSStringRef str1    = XSStringCreateWithCString( "" );
+    XSStringRef str2    = XSStringCreateWithCString( "hello, world" );
+    XSStringRef search1 = XSStringCreateWithCString( "" );
+    XSStringRef search2 = XSStringCreateWithCString( "hello" );
+    XSStringRef search3 = XSStringCreateWithCString( "world" );
+    XSStringRef search4 = XSStringCreateWithCString( "lo, wo" );
+    XSStringRef search5 = XSStringCreateWithCString( "," );
+    XSStringRef search6 = XSStringCreateWithCString( "universe" );
+    XSStringRef search7 = XSStringCreateWithCString( "hello, world & universe" );
+
+    AssertFalse( XSStringContainsString( NULL, NULL ) );
+    AssertFalse( XSStringContainsString( str1, NULL ) );
+    AssertFalse( XSStringContainsString( NULL, search1 ) );
+
+    AssertFalse( XSStringContainsString( str1, search1 ) );
+    AssertFalse( XSStringContainsString( str2, search1 ) );
+
+    AssertTrue( XSStringContainsString( str2, search2 ) );
+    AssertTrue( XSStringContainsString( str2, search3 ) );
+    AssertTrue( XSStringContainsString( str2, search4 ) );
+    AssertTrue( XSStringContainsString( str2, search5 ) );
+    AssertFalse( XSStringContainsString( str2, search6 ) );
+    AssertFalse( XSStringContainsString( str2, search7 ) );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( search1 );
+    XSRelease( search2 );
+    XSRelease( search3 );
+    XSRelease( search3 );
+    XSRelease( search4 );
+    XSRelease( search5 );
+    XSRelease( search6 );
+    XSRelease( search7 );
 }

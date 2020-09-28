@@ -62,3 +62,36 @@ Test( Memory, XSEquals_Null )
 
     XSRelease( mem1 );
 }
+
+Test( Memory, XSEquals_Object_NoCallback )
+{
+    XSAutoreleasePoolRef ap1 = XSAutoreleasePoolCreate();
+    XSAutoreleasePoolRef ap2 = XSAutoreleasePoolCreate();
+
+    AssertFalse( XSEquals( ap1, NULL ) );
+    AssertFalse( XSEquals( NULL, ap1 ) );
+
+    AssertTrue( XSEquals( ap1, ap1 ) );
+    AssertFalse( XSEquals( ap1, ap2 ) );
+
+    XSRelease( ap1 );
+    XSRelease( ap2 );
+}
+
+Test( Memory, XSEquals_Object_Callback )
+{
+    XSStringRef str1 = XSStringCreateWithCString( "hello, world" );
+    XSStringRef str2 = XSStringCreateWithCString( "hello, world" );
+    XSStringRef str3 = XSStringCreateWithCString( "hello, universe" );
+
+    AssertFalse( XSEquals( str1, NULL ) );
+    AssertFalse( XSEquals( NULL, str2 ) );
+
+    AssertTrue( XSEquals( str1, str1 ) );
+    AssertTrue( XSEquals( str1, str2 ) );
+    AssertFalse( XSEquals( str1, str3 ) );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( str3 );
+}

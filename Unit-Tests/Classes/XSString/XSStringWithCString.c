@@ -33,5 +33,36 @@
 
 Test( XSString, XSStringWithCString )
 {
-    AssertTrue( false );
+    XSAutoreleasePoolRef ap   = XSAutoreleasePoolCreate();
+    XSStringRef          str1 = XSStringWithCString( "" );
+    XSStringRef          str2 = XSStringWithCString( "hello, world" );
+    XSStringRef          str3 = XSStringWithCString( NULL );
+
+    AssertTrue( str1 != NULL );
+    AssertTrue( str2 != NULL );
+    AssertTrue( str3 != NULL );
+
+    AssertEqual( XSStringGetLength( str1 ), 0u );
+    AssertEqual( XSStringGetLength( str2 ), 12u );
+    AssertEqual( XSStringGetLength( str3 ), 0u );
+
+    AssertStringEqual( XSStringGetCString( str2 ), "hello, world" );
+
+    XSRetain( str1 );
+    XSRetain( str2 );
+    XSRetain( str3 );
+
+    AssertEqual( XSGetRetainCount( str1 ), 2 );
+    AssertEqual( XSGetRetainCount( str2 ), 2 );
+    AssertEqual( XSGetRetainCount( str3 ), 2 );
+
+    XSRelease( ap );
+
+    AssertEqual( XSGetRetainCount( str1 ), 1 );
+    AssertEqual( XSGetRetainCount( str2 ), 1 );
+    AssertEqual( XSGetRetainCount( str3 ), 1 );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( str3 );
 }

@@ -31,7 +31,63 @@
 #include <XSCTest/XSCTest.h>
 #include <XS/XS.h>
 
+static XSStringRef CreateString( const char * fmt, ... )
+{
+    XSStringRef str;
+    va_list     ap;
+
+    va_start( ap, fmt );
+
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wformat-nonliteral"
+#endif
+
+    str = XSStringCreateWithFormatAndArguments( fmt, ap );
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+
+    va_end( ap );
+
+    return str;
+}
+
 Test( XSString, XSStringWithFormatAndArguments )
 {
-    AssertTrue( false );
+    XSAutoreleasePoolRef ap   = XSAutoreleasePoolCreate();
+    XSStringRef          str1 = CreateString( NULL );
+    XSStringRef          str2 = CreateString( "" );
+    XSStringRef          str3 = CreateString( "%s %i", "hello, world", 42 );
+
+    AssertTrue( str1 != NULL );
+    AssertTrue( str2 != NULL );
+    AssertTrue( str3 != NULL );
+
+    AssertEqual( XSStringGetLength( str1 ), 0 );
+    AssertEqual( XSStringGetLength( str2 ), 0 );
+    AssertEqual( XSStringGetLength( str3 ), 15 );
+
+    AssertStringEqual( XSStringGetCString( str1 ), "" );
+    AssertStringEqual( XSStringGetCString( str2 ), "" );
+    AssertStringEqual( XSStringGetCString( str3 ), "hello, world 42" );
+
+    XSRetain( str1 );
+    XSRetain( str2 );
+    XSRetain( str3 );
+
+    AssertEqual( XSGetRetainCount( str1 ), 2 );
+    AssertEqual( XSGetRetainCount( str2 ), 2 );
+    AssertEqual( XSGetRetainCount( str3 ), 2 );
+
+    XSRelease( ap );
+
+    AssertEqual( XSGetRetainCount( str1 ), 1 );
+    AssertEqual( XSGetRetainCount( str2 ), 1 );
+    AssertEqual( XSGetRetainCount( str3 ), 1 );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( str3 );
 }

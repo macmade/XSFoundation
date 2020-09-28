@@ -33,5 +33,23 @@
 
 Test( XSString, XSStringCreateWithFormat )
 {
-    AssertTrue( false );
+    XSStringRef str1 = XSStringCreateWithFormat( NULL );
+    XSStringRef str2 = XSStringCreateWithFormat( "" );
+    XSStringRef str3 = XSStringCreateWithFormat( "%s %i", "hello, world", 42 );
+
+    AssertTrue( str1 != NULL );
+    AssertTrue( str2 != NULL );
+    AssertTrue( str3 != NULL );
+
+    AssertEqual( XSStringGetLength( str1 ), 0 );
+    AssertEqual( XSStringGetLength( str2 ), 0 );
+    AssertEqual( XSStringGetLength( str3 ), 15 );
+
+    AssertStringEqual( XSStringGetCString( str1 ), "" );
+    AssertStringEqual( XSStringGetCString( str2 ), "" );
+    AssertStringEqual( XSStringGetCString( str3 ), "hello, world 42" );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( str3 );
 }

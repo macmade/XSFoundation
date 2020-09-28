@@ -33,5 +33,36 @@
 
 Test( XSMutableString, XSStringCreateMutableCopy )
 {
-    AssertTrue( false );
+    XSStringRef        str1  = XSStringCreateWithCString( NULL );
+    XSStringRef        str2  = XSStringCreateWithCString( "" );
+    XSStringRef        str3  = XSStringCreateWithCString( "hello, world" );
+    XSMutableStringRef copy1 = XSStringCreateMutableCopy( str1 );
+    XSMutableStringRef copy2 = XSStringCreateMutableCopy( str2 );
+    XSMutableStringRef copy3 = XSStringCreateMutableCopy( str3 );
+    XSMutableStringRef copy4 = XSStringCreateMutableCopy( NULL );
+
+    AssertTrue( copy1 != NULL );
+    AssertTrue( copy2 != NULL );
+    AssertTrue( copy3 != NULL );
+    AssertTrue( copy4 == NULL );
+
+    AssertTrue( XSStringIsMutable( copy1 ) );
+    AssertTrue( XSStringIsMutable( copy2 ) );
+    AssertTrue( XSStringIsMutable( copy3 ) );
+
+    AssertEqual( XSStringGetLength( copy1 ), 0 );
+    AssertEqual( XSStringGetLength( copy2 ), 0 );
+    AssertEqual( XSStringGetLength( copy3 ), 12 );
+
+    AssertStringEqual( XSStringGetCString( copy1 ), "" );
+    AssertStringEqual( XSStringGetCString( copy2 ), "" );
+    AssertStringEqual( XSStringGetCString( copy3 ), "" );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( str3 );
+    XSRelease( copy1 );
+    
+    XSRelease( copy2 );
+    XSRelease( copy3 );
 }

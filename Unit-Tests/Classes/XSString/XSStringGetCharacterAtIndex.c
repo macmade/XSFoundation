@@ -33,5 +33,23 @@
 
 Test( XSString, XSStringGetCharacterAtIndex )
 {
-    AssertTrue( false );
+    XSStringRef str1 = XSStringCreateWithCString( "" );
+    XSStringRef str2 = XSStringCreateWithCString( "hello, world" );
+
+    AssertEqual( XSStringGetCharacterAtIndex( NULL, 0 ), 0 );
+    AssertEqual( XSStringGetCharacterAtIndex( NULL, 1 ), 0 );
+    AssertEqual( XSStringGetCharacterAtIndex( NULL, 42 ), 0 );
+
+    AssertEqual( XSStringGetCharacterAtIndex( str1, 0 ), 0 );
+    AssertEqual( XSStringGetCharacterAtIndex( str1, 1 ), 0 );
+    AssertEqual( XSStringGetCharacterAtIndex( str1, 42 ), 0 );
+
+    AssertEqual( XSStringGetCharacterAtIndex( str2, 0 ), 'h' );
+    AssertEqual( XSStringGetCharacterAtIndex( str2, 1 ), 'e' );
+    AssertEqual( XSStringGetCharacterAtIndex( str2, 11 ), 'd' );
+    AssertEqual( XSStringGetCharacterAtIndex( str2, 12 ), 0 );
+    AssertEqual( XSStringGetCharacterAtIndex( str2, 42 ), 0 );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
 }

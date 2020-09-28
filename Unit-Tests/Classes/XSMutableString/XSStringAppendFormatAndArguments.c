@@ -31,7 +31,61 @@
 #include <XSCTest/XSCTest.h>
 #include <XS/XS.h>
 
+static void Append( XSMutableStringRef str, const char * fmt, ... )
+{
+    va_list ap;
+
+    va_start( ap, fmt );
+
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wformat-nonliteral"
+#endif
+
+    XSStringAppendFormatAndArguments( str, fmt, ap );
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+
+    va_end( ap );
+}
+
 Test( XSMutableString, XSStringAppendFormatAndArguments )
 {
-    AssertTrue( false );
+    XSMutableStringRef mutable = XSStringCreateMutable();
+    const char * str1          = "hello";
+    const char * str2          = "";
+    const char * str3          = ", world";
+    const char * str4          = ".";
+
+    Append( mutable, "%s", str1 );
+    AssertEqual( XSStringGetLength( mutable ), 5 );
+    AssertStringEqual( XSStringGetCString( mutable ), "hello" );
+
+    Append( mutable, NULL );
+    AssertEqual( XSStringGetLength( mutable ), 5 );
+    AssertStringEqual( XSStringGetCString( mutable ), "hello" );
+
+    Append( mutable, "%s", str2 );
+    AssertEqual( XSStringGetLength( mutable ), 5 );
+    AssertStringEqual( XSStringGetCString( mutable ), "hello" );
+
+    Append( mutable, "%s", str3 );
+    AssertEqual( XSStringGetLength( mutable ), 12 );
+    AssertStringEqual( XSStringGetCString( mutable ), "hello, world" );
+
+    {
+        size_t expected = XSStringGetLength( mutable );
+
+        for( size_t i = 0; i < 1024; i++ )
+        {
+            expected++;
+
+            Append( mutable, "%s", str4 );
+            AssertEqual( XSStringGetLength( mutable ), expected );
+        }
+    }
+
+    XSRelease( mutable );
 }

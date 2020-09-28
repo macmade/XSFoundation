@@ -33,5 +33,39 @@
 
 Test( XSMutableString, XSStringAppendCString )
 {
-    AssertTrue( false );
+    XSMutableStringRef mutable = XSStringCreateMutable();
+    const char * str1          = "hello";
+    const char * str2          = "";
+    const char * str3          = ", world";
+    const char * str4          = ".";
+
+    XSStringAppendCString( mutable, str1 );
+    AssertEqual( XSStringGetLength( mutable ), 5 );
+    AssertStringEqual( XSStringGetCString( mutable ), "hello" );
+
+    XSStringAppendCString( mutable, NULL );
+    AssertEqual( XSStringGetLength( mutable ), 5 );
+    AssertStringEqual( XSStringGetCString( mutable ), "hello" );
+
+    XSStringAppendCString( mutable, str2 );
+    AssertEqual( XSStringGetLength( mutable ), 5 );
+    AssertStringEqual( XSStringGetCString( mutable ), "hello" );
+
+    XSStringAppendCString( mutable, str3 );
+    AssertEqual( XSStringGetLength( mutable ), 12 );
+    AssertStringEqual( XSStringGetCString( mutable ), "hello, world" );
+
+    {
+        size_t expected = XSStringGetLength( mutable );
+
+        for( size_t i = 0; i < 1024; i++ )
+        {
+            expected++;
+
+            XSStringAppendCString( mutable, str4 );
+            AssertEqual( XSStringGetLength( mutable ), expected );
+        }
+    }
+
+    XSRelease( mutable );
 }

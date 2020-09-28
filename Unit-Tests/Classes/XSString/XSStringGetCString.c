@@ -33,5 +33,26 @@
 
 Test( XSString, XSStringGetCString )
 {
-    AssertTrue( false );
+    const char * cp1  = NULL;
+    const char * cp2  = "";
+    const char * cp3  = "hello, world";
+    XSStringRef  str1 = XSStringCreateWithCString( cp1 );
+    XSStringRef  str2 = XSStringCreateWithCString( cp2 );
+    XSStringRef  str3 = XSStringCreateWithCString( cp3 );
+
+    AssertTrue( XSStringGetCString( NULL ) == NULL );
+    AssertTrue( XSStringGetCString( str1 ) != NULL );
+    AssertTrue( XSStringGetCString( str2 ) != NULL );
+    AssertTrue( XSStringGetCString( str3 ) != NULL );
+
+    AssertTrue( XSStringGetCString( str2 ) != cp2 );
+    AssertTrue( XSStringGetCString( str3 ) != cp3 );
+
+    AssertStringEqual( XSStringGetCString( str1 ), "" );
+    AssertStringEqual( XSStringGetCString( str2 ), "" );
+    AssertStringEqual( XSStringGetCString( str3 ), "hello, world" );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( str3 );
 }

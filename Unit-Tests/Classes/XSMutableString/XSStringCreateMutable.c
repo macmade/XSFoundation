@@ -33,5 +33,11 @@
 
 Test( XSMutableString, XSStringCreateMutable )
 {
-    AssertTrue( false );
+    XSMutableStringRef str = XSStringCreateMutable();
+
+    AssertTrue( XSStringIsMutable( str ) );
+    AssertEqual( XSStringGetLength( str ), 0 );
+    AssertStringEqual( XSStringGetCString( str ), "" );
+
+    XSRelease( str );
 }

@@ -33,5 +33,22 @@
 
 Test( XSString, Equals )
 {
-    AssertTrue( false );
+    XSStringRef str1 = XSStringCreateWithCString( "" );
+    XSStringRef str2 = XSStringCreateWithCString( "" );
+    XSStringRef str3 = XSStringCreateWithCString( "hello, world" );
+    XSStringRef str4 = XSStringCreateWithCString( "hello, world" );
+    XSStringRef str5 = XSStringCreateWithCString( "hello, universe" );
+
+    AssertTrue( XSEquals( str1, str2 ) );
+    AssertTrue( XSEquals( str3, str4 ) );
+
+    AssertFalse( XSEquals( str1, str3 ) );
+    AssertFalse( XSEquals( str3, str1 ) );
+    AssertFalse( XSEquals( str3, str5 ) );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( str3 );
+    XSRelease( str4 );
+    XSRelease( str5 );
 }

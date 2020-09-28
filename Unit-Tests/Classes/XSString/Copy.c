@@ -33,5 +33,36 @@
 
 Test( XSString, Copy )
 {
-    AssertTrue( false );
+    XSStringRef        str1;
+    XSMutableStringRef str2;
+    XSStringRef        copy1;
+    XSStringRef        copy2;
+
+    str1 = XSStringCreateWithCString( "hello, world" );
+    str2 = XSStringCreateMutable();
+
+    XSStringAppendCString( str2, "hello, universe" );
+
+    copy1 = XSCopy( str1 );
+    copy2 = XSCopy( str2 );
+
+    AssertTrue( copy1 != NULL );
+    AssertTrue( copy2 != NULL );
+
+    AssertTrue( copy1 != str1 );
+    AssertTrue( copy2 != str2 );
+
+    AssertFalse( XSStringIsMutable( copy1 ) );
+    AssertFalse( XSStringIsMutable( copy2 ) );
+
+    AssertTrue( XSEquals( str1, copy1 ) );
+    AssertTrue( XSEquals( str2, copy2 ) );
+
+    AssertStringEqual( XSStringGetCString( str1 ), "hello, world" );
+    AssertStringEqual( XSStringGetCString( str2 ), "hello, universe" );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( copy1 );
+    XSRelease( copy2 );
 }

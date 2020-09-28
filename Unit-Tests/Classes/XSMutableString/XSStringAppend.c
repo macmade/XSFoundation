@@ -33,5 +33,43 @@
 
 Test( XSMutableString, XSStringAppend )
 {
-    AssertTrue( false );
+    XSMutableStringRef mutable = XSStringCreateMutable();
+    XSStringRef str1           = XSStringCreateWithCString( "hello" );
+    XSStringRef str2           = XSStringCreateWithCString( "" );
+    XSStringRef str3           = XSStringCreateWithCString( ", world" );
+    XSStringRef str4           = XSStringCreateWithCString( "." );
+
+    XSStringAppend( mutable, str1 );
+    AssertEqual( XSStringGetLength( mutable ), 5 );
+    AssertStringEqual( XSStringGetCString( mutable ), "hello" );
+
+    XSStringAppend( mutable, NULL );
+    AssertEqual( XSStringGetLength( mutable ), 5 );
+    AssertStringEqual( XSStringGetCString( mutable ), "hello" );
+
+    XSStringAppend( mutable, str2 );
+    AssertEqual( XSStringGetLength( mutable ), 5 );
+    AssertStringEqual( XSStringGetCString( mutable ), "hello" );
+
+    XSStringAppend( mutable, str3 );
+    AssertEqual( XSStringGetLength( mutable ), 12 );
+    AssertStringEqual( XSStringGetCString( mutable ), "hello, world" );
+
+    {
+        size_t expected = XSStringGetLength( mutable );
+
+        for( size_t i = 0; i < 1024; i++ )
+        {
+            expected++;
+
+            XSStringAppend( mutable, str4 );
+            AssertEqual( XSStringGetLength( mutable ), expected );
+        }
+    }
+
+    XSRelease( mutable );
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( str3 );
+    XSRelease( str4 );
 }

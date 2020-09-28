@@ -33,5 +33,25 @@
 
 Test( XSString, XSStringHasSuffix )
 {
-    AssertTrue( false );
+    XSStringRef str1  = XSStringCreateWithCString( "" );
+    XSStringRef str2  = XSStringCreateWithCString( "hello, world" );
+    XSStringRef pref1 = XSStringCreateWithCString( "" );
+    XSStringRef pref2 = XSStringCreateWithCString( "hello" );
+    XSStringRef pref3 = XSStringCreateWithCString( "world" );
+
+    AssertFalse( XSStringHasSuffix( NULL, NULL ) );
+    AssertFalse( XSStringHasSuffix( str1, NULL ) );
+    AssertFalse( XSStringHasSuffix( NULL, pref1 ) );
+
+    AssertFalse( XSStringHasSuffix( str1, pref1 ) );
+    AssertFalse( XSStringHasSuffix( str2, pref1 ) );
+
+    AssertFalse( XSStringHasSuffix( str2, pref2 ) );
+    AssertTrue( XSStringHasSuffix( str2, pref3 ) );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( pref1 );
+    XSRelease( pref2 );
+    XSRelease( pref3 );
 }
