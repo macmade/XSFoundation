@@ -59,22 +59,22 @@ XSStringRef XSStringCreateWithBytes( const uint8_t * bytes, size_t length )
 
     instance->length = length;
 
-    if( length < sizeof( instance->cstr ) )
+    if( length < sizeof( instance->storage.cstr ) )
     {
-        memcpy( instance->cstr, bytes, length );
+        memcpy( instance->storage.cstr, bytes, length );
     }
     else
     {
-        instance->cptr = XSAlloc( length + 1 );
+        instance->storage.cptr = XSAlloc( length + 1 );
 
-        if( instance->cptr == NULL )
+        if( instance->storage.cptr == NULL )
         {
             XSBadAlloc();
         }
 
         instance->capacity = length + 1;
 
-        memcpy( instance->cptr, bytes, length );
+        memcpy( instance->storage.cptr, bytes, length );
     }
 
     return instance;

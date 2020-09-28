@@ -66,23 +66,23 @@ XSStringRef XSStringCreateWithFormatAndArguments( const char * fmt, va_list ap )
 
     instance->length = ( size_t )length;
 
-    if( instance->length < sizeof( instance->cstr ) )
+    if( instance->length < sizeof( instance->storage.cstr ) )
     {
-        vsnprintf( instance->cstr, sizeof( instance->cstr ), fmt, ap2 );
+        vsnprintf( instance->storage.cstr, sizeof( instance->storage.cstr ), fmt, ap2 );
     }
     else
     {
-        instance->capacity = instance->length + 1;
-        instance->cptr     = XSAlloc( instance->capacity );
+        instance->capacity     = instance->length + 1;
+        instance->storage.cptr = XSAlloc( instance->capacity );
 
-        if( instance->cptr == NULL )
+        if( instance->storage.cptr == NULL )
         {
             va_end( ap2 );
             XSRelease( instance );
             XSBadAlloc();
         }
 
-        vsnprintf( instance->cptr, instance->capacity, fmt, ap2 );
+        vsnprintf( instance->storage.cptr, instance->capacity, fmt, ap2 );
     }
 
     va_end( ap2 );

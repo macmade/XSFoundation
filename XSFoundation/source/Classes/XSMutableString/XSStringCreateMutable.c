@@ -41,15 +41,7 @@ XSMutableStringRef XSStringCreateMutable( void )
         XSBadAlloc();
     }
 
-    instance->cptr = XSAlloc( 256 );
-
-    if( instance->cptr == NULL )
-    {
-        XSBadAlloc();
-    }
-
     instance->flags |= XSStringFlagsMutable;
-    instance->capacity = 256;
 
     return instance;
 }

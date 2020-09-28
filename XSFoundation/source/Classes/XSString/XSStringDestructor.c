@@ -41,5 +41,5 @@ void XSStringDestructor( XSMutableObjectRef object )
         return;
     }
 
-    XSRelease( instance->cptr );
+    XSRelease( instance->storage.cptr );
 }

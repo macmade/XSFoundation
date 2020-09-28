@@ -53,20 +53,25 @@ enum XSStringFlags
 };
 
 /*!
+ * @union       XSStringStorage
+ * @abstract    Storage for XSString C string representation
+ */
+union XSStringStorage
+{
+    char * cptr;       /*! The C string (external storage) */
+    char   cstr[ 32 ]; /*! The C string (internal storage) */
+};
+
+/*!
  * @struct      XSString
  * @abstract    XSString instance
  */
 struct XSString
 {
-    union
-    {
-        char * cptr;       /*! The C string (external storage) */
-        char   cstr[ 32 ]; /*! The C string (internal storage) */
-    };
-
-    size_t   length;   /*! Length of the C string */
-    size_t   capacity; /*! Capacity of the C string storage - 0 for internal storage */
-    uint64_t flags;    /*! Instance flags */
+    union XSStringStorage storage;
+    size_t                length;   /*! Length of the C string */
+    size_t                capacity; /*! Capacity of the C string storage - 0 for internal storage */
+    uint64_t              flags;    /*! Instance flags */
 };
 
 #ifdef __clang__

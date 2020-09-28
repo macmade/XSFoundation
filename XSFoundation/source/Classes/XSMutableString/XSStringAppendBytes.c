@@ -61,9 +61,9 @@ void XSStringAppendBytes( XSMutableStringRef str, const uint8_t * bytes, size_t 
 
     if( str->capacity == 0 )
     {
-        if( str->length + length < sizeof( str->cstr ) )
+        if( str->length + length < sizeof( str->storage.cstr ) )
         {
-            memcpy( str->cstr + str->length, bytes, length );
+            memcpy( str->storage.cstr + str->length, bytes, length );
         }
         else
         {
@@ -78,16 +78,16 @@ void XSStringAppendBytes( XSMutableStringRef str, const uint8_t * bytes, size_t 
                 XSBadAlloc();
             }
 
-            memcpy( cptr, str->cstr, str->length );
+            memcpy( cptr, str->storage.cstr, str->length );
             memcpy( cptr + str->length, bytes, length );
 
-            str->capacity = capacity;
-            str->cptr     = cptr;
+            str->capacity     = capacity;
+            str->storage.cptr = cptr;
         }
     }
     else if( str->length + length < str->capacity )
     {
-        memcpy( str->cptr + str->length, bytes, length );
+        memcpy( str->storage.cptr + str->length, bytes, length );
     }
     else
     {
@@ -95,7 +95,7 @@ void XSStringAppendBytes( XSMutableStringRef str, const uint8_t * bytes, size_t 
         size_t capacity;
 
         capacity = str->length + length + 1;
-        cptr     = XSRealloc( str->cptr, capacity );
+        cptr     = XSRealloc( str->storage.cptr, capacity );
 
         if( cptr == NULL )
         {
@@ -104,8 +104,8 @@ void XSStringAppendBytes( XSMutableStringRef str, const uint8_t * bytes, size_t 
 
         memcpy( cptr + str->length, bytes, length );
 
-        str->capacity = capacity;
-        str->cptr     = cptr;
+        str->capacity     = capacity;
+        str->storage.cptr = cptr;
     }
 
     str->length += length;

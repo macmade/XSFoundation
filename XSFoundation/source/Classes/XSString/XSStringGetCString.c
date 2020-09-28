@@ -41,8 +41,8 @@ const char * XSStringGetCString( XSStringRef str )
 
     if( str->capacity == 0 )
     {
-        return str->cstr;
+        return str->storage.cstr;
     }
 
-    return str->cptr;
+    return str->storage.cptr;
 }
