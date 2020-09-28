@@ -52,3 +52,25 @@ Test( XSString, Equals )
     XSRelease( str4 );
     XSRelease( str5 );
 }
+
+Test( XSString, Equals_LongString )
+{
+    XSStringRef str1 = XSStringCreateWithCString( "" );
+    XSStringRef str2 = XSStringCreateWithCString( "" );
+    XSStringRef str3 = XSStringCreateWithCString( "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+    XSStringRef str4 = XSStringCreateWithCString( "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+    XSStringRef str5 = XSStringCreateWithCString( "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat." );
+
+    AssertTrue( XSEquals( str1, str2 ) );
+    AssertTrue( XSEquals( str3, str4 ) );
+
+    AssertFalse( XSEquals( str1, str3 ) );
+    AssertFalse( XSEquals( str3, str1 ) );
+    AssertFalse( XSEquals( str3, str5 ) );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( str3 );
+    XSRelease( str4 );
+    XSRelease( str5 );
+}

@@ -68,3 +68,44 @@ Test( XSString, XSStringContainsString )
     XSRelease( search6 );
     XSRelease( search7 );
 }
+
+Test( XSString, XSStringContainsString_LongString )
+{
+    XSStringRef str1    = XSStringCreateWithCString( "" );
+    XSStringRef str2    = XSStringCreateWithCString( "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+    XSStringRef search1 = XSStringCreateWithCString( "" );
+    XSStringRef search2 = XSStringCreateWithCString( "Lorem" );
+    XSStringRef search3 = XSStringCreateWithCString( "volutpat." );
+    XSStringRef search4 = XSStringCreateWithCString( "amet, consectetuer" );
+    XSStringRef search5 = XSStringCreateWithCString( "," );
+    XSStringRef search6 = XSStringCreateWithCString( "Ut wisi enim." );
+    XSStringRef search7 = XSStringCreateWithCString( "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim." );
+    XSStringRef search8 = XSStringCreateWithCString( "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+
+    AssertFalse( XSStringContainsString( NULL, NULL ) );
+    AssertFalse( XSStringContainsString( str1, NULL ) );
+    AssertFalse( XSStringContainsString( NULL, search1 ) );
+
+    AssertFalse( XSStringContainsString( str1, search1 ) );
+    AssertFalse( XSStringContainsString( str2, search1 ) );
+
+    AssertTrue( XSStringContainsString( str2, search2 ) );
+    AssertTrue( XSStringContainsString( str2, search3 ) );
+    AssertTrue( XSStringContainsString( str2, search4 ) );
+    AssertTrue( XSStringContainsString( str2, search5 ) );
+    AssertFalse( XSStringContainsString( str2, search6 ) );
+    AssertFalse( XSStringContainsString( str2, search7 ) );
+    AssertTrue( XSStringContainsString( str2, search8 ) );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( search1 );
+    XSRelease( search2 );
+    XSRelease( search3 );
+    XSRelease( search3 );
+    XSRelease( search4 );
+    XSRelease( search5 );
+    XSRelease( search6 );
+    XSRelease( search7 );
+    XSRelease( search8 );
+}

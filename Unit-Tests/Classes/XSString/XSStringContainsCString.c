@@ -34,14 +34,14 @@
 Test( XSString, XSStringContainsCString )
 {
     XSStringRef  str1    = XSStringCreateWithCString( "" );
-    XSStringRef  str2    = XSStringCreateWithCString( "hello, world" );
+    XSStringRef  str2    = XSStringCreateWithCString( "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
     const char * search1 = "";
-    const char * search2 = "hello";
-    const char * search3 = "world";
-    const char * search4 = "lo, wo";
+    const char * search2 = "Lorem";
+    const char * search3 = "volutpat.";
+    const char * search4 = "amet, consectetuer";
     const char * search5 = ",";
-    const char * search6 = "universe";
-    const char * search7 = "hello, world & universe";
+    const char * search6 = "Ut wisi enim.";
+    const char * search7 = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim.";
 
     AssertFalse( XSStringContainsCString( NULL, NULL ) );
     AssertFalse( XSStringContainsCString( str1, NULL ) );

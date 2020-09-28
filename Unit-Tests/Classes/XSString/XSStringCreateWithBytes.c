@@ -59,3 +59,32 @@ Test( XSString, XSStringCreateWithBytes )
     XSRelease( str4 );
     XSRelease( str5 );
 }
+
+Test( XSString, XSStringCreateWithBytes_LongString )
+{
+    XSStringRef str1 = XSStringCreateWithBytes( ( const uint8_t * )"", 1 );
+    XSStringRef str2 = XSStringCreateWithBytes( ( const uint8_t * )"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.", 144 );
+    XSStringRef str3 = XSStringCreateWithBytes( NULL, 0 );
+    XSStringRef str4 = XSStringCreateWithBytes( NULL, 1 );
+    XSStringRef str5 = XSStringCreateWithBytes( ( const uint8_t * )"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.", 0 );
+
+    AssertTrue( str1 != NULL );
+    AssertTrue( str2 != NULL );
+    AssertTrue( str3 != NULL );
+    AssertTrue( str4 != NULL );
+    AssertTrue( str5 != NULL );
+
+    AssertEqual( XSStringGetLength( str1 ), 0u );
+    AssertEqual( XSStringGetLength( str2 ), 144u );
+    AssertEqual( XSStringGetLength( str3 ), 0u );
+    AssertEqual( XSStringGetLength( str4 ), 0u );
+    AssertEqual( XSStringGetLength( str5 ), 0u );
+
+    AssertStringEqual( XSStringGetCString( str2 ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( str3 );
+    XSRelease( str4 );
+    XSRelease( str5 );
+}

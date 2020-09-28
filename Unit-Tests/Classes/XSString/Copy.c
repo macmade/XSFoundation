@@ -66,3 +66,39 @@ Test( XSString, Copy )
     XSRelease( copy1 );
     XSRelease( copy2 );
 }
+
+Test( XSString, Copy_LongString )
+{
+    XSStringRef        str1;
+    XSMutableStringRef str2;
+    XSStringRef        copy1;
+    XSStringRef        copy2;
+
+    str1 = XSStringCreateWithCString( "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+    str2 = XSStringCreateMutable();
+
+    XSStringAppendCString( str2, "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat." );
+
+    copy1 = XSCopy( str1 );
+    copy2 = XSCopy( str2 );
+
+    AssertTrue( copy1 != NULL );
+    AssertTrue( copy2 != NULL );
+
+    AssertTrue( copy1 != str1 );
+    AssertTrue( copy2 != str2 );
+
+    AssertFalse( XSStringIsMutable( copy1 ) );
+    AssertFalse( XSStringIsMutable( copy2 ) );
+
+    AssertTrue( XSEquals( str1, copy1 ) );
+    AssertTrue( XSEquals( str2, copy2 ) );
+
+    AssertStringEqual( XSStringGetCString( str1 ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+    AssertStringEqual( XSStringGetCString( str2 ), "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat." );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( copy1 );
+    XSRelease( copy2 );
+}

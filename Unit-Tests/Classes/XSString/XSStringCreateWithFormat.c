@@ -53,3 +53,26 @@ Test( XSString, XSStringCreateWithFormat )
     XSRelease( str2 );
     XSRelease( str3 );
 }
+
+Test( XSString, XSStringCreateWithFormat_LongString )
+{
+    XSStringRef str1 = XSStringCreateWithFormat( NULL );
+    XSStringRef str2 = XSStringCreateWithFormat( "" );
+    XSStringRef str3 = XSStringCreateWithFormat( "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. %s %i", "hello, world", 42 );
+
+    AssertTrue( str1 != NULL );
+    AssertTrue( str2 != NULL );
+    AssertTrue( str3 != NULL );
+
+    AssertEqual( XSStringGetLength( str1 ), 0 );
+    AssertEqual( XSStringGetLength( str2 ), 0 );
+    AssertEqual( XSStringGetLength( str3 ), 160 );
+
+    AssertStringEqual( XSStringGetCString( str1 ), "" );
+    AssertStringEqual( XSStringGetCString( str2 ), "" );
+    AssertStringEqual( XSStringGetCString( str3 ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. hello, world 42" );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( str3 );
+}

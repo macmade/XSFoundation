@@ -52,3 +52,25 @@ Test( XSString, XSStringHasCStringSuffix )
     XSRelease( str1 );
     XSRelease( str2 );
 }
+
+Test( XSString, XSStringHasCStringSuffix_LongString )
+{
+    XSStringRef  str1  = XSStringCreateWithCString( "" );
+    XSStringRef  str2  = XSStringCreateWithCString( "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+    const char * pref1 = "";
+    const char * pref2 = "Lorem";
+    const char * pref3 = "volutpat.";
+
+    AssertFalse( XSStringHasCStringSuffix( NULL, NULL ) );
+    AssertFalse( XSStringHasCStringSuffix( str1, NULL ) );
+    AssertFalse( XSStringHasCStringSuffix( NULL, pref1 ) );
+
+    AssertFalse( XSStringHasCStringSuffix( str1, pref1 ) );
+    AssertFalse( XSStringHasCStringSuffix( str2, pref1 ) );
+
+    AssertFalse( XSStringHasCStringSuffix( str2, pref2 ) );
+    AssertTrue( XSStringHasCStringSuffix( str2, pref3 ) );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+}

@@ -80,3 +80,53 @@ Test( XSString, XSStringWithBytes )
     XSRelease( str4 );
     XSRelease( str5 );
 }
+
+Test( XSString, XSStringWithBytes_LongString )
+{
+    XSAutoreleasePoolRef ap   = XSAutoreleasePoolCreate();
+    XSStringRef          str1 = XSStringWithBytes( ( const uint8_t * )"", 1 );
+    XSStringRef          str2 = XSStringWithBytes( ( const uint8_t * )"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.", 144 );
+    XSStringRef          str3 = XSStringWithBytes( NULL, 0 );
+    XSStringRef          str4 = XSStringWithBytes( NULL, 1 );
+    XSStringRef          str5 = XSStringWithBytes( ( const uint8_t * )"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.", 0 );
+
+    AssertTrue( str1 != NULL );
+    AssertTrue( str2 != NULL );
+    AssertTrue( str3 != NULL );
+    AssertTrue( str4 != NULL );
+    AssertTrue( str5 != NULL );
+
+    AssertEqual( XSStringGetLength( str1 ), 0u );
+    AssertEqual( XSStringGetLength( str2 ), 144u );
+    AssertEqual( XSStringGetLength( str3 ), 0u );
+    AssertEqual( XSStringGetLength( str4 ), 0u );
+    AssertEqual( XSStringGetLength( str5 ), 0u );
+
+    AssertStringEqual( XSStringGetCString( str2 ), "hello, world" );
+
+    XSRetain( str1 );
+    XSRetain( str2 );
+    XSRetain( str3 );
+    XSRetain( str4 );
+    XSRetain( str5 );
+
+    AssertEqual( XSGetRetainCount( str1 ), 2 );
+    AssertEqual( XSGetRetainCount( str2 ), 2 );
+    AssertEqual( XSGetRetainCount( str3 ), 2 );
+    AssertEqual( XSGetRetainCount( str4 ), 2 );
+    AssertEqual( XSGetRetainCount( str5 ), 2 );
+
+    XSRelease( ap );
+
+    AssertEqual( XSGetRetainCount( str1 ), 1 );
+    AssertEqual( XSGetRetainCount( str2 ), 1 );
+    AssertEqual( XSGetRetainCount( str3 ), 1 );
+    AssertEqual( XSGetRetainCount( str4 ), 1 );
+    AssertEqual( XSGetRetainCount( str5 ), 1 );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( str3 );
+    XSRelease( str4 );
+    XSRelease( str5 );
+}

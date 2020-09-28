@@ -81,3 +81,54 @@ Test( XSMutableString, XSStringAppendBytes )
 
     XSRelease( mutable );
 }
+
+Test( XSMutableString, XSStringAppendBytes_LongString )
+{
+    XSMutableStringRef mutable = XSStringCreateMutable();
+    const uint8_t * str1       = ( const uint8_t * )"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.";
+    const uint8_t * str2       = ( const uint8_t * )"";
+    const uint8_t * str3       = ( const uint8_t * )"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.";
+    const uint8_t * str4       = ( const uint8_t * )".";
+
+    XSStringAppendBytes( mutable, str1, 144 );
+    AssertEqual( XSStringGetLength( mutable ), 144 );
+    AssertStringEqual( XSStringGetCString( mutable ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+
+    XSStringAppendBytes( mutable, NULL, 0 );
+    AssertEqual( XSStringGetLength( mutable ), 144 );
+    AssertStringEqual( XSStringGetCString( mutable ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+
+    XSStringAppendBytes( mutable, NULL, 42 );
+    AssertEqual( XSStringGetLength( mutable ), 144 );
+    AssertStringEqual( XSStringGetCString( mutable ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+
+    XSStringAppendBytes( mutable, str2, 0 );
+    AssertEqual( XSStringGetLength( mutable ), 144 );
+    AssertStringEqual( XSStringGetCString( mutable ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+
+    XSStringAppendBytes( mutable, str2, 1 );
+    AssertEqual( XSStringGetLength( mutable ), 144 );
+    AssertStringEqual( XSStringGetCString( mutable ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+
+    XSStringAppendBytes( mutable, str3, 144 );
+    AssertEqual( XSStringGetLength( mutable ), 288 );
+    AssertStringEqual( XSStringGetCString( mutable ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+
+    XSStringAppendBytes( mutable, str3, 3 );
+    AssertEqual( XSStringGetLength( mutable ), 15 );
+    AssertStringEqual( XSStringGetCString( mutable ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lor" );
+
+    {
+        size_t expected = XSStringGetLength( mutable );
+
+        for( size_t i = 0; i < 1024; i++ )
+        {
+            expected++;
+
+            XSStringAppendBytes( mutable, str4, 1 );
+            AssertEqual( XSStringGetLength( mutable ), expected );
+        }
+    }
+
+    XSRelease( mutable );
+}

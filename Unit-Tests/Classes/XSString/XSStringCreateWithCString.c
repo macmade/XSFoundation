@@ -51,3 +51,24 @@ Test( XSString, XSStringCreateWithCString )
     XSRelease( str2 );
     XSRelease( str3 );
 }
+
+Test( XSString, XSStringCreateWithCString_LongString )
+{
+    XSStringRef str1 = XSStringCreateWithCString( "" );
+    XSStringRef str2 = XSStringCreateWithCString( "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+    XSStringRef str3 = XSStringCreateWithCString( NULL );
+
+    AssertTrue( str1 != NULL );
+    AssertTrue( str2 != NULL );
+    AssertTrue( str3 != NULL );
+
+    AssertEqual( XSStringGetLength( str1 ), 0u );
+    AssertEqual( XSStringGetLength( str2 ), 144u );
+    AssertEqual( XSStringGetLength( str3 ), 0u );
+
+    AssertStringEqual( XSStringGetCString( str2 ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( str3 );
+}

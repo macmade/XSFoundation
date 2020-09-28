@@ -56,3 +56,29 @@ Test( XSString, XSStringGetCString )
     XSRelease( str2 );
     XSRelease( str3 );
 }
+
+Test( XSString, XSStringGetCString_LongString )
+{
+    const char * cp1  = NULL;
+    const char * cp2  = "";
+    const char * cp3  = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.";
+    XSStringRef  str1 = XSStringCreateWithCString( cp1 );
+    XSStringRef  str2 = XSStringCreateWithCString( cp2 );
+    XSStringRef  str3 = XSStringCreateWithCString( cp3 );
+
+    AssertTrue( XSStringGetCString( NULL ) == NULL );
+    AssertTrue( XSStringGetCString( str1 ) != NULL );
+    AssertTrue( XSStringGetCString( str2 ) != NULL );
+    AssertTrue( XSStringGetCString( str3 ) != NULL );
+
+    AssertTrue( XSStringGetCString( str2 ) != cp2 );
+    AssertTrue( XSStringGetCString( str3 ) != cp3 );
+
+    AssertStringEqual( XSStringGetCString( str1 ), "" );
+    AssertStringEqual( XSStringGetCString( str2 ), "" );
+    AssertStringEqual( XSStringGetCString( str3 ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( str3 );
+}

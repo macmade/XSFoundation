@@ -55,3 +55,28 @@ Test( XSString, XSStringHasPrefix )
     XSRelease( pref2 );
     XSRelease( pref3 );
 }
+
+Test( XSString, XSStringHasPrefix_LongString )
+{
+    XSStringRef str1  = XSStringCreateWithCString( "" );
+    XSStringRef str2  = XSStringCreateWithCString( "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+    XSStringRef pref1 = XSStringCreateWithCString( "" );
+    XSStringRef pref2 = XSStringCreateWithCString( "Lorem" );
+    XSStringRef pref3 = XSStringCreateWithCString( "ipusm" );
+
+    AssertFalse( XSStringHasPrefix( NULL, NULL ) );
+    AssertFalse( XSStringHasPrefix( str1, NULL ) );
+    AssertFalse( XSStringHasPrefix( NULL, pref1 ) );
+
+    AssertFalse( XSStringHasPrefix( str1, pref1 ) );
+    AssertFalse( XSStringHasPrefix( str2, pref1 ) );
+
+    AssertTrue( XSStringHasPrefix( str2, pref2 ) );
+    AssertFalse( XSStringHasPrefix( str2, pref3 ) );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( pref1 );
+    XSRelease( pref2 );
+    XSRelease( pref3 );
+}

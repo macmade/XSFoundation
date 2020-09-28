@@ -69,3 +69,42 @@ Test( XSMutableString, XSStringAppendCString )
 
     XSRelease( mutable );
 }
+
+Test( XSMutableString, XSStringAppendCString_LongString )
+{
+    XSMutableStringRef mutable = XSStringCreateMutable();
+    const char * str1          = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.";
+    const char * str2          = "";
+    const char * str3          = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.";
+    const char * str4          = ".";
+
+    XSStringAppendCString( mutable, str1 );
+    AssertEqual( XSStringGetLength( mutable ), 144 );
+    AssertStringEqual( XSStringGetCString( mutable ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+
+    XSStringAppendCString( mutable, NULL );
+    AssertEqual( XSStringGetLength( mutable ), 144 );
+    AssertStringEqual( XSStringGetCString( mutable ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+
+    XSStringAppendCString( mutable, str2 );
+    AssertEqual( XSStringGetLength( mutable ), 144 );
+    AssertStringEqual( XSStringGetCString( mutable ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+
+    XSStringAppendCString( mutable, str3 );
+    AssertEqual( XSStringGetLength( mutable ), 288 );
+    AssertStringEqual( XSStringGetCString( mutable ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+
+    {
+        size_t expected = XSStringGetLength( mutable );
+
+        for( size_t i = 0; i < 1024; i++ )
+        {
+            expected++;
+
+            XSStringAppendCString( mutable, str4 );
+            AssertEqual( XSStringGetLength( mutable ), expected );
+        }
+    }
+
+    XSRelease( mutable );
+}

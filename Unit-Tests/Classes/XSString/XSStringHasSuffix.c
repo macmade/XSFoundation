@@ -55,3 +55,28 @@ Test( XSString, XSStringHasSuffix )
     XSRelease( pref2 );
     XSRelease( pref3 );
 }
+
+Test( XSString, XSStringHasSuffix_LongString )
+{
+    XSStringRef str1  = XSStringCreateWithCString( "" );
+    XSStringRef str2  = XSStringCreateWithCString( "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+    XSStringRef pref1 = XSStringCreateWithCString( "" );
+    XSStringRef pref2 = XSStringCreateWithCString( "Lorem" );
+    XSStringRef pref3 = XSStringCreateWithCString( "volutpat." );
+
+    AssertFalse( XSStringHasSuffix( NULL, NULL ) );
+    AssertFalse( XSStringHasSuffix( str1, NULL ) );
+    AssertFalse( XSStringHasSuffix( NULL, pref1 ) );
+
+    AssertFalse( XSStringHasSuffix( str1, pref1 ) );
+    AssertFalse( XSStringHasSuffix( str2, pref1 ) );
+
+    AssertFalse( XSStringHasSuffix( str2, pref2 ) );
+    AssertTrue( XSStringHasSuffix( str2, pref3 ) );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( pref1 );
+    XSRelease( pref2 );
+    XSRelease( pref3 );
+}
