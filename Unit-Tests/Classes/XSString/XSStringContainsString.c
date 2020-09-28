@@ -62,7 +62,6 @@ Test( XSString, XSStringContainsString )
     XSRelease( search1 );
     XSRelease( search2 );
     XSRelease( search3 );
-    XSRelease( search3 );
     XSRelease( search4 );
     XSRelease( search5 );
     XSRelease( search6 );
@@ -101,7 +100,6 @@ Test( XSString, XSStringContainsString_LongString )
     XSRelease( str2 );
     XSRelease( search1 );
     XSRelease( search2 );
-    XSRelease( search3 );
     XSRelease( search3 );
     XSRelease( search4 );
     XSRelease( search5 );
