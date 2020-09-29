@@ -23,24 +23,42 @@
  ******************************************************************************/
 
 /*!
- * @file        XSString.c
+ * @file        XSHash.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSString
+ * @abstract    Definition for XSHash
  */
 
 #include <XS/XS.h>
-#include <XS/Private/Classes/XSString.h>
+#include <XS/Private/Functions/Memory.h>
+#include <XS/Private/Functions/Runtime.h>
 
-XSClassID   XSStringClassID = 0;
-XSClassInfo XSStringClass   = {
-    "XSString",
-    XSClassTypeNormal,
-    sizeof( struct XSString ),
-    NULL,
-    XSStringDestructor,
-    XSStringCopy,
-    XSStringEquals,
-    XSStringHash,
-    XSStringToString
-};
+uint64_t XSHash( const void * memory )
+{
+    XSMemoryObject *    object;
+    XSClassCallbackHash hash;
+
+    if( memory == NULL )
+    {
+        return 0;
+    }
+
+    object = XSGetMemoryObject( memory );
+
+    // TODO
+    //__XSDebugger_CheckObjectIntegrity( object );
+
+    if( XSRuntimeIsRegisteredClass( object->classID ) == false )
+    {
+        return ( uint64_t )memory;
+    }
+
+    hash = XSRuntimeGetHashCallback( object->classID );
+
+    if( hash == NULL )
+    {
+        return ( uint64_t )memory;
+    }
+
+    return hash( memory );
+}

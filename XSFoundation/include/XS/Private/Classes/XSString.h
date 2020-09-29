@@ -123,11 +123,20 @@ XSMutableObjectRef XSStringCopy( XSObjectRef source, XSMutableObjectRef destinat
 bool XSStringEquals( XSObjectRef object1, XSObjectRef object2 );
 
 /*!
+ * @function    XSStringHash
+ * @abstract    Class hash callback
+ * @param       object      The object to hash
+ * @return      The object's hash
+ */
+uint64_t XSStringHash( XSObjectRef object );
+
+/*!
  * @typedef     XSStringToString
  * @abstract    Class to-string callback
  * @param       object      The object for which to get a description
  * @return      The object's description
  */
-XSStringRef XSStringToString( XSObjectRef object );
+XSStringRef
+XSStringToString( XSObjectRef object );
 
 #endif /* XS_PRIVATE_CLASSES_XS_STRING_H */

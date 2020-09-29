@@ -160,6 +160,14 @@ XSClassCallbackCopy XSRuntimeGetCopyCallback( XSClassID classID );
 XSClassCallbackEquals XSRuntimeGetEqualsCallback( XSClassID classID );
 
 /*!
+ * @function    XSRuntimeGetHashCallback
+ * @abstract    Gets the hash callback for a class ID
+ * @param       classID     The class ID
+ * @return      The hash callback
+ */
+XSClassCallbackHash XSRuntimeGetHashCallback( XSClassID classID );
+
+/*!
  * @function    XSRuntimeGetToStringCallback
  * @abstract    Gets the to-string callback for a class ID
  * @param       classID     The class ID

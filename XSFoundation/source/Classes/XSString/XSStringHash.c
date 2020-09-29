@@ -23,24 +23,35 @@
  ******************************************************************************/
 
 /*!
- * @file        XSString.c
+ * @file        XSStringCopy.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSString
+ * @abstract    Definition for XSStringCopy
  */
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
+#include <string.h>
 
-XSClassID   XSStringClassID = 0;
-XSClassInfo XSStringClass   = {
-    "XSString",
-    XSClassTypeNormal,
-    sizeof( struct XSString ),
-    NULL,
-    XSStringDestructor,
-    XSStringCopy,
-    XSStringEquals,
-    XSStringHash,
-    XSStringToString
-};
+uint64_t XSStringHash( XSObjectRef object )
+{
+    const char * cstr;
+    uint64_t     h;
+    uint8_t      c;
+
+    if( object == NULL )
+    {
+        return 0;
+    }
+
+    cstr = XSStringGetCString( object );
+
+    h = 0;
+
+    while( ( c = ( uint8_t ) * ( cstr++ ) ) )
+    {
+        h = h * 31 + c;
+    }
+
+    return h;
+}

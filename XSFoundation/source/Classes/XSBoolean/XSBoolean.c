@@ -43,5 +43,6 @@ XSClassInfo        XSBooleanClass         = {
     NULL,
     XSBooleanCopy,
     XSBooleanEquals,
+    NULL,
     XSBooleanToString
 };

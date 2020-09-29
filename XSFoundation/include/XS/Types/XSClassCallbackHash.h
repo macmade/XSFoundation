@@ -23,24 +23,29 @@
  ******************************************************************************/
 
 /*!
- * @file        XSString.c
+ * @header      XSClassCallbackHash.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSString
+ * @abstract    XSClassCallbackHash type definition
  */
 
-#include <XS/XS.h>
-#include <XS/Private/Classes/XSString.h>
+#ifndef XS_TYPES_XS_CLASS_CALLBACK_HASH_H
+#define XS_TYPES_XS_CLASS_CALLBACK_HASH_H
 
-XSClassID   XSStringClassID = 0;
-XSClassInfo XSStringClass   = {
-    "XSString",
-    XSClassTypeNormal,
-    sizeof( struct XSString ),
-    NULL,
-    XSStringDestructor,
-    XSStringCopy,
-    XSStringEquals,
-    XSStringHash,
-    XSStringToString
-};
+#include <XS/Macros.h>
+#include <XS/Types/XSObjectRef.h>
+#include <stdint.h>
+
+XS_EXTERN_C_BEGIN
+
+/*!
+ * @typedef     XSClassCallbackHash
+ * @abstract    Class hash callback
+ * @param       object      The object to be hashed
+ * @return      The object's hash
+ */
+typedef uint64_t ( *XSClassCallbackHash )( XSObjectRef object );
+
+XS_EXTERN_C_END
+
+#endif /* XS_TYPES_XS_CLASS_CALLBACK_HASH_H */

@@ -40,6 +40,7 @@
 #include <XS/Types/XSClassCallbackDestructor.h>
 #include <XS/Types/XSClassCallbackCopy.h>
 #include <XS/Types/XSClassCallbackEquals.h>
+#include <XS/Types/XSClassCallbackHash.h>
 #include <XS/Types/XSClassCallbackToString.h>
 #include <XS/Types/XSClassInfo.h>
 #include <XS/Types/XSInitStatus.h>

@@ -23,24 +23,34 @@
  ******************************************************************************/
 
 /*!
- * @file        XSString.c
+ * @file        Hash.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSString
  */
 
+#include <XSCTest/XSCTest.h>
 #include <XS/XS.h>
-#include <XS/Private/Classes/XSString.h>
 
-XSClassID   XSStringClassID = 0;
-XSClassInfo XSStringClass   = {
-    "XSString",
-    XSClassTypeNormal,
-    sizeof( struct XSString ),
-    NULL,
-    XSStringDestructor,
-    XSStringCopy,
-    XSStringEquals,
-    XSStringHash,
-    XSStringToString
-};
+Test( XSString, Hash )
+{
+    XSStringRef str1 = XSStringCreateWithCString( "" );
+    XSStringRef str2 = XSStringCreateWithCString( "hello, world" );
+    XSStringRef str3 = XSStringCreateWithCString( "hello, universe" );
+    uint64_t    h1   = XSHash( str1 );
+    uint64_t    h2   = XSHash( str2 );
+    uint64_t    h3   = XSHash( str3 );
+
+    AssertTrue( h1 == 0 );
+    AssertTrue( h2 != 0 );
+    AssertTrue( h3 != 0 );
+
+    AssertEqual( h1, XSHash( str1 ) );
+    AssertEqual( h2, XSHash( str2 ) );
+    AssertEqual( h3, XSHash( str3 ) );
+
+    AssertNotEqual( h2, h3 );
+
+    XSRelease( str1 );
+    XSRelease( str2 );
+    XSRelease( str3 );
+}

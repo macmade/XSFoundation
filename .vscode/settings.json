@@ -45,6 +45,7 @@
         "sstream": "c",
         "xsstring.h": "c",
         "__locale": "c",
-        "__string": "c"
+        "__string": "c",
+        "__threading_support": "c"
     }
 }

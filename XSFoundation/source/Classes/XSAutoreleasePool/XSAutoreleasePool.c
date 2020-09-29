@@ -42,5 +42,6 @@ XSClassInfo XSAutoreleasePoolClass   = {
     XSAutoreleasePoolDestructor,
     XSAutoreleasePoolCopy,
     NULL,
+    NULL,
     NULL
 };

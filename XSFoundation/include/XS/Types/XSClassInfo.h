@@ -60,6 +60,7 @@ typedef struct
     XSClassCallbackDestructor  destructor;   /*! The class destructor */
     XSClassCallbackCopy        copy;         /*! The object's copy callback */
     XSClassCallbackEquals      equals;       /*! The object's comparison callback */
+    XSClassCallbackHash        hash;         /*! The object's hash callback */
     XSClassCallbackToString    toString;     /*! The object's description callback */
 } XSClassInfo;
 

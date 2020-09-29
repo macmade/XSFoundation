@@ -23,24 +23,25 @@
  ******************************************************************************/
 
 /*!
- * @file        XSString.c
+ * @file        XSRuntimeGetHashCallback.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSString
+ * @abstract    Definition for XSRuntimeGetHashCallback
  */
 
 #include <XS/XS.h>
-#include <XS/Private/Classes/XSString.h>
+#include <XS/Private/Functions/Runtime.h>
 
-XSClassID   XSStringClassID = 0;
-XSClassInfo XSStringClass   = {
-    "XSString",
-    XSClassTypeNormal,
-    sizeof( struct XSString ),
-    NULL,
-    XSStringDestructor,
-    XSStringCopy,
-    XSStringEquals,
-    XSStringHash,
-    XSStringToString
-};
+XSClassCallbackHash XSRuntimeGetHashCallback( XSClassID classID )
+{
+    const XSRuntimeClassInfoList * info;
+
+    info = XSRuntimeGetClassInfo( classID );
+
+    if( info == NULL )
+    {
+        return NULL;
+    }
+
+    return info->cls->hash;
+}

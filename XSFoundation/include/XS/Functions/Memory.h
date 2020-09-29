@@ -213,6 +213,14 @@ XS_EXPORT void * XSAutorelease( const void * memory );
 XS_EXPORT bool XSEquals( const void * memory1, const void * memory2 );
 
 /*!
+ * @function    XSHash
+ * @abstract    Hashes a memory data object
+ * @param       memory      The memory data object to hash
+ * @return      The memory data object's hash
+ */
+XS_EXPORT uint64_t XSHash( const void * memory );
+
+/*!
  * @function    XSCopy
  * @abstract    Copies a memory data object
  * @param       memory      The memory data object to copy
