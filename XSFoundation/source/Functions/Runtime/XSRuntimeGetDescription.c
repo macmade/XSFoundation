@@ -32,34 +32,28 @@
 #include <XS/XS.h>
 #include <XS/Private/Functions/Runtime.h>
 
-const char * XSRuntimeGetDescription( XSObjectRef object )
+XSStringRef XSRuntimeGetDescription( XSObjectRef object )
 {
-    ( void )object;
-
-    return "<object>";
-
-    // TODO
-    /*
     XSClassID               classID;
     XSClassCallbackToString toString;
     XSStringRef             description;
+    XSStringRef             objectDescription;
     const char *            className;
-    const char *            objectDescription;
 
     if( object == NULL )
     {
-        return "(null)";
+        return XSStringWithCString( "(null)" );
     }
     else
     {
-        classID           = XSRuntime_GetClassID( object );
-        className         = XSRuntime_GetClassName( classID );
-        toString          = __XSRuntime_GetToStringCallback( classID );
+        classID           = XSRuntimeGetClassID( object );
+        className         = XSRuntimeGetClassName( classID );
+        toString          = XSRuntimeGetToStringCallback( classID );
         objectDescription = NULL;
 
         if( className == NULL )
         {
-            description = XSString_StringWithFormat( "<%p>", object );
+            description = XSStringWithFormat( "<%p>", object );
         }
         else
         {
@@ -68,17 +62,16 @@ const char * XSRuntimeGetDescription( XSObjectRef object )
                 objectDescription = toString( object );
             }
 
-            if( objectDescription != NULL )
+            if( objectDescription != NULL && XSStringGetLength( objectDescription ) > 0 )
             {
-                description = XSString_StringWithFormat( "<%s %p> %s", className, object, objectDescription );
+                description = XSStringWithFormat( "<%s %p> %s", className, object, XSStringGetCString( objectDescription ) );
             }
             else
             {
-                description = XSString_StringWithFormat( "<%s %p>", className, object );
+                description = XSStringWithFormat( "<%s %p>", className, object );
             }
         }
     }
 
-    return XSString_GetCString( description );
-    */
+    return description;
 }

@@ -36,6 +36,7 @@
 #include <XS/Types/XSClassType.h>
 #include <XS/Types/XSClassInfo.h>
 #include <XS/Types/XSObjectRef.h>
+#include <XS/Types/XSStringRef.h>
 #include <stdbool.h>
 
 XS_EXTERN_C_BEGIN
@@ -89,8 +90,9 @@ XS_EXPORT XSObjectRef XSRuntimeGetSharedInstance( XSClassID classID );
  * @abstract    Gets an object's description
  * @param       object      The pointer to the object
  * @return      The object's description
+ * @discussion  The returned string is auto-released.
  */
-XS_EXPORT const char * XSRuntimeGetDescription( XSObjectRef object );
+XS_EXPORT XS_AUTORELEASED XSStringRef XSRuntimeGetDescription( XSObjectRef object );
 
 /*!
  * @function    XSRuntimeIsInstance

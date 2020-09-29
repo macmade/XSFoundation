@@ -47,5 +47,6 @@
 #include <XS/Types/XSSpinLock.h>
 #include <XS/Types/XSObjectAssociation.h>
 #include <XS/Types/XSTLSKey.h>
+#include <XS/Types/XSStringRef.h>
 
 #endif /* XS_TYPES_H */

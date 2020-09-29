@@ -26,7 +26,17 @@
 
 int main( void )
 {
-    XSLog( "hello, world" );
+    XSRuntimeInitialize();
+
+    {
+        XSAutoreleasePoolRef ap = XSAutoreleasePoolCreate();
+
+        XSLog( "hello, world" );
+        XSShow( XSStringWithCString( "hello, universe" ) );
+        XSShow( XSBooleanTrue() );
+
+        XSRelease( ap );
+    }
 
     return 0;
 }

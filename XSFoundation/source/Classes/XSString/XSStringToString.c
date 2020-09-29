@@ -32,10 +32,7 @@
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
 
-const char * XSStringToString( XSObjectRef object )
+XSStringRef XSStringToString( XSObjectRef object )
 {
-    ( void )object;
-
-    // TODO
-    return NULL;
+    return object;
 }

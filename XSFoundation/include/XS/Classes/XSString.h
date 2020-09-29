@@ -42,12 +42,6 @@
 XS_EXTERN_C_BEGIN
 
 /*!
- * @typedef     XSStringRef
- * @abstract    Opaque type for XSString (immutable)
- */
-typedef const struct XSString * XSStringRef;
-
-/*!
  * @function    XSStringGetClassID
  * @abstract    Gets the class ID for XSString
  * @return      The class ID for XSString

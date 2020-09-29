@@ -34,6 +34,7 @@
 
 #include <XS/Macros.h>
 #include <XS/Types/XSObjectRef.h>
+#include <XS/Types/XSStringRef.h>
 
 XS_EXTERN_C_BEGIN
 
@@ -42,8 +43,9 @@ XS_EXTERN_C_BEGIN
  * @abstract    Class to-string callback
  * @param       object      The object for which to get a description
  * @return      The object's description
+ * @discussion  The to-string callback should return an autoreleased object.
  */
-typedef const char * ( *XSClassCallbackToString )( XSObjectRef object );
+typedef XSStringRef ( *XSClassCallbackToString )( XSObjectRef object );
 
 XS_EXTERN_C_END
 

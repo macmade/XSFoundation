@@ -35,8 +35,10 @@
 void XSShowWithInfos( XSObjectRef object, const char * file, int line, const char * func )
 {
     XSAutoreleasePoolRef ap;
+    XSStringRef          description;
 
-    ap = XSAutoreleasePoolCreate();
+    ap          = XSAutoreleasePoolCreate();
+    description = XSRuntimeGetDescription( object );
 
     XSLogWithInfos(
         XSLogLevelInfo,
@@ -44,7 +46,7 @@ void XSShowWithInfos( XSObjectRef object, const char * file, int line, const cha
         line,
         func,
         "%s",
-        XSRuntimeGetDescription( object ) );
+        XSStringGetCString( description ) );
 
     XSRelease( ap );
 }

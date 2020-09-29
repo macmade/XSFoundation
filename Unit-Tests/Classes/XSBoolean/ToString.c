@@ -33,6 +33,10 @@
 
 Test( XSBoolean, ToString )
 {
-    // TODO
-    AssertTrue( true );
+    XSAutoreleasePoolRef ap = XSAutoreleasePoolCreate();
+
+    AssertTrue( XSStringContainsCString( XSRuntimeGetDescription( XSBooleanTrue() ), "True" ) );
+    AssertTrue( XSStringContainsCString( XSRuntimeGetDescription( XSBooleanFalse() ), "False" ) );
+
+    XSRelease( ap );
 }

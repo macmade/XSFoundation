@@ -38,7 +38,7 @@ static XSMutableObjectRef FooConstructor( XSMutableObjectRef object );
 static void               FooDestructor( XSMutableObjectRef object );
 static XSMutableObjectRef FooCopy( XSObjectRef object1, XSMutableObjectRef object2 );
 static bool               FooEquals( XSObjectRef object1, XSObjectRef object2 );
-static const char *       FooToString( XSObjectRef object );
+static XSStringRef        FooToString( XSObjectRef object );
 
 struct Foo
 {
@@ -56,6 +56,10 @@ static bool toStringCalled;
 
 Test( Runtime, CustomClass )
 {
+    XSAutoreleasePoolRef ap;
+
+    ap = XSAutoreleasePoolCreate();
+
     classInfo.className    = "Foo";
     classInfo.type         = XSClassTypeNormal;
     classInfo.instanceSize = sizeof( struct Foo );
@@ -87,10 +91,9 @@ Test( Runtime, CustomClass )
         foo->x = 1;
         foo->y = 2;
 
-        // TODO
-        //toStringCalled = false;
-        //AssertStringEqual( XSRuntimeGetDescription( foo ), "Foo" );
-        //AssertTrue( toStringCalled );
+        toStringCalled = false;
+        AssertTrue( XSStringContainsCString( XSRuntimeGetDescription( foo ), "hello, world" ) );
+        AssertTrue( toStringCalled );
 
         {
             FooRef copy;
@@ -144,6 +147,8 @@ Test( Runtime, CustomClass )
         XSRelease( instance );
         AssertTrue( destructorCalled );
     }
+
+    XSRelease( ap );
 }
 
 static XSMutableObjectRef FooConstructor( XSMutableObjectRef object )
@@ -195,11 +200,11 @@ static bool FooEquals( XSObjectRef object1, XSObjectRef object2 )
     return foo1->x == foo2->x && foo1->y == foo2->y;
 }
 
-static const char * FooToString( XSObjectRef object )
+static XSStringRef FooToString( XSObjectRef object )
 {
     ( void )object;
 
     toStringCalled = true;
 
-    return "Foo";
+    return XSStringWithCString( "hello, world" );
 }

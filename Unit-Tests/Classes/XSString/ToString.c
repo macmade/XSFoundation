@@ -33,6 +33,20 @@
 
 Test( XSString, ToString )
 {
-    // TODO
-    AssertTrue( true );
+    XSAutoreleasePoolRef ap = XSAutoreleasePoolCreate();
+
+    AssertTrue( XSStringContainsCString( XSRuntimeGetDescription( XSStringWithCString( "hello, world" ) ), "hello, world" ) );
+    AssertTrue( XSStringContainsCString( XSRuntimeGetDescription( XSStringWithCString( "hello, universe" ) ), "hello, universe" ) );
+
+    XSRelease( ap );
+}
+
+Test( XSString, ToString_LongString )
+{
+    XSAutoreleasePoolRef ap  = XSAutoreleasePoolCreate();
+    XSStringRef          str = XSStringWithCString( "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+
+    AssertTrue( XSStringContainsCString( XSRuntimeGetDescription( str ), "Lorem ipsum" ) );
+
+    XSRelease( ap );
 }

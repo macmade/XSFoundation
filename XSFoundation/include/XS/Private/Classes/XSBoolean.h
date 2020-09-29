@@ -117,6 +117,6 @@ bool XSBooleanEquals( XSObjectRef object1, XSObjectRef object2 );
  * @param       object      The object for which to get a description
  * @return      The object's description
  */
-const char * XSBooleanToString( XSObjectRef object );
+XSStringRef XSBooleanToString( XSObjectRef object );
 
 #endif /* XS_PRIVATE_CLASSES_XS_BOOLEAN_H */

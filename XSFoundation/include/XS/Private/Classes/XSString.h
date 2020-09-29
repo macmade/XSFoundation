@@ -128,6 +128,6 @@ bool XSStringEquals( XSObjectRef object1, XSObjectRef object2 );
  * @param       object      The object for which to get a description
  * @return      The object's description
  */
-const char * XSStringToString( XSObjectRef object );
+XSStringRef XSStringToString( XSObjectRef object );
 
 #endif /* XS_PRIVATE_CLASSES_XS_STRING_H */

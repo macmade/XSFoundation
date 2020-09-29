@@ -23,18 +23,28 @@
  ******************************************************************************/
 
 /*!
- * @file        XSBooleanToString.c
+ * @header      XSStringRef.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definitions for XSBooleanToString
+ * @abstract    XSStringRef type definition
+ * @dicussion   Opaque class types are usually defined in the same header as
+ *              the class. XSStringRef is an exception, as it's used also for
+ *              runtime functions, such as `XSRuntimeGetDescription`.
  */
 
-#include <XS/XS.h>
-#include <XS/Private/Classes/XSBoolean.h>
+#ifndef XS_TYPES_XS_STRING_REF_H
+#define XS_TYPES_XS_STRING_REF_H
 
-XSStringRef XSBooleanToString( XSObjectRef object )
-{
-    XSBooleanRef boolean = object;
+#include <XS/Macros.h>
 
-    return XSStringWithCString( ( boolean->value ) ? "True" : "False" );
-}
+XS_EXTERN_C_BEGIN
+
+/*!
+ * @typedef     XSStringRef
+ * @abstract    Opaque type for XSString (immutable)
+ */
+typedef const struct XSString * XSStringRef;
+
+XS_EXTERN_C_END
+
+#endif /* XS_TYPES_XS_STRING_REF_H */
