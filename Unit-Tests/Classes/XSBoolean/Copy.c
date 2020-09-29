@@ -35,12 +35,16 @@ Test( XSBoolean, Copy )
 {
     XSBooleanRef bool1 = XSBooleanTrue();
     XSBooleanRef bool2 = XSBooleanFalse();
+    XSBooleanRef bool3 = XSRuntimeCreateInstance( XSBooleanGetClassID() );
     XSBooleanRef copy1 = XSCopy( bool1 );
     XSBooleanRef copy2 = XSCopy( bool2 );
+    XSBooleanRef copy3 = XSCopy( bool3 );
 
     AssertTrue( bool1 == copy1 );
     AssertTrue( bool2 == copy2 );
+    AssertTrue( bool3 != copy3 );
 
     XSRelease( copy1 );
     XSRelease( copy2 );
+    XSRelease( copy3 );
 }

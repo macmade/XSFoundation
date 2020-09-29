@@ -34,7 +34,18 @@
 
 XSMutableObjectRef XSBooleanCopy( XSObjectRef source, XSMutableObjectRef destination )
 {
-    ( void )destination;
+    const struct XSBoolean * b1;
+    struct XSBoolean *       b2;
 
-    return XSRetain( source );
+    if( XSRuntimeIsConstantObject( source ) )
+    {
+        return ( void * )( ( uintptr_t )source );
+    }
+
+    b1 = source;
+    b2 = destination;
+
+    b2->value = b1->value;
+
+    return b2;
 }
