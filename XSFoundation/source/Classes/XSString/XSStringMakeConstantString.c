@@ -100,7 +100,7 @@ add:
         XSBadAlloc();
     }
 
-    memset( XSStringConstantStrings + XSStringConstantStringsCapacity, 0, XSStringConstantStringsCapacity * sizeof( struct XSString * ) );
+    memset( ( void * )( XSStringConstantStrings + XSStringConstantStringsCapacity ), 0, XSStringConstantStringsCapacity * sizeof( struct XSString * ) );
 
     XSStringConstantStringsCapacity *= 2;
 
