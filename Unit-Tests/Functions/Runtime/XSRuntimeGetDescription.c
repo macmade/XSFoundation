@@ -37,10 +37,10 @@ Test( Runtime, XSRuntimeGetDescription )
     XSStringRef          str     = XSStringCreateWithCString( "hello, world" );
     XSAutoreleasePoolRef ap      = XSAutoreleasePoolCreate();
     XSBooleanRef         boolean = XSBooleanTrue();
-    XSStringRef          d1      = XSStringCreateWithFormat( "<%p>", ( const void * )mem );
-    XSStringRef          d2      = XSStringCreateWithFormat( "<XSString %p> hello, world", ( const void * )str );
-    XSStringRef          d3      = XSStringCreateWithFormat( "<XSAutoreleasePool %p>", ( const void * )ap );
-    XSStringRef          d4      = XSStringCreateWithFormat( "<XSBoolean %p> True", ( const void * )boolean );
+    XSStringRef          d1      = XSStringCreateWithFormat( "<0x%016llX>", ( unsigned long long )mem );
+    XSStringRef          d2      = XSStringCreateWithFormat( "<XSString 0x%016llX> hello, world", ( unsigned long long )str );
+    XSStringRef          d3      = XSStringCreateWithFormat( "<XSAutoreleasePool 0x%016llX>", ( unsigned long long )ap );
+    XSStringRef          d4      = XSStringCreateWithFormat( "<XSBoolean 0x%016llX> True", ( unsigned long long )boolean );
 
     AssertStringEqual( XSStringGetCString( XSRuntimeGetDescription( NULL ) ), "(null)" );
     AssertStringEqual( XSStringGetCString( XSRuntimeGetDescription( mem ) ), XSStringGetCString( d1 ) );

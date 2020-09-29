@@ -53,7 +53,7 @@ XSStringRef XSRuntimeGetDescription( XSObjectRef object )
 
         if( XSRuntimeIsRegisteredClass( classID ) == false || className == NULL )
         {
-            description = XSStringWithFormat( "<%p>", object );
+            description = XSStringWithFormat( "<0x%016llX>", ( unsigned long long )object );
         }
         else
         {
@@ -64,11 +64,11 @@ XSStringRef XSRuntimeGetDescription( XSObjectRef object )
 
             if( objectDescription != NULL && XSStringGetLength( objectDescription ) > 0 )
             {
-                description = XSStringWithFormat( "<%s %p> %s", className, object, XSStringGetCString( objectDescription ) );
+                description = XSStringWithFormat( "<%s 0x%016llX> %s", className, ( unsigned long long )object, XSStringGetCString( objectDescription ) );
             }
             else
             {
-                description = XSStringWithFormat( "<%s %p>", className, object );
+                description = XSStringWithFormat( "<%s 0x%016llX>", className, ( unsigned long long )object );
             }
         }
     }
