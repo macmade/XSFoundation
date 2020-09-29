@@ -35,4 +35,5 @@ Test( XSBoolean, XSBooleanFalse )
 {
     AssertFalse( XSBooleanGetValue( XSBooleanFalse() ) );
     AssertTrue( XSBooleanFalse() == XSBooleanFalse() );
+    AssertTrue( XSRuntimeIsConstantObject( XSBooleanFalse() ) );
 }

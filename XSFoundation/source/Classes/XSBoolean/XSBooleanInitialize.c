@@ -45,5 +45,6 @@ void XSBooleanInitialize( void )
 
     XSBooleanTrueInstance->value = true;
 
-    XSRuntimeRegisterFinalizer( XSBooleanFinalize );
+    XSRuntimeSetObjectAsConstant( XSBooleanTrueInstance );
+    XSRuntimeSetObjectAsConstant( XSBooleanFalseInstance );
 }

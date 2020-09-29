@@ -88,12 +88,6 @@ XS_EXTERN struct XSBoolean * XSBooleanFalseInstance;
 void XSBooleanInitialize( void );
 
 /*!
- * @function    XSBooleanFinalize
- * @abstract    Class finalizer
- */
-void XSBooleanFinalize( void );
-
-/*!
  * @function    XSBooleanCopy
  * @abstract    Class copy callback
  * @param       source      The object to copy
