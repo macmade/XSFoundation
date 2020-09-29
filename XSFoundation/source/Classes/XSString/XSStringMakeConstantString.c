@@ -93,7 +93,7 @@ add:
         }
     }
 
-    XSStringConstantStrings = realloc( ( void * )XSStringConstantStrings, 2 * XSStringConstantStringsCapacity * sizeof( struct XSString * ) );
+    XSStringConstantStrings = ( const struct XSString ** )realloc( ( void * )XSStringConstantStrings, 2 * XSStringConstantStringsCapacity * sizeof( struct XSString * ) );
 
     if( XSStringConstantStrings == NULL )
     {
