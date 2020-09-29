@@ -36,7 +36,7 @@ void XSAutoreleasePoolAddObject( XSAutoreleasePoolRef ap, const void * object )
 {
     struct XSAutoreleasePoolStorage * storage;
 
-    if( ap == NULL || object == NULL )
+    if( ap == NULL || object == NULL || XSRuntimeIsConstantObject( object ) )
     {
         return;
     }
