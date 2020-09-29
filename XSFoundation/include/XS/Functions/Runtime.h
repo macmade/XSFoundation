@@ -149,7 +149,25 @@ XS_EXPORT const char * XSRuntimeGetClassName( XSClassID classID );
  * @discussion  Based on its address, a finalizer function will only be
  *              registered once.
  */
-void XSRuntimeRegisterFinalizer( void ( *func )( void ) );
+XS_EXPORT void XSRuntimeRegisterFinalizer( void ( *func )( void ) );
+
+/*!
+ * @function    XSRuntimeSetObjectAsConstant
+ * @abstract    Marks a memory data object as constant
+ * @param       memory  The memory data object to mark as constant
+ * @discussion  Making an object constant will prevent its deallocation.
+ *              Using XSRetain and XSRelease on such an object will have
+ *              no effect.
+ */
+XS_EXPORT void XSRuntimeSetObjectAsConstant( const void * memory );
+
+/*!
+ * @function    XSRuntimeIsConstantObject
+ * @abstract    Checks if a memory data object is constant.
+ * @param       memory  The memory data object inspect
+ * @see         XSRuntimeSetObjectAsConstant
+ */
+XS_EXPORT bool XSRuntimeIsConstantObject( const void * memory );
 
 XS_EXTERN_C_END
 

@@ -23,37 +23,25 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRetain.c
+ * @file        XSRuntimeIsConstantObject.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRetain
  */
 
+#include <XSCTest/XSCTest.h>
 #include <XS/XS.h>
-#include <XS/Private/Functions/Memory.h>
 
-void * XSRetainWithInfos( const void * memory, const char * file, int line, const char * func )
+Test( Runtime, XSRuntimeIsConstantObject )
 {
-    XSMemoryObject * object;
+    const char * mem = XSAlloc( 42 );
+    XSStringRef  str = XSStringCreateWithCString( "hello, world" );
 
-    ( void )file;
-    ( void )line;
-    ( void )func;
+    AssertFalse( XSRuntimeIsConstantObject( mem ) );
+    AssertFalse( XSRuntimeIsConstantObject( str ) );
 
-    if( memory == NULL )
-    {
-        return NULL;
-    }
+    XSRuntimeSetObjectAsConstant( mem );
+    XSRuntimeSetObjectAsConstant( str );
 
-    object = XSGetMemoryObject( memory );
-
-    // TODO
-    //__XSDebugger_CheckObjectIntegrity( object );
-
-    if( object->retainCount != -1 )
-    {
-        XSAtomicIncrement64( &( object->retainCount ) );
-    }
-
-    return ( void * )( ( uintptr_t )memory );
+    AssertTrue( XSRuntimeIsConstantObject( mem ) );
+    AssertTrue( XSRuntimeIsConstantObject( str ) );
 }

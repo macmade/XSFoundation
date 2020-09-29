@@ -23,37 +23,43 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRetain.c
+ * @file        XSRuntimeSetObjectAsConstant.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRetain
  */
 
+#include <XSCTest/XSCTest.h>
 #include <XS/XS.h>
-#include <XS/Private/Functions/Memory.h>
 
-void * XSRetainWithInfos( const void * memory, const char * file, int line, const char * func )
+Test( Runtime, XSRuntimeSetObjectAsConstant )
 {
-    XSMemoryObject * object;
+    const char * mem = XSAlloc( 42 );
+    XSStringRef  str = XSStringCreateWithCString( "hello, world" );
 
-    ( void )file;
-    ( void )line;
-    ( void )func;
+    AssertFalse( XSRuntimeIsConstantObject( mem ) );
+    AssertFalse( XSRuntimeIsConstantObject( str ) );
 
-    if( memory == NULL )
-    {
-        return NULL;
-    }
+    AssertEqual( XSGetRetainCount( mem ), 1 );
+    AssertEqual( XSGetRetainCount( str ), 1 );
 
-    object = XSGetMemoryObject( memory );
+    XSRuntimeSetObjectAsConstant( mem );
+    XSRuntimeSetObjectAsConstant( str );
 
-    // TODO
-    //__XSDebugger_CheckObjectIntegrity( object );
+    AssertTrue( XSRuntimeIsConstantObject( mem ) );
+    AssertTrue( XSRuntimeIsConstantObject( str ) );
 
-    if( object->retainCount != -1 )
-    {
-        XSAtomicIncrement64( &( object->retainCount ) );
-    }
+    AssertEqual( XSGetRetainCount( mem ), -1 );
+    AssertEqual( XSGetRetainCount( str ), -1 );
 
-    return ( void * )( ( uintptr_t )memory );
+    XSRelease( mem );
+    XSRelease( str );
+
+    AssertEqual( XSGetRetainCount( mem ), -1 );
+    AssertEqual( XSGetRetainCount( str ), -1 );
+
+    XSRetain( mem );
+    XSRetain( str );
+
+    AssertEqual( XSGetRetainCount( mem ), -1 );
+    AssertEqual( XSGetRetainCount( str ), -1 );
 }

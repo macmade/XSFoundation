@@ -23,37 +23,24 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRetain.c
- * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
+ * @file        XSRuntimeSetObjectAsConstant.c
+ * @copyright   (c) 2020- Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRetain
+ * @abstract    Definition for XSRuntimeSetObjectAsConstant
  */
 
 #include <XS/XS.h>
+#include <XS/Private/Functions/Runtime.h>
 #include <XS/Private/Functions/Memory.h>
 
-void * XSRetainWithInfos( const void * memory, const char * file, int line, const char * func )
+void XSRuntimeSetObjectAsConstant( const void * memory )
 {
-    XSMemoryObject * object;
+    XSMemoryObject * object = XSGetMemoryObject( memory );
 
-    ( void )file;
-    ( void )line;
-    ( void )func;
-
-    if( memory == NULL )
+    if( object == NULL )
     {
-        return NULL;
+        return;
     }
 
-    object = XSGetMemoryObject( memory );
-
-    // TODO
-    //__XSDebugger_CheckObjectIntegrity( object );
-
-    if( object->retainCount != -1 )
-    {
-        XSAtomicIncrement64( &( object->retainCount ) );
-    }
-
-    return ( void * )( ( uintptr_t )memory );
+    object->retainCount = -1;
 }

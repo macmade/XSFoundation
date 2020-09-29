@@ -51,6 +51,11 @@ void XSReleaseWithInfos( const void * memory, const char * file, int line, const
         return;
     }
 
+    if( object->retainCount == -1 )
+    {
+        return;
+    }
+
     if( XSAtomicDecrement64( &( object->retainCount ) ) == 0 )
     {
         // TODO
