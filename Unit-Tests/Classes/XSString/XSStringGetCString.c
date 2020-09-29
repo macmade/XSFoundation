@@ -45,7 +45,9 @@ Test( XSString, XSStringGetCString )
     AssertTrue( XSStringGetCString( str2 ) != NULL );
     AssertTrue( XSStringGetCString( str3 ) != NULL );
 
-    AssertTrue( XSStringGetCString( str2 ) != cp2 );
+    AssertTrue( XSRuntimeIsConstantObject( str1 ) );
+    AssertTrue( XSRuntimeIsConstantObject( str2 ) );
+
     AssertTrue( XSStringGetCString( str3 ) != cp3 );
 
     AssertStringEqual( XSStringGetCString( str1 ), "" );
@@ -71,7 +73,9 @@ Test( XSString, XSStringGetCString_LongString )
     AssertTrue( XSStringGetCString( str2 ) != NULL );
     AssertTrue( XSStringGetCString( str3 ) != NULL );
 
-    AssertTrue( XSStringGetCString( str2 ) != cp2 );
+    AssertTrue( XSRuntimeIsConstantObject( str1 ) );
+    AssertTrue( XSRuntimeIsConstantObject( str2 ) );
+
     AssertTrue( XSStringGetCString( str3 ) != cp3 );
 
     AssertStringEqual( XSStringGetCString( str1 ), "" );

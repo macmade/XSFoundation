@@ -60,19 +60,16 @@ Test( XSString, XSStringWithBytes )
     XSRetain( str4 );
     XSRetain( str5 );
 
-    AssertEqual( XSGetRetainCount( str1 ), 2 );
+    AssertTrue( XSRuntimeIsConstantObject( str1 ) );
+    AssertTrue( XSRuntimeIsConstantObject( str3 ) );
+    AssertTrue( XSRuntimeIsConstantObject( str4 ) );
+    AssertTrue( XSRuntimeIsConstantObject( str5 ) );
+
     AssertEqual( XSGetRetainCount( str2 ), 2 );
-    AssertEqual( XSGetRetainCount( str3 ), 2 );
-    AssertEqual( XSGetRetainCount( str4 ), 2 );
-    AssertEqual( XSGetRetainCount( str5 ), 2 );
 
     XSRelease( ap );
 
-    AssertEqual( XSGetRetainCount( str1 ), 1 );
     AssertEqual( XSGetRetainCount( str2 ), 1 );
-    AssertEqual( XSGetRetainCount( str3 ), 1 );
-    AssertEqual( XSGetRetainCount( str4 ), 1 );
-    AssertEqual( XSGetRetainCount( str5 ), 1 );
 
     XSRelease( str1 );
     XSRelease( str2 );
@@ -110,19 +107,16 @@ Test( XSString, XSStringWithBytes_LongString )
     XSRetain( str4 );
     XSRetain( str5 );
 
-    AssertEqual( XSGetRetainCount( str1 ), 2 );
+    AssertTrue( XSRuntimeIsConstantObject( str1 ) );
+    AssertTrue( XSRuntimeIsConstantObject( str3 ) );
+    AssertTrue( XSRuntimeIsConstantObject( str4 ) );
+    AssertTrue( XSRuntimeIsConstantObject( str5 ) );
+
     AssertEqual( XSGetRetainCount( str2 ), 2 );
-    AssertEqual( XSGetRetainCount( str3 ), 2 );
-    AssertEqual( XSGetRetainCount( str4 ), 2 );
-    AssertEqual( XSGetRetainCount( str5 ), 2 );
 
     XSRelease( ap );
 
-    AssertEqual( XSGetRetainCount( str1 ), 1 );
     AssertEqual( XSGetRetainCount( str2 ), 1 );
-    AssertEqual( XSGetRetainCount( str3 ), 1 );
-    AssertEqual( XSGetRetainCount( str4 ), 1 );
-    AssertEqual( XSGetRetainCount( str5 ), 1 );
 
     XSRelease( str1 );
     XSRelease( str2 );

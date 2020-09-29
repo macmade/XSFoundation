@@ -93,6 +93,27 @@ XS_EXTERN XSClassID XSStringClassID;
 XS_EXTERN XSClassInfo XSStringClass;
 
 /*!
+ * @var         XSStringConstantStringsLock
+ * @abstract    Lock for accessing the array of constant XSString instances
+ * @see         XSStringConstantStrings
+ */
+XS_EXTERN XSSpinLock XSStringConstantStringsLock;
+
+/*!
+ * @var         XSStringConstantStringsCapacity
+ * @abstract    Capacity for the array of constant XSString instances
+ * @see         XSStringConstantStrings
+ */
+XS_EXTERN size_t XSStringConstantStringsCapacity;
+
+/*!
+ * @var         XSStringConstantStrings
+ * @abstract    Array of constant XSString instances
+ * @see         XSStringMakeConstantString
+ */
+XS_EXTERN const struct XSString ** XSStringConstantStrings;
+
+/*!
  * @function    XSStringInitialize
  * @abstract    Class initializer
  */

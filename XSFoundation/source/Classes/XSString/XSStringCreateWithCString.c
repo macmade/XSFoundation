@@ -35,9 +35,9 @@
 
 XSStringRef XSStringCreateWithCString( const char * cstr )
 {
-    if( cstr == NULL )
+    if( cstr == NULL || strlen( cstr ) == 0 )
     {
-        cstr = "";
+        return XSSTR( "" );
     }
 
     return XSStringCreateWithBytes( ( const uint8_t * )cstr, strlen( cstr ) );

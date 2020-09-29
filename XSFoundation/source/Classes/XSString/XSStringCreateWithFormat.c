@@ -39,7 +39,7 @@ XSStringRef XSStringCreateWithFormat( const char * fmt, ... )
 
     if( fmt == NULL )
     {
-        return XSStringCreateWithCString( NULL );
+        return XSSTR( "" );
     }
 
     va_start( ap, fmt );

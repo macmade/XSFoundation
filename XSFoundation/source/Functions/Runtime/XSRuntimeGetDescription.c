@@ -42,7 +42,7 @@ XSStringRef XSRuntimeGetDescription( XSObjectRef object )
 
     if( object == NULL )
     {
-        return XSStringWithCString( "(null)" );
+        return XSSTR( "(null)" );
     }
     else
     {

@@ -206,5 +206,5 @@ static XSStringRef FooToString( XSObjectRef object )
 
     toStringCalled = true;
 
-    return XSStringWithCString( "hello, world" );
+    return XSSTR( "hello, world" );
 }

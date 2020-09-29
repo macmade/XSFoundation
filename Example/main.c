@@ -32,7 +32,7 @@ int main( void )
         XSAutoreleasePoolRef ap = XSAutoreleasePoolCreate();
 
         XSLog( "hello, world" );
-        XSShow( XSStringWithCString( "hello, universe" ) );
+        XSShow( XSSTR( "hello, universe" ) );
         XSShow( XSBooleanTrue() );
 
         XSRelease( ap );

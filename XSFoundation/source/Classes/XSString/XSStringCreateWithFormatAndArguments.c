@@ -42,7 +42,7 @@ XSStringRef XSStringCreateWithFormatAndArguments( const char * fmt, va_list ap )
 
     if( fmt == NULL || strlen( fmt ) == 0 )
     {
-        return XSStringCreateWithCString( "" );
+        return XSSTR( "" );
     }
 
     va_copy( ap2, ap );
@@ -53,7 +53,7 @@ XSStringRef XSStringCreateWithFormatAndArguments( const char * fmt, va_list ap )
     {
         va_end( ap2 );
 
-        return XSStringCreateWithCString( "" );
+        return XSSTR( "" );
     }
 
     instance = XSRuntimeCreateInstance( XSStringClassID );

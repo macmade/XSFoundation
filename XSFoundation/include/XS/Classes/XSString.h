@@ -42,6 +42,17 @@
 XS_EXTERN_C_BEGIN
 
 /*!
+ * @define      XSSTR
+ * @abstract    Creates an immutable string from a constant compile-time string.
+ * @param       _s_     A constant C string
+ * @discussion  The returned object is a constant. Retaining or releasing it
+ *              will have no effect - it will remain valid until the program
+ *              terminates.
+ * @see         XSStringMakeConstantString
+ */
+#define XSSTR( _s_ ) XSStringMakeConstantString( "" _s_ "" )
+
+/*!
  * @function    XSStringGetClassID
  * @abstract    Gets the class ID for XSString
  * @return      The class ID for XSString
@@ -232,6 +243,18 @@ XS_EXPORT size_t XSStringGetLength( XSStringRef str );
  * @return      True if the string is mutable, otherwise false
  */
 XS_EXPORT bool XSStringIsMutable( XSStringRef str );
+
+/*!
+ * @function    XSStringMakeConstantString
+ * @abstract    Creates an immutable string from a constant compile-time string.
+ * @param       cstr    A constant C string
+ * @return      An immutable string object
+ * @discussion  The returned object is a constant. Retaining or releasing it
+ *              will have no effect - it will remain valid until the program
+ *              terminates.
+ * @see         XSSTR
+ */
+XS_EXPORT XSStringRef XSStringMakeConstantString( const char * cstr );
 
 XS_EXTERN_C_END
 

@@ -32,8 +32,11 @@
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
 
-XSClassID   XSStringClassID = 0;
-XSClassInfo XSStringClass   = {
+XSSpinLock               XSStringConstantStringsLock     = 0;
+size_t                   XSStringConstantStringsCapacity = 0;
+const struct XSString ** XSStringConstantStrings         = NULL;
+XSClassID                XSStringClassID                 = 0;
+XSClassInfo              XSStringClass                   = {
     "XSString",
     XSClassTypeNormal,
     sizeof( struct XSString ),

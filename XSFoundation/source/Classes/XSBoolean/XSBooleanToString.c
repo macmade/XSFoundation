@@ -36,5 +36,5 @@ XSStringRef XSBooleanToString( XSObjectRef object )
 {
     XSBooleanRef boolean = object;
 
-    return XSStringWithCString( ( boolean->value ) ? "True" : "False" );
+    return ( boolean->value ) ? XSSTR( "True" ) : XSSTR( "False" );
 }

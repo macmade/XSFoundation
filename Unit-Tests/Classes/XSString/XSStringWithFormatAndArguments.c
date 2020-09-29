@@ -73,18 +73,17 @@ Test( XSString, XSStringWithFormatAndArguments )
     AssertStringEqual( XSStringGetCString( str2 ), "" );
     AssertStringEqual( XSStringGetCString( str3 ), "hello, world 42" );
 
+    AssertTrue( XSRuntimeIsConstantObject( str1 ) );
+    AssertTrue( XSRuntimeIsConstantObject( str2 ) );
+
     XSRetain( str1 );
     XSRetain( str2 );
     XSRetain( str3 );
 
-    AssertEqual( XSGetRetainCount( str1 ), 2 );
-    AssertEqual( XSGetRetainCount( str2 ), 2 );
     AssertEqual( XSGetRetainCount( str3 ), 2 );
 
     XSRelease( ap );
 
-    AssertEqual( XSGetRetainCount( str1 ), 1 );
-    AssertEqual( XSGetRetainCount( str2 ), 1 );
     AssertEqual( XSGetRetainCount( str3 ), 1 );
 
     XSRelease( str1 );
@@ -111,18 +110,17 @@ Test( XSString, XSStringWithFormatAndArguments_LongString )
     AssertStringEqual( XSStringGetCString( str2 ), "" );
     AssertStringEqual( XSStringGetCString( str3 ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. hello, world 42" );
 
+    AssertTrue( XSRuntimeIsConstantObject( str1 ) );
+    AssertTrue( XSRuntimeIsConstantObject( str2 ) );
+
     XSRetain( str1 );
     XSRetain( str2 );
     XSRetain( str3 );
 
-    AssertEqual( XSGetRetainCount( str1 ), 2 );
-    AssertEqual( XSGetRetainCount( str2 ), 2 );
     AssertEqual( XSGetRetainCount( str3 ), 2 );
 
     XSRelease( ap );
 
-    AssertEqual( XSGetRetainCount( str1 ), 1 );
-    AssertEqual( XSGetRetainCount( str2 ), 1 );
     AssertEqual( XSGetRetainCount( str3 ), 1 );
 
     XSRelease( str1 );

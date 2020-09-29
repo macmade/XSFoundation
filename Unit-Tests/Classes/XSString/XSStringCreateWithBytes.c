@@ -53,6 +53,10 @@ Test( XSString, XSStringCreateWithBytes )
 
     AssertStringEqual( XSStringGetCString( str2 ), "hello, world" );
 
+    AssertTrue( XSRuntimeIsConstantObject( str1 ) );
+    AssertTrue( XSRuntimeIsConstantObject( str3 ) );
+    AssertTrue( XSRuntimeIsConstantObject( str4 ) );
+
     XSRelease( str1 );
     XSRelease( str2 );
     XSRelease( str3 );
@@ -81,6 +85,10 @@ Test( XSString, XSStringCreateWithBytes_LongString )
     AssertEqual( XSStringGetLength( str5 ), 0u );
 
     AssertStringEqual( XSStringGetCString( str2 ), "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat." );
+
+    AssertTrue( XSRuntimeIsConstantObject( str1 ) );
+    AssertTrue( XSRuntimeIsConstantObject( str3 ) );
+    AssertTrue( XSRuntimeIsConstantObject( str4 ) );
 
     XSRelease( str1 );
     XSRelease( str2 );

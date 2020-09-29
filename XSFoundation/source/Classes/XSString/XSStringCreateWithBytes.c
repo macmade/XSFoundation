@@ -38,16 +38,9 @@ XSStringRef XSStringCreateWithBytes( const uint8_t * bytes, size_t length )
     struct XSString * instance;
     const uint8_t *   end;
 
-    instance = XSRuntimeCreateInstance( XSStringClassID );
-
-    if( instance == NULL )
-    {
-        XSBadAlloc();
-    }
-
     if( bytes == NULL || length == 0 )
     {
-        return instance;
+        return XSSTR( "" );
     }
 
     end = memchr( bytes, 0, length );
@@ -55,6 +48,18 @@ XSStringRef XSStringCreateWithBytes( const uint8_t * bytes, size_t length )
     if( end != NULL )
     {
         length = ( size_t )( end - bytes );
+    }
+
+    if( length == 0 )
+    {
+        return XSSTR( "" );
+    }
+
+    instance = XSRuntimeCreateInstance( XSStringClassID );
+
+    if( instance == NULL )
+    {
+        XSBadAlloc();
     }
 
     instance->length = length;
