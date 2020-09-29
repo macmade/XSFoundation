@@ -32,6 +32,7 @@
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
 #include <string.h>
+#include <stdlib.h>
 
 XSStringRef XSStringMakeConstantString( const char * cstr )
 {
@@ -47,7 +48,7 @@ XSStringRef XSStringMakeConstantString( const char * cstr )
 
     if( XSStringConstantStrings == NULL )
     {
-        XSStringConstantStrings = XSAlloc( sizeof( struct XSString * ) * 256 );
+        XSStringConstantStrings = calloc( 256, sizeof( struct XSString * ) );
 
         if( XSStringConstantStrings == NULL )
         {
@@ -92,7 +93,7 @@ add:
         }
     }
 
-    XSStringConstantStrings = XSRealloc( XSStringConstantStrings, 2 * XSStringConstantStringsCapacity * sizeof( struct XSString * ) );
+    XSStringConstantStrings = realloc( XSStringConstantStrings, 2 * XSStringConstantStringsCapacity * sizeof( struct XSString * ) );
 
     if( XSStringConstantStrings == NULL )
     {
