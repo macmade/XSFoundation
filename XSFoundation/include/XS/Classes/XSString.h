@@ -57,6 +57,16 @@ XS_EXPORT XSClassID XSStringGetClassID( void );
 XS_EXPORT XSStringRef XSStringCreateWithCString( const char * cstr );
 
 /*!
+ * @function    XSStringCreateWithCStringNoCopy
+ * @abstract    Creates a string with a C string
+ * @param       cstr    The C string
+ * @return      A string object
+ * @discussion  The C string is not copied. The caller has the responsibility
+ *              to maintain it alive until the return object is deallocated.
+ */
+XS_EXPORT XSStringRef XSStringCreateWithCStringNoCopy( const char * cstr );
+
+/*!
  * @function    XSStringCreateWithBytes
  * @abstract    Creates a string with bytes
  * @param       bytes   The bytes
@@ -91,6 +101,17 @@ XS_EXPORT XSStringRef XSStringCreateWithFormatAndArguments( const char * fmt, va
  * @discussion  The returned object is autoreleased.
  */
 XS_EXPORT XS_AUTORELEASED XSStringRef XSStringWithCString( const char * cstr );
+
+/*!
+ * @function    XSStringWithCStringNoCopy
+ * @abstract    Creates a string with a C string
+ * @param       cstr    The C string
+ * @return      A string object
+ * @discussion  The C string is not copied. The caller has the responsibility
+ *              to maintain it alive until the return object is deallocated.
+ *              The returned object is autoreleased.
+ */
+XS_EXPORT XS_AUTORELEASED XSStringRef XSStringWithCStringNoCopy( const char * cstr );
 
 /*!
  * @function    XSStringWithBytes

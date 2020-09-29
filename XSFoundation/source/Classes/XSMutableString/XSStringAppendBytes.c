@@ -87,7 +87,9 @@ void XSStringAppendBytes( XSMutableStringRef str, const uint8_t * bytes, size_t 
     }
     else if( str->length + length < str->capacity )
     {
-        memcpy( str->storage.cptr + str->length, bytes, length );
+        char * cptr = ( char * )( ( uintptr_t )( str->storage.cptr ) );
+
+        memcpy( cptr + str->length, bytes, length );
     }
     else
     {

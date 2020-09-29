@@ -44,14 +44,16 @@ XSMutableObjectRef XSStringCopy( XSObjectRef source, XSMutableObjectRef destinat
     }
     else
     {
-        str2->storage.cptr = XSAlloc( str1->capacity );
+        char * cptr = XSAlloc( str1->capacity );
 
-        if( str2->storage.cptr == NULL )
+        if( cptr == NULL )
         {
             XSBadAlloc();
         }
 
-        memcpy( str2->storage.cptr, str1->storage.cptr, str1->length );
+        memcpy( cptr, str1->storage.cptr, str1->length );
+
+        str2->storage.cptr = cptr;
     }
 
     str2->length   = str1->length;

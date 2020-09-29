@@ -23,23 +23,37 @@
  ******************************************************************************/
 
 /*!
- * @file        XSStringDestructor.c
+ * @file        XSStringCreateWithCStringNoCopy.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSStringDestructor
+ * @abstract    Definition for XSStringCreateWithCStringNoCopy
  */
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
+#include <string.h>
 
-void XSStringDestructor( XSMutableObjectRef object )
+XSStringRef XSStringCreateWithCStringNoCopy( const char * cstr )
 {
-    XSStringRef instance = object;
+    struct XSString * instance;
 
-    if( instance == NULL || instance->capacity == 0 || ( instance->flags & XSStringFlagsNoCopy ) != 0 )
+    instance = XSRuntimeCreateInstance( XSStringClassID );
+
+    if( instance == NULL )
     {
-        return;
+        XSBadAlloc();
     }
 
-    XSRelease( instance->storage.cptr );
+    if( cstr == NULL )
+    {
+        cstr = "";
+    }
+
+    instance->length       = strlen( cstr );
+    instance->capacity     = instance->length + 1;
+    instance->storage.cptr = cstr;
+
+    instance->flags |= XSStringFlagsNoCopy;
+
+    return instance;
 }

@@ -65,16 +65,18 @@ XSStringRef XSStringCreateWithBytes( const uint8_t * bytes, size_t length )
     }
     else
     {
-        instance->storage.cptr = XSAlloc( length + 1 );
+        char * cptr = XSAlloc( length + 1 );
 
-        if( instance->storage.cptr == NULL )
+        if( cptr == NULL )
         {
             XSBadAlloc();
         }
 
         instance->capacity = length + 1;
 
-        memcpy( instance->storage.cptr, bytes, length );
+        memcpy( cptr, bytes, length );
+
+        instance->storage.cptr = cptr;
     }
 
     return instance;

@@ -72,17 +72,21 @@ XSStringRef XSStringCreateWithFormatAndArguments( const char * fmt, va_list ap )
     }
     else
     {
-        instance->capacity     = instance->length + 1;
-        instance->storage.cptr = XSAlloc( instance->capacity );
+        char * cptr;
 
-        if( instance->storage.cptr == NULL )
+        instance->capacity = instance->length + 1;
+        cptr               = XSAlloc( instance->capacity );
+
+        if( cptr == NULL )
         {
             va_end( ap2 );
             XSRelease( instance );
             XSBadAlloc();
         }
 
-        vsnprintf( instance->storage.cptr, instance->capacity, fmt, ap2 );
+        vsnprintf( cptr, instance->capacity, fmt, ap2 );
+
+        instance->storage.cptr = cptr;
     }
 
     va_end( ap2 );

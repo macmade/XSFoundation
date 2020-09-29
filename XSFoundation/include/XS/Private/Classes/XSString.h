@@ -44,7 +44,8 @@ XS_EXTERN_C_BEGIN
  */
 enum XSStringFlags
 {
-    XSStringFlagsMutable = 0x01ULL
+    XSStringFlagsMutable = 1 << 1,
+    XSStringFlagsNoCopy  = 1 << 2
 };
 
 #ifdef __clang__
@@ -58,8 +59,8 @@ enum XSStringFlags
  */
 union XSStringStorage
 {
-    char * cptr;       /*! The C string (external storage) */
-    char   cstr[ 32 ]; /*! The C string (internal storage) */
+    const char * cptr;       /*! The C string (external storage) */
+    char         cstr[ 32 ]; /*! The C string (internal storage) */
 };
 
 /*!

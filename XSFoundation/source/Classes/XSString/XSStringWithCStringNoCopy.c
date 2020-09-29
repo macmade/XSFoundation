@@ -23,23 +23,16 @@
  ******************************************************************************/
 
 /*!
- * @file        XSStringDestructor.c
+ * @file        XSStringWithCStringNoCopy.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSStringDestructor
+ * @abstract    Definition for XSStringWithCString
  */
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSString.h>
 
-void XSStringDestructor( XSMutableObjectRef object )
+XS_AUTORELEASED XSStringRef XSStringWithCStringNoCopy( const char * cstr )
 {
-    XSStringRef instance = object;
-
-    if( instance == NULL || instance->capacity == 0 || ( instance->flags & XSStringFlagsNoCopy ) != 0 )
-    {
-        return;
-    }
-
-    XSRelease( instance->storage.cptr );
+    return XSAutorelease( XSStringCreateWithCStringNoCopy( cstr ) );
 }
