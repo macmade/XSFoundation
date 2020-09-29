@@ -41,7 +41,7 @@ XSStringRef XSStringMakeConstantString( const char * cstr )
 
     if( cstr == NULL )
     {
-        return NULL;
+        cstr = "";
     }
 
     XSSpinLockLock( &XSStringConstantStringsLock );
@@ -61,7 +61,7 @@ XSStringRef XSStringMakeConstantString( const char * cstr )
 
     for( i = 0; i < XSStringConstantStringsCapacity; i++ )
     {
-        if( XSStringConstantStrings[ i ] != NULL && XSStringConstantStrings[ i ]->storage.cptr == cstr )
+        if( XSStringConstantStrings[ i ] != NULL && ( XSStringConstantStrings[ i ]->storage.cptr == cstr || strcmp( XSStringConstantStrings[ i ]->storage.cptr, cstr ) == 0 ) )
         {
             XSSpinLockUnlock( &XSStringConstantStringsLock );
 
