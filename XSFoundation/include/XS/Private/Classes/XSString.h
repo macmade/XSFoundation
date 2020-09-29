@@ -38,11 +38,6 @@
 
 XS_EXTERN_C_BEGIN
 
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wpadded"
-#endif
-
 /*!
  * @enum        XSStringFlags
  * @abstract    Flags for XSString instances
@@ -51,6 +46,11 @@ enum XSStringFlags
 {
     XSStringFlagsMutable = 0x01ULL
 };
+
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wpadded"
+#endif
 
 /*!
  * @union       XSStringStorage
@@ -92,7 +92,7 @@ XS_EXTERN XSClassID XSStringClassID;
 XS_EXTERN XSClassInfo XSStringClass;
 
 /*!
- * @function    XSAutoreleasePoolInitialize
+ * @function    XSStringInitialize
  * @abstract    Class initializer
  */
 void XSStringInitialize( void );
