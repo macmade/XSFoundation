@@ -51,7 +51,7 @@ XSStringRef XSRuntimeGetDescription( XSObjectRef object )
         toString          = XSRuntimeGetToStringCallback( classID );
         objectDescription = NULL;
 
-        if( className == NULL )
+        if( XSRuntimeIsRegisteredClass( classID ) == false || className == NULL )
         {
             description = XSStringWithFormat( "<%p>", object );
         }

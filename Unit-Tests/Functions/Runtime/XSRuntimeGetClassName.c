@@ -23,58 +23,17 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRuntimeCreateInstance.c
+ * @file        XSRuntimeGetClassName.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntimeCreateInstance
  */
 
+#include <XSCTest/XSCTest.h>
 #include <XS/XS.h>
-#include <XS/Private/Functions/Runtime.h>
 
-void * XSRuntimeCreateInstance( XSClassID classID )
+Test( Runtime, XSRuntimeGetClassName )
 {
-    void *                     object;
-    void *                     newObject;
-    size_t                     instanceSize;
-    XSClassCallbackConstructor constructor;
-
-    if( XSRuntimeIsRegisteredClass( classID ) == false )
-    {
-        return NULL;
-    }
-
-    instanceSize = XSRuntimeGetInstanceSize( classID );
-
-    if( instanceSize == 0 )
-    {
-        XSFatalError( "Cannot create an instance for a class with zero as instance size (class ID: %lli)", ( long long )classID );
-    }
-
-    object = XSAllocWithInfos( instanceSize, classID, NULL, 0, NULL );
-
-    if( object == NULL )
-    {
-        XSBadAlloc();
-    }
-
-    constructor = XSRuntimeGetConstructorCallback( classID );
-
-    if( constructor != NULL )
-    {
-        newObject = constructor( object );
-
-        if( newObject == NULL )
-        {
-            XSRelease( object );
-
-            object = NULL;
-        }
-        else
-        {
-            object = newObject;
-        }
-    }
-
-    return object;
+    AssertStringEqual( XSRuntimeGetClassName( 0 ), "<unknown>" );
+    AssertStringEqual( XSRuntimeGetClassName( XSStringGetClassID() ), "XSString" );
+    AssertStringEqual( XSRuntimeGetClassName( XSBooleanGetClassID() ), "XSBoolean" );
 }

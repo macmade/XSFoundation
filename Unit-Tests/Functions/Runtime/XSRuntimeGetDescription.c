@@ -23,58 +23,36 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRuntimeCreateInstance.c
+ * @file        XSRuntimeGetDescription.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntimeCreateInstance
  */
 
+#include <XSCTest/XSCTest.h>
 #include <XS/XS.h>
-#include <XS/Private/Functions/Runtime.h>
 
-void * XSRuntimeCreateInstance( XSClassID classID )
+Test( Runtime, XSRuntimeGetDescription )
 {
-    void *                     object;
-    void *                     newObject;
-    size_t                     instanceSize;
-    XSClassCallbackConstructor constructor;
+    const char *         mem     = XSAlloc( 42 );
+    XSStringRef          str     = XSStringCreateWithCString( "hello, world" );
+    XSAutoreleasePoolRef ap      = XSAutoreleasePoolCreate();
+    XSBooleanRef         boolean = XSBooleanTrue();
+    XSStringRef          d1      = XSStringCreateWithFormat( "<%p>", ( const void * )mem );
+    XSStringRef          d2      = XSStringCreateWithFormat( "<XSString %p> hello, world", ( const void * )str );
+    XSStringRef          d3      = XSStringCreateWithFormat( "<XSAutoreleasePool %p>", ( const void * )ap );
+    XSStringRef          d4      = XSStringCreateWithFormat( "<XSBoolean %p> True", ( const void * )boolean );
 
-    if( XSRuntimeIsRegisteredClass( classID ) == false )
-    {
-        return NULL;
-    }
+    AssertStringEqual( XSStringGetCString( XSRuntimeGetDescription( NULL ) ), "(null)" );
+    AssertStringEqual( XSStringGetCString( XSRuntimeGetDescription( mem ) ), XSStringGetCString( d1 ) );
+    AssertStringEqual( XSStringGetCString( XSRuntimeGetDescription( str ) ), XSStringGetCString( d2 ) );
+    AssertStringEqual( XSStringGetCString( XSRuntimeGetDescription( ap ) ), XSStringGetCString( d3 ) );
+    AssertStringEqual( XSStringGetCString( XSRuntimeGetDescription( boolean ) ), XSStringGetCString( d4 ) );
 
-    instanceSize = XSRuntimeGetInstanceSize( classID );
-
-    if( instanceSize == 0 )
-    {
-        XSFatalError( "Cannot create an instance for a class with zero as instance size (class ID: %lli)", ( long long )classID );
-    }
-
-    object = XSAllocWithInfos( instanceSize, classID, NULL, 0, NULL );
-
-    if( object == NULL )
-    {
-        XSBadAlloc();
-    }
-
-    constructor = XSRuntimeGetConstructorCallback( classID );
-
-    if( constructor != NULL )
-    {
-        newObject = constructor( object );
-
-        if( newObject == NULL )
-        {
-            XSRelease( object );
-
-            object = NULL;
-        }
-        else
-        {
-            object = newObject;
-        }
-    }
-
-    return object;
+    XSRelease( mem );
+    XSRelease( str );
+    XSRelease( ap );
+    XSRelease( d1 );
+    XSRelease( d2 );
+    XSRelease( d3 );
+    XSRelease( d4 );
 }

@@ -23,58 +23,33 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRuntimeCreateInstance.c
+ * @file        XSRuntimeCreateInstanceOfClassNamed.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntimeCreateInstance
  */
 
+#include <XSCTest/XSCTest.h>
 #include <XS/XS.h>
-#include <XS/Private/Functions/Runtime.h>
 
-void * XSRuntimeCreateInstance( XSClassID classID )
+Test( Runtime, XSRuntimeCreateInstanceOfClassNamed )
 {
-    void *                     object;
-    void *                     newObject;
-    size_t                     instanceSize;
-    XSClassCallbackConstructor constructor;
+    XSObjectRef          obj1 = XSRuntimeCreateInstanceOfClassNamed( NULL );
+    XSObjectRef          obj2 = XSRuntimeCreateInstanceOfClassNamed( "NotAClass" );
+    XSStringRef          str  = XSRuntimeCreateInstanceOfClassNamed( "XSString" );
+    XSAutoreleasePoolRef ap   = XSRuntimeCreateInstanceOfClassNamed( "XSAutoreleasePool" );
 
-    if( XSRuntimeIsRegisteredClass( classID ) == false )
-    {
-        return NULL;
-    }
+    AssertTrue( obj1 == NULL );
+    AssertTrue( obj2 == NULL );
+    AssertTrue( str != NULL );
+    AssertTrue( ap != NULL );
 
-    instanceSize = XSRuntimeGetInstanceSize( classID );
+    AssertTrue( XSRuntimeGetClassID( str ) == XSStringGetClassID() );
+    AssertTrue( XSRuntimeGetClassID( ap ) == XSAutoreleasePoolGetClassID() );
 
-    if( instanceSize == 0 )
-    {
-        XSFatalError( "Cannot create an instance for a class with zero as instance size (class ID: %lli)", ( long long )classID );
-    }
+    AssertTrue( XSRuntimeIsInstance( str ) );
+    AssertTrue( XSRuntimeIsInstance( ap ) );
 
-    object = XSAllocWithInfos( instanceSize, classID, NULL, 0, NULL );
-
-    if( object == NULL )
-    {
-        XSBadAlloc();
-    }
-
-    constructor = XSRuntimeGetConstructorCallback( classID );
-
-    if( constructor != NULL )
-    {
-        newObject = constructor( object );
-
-        if( newObject == NULL )
-        {
-            XSRelease( object );
-
-            object = NULL;
-        }
-        else
-        {
-            object = newObject;
-        }
-    }
-
-    return object;
+    XSRelease( str );
+    XSRelease( ap );
+    AssertTrue( true );
 }
