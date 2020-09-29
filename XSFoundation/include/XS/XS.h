@@ -54,5 +54,6 @@
 #include <XS/Classes/XSAutoreleasePool.h>
 #include <XS/Classes/XSString.h>
 #include <XS/Classes/XSMutableString.h>
+#include <XS/Classes/XSBoolean.h>
 
 #endif /* XS_H */

@@ -23,47 +23,18 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRuntimeInitialize.c
+ * @file        XSBooleanCopy.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntimeInitialize
+ * @abstract    Definitions for XSBooleanCopy
  */
 
 #include <XS/XS.h>
-#include <XS/Private/Functions/Runtime.h>
-#include <stdlib.h>
+#include <XS/Private/Classes/XSBoolean.h>
 
-void XSAutoreleasePoolInitialize( void );
-void XSStringInitialize( void );
-void XSBooleanInitialize( void );
-
-void XSRuntimeInitialize( void )
+XSMutableObjectRef XSBooleanCopy( XSObjectRef source, XSMutableObjectRef destination )
 {
-    XSRuntimeClassInfoList * classes;
+    ( void )destination;
 
-    if( XSAtomicCompareAndSwap64( XSInitStatusNotInited, XSInitStatusInitializing, &XSRuntimeInitStatus ) == false )
-    {
-        return;
-    }
-
-    classes = calloc( sizeof( XSRuntimeClassInfoList ), 1 );
-
-    if( classes == NULL )
-    {
-        XSBadAlloc();
-    }
-
-    if( atexit( XSRuntimeFinalize ) != 0 )
-    {
-        XSFatalError( "Cannot register the XSFoundation finalizier function" );
-    }
-
-    XSRuntimeClasses    = classes;
-    XSRuntimeClassCount = 0;
-
-    XSAtomicWrite64( XSInitStatusInited, &XSRuntimeInitStatus );
-
-    XSAutoreleasePoolInitialize();
-    XSStringInitialize();
-    XSBooleanInitialize();
+    return XSRetain( source );
 }

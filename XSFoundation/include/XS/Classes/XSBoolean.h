@@ -23,47 +23,56 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRuntimeInitialize.c
+ * @header      XSBoolean.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntimeInitialize
+ * @abstract    XSBoolean class
  */
 
-#include <XS/XS.h>
-#include <XS/Private/Functions/Runtime.h>
-#include <stdlib.h>
+#ifndef XS_CLASSES_XS_BOOLEAN_H
+#define XS_CLASSES_XS_BOOLEAN_H
 
-void XSAutoreleasePoolInitialize( void );
-void XSStringInitialize( void );
-void XSBooleanInitialize( void );
+#include <XS/Macros.h>
+#include <XS/Types.h>
+#include <stdbool.h>
 
-void XSRuntimeInitialize( void )
-{
-    XSRuntimeClassInfoList * classes;
+XS_EXTERN_C_BEGIN
 
-    if( XSAtomicCompareAndSwap64( XSInitStatusNotInited, XSInitStatusInitializing, &XSRuntimeInitStatus ) == false )
-    {
-        return;
-    }
+/*!
+ * @typedef     XSBooleanRef
+ * @abstract    Opaque type for XSBoolean
+ */
+typedef const struct XSBoolean * XSBooleanRef;
 
-    classes = calloc( sizeof( XSRuntimeClassInfoList ), 1 );
+/*!
+ * @function    XSBooleanGetClassID
+ * @abstract    Gets the class ID for XSBoolean
+ * @return      The class ID for XSBoolean
+ */
+XS_EXPORT XSClassID XSBooleanGetClassID( void );
 
-    if( classes == NULL )
-    {
-        XSBadAlloc();
-    }
+/*!
+ * @function    XSBooleanTrue
+ * @abstract    Gets a boolean object representing `true`
+ * @return      The boolean object
+ */
+XS_EXPORT XSBooleanRef XSBooleanTrue( void );
 
-    if( atexit( XSRuntimeFinalize ) != 0 )
-    {
-        XSFatalError( "Cannot register the XSFoundation finalizier function" );
-    }
+/*!
+ * @function    XSBooleanFalse
+ * @abstract    Gets a boolean object representing `false`
+ * @return      The boolean object
+ */
+XS_EXPORT XSBooleanRef XSBooleanFalse( void );
 
-    XSRuntimeClasses    = classes;
-    XSRuntimeClassCount = 0;
+/*!
+ * @function    XSBooleanGetValue
+ * @abstract    Gets the value of a boolean object
+ * @param       boolean     The boolean object
+ * @return      The boolean value
+ */
+XS_EXPORT bool XSBooleanGetValue( XSBooleanRef boolean );
 
-    XSAtomicWrite64( XSInitStatusInited, &XSRuntimeInitStatus );
+XS_EXTERN_C_END
 
-    XSAutoreleasePoolInitialize();
-    XSStringInitialize();
-    XSBooleanInitialize();
-}
+#endif /* XS_CLASSES_XS_BOOLEAN_H */
