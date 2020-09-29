@@ -38,5 +38,4 @@ volatile int64_t XSLogCurrentLevel = XSLogLevelAll;
 volatile int64_t XSLogCurrentLevel = XSLogLevelAll & ~XSLogLevelDebug;
 #endif
 
-volatile int64_t XSLogIsPaused = 0;
-XSSpinLock       XSLogLock     = 0;
+XSSpinLock XSLogLock = 0;

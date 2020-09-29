@@ -67,28 +67,10 @@ typedef struct
 XS_EXTERN volatile int64_t XSLogCurrentLevel;
 
 /*!
- * @var         XSLogIsPaused
- * @abstract    1 if any log call should be hold, otherwise 0
- */
-XS_EXTERN volatile int64_t XSLogIsPaused;
-
-/*!
  * @var         XSLogLock
  * @abstract    Spin lock for log calls
  */
 XS_EXTERN XSSpinLock XSLogLock;
-
-/*!
- * @function    XSLogPause
- * @abstract    Holds any log request
- */
-void XSLogPause( void );
-
-/*!
- * @function    XSLogResume
- * @abstract    Resumes all log requests
- */
-void XSLogResume( void );
 
 /*!
  * @function    XSLogGetInfo

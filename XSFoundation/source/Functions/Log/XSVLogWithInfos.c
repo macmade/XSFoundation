@@ -51,9 +51,6 @@ void XSVLogWithInfos( XSLogLevel level, const char * file, int line, const char 
 
     XSSpinLockLock( &XSLogLock );
 
-    while( XSAtomicRead64( &XSLogIsPaused ) == 1 )
-    {}
-
     hasLevel = info.level != NULL;
     hasFile  = strlen( info.file ) > 0;
     hasFunc  = strlen( info.func ) > 0;
