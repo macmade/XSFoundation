@@ -48,7 +48,7 @@ uint64_t XSStringHash( XSObjectRef object )
 
     h = 0;
 
-    while( ( c = ( uint8_t ) * ( cstr++ ) ) )
+    while( ( c = ( uint8_t ) * ( cstr++ ) ) != 0 )
     {
         h = h * 31 + c;
     }
