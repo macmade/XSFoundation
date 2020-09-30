@@ -23,24 +23,19 @@
  ******************************************************************************/
 
 /*!
- * @file        XSData.c
+ * @file        XSDataWithBytes.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSData
+ * @abstract    Definition for XSDataWithBytes
  */
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSData.h>
 
-XSClassID   XSDataClassID = 0;
-XSClassInfo XSDataClass   = {
-    "XSData",
-    XSClassTypeNormal,
-    sizeof( struct XSData ),
-    NULL,
-    XSDataDestructor,
-    XSDataCopy,
-    XSDataEquals,
-    XSDataHash,
-    XSDataToString
-};
+XS_AUTORELEASED XSDataRef XSDataWithBytes( uint8_t * bytes, size_t length )
+{
+    ( void )bytes;
+    ( void )length;
+
+    return NULL;
+}

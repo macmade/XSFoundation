@@ -77,4 +77,45 @@ XS_EXTERN XSClassInfo XSDataClass;
  */
 void XSDataInitialize( void );
 
+/*!
+ * @function    XSDataDestructor
+ * @abstract    Class destructor callback
+ * @param       object      The object beeing destruct
+ */
+void XSDataDestructor( XSMutableObjectRef object );
+
+/*!
+ * @function    XSDataCopy
+ * @abstract    Class copy callback
+ * @param       source      The object to copy
+ * @param       destination The object beeing copied
+ * @result      The copied object
+ */
+XSMutableObjectRef XSDataCopy( XSObjectRef source, XSMutableObjectRef destination );
+
+/*!
+ * @function    XSDataEquals
+ * @abstract    Class equals callback
+ * @param       object1     The first object to compare
+ * @param       object2     The second object to compare
+ * @return      True if both objects are equals, otherwise false
+ */
+bool XSDataEquals( XSObjectRef object1, XSObjectRef object2 );
+
+/*!
+ * @function    XSDataHash
+ * @abstract    Class hash callback
+ * @param       object      The object to hash
+ * @return      The object's hash
+ */
+uint64_t XSDataHash( XSObjectRef object );
+
+/*!
+ * @typedef     XSDataToString
+ * @abstract    Class to-string callback
+ * @param       object      The object for which to get a description
+ * @return      The object's description
+ */
+XSStringRef XSDataToString( XSObjectRef object );
+
 #endif /* XS_PRIVATE_CLASSES_XS_DATA_H */

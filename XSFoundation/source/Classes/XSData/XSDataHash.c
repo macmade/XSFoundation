@@ -23,24 +23,18 @@
  ******************************************************************************/
 
 /*!
- * @file        XSData.c
+ * @file        XSDataHash.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSData
+ * @abstract    Definition for XSDataHash
  */
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSData.h>
 
-XSClassID   XSDataClassID = 0;
-XSClassInfo XSDataClass   = {
-    "XSData",
-    XSClassTypeNormal,
-    sizeof( struct XSData ),
-    NULL,
-    XSDataDestructor,
-    XSDataCopy,
-    XSDataEquals,
-    XSDataHash,
-    XSDataToString
-};
+uint64_t XSDataHash( XSObjectRef object )
+{
+    ( void )object;
+
+    return 0;
+}

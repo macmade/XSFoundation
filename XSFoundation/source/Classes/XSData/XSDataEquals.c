@@ -23,24 +23,19 @@
  ******************************************************************************/
 
 /*!
- * @file        XSData.c
+ * @file        XSDataEquals.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Private definitions for XSData
+ * @abstract    Definition for XSDataEquals
  */
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSData.h>
 
-XSClassID   XSDataClassID = 0;
-XSClassInfo XSDataClass   = {
-    "XSData",
-    XSClassTypeNormal,
-    sizeof( struct XSData ),
-    NULL,
-    XSDataDestructor,
-    XSDataCopy,
-    XSDataEquals,
-    XSDataHash,
-    XSDataToString
-};
+bool XSDataEquals( XSObjectRef object1, XSObjectRef object2 )
+{
+    ( void )object1;
+    ( void )object2;
+
+    return false;
+}
