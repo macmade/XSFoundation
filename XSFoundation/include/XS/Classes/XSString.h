@@ -237,6 +237,29 @@ XS_EXPORT const char * XSStringGetCString( XSStringRef str );
 XS_EXPORT size_t XSStringGetLength( XSStringRef str );
 
 /*!
+ * @function    XSStringCreateSubstringWithRange
+ * @abstract    Creates a substring from a specific range
+ * @param       str     The string object
+ * @param       range   The range of the substring
+ * @return      A substring with the specified range, or NULL
+ * @discussion  This function will return NULL if the range's length is 0 or if
+ *              the range exceeds the string's length.
+ */
+XS_EXPORT XSStringRef XSStringCreateSubstringWithRange( XSStringRef str, XSRange range );
+
+/*!
+ * @function    XSStringSubstringWithRange
+ * @abstract    Creates a substring from a specific range
+ * @param       str     The string object
+ * @param       range   The range of the substring
+ * @return      A substring with the specified range, or NULL
+ * @discussion  This function will return NULL if the range's length is 0 or if
+ *              the range exceeds the string's length.
+ *              The returned object is autoreleased.
+ */
+XS_EXPORT XS_AUTORELEASED XSStringRef XSStringSubstringWithRange( XSStringRef str, XSRange range );
+
+/*!
  * @function    XSStringIsMutable
  * @abstract    Checks if a string is mutable
  * @param       str     The string object
