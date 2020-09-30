@@ -23,39 +23,20 @@
  ******************************************************************************/
 
 /*!
- * @header      XS.h
+ * @file        XSMakeRange.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Definition for XSMakeRange
  */
 
-#ifndef XS_H
-#define XS_H
+#include <XS/XS.h>
 
-/* Base */
-#include <XS/Macros.h>
-#include <XS/Types.h>
+XSRange XSMakeRange( size_t location, size_t length )
+{
+    XSRange r;
 
-/* Functions */
-#include <XS/Functions/Atomic.h>
-#include <XS/Functions/Memory.h>
-#include <XS/Functions/Runtime.h>
-#include <XS/Functions/Log.h>
-#include <XS/Functions/Sleep.h>
-#include <XS/Functions/SpinLock.h>
-#include <XS/Functions/Threading.h>
-#include <XS/Functions/Process.h>
-#include <XS/Functions/CString.h>
-#include <XS/Functions/Utility.h>
+    r.location = location;
+    r.length   = length;
 
-/* Classes */
-#include <XS/Classes/XSAutoreleasePool.h>
-#include <XS/Classes/XSString.h>
-#include <XS/Classes/XSMutableString.h>
-#include <XS/Classes/XSBoolean.h>
-#include <XS/Classes/XSData.h>
-
-#endif /* XS_H */
+    return r;
+}

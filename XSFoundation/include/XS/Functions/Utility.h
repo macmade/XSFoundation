@@ -23,39 +23,29 @@
  ******************************************************************************/
 
 /*!
- * @header      XS.h
+ * @header      Utility.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation main include file
- * @discussion  This file should be included on projects using the XEOS C
- *              Foundation Library. Other header files should never be included
- *              directly.
+ * @abstract    Miscellaneous utility functions
  */
 
-#ifndef XS_H
-#define XS_H
+#ifndef XS_FUNCTIONS_UTILITY_H
+#define XS_FUNCTIONS_UTILITY_H
 
-/* Base */
 #include <XS/Macros.h>
 #include <XS/Types.h>
 
-/* Functions */
-#include <XS/Functions/Atomic.h>
-#include <XS/Functions/Memory.h>
-#include <XS/Functions/Runtime.h>
-#include <XS/Functions/Log.h>
-#include <XS/Functions/Sleep.h>
-#include <XS/Functions/SpinLock.h>
-#include <XS/Functions/Threading.h>
-#include <XS/Functions/Process.h>
-#include <XS/Functions/CString.h>
-#include <XS/Functions/Utility.h>
+XS_EXTERN_C_BEGIN
 
-/* Classes */
-#include <XS/Classes/XSAutoreleasePool.h>
-#include <XS/Classes/XSString.h>
-#include <XS/Classes/XSMutableString.h>
-#include <XS/Classes/XSBoolean.h>
-#include <XS/Classes/XSData.h>
+/*!
+ * @function    XSMakeRange
+ * @abstract    Creates a range
+ * @param       location    The range's location
+ * @param       length      The range's length
+ * @return      A range
+ */
+XS_EXPORT XSRange XSMakeRange( size_t location, size_t length );
 
-#endif /* XS_H */
+XS_EXTERN_C_END
+
+#endif /* XS_FUNCTIONS_UTILITY_H */
