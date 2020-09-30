@@ -158,7 +158,6 @@ uint64_t XSStringHash( XSObjectRef object );
  * @param       object      The object for which to get a description
  * @return      The object's description
  */
-XSStringRef
-XSStringToString( XSObjectRef object );
+XSStringRef XSStringToString( XSObjectRef object );
 
 #endif /* XS_PRIVATE_CLASSES_XS_STRING_H */
