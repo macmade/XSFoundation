@@ -42,5 +42,5 @@ void XSRuntimeSetObjectAsConstant( const void * memory )
         return;
     }
 
-    object->retainCount = -1;
+    XSAtomicWrite64( -1, &( object->retainCount ) );
 }

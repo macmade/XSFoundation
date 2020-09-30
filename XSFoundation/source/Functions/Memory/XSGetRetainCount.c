@@ -34,10 +34,14 @@
 
 int64_t XSGetRetainCount( const void * memory )
 {
+    XSMemoryObject * object;
+
     if( memory == NULL )
     {
         return 0;
     }
 
-    return XSGetMemoryObject( memory )->retainCount;
+    object = XSGetMemoryObject( memory );
+
+    return XSAtomicRead64( &( object->retainCount ) );
 }

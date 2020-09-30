@@ -69,7 +69,7 @@ void * XSReallocWithInfos( const void * memory, size_t bytes, const char * file,
         XSFatalError( "Trying to reallocate an instance of class %s", XSRuntimeGetClassName( object->classID ) );
     }
 
-    if( object->retainCount == -1 )
+    if( XSAtomicRead64( &( object->retainCount ) ) == -1 )
     {
         XSFatalError( "Trying to reallocate a constant object of class %s", XSRuntimeGetClassName( object->classID ) );
     }

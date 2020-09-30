@@ -42,5 +42,5 @@ bool XSRuntimeIsConstantObject( const void * memory )
         return false;
     }
 
-    return object->retainCount == -1;
+    return XSAtomicRead64( &( object->retainCount ) ) == -1;
 }

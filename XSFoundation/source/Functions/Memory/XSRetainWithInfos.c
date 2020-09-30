@@ -50,7 +50,7 @@ void * XSRetainWithInfos( const void * memory, const char * file, int line, cons
     // TODO
     //__XSDebugger_CheckObjectIntegrity( object );
 
-    if( object->retainCount != -1 )
+    if( XSAtomicRead64( &( object->retainCount ) ) != -1 )
     {
         XSAtomicIncrement64( &( object->retainCount ) );
     }
