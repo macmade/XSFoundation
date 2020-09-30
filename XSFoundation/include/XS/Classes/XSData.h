@@ -23,49 +23,34 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRuntimeInitialize.c
+ * @header      XSData.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntimeInitialize
+ * @abstract    XSData class
  */
 
-#include <XS/XS.h>
-#include <XS/Private/Functions/Runtime.h>
-#include <stdlib.h>
+#ifndef XS_CLASSES_XS_DATA_H
+#define XS_CLASSES_XS_DATA_H
 
-void XSAutoreleasePoolInitialize( void );
-void XSStringInitialize( void );
-void XSBooleanInitialize( void );
-void XSDataInitialize( void );
+#include <XS/Macros.h>
+#include <XS/Types.h>
+#include <stdint.h>
 
-void XSRuntimeInitialize( void )
-{
-    XSRuntimeClassInfoList * classes;
+XS_EXTERN_C_BEGIN
 
-    if( XSAtomicCompareAndSwap64( XSInitStatusNotInited, XSInitStatusInitializing, &XSRuntimeInitStatus ) == false )
-    {
-        return;
-    }
+/*!
+ * @typedef     XSDataRef
+ * @abstract    Opaque type for XSData
+ */
+typedef const struct XSData * XSDataRef;
 
-    classes = calloc( sizeof( XSRuntimeClassInfoList ), 1 );
+/*!
+ * @function    XSDataGetClassID
+ * @abstract    Gets the class ID for XSData
+ * @return      The class ID for XSData
+ */
+XS_EXPORT XSClassID XSDataGetClassID( void );
 
-    if( classes == NULL )
-    {
-        XSBadAlloc();
-    }
+XS_EXTERN_C_END
 
-    if( atexit( XSRuntimeFinalize ) != 0 )
-    {
-        XSFatalError( "Cannot register the XSFoundation finalizier function" );
-    }
-
-    XSRuntimeClasses    = classes;
-    XSRuntimeClassCount = 0;
-
-    XSAtomicWrite64( XSInitStatusInited, &XSRuntimeInitStatus );
-
-    XSAutoreleasePoolInitialize();
-    XSStringInitialize();
-    XSBooleanInitialize();
-    XSDataInitialize();
-}
+#endif /* XS_CLASSES_XS_DATA_H */

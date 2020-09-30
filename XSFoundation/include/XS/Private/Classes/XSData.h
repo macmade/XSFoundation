@@ -23,49 +23,58 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRuntimeInitialize.c
+ * @header      XSData.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntimeInitialize
+ * @abstract    Private declarations for the XSData class
  */
 
-#include <XS/XS.h>
-#include <XS/Private/Functions/Runtime.h>
-#include <stdlib.h>
+#ifndef XS_PRIVATE_CLASSES_XS_DATA_H
+#define XS_PRIVATE_CLASSES_XS_DATA_H
 
-void XSAutoreleasePoolInitialize( void );
-void XSStringInitialize( void );
-void XSBooleanInitialize( void );
+#include <XS/Macros.h>
+#include <XS/Types.h>
+#include <stddef.h>
+#include <stdint.h>
+
+XS_EXTERN_C_BEGIN
+
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wpadded"
+#endif
+
+/*!
+ * @struct      XSData
+ * @abstract    XSData instance
+ */
+struct XSData
+{
+    uint8_t * bytes;
+    size_t    length;
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+XS_EXTERN_C_END
+
+/*!
+ * @var         XSDataClassID
+ * @abstract    Class ID
+ */
+XS_EXTERN XSClassID XSDataClassID;
+
+/*!
+ * @var         XSDataClass
+ * @abstract    Class info
+ */
+XS_EXTERN XSClassInfo XSDataClass;
+
+/*!
+ * @function    XSDataInitialize
+ * @abstract    Class initializer
+ */
 void XSDataInitialize( void );
 
-void XSRuntimeInitialize( void )
-{
-    XSRuntimeClassInfoList * classes;
-
-    if( XSAtomicCompareAndSwap64( XSInitStatusNotInited, XSInitStatusInitializing, &XSRuntimeInitStatus ) == false )
-    {
-        return;
-    }
-
-    classes = calloc( sizeof( XSRuntimeClassInfoList ), 1 );
-
-    if( classes == NULL )
-    {
-        XSBadAlloc();
-    }
-
-    if( atexit( XSRuntimeFinalize ) != 0 )
-    {
-        XSFatalError( "Cannot register the XSFoundation finalizier function" );
-    }
-
-    XSRuntimeClasses    = classes;
-    XSRuntimeClassCount = 0;
-
-    XSAtomicWrite64( XSInitStatusInited, &XSRuntimeInitStatus );
-
-    XSAutoreleasePoolInitialize();
-    XSStringInitialize();
-    XSBooleanInitialize();
-    XSDataInitialize();
-}
+#endif /* XS_PRIVATE_CLASSES_XS_DATA_H */

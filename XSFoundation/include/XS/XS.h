@@ -55,5 +55,6 @@
 #include <XS/Classes/XSString.h>
 #include <XS/Classes/XSMutableString.h>
 #include <XS/Classes/XSBoolean.h>
+#include <XS/Classes/XSData.h>
 
 #endif /* XS_H */

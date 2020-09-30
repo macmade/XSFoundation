@@ -23,49 +23,16 @@
  ******************************************************************************/
 
 /*!
- * @file        XSRuntimeInitialize.c
+ * @file        XSDataInitialize.c
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    Definition for XSRuntimeInitialize
+ * @abstract    Definitions for XSDataInitialize
  */
 
 #include <XS/XS.h>
-#include <XS/Private/Functions/Runtime.h>
-#include <stdlib.h>
+#include <XS/Private/Classes/XSData.h>
 
-void XSAutoreleasePoolInitialize( void );
-void XSStringInitialize( void );
-void XSBooleanInitialize( void );
-void XSDataInitialize( void );
-
-void XSRuntimeInitialize( void )
+void XSDataInitialize( void )
 {
-    XSRuntimeClassInfoList * classes;
-
-    if( XSAtomicCompareAndSwap64( XSInitStatusNotInited, XSInitStatusInitializing, &XSRuntimeInitStatus ) == false )
-    {
-        return;
-    }
-
-    classes = calloc( sizeof( XSRuntimeClassInfoList ), 1 );
-
-    if( classes == NULL )
-    {
-        XSBadAlloc();
-    }
-
-    if( atexit( XSRuntimeFinalize ) != 0 )
-    {
-        XSFatalError( "Cannot register the XSFoundation finalizier function" );
-    }
-
-    XSRuntimeClasses    = classes;
-    XSRuntimeClassCount = 0;
-
-    XSAtomicWrite64( XSInitStatusInited, &XSRuntimeInitStatus );
-
-    XSAutoreleasePoolInitialize();
-    XSStringInitialize();
-    XSBooleanInitialize();
-    XSDataInitialize();
+    XSDataClassID = XSRuntimeRegisterClass( &XSDataClass );
 }
