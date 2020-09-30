@@ -40,7 +40,7 @@ XSClassInfo XSAutoreleasePoolClass   = {
     sizeof( struct XSAutoreleasePool ),
     XSAutoreleasePoolConstructor,
     XSAutoreleasePoolDestructor,
-    XSAutoreleasePoolCopy,
+    NULL,
     NULL,
     NULL,
     NULL

@@ -68,21 +68,19 @@ void * XSCopyWithInfos( const void * memory, const char * file, int line, const 
 
     copy = XSRuntimeGetCopyCallback( object->classID );
 
-    if( copy != NULL )
+    if( copy == NULL )
     {
-        copiedData = copy( memory, data );
-
-        if( copiedData == NULL || copiedData != data )
-        {
-            free( XSGetMemoryObject( data ) );
-        }
-
-        data = copiedData;
+        return NULL;
     }
-    else
+
+    copiedData = copy( memory, data );
+
+    if( copiedData == NULL || copiedData != data )
     {
-        memcpy( data, memory, object->size );
+        free( XSGetMemoryObject( data ) );
     }
+
+    data = copiedData;
 
     return data;
 }

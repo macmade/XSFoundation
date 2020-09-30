@@ -114,13 +114,4 @@ XSMutableObjectRef XSAutoreleasePoolConstructor( XSMutableObjectRef object );
  */
 void XSAutoreleasePoolDestructor( XSMutableObjectRef object );
 
-/*!
- * @function    XSAutoreleasePoolCopy
- * @abstract    Class copy callback
- * @param       source      The object to copy
- * @param       destination The object beeing copied
- * @result      The copied object
- */
-XSMutableObjectRef XSAutoreleasePoolCopy( XSObjectRef source, XSMutableObjectRef destination );
-
 #endif /* XS_PRIVATE_CLASSES_XS_AUTORELEASE_POOL_H */
