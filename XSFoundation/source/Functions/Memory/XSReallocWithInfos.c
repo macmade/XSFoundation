@@ -41,7 +41,6 @@ void * XSReallocWithInfos( const void * memory, size_t bytes, const char * file,
     size_t           oldSize;
     XSMemoryObject * object;
     XSMemoryObject * newObject;
-    XSMemoryObject * oldObject;
 
     if( memory == NULL )
     {
@@ -55,8 +54,7 @@ void * XSReallocWithInfos( const void * memory, size_t bytes, const char * file,
         return NULL;
     }
 
-    object    = XSGetMemoryObject( memory );
-    oldObject = XSGetMemoryObject( memory ); /* So the static analyzer doesn't complain about using memory which has been freed... */
+    object = XSGetMemoryObject( memory );
 
     // TODO
     ( void )file;

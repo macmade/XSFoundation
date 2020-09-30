@@ -68,5 +68,8 @@ void XSAutoreleasePoolDrain( XSAutoreleasePoolRef ap )
         }
     }
 
-    memset( ap->storage, 0, sizeof( struct XSAutoreleasePoolStorage ) );
+    if( ap->storage != NULL )
+    {
+        memset( ap->storage, 0, sizeof( struct XSAutoreleasePoolStorage ) );
+    }
 }
