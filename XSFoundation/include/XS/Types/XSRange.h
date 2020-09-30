@@ -23,32 +23,30 @@
  ******************************************************************************/
 
 /*!
- * @header      Types.h
+ * @header      XSRange.h
  * @copyright   (c) 2020 - Jean-David Gadina - www.xs-labs.com
  * @author      Jean-David Gadina - www.xs-labs.com
- * @abstract    XSFoundation types
+ * @abstract    XSRange type definition
  */
 
-#ifndef XS_TYPES_H
-#define XS_TYPES_H
+#ifndef XS_TYPES_XS_RANGE_H
+#define XS_TYPES_XS_RANGE_H
 
-#include <XS/Types/XSClassID.h>
-#include <XS/Types/XSClassType.h>
-#include <XS/Types/XSObjectRef.h>
-#include <XS/Types/XSMutableObjectRef.h>
-#include <XS/Types/XSClassCallbackConstructor.h>
-#include <XS/Types/XSClassCallbackDestructor.h>
-#include <XS/Types/XSClassCallbackCopy.h>
-#include <XS/Types/XSClassCallbackEquals.h>
-#include <XS/Types/XSClassCallbackHash.h>
-#include <XS/Types/XSClassCallbackToString.h>
-#include <XS/Types/XSClassInfo.h>
-#include <XS/Types/XSInitStatus.h>
-#include <XS/Types/XSLogLevel.h>
-#include <XS/Types/XSSpinLock.h>
-#include <XS/Types/XSObjectAssociation.h>
-#include <XS/Types/XSTLSKey.h>
-#include <XS/Types/XSStringRef.h>
-#include <XS/Types/XSRange.h>
+#include <XS/Macros.h>
+#include <stddef.h>
 
-#endif /* XS_TYPES_H */
+XS_EXTERN_C_BEGIN
+
+/*!
+ * @typedef     XSRange
+ * @abstract    Defines a range
+ */
+typedef struct
+{
+    size_t location; /*! The range's location */
+    size_t length;   /*! The range's length */
+} XSRange;
+
+XS_EXTERN_C_END
+
+#endif /* XS_TYPES_XS_RANGE_H */
