@@ -58,7 +58,10 @@ XSMutableObjectRef XSStringCopy( XSObjectRef source, XSMutableObjectRef destinat
 
     str2->length   = str1->length;
     str2->capacity = str1->capacity;
-    str2->flags    = str1->flags & ( uint64_t )( ~XSStringFlagsMutable );
+    str2->flags    = str1->flags;
+
+    str2->flags &= ( uint64_t )( ~XSStringFlagsMutable );
+    str2->flags &= ( uint64_t )( ~XSStringFlagsNoCopy );
 
     return destination;
 }
