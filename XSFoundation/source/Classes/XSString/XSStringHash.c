@@ -46,11 +46,12 @@ uint64_t XSStringHash( XSObjectRef object )
 
     cstr = XSStringGetCString( object );
 
-    h = 0;
+    h = 5381;
 
+    /* djb2 */
     while( ( c = ( uint8_t ) * ( cstr++ ) ) != 0 )
     {
-        h = h * 31 + c;
+        h = ( ( h << 5 ) + h ) + c;
     }
 
     return h;
