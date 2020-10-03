@@ -45,11 +45,11 @@ Test( XSData, XSDataWithBytesNoCopy )
     memset( bytes, 42, sizeof( bytes ) );
 
     ap    = XSAutoreleasePoolCreate();
-    data1 = XSDataCreateWithBytesNoCopy( NULL, 0 );
-    data2 = XSDataCreateWithBytesNoCopy( NULL, 1 );
-    data3 = XSDataCreateWithBytesNoCopy( bytes, 0 );
-    data4 = XSDataCreateWithBytesNoCopy( bytes, 10 );
-    data5 = XSDataCreateWithBytesNoCopy( bytes, sizeof( bytes ) );
+    data1 = XSDataWithBytesNoCopy( NULL, 0 );
+    data2 = XSDataWithBytesNoCopy( NULL, 1 );
+    data3 = XSDataWithBytesNoCopy( bytes, 0 );
+    data4 = XSDataWithBytesNoCopy( bytes, 10 );
+    data5 = XSDataWithBytesNoCopy( bytes, sizeof( bytes ) );
 
     AssertTrue( XSDataGetBytesPointer( data1 ) != NULL );
     AssertTrue( XSDataGetBytesPointer( data2 ) != NULL );

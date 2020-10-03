@@ -34,7 +34,16 @@
 
 XSStringRef XSDataToString( XSObjectRef object )
 {
-    ( void )object;
+    XSDataRef data = object;
 
-    return NULL;
+    if( data->length == 0 )
+    {
+        return XSSTR( "empty" );
+    }
+    else if( data->length == 1 )
+    {
+        return XSSTR( "1 byte" );
+    }
+
+    return XSStringWithFormat( "%llu bytes", ( unsigned long long )( data->length ) );
 }

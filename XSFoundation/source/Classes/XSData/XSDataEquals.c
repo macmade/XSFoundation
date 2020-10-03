@@ -31,11 +31,30 @@
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSData.h>
+#include <string.h>
 
 bool XSDataEquals( XSObjectRef object1, XSObjectRef object2 )
 {
-    ( void )object1;
-    ( void )object2;
+    XSDataRef       data1;
+    XSDataRef       data2;
+    const uint8_t * bytes1;
+    const uint8_t * bytes2;
 
-    return false;
+    if( object1 == NULL || object1 == NULL )
+    {
+        return false;
+    }
+
+    data1 = object1;
+    data2 = object2;
+
+    if( data1->length != data2->length )
+    {
+        return false;
+    }
+
+    bytes1 = XSDataGetBytesPointer( data1 );
+    bytes2 = XSDataGetBytesPointer( data2 );
+
+    return memcmp( bytes1, bytes2, data1->length ) == 0;
 }

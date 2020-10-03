@@ -34,7 +34,10 @@
 
 size_t XSDataGetLength( XSDataRef data )
 {
-    ( void )data;
+    if( data == NULL )
+    {
+        return 0;
+    }
 
-    return 0;
+    return data->length;
 }

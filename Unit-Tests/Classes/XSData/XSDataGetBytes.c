@@ -91,8 +91,8 @@ Test( XSData, XSDataGetBytes )
 
     memset( buf, 0, sizeof( buf ) );
     AssertTrue( XSDataGetBytes( data, buf, XSMakeRange( 0, sizeof( bytes ) - 1 ) ) );
-    AssertTrue( buf[ 0 ] == 1 );
-    AssertTrue( buf[ 1 ] == 2 );
+    AssertTrue( buf[ 0 ] == 0 );
+    AssertTrue( buf[ 1 ] == 1 );
     AssertTrue( buf[ sizeof( bytes ) - 2 ] == bytes[ sizeof( bytes ) - 2 ] );
     AssertTrue( buf[ sizeof( bytes ) - 1 ] == 0 );
 
@@ -158,8 +158,8 @@ Test( XSData, XSDataGetBytes_BigData )
 
     memset( buf, 0, sizeof( buf ) );
     AssertTrue( XSDataGetBytes( data, buf, XSMakeRange( 0, sizeof( bytes ) - 1 ) ) );
-    AssertTrue( buf[ 0 ] == 1 );
-    AssertTrue( buf[ 1 ] == 2 );
+    AssertTrue( buf[ 0 ] == 0 );
+    AssertTrue( buf[ 1 ] == 1 );
     AssertTrue( buf[ sizeof( bytes ) - 2 ] == bytes[ sizeof( bytes ) - 2 ] );
     AssertTrue( buf[ sizeof( bytes ) - 1 ] == 0 );
 

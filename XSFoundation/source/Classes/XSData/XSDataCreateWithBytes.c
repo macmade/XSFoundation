@@ -31,11 +31,45 @@
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSData.h>
+#include <string.h>
 
 XSDataRef XSDataCreateWithBytes( uint8_t * bytes, size_t length )
 {
-    ( void )bytes;
-    ( void )length;
+    struct XSData * instance;
 
-    return NULL;
+    if( bytes == NULL || length == 0 )
+    {
+        return XSDataEmpty;
+    }
+
+    instance = XSRuntimeCreateInstance( XSDataClassID );
+
+    if( instance == NULL )
+    {
+        XSBadAlloc();
+    }
+
+    instance->length = length;
+
+    if( length < sizeof( instance->storage.bytes ) )
+    {
+        memcpy( instance->storage.bytes, bytes, length );
+    }
+    else
+    {
+        uint8_t * ptr = XSAlloc( length );
+
+        if( ptr == NULL )
+        {
+            XSBadAlloc();
+        }
+
+        instance->capacity = length;
+
+        memcpy( ptr, bytes, length );
+
+        instance->storage.ptr = ptr;
+    }
+
+    return instance;
 }

@@ -31,12 +31,16 @@
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSData.h>
+#include <string.h>
 
 bool XSDataGetBytes( XSDataRef data, uint8_t * buf, XSRange range )
 {
-    ( void )data;
-    ( void )buf;
-    ( void )range;
+    if( data == NULL || buf == NULL || range.length == 0 || range.location + range.length > data->length )
+    {
+        return false;
+    }
 
-    return false;
+    memcpy( buf, XSDataGetBytesPointer( data ) + range.location, range.length );
+
+    return true;
 }

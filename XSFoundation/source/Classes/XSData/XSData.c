@@ -32,8 +32,9 @@
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSData.h>
 
-XSClassID   XSDataClassID = 0;
-XSClassInfo XSDataClass   = {
+struct XSData * XSDataEmpty   = NULL;
+XSClassID       XSDataClassID = 0;
+XSClassInfo     XSDataClass   = {
     "XSData",
     XSClassTypeNormal,
     sizeof( struct XSData ),

@@ -34,5 +34,12 @@
 
 void XSDataDestructor( XSMutableObjectRef object )
 {
-    ( void )object;
+    XSDataRef instance = object;
+
+    if( instance == NULL || instance->capacity == 0 || ( instance->flags & XSDataFlagsNoCopy ) != 0 )
+    {
+        return;
+    }
+
+    XSRelease( instance->storage.ptr );
 }

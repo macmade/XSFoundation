@@ -34,8 +34,5 @@
 
 XS_AUTORELEASED XSDataRef XSDataWithBytesNoCopy( uint8_t * bytes, size_t length )
 {
-    ( void )bytes;
-    ( void )length;
-
-    return NULL;
+    return XSAutorelease( XSDataCreateWithBytesNoCopy( bytes, length ) );
 }

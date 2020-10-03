@@ -34,8 +34,25 @@
 
 XSDataRef XSDataCreateWithBytesNoCopy( uint8_t * bytes, size_t length )
 {
-    ( void )bytes;
-    ( void )length;
+    struct XSData * instance;
 
-    return NULL;
+    if( bytes == NULL || length == 0 )
+    {
+        return XSDataEmpty;
+    }
+
+    instance = XSRuntimeCreateInstance( XSDataClassID );
+
+    if( instance == NULL )
+    {
+        XSBadAlloc();
+    }
+
+    instance->length      = length;
+    instance->capacity    = length;
+    instance->storage.ptr = bytes;
+
+    instance->flags |= XSDataFlagsNoCopy;
+
+    return instance;
 }

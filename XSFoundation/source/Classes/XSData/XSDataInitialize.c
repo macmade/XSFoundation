@@ -35,4 +35,7 @@
 void XSDataInitialize( void )
 {
     XSDataClassID = XSRuntimeRegisterClass( &XSDataClass );
+    XSDataEmpty   = XSRuntimeCreateInstance( XSDataClassID );
+
+    XSRuntimeSetObjectAsConstant( XSDataEmpty );
 }

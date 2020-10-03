@@ -39,10 +39,30 @@
 
 XS_EXTERN_C_BEGIN
 
+/*!
+ * @enum        XSDataFlags
+ * @abstract    Flags for XSData instances
+ */
+enum XSDataFlags
+{
+    XSDataFlagsMutable = 1 << 1,
+    XSDataFlagsNoCopy  = 1 << 2
+};
+
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wpadded"
 #endif
+
+/*!
+ * @union       XSDataStorage
+ * @abstract    Storage for XSData bytes
+ */
+union XSDataStorage
+{
+    const uint8_t * ptr;         /*! The data bytes (external storage) */
+    uint8_t         bytes[ 32 ]; /*! The data bytes (internal storage) */
+};
 
 /*!
  * @struct      XSData
@@ -50,8 +70,10 @@ XS_EXTERN_C_BEGIN
  */
 struct XSData
 {
-    uint8_t * bytes;
-    size_t    length;
+    union XSDataStorage storage;
+    size_t              length;   /*! Length of the data bytes */
+    size_t              capacity; /*! Capacity of the data bytes storage - 0 for internal storage */
+    uint64_t            flags;    /*! Instance flags */
 };
 
 #ifdef __clang__
@@ -70,6 +92,12 @@ XS_EXTERN XSClassID XSDataClassID;
  * @abstract    Class info
  */
 XS_EXTERN XSClassInfo XSDataClass;
+
+/*!
+ * @var         XSDataEmpty
+ * @abstract    Empty data shared instance
+ */
+XS_EXTERN struct XSData * XSDataEmpty;
 
 /*!
  * @function    XSDataInitialize

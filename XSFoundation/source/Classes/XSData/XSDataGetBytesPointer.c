@@ -34,7 +34,15 @@
 
 const uint8_t * XSDataGetBytesPointer( XSDataRef data )
 {
-    ( void )data;
+    if( data == NULL )
+    {
+        return NULL;
+    }
 
-    return NULL;
+    if( data->capacity == 0 )
+    {
+        return data->storage.bytes;
+    }
+
+    return data->storage.ptr;
 }

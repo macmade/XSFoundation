@@ -31,11 +31,37 @@
 
 #include <XS/XS.h>
 #include <XS/Private/Classes/XSData.h>
+#include <string.h>
 
 XSMutableObjectRef XSDataCopy( XSObjectRef source, XSMutableObjectRef destination )
 {
-    ( void )source;
-    ( void )destination;
+    const struct XSData * data1 = source;
+    struct XSData *       data2 = destination;
 
-    return NULL;
+    if( data1->capacity == 0 )
+    {
+        memcpy( data2->storage.bytes, data1->storage.bytes, data1->length );
+    }
+    else
+    {
+        uint8_t * ptr = XSAlloc( data1->capacity );
+
+        if( ptr == NULL )
+        {
+            XSBadAlloc();
+        }
+
+        memcpy( ptr, data1->storage.ptr, data1->length );
+
+        data2->storage.ptr = ptr;
+    }
+
+    data2->length   = data1->length;
+    data2->capacity = data1->capacity;
+    data2->flags    = data1->flags;
+
+    data2->flags &= ( uint64_t )( ~XSDataFlagsMutable );
+    data2->flags &= ( uint64_t )( ~XSDataFlagsNoCopy );
+
+    return destination;
 }

@@ -56,8 +56,8 @@ Test( XSData, Equals )
     data4 = XSDataCreateWithBytes( bytes2, sizeof( bytes2 ) );
     data5 = XSDataCreateWithBytes( bytes1, 10 );
     data6 = XSDataCreateWithBytes( bytes2, 10 );
-    data7 = XSDataCreateWithBytes( bytes1 + 1, 10 );
-    data8 = XSDataCreateWithBytes( bytes2 + 1, 10 );
+    data7 = XSDataCreateWithBytes( bytes1, 10 );
+    data8 = XSDataCreateWithBytes( bytes2, 10 );
 
     AssertTrue( XSEquals( data1, data3 ) );
     AssertTrue( XSEquals( data2, data4 ) );

@@ -34,7 +34,28 @@
 
 uint64_t XSDataHash( XSObjectRef object )
 {
-    ( void )object;
+    const uint8_t * bytes;
+    uint64_t        h;
+    uint8_t         c;
+    XSDataRef       data;
 
-    return 0;
+    if( object == NULL )
+    {
+        return 0;
+    }
+
+    data  = object;
+    bytes = XSDataGetBytesPointer( data );
+
+    h = 5381;
+
+    /* djb2 */
+    for( size_t i = 0; i < data->length; i++ )
+    {
+        c = *( bytes++ );
+        h = ( ( h << 5 ) + h ) + c;
+    }
+
+
+    return h;
 }
