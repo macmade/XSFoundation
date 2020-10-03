@@ -45,10 +45,16 @@ bool XSStringEquals( XSObjectRef object1, XSObjectRef object2 )
         return false;
     }
 
-    str1  = object1;
-    str2  = object2;
+    str1 = object1;
+    str2 = object2;
+
+    if( str1->length != str2->length )
+    {
+        return false;
+    }
+
     cstr1 = XSStringGetCString( str1 );
     cstr2 = XSStringGetCString( str2 );
 
-    return strcmp( cstr1, cstr2 ) == 0;
+    return memcmp( cstr1, cstr2, str1->length ) == 0;
 }
